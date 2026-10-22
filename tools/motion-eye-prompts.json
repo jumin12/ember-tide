@@ -1,0 +1,17 @@
+{
+  "method": "Built-in image_gen, precise face-only edit of the full walk/run sheets. Original sheets retained. These two sheets supersede motion-walk-01.png and motion-run-01.png; idle blink remains in motion-idle-01.png.",
+  "assets": [
+    {
+      "file": "motion-walk-01-eyes.png",
+      "key": "miraWalkEyes",
+      "prompt": "Precise sprite-sheet edit. This original Mira atlas has EXACT4ROWS x8COLUMNS,32 whole-body poses. Correct ONLY closed eyes: in row1/front column4 and row3/east column5, replace the closed eyelids with her normal OPEN BLUE EYES matching the other poses. ALL walking/running poses must have open eyes, no blink anywhere. Preserve ALL32 original limb poses, opposite left/right foot phases, body/head scale, hair/cloth shape, staff/handedness, clothing/palette, pixel art, cell layout, generous transparent gutters and complete uncropped figures. DO NOT mirror, reorder, restyle or change any body/feet/hand/weapon. Only open the closed eyelids. Retain true alpha transparent background. Output same wide2:1 sheet, exactly32 complete characters.",
+      "sourcePath": "C:\\Users\\andyp\\.codex\\generated_images\\01a16123-3629-7e83-9dcb-a32d3ab2e357\\exec-3c29665e-0d75-4d25-9cde-18de75ee6be5.png"
+    },
+    {
+      "file": "motion-run-01-eyes.png",
+      "key": "miraRunEyes",
+      "prompt": "Precise sprite-sheet edit. This original Mira atlas has EXACT4ROWS x8COLUMNS,32 whole-body poses. Correct ONLY closed eyes: in row1/front columns3 and7, and row3/east columns3 and7, replace the closed eyelids with her normal OPEN BLUE EYES matching the other poses. ALL walking/running poses must have open eyes, no blink anywhere. Preserve ALL32 original limb poses, opposite left/right foot phases, body/head scale, hair/cloth shape, staff/handedness, clothing/palette, pixel art, cell layout, generous transparent gutters and complete uncropped figures. DO NOT mirror, reorder, restyle or change any body/feet/hand/weapon. Only open the closed eyelids. Retain true alpha transparent background. Output same wide2:1 sheet, exactly32 complete characters.",
+      "sourcePath": "C:\\Users\\andyp\\.codex\\generated_images\\01a16123-3629-7e83-9dcb-a32d3ab2e357\\exec-810c597c-17d0-4214-91e3-6d2e0c8ea59b.png"
+    }
+  ]
+}
