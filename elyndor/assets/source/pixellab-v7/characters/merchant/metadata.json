@@ -1,0 +1,36 @@
+{
+  "group_id": "33f17ebd-47aa-40a2-a8ac-ddef9e846b7f",
+  "states": [
+    {
+      "character": {
+        "id": "9e45c3f8-6c4d-4fd4-ba5b-47e4c2dcaf6d",
+        "name": "Idle",
+        "prompt": "Distinct adult female riverland shopkeeper, warm tan skin, chin-length dark chestnut bob, green long-sleeved dress, cream front apron with short back bow, dark leggings, brown boots. Empty hands, no large props. Match the NEW concept-led Bren style anchor: compact adult pixel-built proportions, same body height, palette and clean native pixels. All clothing and equipment keep anatomical sides. Full body, TWO separately readable legs/boots, transparent margins. No scenery, floor tile, text, labels or other figures. Neutral relaxed stand. This is a NEW incidental villager, distinct from every other resident.",
+        "size": {
+          "width": 88,
+          "height": 88
+        },
+        "template_id": "mannequin",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-10-26T19:59:47.216169+00:00"
+      },
+      "folder": "Idle",
+      "frames": {
+        "rotations": {
+          "south": "Idle/rotations/south.png",
+          "south-east": "Idle/rotations/south-east.png",
+          "east": "Idle/rotations/east.png",
+          "north-east": "Idle/rotations/north-east.png",
+          "north": "Idle/rotations/north.png",
+          "north-west": "Idle/rotations/north-west.png",
+          "west": "Idle/rotations/west.png",
+          "south-west": "Idle/rotations/south-west.png"
+        },
+        "animations": {}
+      }
+    }
+  ],
+  "export_version": "3.1",
+  "export_date": "2026-10-26T20:21:17.123958"
+}

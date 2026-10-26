@@ -1,0 +1,36 @@
+{
+  "group_id": "ff2c1ea5-5245-4a20-a633-0e7db2d28e57",
+  "states": [
+    {
+      "character": {
+        "id": "a4e306ce-cbe7-4340-9e70-3a0cb43b61bc",
+        "name": "Idle",
+        "prompt": "Distinct adult woman cloth seller, light olive skin, long black braid, dusty rose fitted coat, cream skirt over full leggings, brown boots, small fabric sample pouch, empty hands. Match the NEW concept-led Bren style anchor: compact adult pixel-built proportions, same body height, palette and clean native pixels. All clothing and equipment keep anatomical sides. Full body, TWO separately readable legs/boots, transparent margins. No scenery, floor tile, text, labels or other figures. Neutral relaxed stand. This is a NEW incidental villager, distinct from every other resident.",
+        "size": {
+          "width": 88,
+          "height": 88
+        },
+        "template_id": "mannequin",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-10-26T20:12:13.865997+00:00"
+      },
+      "folder": "Idle",
+      "frames": {
+        "rotations": {
+          "south": "Idle/rotations/south.png",
+          "south-east": "Idle/rotations/south-east.png",
+          "east": "Idle/rotations/east.png",
+          "north-east": "Idle/rotations/north-east.png",
+          "north": "Idle/rotations/north.png",
+          "north-west": "Idle/rotations/north-west.png",
+          "west": "Idle/rotations/west.png",
+          "south-west": "Idle/rotations/south-west.png"
+        },
+        "animations": {}
+      }
+    }
+  ],
+  "export_version": "3.1",
+  "export_date": "2026-10-26T20:21:23.434146"
+}

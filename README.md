@@ -1,5 +1,9 @@
 # The Last Light of Elyndor
 
+**PixelLab rebuild checkpoint:** New concept-led artwork and source are described
+in [PIXELLAB_REBUILD.md](PIXELLAB_REBUILD.md). They are not yet integrated into the
+playable release below.
+
 An original HD-2D browser RPG with a connected 3D landscape, pixel-art characters, exploration, turn-based battles, equipment, abilities, day/night lighting and local saves.
 
 **[Play in your browser](https://jumin12.github.io/ember-tide/)**

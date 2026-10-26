@@ -1,0 +1,36 @@
+{
+  "group_id": "ece4293f-de87-4462-8bc7-f807b0c36c6b",
+  "states": [
+    {
+      "character": {
+        "id": "c435221b-da13-442c-846c-e7576c4f4066",
+        "name": "Idle",
+        "prompt": "Tavin: faithful approved concept identity. Lean adult HUMAN male ranger, deep brown skin, narrow tightly curled black mohawk, shaved sides with matte charcoal geometric tattoos and small restrained face tattoos. Natural amber-brown eyes, no beard, no pointed ears. Moss green tunic, brown vest, charcoal trousers, bracers, separate calf boots. Physical wooden bow and quiver across back, compact sheathed knife. No magical tattoo glow, no large headdress, keep readable human silhouette. Match the NEW Bren style anchor's compact proportions, pixel density, palette and body height; one full body with two distinct legs. Clean transparent margins, neutral stand. Do not copy floor tiles, labels or extra poses from the approved concept sheet.",
+        "size": {
+          "width": 88,
+          "height": 88
+        },
+        "template_id": "mannequin",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-10-26T19:55:26.328883+00:00"
+      },
+      "folder": "Idle",
+      "frames": {
+        "rotations": {
+          "south": "Idle/rotations/south.png",
+          "south-east": "Idle/rotations/south-east.png",
+          "east": "Idle/rotations/east.png",
+          "north-east": "Idle/rotations/north-east.png",
+          "north": "Idle/rotations/north.png",
+          "north-west": "Idle/rotations/north-west.png",
+          "west": "Idle/rotations/west.png",
+          "south-west": "Idle/rotations/south-west.png"
+        },
+        "animations": {}
+      }
+    }
+  ],
+  "export_version": "3.1",
+  "export_date": "2026-10-26T20:21:15.961287"
+}

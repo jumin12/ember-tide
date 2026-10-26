@@ -1,0 +1,36 @@
+{
+  "group_id": "56f87c1f-2637-469c-9625-16ba2684b06c",
+  "states": [
+    {
+      "character": {
+        "id": "6f64146e-11cc-4b18-a4e1-cea399620493",
+        "name": "Idle",
+        "prompt": "Distinct slender young adult man messenger, warm olive skin, curly dark hair, burgundy cap, short rust-red coat, cream scarf, tan crossbody mail satchel, dark trousers and boots. Empty hands. Match the NEW concept-led Bren style anchor: compact adult pixel-built proportions, same body height, palette and clean native pixels. All clothing and equipment keep anatomical sides. Full body, TWO separately readable legs/boots, transparent margins. No scenery, floor tile, text, labels or other figures. Neutral relaxed stand. This is a NEW incidental villager, distinct from every other resident.",
+        "size": {
+          "width": 88,
+          "height": 88
+        },
+        "template_id": "mannequin",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-10-26T19:59:52.061880+00:00"
+      },
+      "folder": "Idle",
+      "frames": {
+        "rotations": {
+          "south": "Idle/rotations/south.png",
+          "south-east": "Idle/rotations/south-east.png",
+          "east": "Idle/rotations/east.png",
+          "north-east": "Idle/rotations/north-east.png",
+          "north": "Idle/rotations/north.png",
+          "north-west": "Idle/rotations/north-west.png",
+          "west": "Idle/rotations/west.png",
+          "south-west": "Idle/rotations/south-west.png"
+        },
+        "animations": {}
+      }
+    }
+  ],
+  "export_version": "3.1",
+  "export_date": "2026-10-26T20:21:17.862647"
+}

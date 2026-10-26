@@ -1,0 +1,36 @@
+{
+  "group_id": "50a54cc8-fb1f-40fd-94af-c8153bfbbb19",
+  "states": [
+    {
+      "character": {
+        "id": "c0050c24-02de-4f95-8524-89c1e1727f49",
+        "name": "Idle",
+        "prompt": "Distinct middle-aged man farmer, sun-browned skin, sandy moustache, broad straw hat, cream shirt, olive work overalls with brown belt, brown boots. No farming implements in hands. Match the NEW concept-led Bren style anchor: compact adult pixel-built proportions, same body height, palette and clean native pixels. All clothing and equipment keep anatomical sides. Full body, TWO separately readable legs/boots, transparent margins. No scenery, floor tile, text, labels or other figures. Neutral relaxed stand. This is a NEW incidental villager, distinct from every other resident.",
+        "size": {
+          "width": 88,
+          "height": 88
+        },
+        "template_id": "mannequin",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-10-26T19:59:53.103677+00:00"
+      },
+      "folder": "Idle",
+      "frames": {
+        "rotations": {
+          "south": "Idle/rotations/south.png",
+          "south-east": "Idle/rotations/south-east.png",
+          "east": "Idle/rotations/east.png",
+          "north-east": "Idle/rotations/north-east.png",
+          "north": "Idle/rotations/north.png",
+          "north-west": "Idle/rotations/north-west.png",
+          "west": "Idle/rotations/west.png",
+          "south-west": "Idle/rotations/south-west.png"
+        },
+        "animations": {}
+      }
+    }
+  ],
+  "export_version": "3.1",
+  "export_date": "2026-10-26T20:21:18.746462"
+}

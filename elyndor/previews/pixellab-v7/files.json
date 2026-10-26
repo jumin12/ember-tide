@@ -1,0 +1,3532 @@
+[
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-market/Idle/rotations/east.png",
+    "bytes": 2058,
+    "sha256": "1426934f032d432f09ae7c9fabe0568393fbeca52e2a1e6cebb67d5791d0fe68"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-market/Idle/rotations/north-east.png",
+    "bytes": 2119,
+    "sha256": "58f02b3b60aa0486f44e216d7ee8a1dadd8bdfd57f56a328cc27aa0b90cf6241"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-market/Idle/rotations/north-west.png",
+    "bytes": 2090,
+    "sha256": "a894136b0a63fc5669a91b759f66474ade71f7e4f441379ba642473135bbf52f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-market/Idle/rotations/north.png",
+    "bytes": 2060,
+    "sha256": "e6a7401a79279c545128ef2692db9d1159bc5bc6c9317f04573031f014103d16"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-market/Idle/rotations/south-east.png",
+    "bytes": 2321,
+    "sha256": "19a4810ff9a985549e44964e9ee641dfcb48d90a15c691470513faf7e82b8dff"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-market/Idle/rotations/south-west.png",
+    "bytes": 2373,
+    "sha256": "5a7c6a3ce0d7f9e20b6202daf7e53268b6344f4995c2fae6e8542a7baedcd8a1"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-market/Idle/rotations/south.png",
+    "bytes": 2436,
+    "sha256": "140067749bc0da3090cd33437c5e7016fc32846cc6f935a451e09e717b57107a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-market/Idle/rotations/west.png",
+    "bytes": 2096,
+    "sha256": "1f32e8fda8201ca84bc84589e3404b5423370868559e3d08b827b69f7932e563"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-market/metadata.json",
+    "bytes": 1635,
+    "sha256": "15f4b1d3e92bc1f34d5b696f7f0dcb41f7571d89e59052258d53b9ce7dea771a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-medic/Idle/rotations/east.png",
+    "bytes": 1935,
+    "sha256": "f60e868f0ee16bb517ecc4c55456bc17926ad470d805047f9e28b663e6e3afbd"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-medic/Idle/rotations/north-east.png",
+    "bytes": 2028,
+    "sha256": "395c98803d1dca0d451d80f2b087f468f21c4ab29a61277cd3ebeae0f94105d7"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-medic/Idle/rotations/north-west.png",
+    "bytes": 2025,
+    "sha256": "1a074f83a9e73f1adfd23e66156c9a05578bc3ded6e0abc20674e8f7d0556748"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-medic/Idle/rotations/north.png",
+    "bytes": 1934,
+    "sha256": "f920f477079403fe474338d56dd5264b0920f85ac4e1ad60dfa0c17363b25cc0"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-medic/Idle/rotations/south-east.png",
+    "bytes": 2409,
+    "sha256": "3fd59e5a10d58dc070fdd4fef2d263d8b69c6387827eb9a88b417d545e9e7960"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-medic/Idle/rotations/south-west.png",
+    "bytes": 2322,
+    "sha256": "bee2a26e0d487c902c6651a9e145eb2744c239e6a54b77807e21cda5c5b51f6f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-medic/Idle/rotations/south.png",
+    "bytes": 2356,
+    "sha256": "801fb01dff02f142b8d887b8f7566bcaf6a88f032920fcd99f07d6eebc49584a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-medic/Idle/rotations/west.png",
+    "bytes": 1925,
+    "sha256": "5df6e8f82d541ba50f6da75a1420952e7eb5b60360c713506e742aad0015dea9"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-medic/metadata.json",
+    "bytes": 1624,
+    "sha256": "8afa3643e42a3b1a485247044311136af157bcff2f9be621eadc0eb573ca70df"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-orchard/Idle/rotations/east.png",
+    "bytes": 1393,
+    "sha256": "c472e212282523d5a0c1f8093a0ee7b8ea2d9c5e9f67a02bcd8e297f55fb993a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-orchard/Idle/rotations/north-east.png",
+    "bytes": 1538,
+    "sha256": "8919155d3031284d2bf01495cc8b797159a33a6cd7e1ed79782c986822694235"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-orchard/Idle/rotations/north-west.png",
+    "bytes": 1553,
+    "sha256": "2692496682bb8835799cc835bfabae42c25f43857b103a44cc77a12addf5aada"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-orchard/Idle/rotations/north.png",
+    "bytes": 1516,
+    "sha256": "679b51217f21e669eebd828997e1d6ad889725447c0e47e76a3a480b867a9f92"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-orchard/Idle/rotations/south-east.png",
+    "bytes": 1837,
+    "sha256": "018232b6280c33247441d12f674643f0ee8338d45607fc6f6396814c86bfecc5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-orchard/Idle/rotations/south-west.png",
+    "bytes": 1780,
+    "sha256": "e438b4d7303184b7296ff38d62291091c9117642d4873c6654124cd6df11a825"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-orchard/Idle/rotations/south.png",
+    "bytes": 1849,
+    "sha256": "b6bade197c34bb2f212694a6684a7199ee7b88a53ec8201253acef0d5960415e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-orchard/Idle/rotations/west.png",
+    "bytes": 1388,
+    "sha256": "13f25d1cdf247249025d0f99c26a44e9ed35dd173e2577c4572045a4cb12223c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-orchard/metadata.json",
+    "bytes": 1600,
+    "sha256": "c8ef4d02b38d3dc1614aad34ce7704a9742a34f993bc006a421646507b18f949"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-watch/Idle/rotations/east.png",
+    "bytes": 1800,
+    "sha256": "4886bb930aceb3c8939ec3a1421a30350d4b2ac0760e5bfd7128985cc62f98f3"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-watch/Idle/rotations/north-east.png",
+    "bytes": 1704,
+    "sha256": "81c708eda94dfc36c199962bf74b44f1aa7910e1287dae3e7f56a1f6533e9979"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-watch/Idle/rotations/north-west.png",
+    "bytes": 1757,
+    "sha256": "2a6015489f31b190a732603f34e5c3f0de659061527ade9de404f0e002e08993"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-watch/Idle/rotations/north.png",
+    "bytes": 1792,
+    "sha256": "c148207bb57eac3624799e6512d3f0dba4aac37a0db2e81b6ca66cb7973f1665"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-watch/Idle/rotations/south-east.png",
+    "bytes": 2309,
+    "sha256": "ee6cc397f1d8bf5e31e3a87874205a3e9528059d26783b57974efcba30676681"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-watch/Idle/rotations/south-west.png",
+    "bytes": 2347,
+    "sha256": "99e685909136a2402ae0f8c2741724cb661a7dcad871604e4843cb5159dd5c0a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-watch/Idle/rotations/south.png",
+    "bytes": 2403,
+    "sha256": "a2c99a52eae53053dbf4177fb6972c3cc7d0a9ffef9a472d45a3fb8d350b71b1"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-watch/Idle/rotations/west.png",
+    "bytes": 1972,
+    "sha256": "2d54c88d4b988dbb2aad4d52c1b70c01f9617377a25405b163ad684f2360e59c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/alder-watch/metadata.json",
+    "bytes": 1647,
+    "sha256": "3c7f427ff9de6566705b6aacdeb01353b15eb1b5cd46bed852bdf831c8250f44"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/attack-v7/west/frame_000.png",
+    "bytes": 2297,
+    "sha256": "f161a1513be2d71bd5f342a735f35af2cabada24983160225c8076175ad8243a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/attack-v7/west/frame_001.png",
+    "bytes": 2596,
+    "sha256": "3e6c21dcb2d3f7e57495f4e64d5cd31d46648b96c054c40e99b06be7c1e839c2"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/attack-v7/west/frame_002.png",
+    "bytes": 2530,
+    "sha256": "276983ebe599763dd6d9df8edf19d012ba5641c853c4af9c4693ff2aa367dd24"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/attack-v7/west/frame_003.png",
+    "bytes": 2524,
+    "sha256": "6dc5d7a4603eb033329b474b3c2a7997e8099ed59e96401baa24f1bedfdc2b98"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/attack-v7/west/frame_004.png",
+    "bytes": 2663,
+    "sha256": "24d5d858eb4f11ac6316c5127f09e513ace7ce9f391f7a4156672f29e6a4d506"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/attack-v7/west/frame_005.png",
+    "bytes": 2785,
+    "sha256": "77a4a8250be48aa7c0896376bcc957758fb491e44f46ce4e1c131d64c6df7b5e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/attack-v7/west/frame_006.png",
+    "bytes": 2663,
+    "sha256": "37ba449d0f9054e205dba9f8941b0b2b7672e1eb088b76163b5d850911aa3377"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/attack-v7/west/frame_007.png",
+    "bytes": 2772,
+    "sha256": "55b37614c1d27ee665749c0b8045955f28cb360b984503ca2243d94ac6e6ae37"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/attack-v7/west/frame_008.png",
+    "bytes": 2671,
+    "sha256": "68336e109d0b9b7b670305e34002cf585f3ac2b9e83aeea9658db77ae1d944bd"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/battleIdle-v7/west/frame_000.png",
+    "bytes": 2350,
+    "sha256": "ed80318a3bead679925a1f836de54a46974bc0d6ae7320d8e5be9420f70f8549"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/battleIdle-v7/west/frame_001.png",
+    "bytes": 2516,
+    "sha256": "befd3a6b3b4754d904c233f31832acf5e96a82a7a568be15276767aefe519e84"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/battleIdle-v7/west/frame_002.png",
+    "bytes": 2572,
+    "sha256": "5b57992355b9297c2d8150b8906f0ad09ffd09a81db412f055752562f3da8347"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/battleIdle-v7/west/frame_003.png",
+    "bytes": 2670,
+    "sha256": "0f676fd75de3d63a655dbd567ccfe0909f65525573c9c6f24fdb15dd4c49c92c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/battleIdle-v7/west/frame_004.png",
+    "bytes": 2805,
+    "sha256": "76d9ff2d1469a5ed4e31c98b3ccb4e56a48fcca11708bc32dcd0b1aa5f8aaeb3"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/battleIdle-v7/west/frame_005.png",
+    "bytes": 2651,
+    "sha256": "280cd06925ba2bf07350e9963b4dec5f32e9f8769790cd5c9c6d7c9f0d5e1d28"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/battleIdle-v7/west/frame_006.png",
+    "bytes": 2638,
+    "sha256": "ca7b0092c15106dd001f0ee859e25072a8bfd721a42a3c7a798aec68023c3aa4"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/battleIdle-v7/west/frame_007.png",
+    "bytes": 2635,
+    "sha256": "88668d3b02d7e95beb4e68ac3a9dd1ec649db5173c7c0855e6c4e1a697f1716e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/cast-v7/west/frame_000.png",
+    "bytes": 2297,
+    "sha256": "f161a1513be2d71bd5f342a735f35af2cabada24983160225c8076175ad8243a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/cast-v7/west/frame_001.png",
+    "bytes": 2680,
+    "sha256": "09f076224a3cdaa0d5969ceca7022b0e17b7a3b48b96b32a3d6fa628205bc00b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/cast-v7/west/frame_002.png",
+    "bytes": 2614,
+    "sha256": "48b58656233a23ddd89469b4c131a9e438d6bc71ba874ea742445bc93f4a65a2"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/cast-v7/west/frame_003.png",
+    "bytes": 2786,
+    "sha256": "14ed88d0d979ac493dcaaf65c7c9c6d96e658e95c74a7a3d8daf005afad767d3"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/cast-v7/west/frame_004.png",
+    "bytes": 2659,
+    "sha256": "c0821eaed66fdfc7b326cb382a7c414b7b67e9447dd31a06675590c153a34c49"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/cast-v7/west/frame_005.png",
+    "bytes": 2717,
+    "sha256": "dc8e240c50c7bef442fd71d81cf6892f3675c8f13dd1beba57590f8e38c848b5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/cast-v7/west/frame_006.png",
+    "bytes": 2693,
+    "sha256": "bde3f77a620c6f820fb8df3abf72605a966ce803464a950f7419cac6718fdffb"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/cast-v7/west/frame_007.png",
+    "bytes": 2737,
+    "sha256": "f95c4f7915d1312caa1732bd07d4328e67b4b07b587b9f05f7298a728dda00b4"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/cast-v7/west/frame_008.png",
+    "bytes": 2517,
+    "sha256": "d5d086c01f5c18475f0055b1dd80c584caeb678289a863e95e6004cfb0e34a37"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/east/frame_000.png",
+    "bytes": 2155,
+    "sha256": "7594ab480d4404e3be6badbdd8a3c860d1d34b4507c1e25eed93b32d81fcfd37"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/east/frame_001.png",
+    "bytes": 2296,
+    "sha256": "c51404fc4454816211b3df9b214dd3b4d0f642da6eaaab1037662c01e7c12f80"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/east/frame_002.png",
+    "bytes": 2318,
+    "sha256": "d6779cb9b2b0079d3392a2196401fbba0b67fad9e075e74060257a503b4bd4cf"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/east/frame_003.png",
+    "bytes": 2242,
+    "sha256": "5e20d57a3e34165dfc773b031c4cb0c0242cd4c2c3e481a6765e3a342da4771f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/north-east/frame_000.png",
+    "bytes": 2688,
+    "sha256": "21c3e9a6b32180bcda6201c24b3a0c03babc02c9590b8aa4ac94f2f17d47db94"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/north-east/frame_001.png",
+    "bytes": 2722,
+    "sha256": "4cbc22801e3a5ed8154038ab0bc92a6638079186542328eac1c476f1d084db21"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/north-east/frame_002.png",
+    "bytes": 2621,
+    "sha256": "9ea7618bac2b938d3630dab2ec3a3eaf3a40ff4175f6344b76073b310c557c80"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/north-east/frame_003.png",
+    "bytes": 2684,
+    "sha256": "57906d6e0b15529afb33ffe5a6aebe4b477bfbce07eaa31c12fd096ab23a3fb8"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/north-west/frame_000.png",
+    "bytes": 2387,
+    "sha256": "ac6941485b312a6d8dff19c952212ae83647ebf7ba715d066ae2f8682fa2a2e4"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/north-west/frame_001.png",
+    "bytes": 2407,
+    "sha256": "0bb211207ab5a063b3030c27ce3485ecf125b2976e53a1d0f4ba9c9f20baad07"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/north-west/frame_002.png",
+    "bytes": 2491,
+    "sha256": "1c18421ba127ed7f521bd62a6e5ef512d082567ca0c85661ff7f773480371abc"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/north-west/frame_003.png",
+    "bytes": 2411,
+    "sha256": "aab06bc46f0ba2da9b111ded471c27caca618fd84e8cf582aa4d24a83cb36e0b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/south/frame_000.png",
+    "bytes": 3080,
+    "sha256": "5a1be31c6f7fa4243af5eea6158f6416e3d0a4eb3cae3f3b96eb2a0df85c1f53"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/south/frame_001.png",
+    "bytes": 3125,
+    "sha256": "b7f250becab92039a5d229873663d58d477a10c02dec9b23a85b7482f76c2e63"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/south/frame_002.png",
+    "bytes": 3138,
+    "sha256": "0da7e9a0a439959b5da60da1068feb7ffcaa9cc561469a688df53f4fdc190d21"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/south/frame_003.png",
+    "bytes": 3065,
+    "sha256": "8221c55159f85df3fc42aec622b30f3e7c6421cb3a98c70ad1291b973676f600"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/south-east/frame_000.png",
+    "bytes": 2625,
+    "sha256": "1c0e3ed7b49010e78767a5d9d9a01c2c5e79728b57f15e97d46b9d5adc1bb2e9"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/south-east/frame_001.png",
+    "bytes": 2736,
+    "sha256": "5da82b66e16705bd24ddc565cf1523ba84a12bdd79447cc275f480ed2224f0f3"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/south-east/frame_002.png",
+    "bytes": 2599,
+    "sha256": "f6e9220d27045fe487375c9a06cec455c396a8c95ce76b5b660e28b0a7f46330"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/south-east/frame_003.png",
+    "bytes": 2616,
+    "sha256": "b0416c44b90a9c06cff94cdbe251c5189882aad0c5cc16b0b65a31bee869c07d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/south-west/frame_000.png",
+    "bytes": 2687,
+    "sha256": "f4dcc568ebed90360409f5f6a63a3a80e4e39d4de23bce93f01543e9ac15147a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/south-west/frame_001.png",
+    "bytes": 2782,
+    "sha256": "2c21226324dd98171b93504546285f7ec4629fe6dd902e318ad40577b32cf781"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/south-west/frame_002.png",
+    "bytes": 2727,
+    "sha256": "57c21d2157264db3fafa272fdffa49c601d19ab136fbd1584f14ce8e93de2307"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/south-west/frame_003.png",
+    "bytes": 2697,
+    "sha256": "c36de6e083b1a2998979bf42d7838211877251a0d95803b463cdb9f1d940b1d0"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/west/frame_000.png",
+    "bytes": 2431,
+    "sha256": "1ef5388a8e3e55e3bb7027d16b4c78f28453cd98de3624d3ab9519d7900520e8"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/west/frame_001.png",
+    "bytes": 2454,
+    "sha256": "348fd1dc7b0fea4686f72382da89470fbd6f8c723327afe61a5c3db32846e158"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/west/frame_002.png",
+    "bytes": 2337,
+    "sha256": "dd0a1c090af7617549798578100c6814766c0881b33378b70a70deebf92d0bf5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/idle-v7/west/frame_003.png",
+    "bytes": 2472,
+    "sha256": "b5e31e97c148f8180da5e34dbc0aae306ca919936f31d7af710fa9f766fb074b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/recoil-v7/west/frame_000.png",
+    "bytes": 2376,
+    "sha256": "c732ed07dfd2b4e77cbd31a85b720314b40593a24b14f866766cedfc025f853e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/recoil-v7/west/frame_001.png",
+    "bytes": 2531,
+    "sha256": "d0f0b3c48dbc0d46b4fea9bd358c09ef9962fec51f4799f24eab930876b802be"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/recoil-v7/west/frame_002.png",
+    "bytes": 2458,
+    "sha256": "7ece92e01e2ca023d68a40aacac9b619f3de621a5352896288a3a21b8889ff05"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/recoil-v7/west/frame_003.png",
+    "bytes": 2477,
+    "sha256": "2c90e182ddd7c8ed158e41487ea633d702123a0dcfce82e31754b946674b2885"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/recoil-v7/west/frame_004.png",
+    "bytes": 2228,
+    "sha256": "c6502de1da367075b7561d547fea10931fc8dcf9cee9ccc6603e9aad6f68d671"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/recoil-v7/west/frame_005.png",
+    "bytes": 2146,
+    "sha256": "5f5998fbf0afe7da4e8e75cabe733d47102531725dd058e28077dc7f5157244a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/east/frame_000.png",
+    "bytes": 2319,
+    "sha256": "d1bc5b0dd61d1555c73d51ae000247bef4c17e01c3b043f20b3f292ad1fe82f9"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/east/frame_001.png",
+    "bytes": 2570,
+    "sha256": "f098d80ab250fd3313e58dd5b311e3b6a4740b4f10668fa722d1de158b3df771"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/east/frame_002.png",
+    "bytes": 2344,
+    "sha256": "e4e676683fcd7d87b33825668d7d471eb111d1e59f3721ddc89277aa229d9c9c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/east/frame_003.png",
+    "bytes": 2115,
+    "sha256": "43da297e8669bf3582c6a7fb4066b526051a6893d6cebaf9ed2c200250712a34"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/east/frame_004.png",
+    "bytes": 2385,
+    "sha256": "f302172ebcc4b43683099179b47309a101bf70107bc1c5891fa1de005cf3ea2d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/east/frame_005.png",
+    "bytes": 2495,
+    "sha256": "e557800c15c40e09c315d425ebdf5b59ba3d4886a50560e705db71c3a10e00bc"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/east/frame_006.png",
+    "bytes": 2323,
+    "sha256": "06197c2d78552cb72d7e78b6af065461783f8e49887d1c791e881554958715f1"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/east/frame_007.png",
+    "bytes": 2172,
+    "sha256": "047ca8e83b0eedb763acccc446190ed0839d6aa09999523b32fd24fc44cff725"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north/frame_000.png",
+    "bytes": 2805,
+    "sha256": "94dad9380fb93bf62b426682f399c17e186f87f196258ac76b6fb24d7bceb608"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north/frame_001.png",
+    "bytes": 2722,
+    "sha256": "9ebc29e37de0993ebb10e4aad0848684f020dae16dbdfdfad5c91e3ab17d8be5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north/frame_002.png",
+    "bytes": 2747,
+    "sha256": "b0e797feb3809d4212ddbc763e0fbb0b708b4d966e1830bb9f2e1179e9d06a8b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north/frame_003.png",
+    "bytes": 2741,
+    "sha256": "695e6089a5b20b8f0454d88a35d986520c60b261deed32afd3cd99b713f98e24"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north/frame_004.png",
+    "bytes": 2770,
+    "sha256": "76fadc74cee28f02108981238c5908f4ef547356a1de831921e6532bc3c8714b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north/frame_005.png",
+    "bytes": 2683,
+    "sha256": "d1c744bd656749c984a1579998795ab02ffe4e7900fb175e29a8613fa1e7d7c4"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north/frame_006.png",
+    "bytes": 2715,
+    "sha256": "aa2f2f8ff8bd9106e4369ed79f1caefa1c0dd2f019a8fa2fdcef32ac9d06ed80"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north/frame_007.png",
+    "bytes": 2862,
+    "sha256": "7b27246f6f48822b192a9d886a6642d7d0c62a5ffd4b476d1dfbc7aba0a87fc3"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north-east/frame_000.png",
+    "bytes": 2956,
+    "sha256": "66baeafa14fef05b0d4892a28902a32f8494ae4ca2b556e7ce378243e9b24083"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north-east/frame_001.png",
+    "bytes": 2761,
+    "sha256": "94e20db0b899d22984b20d4ea4990cc5841dfb5580b2afba594c0b151cec2d14"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north-east/frame_002.png",
+    "bytes": 2662,
+    "sha256": "dbb56a3f530e8d466a3dc0b44407fb3422f4e20b3a8c953e0382c0782ecb69ee"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north-east/frame_003.png",
+    "bytes": 2566,
+    "sha256": "45d012fc34fbae481b433f2dbc932db0a7fb0fb6b068db4f3a51e1a814813496"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north-east/frame_004.png",
+    "bytes": 2338,
+    "sha256": "e20c58e19d5df84c4c63203bdb87549b25fdd235efee42b54b767b72d11ccc96"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north-east/frame_005.png",
+    "bytes": 2454,
+    "sha256": "9876abdf7c8bccfe21a33f93f6b7b11a14f741c4c00ecb26093d6c2964fa2d60"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north-east/frame_006.png",
+    "bytes": 2583,
+    "sha256": "308646b884cd06b538ec1b57b5de3ac229baa3e9705fedde176f12e769d25c80"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north-east/frame_007.png",
+    "bytes": 2673,
+    "sha256": "5963e7c7382956bf19297cdb0f51d54679a42b9d9c4eb2a57350b6e53b7b2787"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north-west/frame_000.png",
+    "bytes": 2598,
+    "sha256": "04504da892c7ec8db5ab451101fa7b505774dd03497a207e93c97a143c61c7b5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north-west/frame_001.png",
+    "bytes": 2514,
+    "sha256": "3e2c03b9be7c8a63a25d02f1b0ca6a8c929c03d965629b3ddc983f04d4fb4d39"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north-west/frame_002.png",
+    "bytes": 2563,
+    "sha256": "5839f3cb3f2e8aef3b68245612da70a89b27cfd9f70c9547fafed96fd713cc77"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north-west/frame_003.png",
+    "bytes": 2576,
+    "sha256": "fdf2593b0a1b862f71b222b240fb4cbe3a2a745decd19b8e31d60180ea5cfe7c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north-west/frame_004.png",
+    "bytes": 2744,
+    "sha256": "006f60e24e9aa588b5843b4fe57b63f5f53720f675b03803317eec57a9163afd"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north-west/frame_005.png",
+    "bytes": 2811,
+    "sha256": "7a56ba1c69b43bd7e72c74c25b6d800810982a7c995641b975ab5689f7884232"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north-west/frame_006.png",
+    "bytes": 2789,
+    "sha256": "e8738aa5a598f8800cd88b372e66bc62a0a02a8fc5a79179618510220b0fa807"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/north-west/frame_007.png",
+    "bytes": 2596,
+    "sha256": "2a9fac0b0d77e48deba0a8bc1dd3eaad73ae4d128909972876abef9ae2c94993"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south/frame_000.png",
+    "bytes": 2930,
+    "sha256": "fc36b34a227147969ede24c5190dbcbd11ce8df4d9ac4332289416217eead0ae"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south/frame_001.png",
+    "bytes": 2811,
+    "sha256": "52fb7ad29accca10db10d29eb3116c2407261cb2ad5be434d501577233ad9c83"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south/frame_002.png",
+    "bytes": 2757,
+    "sha256": "a3bc5cca3121cb7fbece164b6928c0bc645a1e193f621e5d2df3b0bb169cf2d0"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south/frame_003.png",
+    "bytes": 2819,
+    "sha256": "e6e151ce19631a35272b0f3795023b8b0c7769ca7edf5af5e24221dc3393b8d7"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south/frame_004.png",
+    "bytes": 2938,
+    "sha256": "dbb96fe9f70afade1f656ea7b259a6ff11d8e4302d0931b9626b53e93ab81b24"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south/frame_005.png",
+    "bytes": 2878,
+    "sha256": "5e58372d59296b2c4b5f664f8cd9fc16ae96da8d2a5919f1968cc1f1d50e46a3"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south/frame_006.png",
+    "bytes": 2904,
+    "sha256": "dbb851bec755f29d95728eebabf7204f28106f01741dcb1f086a27faa3989aa1"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south/frame_007.png",
+    "bytes": 2954,
+    "sha256": "91f431c1dc856443ccaaf3a62e5b29a6a30ded1418a0d8576df42a5d9399c925"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south-east/frame_000.png",
+    "bytes": 2386,
+    "sha256": "3a9386b27f8bebbbd1ca0e894877b9d48cd2a8e282993006556e5e5a2e9d63d0"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south-east/frame_001.png",
+    "bytes": 2359,
+    "sha256": "85130c03660f7bab8a8ecaeed0718e6e86c8f8c06a7b575ce9a1e0f96fc868b1"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south-east/frame_002.png",
+    "bytes": 2355,
+    "sha256": "655ac15caeec35a8e7e1283f4fa30c971829e35db0c197c2b721677078ea69da"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south-east/frame_003.png",
+    "bytes": 2375,
+    "sha256": "e1e0fc11331149c97d138bb1a6a86d8f99a85e26c89c644b8dce2a944e30373e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south-east/frame_004.png",
+    "bytes": 2674,
+    "sha256": "a9fb345cfa3bf58a48360bcdad09742e4cabd11fb193724361d30b135a911df0"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south-east/frame_005.png",
+    "bytes": 2828,
+    "sha256": "58a805ebcb0669ba84b97162062010fd88a789e2112baa26891b333d2f7dba13"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south-east/frame_006.png",
+    "bytes": 2668,
+    "sha256": "98767c0296b96a7727715841d45a519a02a1e52294f83cd62bc29e629b801f18"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south-east/frame_007.png",
+    "bytes": 2556,
+    "sha256": "7eed0633db375518579f530bb13f8f51c49ddd8c25e9e434bfcd460990d1c263"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south-west/frame_000.png",
+    "bytes": 2673,
+    "sha256": "ab97a5fa1c2370da359bd4c049c16f3429a4b4940d8f13b6a664c2f871f1fd8f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south-west/frame_001.png",
+    "bytes": 2622,
+    "sha256": "25648fc1f416a2b96f3e4cc360d753c1ef58092cdcfacadd79599c85098397e6"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south-west/frame_002.png",
+    "bytes": 2671,
+    "sha256": "9c408498901490edbc33d46b7b59ac531af4c8afe0a9935ee2a5b4da8452d934"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south-west/frame_003.png",
+    "bytes": 2505,
+    "sha256": "c57008b21a34cd5e773f0705e25e73c17e329de4c6de59fd1112e4c5327ebccc"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south-west/frame_004.png",
+    "bytes": 2337,
+    "sha256": "ae44a0b516adefc117533bfaccfd7ce5257a70cf7013dc37d1179a3e49907681"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south-west/frame_005.png",
+    "bytes": 2393,
+    "sha256": "03155ddc256711815082772083a8b68d71efacbd50611a875d3ad7b04d4ab63d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south-west/frame_006.png",
+    "bytes": 2439,
+    "sha256": "c1516953b3512e99a98881aa390cf4d9d95eda27e7170452714978f18c6d950b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/south-west/frame_007.png",
+    "bytes": 2565,
+    "sha256": "c72b1c2b514fc8ec5bb07c0e7af697802cd9b30325f05362130768fc288652c9"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/west/frame_000.png",
+    "bytes": 2392,
+    "sha256": "daadc489206ebb27250c3930fb7de6c5423a738597b07efc1181f4e7a22326ff"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/west/frame_001.png",
+    "bytes": 2484,
+    "sha256": "23e4eaf0b82b216cbb961409223903cf7c1da383f195971ef147548d0ab9290f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/west/frame_002.png",
+    "bytes": 2375,
+    "sha256": "6efbda14f5b760273f79396eaf216491e1fe91170e1320939799409022930c4d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/west/frame_003.png",
+    "bytes": 2287,
+    "sha256": "bfd22e9f15f56a97086714f63ba4c86806aebb2de805fc8f9615b60fee98f22c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/west/frame_004.png",
+    "bytes": 2544,
+    "sha256": "e2badefc4d47eb02690bf8791b0315c7dc3d07e05e257dcb3d3874a34ec52777"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/west/frame_005.png",
+    "bytes": 2708,
+    "sha256": "2ee49c6694d1cd193fcf2ced3b2d5e0fb0c071f57f90b8bed8a4824d53aae445"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/west/frame_006.png",
+    "bytes": 2593,
+    "sha256": "cfc0fc92460fcb29547bb322dda92d3a0956d6b2f966e3dfc7ddff56de7fef9d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/run-v7/west/frame_007.png",
+    "bytes": 2297,
+    "sha256": "67c76d3060b1cfb26d2a14007528faefdce9b16fb23eaf38b0d443eacccba637"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/east/frame_000.png",
+    "bytes": 2313,
+    "sha256": "1594ce917f7fbbda62dc88108574a689f89de93f8f089657397cc93edb41a6df"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/east/frame_001.png",
+    "bytes": 2414,
+    "sha256": "cee303054a57daff749efc381fcd39b1116fc9185520eeac0a7b6fe687baaac6"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/east/frame_002.png",
+    "bytes": 2461,
+    "sha256": "63deae0226a8a1ce0e523a51d7b68ba0edc60e25a602ba37b574075192221fa9"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/east/frame_003.png",
+    "bytes": 2382,
+    "sha256": "cd610709857379a44a9e0ef68afb174d8b00942045d48284f35be55124458339"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/east/frame_004.png",
+    "bytes": 2220,
+    "sha256": "c1a56f91e988820a8bb00ab3b04c93f2b569b8970ec8cb61990bd9884e803848"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/east/frame_005.png",
+    "bytes": 2506,
+    "sha256": "115bad90ea35549971eb30d4960673faacdcf74acbc5c866ca421d88ab9d6013"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/east/frame_006.png",
+    "bytes": 2488,
+    "sha256": "a5173e5c555f612466c0cc789590ef022ef5287ddd777696374b6e93b8ab3a1d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/east/frame_007.png",
+    "bytes": 2427,
+    "sha256": "f2b032e0d4202e9db4af6a178bd0a3c1314c02284045e34b76e91ddc851bb0df"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north/frame_000.png",
+    "bytes": 2863,
+    "sha256": "6593f71db292929ff5008d3693fca5b1ffb62146a6aeca9d9b352ac423c70b7a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north/frame_001.png",
+    "bytes": 2709,
+    "sha256": "94f268f0ecfeb07da217f93e41d2f368a9a2defaff4d548283577901c9a62f8b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north/frame_002.png",
+    "bytes": 2730,
+    "sha256": "08d2700db555824fb367ae69c5577e547d2d2500dc5118be87db83ab46a7fc4b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north/frame_003.png",
+    "bytes": 2721,
+    "sha256": "d4ad9d6f5565c1cb23cc7288e06e9bd2d73db6ecfd194f07d819d40c7caae616"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north/frame_004.png",
+    "bytes": 2702,
+    "sha256": "3a7ae77f98e73624c5748ca81142789df35255f9750c660edd58fa1da8f7d154"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north/frame_005.png",
+    "bytes": 2788,
+    "sha256": "f159a70ae88688bfae2bd60717a77cfdd5b1c6f1c2d8b81fb8aa0db6e40b196d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north/frame_006.png",
+    "bytes": 2729,
+    "sha256": "e7348bc76f3dd712b71ab1ba36fe0e9934898cb2d222eb6b071b45914a178e5a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north/frame_007.png",
+    "bytes": 2727,
+    "sha256": "bfd8da6a03d16278b9a0b46f1cb93f3182e21cf5cb1d08d282c9e353c28288e6"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north-east/frame_000.png",
+    "bytes": 2617,
+    "sha256": "dc28f808e2b2bf3622bc32dfa784a7887e62635c80c18b7c324f90e2890e0bb5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north-east/frame_001.png",
+    "bytes": 2640,
+    "sha256": "e87a1605bc26e541ca42113eac046ba0fcd3020eb526e7f47f153be5a770a181"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north-east/frame_002.png",
+    "bytes": 2750,
+    "sha256": "541f28654829b11b7411457b0dbcccfb2b6573f7d690185fb3b4244812fde947"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north-east/frame_003.png",
+    "bytes": 2612,
+    "sha256": "94c983b530d0b44c819dde8f1835f163cf7e6821ac6c326d05e3cae8ea0d2dc2"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north-east/frame_004.png",
+    "bytes": 2469,
+    "sha256": "8b42f7973c2d854106f449fa4ac4297d7c9b4225135a2adbcd861e215da42d7e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north-east/frame_005.png",
+    "bytes": 2576,
+    "sha256": "a5639a1e464127782dc76c6aecb1b5859ac93290104978003dbcf98263df9efd"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north-east/frame_006.png",
+    "bytes": 2565,
+    "sha256": "09ec620c40ce169443cdb9c061e84bf9b518634081a4caae261fd282d929c73d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north-east/frame_007.png",
+    "bytes": 2592,
+    "sha256": "18034ca111afcff31add15b0a438563bf72cc7615f96da59fae08714924f2c2d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north-west/frame_000.png",
+    "bytes": 2604,
+    "sha256": "938f0c68672c5334a2022d84ba7fbdeb4103438577c63793ec4bdb2f8ce9c328"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north-west/frame_001.png",
+    "bytes": 2490,
+    "sha256": "7b33768c06336ad1bba6e372c181873a83ead9651f28ff6d603331c5b1a52e2a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north-west/frame_002.png",
+    "bytes": 2546,
+    "sha256": "a4b6e9fa95109bac365f89d3444a6526f2a00fa8a6b9abd1ee6de6fdbadb7c55"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north-west/frame_003.png",
+    "bytes": 2528,
+    "sha256": "5b54a8f2de1657b9103574949cae585d5f06bf8ed2fad2d69ab135e3a353e381"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north-west/frame_004.png",
+    "bytes": 2519,
+    "sha256": "178ed16793db8f7fe323ba135628ba551a7ef9985347b2eb23da5e2716a759a1"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north-west/frame_005.png",
+    "bytes": 2596,
+    "sha256": "ee2a08e5d4c978aa546a21aa73394baf0e17977a2f279918ca371301d648dbbc"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north-west/frame_006.png",
+    "bytes": 2720,
+    "sha256": "f26a6516838b58be3174edea7e4f67e09e137464dd541e7013f181d116278cd8"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/north-west/frame_007.png",
+    "bytes": 2659,
+    "sha256": "f2b7404f8548b8139c18360bbdfd542449988d1e14643ee1f5f52b623e1fd43f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south/frame_000.png",
+    "bytes": 3007,
+    "sha256": "7411a3b6b9c1637d9846533a9d5147cf63bef39afbb6b029ff73694eb6d3af27"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south/frame_001.png",
+    "bytes": 3004,
+    "sha256": "50ee7bc049ea4c67cf6dc68d47944648172bc2694d25bf7416f79f3973c11b35"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south/frame_002.png",
+    "bytes": 2986,
+    "sha256": "4a1da137ee39de218593517ea411821dcd45f655713b8340d11b4240e3c29b6a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south/frame_003.png",
+    "bytes": 2976,
+    "sha256": "42c1bda6991b75efd6f5df5c55eef37d06b68aa382d1613a275668d6f634e2d0"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south/frame_004.png",
+    "bytes": 2910,
+    "sha256": "3ceb9b3afbdfcbf8059d1459cb417cf48b6fd7c6cad89a8e4fa914c321f3bac9"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south/frame_005.png",
+    "bytes": 2911,
+    "sha256": "2e83562968823f3dd586a1d5f596277828ad5e4e2b5817bd0abc7783389b7298"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south/frame_006.png",
+    "bytes": 2956,
+    "sha256": "c919eef8f8a373aca98b4a42997956c8ba8d2859837442996f551608d043de2f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south/frame_007.png",
+    "bytes": 2909,
+    "sha256": "ac2df24c67f3839d5909b9b4fabd9ded0162a11d628e8f093bbadc8fe69af01a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south-east/frame_000.png",
+    "bytes": 2677,
+    "sha256": "bf38b4875259a116284e090d9f2e4af77026e16a86a1d85fe71cf07ebe3e6964"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south-east/frame_001.png",
+    "bytes": 2701,
+    "sha256": "b36aaeb1367c2603c4f723680d07dc4ad01e9069847fe1d88a7cfcff316d603d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south-east/frame_002.png",
+    "bytes": 2612,
+    "sha256": "7d0b0eaf8f2c5537b8eaca31994cf00a305a5544794343569f3df769b888480d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south-east/frame_003.png",
+    "bytes": 2633,
+    "sha256": "a25a0e02d09e0ff3abaf9ea8f4462d7385b2a371fefc6c1757ca1fbaca79ee2f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south-east/frame_004.png",
+    "bytes": 2753,
+    "sha256": "823d358941630d9dfe21288a4c2f2eb56780660f7dd734237a483d009ceed38b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south-east/frame_005.png",
+    "bytes": 2865,
+    "sha256": "f67c3a860b48af8ae65f2237b55c9370f05826eb2d3118b0bb6275b60049b643"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south-east/frame_006.png",
+    "bytes": 2829,
+    "sha256": "ab55f3b4abc40abcb14c74406ac98b040e0ec645c0d084190599cdd82385410b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south-east/frame_007.png",
+    "bytes": 2699,
+    "sha256": "a51a6b5d6dd990332740e8265206923701d6484d0e36ae3283a126272b109ff1"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south-west/frame_000.png",
+    "bytes": 2771,
+    "sha256": "51450017e2e5275362d1347db6484d718c290e52782381b3d92f7974e3f8834a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south-west/frame_001.png",
+    "bytes": 2780,
+    "sha256": "6daab407e8da0e4da8de1d2d24cbed532d12cbd6cfa6577fb26888a574a4cde7"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south-west/frame_002.png",
+    "bytes": 2876,
+    "sha256": "2df23dcb4b0aa76aab56aad58c66ce6fcb2722aa61c1ed9881668c1ec0fc6a26"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south-west/frame_003.png",
+    "bytes": 2676,
+    "sha256": "c31d92dab3ef163181ab523608b1b1aa2739b37c05d1848ee307ba7afd08f7e9"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south-west/frame_004.png",
+    "bytes": 2630,
+    "sha256": "69c525f35fd96f5aa6e0276268b7ee0d8f1f19c7ee3d342130aadc0a172211f4"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south-west/frame_005.png",
+    "bytes": 2602,
+    "sha256": "87cffebe2326d91ba01485cc71e8d6766e65f994c71c6334e91f9407be3b08d4"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south-west/frame_006.png",
+    "bytes": 2694,
+    "sha256": "018879047ed90db4da3d7d01a765c7bfe16fa1e7b0bb484061aa8c7f21732a69"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/south-west/frame_007.png",
+    "bytes": 2716,
+    "sha256": "718b347ceadfcbf60204d1fb5358e4d1df4873037114e463808326367e86fbbe"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/west/frame_000.png",
+    "bytes": 2298,
+    "sha256": "ffe30a5cec1a2d0b787e75c49d225ecc5e2e7c727afafcbe61188a186e2e3008"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/west/frame_001.png",
+    "bytes": 2391,
+    "sha256": "dafa74eb3c6f45470a06f2703ad1287cddb639aecb96f474738908c31f6753c5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/west/frame_002.png",
+    "bytes": 2449,
+    "sha256": "da9d4a70f6c56b0467ffeabd328923e2a290c4aeaebab757e6c5d7c6ea10c156"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/west/frame_003.png",
+    "bytes": 2433,
+    "sha256": "aa133aac9e183aaec01c4ad36b38b0bfa61548a405087f6a0c4625d44be9e266"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/west/frame_004.png",
+    "bytes": 2250,
+    "sha256": "95fcc22afb74f45b7740f81eae3da9e6106610f1b96b293eb2cc82ef82847057"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/west/frame_005.png",
+    "bytes": 2591,
+    "sha256": "dc73777ad811fad756f238a73fe78569abb979c36d4afcdacad1d5fe0eef82f5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/west/frame_006.png",
+    "bytes": 2595,
+    "sha256": "697bd9a75e746c428126cdb41186b8899067ef5207fc9087168af069107d9415"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/animations/walk-v7/west/frame_007.png",
+    "bytes": 2386,
+    "sha256": "cb860e92e9dce1bccd2b29302819c9645ac2fa2afa6d3fe04bcc590d439f954a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/rotations/east.png",
+    "bytes": 2203,
+    "sha256": "d57df1cf3bae9d8d4cb63d41c521870cf57a046638205bb541694cb08e87e635"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/rotations/north-east.png",
+    "bytes": 2462,
+    "sha256": "46d8b34b8f231db43809cf55127a7309b684b148c5287e91e1570e1ee8a1b099"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/rotations/north-west.png",
+    "bytes": 2475,
+    "sha256": "0e7dc4f8fd51b04c5b7f887a530892b4b10f76ec1dc930604906e78cb6256077"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/rotations/north.png",
+    "bytes": 2653,
+    "sha256": "d6442d9eefdeca8f85295d43e71bb6c545112cac89f3868670bdfd3ea31cd6e1"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/rotations/south-east.png",
+    "bytes": 2647,
+    "sha256": "497803bfd0a0de7ea0dff6101aa51703e175e84a93b30e03bd27b50e942d5a20"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/rotations/south-west.png",
+    "bytes": 2789,
+    "sha256": "5ead4f833ebba19725df4f0143371faee79c070b615dbc431ebb1cd9dd3cb80a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/rotations/south.png",
+    "bytes": 3016,
+    "sha256": "d041b55cf61b208ea6ed48625aab38bec08a98b402d669f409bf007304a4b5fa"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/Idle/rotations/west.png",
+    "bytes": 2321,
+    "sha256": "2d21c7d02c42a6d427c0aa890fc282555a51c8155eba734f06796da857ed93fd"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/bren/metadata.json",
+    "bytes": 15010,
+    "sha256": "8b9b6398ed956c5008f772575908f335903d02f8626a70c34ef6cc26eb6a4449"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/brenAscended/Idle/rotations/east.png",
+    "bytes": 2981,
+    "sha256": "be8b22373256554c8ed0e89953d0c8b7593e7af91298c5594606e3a07395262d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/brenAscended/Idle/rotations/north-east.png",
+    "bytes": 3392,
+    "sha256": "c542ad134f51903161fcc19cb2dcb5a179448e52f9983e618cd0a89723cb99c0"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/brenAscended/Idle/rotations/north-west.png",
+    "bytes": 3363,
+    "sha256": "f1a4cd8ed11362fbdc73278e74389296b2c67482f01d231735818d736a99f57c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/brenAscended/Idle/rotations/north.png",
+    "bytes": 3438,
+    "sha256": "fc3fcfb725ca8f061d6faafa9bb7409f68ac34bf85bbcb08e289825077789cd8"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/brenAscended/Idle/rotations/south-east.png",
+    "bytes": 3752,
+    "sha256": "203fd7cdf8c8b8a943242c0fede94fad409c62c50b5eadbaea9f43e1512aaeb8"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/brenAscended/Idle/rotations/south-west.png",
+    "bytes": 3708,
+    "sha256": "1f5323d92ce31174882fd8dadb0c04fea1860e60ca02028bddbf2bc1321d248a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/brenAscended/Idle/rotations/south.png",
+    "bytes": 4066,
+    "sha256": "d4b4f5bb4ec50505ae911e99295cd36d5a32687a0d1ac31646d377c502acc06a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/brenAscended/Idle/rotations/west.png",
+    "bytes": 2996,
+    "sha256": "284a1c9f31abcf9c75167d78e5e3184cddb4a72555bf181b018fc006bcb40f82"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/brenAscended/metadata.json",
+    "bytes": 1793,
+    "sha256": "737ab018187c29d46baa2f2dacf1e00e269b7be5573fcf6e6d10b45e80a46970"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-archivist/Idle/rotations/east.png",
+    "bytes": 2470,
+    "sha256": "1a919835b3406bffebdcfe5e378d6abbb39ce280d56b0a728c9ab84077e4dbd2"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-archivist/Idle/rotations/north-east.png",
+    "bytes": 2367,
+    "sha256": "8b1ecc52a716e774c42f8cac607b4045489629d21c1326ca41ba9ac247e0a7d3"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-archivist/Idle/rotations/north-west.png",
+    "bytes": 2561,
+    "sha256": "3090486cae26c4ba85fa846b8520c2d3ea53b427ce9e90f1e21302a91eadd1f9"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-archivist/Idle/rotations/north.png",
+    "bytes": 2186,
+    "sha256": "3ea088382abf62b72667cd14c5989350efdbdb59ddcc3c6f002a9777c449e545"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-archivist/Idle/rotations/south-east.png",
+    "bytes": 2942,
+    "sha256": "d35d8d39f4fd777bc8739484a7fda3c6c20ee2569e3f2d4093b695a2badc8e7e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-archivist/Idle/rotations/south-west.png",
+    "bytes": 2938,
+    "sha256": "d3250c54963275f7fbc51719462435b681489a1b6b5786cb39f31ccc8bb3ec21"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-archivist/Idle/rotations/south.png",
+    "bytes": 2864,
+    "sha256": "78988ed9cc7f81ea37514ea5951d39265e9b0884f756c92292fe24620034deec"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-archivist/Idle/rotations/west.png",
+    "bytes": 2514,
+    "sha256": "df9a9bfeac1bbf3eabf65c787b29dc941a6369a4156aa2580acace51c2c8ae9a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-archivist/metadata.json",
+    "bytes": 1632,
+    "sha256": "c67ce1426f25745023639098880aabef0ca9e91e3b94df2fc157321d4047e0b2"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-gardener/Idle/rotations/east.png",
+    "bytes": 2255,
+    "sha256": "c6fa08fb1de760748b7dbb570155da7ccbf7170ede52a5cc20af5cde231ec1a5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-gardener/Idle/rotations/north-east.png",
+    "bytes": 2340,
+    "sha256": "ff9f2377812af5a3275fe587ec836c98bab2c6b118705db9bc1cb1d967a52c57"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-gardener/Idle/rotations/north-west.png",
+    "bytes": 2233,
+    "sha256": "7668f166e4cf5993e1535d883021b03a1fef0fa1c78c205c606baa643cb5f427"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-gardener/Idle/rotations/north.png",
+    "bytes": 2188,
+    "sha256": "f4fde275316d1c6ecf37c2eb86b2de7a8af8c3738ffea78f58dfb3f372563e5d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-gardener/Idle/rotations/south-east.png",
+    "bytes": 2771,
+    "sha256": "a71203ad0a4ba30a4e49f5683bccf5d01b08df32a83a2ee323b83f07ed827dcc"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-gardener/Idle/rotations/south-west.png",
+    "bytes": 2683,
+    "sha256": "0f4dd7a097a1958b09f6530e92110320b619dc7e1697b9894935aeaa70e4fae1"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-gardener/Idle/rotations/south.png",
+    "bytes": 2789,
+    "sha256": "769c7ac63e6568468ee8f3473fa61520000b88810cd3672d1c647c47422ae336"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-gardener/Idle/rotations/west.png",
+    "bytes": 2218,
+    "sha256": "4740ffa199903c4c56e41c6f5e9c210be996702cd1cf80c5a09c432b0ad05ee5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-gardener/metadata.json",
+    "bytes": 1629,
+    "sha256": "3ec033f83177ed2f88aa6b9edc9eca2c78a6fe3d273f7b7e5678d0542ccbec4e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-inn/Idle/rotations/east.png",
+    "bytes": 1867,
+    "sha256": "d8751f6f8c0ac30f0b9edae4adc78e2a13344271b5ef4d8cc46e81fbb713a051"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-inn/Idle/rotations/north-east.png",
+    "bytes": 2063,
+    "sha256": "ed8a7c1a119046f4f07847312c85c8421486122057219696eaeb2a3dca5a2577"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-inn/Idle/rotations/north-west.png",
+    "bytes": 2048,
+    "sha256": "28e75b846cf3a03cb19c7c9c6afba7eefc886ede9d7a98fd2acab56f8d0afb52"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-inn/Idle/rotations/north.png",
+    "bytes": 1996,
+    "sha256": "a042c6403999eb0a3f5665150340a9eb30f82b1fdf24f28da7cc42c719ede8a4"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-inn/Idle/rotations/south-east.png",
+    "bytes": 2102,
+    "sha256": "f2c229c29cdda26a8ed1375e31e8b7cea887fb81c03a8a2785f00d100ca3fb33"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-inn/Idle/rotations/south-west.png",
+    "bytes": 2113,
+    "sha256": "92122547cc1cf24dbbab56c78cd75144b5fd295dd3155f4f8c00dc0d63abfff4"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-inn/Idle/rotations/south.png",
+    "bytes": 2340,
+    "sha256": "0babab0863952ff535746320a51bf6e66aa6c1701a291bc3fb4d50c1582908af"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-inn/Idle/rotations/west.png",
+    "bytes": 1898,
+    "sha256": "5dfefb6923fee5cd17e867a29a410bdf5c201f4824e159232369b28160e61f12"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-inn/metadata.json",
+    "bytes": 1626,
+    "sha256": "104e794c7868aff11e9f77d201d25da887de7aba25946af61b13baf3eebebf3d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-post/Idle/rotations/east.png",
+    "bytes": 1747,
+    "sha256": "e1cb8f7099a0da29f1524e58d9e8b562e4c3fcc4f4fec39a949de1c237f0673d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-post/Idle/rotations/north-east.png",
+    "bytes": 1818,
+    "sha256": "9f0690411e3d00065aca0c1455f8af39605322d41f1825f92d189cfda7576751"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-post/Idle/rotations/north-west.png",
+    "bytes": 1897,
+    "sha256": "f5020a5bc0de1939784d5beec038448349079d137c0a20109e8a072900447e92"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-post/Idle/rotations/north.png",
+    "bytes": 1820,
+    "sha256": "4606530bbfe6156b6f6773b68b227aee0561029357cb48b8e10f89d85ec76553"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-post/Idle/rotations/south-east.png",
+    "bytes": 2245,
+    "sha256": "496da078072889f3f53922ae0952751abe34f63ac5a4c0e798c706ade07b6cff"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-post/Idle/rotations/south-west.png",
+    "bytes": 2300,
+    "sha256": "5194c728cf2150b3160894f23694173aa7ac9adb1bc9d89da1a743bb3ff67a81"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-post/Idle/rotations/south.png",
+    "bytes": 2310,
+    "sha256": "d331044ee5788cc5d612ed76dcb799dbc8c6226a1c132ce046971aaa45ac50a1"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-post/Idle/rotations/west.png",
+    "bytes": 1888,
+    "sha256": "f9ea8019628d0b1286039da54b17b1f9a6d429b7fbe9d2df48577f0785570246"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-post/metadata.json",
+    "bytes": 1649,
+    "sha256": "fc229656a11fb7065fc57bbdf24377317d1fbeb730cb051385d2f43e8d451437"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-stall/Idle/rotations/east.png",
+    "bytes": 1702,
+    "sha256": "fcf5e2668a11c2b46b3d88c3bb41b68001f9e12561c730f15ca6ea11ee6440f3"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-stall/Idle/rotations/north-east.png",
+    "bytes": 1729,
+    "sha256": "5f311156c6c6ec7facf444c298dd04fdd48f3221a5f07715157d65d1cc4593f3"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-stall/Idle/rotations/north-west.png",
+    "bytes": 1696,
+    "sha256": "4a0eeba34a3fc4414e5769868636fd71aeb39615904bf15245c927a929c31bf8"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-stall/Idle/rotations/north.png",
+    "bytes": 1831,
+    "sha256": "f69a56c6a661b1a10b06a5af3c7b1eb1ed3562e62420ac68fad1d73abebe531c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-stall/Idle/rotations/south-east.png",
+    "bytes": 2038,
+    "sha256": "029a785350052263335071e052185e54a1cafb2195b806f0da9e9e850b074f1e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-stall/Idle/rotations/south-west.png",
+    "bytes": 2006,
+    "sha256": "753cc9aa2db2e9b906cd238acd1e078ec8e6b59178a7a29cc54aecbe44371a89"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-stall/Idle/rotations/south.png",
+    "bytes": 2088,
+    "sha256": "0f68790180e0e1aeafa0b0cb2297dbe9f093d485cf01a10cd42fc6379a658b96"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-stall/Idle/rotations/west.png",
+    "bytes": 1714,
+    "sha256": "f629fbc0afefe0eefa34ab0939db05f31bf61eeef457221af5e5cc2e010d77ca"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-stall/metadata.json",
+    "bytes": 1617,
+    "sha256": "eeb2aa38385e3be5924bfe0def9a6169241f27bc642d913fb857f89b1f501676"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-steward/Idle/rotations/east.png",
+    "bytes": 2123,
+    "sha256": "5b393e4e4b54afe53e7f7ad32f131b1976fe4ebdab7155328844c780958aee1d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-steward/Idle/rotations/north-east.png",
+    "bytes": 2237,
+    "sha256": "53c381122f475a2323c631427e2641035165e0b720df29fb0be9edebb3a1e9c5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-steward/Idle/rotations/north-west.png",
+    "bytes": 2272,
+    "sha256": "f94ed02aa36bb2b8c56e238fd3f796bc044e88833779a26d08335f3d1273d8d2"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-steward/Idle/rotations/north.png",
+    "bytes": 2423,
+    "sha256": "d39dd992a4277306462346d7fa2d4207edf8e4ac0ca1bf3a055b4d45b248d377"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-steward/Idle/rotations/south-east.png",
+    "bytes": 2746,
+    "sha256": "c0e6e104268b793cdb1e54dd4efa989d6f177390256bf92a7ccd4d367a2f0a33"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-steward/Idle/rotations/south-west.png",
+    "bytes": 2769,
+    "sha256": "454297a8ef4991c6853be22baab11c026dec7e48a7ff77f837dee37494ce1a20"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-steward/Idle/rotations/south.png",
+    "bytes": 2975,
+    "sha256": "b925d65564d4b2583e5be90524a2ea70bfff621330938cf20890729b73bf693d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-steward/Idle/rotations/west.png",
+    "bytes": 2306,
+    "sha256": "41051e969394d9f21a42d2855c5cf794bf2b29060cb55401a8f82ce9009cce4c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/capital-steward/metadata.json",
+    "bytes": 1667,
+    "sha256": "c1d451347c45b080f6c13d3049ced914ce20657d4e1e1a7940ca206d90f9b015"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander/Idle/rotations/east.png",
+    "bytes": 3097,
+    "sha256": "93f63edc9dc6751484971e8fe47c69837e21c1d9e0fb21ac57aea0e89a690aeb"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander/Idle/rotations/north-east.png",
+    "bytes": 3299,
+    "sha256": "4ae9caa0829765e87092df2e770c907f62a2d160ff5604963ba221f6d5166cb0"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander/Idle/rotations/north-west.png",
+    "bytes": 3175,
+    "sha256": "76dfc6d640e0d45f26df0626300477b713d1a3e7c5c444ce4151dc9f6997e78c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander/Idle/rotations/north.png",
+    "bytes": 3471,
+    "sha256": "bb1428e613576a9bc867b310966da58ea562ea458ae848d6339a135b4f5041f3"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander/Idle/rotations/south-east.png",
+    "bytes": 3613,
+    "sha256": "0643a020728f89d07af18caead2dc81dae1dafd6f708e7e55fe65855c0eef745"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander/Idle/rotations/south-west.png",
+    "bytes": 3255,
+    "sha256": "1365a5f88509aaa6652090141674282d168ef2bdb38b11439d7731097900eac8"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander/Idle/rotations/south.png",
+    "bytes": 4012,
+    "sha256": "86c7059c35874d1167e08956a335b995b63edab34e5a8d6ae100257f576964e1"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander/Idle/rotations/west.png",
+    "bytes": 2843,
+    "sha256": "05445942a41f92e390ce9bc0f9de40179cfef6b0cf017a55bf06e8b2782f5bf2"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander/metadata.json",
+    "bytes": 1731,
+    "sha256": "128e7edd6f48989fbbb09f51f2ec93d51559b8a44a34499a018f45b2300585bf"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander2/Idle/rotations/east.png",
+    "bytes": 2164,
+    "sha256": "64e434cb33b05f892b3dae432f4c10b6d0aaff58bf2937c3e51343361144353a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander2/Idle/rotations/north-east.png",
+    "bytes": 2097,
+    "sha256": "d2cae0ebb6ddc796f3e863fa3de43a08ada7accdd069f43edacbe414a1260336"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander2/Idle/rotations/north-west.png",
+    "bytes": 2275,
+    "sha256": "7f0879c70066cabae07a3c98edc721bb8b5704f124df68e13892b7055f6dc059"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander2/Idle/rotations/north.png",
+    "bytes": 2368,
+    "sha256": "044b48f0679ea306f908674395919fbf5b51dd6374ade54d00e30862b67b8480"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander2/Idle/rotations/south-east.png",
+    "bytes": 2740,
+    "sha256": "d35dbc7331ea3120d0e93a11685aa369a56662704637b392ce368aa3bd181da9"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander2/Idle/rotations/south-west.png",
+    "bytes": 2908,
+    "sha256": "4eb7724ef44ac2014ec22398b4f5bee24b72403e1c3126b46ee1b1888c8a741a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander2/Idle/rotations/south.png",
+    "bytes": 3029,
+    "sha256": "80f44289e22335d81e1b25cb5605587c8470faf0bb04ec57b32bea421aed2567"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander2/Idle/rotations/west.png",
+    "bytes": 2360,
+    "sha256": "9c8932081af913118566f53178fde6de54bd8e1269a1f7f748405bb54e0d4e75"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander2/metadata.json",
+    "bytes": 1700,
+    "sha256": "96db2d68eff9548014e448e751d9f3269c0285f6233d504eea381f22f8750ac6"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander3/Idle/rotations/east.png",
+    "bytes": 2137,
+    "sha256": "68764f6c8b05efdf3f21da90bc8a9f705299121046ec29c0a195e5154d1364d9"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander3/Idle/rotations/north-east.png",
+    "bytes": 2397,
+    "sha256": "a5aed01af5eecd36268eb69a25eb7eff0e02f985b54444ee5d2742eac172a731"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander3/Idle/rotations/north-west.png",
+    "bytes": 2349,
+    "sha256": "abb73d8ebf865f823d1dc0c37ed5929cdd791f032d38ac7fa90270bc64471686"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander3/Idle/rotations/north.png",
+    "bytes": 2723,
+    "sha256": "4a3d12fc80712448f2f8d92edd9bc204817e6a69342e04c3219853d8faba49a9"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander3/Idle/rotations/south-east.png",
+    "bytes": 2949,
+    "sha256": "e209faa1a28ae62cafa58a835f9bc96ea8db7a23336c0c3d971ee1808918eb84"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander3/Idle/rotations/south-west.png",
+    "bytes": 3002,
+    "sha256": "a45f331b9e968349a21c7db382c694cbad2f279ee3e6e36c383c727169fb278e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander3/Idle/rotations/south.png",
+    "bytes": 3142,
+    "sha256": "997b49206854492ad3858a62ca05a6bee57ed7da33a013ead4e3077e9fa523d2"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander3/Idle/rotations/west.png",
+    "bytes": 2173,
+    "sha256": "2509ed7c563743a99485e3deffd7a635dd73a0581fc0c5a0bd5da7e41034de81"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/commander3/metadata.json",
+    "bytes": 1672,
+    "sha256": "e718b2fd1363a7389c89da6e973a1bea6ee895dc1fd9ce10bbb017465fac2a31"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/courier/Idle/rotations/east.png",
+    "bytes": 1632,
+    "sha256": "db348d3551666a5a24371bc0cd6d916e1fe3356c21fb159f20dab54979024ff5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/courier/Idle/rotations/north-east.png",
+    "bytes": 1499,
+    "sha256": "35f5d89460c261d4ce50e7478994071c2dbfc37123c6c8ae059746fa9b69b6c8"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/courier/Idle/rotations/north-west.png",
+    "bytes": 1595,
+    "sha256": "1287c6dd80b98ed7467938c90f7ff05460b31beeb54855289ac6f1b0b3dd8d7c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/courier/Idle/rotations/north.png",
+    "bytes": 1531,
+    "sha256": "31747a4515c0e2f79473f9e90023bd5b900e837417910480ba00e3729ffa4616"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/courier/Idle/rotations/south-east.png",
+    "bytes": 1908,
+    "sha256": "98455467ff1078a07acd6c7595505ce82f96505f5097488f703299814f6ed88c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/courier/Idle/rotations/south-west.png",
+    "bytes": 1945,
+    "sha256": "b0a4594d08f560edfefe3b94c4d80b33e38a3081494be12dae5506cd84abb942"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/courier/Idle/rotations/south.png",
+    "bytes": 2171,
+    "sha256": "97dbcc2939810d918ed22d776ae5103dd42a14666a466e147b16abfd218f71d8"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/courier/Idle/rotations/west.png",
+    "bytes": 1638,
+    "sha256": "8b48e6fa462d9d576584d6b83911c110314b29840b22ab296b3b2ddd63d1294b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/courier/metadata.json",
+    "bytes": 1629,
+    "sha256": "be3c6f37218c020def535ecd2f0d9af1fd08c1ef3219b3b56ed057965d59bd72"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/elder/Idle/rotations/east.png",
+    "bytes": 2053,
+    "sha256": "da978e8806764ec2f1d91a8bd2b68316bc78c58d68afed92a3dfe96386f68218"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/elder/Idle/rotations/north-east.png",
+    "bytes": 2016,
+    "sha256": "8dfae32cc879c3b36729e3ddf7a9d0255cd9fbd5bcb3322b36457f964d07ab55"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/elder/Idle/rotations/north-west.png",
+    "bytes": 1959,
+    "sha256": "c478b9e6ed079a2fbec5badc0f3d7eec6d6c937787ad5d33b5dbe819375ea4d9"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/elder/Idle/rotations/north.png",
+    "bytes": 2257,
+    "sha256": "45e6785be0a567eb8f530519496ae8929bd9453e79aecc98a58c745ce4081777"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/elder/Idle/rotations/south-east.png",
+    "bytes": 2453,
+    "sha256": "0694fa097d7de9a8320d1fc51dec70489cbae1089714239d2e1ce4025cab6695"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/elder/Idle/rotations/south-west.png",
+    "bytes": 2531,
+    "sha256": "adeb767e1d92121c989395ac17cf6d6c91e50332312962f649bfa0b8b5004d3a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/elder/Idle/rotations/south.png",
+    "bytes": 2451,
+    "sha256": "a0fc0e8626aa4f3174bede1d64c6cfa4d28247137a0608816b1f1dfad6198d14"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/elder/Idle/rotations/west.png",
+    "bytes": 2067,
+    "sha256": "fcca33e2800e7250739deb93a7c89361d39c37dd1b8b1284a948cd6323a0a4fa"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/elder/metadata.json",
+    "bytes": 1641,
+    "sha256": "677a457c4c1c2627cd57563e84d2eaba3ebd5aa95afb63da64dcb1f820f02255"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/farmer/Idle/rotations/east.png",
+    "bytes": 2071,
+    "sha256": "4026a5e0d6370ddcdb8749fcc9b2bda2ac867bd5d9c205ca08dce89474c17942"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/farmer/Idle/rotations/north-east.png",
+    "bytes": 2073,
+    "sha256": "3c7df244da89f553958ed45409b5431758bb6f3cbe52ba9183c20737b527c604"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/farmer/Idle/rotations/north-west.png",
+    "bytes": 2185,
+    "sha256": "fcb026c593b8b2e42ef7a1790c175acf84fd3510c98a289db9b24177a73c8bb2"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/farmer/Idle/rotations/north.png",
+    "bytes": 2243,
+    "sha256": "bd94d268d13ddddcf3379b6043b939ab6d8b4f83772b6f1bf1134113ea14858e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/farmer/Idle/rotations/south-east.png",
+    "bytes": 2469,
+    "sha256": "28c2fe57a28bbc8792c06240e002a6e5bb11ee3fcd21688cfa5a948c035895c7"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/farmer/Idle/rotations/south-west.png",
+    "bytes": 2366,
+    "sha256": "71e48a51af4aefcc7f7f0d0c9976be5fff8457bb4b5c675a3598ebeed4ea2ae2"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/farmer/Idle/rotations/south.png",
+    "bytes": 2600,
+    "sha256": "f4e8ad7bf9b142d2ad2cc349f7ee97476842d56b48938af3fbebe48ce33b68ae"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/farmer/Idle/rotations/west.png",
+    "bytes": 1975,
+    "sha256": "66a2edf69324ce5a3407a43f4875b48df58c1da244fbdbe09941ecec161dc72e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/farmer/metadata.json",
+    "bytes": 1617,
+    "sha256": "ecbc2347aa1aea91a15ae610185a945543dc239e1e891a95743df892291f4847"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/fern-hunter/Idle/rotations/east.png",
+    "bytes": 2323,
+    "sha256": "6f0d36bbc3ee05506042c76de47b86d8fac0740978bd833e677bba53fba30ec5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/fern-hunter/Idle/rotations/north-east.png",
+    "bytes": 2505,
+    "sha256": "b4770a0669286431f6d1bb283ed439ef003a1b1798b0d9d5afbd0bdae8d933e9"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/fern-hunter/Idle/rotations/north-west.png",
+    "bytes": 2440,
+    "sha256": "6d36fadd65dbf2f3f3e2df159295b246c40526c56b626132fb07664f64ceb49b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/fern-hunter/Idle/rotations/north.png",
+    "bytes": 2596,
+    "sha256": "92d4d49ecd54b98736e030db42b37c59632a415f463c7540739b5512a61023bb"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/fern-hunter/Idle/rotations/south-east.png",
+    "bytes": 2642,
+    "sha256": "ded195db54749f6eb4ca0dbb6ecd4c2be92900572cfb7010153c686b580dea3d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/fern-hunter/Idle/rotations/south-west.png",
+    "bytes": 2632,
+    "sha256": "def02401732207735d8470921b94cad1bcb94d2ca82208e7a4c2a7a27fded3a6"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/fern-hunter/Idle/rotations/south.png",
+    "bytes": 2803,
+    "sha256": "0592ffa0f37427dfd7c816e89e5c28b41367bff7f2c95b8669792006ab420150"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/fern-hunter/Idle/rotations/west.png",
+    "bytes": 2296,
+    "sha256": "57a016aeb3e783e6b2d2478f0885c57415f687df7342a0fd62bbac12ed1cdd09"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/fern-hunter/metadata.json",
+    "bytes": 1657,
+    "sha256": "370d46374fb43303fde3d12cf4e0a9c54321a1f7d2648bd52b429419e2d04fdb"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/fern-potter/Idle/rotations/east.png",
+    "bytes": 1682,
+    "sha256": "c232cd75d4ba6606239a02ba936f01bb10b4b7c62f589309d4d65ecc1f80271b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/fern-potter/Idle/rotations/north-east.png",
+    "bytes": 1745,
+    "sha256": "63fe3092d3c11d6046c37aebfa54a20dde656f7851bce2cfb2c9a8209c8464c7"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/fern-potter/Idle/rotations/north-west.png",
+    "bytes": 1799,
+    "sha256": "4e372a54c574f1d160fd0841d15ccad4b774092827011b6abc0109ceac841f5e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/fern-potter/Idle/rotations/north.png",
+    "bytes": 1702,
+    "sha256": "af877d7b0f2ecf00d6b47bdfcc1e3f578867147336762183cbd398adb444d5c6"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/fern-potter/Idle/rotations/south-east.png",
+    "bytes": 1914,
+    "sha256": "ffe10febd13a4817224553c3aa1519912c1ead3318e72a2fcda79aa5988e1a33"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/fern-potter/Idle/rotations/south-west.png",
+    "bytes": 1960,
+    "sha256": "ca51a603818790858eeb1b692e1f3a3ccc55021cbb7155b68c46b7fec690d0e0"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/fern-potter/Idle/rotations/south.png",
+    "bytes": 2077,
+    "sha256": "8ff1f85a3f86c95da062537875fe937914840ca756da4b17df828b674e2ebdf5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/fern-potter/Idle/rotations/west.png",
+    "bytes": 1697,
+    "sha256": "24fa7c98dfb91be715bc0c07d1a75501d62e99256fd58bbaf1cacbe98b4727fb"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/fern-potter/metadata.json",
+    "bytes": 1647,
+    "sha256": "ecdac3bf99d722df387153bea86561889a7c962c72d8f83b2da8f0c5194309e8"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/guard/Idle/rotations/east.png",
+    "bytes": 1661,
+    "sha256": "bac332a89b84dabe78e9917ca88329c1b950a01975cf25ccd0582b6b1c847ab4"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/guard/Idle/rotations/north-east.png",
+    "bytes": 1655,
+    "sha256": "9ac0531e86a4d1e989efd1bb5e500be85de4bb61a968322b103ca38d9321aaf5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/guard/Idle/rotations/north-west.png",
+    "bytes": 1809,
+    "sha256": "b28f2ce87e1b50ab33056b56ed4ac20d3e7cdb4681b91b587e49ec6e6e4b7c3a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/guard/Idle/rotations/north.png",
+    "bytes": 2033,
+    "sha256": "1b8ef5f33136c5fa39c4d93880f93d410b3d899cbea9d8607a23cc5828c7713a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/guard/Idle/rotations/south-east.png",
+    "bytes": 2142,
+    "sha256": "5b1cb506b17e7dbd4b656e91c34b2b179757d56a0612e67b65660fbc47eddb63"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/guard/Idle/rotations/south-west.png",
+    "bytes": 2376,
+    "sha256": "b89a84dafb314477b3f51a272ec05c3745310967561f3839d47023a769e7a719"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/guard/Idle/rotations/south.png",
+    "bytes": 2560,
+    "sha256": "b58d84707f101f44fc7fe46e3e38b59495089304da2f1e658836e0033849321e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/guard/Idle/rotations/west.png",
+    "bytes": 1773,
+    "sha256": "4c501b07b607655efbda9dc7180f4307854c2ae5575b584dd7aaf3d8f39f22fe"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/guard/metadata.json",
+    "bytes": 1675,
+    "sha256": "b86a026f8eef94529c9cb731648c4173557356d28a40ff1bf2aa3af891c63a58"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/guardEnemy/Idle/rotations/east.png",
+    "bytes": 2132,
+    "sha256": "ddb497d93c52a6e61af598108bd7e104cfc8e8826cada3d7a4a52e4b02c6a653"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/guardEnemy/Idle/rotations/north-east.png",
+    "bytes": 2192,
+    "sha256": "775315738a9b1af76c1b2bfd35d023320f2fa43ced16d41c95743ca85de34b7b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/guardEnemy/Idle/rotations/north-west.png",
+    "bytes": 2141,
+    "sha256": "efb1ffff1a2d31d34c4147eadd694f9df550265873da946bbf1ce0d88bf93cda"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/guardEnemy/Idle/rotations/north.png",
+    "bytes": 2344,
+    "sha256": "400fd8375dfb1e8ae005f208337eef9126f0d93e076ef8f3917d1e7b2cc88536"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/guardEnemy/Idle/rotations/south-east.png",
+    "bytes": 2802,
+    "sha256": "ba23b8393c9d5988fc1d8b3062db2128132b6844230b5981c79a1748145fbe6f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/guardEnemy/Idle/rotations/south-west.png",
+    "bytes": 2833,
+    "sha256": "2325dc2e76d798119a590516dab47f97ce3bd8417e8bb70223548b1d74b1da0d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/guardEnemy/Idle/rotations/south.png",
+    "bytes": 3190,
+    "sha256": "00f320b94428f015add04346869179b06b7846b0e3fa7afc260cea2e4f51fea8"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/guardEnemy/Idle/rotations/west.png",
+    "bytes": 2054,
+    "sha256": "b76406ef6199501e280fe3825629035ad62a8ea4ca1dbba9f75edc9a6678efe8"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/guardEnemy/metadata.json",
+    "bytes": 1682,
+    "sha256": "eae856bb7ee5909d757f260fbebddfce07277226578ad111be66d60124bba4ae"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/healer/Idle/rotations/east.png",
+    "bytes": 2128,
+    "sha256": "1f211be287bda7f9e8621a067f1bca22cd52d8e731ccace943ccc9a7f2a7c066"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/healer/Idle/rotations/north-east.png",
+    "bytes": 1936,
+    "sha256": "8ea8b56c41ab3cd62ebcd82b9d9a9eb4a7e04233032733be4b2d2c44a56e1872"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/healer/Idle/rotations/north-west.png",
+    "bytes": 1910,
+    "sha256": "95171b9778c263cbf6b041ed353f61cf42e55bb3ce7d52a9db70979c323be52f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/healer/Idle/rotations/north.png",
+    "bytes": 1732,
+    "sha256": "db7b4a96413033024d07bd0e2df310535b2f282fba202f0e78b108994411a2ca"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/healer/Idle/rotations/south-east.png",
+    "bytes": 2455,
+    "sha256": "6df670f1d0f139d074dd7bb8581737e5c477a4378e5d9da153fab75af2c43155"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/healer/Idle/rotations/south-west.png",
+    "bytes": 2401,
+    "sha256": "8bd1d1a9a041beaf234719f7c6706b787a03dedfc96d9f13524f3f523f9c246d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/healer/Idle/rotations/south.png",
+    "bytes": 2543,
+    "sha256": "a4f0992d6ed6670656d196471895aeaa2dcd7997d99fb93f2a930a2f9ea91949"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/healer/Idle/rotations/west.png",
+    "bytes": 2122,
+    "sha256": "7ec1b0e4f0cbf84a51944f39ad1f6bfc974f25a493e937477cc2ff978d79d588"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/healer/metadata.json",
+    "bytes": 1624,
+    "sha256": "bd9153132bd3ad66045343e38e0541b69c5cbce0a762d08eb2a4785987ebdea8"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/innkeeper/Idle/rotations/east.png",
+    "bytes": 1917,
+    "sha256": "6b8dc33de6affe838f6ab2279c24620152e790e7f2a5fbb3729eb06d29ddb3be"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/innkeeper/Idle/rotations/north-east.png",
+    "bytes": 1829,
+    "sha256": "766798b5584b555fb4daa9b92cbaa5030b651c082cdbcb22d1ad785202730942"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/innkeeper/Idle/rotations/north-west.png",
+    "bytes": 1807,
+    "sha256": "68fd2266a81afba5f0fe776cc41836acc5b624fe4223b22c90abdc726fc915dc"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/innkeeper/Idle/rotations/north.png",
+    "bytes": 2000,
+    "sha256": "d6cfa614119d7c377f74a9ae442aad80e6fa4a5cb6c7d6149b07abd25efab961"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/innkeeper/Idle/rotations/south-east.png",
+    "bytes": 2179,
+    "sha256": "20572fc4dfb44e6640a96815abfc3d3c0a0d7cd7aef008748ddf4ba59fd671f2"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/innkeeper/Idle/rotations/south-west.png",
+    "bytes": 2233,
+    "sha256": "765151e577133d45ecf9fed6bc9e1657e2778151c4784a59721689e3a55ba9a2"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/innkeeper/Idle/rotations/south.png",
+    "bytes": 2337,
+    "sha256": "67cc9a669188c49e42fe6087e9107f86155913e2c12c3b3ce0bc4099dc53dac4"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/innkeeper/Idle/rotations/west.png",
+    "bytes": 1881,
+    "sha256": "995e77069d169a4f3f241e7849edfa6ae12fe8ab49c138fe0c558ca5e4d25526"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/innkeeper/metadata.json",
+    "bytes": 1689,
+    "sha256": "3a710c9db4aea593855e9bbe332a47c7f15534861622edaa0d8aceba33047ca9"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/lysa/Idle/rotations/east.png",
+    "bytes": 2142,
+    "sha256": "eeeb0e52f070f0999d7064242af6a5324404d4b9e47f1a4f3cb08adb6625cb26"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/lysa/Idle/rotations/north-east.png",
+    "bytes": 2797,
+    "sha256": "6b9de2f6411bb1ee2733671df0d8ea8aaaec9a087339e3db5f772bb30f96106c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/lysa/Idle/rotations/north-west.png",
+    "bytes": 2587,
+    "sha256": "030b71613f9fece46abebeccfdece82a7163bff42d66c65beeb5e62702c33095"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/lysa/Idle/rotations/north.png",
+    "bytes": 2914,
+    "sha256": "878d23a0a73fe09cef347bb3675fc1f5a6e9aa9620c32df912aa352fb9c78319"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/lysa/Idle/rotations/south-east.png",
+    "bytes": 2868,
+    "sha256": "d25aea1a4bc400d7b16b125ecbfa0541c282d71419973e9723947f970e946fdf"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/lysa/Idle/rotations/south-west.png",
+    "bytes": 2447,
+    "sha256": "0060626347de317ea3342ffc3d479b01c649a1d7d7c9b17309c91355c3614b7b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/lysa/Idle/rotations/south.png",
+    "bytes": 2996,
+    "sha256": "34803c5e0750bfa69619014a2c19e00136be7a1c475007b4ab9b7ac670d82eed"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/lysa/Idle/rotations/west.png",
+    "bytes": 2685,
+    "sha256": "855940257419a38f8dee41283269e173e7aaef836a47ace35a8b726de3459f2f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/lysa/metadata.json",
+    "bytes": 1773,
+    "sha256": "e584a00073d3a6d1766c7233b4b207d8405a7f12ac68351ff5d0a295db5285e7"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/merchant/Idle/rotations/east.png",
+    "bytes": 1736,
+    "sha256": "9b26ff6bc3ac7b6446de30cd3d4365250142a8a5a5c1b6040506e11e43907d23"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/merchant/Idle/rotations/north-east.png",
+    "bytes": 1734,
+    "sha256": "2336f48a8ffbf7db78f40a6e21e1f731ee33d9d87f7788220286ad09bba0317b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/merchant/Idle/rotations/north-west.png",
+    "bytes": 1758,
+    "sha256": "6f1906d899d00fd14c71e226f7c908cb860411791ac65488f6d6393dbda73d57"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/merchant/Idle/rotations/north.png",
+    "bytes": 1696,
+    "sha256": "de417e75c63620e36760a6c9f3dbf3a766a00b0d297451c2121b8ea678250391"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/merchant/Idle/rotations/south-east.png",
+    "bytes": 1958,
+    "sha256": "f7e17247d24ecb78929af2ff70a984c324c9490cf70e898846f13752badff93a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/merchant/Idle/rotations/south-west.png",
+    "bytes": 2054,
+    "sha256": "4f0b9f527cb0a712a8a606deeb3a7a032571c87e807604d94044fb8b5a3043e7"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/merchant/Idle/rotations/south.png",
+    "bytes": 2167,
+    "sha256": "1ab82859ff2ea6cd036b064970c251ec796affce5cfe1dafba2cac705742a959"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/merchant/Idle/rotations/west.png",
+    "bytes": 1776,
+    "sha256": "9b54226c46c0c5e14a925977dad82c18e925d76dfdac7c23e460d14a96488628"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/merchant/metadata.json",
+    "bytes": 1649,
+    "sha256": "c60009915ecb0e4e24d249c820bb3a99e9571bf1841eb1e9c4dd0e3d99138eb4"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/mira/Idle/rotations/east.png",
+    "bytes": 2505,
+    "sha256": "0433cedbc5ef5b6eddb75bb40135cb8be9f4dae37396cd3a2b39c6a0c8dc410a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/mira/Idle/rotations/north-east.png",
+    "bytes": 2732,
+    "sha256": "98856711de0530616cbd383d59ca31fc1848df08fc2ee1f1df19396aa012365d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/mira/Idle/rotations/north-west.png",
+    "bytes": 2944,
+    "sha256": "c772fa3960a5654fd2fed87e83a12fde2e6804f3d2c690c5fc9569fb0d383a5b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/mira/Idle/rotations/north.png",
+    "bytes": 2830,
+    "sha256": "2289f22577d4008c241edf5a8dc6ee10754ddc548e5d7597324d3a11342cfe22"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/mira/Idle/rotations/south-east.png",
+    "bytes": 2837,
+    "sha256": "a978e6dcfe3a08148241813f3604c7424c23f2b860dbb1c3f008f0b8a34bd72f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/mira/Idle/rotations/south-west.png",
+    "bytes": 2897,
+    "sha256": "a46c9324e772ff04c386a9e84317066f8d5f9ae22bbd4c618b86a3e70d2bd592"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/mira/Idle/rotations/south.png",
+    "bytes": 3005,
+    "sha256": "0dcfaee754c3cbd03a9c601ccedc26d70aec44c24741872b34bf8e3cc42368eb"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/mira/Idle/rotations/west.png",
+    "bytes": 2717,
+    "sha256": "569aedd7753b84e83f03936dacec1b36656e318c108d0bbfa7ca4507ba5c0a81"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/mira/metadata.json",
+    "bytes": 1749,
+    "sha256": "ac7c0fafe4e924b5dede5dceeff814bdf38535ba0eeaab8ea1cb462760caa9e0"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-medic/Idle/rotations/east.png",
+    "bytes": 1990,
+    "sha256": "bf6030346b7cab0ed73661a89b78cbb3132db205a1e5af40b417759ec0e058ac"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-medic/Idle/rotations/north-east.png",
+    "bytes": 2035,
+    "sha256": "6ab645d00a9b54a406c194039e2f2bdd77033736a424cf0f40b9a96ac5fe74a7"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-medic/Idle/rotations/north-west.png",
+    "bytes": 1965,
+    "sha256": "f162d57aa49f5bf3d08f8ce67ce4e4f8f6fbaa5817e232e99c2fde0a8cdf29c2"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-medic/Idle/rotations/north.png",
+    "bytes": 1929,
+    "sha256": "f3d5c9d78ea20a1c88c0d5e5497601372844fb2f7d652f78e68858ce692de9a5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-medic/Idle/rotations/south-east.png",
+    "bytes": 2622,
+    "sha256": "36d6b87203876cc2995cad1186f580cb032bff2849959472500c21cb34377b9b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-medic/Idle/rotations/south-west.png",
+    "bytes": 2462,
+    "sha256": "f1eafdaba7828463f37537896c27db5f11f28b1a1f4a89b784c53845cdccc423"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-medic/Idle/rotations/south.png",
+    "bytes": 2796,
+    "sha256": "3bbdc21bab3693677f46a9200f785e0fe0e251e9202f0bd90c100803f9c7859c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-medic/Idle/rotations/west.png",
+    "bytes": 1919,
+    "sha256": "287e4ea2f9d423b75a66e3d06d7cf063c881dab3c40ab08a368aefad2f5c4c51"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-medic/metadata.json",
+    "bytes": 1649,
+    "sha256": "1adce6e5efb22b08d225f7bbe45b571c5ce4eda1a35b5703efcaeabf30909fda"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-quarter/Idle/rotations/east.png",
+    "bytes": 2120,
+    "sha256": "f558018404c20ee64f521dcc020e390c2281e0e0f0d2fa91f73fd5ca15f8608a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-quarter/Idle/rotations/north-east.png",
+    "bytes": 2007,
+    "sha256": "e0148fcca2bdf537b8336fdb2a04d2aef3e1dda06822123fbd51927ced9a5961"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-quarter/Idle/rotations/north-west.png",
+    "bytes": 2049,
+    "sha256": "d63c24881298b16099df39eeb6bceb1901daba182cc3674d7f7997592f5f5876"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-quarter/Idle/rotations/north.png",
+    "bytes": 2067,
+    "sha256": "b532ffd3c89ba8758c9c76e374de24c15970b873ad2d95f718e2f0f5513831f6"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-quarter/Idle/rotations/south-east.png",
+    "bytes": 2359,
+    "sha256": "8e19c449b0bdf03cb967e0de0597c40220d5295bf5dd6ecf9baa6cf9408ad8ca"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-quarter/Idle/rotations/south-west.png",
+    "bytes": 2062,
+    "sha256": "10b4b35cf0f962e6e13b94f619fc85b9b979bbe23ff0e2c26503529e49adca59"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-quarter/Idle/rotations/south.png",
+    "bytes": 2333,
+    "sha256": "13bd0b7add43ecf6631e43370ca5b2b865b2e320dd43082a016ec700af491957"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-quarter/Idle/rotations/west.png",
+    "bytes": 1862,
+    "sha256": "c1ef3a20be32a33f5dbe5eaacedcdaa4ba93b34556f1c5d793ed9aace2ef0fa3"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-quarter/metadata.json",
+    "bytes": 1645,
+    "sha256": "7b6479257931113bd990a278138189057568237b754efafa0144a33412ad48fa"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-scribe/Idle/rotations/east.png",
+    "bytes": 2278,
+    "sha256": "b072450cb4ec9009077eb79d6f0b0bd29b6d2e06ee8717da4e68d5653f465c4a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-scribe/Idle/rotations/north-east.png",
+    "bytes": 2085,
+    "sha256": "06ec41ce63837d34d29c327fe76ceeafb3794b40658db02a2590e0c07ad882d6"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-scribe/Idle/rotations/north-west.png",
+    "bytes": 2190,
+    "sha256": "d6cbd866326dc13821fe97fa8e3d1419c6d031d30f6e16767e9863faeb672e0f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-scribe/Idle/rotations/north.png",
+    "bytes": 2189,
+    "sha256": "37f18edcd3bdc2fbbfbe1f86017c059a421fb537b75ed47419b87c7f620c46d6"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-scribe/Idle/rotations/south-east.png",
+    "bytes": 2598,
+    "sha256": "c6be77408ec6da7c97457822766ea4dd4aeeb53de168731ce3007fba0e2e5d37"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-scribe/Idle/rotations/south-west.png",
+    "bytes": 2493,
+    "sha256": "9f72adc7b1dc4a4d80732695b2bb640749170834db24b3a0a12dcd6a7b869ce6"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-scribe/Idle/rotations/south.png",
+    "bytes": 2762,
+    "sha256": "219cff2913cdd7fbaa5f7fccf243582434cbaeb7d82e22f6c6b31f0608e675de"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-scribe/Idle/rotations/west.png",
+    "bytes": 2279,
+    "sha256": "6fe77e45f71d5e421eb0a99774d9d2dd2599b1369925a22771edca19a8edfaf3"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/relief-scribe/metadata.json",
+    "bytes": 1625,
+    "sha256": "02b3e9cfe2b5ea55a87cb4fb89946b06be1bce49b0f7e7a43208956bdbf95835"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/representative/Idle/rotations/east.png",
+    "bytes": 2093,
+    "sha256": "b729d4bff003e5e44f71319661fb96ea3bf38687b0f011339653d09ea6f0ee76"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/representative/Idle/rotations/north-east.png",
+    "bytes": 2170,
+    "sha256": "2613dfe3e7560a7f8930c5aba712d156588702a8b68c986849e05588b98c4406"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/representative/Idle/rotations/north-west.png",
+    "bytes": 2211,
+    "sha256": "b075f2d8a31ab6be1ca1629c2702fcc5460af75a46a3d9552e4ea6dc47f005f7"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/representative/Idle/rotations/north.png",
+    "bytes": 2295,
+    "sha256": "a7f5acf705aa4dbec9c2eacb546b915175c82bee5f5c373afca2ec55c1452536"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/representative/Idle/rotations/south-east.png",
+    "bytes": 2442,
+    "sha256": "59c6b9327f851d3d6472cb2ab25fc4b8768d85a26451373ed69f29d0c5dbddc4"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/representative/Idle/rotations/south-west.png",
+    "bytes": 2451,
+    "sha256": "0d8527164f95a2aed42f2b8ad792b512424aba3d54d430514953875ea470b785"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/representative/Idle/rotations/south.png",
+    "bytes": 2810,
+    "sha256": "69bc30ae6c36e62c83a76e08f50ec4e9185875f0953f7fa9f55ef0f566b891ba"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/representative/Idle/rotations/west.png",
+    "bytes": 2018,
+    "sha256": "b54869760fa71ba8a670df2bb20b5e8638aa1efcde2a3563ce4c245f16cc15f5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/representative/metadata.json",
+    "bytes": 1663,
+    "sha256": "1f0ebfe70d8d4f8c342194df0235403723bca983ea99bf791b85ac349de8bd91"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/east/frame_000.png",
+    "bytes": 2484,
+    "sha256": "55864118ee3e23a46c9eee6d992a20aa85df36887b8853f31f1e4c56a6a553df"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/east/frame_001.png",
+    "bytes": 2723,
+    "sha256": "140778c7986226c1f13b136b145d574c0468ed831f6ae76f7d9ec2c47e484a62"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/east/frame_002.png",
+    "bytes": 2696,
+    "sha256": "c83121aba0a69ee1f91d20697fbf3378d3127e17312f83f018297406bf376fdd"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/east/frame_003.png",
+    "bytes": 2367,
+    "sha256": "c40db87548af3a77ac6c53614e2044241d202cc53f3ed67cd514e9643b67126b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/east/frame_004.png",
+    "bytes": 2670,
+    "sha256": "b31627138f62776054445c3c538433951e3eafb11542f88cd24e8ed5edda59b4"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/east/frame_005.png",
+    "bytes": 2743,
+    "sha256": "6685192be5492f776f40be779aed6d48983de1f676ff5013b4c3cdc0a9092fe5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/east/frame_006.png",
+    "bytes": 2789,
+    "sha256": "d0877b4911aa93d6b189045d6e123f578369d3fdfefcbcff55e955bc5da02b9f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/east/frame_007.png",
+    "bytes": 2375,
+    "sha256": "f59f0ab639391a6dd75371117ffd902f98f2654e7647f52eaf7dca12295a78fb"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north/frame_000.png",
+    "bytes": 3412,
+    "sha256": "de01343ebae4c9f1a04768dcbf53fb09d15fb2f9795d31f03ce0f8045e94272f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north/frame_001.png",
+    "bytes": 3326,
+    "sha256": "bbca338f53744965824174a533daa08ab2678a8f9e0a7962c54700889a7c31e9"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north/frame_002.png",
+    "bytes": 3244,
+    "sha256": "c0ad1f492d70ddbdbe83ec91ada26f8bb30c960e3d3281cd72cff247ab5dd71b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north/frame_003.png",
+    "bytes": 3293,
+    "sha256": "6df1404a923903d3e75d6d7d6c9a6f62972b4f7669a5694c3924beaeb6137d35"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north/frame_004.png",
+    "bytes": 3235,
+    "sha256": "0865070943cc29415b8b6ddcc79c59da64683c3ef072f513b67042cbf0e60e77"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north/frame_005.png",
+    "bytes": 3216,
+    "sha256": "ff3b29a7a7009cab538cd94dab05530cd7f34e9857e5247d588b6633df635851"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north/frame_006.png",
+    "bytes": 3240,
+    "sha256": "cb05314cc155065b3f42d500d163f7a7ee9c5230ebeacfa21982d1e37d266e67"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north/frame_007.png",
+    "bytes": 3294,
+    "sha256": "098c92570c63a2442995160f0507585a085ee5c26063c07f803b302b5cc0729f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north-east/frame_000.png",
+    "bytes": 3572,
+    "sha256": "95b6587a118dd85159bf62737c468695c9d96ad1e4108889b2ad4a25a27948f9"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north-east/frame_001.png",
+    "bytes": 3528,
+    "sha256": "e2043e4bb757d614b00462f51839209c3b9ba394995b77e01f7e0789eebf0e9e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north-east/frame_002.png",
+    "bytes": 3392,
+    "sha256": "d7367ee598b27717444a55a1af902740214658440bd2b1f29fc1edaa8f8c5eb4"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north-east/frame_003.png",
+    "bytes": 3205,
+    "sha256": "f5fbd2b33dddc51a3218efe874faffa8a09c436b111854fcb8b377fc11d99b4e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north-east/frame_004.png",
+    "bytes": 3005,
+    "sha256": "425dce26d1ceb3438770bcf8d5f92582a6f7f3983f4ebde51926413f7d154d6d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north-east/frame_005.png",
+    "bytes": 2922,
+    "sha256": "2fe1de56aecd194617f9eac77bda0fc0dd8d8a8a9e601548310af0d1ea90f5bb"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north-east/frame_006.png",
+    "bytes": 2985,
+    "sha256": "ad81d700e9a5a41f91965e7a106a3d873737b41a505c7d8deb4cce514d84bf92"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north-east/frame_007.png",
+    "bytes": 3293,
+    "sha256": "06a1ebaa47569638af6a6a73102797dde325949928c017e3668503064d59fe6e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north-west/frame_000.png",
+    "bytes": 2799,
+    "sha256": "89d64720dd86a1cf8f0067aa97f5ab5df760c832964855c1c9eb17fef632d1ae"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north-west/frame_001.png",
+    "bytes": 2939,
+    "sha256": "170b2d8ea88506231ce00766e4310ca0c11106cb6d84fd336b01b1a113248386"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north-west/frame_002.png",
+    "bytes": 2691,
+    "sha256": "d2254f76f9a4bef783c9ca66f7c52f69ae7bd8781354c128f552e246da79ca7d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north-west/frame_003.png",
+    "bytes": 2689,
+    "sha256": "e0282dce80581526d4b5168543136cb3e590a20e9c54dc0e6e45eb55a278e27d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north-west/frame_004.png",
+    "bytes": 2967,
+    "sha256": "44ef96623837d3f5150a3611c79bb902a27ae3be7af829f7c00265c590136fda"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north-west/frame_005.png",
+    "bytes": 2950,
+    "sha256": "ba3ca174bcaf9c6175bd3ac2f9073be3eedd6aaf8a647407146be3c5a863cbef"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north-west/frame_006.png",
+    "bytes": 2902,
+    "sha256": "53083f1871a48b7f04a03ccdd1fa0bb6dd79be15ada13406e84161e08864e77a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/north-west/frame_007.png",
+    "bytes": 2861,
+    "sha256": "eed91da505bb6d6da04b99921664d641154d146fb9aee3a1d4027d9dd1d911e6"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/south/frame_000.png",
+    "bytes": 4271,
+    "sha256": "46ac13dfd90cde146945df587b7e03df1d047f2fadffe25dadcc3fa152c03532"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/south/frame_001.png",
+    "bytes": 4025,
+    "sha256": "92d3f1eca2cf4e11193906b6db13be6eedd4db3adcd549db42eb2b6eebb50060"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/south/frame_002.png",
+    "bytes": 3992,
+    "sha256": "088c659ddf3af5988116693989cebeb54ae3a8d89ec40c5d99af5af685c5f1b7"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/south/frame_003.png",
+    "bytes": 4220,
+    "sha256": "42a9b35f0e734b5292706fb694d32632ea9d398d6611e89b7dfc2b1b08a3e7c5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/south/frame_004.png",
+    "bytes": 4162,
+    "sha256": "fc0759c98fc470a2aa7b900c9c2815d35bb8545a8a32875c6f39bec1f75ac766"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/south/frame_005.png",
+    "bytes": 4019,
+    "sha256": "f3ac8d26377d2c078dc133260fe828dc18132d95238c72b24ee3317257376ee0"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/south/frame_006.png",
+    "bytes": 4218,
+    "sha256": "04d366ba57c9c2d53fae52b97584c783e8107d76307654901149abe16504dd01"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/south/frame_007.png",
+    "bytes": 4359,
+    "sha256": "edc086173028a4c0ad630d9798395cca0a56eaf7d7e57298d756a396049317aa"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/south-east/frame_000.png",
+    "bytes": 3470,
+    "sha256": "a58d162c96de74058ed96957b8ffc3431799b55039957edddb3e9587039dc019"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/south-east/frame_001.png",
+    "bytes": 3286,
+    "sha256": "54a8a7998ae78d4409cbf320b096f8e543dba088f49a90d443e28d17518f104d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/south-east/frame_002.png",
+    "bytes": 3243,
+    "sha256": "0ffc4835a40c6f72b7434f13a52a30fa240e36f03d763b32286cd50dca8bd771"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/south-east/frame_003.png",
+    "bytes": 3646,
+    "sha256": "7409cc35acee21f7f50222802a88131292680ae68ffaabf7f7239f14dfc65714"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/south-east/frame_004.png",
+    "bytes": 3825,
+    "sha256": "5845b7b0cd9f71604a696eda63c9a5f71595dff3a44f5b4db55f0f2fb247863e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/south-east/frame_005.png",
+    "bytes": 4046,
+    "sha256": "5823c0d497d88f73995e11885ddbf07ac9d3e08d1a9f1c60176d2ba01f781c66"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/south-east/frame_006.png",
+    "bytes": 3984,
+    "sha256": "38cee55d18973812637df6feb3fdd1342755b40ebd4a8c7ce76d7637abbeec1a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/run-v7/south-east/frame_007.png",
+    "bytes": 3787,
+    "sha256": "1c6ede1e781f5067f37606001d2e6a0fb84e0f6a7879d5bfda9924b19aa692f7"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/east/frame_000.png",
+    "bytes": 2493,
+    "sha256": "f25b16ff73657484b2b24a70aec54f05d678bf9a264d0270ae34f28fa8f6c79d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/east/frame_001.png",
+    "bytes": 2590,
+    "sha256": "5628c7a53a01f2d6d24272da58a3ad82a8cc1d1767a8d30e40661eadfeb3d9bd"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/east/frame_002.png",
+    "bytes": 2752,
+    "sha256": "c3f3fdc6ec7a6f3aa9ce8f0410717c3cec061961a778b845f12dfd2929665f92"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/east/frame_003.png",
+    "bytes": 2453,
+    "sha256": "c3a9b341ec52b117d2687cc26681457ffb600c66bdbaa9bb7fc657d5e3d10701"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/east/frame_004.png",
+    "bytes": 2539,
+    "sha256": "f0f14f965d080b69cb85f6d9cf7148752ea8f7fcf138408ae3b7376825c430ef"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/east/frame_005.png",
+    "bytes": 2701,
+    "sha256": "bf644bcaa686499b033dd2099925a6b2d9c39a61b9453eff490894237acf422d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/east/frame_006.png",
+    "bytes": 2808,
+    "sha256": "88f950fe2a5662239b53d3ce286c7c25dbecde2c9625be318d6162017405cfcd"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/east/frame_007.png",
+    "bytes": 2675,
+    "sha256": "21f04470bd9f094806ebc1f27f759e44612f343f43ebdc9c01444fc818512b4c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north/frame_000.png",
+    "bytes": 3158,
+    "sha256": "fceeeda4d9e3f7d4d1cfd229f99fe9737ba4282536be93ef57a762e5d0144227"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north/frame_001.png",
+    "bytes": 3174,
+    "sha256": "c7c19c6dfc48507c3a78ffdd69a867b1266b1f8030973f082f865939b7e8323d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north/frame_002.png",
+    "bytes": 3099,
+    "sha256": "4d3f364c5a2d655f8903d7db542c83ab7957b47fd1810c64f7c67dc110255573"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north/frame_003.png",
+    "bytes": 3080,
+    "sha256": "800c43288a55b5fc5d68d8e0aae207e6837466ef8604f86201193333dfd10b0f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north/frame_004.png",
+    "bytes": 3150,
+    "sha256": "cbf5132a4beb65bbd3935343588c4496ba5786839087e6d267334a3dd76ecc0f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north/frame_005.png",
+    "bytes": 3136,
+    "sha256": "e14a9010378e6ba93bfdd5b509711b1eb2aab3995f360791abca6fb8f674ed51"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north/frame_006.png",
+    "bytes": 3170,
+    "sha256": "fca518e66bc46d6bbc27b5906f1d9d390b204d54a4e82032438ce6eeb030b57d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north/frame_007.png",
+    "bytes": 3169,
+    "sha256": "11f8fa5b7e1d5b98fbf3edd55925e286dccc0f20f2d1a3807224ce764a1699df"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north-east/frame_000.png",
+    "bytes": 3097,
+    "sha256": "1f48d128a588b5ada2631f3da0204d6c8c08041b3a2cbf73f88adb3397f1b552"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north-east/frame_001.png",
+    "bytes": 3237,
+    "sha256": "7f2e527e1dcbbd046abf2c7f69c8dba9e1242277963a7aa8570f4b34f51119e0"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north-east/frame_002.png",
+    "bytes": 3426,
+    "sha256": "2b10481a2f0ce743587685edf881025e87996bfc1e2368be6a3e06a9609fcc77"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north-east/frame_003.png",
+    "bytes": 3058,
+    "sha256": "ec4b6d0081049bb0fcdd851e8ddac84f40972235bb69ded73e1256d22e00297b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north-east/frame_004.png",
+    "bytes": 3045,
+    "sha256": "010dd89d482c2825045ad9c72d289f1fc97e4fdeb96a1c820c9cd636907e374e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north-east/frame_005.png",
+    "bytes": 3130,
+    "sha256": "cc65ec0fd8fb29bd8659d171624c1f010f27411ce5ce5c7602b0811f61376e17"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north-east/frame_006.png",
+    "bytes": 3187,
+    "sha256": "7701916976a04f51a13b00b8254d53d298c48342b940da1986ad48af3e6800fb"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north-east/frame_007.png",
+    "bytes": 3146,
+    "sha256": "2205fc0e1f77a3c63677dc2ff108724f74a4b10aabf3975696de7c2e9587bb0f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north-west/frame_000.png",
+    "bytes": 3131,
+    "sha256": "8dfeafb67ab7cebc6041cdf458319925572a9bcc603e58ab975bc72061c63089"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north-west/frame_001.png",
+    "bytes": 3098,
+    "sha256": "dd8a1d7a74162df4e2d3f00b2d1009c7a6a7292d75582c74a072ea207dbd5cb2"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north-west/frame_002.png",
+    "bytes": 3196,
+    "sha256": "80e0cf2f62e543a5d8f11ef6d8a96266ee2fb9f82b8b9969e139a676244ba6f4"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north-west/frame_003.png",
+    "bytes": 3080,
+    "sha256": "5040e2a8f57c053f40c52b5be06bb73cb357f45c6759b3cf95b6cb93a420abf5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north-west/frame_004.png",
+    "bytes": 2931,
+    "sha256": "9d4abae3d4f6a81be439ed8447411850adea4a1aea792cec06cb9f6156d58821"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north-west/frame_005.png",
+    "bytes": 3354,
+    "sha256": "601e154286e74babd97c7027a5155d31575d0294d36395c792f82d287694134b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north-west/frame_006.png",
+    "bytes": 3477,
+    "sha256": "d5f4a24904b6cc19d047c9ee0d7429a78f31e761c48973e80a84c74bd5ddefaa"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/north-west/frame_007.png",
+    "bytes": 3188,
+    "sha256": "26e951a6abbe38cca137da08ab694b9bc69809a323733cd8ab8622743cdbeea7"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south/frame_000.png",
+    "bytes": 4198,
+    "sha256": "963dc607fccc4d498c5139c4bd5de977ab1fcbaaba92b79e9ece427961351566"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south/frame_001.png",
+    "bytes": 4229,
+    "sha256": "e4ebf89441d7fea3447eaa6006df2b7ded646ccabc8fd18cf8bbee111cd303d1"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south/frame_002.png",
+    "bytes": 4252,
+    "sha256": "9c8d926ef2a762201b2e1ee8a9703b9c59cf626ca8ac0484b85bd4c1c5908ded"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south/frame_003.png",
+    "bytes": 4227,
+    "sha256": "57bba401e28c862b517810cf505db443e1097e6b69990bd48689554aff10583c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south/frame_004.png",
+    "bytes": 4151,
+    "sha256": "acd2e8cfe09fd94d6dd270bfbc18044d70f99e1f35652d8cf529fc5e1e6e5696"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south/frame_005.png",
+    "bytes": 4224,
+    "sha256": "a5be559bb6f73c2196902ee674383a8d23eceafb87a61de0c09d388e35972dcc"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south/frame_006.png",
+    "bytes": 4226,
+    "sha256": "15f96af9911456d3aa36ed477111f00e1e85f22433837e75a334b1fddfac80c3"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south/frame_007.png",
+    "bytes": 4307,
+    "sha256": "e1d66bff9cf3ed83590af8752f2d6c2e4e33a364f299f96e68790e8471e340fa"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south-east/frame_000.png",
+    "bytes": 4159,
+    "sha256": "c7812d8de7242d47ab86b879daa94d46b361d8b01d4ab6e7d510b5be96930e0f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south-east/frame_001.png",
+    "bytes": 3903,
+    "sha256": "179457f288e2fa424883284929edb7accfbbe8a285b6b13b8b42384e156868c3"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south-east/frame_002.png",
+    "bytes": 3741,
+    "sha256": "9f91e7e83a30986a662a4d3f470e54c6a2b36b26081e81e5a17850009d07457d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south-east/frame_003.png",
+    "bytes": 3916,
+    "sha256": "87bb1b62f157b7137bca9c352d3f0cd17fa18f4135b976c1d3d7b6288e30981f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south-east/frame_004.png",
+    "bytes": 3979,
+    "sha256": "d17e34cbc267ff1422867f7036eef8966a2333249613316cf25a088987faf6f5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south-east/frame_005.png",
+    "bytes": 4159,
+    "sha256": "2d61fc979a3995a25f42f313538ca26f3f010e1efe34e403d4f9ab0bcc9c25f1"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south-east/frame_006.png",
+    "bytes": 4142,
+    "sha256": "f91a419272c01c80eef6dea60edc1031a3d6ebdc13ab986d0daaeddd4d262c0b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south-east/frame_007.png",
+    "bytes": 4073,
+    "sha256": "fc4580cd9926c76edd961b71ec5c156c02f6d6c5d593a5dcd8ff585b77c71a3d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south-west/frame_000.png",
+    "bytes": 3895,
+    "sha256": "acac51d3df4055ea87602c4686a19065cce8f70e0b9f5b111159431382f1a54d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south-west/frame_001.png",
+    "bytes": 3787,
+    "sha256": "88ed4eeebb7944034595b0bff3d853c64e165402c87ffcc292fa267886433ae8"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south-west/frame_002.png",
+    "bytes": 3842,
+    "sha256": "f99e747807e9faeb65675f500b1d6d9c89e84d8e3f666ed57b93a44d4c492ef6"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south-west/frame_003.png",
+    "bytes": 3691,
+    "sha256": "a69e8122aec61c422b5c404227d1c0d5f0c1f6358c3959f65188d74724a048a2"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south-west/frame_004.png",
+    "bytes": 3569,
+    "sha256": "87c53c8e74d2f53dba2ac4cb5f51af737741dd09c40c78c71968c58a555599f5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south-west/frame_005.png",
+    "bytes": 3622,
+    "sha256": "16130fcde3cb3ff0e8828dfc47e07c752479d2214cdfcbd40e67db9ed42bc5f1"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south-west/frame_006.png",
+    "bytes": 3562,
+    "sha256": "39c98c4975afcac2cd331172c5d381214aa571c63a1456e7e43ade8d96d45abc"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/south-west/frame_007.png",
+    "bytes": 3627,
+    "sha256": "1c57929f4b7bb2035a10c9965a2ea5e21bc774cfd3fe84ea7fec110cc498e327"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/west/frame_000.png",
+    "bytes": 2518,
+    "sha256": "556cdc0f8e217febb7f2b2fa5aee1964985fbe772624f9ed86a79a51d51e6e18"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/west/frame_001.png",
+    "bytes": 2543,
+    "sha256": "22b947b07d5cad7743530c460de92c91a21636858e22ba92b364250fff2e03e8"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/west/frame_002.png",
+    "bytes": 2652,
+    "sha256": "a557757511bb3833b91009c057081c7bf9fc7d77ca4f09628c1256bb34dee84d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/west/frame_003.png",
+    "bytes": 2405,
+    "sha256": "399d96043a6d1fbe858158565556062d86e741db8e6ef70267138714a7f7984f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/west/frame_004.png",
+    "bytes": 2427,
+    "sha256": "84c9079b019f4a0af55a10000da9d1edbc275be7ff8b7d7dfa570e91307284bc"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/west/frame_005.png",
+    "bytes": 2732,
+    "sha256": "d763c9be494efc4b9e886e4d73aeb91a8016d7118ad35868a0aa347173de2894"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/west/frame_006.png",
+    "bytes": 2728,
+    "sha256": "55f1d7c574be7296ebaa85e27dcf573fc56a6eacf74e7dd06c92dd747e0016ba"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/animations/walk-v7/west/frame_007.png",
+    "bytes": 2511,
+    "sha256": "367f27a59a70d172785d6a9990b5104591b32a0f21a7f3b08cad7283aecb7aa5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/rotations/east.png",
+    "bytes": 2372,
+    "sha256": "293a2e64ae29d4c39418a1f36d2f4b26cae7448427d3497315220407be9f3d3c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/rotations/north-east.png",
+    "bytes": 3080,
+    "sha256": "6fbf22a76417b4c2e63ec401e03c3e860d69f6b146a22f3a5e9e6072f15a1627"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/rotations/north-west.png",
+    "bytes": 2983,
+    "sha256": "8b62ce97c67932f9f50ebcb908a2cd7edbb40163140d4fd9aae5ca9f041768d5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/rotations/north.png",
+    "bytes": 3043,
+    "sha256": "9ab5000de6423ada2b8e461d0e46057e802810be146815a1608387f163251873"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/rotations/south-east.png",
+    "bytes": 3830,
+    "sha256": "e6ccdf7ebc194562f0fd37669a8cf36463dedd30c01d1869af6728d83bba2c55"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/rotations/south-west.png",
+    "bytes": 3777,
+    "sha256": "926973777d066eb352099436b0e462173625d045a56dd1e3de7a6940324bc1c6"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/rotations/south.png",
+    "bytes": 4022,
+    "sha256": "7dbdceb5127d23376c517185b118ea94ee4a80894e2f85716d3233be5239a7b4"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/Idle/rotations/west.png",
+    "bytes": 2323,
+    "sha256": "6afdbdf16c794c23a9cbd0be65bcc804a55196fcd54f5be76edbfa6509939ce3"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/soren/metadata.json",
+    "bytes": 9435,
+    "sha256": "4df8aa3f226327ec725c5124ea55939aa7d8a4e4d885b74f78abf10e5f66cf00"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tavin/Idle/rotations/east.png",
+    "bytes": 2242,
+    "sha256": "5c8035ddf87fcd88cde114b134fd3cd2c27d621a7d3c9c0661d87a7e14a1982c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tavin/Idle/rotations/north-east.png",
+    "bytes": 2386,
+    "sha256": "5f84833c5711350a02d3437a4e383b723d9d2eab95ba5122e9d4923e28462f95"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tavin/Idle/rotations/north-west.png",
+    "bytes": 2368,
+    "sha256": "baf8020989e362fbae8af913afecbff1550dd6f764e2e1e706a19118d2d32c94"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tavin/Idle/rotations/north.png",
+    "bytes": 2487,
+    "sha256": "42e90c55d41458c4132fd659856120fb8e9d2ad1ff98a3b7b0baa9b34752389d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tavin/Idle/rotations/south-east.png",
+    "bytes": 2649,
+    "sha256": "9434daee682a2f0b6ce5647ebf87bcfa81fc8e6485dbaa6503633f043e96885a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tavin/Idle/rotations/south-west.png",
+    "bytes": 2439,
+    "sha256": "27cef10445647259aee746945f7f5a440164686023834c4665d29173cb28d4e3"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tavin/Idle/rotations/south.png",
+    "bytes": 2908,
+    "sha256": "119b063656fc40e672f067d7b4df406a26cdcb01a5761a1d9f124590338820d9"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tavin/Idle/rotations/west.png",
+    "bytes": 2191,
+    "sha256": "e27dbeb4c5caf494a8da8f26e0d75626ddac3f00da3088d07ac1ebf70a25241a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tavin/metadata.json",
+    "bytes": 1778,
+    "sha256": "8e6620985f4a3af55c996b0e01362bb1e7c43dc0646130f6bd00fee0db44daa0"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tavinAscended/Idle/rotations/east.png",
+    "bytes": 3397,
+    "sha256": "0f98cccaa7b04864df7666bee55b45ee9f3a8a2c57ff492f11a594c9e2c2e68e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tavinAscended/Idle/rotations/north-east.png",
+    "bytes": 3547,
+    "sha256": "12f72f349f3c293bbf8b6ed04e67a4db3c38f66b1ac4a654250cc7ec3abaa170"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tavinAscended/Idle/rotations/north-west.png",
+    "bytes": 3418,
+    "sha256": "e65856ab4770ba1447511116820e082ee8d2b0f280e4661da58d0408ed653f70"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tavinAscended/Idle/rotations/north.png",
+    "bytes": 3414,
+    "sha256": "896405eccfc234095541b3e6206b326f7c246ae210067fac4f59fc4252d3a9f0"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tavinAscended/Idle/rotations/south-east.png",
+    "bytes": 3894,
+    "sha256": "e62f99edb9ade045124d7c986daaf61650d25d79cec1a1d1768deb1bd9973299"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tavinAscended/Idle/rotations/south-west.png",
+    "bytes": 3703,
+    "sha256": "630c267520b705f2a7c496a3f1918a7cbdc88dfd8255a469bd6ac9245104aaed"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tavinAscended/Idle/rotations/south.png",
+    "bytes": 4015,
+    "sha256": "9b7519dc59d5bd7c506a11cac6145bbcf84e3f3b74feb1119d6ab797ab8b42cd"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tavinAscended/Idle/rotations/west.png",
+    "bytes": 3410,
+    "sha256": "1f06462d673729099d40ebc27499d739acb3a971e029225214792fbc7775abca"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tavinAscended/metadata.json",
+    "bytes": 1779,
+    "sha256": "b3ed74c645aedafdac36219c4496905978bc9caff90c788667caf7b7766aa837"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tribeFemale/Idle/rotations/east.png",
+    "bytes": 2361,
+    "sha256": "78baa56b372b82e9cd41b79cc4d64f31d7db8eeaa90fcbeb7fe1444b7ef8420c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tribeFemale/Idle/rotations/north-east.png",
+    "bytes": 2485,
+    "sha256": "cd904233d8739ef7ab18d12f8b89c1e2180b964ceb06ac455f7f24ade927347c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tribeFemale/Idle/rotations/north-west.png",
+    "bytes": 2455,
+    "sha256": "cab0fc1b56bb6b47aeb37be0c659c71d17e95c7ac431ca94dcd0d778921086b0"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tribeFemale/Idle/rotations/north.png",
+    "bytes": 2682,
+    "sha256": "82d7c89e46314292720ea44574e20b37cedaa3baa45a775ab7120969a5cf6684"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tribeFemale/Idle/rotations/south-east.png",
+    "bytes": 2761,
+    "sha256": "6e89f1daa8b58e4952194f77c172c9c3a2a5dc32b42976c7fc41f6e600101549"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tribeFemale/Idle/rotations/south-west.png",
+    "bytes": 2856,
+    "sha256": "88de1bc0725e7fe3d7ac1e264adbad7f33bebb7ef486f6fc4c94cb8b67abbe6d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tribeFemale/Idle/rotations/south.png",
+    "bytes": 2984,
+    "sha256": "a2e07a32ff37beb7e5f74c147724b122cd9841db8aa9e7cac62d671843f06fd3"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tribeFemale/Idle/rotations/west.png",
+    "bytes": 2342,
+    "sha256": "232ed705680321bf7653905c5f28e4eb0bd20b76156f7046de2d70127636990d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tribeFemale/metadata.json",
+    "bytes": 1689,
+    "sha256": "9b12e1ce8813454b3eed89f54e7a9c2045d00c621e216228640a11aed3a20260"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tribeMale/Idle/rotations/east.png",
+    "bytes": 1934,
+    "sha256": "7aeda6198e4ef7f117dcaed64d44fba50edd3b1f458795dbfcafaa7448a6c0f9"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tribeMale/Idle/rotations/north-east.png",
+    "bytes": 2092,
+    "sha256": "9a620356fcfca36e14d8e133cb0dc2021059bf13db81f573e7489b73a58c7a49"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tribeMale/Idle/rotations/north-west.png",
+    "bytes": 2197,
+    "sha256": "ad2e5765dd1f9a181fb51c83a135df0873254d498d8d2c238f1d18e6dfd4b982"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tribeMale/Idle/rotations/north.png",
+    "bytes": 2186,
+    "sha256": "eb3b45829e9ff96946e0ad1d26be05f787da03a798915ec8be43b9528c9bea50"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tribeMale/Idle/rotations/south-east.png",
+    "bytes": 2373,
+    "sha256": "28d4e5d396b295bc7219d6c22465e89025000172b86f97d2673e6ff71a992557"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tribeMale/Idle/rotations/south-west.png",
+    "bytes": 2157,
+    "sha256": "a69929109f697052f6c38bd5b34f8e29ebd0c83f8f9c167f505e154402f9ef4f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tribeMale/Idle/rotations/south.png",
+    "bytes": 2538,
+    "sha256": "8191d003251588a9b217ff8f652a28bd0194eeca5ca8a23d5bdb83c7328b5cbd"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tribeMale/Idle/rotations/west.png",
+    "bytes": 1908,
+    "sha256": "3b0ab48429e37b5e7d3ea787b1b0438fc0c1352223971c70115183aaae89a402"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/tribeMale/metadata.json",
+    "bytes": 1748,
+    "sha256": "5cf5e774331c3d99673abd2c2f755a0049207fb516f9d006c4da808e1d32731d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/worker/Idle/rotations/east.png",
+    "bytes": 1774,
+    "sha256": "d7b460ba3c8d882a0dcd916072a45867f4d1967605f1e8518777de1217029ac2"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/worker/Idle/rotations/north-east.png",
+    "bytes": 1893,
+    "sha256": "be251e558a612216d1a989c8c18cd6aa959f3c5f9ef8f7f1398801e26c759693"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/worker/Idle/rotations/north-west.png",
+    "bytes": 1923,
+    "sha256": "c0fe3e2362c514c9e6fe19355a0033914681f60a7c2d124a4ff4f827c73b6756"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/worker/Idle/rotations/north.png",
+    "bytes": 2030,
+    "sha256": "1f2d6bcc77a7e81158d50f67b821197f125b855c579b0768acdaa1e7472d69ea"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/worker/Idle/rotations/south-east.png",
+    "bytes": 2071,
+    "sha256": "2fe9c3a48ad7f8cdd8bbf4065407e595f6e0e08dba876db20df6a9ec4c714bba"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/worker/Idle/rotations/south-west.png",
+    "bytes": 2022,
+    "sha256": "cbb0a4aec2ac6d8424e342dc952c37ee79477726bd326713e045303cf1040b4f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/worker/Idle/rotations/south.png",
+    "bytes": 2294,
+    "sha256": "729a177efd1dd5ac9b281942c7f2bd3467c352d50f258cac962ae5e1b8057dcb"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/worker/Idle/rotations/west.png",
+    "bytes": 1741,
+    "sha256": "1b88326eba052f88c431affe4175bb360954a301793bcc9646837f5e7e5949ff"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/characters/worker/metadata.json",
+    "bytes": 1696,
+    "sha256": "ec079f58f4369d948df2167ac28c2c8e8d5209eb65dc2e2efc9add9c7fd46cea"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/checkpoint.json",
+    "bytes": 9717,
+    "sha256": "1b48be1950123baa5d91829a50a7442e2f8970fc81bc9d8235135e74e6e31995"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-bark/000.png",
+    "bytes": 8382,
+    "sha256": "7abab5bc75e63c6c6589814f99af974955014f458316fef56ffe123cc70c5cd5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-bark/001.png",
+    "bytes": 8137,
+    "sha256": "138e4dbb9023aca673d54c9c789b8b61f2fd4661cc61e7ff947b80c7fa781eb5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-bark/002.png",
+    "bytes": 8984,
+    "sha256": "809dd3d731d7f98c1404d9f4a123fa0aac940571f8db8e890a8dbce176d85f78"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-bark/003.png",
+    "bytes": 6467,
+    "sha256": "879e9c1424e9978b5633480eea8b321f0c316d0763dd56e77bce823e7be22278"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-cloth/000.png",
+    "bytes": 4152,
+    "sha256": "8bf4dc45a49eca5a3256b629a931cbfd316a170cddf683cb7d9134223c5bc814"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-cloth/001.png",
+    "bytes": 2914,
+    "sha256": "bb34b5d2bcac920d2b79b67a80cf95e7a2919c6b7dfd5bfb8f2b643e9afb9d59"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-cloth/002.png",
+    "bytes": 447,
+    "sha256": "4dabc2145c6ede14ddc448a80a57ccaaa7773f48ac7da26af635583d1a78b955"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-cloth/003.png",
+    "bytes": 5299,
+    "sha256": "96814323f8ee8840551dab4c802fe330d87210090087c8c6038f2d1909650076"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-cobble/000.png",
+    "bytes": 7475,
+    "sha256": "324e08193afc0bb5fe6d9dc9f728af026228f2336375a97f87c3aca222e71558"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-cobble/001.png",
+    "bytes": 7130,
+    "sha256": "b53c888d14277237a2102f47ac79fe75beeadfafdee3f662a8fec27c2aed937d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-cobble/002.png",
+    "bytes": 7281,
+    "sha256": "b15881a8381ad420639e19082564b0be2d30efd3214acdbfbd24ccac21c2972f"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-cobble/003.png",
+    "bytes": 11176,
+    "sha256": "504f6adf96781ed995474c43fa00463d7d4efae0435b38c664299ccdcf08284e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-darkWood/000.png",
+    "bytes": 6652,
+    "sha256": "6d27850f230970b7919c79bde923624aa6bd02e7e03fa8680f81bc0e2de00854"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-darkWood/001.png",
+    "bytes": 5634,
+    "sha256": "c5638be825932296ad18d07ef11276479414ec4aaf1bc1c6faf093c59b35aa29"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-darkWood/002.png",
+    "bytes": 3492,
+    "sha256": "74a120bb0476d2ec504f5b65a801d51d1ae155f895b0e886a631d1708f601a10"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-darkWood/003.png",
+    "bytes": 5852,
+    "sha256": "5dc226f1c45f4167434c952ffddd9f60515714e674e3bf7d431871cf02f692de"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-earth/000.png",
+    "bytes": 11817,
+    "sha256": "d4e9e1ecb6c02b135670973659b0e7f9a595109247abcc43cca6c72019718464"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-earth/001.png",
+    "bytes": 10828,
+    "sha256": "ac1aabd70457037e55c10aabf9c0da56261013f81a4a048c8d1b9174d78767b7"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-earth/002.png",
+    "bytes": 10821,
+    "sha256": "2c749b0ac6aecffd48538bd7eaaaca2e57843e10220bc28755812979f0bdb5be"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-earth/003.png",
+    "bytes": 10481,
+    "sha256": "3dfef57bfc29d9783dbce48cfe90c6bd88c1357520bbd2dbf24e1c04595dd9a1"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-grass/000.png",
+    "bytes": 8456,
+    "sha256": "be2d7e244a56077526bbd1902b932d7b78df7708dab37dd12ebc36a4e34d173c"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-grass/001.png",
+    "bytes": 9910,
+    "sha256": "a7d1270e72d0c87c4c6586a6660273e395d5f485a1a7ee79f159ed4df020b3d2"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-grass/002.png",
+    "bytes": 8119,
+    "sha256": "ba91c38647365f711a2b8ab205229c99fa4d78b550d290683d9ca3fdc85566e1"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-grass/003.png",
+    "bytes": 10689,
+    "sha256": "546034c4806247d5d45cd71e7f25b84c16dd93e34b574bc7a7a76265f05d9130"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-lightFacets/000.png",
+    "bytes": 5861,
+    "sha256": "f6160138a528ed4ecd8060de3a573ae6367d6ea809016df14f8e350fddfa9f44"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-lightFacets/001.png",
+    "bytes": 8175,
+    "sha256": "883dd863593f616273119ec87b6a6fa927f19311160efd38a75d09155b79bef7"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-lightFacets/002.png",
+    "bytes": 4905,
+    "sha256": "cb5afe8a70085f1f11d72e6d47babff02ede7d7c2f8e85c546a3cfe63b9bbaa0"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-lightFacets/003.png",
+    "bytes": 7305,
+    "sha256": "b8b5c805de6c268f4959621e23fcd53072ab460afc5e7274d391b60dca15a39d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-metal/000.png",
+    "bytes": 9125,
+    "sha256": "3d9aa56ef5c2791b5eca756d26c9d0eec7557d4c6ea0354d807658e863a81c75"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-metal/001.png",
+    "bytes": 5151,
+    "sha256": "4b9ff485d4f9aa3247d5eabe6a9a1701470277f31ca75bb3f7da450a31271cb6"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-metal/002.png",
+    "bytes": 6507,
+    "sha256": "43a11423b97085567f2c9d8508fc0154b70d064ffcaed84525b26ac4ecdb3cdd"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-metal/003.png",
+    "bytes": 6095,
+    "sha256": "a3a4925703ad6d59c46f419d81da4a70c48961622a299f00ae37af5adf21a0fa"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-oakCanopy/000.png",
+    "bytes": 11595,
+    "sha256": "15c29713ae81c46735b08e073b3774e906cf400567963cd69284ec2a1714b603"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-oakCanopy/001.png",
+    "bytes": 11567,
+    "sha256": "86a56eb83127665e84c1781320f1e9b0e241187a75f2fb041b0b2a66e5e34244"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-oakCanopy/002.png",
+    "bytes": 11781,
+    "sha256": "09d6765b908430e181baf626fdc5fd1def2bc74e8bcaff561e472ef7133e7afc"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-oakCanopy/003.png",
+    "bytes": 10040,
+    "sha256": "987f0a4b35b80bc4495fdb1166236d985ad6b5d7c4d6b5b515ee9cd43753a533"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-pineCanopy/000.png",
+    "bytes": 14630,
+    "sha256": "359ad51bc55f6a870c4e50e00b70bb8781e7989575146b1c586b256a1473688d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-pineCanopy/001.png",
+    "bytes": 14792,
+    "sha256": "52ac9043f2767865f4d0e74aff799dda6579208a17771c1c914ff59e9b98eca8"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-pineCanopy/002.png",
+    "bytes": 14024,
+    "sha256": "46cfa14e3ff5d623886f6cf5e0ae182003afb6512f904d901057ba3bb46e2b25"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-pineCanopy/003.png",
+    "bytes": 16280,
+    "sha256": "f49ab90f864c398c619424cfb09c37cbb7b24976a0253737de958ffac911106e"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-plaster/000.png",
+    "bytes": 3174,
+    "sha256": "0b2ad4d3b86e3c54aa28caa8cb3cc0cac1f791696c00a02109c8a35451accbd5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-plaster/001.png",
+    "bytes": 4893,
+    "sha256": "4bc37ce82727511f673489d7417c8278843159d5a03d0c90b356eac6577c208a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-plaster/002.png",
+    "bytes": 2230,
+    "sha256": "a909286a4cc1c22f03ee88d2a30aae13047096b6fe5182d74b2428aea3bd6a59"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-plaster/003.png",
+    "bytes": 5572,
+    "sha256": "14911ddfd1b3c71d7226d55ff8ce8700d40dd77052b120847a35a97947f17fb2"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-rock/000.png",
+    "bytes": 8767,
+    "sha256": "00a166acafcbdc594867808e91a7160dbe9192822066923797ff3d6eb7b23cb8"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-rock/001.png",
+    "bytes": 6583,
+    "sha256": "ce82d9022e2536c682149675937cfb7fd7b6feaa65dbbe8dc530feb6a0232137"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-rock/002.png",
+    "bytes": 11261,
+    "sha256": "70cb6b4adc769278f3fa686918fb26bb53583c8ae41d0c9d751f63d008a76301"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-rock/003.png",
+    "bytes": 9706,
+    "sha256": "debbd7e9610d4a12844d04dcd3a41a742e047c1a68f451c26080872e8adc1b40"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-slate/000.png",
+    "bytes": 4465,
+    "sha256": "103f5ed9c7226da553e16a5b07325d3549c7ef19518896bbe4a7ea4c92b3eeda"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-slate/001.png",
+    "bytes": 5974,
+    "sha256": "d669f988d6cce7fba25bea68a2f99c2a49bae68f659aeffee8db2655ec5c049a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-slate/002.png",
+    "bytes": 6630,
+    "sha256": "3fe9eb51f79a64729dc6dcff7d6657e61bff7e63febbf0fbe3bdc8173b62e1ef"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-slate/003.png",
+    "bytes": 6012,
+    "sha256": "bd5b5f0d5e6ad4f2e17492d76c31b4ff430bc3297c9074fcfd4d2e55e51f3e64"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-wall/000.png",
+    "bytes": 4134,
+    "sha256": "3614882c21b436cb0a61348199329aaa2eabd344601aca7571620a13fa8fa01a"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-wall/001.png",
+    "bytes": 6751,
+    "sha256": "8d931b2f16f6f7875942c844d7e58e71acf86948db8361ce47b9bb5e4f10e13b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-wall/002.png",
+    "bytes": 8777,
+    "sha256": "372e6ca6e00267de56002aeaba244f055a89c5fbffef6a8a7132e4d4129644e5"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-wall/003.png",
+    "bytes": 4541,
+    "sha256": "b5fa596a95ba9513619a1048d001a0bba5470195045c950d6553d76a6a5dd6ef"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-wood/000.png",
+    "bytes": 2590,
+    "sha256": "3543ecd8d2c686eb8952562d252c9325baa9d46479a6feb2c93045a879103bce"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-wood/001.png",
+    "bytes": 6247,
+    "sha256": "5101f7a0072268add2a440d4cc5a47a8b6bd8fd41a4473ee858112a94c5acf7b"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-wood/002.png",
+    "bytes": 2654,
+    "sha256": "815515f542bfde3cbefbd16ed4960ad73dd3062bf494e5b87244c18254ce60a0"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/material-wood/003.png",
+    "bytes": 6674,
+    "sha256": "6f0d7f813fc175a8a8d8480010588735ded1ca315ef461623337be410c35ca1d"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/portrait-bren/000.png",
+    "bytes": 32758,
+    "sha256": "ba8bd81f7b0a6df21eae82c3844d253b3ecb88684007bfc6a4887fff926311e9"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/portrait-soren/000.png",
+    "bytes": 35959,
+    "sha256": "247442fb24cf953a1014c50a47e77c32d07372bbba44574fe302c324fc7ae778"
+  },
+  {
+    "file": "elyndor/assets/source/pixellab-v7/images/ui-frame/000.png",
+    "bytes": 16262,
+    "sha256": "851b320692787a928afa3c342ca83b39003c2b4ece255dd3a23f998af64b4281"
+  },
+  {
+    "file": "elyndor/previews/pixellab-v7/bren-walk-eight-directions.gif",
+    "bytes": 123810,
+    "sha256": "79219eca73c556bf4b1375c2a63fb5a713ceb35b0742d9f73fb0f47e1e04b11a"
+  },
+  {
+    "file": "elyndor/previews/pixellab-v7/cast-1.png",
+    "bytes": 98832,
+    "sha256": "df118f9891f02a26120bd0a409a0e0aca7f68431e09d87b04be74abc7de3b054"
+  },
+  {
+    "file": "elyndor/previews/pixellab-v7/cast-2.png",
+    "bytes": 74567,
+    "sha256": "75f2cf624636270e9961c32b67f2bd76ad79b7f7a0c27baa5ea7ea0d02356cb2"
+  },
+  {
+    "file": "elyndor/previews/pixellab-v7/cast-3.png",
+    "bytes": 74895,
+    "sha256": "42758bba6e95569f49fd862a5b055e78054e75219127eb64b554a8f85514d229"
+  },
+  {
+    "file": "elyndor/previews/pixellab-v7/cast-4.png",
+    "bytes": 99299,
+    "sha256": "bcbfa7f573c290f68f4964bcc70645a42d6ecf14b7519ab95b59c379cc83f852"
+  },
+  {
+    "file": "elyndor/previews/pixellab-v7/cast-5.png",
+    "bytes": 102744,
+    "sha256": "585625aa8c1589ee9085cf78e66b121e7b9633aba9b0db7979d30bc9e7fbc5d2"
+  },
+  {
+    "file": "elyndor/previews/pixellab-v7/cast-6.png",
+    "bytes": 77296,
+    "sha256": "89a76f7fa84bc729096200e1b27cb4e612dc240b256282d54bdc417535d7412d"
+  },
+  {
+    "file": "elyndor/previews/pixellab-v7/cast-7.png",
+    "bytes": 75972,
+    "sha256": "b6366e64c0563a3d75f47e5b460db2f3aa7809e57b0a357c5325017d1526c083"
+  },
+  {
+    "file": "elyndor/previews/pixellab-v7/cast-8.png",
+    "bytes": 31743,
+    "sha256": "83abac4dca6b20b5738ccf77c5d4086e565a1cbeace992389e476696d1ad3c0b"
+  }
+]

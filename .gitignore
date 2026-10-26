@@ -6,3 +6,10 @@ __pycache__/
 Thumbs.db
 debug.log
 output/
+
+# Private concept documents, upload receipts and local build history.
+/design/
+/archive/
+/elyndor.preview.html
+/elyndor/assets/source/pixellab-v7/**/original.zip
+/elyndor/assets/source/pixellab-v7/**/source-signature.txt

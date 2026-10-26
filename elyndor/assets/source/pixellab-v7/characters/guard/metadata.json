@@ -1,0 +1,36 @@
+{
+  "group_id": "2d6aa1b3-b101-47d6-a0ce-132e0ed04b0d",
+  "states": [
+    {
+      "character": {
+        "id": "4fc83c5f-1156-4ce7-beb6-f547c6f6de6c",
+        "name": "Idle",
+        "prompt": "Distinct young adult female village watchkeeper, copper brown skin, short black hair, plain slate-blue gambeson and modest grey shoulder protection, brown belt and boots, sheathed straight sword. No helm hiding face, no faction insignia. Match the NEW concept-led Bren style anchor: compact adult pixel-built proportions, same body height, palette and clean native pixels. All clothing and equipment keep anatomical sides. Full body, TWO separately readable legs/boots, transparent margins. No scenery, floor tile, text, labels or other figures. Neutral relaxed stand. This is a NEW incidental villager, distinct from every other resident.",
+        "size": {
+          "width": 88,
+          "height": 88
+        },
+        "template_id": "mannequin",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-10-26T19:59:51.690835+00:00"
+      },
+      "folder": "Idle",
+      "frames": {
+        "rotations": {
+          "south": "Idle/rotations/south.png",
+          "south-east": "Idle/rotations/south-east.png",
+          "east": "Idle/rotations/east.png",
+          "north-east": "Idle/rotations/north-east.png",
+          "north": "Idle/rotations/north.png",
+          "north-west": "Idle/rotations/north-west.png",
+          "west": "Idle/rotations/west.png",
+          "south-west": "Idle/rotations/south-west.png"
+        },
+        "animations": {}
+      }
+    }
+  ],
+  "export_version": "3.1",
+  "export_date": "2026-10-26T20:21:17.659285"
+}

@@ -1,0 +1,36 @@
+{
+  "group_id": "ad0362ff-bdac-49c6-a71b-7dde71f7bae0",
+  "states": [
+    {
+      "character": {
+        "id": "ce290039-6126-4e84-8309-14d8cc2d6b66",
+        "name": "Idle",
+        "prompt": "Approved Alderbridge adult community Commander, exactly the face, hair and clothing identity in the concept portrait, translated to compact full-body practical commander armor, full trousers and boots, one sword and a plain shield; no new insignia or magic. Match the NEW concept-led Bren style anchor: compact adult pixel-built proportions, same body height, palette and clean native pixels. All clothing and equipment keep anatomical sides. Full body, TWO separately readable legs/boots, transparent margins. No scenery, floor tile, text, labels or other figures. Neutral relaxed stand. Faithfully use the approved Google Drive concept; do not redesign identity.",
+        "size": {
+          "width": 88,
+          "height": 88
+        },
+        "template_id": "mannequin",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-10-26T20:04:56.613105+00:00"
+      },
+      "folder": "Idle",
+      "frames": {
+        "rotations": {
+          "south": "Idle/rotations/south.png",
+          "south-east": "Idle/rotations/south-east.png",
+          "east": "Idle/rotations/east.png",
+          "north-east": "Idle/rotations/north-east.png",
+          "north": "Idle/rotations/north.png",
+          "north-west": "Idle/rotations/north-west.png",
+          "west": "Idle/rotations/west.png",
+          "south-west": "Idle/rotations/south-west.png"
+        },
+        "animations": {}
+      }
+    }
+  ],
+  "export_version": "3.1",
+  "export_date": "2026-10-26T20:21:20.435371"
+}

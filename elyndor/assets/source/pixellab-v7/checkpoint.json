@@ -1,0 +1,471 @@
+{
+  "status": "Work in progress; not integrated into the playable release",
+  "referencePolicy": "Original approved Google Drive concepts and mockups; no earlier generated game artwork",
+  "characterFamilies": 37,
+  "nativeCharacterImages": 596,
+  "characters": [
+    {
+      "id": "alder-market",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "alder-medic",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "alder-orchard",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "alder-watch",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "bren",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {
+        "attack-v7": {
+          "west": 9
+        },
+        "battleIdle-v7": {
+          "west": 8
+        },
+        "walk-v7": {
+          "north-east": 8,
+          "north": 8,
+          "west": 8,
+          "east": 8,
+          "south": 8,
+          "south-east": 8,
+          "south-west": 8,
+          "north-west": 8
+        },
+        "recoil-v7": {
+          "west": 6
+        },
+        "run-v7": {
+          "south-west": 8,
+          "south-east": 8,
+          "north-west": 8,
+          "north-east": 8,
+          "north": 8,
+          "south": 8,
+          "west": 8,
+          "east": 8
+        },
+        "cast-v7": {
+          "west": 9
+        },
+        "idle-v7": {
+          "north-east": 4,
+          "south-west": 4,
+          "west": 4,
+          "south-east": 4,
+          "east": 4,
+          "south": 4,
+          "north-west": 4
+        }
+      },
+      "nativeImages": 196
+    },
+    {
+      "id": "brenAscended",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "capital-archivist",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "capital-gardener",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "capital-inn",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "capital-post",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "capital-stall",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "capital-steward",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "commander",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "commander2",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "commander3",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "courier",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "elder",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "farmer",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "fern-hunter",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "fern-potter",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "guard",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "guardEnemy",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "healer",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "innkeeper",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "lysa",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "merchant",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "mira",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "relief-medic",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "relief-quarter",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "relief-scribe",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "representative",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "soren",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {
+        "walk-v7": {
+          "north-east": 8,
+          "north-west": 8,
+          "south": 8,
+          "south-west": 8,
+          "west": 8,
+          "south-east": 8,
+          "north": 8,
+          "east": 8
+        },
+        "run-v7": {
+          "north-east": 8,
+          "south-east": 8,
+          "south": 8,
+          "east": 8,
+          "north-west": 8,
+          "north": 8
+        }
+      },
+      "nativeImages": 120
+    },
+    {
+      "id": "tavin",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "tavinAscended",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "tribeFemale",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "tribeMale",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    },
+    {
+      "id": "worker",
+      "directions": 8,
+      "nativeCanvas": {
+        "width": 88,
+        "height": 88
+      },
+      "clips": {},
+      "nativeImages": 8
+    }
+  ],
+  "imageCandidates": {
+    "material-bark": 4,
+    "material-cloth": 4,
+    "material-cobble": 4,
+    "material-darkWood": 4,
+    "material-earth": 4,
+    "material-grass": 4,
+    "material-lightFacets": 4,
+    "material-metal": 4,
+    "material-oakCanopy": 4,
+    "material-pineCanopy": 4,
+    "material-plaster": 4,
+    "material-rock": 4,
+    "material-slate": 4,
+    "material-wall": 4,
+    "material-wood": 4,
+    "portrait-bren": 1,
+    "portrait-soren": 1,
+    "ui-frame": 1
+  },
+  "liveArtifactUnchanged": {
+    "file": "index.html",
+    "sha256": "b552e5b5262d4993bb686cb52ff6aca814e32d0af4d7bbd7b42557f6721635fb"
+  },
+  "remaining": [
+    "Finish and review all eight-direction walking and idle clips",
+    "Finish party running and combat clips",
+    "Complete transparent speaker portraits, object art and creature sets",
+    "Select and seam-check material candidates",
+    "Integrate the new asset manifest and UI layer into the standalone build",
+    "Run gameplay, rendering and performance checks before deployment"
+  ]
+}

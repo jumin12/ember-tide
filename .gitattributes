@@ -1,2 +1,4 @@
 # Preserve the exact tested bytes of the self-contained, asset-embedded game.
 index.html -text
+elyndor/assets/source/pixellab-v7/** -text
+elyndor/previews/pixellab-v7/** -text

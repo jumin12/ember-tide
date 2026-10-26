@@ -1,0 +1,36 @@
+{
+  "group_id": "570c043f-87d5-4375-b1c9-4858c78b3e22",
+  "states": [
+    {
+      "character": {
+        "id": "8b335186-6914-4f6b-8205-3cfe9e286362",
+        "name": "Idle",
+        "prompt": "Distinct older adult man civic gardener, deep brown skin, close silver curls, sage sleeveless work coat, ivory shirt, charcoal trousers, ochre sash and boots. Empty hands, no large equipment. Match the NEW concept-led Bren style anchor: compact adult pixel-built proportions, same body height, palette and clean native pixels. All clothing and equipment keep anatomical sides. Full body, TWO separately readable legs/boots, transparent margins. No scenery, floor tile, text, labels or other figures. Neutral relaxed stand. This is a NEW incidental villager, distinct from every other resident.",
+        "size": {
+          "width": 88,
+          "height": 88
+        },
+        "template_id": "mannequin",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-10-26T20:12:15.207031+00:00"
+      },
+      "folder": "Idle",
+      "frames": {
+        "rotations": {
+          "south": "Idle/rotations/south.png",
+          "south-east": "Idle/rotations/south-east.png",
+          "east": "Idle/rotations/east.png",
+          "north-east": "Idle/rotations/north-east.png",
+          "north": "Idle/rotations/north.png",
+          "north-west": "Idle/rotations/north-west.png",
+          "west": "Idle/rotations/west.png",
+          "south-west": "Idle/rotations/south-west.png"
+        },
+        "animations": {}
+      }
+    }
+  ],
+  "export_version": "3.1",
+  "export_date": "2026-10-26T20:21:22.356757"
+}
