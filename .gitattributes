@@ -1,0 +1,2 @@
+# Preserve the exact tested bytes of the self-contained, asset-embedded game.
+index.html -text
