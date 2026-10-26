@@ -3,8 +3,8 @@
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 27485490,
-    "sha256": "89f10fb146529b7f088e2f097af60d3cece7cc367d358a19adfbcab94633ee6f",
+    "bytes": 27485826,
+    "sha256": "b552e5b5262d4993bb686cb52ff6aca814e32d0af4d7bbd7b42557f6721635fb",
     "offline": true
   },
   "changes": [
