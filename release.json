@@ -1,0 +1,84 @@
+{
+  "release": "elyndor-2026-10-26-materials-v6",
+  "game": "The Last Light of Elyndor",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 27485490,
+    "sha256": "89f10fb146529b7f088e2f097af60d3cece7cc367d358a19adfbcab94633ee6f",
+    "offline": true
+  },
+  "changes": [
+    "Four-edge diorama blur with a sharp focal center and full-resolution UI",
+    "Fifteen individually generated 128-pixel world materials",
+    "Bounded anisotropic filtering and mipmaps for angled surfaces",
+    "Twelve completed eight-direction character families from the preceding review checkpoint"
+  ],
+  "art": {
+    "materials": 15,
+    "logicalTileSize": 128,
+    "runtimeTileSize": 512,
+    "prompts": "MATERIAL_PROMPTS.json",
+    "packedSpritePoses": 1565,
+    "spriteFamilies": 25,
+    "completeIndividualRoamingFamilies": 12,
+    "remainingRoamingFamilies": [
+      "lysa",
+      "representative",
+      "tribeMale",
+      "tribeFemale"
+    ]
+  },
+  "validation": {
+    "standaloneMatchesSource": true,
+    "spritePixelAudit": true,
+    "sourceCropWarnings": 0,
+    "keyboardSmoke": true,
+    "gpuEdgeBlurAspectRatios": [
+      "square",
+      "wide",
+      "portrait"
+    ],
+    "gpuEdgeBlurCenterUnchanged": true,
+    "campaignProgressionSteps": 44,
+    "campaignBattles": 7,
+    "navigationRoutes": 42,
+    "saveLoad": true,
+    "liveReflectionsAndShadows": true,
+    "bridgeApproachSamples": 36,
+    "browserErrors": []
+  },
+  "performance": {
+    "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "samples": [
+      {
+        "area": "Town",
+        "fps": 71.8,
+        "buffer": [
+          1419,
+          798
+        ],
+        "seconds": 5
+      },
+      {
+        "area": "Forest",
+        "fps": 72.0,
+        "buffer": [
+          1451,
+          816
+        ],
+        "seconds": 5
+      },
+      {
+        "area": "Canal",
+        "fps": 72.1,
+        "buffer": [
+          1451,
+          816
+        ],
+        "seconds": 5
+      }
+    ],
+    "scope": "Short local hardware-accelerated samples with adaptive buffers; software WebGL still needs optimization."
+  },
+  "status": "Playable work in progress. Four individual walking sets, further idle/running animation and environment refinement remain."
+}
