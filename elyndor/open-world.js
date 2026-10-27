@@ -3,7 +3,7 @@
 const OLD_SCENES=JSON.parse(JSON.stringify(SCENES));
 const LAND={minX:-230,maxX:265,minZ:-270,maxZ:185};
 const PLACES={
- approach:[-168,112],entrance:[-143,99],lane:[-119,94],square:[-90,81],waterworks:[-116,55],yard:[-64,88],
+ approach:[-158,130],entrance:[-143,120],lane:[-124,103],square:[-121,63],waterworks:[-160,70],yard:[-64,88],
  worldMeadow:[-30,96],worldRidge:[24,70],fernOut:[58,75],fern:[100,67],depths:[110,25],
  highmere:[-70,-86],council:[-69,-118],inn:[-40,-93],archives:[-99,-105],capitalRoad:[23,-80],
  alder:[127,-78],patrol:[173,-57],alderRemnant:[208,-101],relief:[24,-153],nearbySite:[-76,-196],snow:[148,-224]
@@ -11,12 +11,12 @@ const PLACES={
 const AT=(id,x=0,z=0)=>({x:PLACES[id][0]+x,z:PLACES[id][1]+z});
 const points=(...p)=>p;
 const ROAD_DEFS=[
- {kind:'lane',p:points([-199,125],[-170,112],[-143,99],[-119,94],[-99,83],[-87,81],[-64,88],[-43,91])},
- {kind:'lane',p:points([-143,99],[-147,77],[-146,55],[-132,55],[-116,55],[-101,64],[-90,81])},
- {kind:'lane',p:points([-119,94],[-115,110],[-91,111],[-77,99],[-64,88])},
+ {kind:'lane',p:points([-199,145],[-174,137],[-151,126],[-143,120],[-123,120],[-122,107],[-124,94],[-124,82],[-123,71],[-121,63],[-109,66],[-97,69],[-85,78],[-64,88],[-43,91])},
+ {kind:'lane',p:points([-124,92],[-143,89],[-150,83],[-143,81],[-140,75],[-140,71],[-132,68.5],[-121,63],[-116,54],[-124,53],[-143,54],[-155,65],[-160,70])},
+ {kind:'lane',p:points([-123,120],[-112,108],[-98,110],[-91,98],[-101,85],[-101,79],[-107,69],[-110,58],[-116,54])},
  {kind:'road',p:points([-64,88],[-35,96],[-14,99],[8,85],[24,70],[44,66],[61,75],[81,70],[100,67])},
  {kind:'trail',p:points([100,67],[116,54],[119,40],[118,27],[125,21],[139,30])},
- {kind:'road',p:points([-143,99],[-158,70],[-157,33],[-138,7],[-107,-18],[-93,-43],[-84,-57],[-84,-71],[-85,-82])},
+ {kind:'road',p:points([-124,94],[-143,89],[-145,82],[-140,79],[-140,74],[-140,71],[-148,66],[-155,65],[-160,70],[-158,50],[-157,33],[-138,7],[-107,-18],[-93,-43],[-84,-57],[-84,-71],[-85,-82])},
  {kind:'road',p:points([24,70],[13,30],[-3,13],[-18,2],[-30,-8],[-63,-8],[-74,-30],[-84,-57],[-84,-71],[-85,-82])},
  {kind:'lane',p:points([-104,-80],[-85,-82],[-75,-80],[-60,-80],[-43,-80],[-25,-83])},
  {kind:'lane',p:points([-99,-105],[-99,-96],[-85,-96],[-70,-105],[-69,-118])},
@@ -89,9 +89,10 @@ findRoute=function(from,to,avoid=[]){
 };
 function addContinuousTerrain(){
  const chunk=55;world.userData.terrainChunks=[];world.userData.walkSurfaces=[];
- for(let ox=-245;ox<280;ox+=chunk)for(let oz=-285;oz<210;oz+=chunk){const g=new THREE.PlaneGeometry(chunk,chunk,42,42);g.rotateX(-Math.PI/2);const p=g.attributes.position,blend=[],town=[],snow=[];
+ for(let ox=-245;ox<280;ox+=chunk)for(let oz=-285;oz<210;oz+=chunk){const g=new THREE.PlaneGeometry(chunk,chunk,42,42);g.rotateX(-Math.PI/2);const p=g.attributes.position,blend=[],town=[],snow=[],river=[];
   for(let i=0;i<p.count;i++){const x=p.getX(i)+ox+chunk/2,z=p.getZ(i)+oz+chunk/2,r=roadInfo(x,z);p.setXYZ(i,x,groundAt(x,z),z);const jitter=noise(x*1.8,z*1.8)*.34;blend.push(1-smooth((r.kind==='trail'?1.6:2.7)+jitter,(r.kind==='trail'?2.8:4.1)+jitter,r.d));town.push(r.kind==='lane'?1:0);snow.push(winterAt(x,z));}
-  g.setAttribute('pathMix',new THREE.Float32BufferAttribute(blend,1));g.setAttribute('townMix',new THREE.Float32BufferAttribute(town,1));g.setAttribute('snowMix',new THREE.Float32BufferAttribute(snow,1));g.computeVertexNormals();
+  for(let i=0;i<p.count;i++)river.push(1-smooth(-1,2.2,channelDistance(p.getX(i),p.getZ(i))));
+  g.setAttribute('riverMix',new THREE.Float32BufferAttribute(river,1));g.setAttribute('pathMix',new THREE.Float32BufferAttribute(blend,1));g.setAttribute('townMix',new THREE.Float32BufferAttribute(town,1));g.setAttribute('snowMix',new THREE.Float32BufferAttribute(snow,1));g.computeVertexNormals();
   const m=new THREE.MeshStandardMaterial({map:textures.grass,roughness:.94,color:'#f0f1ee'});
   m.onBeforeCompile=sh=>{Object.assign(sh.uniforms,{earthTex:{value:textures.earth},rockTex:{value:textures.rock},roadTex:{value:textures.cobble}});sh.vertexShader='attribute float pathMix,townMix,snowMix;varying vec3 vGround,vGroundN;varying vec3 vGroundBlend;\n'+sh.vertexShader;sh.vertexShader=sh.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvGround=position;vGroundN=normal;vGroundBlend=vec3(pathMix,townMix,snowMix);');sh.fragmentShader='uniform sampler2D earthTex,rockTex,roadTex;varying vec3 vGround,vGroundN,vGroundBlend;\n'+sh.fragmentShader;sh.fragmentShader=sh.fragmentShader.replace('#include <map_fragment>',`
    vec3 gn=pow(abs(normalize(vGroundN)),vec3(5.));gn/=gn.x+gn.y+gn.z;
@@ -142,8 +143,7 @@ function openHall(id,w,d,kind){const p=AT(id),y=groundAt(p.x,p.z),g=new THREE.Gr
 }
 function buildSettlements(){
  const houses=[
-  // Brookstead: an inhabited riverside settlement, two streets and a working canal.
-  [-160,103,7,6,0],[-151,113,7,6,1],[-149,85,7,6,3],[-139,119,7,6,2],[-118,84,9,7,1],[-109,72,8,7,3],[-95,65,8,7,0],[-78,68,9,7,2],[-67,75,7,6,0],[-63,105,8,7,1],[-83,116,8,6,3],[-102,122,8,6,1],[-119,120,7,6,0],[-151,60,8,7,3],[-119,41,8,6,0],[-104,48,7,6,2],[-87,52,7,6,1],[-52,74,7,6,3],
+  // Brookstead is authored in town-v8.js around the approved terraced layout.
   // Highmere: civic architecture frames a broad avenue and open public square.
   [-106,-66,8,7,0],[-91,-68,7,6,1],[-73,-69,9,7,3],[-55,-63,7,6,0],[-35,-65,8,7,2],[-27,-97,7,6,1],[-52,-116,7,6,3],[-88,-123,7,6,0],[-115,-112,7,6,2],[-117,-83,7,6,1],
   // Alderbridge has its own timbered riverside frontage and small courtyards.
@@ -159,13 +159,13 @@ function buildSettlements(){
  for(let x=-14;x<=14;x+=1.7)box(x,8.4,3,.9,.9,.7,'wall','#c9c9af',keep);obstacle(-71,-141,34,7,'castle');
  // Fountains, street furniture and a working market are set off the walking lanes.
  function atFountain(x,z){const oldChildren=new Set(world.children),oldColliders=colliders.length;fountain();for(const o of world.children)if(!oldChildren.has(o))o.position.add(V3(x,groundAt(x,z)-groundAt(0,-3),z+3));for(const c of colliders.slice(oldColliders)){c.x+=x;c.z+=z+3;}world.userData.fountains=world.userData.fountains.map(p=>p.x===0?p.add(V3(x,groundAt(x,z),z+3)):p);}
- atFountain(-96,79);atFountain(-70,-89);
- for(const[x,z,a]of[[-101,77,Math.PI/2],[-82,89,-Math.PI/2],[-78,-91,Math.PI/2],[-61,-92,-Math.PI/2],[119,-89,0]])bench(x,z,a);
- for(const[x,z,c]of[[-86,97,'#b58c58'],[-98,94,'#657f77'],[-112,103,'#b2a16b'],[-58,-91,'#637d91'],[119,-98,'#a67b4e']]){
+ atFountain(-70,-89);
+ for(const[x,z,a]of[[-78,-91,Math.PI/2],[-61,-92,-Math.PI/2],[119,-89,0]])bench(x,z,a);
+ for(const[x,z,c]of[[-58,-91,'#637d91'],[119,-98,'#a67b4e']]){
   const y=groundAt(x,z),g=new THREE.Group();g.position.set(x,y,z);world.add(g);for(const a of[-1,1])for(const b of[-1,1])box(a*1.8,1.4,b*.95,.1,2.8,.1,'wood','#93764e',g);const canopy=box(0,2.85,0,4.2,.1,2.5,'cloth',c,g);canopy.rotation.z=.07;box(0,.95,.2,3.8,.2,1.5,'wood','#9a7e53',g);for(let k=0;k<14;k++)mesh(new THREE.IcosahedronGeometry(.13,0),material('grass',k%3?'#c4ad56':'#9d6743'),(k%7-3)*.42,1.18,Math.floor(k/7)*.5,g);obstacle(x,z,4,2.5,'market stall');
  }
- for(const[x,z,w,d]of[[-107,67,3,1.6],[-78,61,3,1.2],[-96,116,3,1.4],[-121,44,2,1.3],[-46,-65,3,1.6],[114,-114,3,1.2],[127,-59,2,1.1]])gardenEdge(x,z,w,d);
- for(const[x,z]of[[-137,94],[-126,91],[-96,88],[-72,89],[-144,57],[-112,56],[-91,-84],[-55,-80],[110,-79],[144,-74],[20,-149]]){const y=groundAt(x,z);box(x,y+1.4,z,.13,2.8,.13,'wood','#665b43');beam(V3(x,y+2.75,z),V3(x+.55,y+2.75,z),.055,'metal','#675d46');lantern(x+.55,y+2.48,z);}
+ for(const[x,z,w,d]of[[-46,-65,3,1.6],[114,-114,3,1.2],[127,-59,2,1.1]])gardenEdge(x,z,w,d);
+ for(const[x,z]of[[-91,-84],[-55,-80],[110,-79],[144,-74],[20,-149]]){const y=groundAt(x,z);box(x,y+1.4,z,.13,2.8,.13,'wood','#665b43');beam(V3(x,y+2.75,z),V3(x+.55,y+2.75,z),.055,'metal','#675d46');lantern(x+.55,y+2.48,z);}
  for(const t of TOWNS){const rand=seeded(t.x*123+t.z);for(let i=0;i<10;i++){let a=rand()*TAU,r=t.r*(.65+rand()*.35),x=t.x+Math.cos(a)*r,z=t.z+Math.sin(a)*r;if(roadDistance(x,z)<5||channelDistance(x,z)<2)continue;fence([x-2,z],[x+2,z],t.id!=='highmere');}}
 }
 function buildGlobalWater(){
@@ -243,7 +243,7 @@ function buildRuins(){
  for(const s of LIGHT_SITES)lightModel(s);
 }
 const INTERACTION_POS={
- representative:[-94,84],shop:[-99,96],inn:[-73,77],chest:[-111,114],gate:[-124,47],pump:[-111.8,54],water:[-110,56],wildlife:[-62,89],aftermath:[-68,93],
+ representative:[-126,66],shop:[-116,54.3],inn:[-111,101.5],chest:[-98,119],gate:[-160,70],pump:[-123,50],water:[-127,54],wildlife:[-62,89],aftermath:[-68,93],
  tavin:[94,69],commander1:[105,74],evacuees:[88,79],fernRepair:[111,28],stabilize:[107,27],activation:[114,26],
  mira:[-74,-82],councilDoor:[-69,-110],innDoor:[-40,-85],archiveDoor:[-99,-97],council:[-69,-116],sleep:[-42,-94],save:[-43,-89],archivist:[-102,-105],records:[-97,-108],
  standoff:[121,-77],patients:[129,-91],leader:[138,-79],rescue:[136,-102],returnLysa:[139,-84],guard:[176,-57],lysa:[202,-98],commander2:[212,-97],brace:[212,-104],alderRepair:[205,-102],
@@ -311,7 +311,7 @@ function batchLandscape(){
  for(const g of world.userData.buildings){const shells=[g.userData.roofShell,g.userData.facadeShell].filter(Boolean);for(const shell of shells)g.remove(shell);mergeGroup(g);for(const shell of shells){g.add(shell);mergeGroup(shell);}}
  const protectedGroups=new Set([...world.userData.buildings,...world.userData.lightSites.map(s=>s.group),world.userData.gate,world.userData.crank,world.userData.pump,world.userData.waterwheel].filter(Boolean));
  const buckets=new Map(),meshes=[];world.updateMatrixWorld(true);
- world.traverse(o=>{if(!o.isMesh||o.isInstancedMesh||o===water||o.userData.terrain)return;let p=o;while(p&&p!==world){if(protectedGroups.has(p))return;p=p.parent;}meshes.push(o);});
+ world.traverse(o=>{if(!o.isMesh||o.isInstancedMesh||o===water||o.userData.terrain||o.userData.terracedWater)return;let p=o;while(p&&p!==world){if(protectedGroups.has(p))return;p=p.parent;}meshes.push(o);});
  for(const o of meshes){const p=o.getWorldPosition(V3()),k=Math.floor(p.x/40)+','+Math.floor(p.z/40);if(!buckets.has(k)){const g=new THREE.Group();g.userData.chunk=true;g.userData.center=V3(Math.floor(p.x/40)*40+20,0,Math.floor(p.z/40)*40+20);world.add(g);buckets.set(k,g);}buckets.get(k).attach(o);}
  for(const g of buckets.values())mergeGroup(g);world.userData.staticChunks=[...buckets.values()];
  // Lighting is pooled, so adding houses does not add hundreds of live point lights.
@@ -323,7 +323,7 @@ buildWorld=function(id='approach',spawn=null){
  if(openWorldReady&&state.mode==='title'){const p=AT(id);player.x=p.x;player.z=p.z;state.scene=id;updateCamera(1,true);return;}
  disposeContinuousWorld();openWorldReady=false;world=new THREE.Group();world.userData={continuous:true,serial:++worldBuildSerial,leafMatrices:[],plantMatrices:{fern:[],flowers:[],ivy:[],grassBlades:[],shrub:[]},buildings:[],lanterns:[],smoke:[],fountains:[],crystals:[],lightSites:[],bridges:[],navCache:new Map()};scene.add(world);
  colliders=[];actors=[];player=null;followers=[];npcs=[];interactables=[];fx=[];water=null;route=null;trail=[];trailLength=0;roadNavGraph=null;colliderGrid.clear();restoration=null;state.scene=id;state.worldFormat=1;
- addContinuousTerrain();for(const[z,len]of[[97,23],[-8,23],[-80,23],[-180,23]])makeBridge(riverX(z),z,z===-180?35:len,8,true);makeBridge(-132,97,13,7,false);makeBridge(-132,55,13,7,false);
+ addContinuousTerrain();for(const[z,len]of[[97,23],[-8,23],[-80,23],[-180,23]])makeBridge(riverX(z),z,z===-180?35:len,8,true);makeBridge(-133,120,21,8.5,true);
  addAuthoredGateway();buildSettlements();buildWorkingCanal();addAuthoredDetails();buildRuins();buildGlobalWater();rebuildColliderGrid();buildNature();buildPlants();batchLandscape();rebuildColliderGrid();
  addWorldInteractions();rebuildColliderGrid();placeStoryActors();setupWorldVillagers();addRegionalResidents();settleResidents();prepareCutaways();for(const g of world.userData.staticChunks)for(const o of g.children)if(o.isMesh)o.material=cutawayMaterial(o.material,{value:1});
  const p=spawn?{x:spawn[0],z:spawn[1]}:AT(id);setupParty([p.x,p.z]);setupAtmosphere();state.lastScene=id;worldLastArea=id;openWorldReady=true;openWorldDebug.builds++;scene.fog.near=42;scene.fog.far=145;camera.far=220;camera.updateProjectionMatrix();post.material.uniforms.nearFar.value.y=220;updateHUD();updateLighting();updateCamera(1,true);updateCutaways(1);syncStoryWorld();
@@ -391,9 +391,9 @@ updateCamera=function(dt,instant=false){if(!player)return;const s=currentScene()
  if(s.view==='dungeon')scale=1.04;
  if(s.elderClearing)scale=1.02;const gateView=(1-smooth(18,36,Math.hypot(p.x+84,p.z+59)))*smooth(-68,-57,p.z);if(gateView>0){look.lerp(V3(p.x-.6,heightAt(p.x,p.z)+2.7,p.z-6.5),gateView);scale=mix(scale,1.24,gateView);}
  if(state.mode==='title'){look=V3(p.x+Math.sin(titleClock*.055)*4,heightAt(p.x,p.z)+1,p.z-2+Math.cos(titleClock*.05)*2);scale=1.18;}
- if(battle){const c=battle.center;look=V3(c.x,heightAt(c.x,c.z)+1,c.z);off=V3(8.5,7.3,18.5);scale=1;if(battle.intro>0){const t=smooth(0,2,2-battle.intro);off=V3(mix(-6,8.5,t),mix(10,7.3,t),mix(23,18.5,t));}}
+ if(battle){const c=battle.center;look=V3(c.x+1.9,heightAt(c.x,c.z)+1,c.z);off=V3(8.5,7.3,18.5);scale=1;if(battle.intro>0){const t=smooth(0,2,2-battle.intro);off=V3(mix(-6,8.5,t),mix(10,7.3,t),mix(23,18.5,t));}}
  if(restoration){const r=restoration,s=r.phase==='regional'?r.order[r.index]??r.site:r.site;look=V3(s.x,groundAt(s.x,s.z)+3,s.z);scale=1.05;}
- openCameraScale=mix(openCameraScale,scale,instant?1:1-Math.exp(-dt*1.3));off.multiplyScalar(openCameraScale*state.settings.zoom);cameraTarget.lerp(look,instant?1:1-Math.exp(-dt*5));camera.position.copy(cameraTarget).add(off);camera.lookAt(cameraTarget);camera.updateMatrixWorld();focusPoint.copy(cameraTarget);post.material.uniforms.focus.value=camera.position.distanceTo(cameraTarget);for(const a of actors){a.mesh.quaternion.copy(camera.quaternion);a.shadow.visible=a.mesh.visible;}
+ openCameraScale=mix(openCameraScale,scale,instant?1:1-Math.exp(-dt*1.3));off.multiplyScalar(openCameraScale*state.settings.zoom);cameraTarget.lerp(look,instant?1:1-Math.exp(-dt*5));camera.position.copy(cameraTarget).add(off);camera.fov=battle?38:34;camera.updateProjectionMatrix();camera.lookAt(cameraTarget);camera.updateMatrixWorld();focusPoint.copy(cameraTarget);post.material.uniforms.focus.value=camera.position.distanceTo(cameraTarget);for(const a of actors){a.mesh.quaternion.copy(camera.quaternion);a.shadow.visible=a.mesh.visible;}
 };
 const oldUpdateWorldFXOpen=updateWorldFX;
 updateWorldFX=function(dt){oldUpdateWorldFXOpen(dt);if(world.userData.waterwheel)world.userData.waterwheel.rotation.x-=dt*(state.flags.gate_open?.44:.12);for(const s of world.userData.lightSites??[]){s.core.position.y=s.base+Math.sin(clock*.9+s.x)*.09;s.core.rotation.y=Math.sin(clock*.12)*.04;s.inner.rotation.y+=dt*.2;if(!state.restoredLights?.includes(s.id)&&!restoration)s.core.material.emissiveIntensity=.15+Math.sin(clock*3+s.x)*.06;}
@@ -438,7 +438,7 @@ const compass=document.createElement('button');compass.id='overworld-compass';co
 function prepareBattlefield(kind){
  if([player,...followers].map(a=>a.characterId??a.id.replace('Ascended','')).join(',')!==state.members.join(','))setupParty([player.x,player.z]);
  const origin={scene:state.scene,x:player.x,z:player.z,poses:[player,...followers].map(a=>({a,x:a.x,z:a.z,face:a.face,id:a.characterId??a.id})),hidden:[]};let center={x:player.x-3,z:player.z-2},best=Infinity;
- for(let r=0;r<=21;r+=3)for(let k=0;k<(r?16:1);k++){const a=k*TAU/16,c={x:player.x-3+Math.cos(a)*r,z:player.z-2+Math.sin(a)*r},sample=[...state.members.map((_,i)=>({x:c.x+3+i*1.45,z:c.z+2+i*.8})),...Array.from({length:3},(_,i)=>({x:c.x-4+(i%2)*1.6,z:c.z-2+(i===0?0:Math.ceil(i/2)*2.9)}))];if(sample.some(q=>!staticFree(q.x,q.z,.4)))continue;const score=dist(c,player)+Math.max(...sample.map(q=>heightAt(q.x,q.z)))-Math.min(...sample.map(q=>heightAt(q.x,q.z)));if(score<best){best=score;center=c;}}
+ for(let r=0;r<=30;r+=3)for(let k=0;k<(r?16:1);k++){const a=k*TAU/16,c={x:player.x-3+Math.cos(a)*r,z:player.z-2+Math.sin(a)*r},sample=[...state.members.map((_,i)=>battleFormation(c,i)),...Array.from({length:3},(_,i)=>battleFormation(c,i,true))];if(sample.some(q=>!staticFree(q.x,q.z,.4))||state.members.some((_,i)=>Array.from({length:3},(_,j)=>j).some(j=>!edgeFree(battleFormation(c,i),battleFormation(c,j,true),.35))))continue;const score=dist(c,player)+Math.max(...sample.map(q=>heightAt(q.x,q.z)))-Math.min(...sample.map(q=>heightAt(q.x,q.z)));if(score<best){best=score;center=c;}}
  for(const a of actors.filter(a=>a.npc&&a.mesh.visible&&Math.hypot(a.x-center.x,a.z-center.z)<22)){origin.hidden.push(a);a.mesh.visible=a.shadow.visible=false;}
  const lights=[];for(const[color,power,dx,dz]of[['#ffca83',18,6,6],['#9ecfed',12,-6,3]]){const l=new THREE.PointLight(color,power,19,2);l.position.set(center.x+dx,heightAt(center.x,center.z)+5,center.z+dz);l.userData.power=power;world.add(l);lights.push(l);}route=null;keys.clear();openWorldDebug.battles++;return{origin,center,lights};
 }

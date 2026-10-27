@@ -1,66 +1,41 @@
-"""Prepare a public progress checkpoint without private Drive references."""
+"""Prepare the tested integrated release, excluding private references."""
 from pathlib import Path
 from PIL import Image
 import json,hashlib,shutil
-
-root=Path(__file__).resolve().parents[2]
-source=root/'elyndor/assets/source/pixellab-v7'
-previews=root/'elyndor/previews/pixellab-v7';previews.mkdir(parents=True,exist_ok=True)
-characters=[];paths=[];frames=0
-selected={x['id'] for x in json.loads((root/'design/pixellab-v7/characters-plan.json').read_text())}
-for folder in sorted((source/'characters').iterdir()):
- if not folder.is_dir() or folder.name not in selected:continue
- meta=json.loads((folder/'metadata.json').read_text());state=meta['states'][0]
- native=list(state['frames']['rotations'].values())
- clips={}
- for name,directions in state['frames'].get('animations',{}).items():
-  clips[name]={d:len(ps) for d,ps in directions.items()}
-  for ps in directions.values():native.extend(ps)
- native=sorted(set(native));frames+=len(native)
- for path in native:
-  file=folder/path
-  with Image.open(file) as im:im.verify()
-  paths.append(file)
- paths.append(folder/'metadata.json')
- characters.append({'id':folder.name,'directions':len(state['frames']['rotations']),
-  'nativeCanvas':state['character']['size'],'clips':clips,'nativeImages':len(native)})
-
-images={}
-for folder in sorted((source/'images').iterdir()):
- if not folder.is_dir() or not folder.name.startswith(('material-','portrait-','ui-frame','prop-','map-paper')):continue
- files=sorted(folder.glob('*.png'));images[folder.name]=len(files)
- for file in files:
-  with Image.open(file) as im:im.verify()
-  paths.append(file)
-
-# This GIF assembles complete native frames. It creates no new sprite poses.
-bren=source/'characters/bren';meta=json.loads((bren/'metadata.json').read_text())
-walk=meta['states'][0]['frames']['animations']['walk-v7']
-directions=['south','south-west','west','north-west','north','north-east','east','south-east']
-images_gif=[]
-for frame in range(8):
- canvas=Image.new('RGBA',(128*8,128),(67,82,91,255))
- for col,direction in enumerate(directions):
-  q=Image.open(bren/walk[direction][frame]).convert('RGBA')
-  canvas.alpha_composite(q,(col*128+(128-q.width)//2,(128-q.height)//2))
- images_gif.append(canvas.convert('RGB').resize((2048,256),Image.Resampling.NEAREST))
-images_gif[0].save(previews/'bren-walk-eight-directions.gif',save_all=True,append_images=images_gif[1:],duration=110,loop=0,disposal=2)
-for i in range(8):
- shutil.copyfile(root/f'output/elyndor/pixellab-v7/base-review-{i}.png',previews/f'cast-{i+1}.png')
-
-report={'status':'Work in progress; not integrated into the playable release',
- 'referencePolicy':'Original approved Google Drive concepts and mockups; no earlier generated game artwork',
- 'characterFamilies':len(characters),'nativeCharacterImages':frames,'characters':characters,'imageCandidates':images,
- 'liveArtifactUnchanged':{'file':'index.html','sha256':hashlib.sha256((root/'index.html').read_bytes()).hexdigest()},
- 'remaining':['Finish and review all eight-direction walking and idle clips','Finish party running and combat clips',
- 'Complete transparent speaker portraits, object art and creature sets','Select and seam-check material candidates',
- 'Integrate the new asset manifest and UI layer into the standalone build','Run gameplay, rendering and performance checks before deployment']}
-(source/'checkpoint.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
-paths.append(source/'checkpoint.json');paths.extend(p for p in previews.glob('*') if p.name!='files.json')
-manifest=[]
-for p in sorted(set(paths)):
- manifest.append({'file':p.relative_to(root).as_posix(),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()})
-(previews/'files.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')
-paths.append(previews/'files.json')
-(root/'output/elyndor/pixellab-v7/publish-art-paths.json').write_text(json.dumps([p.relative_to(root).as_posix() for p in paths]))
-print(json.dumps({'families':len(characters),'nativeCharacterImages':frames,'imageSets':len(images),'files':len(paths),'bytes':sum(p.stat().st_size for p in paths)}))
+ROOT=Path(__file__).resolve().parents[2]
+SRC=ROOT/'elyndor/assets/source/pixellab-v7'
+OUT=ROOT/'output/elyndor/pixellab-v8'
+PRE=ROOT/'elyndor/previews/pixellab-v8';PRE.mkdir(parents=True,exist_ok=True)
+manifest=json.loads((SRC/'manifest.json').read_text())
+audit=json.loads((ROOT/'elyndor/assets/packed/audit.json').read_text())
+assets=json.loads((ROOT/'elyndor/assets/packed/assets.cache.json').read_text())
+assert not manifest['preview'] and not assets['pixelLabAudit']['incompleteClips']
+assert len(manifest['characters'])==41 and len(assets['sprites'])==42
+paths=[]
+for item in manifest['characters']:
+ folder=ROOT/item['folder'];paths.append(folder/'metadata.json');paths.extend(folder.rglob('*.png'))
+for category in ['images','portraits','guide']:
+ paths.extend(ROOT/p for p in manifest[category].values())
+# Previously published candidates remain present; current selection is explicit.
+paths.extend([SRC/'manifest.json',SRC/'packed-review.json',SRC/'checkpoint.json'])
+for name in ['title','bridge','plaza','mill','town-overview','town-night','inventory','map']:
+ shutil.copyfile(OUT/'town'/f'{name}.png',PRE/f'{name}.png')
+paths.extend(PRE.glob('*.png'))
+paths.extend(p for p in (ROOT/'elyndor').iterdir() if p.suffix in ['.js','.css','.html'])
+helpers=['ui-previews-v8.mjs','live-release-check.mjs','battle-layout-v8.mjs','build.py','build-v7.py','pixellab-pack.py','review-pixellab-character.py','audit-continuous.py','audit-runtime-sprites.py','prepare-pixellab-checkpoint.py','check-pixellab-checkpoint.py','web_game_playwright_client.mjs','smoke-actions.json','continuous-verify.mjs','inspect-town-v8.mjs','qa-town-v8.mjs','keys-combat-v8.mjs','surfaces-town-v8.mjs','four-edge-check.mjs','profile-town-v8.mjs','sustained-check.mjs']
+paths.extend(ROOT/'elyndor/tools'/p for p in helpers)
+paths.extend(ROOT/p for p in ['index.html','three.vendor.js','README.md','ASSET_NOTES.md','PIXELLAB_REBUILD.md','MATERIAL_PROMPTS.json','release.json','.gitattributes','.gitignore','.nojekyll','tools/build.py'])
+artifact={'file':'index.html','bytes':(ROOT/'index.html').stat().st_size,'sha256':hashlib.sha256((ROOT/'index.html').read_bytes()).hexdigest(),'offline':True}
+checkpoint={'status':'Integrated playable release','referencePolicy':manifest['referencePolicy'],'characterFamilies':len(manifest['characters']),'runtimeFamilies':len(assets['sprites']),'nativeSelectedPoses':len(audit['poses']),'portraits':len(manifest['portraits']),'worldImages':len(manifest['images']),'artifact':artifact,'incompleteClips':assets['pixelLabAudit']['incompleteClips']}
+(SRC/'checkpoint.json').write_text(json.dumps(checkpoint,indent=2),encoding='utf-8')
+paths=sorted(set(paths));records=[]
+for p in paths:
+ p.resolve().relative_to(ROOT.resolve())
+ assert p.is_file(),p
+ if p.suffix=='.png':
+  with Image.open(p) as im:im.verify()
+ records.append({'file':p.relative_to(ROOT).as_posix(),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()})
+(PRE/'files.json').write_text(json.dumps(records,indent=2),encoding='utf-8');paths.append(PRE/'files.json')
+(OUT/'publish-paths.json').write_text(json.dumps([p.relative_to(ROOT).as_posix() for p in paths],indent=2),encoding='utf-8')
+(OUT/'publish-paths.nul').write_bytes(b'\0'.join(p.relative_to(ROOT).as_posix().encode() for p in paths)+b'\0')
+print(json.dumps({**checkpoint,'publishFiles':len(paths),'publishBytes':sum(p.stat().st_size for p in paths)}))

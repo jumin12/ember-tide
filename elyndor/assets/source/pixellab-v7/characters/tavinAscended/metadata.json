@@ -27,10 +27,68 @@
           "west": "Idle/rotations/west.png",
           "south-west": "Idle/rotations/south-west.png"
         },
-        "animations": {}
+        "animations": {
+          "recoil-v8": {
+            "west": [
+              "Idle/animations/recoil-v8/west/frame_000.png",
+              "Idle/animations/recoil-v8/west/frame_001.png",
+              "Idle/animations/recoil-v8/west/frame_002.png",
+              "Idle/animations/recoil-v8/west/frame_003.png",
+              "Idle/animations/recoil-v8/west/frame_004.png"
+            ]
+          },
+          "cast-v7": {
+            "west": [
+              "Idle/animations/cast-v7/west/frame_000.png",
+              "Idle/animations/cast-v7/west/frame_001.png",
+              "Idle/animations/cast-v7/west/frame_002.png",
+              "Idle/animations/cast-v7/west/frame_003.png",
+              "Idle/animations/cast-v7/west/frame_004.png",
+              "Idle/animations/cast-v7/west/frame_005.png",
+              "Idle/animations/cast-v7/west/frame_006.png",
+              "Idle/animations/cast-v7/west/frame_007.png",
+              "Idle/animations/cast-v7/west/frame_008.png"
+            ]
+          },
+          "battleIdle-v7": {
+            "west": [
+              "Idle/animations/battleIdle-v7/west/frame_000.png",
+              "Idle/animations/battleIdle-v7/west/frame_001.png",
+              "Idle/animations/battleIdle-v7/west/frame_002.png",
+              "Idle/animations/battleIdle-v7/west/frame_003.png",
+              "Idle/animations/battleIdle-v7/west/frame_004.png",
+              "Idle/animations/battleIdle-v7/west/frame_005.png",
+              "Idle/animations/battleIdle-v7/west/frame_006.png",
+              "Idle/animations/battleIdle-v7/west/frame_007.png"
+            ]
+          },
+          "attack-v7": {
+            "west": [
+              "Idle/animations/attack-v7/west/frame_000.png",
+              "Idle/animations/attack-v7/west/frame_001.png",
+              "Idle/animations/attack-v7/west/frame_002.png",
+              "Idle/animations/attack-v7/west/frame_003.png",
+              "Idle/animations/attack-v7/west/frame_004.png",
+              "Idle/animations/attack-v7/west/frame_005.png",
+              "Idle/animations/attack-v7/west/frame_006.png",
+              "Idle/animations/attack-v7/west/frame_007.png",
+              "Idle/animations/attack-v7/west/frame_008.png"
+            ]
+          },
+          "recoil-v7": {
+            "west": [
+              "Idle/animations/recoil-v7/west/frame_000.png",
+              "Idle/animations/recoil-v7/west/frame_001.png",
+              "Idle/animations/recoil-v7/west/frame_002.png",
+              "Idle/animations/recoil-v7/west/frame_003.png",
+              "Idle/animations/recoil-v7/west/frame_004.png",
+              "Idle/animations/recoil-v7/west/frame_005.png"
+            ]
+          }
+        }
       }
     }
   ],
   "export_version": "3.1",
-  "export_date": "2026-10-26T20:21:20.956347"
+  "export_date": "2026-10-27T01:32:46.306471"
 }

@@ -1,0 +1,48 @@
+/* The interface stays clear while the miniature town remains visible. */
+#load-screen{background:radial-gradient(ellipse at 50% 35%,#294263 0,#1d2630 38%,#101820 78%);color:#f7edda;overflow:hidden}
+#load-screen:before{content:"";position:absolute;inset:28px;border:1px solid #d0ad6040;pointer-events:none}
+#load-screen:after{content:"✦";position:absolute;left:50%;top:28px;transform:translate(-50%,-50%);padding:0 20px;background:#1d2630;color:#d0ad60;font-size:21px}
+#load-screen .sigil{font-size:58px;color:#e8cf84;text-shadow:0 0 28px #72b9ad80;animation:light-breath 3s ease-in-out infinite}
+#load-screen h2{font:38px/1.2 Georgia;letter-spacing:.04em;margin:17px 0 10px}
+#load-screen .eyebrow{font-size:10px;letter-spacing:.32em;color:#d0ad60}
+#load-label{font:12px/1.8 system-ui;color:#b6c0c4;margin-top:9px}
+.load-track{width:240px;height:3px;background:#a8b2a725;margin-top:26px;border:0}
+.load-track i{background:linear-gradient(90deg,#765738,#d0ad60,#f7edda);box-shadow:0 0 13px #d0ad6060}
+.loading-travellers{position:absolute;inset:22% 5% 0;pointer-events:none;opacity:.45;z-index:-1;background-image:var(--hero-bren),var(--hero-soren);background-size:auto 78%;background-position:left bottom,right bottom;background-repeat:no-repeat;filter:drop-shadow(0 0 24px #294263)}
+#load-screen{isolation:isolate}
+@keyframes light-breath{50%{opacity:.6;transform:translateY(-5px);text-shadow:0 0 45px #72b9ad}}
+.title-shade{background:linear-gradient(90deg,#101820eb 0,#101820c9 23%,#10182042 48%,transparent 70%),linear-gradient(0deg,#10182090,transparent 25%)}
+.title-copy{left:6.2vw;top:18%;width:375px;max-width:40vw}
+.title-copy .eyebrow{font-size:10px;letter-spacing:.25em;color:#e8cf84}
+.title-copy h1{font:clamp(60px,6.4vw,100px)/.98 Georgia;letter-spacing:-.035em;text-shadow:0 4px 19px #0007;color:#f7edda;margin-top:24px}
+.title-copy h1 small{font:clamp(20px,2vw,30px)/1.9 Georgia;letter-spacing:.06em;color:#dbc292}
+.title-rule{display:flex;align-items:center;gap:18px;margin:26px 0;color:#e8cf84;font-size:16px;max-width:290px}
+.title-rule:before,.title-rule:after{content:"";height:1px;background:linear-gradient(90deg,transparent,#d0ad6080);flex:1}.title-rule:after{transform:rotate(180deg)}
+.title-blurb{font:15px/1.8 Georgia;color:#d9dccb;margin:0 0 27px}
+.title-buttons{gap:9px;max-width:285px}.title-buttons button{padding:14px 20px;text-align:left;font:16px Georgia;border:1px solid #d0ad6060;background:#131820b0;transition:background .2s,transform .2s}
+.title-buttons button:hover:enabled{transform:translateX(5px);background:linear-gradient(90deg,#765738,#1d2630e0)}
+.title-buttons button.primary{background:linear-gradient(95deg,#a38346e0,#674737d0);border-color:#d0ad60}
+.title-buttons button span{color:#e8cf84}.title-footer{font:10px/1.8 system-ui;letter-spacing:.08em;margin-top:25px;color:#a8b2a7}
+.title-scene{right:35px;bottom:30px;background:#1318208c;border:1px solid #d0ad6033;padding:12px 19px;font:11px Georgia;letter-spacing:.06em;color:#efe1bd}
+.title-scene i{background:#e8cf84;box-shadow:0 0 11px #e8cf84}
+.hud-actions button{backdrop-filter:blur(10px)}
+.portrait-frame{position:relative}
+.portrait-frame .portrait,#menu-party .portrait-frame .portrait{position:absolute!important;left:50%!important;top:50%!important;width:118%!important;height:118%!important;max-width:none!important;margin:0!important;transform:translate(-50%,-50%) rotate(-45deg)!important;object-fit:contain!important;object-position:center!important;flex:none!important}
+#movement-hint{background:linear-gradient(90deg,#131820a0,transparent);padding:8px 12px;font-size:10px}
+.menu-header h2{letter-spacing:.01em}.menu-meta{font:12px Georgia;color:#dbc292}.menu-meta button{font-family:system-ui}
+.menu-footer{font-size:10px}.menu-scrim{background:#10182055;backdrop-filter:blur(7px)}
+#menu-nav button{transition:padding .15s,background .15s}#menu-nav button:hover{padding-left:25px}
+.menu-shell[data-page="map"] #menu-content{background-image:linear-gradient(#efe1bd40,#dbc29266),var(--map-paper)}
+.menu-shell[data-page="map"] #menu-content h3{color:#45302a}
+@media(max-width:700px){.title-copy{left:7vw;top:14%;max-width:80vw;width:310px}.title-copy h1{font-size:68px}.title-shade{background:linear-gradient(90deg,#101820ed,#101820a0 45%,#10182020)}.title-scene{right:15px;bottom:17px;font-size:9px;padding:8px 12px}.title-copy .eyebrow{font-size:9px}.title-blurb{font-size:14px}.title-buttons{max-width:255px}.title-copy h1 small{font-size:24px}.title-footer{font-size:9px}}
+@media(prefers-reduced-motion:reduce){#load-screen .sigil{animation:none}.title-buttons button{transition:none}}
+
+.menu-shell[data-page="map"] #menu-content{background-size:cover;background-position:center}
+.menu-shell[data-page="map"] #menu-content button{color:#efe1bd}
+.menu-shell[data-page="map"] #menu-content button.active{color:#fff5dc;background:#765738}
+
+body:has(#menu:not(.hidden)) #toast{display:none}
+
+/* Keep dialogue portraits and small-screen navigation clear. */
+body:has(#dialogue:not(.hidden)) #hud{visibility:hidden}
+@media(max-width:700px){#objective{display:none}}

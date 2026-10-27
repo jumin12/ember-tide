@@ -2,3 +2,14 @@
 index.html -text
 elyndor/assets/source/pixellab-v7/** -text
 elyndor/previews/pixellab-v7/** -text
+
+# Keep reviewed source and release checksums identical across Windows checkouts.
+elyndor/** -text
+*.md -text
+release.json -text
+MATERIAL_PROMPTS.json -text
+three.vendor.js -text
+tools/build.py -text
+.gitattributes -text
+.gitignore -text
+.nojekyll -text

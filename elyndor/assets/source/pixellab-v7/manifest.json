@@ -1,0 +1,423 @@
+{
+  "revision": "pixellab-v7",
+  "preview": false,
+  "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
+  "characters": [
+    {
+      "id": "bren",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/bren",
+      "characterId": "e763040b-55a9-453c-b107-938a64dfe277",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "soren",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/soren",
+      "characterId": "1160c739-8e48-4c7e-bfd0-1bd5b86b133d",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "tavin",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/tavin",
+      "characterId": "c435221b-da13-442c-846c-e7576c4f4066",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "mira",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/mira",
+      "characterId": "872889f1-dc6f-4dc0-ab5a-7e88d10dd35e",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "lysa",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/lysa",
+      "characterId": "d3e55833-e66e-4efe-82ac-d6479fa9c7bc",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "representative",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/representative",
+      "characterId": "1715fd25-67b8-4929-8ae3-cf12de93a23e",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "merchant",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/merchant",
+      "characterId": "9e45c3f8-6c4d-4fd4-ba5b-47e4c2dcaf6d",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "worker",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/worker",
+      "characterId": "221d89c7-e1c4-45bf-aab5-b13e28e6ea28",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "healer",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/healer",
+      "characterId": "5117189b-b22d-4715-aedd-0bb0dfc5d6ba",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "guard",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/guard",
+      "characterId": "4fc83c5f-1156-4ce7-beb6-f547c6f6de6c",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "courier",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/courier",
+      "characterId": "6f64146e-11cc-4b18-a4e1-cea399620493",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "farmer",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/farmer",
+      "characterId": "c0050c24-02de-4f95-8524-89c1e1727f49",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "elder",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/elder",
+      "characterId": "c7187c46-ff8d-45fb-b016-d2fe7265831e",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "innkeeper",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/innkeeper",
+      "characterId": "0ada976a-aa4a-4422-adf5-fb5c9617cce0",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "tribeMale",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/tribeMale",
+      "characterId": "d867bf2d-9202-4343-9291-e28a5e7a653d",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "tribeFemale",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/tribeFemale",
+      "characterId": "ba993cc9-b01d-409e-9e73-5029984ecc52",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "commander",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/commander",
+      "characterId": "2fb089a2-163f-4485-a86e-6eb33cf22a35",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "commander2",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/commander2",
+      "characterId": "ce290039-6126-4e84-8309-14d8cc2d6b66",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "commander3",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/commander3",
+      "characterId": "a0486556-0102-4cb1-b608-a95dbbbf49aa",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "guardEnemy",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/guardEnemy",
+      "characterId": "719654fe-e56a-4364-8b10-cf6f26d0384c",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "brenAscended",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/brenAscended",
+      "characterId": "c6cf34d4-6dab-4895-a7bd-c86b1209e6a7",
+      "human": true,
+      "combatOnly": true
+    },
+    {
+      "id": "tavinAscended",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/tavinAscended",
+      "characterId": "f5081900-1f76-449f-90a6-69348447fa7f",
+      "human": true,
+      "combatOnly": true
+    },
+    {
+      "id": "capital-steward",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/capital-steward",
+      "characterId": "0f4889aa-7e1a-4048-b523-f41094ad9b98",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "capital-archivist",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/capital-archivist",
+      "characterId": "b8aeb4e6-0919-4d8b-a42b-d5e664d2a376",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "capital-stall",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/capital-stall",
+      "characterId": "a4e306ce-cbe7-4340-9e70-3a0cb43b61bc",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "capital-gardener",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/capital-gardener",
+      "characterId": "8b335186-6914-4f6b-8205-3cfe9e286362",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "capital-post",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/capital-post",
+      "characterId": "47f33991-3130-4f3f-8d2b-85ea91b61ed4",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "capital-inn",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/capital-inn",
+      "characterId": "656d03c0-6a73-475d-b6ae-118d7dd01e3b",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "alder-market",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/alder-market",
+      "characterId": "b74125f5-cbab-4398-8ed4-47411a5e9780",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "alder-watch",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/alder-watch",
+      "characterId": "57a89229-783b-4ad3-9d6c-59d3588fa00c",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "alder-medic",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/alder-medic",
+      "characterId": "673ceb57-d92b-4f1d-9e85-46b6c8a8f51b",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "alder-orchard",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/alder-orchard",
+      "characterId": "0b64e435-15d8-4602-b507-78283518e77c",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "fern-potter",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/fern-potter",
+      "characterId": "fb5c136c-14df-4e10-9d69-95bffaa46b06",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "fern-hunter",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/fern-hunter",
+      "characterId": "b84f213e-058e-410d-8478-8e17d8ff75bf",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "relief-medic",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/relief-medic",
+      "characterId": "98173dfb-e210-4963-86dc-80704ac59442",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "relief-scribe",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/relief-scribe",
+      "characterId": "bcfad9a8-8364-4142-8833-2b0c31dc27c5",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "relief-quarter",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/relief-quarter",
+      "characterId": "6a7801c2-a045-4237-bd0f-ea510d27fc7f",
+      "human": true,
+      "combatOnly": false
+    },
+    {
+      "id": "wolf",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/wolf",
+      "characterId": "f6503f4f-3272-49e5-bb73-f488e6820830",
+      "human": false,
+      "combatOnly": false,
+      "bodyUnit": 62
+    },
+    {
+      "id": "boar",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/boar",
+      "characterId": "d8ce6ea8-b859-44b7-a5ab-01eb34fadae6",
+      "human": false,
+      "combatOnly": false,
+      "bodyUnit": 62
+    },
+    {
+      "id": "sheepEwe",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/sheepEwe",
+      "characterId": "8b103ea1-a647-4901-9703-0127608f7ad5",
+      "human": false,
+      "combatOnly": false,
+      "bodyUnit": 62
+    },
+    {
+      "id": "sheepLamb",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/sheepLamb",
+      "characterId": "3a635a94-3c97-4780-90aa-f6c48fa0454e",
+      "human": false,
+      "combatOnly": false,
+      "bodyUnit": 62
+    }
+  ],
+  "images": {
+    "cobble": "elyndor/assets/source/pixellab-v7/images/material-cobble/000.png",
+    "wood": "elyndor/assets/source/pixellab-v7/images/material-wood/000.png",
+    "darkWood": "elyndor/assets/source/pixellab-v7/images/material-darkWood/000.png",
+    "slate": "elyndor/assets/source/pixellab-v7/images/material-slate/000.png",
+    "plaster": "elyndor/assets/source/pixellab-v7/images/material-plaster/000.png",
+    "wall": "elyndor/assets/source/pixellab-v7/images/material-wall/000.png",
+    "rock": "elyndor/assets/source/pixellab-v7/images/material-rock/002.png",
+    "earth": "elyndor/assets/source/pixellab-v7/images/material-earth/003.png",
+    "grass": "elyndor/assets/source/pixellab-v7/images/material-grass/001.png",
+    "bark": "elyndor/assets/source/pixellab-v7/images/material-bark/001.png",
+    "cloth": "elyndor/assets/source/pixellab-v7/images/material-cloth/000.png",
+    "metal": "elyndor/assets/source/pixellab-v7/images/material-metal-v8/000.png",
+    "oakCanopy": "elyndor/assets/source/pixellab-v7/images/material-oakCanopy/000.png",
+    "pineCanopy": "elyndor/assets/source/pixellab-v7/images/material-pineCanopy/002.png",
+    "lightFacets": "elyndor/assets/source/pixellab-v7/images/material-lightFacets/002.png",
+    "door": "elyndor/assets/source/pixellab-v7/images/prop-door/000.png",
+    "window": "elyndor/assets/source/pixellab-v7/images/prop-window/000.png",
+    "crateFace": "elyndor/assets/source/pixellab-v7/images/prop-crateFace/000.png",
+    "barrelStave": "elyndor/assets/source/pixellab-v7/images/prop-barrelStave/000.png",
+    "innSign": "elyndor/assets/source/pixellab-v7/images/prop-innSign/000.png",
+    "shopSign": "elyndor/assets/source/pixellab-v7/images/prop-shopSign/000.png",
+    "forgeSign": "elyndor/assets/source/pixellab-v7/images/prop-forgeSign/000.png",
+    "leaves": "elyndor/assets/source/pixellab-v7/images/prop-leaves/000.png",
+    "fern": "elyndor/assets/source/pixellab-v7/images/prop-fern/000.png",
+    "flowers": "elyndor/assets/source/pixellab-v7/images/prop-flowers/000.png",
+    "ivy": "elyndor/assets/source/pixellab-v7/images/prop-ivy/000.png",
+    "grassBlades": "elyndor/assets/source/pixellab-v7/images/prop-grassBlades/000.png",
+    "shrub": "elyndor/assets/source/pixellab-v7/images/prop-shrub/000.png",
+    "uiFrame": "elyndor/assets/source/pixellab-v7/images/ui-frame/000.png",
+    "icon_herb": "elyndor/assets/source/pixellab-v7/images/icon-herb/000.png",
+    "icon_ether": "elyndor/assets/source/pixellab-v7/images/icon-ether/000.png",
+    "icon_revive": "elyndor/assets/source/pixellab-v7/images/icon-revive/000.png",
+    "icon_blade": "elyndor/assets/source/pixellab-v7/images/icon-blade/000.png",
+    "icon_coat": "elyndor/assets/source/pixellab-v7/images/icon-coat/000.png",
+    "icon_report": "elyndor/assets/source/pixellab-v7/images/icon-report/000.png",
+    "icon_notes": "elyndor/assets/source/pixellab-v7/images/icon-notes/000.png",
+    "icon_component": "elyndor/assets/source/pixellab-v7/images/icon-component/000.png",
+    "icon_order": "elyndor/assets/source/pixellab-v7/images/icon-order/000.png",
+    "regionMap": "elyndor/assets/source/pixellab-v7/images/map-paper/000.png"
+  },
+  "materialKeys": [
+    "cobble",
+    "wood",
+    "darkWood",
+    "slate",
+    "plaster",
+    "wall",
+    "rock",
+    "earth",
+    "grass",
+    "bark",
+    "cloth",
+    "metal",
+    "oakCanopy",
+    "pineCanopy",
+    "lightFacets"
+  ],
+  "portraits": {
+    "aidOfficial": "elyndor/assets/source/pixellab-v7/images/portrait-aidOfficial-v8/000.png",
+    "alder-market": "elyndor/assets/source/pixellab-v7/images/portrait-alder-market/000.png",
+    "alder-medic": "elyndor/assets/source/pixellab-v7/images/portrait-alder-medic/000.png",
+    "alder-orchard": "elyndor/assets/source/pixellab-v7/images/portrait-alder-orchard/000.png",
+    "alder-watch": "elyndor/assets/source/pixellab-v7/images/portrait-alder-watch/000.png",
+    "alderGuardPortrait": "elyndor/assets/source/pixellab-v7/images/portrait-alderGuardPortrait/000.png",
+    "alderLeader": "elyndor/assets/source/pixellab-v7/images/portrait-alderLeader/000.png",
+    "archivistPortrait": "elyndor/assets/source/pixellab-v7/images/portrait-archivistPortrait-v8/000.png",
+    "bren": "elyndor/assets/source/pixellab-v7/images/portrait-bren/000.png",
+    "capital-gardener": "elyndor/assets/source/pixellab-v7/images/portrait-capital-gardener/000.png",
+    "capital-inn": "elyndor/assets/source/pixellab-v7/images/portrait-capital-inn-v8/000.png",
+    "capital-post": "elyndor/assets/source/pixellab-v7/images/portrait-capital-post/000.png",
+    "capital-stall": "elyndor/assets/source/pixellab-v7/images/portrait-capital-stall/000.png",
+    "commander": "elyndor/assets/source/pixellab-v7/images/portrait-commander/000.png",
+    "commander2": "elyndor/assets/source/pixellab-v7/images/portrait-commander2/000.png",
+    "commander3": "elyndor/assets/source/pixellab-v7/images/portrait-commander3-v8/000.png",
+    "commanderFollower": "elyndor/assets/source/pixellab-v7/images/portrait-commanderFollower/000.png",
+    "councilOfficial": "elyndor/assets/source/pixellab-v7/images/portrait-councilOfficial/000.png",
+    "courier": "elyndor/assets/source/pixellab-v7/images/portrait-courier/000.png",
+    "elder": "elyndor/assets/source/pixellab-v7/images/portrait-elder/000.png",
+    "farmer": "elyndor/assets/source/pixellab-v7/images/portrait-farmer/000.png",
+    "fern-hunter": "elyndor/assets/source/pixellab-v7/images/portrait-fern-hunter/000.png",
+    "fern-potter": "elyndor/assets/source/pixellab-v7/images/portrait-fern-potter/000.png",
+    "guard": "elyndor/assets/source/pixellab-v7/images/portrait-guard/000.png",
+    "healer": "elyndor/assets/source/pixellab-v7/images/portrait-healer/000.png",
+    "innkeeper": "elyndor/assets/source/pixellab-v7/images/portrait-innkeeper/000.png",
+    "lysa": "elyndor/assets/source/pixellab-v7/images/portrait-lysa/000.png",
+    "merchant": "elyndor/assets/source/pixellab-v7/images/portrait-merchant/000.png",
+    "mira": "elyndor/assets/source/pixellab-v7/images/portrait-mira-v8/000.png",
+    "relief-quarter": "elyndor/assets/source/pixellab-v7/images/portrait-relief-quarter/000.png",
+    "relief-scribe": "elyndor/assets/source/pixellab-v7/images/portrait-relief-scribe/000.png",
+    "reliefOfficial": "elyndor/assets/source/pixellab-v7/images/portrait-reliefOfficial-v8/000.png",
+    "representative": "elyndor/assets/source/pixellab-v7/images/portrait-representative/000.png",
+    "soren": "elyndor/assets/source/pixellab-v7/images/portrait-soren-v8/000.png",
+    "tavin": "elyndor/assets/source/pixellab-v7/images/portrait-tavin/000.png",
+    "tribeFemale": "elyndor/assets/source/pixellab-v7/images/portrait-tribeFemale/000.png",
+    "tribeMale": "elyndor/assets/source/pixellab-v7/images/portrait-tribeMale-v8/000.png",
+    "worker": "elyndor/assets/source/pixellab-v7/images/portrait-worker/000.png"
+  },
+  "portraitPadding": {
+    "tribeMale": 40,
+    "soren": 40,
+    "reliefOfficial": 40,
+    "mira": 40,
+    "commander3": 40,
+    "capital-inn": 40,
+    "archivistPortrait": 40,
+    "aidOfficial": 40
+  },
+  "portraitAliases": {
+    "capital-steward": "councilOfficial",
+    "capital-archivist": "archivistPortrait",
+    "relief-medic": "reliefOfficial",
+    "guardEnemy": "alderGuardPortrait",
+    "brenAscended": "bren",
+    "tavinAscended": "tavin"
+  },
+  "guide": {
+    "stag": "elyndor/assets/source/pixellab-v7/images/guide-stag/000.png",
+    "bird": "elyndor/assets/source/pixellab-v7/images/guide-bird/000.png",
+    "ogre": "elyndor/assets/source/pixellab-v7/images/guide-ogre/000.png",
+    "wisp": "elyndor/assets/source/pixellab-v7/images/guide-wisp/000.png",
+    "stone": "elyndor/assets/source/pixellab-v7/images/guide-stone/000.png",
+    "wolf": "elyndor/assets/source/pixellab-v7/characters/wolf/Idle/rotations/south-east.png",
+    "boar": "elyndor/assets/source/pixellab-v7/characters/boar/Idle/rotations/south-east.png"
+  }
+}

@@ -1,84 +1,134 @@
 {
-  "release": "elyndor-2026-10-26-materials-v6",
+  "release": "elyndor-2026-10-26-pixellab-town-v8",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 27485826,
-    "sha256": "b552e5b5262d4993bb686cb52ff6aca814e32d0af4d7bbd7b42557f6721635fb",
+    "bytes": 5397022,
+    "sha256": "65ab2166837a87ea6310bf3d69a93dcb504d82c840b9bc15361e6b5a96c7ee11",
     "offline": true
   },
   "changes": [
-    "Four-edge diorama blur with a sharp focal center and full-resolution UI",
-    "Fifteen individually generated 128-pixel world materials",
-    "Bounded anisotropic filtering and mipmaps for angled surfaces",
-    "Twelve completed eight-direction character families from the preceding review checkpoint"
+    "Native PixelLab artwork integrated into the playable standalone game",
+    "Brookstead reconstructed with three terrain terraces, stairs, arched river bridge, watermill, cascades, fountain square, inn, forge, shop and planted gardens",
+    "Eight-direction whole-pose walks and idles, separate party runs, reviewed combat clips and transparent detailed portraits",
+    "Ink-and-gold main menu, loading, dialogue, nine menu pages and geographic world map",
+    "Individual tree and building cutaways, lit sprites, smooth shadows, raised-pool reflections and continuous day/night lighting",
+    "Connected exploration, regional campaign, timed combat, abilities, ascensions, equipment, healing, shops and local saves"
   ],
   "art": {
+    "generator": "PixelLab",
+    "nativeDesignFamilies": 41,
+    "spriteFamilies": 42,
+    "packedSpritePoses": 4917,
+    "portraits": 38,
+    "worldImages": 39,
     "materials": 15,
-    "logicalTileSize": 128,
+    "logicalTileSize": 64,
     "runtimeTileSize": 512,
+    "paletteColors": 60,
+    "incompleteClips": 0,
     "prompts": "MATERIAL_PROMPTS.json",
-    "packedSpritePoses": 1565,
-    "spriteFamilies": 25,
-    "completeIndividualRoamingFamilies": 12,
-    "remainingRoamingFamilies": [
-      "lysa",
-      "representative",
-      "tribeMale",
-      "tribeFemale"
-    ]
+    "previousGameArtworkUsed": false
   },
   "validation": {
     "standaloneMatchesSource": true,
     "spritePixelAudit": true,
     "sourceCropWarnings": 0,
-    "keyboardSmoke": true,
-    "gpuEdgeBlurAspectRatios": [
-      "square",
-      "wide",
-      "portrait"
-    ],
-    "gpuEdgeBlurCenterUnchanged": true,
+    "eightWayKeyboardMovement": true,
+    "desktopMobileMenus": true,
+    "dialogueDesktopMobileContained": true,
+    "menuPages": 9,
+    "townBuildingCollisions": 0,
+    "townNpcOverlaps": 0,
+    "townResidentsUnique": true,
     "campaignProgressionSteps": 44,
     "campaignBattles": 7,
-    "navigationRoutes": 42,
+    "restoredLights": 4,
+    "ascensions": 2,
+    "campaignComplete": true,
+    "navigationRoutes": 41,
+    "navigationIssues": [],
+    "blockedFollowers": 0,
     "saveLoad": true,
-    "liveReflectionsAndShadows": true,
-    "bridgeApproachSamples": 36,
+    "reactiveReflectionsAndShadows": true,
+    "bridgeApproachSamples": 30,
+    "spritesReceiveEnvironmentalShadows": true,
+    "fourEdgeBlur": true,
+    "gpuEdgeBlurCenterUnchanged": true,
     "browserErrors": []
   },
   "performance": {
     "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-    "samples": [
+    "nativeViewport": [
+      1440,
+      900
+    ],
+    "nativeSamples": [
+      {
+        "area": "bridge",
+        "fps": 50.0,
+        "p95FrameMs": 22.5,
+        "buffer": [
+          1440,
+          900
+        ],
+        "scale": 1
+      },
+      {
+        "area": "square",
+        "fps": 70.9,
+        "p95FrameMs": 16.4,
+        "buffer": [
+          1440,
+          900
+        ],
+        "scale": 1
+      },
+      {
+        "area": "forest",
+        "fps": 72.1,
+        "p95FrameMs": 14.2,
+        "buffer": [
+          1440,
+          900
+        ],
+        "scale": 1
+      }
+    ],
+    "fourPartyWalkingSamples": [
       {
         "area": "Town",
-        "fps": 71.8,
+        "fps": 50.9,
+        "seconds": 5.01,
         "buffer": [
-          1419,
-          798
+          1577,
+          887
         ],
-        "seconds": 5
+        "walkingFlashEvents": 0
       },
       {
         "area": "Forest",
-        "fps": 72.0,
+        "fps": 71.5,
+        "seconds": 4.99,
         "buffer": [
-          1451,
-          816
+          1577,
+          887
         ],
-        "seconds": 5
+        "walkingFlashEvents": 0
       },
       {
         "area": "Canal",
-        "fps": 72.1,
+        "fps": 49.0,
+        "seconds": 5.02,
         "buffer": [
-          1451,
-          816
+          1577,
+          887
         ],
-        "seconds": 5
+        "walkingFlashEvents": 0
       }
     ],
-    "scope": "Short local hardware-accelerated samples with adaptive buffers; software WebGL still needs optimization."
+    "singleFileReductionPercent": 80.36,
+    "scope": "Short local hardware-accelerated real-render-count samples. Adaptive resolution is enabled. Performance depends on hardware; software WebGL remains substantially slower."
   },
-  "status": "Playable work in progress. Four individual walking sets, further idle/running animation and environment refinement remain."
+  "status": "Integrated playable regional release"
 }

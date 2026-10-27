@@ -73,8 +73,8 @@ if(ASSETS.artRevision==='pixellab-v7'){
   const key='pixellab-crown-'+kind;if(sharedGeo[key])return sharedGeo[key];
   const positions=[],normals=[],uv=[];
   for(let i=0;i<8;i++){
-   const a=i*2.399963,top=i===7,r=top?.18:.53,c=V3(Math.cos(a)*r,top?.48:Math.sin(i*1.7)*.26,Math.sin(a)*r);
-   const g=new THREE.IcosahedronGeometry(1,0);g.scale(.54+(i%3)*.06,top?.62:.54,.58);g.translate(c.x,c.y,c.z);
+   const a=i*2.399963,top=i===7,r=top?.18:.53,c=V3(Math.cos(a)*r,top?.6:Math.sin(i*1.7)*.35,Math.sin(a)*r);
+   const g=new THREE.IcosahedronGeometry(1,1);g.scale(.54+(i%3)*.06,top?.96:.83,.58);g.translate(c.x,c.y,c.z);
    positions.push(...g.attributes.position.array);normals.push(...g.attributes.normal.array);uv.push(...g.attributes.uv.array);g.dispose();
   }
   const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));g.setAttribute('normal',new THREE.Float32BufferAttribute(normals,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));g.computeBoundingSphere();sharedGeo[key]=g;return g;
@@ -88,7 +88,7 @@ if(ASSETS.artRevision==='pixellab-v7'){
    const x=g.position.x,z=g.position.z;if(x<-45&&z>30&&z<130){
     const y=groundAt(x,z),w=g.userData.footprint?.w??6;
     // Deliberately keep planting beside walls, never over an entrance or road.
-    for(const side of[-1,1]){const px=x+side*(w*.5+.65),pz=z+1.8;if(roadDistance(px,pz)>3.4&&!waterGround(px,pz)){plant(px,pz,.65,'flowers');plant(px+.3,pz+.25,.45,'fern');}}
+    for(const side of[-1,1]){const px=x+side*(w*.5+.65),pz=z+1.8;if(roadDistance(px,pz)>3.4&&!waterGround(px,pz)){plant(px,pz,.65,'flower');plant(px+.3,pz+.25,.45,'fern');}}
    }
   }
  };

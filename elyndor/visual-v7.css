@@ -79,7 +79,7 @@ button.primary{background:linear-gradient(100deg,#a38346,#674737);border-color:#
 .journal-entry p{font:12px/1.8 system-ui;color:#b6c0c4}
 .continuous-map{height:min(58vh,620px);border-color:#a38346;background-color:#dbc292;box-shadow:inset 0 0 40px #67473760}
 .atlas-locations button{background:#131820cc;border:1px solid #d0ad6060;padding:12px 15px}
-#dialogue{left:6vw;right:6vw;bottom:26px;min-height:192px;max-width:1260px;margin:auto;background:linear-gradient(105deg,#131820f7,#1d2630ed);border:1px solid #d0ad6080;box-shadow:0 0 0 4px #13182066,0 15px 55px #0007;overflow:visible}
+#dialogue{left:6vw;right:6vw;width:auto;transform:none;bottom:26px;min-height:192px;max-width:1260px;margin:auto;background:linear-gradient(105deg,#131820f7,#1d2630ed);border:1px solid #d0ad6080;box-shadow:0 0 0 4px #13182066,0 15px 55px #0007;overflow:visible}
 .dialogue-portrait{width:224px;min-height:256px;flex:0 0 224px;align-self:flex-end;background-size:contain;background-repeat:no-repeat;background-position:center bottom;margin:-67px 0 0 12px;image-rendering:pixelated;filter:drop-shadow(0 4px 5px #0004)}
 .dialogue-body{padding:25px 29px 22px;min-width:0}
 #speaker{font:15px/1.4 Georgia;letter-spacing:.06em;text-transform:none;color:#e8cf84;margin:0 0 13px}

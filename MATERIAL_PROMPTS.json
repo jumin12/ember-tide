@@ -1,167 +1,270 @@
-[
-  {
-    "id": "bark",
-    "prompt": "Create ONE finished seamless repeating game material tile: Weathered oak bark in muted chestnut and ash grey, irregular vertical split ridges and broad small interlocking scales, fine crevices, tiny lichen flecks. No trunk outline, no branches, no floor. Match the environmental art direction of reference1 and the compact pixel character scale/palette of reference2. Rich crafted HD-2D diorama pixel-art texture, more refined and less chunky than a 64px tile: intentionally work on a 128 by 128 logical pixel grid with crisp coherent hand-placed square pixel clusters, about24 to32 harmonious colors; nearest-neighbor enlarged output, no blurry photography or random grain. Broad readable material shapes with fine controlled pixel craftsmanship. ONE flat orthographic material sample, edge-to-edge opaque square, seamless on both axes, same density and colors across all edges. Color/albedo only, neutral even diffuse lighting, no cast shadows, no directional highlights, no scene, no perspective, no objects, no borders, labels, padding, multiple samples, transparency, vignette or big painted lighting gradients.",
-    "referenceFilenames": [
-      "scene-02.png",
-      "Bren_Gameplay_CURRENT_v01.png"
+{
+  "generator": "PixelLab",
+  "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
+  "palette": {
+    "name": "Elyndor Riverland",
+    "colors": [
+      "#131820",
+      "#1d2630",
+      "#2a3640",
+      "#3b4a50",
+      "#55666a",
+      "#7a8985",
+      "#a8b2a7",
+      "#d9dccb",
+      "#2b1c1e",
+      "#45302a",
+      "#674737",
+      "#8a6041",
+      "#aa7d51",
+      "#c59b69",
+      "#dbc292",
+      "#efe1bd",
+      "#432b2b",
+      "#634032",
+      "#8b5740",
+      "#b87951",
+      "#d69e70",
+      "#eac098",
+      "#f5d8b7",
+      "#582c2d",
+      "#803f36",
+      "#a9563c",
+      "#c9764d",
+      "#765738",
+      "#a38346",
+      "#d0ad60",
+      "#e8cf84",
+      "#1b352b",
+      "#2b4a35",
+      "#40613c",
+      "#62804c",
+      "#8b9c61",
+      "#bac78c",
+      "#1b2a42",
+      "#294263",
+      "#3c5c7c",
+      "#6184a3",
+      "#8babb8",
+      "#c3d4d6",
+      "#174748",
+      "#24696b",
+      "#3a9291",
+      "#72b9ad",
+      "#afdac6",
+      "#3a253e",
+      "#593c5a",
+      "#7b5574",
+      "#a57f97",
+      "#d0adbc",
+      "#343f4a",
+      "#576572",
+      "#84929b",
+      "#b6c0c4",
+      "#edf0e5",
+      "#a0c6d7",
+      "#f7edda"
     ],
-    "mode": "built-in OpenAI image generation, one material per image",
-    "logicalResolution": 128,
-    "sha256": "aad396d5cdbe9a498b9a342e86bb4fb8f408c106585e126c617abff9188d048b"
+    "characterCanvas": 80,
+    "bodyUnit": 64,
+    "pixelsPerMetre": 32,
+    "terrainTileSize": 64
   },
-  {
-    "id": "cloth",
-    "prompt": "Create ONE finished seamless repeating game material tile: Unpatterned natural cream linen canvas, subtle fine woven pixel threads and gentle broad worn variation, neutral diffuse material with no folds, no ropes, no seams and no printed motifs. Match the environmental art direction of reference1 and the compact pixel character scale/palette of reference2. Rich crafted HD-2D diorama pixel-art texture, more refined and less chunky than a 64px tile: intentionally work on a 128 by 128 logical pixel grid with crisp coherent hand-placed square pixel clusters, about24 to32 harmonious colors; nearest-neighbor enlarged output, no blurry photography or random grain. Broad readable material shapes with fine controlled pixel craftsmanship. ONE flat orthographic material sample, edge-to-edge opaque square, seamless on both axes, same density and colors across all edges. Color/albedo only, neutral even diffuse lighting, no cast shadows, no directional highlights, no scene, no perspective, no objects, no borders, labels, padding, multiple samples, transparency, vignette or big painted lighting gradients.",
-    "referenceFilenames": [
-      "scene-02.png",
-      "Bren_Gameplay_CURRENT_v01.png"
-    ],
-    "mode": "built-in OpenAI image generation, one material per image",
-    "logicalResolution": 128,
-    "sha256": "0cb6e7730f86a75b8e5870b31b5198c09a2867352838c8e22a597e77e9b81c51"
-  },
-  {
-    "id": "cobble",
-    "prompt": "Create ONE finished seamless repeating game material tile: Worn irregular pale grey limestone paving with flatter pale centers, narrow dark cool-grey joints, sparse tiny moss only in a few joints, modest individually chipped edges; natural varied stone sizes, no regular grid. Restrained contrast, no thick black outlines. Match the environmental art direction of reference1 and the compact pixel character scale/palette of reference2. Rich crafted HD-2D diorama pixel-art texture, more refined and less chunky than a 64px tile: intentionally work on a 128 by 128 logical pixel grid with crisp coherent hand-placed square pixel clusters, about24 to32 harmonious colors; nearest-neighbor enlarged output, no blurry photography or random grain. Broad readable material shapes with fine controlled pixel craftsmanship. ONE flat orthographic material sample, edge-to-edge opaque square, seamless on both axes, same density and colors across all edges. Color/albedo only, neutral even diffuse lighting, no cast shadows, no directional highlights, no scene, no perspective, no objects, no borders, labels, padding, multiple samples, transparency, vignette or big painted lighting gradients.",
-    "referenceFilenames": [
-      "scene-02.png",
-      "Bren_Gameplay_CURRENT_v01.png"
-    ],
-    "mode": "built-in OpenAI image generation, one material per image",
-    "logicalResolution": 128,
-    "sha256": "fd085623ad941d64eb09ea1ccb353533011ceccc746e71f6990f31b5f3219395"
-  },
-  {
-    "id": "darkWood",
-    "prompt": "Create ONE finished seamless repeating game material tile: Dark chocolate structural oak timber with long vertical grain, shallow fissures, a few knots and worn caramel edges. Even subdued midtones, no black voids, no grid of planks. Match the environmental art direction of reference1 and the compact pixel character scale/palette of reference2. Rich crafted HD-2D diorama pixel-art texture, more refined and less chunky than a 64px tile: intentionally work on a 128 by 128 logical pixel grid with crisp coherent hand-placed square pixel clusters, about24 to32 harmonious colors; nearest-neighbor enlarged output, no blurry photography or random grain. Broad readable material shapes with fine controlled pixel craftsmanship. ONE flat orthographic material sample, edge-to-edge opaque square, seamless on both axes, same density and colors across all edges. Color/albedo only, neutral even diffuse lighting, no cast shadows, no directional highlights, no scene, no perspective, no objects, no borders, labels, padding, multiple samples, transparency, vignette or big painted lighting gradients.",
-    "referenceFilenames": [
-      "scene-02.png",
-      "Bren_Gameplay_CURRENT_v01.png"
-    ],
-    "mode": "built-in OpenAI image generation, one material per image",
-    "logicalResolution": 128,
-    "sha256": "b794878f1f71979574146a2a2e0b3bf371a401040178993a6a395affd6de5d89"
-  },
-  {
-    "id": "earth",
-    "prompt": "Create ONE finished seamless repeating game material tile: A well-trodden muted taupe brown woodland earth surface with subtle broad compacted patches, fine leaf litter, sparse small grey pebbles and faint roots. Low contrast, no large objects, no tiles or roads painted into the image. Match the environmental art direction of reference1 and the compact pixel character scale/palette of reference2. Rich crafted HD-2D diorama pixel-art texture, more refined and less chunky than a 64px tile: intentionally work on a 128 by 128 logical pixel grid with crisp coherent hand-placed square pixel clusters, about24 to32 harmonious colors; nearest-neighbor enlarged output, no blurry photography or random grain. Broad readable material shapes with fine controlled pixel craftsmanship. ONE flat orthographic material sample, edge-to-edge opaque square, seamless on both axes, same density and colors across all edges. Color/albedo only, neutral even diffuse lighting, no cast shadows, no directional highlights, no scene, no perspective, no objects, no borders, labels, padding, multiple samples, transparency, vignette or big painted lighting gradients.",
-    "referenceFilenames": [
-      "scene-02.png",
-      "Bren_Gameplay_CURRENT_v01.png"
-    ],
-    "mode": "built-in OpenAI image generation, one material per image",
-    "logicalResolution": 128,
-    "sha256": "7097bdf84221b21d1e6a5a5546e13f44bf223a8bbcc393bbaa63c229d10ca4d9"
-  },
-  {
-    "id": "grass",
-    "prompt": "Create ONE finished seamless repeating game material tile: Rich natural meadow turf in restrained sage, jade and olive greens, readable overlapping short grass blade clusters with soft broad tonal variation, a few tiny clover leaves. No flowers, no bare brown circles, no repeated large yellow tufts, no striped pattern. Match the environmental art direction of reference1 and the compact pixel character scale/palette of reference2. Rich crafted HD-2D diorama pixel-art texture, more refined and less chunky than a 64px tile: intentionally work on a 128 by 128 logical pixel grid with crisp coherent hand-placed square pixel clusters, about24 to32 harmonious colors; nearest-neighbor enlarged output, no blurry photography or random grain. Broad readable material shapes with fine controlled pixel craftsmanship. ONE flat orthographic material sample, edge-to-edge opaque square, seamless on both axes, same density and colors across all edges. Color/albedo only, neutral even diffuse lighting, no cast shadows, no directional highlights, no scene, no perspective, no objects, no borders, labels, padding, multiple samples, transparency, vignette or big painted lighting gradients.",
-    "referenceFilenames": [
-      "scene-02.png",
-      "Bren_Gameplay_CURRENT_v01.png"
-    ],
-    "mode": "built-in OpenAI image generation, one material per image",
-    "logicalResolution": 128,
-    "sha256": "d8e3bff7a89c9531582174cfb905a3ece6d50187ca0aab8af02784c78f3f5493"
-  },
-  {
-    "id": "lightFacets",
-    "prompt": "Create ONE finished seamless repeating game material tile: Aquamarine crystal internal facets, large irregular translucent-looking turquoise and soft pale mint triangular planes, restrained amber threads inside a few facets. Material albedo only, no bright bloom, no black gaps, no gem outline. Match the environmental art direction of reference1 and the compact pixel character scale/palette of reference2. Rich crafted HD-2D diorama pixel-art texture, more refined and less chunky than a 64px tile: intentionally work on a 128 by 128 logical pixel grid with crisp coherent hand-placed square pixel clusters, about24 to32 harmonious colors; nearest-neighbor enlarged output, no blurry photography or random grain. Broad readable material shapes with fine controlled pixel craftsmanship. ONE flat orthographic material sample, edge-to-edge opaque square, seamless on both axes, same density and colors across all edges. Color/albedo only, neutral even diffuse lighting, no cast shadows, no directional highlights, no scene, no perspective, no objects, no borders, labels, padding, multiple samples, transparency, vignette or big painted lighting gradients.",
-    "referenceFilenames": [
-      "scene-02.png",
-      "Bren_Gameplay_CURRENT_v01.png"
-    ],
-    "mode": "built-in OpenAI image generation, one material per image",
-    "logicalResolution": 128,
-    "sha256": "c296a357638879a084426bf49ebf85b741e55071f0a4bb8519ed4d404ea2675f"
-  },
-  {
-    "id": "metal",
-    "prompt": "Create ONE finished seamless repeating game material tile: Forged cool dark iron, subtle hammered facets, quiet brushed grey variations and a few restrained silver wear flecks, no rust pattern, no bolts, no panels, no strong white highlights or reflections. Match the environmental art direction of reference1 and the compact pixel character scale/palette of reference2. Rich crafted HD-2D diorama pixel-art texture, more refined and less chunky than a 64px tile: intentionally work on a 128 by 128 logical pixel grid with crisp coherent hand-placed square pixel clusters, about24 to32 harmonious colors; nearest-neighbor enlarged output, no blurry photography or random grain. Broad readable material shapes with fine controlled pixel craftsmanship. ONE flat orthographic material sample, edge-to-edge opaque square, seamless on both axes, same density and colors across all edges. Color/albedo only, neutral even diffuse lighting, no cast shadows, no directional highlights, no scene, no perspective, no objects, no borders, labels, padding, multiple samples, transparency, vignette or big painted lighting gradients.",
-    "referenceFilenames": [
-      "scene-02.png",
-      "Bren_Gameplay_CURRENT_v01.png"
-    ],
-    "mode": "built-in OpenAI image generation, one material per image",
-    "logicalResolution": 128,
-    "sha256": "bc4ecf27afe6b69419c60abee70ad2c50c4150a6a940c7ae362bac4a5d6a0733"
-  },
-  {
-    "id": "oakCanopy",
-    "prompt": "Create ONE finished seamless repeating game material tile: Dense overlapping broadleaf oak foliage clusters in muted forest jade and sage, smaller well-defined leaves in groups, subtle warmer tips and cooler recesses, entire tile filled with leaves. No sky gaps, black holes, branches, flowers or trunk. Match the environmental art direction of reference1 and the compact pixel character scale/palette of reference2. Rich crafted HD-2D diorama pixel-art texture, more refined and less chunky than a 64px tile: intentionally work on a 128 by 128 logical pixel grid with crisp coherent hand-placed square pixel clusters, about24 to32 harmonious colors; nearest-neighbor enlarged output, no blurry photography or random grain. Broad readable material shapes with fine controlled pixel craftsmanship. ONE flat orthographic material sample, edge-to-edge opaque square, seamless on both axes, same density and colors across all edges. Color/albedo only, neutral even diffuse lighting, no cast shadows, no directional highlights, no scene, no perspective, no objects, no borders, labels, padding, multiple samples, transparency, vignette or big painted lighting gradients.",
-    "referenceFilenames": [
-      "scene-02.png",
-      "Bren_Gameplay_CURRENT_v01.png"
-    ],
-    "mode": "built-in OpenAI image generation, one material per image",
-    "logicalResolution": 128,
-    "sha256": "3a23af65bf1f546c31d13b91cf18626ede8921524b20ff357c8a82f5599d3cad"
-  },
-  {
-    "id": "pineCanopy",
-    "prompt": "Create ONE finished seamless repeating game material tile: Dense overlapping deep jade and blue-green conifer needles in small fan-shaped whorls, readable fine needle clusters and soft tonal recesses, entire tile filled. No sky gaps, black holes, branches, trunk or snow. Match the environmental art direction of reference1 and the compact pixel character scale/palette of reference2. Rich crafted HD-2D diorama pixel-art texture, more refined and less chunky than a 64px tile: intentionally work on a 128 by 128 logical pixel grid with crisp coherent hand-placed square pixel clusters, about24 to32 harmonious colors; nearest-neighbor enlarged output, no blurry photography or random grain. Broad readable material shapes with fine controlled pixel craftsmanship. ONE flat orthographic material sample, edge-to-edge opaque square, seamless on both axes, same density and colors across all edges. Color/albedo only, neutral even diffuse lighting, no cast shadows, no directional highlights, no scene, no perspective, no objects, no borders, labels, padding, multiple samples, transparency, vignette or big painted lighting gradients.",
-    "referenceFilenames": [
-      "scene-02.png",
-      "Bren_Gameplay_CURRENT_v01.png"
-    ],
-    "mode": "built-in OpenAI image generation, one material per image",
-    "logicalResolution": 128,
-    "sha256": "1ba124be976778cb2152376068960ef2c1c5fab6bd995bbae5cd428ce0333009"
-  },
-  {
-    "id": "plaster",
-    "prompt": "Create ONE finished seamless repeating game material tile: Warm ivory lime plaster, softly mottled cream and pale stone grey with a few worn patches exposing finer grey aggregate; mostly quiet uniform readable surface, absolutely no timber or bricks, no large cracks. Match the environmental art direction of reference1 and the compact pixel character scale/palette of reference2. Rich crafted HD-2D diorama pixel-art texture, more refined and less chunky than a 64px tile: intentionally work on a 128 by 128 logical pixel grid with crisp coherent hand-placed square pixel clusters, about24 to32 harmonious colors; nearest-neighbor enlarged output, no blurry photography or random grain. Broad readable material shapes with fine controlled pixel craftsmanship. ONE flat orthographic material sample, edge-to-edge opaque square, seamless on both axes, same density and colors across all edges. Color/albedo only, neutral even diffuse lighting, no cast shadows, no directional highlights, no scene, no perspective, no objects, no borders, labels, padding, multiple samples, transparency, vignette or big painted lighting gradients.",
-    "referenceFilenames": [
-      "scene-02.png",
-      "Bren_Gameplay_CURRENT_v01.png"
-    ],
-    "mode": "built-in OpenAI image generation, one material per image",
-    "logicalResolution": 128,
-    "sha256": "b4d7c722f8ec99118b03cb38f70058065eb900f39faf257a0aefb82810d1a914"
-  },
-  {
-    "id": "rock",
-    "prompt": "Create ONE finished seamless repeating game material tile: Neutral weathered grey limestone cliff surface, broad interlocking strata and irregular natural angular facets, tiny fissures, low-contrast patches of grey-green lichen. No masonry courses, no cobblestones, no dark caves. Match the environmental art direction of reference1 and the compact pixel character scale/palette of reference2. Rich crafted HD-2D diorama pixel-art texture, more refined and less chunky than a 64px tile: intentionally work on a 128 by 128 logical pixel grid with crisp coherent hand-placed square pixel clusters, about24 to32 harmonious colors; nearest-neighbor enlarged output, no blurry photography or random grain. Broad readable material shapes with fine controlled pixel craftsmanship. ONE flat orthographic material sample, edge-to-edge opaque square, seamless on both axes, same density and colors across all edges. Color/albedo only, neutral even diffuse lighting, no cast shadows, no directional highlights, no scene, no perspective, no objects, no borders, labels, padding, multiple samples, transparency, vignette or big painted lighting gradients.",
-    "referenceFilenames": [
-      "scene-02.png",
-      "Bren_Gameplay_CURRENT_v01.png"
-    ],
-    "mode": "built-in OpenAI image generation, one material per image",
-    "logicalResolution": 128,
-    "sha256": "c52b509c0ea80a4d23a03b59153ce0f5cf4a11eb5625007639e0e5d5623598b5"
-  },
-  {
-    "id": "slate",
-    "prompt": "Create ONE finished seamless repeating game material tile: Overlapping small blue-grey slate roofing shingles in staggered horizontal courses; varied cool slate blue planes, fine chipped edges, restrained grey lichen specks, thin joints, convincingly layered stone rather than brick. Match the environmental art direction of reference1 and the compact pixel character scale/palette of reference2. Rich crafted HD-2D diorama pixel-art texture, more refined and less chunky than a 64px tile: intentionally work on a 128 by 128 logical pixel grid with crisp coherent hand-placed square pixel clusters, about24 to32 harmonious colors; nearest-neighbor enlarged output, no blurry photography or random grain. Broad readable material shapes with fine controlled pixel craftsmanship. ONE flat orthographic material sample, edge-to-edge opaque square, seamless on both axes, same density and colors across all edges. Color/albedo only, neutral even diffuse lighting, no cast shadows, no directional highlights, no scene, no perspective, no objects, no borders, labels, padding, multiple samples, transparency, vignette or big painted lighting gradients.",
-    "referenceFilenames": [
-      "scene-02.png",
-      "Bren_Gameplay_CURRENT_v01.png"
-    ],
-    "mode": "built-in OpenAI image generation, one material per image",
-    "logicalResolution": 128,
-    "sha256": "d97dbefa1c2a3978bdcb301257643138cb82d9aa35051d06e4f8f7cf3021d4f9"
-  },
-  {
-    "id": "wall",
-    "prompt": "Create ONE finished seamless repeating game material tile: Mortared irregular grey limestone wall masonry in lightly staggered courses, varied chunky stones with restrained edge chips and tiny moss seams. Limestone grey and warm cream, low-contrast mortar, no giant boulders or black holes. Match the environmental art direction of reference1 and the compact pixel character scale/palette of reference2. Rich crafted HD-2D diorama pixel-art texture, more refined and less chunky than a 64px tile: intentionally work on a 128 by 128 logical pixel grid with crisp coherent hand-placed square pixel clusters, about24 to32 harmonious colors; nearest-neighbor enlarged output, no blurry photography or random grain. Broad readable material shapes with fine controlled pixel craftsmanship. ONE flat orthographic material sample, edge-to-edge opaque square, seamless on both axes, same density and colors across all edges. Color/albedo only, neutral even diffuse lighting, no cast shadows, no directional highlights, no scene, no perspective, no objects, no borders, labels, padding, multiple samples, transparency, vignette or big painted lighting gradients.",
-    "referenceFilenames": [
-      "scene-02.png",
-      "Bren_Gameplay_CURRENT_v01.png"
-    ],
-    "mode": "built-in OpenAI image generation, one material per image",
-    "logicalResolution": 128,
-    "sha256": "b0fa7012307506259551528cfe4d5c939047f3faf644f62f6120bcfe40f1ddf4"
-  },
-  {
-    "id": "wood",
-    "prompt": "Create ONE finished seamless repeating game material tile: Aged warm chestnut oak planks with long vertical wood grain, occasional small knots, fine split ends and subtly varied individual boards; no bolts or crossbars. Fine hand-crafted joinery, warm muted brown, no orange saturation. Match the environmental art direction of reference1 and the compact pixel character scale/palette of reference2. Rich crafted HD-2D diorama pixel-art texture, more refined and less chunky than a 64px tile: intentionally work on a 128 by 128 logical pixel grid with crisp coherent hand-placed square pixel clusters, about24 to32 harmonious colors; nearest-neighbor enlarged output, no blurry photography or random grain. Broad readable material shapes with fine controlled pixel craftsmanship. ONE flat orthographic material sample, edge-to-edge opaque square, seamless on both axes, same density and colors across all edges. Color/albedo only, neutral even diffuse lighting, no cast shadows, no directional highlights, no scene, no perspective, no objects, no borders, labels, padding, multiple samples, transparency, vignette or big painted lighting gradients.",
-    "referenceFilenames": [
-      "scene-02.png",
-      "Bren_Gameplay_CURRENT_v01.png"
-    ],
-    "mode": "built-in OpenAI image generation, one material per image",
-    "logicalResolution": 128,
-    "sha256": "44cf02730b7ca5b33d4ba0543dff3fe27ccbcbcd8ae82c50f22ccfd886ec026e"
-  }
-]
+  "materials": [
+    {
+      "material": "cobble",
+      "source": "elyndor/assets/source/pixellab-v7/images/material-cobble/000.png",
+      "description": "ONE seamless repeatable albedo material tile for the actual 3D environment: irregular pale warm-grey limestone courtyard paving, 6 to10 small stones across each tile, restrained chipped bevels, varied stone sizes, thin grey mortar and sparse moss in joints. Each stone has subtle crafted three-tone mineral mottling and tiny wear marks, not a flat diagram or noisy speckles. Match the fine pixel craftsmanship and material character of the approved Google Drive village concept. Native128x128 refined pixel art with coherent clean clusters and subtle intrinsic surface variation; fill the complete square edge-to-edge with equally detailed edges. Both axes repeat seamlessly. Flat overhead or orthographic material scan, neutral even diffuse lighting, no cast shadows or large painted light gradients, no perspective, scene, border, padding, labels, object silhouette or sheet. No thick black outlines. Same pixel-art family as compact JRPG characters, not photographic noise.",
+      "nativeTile": [
+        64,
+        64
+      ],
+      "embeddedTile": [
+        512,
+        512
+      ]
+    },
+    {
+      "material": "wood",
+      "source": "elyndor/assets/source/pixellab-v7/images/material-wood/000.png",
+      "description": "ONE seamless repeatable albedo material tile for the actual 3D environment: aged chestnut oak planks, fine long vertical grain, a few small knots and split ends, warm muted brown board variation, fine seams, no hardware or crossbars. Match the fine pixel craftsmanship and material character of the approved Google Drive village concept. Native128x128 refined pixel art with coherent clean clusters and subtle intrinsic surface variation; fill the complete square edge-to-edge with equally detailed edges. Both axes repeat seamlessly. Flat overhead or orthographic material scan, neutral even diffuse lighting, no cast shadows or large painted light gradients, no perspective, scene, border, padding, labels, object silhouette or sheet. No thick black outlines. Same pixel-art family as compact JRPG characters, not photographic noise.",
+      "nativeTile": [
+        64,
+        64
+      ],
+      "embeddedTile": [
+        512,
+        512
+      ]
+    },
+    {
+      "material": "darkWood",
+      "source": "elyndor/assets/source/pixellab-v7/images/material-darkWood/000.png",
+      "description": "ONE seamless repeatable albedo material tile for the actual 3D environment: dark structural oak with long vertical grain and shallow splits, quiet caramel worn edges, chocolate-brown midtones, no black gaps or plank grid. Match the fine pixel craftsmanship and material character of the approved Google Drive village concept. Native128x128 refined pixel art with coherent clean clusters and subtle intrinsic surface variation; fill the complete square edge-to-edge with equally detailed edges. Both axes repeat seamlessly. Flat overhead or orthographic material scan, neutral even diffuse lighting, no cast shadows or large painted light gradients, no perspective, scene, border, padding, labels, object silhouette or sheet. No thick black outlines. Same pixel-art family as compact JRPG characters, not photographic noise.",
+      "nativeTile": [
+        64,
+        64
+      ],
+      "embeddedTile": [
+        512,
+        512
+      ]
+    },
+    {
+      "material": "slate",
+      "source": "elyndor/assets/source/pixellab-v7/images/material-slate/000.png",
+      "description": "ONE seamless repeatable albedo material tile for the actual 3D environment: small overlapping blue-grey roof slates in staggered horizontal courses, subtle three-tone mineral surfaces and tiny chipped edges, thin overlap seams and sparse grey lichen. Match the fine pixel craftsmanship and material character of the approved Google Drive village concept. Native128x128 refined pixel art with coherent clean clusters and subtle intrinsic surface variation; fill the complete square edge-to-edge with equally detailed edges. Both axes repeat seamlessly. Flat overhead or orthographic material scan, neutral even diffuse lighting, no cast shadows or large painted light gradients, no perspective, scene, border, padding, labels, object silhouette or sheet. No thick black outlines. Same pixel-art family as compact JRPG characters, not photographic noise.",
+      "nativeTile": [
+        64,
+        64
+      ],
+      "embeddedTile": [
+        512,
+        512
+      ]
+    },
+    {
+      "material": "plaster",
+      "source": "elyndor/assets/source/pixellab-v7/images/material-plaster/000.png",
+      "description": "ONE seamless repeatable albedo material tile for the actual 3D environment: quiet warm ivory lime plaster with pale cream and grey aggregate variation and a few tiny worn patches, no large cracks, beams or exposed bricks. Match the fine pixel craftsmanship and material character of the approved Google Drive village concept. Native128x128 refined pixel art with coherent clean clusters and subtle intrinsic surface variation; fill the complete square edge-to-edge with equally detailed edges. Both axes repeat seamlessly. Flat overhead or orthographic material scan, neutral even diffuse lighting, no cast shadows or large painted light gradients, no perspective, scene, border, padding, labels, object silhouette or sheet. No thick black outlines. Same pixel-art family as compact JRPG characters, not photographic noise.",
+      "nativeTile": [
+        64,
+        64
+      ],
+      "embeddedTile": [
+        512,
+        512
+      ]
+    },
+    {
+      "material": "wall",
+      "source": "elyndor/assets/source/pixellab-v7/images/material-wall/000.png",
+      "description": "ONE seamless repeatable albedo material tile for the actual 3D environment: weathered warm-grey limestone masonry with broad varied stones and soft narrow mortar, subtle mineral pixel clusters, small edge chips and restrained moss seams, no giant dark gaps. Match the fine pixel craftsmanship and material character of the approved Google Drive village concept. Native128x128 refined pixel art with coherent clean clusters and subtle intrinsic surface variation; fill the complete square edge-to-edge with equally detailed edges. Both axes repeat seamlessly. Flat overhead or orthographic material scan, neutral even diffuse lighting, no cast shadows or large painted light gradients, no perspective, scene, border, padding, labels, object silhouette or sheet. No thick black outlines. Same pixel-art family as compact JRPG characters, not photographic noise.",
+      "nativeTile": [
+        64,
+        64
+      ],
+      "embeddedTile": [
+        512,
+        512
+      ]
+    },
+    {
+      "material": "rock",
+      "source": "elyndor/assets/source/pixellab-v7/images/material-rock/002.png",
+      "description": "ONE seamless repeatable albedo material tile for the actual 3D environment: natural neutral-grey limestone strata, broad irregular angular facets, fine shallow fissures and quiet grey-green lichen, no brick courses or cave holes. Match the fine pixel craftsmanship and material character of the approved Google Drive village concept. Native128x128 refined pixel art with coherent clean clusters and subtle intrinsic surface variation; fill the complete square edge-to-edge with equally detailed edges. Both axes repeat seamlessly. Flat overhead or orthographic material scan, neutral even diffuse lighting, no cast shadows or large painted light gradients, no perspective, scene, border, padding, labels, object silhouette or sheet. No thick black outlines. Same pixel-art family as compact JRPG characters, not photographic noise.",
+      "nativeTile": [
+        64,
+        64
+      ],
+      "embeddedTile": [
+        512,
+        512
+      ]
+    },
+    {
+      "material": "earth",
+      "source": "elyndor/assets/source/pixellab-v7/images/material-earth/003.png",
+      "description": "ONE seamless repeatable albedo material tile for the actual 3D environment: muted taupe woodland earth with fine compacted soil clusters, a few small grey pebbles and tiny ochre leaves, subtle roots, no large litter piles or repeated paths. Match the fine pixel craftsmanship and material character of the approved Google Drive village concept. Native128x128 refined pixel art with coherent clean clusters and subtle intrinsic surface variation; fill the complete square edge-to-edge with equally detailed edges. Both axes repeat seamlessly. Flat overhead or orthographic material scan, neutral even diffuse lighting, no cast shadows or large painted light gradients, no perspective, scene, border, padding, labels, object silhouette or sheet. No thick black outlines. Same pixel-art family as compact JRPG characters, not photographic noise.",
+      "nativeTile": [
+        64,
+        64
+      ],
+      "embeddedTile": [
+        512,
+        512
+      ]
+    },
+    {
+      "material": "grass",
+      "source": "elyndor/assets/source/pixellab-v7/images/material-grass/001.png",
+      "description": "ONE seamless repeatable albedo material tile for the actual 3D environment: luminous mid-value sage and jade meadow turf with overlapping fine blades and tiny clover, gentle broad variation. Predominantly medium greens, very sparse dark green recesses, no black areas, flowers or big yellow tufts. Match the fine pixel craftsmanship and material character of the approved Google Drive village concept. Native128x128 refined pixel art with coherent clean clusters and subtle intrinsic surface variation; fill the complete square edge-to-edge with equally detailed edges. Both axes repeat seamlessly. Flat overhead or orthographic material scan, neutral even diffuse lighting, no cast shadows or large painted light gradients, no perspective, scene, border, padding, labels, object silhouette or sheet. No thick black outlines. Same pixel-art family as compact JRPG characters, not photographic noise.",
+      "nativeTile": [
+        64,
+        64
+      ],
+      "embeddedTile": [
+        512,
+        512
+      ]
+    },
+    {
+      "material": "bark",
+      "source": "elyndor/assets/source/pixellab-v7/images/material-bark/001.png",
+      "description": "ONE seamless repeatable albedo material tile for the actual 3D environment: weathered oak bark, broad small interlocking vertical ridges in muted chestnut and ash-grey, shallow fine crevices and tiny lichen flecks, no trunk outline. Match the fine pixel craftsmanship and material character of the approved Google Drive village concept. Native128x128 refined pixel art with coherent clean clusters and subtle intrinsic surface variation; fill the complete square edge-to-edge with equally detailed edges. Both axes repeat seamlessly. Flat overhead or orthographic material scan, neutral even diffuse lighting, no cast shadows or large painted light gradients, no perspective, scene, border, padding, labels, object silhouette or sheet. No thick black outlines. Same pixel-art family as compact JRPG characters, not photographic noise.",
+      "nativeTile": [
+        64,
+        64
+      ],
+      "embeddedTile": [
+        512,
+        512
+      ]
+    },
+    {
+      "material": "cloth",
+      "source": "elyndor/assets/source/pixellab-v7/images/material-cloth/000.png",
+      "description": "ONE seamless repeatable albedo material tile for the actual 3D environment: quiet unpatterned cream linen canvas, subtle fine woven pixel threads and warm ivory worn variation, completely flat, no folds or seams. Match the fine pixel craftsmanship and material character of the approved Google Drive village concept. Native128x128 refined pixel art with coherent clean clusters and subtle intrinsic surface variation; fill the complete square edge-to-edge with equally detailed edges. Both axes repeat seamlessly. Flat overhead or orthographic material scan, neutral even diffuse lighting, no cast shadows or large painted light gradients, no perspective, scene, border, padding, labels, object silhouette or sheet. No thick black outlines. Same pixel-art family as compact JRPG characters, not photographic noise.",
+      "nativeTile": [
+        64,
+        64
+      ],
+      "embeddedTile": [
+        512,
+        512
+      ]
+    },
+    {
+      "material": "metal",
+      "source": "elyndor/assets/source/pixellab-v7/images/material-metal-v8/000.png",
+      "description": "Seamless flat STEEL METAL material texture only. A single continuous sheet of cool blue-grey forged steel viewed straight on, fine directional brushed grain, a few tiny restrained silver scratches, subtle dark-to-light metal patina. High resolution crisp 128x128 PIXEL ART with coherent clustered shading, same navy, steel grey, ivory and antique-gold palette as the approved Elyndor fantasy concept. Very low contrast base metal for mapping onto 3D sword blades, iron bands, winches, hinges and tools. No rocks, stones, scales, cobblestones, masonry, tiles, seams, borders, rivets, symbols, identifiable objects, perspective or cast shadows. Entire square is solid uninterrupted opaque METAL surface.",
+      "nativeTile": [
+        64,
+        64
+      ],
+      "embeddedTile": [
+        512,
+        512
+      ]
+    },
+    {
+      "material": "oakCanopy",
+      "source": "elyndor/assets/source/pixellab-v7/images/material-oakCanopy/000.png",
+      "description": "ONE seamless repeatable albedo material tile for the actual 3D environment: dense overlapping small broadleaf oak clusters in medium jade and sage, crisp small groups of leaves with warmer tips and soft cool recesses. Entire tile filled with leaves, no black holes, trunk or sky gaps. Match the fine pixel craftsmanship and material character of the approved Google Drive village concept. Native128x128 refined pixel art with coherent clean clusters and subtle intrinsic surface variation; fill the complete square edge-to-edge with equally detailed edges. Both axes repeat seamlessly. Flat overhead or orthographic material scan, neutral even diffuse lighting, no cast shadows or large painted light gradients, no perspective, scene, border, padding, labels, object silhouette or sheet. No thick black outlines. Same pixel-art family as compact JRPG characters, not photographic noise.",
+      "nativeTile": [
+        64,
+        64
+      ],
+      "embeddedTile": [
+        512,
+        512
+      ]
+    },
+    {
+      "material": "pineCanopy",
+      "source": "elyndor/assets/source/pixellab-v7/images/material-pineCanopy/002.png",
+      "description": "ONE seamless repeatable albedo material tile for the actual 3D environment: overlapping deep jade and blue-green conifer needle fans, finely grouped whorls and soft recesses, no black holes, trunk or sky gaps. Match the fine pixel craftsmanship and material character of the approved Google Drive village concept. Native128x128 refined pixel art with coherent clean clusters and subtle intrinsic surface variation; fill the complete square edge-to-edge with equally detailed edges. Both axes repeat seamlessly. Flat overhead or orthographic material scan, neutral even diffuse lighting, no cast shadows or large painted light gradients, no perspective, scene, border, padding, labels, object silhouette or sheet. No thick black outlines. Same pixel-art family as compact JRPG characters, not photographic noise.",
+      "nativeTile": [
+        64,
+        64
+      ],
+      "embeddedTile": [
+        512,
+        512
+      ]
+    },
+    {
+      "material": "lightFacets",
+      "source": "elyndor/assets/source/pixellab-v7/images/material-lightFacets/002.png",
+      "description": "ONE seamless repeatable albedo material tile for the actual 3D environment: large irregular internal aquamarine crystal facets, translucent-looking soft mint and turquoise triangular planes with a few restrained amber threads, no gem outline or baked glow. Match the fine pixel craftsmanship and material character of the approved Google Drive village concept. Native128x128 refined pixel art with coherent clean clusters and subtle intrinsic surface variation; fill the complete square edge-to-edge with equally detailed edges. Both axes repeat seamlessly. Flat overhead or orthographic material scan, neutral even diffuse lighting, no cast shadows or large painted light gradients, no perspective, scene, border, padding, labels, object silhouette or sheet. No thick black outlines. Same pixel-art family as compact JRPG characters, not photographic noise.",
+      "nativeTile": [
+        64,
+        64
+      ],
+      "embeddedTile": [
+        512,
+        512
+      ]
+    }
+  ]
+}
