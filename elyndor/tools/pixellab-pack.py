@@ -57,6 +57,11 @@ def pack_character(root,item,encode,audit,strict):
   # reviewed complete-hair poses without changing any native pixels.
   idle=animations.get('idle-v7',{}).get('north',[])
   if len(idle)==4:animations['idle-v7']['north']=[idle[1],idle[2]]
+ if name=='brenAscended':
+  # Reject the recoil turn that looks away from the attacker. These native
+  # flinch and recovery poses retain the reviewed left-facing helmet profile.
+  recoil=animations.get('recoil-v10',{}).get('west',[])
+  if len(recoil)==9:animations['recoil-v10']['west']=[recoil[i] for i in [0,1,7,8]]
  native={}
  def load(path):
   p=(folder/path).resolve();p.relative_to((root/'elyndor/assets/source/pixellab-v7').resolve())
@@ -78,7 +83,7 @@ def pack_character(root,item,encode,audit,strict):
   if run:keys['run_'+key]=run
  direction='west' if name in PARTY or name.endswith('Ascended') else 'east'
  for action in ['battleIdle','attack','cast','recoil']:
-  group=animations.get(action+'-v8',animations.get(action+'-v7',{}))
+  group=animations.get(action+'-v10',animations.get(action+'-v8',animations.get(action+'-v7',{})))
   for view,clip in group.items():keys[action+'_'+view.replace('-','')]=clip
   clip=group.get(direction,[])
   if name in FIGHTERS and not clip:missing.append(action+':'+direction)
@@ -111,6 +116,7 @@ def pack_character(root,item,encode,audit,strict):
  out=root/'elyndor/assets/packed';atlas.resize((atlas.width*2,atlas.height*2),Image.Resampling.NEAREST).save(out/(name+'.png'))
  meta={'url':encode(atlas),'w':width,'h':height,'unit':unit,'gutter':gutter,'cols':cols,'rows':rows,'frames':{k:[index[p] for p in clip] for k,clip in keys.items()},'frameRate':{k:3 for k in keys if k.startswith('idle_')},'pixelLab':True,'sourceCharacterId':expected}
  meta['impactFrame']={'attack':round((len(keys['attack'])-1)*(.75 if name in ['bren','brenAscended','tavin','tavinAscended'] else .55)),'cast':round((len(keys['cast'])-1)*.5)}
+ if name in ['bren','brenAscended'] and animations.get('attack-v10'):meta['impactFrame']['attack']=4
  if name in ['mira','lysa']:meta['sourceClipAliases']={'cast-v8':'attack-v8'}
  return meta,load(rotations['south']),records,missing
 
@@ -150,6 +156,12 @@ def build_assets(root,encode,audit,warnings,strict):
   assets['portraits'][key]=encode(im)
   w,h=im.size;pad=manifest.get('portraitPadding',{}).get(key,0)
   face=im.crop((round(w*.15),max(0,pad-24),round(w*.85),pad+round((h-pad)*.54)));assets['portraitFaces'][key]=encode(face)
+ # Small HUD faces are separately authored head portraits, not cropped busts.
+ for key,path in manifest.get('hudPortraits',{}).items():
+  p=(root/path).resolve();p.relative_to(folder.resolve());im=Image.open(p).convert('RGBA')
+  if im.size!=(128,128) or np.mean(np.array(im)[:,:,3]==0)<.1:raise ValueError('Invalid HUD portrait: '+key)
+  assets['portraitFaces'][key]=encode(im)
+ if strict and set(PARTY)-set(manifest.get('hudPortraits',{})):raise ValueError('Missing dedicated party HUD portraits')
  for alias,target in manifest.get('portraitAliases',{}).items():
   if target not in assets['portraits']:raise ValueError('Missing portrait alias source '+target)
   assets['portraits'][alias]=assets['portraits'][target];assets['portraitFaces'][alias]=assets['portraitFaces'][target]

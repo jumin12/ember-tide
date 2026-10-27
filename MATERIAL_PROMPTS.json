@@ -266,5 +266,10 @@
         512
       ]
     }
-  ]
+  ],
+  "worldDesignRevision": {
+    "granite": "128x128 opaque neutral gray river granite albedo. Fine pixel grain and muted mineral veins; no painted boulder, face, outline, perspective or baked shadows. Shared Riverland palette. Geometry supplies volume.",
+    "brenCombat": "Preserve the reviewed left-profile face and planted boots, exact native dimensions, gear and palette. Sword in right hand moves upper-left, left at contact, then lower-left; no head turn, mirroring or painted effects. Individually correct three strike keyframes.",
+    "hudPortraits": "128x128 transparent detailed head portraits of the five party characters, using their approved original concepts. Complete hair, readable eyes and clean facial anatomy, shared palette; separately authored for the compact HUD, not cropped dialogue busts."
+  }
 }

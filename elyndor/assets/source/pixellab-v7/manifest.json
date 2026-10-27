@@ -302,7 +302,7 @@
     "slate": "elyndor/assets/source/pixellab-v7/images/material-slate/000.png",
     "plaster": "elyndor/assets/source/pixellab-v7/images/material-plaster/000.png",
     "wall": "elyndor/assets/source/pixellab-v7/images/material-wall/000.png",
-    "rock": "elyndor/assets/source/pixellab-v7/images/material-rock/002.png",
+    "rock": "elyndor/assets/source/pixellab-v7/images/rock-v10/000.png",
     "earth": "elyndor/assets/source/pixellab-v7/images/earth-surface-v9/image.png",
     "grass": "elyndor/assets/source/pixellab-v7/images/grass-surface-v9/image.png",
     "bark": "elyndor/assets/source/pixellab-v7/images/material-bark/001.png",
@@ -419,5 +419,12 @@
     "stone": "elyndor/assets/source/pixellab-v7/images/guide-stone/000.png",
     "wolf": "elyndor/assets/source/pixellab-v7/characters/wolf/Idle/rotations/south-east.png",
     "boar": "elyndor/assets/source/pixellab-v7/characters/boar/Idle/rotations/south-east.png"
+  },
+  "hudPortraits": {
+    "bren": "elyndor/assets/source/pixellab-v7/images/hud-bren-v10/000.png",
+    "soren": "elyndor/assets/source/pixellab-v7/images/hud-soren-v10/000.png",
+    "tavin": "elyndor/assets/source/pixellab-v7/images/hud-tavin-v10/000.png",
+    "mira": "elyndor/assets/source/pixellab-v7/images/hud-mira-v10/002.png",
+    "lysa": "elyndor/assets/source/pixellab-v7/images/hud-lysa-v10/002.png"
   }
 }

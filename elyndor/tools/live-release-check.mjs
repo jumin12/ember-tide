@@ -1,5 +1,5 @@
 import{chromium}from'playwright';import fs from'node:fs';import crypto from'node:crypto';
-const out='output/elyndor/pixellab-v9/live',release=JSON.parse(fs.readFileSync('release.json','utf8'));
+const out='output/elyndor/pixellab-v10/live',release=JSON.parse(fs.readFileSync('release.json','utf8'));
 fs.mkdirSync(out,{recursive:true});
 const browser=await chromium.launch({headless:true,channel:'chrome',args:['--enable-webgl','--ignore-gpu-blocklist','--use-angle=d3d11']});
 const page=await browser.newPage({viewport:{width:1440,height:900}}),errors=[],report={url:'https://jumin12.github.io/ember-tide/'};page.setDefaultTimeout(240000);

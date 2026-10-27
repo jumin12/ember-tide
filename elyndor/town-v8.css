@@ -27,7 +27,7 @@
 .title-scene i{background:#e8cf84;box-shadow:0 0 11px #e8cf84}
 .hud-actions button{backdrop-filter:blur(10px)}
 .portrait-frame{position:relative}
-.portrait-frame .portrait,#menu-party .portrait-frame .portrait{position:absolute!important;left:50%!important;top:50%!important;width:118%!important;height:118%!important;max-width:none!important;margin:0!important;transform:translate(-50%,-50%) rotate(-45deg)!important;object-fit:contain!important;object-position:center!important;flex:none!important}
+.portrait-frame .portrait,#menu-party .portrait-frame .portrait{position:absolute!important;left:50%!important;top:50%!important;width:100%!important;height:100%!important;max-width:none!important;margin:0!important;transform:translate(-50%,-50%) rotate(-45deg)!important;object-fit:contain!important;object-position:center!important;flex:none!important}
 #movement-hint{background:linear-gradient(90deg,#131820a0,transparent);padding:8px 12px;font-size:10px}
 .menu-header h2{letter-spacing:.01em}.menu-meta{font:12px Georgia;color:#dbc292}.menu-meta button{font-family:system-ui}
 .menu-footer{font-size:10px}.menu-scrim{background:#10182055;backdrop-filter:blur(7px)}

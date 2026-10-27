@@ -58,7 +58,7 @@ function findRoute(from,to,avoid=[]){
  const pop=()=>{const top=heap[0],last=heap.pop();if(heap.length){let i=0;while(i*2+1<heap.length){let c=i*2+1;if(c+1<heap.length&&heap[c+1].f<heap[c].f)c++;if(heap[c].f>=last.f)break;heap[i]=heap[c];i=c;}heap[i]=last;}return top;};
  const free=(x,z)=>{const k=key(x,z);if(freeCache.has(k))return freeCache.get(k);const p={x:x*step,z:z*step},ok=staticFree(p.x,p.z,.43)&&!crowd.some(a=>dist(a,p)<.92);freeCache.set(k,ok);return ok;};
  const sk=key(...start);seen.set(sk,0);positions.set(sk,start);push({x:start[0],z:start[1],g:0,f:0});let end=null;
- for(let count=0;heap.length&&count<6500;count++){const cur=pop(),ck=key(cur.x,cur.z);if(closed.has(ck))continue;closed.add(ck);const cp={x:cur.x*step,z:cur.z*step};
+ for(let count=0;heap.length&&count<6500;count++){const cur=pop(),ck=key(cur.x,cur.z);if(closed.has(ck))continue;closed.add(ck);const cp=ck===sk?{x:from.x,z:from.z}:{x:cur.x*step,z:cur.z*step};
   if(Math.hypot(cur.x-goal[0],cur.z-goal[1])<1.5&&edgeFree(cp,to,.4)){end=ck;break;}
   for(const[dx,dz]of[[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]]){const x=cur.x+dx,z=cur.z+dz,nk=key(x,z);if(closed.has(nk)||!free(x,z))continue;const p={x:x*step,z:z*step};if(!edgeFree(cp,p,.43))continue;const g=cur.g+Math.hypot(dx,dz);if(g>=(seen.get(nk)??Infinity))continue;seen.set(nk,g);parent.set(nk,ck);positions.set(nk,[x,z]);push({x,z,g,f:g+Math.hypot(x-goal[0],z-goal[1])});}
  }

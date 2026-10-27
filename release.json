@@ -1,28 +1,28 @@
 {
-  "release": "elyndor-2026-10-26-town-events-v9",
+  "release": "elyndor-2026-10-27-world-design-v10",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 5410963,
-    "sha256": "606199703bcba2c7ae11f624b5598ed6383e12bea92663ed07aaba8189cdf0f3",
+    "bytes": 5389366,
+    "sha256": "dede343fb82dc275aeb4c3853b05dba0f5b3f73dcfbe7b4e7b4388195c431013",
     "offline": true
   },
   "changes": [
-    "Stable locally bounded waterfalls excluded from static landscape culling",
-    "One sluice-height update, gradual downstream flow, pump restoration, reactive wheel and fountain supply",
-    "Native PixelLab strength animation for Bren; physical and magical work use separate actions",
-    "Town wildlife exits through the eastern woodland before continuing; the elder runs over and automatically delivers the report",
-    "Current storyboard aid-office sequence and peaceful scout rescue",
-    "Full attack recovery frames, bounded melee movement, planted ranged attacks and synchronized projectile hits",
-    "Portraits inset upward and right from the trim; menu focus and flexible layout fixes",
-    "Accepted 128-pixel PixelLab grass and earth swatches, organic material variation, softened path edges and consistent main-road paving"
+    "Continuous curved waterfalls share river bank widths, endpoint normals, physical shading, ripples and two-height reflections",
+    "Settlement streets rerouted around the fountain, forge, market, canal wall and archive; forge and mill entrances repositioned",
+    "Local pathfinding uses the actual starting position, fixing bank-side click-to-walk failures",
+    "Shop counter moved beside its doorway and ground foliage cleared from streets and stair approaches",
+    "Rounded boulders with new PixelLab granite albedo; bank stones embedded in the actual terrain",
+    "New native left-facing Bren and Ascended combat loops with three individually corrected sword strike poses and synchronized contact",
+    "Five dedicated transparent PixelLab HUD head portraits, separately packed from the dialogue busts"
   ],
   "art": {
     "generator": "PixelLab",
     "nativeDesignFamilies": 41,
     "spriteFamilies": 42,
-    "packedSpritePoses": 4925,
+    "packedSpritePoses": 4917,
     "portraits": 38,
+    "dedicatedHudPortraits": 5,
     "worldImages": 39,
     "materials": 15,
     "logicalTileSizes": [
@@ -40,6 +40,14 @@
     "spritePixelAudit": true,
     "sourceCropWarnings": 0,
     "regressionChecks": [
+      {
+        "name": "layout",
+        "pass": true
+      },
+      {
+        "name": "world",
+        "pass": true
+      },
       {
         "name": "campaign",
         "pass": true
@@ -103,6 +111,10 @@
     "townNpcOverlaps": 0,
     "townBuildingCollisions": 0,
     "reactiveReflectionsAndShadows": true,
+    "blockedStreetSamples": 0,
+    "townInteractionRoutes": 108,
+    "waterJoinMaxGapMetres": 8.004110842636442e-06,
+    "reviewedBrenRenderedFrames": 18,
     "browserErrors": []
   },
   "performance": {
@@ -114,8 +126,8 @@
     "samples": [
       {
         "area": "bridge",
-        "fps": 71.4,
-        "p95FrameMs": 14.4,
+        "fps": 60.4,
+        "p95FrameMs": 22.1,
         "buffer": [
           1440,
           900
@@ -124,8 +136,8 @@
       },
       {
         "area": "square",
-        "fps": 71.9,
-        "p95FrameMs": 14.6,
+        "fps": 71.8,
+        "p95FrameMs": 14.5,
         "buffer": [
           1440,
           900
@@ -134,8 +146,8 @@
       },
       {
         "area": "forest",
-        "fps": 71.7,
-        "p95FrameMs": 14.5,
+        "fps": 72.0,
+        "p95FrameMs": 14.3,
         "buffer": [
           1440,
           900
@@ -143,7 +155,7 @@
         "scale": 1
       }
     ],
-    "singleFileReductionPercent": 80.31,
+    "singleFileReductionPercent": 80.39,
     "scope": "Short local hardware-accelerated samples using actual render counts. Software WebGL remains substantially slower."
   },
   "status": "Integrated playable regional release"
