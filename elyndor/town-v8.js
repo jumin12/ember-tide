@@ -11,7 +11,7 @@ const roadsBeforeBrook=roadInfo;
 roadInfo=function(x,z){const r=roadsBeforeBrook(x,z);return inBrook(x,z)?{...r,kind:'lane'}:r;};
 function brookChannel(z){return -163-3*Math.sin(clamp((z-30)/70,0,1)*Math.PI)+30*smooth(92,122,z)+7*smooth(140,180,z);}
 function brookWidth(z){return 4.2+.42*Math.sin(z*.17)+.28*Math.sin(z*.053)+1.05*smooth(104,117,z);}
-function brookWaterLevel(z){return 4.55-3*smooth(79.2,80.8,z)-2.95*smooth(97.2,98.8,z);}
+function brookWaterLevel(z){return 6.15-1.6*smooth(63,76,z)-3*smooth(79.2,80.8,z)-2.95*smooth(97.2,98.8,z);}
 const bridgeBeforeBrook=makeBridge;
 makeBridge=function(x,z,length=20,width=6,stone=true){
  if(Math.abs(x+133)>.1||z!==120)return bridgeBeforeBrook(x,z,length,width,stone);
@@ -224,7 +224,7 @@ buildSettlements=function(){
  brookStairs(-124,79.5,5.2,7,1.3,3.8);brookStairs(-101,79.5,5,7,1.3,3.8);brookStairs(-140,75.5,4.8,7,3.8,6.2);
  for(let i=0;i<10;i++){const xx=-128.5-(i+.5)*.7,top=3.8+2.4*(i+1)/10;box(xx,(top+3.8)/2-.03,68.5,.735,top-3.8+.06,5,'cobble','#d9dccb');box(xx+.29,top+.015,68.5,.13,.06,5.1,'wall','#edf0e5');}
  brookFountain();
- bench(-130,60,Math.PI/2);bench(-115,70,-Math.PI/2);
+ bench(-130,60,Math.PI/2);bench(-110,73,-Math.PI/2);
  for(const f of[[-121,105,-103,105],[-100,103,-100,95],[-103,88,-100,88],[-116,72,-112,72],[-108,57,-100,57],[-100,57,-100,63],[-157,82,-151,82],[-161,100,-155,100],[-93,119,-81,119],[-81,119,-81,112],[-120,36,-108,36],[-96,130,-82,130],[-82,130,-82,122],[-96,130,-96,124]])brookFence(...f);
  for(const [x,z]of[[-146,117],[-125,117],[-128,74],[-130,63],[-111,65],[-108,52],[-146,75],[-159,80],[-160,66],[-106,102],[-95,109]]){const y=heightAt(x,z);box(x,y+1.7,z,.17,3.4,.17,'darkWood','#8a6041');beam(V3(x,y+3.4,z),V3(x+.7,y+3.4,z),.07,'wood','#aa7d51');lantern(x+.7,y+2.96,z);}
  world.userData.brookstead={terraces:[1.3,3.8,6.2],referenceLayout:true};
@@ -237,20 +237,20 @@ function brookRibbon(z0,z1,center,width,main=false){
  for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){const a=j*(cols+1)+i;index.push(a,a+cols+1,a+1,a+1,a+cols+1,a+cols+2);}
  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(verts,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));g.setAttribute('riverAcross',new THREE.Float32BufferAttribute(across,1));g.setIndex(index);g.computeVertexNormals();return g;
 }
-function brookWaterfall(z,top,bottom){
+function brookWaterfall(z,top,bottom,halfSpan=.8){
  const x=brookChannel(z),positions=[],uv=[],across=[],normals=[],indices=[],cols=12,rows=32;
  // The lip and toe share the river's exact bank widths, vertices and normals.
  for(let j=0;j<=rows;j++)for(let i=0;i<=cols;i++){
-  const t=j/rows,zz=z-.8+t*1.6,a=i/cols*2-1,yy=mix(top,bottom,t*t*(3-2*t));
+  const t=j/rows,zz=z-halfSpan+t*halfSpan*2,a=i/cols*2-1,yy=mix(top,bottom,t*t*(3-2*t));
   positions.push(brookChannel(zz)+a*(brookWidth(zz)+1.05)-x,yy-top,zz-z);
-  const n=V3(0,1,-(bottom-top)*6*t*(1-t)/1.6).normalize();normals.push(n.x,n.y,n.z);uv.push(i/cols,t);across.push(a);
+  const n=V3(0,1,-(bottom-top)*6*t*(1-t)/(halfSpan*2)).normalize();normals.push(n.x,n.y,n.z);uv.push(i/cols,t);across.push(a);
  }
  for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){const a=j*(cols+1)+i;indices.push(a,a+cols+1,a+1,a+1,a+cols+1,a+cols+2);}
  const g=new THREE.BufferGeometry();for(const [name,data,size]of[['position',positions,3],['normal',normals,3],['uv',uv,2],['riverAcross',across,1]])g.setAttribute(name,new THREE.Float32BufferAttribute(data,size));g.setIndex(indices);g.computeBoundingSphere();g.computeBoundingBox();
- const old=water;buildWater({waterX:0});const o=water;water=old;o.geometry.dispose();o.geometry=g;o.position.set(x,top,z);o.userData.dynamicWater=true;o.userData.waterfall=true;o.userData.join={z,top,bottom,halfSpan:.8};
+ const old=water;buildWater({waterX:0});const o=water;water=old;o.geometry.dispose();o.geometry=g;o.position.set(x,top,z);o.userData.dynamicWater=true;o.userData.waterfall=true;o.userData.join={z,top,bottom,halfSpan};
  const pools=world.userData.waterPools,upper=pools.find(p=>p.position.y===top),lower=pools.find(p=>p.position.y===bottom)??old,r=o.material.userData.riverReflection;
- r.matrix=lower.userData.reflMatrix;r.texture=lower.userData.poolTarget?.texture??reflectionTarget.texture;r.upperMatrix=upper.userData.reflMatrix;r.upperTexture=upper.userData.poolTarget.texture;r.cascade=z;
- const bounds=g.boundingBox.clone().translate(o.position);upper.userData.poolPatches.push(bounds);if(lower.userData.poolPatches)lower.userData.poolPatches.push(bounds);
+ r.matrix=lower.userData.reflMatrix;r.texture=lower.userData.poolTarget?.texture??reflectionTarget.texture;r.upperMatrix=upper.userData.reflMatrix;r.upperTexture=upper.userData.poolTarget.texture;r.cascade=z;r.span=halfSpan;
+ const bounds=g.boundingBox.clone().translate(o.position);o.userData.joinBounds=bounds;upper.userData.poolPatches.push(bounds);if(lower.userData.poolPatches)lower.userData.poolPatches.push(bounds);
  world.userData.brookFalls??=[];world.userData.brookFalls.push(o.material);world.userData.brookFallObjects??=[];world.userData.brookFallObjects.push(o);
  const w=(brookWidth(z)+1.05)*2,fp=[],random=seeded(Math.round(z*87));for(let i=0;i<80;i++)fp.push((random()-.5)*w,.08+random()*.18,.8+random()*.9);
  const fg=new THREE.BufferGeometry();fg.setAttribute('position',new THREE.Float32BufferAttribute(fp,3));fg.computeBoundingSphere();
@@ -261,19 +261,20 @@ function brookWaterfall(z,top,bottom){
  const foam=new THREE.Points(fg,fm);foam.position.set(x,bottom,z);foam.renderOrder=2;foam.userData.dynamicWater=true;world.add(foam);
 }
 buildGlobalWater=function(){
+ const initialHead=state.flags.gate_open?(state.flags.pump_repaired?4.68:4.85):6.15;brookHydraulics.head.value=initialHead;
  brookHydraulics.flow.value=state.flags.gate_open?(state.flags.pump_repaired?.72:.28):.025;brookHydraulics.time.value=0;
  buildWater({waterX:-43});water.geometry.dispose();water.geometry=brookRibbon(-290,210,riverX,z=>riverWidth(z)+2);const main=water;
  // Add the lower branch to the main plane without changing its reflection level.
  const branch=brookRibbon(98.8,221,brookChannel,z=>brookWidth(z)+1.05),merged=new THREE.BufferGeometry(),a=main.geometry.toNonIndexed(),b=branch.toNonIndexed();
  for(const key of['position','normal','uv','riverAcross']){const aa=a.attributes[key],bb=b.attributes[key],data=new Float32Array(aa.array.length+bb.array.length);data.set(aa.array);data.set(bb.array,aa.array.length);merged.setAttribute(key,new THREE.BufferAttribute(data,aa.itemSize));}main.geometry.dispose();main.geometry=merged;a.dispose();b.dispose();branch.dispose();
  world.userData.waterPools=[];
- for(const [z0,z1,level]of[[-290,79.2,4.55],[80.8,97.2,1.55]]){
-  buildWater({waterX:-139});const pool=water;pool.geometry.dispose();pool.geometry=brookRibbon(z0,z1,brookChannel,z=>brookWidth(z)+1.05);pool.position.y=level;pool.userData.terracedWater=true;
+ for(const [z0,z1,level]of[[-290,69.8,initialHead],[70.2,79.2,4.55],[80.8,97.2,1.55]]){
+  buildWater({waterX:-139});const pool=water;pool.geometry.dispose();pool.geometry=brookRibbon(z0,z1,brookChannel,z=>brookWidth(z)+1.05);pool.position.y=level;pool.userData.terracedWater=true;pool.userData.waterRole=z1<70?'reservoir':z0<80?'headrace':'millrace';
   const target=new THREE.WebGLRenderTarget(scenery.software?256:640,scenery.software?144:360),compile=pool.material.onBeforeCompile;pool.userData.poolTarget=target;
   pool.material.onBeforeCompile=sh=>{compile(sh);sh.uniforms.reflectionTex.value=target.texture;};pool.material.customProgramCacheKey=()=> 'brook-pool-'+level;
-  pool.geometry.computeBoundingBox();pool.userData.poolBounds=pool.geometry.boundingBox.clone().translate(V3(0,level,0));pool.userData.poolPatches=[];for(let z=z0;z<z1;z+=20){const xs=[brookChannel(z),brookChannel(Math.min(z+20,z1))];pool.userData.poolPatches.push(new THREE.Box3(V3(Math.min(...xs)-6,level-.1,z),V3(Math.max(...xs)+6,level+.1,Math.min(z+20,z1))));}world.userData.waterPools.push(pool);
+  pool.geometry.computeBoundingBox();pool.userData.poolBounds=pool.geometry.boundingBox.clone().translate(V3(0,level,0));pool.userData.poolPatches=[];for(let z=z0;z<z1;z+=20){const xs=[brookChannel(z),brookChannel(Math.min(z+20,z1))];pool.userData.poolPatches.push(new THREE.Box3(V3(Math.min(...xs)-6,level-.1,z),V3(Math.max(...xs)+6,level+.1,Math.min(z+20,z1))));}pool.userData.levelPatchCount=pool.userData.poolPatches.length;world.userData.waterPools.push(pool);
  }
- water=main;brookWaterfall(80,4.55,1.55);brookWaterfall(98,1.55,-1.4);
+ water=main;brookWaterfall(70,initialHead,4.55,.2);brookWaterfall(80,4.55,1.55);brookWaterfall(98,1.55,-1.4);
  world.userData.connectedWater=true;world.userData.waterCourse=CANAL_COURSE;world.userData.waterPatches=[];
  for(let z=-290;z<210;z+=24){const a=riverX(z),b=riverX(z+24);world.userData.waterPatches.push(new THREE.Box3(V3(Math.min(a,b)-10,-1.6,z),V3(Math.max(a,b)+10,-1.2,z+24)));}
  for(let z=98;z<221;z+=20){const a=brookChannel(z),b=brookChannel(z+20);world.userData.waterPatches.push(new THREE.Box3(V3(Math.min(a,b)-6,-1.6,z),V3(Math.max(a,b)+6,-1.2,z+20)));}

@@ -2,7 +2,7 @@ import {chromium} from 'playwright';import fs from 'node:fs';import path from 'n
 const out='output/elyndor/continuous-verify';fs.mkdirSync(out,{recursive:true});const report={};const errors=[];
 const browser=await chromium.launch({headless:true,...(process.env.ELY_NATIVE?{channel:'chrome'}:{}),args:['--allow-file-access-from-files','--enable-webgl','--ignore-gpu-blocklist',process.env.ELY_NATIVE?'--use-angle=d3d11':'--use-angle=swiftshader']});const page=await browser.newPage({viewport:{width:1280,height:800}});page.setDefaultTimeout(240000);page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
 try{
- await page.goto(pathToFileURL(path.resolve(process.argv[2]??'elyndor.preview.html')).href,{timeout:240000});await page.waitForFunction(()=>!!window.__ely);await page.click('#start-btn');await page.keyboard.press('Space');await page.keyboard.press('Space');
+ await page.goto(pathToFileURL(path.resolve(process.argv[2]??'elyndor.preview.html')).href,{timeout:240000});await page.waitForFunction(()=>!!window.__ely);await page.click('#start-btn');await page.waitForFunction(()=>document.querySelector('#load-screen').classList.contains('hidden'),null,{timeout:120000});await page.keyboard.press('Space');await page.keyboard.press('Space');
  await page.evaluate(()=>{__ely.state.settings.voices=false;__ely.state.settings.volume=0;__ely.state.encounterDistance=-100000;});
  console.log('Controls');
  report.controls=[];
@@ -33,8 +33,8 @@ try{
      else if(g.state.characters[low].hp/g.stats(low).hp<.4&&q==='tavin'&&c.mp>=8){g.battleAction('skill',1);g.battleAllyTarget(g.state.members.indexOf(low));}
      else if(g.state.characters[low].hp/g.stats(low).hp<.35&&g.state.items.herb>0){g.battleAction('item','herb');g.battleAllyTarget(g.state.members.indexOf(low));}
      else if(c.charge>=100&&!c.ascended&&isAwake(q)){document.querySelector('[data-action="ascend"]').click();asc=true;}
-     else{g.battleAction('attack');for(let k=0;k<3&&g.battle?.combo;k++){g.battle.combo.t=g.battle.combo.duration*.75;g.comboHit();}}
-    }}wait(.1);
+       else g.battleAction('attack');
+      }}if(b.status==='combo'&&b.combo&&!b.combo.input&&b.combo.t/b.combo.duration>=.67&&b.combo.t/b.combo.duration<=.84)g.comboHit();wait(.05);
    }throw Error('Battle did not finish '+start);
   }
   drain();state.beat=0;state.flags={};state.restoredLights=[];state.members=['bren','soren'];setupParty([player.x,player.z]);restoreParty();

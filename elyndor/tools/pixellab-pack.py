@@ -168,7 +168,7 @@ def build_assets(root,encode,audit,warnings,strict):
  for key,path in manifest.get('guide',{}).items():
   p=(root/path).resolve();p.relative_to(folder.resolve());assets['guide'][key]=encode(Image.open(p).convert('RGBA'))
  required_images={'cobble','wood','slate','plaster','grass','rock','earth','wall','bark','cloth','metal','darkWood','leaves','fern','flowers','ivy','grassBlades','shrub','lightFacets','regionMap','oakCanopy','pineCanopy','uiFrame'}
- required_images.update({'door','window','crateFace','barrelStave','innSign','shopSign','forgeSign'})
+ required_images.update({'door','window','crateFace','barrelStave','innSign','shopSign','forgeSign','fxFire','fxSmoke','fxEnergy','fxIce'})
  required_images.update('icon_'+key for key in ['herb','ether','revive','blade','coat','report','notes','component','order'])
  if strict:
   if required_images-set(assets['images']):raise ValueError('Incomplete PixelLab world art '+str(required_images-set(assets['images'])))

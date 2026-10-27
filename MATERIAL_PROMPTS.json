@@ -271,5 +271,11 @@
     "granite": "128x128 opaque neutral gray river granite albedo. Fine pixel grain and muted mineral veins; no painted boulder, face, outline, perspective or baked shadows. Shared Riverland palette. Geometry supplies volume.",
     "brenCombat": "Preserve the reviewed left-profile face and planted boots, exact native dimensions, gear and palette. Sword in right hand moves upper-left, left at contact, then lower-left; no head turn, mirroring or painted effects. Individually correct three strike keyframes.",
     "hudPortraits": "128x128 transparent detailed head portraits of the five party characters, using their approved original concepts. Complete hair, readable eyes and clean facial anatomy, shared palette; separately authored for the compact HUD, not cropped dialogue busts."
+  },
+  "combatEffectsRevision": {
+    "fire": "Transparent isolated warm amber fire tongue, fine restrained pixel clusters, bright pale core and soft orange edge, no scenery or floor. Geometry and particles supply the volume.",
+    "smoke": "Transparent isolated soft gray smoke puff, clean pixel clusters, no background, flame or scenery. Engine supplies directional light and rising volume.",
+    "energy": "Transparent isolated pale cyan and ivory energy streak and spark texture, coherent Riverland pixel palette. Engine supplies arcs, rings and beams.",
+    "ice": "Flat opaque seamless pale blue frost and icy crystal albedo, subtle fine pixel facets, even diffuse light. No pavers, terrain, object silhouette or perspective. Used on dimensional ice shards."
   }
 }

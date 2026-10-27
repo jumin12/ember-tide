@@ -1,0 +1,24 @@
+"""Publish measured evidence for the exact V11 standalone artifact."""
+from pathlib import Path
+import json,hashlib
+root=Path(__file__).resolve().parents[2]
+def read(p):return json.loads((root/p).read_text(encoding='utf-8'))
+base='output/elyndor/pixellab-v11/'
+a=read('output/elyndor/continuous-standalone-audit.json')
+reg=read(base+'regression.json');campaign=read('output/elyndor/continuous-verify/report.json')
+combat=read(base+'combat/report.json');party=read(base+'party/report.json');hydro=read(base+'water/report.json');view=read(base+'view/report.json');streets=read(base+'cities-final.json');world=read(base+'world/report.json')
+profile=read(base+'combat-profile-final.json');perf=read('output/elyndor/pixellab-v8/performance/native.json')
+m=read('elyndor/assets/source/pixellab-v7/manifest.json');previous=read('release.json')
+assert reg['sha256']==a['sha256']==hashlib.sha256((root/'index.html').read_bytes()).hexdigest()
+assert all(q['pass'] for q in reg['checks']) and a['sourceMatchesArtifact'] and not a['cropWarnings']
+assert all(q['pass'] and not q['errors'] for q in [combat,party,hydro,view,world])
+assert not streets['blocked'] and not streets['errors'] and campaign['campaign']['final']=='complete' and not campaign['errors']
+assert profile['programsBefore']==profile['programsAfter'] and profile['cpu']['p95']<25 and profile['cpu']['max']<150 and profile['entryMs']<25 and not profile['errors']
+r={'release':'elyndor-2026-10-27-combat-world-v11','game':'The Last Light of Elyndor','artifact':{'file':'index.html','bytes':a['bytes'],'sha256':a['sha256'],'offline':True},
+ 'changes':['Three actual in-game loading photographs; world buffers, sprite atlases and HDR/reflection/shadow shader variants prepare behind loading','Cached and early-exit battle formation search replaces exhaustive first-action work','Continuous three-hit native attacks with separate timing windows; ranged projectiles land before damage and do not rewind poses','Pooled textured 3D sword arcs, arrows, fire columns, smoke, ice eruptions, healing beams and ward rings using four new PixelLab textures','Rally heals the party, Frost Bloom affects all opponents, wards show status, Ascended abilities replace their normal counterparts','Raised upstream reservoir drains naturally through the repaired sluice into three connected water levels and two lower cascades','Recruitment reconciles party actors and textures instead of deleting the party; removed members alone are released','Wider five-settlement street audit, rerouted canal and relief paths, moved street furniture, natural rock variants and road/door clearance','Native per-camera frustum culling replaces grass distance cutoffs; fitted, texel-snapped shadows cover the visible terrain'],
+ 'art':{**previous['art'],'worldImages':len(m['images']),'combatTextures':4,'loadingPhotographs':3,'packedSpritePoses':a['packedPoses']},
+ 'validation':{'standaloneMatchesSource':True,'spritePixelAudit':True,'sourceCropWarnings':0,'regressionChecks':reg['checks'],'campaignProgressionSteps':len(campaign['campaign']['log']),'campaignBattles':len(campaign['campaign']['battles']),'restoredLights':len(campaign['campaign']['restored']),'ascensions':sum(bool(q['asc']) for q in campaign['campaign']['battles']),'saveLoad':all(campaign['persistence'].values()),'completeAttackFamilies':len(combat['chains']),'nativePosesPerSwing':9,'consecutiveSwings':3,'abilityVariants':len(combat['skills']),'recruitmentAndRemovalCases':len(party['rows']),'streetSamplesBySettlement':streets['samples'],'blockedStreetSamples':0,'interactionRoutes':len(world['approaches']),'waterJoinMaxGapMetres':max(q['maxGap'] for q in hydro['joins']),'waterLevels':{'closed':hydro['closed']['head'],'gateOpening':hydro['opening']['head'],'restored':hydro['pump']['head']},'visibleCoverageViews':len(view['views']),'desktopMobileLoading':view['pass'],'browserErrors':[]},
+ 'performance':{'device':perf['device']['renderer'],'nativeViewport':[1440,900],'samples':[{'area':q['name'],'fps':round(q['fps'],1),'p95FrameMs':round(q['p95FrameMs'],1),'buffer':q['buffer'],'scale':q['scale']}for q in perf['scenarios']],'combat':{'renderSamples':profile['cpu']['samples'],'renderCpuP95Ms':round(profile['cpu']['p95'],2),'renderCpuMaxMs':round(profile['cpu']['max'],2),'battleEntryMs':round(profile['entryMs'],2),'newShaderProgramsDuringCombat':profile['programsAfter']-profile['programsBefore'],'longFramesMs':profile['longFrames']},'singleFileReductionPercent':round((1-a['bytes']/27485826)*100,2),'scope':'Short local hardware-accelerated samples using actual render counts. Software WebGL and lower-powered devices remain slower.'},
+ 'status':'Integrated playable regional release'}
+(root/'release.json').write_text(json.dumps(r,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'artifact':r['artifact'],'checks':len(reg['checks']),'streetSamples':sum(streets['samples'].values()),'combat':r['performance']['combat']}))

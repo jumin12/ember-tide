@@ -20,6 +20,7 @@ def main():
    for directions in state['frames'].get('animations',{}).values():
     for frames in directions.values():files.update(folder/p for p in frames)
  for category in ['images','portraits','hudPortraits','guide']:files.update(ROOT/p for p in manifest.get(category,{}).values())
+ files.update(ROOT/q['file'] for q in manifest.get('loadingScreens',{}).values())
  signature=hashlib.sha256(str(FINAL).encode())
  for p in sorted(files):signature.update(str(p.relative_to(ROOT)).encode());signature.update(p.read_bytes())
  signature=signature.hexdigest();cache=OUT/'assets-v7.cache.json';meta_file=OUT/'assets-v7.cache-meta.json'
@@ -32,12 +33,19 @@ def main():
   audit=[];warnings=[];assets=module.build_assets(ROOT,encode,audit,warnings,FINAL)
   cache.write_text(json.dumps(assets,separators=(',',':')),encoding='utf-8');meta_file.write_text(json.dumps({'signature':signature,'audit':audit,'warnings':warnings}),encoding='utf-8')
  parts={
-  'STYLE':read('style.css')+'\n'+read('visual-v7.css')+'\n'+read('town-v8.css'),
+  'STYLE':read('style.css')+'\n'+read('visual-v7.css')+'\n'+read('town-v8.css')+'\n'+read('loading-v11.css'),
   'THREE':(ROOT/'three.vendor.js').read_text(encoding='utf-8'),'ASSETS':json.dumps(assets,separators=(',',':')),
   'DATA':read('data.js'),'WORLD':'\n'.join(read(n) for n in ['world.js','detail.js','scene-polish.js','water.js']),
   'GAME':'\n'.join(read(n) for n in ['game.js','movement.js','combat.js']),'UI':read('ui.js'),
   'OPEN_WORLD':read('open-world.js'),
-  'POLISH':'\n'.join(read(n) for n in ['polish.js','scenery.js','render-v4.js','review-v5.js','visual-v7.js','town-v8.js','town-events.js','world-design.js'])}
+  'POLISH':'\n'.join(read(n) for n in ['polish.js','scenery.js','render-v4.js','review-v5.js','visual-v7.js','town-v8.js','town-events.js','world-design.js','party-v11.js','effects-v11.js','combat-v11.js','placement-v11.js','visibility-v11.js','hydraulics-v11.js','loading-v11.js'])}
+ shots=manifest.get('loadingScreens',{})
+ if FINAL and len(shots)<3:raise ValueError('Three actual in-game loading screenshots are required')
+ for q in shots.values():
+  with Image.open(ROOT/q['file']) as im:
+   if im.width<1280 or im.height<720:raise ValueError('Loading photos must be full-resolution game screenshots')
+   im.verify()
+ parts['LOADING_SCENES']=''.join('<figure style="--scene:'+str(i)+'"><img src="data:image/webp;base64,'+base64.b64encode((ROOT/q['file']).read_bytes()).decode()+'" alt="'+q['name']+'"><figcaption>'+q['name']+'</figcaption></figure>' for i,q in enumerate(shots.values()))
  src=read('index.source.html')
  for key,value in parts.items():src=src.replace('/*__'+key+'__*/',value)
  if '/*__' in src:raise ValueError('Unresolved standalone build markers')

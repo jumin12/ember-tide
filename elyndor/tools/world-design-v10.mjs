@@ -3,7 +3,7 @@ const out='output/elyndor/pixellab-v10/world';fs.mkdirSync(out,{recursive:true})
 const browser=await chromium.launch({headless:true,channel:'chrome',args:['--allow-file-access-from-files','--enable-webgl','--ignore-gpu-blocklist','--use-angle=d3d11']});
 const p=await browser.newPage({viewport:{width:1440,height:900}}),errors=[],report={};p.setDefaultTimeout(240000);p.on('pageerror',e=>errors.push(e.message));p.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
 try{
- await p.goto(pathToFileURL(path.resolve('index.html')).href);await p.waitForFunction(()=>window.__ely);await p.click('#start-btn');await p.keyboard.press('Space');await p.keyboard.press('Space');
+ await p.goto(pathToFileURL(path.resolve('index.html')).href);await p.waitForFunction(()=>window.__ely);await p.click('#start-btn');await p.waitForFunction(()=>document.querySelector('#load-screen').classList.contains('hidden'),null,{timeout:120000});await p.keyboard.press('Space');await p.keyboard.press('Space');
  await p.evaluate(()=>{manualUntil=performance.now()+600000;state.settings.voices=false;state.settings.volume=0;state.encounterDistance=-100000;});
  report.joins=await p.evaluate(()=>world.userData.brookFallObjects.flatMap(fall=>{
   const rows=[],g=fall.geometry,cols=13,join=fall.userData.join;

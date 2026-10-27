@@ -1,20 +1,22 @@
 {
-  "release": "elyndor-2026-10-27-world-design-v10",
+  "release": "elyndor-2026-10-27-combat-world-v11",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 5389366,
-    "sha256": "dede343fb82dc275aeb4c3853b05dba0f5b3f73dcfbe7b4e7b4388195c431013",
+    "bytes": 6925351,
+    "sha256": "e056f227d11c92dc6dbe0c9ccd19301d25d896a58775aa6a8eef9099d42f8e54",
     "offline": true
   },
   "changes": [
-    "Continuous curved waterfalls share river bank widths, endpoint normals, physical shading, ripples and two-height reflections",
-    "Settlement streets rerouted around the fountain, forge, market, canal wall and archive; forge and mill entrances repositioned",
-    "Local pathfinding uses the actual starting position, fixing bank-side click-to-walk failures",
-    "Shop counter moved beside its doorway and ground foliage cleared from streets and stair approaches",
-    "Rounded boulders with new PixelLab granite albedo; bank stones embedded in the actual terrain",
-    "New native left-facing Bren and Ascended combat loops with three individually corrected sword strike poses and synchronized contact",
-    "Five dedicated transparent PixelLab HUD head portraits, separately packed from the dialogue busts"
+    "Three actual in-game loading photographs; world buffers, sprite atlases and HDR/reflection/shadow shader variants prepare behind loading",
+    "Cached and early-exit battle formation search replaces exhaustive first-action work",
+    "Continuous three-hit native attacks with separate timing windows; ranged projectiles land before damage and do not rewind poses",
+    "Pooled textured 3D sword arcs, arrows, fire columns, smoke, ice eruptions, healing beams and ward rings using four new PixelLab textures",
+    "Rally heals the party, Frost Bloom affects all opponents, wards show status, Ascended abilities replace their normal counterparts",
+    "Raised upstream reservoir drains naturally through the repaired sluice into three connected water levels and two lower cascades",
+    "Recruitment reconciles party actors and textures instead of deleting the party; removed members alone are released",
+    "Wider five-settlement street audit, rerouted canal and relief paths, moved street furniture, natural rock variants and road/door clearance",
+    "Native per-camera frustum culling replaces grass distance cutoffs; fitted, texel-snapped shadows cover the visible terrain"
   ],
   "art": {
     "generator": "PixelLab",
@@ -23,7 +25,7 @@
     "packedSpritePoses": 4917,
     "portraits": 38,
     "dedicatedHudPortraits": 5,
-    "worldImages": 39,
+    "worldImages": 43,
     "materials": 15,
     "logicalTileSizes": [
       64,
@@ -33,7 +35,9 @@
     "paletteColors": 60,
     "incompleteClips": 0,
     "previousGameArtworkUsed": false,
-    "prompts": "MATERIAL_PROMPTS.json"
+    "prompts": "MATERIAL_PROMPTS.json",
+    "combatTextures": 4,
+    "loadingPhotographs": 3
   },
   "validation": {
     "standaloneMatchesSource": true,
@@ -61,6 +65,22 @@
         "pass": true
       },
       {
+        "name": "party",
+        "pass": true
+      },
+      {
+        "name": "streets",
+        "pass": true
+      },
+      {
+        "name": "hydraulics",
+        "pass": true
+      },
+      {
+        "name": "view-loading",
+        "pass": true
+      },
+      {
         "name": "menus",
         "pass": true
       },
@@ -83,38 +103,39 @@
       {
         "name": "performance",
         "pass": true
+      },
+      {
+        "name": "combat-performance",
+        "pass": true
       }
     ],
-    "waterfallVisibleFrames": [
-      72,
-      72
-    ],
-    "gateStrengthFrames": 8,
-    "waterFlowStages": {
-      "closed": 0.025,
-      "gateOpen": 0.2786923584599533,
-      "pumpRepaired": 0.7197626504235604
-    },
-    "wildlifeReachedEasternWoods": true,
-    "elderAutomaticallyApproachesAndTalks": true,
-    "portraitBottomInsetPixels": 6,
-    "allSevenPartyAndAscendedAttackClipsComplete": true,
     "campaignProgressionSteps": 45,
     "campaignBattles": 6,
     "restoredLights": 4,
     "ascensions": 2,
-    "navigationRoutes": 41,
-    "blockedFollowers": 0,
     "saveLoad": true,
-    "menuPages": 9,
-    "desktopAndMobilePortraitsContained": true,
-    "townNpcOverlaps": 0,
-    "townBuildingCollisions": 0,
-    "reactiveReflectionsAndShadows": true,
+    "completeAttackFamilies": 7,
+    "nativePosesPerSwing": 9,
+    "consecutiveSwings": 3,
+    "abilityVariants": 14,
+    "recruitmentAndRemovalCases": 5,
+    "streetSamplesBySettlement": {
+      "square": 1952,
+      "fern": 547,
+      "highmere": 1248,
+      "alder": 650,
+      "relief": 536
+    },
     "blockedStreetSamples": 0,
-    "townInteractionRoutes": 108,
-    "waterJoinMaxGapMetres": 8.004110842636442e-06,
-    "reviewedBrenRenderedFrames": 18,
+    "interactionRoutes": 108,
+    "waterJoinMaxGapMetres": 8.024994323728734e-06,
+    "waterLevels": {
+      "closed": 6.15,
+      "gateOpening": 5.281148628679867,
+      "restored": 4.684082789668458
+    },
+    "visibleCoverageViews": 10,
+    "desktopMobileLoading": true,
     "browserErrors": []
   },
   "performance": {
@@ -126,8 +147,8 @@
     "samples": [
       {
         "area": "bridge",
-        "fps": 60.4,
-        "p95FrameMs": 22.1,
+        "fps": 70.7,
+        "p95FrameMs": 14.3,
         "buffer": [
           1440,
           900
@@ -136,8 +157,8 @@
       },
       {
         "area": "square",
-        "fps": 71.8,
-        "p95FrameMs": 14.5,
+        "fps": 72.2,
+        "p95FrameMs": 14.2,
         "buffer": [
           1440,
           900
@@ -146,8 +167,8 @@
       },
       {
         "area": "forest",
-        "fps": 72.0,
-        "p95FrameMs": 14.3,
+        "fps": 71.8,
+        "p95FrameMs": 14.2,
         "buffer": [
           1440,
           900
@@ -155,8 +176,16 @@
         "scale": 1
       }
     ],
-    "singleFileReductionPercent": 80.39,
-    "scope": "Short local hardware-accelerated samples using actual render counts. Software WebGL remains substantially slower."
+    "combat": {
+      "renderSamples": 856,
+      "renderCpuP95Ms": 9,
+      "renderCpuMaxMs": 50.2,
+      "battleEntryMs": 4.9,
+      "newShaderProgramsDuringCombat": 0,
+      "longFramesMs": []
+    },
+    "singleFileReductionPercent": 74.8,
+    "scope": "Short local hardware-accelerated samples using actual render counts. Software WebGL and lower-powered devices remain slower."
   },
   "status": "Integrated playable regional release"
 }

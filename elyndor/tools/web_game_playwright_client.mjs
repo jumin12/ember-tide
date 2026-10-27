@@ -292,6 +292,7 @@ async function main() {
     try {
       // The standalone build decodes its embedded atlases before enabling Start.
       await page.click(args.clickSelector, { timeout: 120000 });
+      await page.waitForFunction(() => !document.querySelector("#load-screen") || document.querySelector("#load-screen").classList.contains("hidden"), null, { timeout: 120000 });
       await page.waitForTimeout(250);
     } catch (err) {
       console.warn("Failed to click selector", args.clickSelector, err);

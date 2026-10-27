@@ -6,11 +6,11 @@
   "nativeSelectedPoses": 4917,
   "portraits": 38,
   "dedicatedHudPortraits": 5,
-  "worldImages": 39,
+  "worldImages": 43,
   "artifact": {
     "file": "index.html",
-    "bytes": 5389366,
-    "sha256": "dede343fb82dc275aeb4c3853b05dba0f5b3f73dcfbe7b4e7b4388195c431013",
+    "bytes": 6925351,
+    "sha256": "e056f227d11c92dc6dbe0c9ccd19301d25d896a58775aa6a8eef9099d42f8e54",
     "offline": true
   },
   "incompleteClips": {}

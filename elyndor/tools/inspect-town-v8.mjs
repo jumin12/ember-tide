@@ -5,7 +5,7 @@ const page=await browser.newPage({viewport:{width:1672,height:941}}),errors=[],r
 const shot=async name=>{await page.evaluate(()=>{manualUntil=performance.now()+600000;toastTime=0;$('#toast').classList.remove('show');updateHUD();render();});await page.screenshot({path:out+'/'+name+'.png'});};
 try{
  await page.goto(pathToFileURL(path.resolve(process.argv[2]??'elyndor.preview.html')).href,{timeout:240000});await page.waitForFunction(()=>window.__ely);await shot('title');
- await page.click('#start-btn');await page.keyboard.press('Space');await page.keyboard.press('Space');
+ await page.click('#start-btn');await page.waitForFunction(()=>document.querySelector('#load-screen').classList.contains('hidden'),null,{timeout:120000});await page.keyboard.press('Space');await page.keyboard.press('Space');
  await page.evaluate(()=>{manualUntil=performance.now()+600000;state.settings.volume=0;state.settings.voices=false;state.encounterDistance=-1000000;state.worldMinutes=14*60;});
  for(const [name,x,z]of[['bridge',-133,120],['plaza',-128,67],['mill',-155,102],['upper-terrace',-140,71]]){
   await page.evaluate(([x,z])=>{const p=safePoint({x,z});player.x=p.x;player.z=p.z;setupParty([p.x,p.z]);for(let i=0;i<2;i++)tick(1/60);updateLighting();updateCamera(1,true);},[x,z]);await shot(name);

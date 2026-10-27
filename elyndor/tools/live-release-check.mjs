@@ -1,5 +1,5 @@
 import{chromium}from'playwright';import fs from'node:fs';import crypto from'node:crypto';
-const out='output/elyndor/pixellab-v10/live',release=JSON.parse(fs.readFileSync('release.json','utf8'));
+const out='output/elyndor/pixellab-v11/live',release=JSON.parse(fs.readFileSync('release.json','utf8'));
 fs.mkdirSync(out,{recursive:true});
 const browser=await chromium.launch({headless:true,channel:'chrome',args:['--enable-webgl','--ignore-gpu-blocklist','--use-angle=d3d11']});
 const page=await browser.newPage({viewport:{width:1440,height:900}}),errors=[],report={url:'https://jumin12.github.io/ember-tide/'};page.setDefaultTimeout(240000);
@@ -12,7 +12,7 @@ try{
  const body=await response.body();report.httpStatus=response.status();report.bytes=body.length;report.sha256=crypto.createHash('sha256').update(body).digest('hex');report.matchesTestedArtifact=report.sha256===release.artifact.sha256;
  if(!report.matchesTestedArtifact)throw Error('Live artifact differs from the exact tested build');
  const navigation=await page.goto(liveUrl,{timeout:240000});report.browserHttpStatus=navigation.status();
- await page.waitForFunction(()=>window.__ely);await page.click('#start-btn');await page.keyboard.press('Space');await page.keyboard.press('Space');
+ await page.waitForFunction(()=>window.__ely);await page.click('#start-btn');await page.waitForFunction(()=>document.querySelector('#load-screen').classList.contains('hidden'),null,{timeout:120000});await page.keyboard.press('Space');await page.keyboard.press('Space');
  await page.evaluate(()=>{manualUntil=performance.now()+600000;state.settings.volume=0;state.settings.voices=false;state.encounterDistance=-1000000;});
  const before=await page.evaluate(()=>({x:player.x,z:player.z}));await page.keyboard.down('d');await page.evaluate(()=>advanceTime(350,false));await page.keyboard.up('d');
  report.play=await page.evaluate(()=>{render();const r=JSON.parse(render_game_to_text());return{mode:r.mode,player:r.player,followers:r.followers,title:document.title,blurSides:post.material.fragmentShader.includes('float horizontal='),materials:terrainTileNames.length};});

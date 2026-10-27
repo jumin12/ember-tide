@@ -334,7 +334,11 @@
     "icon_notes": "elyndor/assets/source/pixellab-v7/images/icon-notes/000.png",
     "icon_component": "elyndor/assets/source/pixellab-v7/images/icon-component/000.png",
     "icon_order": "elyndor/assets/source/pixellab-v7/images/icon-order/000.png",
-    "regionMap": "elyndor/assets/source/pixellab-v7/images/map-paper/000.png"
+    "regionMap": "elyndor/assets/source/pixellab-v7/images/map-paper/000.png",
+    "fxFire": "elyndor/assets/source/pixellab-v7/images/fx-fire-v11/000.png",
+    "fxSmoke": "elyndor/assets/source/pixellab-v7/images/fx-smoke-v11/000.png",
+    "fxEnergy": "elyndor/assets/source/pixellab-v7/images/fx-energy-v11/000.png",
+    "fxIce": "elyndor/assets/source/pixellab-v7/images/fx-ice-retry-v11/000.png"
   },
   "materialKeys": [
     "cobble",
@@ -426,5 +430,19 @@
     "tavin": "elyndor/assets/source/pixellab-v7/images/hud-tavin-v10/000.png",
     "mira": "elyndor/assets/source/pixellab-v7/images/hud-mira-v10/002.png",
     "lysa": "elyndor/assets/source/pixellab-v7/images/hud-lysa-v10/002.png"
+  },
+  "loadingScreens": {
+    "brookstead": {
+      "file": "elyndor/assets/source/pixellab-v7/loading/brookstead.webp",
+      "name": "Brookstead \u00b7 The fountain terrace"
+    },
+    "waterworks": {
+      "file": "elyndor/assets/source/pixellab-v7/loading/waterworks.webp",
+      "name": "Brookstead \u00b7 The waterworks"
+    },
+    "alder": {
+      "file": "elyndor/assets/source/pixellab-v7/loading/alder.webp",
+      "name": "Alderwatch \u00b7 The northern road"
+    }
   }
 }
