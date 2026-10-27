@@ -37,7 +37,7 @@ def main():
   'DATA':read('data.js'),'WORLD':'\n'.join(read(n) for n in ['world.js','detail.js','scene-polish.js','water.js']),
   'GAME':'\n'.join(read(n) for n in ['game.js','movement.js','combat.js']),'UI':read('ui.js'),
   'OPEN_WORLD':read('open-world.js'),
-  'POLISH':'\n'.join(read(n) for n in ['polish.js','scenery.js','render-v4.js','review-v5.js','visual-v7.js','town-v8.js'])}
+  'POLISH':'\n'.join(read(n) for n in ['polish.js','scenery.js','render-v4.js','review-v5.js','visual-v7.js','town-v8.js','town-events.js'])}
  src=read('index.source.html')
  for key,value in parts.items():src=src.replace('/*__'+key+'__*/',value)
  if '/*__' in src:raise ValueError('Unresolved standalone build markers')

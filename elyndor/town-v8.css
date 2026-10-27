@@ -46,3 +46,10 @@ body:has(#menu:not(.hidden)) #toast{display:none}
 /* Keep dialogue portraits and small-screen navigation clear. */
 body:has(#dialogue:not(.hidden)) #hud{visibility:hidden}
 @media(max-width:700px){#objective{display:none}}
+
+/* Inset the portrait artwork from the panel border without shifting the text. */
+.dialogue-portrait{background-position:calc(50% + 4px) calc(100% - 5px);margin-left:16px;margin-bottom:5px}
+@media(max-width:650px){.dialogue-portrait{background-position:calc(50% + 3px) calc(100% - 4px);margin-left:5px;margin-bottom:4px}}
+.menu-header{flex-shrink:0}.menu-footer{flex-shrink:0}
+.item-row:focus-within{background:#d0ad6014;outline:1px solid #d0ad6050;outline-offset:-1px}
+.tabs button:focus-visible,#menu-nav button:focus-visible{outline:2px solid #e8cf84;outline-offset:-3px}

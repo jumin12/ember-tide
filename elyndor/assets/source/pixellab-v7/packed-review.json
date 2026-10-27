@@ -2560,6 +2560,110 @@
       ],
       "cell": 196,
       "sha256": "f5af0de30f87d4f15c16365dddd22852d50af19a83dac1a1f482ba6957901422"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\bren\\Idle\\animations\\gate-brace-v9\\north-west\\frame_000.png",
+      "sourceSize": [
+        88,
+        88
+      ],
+      "offset": [
+        0,
+        -3
+      ],
+      "cell": 197,
+      "sha256": "5d9715af1d0e6fd39540d7b719e54f7b6ccc77514d26303eb04e193097f53eb3"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\bren\\Idle\\animations\\gate-brace-v9\\north-west\\frame_001.png",
+      "sourceSize": [
+        88,
+        88
+      ],
+      "offset": [
+        0,
+        -3
+      ],
+      "cell": 198,
+      "sha256": "60f0a8f5df275161f5193c6e91a80e27778ca489e3d346ce3baa5c60bfb56727"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\bren\\Idle\\animations\\gate-brace-v9\\north-west\\frame_002.png",
+      "sourceSize": [
+        88,
+        88
+      ],
+      "offset": [
+        0,
+        -3
+      ],
+      "cell": 199,
+      "sha256": "88a36be911bb8bc575876a6e712dd8ecab9000d5c409e03cbe2a0e8d0d56a5e6"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\bren\\Idle\\animations\\gate-brace-v9\\north-west\\frame_003.png",
+      "sourceSize": [
+        88,
+        88
+      ],
+      "offset": [
+        0,
+        -3
+      ],
+      "cell": 200,
+      "sha256": "d54fc205a2ed9a146b19f3662b31abeba1281af539213e1a8160fa8d21673386"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\bren\\Idle\\animations\\gate-brace-v9\\north-west\\frame_004.png",
+      "sourceSize": [
+        88,
+        88
+      ],
+      "offset": [
+        0,
+        -3
+      ],
+      "cell": 201,
+      "sha256": "a5e47a1c97d3a1b2dbca45c4a101e209896937f49720509240ab0bdd6309a181"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\bren\\Idle\\animations\\gate-brace-v9\\north-west\\frame_005.png",
+      "sourceSize": [
+        88,
+        88
+      ],
+      "offset": [
+        0,
+        -3
+      ],
+      "cell": 202,
+      "sha256": "6a6d38820d681ad9c686afcd7adbbd5c2e47d60c076e00e699ec582e7ee1e833"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\bren\\Idle\\animations\\gate-brace-v9\\north-west\\frame_006.png",
+      "sourceSize": [
+        88,
+        88
+      ],
+      "offset": [
+        0,
+        -3
+      ],
+      "cell": 203,
+      "sha256": "920cc4a7427b0058aadb323de5a050ec72fef218cf8eb391ab7e3e15581c62d4"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\bren\\Idle\\animations\\gate-brace-v9\\north-west\\frame_007.png",
+      "sourceSize": [
+        88,
+        88
+      ],
+      "offset": [
+        0,
+        -3
+      ],
+      "cell": 204,
+      "sha256": "dc96ae5db4360bd60d9af43618564106cfbec1db5d30f138e5d10b655136cfcd"
     }
   ],
   "soren": [

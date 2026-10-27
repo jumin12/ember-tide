@@ -164,11 +164,11 @@
     },
     {
       "material": "earth",
-      "source": "elyndor/assets/source/pixellab-v7/images/material-earth/003.png",
-      "description": "ONE seamless repeatable albedo material tile for the actual 3D environment: muted taupe woodland earth with fine compacted soil clusters, a few small grey pebbles and tiny ochre leaves, subtle roots, no large litter piles or repeated paths. Match the fine pixel craftsmanship and material character of the approved Google Drive village concept. Native128x128 refined pixel art with coherent clean clusters and subtle intrinsic surface variation; fill the complete square edge-to-edge with equally detailed edges. Both axes repeat seamlessly. Flat overhead or orthographic material scan, neutral even diffuse lighting, no cast shadows or large painted light gradients, no perspective, scene, border, padding, labels, object silhouette or sheet. No thick black outlines. Same pixel-art family as compact JRPG characters, not photographic noise.",
+      "source": "elyndor/assets/source/pixellab-v7/images/earth-surface-v9/image.png",
+      "description": "Full-bleed flat albedo material swatch of packed tan earth grains and tiny pale pebbles, with even diffuse lighting, no outlined border, large props, map composition or edge shading. Fine 1\u20133 pixel clusters in the Elyndor Riverland palette.",
       "nativeTile": [
-        64,
-        64
+        128,
+        128
       ],
       "embeddedTile": [
         512,
@@ -177,11 +177,11 @@
     },
     {
       "material": "grass",
-      "source": "elyndor/assets/source/pixellab-v7/images/material-grass/001.png",
-      "description": "ONE seamless repeatable albedo material tile for the actual 3D environment: luminous mid-value sage and jade meadow turf with overlapping fine blades and tiny clover, gentle broad variation. Predominantly medium greens, very sparse dark green recesses, no black areas, flowers or big yellow tufts. Match the fine pixel craftsmanship and material character of the approved Google Drive village concept. Native128x128 refined pixel art with coherent clean clusters and subtle intrinsic surface variation; fill the complete square edge-to-edge with equally detailed edges. Both axes repeat seamlessly. Flat overhead or orthographic material scan, neutral even diffuse lighting, no cast shadows or large painted light gradients, no perspective, scene, border, padding, labels, object silhouette or sheet. No thick black outlines. Same pixel-art family as compact JRPG characters, not photographic noise.",
+      "source": "elyndor/assets/source/pixellab-v7/images/grass-surface-v9/image.png",
+      "description": "Full-bleed flat albedo material swatch of dense fine olive and sage meadow grass blades, with even diffuse lighting, no outlined border, large props, map composition or edge shading. Fine 1\u20133 pixel clusters in the Elyndor Riverland palette.",
       "nativeTile": [
-        64,
-        64
+        128,
+        128
       ],
       "embeddedTile": [
         512,

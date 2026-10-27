@@ -13,3 +13,7 @@ Fifteen opaque PixelLab material tiles, thirteen prop/botanical images, nine ite
 The layout is an authored 3D interpretation of the town concept. Terrain height, visible stairs, collision and navigation share coordinates. Rivers continue through the connected landscape, with separate heights and reflection targets for the raised pools. No concept image is used as a flat gameplay background.
 
 Private source concepts, upload receipts, signed URLs and account credentials are not part of the published project. Historical artwork may remain in repository history, but the current manifest and standalone artifact contain only the selected new pass. Native sources and the public selection are under `elyndor/assets/source/pixellab-v7`.
+
+The waterworks strength action uses eight additional native PixelLab Bren poses, reviewed and registered without limb slicing. This gesture keeps his sword sheathed. Melee strikes, bow releases and spell gestures are selected separately; ranged attacks remain planted and projectiles arrive before damage resolves.
+
+The ground revision adds accepted 128×128 native grass and earth swatches in the same palette. Earlier scene-like candidates were rejected and are absent from the manifest. Main roads consistently use paving; separate trails blend into earth.

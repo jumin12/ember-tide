@@ -3,13 +3,13 @@
   "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
   "characterFamilies": 41,
   "runtimeFamilies": 42,
-  "nativeSelectedPoses": 4917,
+  "nativeSelectedPoses": 4925,
   "portraits": 38,
   "worldImages": 39,
   "artifact": {
     "file": "index.html",
-    "bytes": 5397022,
-    "sha256": "65ab2166837a87ea6310bf3d69a93dcb504d82c840b9bc15361e6b5a96c7ee11",
+    "bytes": 5410963,
+    "sha256": "606199703bcba2c7ae11f624b5598ed6383e12bea92663ed07aaba8189cdf0f3",
     "offline": true
   },
   "incompleteClips": {}

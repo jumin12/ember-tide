@@ -2,13 +2,15 @@
 
 [Play in your browser](https://jumin12.github.io/ember-tide/)
 
-An original browser RPG with native PixelLab characters in a connected 3D landscape. Brookstead is rebuilt around an arched river bridge, a watermill and cascades, three terrain terraces, a fountain square, timber shops and planted gardens. Residents follow individual work routes, and the world moves continuously through dawn, daylight, dusk and night.
+An original browser RPG with native PixelLab characters in a connected 3D landscape. Brookstead is rebuilt around an arched river bridge, a watermill and cascades, three terrain terraces, a fountain square, timber shops and planted gardens. The sluice and pump visibly control the downstream flow. Residents follow individual work routes, and the world moves continuously through dawn, daylight, dusk and night.
 
-The complete playable regional arc includes exploration, seven story encounters, timed attack chains, abilities, two character ascensions, equipment, healing, shops, four Light restorations, journals and local saves.
+After the town fight, wildlife flees toward the eastern woods and the elder runs over to deliver the next report. The current storyboard also includes helping Mira before the aid-office report and a peaceful scout rescue.
+
+The complete playable regional arc includes exploration, six story encounters, timed attack chains, abilities, two character ascensions, equipment, healing, shops, four Light restorations, journals and local saves.
 
 Download `index.html` and open it directly to play offline. All required artwork and runtime code are embedded in that one file.
 
-![Brookstead, rebuilt as a traversable river town](elyndor/previews/pixellab-v8/town-overview.png)
+![Brookstead, rebuilt as a traversable river town](elyndor/previews/pixellab-v9/town-overview.png)
 
 ## Controls
 

@@ -83,6 +83,9 @@ def pack_character(root,item,encode,audit,strict):
   clip=group.get(direction,[])
   if name in FIGHTERS and not clip:missing.append(action+':'+direction)
   keys[action]=clip or [rotations[direction]]
+ if name=='bren':
+  keys['work_gate']=animations.get('gate-brace-v9',{}).get('north-west',[])
+  if strict and len(keys['work_gate'])<6:raise ValueError('Missing reviewed Bren gate strength animation')
  keys['guard']=keys['battleIdle'];keys['enemyIdle']=keys['battleIdle'];keys['retreat']=keys.get('run_east') or keys.get('east') or keys['recoil']
  if strict and missing:raise ValueError(f'{name}: incomplete PixelLab clips: {missing}')
  paths=list(dict.fromkeys(p for clip in keys.values() for p in clip))

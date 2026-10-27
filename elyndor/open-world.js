@@ -90,17 +90,17 @@ findRoute=function(from,to,avoid=[]){
 function addContinuousTerrain(){
  const chunk=55;world.userData.terrainChunks=[];world.userData.walkSurfaces=[];
  for(let ox=-245;ox<280;ox+=chunk)for(let oz=-285;oz<210;oz+=chunk){const g=new THREE.PlaneGeometry(chunk,chunk,42,42);g.rotateX(-Math.PI/2);const p=g.attributes.position,blend=[],town=[],snow=[],river=[];
-  for(let i=0;i<p.count;i++){const x=p.getX(i)+ox+chunk/2,z=p.getZ(i)+oz+chunk/2,r=roadInfo(x,z);p.setXYZ(i,x,groundAt(x,z),z);const jitter=noise(x*1.8,z*1.8)*.34;blend.push(1-smooth((r.kind==='trail'?1.6:2.7)+jitter,(r.kind==='trail'?2.8:4.1)+jitter,r.d));town.push(r.kind==='lane'?1:0);snow.push(winterAt(x,z));}
+  for(let i=0;i<p.count;i++){const x=p.getX(i)+ox+chunk/2,z=p.getZ(i)+oz+chunk/2,r=roadInfo(x,z);p.setXYZ(i,x,groundAt(x,z),z);const jitter=noise(x*1.8,z*1.8)*.34;blend.push(1-smooth((r.kind==='trail'?1.6:2.7)+jitter,(r.kind==='trail'?2.8:4.1)+jitter,r.d));town.push(r.kind==='trail'?0:1);snow.push(winterAt(x,z));}
   for(let i=0;i<p.count;i++)river.push(1-smooth(-1,2.2,channelDistance(p.getX(i),p.getZ(i))));
   g.setAttribute('riverMix',new THREE.Float32BufferAttribute(river,1));g.setAttribute('pathMix',new THREE.Float32BufferAttribute(blend,1));g.setAttribute('townMix',new THREE.Float32BufferAttribute(town,1));g.setAttribute('snowMix',new THREE.Float32BufferAttribute(snow,1));g.computeVertexNormals();
   const m=new THREE.MeshStandardMaterial({map:textures.grass,roughness:.94,color:'#f0f1ee'});
-  m.onBeforeCompile=sh=>{Object.assign(sh.uniforms,{earthTex:{value:textures.earth},rockTex:{value:textures.rock},roadTex:{value:textures.cobble}});sh.vertexShader='attribute float pathMix,townMix,snowMix;varying vec3 vGround,vGroundN;varying vec3 vGroundBlend;\n'+sh.vertexShader;sh.vertexShader=sh.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvGround=position;vGroundN=normal;vGroundBlend=vec3(pathMix,townMix,snowMix);');sh.fragmentShader='uniform sampler2D earthTex,rockTex,roadTex;varying vec3 vGround,vGroundN,vGroundBlend;\n'+sh.fragmentShader;sh.fragmentShader=sh.fragmentShader.replace('#include <map_fragment>',`
+  m.onBeforeCompile=sh=>{Object.assign(sh.uniforms,{earthTex:{value:textures.earth},rockTex:{value:textures.rock},roadTex:{value:textures.cobble}});sh.vertexShader='attribute float pathMix,townMix,snowMix;varying vec3 vGround,vGroundN;varying vec3 vGroundBlend;\n'+sh.vertexShader;sh.vertexShader=sh.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvGround=position;vGroundN=normal;vGroundBlend=vec3(pathMix,townMix,snowMix);');sh.fragmentShader='float groundHash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}float groundNoise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(groundHash(i),groundHash(i+vec2(1.,0.)),f.x),mix(groundHash(i+vec2(0.,1.)),groundHash(i+vec2(1.,1.)),f.x),f.y);}vec4 organicSample(sampler2D t,vec2 uv,vec2 world){float blend=.22+.56*groundNoise(world*.09);return mix(texture2D(t,uv),texture2D(t,vec2(-uv.y,uv.x)*.79+vec2(17.37,41.91)),blend); }uniform sampler2D earthTex,rockTex,roadTex;varying vec3 vGround,vGroundN,vGroundBlend;\n'+sh.fragmentShader;sh.fragmentShader=sh.fragmentShader.replace('#include <map_fragment>',`
    vec3 gn=pow(abs(normalize(vGroundN)),vec3(5.));gn/=gn.x+gn.y+gn.z;
    vec4 stone=texture2D(rockTex,vGround.zy*.35)*gn.x+texture2D(rockTex,vGround.xz*.35)*gn.y+texture2D(rockTex,vGround.xy*.35)*gn.z;
-   vec4 grass=texture2D(map,vGround.xz*.57);float mottling=sin(vGround.x*.16+sin(vGround.z*.11))*sin(vGround.z*.13)*.5+.5;
+   vec4 grass=organicSample(map,vGround.xz*.31,vGround.xz);float mottling=sin(vGround.x*.16+sin(vGround.z*.11))*sin(vGround.z*.13)*.5+.5;
    grass.rgb*=mix(vec3(.70,.89,.72),vec3(1.00,1.10,.91),mottling);
-   vec4 earth=texture2D(earthTex,vGround.xz*.32);vec4 road=mix(earth*vec4(1.12,1.06,.87,1.),texture2D(roadTex,vGround.xz*.4),vGroundBlend.y);
-   vec4 surface=mix(grass,earth,.08+mottling*.08);surface=mix(surface,road,vGroundBlend.x);
+   vec4 earth=organicSample(earthTex,vGround.xz*.25,vGround.xz+13.7);vec4 road=mix(earth*vec4(1.12,1.06,.87,1.),texture2D(roadTex,vGround.xz*.4),vGroundBlend.y);
+   vec4 surface=mix(grass,earth,.08+mottling*.08);float edge=4.*vGroundBlend.x*(1.-vGroundBlend.x),pathBlend=clamp(vGroundBlend.x+(groundNoise(vGround.xz*1.7)-.5)*.48*edge,0.,1.);surface=mix(surface,road,pathBlend);
    surface=mix(surface,stone,1.-smoothstep(.52,.88,abs(vGroundN.y)));
    float riverbed=1.-smoothstep(-2.8,-1.1,vGround.y);surface=mix(surface,mix(earth,stone,.6)*vec4(.72,.82,.81,1.),riverbed);
    surface.rgb=mix(surface.rgb,vec3(.75,.83,.86)*( .92+.08*grass.r),vGroundBlend.z*(.6+.3*abs(vGroundN.y)));
@@ -298,7 +298,7 @@ function addRegionalResidents(){
  }
 }
 function settleResidents(){const placed=[];for(const a of npcs){let p={x:a.x,z:a.z};if(!staticFree(p.x,p.z,.4)||placed.some(b=>dist(b,p)<.95)){let found=null;for(let r=.4;r<8&&!found;r+=.3)for(let k=0;k<24;k++){const angle=k*TAU/24,q={x:a.x+Math.cos(angle)*r,z:a.z+Math.sin(angle)*r};if(staticFree(q.x,q.z,.45)&&!placed.some(b=>dist(b,q)<1)){found=q;break;}}if(found)p=found;}a.x=p.x;a.z=p.z;a.home={...p};if(a.interaction){a.interaction.x=p.x;a.interaction.z=p.z;}for(const o of interactables)if(o.actor===a){o.x=p.x;o.z=p.z;}placed.push(p);}}
-updateVillagers=function(dt){for(const a of npcs){a.speed=0;const o=a.interaction??interactables.find(o=>o.actor===a);if(o){o.x=a.x;o.z=a.z;}if(a.storyTarget){a.storyTarget.x=a.x;a.storyTarget.z=a.z;}if(!a.mesh.visible||battle||dist(a,player)>100)continue;
+updateVillagers=function(dt){for(const a of npcs){a.speed=0;const o=a.interaction??interactables.find(o=>o.actor===a);if(o){o.x=a.x;o.z=a.z;}if(a.storyTarget){a.storyTarget.x=a.x;a.storyTarget.z=a.z;}if(a.scripted||!a.mesh.visible||battle||dist(a,player)>100)continue;
  // Encounter commanders hold their post and breathe in their ready poses.
  // Combat-only cards must never slide around as if they were walking sheets.
  if((assets.sprites[a.id].frames.north?.length??0)<2){a.action='enemyIdle';a.task='Keeping watch over the approach';a.route=null;continue;}
@@ -311,7 +311,7 @@ function batchLandscape(){
  for(const g of world.userData.buildings){const shells=[g.userData.roofShell,g.userData.facadeShell].filter(Boolean);for(const shell of shells)g.remove(shell);mergeGroup(g);for(const shell of shells){g.add(shell);mergeGroup(shell);}}
  const protectedGroups=new Set([...world.userData.buildings,...world.userData.lightSites.map(s=>s.group),world.userData.gate,world.userData.crank,world.userData.pump,world.userData.waterwheel].filter(Boolean));
  const buckets=new Map(),meshes=[];world.updateMatrixWorld(true);
- world.traverse(o=>{if(!o.isMesh||o.isInstancedMesh||o===water||o.userData.terrain||o.userData.terracedWater)return;let p=o;while(p&&p!==world){if(protectedGroups.has(p))return;p=p.parent;}meshes.push(o);});
+ world.traverse(o=>{if(!o.isMesh||o.isInstancedMesh||o===water||o.userData.terrain||o.userData.terracedWater||o.userData.dynamicWater)return;let p=o;while(p&&p!==world){if(protectedGroups.has(p))return;p=p.parent;}meshes.push(o);});
  for(const o of meshes){const p=o.getWorldPosition(V3()),k=Math.floor(p.x/40)+','+Math.floor(p.z/40);if(!buckets.has(k)){const g=new THREE.Group();g.userData.chunk=true;g.userData.center=V3(Math.floor(p.x/40)*40+20,0,Math.floor(p.z/40)*40+20);world.add(g);buckets.set(k,g);}buckets.get(k).attach(o);}
  for(const g of buckets.values())mergeGroup(g);world.userData.staticChunks=[...buckets.values()];
  // Lighting is pooled, so adding houses does not add hundreds of live point lights.
@@ -360,7 +360,7 @@ act=function(o){if(!o||dialogue||menu||eventAction||battle||restoration)return;
 };
 const oldInteractionAvailable=interactionAvailable;
 interactionAvailable=function(o){if(o.type==='elderLight')return currentBeat()[0]===LIGHT_SITES.find(s=>s.id===o.site)?.beat;return oldInteractionAvailable(o);};
-function objectiveTarget(){const beat=currentBeat()[0],mapping={arrival:'representative',travelFern:'tavin',joinTavin:'tavin',evacuate:'evacuees',highmere:'mira',patrol:'guard',reportNotes:'council',initialCouncil:'council',dream:'sleep',archives:'archivist',trialCouncil:'council',trialReturn:'logs',councilFindings:'council',nearby:'sorenSite',debrief:'council',snow:'end',betrayal:'activation'};if(beat.endsWith('Light'))return interactables.find(o=>o.type==='elderLight'&&LIGHT_SITES.find(s=>s.id===o.site)?.beat===beat);return interactables.find(o=>o.type===(mapping[beat]??beat));}
+function objectiveTarget(){const beat=currentBeat()[0],mapping={arrival:'representative',travelFern:'tavin',joinTavin:'tavin',evacuate:'evacuees',highmere:state.flags.mira_aid_helped?'council':'mira',patrol:'guard',reportNotes:'council',initialCouncil:'council',dream:'sleep',archives:'archivist',trialCouncil:'council',trialReturn:'logs',councilFindings:'council',nearby:'sorenSite',debrief:'council',snow:'end',betrayal:'activation'};if(beat.endsWith('Light'))return interactables.find(o=>o.type==='elderLight'&&LIGHT_SITES.find(s=>s.id===o.site)?.beat===beat);return interactables.find(o=>o.type===(mapping[beat]??beat));}
 const oldNextBeatOpen=nextBeat;
 nextBeat=function(){oldNextBeatOpen();const o=objectiveTarget();if(o)waypoint={x:o.x,z:o.z,label:currentBeat()[2]};syncStoryWorld();};
 function beginRestoration(site){state.mode='restoration';keys.clear();route=null;const s=world.userData.lightSites.find(s=>s.id===site.id);restoration={site:s,time:0,phase:'individual',order:[],done:false};$('#letterbox').classList.add('active');toast('Listening to the Elder Light…');openWorldDebug.restorations++;}

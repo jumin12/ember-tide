@@ -135,6 +135,18 @@
               "Idle/animations/walk-v7/north-west/frame_007.png"
             ]
           },
+          "gate-brace-v9": {
+            "north-west": [
+              "Idle/animations/gate-brace-v9/north-west/frame_000.png",
+              "Idle/animations/gate-brace-v9/north-west/frame_001.png",
+              "Idle/animations/gate-brace-v9/north-west/frame_002.png",
+              "Idle/animations/gate-brace-v9/north-west/frame_003.png",
+              "Idle/animations/gate-brace-v9/north-west/frame_004.png",
+              "Idle/animations/gate-brace-v9/north-west/frame_005.png",
+              "Idle/animations/gate-brace-v9/north-west/frame_006.png",
+              "Idle/animations/gate-brace-v9/north-west/frame_007.png"
+            ]
+          },
           "recoil-v7": {
             "west": [
               "Idle/animations/recoil-v7/west/frame_000.png",
@@ -350,5 +362,5 @@
     }
   ],
   "export_version": "3.1",
-  "export_date": "2026-10-27T01:19:46.125900"
+  "export_date": "2026-10-27T03:07:56.272438"
 }

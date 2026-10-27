@@ -211,7 +211,7 @@ function brookFountain(){
  for(let i=0;i<24;i++){const a=i/24*TAU,o=box(Math.cos(a)*2.5,.5,Math.sin(a)*2.5,.72,.7,.53,'wall',i%3?'#b6c0c4':'#d9dccb',g);o.rotation.y=-a;box(Math.cos(a)*2.5,.9,Math.sin(a)*2.5,.76,.15,.64,'wall','#edf0e5',g).rotation.y=-a;}
  const waterDisk=mesh(new THREE.CircleGeometry(2.24,48),new THREE.MeshStandardMaterial({color:'#3a9291',roughness:.12,metalness:.15,transparent:true,opacity:.88}),0,.69,0,g);waterDisk.rotation.x=-Math.PI/2;waterDisk.castShadow=false;
  for(const [radius,yy,h]of[[.76,.5,1.2],[1.1,1.5,.23],[.4,2.0,1],[.62,2.6,.19]])mesh(new THREE.CylinderGeometry(radius,radius*1.05,h,16),material('wall','#d9dccb'),0,yy,0,g);
- for(let i=0;i<8;i++){const a=i/8*TAU,curve=new THREE.QuadraticBezierCurve3(V3(Math.cos(a)*.48,2.71,Math.sin(a)*.48),V3(Math.cos(a)*1.1,2.1,Math.sin(a)*1.1),V3(Math.cos(a)*1.8,.72,Math.sin(a)*1.8));const stream=mesh(new THREE.TubeGeometry(curve,18,.026,5,false),material('cloth','#c3d4d6',{transparent:true,opacity:.7,emissive:'#3a9291',emissiveIntensity:.12}),0,0,0,g);stream.castShadow=false;}
+ for(let i=0;i<8;i++){const a=i/8*TAU,curve=new THREE.QuadraticBezierCurve3(V3(Math.cos(a)*.48,2.71,Math.sin(a)*.48),V3(Math.cos(a)*1.1,2.1,Math.sin(a)*1.1),V3(Math.cos(a)*1.8,.72,Math.sin(a)*1.8));const stream=mesh(new THREE.TubeGeometry(curve,18,.026,5,false),material('cloth','#c3d4d6',{transparent:true,opacity:.7,emissive:'#3a9291',emissiveIntensity:.12}),0,0,0,g);stream.castShadow=false;stream.userData.dynamicWater=true;world.userData.supplyJets??=[];world.userData.supplyJets.push(stream);}
  world.userData.fountains.push(V3(x,y+2.75,z));obstacle(x,z,5.3,5.3,'fountain');
  for(const a of[.5,1.7,2.9,4.1,5.3])brookPlanter(x+Math.cos(a)*4,z+Math.sin(a)*4,1.05,a>3);
 }
@@ -237,18 +237,26 @@ function brookRibbon(z0,z1,center,width,main=false){
  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(verts,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));g.setAttribute('riverAcross',new THREE.Float32BufferAttribute(across,1));g.setIndex(index);g.computeVertexNormals();return g;
 }
 function brookWaterfall(z,top,bottom){
- const x=brookChannel(z),w=8.0,positions=[],uv=[],indices=[];
- for(let j=0;j<=24;j++)for(let i=0;i<=16;i++){const t=j/24,u=i/16;positions.push(x+(u-.5)*w,top+(bottom-top)*t,z+Math.sin(t*Math.PI*.5)*.65);uv.push(u,t);}
+ const x=brookChannel(z),w=8,positions=[],uv=[],indices=[];
+ // Local coordinates keep bounds and culling anchored at the actual falls.
+ for(let j=0;j<=24;j++)for(let i=0;i<=16;i++){const t=j/24,u=i/16;positions.push((u-.5)*w,(bottom-top)*t,Math.sin(t*Math.PI*.5)*.7);uv.push(u,t);}
  for(let j=0;j<24;j++)for(let i=0;i<16;i++){const a=j*17+i;indices.push(a,a+1,a+17,a+1,a+18,a+17);}
- const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));g.setIndex(indices);g.computeVertexNormals();
- const m=new THREE.ShaderMaterial({transparent:true,depthWrite:false,side:THREE.DoubleSide,uniforms:{time:windUniforms.time,flow:{value:1}},vertexShader:'uniform float time;varying vec2 v;void main(){v=uv;vec3 p=position;p.z+=sin(uv.x*37.+time*2.-uv.y*11.)*.035;gl_Position=projectionMatrix*modelViewMatrix*vec4(p,1.);}',fragmentShader:'uniform float time,flow;varying vec2 v;void main(){float streak=pow(.5+.5*sin(v.x*93.+sin(v.y*17.-time*4.)*.8),3.);float fleck=pow(max(0.,sin(v.y*79.-time*12.+v.x*17.)),10.);float edge=smoothstep(0.,.06,v.x)*smoothstep(0.,.06,1.-v.x);vec3 c=mix(vec3(.10,.36,.48),vec3(.70,.89,.92),streak*.67+fleck*.23);gl_FragColor=vec4(c,edge*(.65+streak*.25)*flow);\n#include <tonemapping_fragment>\n#include <colorspace_fragment>\n}'});
- const o=mesh(g,m,0,0,0);o.castShadow=false;world.userData.brookFalls??=[];world.userData.brookFalls.push(m);
- const fp=[],random=seeded(Math.round(z*87));for(let i=0;i<120;i++)fp.push(x+(random()-.5)*w,bottom+.08+random()*.18,z+.25+random()*1.4);
- const fg=new THREE.BufferGeometry();fg.setAttribute('position',new THREE.Float32BufferAttribute(fp,3));
- const fm=new THREE.ShaderMaterial({transparent:true,depthWrite:false,uniforms:{time:windUniforms.time},vertexShader:'uniform float time;void main(){vec3 p=position;p.y+=max(0.,sin(time*2.+position.x*13.))* .12;vec4 v=modelViewMatrix*vec4(p,1.);gl_Position=projectionMatrix*v;gl_PointSize=clamp(24./max(1.,-v.z),1.,4.);}',fragmentShader:'void main(){float a=1.-smoothstep(.15,.5,length(gl_PointCoord-.5));gl_FragColor=vec4(.80,.94,.96,a*.6);\n#include <tonemapping_fragment>\n#include <colorspace_fragment>\n}'});
- const foam=new THREE.Points(fg,fm);foam.frustumCulled=false;world.add(foam);
+ const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));g.setIndex(indices);g.computeVertexNormals();g.computeBoundingSphere();
+ const uniforms={time:brookHydraulics.time,flow:brookHydraulics.flow,daylight:brookHydraulics.light};
+ const m=new THREE.ShaderMaterial({depthWrite:true,side:THREE.DoubleSide,uniforms,
+ vertexShader:'uniform float time,flow;varying vec2 v;void main(){v=uv;vec3 p=position;p.z+=sin(uv.x*37.+time*2.-uv.y*11.)*.025*flow;gl_Position=projectionMatrix*modelViewMatrix*vec4(p,1.);}',
+ fragmentShader:'uniform float time,flow,daylight;varying vec2 v;void main(){float width=.12+.88*smoothstep(.01,.65,flow);float center=abs(v.x-.5)*2.;if(center>width)discard;float drift=v.y*11.-time*5.;float streak=.5+.25*sin(v.x*147.+sin(drift+v.x*19.)*.7)+.25*sin(v.x*241.-drift*.37);float froth=smoothstep(.64,1.,v.y)*(.25+.4*sin(v.x*83.+drift*1.7)*sin(v.x*127.-drift));vec3 c=mix(vec3(.075,.29,.38),vec3(.47,.73,.78),.25+streak*.38);c=mix(c,vec3(.72,.87,.86),clamp(froth,0.,.55));gl_FragColor=vec4(c*daylight,1.);\n#include <tonemapping_fragment>\n#include <colorspace_fragment>\n}'});
+ const o=mesh(g,m,x,top,z);o.castShadow=false;o.userData.dynamicWater=true;o.userData.waterfall=true;o.renderOrder=1;
+ world.userData.brookFalls??=[];world.userData.brookFalls.push(m);world.userData.brookFallObjects??=[];world.userData.brookFallObjects.push(o);
+ const fp=[],random=seeded(Math.round(z*87));for(let i=0;i<96;i++)fp.push((random()-.5)*w,.08+random()*.18,.25+random()*1.4);
+ const fg=new THREE.BufferGeometry();fg.setAttribute('position',new THREE.Float32BufferAttribute(fp,3));fg.computeBoundingSphere();
+ const fm=new THREE.ShaderMaterial({transparent:true,depthWrite:false,uniforms,
+ vertexShader:'uniform float time,flow;varying float foamVisible;void main(){foamVisible=step(abs(position.x)/4.,.12+flow*1.3);vec3 p=position;p.y+=max(0.,sin(time*2.+position.x*13.))*.12*flow;vec4 v=modelViewMatrix*vec4(p,1.);gl_Position=projectionMatrix*v;gl_PointSize=clamp(24./max(1.,-v.z),1.,4.);}',
+ fragmentShader:'uniform float flow,daylight;varying float foamVisible;void main(){float a=1.-smoothstep(.15,.5,length(gl_PointCoord-.5));gl_FragColor=vec4(vec3(.80,.94,.96)*daylight,a*.7*flow*foamVisible);\n#include <tonemapping_fragment>\n#include <colorspace_fragment>\n}'});
+ const foam=new THREE.Points(fg,fm);foam.position.set(x,bottom,z);foam.renderOrder=2;foam.userData.dynamicWater=true;world.add(foam);
 }
 buildGlobalWater=function(){
+ brookHydraulics.flow.value=state.flags.gate_open?(state.flags.pump_repaired?.72:.28):.025;brookHydraulics.time.value=0;
  buildWater({waterX:-43});water.geometry.dispose();water.geometry=brookRibbon(-290,210,riverX,z=>riverWidth(z)+2);const main=water;
  // Add the lower branch to the main plane without changing its reflection level.
  const branch=brookRibbon(98,221,brookChannel,z=>brookWidth(z)+1.25),merged=new THREE.BufferGeometry(),a=main.geometry.toNonIndexed(),b=branch.toNonIndexed();
@@ -275,7 +283,7 @@ buildGlobalWater=function(){
  }
 };
 const canalBeforeBrook=buildWorkingCanal;
-buildWorkingCanal=function(){canalBeforeBrook();world.userData.gate.position.set(brookChannel(70),5.45,70);world.userData.crank.position.set(brookChannel(70)+5.7,groundAt(brookChannel(70)+5.7,70)+1.3,70);world.userData.waterwheel.position.set(-169,4,91);for(const c of colliders)if(c.type==='winch'&&c.z===47){c.x=brookChannel(70)+5.7;c.z=70;}
+buildWorkingCanal=function(){canalBeforeBrook();world.userData.gate.userData.brookSluice=true;world.userData.gate.position.set(brookChannel(70),state.flags.gate_open?7.6:5.45,70);world.userData.crank.position.set(brookChannel(70)+5.7,groundAt(brookChannel(70)+5.7,70)+1.3,70);world.userData.waterwheel.position.set(-169,4,91);for(const c of colliders)if(c.type==='winch'&&c.z===47){c.x=brookChannel(70)+5.7;c.z=70;}
  const gx=brookChannel(70);for(const xx of[gx-5.1,gx+5.1]){box(xx,6.1,70,.43,4.8,.43,'darkWood','#8a6041');box(xx,4.1,70,.9,.7,.9,'wall','#b6c0c4');}box(gx,8.55,70,11.2,.45,.5,'wood','#aa7d51');
  for(const xx of[gx-2,gx+2])beam(V3(xx,8.5,70),V3(xx,5.6,70),.035,'metal','#84929b');beam(V3(-169,4,91),V3(-155,4,91),.13,'wood','#8a6041');
 };
@@ -347,7 +355,14 @@ updateLighting=function(){lightingBeforeBrook();if(!player||roomAt(player.x,play
  sceneryLight.direction.value.copy(sun.position).sub(sun.target.position).normalize();
 };
 const worldFxBeforeBrook=updateWorldFX;
-updateWorldFX=function(dt){worldFxBeforeBrook(dt);for(const m of world.userData.brookFalls??[])m.uniforms.flow.value=mix(m.uniforms.flow.value,state.flags.pump_repaired?1:.82,Math.min(1,dt*.7));if(world.userData.gate)world.userData.gate.position.y=mix(world.userData.gate.position.y,state.flags.gate_open?7.2:5.45,Math.min(1,dt*2));};
+updateWorldFX=function(dt){worldFxBeforeBrook(dt);
+ const gate=world.userData.gate;if(gate)gate.position.y=mix(gate.position.y,state.flags.gate_open?7.6:5.45,1-Math.exp(-dt*2.8));
+ const opening=gate?clamp((gate.position.y-5.45)/2.15,0,1):0,target=.025+opening*(state.flags.pump_repaired?.695:.255);
+ brookHydraulics.flow.value=mix(brookHydraulics.flow.value,target,1-Math.exp(-dt*1.5));brookHydraulics.time.value+=dt*(.04+brookHydraulics.flow.value*1.8);
+ const h=state.worldMinutes/60%24,day=Math.max(0,Math.sin((h-6)/12*Math.PI));brookHydraulics.light.value=.22+.78*Math.sqrt(day);
+ for(const jet of world.userData.supplyJets??[]){jet.visible=state.flags.pump_repaired===true;jet.material.opacity=.30+brookHydraulics.flow.value*.45;}
+ if(world.userData.waterwheel)world.userData.waterwheel.rotation.x+=dt*(state.flags.gate_open?.44:.12)-dt*brookHydraulics.flow.value*.6;
+};
 const loadBeforeBrook=loadAssets;
 loadAssets=async function(){
  document.documentElement.style.setProperty('--hero-bren',`url("${ASSETS.portraits.bren}")`);document.documentElement.style.setProperty('--hero-soren',`url("${ASSETS.portraits.soren}")`);

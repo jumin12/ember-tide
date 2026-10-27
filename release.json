@@ -1,60 +1,108 @@
 {
-  "release": "elyndor-2026-10-26-pixellab-town-v8",
+  "release": "elyndor-2026-10-26-town-events-v9",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 5397022,
-    "sha256": "65ab2166837a87ea6310bf3d69a93dcb504d82c840b9bc15361e6b5a96c7ee11",
+    "bytes": 5410963,
+    "sha256": "606199703bcba2c7ae11f624b5598ed6383e12bea92663ed07aaba8189cdf0f3",
     "offline": true
   },
   "changes": [
-    "Native PixelLab artwork integrated into the playable standalone game",
-    "Brookstead reconstructed with three terrain terraces, stairs, arched river bridge, watermill, cascades, fountain square, inn, forge, shop and planted gardens",
-    "Eight-direction whole-pose walks and idles, separate party runs, reviewed combat clips and transparent detailed portraits",
-    "Ink-and-gold main menu, loading, dialogue, nine menu pages and geographic world map",
-    "Individual tree and building cutaways, lit sprites, smooth shadows, raised-pool reflections and continuous day/night lighting",
-    "Connected exploration, regional campaign, timed combat, abilities, ascensions, equipment, healing, shops and local saves"
+    "Stable locally bounded waterfalls excluded from static landscape culling",
+    "One sluice-height update, gradual downstream flow, pump restoration, reactive wheel and fountain supply",
+    "Native PixelLab strength animation for Bren; physical and magical work use separate actions",
+    "Town wildlife exits through the eastern woodland before continuing; the elder runs over and automatically delivers the report",
+    "Current storyboard aid-office sequence and peaceful scout rescue",
+    "Full attack recovery frames, bounded melee movement, planted ranged attacks and synchronized projectile hits",
+    "Portraits inset upward and right from the trim; menu focus and flexible layout fixes",
+    "Accepted 128-pixel PixelLab grass and earth swatches, organic material variation, softened path edges and consistent main-road paving"
   ],
   "art": {
     "generator": "PixelLab",
     "nativeDesignFamilies": 41,
     "spriteFamilies": 42,
-    "packedSpritePoses": 4917,
+    "packedSpritePoses": 4925,
     "portraits": 38,
     "worldImages": 39,
     "materials": 15,
-    "logicalTileSize": 64,
+    "logicalTileSizes": [
+      64,
+      128
+    ],
     "runtimeTileSize": 512,
     "paletteColors": 60,
     "incompleteClips": 0,
-    "prompts": "MATERIAL_PROMPTS.json",
-    "previousGameArtworkUsed": false
+    "previousGameArtworkUsed": false,
+    "prompts": "MATERIAL_PROMPTS.json"
   },
   "validation": {
     "standaloneMatchesSource": true,
     "spritePixelAudit": true,
     "sourceCropWarnings": 0,
-    "eightWayKeyboardMovement": true,
-    "desktopMobileMenus": true,
-    "dialogueDesktopMobileContained": true,
-    "menuPages": 9,
-    "townBuildingCollisions": 0,
-    "townNpcOverlaps": 0,
-    "townResidentsUnique": true,
-    "campaignProgressionSteps": 44,
-    "campaignBattles": 7,
+    "regressionChecks": [
+      {
+        "name": "campaign",
+        "pass": true
+      },
+      {
+        "name": "events",
+        "pass": true
+      },
+      {
+        "name": "combat",
+        "pass": true
+      },
+      {
+        "name": "menus",
+        "pass": true
+      },
+      {
+        "name": "portraits",
+        "pass": true
+      },
+      {
+        "name": "surfaces",
+        "pass": true
+      },
+      {
+        "name": "town",
+        "pass": true
+      },
+      {
+        "name": "official",
+        "pass": true
+      },
+      {
+        "name": "performance",
+        "pass": true
+      }
+    ],
+    "waterfallVisibleFrames": [
+      72,
+      72
+    ],
+    "gateStrengthFrames": 8,
+    "waterFlowStages": {
+      "closed": 0.025,
+      "gateOpen": 0.2786923584599533,
+      "pumpRepaired": 0.7197626504235604
+    },
+    "wildlifeReachedEasternWoods": true,
+    "elderAutomaticallyApproachesAndTalks": true,
+    "portraitBottomInsetPixels": 6,
+    "allSevenPartyAndAscendedAttackClipsComplete": true,
+    "campaignProgressionSteps": 45,
+    "campaignBattles": 6,
     "restoredLights": 4,
     "ascensions": 2,
-    "campaignComplete": true,
     "navigationRoutes": 41,
-    "navigationIssues": [],
     "blockedFollowers": 0,
     "saveLoad": true,
+    "menuPages": 9,
+    "desktopAndMobilePortraitsContained": true,
+    "townNpcOverlaps": 0,
+    "townBuildingCollisions": 0,
     "reactiveReflectionsAndShadows": true,
-    "bridgeApproachSamples": 30,
-    "spritesReceiveEnvironmentalShadows": true,
-    "fourEdgeBlur": true,
-    "gpuEdgeBlurCenterUnchanged": true,
     "browserErrors": []
   },
   "performance": {
@@ -63,11 +111,11 @@
       1440,
       900
     ],
-    "nativeSamples": [
+    "samples": [
       {
         "area": "bridge",
-        "fps": 50.0,
-        "p95FrameMs": 22.5,
+        "fps": 71.4,
+        "p95FrameMs": 14.4,
         "buffer": [
           1440,
           900
@@ -76,8 +124,8 @@
       },
       {
         "area": "square",
-        "fps": 70.9,
-        "p95FrameMs": 16.4,
+        "fps": 71.9,
+        "p95FrameMs": 14.6,
         "buffer": [
           1440,
           900
@@ -86,8 +134,8 @@
       },
       {
         "area": "forest",
-        "fps": 72.1,
-        "p95FrameMs": 14.2,
+        "fps": 71.7,
+        "p95FrameMs": 14.5,
         "buffer": [
           1440,
           900
@@ -95,40 +143,8 @@
         "scale": 1
       }
     ],
-    "fourPartyWalkingSamples": [
-      {
-        "area": "Town",
-        "fps": 50.9,
-        "seconds": 5.01,
-        "buffer": [
-          1577,
-          887
-        ],
-        "walkingFlashEvents": 0
-      },
-      {
-        "area": "Forest",
-        "fps": 71.5,
-        "seconds": 4.99,
-        "buffer": [
-          1577,
-          887
-        ],
-        "walkingFlashEvents": 0
-      },
-      {
-        "area": "Canal",
-        "fps": 49.0,
-        "seconds": 5.02,
-        "buffer": [
-          1577,
-          887
-        ],
-        "walkingFlashEvents": 0
-      }
-    ],
-    "singleFileReductionPercent": 80.36,
-    "scope": "Short local hardware-accelerated real-render-count samples. Adaptive resolution is enabled. Performance depends on hardware; software WebGL remains substantially slower."
+    "singleFileReductionPercent": 80.31,
+    "scope": "Short local hardware-accelerated samples using actual render counts. Software WebGL remains substantially slower."
   },
   "status": "Integrated playable regional release"
 }
