@@ -1,6 +1,6 @@
 // Grounded characters, deliberate sprinting, useful thresholds and quiet chatter.
 const experience={bubbles:[],saveCircle:false,exits:0};
-function movementSpeed(){return keys.has('shift')?5.9:4.8;}
+function movementSpeed(){return keys.has('shift')?6.6:5.35;}
 function actorRadius(a){return a.party ? .48 : .41;}
 const actorBeforeUpright=createActor;
 createActor=function(...args){const a=actorBeforeUpright(...args);if(!a)return a;const m=a.mesh.material,before=m.onBeforeCompile,key=m.customProgramCacheKey.bind(m);m.onBeforeCompile=function(sh,...params){before.call(this,sh,...params);sh.vertexShader=sh.vertexShader.replace('#include <beginnormal_vertex>','#include <beginnormal_vertex>\nobjectNormal=normalize(objectNormal+vec3(0.,.45,0.));');};m.customProgramCacheKey=()=>key()+'-upright-v13';return a;};

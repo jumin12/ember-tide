@@ -1,15 +1,16 @@
 {
   "provider": "ElevenLabs",
+  "revision": 15,
   "tasks": [
     {
       "id": "theme-title",
       "kind": "music",
       "endpoint": "music",
       "request": {
-        "prompt": "Original instrumental fantasy JRPG soundtrack. Warm expressive piano, delicate harp, lyrical chamber strings and solo flute. Sunlight over a terraced river town and a thoughtful journey. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
-        "music_length_ms": 64000,
+        "prompt": "A coherent original Elyndor score: a memorable D E G A B rising five-note hope motif, with D Dorian and B minor colors. Detailed live-sounding orchestral performance, intimate expressive solo instruments, organic rubato at phrase endings, rich musical development, clean balanced mix with room for dialogue. No vocals, choir, distorted clipping, synthetic alarm tones or speech. Original instrumental fantasy JRPG soundtrack. Warm expressive piano, delicate harp, lyrical chamber strings and solo flute. Sunlight over a terraced river town and a thoughtful journey. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending. Immediate purposeful arrangement. A complete looping musical paragraph with no long intro and a flowing end matching the opening harmony.",
+        "music_length_ms": 96000,
         "force_instrumental": true,
-        "model_id": "music_v1"
+        "model_id": "music_v2_5"
       }
     },
     {
@@ -17,10 +18,10 @@
       "kind": "music",
       "endpoint": "music",
       "request": {
-        "prompt": "Original instrumental fantasy JRPG soundtrack. A hopeful adventurous travel theme, lyrical strings and French horn, rippling harp and woodwinds, light timpani. 104 BPM, D Dorian, a memorable rising D E G A B melody. Vast green valleys, rivers and clouds. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
-        "music_length_ms": 64000,
+        "prompt": "A coherent original Elyndor score: a memorable D E G A B rising five-note hope motif, with D Dorian and B minor colors. Detailed live-sounding orchestral performance, intimate expressive solo instruments, organic rubato at phrase endings, rich musical development, clean balanced mix with room for dialogue. No vocals, choir, distorted clipping, synthetic alarm tones or speech. Original instrumental fantasy JRPG soundtrack. A hopeful adventurous travel theme, lyrical strings and French horn, rippling harp and woodwinds, light timpani. 104 BPM, D Dorian, a memorable rising D E G A B melody. Vast green valleys, rivers and clouds. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending. Immediate purposeful arrangement. A complete looping musical paragraph with no long intro and a flowing end matching the opening harmony.",
+        "music_length_ms": 96000,
         "force_instrumental": true,
-        "model_id": "music_v1"
+        "model_id": "music_v2_5"
       }
     },
     {
@@ -28,10 +29,10 @@
       "kind": "music",
       "endpoint": "music",
       "request": {
-        "prompt": "Original instrumental fantasy JRPG soundtrack. Intimate warm village chamber music, wooden flute, plucked acoustic guitar, pizzicato strings, gentle hand percussion and soft violin melody. 92 BPM, D Dorian. Busy peaceful river town, markets and gardens. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
-        "music_length_ms": 64000,
+        "prompt": "A coherent original Elyndor score: a memorable D E G A B rising five-note hope motif, with D Dorian and B minor colors. Detailed live-sounding orchestral performance, intimate expressive solo instruments, organic rubato at phrase endings, rich musical development, clean balanced mix with room for dialogue. No vocals, choir, distorted clipping, synthetic alarm tones or speech. Original instrumental fantasy JRPG soundtrack. Intimate warm village chamber music, wooden flute, plucked acoustic guitar, pizzicato strings, gentle hand percussion and soft violin melody. 92 BPM, D Dorian. Busy peaceful river town, markets and gardens. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending. Immediate purposeful arrangement. A complete looping musical paragraph with no long intro and a flowing end matching the opening harmony.",
+        "music_length_ms": 96000,
         "force_instrumental": true,
-        "model_id": "music_v1"
+        "model_id": "music_v2_5"
       }
     },
     {
@@ -39,10 +40,10 @@
       "kind": "music",
       "endpoint": "music",
       "request": {
-        "prompt": "Original instrumental fantasy JRPG soundtrack. Peaceful woodland village theme, alto flute, soft marimba, pizzicato cello, muted hand drum and delicate strings. 88 BPM, D Dorian, warm human connection and natural beauty. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
-        "music_length_ms": 64000,
+        "prompt": "A coherent original Elyndor score: a memorable D E G A B rising five-note hope motif, with D Dorian and B minor colors. Detailed live-sounding orchestral performance, intimate expressive solo instruments, organic rubato at phrase endings, rich musical development, clean balanced mix with room for dialogue. No vocals, choir, distorted clipping, synthetic alarm tones or speech. Original instrumental fantasy JRPG soundtrack. Peaceful woodland village theme, alto flute, soft marimba, pizzicato cello, muted hand drum and delicate strings. 88 BPM, D Dorian, warm human connection and natural beauty. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending. Immediate purposeful arrangement. A complete looping musical paragraph with no long intro and a flowing end matching the opening harmony.",
+        "music_length_ms": 96000,
         "force_instrumental": true,
-        "model_id": "music_v1"
+        "model_id": "music_v2_5"
       }
     },
     {
@@ -50,10 +51,10 @@
       "kind": "music",
       "endpoint": "music",
       "request": {
-        "prompt": "Original instrumental fantasy JRPG soundtrack. Elegant hopeful royal-city chamber theme, strings, oboe, harp and expressive piano with restrained French horn. 96 BPM, dignified and compassionate, open courtyards and people helping one another. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
-        "music_length_ms": 64000,
+        "prompt": "A coherent original Elyndor score: a memorable D E G A B rising five-note hope motif, with D Dorian and B minor colors. Detailed live-sounding orchestral performance, intimate expressive solo instruments, organic rubato at phrase endings, rich musical development, clean balanced mix with room for dialogue. No vocals, choir, distorted clipping, synthetic alarm tones or speech. Original instrumental fantasy JRPG soundtrack. Elegant hopeful royal-city chamber theme, strings, oboe, harp and expressive piano with restrained French horn. 96 BPM, dignified and compassionate, open courtyards and people helping one another. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending. Immediate purposeful arrangement. A complete looping musical paragraph with no long intro and a flowing end matching the opening harmony.",
+        "music_length_ms": 96000,
         "force_instrumental": true,
-        "model_id": "music_v1"
+        "model_id": "music_v2_5"
       }
     },
     {
@@ -61,10 +62,10 @@
       "kind": "music",
       "endpoint": "music",
       "request": {
-        "prompt": "Original instrumental fantasy JRPG soundtrack. Mysterious ancient open-air ruins under trees. Low strings, glassy celesta, bass clarinet, quiet harp harmonics and sparse low percussion. D Dorian, a sense of listening and discovery, never horror. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
-        "music_length_ms": 64000,
+        "prompt": "A coherent original Elyndor score: a memorable D E G A B rising five-note hope motif, with D Dorian and B minor colors. Detailed live-sounding orchestral performance, intimate expressive solo instruments, organic rubato at phrase endings, rich musical development, clean balanced mix with room for dialogue. No vocals, choir, distorted clipping, synthetic alarm tones or speech. Original instrumental fantasy JRPG soundtrack. Mysterious ancient open-air ruins under trees. Low strings, glassy celesta, bass clarinet, quiet harp harmonics and sparse low percussion. D Dorian, a sense of listening and discovery, never horror. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending. Immediate purposeful arrangement. A complete looping musical paragraph with no long intro and a flowing end matching the opening harmony.",
+        "music_length_ms": 96000,
         "force_instrumental": true,
-        "model_id": "music_v1"
+        "model_id": "music_v2_5"
       }
     },
     {
@@ -72,10 +73,10 @@
       "kind": "music",
       "endpoint": "music",
       "request": {
-        "prompt": "Original instrumental fantasy JRPG soundtrack. A welcoming travelers lounge and shop theme: intimate nylon guitar, soft piano, clarinet and warm cello. Relaxed 80 BPM, fireside calm and a beautiful unhurried melody. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
-        "music_length_ms": 64000,
+        "prompt": "A coherent original Elyndor score: a memorable D E G A B rising five-note hope motif, with D Dorian and B minor colors. Detailed live-sounding orchestral performance, intimate expressive solo instruments, organic rubato at phrase endings, rich musical development, clean balanced mix with room for dialogue. No vocals, choir, distorted clipping, synthetic alarm tones or speech. Original instrumental fantasy JRPG soundtrack. A welcoming travelers lounge and shop theme: intimate nylon guitar, soft piano, clarinet and warm cello. Relaxed 80 BPM, fireside calm and a beautiful unhurried melody. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending. Immediate purposeful arrangement. A complete looping musical paragraph with no long intro and a flowing end matching the opening harmony.",
+        "music_length_ms": 96000,
         "force_instrumental": true,
-        "model_id": "music_v1"
+        "model_id": "music_v2_5"
       }
     },
     {
@@ -83,10 +84,10 @@
       "kind": "music",
       "endpoint": "music",
       "request": {
-        "prompt": "Original instrumental fantasy JRPG soundtrack. Quiet snowbound mountain journey, soft felt piano, glassy bells, lyrical cello and suspended strings. 84 BPM, cold clear air, resolve and hope rather than sadness. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
-        "music_length_ms": 64000,
+        "prompt": "A coherent original Elyndor score: a memorable D E G A B rising five-note hope motif, with D Dorian and B minor colors. Detailed live-sounding orchestral performance, intimate expressive solo instruments, organic rubato at phrase endings, rich musical development, clean balanced mix with room for dialogue. No vocals, choir, distorted clipping, synthetic alarm tones or speech. Original instrumental fantasy JRPG soundtrack. Quiet snowbound mountain journey, soft felt piano, glassy bells, lyrical cello and suspended strings. 84 BPM, cold clear air, resolve and hope rather than sadness. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending. Immediate purposeful arrangement. A complete looping musical paragraph with no long intro and a flowing end matching the opening harmony.",
+        "music_length_ms": 96000,
         "force_instrumental": true,
-        "model_id": "music_v1"
+        "model_id": "music_v2_5"
       }
     },
     {
@@ -94,10 +95,10 @@
       "kind": "music",
       "endpoint": "music",
       "request": {
-        "prompt": "Original instrumental fantasy JRPG soundtrack. An exhilarating stylish turn-based RPG battle theme, propulsive staccato strings, powerful low brass, agile solo violin and French horn, punchy orchestral percussion. 144 BPM, D minor, intricate heroic melody and urgent rhythmic drive. Energetic from the start, no long introduction. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
-        "music_length_ms": 64000,
+        "prompt": "A coherent original Elyndor score: a memorable D E G A B rising five-note hope motif, with D Dorian and B minor colors. Detailed live-sounding orchestral performance, intimate expressive solo instruments, organic rubato at phrase endings, rich musical development, clean balanced mix with room for dialogue. No vocals, choir, distorted clipping, synthetic alarm tones or speech. Original instrumental fantasy JRPG soundtrack. An exhilarating stylish turn-based RPG battle theme, propulsive staccato strings, powerful low brass, agile solo violin and French horn, punchy orchestral percussion. 144 BPM, D minor, intricate heroic melody and urgent rhythmic drive. Energetic from the start, no long introduction. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending. Immediate purposeful arrangement. A complete looping musical paragraph with no long intro and a flowing end matching the opening harmony.",
+        "music_length_ms": 96000,
         "force_instrumental": true,
-        "model_id": "music_v1"
+        "model_id": "music_v2_5"
       }
     },
     {
@@ -105,10 +106,10 @@
       "kind": "music",
       "endpoint": "music",
       "request": {
-        "prompt": "Original instrumental fantasy JRPG soundtrack. An intense epic JRPG boss battle, rapid strings, heavy brass answering a soaring violin melody, thunderous orchestral drums and piano ostinato. 152 BPM, D minor, dramatic shifting harmony, emotional confrontation and defiant hope. Strong immediate groove, no slow introduction. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
-        "music_length_ms": 64000,
+        "prompt": "A coherent original Elyndor score: a memorable D E G A B rising five-note hope motif, with D Dorian and B minor colors. Detailed live-sounding orchestral performance, intimate expressive solo instruments, organic rubato at phrase endings, rich musical development, clean balanced mix with room for dialogue. No vocals, choir, distorted clipping, synthetic alarm tones or speech. Original instrumental fantasy JRPG soundtrack. An intense epic JRPG boss battle, rapid strings, heavy brass answering a soaring violin melody, thunderous orchestral drums and piano ostinato. 152 BPM, D minor, dramatic shifting harmony, emotional confrontation and defiant hope. Strong immediate groove, no slow introduction. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending. Immediate purposeful arrangement. A complete looping musical paragraph with no long intro and a flowing end matching the opening harmony.",
+        "music_length_ms": 96000,
         "force_instrumental": true,
-        "model_id": "music_v1"
+        "model_id": "music_v2_5"
       }
     },
     {
@@ -116,10 +117,10 @@
       "kind": "music",
       "endpoint": "music",
       "request": {
-        "prompt": "Original instrumental fantasy JRPG soundtrack. A concise triumphant orchestral victory flourish: bright brass, flowing strings, harp and a satisfying warm final cadence, joyful and elegant. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
-        "music_length_ms": 8000,
+        "prompt": "A coherent original Elyndor score: a memorable D E G A B rising five-note hope motif, with D Dorian and B minor colors. Detailed live-sounding orchestral performance, intimate expressive solo instruments, organic rubato at phrase endings, rich musical development, clean balanced mix with room for dialogue. No vocals, choir, distorted clipping, synthetic alarm tones or speech. Original instrumental fantasy JRPG soundtrack. A concise triumphant orchestral victory flourish: bright brass, flowing strings, harp and a satisfying warm final cadence, joyful and elegant. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending. Immediate purposeful arrangement. A complete looping musical paragraph with no long intro and a flowing end matching the opening harmony.",
+        "music_length_ms": 12000,
         "force_instrumental": true,
-        "model_id": "music_v1"
+        "model_id": "music_v2_5"
       }
     },
     {
@@ -127,10 +128,10 @@
       "kind": "music",
       "endpoint": "music",
       "request": {
-        "prompt": "Original instrumental fantasy JRPG soundtrack. A concise gentle orchestral setback cue: soft piano, low strings and a suspended hopeful final chord, no dramatic horror. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
+        "prompt": "A coherent original Elyndor score: a memorable D E G A B rising five-note hope motif, with D Dorian and B minor colors. Detailed live-sounding orchestral performance, intimate expressive solo instruments, organic rubato at phrase endings, rich musical development, clean balanced mix with room for dialogue. No vocals, choir, distorted clipping, synthetic alarm tones or speech. Original instrumental fantasy JRPG soundtrack. A concise gentle orchestral setback cue: soft piano, low strings and a suspended hopeful final chord, no dramatic horror. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending. Immediate purposeful arrangement. A complete looping musical paragraph with no long intro and a flowing end matching the opening harmony.",
         "music_length_ms": 8000,
         "force_instrumental": true,
-        "model_id": "music_v1"
+        "model_id": "music_v2_5"
       }
     },
     {
@@ -138,10 +139,10 @@
       "kind": "music",
       "endpoint": "music",
       "request": {
-        "prompt": "Original instrumental fantasy JRPG soundtrack. A delicate warm harp and celesta rest-and-recovery flourish, soft ascending notes and peaceful resolution. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
+        "prompt": "A coherent original Elyndor score: a memorable D E G A B rising five-note hope motif, with D Dorian and B minor colors. Detailed live-sounding orchestral performance, intimate expressive solo instruments, organic rubato at phrase endings, rich musical development, clean balanced mix with room for dialogue. No vocals, choir, distorted clipping, synthetic alarm tones or speech. Original instrumental fantasy JRPG soundtrack. A delicate warm harp and celesta rest-and-recovery flourish, soft ascending notes and peaceful resolution. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending. Immediate purposeful arrangement. A complete looping musical paragraph with no long intro and a flowing end matching the opening harmony.",
         "music_length_ms": 5000,
         "force_instrumental": true,
-        "model_id": "music_v1"
+        "model_id": "music_v2_5"
       }
     },
     {
@@ -149,10 +150,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "One pair of soft leather boot footsteps running over old stone paving, dry natural foley, close perspective, no voice or music.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. One pair of soft leather boot footsteps running over old stone paving, dry natural foley, close perspective, no voice or music.",
         "duration_seconds": 0.7,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -161,10 +162,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "One single leather boot footfall on soft dry woodland earth, a quiet crunch of tiny grit and leaves, close natural foley, no voice.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. One single leather boot footfall on soft dry woodland earth, a quiet crunch of tiny grit and leaves, close natural foley, no voice.",
         "duration_seconds": 0.5,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -173,10 +174,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "One single soft leather boot footfall on a solid timber floor, warm short wooden knock and slight leather shuffle, no creaking rhythm, no voice.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. One single soft leather boot footfall on a solid timber floor, warm short wooden knock and slight leather shuffle, no creaking rhythm, no voice.",
         "duration_seconds": 0.5,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -185,10 +186,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A tiny elegant muted wooden tick with a delicate glass overtone, single understated fantasy game menu cursor movement, no music.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A tiny elegant muted wooden tick with a delicate glass overtone, single understated fantasy game menu cursor movement, no music.",
         "duration_seconds": 0.5,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -197,10 +198,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A short elegant crystalline two-note confirmation chime with a soft warm attack, premium fantasy RPG interface, no speech.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A short elegant crystalline two-note confirmation chime with a soft warm attack, premium fantasy RPG interface, no speech.",
         "duration_seconds": 0.6,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -209,10 +210,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A quiet descending wooden and glass interface click, concise premium fantasy game back action.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A quiet descending wooden and glass interface click, concise premium fantasy game back action.",
         "duration_seconds": 0.5,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -221,10 +222,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A soft parchment unfurl and a tiny warm metallic glint, elegant fantasy menu opening, concise and gentle.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A soft parchment unfurl and a tiny warm metallic glint, elegant fantasy menu opening, concise and gentle.",
         "duration_seconds": 0.7,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -233,10 +234,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A beautiful soft rising crystal flourish with a warm resonant finish, recording a journey at a fantasy save circle, magical but understated.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A beautiful soft rising crystal flourish with a warm resonant finish, recording a journey at a fantasy save circle, magical but understated.",
         "duration_seconds": 2.4,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -245,10 +246,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A gentle glass bottle uncork and a small sparkling restorative shimmer, premium RPG healing item.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A gentle glass bottle uncork and a small sparkling restorative shimmer, premium RPG healing item.",
         "duration_seconds": 1.1,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -257,10 +258,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A clean leather strap adjustment and light metal clasp clicking shut, concise fantasy equipment foley.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A clean leather strap adjustment and light metal clasp clicking shut, concise fantasy equipment foley.",
         "duration_seconds": 0.8,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -269,10 +270,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A small old wooden treasure chest opening, warm wood creak, latch click and a delicate discovery glint.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A small old wooden treasure chest opening, warm wood creak, latch click and a delicate discovery glint.",
         "duration_seconds": 1.6,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -281,10 +282,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A short beautiful bright harp and bell discovery flourish, elegant fantasy adventure, no speech.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A short beautiful bright harp and bell discovery flourish, elegant fantasy adventure, no speech.",
         "duration_seconds": 2.1,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -293,10 +294,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A single powerful clean longsword whoosh, tight low wind cutting to a crisp metallic edge, cinematic fantasy combat, no hit or voices.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A single powerful clean longsword whoosh, tight low wind cutting to a crisp metallic edge, cinematic fantasy combat, no hit or voices.",
         "duration_seconds": 0.65,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -305,10 +306,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A sharp dramatic fantasy sword contact, ringing steel layered with a weighty dry impact and a short magical shimmer, no gore, no voice.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A sharp dramatic fantasy sword contact, ringing steel layered with a weighty dry impact and a short magical shimmer, no gore, no voice.",
         "duration_seconds": 0.8,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -317,10 +318,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A forceful deep armored impact, a short stone and metal crack with a cinematic bass thump and tiny debris, no gore or voice.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A forceful deep armored impact, a short stone and metal crack with a cinematic bass thump and tiny debris, no gore or voice.",
         "duration_seconds": 1,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -329,10 +330,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A taut bowstring drawn and released in one clean elastic twang followed by a fast arrow air-whistle, natural detailed foley.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A taut bowstring drawn and released in one clean elastic twang followed by a fast arrow air-whistle, natural detailed foley.",
         "duration_seconds": 0.8,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -341,10 +342,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A crisp arrow impact with a tight wooden snap, small thud and a short bright magical ping, no gore or voice.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A crisp arrow impact with a tight wooden snap, small thud and a short bright magical ping, no gore or voice.",
         "duration_seconds": 0.65,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -353,10 +354,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A powerful compact magical energy pulse, a deep resonant charge rising into a crisp luminous crystalline burst with an airy tail, cinematic and clean.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A powerful compact magical energy pulse, a deep resonant charge rising into a crisp luminous crystalline burst with an airy tail, cinematic and clean.",
         "duration_seconds": 1.5,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -365,10 +366,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A fierce magical flame gathering in a palm, a quick rising hot-air rush and a tight ignition crack, no ambient fire bed or speech.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A fierce magical flame gathering in a palm, a quick rising hot-air rush and a tight ignition crack, no ambient fire bed or speech.",
         "duration_seconds": 0.9,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -377,10 +378,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A spectacular concentrated fantasy fire blast, powerful ignition punch with roaring flame and fast fading crackling embers, no voices.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A spectacular concentrated fantasy fire blast, powerful ignition punch with roaring flame and fast fading crackling embers, no voices.",
         "duration_seconds": 1.8,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -389,10 +390,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "An explosive eruption of luminous ice crystals, sharp glassy crystalline cracks, deep cold impact and tiny delicate falling shards, no voices.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. An explosive eruption of luminous ice crystals, sharp glassy crystalline cracks, deep cold impact and tiny delicate falling shards, no voices.",
         "duration_seconds": 1.8,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -401,10 +402,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A beautiful swirling healing spell, soft airy rising shimmer, layered crystalline bells and a warm gentle resolving hum, no voices.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A beautiful swirling healing spell, soft airy rising shimmer, layered crystalline bells and a warm gentle resolving hum, no voices.",
         "duration_seconds": 1.8,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -413,10 +414,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "An elegant protective magical barrier forming, deep smooth tonal swell, clear resonant glass ring and a soft shimmering tail, no voice.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. An elegant protective magical barrier forming, deep smooth tonal swell, clear resonant glass ring and a soft shimmering tail, no voice.",
         "duration_seconds": 1.6,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -425,10 +426,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "An extraordinary heroic armor transformation, rising crystalline energy, layered metallic armor locks, a huge radiant bass impact and glittering clear resonance, no vocals.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. An extraordinary heroic armor transformation, rising crystalline energy, layered metallic armor locks, a huge radiant bass impact and glittering clear resonance, no vocals.",
         "duration_seconds": 3,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -437,10 +438,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A quick airy sword dodge whoosh passing harmlessly by, short soft cloth flutter, no impact or voice.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A quick airy sword dodge whoosh passing harmlessly by, short soft cloth flutter, no impact or voice.",
         "duration_seconds": 0.6,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -449,10 +450,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A short powerful wolf snarl and bark, animal breath and natural throat texture, tense but not supernatural or demonic.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A short powerful wolf snarl and bark, animal breath and natural throat texture, tense but not supernatural or demonic.",
         "duration_seconds": 1,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -461,10 +462,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A short deep wild-boar grunt, snort and forceful exhale, natural animal sound, no monstrous electronic voice.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A short deep wild-boar grunt, snort and forceful exhale, natural animal sound, no monstrous electronic voice.",
         "duration_seconds": 1,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -473,10 +474,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A brief natural distressed animal yelp and breath after a nonlethal impact, no gore, no prolonged suffering.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A brief natural distressed animal yelp and breath after a nonlethal impact, no gore, no prolonged suffering.",
         "duration_seconds": 0.7,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -485,10 +486,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A heavy wooden weapon whipping through the air, an intense short whoosh, no impact or voice.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A heavy wooden weapon whipping through the air, an intense short whoosh, no impact or voice.",
         "duration_seconds": 0.7,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -497,10 +498,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "An old timber sluice crank turning with rusty gear strain, then a decisive wooden release and heavy latch clunk, no water bed.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. An old timber sluice crank turning with rusty gear strain, then a decisive wooden release and heavy latch clunk, no water bed.",
         "duration_seconds": 3.2,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -509,10 +510,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A river sluice releasing built-up water, deep rushing surge blooming into a smooth flowing current, natural clear water, no voice.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A river sluice releasing built-up water, deep rushing surge blooming into a smooth flowing current, natural clear water, no voice.",
         "duration_seconds": 3,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -521,10 +522,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "Careful cooperative repair foley, wood settling and a few small tool clicks followed by a gentle magical stabilizing hum, no hammer rhythm or voice.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. Careful cooperative repair foley, wood settling and a few small tool clicks followed by a gentle magical stabilizing hum, no hammer rhythm or voice.",
         "duration_seconds": 2,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -533,10 +534,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A beautiful restrained fantasy crystal restoration, layered glass harmonics clearing into a steady warm luminous tone and a soft final sparkle, no voices.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A beautiful restrained fantasy crystal restoration, layered glass harmonics clearing into a steady warm luminous tone and a soft final sparkle, no voices.",
         "duration_seconds": 3,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -545,10 +546,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A single distant natural thunder crack followed by a broad low rolling rumble across a valley, cinematic but realistic, no rain bed.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A single distant natural thunder crack followed by a broad low rolling rumble across a valley, cinematic but realistic, no rain bed.",
         "duration_seconds": 5,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -557,10 +558,10 @@
       "kind": "effect",
       "endpoint": "sound-generation",
       "request": {
-        "text": "One soft friendly sheep bleat, close and natural, no voices or background music.",
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. One soft friendly sheep bleat, close and natural, no voices or background music.",
         "duration_seconds": 1,
         "loop": false,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -569,10 +570,10 @@
       "kind": "ambience",
       "endpoint": "sound-generation",
       "request": {
-        "text": "Quiet lush forest ambience, layered distant songbirds, subtle leaves rustling in a mild breeze and tiny insects, no voices or music.",
-        "duration_seconds": 15,
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. Quiet lush forest ambience, layered distant songbirds, subtle leaves rustling in a mild breeze and tiny insects, no voices or music. A seamless continuous stereo loop, no abrupt entrances, no fades or silence at the ends; varied overlapping layers, believable physical distance.",
+        "duration_seconds": 20,
         "loop": true,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -581,10 +582,10 @@
       "kind": "ambience",
       "endpoint": "sound-generation",
       "request": {
-        "text": "Quiet friendly village ambience, distant indistinct crowd murmur without intelligible words, a little wooden activity and birds far away, no music.",
-        "duration_seconds": 15,
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. Quiet friendly village ambience, distant indistinct crowd murmur without intelligible words, a little wooden activity and birds far away, no music. A seamless continuous stereo loop, no abrupt entrances, no fades or silence at the ends; varied overlapping layers, believable physical distance.",
+        "duration_seconds": 20,
         "loop": true,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -593,10 +594,10 @@
       "kind": "ambience",
       "endpoint": "sound-generation",
       "request": {
-        "text": "Beautiful clear shallow river flowing continuously over natural stones, soft layered water movement with delicate close detail, no bird or voices.",
-        "duration_seconds": 14,
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. Beautiful clear shallow river flowing continuously over natural stones, soft layered water movement with delicate close detail, no bird or voices. A seamless continuous stereo loop, no abrupt entrances, no fades or silence at the ends; varied overlapping layers, believable physical distance.",
+        "duration_seconds": 20,
         "loop": true,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -605,10 +606,10 @@
       "kind": "ambience",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A broad gentle mill waterfall flowing continuously into a small river pool, textured rushing water and soft bubbling foam, no voices.",
-        "duration_seconds": 14,
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A broad gentle mill waterfall flowing continuously into a small river pool, textured rushing water and soft bubbling foam, no voices. A seamless continuous stereo loop, no abrupt entrances, no fades or silence at the ends; varied overlapping layers, believable physical distance.",
+        "duration_seconds": 20,
         "loop": true,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -617,10 +618,10 @@
       "kind": "ambience",
       "endpoint": "sound-generation",
       "request": {
-        "text": "Steady natural rain falling on grass and leaves with sparse tiny stone splashes, soft detailed stereo atmosphere, no thunder or voices.",
-        "duration_seconds": 16,
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. Steady natural rain falling on grass and leaves with sparse tiny stone splashes, soft detailed stereo atmosphere, no thunder or voices. A seamless continuous stereo loop, no abrupt entrances, no fades or silence at the ends; varied overlapping layers, believable physical distance.",
+        "duration_seconds": 20,
         "loop": true,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -629,10 +630,10 @@
       "kind": "ambience",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A gentle natural wind through tree leaves and tall grass, smooth changing gusts with no tonal whistle, no voices or birds.",
-        "duration_seconds": 16,
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A gentle natural wind through tree leaves and tall grass, smooth changing gusts with no tonal whistle, no voices or birds. A seamless continuous stereo loop, no abrupt entrances, no fades or silence at the ends; varied overlapping layers, believable physical distance.",
+        "duration_seconds": 20,
         "loop": true,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -641,10 +642,10 @@
       "kind": "ambience",
       "endpoint": "sound-generation",
       "request": {
-        "text": "Strong natural wind through a wooded valley, changing low gusts and shaking leaves, no thunder, rain or voices.",
-        "duration_seconds": 15,
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. Strong natural wind through a wooded valley, changing low gusts and shaking leaves, no thunder, rain or voices. A seamless continuous stereo loop, no abrupt entrances, no fades or silence at the ends; varied overlapping layers, believable physical distance.",
+        "duration_seconds": 20,
         "loop": true,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -653,10 +654,10 @@
       "kind": "ambience",
       "endpoint": "sound-generation",
       "request": {
-        "text": "A small welcoming hearth fire, gentle layered crackle, occasional soft wood tick and warm low flame, no voice or music.",
-        "duration_seconds": 12,
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. A small welcoming hearth fire, gentle layered crackle, occasional soft wood tick and warm low flame, no voice or music. A seamless continuous stereo loop, no abrupt entrances, no fades or silence at the ends; varied overlapping layers, believable physical distance.",
+        "duration_seconds": 20,
         "loop": true,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -665,10 +666,10 @@
       "kind": "ambience",
       "endpoint": "sound-generation",
       "request": {
-        "text": "Soft wind through ancient stone ruins, very faint grass and leaf movement, a few distant tiny bird calls, calm mysterious outdoor atmosphere.",
-        "duration_seconds": 15,
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. Soft wind through ancient stone ruins, very faint grass and leaf movement, a few distant tiny bird calls, calm mysterious outdoor atmosphere. A seamless continuous stereo loop, no abrupt entrances, no fades or silence at the ends; varied overlapping layers, believable physical distance.",
+        "duration_seconds": 20,
         "loop": true,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     },
@@ -677,10 +678,418 @@
       "kind": "ambience",
       "endpoint": "sound-generation",
       "request": {
-        "text": "Cold mountain breeze, soft natural gusts and a few delicate icy grains rustling across a stony pass, no howling, no music or voices.",
-        "duration_seconds": 15,
+        "text": "Premium cinematic game production, detailed natural transient and textured body, spacious but focused, balanced dynamics, no clipping. Cold mountain breeze, soft natural gusts and a few delicate icy grains rustling across a stony pass, no howling, no music or voices. A seamless continuous stereo loop, no abrupt entrances, no fades or silence at the ends; varied overlapping layers, believable physical distance.",
+        "duration_seconds": 20,
         "loop": true,
-        "prompt_influence": 0.65,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "step-stone-1",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "One isolated light forefoot landing from a leather boot on uneven pale limestone paving, fine grit and soft leather soles. Short clean foley; one footfall only, no rhythm or tail. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.5,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "step-stone-2",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "One isolated slightly heavier heel-to-toe landing from a leather boot on uneven pale limestone paving, fine grit and soft leather soles. Short clean foley; one footfall only, no rhythm or tail. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.5,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "step-stone-3",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "One isolated quick angled running footfall from a leather boot on uneven pale limestone paving, fine grit and soft leather soles. Short clean foley; one footfall only, no rhythm or tail. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.5,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "step-earth-1",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "One isolated light forefoot landing from a leather boot on soft earth and dry leaves, delicate granular crunch. Short clean foley; one footfall only, no rhythm or tail. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.5,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "step-earth-2",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "One isolated slightly heavier heel-to-toe landing from a leather boot on soft earth and dry leaves, delicate granular crunch. Short clean foley; one footfall only, no rhythm or tail. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.5,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "step-earth-3",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "One isolated quick angled running footfall from a leather boot on soft earth and dry leaves, delicate granular crunch. Short clean foley; one footfall only, no rhythm or tail. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.5,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "step-wood-1",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "One isolated light forefoot landing from a leather boot on solid oak bridge planks, tight woody knock and leather scuff. Short clean foley; one footfall only, no rhythm or tail. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.5,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "step-wood-2",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "One isolated slightly heavier heel-to-toe landing from a leather boot on solid oak bridge planks, tight woody knock and leather scuff. Short clean foley; one footfall only, no rhythm or tail. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.5,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "step-wood-3",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "One isolated quick angled running footfall from a leather boot on solid oak bridge planks, tight woody knock and leather scuff. Short clean foley; one footfall only, no rhythm or tail. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.5,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "step-wet-1",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "One isolated light forefoot landing from a leather boot on rain-wet paving with a small close splash. Short clean foley; one footfall only, no rhythm or tail. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.5,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "step-wet-2",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "One isolated slightly heavier heel-to-toe landing from a leather boot on rain-wet paving with a small close splash. Short clean foley; one footfall only, no rhythm or tail. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.5,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "step-wet-3",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "One isolated quick angled running footfall from a leather boot on rain-wet paving with a small close splash. Short clean foley; one footfall only, no rhythm or tail. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.5,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "step-snow-1",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "One isolated light forefoot landing from a leather boot on powdered snow over packed earth, soft compacting crunch. Short clean foley; one footfall only, no rhythm or tail. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.5,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "step-snow-2",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "One isolated slightly heavier heel-to-toe landing from a leather boot on powdered snow over packed earth, soft compacting crunch. Short clean foley; one footfall only, no rhythm or tail. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.5,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "step-snow-3",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "One isolated quick angled running footfall from a leather boot on powdered snow over packed earth, soft compacting crunch. Short clean foley; one footfall only, no rhythm or tail. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.5,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "blade-swing-1",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A fast rising sword cut, airy edge and a tight leather movement. One brief cinematic attack, no impact. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.6,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "blade-swing-2",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A hard horizontal sword slash, broad low whoosh with crisp steel ring. One brief cinematic attack, no impact. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.6,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "blade-swing-3",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A forceful downward longsword finish, deep air displacement and a sparkling trailing edge. One brief cinematic attack, no impact. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.6,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "blade-impact-1",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "Precise steel contact with a dry solid body. One clean game impact, immediate transient, no explosion. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.65,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "blade-impact-2",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "Heavy metallic contact with low wooden resonance. One clean game impact, immediate transient, no explosion. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.65,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "blade-impact-3",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "Bright glancing steel strike with scattering clear sparks. One clean game impact, immediate transient, no explosion. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.65,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "arrow-release",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "One taut wooden recurve bow releasing a physical arrow, crisp string snap with a short feathered aerodynamic whoosh. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.6,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "arrow-hit",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A physical arrow arriving into a thick leather target, tight woody impact, feathers fluttering, no gore. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.6,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "staff-charge",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A focused magical staff gathering quiet energy, breathy spinning harmonics rising into a clean glass pulse. Detailed elegant fantasy sound. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 1.4,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "pixel-dissolve",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A creature softly dispersing into hundreds of tiny bright grains, low airy exhale transforming into an intricate falling crystalline shimmer, three-second graceful tail, no explosion. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 3.4,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "fire-ignite",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A magical lance ignites: crisp spark, forceful rushing ignition, gritty warm flame crackle and a tight bass thump. Fast expressive fantasy attack. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 1.4,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ice-shatter",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "An ice flower expands in a crystalline burst, deep clean frozen crack with hundreds of fine tinkling shards and soft icy breath. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 1.6,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ward-break",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A magical glass shield absorbs a strike, resonant crystal contact and a controlled shower of fine harmonic fragments. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 1.1,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "combat-select",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A precise soft targeting tick, airy glass and a tiny restrained metallic accent, one short elegant sound. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 0.5,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "travel",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A soft rush of wind, leather pack movement, and a bright gentle compass chime, elegant fantasy journey transition. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 1.2,
+        "loop": false,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ambient-harbor",
+      "kind": "ambience",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "Beautiful tranquil coastal harbor ambience, small waves against stone quays, gentle rigging and creaking moored boats, distant gulls, stereo physical distance. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 20,
+        "loop": true,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ambient-night",
+      "kind": "ambience",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "Warm summer night beside a woodland village, quiet layered crickets, one very distant owl, soft leaves moving in occasional breeze, intimate calm. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 20,
+        "loop": true,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ambient-roof-rain",
+      "kind": "ambience",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "Natural steady rain pattering on an oak shingle roof above an inn, distant outdoor water with warm indoor muffling, fine varied droplets. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 20,
+        "loop": true,
+        "prompt_influence": 0.8,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ambient-stream-close",
+      "kind": "ambience",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A shallow flowing stream passing close over varied stones, clear small bubbles, gentle splashes and layered fast ripples, natural detailed stereo. Studio-quality detailed game sound, no music, no spoken words, no clipping.",
+        "duration_seconds": 20,
+        "loop": true,
+        "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
     }

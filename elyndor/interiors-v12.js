@@ -10,7 +10,7 @@ for(const[id,q]of Object.entries(INTERIORS))SCENES[id]={name:q.name,sub:'Interio
 function addInteriorDoors(){
  if(activeScene.kind!=='poi')return;const key=activeScene.key;
  const links=key==='brookstead'?[['shop','brookShop'],['inn','brookInn']]:key==='highmere'?[['innDoor','highmereInn'],['councilDoor','council'],['archiveDoor','archives'],['shop','highmereShop']]:key==='fern'?[['shop','fernShop']]:key==='alder'?[['shop','alderShop']]:[];
- for(const[type,id]of links){const o=interactables.find(o=>o.type===type);if(o){o.interior=id;o.label='Enter '+INTERIORS[id].name;o.radius=2.6;}}
+ for(const[type,id]of links){const o=interactables.find(o=>o.type===type);if(o&&INTERIORS[id]){o.interior=id;o.label='Enter '+INTERIORS[id].name;o.radius=2.6;}}
  if(key==='alder'&&!interactables.some(o=>o.interior==='alderShop')){createInteraction('interiorDoor',119,-96,'Enter Alderbridge Trading House');Object.assign(interactables.at(-1),{interior:'alderShop',radius:2.7});}
 }
 const INTERIOR_CHATTER={apprentice:['Apprentice','We are checking the stock for travelers. Let the clerk know what you need.'],potter:['Potter','I make the jars for the salves. The clerk keeps the remedies stocked.'],innkeeper:['The innkeeper','A warm meal and a little rest can make the next road easier.']};
@@ -37,7 +37,7 @@ function buildJourneyInterior(id,spawn){
   // The rear counter leaves two clear customer aisles and a spacious foreground.
   box(0,.85,-3.4,14,1.7,1.5,'darkWood','#967b56');box(0,1.78,-3.4,14.5,.16,1.8,'wall','#c3c7b5');obstacle(0,-3.4,14,1.8,'shop counter');
   for(const x of[-7.1,7.1]){box(x,.85,-1.9,1.25,1.7,3.9,'darkWood','#9d805b');box(x,1.78,-1.9,1.55,.16,4.2,'wall','#c3c7b5');obstacle(x,-1.9,1.4,4,'counter return');}
-  for(let i=0;i<6;i++){const x=-4.8+i*1.9,y=3.2;box(x,y,-8.8,.1,2,.1,'metal','#bbc6be');const sword=box(x,y+.4,-8.65,.12,1.8,.09,'metal','#cbd8cf');sword.rotation.z=(i%2-.5)*.12;box(x,y-.25,-8.6,.6,.09,.13,'metal','#c9aa68');box(x,y-.5,-8.65,.12,.45,.14,'wood','#8f7155');}
+  if(id!=='brookShop')for(let i=0;i<6;i++){const x=-4.8+i*1.9,y=3.2;box(x,y,-8.8,.1,2,.1,'metal','#bbc6be');const sword=box(x,y+.4,-8.65,.12,1.8,.09,'metal','#cbd8cf');sword.rotation.z=(i%2-.5)*.12;box(x,y-.25,-8.6,.6,.09,.13,'metal','#c9aa68');box(x,y-.5,-8.65,.12,.45,.14,'wood','#8f7155');}
   for(const x of[-9.7,9.7]){roomCrate(x,1.7,1.25);roomCrate(x,3.1,1.1);barrel(x,-5.9);}
   for(const x of[-5,5])roomCandle(x,1.92,-3.5);
   createInteraction('shop',0,-5,'Browse equipment and provisions',({brookShop:'merchant',highmereShop:'capital-stall',fernShop:'fern-hunter',alderShop:'alder-market'})[id]);interactables.at(-1).actor.scripted=true;

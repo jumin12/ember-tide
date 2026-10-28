@@ -327,5 +327,442 @@
       "An ancient Elder Light remnant"
     ],
     "referencePolicy": "Approved Drive character portraits and storyboard illustrations only. No earlier generated art as reference."
+  },
+  "v15": {
+    "policy": "New native PixelLab materials; approved concept references only; invalid candidates rejected.",
+    "selected": [
+      {
+        "key": "bark",
+        "job": "ca02dfbc-45fc-4907-8f50-7c9354d5702c",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "fda6c20ac27066e2b7b7d4b18b7d23e986299f6e54bfca7e347fe521775cf405"
+      },
+      {
+        "key": "barrelStave",
+        "job": "1d6ecfca-e7d5-4849-91b2-595729f662f1",
+        "nativeSize": [
+          256,
+          256
+        ],
+        "sha256": "2db8f6e26c29c639af91759c5ca36b84c1c0f6d6e7f45f41b0360e58398b920c"
+      },
+      {
+        "key": "barren",
+        "job": "69179fa3-4cbd-4e24-acc5-f630d5cd5c43",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "9d4f20fab841b755092741716f644fddf41b5be49860ccf015404a2fa08b4431"
+      },
+      {
+        "key": "cloth",
+        "job": "3d847e10-4c05-4b9d-85c0-08b17e7c265e",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "5611effd3cdf17416b659611ac1058f090660a929dd6876077dafad54163c17c"
+      },
+      {
+        "key": "cloudMask",
+        "job": "45af5ae9-a5b0-4444-be74-8b72b70809c4",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "7ba78d749af1da132e605afe02571d7949988de5571e84994e1d297c915275e2"
+      },
+      {
+        "key": "cobble",
+        "job": "0edd6ef9-6f62-4ca4-ae06-35c67f68ed28",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "b2a5a81e5bfa8a31d17bdbc51056d195c7016832d09077b6b7b76b015317d0cd"
+      },
+      {
+        "key": "cobbleA",
+        "job": "33d3f7c0-deec-4d1f-94fe-7402dbcb87f4",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "a1cb599b297d7451b8184a15afe15cc3104db0b1073922c9198338c23f6d011e"
+      },
+      {
+        "key": "cobbleB",
+        "job": "d1bfd791-1363-4a8c-b285-6a24a57a97eb",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "45dee003b8f7da74f36103d0d0dc009f3ae0b461bd718ef5230edd83d5572f54"
+      },
+      {
+        "key": "crateFace",
+        "job": "ba73dda5-ca8c-4d32-90ca-2786799f60cd",
+        "nativeSize": [
+          256,
+          256
+        ],
+        "sha256": "f3824f76ad9da38ca310e0efac943b8b14b69ff2ed016a974a683a817bdbe400"
+      },
+      {
+        "key": "darkWood",
+        "job": "6e273700-c4b9-42bd-a132-46355f75ca4d",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "ba230db3bf49888393b84dab43d353df7e3ee0f48475f69bb4fec9e3f39cea28"
+      },
+      {
+        "key": "desert",
+        "job": "ec7f3543-d414-4ba0-b302-237803801408",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "5c3405994b4d64a69595e218ebbeb05f55c0c4020c0d39962225c3739a50c2d5"
+      },
+      {
+        "key": "door",
+        "job": "23653c02-1cb9-4412-b6c3-d20767193cc6",
+        "nativeSize": [
+          256,
+          384
+        ],
+        "sha256": "57b5c90ce65f982bd01bdc41b62e287361caa1bcc697cee7abe72bbd8f8b8ea1"
+      },
+      {
+        "key": "earth",
+        "job": "d28fc65d-6832-4a38-8e45-7311ab88971c",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "f7e77c2043daacd621c9daf0d0509f69b2c61574659736a3fdbac7e56eef87c9"
+      },
+      {
+        "key": "earthA",
+        "job": "1fa71f5b-e9a8-4fe6-a49b-fe6654608002",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "b09b9526ac31d0ef2534a4f94bf179aaca52f97c44029675b619dc97465b791e"
+      },
+      {
+        "key": "exitMarker",
+        "job": "427ba5bd-bb9e-4b45-8c5e-37d6d9feba7d",
+        "nativeSize": [
+          256,
+          256
+        ],
+        "sha256": "f6c6e17275c40998f48e8ee7f3b3980c45632277280e49b2a7f9b66b63dd8bce"
+      },
+      {
+        "key": "fern",
+        "job": "8b89d611-8ddf-4244-876d-8d68c8980457",
+        "nativeSize": [
+          256,
+          256
+        ],
+        "sha256": "f409d3018500b5fca8aa7ba9912bd74bac4b4dee6f5bb091f65f9b4db3085896"
+      },
+      {
+        "key": "flowers",
+        "job": "dd44946d-b684-43b6-a165-2fc1e00fb552",
+        "nativeSize": [
+          256,
+          256
+        ],
+        "sha256": "eab13a76852c6753a08afef3f3f8f9afc7687ed87220457c8283817f28f0f71f"
+      },
+      {
+        "key": "forgeSign",
+        "job": "2f609079-e154-491f-980f-e3239fe387f4",
+        "nativeSize": [
+          256,
+          256
+        ],
+        "sha256": "f5d11394683d153b6f091e6b8a0cb9910600e6411eabf70b2b6df4406f394045"
+      },
+      {
+        "key": "fxEnergy",
+        "job": "e1dfe9b8-2cea-420a-91f2-b99ea9a982b1",
+        "nativeSize": [
+          256,
+          256
+        ],
+        "sha256": "8f8a6e85a39c94b3fa2d7afc72db604da71540ae82bfb090e01c8ac38a0b3262"
+      },
+      {
+        "key": "fxFire",
+        "job": "edcf5bf6-6352-402e-b930-da46911c7753",
+        "nativeSize": [
+          256,
+          256
+        ],
+        "sha256": "0b19145a33c45cc91aeaef9ed9ae16b63f7f4b6a88a8788d41e5c2b6c89a516c"
+      },
+      {
+        "key": "fxIce",
+        "job": "ce2f36a7-6283-4ca0-8700-df676a1c269b",
+        "nativeSize": [
+          256,
+          256
+        ],
+        "sha256": "9e35999442bbacfaf671bccf7045718ae96a612c06691cc57e990975670eb161"
+      },
+      {
+        "key": "fxSmoke",
+        "job": "5631eee6-b408-4943-9e9a-42f238f6d314",
+        "nativeSize": [
+          256,
+          256
+        ],
+        "sha256": "775a1d7eb69aca3395aad1f15ba7246df8999e96cd773b2e5133dd7f35b04734"
+      },
+      {
+        "key": "grass",
+        "job": "7a4d516a-3d30-42b3-ae16-cc16d1d3585c",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "1662d28c30328b2ce7800b3eaf4dccedf2a10b09921d6034b80f47d936bec629"
+      },
+      {
+        "key": "grassA",
+        "job": "f0448728-6d43-435c-87b9-0024ca150757",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "1ca67d668accab22e1f9886854c6b82e4db8495596b4f6b61828ae98eb8fc370"
+      },
+      {
+        "key": "grassBlades",
+        "job": "9981e4ba-0e34-4a66-a14e-7dbc0968965c",
+        "nativeSize": [
+          256,
+          256
+        ],
+        "sha256": "8fdf15878888e32df92b032a0e14262ddd0ed609340b492b7816d0635c74ccf5"
+      },
+      {
+        "key": "innSign",
+        "job": "6747ceb7-1959-4144-9600-d22797fdd39c",
+        "nativeSize": [
+          256,
+          256
+        ],
+        "sha256": "150b85eb1cd9e377c7e6280ea2ae60b9e00c6148313ac65631760f0fe78c6629"
+      },
+      {
+        "key": "interiorFloor",
+        "job": "8126e7f0-86b8-4562-8034-59e952d8c3a2",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "86ed38cad5acce6cac93d0f96b148bf7572ce9152c4afa416179b8d445f923d8"
+      },
+      {
+        "key": "ivy",
+        "job": "08800175-746c-4734-8f29-634f3ec70762",
+        "nativeSize": [
+          256,
+          256
+        ],
+        "sha256": "9e91d0b418dd6cf26c303ce8fa7c95a9d55fa32fd8b5f38dcb2c682c1c4e080c"
+      },
+      {
+        "key": "lava",
+        "job": "363c29b9-f8a4-4b1f-88ee-57dfbf0dade8",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "a33750944619140df05d1d0b341634434b0c5e8d591a6523d8395aae8a54f675"
+      },
+      {
+        "key": "leaves",
+        "job": "8af6807f-64dd-4b10-a8b2-27b9099be442",
+        "nativeSize": [
+          256,
+          256
+        ],
+        "sha256": "288e1ce9376f25ed50eb44e0459342cab99c8d8a0a335413ce0041c71d7dba4b"
+      },
+      {
+        "key": "lightFacets",
+        "job": "9ee3226e-3595-4c90-a015-7f5cd0a4d2e7",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "5936ea3c989434ce6db60398befee91080fc739abeaca610ab7875ecac96dc85"
+      },
+      {
+        "key": "metal",
+        "job": "96398702-1733-4a3e-a9b7-cd14bc899a87",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "b86f6947e19b2c49945d7c0cc2cf9803e90e0f2a01713b7356d4885afb660253"
+      },
+      {
+        "key": "oakCanopy",
+        "job": "a368399c-14ea-4d90-8962-160710495dd1",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "3fd9a2bafd0fabe75d291046cedfd686b5fbe7ef4de657dda0e8833d1392f3ff"
+      },
+      {
+        "key": "pineCanopy",
+        "job": "80d928d1-a8a7-43cf-a527-8428a12e8b6c",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "522fc2d627810ef02b523ce2e5009cfdb5c8216de1cfdd5e705801e70a238aa9"
+      },
+      {
+        "key": "plaster",
+        "job": "18b324c9-ed18-4c13-94aa-a7a45516fa1b",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "5d43ba4a83c5911b30e253be73b32c0593bf4295e77e8e79f5bb5aaafab61e8c"
+      },
+      {
+        "key": "plasterA",
+        "job": "6afb704b-0ee1-4a5f-b709-20083bd1425e",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "bb6de36b12104179b2963a8ceece16d5ced194acad7499f9e0494d92a72113b3"
+      },
+      {
+        "key": "rock",
+        "job": "a182bad4-0823-488d-b95f-3f9db70d67c0",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "d6458f6026a449d7e278581395277eb328a50aef5cb8a071433f3b0a3e72a16e"
+      },
+      {
+        "key": "runeSeal",
+        "job": "3b58839b-9997-4c9b-85f6-26bc13e02fe6",
+        "nativeSize": [
+          256,
+          256
+        ],
+        "sha256": "d3e74971e49944a9558e3555052fa255487313e430ca560be4059c454ada5ed3"
+      },
+      {
+        "key": "saveSeal",
+        "job": "ea37ff79-044d-43b1-9a49-bba425041384",
+        "nativeSize": [
+          256,
+          256
+        ],
+        "sha256": "21f0536c87b81bebbf8bd7b8963612d796a55751831b577cecaacc28093dffb6"
+      },
+      {
+        "key": "shopSign",
+        "job": "421bc42b-a436-42a4-b614-ce96c8709b24",
+        "nativeSize": [
+          256,
+          256
+        ],
+        "sha256": "bdd4c7882ba5060d1d18f5f1d3d91441906eef7bc00b1a5ab3dfeb2ecd698f5b"
+      },
+      {
+        "key": "shrub",
+        "job": "76427f81-21b5-47a3-b4ef-ab71985b4dc4",
+        "nativeSize": [
+          256,
+          256
+        ],
+        "sha256": "c4c825b7e142268d491b7ef542775aa3899f0591e9210690e5088bfc4d4d9ad3"
+      },
+      {
+        "key": "slate",
+        "job": "3980999d-000a-48ca-aff5-e7c0eba949ab",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "ebf48cdc156db62d45ec9d289f1fb1759b478837a5bc5c759492c50dfc6d06a1"
+      },
+      {
+        "key": "snow",
+        "job": "3ad1b5b6-a15b-472c-b7ed-2292e0db0bf6",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "69bc899b0a52f162ea9543a9e0affea805e567684953ec0dbeafe58960be3ad5"
+      },
+      {
+        "key": "wall",
+        "job": "74314d78-57a0-4a7f-acdb-edaae769f275",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "41114e235990a546a6c7c04bd6a1bce60889bd4a07d11c9b1cfdc2edbfa751d9"
+      },
+      {
+        "key": "wallA",
+        "job": "3da63ea5-ebaf-4afe-859a-93889e4d73fc",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "6403e5175774eac0a36c00e846c74353dc546666fe7030e2ad7ffb49ff67da84"
+      },
+      {
+        "key": "waterAlbedo",
+        "job": "a8eef17c-5a88-4f36-91db-8b576a5099dd",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "5c6d37a5e30ebbb68a2b22f068d50247ca8725ebdd0c9ec4af850b469beb5e9a"
+      },
+      {
+        "key": "window",
+        "job": "6a26ddad-2d2a-4d23-b8c2-cf36f198a3b1",
+        "nativeSize": [
+          256,
+          256
+        ],
+        "sha256": "a083abb0fae30b373392c6ad0cc06104b72fa02d44bda0bd95b59701ab15fec6"
+      },
+      {
+        "key": "wood",
+        "job": "30aa9010-7810-4d21-8822-bc6d511e4671",
+        "nativeSize": [
+          512,
+          512
+        ],
+        "sha256": "9073e84d3ed571ee4dad093169709afa2b12dde598285697df8cb45637ca1f77"
+      }
+    ]
   }
 }

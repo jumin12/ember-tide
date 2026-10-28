@@ -1,1840 +1,2677 @@
 {
   "provider": "ElevenLabs",
-  "model": "eleven_v3",
+  "model": "eleven_v4",
   "casting": {
     "bren": {
       "voiceId": "Ns5QEOBF1SCXJvrWnJ6k",
       "voiceName": "Elyndor Bren",
       "direction": "An original male fantasy RPG protagonist in his mid twenties. Youthful natural mid-low speaking voice, subtle gravel on stressed words, warm and grounded, impulsive and quietly angsty. A brave young adult carrying frustration and responsibility beneath a dry sense of humor. Intimate believable acting, conversational short phrases, flexible emotion, relaxed neutral English with a light British inflection. Never a booming trailer announcer, no old man's bass or forced theatrical growl. Pristine dry studio audio.",
-      "speed": 1
+      "speed": 1,
+      "gender": "male",
+      "age": "young adult",
+      "portrait": "bren"
     },
     "soren": {
       "voiceId": "YIbnML8At2ERrzrDbmdC",
       "voiceName": "Elyndor Soren",
       "direction": "An original male fantasy scholar mage in his mid twenties, intelligent and guarded. A youthful clear mid register with a slightly breathy edge and precise soft consonants. Thoughtful, emotionally conflicted, restrained angst and uneasy warmth when speaking to his closest friend. Natural contemporary dramatic acting, conversational pace with subtle hesitations, neutral English lightly British. Distinct from a rugged warrior: leaner, smoother, intimate. No narration, caricature or elderly voice. Pristine dry studio recording.",
-      "speed": 1
+      "speed": 1,
+      "gender": "male",
+      "age": "young adult",
+      "portrait": "soren"
     },
     "tavin": {
       "voiceId": "Z09i6BOg9kMJ2Sz6JiIK",
       "voiceName": "Elyndor Tavin",
       "direction": "An original male ranger in his late twenties. Youthful but grounded, warm rounded low-mid voice with a gentle husky edge, wry protective confidence and understated impatience. Natural English, conversational British inflection. A practical friend who has seen trouble, not an old mentor or radio host. Intimate nuanced dramatic performance, easy phrasing and real emotion instead of a fantasy announcer delivery. Pristine dry studio audio.",
-      "speed": 1
+      "speed": 1,
+      "gender": "male",
+      "age": "young adult",
+      "portrait": "tavin"
     },
     "mira": {
       "voiceId": "ePW8srd7xpCdNTmANfvR",
       "voiceName": "Elyndor Mira",
       "direction": "An original young adult woman healer in her mid twenties. Warm confident mezzo speaking voice, naturally textured and softly husky, emotionally intelligent with a stubborn, slightly sardonic edge. Compassion with urgency and frustration, never saccharine or motherly. Conversational natural English with a light British inflection, intimate believable dramatic acting and varied cadence. Clear articulate words without advertising-style brightness. Pristine dry studio audio.",
-      "speed": 1
+      "speed": 1,
+      "gender": "female",
+      "age": "young adult",
+      "portrait": "mira"
     },
     "lysa": {
       "voiceId": "mWwwNjOXrv31uLni73aY",
       "voiceName": "Elyndor Lysa",
       "direction": "An original young adult woman mage in her early twenties. Clear lively mid-high speaking voice with a lightly smoky edge, sharp wit, impatient resolve and vulnerable youthful angst. Bright but not squeaky, confident but never a cartoon. Natural conversational English lightly British, nuanced dramatic game acting, expressive phrasing and short purposeful breaths. No narrator cadence. Pristine dry studio audio.",
-      "speed": 1
+      "speed": 1,
+      "gender": "female",
+      "age": "young adult",
+      "portrait": "lysa"
     },
-    "elder": {
+    "representative": {
       "voiceId": "pqHfZKP75CvOlQylNhV4",
       "voiceName": "Bill",
-      "direction": "Patient, weathered village elder",
-      "speed": 0.96
-    },
-    "commander": {
-      "voiceId": "nPczCjzI2devNBz1zQrb",
-      "voiceName": "Brian",
-      "direction": "Resonant commander; forceful without shouting",
-      "speed": 0.98
-    },
-    "official": {
-      "voiceId": "onwK4e9ZLuTAKqWW03F9",
-      "voiceName": "Daniel",
-      "direction": "Precise civic official",
+      "gender": "male",
+      "age": "older adult",
+      "portrait": "representative",
+      "direction": "Capable weathered working man, immediate concern turning into sincere relief; short direct conversation.",
       "speed": 1
     },
-    "merchant": {
-      "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
-      "voiceName": "Roger",
-      "direction": "Friendly working townsman",
+    "elderWoman": {
+      "voiceId": "XrExE9yKIg1WjnnlVkGX",
+      "voiceName": "Matilda",
+      "gender": "female",
+      "age": "elderly",
+      "portrait": "elder",
+      "direction": "Soft textured older woman; knowing, humane and conversational, no ceremonial narration.",
       "speed": 1
     },
-    "healer": {
+    "merchantWoman": {
+      "voiceId": "EXAVITQu4vr4xnSDxMaL",
+      "voiceName": "Sarah",
+      "gender": "female",
+      "age": "adult",
+      "portrait": "merchant",
+      "direction": "Friendly practical female shopkeeper, bright human warmth, easy unforced conversation.",
+      "speed": 1
+    },
+    "bridgekeeperWoman": {
+      "voiceId": "cgSgspJ2msm6clMCkdW9",
+      "voiceName": "Jessica",
+      "gender": "female",
+      "age": "young adult",
+      "portrait": "guard",
+      "direction": "Young female guard with brisk practical warmth, relaxed everyday phrasing.",
+      "speed": 1
+    },
+    "archivistWoman": {
+      "voiceId": "Xb7hH8MSUJpSbSDYk0k2",
+      "voiceName": "Alice",
+      "gender": "female",
+      "age": "older adult",
+      "portrait": "archivistPortrait",
+      "direction": "Thoughtful older female scholar, curious and quietly engaged rather than reading an announcement.",
+      "speed": 1
+    },
+    "aidOfficialWoman": {
       "voiceId": "pFZP5JQG7iQjIQuC4Bku",
       "voiceName": "Lily",
-      "direction": "Calm townswoman",
+      "gender": "female",
+      "age": "middle aged",
+      "portrait": "aidOfficial",
+      "direction": "Practical female aid official, compassionate authority and plain human speech.",
       "speed": 1
     },
-    "guard": {
+    "healerWoman": {
+      "voiceId": "XrExE9yKIg1WjnnlVkGX",
+      "voiceName": "Matilda",
+      "gender": "female",
+      "age": "older adult",
+      "portrait": "healer",
+      "direction": "Experienced female medic, reassuring but worried for actual people, warm natural cadence.",
+      "speed": 1
+    },
+    "innkeeperWoman": {
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5",
+      "voiceName": "Laura",
+      "gender": "female",
+      "age": "adult",
+      "portrait": "innkeeper",
+      "direction": "Welcoming female innkeeper, easy smile and warm familiar conversation.",
+      "speed": 1
+    },
+    "stewardMan": {
+      "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
+      "voiceName": "Roger",
+      "gender": "male",
+      "age": "adult",
+      "portrait": "capital-inn",
+      "direction": "Slightly wry friendly male inn steward, hospitable and relaxed.",
+      "speed": 1
+    },
+    "councilMan": {
+      "voiceId": "onwK4e9ZLuTAKqWW03F9",
+      "voiceName": "Daniel",
+      "gender": "male",
+      "age": "older adult",
+      "portrait": "councilOfficial",
+      "direction": "Older civic official, thoughtful skepticism with care, never a robotic announcement.",
+      "speed": 1
+    },
+    "leaderMan": {
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb",
+      "voiceName": "George",
+      "gender": "male",
+      "age": "middle aged",
+      "portrait": "alderLeader",
+      "direction": "Bearded father worried about his daughter, emotion held beneath practical authority.",
+      "speed": 1
+    },
+    "stationMan": {
       "voiceId": "IKne3meq5aSn9XLyUdCD",
       "voiceName": "Charlie",
-      "direction": "Direct, alert guard",
+      "gender": "male",
+      "age": "middle aged",
+      "portrait": "reliefOfficial",
+      "direction": "Tired relief official trying to protect people; candid and concerned, no detached policy voice.",
+      "speed": 1
+    },
+    "commanderMan": {
+      "voiceId": "nPczCjzI2devNBz1zQrb",
+      "voiceName": "Brian",
+      "gender": "male",
+      "age": "adult",
+      "portrait": "commander",
+      "direction": "Forceful armored fighter, urgent strained conviction, close dramatic acting instead of a trailer growl.",
+      "speed": 1
+    },
+    "guardMan": {
+      "voiceId": "bIHbv24MWmeRgasZH58o",
+      "voiceName": "Will",
+      "gender": "male",
+      "age": "young adult",
+      "portrait": "alderGuardPortrait",
+      "direction": "Young local guard, uncertain and defensive, capable of relief and gratitude.",
+      "speed": 1
+    },
+    "courierMan": {
+      "voiceId": "bIHbv24MWmeRgasZH58o",
+      "voiceName": "Will",
+      "gender": "male",
+      "age": "young adult",
+      "portrait": "courier",
+      "direction": "Quick conversational courier, alert and a little out of breath from errands.",
+      "speed": 1
+    },
+    "courierWoman": {
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5",
+      "voiceName": "Laura",
+      "gender": "female",
+      "age": "young adult",
+      "portrait": "capital-post",
+      "direction": "Young female courier, energetic natural conversational confidence.",
+      "speed": 1
+    },
+    "workerMan": {
+      "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
+      "voiceName": "Roger",
+      "gender": "male",
+      "age": "adult",
+      "portrait": "worker",
+      "direction": "Grounded working carpenter, friendly dry humor, direct ordinary human speech.",
+      "speed": 1
+    },
+    "farmerMan": {
+      "voiceId": "pqHfZKP75CvOlQylNhV4",
+      "voiceName": "Bill",
+      "gender": "male",
+      "age": "older adult",
+      "portrait": "farmer",
+      "direction": "Older working farmer, gentle and earthy, comfortable conversation.",
+      "speed": 1
+    },
+    "gardenerMan": {
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb",
+      "voiceName": "George",
+      "gender": "male",
+      "age": "older adult",
+      "portrait": "capital-gardener",
+      "direction": "Older gardener, warm and observant with a soft amused smile.",
+      "speed": 1
+    },
+    "clothWoman": {
+      "voiceId": "Xb7hH8MSUJpSbSDYk0k2",
+      "voiceName": "Alice",
+      "gender": "female",
+      "age": "adult",
+      "portrait": "capital-stall",
+      "direction": "Female cloth merchant, practical friendly confidence and lived-in warmth.",
+      "speed": 1
+    },
+    "fishmongerWoman": {
+      "voiceId": "XrExE9yKIg1WjnnlVkGX",
+      "voiceName": "Matilda",
+      "gender": "female",
+      "age": "older adult",
+      "portrait": "alder-market",
+      "direction": "Older female market seller, warm textured voice and lively natural expression.",
+      "speed": 1
+    },
+    "quartermasterWoman": {
+      "voiceId": "Xb7hH8MSUJpSbSDYk0k2",
+      "voiceName": "Alice",
+      "gender": "female",
+      "age": "older adult",
+      "portrait": "relief-quarter",
+      "direction": "Older female quartermaster, calm firm efficiency with genuine care.",
+      "speed": 1
+    },
+    "potterWoman": {
+      "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+      "voiceName": "Lily",
+      "gender": "female",
+      "age": "adult",
+      "portrait": "fern-potter",
+      "direction": "Female woodland potter, grounded soft low-mid voice, informal and warm.",
+      "speed": 1
+    },
+    "medicWoman": {
+      "voiceId": "cgSgspJ2msm6clMCkdW9",
+      "voiceName": "Jessica",
+      "gender": "female",
+      "age": "young adult",
+      "portrait": "alder-medic",
+      "direction": "Young female medic, focused kindness and urgency, never sugar-sweet.",
+      "speed": 1
+    },
+    "displacedWoman": {
+      "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+      "voiceName": "Lily",
+      "gender": "female",
+      "age": "adult",
+      "portrait": "tribeFemale",
+      "direction": "Adult woman feeling frightened and unsteady, vulnerable honest phrasing.",
+      "speed": 1
+    },
+    "tribeMan": {
+      "voiceId": "SOYHLrjzK2X1ezoPC6cr",
+      "voiceName": "Harry",
+      "gender": "male",
+      "age": "young adult",
+      "portrait": "tribeMale",
+      "direction": "Young affected villager, frightened and struggling to explain, human rather than monstrous.",
       "speed": 1
     },
     "narrator": {
       "voiceId": "SAz9YHcvj6GT2YYXdXww",
       "voiceName": "River",
-      "direction": "Quiet, clear story narration",
-      "speed": 0.98
-    },
-    "youngTownMan": {
-      "voiceId": "bIHbv24MWmeRgasZH58o",
-      "voiceName": "Will",
-      "direction": "Young adult courier, scout or apprentice; relaxed natural conversation",
-      "speed": 1
-    },
-    "youngTownWoman": {
-      "voiceId": "FGY2WhTYpPnrIDTdsKH5",
-      "voiceName": "Laura",
-      "direction": "Young adult royal courier; clear, alert and conversational",
-      "speed": 1
-    },
-    "townWoman": {
-      "voiceId": "Xb7hH8MSUJpSbSDYk0k2",
-      "voiceName": "Alice",
-      "direction": "Adult female cloth merchant or practical quartermaster; composed and direct",
-      "speed": 1
-    },
-    "matron": {
-      "voiceId": "XrExE9yKIg1WjnnlVkGX",
-      "voiceName": "Matilda",
-      "direction": "Older female working townsfolk; warm, grounded conversation",
+      "gender": "female",
+      "age": "adult",
+      "portrait": null,
+      "direction": "Intimate cinematic story narration, clear and unhurried; subtle feeling without theatrical overstatement.",
       "speed": 1
     }
   },
+  "speakerAssignments": {
+    "": "narrator",
+    "affected person": "tribeMan",
+    "apprentice": "courierMan",
+    "archivist": "archivistWoman",
+    "commander": "commanderMan",
+    "community leader": "leaderMan",
+    "council official": "councilMan",
+    "displaced woman": "displacedWoman",
+    "elder": "elderWoman",
+    "guard": "guardMan",
+    "highmere outfitter": "clothWoman",
+    "inn steward": "stewardMan",
+    "innkeeper": "innkeeperWoman",
+    "local representative": "representative",
+    "potter": "potterWoman",
+    "resident": "workerMan",
+    "route marker": "narrator",
+    "scout": "courierMan",
+    "station official": "stationMan",
+    "the archivist": "archivistWoman",
+    "the bridgekeeper": "bridgekeeperWoman",
+    "the carpenter": "workerMan",
+    "the civic gardener": "gardenerMan",
+    "the cloth merchant": "clothWoman",
+    "the council steward": "councilMan",
+    "the courier": "courierMan",
+    "the elder": "elderWoman",
+    "the farmer": "farmerMan",
+    "the fishmonger": "fishmongerWoman",
+    "the inn steward": "stewardMan",
+    "the innkeeper": "innkeeperWoman",
+    "the orchard keeper": "farmerMan",
+    "the potter": "potterWoman",
+    "the quartermaster": "quartermasterWoman",
+    "the refuge medic": "medicWoman",
+    "the royal courier": "courierWoman",
+    "the shelter medic": "medicWoman",
+    "the station recorder": "courierMan",
+    "the timber keeper": "workerMan",
+    "village representative": "representative",
+    "weapon shop clerk": "merchantWoman",
+    "aid official": "aidOfficialWoman",
+    "bren": "bren",
+    "soren": "soren",
+    "tavin": "tavin",
+    "mira": "mira",
+    "lysa": "lysa",
+    "smith": "workerMan"
+  },
   "lines": [
     {
-      "key": "728d9ceb0c5dbd4876d2",
       "speaker": "Tavin",
       "text": "Easy. I know you. I won’t let this hurt anyone else.",
       "role": "tavin",
-      "performance": ""
+      "performance": "[concerned]",
+      "contextBefore": "soren",
+      "contextAfter": "Tavin’s people are distressed, not evil. He holds back to protect them.",
+      "key": "88dc19d163a336f7a13a"
     },
     {
-      "key": "67b18711ccd3472ef2c6",
       "speaker": "",
       "text": "Tavin’s people are distressed, not evil. He holds back to protect them.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Easy. I know you. I won’t let this hurt anyone else.",
+      "contextAfter": "The Light is a little brighter. The flow is beginning to settle.",
+      "key": "7dc5e9a1adad372b27b1"
     },
     {
-      "key": "aee66ec9d34d11535485",
       "speaker": "Mira",
       "text": "The Light is a little brighter. The flow is beginning to settle.",
       "role": "mira",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Tavin’s people are distressed, not evil. He holds back to protect them.",
+      "contextAfter": "Sharing observations before making corrections is helping. We can work on the damaged mechanism now.",
+      "key": "81491d52b705cd46f56d"
     },
     {
-      "key": "4290ea5fd82c5934b86b",
       "speaker": "Station official",
       "text": "Sharing observations before making corrections is helping. We can work on the damaged mechanism now.",
-      "role": "official",
-      "performance": ""
+      "role": "stationMan",
+      "performance": "[conversationally]",
+      "contextBefore": "The Light is a little brighter. The flow is beginning to settle.",
+      "contextAfter": "We have our assignment. We follow the signs, and we listen.",
+      "key": "8a95f4b1202f3189dd88"
     },
     {
-      "key": "0876f37fcf92282c2a4b",
       "speaker": "Bren",
       "text": "We have our assignment. We follow the signs, and we listen.",
       "role": "bren",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Sharing observations before making corrections is helping. We can work on the damaged mechanism now.",
+      "contextAfter": "Together.",
+      "key": "8ca8575c073b6134350b"
     },
     {
-      "key": "a708bfbe021a797a1f07",
       "speaker": "Tavin",
       "text": "Together.",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[relieved]",
+      "contextBefore": "We have our assignment. We follow the signs, and we listen.",
+      "contextAfter": "The road reaches the snowy region. The party carries Valenne’s interception assignment.",
+      "key": "864d997d7f6d54bdaf83"
     },
     {
-      "key": "b701d12bf5e34acf94bd",
       "speaker": "",
       "text": "The road reaches the snowy region. The party carries Valenne’s interception assignment.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Together.",
+      "contextAfter": "The road continues toward Fern Hollow. Leave the local outskirts to enter the wider world path.",
+      "key": "cd0f676f05fd10f999c1"
     },
     {
-      "key": "a607da225d369a6aa5c9",
       "speaker": "Route marker",
       "text": "The road continues toward Fern Hollow. Leave the local outskirts to enter the wider world path.",
-      "role": "merchant",
-      "performance": ""
+      "role": "narrator",
+      "performance": "[conversationally]",
+      "contextBefore": "The road reaches the snowy region. The party carries Valenne’s interception assignment.",
+      "contextAfter": "I sent the report. The water’s unsafe, and the animals have been acting dangerously.",
+      "key": "be9102625be2f7616bbc"
     },
     {
-      "key": "5f54b99cd3038e997b08",
       "speaker": "Local representative",
       "text": "I sent the report. The water’s unsafe, and the animals have been acting dangerously.",
-      "role": "elder",
-      "performance": ""
+      "role": "representative",
+      "performance": "[conversationally]",
+      "contextBefore": "The road continues toward Fern Hollow. Leave the local outskirts to enter the wider world path.",
+      "contextAfter": "We’ll get people clear and secure safe water first.",
+      "key": "8df904a365971a1bcbd0"
     },
     {
-      "key": "1c35f19996f7244c43bb",
       "speaker": "Bren",
       "text": "We’ll get people clear and secure safe water first.",
       "role": "bren",
-      "performance": ""
+      "performance": "[concerned]",
+      "contextBefore": "I sent the report. The water’s unsafe, and the animals have been acting dangerously.",
+      "contextAfter": "Show us the water control.",
+      "key": "8f292e04951eaee69de1"
     },
     {
-      "key": "998ebe19ba7dee6ff1e1",
       "speaker": "Soren",
       "text": "Show us the water control.",
       "role": "soren",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "We’ll get people clear and secure safe water first.",
+      "contextAfter": "The gate is jammed and the pump is broken. Take the side lane to the waterworks.",
+      "key": "a10fa36d24976c972fde"
     },
     {
-      "key": "7670bb29e57b76a74fbc",
       "speaker": "Local representative",
       "text": "The gate is jammed and the pump is broken. Take the side lane to the waterworks.",
-      "role": "elder",
-      "performance": ""
+      "role": "representative",
+      "performance": "[conversationally]",
+      "contextBefore": "Show us the water control.",
+      "contextAfter": "It’s moving. Keep clear.",
+      "key": "3cd95010f0eb2274e7e8"
     },
     {
-      "key": "1acdafd413028c8f6b32",
       "speaker": "Bren",
       "text": "It’s moving. Keep clear.",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "The gate is jammed and the pump is broken. Take the side lane to the waterworks.",
+      "contextAfter": "The gate’s free. The pump is still broken.",
+      "key": "e24749a3a0547ea28eaa"
     },
     {
-      "key": "da3d704bef12471be344",
       "speaker": "Soren",
       "text": "The gate’s free. The pump is still broken.",
       "role": "soren",
-      "performance": "[concerned]"
+      "performance": "[thoughtful]",
+      "contextBefore": "It’s moving. Keep clear.",
+      "contextAfter": "There. It’s flowing again.",
+      "key": "55d9adcbb47ecff7d787"
     },
     {
-      "key": "351d1b23f0d4451b1b7d",
       "speaker": "Bren",
       "text": "There. It’s flowing again.",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[relieved]",
+      "contextBefore": "The gate’s free. The pump is still broken.",
+      "contextAfter": "Thank you. We needed that.",
+      "key": "a90ae3cde274b4efd12b"
     },
     {
-      "key": "915c3d3f04c7e6832842",
       "speaker": "Local representative",
       "text": "Thank you. We needed that.",
-      "role": "elder",
-      "performance": ""
+      "role": "representative",
+      "performance": "[conversationally]",
+      "contextBefore": "There. It’s flowing again.",
+      "contextAfter": "A modest flow returns. Distressed wildlife is still threatening residents in the outer yard.",
+      "key": "65116d57cf0bf46cfcca"
     },
     {
-      "key": "4b2411bd08663b1dad77",
       "speaker": "",
       "text": "A modest flow returns. Distressed wildlife is still threatening residents in the outer yard.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Thank you. We needed that.",
+      "contextAfter": "Get everyone behind us.",
+      "key": "28fa557a259d55f7076d"
     },
     {
-      "key": "3db56472d7f7f2f5204b",
       "speaker": "Bren",
       "text": "Get everyone behind us.",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "A modest flow returns. Distressed wildlife is still threatening residents in the outer yard.",
+      "contextAfter": "Keep them away from the homes.",
+      "key": "1a00e4d6f6011611afe5"
     },
     {
-      "key": "82771559390400f00c1b",
       "speaker": "Soren",
       "text": "Keep them away from the homes.",
       "role": "soren",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Get everyone behind us.",
+      "contextAfter": "I’ve seen the same pattern in old accounts. This reaches beyond Brookstead.",
+      "key": "8dcc09f27ef9f15b3d2d"
     },
     {
-      "key": "ab3aea7c32d7844a2342",
       "speaker": "Soren",
       "text": "I’ve seen the same pattern in old accounts. This reaches beyond Brookstead.",
       "role": "soren",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Keep them away from the homes.",
+      "contextAfter": "You’ve helped us. But we still don’t know what drove them here. Another report has arrived with the same symptoms.",
+      "key": "7360fa897d94502a4159"
     },
     {
-      "key": "e1f021e8df5afe55d381",
       "speaker": "Elder",
       "text": "You’ve helped us. But we still don’t know what drove them here. Another report has arrived with the same symptoms.",
-      "role": "elder",
-      "performance": ""
+      "role": "elderWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "I’ve seen the same pattern in old accounts. This reaches beyond Brookstead.",
+      "contextAfter": "Then we keep looking.",
+      "key": "cf459805eab0f9392e9c"
     },
     {
-      "key": "8474567bc6a82402b47c",
       "speaker": "Bren",
       "text": "Then we keep looking.",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "You’ve helped us. But we still don’t know what drove them here. Another report has arrived with the same symptoms.",
+      "contextAfter": "Something is pulling at my people. I stopped them, but I haven’t found what’s causing it.",
+      "key": "f1b80a92409cfcabe2e2"
     },
     {
-      "key": "4fa5ba17a22314ec8753",
       "speaker": "Tavin",
       "text": "Something is pulling at my people. I stopped them, but I haven’t found what’s causing it.",
       "role": "tavin",
-      "performance": ""
+      "performance": "[frustrated]",
+      "contextBefore": "Then we keep looking.",
+      "contextAfter": "We’ve seen the water and wildlife change too.",
+      "key": "96c5a70aeec73ac67d18"
     },
     {
-      "key": "6968ef3c995b31a67c4b",
       "speaker": "Bren",
       "text": "We’ve seen the water and wildlife change too.",
       "role": "bren",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Something is pulling at my people. I stopped them, but I haven’t found what’s causing it.",
+      "contextAfter": "Then we may be following the same disturbance.",
+      "key": "c0f2e6166e3c001a784b"
     },
     {
-      "key": "03c61ffa6a98a836d58d",
       "speaker": "Soren",
       "text": "Then we may be following the same disturbance.",
       "role": "soren",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "We’ve seen the water and wildlife change too.",
+      "contextAfter": "I’m coming with you. They need a cure, not another fight.",
+      "key": "a90b5128a23ba6d02298"
     },
     {
-      "key": "28f59a9e118ddcd72901",
       "speaker": "Tavin",
       "text": "I’m coming with you. They need a cure, not another fight.",
       "role": "tavin",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Then we may be following the same disturbance.",
+      "contextAfter": "It pulls at us. We can’t stop when it starts.",
+      "key": "fe5d451aef7a25c4dcbc"
     },
     {
-      "key": "80c8c7227b3146fd0b84",
       "speaker": "Affected person",
       "text": "It pulls at us. We can’t stop when it starts.",
-      "role": "merchant",
-      "performance": ""
+      "role": "tribeMan",
+      "performance": "[conversationally]",
+      "contextBefore": "I’m coming with you. They need a cure, not another fight.",
+      "contextAfter": "Stay with me. We’re here.",
+      "key": "2bbc805f461b6fcad75c"
     },
     {
-      "key": "eb018b2b66436ad7e33c",
       "speaker": "Tavin",
       "text": "Stay with me. We’re here.",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[concerned]",
+      "contextBefore": "It pulls at us. We can’t stop when it starts.",
+      "contextAfter": "I can suppress it for a moment. Help me hold this section steady.",
+      "key": "60c1fb7a5c13a6bbdf8c"
     },
     {
-      "key": "cb9b6a94b31d2aab0867",
       "speaker": "Soren",
       "text": "I can suppress it for a moment. Help me hold this section steady.",
       "role": "soren",
-      "performance": "[determined]"
+      "performance": "[concerned]",
+      "contextBefore": "Stay with me. We’re here.",
+      "contextAfter": "The three stabilize the remnant. The attacks stop and the village’s Light returns faintly. The damage remains.",
+      "key": "b5c80943f2321b8c1737"
     },
     {
-      "key": "5e8b462cb1228849b540",
       "speaker": "",
       "text": "The three stabilize the remnant. The attacks stop and the village’s Light returns faintly. The damage remains.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "I can suppress it for a moment. Help me hold this section steady.",
+      "contextAfter": "This section still responds. If I hold it steady, we can protect the village.",
+      "key": "2c1872171d2d59a38337"
     },
     {
-      "key": "1d8292b45c8f44a382f5",
       "speaker": "Soren",
       "text": "This section still responds. If I hold it steady, we can protect the village.",
       "role": "soren",
-      "performance": "[determined]"
+      "performance": "[concerned]",
+      "contextBefore": "The three stabilize the remnant. The attacks stop and the village’s Light returns faintly. The damage remains.",
+      "contextAfter": "Then we do it together.",
+      "key": "922d9547f09747961c3d"
     },
     {
-      "key": "10681f7c0696ca5a8670",
       "speaker": "Bren",
       "text": "Then we do it together.",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[relieved]",
+      "contextBefore": "This section still responds. If I hold it steady, we can protect the village.",
+      "contextAfter": "At activation, the responses converge under a single imposed command.",
+      "key": "defd3d0e6c09a8b8c243"
     },
     {
-      "key": "9108cea64d1329608780",
       "speaker": "",
       "text": "At activation, the responses converge under a single imposed command.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Then we do it together.",
+      "contextAfter": "It’s resisting you.",
+      "key": "54248d8cba9d6eccf7cd"
     },
     {
-      "key": "f78788316121495daced",
       "speaker": "Tavin",
       "text": "It’s resisting you.",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "At activation, the responses converge under a single imposed command.",
+      "contextAfter": "You said we were stabilizing it.",
+      "key": "bb8ba17c2daf3f580165"
     },
     {
-      "key": "e0902f5e8325faa92890",
       "speaker": "Bren",
       "text": "You said we were stabilizing it.",
       "role": "bren",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "It’s resisting you.",
+      "contextAfter": "We are. A system that refuses to cooperate still has to be made safe.",
+      "key": "807a65986cc33f27bec0"
     },
     {
-      "key": "8670eb7e2d5b189b3211",
       "speaker": "Soren",
       "text": "We are. A system that refuses to cooperate still has to be made safe.",
       "role": "soren",
-      "performance": ""
+      "performance": "[concerned]",
+      "contextBefore": "You said we were stabilizing it.",
+      "contextAfter": "You’re forcing it. Stop.",
+      "key": "a91c8468859579d46bff"
     },
     {
-      "key": "236e0cc7f7fb8aed52b4",
       "speaker": "Bren",
       "text": "You’re forcing it. Stop.",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[frustrated]",
+      "contextBefore": "We are. A system that refuses to cooperate still has to be made safe.",
+      "contextAfter": "tavin",
+      "key": "8e5800ee5130fa9721e1"
     },
     {
-      "key": "ca3d2d3776ca9e769d6d",
       "speaker": "Tavin",
       "text": "This way. Stay together. Bren will keep the route clear.",
       "role": "tavin",
-      "performance": ""
+      "performance": "[concerned]",
+      "contextBefore": "tavin",
+      "contextAfter": "Tavin leads the residents to safety while Bren protects the way through.",
+      "key": "c756d45503e9554688ec"
     },
     {
-      "key": "440f847e15171a8dfe54",
       "speaker": "",
       "text": "Tavin leads the residents to safety while Bren protects the way through.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "This way. Stay together. Bren will keep the route clear.",
+      "contextAfter": "The villagers and party finish the remnant repair. A separate Elder Light waits in the secluded clearing. Its response is still flickering.",
+      "key": "abfcb9a7aa6c4f39c705"
     },
     {
-      "key": "d9d91017b1312d092a10",
       "speaker": "",
       "text": "The villagers and party finish the remnant repair. A separate Elder Light waits in the secluded clearing. Its response is still flickering.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Tavin leads the residents to safety while Bren protects the way through.",
+      "contextAfter": "Take our report to Highmere. The kingdom needs to know what happened.",
+      "key": "2204bc00eb0324ca7673"
     },
     {
-      "key": "b05d08f842baaa579ba0",
       "speaker": "Village representative",
       "text": "Take our report to Highmere. The kingdom needs to know what happened.",
-      "role": "elder",
-      "performance": ""
+      "role": "representative",
+      "performance": "[conversationally]",
+      "contextBefore": "The villagers and party finish the remnant repair. A separate Elder Light waits in the secluded clearing. Its response is still flickering.",
+      "contextAfter": "Could you help me with those supplies?",
+      "key": "52ca099c999ff19ddda2"
     },
     {
-      "key": "4774cf41d425a2055465",
       "speaker": "Mira",
       "text": "Could you help me with those supplies?",
       "role": "mira",
-      "performance": ""
+      "performance": "[curious]",
+      "contextBefore": "Take our report to Highmere. The kingdom needs to know what happened.",
+      "contextAfter": "Of course.",
+      "key": "47b5989e1f213f029d66"
     },
     {
-      "key": "c8f2597d0cd00e02ee4e",
       "speaker": "Bren",
       "text": "Of course.",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "Could you help me with those supplies?",
+      "contextAfter": "Where do you need them?",
+      "key": "a43caa19c2545a5dfba8"
     },
     {
-      "key": "d853a70490d843676513",
       "speaker": "Tavin",
       "text": "Where do you need them?",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[curious]",
+      "contextBefore": "Of course.",
+      "contextAfter": "The party helps Mira care for the arrivals, then tells her what happened in Fern Hollow.",
+      "key": "8c2067fa68469302d2d7"
     },
     {
-      "key": "62b5f791fbce2429efbc",
       "speaker": "",
       "text": "The party helps Mira care for the arrivals, then tells her what happened in Fern Hollow.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Where do you need them?",
+      "contextAfter": "I’ll come with you to the royal aid office.",
+      "key": "046bf2c93fefab839245"
     },
     {
-      "key": "18bea058a67ae5239490",
       "speaker": "Mira",
       "text": "I’ll come with you to the royal aid office.",
       "role": "mira",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "The party helps Mira care for the arrivals, then tells her what happened in Fern Hollow.",
+      "contextAfter": "Thank you.",
+      "key": "8bcfc0f20b1bec189509"
     },
     {
-      "key": "ff08805b6e4413ae4526",
       "speaker": "Bren",
       "text": "Thank you.",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[relieved]",
+      "contextBefore": "I’ll come with you to the royal aid office.",
+      "contextAfter": "Stay where you are. And if they lose control?",
+      "key": "05aa44cd440907f32fb5"
     },
     {
-      "key": "9c337a523f13d1a93c0d",
       "speaker": "Guard",
       "text": "Stay where you are. And if they lose control?",
-      "role": "guard",
-      "performance": ""
+      "role": "guardMan",
+      "performance": "[conversationally]",
+      "contextBefore": "Thank you.",
+      "contextAfter": "They came here for shelter. Let them rest somewhere safe. I’ll stay.",
+      "key": "8f7a5e10420de2e64982"
     },
     {
-      "key": "7f5bb026b94d97447b52",
       "speaker": "Tavin",
       "text": "They came here for shelter. Let them rest somewhere safe. I’ll stay.",
       "role": "tavin",
-      "performance": ""
+      "performance": "[concerned]",
+      "contextBefore": "Stay where you are. And if they lose control?",
+      "contextAfter": "Some of them need care. Your people do, too.",
+      "key": "699056d73fe99f22017b"
     },
     {
-      "key": "2502d246248324a45525",
       "speaker": "Mira",
       "text": "Some of them need care. Your people do, too.",
       "role": "mira",
-      "performance": ""
+      "performance": "[concerned]",
+      "contextBefore": "They came here for shelter. Let them rest somewhere safe. I’ll stay.",
+      "contextAfter": "Temporary shelter. Your healer tends to everyone who needs her. And you go with our scouts.",
+      "key": "35d1d2dd5153266ce1d0"
     },
     {
-      "key": "ce5e79a157732aa7685f",
       "speaker": "Guard",
       "text": "Temporary shelter. Your healer tends to everyone who needs her. And you go with our scouts.",
-      "role": "guard",
-      "performance": ""
+      "role": "guardMan",
+      "performance": "[conversationally]",
+      "contextBefore": "Some of them need care. Your people do, too.",
+      "contextAfter": "I’ll go.",
+      "key": "bf66ef7d9d38b1616319"
     },
     {
-      "key": "39781563a8a3445c65f4",
       "speaker": "Tavin",
       "text": "I’ll go.",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "Temporary shelter. Your healer tends to everyone who needs her. And you go with our scouts.",
+      "contextAfter": "Then let’s get them inside.",
+      "key": "b7d25243caa799c4d266"
     },
     {
-      "key": "0a91c3894505d9a119d3",
       "speaker": "Bren",
       "text": "Then let’s get them inside.",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "I’ll go.",
+      "contextAfter": "I knew where I was. Then, for a moment, I didn’t.",
+      "key": "1270ba8f9fe231010279"
     },
     {
-      "key": "f635fe4c8cf26cb60702",
       "speaker": "Resident",
       "text": "I knew where I was. Then, for a moment, I didn’t.",
-      "role": "merchant",
-      "performance": ""
+      "role": "workerMan",
+      "performance": "[conversationally]",
+      "contextBefore": "Then let’s get them inside.",
+      "contextAfter": "Does it come in waves?",
+      "key": "a7e4dc46bd484f3298e1"
     },
     {
-      "key": "a63fc4927ebf1bfb5ca5",
       "speaker": "Mira",
       "text": "Does it come in waves?",
       "role": "mira",
-      "performance": "[determined]"
+      "performance": "[curious]",
+      "contextBefore": "I knew where I was. Then, for a moment, I didn’t.",
+      "contextAfter": "Yes. And my hands won’t stay still.",
+      "key": "abdb84d3843fffb4b6a2"
     },
     {
-      "key": "4f5e5ab657b30905b2ec",
       "speaker": "Displaced woman",
       "text": "Yes. And my hands won’t stay still.",
-      "role": "townWoman",
-      "performance": ""
+      "role": "displacedWoman",
+      "performance": "[nervously]",
+      "contextBefore": "Does it come in waves?",
+      "contextAfter": "The same signs, in both of you.",
+      "key": "269638a7933f76829c9e"
     },
     {
-      "key": "705cb22f67212223a4df",
       "speaker": "Mira",
       "text": "The same signs, in both of you.",
       "role": "mira",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Yes. And my hands won’t stay still.",
+      "contextAfter": "Then this isn’t coming from her people.",
+      "key": "7deb762e9b7d8db60992"
     },
     {
-      "key": "25d733176463f68bdbe9",
       "speaker": "Bren",
       "text": "Then this isn’t coming from her people.",
       "role": "bren",
-      "performance": ""
+      "performance": "[concerned]",
+      "contextBefore": "The same signs, in both of you.",
+      "contextAfter": "Wait. Which way—",
+      "key": "1ac828f04aaa28666148"
     },
     {
-      "key": "2227b9de4714a40d8d01",
       "speaker": "Guard",
       "text": "Wait. Which way—",
-      "role": "guard",
-      "performance": ""
+      "role": "guardMan",
+      "performance": "[conversationally]",
+      "contextBefore": "Then this isn’t coming from her people.",
+      "contextAfter": "Here. Take my arm. One step at a time. I’ve got you.",
+      "key": "0ab5b7867e79e6e827b5"
     },
     {
-      "key": "52a290833b7ef3657c91",
       "speaker": "Tavin",
       "text": "Here. Take my arm. One step at a time. I’ve got you.",
       "role": "tavin",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Wait. Which way—",
+      "contextAfter": "His hands. The people at the shelter were like that.",
+      "key": "0b549bd1134de1bcddfc"
     },
     {
-      "key": "59bf431aa328cdf8cb66",
       "speaker": "Scout",
       "text": "His hands. The people at the shelter were like that.",
-      "role": "guard",
-      "performance": ""
+      "role": "courierMan",
+      "performance": "[conversationally]",
+      "contextBefore": "Here. Take my arm. One step at a time. I’ve got you.",
+      "contextAfter": "That’s why we need to find what’s happening to the Light.",
+      "key": "d6e1c52d2fac875b5923"
     },
     {
-      "key": "42b051199d0a90c403b2",
       "speaker": "Tavin",
       "text": "That’s why we need to find what’s happening to the Light.",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "His hands. The people at the shelter were like that.",
+      "contextAfter": "Once the guard can walk safely, the patrol reaches the clearing. The Light still burns, but its fractured, clouded facets are dimming.",
+      "key": "a1cf11d3cf6f8dd91ea2"
     },
     {
-      "key": "72ea650ea06503738be1",
       "speaker": "",
       "text": "Once the guard can walk safely, the patrol reaches the clearing. The Light still burns, but its fractured, clouded facets are dimming.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "That’s why we need to find what’s happening to the Light.",
+      "contextAfter": "The Light is dimming. One of your scouts felt the same disturbance.",
+      "key": "9fc5142a0d6517a146b4"
     },
     {
-      "key": "5ed4c670751a6b3768c4",
       "speaker": "Tavin",
       "text": "The Light is dimming. One of your scouts felt the same disturbance.",
       "role": "tavin",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Once the guard can walk safely, the patrol reaches the clearing. The Light still burns, but its fractured, clouded facets are dimming.",
+      "contextAfter": "We’re seeing the same signs here, in both groups.",
+      "key": "e97b0f1c0b8d649cb13d"
     },
     {
-      "key": "069d6865c643df31a7b9",
       "speaker": "Mira",
       "text": "We’re seeing the same signs here, in both groups.",
       "role": "mira",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "The Light is dimming. One of your scouts felt the same disturbance.",
+      "contextAfter": "Lysa went to look at the old remnant. She should have returned by now.",
+      "key": "2ec31bd012fe671739b1"
     },
     {
-      "key": "ae9166743539ac7b4702",
       "speaker": "Community leader",
       "text": "Lysa went to look at the old remnant. She should have returned by now.",
-      "role": "official",
-      "performance": ""
+      "role": "leaderMan",
+      "performance": "[worried]",
+      "contextBefore": "We’re seeing the same signs here, in both groups.",
+      "contextAfter": "A pulse jolts the settlement. Plaster cracks and timber breaks loose beside the homes.",
+      "key": "8b28f51fe521a0b5a5ba"
     },
     {
-      "key": "5ee228649243fcec7894",
       "speaker": "",
       "text": "A pulse jolts the settlement. Plaster cracks and timber breaks loose beside the homes.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Lysa went to look at the old remnant. She should have returned by now.",
+      "contextAfter": "Away from the porch!",
+      "key": "5e216919befc5c964846"
     },
     {
-      "key": "6d443cd05c98e05dcbaa",
       "speaker": "Bren",
       "text": "Away from the porch!",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "A pulse jolts the settlement. Plaster cracks and timber breaks loose beside the homes.",
+      "contextAfter": "Come toward me. There’s room in the court.",
+      "key": "82bbdd4c8e69818d5cc5"
     },
     {
-      "key": "8a5725a647f95013bd4a",
       "speaker": "Mira",
       "text": "Come toward me. There’s room in the court.",
       "role": "mira",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Away from the porch!",
+      "contextAfter": "I can hold this. Get them past.",
+      "key": "59d1962b777902efda4b"
     },
     {
-      "key": "91c36c456a0ce4a596d6",
       "speaker": "Bren",
       "text": "I can hold this. Get them past.",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "Come toward me. There’s room in the court.",
+      "contextAfter": "This way. Stay together.",
+      "key": "7f93a05b3385b155b3e1"
     },
     {
-      "key": "c6441db4d06192a116fc",
       "speaker": "Tavin",
       "text": "This way. Stay together.",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[concerned]",
+      "contextBefore": "I can hold this. Get them past.",
+      "contextAfter": "Lean on me. We’ll take it slowly.",
+      "key": "7d5d6d3c679193f12c22"
     },
     {
-      "key": "e99cfb8f548e8404f823",
       "speaker": "Mira",
       "text": "Lean on me. We’ll take it slowly.",
       "role": "mira",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "This way. Stay together.",
+      "contextAfter": "We’ll keep them here, away from the damaged buildings. Lysa took the path to the remnant.",
+      "key": "015a05a60b4aed672ee5"
     },
     {
-      "key": "04d5df503c6381547f9d",
       "speaker": "Community leader",
       "text": "We’ll keep them here, away from the damaged buildings. Lysa took the path to the remnant.",
-      "role": "official",
-      "performance": ""
+      "role": "leaderMan",
+      "performance": "[worried]",
+      "contextBefore": "Lean on me. We’ll take it slowly.",
+      "contextAfter": "We’ll look for her.",
+      "key": "c017e25966928b0cc250"
     },
     {
-      "key": "a33482c2944fe13df7a0",
       "speaker": "Bren",
       "text": "We’ll look for her.",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "We’ll keep them here, away from the damaged buildings. Lysa took the path to the remnant.",
+      "contextAfter": "We’ll stay together.",
+      "key": "18ded2cae38077c0131f"
     },
     {
-      "key": "28c25fa0f18c573d4627",
       "speaker": "Tavin",
       "text": "We’ll stay together.",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[concerned]",
+      "contextBefore": "We’ll look for her.",
+      "contextAfter": "I saw someone forcing a pulse through it. The Commander said a superior wanted the section held.",
+      "key": "af357d9f07727dabaa22"
     },
     {
-      "key": "91329fa68e7157e82617",
       "speaker": "Lysa",
       "text": "I saw someone forcing a pulse through it. The Commander said a superior wanted the section held.",
       "role": "lysa",
-      "performance": ""
+      "performance": "[forcefully]",
+      "contextBefore": "We’ll stay together.",
+      "contextAfter": "You’re hurt. Let me help.",
+      "key": "80243ff44d9c7e75ba51"
     },
     {
-      "key": "5fcfeb280eebef5627a0",
       "speaker": "Mira",
       "text": "You’re hurt. Let me help.",
       "role": "mira",
-      "performance": "[determined]"
+      "performance": "[concerned]",
+      "contextBefore": "I saw someone forcing a pulse through it. The Commander said a superior wanted the section held.",
+      "contextAfter": "I can still stand. I’m not letting them send another pulse.",
+      "key": "d6d639ebd2a23993cb66"
     },
     {
-      "key": "31a6f35e16387b95c090",
       "speaker": "Lysa",
       "text": "I can still stand. I’m not letting them send another pulse.",
       "role": "lysa",
-      "performance": ""
+      "performance": "[forcefully]",
+      "contextBefore": "You’re hurt. Let me help.",
+      "contextAfter": "Stay with us. We’ll stop them together.",
+      "key": "a3e6d47469ae433776eb"
     },
     {
-      "key": "383977dd78bb48b38dbf",
       "speaker": "Bren",
       "text": "Stay with us. We’ll stop them together.",
       "role": "bren",
-      "performance": ""
+      "performance": "[frustrated]",
+      "contextBefore": "I can still stand. I’m not letting them send another pulse.",
+      "contextAfter": "The party and community complete the mechanism repair. The path east leads to the separate Elder Light; it still needs our help.",
+      "key": "543de602c232dcd6eaf5"
     },
     {
-      "key": "16011d851f08cb144316",
       "speaker": "",
       "text": "The party and community complete the mechanism repair. The path east leads to the separate Elder Light; it still needs our help.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Stay with us. We’ll stop them together.",
+      "contextAfter": "Let’s get Lysa home.",
+      "key": "74f38e5ff95af72cd962"
     },
     {
-      "key": "03c74db7072d7fb374b7",
       "speaker": "Mira",
       "text": "Let’s get Lysa home.",
       "role": "mira",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "The party and community complete the mechanism repair. The path east leads to the separate Elder Light; it still needs our help.",
+      "contextAfter": "You brought her back. Thank you.",
+      "key": "93f57075a316d227640d"
     },
     {
-      "key": "2adbbfe09f3e510f9390",
       "speaker": "Community leader",
       "text": "You brought her back. Thank you.",
-      "role": "official",
-      "performance": ""
+      "role": "leaderMan",
+      "performance": "[conversationally]",
+      "contextBefore": "Let’s get Lysa home.",
+      "contextAfter": "These notes point to the control brace. The kingdom should see them.",
+      "key": "efcd140a3a5d379806f9"
     },
     {
-      "key": "ee072280604139401414",
       "speaker": "Lysa",
       "text": "These notes point to the control brace. The kingdom should see them.",
       "role": "lysa",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "You brought her back. Thank you.",
+      "contextAfter": "We’ll take the report and notes to Highmere.",
+      "key": "bbbceda75ed899406595"
     },
     {
-      "key": "51bbb54ea38096c4a764",
       "speaker": "Bren",
       "text": "We’ll take the report and notes to Highmere.",
       "role": "bren",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "These notes point to the control brace. The kingdom should see them.",
+      "contextAfter": "The corrections are logged here. We’ve kept the refuge open through all of this.",
+      "key": "d593d3c1c88e797bedb2"
     },
     {
-      "key": "cab6eba19fbfa4da2cf7",
       "speaker": "Station official",
       "text": "The corrections are logged here. We’ve kept the refuge open through all of this.",
-      "role": "official",
-      "performance": ""
+      "role": "stationMan",
+      "performance": "[conversationally]",
+      "contextBefore": "We’ll take the report and notes to Highmere.",
+      "contextAfter": "The corrections come first. Afterward, the local Light dims or redirects its response.",
+      "key": "c88c3ca41a9dca9d12ff"
     },
     {
-      "key": "a92334e7c736bfcea688",
       "speaker": "Mira",
       "text": "The corrections come first. Afterward, the local Light dims or redirects its response.",
       "role": "mira",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "The corrections are logged here. We’ve kept the refuge open through all of this.",
+      "contextAfter": "That unsettled response. I felt it before, when the Light resisted being commanded.",
+      "key": "cd815b55a3d62dea370f"
     },
     {
-      "key": "c596b19e48bb8a2de439",
       "speaker": "Bren",
       "text": "That unsettled response. I felt it before, when the Light resisted being commanded.",
       "role": "bren",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "The corrections come first. Afterward, the local Light dims or redirects its response.",
+      "contextAfter": "We need to see what happens when the corrections stop.",
+      "key": "eeba3a20086cbd5731bf"
     },
     {
-      "key": "834d93b83209fd65fce3",
       "speaker": "Tavin",
       "text": "We need to see what happens when the corrections stop.",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[frustrated]",
+      "contextBefore": "That unsettled response. I felt it before, when the Light resisted being commanded.",
+      "contextAfter": "A brief pause in nonessential corrections. Normal shelter services stay running.",
+      "key": "23eb636935e415d65c89"
     },
     {
-      "key": "2ee17d52b85491514744",
       "speaker": "Station official",
       "text": "A brief pause in nonessential corrections. Normal shelter services stay running.",
-      "role": "official",
-      "performance": ""
+      "role": "stationMan",
+      "performance": "[conversationally]",
+      "contextBefore": "We need to see what happens when the corrections stop.",
+      "contextAfter": "Under supervision, the relay remains at high output but the sharp surges stop. The Light’s signs become easier to read, although it remains dim.",
+      "key": "ca4c60ee412517cb5780"
     },
     {
-      "key": "ae816b02009d36f2a618",
       "speaker": "",
       "text": "Under supervision, the relay remains at high output but the sharp surges stop. The Light’s signs become easier to read, although it remains dim.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "A brief pause in nonessential corrections. Normal shelter services stay running.",
+      "contextAfter": "We’ll share local observations before making further nonessential corrections.",
+      "key": "daf2eaff7e3d4d0d3708"
     },
     {
-      "key": "fe4766b193f894da87db",
       "speaker": "Station official",
       "text": "We’ll share local observations before making further nonessential corrections.",
-      "role": "official",
-      "performance": ""
+      "role": "stationMan",
+      "performance": "[conversationally]",
+      "contextBefore": "Under supervision, the relay remains at high output but the sharp surges stop. The Light’s signs become easier to read, although it remains dim.",
+      "contextAfter": "Bren wakes with a fading sense of a voice—and a pull toward the Royal Archives. Bren cannot tell whether it was only a dream.",
+      "key": "3eabca8ff722a7802b92"
     },
     {
-      "key": "1a8d410e4820fa07ccd8",
       "speaker": "",
       "text": "Bren wakes with a fading sense of a voice—and a pull toward the Royal Archives. Bren cannot tell whether it was only a dream.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "We’ll share local observations before making further nonessential corrections.",
+      "contextAfter": "The archives. There may be something we haven’t understood.",
+      "key": "5ac195e3fb36ca5e3bd0"
     },
     {
-      "key": "5b52a4a082c6f7ac2495",
       "speaker": "Bren",
       "text": "The archives. There may be something we haven’t understood.",
       "role": "bren",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Bren wakes with a fading sense of a voice—and a pull toward the Royal Archives. Bren cannot tell whether it was only a dream.",
+      "contextAfter": "Read these together: an account of listening, a rare whisper, and a Light refusing a command.",
+      "key": "21b50818a6e605f4e236"
     },
     {
-      "key": "3044be88bb419e94a935",
       "speaker": "Archivist",
       "text": "Read these together: an account of listening, a rare whisper, and a Light refusing a command.",
-      "role": "official",
-      "performance": ""
+      "role": "archivistWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "The archives. There may be something we haven’t understood.",
+      "contextAfter": "The connected records describe a rare capacity for listening and cooperation. The Lights’ bond is not a shared bloodline or a guarantee of virtue.",
+      "key": "7c68f6612c90c600095f"
     },
     {
-      "key": "6cd303ea61b47f88782f",
       "speaker": "",
       "text": "The connected records describe a rare capacity for listening and cooperation. The Lights’ bond is not a shared bloodline or a guarantee of virtue.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Read these together: an account of listening, a rare whisper, and a Light refusing a command.",
+      "contextAfter": "Being chosen doesn’t decide what someone does.",
+      "key": "9c8a3b12ce416a9a18b2"
     },
     {
-      "key": "2f7dba9ec15c97fac51b",
       "speaker": "Mira",
       "text": "Being chosen doesn’t decide what someone does.",
       "role": "mira",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "The connected records describe a rare capacity for listening and cooperation. The Lights’ bond is not a shared bloodline or a guarantee of virtue.",
+      "contextAfter": "Soren could still choose differently.",
+      "key": "5b3e4f9bc4c332955f5b"
     },
     {
-      "key": "8fcf1375e7b21771c632",
       "speaker": "Bren",
       "text": "Soren could still choose differently.",
       "role": "bren",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Being chosen doesn’t decide what someone does.",
+      "contextAfter": "The records are fragments. Take what you observed beside what they say.",
+      "key": "e944fad66c6f3ddc76c5"
     },
     {
-      "key": "596a72d0be5502f0e306",
       "speaker": "Archivist",
       "text": "The records are fragments. Take what you observed beside what they say.",
-      "role": "official",
-      "performance": ""
+      "role": "archivistWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "Soren could still choose differently.",
+      "contextAfter": "The station mechanism is repaired. The separate Elder Light beyond the refuge can now be restored. Other affected areas remain unresolved.",
+      "key": "09fde18dafc1379802d7"
     },
     {
-      "key": "10dd9079a7d865931b15",
       "speaker": "",
       "text": "The station mechanism is repaired. The separate Elder Light beyond the refuge can now be restored. Other affected areas remain unresolved.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "The records are fragments. Take what you observed beside what they say.",
+      "contextAfter": "The section is still resisting.",
+      "key": "ceb7c2c665b2b0968a1b"
     },
     {
-      "key": "5e6bc4d2716052125a46",
       "speaker": "Commander",
       "text": "The section is still resisting.",
-      "role": "commander",
-      "performance": ""
+      "role": "commanderMan",
+      "performance": "[sternly]",
+      "contextBefore": "The station mechanism is repaired. The separate Elder Light beyond the refuge can now be restored. Other affected areas remain unresolved.",
+      "contextAfter": "Then stop asking it.",
+      "key": "9b9ae70bbcc9270afd12"
     },
     {
-      "key": "b9ea1045963db7e953fe",
       "speaker": "Soren",
       "text": "Then stop asking it.",
       "role": "soren",
-      "performance": "[determined]"
+      "performance": "[frustrated]",
+      "contextBefore": "The section is still resisting.",
+      "contextAfter": "You knew what commanding the Lights could do.",
+      "key": "7d8117d357965673b5fd"
     },
     {
-      "key": "6cc82d0589f76f612580",
       "speaker": "Bren",
       "text": "You knew what commanding the Lights could do.",
       "role": "bren",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Then stop asking it.",
+      "contextAfter": "I knew what waiting would cost.",
+      "key": "558d8179fa19c133f594"
     },
     {
-      "key": "685512fa4bb49c183bb3",
       "speaker": "Soren",
       "text": "I knew what waiting would cost.",
       "role": "soren",
-      "performance": ""
+      "performance": "[frustrated]",
+      "contextBefore": "You knew what commanding the Lights could do.",
+      "contextAfter": "Stay. Help us stop this.",
+      "key": "a37117899345828bff29"
     },
     {
-      "key": "e52c9ffa6a08a57302f6",
       "speaker": "Bren",
       "text": "Stay. Help us stop this.",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[frustrated]",
+      "contextBefore": "I knew what waiting would cost.",
+      "contextAfter": "I can’t.",
+      "key": "f477ded5400edd708bb2"
     },
     {
-      "key": "48fe0e7dc5ccbbf7c99a",
       "speaker": "Soren",
       "text": "I can’t.",
       "role": "soren",
-      "performance": "[determined]"
+      "performance": "[frustrated]",
+      "contextBefore": "Stay. Help us stop this.",
+      "contextAfter": "Soren leaves through a portal. The Commander continues the unfinished control attempt.",
+      "key": "4299341a638561e552f2"
     },
     {
-      "key": "07190d5554753f85bf77",
       "speaker": "",
       "text": "Soren leaves through a portal. The Commander continues the unfinished control attempt.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "I can’t.",
+      "contextAfter": "The component returns to its mechanism. The final Elder Light waits in the secluded clearing. Restoring it will let the region’s Lights answer one another.",
+      "key": "e60a662665044105005b"
     },
     {
-      "key": "a0918bba10e7033a5d8d",
       "speaker": "",
       "text": "The component returns to its mechanism. The final Elder Light waits in the secluded clearing. Restoring it will let the region’s Lights answer one another.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Soren leaves through a portal. The Commander continues the unfinished control attempt.",
+      "contextAfter": "My people are safe. You’re all going home. Stay together.",
+      "key": "986c7b7dfd2214bf8866"
     },
     {
-      "key": "7c1cfa9c292511f67fe8",
       "speaker": "Tavin",
       "text": "My people are safe. You’re all going home. Stay together.",
       "role": "tavin",
-      "performance": ""
+      "performance": "[concerned]",
+      "contextBefore": "The component returns to its mechanism. The final Elder Light waits in the secluded clearing. Restoring it will let the region’s Lights answer one another.",
+      "contextAfter": "And you?",
+      "key": "0e8f0d4a528557a5b321"
     },
     {
-      "key": "7fa8c9a39ea8d2370968",
       "speaker": "Bren",
       "text": "And you?",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[curious]",
+      "contextBefore": "My people are safe. You’re all going home. Stay together.",
+      "contextAfter": "I need to know how far this has spread.",
+      "key": "af596807c88d545285c2"
     },
     {
-      "key": "61d54df663b0fb49350f",
       "speaker": "Tavin",
       "text": "I need to know how far this has spread.",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "And you?",
+      "contextAfter": "You don’t have to find out alone.",
+      "key": "1921de5d3727121c10d1"
     },
     {
-      "key": "f0c34d7827ae0ed5c061",
       "speaker": "Bren",
       "text": "You don’t have to find out alone.",
       "role": "bren",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "I need to know how far this has spread.",
+      "contextAfter": "I know.",
+      "key": "fbf47fa74a1daa3cc8d8"
     },
     {
-      "key": "2ce041a339ea51bf9032",
       "speaker": "Tavin",
       "text": "I know.",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[relieved]",
+      "contextBefore": "You don’t have to find out alone.",
+      "contextAfter": "Fern Hollow’s report is received. Alderbridge’s Light is still burning. Get there before that changes.",
+      "key": "50fa59f7dd540984e9a2"
     },
     {
-      "key": "e8bc462109e41a579871",
       "speaker": "Council official",
       "text": "Fern Hollow’s report is received. Alderbridge’s Light is still burning. Get there before that changes.",
-      "role": "official",
-      "performance": ""
+      "role": "councilMan",
+      "performance": "[conversationally]",
+      "contextBefore": "I know.",
+      "contextAfter": "If people there need help, I want to come.",
+      "key": "8e03c0576b460f1be954"
     },
     {
-      "key": "16e6c3733c30f7bbaa41",
       "speaker": "Mira",
       "text": "If people there need help, I want to come.",
       "role": "mira",
-      "performance": ""
+      "performance": "[concerned]",
+      "contextBefore": "Fern Hollow’s report is received. Alderbridge’s Light is still burning. Get there before that changes.",
+      "contextAfter": "Then we go together.",
+      "key": "8cfbaf215a216bec59a5"
     },
     {
-      "key": "3f083aae42b591760c33",
       "speaker": "Bren",
       "text": "Then we go together.",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[relieved]",
+      "contextBefore": "If people there need help, I want to come.",
+      "contextAfter": "One site reference in these notes matches a royal relief station. It is open and sheltering people.",
+      "key": "02b9fcf043cd245eec7d"
     },
     {
-      "key": "d82246f49edc90c8bc6a",
       "speaker": "Council official",
       "text": "One site reference in these notes matches a royal relief station. It is open and sheltering people.",
-      "role": "official",
-      "performance": ""
+      "role": "councilMan",
+      "performance": "[conversationally]",
+      "contextBefore": "Then we go together.",
+      "contextAfter": "We’ll investigate without putting the refuge at risk.",
+      "key": "c5fd38dbe169fc3ffbe9"
     },
     {
-      "key": "210318f9654be2469f54",
       "speaker": "Bren",
       "text": "We’ll investigate without putting the refuge at risk.",
       "role": "bren",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "One site reference in these notes matches a royal relief station. It is open and sheltering people.",
+      "contextAfter": "Your observations matter. We won’t extend this practice to other stations without stronger evidence.",
+      "key": "956729b2ccb037354063"
     },
     {
-      "key": "fcd920bc2e6b62bd5ff0",
       "speaker": "Council official",
       "text": "Your observations matter. We won’t extend this practice to other stations without stronger evidence.",
-      "role": "official",
-      "performance": ""
+      "role": "councilMan",
+      "performance": "[conversationally]",
+      "contextBefore": "We’ll investigate without putting the refuge at risk.",
+      "contextAfter": "The station staff are trying to protect people. We need to understand the response, not blame them.",
+      "key": "ecce8727a5cb35352956"
     },
     {
-      "key": "1d2389e996f1ccde4f59",
       "speaker": "Mira",
       "text": "The station staff are trying to protect people. We need to understand the response, not blame them.",
       "role": "mira",
-      "performance": "[determined]"
+      "performance": "[concerned]",
+      "contextBefore": "Your observations matter. We won’t extend this practice to other stations without stronger evidence.",
+      "contextAfter": "Rest here while we deliberate.",
+      "key": "8d40abf773549cbf81c4"
     },
     {
-      "key": "036ea9c33adb1b6fddd5",
       "speaker": "Council official",
       "text": "Rest here while we deliberate.",
-      "role": "official",
-      "performance": ""
+      "role": "councilMan",
+      "performance": "[conversationally]",
+      "contextBefore": "The station staff are trying to protect people. We need to understand the response, not blame them.",
+      "contextAfter": "The records may be real. They’re still fragments. They don’t tell us how to run every station.",
+      "key": "eb420518253c6cd9f413"
     },
     {
-      "key": "ea13430f4d31b2180dae",
       "speaker": "Council official",
       "text": "The records may be real. They’re still fragments. They don’t tell us how to run every station.",
-      "role": "official",
-      "performance": ""
+      "role": "councilMan",
+      "performance": "[conversationally]",
+      "contextBefore": "Rest here while we deliberate.",
+      "contextAfter": "We’re telling you what happened at the one we saw, alongside what the old accounts describe.",
+      "key": "735ba0c23ab92b4b6d2b"
     },
     {
-      "key": "bb5fac1708ae28c130e7",
       "speaker": "Bren",
       "text": "We’re telling you what happened at the one we saw, alongside what the old accounts describe.",
       "role": "bren",
-      "performance": "[concerned]"
+      "performance": "[thoughtful]",
+      "contextBefore": "The records may be real. They’re still fragments. They don’t tell us how to run every station.",
+      "contextAfter": "Credible, but not conclusive. We authorize a limited listening-first trial at that station. Return with the results.",
+      "key": "a1ef0a47b9100c034903"
     },
     {
-      "key": "4819c71a68a8caff9e42",
       "speaker": "Council official",
       "text": "Credible, but not conclusive. We authorize a limited listening-first trial at that station. Return with the results.",
-      "role": "official",
-      "performance": ""
+      "role": "councilMan",
+      "performance": "[conversationally]",
+      "contextBefore": "We’re telling you what happened at the one we saw, alongside what the old accounts describe.",
+      "contextAfter": "The trial showed local healing. After that, the staff and party repaired the mechanism together.",
+      "key": "a8a3151509a41a53bd19"
     },
     {
-      "key": "9fff88cce30b05455275",
       "speaker": "Mira",
       "text": "The trial showed local healing. After that, the staff and party repaired the mechanism together.",
       "role": "mira",
-      "performance": ""
+      "performance": "[relieved]",
+      "contextBefore": "Credible, but not conclusive. We authorize a limited listening-first trial at that station. Return with the results.",
+      "contextAfter": "The practice stays limited to that station. We’ll review what comes next carefully.",
+      "key": "227597e9a20ed44ae33b"
     },
     {
-      "key": "af1c1c15a40eb32579a8",
       "speaker": "Council official",
       "text": "The practice stays limited to that station. We’ll review what comes next carefully.",
-      "role": "official",
-      "performance": ""
+      "role": "councilMan",
+      "performance": "[conversationally]",
+      "contextBefore": "The trial showed local healing. After that, the staff and party repaired the mechanism together.",
+      "contextAfter": "That unsettled response again. Closer this time.",
+      "key": "23a174b99ea43184eba6"
     },
     {
-      "key": "2ea761fc05760e532f7d",
       "speaker": "Bren",
       "text": "That unsettled response again. Closer this time.",
       "role": "bren",
-      "performance": "[quietly]"
+      "performance": "[thoughtful]",
+      "contextBefore": "The practice stays limited to that station. We’ll review what comes next carefully.",
+      "contextAfter": "Then let’s go.",
+      "key": "ac4e9860190f34cb3c99"
     },
     {
-      "key": "4689b404e54b3dc500c6",
       "speaker": "Tavin",
       "text": "Then let’s go.",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "That unsettled response again. Closer this time.",
+      "contextAfter": "The unfinished command stopped. We returned the component and restored the local section.",
+      "key": "90dd908f85650956a804"
     },
     {
-      "key": "0fbb021c81b265562e5a",
       "speaker": "Bren",
       "text": "The unfinished command stopped. We returned the component and restored the local section.",
       "role": "bren",
-      "performance": ""
+      "performance": "[frustrated]",
+      "contextBefore": "Then let’s go.",
+      "contextAfter": "This recovered field order points toward an operation serving Soren’s agenda in the snowy region. Intercept it before it advances.",
+      "key": "40d989d4751eab4d497e"
     },
     {
-      "key": "1b2f9c4732162a47e166",
       "speaker": "Council official",
       "text": "This recovered field order points toward an operation serving Soren’s agenda in the snowy region. Intercept it before it advances.",
-      "role": "official",
-      "performance": ""
+      "role": "councilMan",
+      "performance": "[conversationally]",
+      "contextBefore": "The unfinished command stopped. We returned the component and restored the local section.",
+      "contextAfter": "The party accepts the assignment and prepares to leave for the snowy region.",
+      "key": "1d0a7a1713f9f1e86240"
     },
     {
-      "key": "6a1e179c1ce2feb77607",
       "speaker": "",
       "text": "The party accepts the assignment and prepares to leave for the snowy region.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "This recovered field order points toward an operation serving Soren’s agenda in the snowy region. Intercept it before it advances.",
+      "contextAfter": "Bring us the findings from your current investigation.",
+      "key": "37915d5b44bf7fdbf776"
     },
     {
-      "key": "d59cf8e33b629639510e",
       "speaker": "Council official",
       "text": "Bring us the findings from your current investigation.",
-      "role": "official",
-      "performance": ""
+      "role": "councilMan",
+      "performance": "[conversationally]",
+      "contextBefore": "The party accepts the assignment and prepares to leave for the snowy region.",
+      "contextAfter": "",
+      "key": "63c4bbe455024ee6ca7b"
     },
     {
-      "key": "bc894bff77a626c43943",
       "speaker": "Soren",
       "text": "I won’t let another village be lost because we waited.",
       "role": "soren",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "They’re resisting. You can’t save them by refusing to listen.",
+      "key": "1e064f5614c4861fe851"
     },
     {
-      "key": "ed2a0ae0e368d0e77eab",
       "speaker": "Bren",
       "text": "They’re resisting. You can’t save them by refusing to listen.",
       "role": "bren",
-      "performance": "[concerned]"
+      "performance": "[frustrated]",
+      "contextBefore": "I won’t let another village be lost because we waited.",
+      "contextAfter": "A cold light takes shape around Bren. Armor closes over him; his sword changes in his hand.",
+      "key": "8c548b7c0715577d14aa"
     },
     {
-      "key": "f561a475eecdf1d8f8ae",
       "speaker": "",
       "text": "A cold light takes shape around Bren. Armor closes over him; his sword changes in his hand.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "They’re resisting. You can’t save them by refusing to listen.",
+      "contextAfter": "Bren… what happened?",
+      "key": "449080a1cff4e1bb3ed9"
     },
     {
-      "key": "103dcad6e391f1d96169",
       "speaker": "Tavin",
       "text": "Bren… what happened?",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[curious]",
+      "contextBefore": "A cold light takes shape around Bren. Armor closes over him; his sword changes in his hand.",
+      "contextAfter": "That wasn’t in the records.",
+      "key": "9bc083008e3c0ec141db"
     },
     {
-      "key": "cbecc7c971997e8f956e",
       "speaker": "Soren",
       "text": "That wasn’t in the records.",
       "role": "soren",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "Bren… what happened?",
+      "contextAfter": "Open the channel again.",
+      "key": "564dd65d759af902126f"
     },
     {
-      "key": "2173e0ab2e160067855f",
       "speaker": "Commander",
       "text": "Open the channel again.",
-      "role": "commander",
-      "performance": ""
+      "role": "commanderMan",
+      "performance": "[sternly]",
+      "contextBefore": "That wasn’t in the records.",
+      "contextAfter": "A forced pulse reaches the nearby settlement and catches one of Tavin’s people in its pull.",
+      "key": "16201077d3e0bde068e6"
     },
     {
-      "key": "01aa21a1291a458c23bd",
       "speaker": "",
       "text": "A forced pulse reaches the nearby settlement and catches one of Tavin’s people in its pull.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Open the channel again.",
+      "contextAfter": "That’s one of my people.",
+      "key": "61ba39104f51bdb6b6bd"
     },
     {
-      "key": "dcf9b4a8c03042252246",
       "speaker": "Tavin",
       "text": "That’s one of my people.",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[concerned]",
+      "contextBefore": "A forced pulse reaches the nearby settlement and catches one of Tavin’s people in its pull.",
+      "contextAfter": "Don’t go in alone.",
+      "key": "c0848b9bfaefb400d8f8"
     },
     {
-      "key": "9b0e080bd06866e72625",
       "speaker": "Bren",
       "text": "Don’t go in alone.",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "That’s one of my people.",
+      "contextAfter": "Tell us what you need.",
+      "key": "c0624430915f94386103"
     },
     {
-      "key": "772bd34a0c59d2b5f513",
       "speaker": "Mira",
       "text": "Tell us what you need.",
       "role": "mira",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "Don’t go in alone.",
+      "contextAfter": "Keep the others back. I’ll draw the pulse away. When I move, get them clear.",
+      "key": "0b98714e2167669ffbf5"
     },
     {
-      "key": "86d11329207721f5d896",
       "speaker": "Tavin",
       "text": "Keep the others back. I’ll draw the pulse away. When I move, get them clear.",
       "role": "tavin",
-      "performance": ""
+      "performance": "[forcefully]",
+      "contextBefore": "Tell us what you need.",
+      "contextAfter": "We’ll hold them. Go.",
+      "key": "965ce1d122457d9fabdf"
     },
     {
-      "key": "7e519e4472673d2ab5f8",
       "speaker": "Bren",
       "text": "We’ll hold them. Go.",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "Keep the others back. I’ll draw the pulse away. When I move, get them clear.",
+      "contextAfter": "The Light responds to Tavin’s trust in the party. Keep building charge. Click Ascend when it is ready.",
+      "key": "4398f81d2f2552295e60"
     },
     {
-      "key": "382da0a86a76b96409ea",
       "speaker": "",
       "text": "The Light responds to Tavin’s trust in the party. Keep building charge. Click Ascend when it is ready.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "We’ll hold them. Go.",
+      "contextAfter": "soren",
+      "key": "ec48466592bf68400d15"
     },
     {
-      "key": "605daae85a64a8a2c3b0",
       "speaker": "Tavin",
       "text": "They’re alive. I’ll find what’s doing this to them.",
       "role": "tavin",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "soren",
+      "contextAfter": "Bren and Soren arrive after Tavin’s encounter.",
+      "key": "ae27c0a4427a7dfd8c60"
     },
     {
-      "key": "5c4b985770b79948cf94",
       "speaker": "",
       "text": "Bren and Soren arrive after Tavin’s encounter.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "They’re alive. I’ll find what’s doing this to them.",
+      "contextAfter": "You can still help us stop this.",
+      "key": "6e867acd6e4ad918e19a"
     },
     {
-      "key": "3bbb28ce380b0477613e",
       "speaker": "Bren",
       "text": "You can still help us stop this.",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[frustrated]",
+      "contextBefore": "Bren and Soren arrive after Tavin’s encounter.",
+      "contextAfter": "I can’t let it happen again.",
+      "key": "b6c1100c52eb7e812ff6"
     },
     {
-      "key": "2054795329b75c93db47",
       "speaker": "Soren",
       "text": "I can’t let it happen again.",
       "role": "soren",
-      "performance": "[determined]"
+      "performance": "[frustrated]",
+      "contextBefore": "You can still help us stop this.",
+      "contextAfter": "Soren escapes after the exchange. His forced command destabilizes the remnant again. The residents need protection.",
+      "key": "1ce17c59f5c235ab0af8"
     },
     {
-      "key": "25d68a06f12240c55560",
       "speaker": "",
       "text": "Soren escapes after the exchange. His forced command destabilizes the remnant again. The residents need protection.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "I can’t let it happen again.",
+      "contextAfter": "I felt it too. The same pull. I’m sorry.",
+      "key": "2d748482b5dc2b2f9a29"
     },
     {
-      "key": "455b05abdc4399e3d9a0",
       "speaker": "Guard",
       "text": "I felt it too. The same pull. I’m sorry.",
-      "role": "guard",
-      "performance": ""
+      "role": "guardMan",
+      "performance": "[conversationally]",
+      "contextBefore": "Soren escapes after the exchange. His forced command destabilizes the remnant again. The residents need protection.",
+      "contextAfter": "Now you know why they came for help.",
+      "key": "1fee0929ddf6d476e6e2"
     },
     {
-      "key": "e775fefd26e2045afdd7",
       "speaker": "Tavin",
       "text": "Now you know why they came for help.",
       "role": "tavin",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "I felt it too. The same pull. I’m sorry.",
+      "contextAfter": "Temporary shelter is granted. Immediate tension eases, though trust is still incomplete.",
+      "key": "60a1f856860f59029101"
     },
     {
-      "key": "1710d17b3515cc578395",
       "speaker": "",
       "text": "Temporary shelter is granted. Immediate tension eases, though trust is still incomplete.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "Now you know why they came for help.",
+      "contextAfter": "Fall back!",
+      "key": "bb079eb4af3ac7066ef0"
     },
     {
-      "key": "94bf95be6b258b198b5d",
       "speaker": "Commander",
       "text": "Fall back!",
-      "role": "commander",
-      "performance": ""
+      "role": "commanderMan",
+      "performance": "[sternly]",
+      "contextBefore": "Temporary shelter is granted. Immediate tension eases, though trust is still incomplete.",
+      "contextAfter": "The pull has stopped. They’re coming around.",
+      "key": "66427c6af5a14398e39b"
     },
     {
-      "key": "e4695ebd04acfab7415e",
       "speaker": "Mira",
       "text": "The pull has stopped. They’re coming around.",
       "role": "mira",
-      "performance": ""
+      "performance": "[frustrated]",
+      "contextBefore": "Fall back!",
+      "contextAfter": "The Commander withdraws. The component taken from this site’s mechanism is recovered.",
+      "key": "84336dfd4526182b9059"
     },
     {
-      "key": "e6eeb19f0a1a6b6523a5",
       "speaker": "",
       "text": "The Commander withdraws. The component taken from this site’s mechanism is recovered.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "The pull has stopped. They’re coming around.",
+      "contextAfter": "",
+      "key": "5fece894c19590b0e7d9"
     },
     {
-      "key": "46eb726c8623afce3d8e",
       "speaker": "",
       "text": "Tavin holds back to protect his distressed people. Bren and Soren are coming along the forest road.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "ed1ba6cff2f4c7b64dd1"
     },
     {
-      "key": "248f19fe2cd1204e551a",
       "speaker": "",
       "text": "The northern pass opens into the snowy region. The party carries Valenne’s interception assignment.",
       "role": "narrator",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "21767e95ebb5809a2bd1"
     },
     {
-      "key": "863672d9a9ac9dc8ff55",
       "speaker": "Bren",
       "text": "It’s worse than the report made it sound.",
       "role": "bren",
-      "performance": ""
+      "performance": "[frustrated]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "56b06d384be9606615c4"
     },
     {
-      "key": "5726aa94a3be110feb44",
       "speaker": "Soren",
       "text": "The water, the animals, the Light. Let’s hear what the representative has seen.",
       "role": "soren",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "df269e136f2827c5a953"
     },
     {
-      "key": "768768a11e009d156812",
       "speaker": "Weapon shop clerk",
       "text": "A good blade and a full satchel. What can I help you find?",
-      "role": "merchant",
-      "performance": ""
+      "role": "merchantWoman",
+      "performance": "[warmly]",
+      "contextBefore": "A good blade and a full satchel. What can I help you find?",
+      "contextAfter": "Welcome in. The hearth is warm, and there is supper on the table. Take a moment to rest.",
+      "key": "90f0211d6489e6c71b12"
     },
     {
-      "key": "438d9405cceb68a17c5d",
       "speaker": "bren",
       "text": "I’ll hold the line.",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "ce29f91c8986b2d6b793"
     },
     {
-      "key": "abf7281aaff3aa04c19f",
       "speaker": "bren",
       "text": "Stay with us.",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[concerned]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "1204a618ed9ce271a345"
     },
     {
-      "key": "a0cd776709af6cccff4d",
       "speaker": "bren",
       "text": "We stand together!",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[relieved]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "4d5bc9b08651a2e8dc22"
     },
     {
-      "key": "7eaf22199a548392f6ff",
       "speaker": "bren",
       "text": "Driving slash!",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "2de03e044d17a074a575"
     },
     {
-      "key": "bbb23521c19bd25f90fd",
       "speaker": "bren",
       "text": "Right on target!",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "9a5d3fe04e0e693abc9c"
     },
     {
-      "key": "9f1ff91773fb11cfcedd",
       "speaker": "bren",
       "text": "A perfect opening!",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "fda537bf5baee43ea192"
     },
     {
-      "key": "7f4879d5d71635ac64b1",
       "speaker": "bren",
       "text": "Keep moving!",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "5b88e8d4ffbb251d0726"
     },
     {
-      "key": "0dd7b61c21c78ca2a8c9",
       "speaker": "bren",
       "text": "Now!",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "406014ca1e2dea82d2ce"
     },
     {
-      "key": "b72bc1d44747f55adb70",
       "speaker": "bren",
       "text": "They have a way out. Let them go.",
       "role": "bren",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "6a5d9744ed6716245ec7"
     },
     {
-      "key": "09f02e6de7144e8a1fb5",
       "speaker": "bren",
       "text": "Driving slash",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "69f2abe20c8839ccd592"
     },
     {
-      "key": "f14fa995a8e9e1c11f86",
       "speaker": "bren",
       "text": "Sundering slash",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "e2c6697989107a86c4cf"
     },
     {
-      "key": "9e564ff0ffafc4fdc0be",
       "speaker": "bren",
       "text": "Rally",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "f193371ae3f5b105f559"
     },
     {
-      "key": "842f5108716514abd4f6",
       "speaker": "bren",
       "text": "Unbroken resolve",
       "role": "bren",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "cae186ae65bcb7eb63d0"
     },
     {
-      "key": "a8df538e9074adbe6df3",
       "speaker": "soren",
       "text": "I’ll hold the line.",
       "role": "soren",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "3a5d4fcef8f4e39a962e"
     },
     {
-      "key": "109d68fd92886f8a41db",
       "speaker": "soren",
       "text": "Stay with us.",
       "role": "soren",
-      "performance": "[determined]"
+      "performance": "[concerned]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "0cd2ee82e86261237ddd"
     },
     {
-      "key": "3ce51ecdf21d9c62d6bd",
       "speaker": "soren",
       "text": "We stand together!",
       "role": "soren",
-      "performance": "[determined]"
+      "performance": "[relieved]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "4c9a58611f5d5897094b"
     },
     {
-      "key": "d3b1482de41ceb1be0e8",
       "speaker": "soren",
       "text": "Driving slash!",
       "role": "soren",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "fd131aebe3441e40a65f"
     },
     {
-      "key": "95e3372bf5083486cb6c",
       "speaker": "soren",
       "text": "Right on target!",
       "role": "soren",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "1281979439d1e005aca4"
     },
     {
-      "key": "c18966441a8fee7cb2bd",
       "speaker": "soren",
       "text": "A perfect opening!",
       "role": "soren",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "d6d8b48f3ae66090a922"
     },
     {
-      "key": "ed66329232c47049222c",
       "speaker": "soren",
       "text": "Keep moving!",
       "role": "soren",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "5ac13f7059b08b905c90"
     },
     {
-      "key": "808c0d6675b48f33a3bd",
       "speaker": "soren",
       "text": "Now!",
       "role": "soren",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "7be11ae37709097b0620"
     },
     {
-      "key": "a41e2a08598befec9a4f",
       "speaker": "soren",
       "text": "They have a way out. Let them go.",
       "role": "soren",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "00458a49caa4fed9461a"
     },
     {
-      "key": "cf28c1d7aae3dd2bcbd8",
       "speaker": "soren",
       "text": "Arcane pulse",
       "role": "soren",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "83e98cefda62645a2d84"
     },
     {
-      "key": "24f60a651518310d3b87",
       "speaker": "soren",
       "text": "Convergent pulse",
       "role": "soren",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "f6688b61663e2d810b50"
     },
     {
-      "key": "c10b579fc683ccab740a",
       "speaker": "soren",
       "text": "Ward",
       "role": "soren",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "f75722e1affa5e790d04"
     },
     {
-      "key": "57f8bfb6b7ed4d59d535",
       "speaker": "soren",
       "text": "Greater ward",
       "role": "soren",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "5e9baaea362e350a3162"
     },
     {
-      "key": "ee552e32e6dda790d3b6",
       "speaker": "tavin",
       "text": "I’ll hold the line.",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "4c8d2f58c1520a6938ea"
     },
     {
-      "key": "06023c00e84a1dde2c70",
       "speaker": "tavin",
       "text": "Stay with us.",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[concerned]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "b04aad0a6bda9e581c83"
     },
     {
-      "key": "f1f667723fa4146fea15",
       "speaker": "tavin",
       "text": "We stand together!",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[relieved]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "7c220726af09e332bfef"
     },
     {
-      "key": "a7887c518bc6a5712bde",
       "speaker": "tavin",
       "text": "Driving slash!",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "d1ad206feac5bbd3f468"
     },
     {
-      "key": "232fc44d8705520ba2de",
       "speaker": "tavin",
       "text": "Right on target!",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "8521ca3a392f3639e994"
     },
     {
-      "key": "38fb186226b8094b9dda",
       "speaker": "tavin",
       "text": "A perfect opening!",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "74504bf04486a5d5da84"
     },
     {
-      "key": "134fea8655fffa261f6f",
       "speaker": "tavin",
       "text": "Keep moving!",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "72614b9b884ac9b7b00a"
     },
     {
-      "key": "85b8250dd43f1feed786",
       "speaker": "tavin",
       "text": "Now!",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "8ceb8db8fd7b20ec18e7"
     },
     {
-      "key": "633fa2f8a27651041534",
       "speaker": "tavin",
       "text": "They have a way out. Let them go.",
       "role": "tavin",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "c2c0b093d86010dae486"
     },
     {
-      "key": "c3c9739a4ce0b43ef9de",
       "speaker": "tavin",
       "text": "Piercing arrow",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "285c85ad5a80d27fe257"
     },
     {
-      "key": "f76e68e978fdc1923659",
       "speaker": "tavin",
       "text": "Crystal volley",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "2818ca8279c0688353d5"
     },
     {
-      "key": "d539c3a66c9fafb52ba0",
       "speaker": "tavin",
       "text": "Field dressing",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "674fb221e74a634c96bf"
     },
     {
-      "key": "c7c5a078533c939e79e2",
       "speaker": "tavin",
       "text": "Renewing wind",
       "role": "tavin",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "5ff517df163e52ba76ff"
     },
     {
-      "key": "3810239a9e10aad22ff9",
       "speaker": "mira",
       "text": "I’ll hold the line.",
       "role": "mira",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "73a33482381aa56e3e3a"
     },
     {
-      "key": "54d8cf55095327c4d653",
       "speaker": "mira",
       "text": "Stay with us.",
       "role": "mira",
-      "performance": "[determined]"
+      "performance": "[concerned]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "5b796fa48eee9449b833"
     },
     {
-      "key": "6c7051c3a48334223fb9",
       "speaker": "mira",
       "text": "We stand together!",
       "role": "mira",
-      "performance": "[determined]"
+      "performance": "[relieved]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "08e654768c26c143c612"
     },
     {
-      "key": "60ec4852c3252727a78d",
       "speaker": "mira",
       "text": "Driving slash!",
       "role": "mira",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "135f19fdf4bf9aacb96b"
     },
     {
-      "key": "e6b60adc5625520a2065",
       "speaker": "mira",
       "text": "Right on target!",
       "role": "mira",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "d6b8466f7f6c09242979"
     },
     {
-      "key": "da505e25b8d9ae964343",
       "speaker": "mira",
       "text": "A perfect opening!",
       "role": "mira",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "0e967f1890ac922bdcc7"
     },
     {
-      "key": "9feb5a2eec73b52f2cc3",
       "speaker": "mira",
       "text": "Keep moving!",
       "role": "mira",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "781299d686cccdb15ad9"
     },
     {
-      "key": "cf0c379bedfa4dcea5fc",
       "speaker": "mira",
       "text": "Now!",
       "role": "mira",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "8008d877f9dc963131a2"
     },
     {
-      "key": "c01e1ea364233953a502",
       "speaker": "mira",
       "text": "They have a way out. Let them go.",
       "role": "mira",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "985747efe7dc81f9c640"
     },
     {
-      "key": "6dbf993845ab8c3af2b1",
       "speaker": "mira",
       "text": "Mend",
       "role": "mira",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "17512d6303a5622d671c"
     },
     {
-      "key": "1eac3840cbd85da145cc",
       "speaker": "mira",
       "text": "Restorative light",
       "role": "mira",
-      "performance": "[determined]"
+      "performance": "[concerned]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "f315a79b31c434b408f7"
     },
     {
-      "key": "7d458dc6b3b1954d3d08",
       "speaker": "mira",
       "text": "Sheltering light",
       "role": "mira",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "7333c3921dd48e62f5d9"
     },
     {
-      "key": "2e0dd8912e5b9e8420e9",
       "speaker": "mira",
       "text": "Sanctuary",
       "role": "mira",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "f9a14d17eba184a3ac99"
     },
     {
-      "key": "f32e48a015fad1e7e2b5",
       "speaker": "lysa",
       "text": "I’ll hold the line.",
       "role": "lysa",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "ba8e14cd582e7c41f9fb"
     },
     {
-      "key": "9f3fb0a9e085319f7a4a",
       "speaker": "lysa",
       "text": "Stay with us.",
       "role": "lysa",
-      "performance": "[determined]"
+      "performance": "[concerned]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "5894c79d4ecf4ee2e09d"
     },
     {
-      "key": "b2363994d334cb9066c0",
       "speaker": "lysa",
       "text": "We stand together!",
       "role": "lysa",
-      "performance": "[determined]"
+      "performance": "[relieved]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "1f64d39a93a1626ebb22"
     },
     {
-      "key": "1f09402c65e255b9a98e",
       "speaker": "lysa",
       "text": "Driving slash!",
       "role": "lysa",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "d22cd9363d12cb49cc1d"
     },
     {
-      "key": "4b055b4de31eb8d552dd",
       "speaker": "lysa",
       "text": "Right on target!",
       "role": "lysa",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "6f4374032184e3ffa0c3"
     },
     {
-      "key": "e2b05b2e86bed10e710a",
       "speaker": "lysa",
       "text": "A perfect opening!",
       "role": "lysa",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "0f3124645b6df5a4d444"
     },
     {
-      "key": "bf5960c7a683e437cda1",
       "speaker": "lysa",
       "text": "Keep moving!",
       "role": "lysa",
-      "performance": "[determined]"
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "cd9f128bb9143b744e52"
     },
     {
-      "key": "78cb21e01bc75d626aa7",
       "speaker": "lysa",
       "text": "Now!",
       "role": "lysa",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "f570862dd380e2e9dd44"
     },
     {
-      "key": "f6bdef9630150afb9215",
       "speaker": "lysa",
       "text": "They have a way out. Let them go.",
       "role": "lysa",
-      "performance": ""
+      "performance": "[thoughtful]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "a80261db883a497053ab"
     },
     {
-      "key": "7dc8435b80a1bd56e5c3",
       "speaker": "lysa",
       "text": "Flame lance",
       "role": "lysa",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "67368290d435600709c4"
     },
     {
-      "key": "b4f9ed5630b44d234261",
       "speaker": "lysa",
       "text": "Frost bloom",
       "role": "lysa",
-      "performance": "[determined]"
+      "performance": "[forcefully]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "012ea5d142b4b6b161f5"
     },
     {
-      "key": "5f2a19d770e1717ce323",
       "speaker": "The carpenter",
       "text": "I’m checking the joinery. An open path is worth more than a pile of spare timber.",
-      "role": "merchant",
-      "performance": ""
+      "role": "workerMan",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "9b4d3bf8e6002e481bff"
     },
     {
-      "key": "833c6ef8a0799cb14357",
       "speaker": "The courier",
       "text": "I’m taking reports between the houses. There are more today than usual.",
-      "role": "youngTownMan",
-      "performance": ""
+      "role": "courierMan",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "850e717893406a667064"
     },
     {
-      "key": "347cb34a26fc1457bf25",
       "speaker": "The farmer",
       "text": "The ground and the water tell you when something has changed.",
-      "role": "merchant",
-      "performance": ""
+      "role": "farmerMan",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "25caf06a3cbdca780edc"
     },
     {
-      "key": "5bfcd61de41a01dc0ac2",
       "speaker": "The elder",
       "text": "Watch how the world responds. You can learn a lot by waiting a moment.",
-      "role": "elder",
-      "performance": ""
+      "role": "elderWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "4684d351ec644439f20a"
     },
     {
-      "key": "c2f27d4f573b7fce9559",
       "speaker": "The potter",
       "text": "Take care on the road.",
-      "role": "healer",
-      "performance": ""
+      "role": "potterWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "ba2894c50289d77a5375"
     },
     {
-      "key": "f16176163f91f1339560",
       "speaker": "The timber keeper",
       "text": "Take care on the road.",
-      "role": "merchant",
-      "performance": ""
+      "role": "workerMan",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "d94a460a54059eb4b01d"
     },
     {
-      "key": "e1ca9e06bd4b1c6d1640",
       "speaker": "The council steward",
       "text": "Watch how the world responds. You can learn a lot by waiting a moment.",
-      "role": "official",
-      "performance": ""
+      "role": "councilMan",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "aebfe17747e9d31b30f3"
     },
     {
-      "key": "ce7a136a545d2d21567a",
       "speaker": "The archivist",
       "text": "I’m taking reports between the houses. There are more today than usual.",
-      "role": "official",
-      "performance": ""
+      "role": "archivistWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "7f6809096f0b454fd548"
     },
     {
-      "key": "7c676cfd6e492a272e98",
       "speaker": "The cloth merchant",
       "text": "The market is still open. We’re making sure everyone has what they need.",
-      "role": "townWoman",
-      "performance": ""
+      "role": "clothWoman",
+      "performance": "[warmly]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "f29453ac47065981d794"
     },
     {
-      "key": "e01a15c4f22b1b715baf",
       "speaker": "The civic gardener",
       "text": "The ground and the water tell you when something has changed.",
-      "role": "elder",
-      "performance": ""
+      "role": "gardenerMan",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "ec4e8112df126b37b3b5"
     },
     {
-      "key": "7b6a1960ce6624f72079",
       "speaker": "The royal courier",
       "text": "I’m checking the joinery. An open path is worth more than a pile of spare timber.",
-      "role": "youngTownWoman",
-      "performance": ""
+      "role": "courierWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "a44e5fe7ca2ce9b33c15"
     },
     {
-      "key": "45c8b0aedbbe03d5c875",
       "speaker": "The inn steward",
       "text": "A warm meal and a little rest can make the next road easier.",
-      "role": "merchant",
-      "performance": ""
+      "role": "stewardMan",
+      "performance": "[warmly]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "bdb51d73d102db6068bf"
     },
     {
-      "key": "73ae05994b90da0385b1",
       "speaker": "The fishmonger",
       "text": "The market is still open. We’re making sure everyone has what they need.",
-      "role": "matron",
-      "performance": ""
+      "role": "fishmongerWoman",
+      "performance": "[warmly]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "6db8b5256edacb53b4a2"
     },
     {
-      "key": "a689070bbbb86f82ec85",
       "speaker": "The bridgekeeper",
       "text": "There’s room through the main lane. Keep the work aprons clear.",
-      "role": "merchant",
-      "performance": ""
+      "role": "bridgekeeperWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "17d4bc1c542f27d27dee"
     },
     {
-      "key": "e3577ef43610b868d308",
       "speaker": "The shelter medic",
       "text": "We look after each other. Tell me if you see someone who needs help.",
-      "role": "healer",
-      "performance": ""
+      "role": "medicWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "df106e4eb535db4544c3"
     },
     {
-      "key": "97025a4066f90339ccd0",
       "speaker": "The orchard keeper",
       "text": "The ground and the water tell you when something has changed.",
-      "role": "merchant",
-      "performance": ""
+      "role": "farmerMan",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "01272e37693cd9dd0cc2"
     },
     {
-      "key": "a2380d3163cd37b43457",
       "speaker": "The refuge medic",
       "text": "We look after each other. Tell me if you see someone who needs help.",
-      "role": "healer",
-      "performance": ""
+      "role": "medicWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "65bbe7bc2f7e22db2971"
     },
     {
-      "key": "1471347d72a848b59824",
       "speaker": "The station recorder",
       "text": "I’m taking reports between the houses. There are more today than usual.",
-      "role": "youngTownMan",
-      "performance": ""
+      "role": "courierMan",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "1cf78ec745b96f173cb2"
     },
     {
-      "key": "ad1d2d3607b74a2b45d0",
       "speaker": "The quartermaster",
       "text": "I’m checking the joinery. An open path is worth more than a pile of spare timber.",
-      "role": "townWoman",
-      "performance": ""
+      "role": "quartermasterWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "553c731e4bce75bd0dd3"
     },
     {
-      "key": "68e5a0392a5e877e8bdc",
       "speaker": "Inn steward",
       "text": "Welcome in. The hearth is warm, and there is supper on the table. Take a moment to rest.",
-      "role": "merchant",
-      "performance": ""
+      "role": "stewardMan",
+      "performance": "[warmly]",
+      "contextBefore": "A good blade and a full satchel. What can I help you find?",
+      "contextAfter": "Welcome in. The hearth is warm, and there is supper on the table. Take a moment to rest.",
+      "key": "e714cc15bfb57d6ed63c"
     },
     {
-      "key": "1b6541d4f2f530e446f6",
       "speaker": "Apprentice",
       "text": "We are checking the stock for travelers. Let the clerk know what you need.",
-      "role": "youngTownMan",
-      "performance": ""
+      "role": "courierMan",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "I make the jars for the salves. The clerk keeps the remedies stocked.",
+      "key": "ea121891e42ce95dd41a"
     },
     {
-      "key": "09fbe298c9d2c715c454",
       "speaker": "Potter",
       "text": "I make the jars for the salves. The clerk keeps the remedies stocked.",
-      "role": "healer",
-      "performance": ""
+      "role": "potterWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "We are checking the stock for travelers. Let the clerk know what you need.",
+      "contextAfter": "A warm meal and a little rest can make the next road easier.",
+      "key": "677b53f1c8c1d89a11c0"
     },
     {
-      "key": "18eae6a3a0f3865570a6",
       "speaker": "The innkeeper",
       "text": "A warm meal and a little rest can make the next road easier.",
-      "role": "healer",
-      "performance": ""
+      "role": "innkeeperWoman",
+      "performance": "[warmly]",
+      "contextBefore": "I make the jars for the salves. The clerk keeps the remedies stocked.",
+      "contextAfter": "A good blade and a full satchel. What can I help you find?",
+      "key": "d8849fc6b07d5ebb2c16"
     },
     {
-      "key": "785d5c2902e6b67451d2",
       "speaker": "Highmere outfitter",
       "text": "A good blade and a full satchel. What can I help you find?",
-      "role": "healer",
-      "performance": ""
+      "role": "clothWoman",
+      "performance": "[warmly]",
+      "contextBefore": "A warm meal and a little rest can make the next road easier.",
+      "contextAfter": "A good blade and a full satchel. What can I help you find?",
+      "key": "97289ae33a6c56ec78be"
     },
     {
-      "key": "961d3da6a429c742264f",
       "speaker": "Innkeeper",
       "text": "Welcome in. The hearth is warm, and there is supper on the table. Take a moment to rest.",
-      "role": "healer",
-      "performance": ""
+      "role": "innkeeperWoman",
+      "performance": "[warmly]",
+      "contextBefore": "Welcome in. The hearth is warm, and there is supper on the table. Take a moment to rest.",
+      "contextAfter": "",
+      "key": "e31f170674558a6fad9c"
+    },
+    {
+      "speaker": "Aid official",
+      "text": "Fern Hollow’s report is received. Alderbridge’s Light is still burning. Get there before that changes.",
+      "role": "aidOfficialWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "cf676215021a157cd235"
+    },
+    {
+      "speaker": "Aid official",
+      "text": "One site reference in these notes matches a royal relief station. It is open and sheltering people.",
+      "role": "aidOfficialWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "e3018ebdd012206f5db1"
+    },
+    {
+      "speaker": "Aid official",
+      "text": "Your observations matter. We won’t extend this practice to other stations without stronger evidence.",
+      "role": "aidOfficialWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "e405c9d8d312f70bae1c"
+    },
+    {
+      "speaker": "Aid official",
+      "text": "Rest here while we deliberate.",
+      "role": "aidOfficialWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "193d9cb5ba10b6a350f6"
+    },
+    {
+      "speaker": "Aid official",
+      "text": "The records may be real. They’re still fragments. They don’t tell us how to run every station.",
+      "role": "aidOfficialWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "9c180019d407b6dcd1d9"
+    },
+    {
+      "speaker": "Aid official",
+      "text": "Credible, but not conclusive. We authorize a limited listening-first trial at that station. Return with the results.",
+      "role": "aidOfficialWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "10d8b87a39dfd43d898b"
+    },
+    {
+      "speaker": "Aid official",
+      "text": "The practice stays limited to that station. We’ll review what comes next carefully.",
+      "role": "aidOfficialWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "94da0dcad980d72c8276"
+    },
+    {
+      "speaker": "Aid official",
+      "text": "This recovered field order points toward an operation serving Soren’s agenda in the snowy region. Intercept it before it advances.",
+      "role": "aidOfficialWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "3e092c0c01f31519cd9e"
+    },
+    {
+      "speaker": "Aid official",
+      "text": "Bring us the findings from your current investigation.",
+      "role": "aidOfficialWoman",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "a24cedcc57eeb44740fa"
+    },
+    {
+      "speaker": "Smith",
+      "text": "A good blade and a full satchel. What can I help you find?",
+      "role": "workerMan",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "ccad6994d18891bcb2b2"
+    },
+    {
+      "speaker": "Local representative",
+      "text": "You’ve helped us. But we still don’t know what drove them here. Another report has arrived with the same symptoms.",
+      "role": "representative",
+      "performance": "[conversationally]",
+      "contextBefore": "",
+      "contextAfter": "",
+      "key": "47bab6bc805c9716018b"
     }
   ]
 }

@@ -34,7 +34,7 @@ function updateActor(a,dt){
  if(moving){
    const running=a.party&&!eventAction&&!dialogue&&state.mode==='explore'&&meta.frames['run_'+a.face];
    const action=running?'run_'+a.face:a.face,clip=meta.frames[action]??meta.frames.south;
-   if(running){a.runTime=(a.runTime??0)+dt;setActorFrame(a,action,Math.floor(a.runTime*(keys.has('shift')?11:9))%clip.length);}
+   if(running){a.runTime=(a.runTime??0)+dt;setActorFrame(a,action,Math.floor(a.runTime*(keys.has('shift')?12:10))%clip.length);}
    else setActorFrame(a,action,Math.floor(a.phase*clip.length)%clip.length);
   }else{
    const action='idle_'+a.face,clip=meta.frames[action];

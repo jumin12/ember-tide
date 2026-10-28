@@ -160,7 +160,8 @@ def build_assets(root,encode,audit,warnings,strict):
   p=(root/path).resolve();p.relative_to(folder.resolve());im=Image.open(p).convert('RGBA')
   if key in manifest.get('materialKeys',[]):
    if im.getextrema()[3][0]!=255:raise ValueError('Transparent surface material: '+key)
-   im=im.convert('RGB').resize((512,512),Image.Resampling.NEAREST)
+   im=im.convert('RGB')
+   if max(im.size)>1024:raise ValueError('Surface material exceeds texture budget: '+key)
   assets['images'][key]=encode(im)
  # Mathematical receiver mask, not artwork from the previous generation.
  y,x=np.mgrid[-1:1:128j,-1:1:128j];alpha=np.uint8(np.clip(1-x*x-y*y,0,1)**2*255);q=np.zeros((128,128,4),dtype=np.uint8);q[:,:,3]=alpha;assets['images']['shadow']=encode(Image.fromarray(q))

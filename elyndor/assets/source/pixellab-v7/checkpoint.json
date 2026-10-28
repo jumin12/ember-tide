@@ -6,18 +6,18 @@
   "nativeSelectedPoses": 4878,
   "portraits": 38,
   "dedicatedHudPortraits": 5,
-  "worldImages": 55,
+  "worldImages": 59,
   "artifact": {
     "file": "index.html",
-    "bytes": 24725469,
-    "sha256": "eef5c48f775afb9d29b266fb25110492bb1b076776777f5e51eb62711d4211b9",
+    "bytes": 33238090,
+    "sha256": "a13020c5b4a6e7f950e0d0828d971a7db6507602f029ef74d6cba7acc0261aa1",
     "offline": true
   },
   "incompleteClips": {},
-  "worldSystem": "Overworld with 14 points of interest and eight interiors",
-  "voiceModel": "eleven_v3",
-  "voiceClips": 248,
+  "worldSystem": "Reference-atlas overworld with 15 points of interest and seven interiors",
+  "voiceModel": "eleven_v4",
+  "voiceClips": 259,
   "voiceProvider": "ElevenLabs",
-  "soundAssets": 58,
+  "soundAssets": 92,
   "soundProvider": "ElevenLabs"
 }

@@ -1,0 +1,12 @@
+#world.combat-pointing{cursor:crosshair}
+#combat-target-label,#combat-target-arrow{position:fixed;z-index:36;pointer-events:none;transform:translate(-50%,-100%)}
+#combat-target-label{padding:7px 13px;color:#ffedc0;background:linear-gradient(90deg,#16232b00,#16232bef 15%,#16232bef 85%,#16232b00);font:12px Georgia,serif;white-space:nowrap;text-shadow:0 1px 2px #000;max-width:310px;overflow:hidden;text-overflow:ellipsis;border-bottom:1px solid #c5a86770}
+#combat-target-arrow{color:#f5cf7c;font-size:15px;text-shadow:0 1px 3px #16120b,0 0 10px #ffc86a80}
+#combat-target-arrow.ally{color:#a5ddd0}
+#combat-target-label[hidden],#combat-target-arrow[hidden]{display:none}
+.atlas3d-info .atlas-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.atlas3d-info #atlas-travel{background:linear-gradient(135deg,#766744,#a5884d);color:#fff0ce;border-color:#d0b879}
+.atlas3d-info #atlas-travel:disabled{background:#26343b;color:#768a8c;border-color:#52636150}
+.atlas-pin span{pointer-events:none}
+.atlas3d-buttons select{max-width:240px;min-width:150px;border:1px solid #b59d655e;background:#172a33;color:#ecdfbb;padding:8px 10px;font:12px Georgia,serif}
+@media(max-width:700px){.atlas3d-info .atlas-actions{justify-content:flex-start}.atlas3d-info button{font-size:11px}}

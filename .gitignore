@@ -20,3 +20,6 @@ output/
 
 # ElevenLabs generation originals; compact offline Ogg files are published.
 elyndor/audio/source-v13/
+
+elyndor/audio/source-v14/
+elyndor/audio/source-v15/

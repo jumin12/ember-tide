@@ -1,23 +1,23 @@
 {
-  "release": "elyndor-2026-10-28-voices-relief-atlas-diorama-v14",
+  "release": "elyndor-2026-10-28-voices-relief-atlas-diorama-v15",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 24725469,
-    "sha256": "eef5c48f775afb9d29b266fb25110492bb1b076776777f5e51eb62711d4211b9",
+    "bytes": 33238090,
+    "sha256": "a13020c5b4a6e7f950e0d0828d971a7db6507602f029ef74d6cba7acc0261aa1",
     "offline": true
   },
   "changes": [
-    "Original young-adult ElevenLabs party voices and all 248 directed dialogue/battle recordings regenerated with v3; supporting casting checked against portraits",
-    "All journey records, including automatic checkpoints, are written only inside inns; legacy records remain loadable",
-    "Slow native-color 3D pixel dissolution for defeated wildlife with fading grounded shadows, preallocated and prewarmed fragments",
-    "Melee approach, ranged stance steps, matched moving spell origins, flatter staging, upright silhouettes and full native combat poses",
-    "Measured sunlight, real shadow, cloud and night response on characters; coherent overhead world lighting and stronger shafts",
-    "Four PixelLab character/lore loading illustrations selected for character/world/interior context",
-    "Interactive 3D relief atlas with pan, rotate, zoom, discovered landmarks, tracking, mobile layout and persistent exploration fog",
-    "Six additional PixelLab ground/wall materials, stable blended variation, preserved batched material attributes and thicker lit vegetation",
-    "Continuous overworld river bed, with all destination routes and four bridge crossings verified",
-    "Immutable sprite atlas sources share GPU storage without redundant texture uploads; likely battle views and arena searches are warmed under loading"
+    "Forty-eight newly generated native PixelLab world textures; 512-pixel surface pages and native prop sizes with consistent UV density",
+    "All 259 dialogue and battle performances regenerated using Eleven v4, portrait-grounded casting, scene context and emotional direction",
+    "All 92 music, ambience and effects cues regenerated, with layered environments, physical footsteps, multiple impact variants and voice ducking",
+    "Reference-atlas geography with western Valenne, snowy ridges, eastern dry terrain and southern volcanic islands; original Brookstead floor plan retained",
+    "Fifteen points of interest and seven interiors with atlas-supported services, a coastal harbor with ships, Brookstead smithy and Royal Aid Office",
+    "Persistent discovery fog, interactive 3D atlas and accessible fast travel between discovered locations",
+    "Stable world-space rain, snow, pollen, fireflies and overhead clouds sharing their projected shadow coordinates",
+    "Faster 5.35/6.6m per second movement with native 10/12FPS run and sprint cycles",
+    "Pixel-alpha-aware mouse enemy/ally targeting, projected cursor and double-click attack, retaining keyboard controls",
+    "Road-aware settlement placement, aligned bridges and shaped approaches; vertical wall/counter clearance and separated pier/terrain surfaces"
   ],
   "art": {
     "generator": "PixelLab",
@@ -26,8 +26,8 @@
     "packedSpritePoses": 4878,
     "portraits": 38,
     "dedicatedHudPortraits": 5,
-    "worldImages": 55,
-    "newMaterialSwatches": 6,
+    "worldImages": 59,
+    "newMaterialSwatches": 48,
     "loadingIllustrations": 4,
     "loadingNativeResolution": [
       688,
@@ -37,15 +37,15 @@
   },
   "audio": {
     "provider": "ElevenLabs",
-    "speechModel": "eleven_v3",
-    "recordedVoices": 248,
-    "voiceRoles": 16,
+    "speechModel": "eleven_v4",
+    "recordedVoices": 259,
+    "voiceRoles": 32,
     "originalPartyVoiceDesigns": 5,
-    "soundAssets": 58,
+    "soundAssets": 92,
     "music": 13,
-    "ambience": 10,
-    "effectsAndFoley": 35,
-    "bytes": 13587673,
+    "ambience": 14,
+    "effectsAndFoley": 65,
+    "bytes": 17718417,
     "codec": "Ogg Opus",
     "offline": true,
     "embeddedCredential": false
@@ -70,6 +70,10 @@
       },
       {
         "name": "features",
+        "pass": true
+      },
+      {
+        "name": "presentation",
         "pass": true
       },
       {
@@ -139,7 +143,7 @@
     ],
     "sourceMatchesArtifact": true,
     "nativeSpritePixelAudit": true,
-    "decodedAudioAssets": 306,
+    "decodedAudioAssets": 351,
     "storyProgressionSteps": 45,
     "storyBattles": 6,
     "restoredLights": 4,
@@ -154,26 +158,83 @@
     "auditedLocations": 22,
     "outdoorSaveCircles": 0,
     "innSaveCircles": 2,
-    "overworldRoutes": 14,
-    "bridgeRoutes": 4,
+    "overworldRoutes": 15,
+    "bridgeRoutes": 5,
     "allPartyDirectionCases": 40,
     "visibleCoverageViews": 12,
     "nativeAttackFamilies": 7,
     "abilityVariants": 14,
     "spriteLuminance": {
-      "sun": 0.1250731038930464,
-      "shadow": 0.017727607645307272,
+      "sun": 0.12505223027443402,
+      "shadow": 0.017727366443556176,
       "cloud": 0.06504824058377016,
       "night": 0.011474268304085251
     },
+    "mouseTargeting": {
+      "target": 1,
+      "selected": 1,
+      "visible": true,
+      "label": "Briartusk Boar · 170 / 170 HP · Double-click to attack"
+    },
+    "mouseAllyHealing": {
+      "hp": 130,
+      "items": 4,
+      "pending": false,
+      "clicks": 1
+    },
+    "fastTravel": {
+      "enabled": true,
+      "selected": "fern",
+      "after": {
+        "scene": "fern",
+        "last": {
+          "key": "fern",
+          "minutes": 11
+        },
+        "members": [
+          "bren",
+          "soren"
+        ]
+      }
+    },
+    "anchoredWeather": {
+      "key": "-10,-3",
+      "first": [
+        -305.2242431640625,
+        14.38295841217041,
+        -89.98210144042969,
+        22.68363380432129,
+        -302.14788818359375,
+        12.938060760498047,
+        -85.44564819335938,
+        18.822525024414062
+      ],
+      "size": 49,
+      "screenCentered": false,
+      "motesCenter": [
+        0,
+        0,
+        0
+      ],
+      "after": [
+        -305.2242431640625,
+        14.38295841217041,
+        -89.98210144042969,
+        22.68363380432129,
+        -302.14788818359375,
+        12.938060760498047,
+        -85.44564819335938,
+        18.822525024414062
+      ]
+    },
     "atlas": {
-      "exploredBefore": 80,
-      "exploredAfter": 5542,
-      "knownLandmarks": 14,
+      "exploredBefore": 81,
+      "exploredAfter": 2562,
+      "knownLandmarks": 15,
       "savedFog": true,
       "mobile": {
         "overflow": false,
-        "view": 490.921875,
+        "view": 420.109375,
         "footer": true
       }
     },
@@ -187,12 +248,12 @@
     "nativeScenarios": [
       {
         "name": "bridge",
-        "fps": 71.98920161932801,
-        "p95FrameMs": 14.799999952316284,
-        "meanRenderCpuMs": 5.640277776246269,
-        "ticks": 290,
-        "calls": 1493.5902777777778,
-        "triangles": 3571846.1805555555,
+        "fps": 71.98020544307413,
+        "p95FrameMs": 14.899999976158142,
+        "meanRenderCpuMs": 6.137847221973869,
+        "ticks": 289,
+        "calls": 1551.3055555555557,
+        "triangles": 3537255.611111111,
         "buffer": [
           1440,
           900
@@ -202,17 +263,17 @@
           2048,
           2048
         ],
-        "programs": 133,
+        "programs": 130,
         "worldSerial": 3
       },
       {
         "name": "square",
-        "fps": 71.71593493026693,
+        "fps": 72.215697544097,
         "p95FrameMs": 14.899999976158142,
-        "meanRenderCpuMs": 4.233101042928596,
-        "ticks": 288,
-        "calls": 753.5818815331011,
-        "triangles": 1385874.1637630663,
+        "meanRenderCpuMs": 3.906920416132389,
+        "ticks": 290,
+        "calls": 750.8823529411765,
+        "triangles": 1394278.7647058824,
         "buffer": [
           1440,
           900
@@ -222,17 +283,17 @@
           2048,
           2048
         ],
-        "programs": 133,
+        "programs": 130,
         "worldSerial": 4
       },
       {
         "name": "forest",
-        "fps": 71.9640179910045,
-        "p95FrameMs": 14.699999988079071,
-        "meanRenderCpuMs": 1.4593749998344316,
-        "ticks": 290,
-        "calls": 382.94444444444446,
-        "triangles": 834970.8888888889,
+        "fps": 71.99280072035708,
+        "p95FrameMs": 14.600000023841858,
+        "meanRenderCpuMs": 1.661805557500985,
+        "ticks": 288,
+        "calls": 389.09027777777777,
+        "triangles": 835557.1805555555,
         "buffer": [
           1440,
           900
@@ -242,17 +303,17 @@
           2048,
           2048
         ],
-        "programs": 131,
+        "programs": 128,
         "worldSerial": 5
       },
       {
         "name": "overworld",
-        "fps": 71.91729511019462,
-        "p95FrameMs": 14.5,
-        "meanRenderCpuMs": 4.35868055642479,
-        "ticks": 289,
-        "calls": 553.3194444444445,
-        "triangles": 1021823.6388888889,
+        "fps": 71.48391611929924,
+        "p95FrameMs": 14.399999976158142,
+        "meanRenderCpuMs": 5.179370626703009,
+        "ticks": 291,
+        "calls": 748.3986013986014,
+        "triangles": 3256733.797202797,
         "buffer": [
           1440,
           900
@@ -262,17 +323,17 @@
           2048,
           2048
         ],
-        "programs": 147,
+        "programs": 150,
         "worldSerial": 6
       },
       {
         "name": "shop",
-        "fps": 71.99460040475508,
-        "p95FrameMs": 15.300000011920929,
-        "meanRenderCpuMs": 0.5916666676186852,
+        "fps": 72.23374740726392,
+        "p95FrameMs": 15.100000023841858,
+        "meanRenderCpuMs": 0.5134948096060835,
         "ticks": 292,
-        "calls": 54.15277777777778,
-        "triangles": 10136.305555555555,
+        "calls": 55.186851211072664,
+        "triangles": 9562.373702422145,
         "buffer": [
           1440,
           900
@@ -282,60 +343,60 @@
           2048,
           2048
         ],
-        "programs": 153,
+        "programs": 156,
         "worldSerial": 7
       }
     ],
     "combatRenderCPU": {
       "samples": 858,
-      "p95": 3.900000035762787,
-      "max": 7.100000023841858,
-      "mean": 3.6505827525834658
+      "p95": 4,
+      "max": 4.899999976158142,
+      "mean": 3.7142191131214997
     },
     "combatEntryMs": 0.6000000238418579,
     "newCombatPrograms": 0,
     "atlas": {
-      "openMs": 161.19999998807907,
-      "fps": 29.10616983123396,
+      "openMs": 126.10000002384186,
+      "fps": 29.11700975057753,
       "cpu": {
-        "p95": 0.6000000238418579,
-        "max": 0.800000011920929,
-        "mean": 0.4139534872631694
+        "p95": 0.5999999642372131,
+        "max": 0.699999988079071,
+        "mean": 0.386046510103137
       },
       "frames": {
-        "p95": 35.10000002384186,
-        "max": 36.5,
-        "mean": 34.76117647044799
+        "p95": 35.200000047683716,
+        "max": 36.10000002384186,
+        "mean": 34.74823529439814
       },
       "webglContexts": 1,
-      "sceneObjects": 114,
-      "textures": 61,
+      "sceneObjects": 134,
+      "textures": 62,
       "errors": [],
       "pass": true
     },
     "sceneTransitionMs": {
-      "brookstead": 1322.7,
-      "fern": 762.9,
-      "depths": 421.5,
-      "highmere": 926.9,
-      "alder": 467.3,
-      "patrol": 425.6,
-      "alderRemnant": 380.6,
-      "relief": 512.3,
-      "nearbySite": 479.1,
-      "snow": 355.6,
-      "fernClearing": 341.3,
-      "alderClearing": 510.8,
-      "reliefClearing": 395.1,
-      "siteClearing": 408.2,
-      "brookInn": 63,
-      "brookShop": 68.9,
-      "highmereInn": 47.8,
-      "highmereShop": 65.4,
-      "fernShop": 52.3,
-      "alderShop": 54.5,
-      "council": 49,
-      "archives": 47.7
+      "brookstead": 1434,
+      "fern": 770.9,
+      "depths": 432,
+      "highmere": 1037.3,
+      "alder": 497.1,
+      "patrol": 377.4,
+      "alderRemnant": 564.6,
+      "relief": 568.4,
+      "nearbySite": 495.2,
+      "snow": 362.8,
+      "fernClearing": 371.5,
+      "alderClearing": 1633.9,
+      "reliefClearing": 426.9,
+      "siteClearing": 427.1,
+      "harbor": 187.9,
+      "brookInn": 589.9,
+      "brookShop": 486,
+      "highmereInn": 94.4,
+      "council": 480.6,
+      "archives": 78.2,
+      "brookForge": 81.6,
+      "aidOffice": 100.6
     },
     "scope": "Measurements from native Chrome on the tested GPU; not a guarantee for other hardware."
   }
