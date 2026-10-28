@@ -1,5 +1,11 @@
 # The Last Light of Elyndor
 
+Brookstead now teaches movement, sprinting, interactions, party field talents, menus and combat through responsive guidance. Press **F1** for the complete lesson library; hide or resume guidance whenever you prefer. The local representative, rather than the elder, approaches the party after the opening fight. A native PixelLab crossed-sword floor mark starts that encounter and disappears after completion.
+
+After the representative’s final report, **15 optional local requests** open across the points of interest. Read teal notices, accept a request, complete its three marked tasks, and return for a single coin-and-supply reward. Local requests have their own journal page, floor marks, local-map symbols, progress tracking and inn-save persistence. They do not replace the main story.
+
+The 3D atlas and overworld share rebuilt timber-and-slate settlement models, rocky relief, varied biome surfaces, planted verges and stone village approaches. Overworld settlements and bridges remain visible when approached. Local POI building and tree cutaways continue to provide visibility. Request positions are authored and audited in advance; unlocking lessons and requests does not rebuild levels or run pathfinding. New marker and atlas resources are warmed under the loader.
+
 A standalone browser JRPG with a dimensional pixel-art world, lit 2D characters, an explorable overworld, fifteen points of interest and seven interiors. Open `index.html` or play the GitHub Pages release. Selected artwork, recorded dialogue, music and effects are embedded for offline play.
 
 Use WASD, arrow keys or click-to-move. Normal movement uses native eight-direction running cycles at 10 FPS. Hold Shift to sprint at 12 FPS and move about 23% faster. E or right-click interacts. M, I, C and J open the atlas, inventory, party and journal. Escape opens settings or returns from menus. Buttons, arrow keys and Enter also work in menus.

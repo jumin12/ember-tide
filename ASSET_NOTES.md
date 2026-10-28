@@ -15,3 +15,5 @@ Thirteen original `music_v2_5` music cues, fourteen ambience loops and sixty-fiv
 The browser world is an authored 3D interpretation of the approved concepts. The 3D atlas derives its relief and roads from the physical overworld and keeps explored fog in the save data. No concept painting is pasted over gameplay to substitute for a playable level.
 
 The V15.1 dialogue audit transcribed every selected performance with ElevenLabs Scribe v2. Proper-name and punctuation differences were rechecked; one Tavin line was replaced to make the past-tense phrase clearer. The final 259 clips have no unresolved word differences or detected spoken acting tags. Transcription verifies spoken content; it does not measure subjective acting quality. Detailed transcripts remain private; the public audit records counts and source hashes.
+
+V16 adds one native 128×128 transparent PixelLab crossed-sword encounter decal. The selected PNG is retained without resizing. New settlement geometry, relief dressing and quest props reuse the selected V15 material palette; no older generated art was submitted as a reference.

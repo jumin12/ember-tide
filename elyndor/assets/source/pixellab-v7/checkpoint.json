@@ -1,16 +1,16 @@
 {
-  "status": "Integrated playable release",
+  "status": "Guided village, local requests and persistent atlas landmarks",
   "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
   "characterFamilies": 41,
   "runtimeFamilies": 42,
   "nativeSelectedPoses": 4878,
   "portraits": 38,
   "dedicatedHudPortraits": 5,
-  "worldImages": 59,
+  "worldImages": 60,
   "artifact": {
     "file": "index.html",
-    "bytes": 33238298,
-    "sha256": "e4f0cc652fe2f838b8735ca91d2a447100f7274ee13568c7cfc2265af2d47bed",
+    "bytes": 33296545,
+    "sha256": "cf165c27db5a4ce107d54b2d8b654c5d6d859d02b59abe9d848517372543515c",
     "offline": true
   },
   "incompleteClips": {},

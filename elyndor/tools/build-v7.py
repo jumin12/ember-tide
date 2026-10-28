@@ -45,8 +45,8 @@ def main():
   'GAME':'\n'.join(read(n) for n in ['game.js','movement.js','combat.js']),'UI':read('ui.js'),
   'OPEN_WORLD':read('open-world.js'),
   'POLISH':'\n'.join(read(n) for n in ['polish.js','scenery.js','render-v4.js','review-v5.js','visual-v7.js','town-v8.js','town-events.js','world-design.js','party-v11.js','effects-v11.js','combat-v11.js','placement-v11.js','visibility-v11.js','hydraulics-v11.js','loading-v11.js','journey-v12.js','interiors-v12.js','battle-v12.js','weather-v12.js','voices-v12.js','level-layout-v13.js','experience-v13.js','audio-v13.js','environment-v13.js','battle-v13.js','performance-v13.js','overworld-v13.js','materials-v14.js','presentation-v14.js','atlas-v14.js','loading-v14.js','arena-v14.js'])}
- parts['POLISH']+='\n'+'\n'.join(read(n)for n in ['relief-data-v15.js','geography-v15.js','settlements-v15.js','travel-v15.js','combat-input-v15.js','weather-v15.js','clearance-v15.js','audio-v15.js','casting-v15.js'])
- parts['STYLE']+='\n'+read('experience-v15.css')
+ parts['POLISH']+='\n'+'\n'.join(read(n)for n in ['relief-data-v15.js','geography-v15.js','settlements-v15.js','travel-v15.js','combat-input-v15.js','weather-v15.js','clearance-v15.js','audio-v15.js','casting-v15.js','overworld-v16.js','onboarding-v16.js','requests-v16.js'])
+ parts['STYLE']+='\n'+read('experience-v15.css')+'\n'+read('experience-v16.css')
  shots=manifest.get('loadingScreens',{})
  if FINAL and len(shots)<3:raise ValueError('Three actual in-game loading screenshots are required')
  for q in shots.values():

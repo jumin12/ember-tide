@@ -352,7 +352,8 @@
     "desert": "elyndor/assets/source/pixellab-v7/images/v15-desert.png",
     "barren": "elyndor/assets/source/pixellab-v7/images/v15-barren.png",
     "lava": "elyndor/assets/source/pixellab-v7/images/v15-lava.png",
-    "snow": "elyndor/assets/source/pixellab-v7/images/v15-snow.png"
+    "snow": "elyndor/assets/source/pixellab-v7/images/v15-snow.png",
+    "encounterMark16": "elyndor/assets/source/pixellab-v7/world/encounter-mark-v16.png"
   },
   "materialKeys": [
     "cobble",
@@ -448,14 +449,14 @@
   "loadingScreens": {
     "bren": {
       "file": "elyndor/assets/source/pixellab-v7/loading/v14-bren.webp",
-      "name": "Bren — A friend before a hero",
+      "name": "Bren \u2014 A friend before a hero",
       "illustration": true,
       "provider": "PixelLab",
       "reference": "Approved Google Drive concepts"
     },
     "soren": {
       "file": "elyndor/assets/source/pixellab-v7/loading/v14-soren.webp",
-      "name": "Soren — Questions worth crossing a world for",
+      "name": "Soren \u2014 Questions worth crossing a world for",
       "illustration": true,
       "provider": "PixelLab",
       "reference": "Approved Google Drive concepts"

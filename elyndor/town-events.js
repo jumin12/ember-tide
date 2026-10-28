@@ -15,7 +15,7 @@ function townWildlifeExit(a,index){
 }
 function notifyTownElder(){
  if(state.flags.prologue_complete||world.userData.elderEscort)return;
- const actor=npcs.find(a=>a.id==='elder');if(!actor)return;
+ const actor=npcs.find(a=>a.id==='representative');if(!actor)return;
  actor.scripted=true;actor.route=null;actor.action='walk';actor.task='Checking on the residents in the outer yard';
  world.userData.elderEscort={actor,phase:'waiting',goal:safePoint({x:-71,z:94}),route:null,replan:0};
 }
@@ -46,7 +46,7 @@ function updateTownEvents(dt){
   if(e.phase==='approach'){
    a.face=facingForMotion(player.x-a.x,player.z-a.z);player.face=facingForMotion(a.x-player.x,a.z-player.z);
    e.phase='talking';world.userData.elderReportReady=true;
-   const report=interactables.find(o=>o.type==='aftermath');report.x=a.x;report.z=a.z;report.actor=a;report.actorId='elder';
+   const report=interactables.find(o=>o.type==='aftermath');if(!report)return;report.x=a.x;report.z=a.z;report.actor=a;report.actorId='representative';
    $('#letterbox').classList.remove('active');state.mode='explore';act(report);
   }
   return;
