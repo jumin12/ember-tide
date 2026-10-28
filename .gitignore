@@ -13,3 +13,7 @@ output/
 /elyndor.preview.html
 /elyndor/assets/source/pixellab-v7/**/original.zip
 /elyndor/assets/source/pixellab-v7/**/source-signature.txt
+
+# Local generation dependencies and intermediate recordings.
+/.tools/
+/elyndor/audio/clips/

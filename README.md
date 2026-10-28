@@ -2,47 +2,38 @@
 
 [Play in your browser](https://jumin12.github.io/ember-tide/)
 
-An original browser RPG with native PixelLab characters in a connected 3D landscape. Brookstead is rebuilt around an arched river bridge, a watermill and cascades, three terrain terraces, a fountain square, timber shops and planted gardens. The sluice and pump visibly control the downstream flow. Residents follow individual work routes, and the world moves continuously through dawn, daylight, dusk and night.
+An original browser RPG with native PixelLab sprites in a lit 3D diorama. Explore a miniature overworld and enter 14 settlements, ruins, trails and secluded Light clearings. Eight cutaway interiors include inns, provision shops, the council chamber and royal archives.
 
-River pools and waterfalls now meet along shared banks with matching physical water, lighting, ripples and reflections. Revised streets go around the fountain, forge, market and civic buildings; doors and bridge approaches stay clear. Six weathered boulder shapes share a PixelLab granite texture, with automatic clearance from streets and entrances.
+Brookstead is a terraced river town with an arched bridge, watermill, cascades, gardens, fountain square and individual residents at work. The sluice holds a raised reservoir; opening it releases the stored water, and repairing the pump restores the town supply. Trees and buildings cut away individually when they obscure the party.
 
-After the town fight, wildlife flees toward the eastern woods and the elder runs over to deliver the next report. The current storyboard also includes helping Mira before the aid-office report and a peaceful scout rescue.
+The playable regional story includes 45 progression steps, six encounters, timed three-hit attack chains, ten normal abilities, four Ascended counterparts, equipment, healing, shops, journals, four Light restorations and local saves. It ends at the northern assignment leading into the next region.
 
-The complete playable regional arc includes exploration, six story encounters, timed attack chains, abilities, two character ascensions, equipment, healing, shops, four Light restorations, journals and local saves.
+Battles use a traditional side view, with restrained cinematic spell shots, pooled textured 3D effects, and two post-battle pages showing rewards and actual character growth. Recorded ElevenLabs dialogue and battle calls are embedded: 244 clips across 12 cast roles. No account or API connection is needed to play.
 
-Download `index.html` and open it directly to play offline. All required artwork and runtime code are embedded in that one file.
+Natural time, drifting clouds and projected cloud shadows persist across locations. Automatic weather includes clear skies, cloud, rain, thunder and regional snowfall. Dense grass, flowers and trees respond to wind and movement; foliage and shadows cover the camera's visible ground. Four-edge focus blur preserves the party and interface.
 
-![Brookstead, rebuilt as a traversable river town](elyndor/previews/pixellab-v11/town-overview.png)
+Download `index.html` and open it directly to play offline. Artwork, voices and runtime code are embedded in this one file.
+
+![Brookstead fountain terrace](elyndor/previews/pixellab-v12/brookstead.png)
 
 ## Controls
 
-- WASD or arrow keys move; Shift runs. Click clear ground to walk there.
-- E or right-click interacts; people and objects can also be clicked.
-- M opens the map, I inventory, C party, J journal, Escape menus/back, F fullscreen.
-- Click menu buttons, or use arrow keys and Enter. Tab also moves keyboard focus.
-- In battle, press E or click in the gold window on each of three consecutive attacks. Misses end the chain after recovery.
-- Three manual saves and autosave are stored in your browser. Opening the game on a different origin uses separate browser storage.
+- WASD or arrows run; click clear ground to run there. Walking is reserved for cutscenes and NPC routines.
+- E or right-click interacts. At a marked exit, E enters the overworld; at a landmark, E enters its location.
+- M opens the atlas, I inventory, C party, J journal, Escape menus/back, F fullscreen.
+- Click buttons or use arrows, Tab and Enter. Scroll adjusts zoom while preserving the fixed camera angle.
+- In battle, press E or click in the gold timing window on each consecutive attack.
+- Enter or Space advances battle results and growth; rewards apply once on returning to exploration.
+- Three manual records and autosave use browser storage. Different website origins keep separate saves.
 
-## PixelLab integration
+## Art and build
 
-The playable release uses the new PixelLab cast, full eight-direction walking and idle cycles, separate party running cycles, combat poses, transparent detailed portraits, world surfaces, props and icons. Previous generated game artwork is excluded from the asset manifest.
+The selected cast, portraits, surfaces, props and effects use PixelLab. Whole native frames are registered to consistent baselines and packed losslessly. Earlier generated game artwork is excluded from the runtime manifest. This is an authored 3D interpretation of the supplied concepts, with original characters and interface.
 
-Bren's combat poses keep his gaze toward the enemy. Individually corrected sword keyframes carry the slash through that side, with contact timing matched to the animation. Five dedicated head portraits provide clear faces in the compact party HUD, separately from dialogue busts.
+Loading screens use actual game captures. Location transitions prepare geometry and shader variants behind the loader. Program retention is bounded; geometry is released when a location unloads. Recruitment retains existing actors and follower state.
 
-Loading screens crossfade between actual in-game photographs. New journeys and loaded saves prepare graphics behind that screen, including world geometry and the battle-camera rendering passes. Recruitment preserves existing party actors and their followers.
+Install Python with Pillow and NumPy, then run `python elyndor/tools/build.py --final`. Run `python elyndor/tools/regression-v12.py` for the sequential native Chrome/Playwright checks. The audio audit additionally uses `imageio-ffmpeg`; existing recorded Ogg files require no API access to build.
 
-Fire, smoke, sparks, ice eruptions, sword arcs, arrows and protective rings use bounded pools of textured 3D effects. Damage follows weapon contact or projectile arrival. The closed sluice holds a raised reservoir that drains gradually when released; the magic pump restores the town supply.
+For optional voice regeneration, `voice_credentials.py` reads `ELEVENLABS_API_KEY` or the local Windows Credential Manager entry `Codex/ElevenLabs`. Credentials are never embedded or published. Generate missing catalog lines with `generate-voices-v12.py`, then encode with `compress-voices-v12.py`.
 
-Buildings and individual trees cut away when they obscure the party. Physical shadows remain intact. Raised water pools have separate reflection planes, and sprite lighting responds to environmental shadows. Grass and scenery are culled independently against the main, reflection and shadow cameras. Shadows fit the visible terrain instead of a player-centered square. Four-edge diorama blur preserves the focal center and interface.
-
-See [asset notes](ASSET_NOTES.md), [build details](PIXELLAB_REBUILD.md) and `release.json` for provenance, scope and validation. This is a playable 3D reconstruction of the supplied concepts; it is not a pasted background or a pixel-for-pixel reproduction.
-
-## Build
-
-Install Python with Pillow and NumPy, then run:
-
-```powershell
-python elyndor/tools/build.py --final
-```
-
-The build reads only the committed native PixelLab manifest and sources. Generation accounts, private reference documents and network access are unnecessary for rebuilding or playing. Hardware-accelerated WebGL is recommended; software rendering remains substantially slower.
+See [asset notes](ASSET_NOTES.md), [build details](PIXELLAB_REBUILD.md) and `release.json` for provenance and measured validation. Performance results describe the tested device; software WebGL and lower-powered machines remain slower.

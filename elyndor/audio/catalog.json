@@ -1,0 +1,1544 @@
+{
+  "provider": "ElevenLabs",
+  "model": "eleven_multilingual_v2",
+  "casting": {
+    "bren": {
+      "voiceId": "SOYHLrjzK2X1ezoPC6cr",
+      "voiceName": "Harry",
+      "direction": "Warm, earnest young frontier fighter",
+      "speed": 1.02
+    },
+    "soren": {
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb",
+      "voiceName": "George",
+      "direction": "Measured, thoughtful scholar; controlled conviction",
+      "speed": 0.97
+    },
+    "tavin": {
+      "voiceId": "uLfPT2jUO3X81OwnftBP",
+      "voiceName": "Keith",
+      "direction": "Grounded, warm ranger with quiet authority",
+      "speed": 0.96
+    },
+    "mira": {
+      "voiceId": "EXAVITQu4vr4xnSDxMaL",
+      "voiceName": "Sarah",
+      "direction": "Reassuring young healer; clear and compassionate",
+      "speed": 0.98
+    },
+    "lysa": {
+      "voiceId": "cgSgspJ2msm6clMCkdW9",
+      "voiceName": "Jessica",
+      "direction": "Bright, determined young mage",
+      "speed": 1.02
+    },
+    "elder": {
+      "voiceId": "pqHfZKP75CvOlQylNhV4",
+      "voiceName": "Bill",
+      "direction": "Patient, weathered village elder",
+      "speed": 0.96
+    },
+    "commander": {
+      "voiceId": "nPczCjzI2devNBz1zQrb",
+      "voiceName": "Brian",
+      "direction": "Resonant commander; forceful without shouting",
+      "speed": 0.98
+    },
+    "official": {
+      "voiceId": "onwK4e9ZLuTAKqWW03F9",
+      "voiceName": "Daniel",
+      "direction": "Precise civic official",
+      "speed": 1
+    },
+    "merchant": {
+      "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
+      "voiceName": "Roger",
+      "direction": "Friendly working townsman",
+      "speed": 1
+    },
+    "healer": {
+      "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+      "voiceName": "Lily",
+      "direction": "Calm townswoman",
+      "speed": 1
+    },
+    "guard": {
+      "voiceId": "IKne3meq5aSn9XLyUdCD",
+      "voiceName": "Charlie",
+      "direction": "Direct, alert guard",
+      "speed": 1
+    },
+    "narrator": {
+      "voiceId": "SAz9YHcvj6GT2YYXdXww",
+      "voiceName": "River",
+      "direction": "Quiet, clear story narration",
+      "speed": 0.98
+    }
+  },
+  "lines": [
+    {
+      "key": "8e5c64fb396cd15471d1",
+      "speaker": "Tavin",
+      "text": "Easy. I know you. I won’t let this hurt anyone else.",
+      "role": "tavin"
+    },
+    {
+      "key": "02da71d08c59faf39c37",
+      "speaker": "",
+      "text": "Tavin’s people are distressed, not evil. He holds back to protect them.",
+      "role": "narrator"
+    },
+    {
+      "key": "abac6d2b79b153bcea87",
+      "speaker": "Mira",
+      "text": "The Light is a little brighter. The flow is beginning to settle.",
+      "role": "mira"
+    },
+    {
+      "key": "7f886ae034d5fc45371d",
+      "speaker": "Station official",
+      "text": "Sharing observations before making corrections is helping. We can work on the damaged mechanism now.",
+      "role": "official"
+    },
+    {
+      "key": "3f84b91bcb9327ab3951",
+      "speaker": "Bren",
+      "text": "We have our assignment. We follow the signs, and we listen.",
+      "role": "bren"
+    },
+    {
+      "key": "822a7f8aa781d02c5fcf",
+      "speaker": "Tavin",
+      "text": "Together.",
+      "role": "tavin"
+    },
+    {
+      "key": "af98d04aad6f4d8ae23e",
+      "speaker": "",
+      "text": "The road reaches the snowy region. The party carries Valenne’s interception assignment.",
+      "role": "narrator"
+    },
+    {
+      "key": "939c77a5d68fd8ac7536",
+      "speaker": "Route marker",
+      "text": "The road continues toward Fern Hollow. Leave the local outskirts to enter the wider world path.",
+      "role": "merchant"
+    },
+    {
+      "key": "e5dfb7ce6946b485a5d5",
+      "speaker": "Local representative",
+      "text": "I sent the report. The water’s unsafe, and the animals have been acting dangerously.",
+      "role": "elder"
+    },
+    {
+      "key": "5c4a13be8a485a7400ff",
+      "speaker": "Bren",
+      "text": "We’ll get people clear and secure safe water first.",
+      "role": "bren"
+    },
+    {
+      "key": "6fcc8e9fcd93ea079652",
+      "speaker": "Soren",
+      "text": "Show us the water control.",
+      "role": "soren"
+    },
+    {
+      "key": "40783df5cf0d280e2107",
+      "speaker": "Local representative",
+      "text": "The gate is jammed and the pump is broken. Take the side lane to the waterworks.",
+      "role": "elder"
+    },
+    {
+      "key": "9c75453efcea2b0bb7e4",
+      "speaker": "Bren",
+      "text": "It’s moving. Keep clear.",
+      "role": "bren"
+    },
+    {
+      "key": "99c8d9d95b2fd3bd9529",
+      "speaker": "Soren",
+      "text": "The gate’s free. The pump is still broken.",
+      "role": "soren"
+    },
+    {
+      "key": "60608ae467ccfbdfdfd5",
+      "speaker": "Bren",
+      "text": "There. It’s flowing again.",
+      "role": "bren"
+    },
+    {
+      "key": "ca988a61cdf275d8765d",
+      "speaker": "Local representative",
+      "text": "Thank you. We needed that.",
+      "role": "elder"
+    },
+    {
+      "key": "f0bddae6db87f77a86bb",
+      "speaker": "",
+      "text": "A modest flow returns. Distressed wildlife is still threatening residents in the outer yard.",
+      "role": "narrator"
+    },
+    {
+      "key": "73a5755f94a1d43fa797",
+      "speaker": "Bren",
+      "text": "Get everyone behind us.",
+      "role": "bren"
+    },
+    {
+      "key": "fd0d857307134ca4963d",
+      "speaker": "Soren",
+      "text": "Keep them away from the homes.",
+      "role": "soren"
+    },
+    {
+      "key": "1fca2cf8178b3bb9a66c",
+      "speaker": "Soren",
+      "text": "I’ve seen the same pattern in old accounts. This reaches beyond Brookstead.",
+      "role": "soren"
+    },
+    {
+      "key": "b70255ebd302a459ec6c",
+      "speaker": "Elder",
+      "text": "You’ve helped us. But we still don’t know what drove them here. Another report has arrived with the same symptoms.",
+      "role": "elder"
+    },
+    {
+      "key": "d5e31530ee52c6018169",
+      "speaker": "Bren",
+      "text": "Then we keep looking.",
+      "role": "bren"
+    },
+    {
+      "key": "a33936afc84497dcd23c",
+      "speaker": "Tavin",
+      "text": "Something is pulling at my people. I stopped them, but I haven’t found what’s causing it.",
+      "role": "tavin"
+    },
+    {
+      "key": "c80e7f771a6ad2439c1c",
+      "speaker": "Bren",
+      "text": "We’ve seen the water and wildlife change too.",
+      "role": "bren"
+    },
+    {
+      "key": "a13fbaeffb1e3d93d767",
+      "speaker": "Soren",
+      "text": "Then we may be following the same disturbance.",
+      "role": "soren"
+    },
+    {
+      "key": "084fe3cdcbbf288af335",
+      "speaker": "Tavin",
+      "text": "I’m coming with you. They need a cure, not another fight.",
+      "role": "tavin"
+    },
+    {
+      "key": "9dc5f373d58d1a72c17e",
+      "speaker": "Affected person",
+      "text": "It pulls at us. We can’t stop when it starts.",
+      "role": "merchant"
+    },
+    {
+      "key": "72bd9b21800a90ab43c2",
+      "speaker": "Tavin",
+      "text": "Stay with me. We’re here.",
+      "role": "tavin"
+    },
+    {
+      "key": "f40e31221db98fac2e29",
+      "speaker": "Soren",
+      "text": "I can suppress it for a moment. Help me hold this section steady.",
+      "role": "soren"
+    },
+    {
+      "key": "c1e600cc7ef1dfdda64f",
+      "speaker": "",
+      "text": "The three stabilize the remnant. The attacks stop and the village’s Light returns faintly. The damage remains.",
+      "role": "narrator"
+    },
+    {
+      "key": "d8d3cf3581bce45f64b5",
+      "speaker": "Soren",
+      "text": "This section still responds. If I hold it steady, we can protect the village.",
+      "role": "soren"
+    },
+    {
+      "key": "5221b594061c06e4d6c1",
+      "speaker": "Bren",
+      "text": "Then we do it together.",
+      "role": "bren"
+    },
+    {
+      "key": "93d6b0fdf3c0ac319351",
+      "speaker": "",
+      "text": "At activation, the responses converge under a single imposed command.",
+      "role": "narrator"
+    },
+    {
+      "key": "6afbab2481cd460e6f59",
+      "speaker": "Tavin",
+      "text": "It’s resisting you.",
+      "role": "tavin"
+    },
+    {
+      "key": "330aaf0a7821a1169616",
+      "speaker": "Bren",
+      "text": "You said we were stabilizing it.",
+      "role": "bren"
+    },
+    {
+      "key": "9a08e510b70d1de52e18",
+      "speaker": "Soren",
+      "text": "We are. A system that refuses to cooperate still has to be made safe.",
+      "role": "soren"
+    },
+    {
+      "key": "ea5c18667b433f9d083d",
+      "speaker": "Bren",
+      "text": "You’re forcing it. Stop.",
+      "role": "bren"
+    },
+    {
+      "key": "db77cbbc74d0c3906473",
+      "speaker": "Tavin",
+      "text": "This way. Stay together. Bren will keep the route clear.",
+      "role": "tavin"
+    },
+    {
+      "key": "b388eb6b0066986a81f2",
+      "speaker": "",
+      "text": "Tavin leads the residents to safety while Bren protects the way through.",
+      "role": "narrator"
+    },
+    {
+      "key": "b1960e1442a734f9baa2",
+      "speaker": "",
+      "text": "The villagers and party finish the remnant repair. A separate Elder Light waits in the secluded clearing. Its response is still flickering.",
+      "role": "narrator"
+    },
+    {
+      "key": "44beae33ce819f21d3b8",
+      "speaker": "Village representative",
+      "text": "Take our report to Highmere. The kingdom needs to know what happened.",
+      "role": "elder"
+    },
+    {
+      "key": "32ccfc6fc36a74c5e448",
+      "speaker": "Mira",
+      "text": "Could you help me with those supplies?",
+      "role": "mira"
+    },
+    {
+      "key": "a5beb4e8fc14310411c8",
+      "speaker": "Bren",
+      "text": "Of course.",
+      "role": "bren"
+    },
+    {
+      "key": "79d777e7601b3ea439c8",
+      "speaker": "Tavin",
+      "text": "Where do you need them?",
+      "role": "tavin"
+    },
+    {
+      "key": "02a6abc521ac1bcee418",
+      "speaker": "",
+      "text": "The party helps Mira care for the arrivals, then tells her what happened in Fern Hollow.",
+      "role": "narrator"
+    },
+    {
+      "key": "609c386796120f31d371",
+      "speaker": "Mira",
+      "text": "I’ll come with you to the royal aid office.",
+      "role": "mira"
+    },
+    {
+      "key": "e7a7c20990ec4c7acb7c",
+      "speaker": "Bren",
+      "text": "Thank you.",
+      "role": "bren"
+    },
+    {
+      "key": "31bab1d418de83f825d7",
+      "speaker": "Guard",
+      "text": "Stay where you are. And if they lose control?",
+      "role": "guard"
+    },
+    {
+      "key": "02c677f9bf93794d0c40",
+      "speaker": "Tavin",
+      "text": "They came here for shelter. Let them rest somewhere safe. I’ll stay.",
+      "role": "tavin"
+    },
+    {
+      "key": "711066801531b648113c",
+      "speaker": "Mira",
+      "text": "Some of them need care. Your people do, too.",
+      "role": "mira"
+    },
+    {
+      "key": "24bc4b3c32ae7f71fcce",
+      "speaker": "Guard",
+      "text": "Temporary shelter. Your healer tends to everyone who needs her. And you go with our scouts.",
+      "role": "guard"
+    },
+    {
+      "key": "ecee9e493b88d25cf84e",
+      "speaker": "Tavin",
+      "text": "I’ll go.",
+      "role": "tavin"
+    },
+    {
+      "key": "5de79ac36ce6a3223865",
+      "speaker": "Bren",
+      "text": "Then let’s get them inside.",
+      "role": "bren"
+    },
+    {
+      "key": "a63dcbc74cb30e83c4af",
+      "speaker": "Resident",
+      "text": "I knew where I was. Then, for a moment, I didn’t.",
+      "role": "merchant"
+    },
+    {
+      "key": "51701fa9db39f1cf15e6",
+      "speaker": "Mira",
+      "text": "Does it come in waves?",
+      "role": "mira"
+    },
+    {
+      "key": "ba25d2b01ef6d420ba52",
+      "speaker": "Displaced woman",
+      "text": "Yes. And my hands won’t stay still.",
+      "role": "merchant"
+    },
+    {
+      "key": "adae0990d7006e931df2",
+      "speaker": "Mira",
+      "text": "The same signs, in both of you.",
+      "role": "mira"
+    },
+    {
+      "key": "dfd524ff02b321aaf231",
+      "speaker": "Bren",
+      "text": "Then this isn’t coming from her people.",
+      "role": "bren"
+    },
+    {
+      "key": "67538cbe9b9baad0dddd",
+      "speaker": "Guard",
+      "text": "Wait. Which way—",
+      "role": "guard"
+    },
+    {
+      "key": "3402e367bb9030ced2a2",
+      "speaker": "Tavin",
+      "text": "Here. Take my arm. One step at a time. I’ve got you.",
+      "role": "tavin"
+    },
+    {
+      "key": "5af65128ba963e402abc",
+      "speaker": "Scout",
+      "text": "His hands. The people at the shelter were like that.",
+      "role": "merchant"
+    },
+    {
+      "key": "9c1ab36e4ca952527612",
+      "speaker": "Tavin",
+      "text": "That’s why we need to find what’s happening to the Light.",
+      "role": "tavin"
+    },
+    {
+      "key": "ecc4f45d51eb666b164e",
+      "speaker": "",
+      "text": "Once the guard can walk safely, the patrol reaches the clearing. The Light still burns, but its fractured, clouded facets are dimming.",
+      "role": "narrator"
+    },
+    {
+      "key": "f00a69fd49d2e13e98f5",
+      "speaker": "Tavin",
+      "text": "The Light is dimming. One of your scouts felt the same disturbance.",
+      "role": "tavin"
+    },
+    {
+      "key": "8dcc815c2b48546694e0",
+      "speaker": "Mira",
+      "text": "We’re seeing the same signs here, in both groups.",
+      "role": "mira"
+    },
+    {
+      "key": "f603a7a34b9a569aec6f",
+      "speaker": "Community leader",
+      "text": "Lysa went to look at the old remnant. She should have returned by now.",
+      "role": "official"
+    },
+    {
+      "key": "e78efa3355d9a577c79b",
+      "speaker": "",
+      "text": "A pulse jolts the settlement. Plaster cracks and timber breaks loose beside the homes.",
+      "role": "narrator"
+    },
+    {
+      "key": "1b65d88e045aa7fd67ad",
+      "speaker": "Bren",
+      "text": "Away from the porch!",
+      "role": "bren"
+    },
+    {
+      "key": "8e7f15778c156a6585a9",
+      "speaker": "Mira",
+      "text": "Come toward me. There’s room in the court.",
+      "role": "mira"
+    },
+    {
+      "key": "bc8c29886cbc2666e7ae",
+      "speaker": "Bren",
+      "text": "I can hold this. Get them past.",
+      "role": "bren"
+    },
+    {
+      "key": "2e261d95ed5c40d1a63b",
+      "speaker": "Tavin",
+      "text": "This way. Stay together.",
+      "role": "tavin"
+    },
+    {
+      "key": "3f496752d7bdfb1cf88b",
+      "speaker": "Mira",
+      "text": "Lean on me. We’ll take it slowly.",
+      "role": "mira"
+    },
+    {
+      "key": "7ac15261905cd1280588",
+      "speaker": "Community leader",
+      "text": "We’ll keep them here, away from the damaged buildings. Lysa took the path to the remnant.",
+      "role": "official"
+    },
+    {
+      "key": "f6d08412995884386c92",
+      "speaker": "Bren",
+      "text": "We’ll look for her.",
+      "role": "bren"
+    },
+    {
+      "key": "c527936ebae19b1f39d0",
+      "speaker": "Tavin",
+      "text": "We’ll stay together.",
+      "role": "tavin"
+    },
+    {
+      "key": "0d2200982048142e58af",
+      "speaker": "Lysa",
+      "text": "I saw someone forcing a pulse through it. The Commander said a superior wanted the section held.",
+      "role": "lysa"
+    },
+    {
+      "key": "a049f6ca2767dd6da984",
+      "speaker": "Mira",
+      "text": "You’re hurt. Let me help.",
+      "role": "mira"
+    },
+    {
+      "key": "5d143d599a7e48badf35",
+      "speaker": "Lysa",
+      "text": "I can still stand. I’m not letting them send another pulse.",
+      "role": "lysa"
+    },
+    {
+      "key": "1092fc3a5795057d8077",
+      "speaker": "Bren",
+      "text": "Stay with us. We’ll stop them together.",
+      "role": "bren"
+    },
+    {
+      "key": "1681c87f6761a528a2a0",
+      "speaker": "",
+      "text": "The party and community complete the mechanism repair. The path east leads to the separate Elder Light; it still needs our help.",
+      "role": "narrator"
+    },
+    {
+      "key": "7734fce94946e71f56f9",
+      "speaker": "Mira",
+      "text": "Let’s get Lysa home.",
+      "role": "mira"
+    },
+    {
+      "key": "ee321f198342c0e76a97",
+      "speaker": "Community leader",
+      "text": "You brought her back. Thank you.",
+      "role": "official"
+    },
+    {
+      "key": "e7c1463df67d2b02ffb8",
+      "speaker": "Lysa",
+      "text": "These notes point to the control brace. The kingdom should see them.",
+      "role": "lysa"
+    },
+    {
+      "key": "227c5a1aa644cbd8c916",
+      "speaker": "Bren",
+      "text": "We’ll take the report and notes to Highmere.",
+      "role": "bren"
+    },
+    {
+      "key": "2b33cbbbeec4a2698a4e",
+      "speaker": "Station official",
+      "text": "The corrections are logged here. We’ve kept the refuge open through all of this.",
+      "role": "official"
+    },
+    {
+      "key": "e092dd1cbfdf2c411003",
+      "speaker": "Mira",
+      "text": "The corrections come first. Afterward, the local Light dims or redirects its response.",
+      "role": "mira"
+    },
+    {
+      "key": "9ded8c62bbafa5604ca0",
+      "speaker": "Bren",
+      "text": "That unsettled response. I felt it before, when the Light resisted being commanded.",
+      "role": "bren"
+    },
+    {
+      "key": "b0e6679490e6272d111b",
+      "speaker": "Tavin",
+      "text": "We need to see what happens when the corrections stop.",
+      "role": "tavin"
+    },
+    {
+      "key": "a30722e20374cad3e6f0",
+      "speaker": "Station official",
+      "text": "A brief pause in nonessential corrections. Normal shelter services stay running.",
+      "role": "official"
+    },
+    {
+      "key": "c004dc3ddfd96b61afee",
+      "speaker": "",
+      "text": "Under supervision, the relay remains at high output but the sharp surges stop. The Light’s signs become easier to read, although it remains dim.",
+      "role": "narrator"
+    },
+    {
+      "key": "250588c621aa67ba604a",
+      "speaker": "Station official",
+      "text": "We’ll share local observations before making further nonessential corrections.",
+      "role": "official"
+    },
+    {
+      "key": "9c27417cdb109a442a0f",
+      "speaker": "",
+      "text": "Bren wakes with a fading sense of a voice—and a pull toward the Royal Archives. Bren cannot tell whether it was only a dream.",
+      "role": "narrator"
+    },
+    {
+      "key": "4c045b2533c8ab779645",
+      "speaker": "Bren",
+      "text": "The archives. There may be something we haven’t understood.",
+      "role": "bren"
+    },
+    {
+      "key": "683533a094cb2f7429d7",
+      "speaker": "Archivist",
+      "text": "Read these together: an account of listening, a rare whisper, and a Light refusing a command.",
+      "role": "official"
+    },
+    {
+      "key": "675c2b6f0fc35178d898",
+      "speaker": "",
+      "text": "The connected records describe a rare capacity for listening and cooperation. The Lights’ bond is not a shared bloodline or a guarantee of virtue.",
+      "role": "narrator"
+    },
+    {
+      "key": "c0190d87f8f8783fa807",
+      "speaker": "Mira",
+      "text": "Being chosen doesn’t decide what someone does.",
+      "role": "mira"
+    },
+    {
+      "key": "b7ea9a989d4a3ff7bee8",
+      "speaker": "Bren",
+      "text": "Soren could still choose differently.",
+      "role": "bren"
+    },
+    {
+      "key": "12021060f7f18a8b5267",
+      "speaker": "Archivist",
+      "text": "The records are fragments. Take what you observed beside what they say.",
+      "role": "official"
+    },
+    {
+      "key": "d44e420e776d45c1cc2e",
+      "speaker": "",
+      "text": "The station mechanism is repaired. The separate Elder Light beyond the refuge can now be restored. Other affected areas remain unresolved.",
+      "role": "narrator"
+    },
+    {
+      "key": "478488da50d4dd4b3473",
+      "speaker": "Commander",
+      "text": "The section is still resisting.",
+      "role": "commander"
+    },
+    {
+      "key": "7231fa2dfd24205b986b",
+      "speaker": "Soren",
+      "text": "Then stop asking it.",
+      "role": "soren"
+    },
+    {
+      "key": "b75e499d9dcf5b84e3cf",
+      "speaker": "Bren",
+      "text": "You knew what commanding the Lights could do.",
+      "role": "bren"
+    },
+    {
+      "key": "6adb2ea26dbc3d314300",
+      "speaker": "Soren",
+      "text": "I knew what waiting would cost.",
+      "role": "soren"
+    },
+    {
+      "key": "1083f661f361e74e5ddb",
+      "speaker": "Bren",
+      "text": "Stay. Help us stop this.",
+      "role": "bren"
+    },
+    {
+      "key": "33de320bcd4f9ee17eda",
+      "speaker": "Soren",
+      "text": "I can’t.",
+      "role": "soren"
+    },
+    {
+      "key": "a32e194f2abf718aa24f",
+      "speaker": "",
+      "text": "Soren leaves through a portal. The Commander continues the unfinished control attempt.",
+      "role": "narrator"
+    },
+    {
+      "key": "8ecc2d60208631fa942f",
+      "speaker": "",
+      "text": "The component returns to its mechanism. The final Elder Light waits in the secluded clearing. Restoring it will let the region’s Lights answer one another.",
+      "role": "narrator"
+    },
+    {
+      "key": "9612ba205d37455e34a1",
+      "speaker": "Tavin",
+      "text": "My people are safe. You’re all going home. Stay together.",
+      "role": "tavin"
+    },
+    {
+      "key": "be96abd9061cc90164ce",
+      "speaker": "Bren",
+      "text": "And you?",
+      "role": "bren"
+    },
+    {
+      "key": "c743bed7fac928949152",
+      "speaker": "Tavin",
+      "text": "I need to know how far this has spread.",
+      "role": "tavin"
+    },
+    {
+      "key": "5dd549b734d14c5660ea",
+      "speaker": "Bren",
+      "text": "You don’t have to find out alone.",
+      "role": "bren"
+    },
+    {
+      "key": "8d1da26ffe636a2245f5",
+      "speaker": "Tavin",
+      "text": "I know.",
+      "role": "tavin"
+    },
+    {
+      "key": "52bd396f9d3beb13f712",
+      "speaker": "Council official",
+      "text": "Fern Hollow’s report is received. Alderbridge’s Light is still burning. Get there before that changes.",
+      "role": "official"
+    },
+    {
+      "key": "6574c19a0b25e3f1a068",
+      "speaker": "Mira",
+      "text": "If people there need help, I want to come.",
+      "role": "mira"
+    },
+    {
+      "key": "c9dfc4a656ce3b550506",
+      "speaker": "Bren",
+      "text": "Then we go together.",
+      "role": "bren"
+    },
+    {
+      "key": "6dae084cc85ab3c6fed1",
+      "speaker": "Council official",
+      "text": "One site reference in these notes matches a royal relief station. It is open and sheltering people.",
+      "role": "official"
+    },
+    {
+      "key": "fca131c216c1063d785b",
+      "speaker": "Bren",
+      "text": "We’ll investigate without putting the refuge at risk.",
+      "role": "bren"
+    },
+    {
+      "key": "d9559eda4cd9c3d42812",
+      "speaker": "Council official",
+      "text": "Your observations matter. We won’t extend this practice to other stations without stronger evidence.",
+      "role": "official"
+    },
+    {
+      "key": "40b632e116653ee6e429",
+      "speaker": "Mira",
+      "text": "The station staff are trying to protect people. We need to understand the response, not blame them.",
+      "role": "mira"
+    },
+    {
+      "key": "f72f1d3b731d5b8e005a",
+      "speaker": "Council official",
+      "text": "Rest here while we deliberate.",
+      "role": "official"
+    },
+    {
+      "key": "e7fd8191a8849eae981b",
+      "speaker": "Council official",
+      "text": "The records may be real. They’re still fragments. They don’t tell us how to run every station.",
+      "role": "official"
+    },
+    {
+      "key": "72b151c16e2187248aac",
+      "speaker": "Bren",
+      "text": "We’re telling you what happened at the one we saw, alongside what the old accounts describe.",
+      "role": "bren"
+    },
+    {
+      "key": "7270b3279ecda0a3bd18",
+      "speaker": "Council official",
+      "text": "Credible, but not conclusive. We authorize a limited listening-first trial at that station. Return with the results.",
+      "role": "official"
+    },
+    {
+      "key": "e74d96efe54ef644861b",
+      "speaker": "Mira",
+      "text": "The trial showed local healing. After that, the staff and party repaired the mechanism together.",
+      "role": "mira"
+    },
+    {
+      "key": "3f560e55293aa071b458",
+      "speaker": "Council official",
+      "text": "The practice stays limited to that station. We’ll review what comes next carefully.",
+      "role": "official"
+    },
+    {
+      "key": "d25a19964d625e830461",
+      "speaker": "Bren",
+      "text": "That unsettled response again. Closer this time.",
+      "role": "bren"
+    },
+    {
+      "key": "39baf5bf2a77e4827ba5",
+      "speaker": "Tavin",
+      "text": "Then let’s go.",
+      "role": "tavin"
+    },
+    {
+      "key": "baccd5c1813ee0b6b3b6",
+      "speaker": "Bren",
+      "text": "The unfinished command stopped. We returned the component and restored the local section.",
+      "role": "bren"
+    },
+    {
+      "key": "1868627d12657f4e0820",
+      "speaker": "Council official",
+      "text": "This recovered field order points toward an operation serving Soren’s agenda in the snowy region. Intercept it before it advances.",
+      "role": "official"
+    },
+    {
+      "key": "b1f85b13cec22d4eb516",
+      "speaker": "",
+      "text": "The party accepts the assignment and prepares to leave for the snowy region.",
+      "role": "narrator"
+    },
+    {
+      "key": "14ff5171d727623e1295",
+      "speaker": "Council official",
+      "text": "Bring us the findings from your current investigation.",
+      "role": "official"
+    },
+    {
+      "key": "92d01072cc8049ea2fca",
+      "speaker": "Soren",
+      "text": "I won’t let another village be lost because we waited.",
+      "role": "soren"
+    },
+    {
+      "key": "ddb18582d06a5c6de46b",
+      "speaker": "Bren",
+      "text": "They’re resisting. You can’t save them by refusing to listen.",
+      "role": "bren"
+    },
+    {
+      "key": "114cb36341d72214b340",
+      "speaker": "",
+      "text": "A cold light takes shape around Bren. Armor closes over him; his sword changes in his hand.",
+      "role": "narrator"
+    },
+    {
+      "key": "690c555541f40de8e670",
+      "speaker": "Tavin",
+      "text": "Bren… what happened?",
+      "role": "tavin"
+    },
+    {
+      "key": "373e3ecb614828ed8d4b",
+      "speaker": "Soren",
+      "text": "That wasn’t in the records.",
+      "role": "soren"
+    },
+    {
+      "key": "6b673bd9b4b3a36fb9b9",
+      "speaker": "Commander",
+      "text": "Open the channel again.",
+      "role": "commander"
+    },
+    {
+      "key": "1b5ddd9b6a88bd606c29",
+      "speaker": "",
+      "text": "A forced pulse reaches the nearby settlement and catches one of Tavin’s people in its pull.",
+      "role": "narrator"
+    },
+    {
+      "key": "333d7648d02eb428f9db",
+      "speaker": "Tavin",
+      "text": "That’s one of my people.",
+      "role": "tavin"
+    },
+    {
+      "key": "c91acceba5bfe0b02f90",
+      "speaker": "Bren",
+      "text": "Don’t go in alone.",
+      "role": "bren"
+    },
+    {
+      "key": "4a791ee170b2682db52f",
+      "speaker": "Mira",
+      "text": "Tell us what you need.",
+      "role": "mira"
+    },
+    {
+      "key": "1acc621d67db08208185",
+      "speaker": "Tavin",
+      "text": "Keep the others back. I’ll draw the pulse away. When I move, get them clear.",
+      "role": "tavin"
+    },
+    {
+      "key": "9a3a149f8e257b6ad3cd",
+      "speaker": "Bren",
+      "text": "We’ll hold them. Go.",
+      "role": "bren"
+    },
+    {
+      "key": "e266c73480462072cef8",
+      "speaker": "",
+      "text": "The Light responds to Tavin’s trust in the party. Keep building charge. Click Ascend when it is ready.",
+      "role": "narrator"
+    },
+    {
+      "key": "402b092f1775d0ce0d17",
+      "speaker": "Tavin",
+      "text": "They’re alive. I’ll find what’s doing this to them.",
+      "role": "tavin"
+    },
+    {
+      "key": "55ea56b7817794068e32",
+      "speaker": "",
+      "text": "Bren and Soren arrive after Tavin’s encounter.",
+      "role": "narrator"
+    },
+    {
+      "key": "7606c55ecda91f9e05c4",
+      "speaker": "Bren",
+      "text": "You can still help us stop this.",
+      "role": "bren"
+    },
+    {
+      "key": "c1a9af0b144b8fe16bc8",
+      "speaker": "Soren",
+      "text": "I can’t let it happen again.",
+      "role": "soren"
+    },
+    {
+      "key": "259b490753ee57729ab2",
+      "speaker": "",
+      "text": "Soren escapes after the exchange. His forced command destabilizes the remnant again. The residents need protection.",
+      "role": "narrator"
+    },
+    {
+      "key": "fca99aa04f4447ad289f",
+      "speaker": "Guard",
+      "text": "I felt it too. The same pull. I’m sorry.",
+      "role": "guard"
+    },
+    {
+      "key": "ab574e68b9fb0395b174",
+      "speaker": "Tavin",
+      "text": "Now you know why they came for help.",
+      "role": "tavin"
+    },
+    {
+      "key": "7fedec86985247490a72",
+      "speaker": "",
+      "text": "Temporary shelter is granted. Immediate tension eases, though trust is still incomplete.",
+      "role": "narrator"
+    },
+    {
+      "key": "0d4e6d733b528736141a",
+      "speaker": "Commander",
+      "text": "Fall back!",
+      "role": "commander"
+    },
+    {
+      "key": "5b9829fa2cd72fe3c261",
+      "speaker": "Mira",
+      "text": "The pull has stopped. They’re coming around.",
+      "role": "mira"
+    },
+    {
+      "key": "86f2b94be246cee6a01b",
+      "speaker": "",
+      "text": "The Commander withdraws. The component taken from this site’s mechanism is recovered.",
+      "role": "narrator"
+    },
+    {
+      "key": "b0d439e1041a8ef1ed05",
+      "speaker": "",
+      "text": "Tavin holds back to protect his distressed people. Bren and Soren are coming along the forest road.",
+      "role": "narrator"
+    },
+    {
+      "key": "c0cf887362b68c1775a9",
+      "speaker": "",
+      "text": "The northern pass opens into the snowy region. The party carries Valenne’s interception assignment.",
+      "role": "narrator"
+    },
+    {
+      "key": "80e57fcfde87b33d37df",
+      "speaker": "Bren",
+      "text": "It’s worse than the report made it sound.",
+      "role": "bren"
+    },
+    {
+      "key": "94fc732eab088f9be308",
+      "speaker": "Soren",
+      "text": "The water, the animals, the Light. Let’s hear what the representative has seen.",
+      "role": "soren"
+    },
+    {
+      "key": "3ecb46983b86fb7e2562",
+      "speaker": "Weapon shop clerk",
+      "text": "A good blade and a full satchel. What can I help you find?",
+      "role": "merchant"
+    },
+    {
+      "key": "2ae82377f6a793d15cac",
+      "speaker": "Innkeeper",
+      "text": "You look like you have come a long way. There is a warm bed and a meal waiting for you.",
+      "role": "merchant"
+    },
+    {
+      "key": "6de8f6b41dff8df50ed5",
+      "speaker": "bren",
+      "text": "I’ll hold the line.",
+      "role": "bren"
+    },
+    {
+      "key": "5525702d8a1d912cecb2",
+      "speaker": "bren",
+      "text": "Stay with us.",
+      "role": "bren"
+    },
+    {
+      "key": "c46e4dcf6183464d318f",
+      "speaker": "bren",
+      "text": "We stand together!",
+      "role": "bren"
+    },
+    {
+      "key": "00081d1bdd356309f869",
+      "speaker": "bren",
+      "text": "Driving slash!",
+      "role": "bren"
+    },
+    {
+      "key": "aa3e2074f276342113eb",
+      "speaker": "bren",
+      "text": "Right on target!",
+      "role": "bren"
+    },
+    {
+      "key": "a16b198d68299cbd489c",
+      "speaker": "bren",
+      "text": "A perfect opening!",
+      "role": "bren"
+    },
+    {
+      "key": "2f4e11c4112210fe402a",
+      "speaker": "bren",
+      "text": "Keep moving!",
+      "role": "bren"
+    },
+    {
+      "key": "1345889adb2f459bf012",
+      "speaker": "bren",
+      "text": "Now!",
+      "role": "bren"
+    },
+    {
+      "key": "3e72d614aa00bf005709",
+      "speaker": "bren",
+      "text": "They have a way out. Let them go.",
+      "role": "bren"
+    },
+    {
+      "key": "3bba0b63723744d2c92b",
+      "speaker": "bren",
+      "text": "Driving slash",
+      "role": "bren"
+    },
+    {
+      "key": "c1f9c722b754466ce6fb",
+      "speaker": "bren",
+      "text": "Sundering slash",
+      "role": "bren"
+    },
+    {
+      "key": "2b1a0118e0c3c5e612e6",
+      "speaker": "bren",
+      "text": "Rally",
+      "role": "bren"
+    },
+    {
+      "key": "2bf24e2652d5171b6524",
+      "speaker": "bren",
+      "text": "Unbroken resolve",
+      "role": "bren"
+    },
+    {
+      "key": "9b43680ae16dacb73a4e",
+      "speaker": "soren",
+      "text": "I’ll hold the line.",
+      "role": "soren"
+    },
+    {
+      "key": "0abcd7989babb8eda581",
+      "speaker": "soren",
+      "text": "Stay with us.",
+      "role": "soren"
+    },
+    {
+      "key": "3c6603375e1d1f3691fb",
+      "speaker": "soren",
+      "text": "We stand together!",
+      "role": "soren"
+    },
+    {
+      "key": "bf7502299aa50c7db51b",
+      "speaker": "soren",
+      "text": "Driving slash!",
+      "role": "soren"
+    },
+    {
+      "key": "5fcf1566d944d75f9491",
+      "speaker": "soren",
+      "text": "Right on target!",
+      "role": "soren"
+    },
+    {
+      "key": "26078e21913b2571ee02",
+      "speaker": "soren",
+      "text": "A perfect opening!",
+      "role": "soren"
+    },
+    {
+      "key": "6a42a659f2c5277ed4a6",
+      "speaker": "soren",
+      "text": "Keep moving!",
+      "role": "soren"
+    },
+    {
+      "key": "f3e3f3d73195717481cb",
+      "speaker": "soren",
+      "text": "Now!",
+      "role": "soren"
+    },
+    {
+      "key": "b4bcc134a2fcc4334130",
+      "speaker": "soren",
+      "text": "They have a way out. Let them go.",
+      "role": "soren"
+    },
+    {
+      "key": "3c5d10a3999529ac7c85",
+      "speaker": "soren",
+      "text": "Arcane pulse",
+      "role": "soren"
+    },
+    {
+      "key": "48d9962eba579cabdbab",
+      "speaker": "soren",
+      "text": "Convergent pulse",
+      "role": "soren"
+    },
+    {
+      "key": "136b659b25e022b80065",
+      "speaker": "soren",
+      "text": "Ward",
+      "role": "soren"
+    },
+    {
+      "key": "5caf2f649724544200b0",
+      "speaker": "soren",
+      "text": "Greater ward",
+      "role": "soren"
+    },
+    {
+      "key": "7b8442dffeeeeaa67606",
+      "speaker": "tavin",
+      "text": "I’ll hold the line.",
+      "role": "tavin"
+    },
+    {
+      "key": "53c4e5684e42e83edab5",
+      "speaker": "tavin",
+      "text": "Stay with us.",
+      "role": "tavin"
+    },
+    {
+      "key": "d5ad3d0119cfdb835c6e",
+      "speaker": "tavin",
+      "text": "We stand together!",
+      "role": "tavin"
+    },
+    {
+      "key": "f1695896e2762633a89d",
+      "speaker": "tavin",
+      "text": "Driving slash!",
+      "role": "tavin"
+    },
+    {
+      "key": "3485a49db0d65f3557ad",
+      "speaker": "tavin",
+      "text": "Right on target!",
+      "role": "tavin"
+    },
+    {
+      "key": "1f6f059d6e7e2c459301",
+      "speaker": "tavin",
+      "text": "A perfect opening!",
+      "role": "tavin"
+    },
+    {
+      "key": "296e39c136bbe7be8f52",
+      "speaker": "tavin",
+      "text": "Keep moving!",
+      "role": "tavin"
+    },
+    {
+      "key": "bdac8bb35ee5ee45ed48",
+      "speaker": "tavin",
+      "text": "Now!",
+      "role": "tavin"
+    },
+    {
+      "key": "da442be43d5ffe6e1080",
+      "speaker": "tavin",
+      "text": "They have a way out. Let them go.",
+      "role": "tavin"
+    },
+    {
+      "key": "a55bfaa4dc577b609957",
+      "speaker": "tavin",
+      "text": "Piercing arrow",
+      "role": "tavin"
+    },
+    {
+      "key": "ae1dfaf4529ca197d885",
+      "speaker": "tavin",
+      "text": "Crystal volley",
+      "role": "tavin"
+    },
+    {
+      "key": "07bf17392048b07a648b",
+      "speaker": "tavin",
+      "text": "Field dressing",
+      "role": "tavin"
+    },
+    {
+      "key": "3ac28f51d36353fa5c51",
+      "speaker": "tavin",
+      "text": "Renewing wind",
+      "role": "tavin"
+    },
+    {
+      "key": "2f4131028e59f85a8b6f",
+      "speaker": "mira",
+      "text": "I’ll hold the line.",
+      "role": "mira"
+    },
+    {
+      "key": "60e086395ebf4fe6624d",
+      "speaker": "mira",
+      "text": "Stay with us.",
+      "role": "mira"
+    },
+    {
+      "key": "de59c78a051d7009b3a1",
+      "speaker": "mira",
+      "text": "We stand together!",
+      "role": "mira"
+    },
+    {
+      "key": "c21f8189116c35785529",
+      "speaker": "mira",
+      "text": "Driving slash!",
+      "role": "mira"
+    },
+    {
+      "key": "2a759a3194597d79b519",
+      "speaker": "mira",
+      "text": "Right on target!",
+      "role": "mira"
+    },
+    {
+      "key": "a3c70e6274f0e0f7272b",
+      "speaker": "mira",
+      "text": "A perfect opening!",
+      "role": "mira"
+    },
+    {
+      "key": "385af347954febc75ac0",
+      "speaker": "mira",
+      "text": "Keep moving!",
+      "role": "mira"
+    },
+    {
+      "key": "3dfb558c1a484cb966ab",
+      "speaker": "mira",
+      "text": "Now!",
+      "role": "mira"
+    },
+    {
+      "key": "ef57cb88a34457ee24f1",
+      "speaker": "mira",
+      "text": "They have a way out. Let them go.",
+      "role": "mira"
+    },
+    {
+      "key": "b6d14038e3e63d84cfdd",
+      "speaker": "mira",
+      "text": "Mend",
+      "role": "mira"
+    },
+    {
+      "key": "2d676ceb3ada4d772f87",
+      "speaker": "mira",
+      "text": "Restorative light",
+      "role": "mira"
+    },
+    {
+      "key": "53048a938bca43e4fbda",
+      "speaker": "mira",
+      "text": "Sheltering light",
+      "role": "mira"
+    },
+    {
+      "key": "cd987210539bcbfa39f7",
+      "speaker": "mira",
+      "text": "Sanctuary",
+      "role": "mira"
+    },
+    {
+      "key": "0b2432fb2e0406bddd71",
+      "speaker": "lysa",
+      "text": "I’ll hold the line.",
+      "role": "lysa"
+    },
+    {
+      "key": "2954744b0966eaf398dd",
+      "speaker": "lysa",
+      "text": "Stay with us.",
+      "role": "lysa"
+    },
+    {
+      "key": "934196ec573ec9e6a277",
+      "speaker": "lysa",
+      "text": "We stand together!",
+      "role": "lysa"
+    },
+    {
+      "key": "3a19cdb74963340e1041",
+      "speaker": "lysa",
+      "text": "Driving slash!",
+      "role": "lysa"
+    },
+    {
+      "key": "aa578c36d8160c1d3380",
+      "speaker": "lysa",
+      "text": "Right on target!",
+      "role": "lysa"
+    },
+    {
+      "key": "18ac824f3fa8b026db36",
+      "speaker": "lysa",
+      "text": "A perfect opening!",
+      "role": "lysa"
+    },
+    {
+      "key": "2b71e81b32e4d980dd9e",
+      "speaker": "lysa",
+      "text": "Keep moving!",
+      "role": "lysa"
+    },
+    {
+      "key": "278fb4ea3f2e7c8f02f9",
+      "speaker": "lysa",
+      "text": "Now!",
+      "role": "lysa"
+    },
+    {
+      "key": "80e406ffe81bb9761860",
+      "speaker": "lysa",
+      "text": "They have a way out. Let them go.",
+      "role": "lysa"
+    },
+    {
+      "key": "36844fcbf18aac4de8f9",
+      "speaker": "lysa",
+      "text": "Flame lance",
+      "role": "lysa"
+    },
+    {
+      "key": "e35db0bfad7d06cf4735",
+      "speaker": "lysa",
+      "text": "Frost bloom",
+      "role": "lysa"
+    },
+    {
+      "key": "3d8d1db7bd0f59b2204b",
+      "speaker": "The carpenter",
+      "text": "I’m checking the joinery. An open path is worth more than a pile of spare timber.",
+      "role": "merchant"
+    },
+    {
+      "key": "844938724096922ffef0",
+      "speaker": "The courier",
+      "text": "I’m taking reports between the houses. There are more today than usual.",
+      "role": "merchant"
+    },
+    {
+      "key": "626402f91d4833c5effe",
+      "speaker": "The farmer",
+      "text": "The ground and the water tell you when something has changed.",
+      "role": "merchant"
+    },
+    {
+      "key": "d66fa0e2744c0a4a1201",
+      "speaker": "The elder",
+      "text": "Watch how the world responds. You can learn a lot by waiting a moment.",
+      "role": "elder"
+    },
+    {
+      "key": "ae37068fb88745d8f55c",
+      "speaker": "The innkeeper",
+      "text": "A warm meal and a little rest can make the next road easier.",
+      "role": "merchant"
+    },
+    {
+      "key": "61d0d19adba1e6d12d09",
+      "speaker": "The potter",
+      "text": "Take care on the road.",
+      "role": "healer"
+    },
+    {
+      "key": "3eeeee847c7d75ad36e6",
+      "speaker": "The timber keeper",
+      "text": "Take care on the road.",
+      "role": "merchant"
+    },
+    {
+      "key": "d5beecf7e2d2b81c4725",
+      "speaker": "The council steward",
+      "text": "Watch how the world responds. You can learn a lot by waiting a moment.",
+      "role": "official"
+    },
+    {
+      "key": "bda09e1f3486961f4020",
+      "speaker": "The archivist",
+      "text": "I’m taking reports between the houses. There are more today than usual.",
+      "role": "official"
+    },
+    {
+      "key": "2d266556375c6095f2e2",
+      "speaker": "The cloth merchant",
+      "text": "The market is still open. We’re making sure everyone has what they need.",
+      "role": "merchant"
+    },
+    {
+      "key": "bacedb656109c569dc97",
+      "speaker": "The civic gardener",
+      "text": "The ground and the water tell you when something has changed.",
+      "role": "merchant"
+    },
+    {
+      "key": "70d8f0f004132ce86606",
+      "speaker": "The royal courier",
+      "text": "I’m checking the joinery. An open path is worth more than a pile of spare timber.",
+      "role": "merchant"
+    },
+    {
+      "key": "899433ebad878b62941a",
+      "speaker": "The inn steward",
+      "text": "A warm meal and a little rest can make the next road easier.",
+      "role": "merchant"
+    },
+    {
+      "key": "fbe9a235c5e223852731",
+      "speaker": "The fishmonger",
+      "text": "The market is still open. We’re making sure everyone has what they need.",
+      "role": "merchant"
+    },
+    {
+      "key": "b8ab4fe511c76387cda9",
+      "speaker": "The bridgekeeper",
+      "text": "There’s room through the main lane. Keep the work aprons clear.",
+      "role": "merchant"
+    },
+    {
+      "key": "ee01049e01d5a7715d54",
+      "speaker": "The shelter medic",
+      "text": "We look after each other. Tell me if you see someone who needs help.",
+      "role": "healer"
+    },
+    {
+      "key": "812df5754f2e8c0d665e",
+      "speaker": "The orchard keeper",
+      "text": "The ground and the water tell you when something has changed.",
+      "role": "merchant"
+    },
+    {
+      "key": "eef9d8472dae63b6c081",
+      "speaker": "The refuge medic",
+      "text": "We look after each other. Tell me if you see someone who needs help.",
+      "role": "healer"
+    },
+    {
+      "key": "26373d21ed9e4fbcc05f",
+      "speaker": "The station recorder",
+      "text": "I’m taking reports between the houses. There are more today than usual.",
+      "role": "merchant"
+    },
+    {
+      "key": "e0b17fa18ad5b3b7d316",
+      "speaker": "The quartermaster",
+      "text": "I’m checking the joinery. An open path is worth more than a pile of spare timber.",
+      "role": "merchant"
+    }
+  ]
+}

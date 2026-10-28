@@ -97,7 +97,7 @@ buildPlants=function(){budgetedPlantBuilder();const materials=new Map();for(cons
 // Keep one volume per plant; the old second crossed photograph would duplicate it.
 const photographPlant=plant;
 plant=function(x,z,scale=1,type='fern',givenY=null){
- if(type==='grassBlades'&&Math.abs(Math.sin(x*117.3+z*49.9)*43758.4)%1>.32)return;
+ if(type==='grassBlades'&&Math.abs(Math.sin(x*117.3+z*49.9)*43758.4)%1>.72)return;
  const key=type==='flower'?'flowers':type==='ivy'?'ivy':type==='grassBlades'?'grassBlades':type==='shrub'?'shrub':'fern',start=world.userData.plantMatrices[key].length;
  photographPlant(x,z,type==='grassBlades'?scale*1.25:scale,type,givenY);if(world.userData.plantMatrices[key].length===start+2)world.userData.plantMatrices[key].pop();
 };

@@ -1,0 +1,123 @@
+// A physical overworld connects individually loaded points of interest.
+const POIS={
+ brookstead:{name:'Brookstead',id:'entrance',aliases:['approach','entrance','lane','square','waterworks','yard'],bounds:[-208,-36,22,158],spawn:[-143,120],node:[-152,126],exit:[-188,140],kind:'town',description:'Terraced river town · Waterworks and market'},
+ fern:{name:'Fern Hollow',id:'fern',aliases:['fern','fernOut'],bounds:[57,141,42,114],spawn:[68,76],node:[93,76],exit:[65,76],kind:'town',description:'Woodland settlement · Tavin’s home'},
+ depths:{name:'Fern Remnant',id:'depths',aliases:['depths'],bounds:[81,130,0,45],spawn:[106,39],node:[111,28],exit:[108,39],kind:'ruin',description:'Sheltered ruins · The damaged mechanism'},
+ highmere:{name:'Highmere',id:'highmere',aliases:['highmere'],bounds:[-130,-16,-153,-51],spawn:[-84,-61],node:[-77,-88],exit:[-84,-60],kind:'town',description:'Royal city · Council, archives and inn'},
+ alder:{name:'Alderbridge',id:'alder',aliases:['alder'],bounds:[89,164,-132,-47],spawn:[104,-80],node:[125,-79],exit:[102,-80],kind:'town',description:'Orchards and riverside shelter'},
+ patrol:{name:'Eastern Watch',id:'patrol',aliases:['patrol','capitalRoad'],bounds:[151,196,-82,-34],spawn:[157,-57],node:[176,-57],exit:[157,-57],kind:'trail',description:'Woodland watchpost · An injured scout'},
+ alderRemnant:{name:'Alder Remnant',id:'alderRemnant',aliases:['alderRemnant'],bounds:[178,239,-124,-76],spawn:[188,-94],node:[208,-101],exit:[187,-94],kind:'ruin',description:'Ancient control site · Lysa’s trail'},
+ relief:{name:'Royal Relief Station',id:'relief',aliases:['relief'],bounds:[-6,66,-182,-126],spawn:[8,-145],node:[24,-153],exit:[8,-145],kind:'town',description:'A refuge and an unsettled Light'},
+ nearbySite:{name:'Network Clearing',id:'nearbySite',aliases:['nearbySite'],bounds:[-106,-42,-222,-172],spawn:[-92,-185],node:[-76,-196],exit:[-93,-185],kind:'ruin',description:'The unfinished command'},
+ snow:{name:'Northern Pass',id:'snow',aliases:['snow'],bounds:[113,186,-261,-204],spawn:[140,-216],node:[149,-224],exit:[138,-216],kind:'trail',description:'The road into the next region'}
+};
+for(const site of LIGHT_SITES){const key=site.area;POIS[key]={name:site.name,id:key,aliases:[key],bounds:[site.x-22,site.x+22,site.z-21,site.z+22],spawn:[site.x,site.z+12],node:[site.x,site.z],exit:[site.x+5,site.z+14],kind:'clearing',description:'A secluded Elder Light · '+site.id};}
+SCENES.overworld={name:'Valenne',sub:'Overworld · Follow the roads to a destination',view:'world',kit:'fern',seed:812,path:[],interact:[]};PLACES.overworld=[-168,137];
+let activeScene=null,sceneBuildFilter=false,sceneSwitchPending=false;
+const sceneStats={loads:0,transitions:0,removedMeshes:0};
+const disposeBeforeSceneResources=disposeContinuousWorld;
+disposeContinuousWorld=function(){if(world){const geometries=new Set(),materials=new Set();world.traverse(o=>{if(o.customDepthMaterial)materials.add(o.customDepthMaterial);for(const g of[o.userData?.fullGeometry,o.userData?.farGeometry,o.userData?.simpleGeometry])if(g&&!Object.values(sharedGeo).includes(g))geometries.add(g);});for(const g of geometries)g.dispose();for(const m of materials)m.dispose();}disposeBeforeSceneResources();scenery.lambert?.clear();};
+function poiFor(id){return Object.entries(POIS).find(([key,p])=>key===id||p.aliases.includes(id))?.[0]??(id==='council'||id==='archives'||id==='inn'?'highmere':'brookstead');}
+function scenePlan(id){if(id==='overworld')return{kind:'overworld',key:id,bounds:[LAND.minX,LAND.maxX,LAND.minZ,LAND.maxZ]};if(typeof INTERIORS!=='undefined'&&INTERIORS[id])return{kind:'interior',key:id,bounds:[-13,13,-10,10]};const key=poiFor(id);return{kind:'poi',key,bounds:POIS[key].bounds};}
+function inSceneBounds(x,z,pad=0){if(!activeScene||activeScene.kind==='overworld')return true;const[a,b,c,d]=activeScene.bounds;return x>=a-pad&&x<=b+pad&&z>=c-pad&&z<=d+pad;}
+function sceneTerrainVisible(x,z,size){return !activeScene||activeScene.kind==='overworld'||!(x+size<activeScene.bounds[0]-30||x>activeScene.bounds[1]+30||z+size<activeScene.bounds[2]-30||z>activeScene.bounds[3]+30);}
+const roadBeforeMacro=roadInfo;
+roadInfo=function(x,z){const r=roadBeforeMacro(x,z);return activeScene?.kind==='overworld'?{...r,kind:'trail'}:r;};
+const regionGround=groundAt,regionHeight=heightAt,regionWaterGround=waterGround,regionStaticFree=staticFree;
+function macroGround(x,z){const edge=Math.min((x-LAND.minX)/24,(LAND.maxX-x)/24,(z-LAND.minZ)/28,(LAND.maxZ-z)/25),base=-3.2+smooth(0,1,edge)*6.2,hills=1.8*Math.sin(x*.027)*Math.cos(z*.023)+11*Math.pow(Math.abs(Math.sin(x*.012+z*.008)),5);let y=base+hills;const river=Math.abs(x-riverX(z));y-=6*(1-smooth(3,9,river));for(const p of Object.values(POIS)){const d=Math.hypot(x-p.node[0],z-p.node[1]);if(d<26)y=mix(Math.max(2.4,base+1.3),y,smooth(8,26,d));}return y;}
+groundAt=function(x,z,...args){return activeScene?.kind==='interior'?0:activeScene?.kind==='overworld'?macroGround(x,z):regionGround(x,z,...args);};
+heightAt=function(x,z,...args){if(activeScene?.kind==='interior')return 0;if(activeScene?.kind==='overworld'){for(const b of world?.userData.bridges??[])if(Math.abs(x-b.x)<b.length/2+.1&&Math.abs(z-b.z)<b.width/2-.12){const t=clamp((x-b.x+b.length/2)/b.length,0,1);return mix(b.left,b.right,t)+Math.sin(t*Math.PI)*.45+.12;}return macroGround(x,z);}return regionHeight(x,z,...args);};
+waterGround=function(x,z){if(activeScene?.kind==='interior')return false;if(activeScene?.kind==='overworld')return heightAt(x,z)<-1.25;return regionWaterGround(x,z);};
+staticFree=function(x,z,r=.4){if(!sceneBuildFilter&&activeScene?.kind!=='overworld'&&!inSceneBounds(x,z,-r))return false;return regionStaticFree(x,z,r);};
+const sceneTree=buildSolidTree;
+buildSolidTree=function(x,z,...args){if(sceneBuildFilter&&!inSceneBounds(x,z,20))return null;return sceneTree(x,z,...args);};
+const scenePlant=plant;
+plant=function(x,z,...args){if(sceneBuildFilter&&!inSceneBounds(x,z,15))return;return scenePlant(x,z,...args);};
+const sceneNature=buildNature;
+buildNature=function(){sceneNature();if(activeScene?.kind!=='poi')return;const[a,b,c,d]=activeScene.bounds,random=seeded(48531+a*13+c);for(let i=0;i<5500;i++){const x=mix(a,b,random()),z=mix(c,d,random());if(roadDistance(x,z)<3.65||waterGround(x,z)||!staticFree(x,z,.18))continue;plant(x,z,.45+random()*.45,i%13===0?'flower':i%17===0?'fern':'grassBlades');}};
+function trimPoiWorld(){
+ const bounds=new THREE.Box3(V3(activeScene.bounds[0]-24,-100,activeScene.bounds[2]-24),V3(activeScene.bounds[1]+24,200,activeScene.bounds[3]+24));world.updateMatrixWorld(true);const remove=[];
+ world.traverse(o=>{if(!o.isMesh||o.userData.dynamicWater||o.userData.dynamicFX||o.isInstancedMesh||o.userData.terrain)return;const box=new THREE.Box3().setFromObject(o);if(!box.intersectsBox(bounds))remove.push(o);});
+ for(const o of remove){o.removeFromParent();sceneStats.removedMeshes++;}
+ colliders=colliders.filter(c=>inSceneBounds(c.x,c.z,Math.max(c.w,c.d)+5));
+ const outsiders=actors.filter(a=>!a.party&&!inSceneBounds(a.x,a.z));for(const a of outsiders){a.mesh.removeFromParent();a.shadow.removeFromParent();a.mesh.geometry.dispose();a.mesh.material.map.dispose();a.mesh.material.dispose();a.shadow.geometry.dispose();a.shadow.material.dispose();}actors=actors.filter(a=>!outsiders.includes(a));npcs=npcs.filter(a=>actors.includes(a));interactables=interactables.filter(o=>inSceneBounds(o.x,o.z)&&(!o.actor||actors.includes(o.actor))&&(POIS[activeScene.key].kind==='clearing'?o.type==='elderLight'&&o.site+'Clearing'===activeScene.key:o.type!=='elderLight'));
+ world.userData.buildings=(world.userData.buildings??[]).filter(g=>inSceneBounds(g.position.x,g.position.z,20));world.userData.lightSites=(world.userData.lightSites??[]).filter(s=>inSceneBounds(s.x,s.z,12));world.userData.treePoints=(world.userData.treePoints??[]).filter(p=>inSceneBounds(p.x,p.z,20));rebuildColliderGrid();roadNavGraph=null;prepareCutaways();
+}
+function scenePortal(type,x,z,label,data={}){const p=safePoint({x,z},.5);createInteraction(type,p.x,p.z,label);const o=interactables.at(-1);Object.assign(o,data,{radius:type==='location'?7:3.2});const g=new THREE.Group();g.position.set(p.x,heightAt(p.x,p.z),p.z);world.add(g);for(const s of[-1,1])box(s*1.65,1.4,0,.19,2.8,.19,'darkWood','#aa8051',g);box(0,2.9,0,3.8,.3,.27,'wood','#c59b69',g);box(1.5,2.3,0,.35,.55,.35,'metal','#a88b55',g);mesh(new THREE.PlaneGeometry(.18,.33),new THREE.MeshBasicMaterial({color:'#ffce83',side:THREE.DoubleSide}),1.5,2.3,.181,g);world.userData.lampSources?.push(V3(p.x+1.5,heightAt(p.x,p.z)+2.2,p.z));const token=mesh(new THREE.OctahedronGeometry(.2,0),new THREE.MeshStandardMaterial({map:textures.metal,color:'#f7d987',emissive:'#cc9c36',emissiveIntensity:.5}),0,3.5,0,g);token.userData.portalMarker=true;o.visualHeight=2;world.userData.portals??=[];world.userData.portals.push({o,token});return o;}
+function resetJourneyWorld(id){disposeContinuousWorld();openWorldReady=false;world=new THREE.Group();world.userData={continuous:true,serial:++worldBuildSerial,leafMatrices:[],plantMatrices:{fern:[],flowers:[],ivy:[],grassBlades:[],shrub:[]},buildings:[],lanterns:[],smoke:[],fountains:[],crystals:[],lightSites:[],bridges:[],terrainChunks:[],staticChunks:[],waterPools:[],walkSurfaces:[],navCache:new Map(),treePoints:[]};scene.add(world);colliders=[];actors=[];player=null;followers=[];npcs=[];interactables=[];fx=[];water=null;route=null;trail=[];trailLength=0;roadNavGraph=null;colliderGrid.clear();restoration=null;scenery.trees=[];scenery.forestMeshes=[];state.scene=id;perf.heights.clear();}
+function finishJourneyWorld(spawn){rebuildColliderGrid();setupParty(spawn);setupAtmosphere();prepareCutaways();prepareBudgetedWorld();initCombatVfx();openWorldReady=true;state.worldFormat=2;state.lastScene=state.scene;openWorldDebug.builds++;sceneStats.loads++;camera.far=280;post.material.uniforms.nearFar.value.y=280;updateLighting();updateCamera(1,true);updateHUD();if(typeof setupWeather==='function')setupWeather();}
+function worldTownModel(key,p){
+ const[x,z]=p.node,y=macroGround(x,z),g=new THREE.Group();g.position.set(x,y,z);world.add(g);
+ const court=mesh(new THREE.CircleGeometry(3.5,24),material('cobble','#d3c9ae'),0,.055,1,g);court.rotation.x=-Math.PI/2;court.castShadow=false;
+ for(let i=0;i<6;i++){
+  const px=(i%3-1)*3.8,pz=Math.floor(i/3)===0?-3.8:3.8,h=2.1+(i%3)*.28;
+  box(px,h*.5,pz,2.35,h,2.6,'plaster',['#ddd0aa','#c1c7b7','#cdbb9c'][i%3],g);box(px,.2,pz,2.5,.4,2.8,'wall','#a7b5a9',g);
+  for(const side of[-1,1]){const roof=box(px+side*.64,h+.48,pz,1.85,.18,3.2,'slate',key==='fern'?'#688178':'#68829a',g);roof.rotation.z=-side*.55;box(px+side*1.05,h*.5,pz+1.34,.12,h,.14,'darkWood','#6f5037',g);}
+  box(px,h-.1,pz+1.35,2.5,.14,.13,'darkWood','#806248',g);box(px,.9,pz+1.37,.55,1.45,.1,'wood','#76583a',g);box(px+.7,1.5,pz+1.38,.42,.55,.09,'window','#ffce83',g);box(px-.7,1.5,pz+1.38,.42,.55,.09,'window','#ffce83',g);
+  box(px+.7,h+.6,pz-.75,.32,1.3,.34,'wall','#a0ada6',g);box(px+.7,h+1.24,pz-.75,.42,.14,.44,'wall','#c5cabc',g);
+ }
+ for(const side of[-1,1]){box(side*6.2,.5,0,.35,1,11,'wall','#9cae9e',g);for(const zz of[-5,0,5])box(side*6.2,.8,zz,.55,1.6,.55,'wall','#ccd2bd',g);}
+ mesh(new THREE.CylinderGeometry(.6,.85,.4,12),material('wall','#b8c6bf'),0,.25,.8,g);mesh(new THREE.CylinderGeometry(.48,.48,.12,12),material('lightFacets','#5cbbc7',{emissive:'#1a6471',emissiveIntensity:.2}),0,.49,.8,g);
+ if(key==='highmere')for(const side of[-1,1]){mesh(new THREE.CylinderGeometry(1,1.3,5,8),material('wall','#afbbb1'),side*5,2.5,-3,g);mesh(new THREE.ConeGeometry(1.5,2.4,8),material('slate','#5f819b'),side*5,6,-3,g);}
+ world.userData.buildings.push(g);createInteraction('location',x,z+6,'Enter '+p.name);Object.assign(interactables.at(-1),{poi:key,radius:7,visualHeight:3});
+}
+function buildJourneyOverworld(spawn){
+ resetJourneyWorld('overworld');sceneBuildFilter=true;addContinuousTerrain();const random=seeded(7331);
+ buildWater({waterX:0});water.geometry.dispose();const geo=new THREE.PlaneGeometry(1000,1000,60,60);geo.rotateX(-Math.PI/2);geo.setAttribute('riverAcross',new THREE.Float32BufferAttribute(new Float32Array(geo.attributes.position.count),1));water.geometry=geo;water.position.y=-1.4;world.userData.waterPatches=[new THREE.Box3(V3(-500,-1.5,-500),V3(500,-1.3,500))];world.userData.connectedWater=true;
+ for(const z of[97,-8,-80,-180])makeBridge(riverX(z),z,35,8,true);
+ for(const[key,p]of Object.entries(POIS)){if(p.kind==='town')worldTownModel(key,p);else{const[x,z]=p.node,g=new THREE.Group();g.position.set(x,macroGround(x,z),z);world.add(g);if(p.kind==='clearing'){mesh(new THREE.OctahedronGeometry(1.7,0),material('lightFacets','#9cdbce',{emissive:'#78aca6',emissiveIntensity:.4}),0,3,0,g);}else for(let i=0;i<4;i++){const s=i*TAU/4;box(Math.cos(s)*2,1.4,Math.sin(s)*2,.8,2.8,.9,'wall','#a2b0a6',g);}createInteraction('location',x,z+5,'Enter '+p.name);Object.assign(interactables.at(-1),{poi:key,radius:6.5,visualHeight:2});}}
+ for(let i=0;i<3000;i++){const x=mix(LAND.minX+12,LAND.maxX-12,random()),z=mix(LAND.minZ+12,LAND.maxZ-12,random());if(macroGround(x,z)<0||roadDistance(x,z)<6||Object.values(POIS).some(p=>Math.hypot(x-p.node[0],z-p.node[1])<13))continue;buildSolidTree(x,z,.35+random()*.35,z<-170?'pine':random()<.35?'pine':'oak',random);}
+ for(let i=0;i<28000;i++){const x=mix(LAND.minX,LAND.maxX,random()),z=mix(LAND.minZ,LAND.maxZ,random());if(macroGround(x,z)<0||roadDistance(x,z)<3.8)continue;plant(x,z,.35+random()*.4,i%12===0?'flower':'grassBlades');}
+ buildPlants();batchLandscape();sceneBuildFilter=false;const q=spawn??state.overworldPosition??PLACES.overworld;finishJourneyWorld(q);state.poi='overworld';
+}
+const sceneBuildBeforeJourney=buildWorld;
+buildWorld=function(id='approach',spawn=null){
+ if(['worldMeadow','worldRidge','capitalRoad','world'].includes(id)){spawn??=PLACES[id];id='overworld';}if(id==='inn'){id='highmereInn';spawn=[0,5];}activeScene=scenePlan(id);sceneBuildFilter=true;if(activeScene.kind==='overworld'){buildJourneyOverworld(spawn);return;}
+ if(activeScene.kind==='interior'){if(spawn&&(Math.abs(spawn[0])>12||Math.abs(spawn[1])>9))spawn=[0,5];buildJourneyInterior(id,spawn);sceneBuildFilter=false;return;}
+ const p=POIS[activeScene.key],oldTitle=state.mode==='title';if(oldTitle&&world?.userData.poi===activeScene.key){state.scene=id;const q=spawn??PLACES[id]??p.spawn;setupParty(q);updateCamera(1,true);sceneBuildFilter=false;return;}
+ openWorldReady=false;sceneBuildBeforeJourney(id,spawn??p.spawn);trimPoiWorld();world.userData.poi=activeScene.key;state.poi=activeScene.key;state.worldFormat=2;sceneBuildFilter=false;sceneStats.loads++;
+ scenePortal('poiExit',...p.exit,'Leave for the overworld',{poi:activeScene.key});if(activeScene.key==='brookstead'){const q=scenePortal('routeDoor',-100,44,'Follow the trail to Fern Hollow',{poi:'fern'});q.toWorld=true;}
+ if(typeof addInteriorDoors==='function')addInteriorDoors();if(typeof setupWeather==='function')setupWeather();updateLighting();updateCamera(1,true);updateHUD();
+};
+async function changeJourneyScene(id,spawn=null){
+ if(sceneSwitchPending||gameLoading||battle)return false;sceneSwitchPending=true;const loadStarted=performance.now();setJourneyLoading(true);keys.clear();if(activeScene?.kind==='overworld')state.overworldPosition=[player.x,player.z];
+ try{await new Promise(requestAnimationFrame);await new Promise(requestAnimationFrame);buildWorld(id,spawn);state.mode='explore';await prepareGameplayGraphics();updateHUD();if(id!=='overworld'&&activeScene.kind!=='interior')onSceneEntered(id);autoSave();sceneStats.transitions++;return true;}finally{setJourneyLoading(false);sceneSwitchPending=false;lastFrame=0;sceneStats.lastLoadMs=performance.now()-loadStarted;}
+}
+function returnToOverworld(){const p=POIS[activeScene.key]??POIS[state.interiorReturn?.poi]??POIS.brookstead;changeJourneyScene('overworld',[p.node[0],p.node[1]+10]);}
+function enterPoi(key){const p=POIS[key];if(!p)return;if(key==='snow'&&!['snow','complete'].includes(currentBeat()[0])){toast('The northern pass is sealed until the royal assignment.');return;}if(!state.visited.includes(p.id))state.visited.push(p.id);const region=Object.entries(REGIONS).find(([,r])=>r.keys.includes(p.id));if(region&&!state.discovered.includes(region[0]))state.discovered.push(region[0]);changeJourneyScene(p.id,p.spawn);}
+const actBeforeJourney=act;
+act=function(o){if(!o)return;if(o.type==='location'){enterPoi(o.poi);return;}if(o.type==='poiExit'){returnToOverworld();return;}if(o.type==='routeDoor'){state.trackedPoi=o.poi;returnToOverworld();return;}if(typeof handleInteriorInteraction==='function'&&handleInteriorInteraction(o))return;return actBeforeJourney(o);};
+const nearestBeforeJourney=nearestInteraction;
+nearestInteraction=function(){const doors=interactables.filter(o=>['location','poiExit','routeDoor','interiorDoor','interiorExit'].includes(o.type)&&dist(player,o)<(o.radius??3)).sort((a,b)=>dist(a,player)-dist(b,player));if(doors[0])return doors[0];const service=interactables.filter(o=>o.radius&&dist(player,o)<o.radius).sort((a,b)=>interactionPriority(b)-interactionPriority(a)||dist(player,a)-dist(player,b))[0];return service??nearestBeforeJourney();};
+const priorityBeforeJourney=interactionPriority;
+interactionPriority=function(o){return['location','poiExit','routeDoor','interiorDoor','interiorExit'].includes(o.type)?0:priorityBeforeJourney(o);};
+const localObjectiveBeforeJourney=objectiveTarget;
+function objectiveScene(){const b=currentBeat()[0];if(['arrival','gate','pump','wildlife','aftermath'].includes(b))return'entrance';if(['travelFern','tavinIntro','joinTavin','commander1','evacuate'].includes(b))return'fern';if(['stabilize','betrayal','fernRepair'].includes(b))return'depths';if(b==='fernLight')return'fernClearing';if(b==='highmere')return state.flags.mira_aid_helped?'council':'highmere';if(['standoff','patients','leader','rescue','returnLysa'].includes(b))return'alder';if(b==='patrol')return'patrol';if(['lysa','commander2','brace','alderRepair'].includes(b))return'alderRemnant';if(b==='alderLight')return'alderClearing';if(['reportNotes','initialCouncil','trialCouncil','councilFindings','debrief'].includes(b))return'council';if(b==='dream')return'highmereInn';if(b==='archives')return'archives';if(['logs','relay','pause','trialReturn','reliefRepair'].includes(b))return'relief';if(b==='reliefLight')return'reliefClearing';if(['nearby','commander3','siteRepair'].includes(b))return'nearbySite';if(b==='siteLight')return'siteClearing';return'snow';}
+objectiveTarget=function(){const dest=objectiveScene(),targetPoi=typeof INTERIORS!=='undefined'&&INTERIORS[dest]?INTERIORS[dest].poi:poiFor(dest),key=state.trackedPoi??targetPoi;
+ if(activeScene?.kind==='overworld')return interactables.find(o=>o.type==='location'&&o.poi===key);
+ if(activeScene?.kind==='interior')return activeScene.key===dest?localObjectiveBeforeJourney():interactables.find(o=>o.type==='interiorExit');
+ if(activeScene?.key!==key)return interactables.find(o=>o.type==='poiExit');
+ if(typeof INTERIORS!=='undefined'&&INTERIORS[dest])return interactables.find(o=>o.interior===dest);
+ return localObjectiveBeforeJourney();};
+const nextBeatBeforeJourney=nextBeat;
+nextBeat=function(){state.trackedPoi=null;nextBeatBeforeJourney();};
+const restoreLightBeforePoi=updateRestoration;
+updateRestoration=function(dt){if(restoration?.phase==='regional')restoration.order=restoration.order.filter(Boolean);restoreLightBeforePoi(dt);if(restoration?.phase==='regional'){restoration.order=restoration.order.filter(Boolean);if(!restoration.order.length)restoration.order=[restoration.site];}};
+const discoverBeforeJourney=discoverArea;
+discoverArea=function(){if(activeScene?.kind==='overworld'||activeScene?.kind==='interior')return;discoverBeforeJourney();};
+travel=function(id){const key=poiFor(id),p=POIS[key];if(!p)return;state.trackedPoi=key;waypoint={x:p.node[0],z:p.node[1],label:p.name};toast('Destination marked · '+p.name);updateHUD();};
+const hudBeforeJourney=updateHUD;
+updateHUD=function(){if(player&&activeScene&&!battle&&!restoration){const target=objectiveTarget();waypoint=target?{x:target.x,z:target.z,label:target.type==='location'?target.label:target.type==='poiExit'?'Overworld - '+(POIS[state.trackedPoi??poiFor(objectiveScene())]?.name??'Follow the lead'):target.label}:null;}hudBeforeJourney();if(!player||!activeScene)return;const p=POIS[activeScene.key];if(activeScene.kind==='overworld'){$('#area-name').textContent='Valenne';$('#area-subtitle').textContent='Overworld · E to enter a destination';}else if(p){$('#area-name').textContent=p.name;$('#area-subtitle').textContent=currentScene().sub;}const radar=$('#overworld-radar');if(radar)radar.innerHTML=journeyMapSVG(true);};
+function journeyMapSVG(local=false){if(activeScene?.kind==='interior')return`<svg viewBox="-13 -10 26 20"><rect x="-13" y="-10" width="26" height="20" fill="#dfd2b0"/>${colliders.map(c=>`<rect x="${c.x-c.w}" y="${c.z-c.d}" width="${c.w*2}" height="${c.d*2}" fill="#8a8067"/>`).join('')}<circle cx="${player.x}" cy="${player.z}" r=".65" fill="#315c60"/><path d="M-1 7h2v2h-2z" fill="#91a5a0"/></svg>`;const size=local?140:510,x=local?player.x-size/2:-240,z=local?player.z-size/2:-280;return`<svg viewBox="${x} ${z} ${size} ${local?size:480}" role="img" aria-label="Valenne overworld and points of interest"><rect x="-250" y="-290" width="550" height="520" fill="#bdd0b2"/><path d="M-240 168 Q-120 140 -40 174T270 140V210H-240Z" fill="#609caa"/><polyline points="${Array.from({length:70},(_,i)=>{const z=-280+i*7;return riverX(z)+','+z;}).join(' ')}" fill="none" stroke="#6b9faa" stroke-width="8"/>${ROADS.map(r=>`<polyline points="${r.p.map(p=>p.join(',')).join(' ')}" fill="none" stroke="#e8dab4" stroke-width="3"/>`).join('')}${Object.entries(POIS).map(([key,p])=>`<g data-world-location="${p.id}" class="atlas-map-marker"><circle cx="${p.node[0]}" cy="${p.node[1]}" r="${p.kind==='town'?5:3}" fill="${state.trackedPoi===key?'#f4d16d':p.kind==='town'?'#475b52':'#8aa68d'}" stroke="#465749" stroke-width="1"/>${local?'':`<text x="${p.node[0]}" y="${p.node[1]+(p.kind==='clearing'&&key!=='alderClearing'?13:-8)}" text-anchor="middle" fill="#263c38" stroke="#dce0c0" stroke-width="1.5" paint-order="stroke" font-family="Georgia" font-size="9">${esc(p.kind==='clearing'?'Elder Light':p.name)}</text>`}</g>`).join('')}<circle cx="${local||activeScene?.kind==='overworld'?player.x:POIS[activeScene?.key]?.node[0]??-152}" cy="${local||activeScene?.kind==='overworld'?player.z:POIS[activeScene?.key]?.node[1]??126}" r="3.5" fill="#fff7d6" stroke="#2c5559" stroke-width="1.5"/></svg>`;}
+const localMapBeforeJourney=worldMapSVG;
+worldMapSVG=function(mode='region'){return mode==='radar'?journeyMapSVG(true):activeScene?.kind==='poi'&&mode==='local'?localMapBeforeJourney(mode):journeyMapSVG(false);};
+renderMap=function(el){el.innerHTML=`<div class="atlas-heading"><div><p class="eyebrow">ATLAS OF VALENNE</p><h3>The roads between us</h3></div><span>Overworld & points of interest</span></div><p class="desc">Run through Valenne’s overworld. Enter a settlement, ruin or secluded clearing at its landmark. Each location has its own detailed level.</p><div class="continuous-map" id="continuous-map">${journeyMapSVG(false)}<span class="map-north">N<br>↑</span></div><div class="atlas-locations">${Object.entries(POIS).map(([id,p])=>`<button data-world-location="${p.id}">${esc(p.name)}<small>${esc(p.description)}</small></button>`).join('')}</div><p class="desc">Select a location to track it. Use the marked exits to leave a level for the overworld.</p>`;};
+const tickBeforeJourney=tick;
+tick=function(dt){tickBeforeJourney(dt);if(!world||!player)return;if(activeScene?.kind==='overworld'&&state.mode==='explore')state.overworldPosition=[player.x,player.z];for(const p of world.userData.portals??[])p.token.position.y=3.5+Math.sin(clock*1.8)*.12;};
+
+// A tracked landmark persists when the HUD refreshes; map selection is not travel.
+document.addEventListener('click',e=>{const button=e.target.closest('[data-world-location]');if(!button)return;const key=poiFor(button.dataset.worldLocation);state.trackedPoi=key;renderMenu();updateHUD();e.preventDefault();e.stopImmediatePropagation();},true);
+
+// Save a level's identity, rather than a transient discovery label inside it.
+const saveBeforeJourneyIdentity=saveSlot;
+saveSlot=function(...args){const label=state.scene;if(activeScene)state.scene=activeScene.kind==='poi'?POIS[activeScene.key].id:activeScene.key;try{return saveBeforeJourneyIdentity(...args);}finally{state.scene=label;}};

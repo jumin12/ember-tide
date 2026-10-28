@@ -6,12 +6,15 @@
   "nativeSelectedPoses": 4917,
   "portraits": 38,
   "dedicatedHudPortraits": 5,
-  "worldImages": 43,
+  "worldImages": 47,
   "artifact": {
     "file": "index.html",
-    "bytes": 6925351,
-    "sha256": "e056f227d11c92dc6dbe0c9ccd19301d25d896a58775aa6a8eef9099d42f8e54",
+    "bytes": 11500746,
+    "sha256": "565f465ad2604555fb557f4504d22692fc0e490192893e0f9e44033525c9a32d",
     "offline": true
   },
-  "incompleteClips": {}
+  "incompleteClips": {},
+  "worldSystem": "Overworld with 14 points of interest and eight interiors",
+  "voiceClips": 244,
+  "voiceProvider": "ElevenLabs"
 }

@@ -165,7 +165,7 @@
     {
       "material": "earth",
       "source": "elyndor/assets/source/pixellab-v7/images/earth-surface-v9/image.png",
-      "description": "Full-bleed flat albedo material swatch of packed tan earth grains and tiny pale pebbles, with even diffuse lighting, no outlined border, large props, map composition or edge shading. Fine 1\u20133 pixel clusters in the Elyndor Riverland palette.",
+      "description": "Full-bleed flat albedo material swatch of packed tan earth grains and tiny pale pebbles, with even diffuse lighting, no outlined border, large props, map composition or edge shading. Fine 1–3 pixel clusters in the Elyndor Riverland palette.",
       "nativeTile": [
         128,
         128
@@ -178,7 +178,7 @@
     {
       "material": "grass",
       "source": "elyndor/assets/source/pixellab-v7/images/grass-surface-v9/image.png",
-      "description": "Full-bleed flat albedo material swatch of dense fine olive and sage meadow grass blades, with even diffuse lighting, no outlined border, large props, map composition or edge shading. Fine 1\u20133 pixel clusters in the Elyndor Riverland palette.",
+      "description": "Full-bleed flat albedo material swatch of dense fine olive and sage meadow grass blades, with even diffuse lighting, no outlined border, large props, map composition or edge shading. Fine 1–3 pixel clusters in the Elyndor Riverland palette.",
       "nativeTile": [
         128,
         128
@@ -277,5 +277,16 @@
     "smoke": "Transparent isolated soft gray smoke puff, clean pixel clusters, no background, flame or scenery. Engine supplies directional light and rising volume.",
     "energy": "Transparent isolated pale cyan and ivory energy streak and spark texture, coherent Riverland pixel palette. Engine supplies arcs, rings and beams.",
     "ice": "Flat opaque seamless pale blue frost and icy crystal albedo, subtle fine pixel facets, even diffuse light. No pavers, terrain, object silhouette or perspective. Used on dimensional ice shards."
+  },
+  "overworldRevision": {
+    "generator": "PixelLab MCP Pro Flash",
+    "nativeSize": [
+      128,
+      128
+    ],
+    "cloudMask": "Pearly billowing cloud, transparent exterior, soft pixel edge; original Elyndor concept palette",
+    "waterAlbedo": "Seamless teal river surface, small pale caustics, no landscape or objects",
+    "interiorFloor": "Seamless worn slate flagstones, muted teal and warm grey, fine pixel-art detail",
+    "runeSeal": "Transparent circular ivory gold and cyan magic sigil, clear center and margins"
   }
 }

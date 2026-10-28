@@ -5,16 +5,16 @@ function softwareBudget(){return scenery.software&&state.settings.quality!=='hig
 function terrainDetailGeometry(g,step){
  // Preserve every original perimeter vertex. Border fans stitch coarse interiors
  // to full-detail neighbours without cracks or artificial vertical skirts.
- const out=new THREE.BufferGeometry(),points=[],lookup=new Map(),indices=[];
+ const grid=Math.round(Math.sqrt(g.attributes.position.count))-1,stride=grid+1,out=new THREE.BufferGeometry(),points=[],lookup=new Map(),indices=[];
  const vertex=(x,y)=>{const key=x+','+y;if(!lookup.has(key)){lookup.set(key,points.length);points.push([x,y]);}return lookup.get(key);};
- for(let y=0;y<42;y+=step)for(let x=0;x<42;x+=step){const polygon=[[x,y]];
+ for(let y=0;y<grid;y+=step)for(let x=0;x<grid;x+=step){const polygon=[[x,y]];
   for(let j=x===0?1:step;j<=step;j+=x===0?1:step)polygon.push([x,y+j]);
-  for(let j=y+step===42?1:step;j<=step;j+=y+step===42?1:step)polygon.push([x+j,y+step]);
-  for(let j=x+step===42?1:step;j<=step;j+=x+step===42?1:step)polygon.push([x+step,y+step-j]);
+  for(let j=y+step===grid?1:step;j<=step;j+=y+step===grid?1:step)polygon.push([x+j,y+step]);
+  for(let j=x+step===grid?1:step;j<=step;j+=x+step===grid?1:step)polygon.push([x+step,y+step-j]);
   for(let j=y===0?1:step;j<=step;j+=y===0?1:step)polygon.push([x+step-j,y]);
   polygon.pop();const center=vertex(x+step/2,y+step/2);for(let j=0;j<polygon.length;j++)indices.push(center,vertex(...polygon[j]),vertex(...polygon[(j+1)%polygon.length]));
  }
- for(const[key,a]of Object.entries(g.attributes)){const data=new Float32Array(points.length*a.itemSize);points.forEach(([x,y],i)=>{const ix=Math.floor(x),iy=Math.floor(y),nx=Math.min(42,ix+1),ny=Math.min(42,iy+1),u=x-ix,v=y-iy;for(let k=0;k<a.itemSize;k++)data[i*a.itemSize+k]=mix(mix(a.array[(iy*43+ix)*a.itemSize+k],a.array[(iy*43+nx)*a.itemSize+k],u),mix(a.array[(ny*43+ix)*a.itemSize+k],a.array[(ny*43+nx)*a.itemSize+k],u),v);});out.setAttribute(key,new THREE.BufferAttribute(data,a.itemSize));}
+ for(const[key,a]of Object.entries(g.attributes)){const data=new Float32Array(points.length*a.itemSize);points.forEach(([x,y],i)=>{const ix=Math.floor(x),iy=Math.floor(y),nx=Math.min(grid,ix+1),ny=Math.min(grid,iy+1),u=x-ix,v=y-iy;for(let k=0;k<a.itemSize;k++)data[i*a.itemSize+k]=mix(mix(a.array[(iy*stride+ix)*a.itemSize+k],a.array[(iy*stride+nx)*a.itemSize+k],u),mix(a.array[(ny*stride+ix)*a.itemSize+k],a.array[(ny*stride+nx)*a.itemSize+k],u),v);});out.setAttribute(key,new THREE.BufferAttribute(data,a.itemSize));}
  out.setIndex(indices);out.computeBoundingSphere();return out;
 }
 function simpleGrassGeometry(){if(sharedGeo.simpleVolumeGrass)return sharedGeo.simpleVolumeGrass;const p=[],u=[],c=[];for(let i=0;i<3;i++){const a=i*2.399,side=[-Math.sin(a)*.025,Math.cos(a)*.025],tip=[Math.cos(a)*.2,.35+i*.08,Math.sin(a)*.2],v=[[-side[0],-.44,-side[1]],[side[0],-.44,side[1]],[tip[0]+side[0]*.3,tip[1],tip[2]+side[1]*.3],[-side[0],-.44,-side[1]],[tip[0]+side[0]*.3,tip[1],tip[2]+side[1]*.3],tip];for(const q of v){p.push(...q);c.push(.48,.68,.36);}u.push(0,0,1,0,1,1,0,0,1,1,0,1);}const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(p,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(u,2));g.setAttribute('color',new THREE.Float32BufferAttribute(c,3));g.computeVertexNormals();return sharedGeo.simpleVolumeGrass=g;}

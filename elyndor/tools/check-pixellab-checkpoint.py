@@ -1,15 +1,15 @@
 """Check the exact selected public release files, optionally their Git blobs."""
 from pathlib import Path
 import json,re,hashlib,subprocess,sys
-ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'output/elyndor/pixellab-v11'
+ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'output/elyndor/pixellab-v12'
 paths=json.loads((OUT/'publish-paths.json').read_text());errors=[]
 for path in paths:
  p=(ROOT/path).resolve();p.relative_to(ROOT.resolve())
  if path.startswith(('design/','archive/')) or p.name in ['progress.md','original.zip','source-signature.txt']:errors.append('Private file: '+path)
  if p.suffix in ['.json','.js','.css','.html','.md','.py']:
   text=p.read_text(encoding='utf-8')
-  if re.search(r'(?i)Bearer\s+[A-Za-z0-9._-]{16,}|sk-[A-Za-z0-9]{20,}|upload:[a-f0-9]{8}|googleusercontent\.com|[?&]X-Amz-',text):errors.append('Private reference or credential: '+path)
-records=json.loads((ROOT/'elyndor/previews/pixellab-v11/files.json').read_text())
+  if re.search(r'(?i)Bearer\s+[A-Za-z0-9._-]{16,}|sk[_-][A-Za-z0-9]{20,}|upload:[a-f0-9]{8}|googleusercontent\.com|[?&]X-Amz-',text):errors.append('Private reference or credential: '+path)
+records=json.loads((ROOT/'elyndor/previews/pixellab-v12/files.json').read_text())
 for e in records:
  if hashlib.sha256((ROOT/e['file']).read_bytes()).hexdigest()!=e['sha256']:errors.append('File changed: '+e['file'])
 checkpoint=json.loads((ROOT/'elyndor/assets/source/pixellab-v7/checkpoint.json').read_text())

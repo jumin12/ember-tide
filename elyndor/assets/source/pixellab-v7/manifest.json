@@ -338,7 +338,11 @@
     "fxFire": "elyndor/assets/source/pixellab-v7/images/fx-fire-v11/000.png",
     "fxSmoke": "elyndor/assets/source/pixellab-v7/images/fx-smoke-v11/000.png",
     "fxEnergy": "elyndor/assets/source/pixellab-v7/images/fx-energy-v11/000.png",
-    "fxIce": "elyndor/assets/source/pixellab-v7/images/fx-ice-retry-v11/000.png"
+    "fxIce": "elyndor/assets/source/pixellab-v7/images/fx-ice-retry-v11/000.png",
+    "cloudMask": "elyndor/assets/source/pixellab-v7/images/v12-cloud/000.png",
+    "waterAlbedo": "elyndor/assets/source/pixellab-v7/images/v12-water/000.png",
+    "interiorFloor": "elyndor/assets/source/pixellab-v7/images/v12-floor/000.png",
+    "runeSeal": "elyndor/assets/source/pixellab-v7/images/v12-rune/000.png"
   },
   "materialKeys": [
     "cobble",
@@ -440,9 +444,9 @@
       "file": "elyndor/assets/source/pixellab-v7/loading/waterworks.webp",
       "name": "Brookstead \u00b7 The waterworks"
     },
-    "alder": {
-      "file": "elyndor/assets/source/pixellab-v7/loading/alder.webp",
-      "name": "Alderwatch \u00b7 The northern road"
+    "overworld": {
+      "file": "elyndor/assets/source/pixellab-v7/loading/overworld.webp",
+      "name": "Valenne \u00b7 The roads between us"
     }
   }
 }

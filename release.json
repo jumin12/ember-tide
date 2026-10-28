@@ -1,22 +1,25 @@
 {
-  "release": "elyndor-2026-10-27-combat-world-v11",
+  "release": "elyndor-2026-10-27-overworld-voices-v12",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 6925351,
-    "sha256": "e056f227d11c92dc6dbe0c9ccd19301d25d896a58775aa6a8eef9099d42f8e54",
+    "bytes": 11500746,
+    "sha256": "565f465ad2604555fb557f4504d22692fc0e490192893e0f9e44033525c9a32d",
     "offline": true
   },
   "changes": [
-    "Three actual in-game loading photographs; world buffers, sprite atlases and HDR/reflection/shadow shader variants prepare behind loading",
-    "Cached and early-exit battle formation search replaces exhaustive first-action work",
-    "Continuous three-hit native attacks with separate timing windows; ranged projectiles land before damage and do not rewind poses",
-    "Pooled textured 3D sword arcs, arrows, fire columns, smoke, ice eruptions, healing beams and ward rings using four new PixelLab textures",
-    "Rally heals the party, Frost Bloom affects all opponents, wards show status, Ascended abilities replace their normal counterparts",
-    "Raised upstream reservoir drains naturally through the repaired sluice into three connected water levels and two lower cascades",
-    "Recruitment reconciles party actors and textures instead of deleting the party; removed members alone are released",
-    "Wider five-settlement street audit, rerouted canal and relief paths, moved street furniture, natural rock variants and road/door clearance",
-    "Native per-camera frustum culling replaces grass distance cutoffs; fitted, texel-snapped shadows cover the visible terrain"
+    "Traditional side-view battle staging with controlled cinematic spell dolly/yaw and textured 3D sigils",
+    "Two-page battle results and growth, transparent detailed portraits, true level-up stats and once-only rewards",
+    "Physical miniature overworld with 14 separately loaded settlements, ruins, trails and Light clearings",
+    "Eight complete inns, provision shops, council and archives interiors with real exterior return points",
+    "Front-facing downward town camera; all five party members run in eight native directions at a slower 9 FPS animation cadence",
+    "244 offline ElevenLabs dialogue and battle performances across 12 cast roles; no runtime synthesis or embedded credentials",
+    "Persistent natural day/night and automatic cloud, rain, thunder and snow weather with visible projected cloud shadows on scenery and sprites",
+    "Denser instanced planting, wind-matched grass shadows, overhead lighting, far ridgelines and four-edge diorama focus",
+    "Four new native PixelLab assets for water, clouds, interior stone and magic sigils",
+    "Visible marked location exits, interior entrances and atlas destinations; global interaction leakage removed",
+    "Broader navigable overworld hills, bridge deck/ground agreement, validated physical routes and corrected path graph step tests",
+    "Bounded shader retention and released unloaded geometry; recorded audio compressed to independently decodable Opus; new real game loading photographs"
   ],
   "art": {
     "generator": "PixelLab",
@@ -25,7 +28,7 @@
     "packedSpritePoses": 4917,
     "portraits": 38,
     "dedicatedHudPortraits": 5,
-    "worldImages": 43,
+    "worldImages": 47,
     "materials": 15,
     "logicalTileSizes": [
       64,
@@ -37,19 +40,32 @@
     "previousGameArtworkUsed": false,
     "prompts": "MATERIAL_PROMPTS.json",
     "combatTextures": 4,
-    "loadingPhotographs": 3
+    "loadingPhotographs": 3,
+    "nativeSelectedFamilies": 41,
+    "runtimeFamilies": 42,
+    "newPixelLabImages": 4
+  },
+  "voice": {
+    "provider": "ElevenLabs",
+    "clips": 244,
+    "roles": 12,
+    "codec": "Ogg Opus mono 40 kbps",
+    "bytes": 3501718,
+    "offline": true,
+    "embeddedCredential": false
   },
   "validation": {
-    "standaloneMatchesSource": true,
-    "spritePixelAudit": true,
-    "sourceCropWarnings": 0,
-    "regressionChecks": [
+    "checks": [
       {
-        "name": "layout",
+        "name": "navigation",
         "pass": true
       },
       {
-        "name": "world",
+        "name": "features",
+        "pass": true
+      },
+      {
+        "name": "traversal",
         "pass": true
       },
       {
@@ -69,15 +85,7 @@
         "pass": true
       },
       {
-        "name": "streets",
-        "pass": true
-      },
-      {
         "name": "hydraulics",
-        "pass": true
-      },
-      {
-        "name": "view-loading",
         "pass": true
       },
       {
@@ -86,14 +94,6 @@
       },
       {
         "name": "portraits",
-        "pass": true
-      },
-      {
-        "name": "surfaces",
-        "pass": true
-      },
-      {
-        "name": "town",
         "pass": true
       },
       {
@@ -107,85 +107,119 @@
       {
         "name": "combat-performance",
         "pass": true
+      },
+      {
+        "name": "source",
+        "pass": true
+      },
+      {
+        "name": "sprites",
+        "pass": true
+      },
+      {
+        "name": "audio",
+        "pass": true
       }
     ],
-    "campaignProgressionSteps": 45,
-    "campaignBattles": 6,
+    "sourceMatchesArtifact": true,
+    "nativeSpritePixelAudit": true,
+    "sourceCropWarnings": 0,
+    "decodedAudioClips": 244,
+    "storyProgressionSteps": 45,
+    "storyBattles": 6,
     "restoredLights": 4,
     "ascensions": 2,
-    "saveLoad": true,
-    "completeAttackFamilies": 7,
-    "nativePosesPerSwing": 9,
-    "consecutiveSwings": 3,
+    "saveLoad": {
+      "loaded": true,
+      "gold": true,
+      "position": true,
+      "time": true,
+      "lights": true,
+      "region": true
+    },
+    "locationsAndInteriors": 22,
+    "overworldRoutes": 14,
+    "bridgeRoutes": 4,
+    "allPartyDirectionCases": 40,
+    "visibleCoverageViews": 12,
+    "nativeAttackFamilies": 7,
     "abilityVariants": 14,
-    "recruitmentAndRemovalCases": 5,
-    "streetSamplesBySettlement": {
-      "square": 1952,
-      "fern": 547,
-      "highmere": 1248,
-      "alder": 650,
-      "relief": 536
+    "cloudShadowMeasuredLuminance": {
+      "clear": 0.1527222301930557,
+      "cloud": 0.10521505567762587
     },
-    "blockedStreetSamples": 0,
-    "interactionRoutes": 108,
+    "oldInnSaveMigrated": true,
+    "mobileGrowthFooter": true,
     "waterJoinMaxGapMetres": 8.024994323728734e-06,
-    "waterLevels": {
-      "closed": 6.15,
-      "gateOpening": 5.281148628679867,
-      "restored": 4.684082789668458
-    },
-    "visibleCoverageViews": 10,
-    "desktopMobileLoading": true,
+    "missingVoices": 0,
     "browserErrors": []
   },
   "performance": {
     "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-    "nativeViewport": [
+    "viewport": [
       1440,
       900
     ],
-    "samples": [
+    "exploration": [
       {
         "area": "bridge",
-        "fps": 70.7,
-        "p95FrameMs": 14.3,
+        "fps": 72.1,
+        "p95FrameMs": 14.6,
+        "renderCpuMs": 6.19,
         "buffer": [
           1440,
           900
-        ],
-        "scale": 1
+        ]
       },
       {
         "area": "square",
-        "fps": 72.2,
-        "p95FrameMs": 14.2,
+        "fps": 72.0,
+        "p95FrameMs": 14.8,
+        "renderCpuMs": 4.23,
         "buffer": [
           1440,
           900
-        ],
-        "scale": 1
+        ]
       },
       {
         "area": "forest",
-        "fps": 71.8,
-        "p95FrameMs": 14.2,
+        "fps": 72.0,
+        "p95FrameMs": 14.8,
+        "renderCpuMs": 1.86,
         "buffer": [
           1440,
           900
-        ],
-        "scale": 1
+        ]
+      },
+      {
+        "area": "overworld",
+        "fps": 72.0,
+        "p95FrameMs": 15,
+        "renderCpuMs": 4.33,
+        "buffer": [
+          1440,
+          900
+        ]
+      },
+      {
+        "area": "shop",
+        "fps": 72.0,
+        "p95FrameMs": 15.3,
+        "renderCpuMs": 0.57,
+        "buffer": [
+          1440,
+          900
+        ]
       }
     ],
     "combat": {
-      "renderSamples": 856,
-      "renderCpuP95Ms": 9,
-      "renderCpuMaxMs": 50.2,
-      "battleEntryMs": 4.9,
-      "newShaderProgramsDuringCombat": 0,
+      "renderCpuP95Ms": 4.5,
+      "renderCpuMaxMs": 44.3,
+      "entryMs": 7.4,
+      "newPrograms": 0,
       "longFramesMs": []
     },
-    "singleFileReductionPercent": 74.8,
-    "scope": "Short local hardware-accelerated samples using actual render counts. Software WebGL and lower-powered devices remain slower."
+    "scope": "Short local native Chrome hardware-accelerated samples with actual rendered-frame counts. Lower-powered devices and software WebGL remain slower."
   },
-  "status": "Integrated playable regional release"
+  "status": "Playable documented regional arc through the northern assignment; later regions remain future content"
 }
