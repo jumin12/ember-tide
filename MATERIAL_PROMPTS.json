@@ -310,5 +310,22 @@
     },
     "variation": "Stable world-coordinate phase blending on natural terrain; material wear, geometry and palette variation on architecture",
     "geometry": "Three-dimensional terraced terrain, stairs, bridges, tree branches, foliage, miniature settlements and furnished interiors"
+  },
+  "v14Pass": {
+    "materials": {
+      "cobbleA": "Small uneven pale river limestone cobblestones, irregular rounded polygons and tiny weathered chips, warm chalk and gray sage with subtle moss in thin joints. Flat orthographic top-down square seamless material swatch, no perspective, no objects, no border, no directional light. Refined dense HD pixel art at consistent fine pixel density for a lush fantasy river village. No large repeating motif.",
+      "cobbleB": "Old plaza paving of small softly eroded gray limestone cobbles interspersed with narrow warm pale sandstone pieces, organic varying sizes, restrained moss and tiny leaf fragments. Flat orthographic top down square material swatch, no perspective, objects, borders or baked shadows. Dense elegant fine pixel art for fantasy river village, natural subtle tonal variation.",
+      "wallA": "River village dry masonry wall material, irregular varied hand-sized blocks of pale limestone with shaded gray-sage crevices, soft edge wear, tiny flecks of lichen, coursed but not a perfect grid. Straight orthographic front view covering square, no borders, no objects, no baked lighting. Dense beautiful high resolution pixel art, natural restrained palette.",
+      "plasterA": "Weathered warm ivory lime plaster surface with subtle sandy grain, faint hairline cracks and soft terracotta undertones, mottled natural finish, no bricks, no beams or objects. Perfect flat front view material swatch, no directional light or frame. Delicate dense high resolution pixel art fantasy timber-house wall.",
+      "earthA": "Lush forest floor material with warm umber soil, fine pebbles, scattered tiny brown leaves and patchy moss along irregular edges, no large stones or obvious repeated motifs. Flat orthographic top down square. Dense natural fine pixel art, no objects, no perspective, no baked lighting, muted earthy sage and brown palette.",
+      "grassA": "Thick varied meadow ground material with short fine grass clusters, clover leaves and uneven olive/sage/moss green patches, tiny golden flecks, subtle dark soil glimpses, no large flowers, no individual large bushes. Flat top down full square seamless texture swatch, dense premium high resolution pixel art, no perspective or directional shadows."
+    },
+    "loadingIllustrations": [
+      "Bren overlooking Brookstead",
+      "Soren studying by an inn window",
+      "An inn reading lounge and hearth",
+      "An ancient Elder Light remnant"
+    ],
+    "referencePolicy": "Approved Drive character portraits and storyboard illustrations only. No earlier generated art as reference."
   }
 }

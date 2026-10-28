@@ -342,7 +342,13 @@
     "interiorFloor": "elyndor/assets/source/pixellab-v7/images/v12-floor/000.png",
     "runeSeal": "elyndor/assets/source/pixellab-v7/images/v12-rune/000.png",
     "exitMarker": "elyndor/assets/source/pixellab-v7/images/v13-exit.png",
-    "saveSeal": "elyndor/assets/source/pixellab-v7/images/v13-save.png"
+    "saveSeal": "elyndor/assets/source/pixellab-v7/images/v13-save.png",
+    "cobbleA": "elyndor/assets/source/pixellab-v7/images/v14-cobbleA.png",
+    "cobbleB": "elyndor/assets/source/pixellab-v7/images/v14-cobbleB.png",
+    "wallA": "elyndor/assets/source/pixellab-v7/images/v14-wallA.png",
+    "plasterA": "elyndor/assets/source/pixellab-v7/images/v14-plasterA.png",
+    "earthA": "elyndor/assets/source/pixellab-v7/images/v14-earthA.png",
+    "grassA": "elyndor/assets/source/pixellab-v7/images/v14-grassA.png"
   },
   "materialKeys": [
     "cobble",
@@ -436,17 +442,33 @@
     "lysa": "elyndor/assets/source/pixellab-v7/images/hud-lysa-v10/002.png"
   },
   "loadingScreens": {
-    "brookstead": {
-      "file": "elyndor/assets/source/pixellab-v7/loading/brookstead.webp",
-      "name": "Brookstead \u00b7 The fountain terrace"
+    "bren": {
+      "file": "elyndor/assets/source/pixellab-v7/loading/v14-bren.webp",
+      "name": "Bren — A friend before a hero",
+      "illustration": true,
+      "provider": "PixelLab",
+      "reference": "Approved Google Drive concepts"
     },
-    "waterworks": {
-      "file": "elyndor/assets/source/pixellab-v7/loading/waterworks.webp",
-      "name": "Brookstead \u00b7 The waterworks"
+    "soren": {
+      "file": "elyndor/assets/source/pixellab-v7/loading/v14-soren.webp",
+      "name": "Soren — Questions worth crossing a world for",
+      "illustration": true,
+      "provider": "PixelLab",
+      "reference": "Approved Google Drive concepts"
     },
-    "overworld": {
-      "file": "elyndor/assets/source/pixellab-v7/loading/overworld.webp",
-      "name": "Valenne \u00b7 The roads between us"
+    "inn": {
+      "file": "elyndor/assets/source/pixellab-v7/loading/v14-inn.webp",
+      "name": "A light in the window",
+      "illustration": true,
+      "provider": "PixelLab",
+      "reference": "Approved Google Drive concepts"
+    },
+    "light": {
+      "file": "elyndor/assets/source/pixellab-v7/loading/v14-light.webp",
+      "name": "The Elder Lights",
+      "illustration": true,
+      "provider": "PixelLab",
+      "reference": "Approved Google Drive concepts"
     }
   }
 }

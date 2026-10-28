@@ -1,27 +1,23 @@
 {
-  "release": "elyndor-2026-10-28-native-combat-soundscape-v13",
+  "release": "elyndor-2026-10-28-voices-relief-atlas-diorama-v14",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 24584259,
-    "sha256": "249d4ec1d68e1a034d4ea7adb4be6944bf5a0016a9eee1bb21b6cf6ef84d076a",
+    "bytes": 24725469,
+    "sha256": "eef5c48f775afb9d29b266fb25110492bb1b076776777f5e51eb62711d4211b9",
     "offline": true
   },
   "changes": [
-    "Shift uses the same native eight-direction running cycles at 11 FPS instead of 9 and moves at 5.9 instead of 4.8 metres per second",
-    "Upright lit sprite cards, .48 metre party collision clearance and .5 metre route clearance keep characters out of fixtures and railings",
-    "Multiple authored gold floor exits, local-map markers and jade save circles; manual saving removed from the Escape menu",
-    "Inns redecorated as travelers lounges with hearths, tables, reading shelves and rest service",
-    "Ordinary interactions use small world speech bubbles while main-story conversations retain full portraits",
-    "New native party, Ascended, guard and Commander attacks and casting; reviewed full-staff poses and complete wolf tails",
-    "Approved horned/quill-maned Duskfang Wolf and bark-armored Briartusk Boar with eight-direction native gait and idle cycles",
-    "Contact-timed three-hit chains with melee approach/recovery and layered pooled 3D fire, smoke, ribbons, lightning, ice and wards",
-    "Thirteen original ElevenLabs music cues, ten environmental loops and thirty-five effect/foley clips alongside 248 recorded voice performances",
-    "Area/battle music, dialogue ducking, spatial water/hearth/weather ambience, running footsteps and independent mix controls",
-    "Location-local dense meadows, exact-coordinate construction caches, preaudited thresholds and warmed graphics reduce scene loading",
-    "Seven 256 by 256 PixelLab surface textures, two floor markers, stable material variation and new actual game loading photographs",
-    "Distinct miniature settlement plans, complete roofs, bridge clearances, stronger wooded groves and an overhead cloud layer",
-    "Overhead lighting, matched cloud shadows, rain streaks, wind gusts, fireflies, persistent weather and day/night"
+    "Original young-adult ElevenLabs party voices and all 248 directed dialogue/battle recordings regenerated with v3; supporting casting checked against portraits",
+    "All journey records, including automatic checkpoints, are written only inside inns; legacy records remain loadable",
+    "Slow native-color 3D pixel dissolution for defeated wildlife with fading grounded shadows, preallocated and prewarmed fragments",
+    "Melee approach, ranged stance steps, matched moving spell origins, flatter staging, upright silhouettes and full native combat poses",
+    "Measured sunlight, real shadow, cloud and night response on characters; coherent overhead world lighting and stronger shafts",
+    "Four PixelLab character/lore loading illustrations selected for character/world/interior context",
+    "Interactive 3D relief atlas with pan, rotate, zoom, discovered landmarks, tracking, mobile layout and persistent exploration fog",
+    "Six additional PixelLab ground/wall materials, stable blended variation, preserved batched material attributes and thicker lit vegetation",
+    "Continuous overworld river bed, with all destination routes and four bridge crossings verified",
+    "Immutable sprite atlas sources share GPU storage without redundant texture uploads; likely battle views and arena searches are warmed under loading"
   ],
   "art": {
     "generator": "PixelLab",
@@ -30,20 +26,26 @@
     "packedSpritePoses": 4878,
     "portraits": 38,
     "dedicatedHudPortraits": 5,
-    "worldImages": 49,
-    "newPixelLabSurfaceAndMarkerImages": 9,
-    "sourceCropWarnings": 0,
-    "loadingPhotographs": 3
+    "worldImages": 55,
+    "newMaterialSwatches": 6,
+    "loadingIllustrations": 4,
+    "loadingNativeResolution": [
+      688,
+      384
+    ],
+    "sourceCropWarnings": 0
   },
   "audio": {
     "provider": "ElevenLabs",
+    "speechModel": "eleven_v3",
     "recordedVoices": 248,
-    "voiceRoles": 12,
+    "voiceRoles": 16,
+    "originalPartyVoiceDesigns": 5,
     "soundAssets": 58,
     "music": 13,
     "ambience": 10,
     "effectsAndFoley": 35,
-    "bytes": 13120842,
+    "bytes": 13587673,
     "codec": "Ogg Opus",
     "offline": true,
     "embeddedCredential": false
@@ -55,7 +57,7 @@
         "pass": true
       },
       {
-        "name": "sprint-and-save",
+        "name": "sprint-save-dissolve",
         "pass": true
       },
       {
@@ -125,6 +127,14 @@
       {
         "name": "audio",
         "pass": true
+      },
+      {
+        "name": "lighting",
+        "pass": true
+      },
+      {
+        "name": "atlas-performance",
+        "pass": true
       }
     ],
     "sourceMatchesArtifact": true,
@@ -133,7 +143,6 @@
     "storyProgressionSteps": 45,
     "storyBattles": 6,
     "restoredLights": 4,
-    "ascensions": 2,
     "saveLoad": {
       "loaded": true,
       "gold": true,
@@ -143,17 +152,30 @@
       "region": true
     },
     "auditedLocations": 22,
-    "outdoorExits": 43,
-    "outdoorSaveCircles": 14,
+    "outdoorSaveCircles": 0,
+    "innSaveCircles": 2,
     "overworldRoutes": 14,
     "bridgeRoutes": 4,
     "allPartyDirectionCases": 40,
     "visibleCoverageViews": 12,
     "nativeAttackFamilies": 7,
     "abilityVariants": 14,
-    "cloudShadowMeasuredLuminance": {
-      "clear": 0.17758817861109605,
-      "cloud": 0.11966215910734954
+    "spriteLuminance": {
+      "sun": 0.1250731038930464,
+      "shadow": 0.017727607645307272,
+      "cloud": 0.06504824058377016,
+      "night": 0.011474268304085251
+    },
+    "atlas": {
+      "exploredBefore": 80,
+      "exploredAfter": 5542,
+      "knownLandmarks": 14,
+      "savedFog": true,
+      "mobile": {
+        "overflow": false,
+        "view": 490.921875,
+        "footer": true
+      }
     },
     "waterJoinMaxGapMetres": 8.024994323728734e-06
   },
@@ -165,12 +187,12 @@
     "nativeScenarios": [
       {
         "name": "bridge",
-        "fps": 71.9586237921773,
-        "p95FrameMs": 14.800000011920929,
-        "meanRenderCpuMs": 6.031597223132849,
-        "ticks": 292,
-        "calls": 1512.25,
-        "triangles": 3330257.5,
+        "fps": 71.98920161932801,
+        "p95FrameMs": 14.799999952316284,
+        "meanRenderCpuMs": 5.640277776246269,
+        "ticks": 290,
+        "calls": 1493.5902777777778,
+        "triangles": 3571846.1805555555,
         "buffer": [
           1440,
           900
@@ -180,17 +202,37 @@
           2048,
           2048
         ],
-        "programs": 131,
+        "programs": 133,
         "worldSerial": 3
       },
       {
         "name": "square",
-        "fps": 71.9910011248594,
-        "p95FrameMs": 14.900000035762787,
-        "meanRenderCpuMs": 4.053819444444445,
+        "fps": 71.71593493026693,
+        "p95FrameMs": 14.899999976158142,
+        "meanRenderCpuMs": 4.233101042928596,
+        "ticks": 288,
+        "calls": 753.5818815331011,
+        "triangles": 1385874.1637630663,
+        "buffer": [
+          1440,
+          900
+        ],
+        "scale": 1,
+        "shadow": [
+          2048,
+          2048
+        ],
+        "programs": 133,
+        "worldSerial": 4
+      },
+      {
+        "name": "forest",
+        "fps": 71.9640179910045,
+        "p95FrameMs": 14.699999988079071,
+        "meanRenderCpuMs": 1.4593749998344316,
         "ticks": 290,
-        "calls": 732.9548611111111,
-        "triangles": 1280829.9097222222,
+        "calls": 382.94444444444446,
+        "triangles": 834970.8888888889,
         "buffer": [
           1440,
           900
@@ -201,36 +243,16 @@
           2048
         ],
         "programs": 131,
-        "worldSerial": 4
-      },
-      {
-        "name": "forest",
-        "fps": 71.98380364460901,
-        "p95FrameMs": 14.799999952316284,
-        "meanRenderCpuMs": 1.4684027791437175,
-        "ticks": 291,
-        "calls": 379.68055555555554,
-        "triangles": 739534.3611111111,
-        "buffer": [
-          1440,
-          900
-        ],
-        "scale": 1,
-        "shadow": [
-          2048,
-          2048
-        ],
-        "programs": 129,
         "worldSerial": 5
       },
       {
         "name": "overworld",
-        "fps": 72.23194201449637,
+        "fps": 71.91729511019462,
         "p95FrameMs": 14.5,
-        "meanRenderCpuMs": 4.369550174289096,
+        "meanRenderCpuMs": 4.35868055642479,
         "ticks": 289,
-        "calls": 562.5432525951558,
-        "triangles": 1105019.0865051902,
+        "calls": 553.3194444444445,
+        "triangles": 1021823.6388888889,
         "buffer": [
           1440,
           900
@@ -240,17 +262,17 @@
           2048,
           2048
         ],
-        "programs": 145,
+        "programs": 147,
         "worldSerial": 6
       },
       {
         "name": "shop",
-        "fps": 72.23194201449637,
+        "fps": 71.99460040475508,
         "p95FrameMs": 15.300000011920929,
-        "meanRenderCpuMs": 0.5311418685121108,
-        "ticks": 290,
-        "calls": 49.9757785467128,
-        "triangles": 10127.951557093425,
+        "meanRenderCpuMs": 0.5916666676186852,
+        "ticks": 292,
+        "calls": 54.15277777777778,
+        "triangles": 10136.305555555555,
         "buffer": [
           1440,
           900
@@ -260,42 +282,61 @@
           2048,
           2048
         ],
-        "programs": 151,
+        "programs": 153,
         "worldSerial": 7
       }
     ],
     "combatRenderCPU": {
-      "samples": 856,
-      "p95": 3.699999988079071,
-      "max": 49.89999997615814,
-      "mean": 3.524883176678809
+      "samples": 858,
+      "p95": 3.900000035762787,
+      "max": 7.100000023841858,
+      "mean": 3.6505827525834658
     },
-    "combatEntryMs": 8.5,
+    "combatEntryMs": 0.6000000238418579,
     "newCombatPrograms": 0,
-    "sceneTransitionMs": {
-      "brookstead": 1150.6,
-      "fern": 617.8,
-      "depths": 413.9,
-      "highmere": 899.4,
-      "alder": 473.8,
-      "patrol": 457.1,
-      "alderRemnant": 1441.8,
-      "relief": 683,
-      "nearbySite": 465.9,
-      "snow": 350.9,
-      "fernClearing": 446.1,
-      "alderClearing": 349.9,
-      "reliefClearing": 403.9,
-      "siteClearing": 418.1,
-      "brookInn": 93.6,
-      "brookShop": 97.9,
-      "highmereInn": 94,
-      "highmereShop": 108.9,
-      "fernShop": 117.2,
-      "alderShop": 81.7,
-      "council": 80.5,
-      "archives": 80.3
+    "atlas": {
+      "openMs": 161.19999998807907,
+      "fps": 29.10616983123396,
+      "cpu": {
+        "p95": 0.6000000238418579,
+        "max": 0.800000011920929,
+        "mean": 0.4139534872631694
+      },
+      "frames": {
+        "p95": 35.10000002384186,
+        "max": 36.5,
+        "mean": 34.76117647044799
+      },
+      "webglContexts": 1,
+      "sceneObjects": 114,
+      "textures": 61,
+      "errors": [],
+      "pass": true
     },
-    "scope": "Measurements from native Chrome on the tested GPU; not a guarantee for all hardware."
+    "sceneTransitionMs": {
+      "brookstead": 1322.7,
+      "fern": 762.9,
+      "depths": 421.5,
+      "highmere": 926.9,
+      "alder": 467.3,
+      "patrol": 425.6,
+      "alderRemnant": 380.6,
+      "relief": 512.3,
+      "nearbySite": 479.1,
+      "snow": 355.6,
+      "fernClearing": 341.3,
+      "alderClearing": 510.8,
+      "reliefClearing": 395.1,
+      "siteClearing": 408.2,
+      "brookInn": 63,
+      "brookShop": 68.9,
+      "highmereInn": 47.8,
+      "highmereShop": 65.4,
+      "fernShop": 52.3,
+      "alderShop": 54.5,
+      "council": 49,
+      "archives": 47.7
+    },
+    "scope": "Measurements from native Chrome on the tested GPU; not a guarantee for other hardware."
   }
 }

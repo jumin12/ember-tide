@@ -17,7 +17,7 @@ def body_anchor(im):
  return top,bottom
 
 def pack_character(root,item,encode,audit,strict):
- name=item['id'];folder=root/item['folder'];metadata=json.loads((folder/'metadata.json').read_text());state=metadata['states'][0]
+ name=item['id'];folder=root/item['folder'];metadata=json.loads((folder/'metadata.json').read_text(encoding='utf-8'));state=metadata['states'][0]
  expected=item['characterId']
  if state['character']['id']!=expected:raise ValueError(f'Wrong source identity for {name}')
  rotations=state['frames']['rotations'];animations=copy.deepcopy(state['frames'].get('animations',{}))
@@ -137,7 +137,7 @@ def pack_character(root,item,encode,audit,strict):
  return meta,load(rotations['south']),records,missing
 
 def build_assets(root,encode,audit,warnings,strict):
- folder=root/'elyndor/assets/source/pixellab-v7';manifest=json.loads((folder/'manifest.json').read_text())
+ folder=root/'elyndor/assets/source/pixellab-v7';manifest=json.loads((folder/'manifest.json').read_text(encoding='utf-8'))
  assets={'artRevision':'pixellab-v7','images':{},'sprites':{},'portraits':{},'portraitFaces':{},'figures':{},'guide':{}}
  review={};missing={}
  for item in manifest['characters']:

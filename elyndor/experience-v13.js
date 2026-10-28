@@ -22,7 +22,7 @@ function extraLevelExits(){
  for(const p of LEVEL_THRESHOLDS[activeScene.key]??[])if(staticFree(p.x,p.z,.65))scenePortal('poiExit',p.x,p.z,p.label,{poi:activeScene.key});
  // A broad, directly reachable circle beside the arrival path. No expensive
  // speculative routes to distant service NPCs are needed during scene loading.
- let site=null;for(const radius of[5,4,3,2]){for(let i=0;i<16;i++){const angle=i*TAU/16,p={x:spawn.x+Math.cos(angle)*radius,z:spawn.z+Math.sin(angle)*radius};if(staticFree(p.x,p.z,.85)&&edgeFree(spawn,p,.52)&&interactables.every(o=>dist(o,p)>2.9)){site=p;break;}}if(site)break;}site??=safePoint(spawn,.85);createSaveCircle(site.x,site.z);
+ // Journey records belong to inns; outdoor roads carry exits only.
 }
 const buildBeforeFloorExits=buildWorld;
 buildWorld=function(...args){buildBeforeFloorExits(...args);if(activeScene.kind==='poi')extraLevelExits();else if(activeScene.kind==='interior'){for(const o of interactables.filter(o=>o.type==='interiorExit'))groundDecal(o.x,o.z,textures.exitMarker??textures.runeSeal,2.8,Math.PI);if(INTERIORS[activeScene.key].type==='inn')createSaveCircle(-9,5);}};

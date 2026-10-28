@@ -4,11 +4,11 @@ from PIL import Image
 import json,hashlib,shutil
 ROOT=Path(__file__).resolve().parents[2]
 SRC=ROOT/'elyndor/assets/source/pixellab-v7'
-OUT=ROOT/'output/elyndor/pixellab-v13'
-PRE=ROOT/'elyndor/previews/pixellab-v13';PRE.mkdir(parents=True,exist_ok=True)
-manifest=json.loads((SRC/'manifest.json').read_text())
-audit=json.loads((ROOT/'elyndor/assets/packed/audit.json').read_text())
-assets=json.loads((ROOT/'elyndor/assets/packed/assets.cache.json').read_text())
+OUT=ROOT/'output/elyndor/pixellab-v14'
+PRE=ROOT/'elyndor/previews/pixellab-v14';PRE.mkdir(parents=True,exist_ok=True)
+manifest=json.loads((SRC/'manifest.json').read_text(encoding='utf-8'))
+audit=json.loads((ROOT/'elyndor/assets/packed/audit.json').read_text(encoding='utf-8'))
+assets=json.loads((ROOT/'elyndor/assets/packed/assets.cache.json').read_text(encoding='utf-8'))
 assert not manifest['preview'] and not assets['pixelLabAudit']['incompleteClips']
 assert len(manifest['characters'])==41 and len(assets['sprites'])==42
 paths=[]
@@ -31,14 +31,15 @@ paths.extend(ROOT/'elyndor/audio'/name for name in ['catalog.json','manifest.jso
 sounds=json.loads((ROOT/'elyndor/audio/sound-manifest.json').read_text(encoding='utf-8'))
 paths.extend(ROOT/q['file'] for q in sounds['sounds'])
 paths.extend(ROOT/'elyndor/audio'/name for name in ['sound-catalog.json','sound-manifest.json'])
-for name in ['title','atlas']:shutil.copyfile(OUT/'navigation'/f'{name}.png',PRE/f'{name}.png')
+for name in ['title','atlas','atlas-start','atlas-mobile']:shutil.copyfile(OUT/'navigation'/f'{name}.png',PRE/f'{name}.png')
 paths.extend(PRE.glob('*.png'))
 paths.extend(p for p in (ROOT/'elyndor').iterdir() if p.suffix in ['.js','.css','.html'])
 helpers=['write-v13-release.py','regression-v13.py','navigation-v13.mjs','features-v13.mjs','traversal-v13.mjs','campaign-v13.mjs','events-v13.mjs','combat-v13.mjs','party-v13.mjs','hydraulics-v13.mjs','menus-v13.mjs','portraits-v13.mjs','capture-scenes-v13.mjs','loading-photos-v13.py','profile-v13.mjs','profile-combat-v13.mjs','audit-audio-v13.py','audit-soundtrack-v13.py','load-profile-v13.mjs','locations-v13.mjs','smoke-v13.mjs','soundtrack-v13.py','compress-soundtrack-v13.py','import-combat-v13.py','live-release-v13.mjs','write-v12-release.py','regression-v12.py','navigation-v12.mjs','features-v12.mjs','traversal-v12.mjs','campaign-v12.mjs','events-v12.mjs','combat-v12.mjs','party-v12.mjs','hydraulics-v12.mjs','menus-v12.mjs','portraits-v12.mjs','capture-scenes-v12.mjs','loading-photos-v12.py','profile-v12.mjs','profile-combat-v12.mjs','audit-audio-v12.py','voice_credentials.py','voice-catalog-v12.py','generate-voices-v12.py','compress-voices-v12.py','live-release-v12.mjs','write-v11-release.py','regression-v11.py','world-design-v11.mjs','party-v11.mjs','combat-v11.mjs','hydraulics-v11.mjs','view-loading-v11.mjs','audit-cities-v11.mjs','profile-combat-v11.mjs','capture-scenes-v11.mjs','loading-photos-v11.py','write-v10-release.py','regression-v10.py','town-events-v10.mjs','combat-v10.mjs','layout-v10.mjs','world-design-v10.mjs','write-v9-release.py','regression-v9.py','town-events-v9.mjs','combat-v9.mjs','ui-previews-v8.mjs','live-release-check.mjs','battle-layout-v8.mjs','build.py','build-v7.py','pixellab-pack.py','review-pixellab-character.py','audit-continuous.py','audit-runtime-sprites.py','prepare-pixellab-checkpoint.py','check-pixellab-checkpoint.py','web_game_playwright_client.mjs','smoke-actions.json','continuous-verify.mjs','inspect-town-v8.mjs','qa-town-v8.mjs','keys-combat-v8.mjs','surfaces-town-v8.mjs','four-edge-check.mjs','profile-town-v8.mjs','sustained-check.mjs']
+helpers += ['write-v14-release.py','regression-v14.py','navigation-v14.mjs','features-v14.mjs','traversal-v14.mjs','campaign-v14.mjs','events-v14.mjs','combat-v14.mjs','party-v14.mjs','hydraulics-v14.mjs','menus-v14.mjs','portraits-v14.mjs','capture-scenes-v14.mjs','profile-v14.mjs','profile-combat-v14.mjs','profile-atlas-v14.mjs','audit-audio-v14.py','audit-soundtrack-v14.py','load-profile-v14.mjs','locations-v14.mjs','smoke-v14.mjs','lighting-v14.mjs','live-release-v14.mjs','voice-design-v14.py','recast-voices-v14.py']
 paths.extend(ROOT/'elyndor/tools'/p for p in helpers)
 paths.extend(ROOT/p for p in ['index.html','three.vendor.js','README.md','ASSET_NOTES.md','PIXELLAB_REBUILD.md','MATERIAL_PROMPTS.json','release.json','.gitattributes','.gitignore','.nojekyll','tools/build.py'])
 artifact={'file':'index.html','bytes':(ROOT/'index.html').stat().st_size,'sha256':hashlib.sha256((ROOT/'index.html').read_bytes()).hexdigest(),'offline':True}
-checkpoint={'status':'Integrated playable release','referencePolicy':manifest['referencePolicy'],'characterFamilies':len(manifest['characters']),'runtimeFamilies':len(assets['sprites']),'nativeSelectedPoses':len(audit['poses']),'portraits':len(manifest['portraits']),'dedicatedHudPortraits':len(manifest['hudPortraits']),'worldImages':len(manifest['images']),'artifact':artifact,'incompleteClips':assets['pixelLabAudit']['incompleteClips'],'worldSystem':'Overworld with 14 points of interest and eight interiors','voiceClips':len(voice['lines']),'voiceProvider':voice['provider'],'soundAssets':len(sounds['sounds']),'soundProvider':sounds['provider']}
+checkpoint={'status':'Integrated playable release','referencePolicy':manifest['referencePolicy'],'characterFamilies':len(manifest['characters']),'runtimeFamilies':len(assets['sprites']),'nativeSelectedPoses':len(audit['poses']),'portraits':len(manifest['portraits']),'dedicatedHudPortraits':len(manifest['hudPortraits']),'worldImages':len(manifest['images']),'artifact':artifact,'incompleteClips':assets['pixelLabAudit']['incompleteClips'],'worldSystem':'Overworld with 14 points of interest and eight interiors','voiceModel':voice['model'],'voiceClips':len(voice['lines']),'voiceProvider':voice['provider'],'soundAssets':len(sounds['sounds']),'soundProvider':sounds['provider']}
 (SRC/'checkpoint.json').write_text(json.dumps(checkpoint,indent=2),encoding='utf-8')
 paths=sorted(set(paths));records=[]
 for p in paths:

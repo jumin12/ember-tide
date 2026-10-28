@@ -5,8 +5,7 @@ const battleArenaCache=new Map();
 prepareBattlefield=function(kind){
  const started=performance.now();if([player,...followers].map(a=>a.characterId??a.id.replace('Ascended','')).join(',')!==state.members.join(','))setupParty([player.x,player.z]);
  const origin={scene:state.scene,x:player.x,z:player.z,poses:[player,...followers].map(a=>({a,x:a.x,z:a.z,face:a.face,id:a.characterId??a.id})),hidden:[]},key=world.userData.serial+':'+Math.round(player.x/8)+','+Math.round(player.z/8)+':'+state.members.length;
- const usable=c=>{const party=state.members.map((_,i)=>battleFormation(c,i)),enemies=Array.from({length:3},(_,i)=>battleFormation(c,i,true)),all=[...party,...enemies];if(all.some(q=>!staticFree(q.x,q.z,.42)))return false;const heights=all.map(q=>heightAt(q.x,q.z));if(Math.max(...heights)-Math.min(...heights)>1.8)return false;return party.every(p=>enemies.every(e=>edgeFree(p,e,.35)));};
- let center=battleArenaCache.get(key);if(!center||!usable(center)){center=null;for(const r of[0,3,6,9,13,18,24,30]){for(let k=0;k<(r?12:1);k++){const a=k*TAU/12,c={x:player.x-3+Math.cos(a)*r,z:player.z-2+Math.sin(a)*r};if(usable(c)){center=c;break;}}if(center)break;}center??={x:player.x-3,z:player.z-2};battleArenaCache.set(key,center);}
+ const center=locateBattleCenter(player,state.members.length);
  for(const a of actors)if(a.npc&&a.mesh.visible&&Math.hypot(a.x-center.x,a.z-center.z)<22){origin.hidden.push(a);a.mesh.visible=a.shadow.visible=false;}
  const lights=[world.userData.lanterns[2],world.userData.lanterns[3]];for(let i=0;i<lights.length;i++){const l=lights[i];l.position.set(center.x+(i?-6:6),heightAt(center.x,center.z)+5,center.z+4);l.color.set(i?'#9ecfed':'#ffca83');l.intensity=i?12:18;l.distance=19;l.userData.power=l.intensity;}
  route=null;keys.clear();openWorldDebug.battles++;combatPacing.entryMs=performance.now()-started;return{origin,center,lights};

@@ -8,7 +8,7 @@ def compress(q):
  source=folder/'clips'/(q['key']+'.mp3');target=dest/(q['key']+'.ogg')
  if not source.exists():raise RuntimeError('Missing recorded line '+q['key'])
  if not target.exists() or source.stat().st_mtime>target.stat().st_mtime:
-  subprocess.run([ffmpeg,'-v','error','-y','-i',str(source),'-ac','1','-ar','24000','-c:a','libopus','-b:a','40k','-vbr','on','-application','voip',str(target)],check=True)
+  subprocess.run([ffmpeg,'-v','error','-y','-i',str(source),'-af','alimiter=limit=0.82:level=false','-ac','1','-ar','24000','-c:a','libopus','-b:a','40k','-vbr','on','-application','voip',str(target)],check=True)
  if target.stat().st_size<500:raise RuntimeError('Invalid encoded clip '+q['key'])
  return {**q,'file':target.relative_to(root).as_posix(),'bytes':target.stat().st_size}
 with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:lines=list(pool.map(compress,catalog['lines']))
