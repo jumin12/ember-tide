@@ -10,7 +10,7 @@ function releasePartyActor(a){
 setupParty=function(point){
  const ids=[...new Set(state.members)].filter(id=>CAST[id]&&assets.sprites[id]);if(!ids.length)ids.push('bren');state.members=ids;
  const old=[player,...followers].filter(a=>a&&actors.includes(a)&&a.mesh.parent===world),identity=a=>a.characterId??a.id.replace('Ascended','');
- const anchor=safePoint({x:point[0],z:point[1]},.45),keepTrail=old[0]&&identity(old[0])===ids[0]&&dist(old[0],anchor)<.6&&trail?.length>1;
+ const anchor=safePoint({x:point[0],z:point[1]},.52),keepTrail=old[0]&&identity(old[0])===ids[0]&&dist(old[0],anchor)<.6&&trail?.length>1;
  const next=ids.map((id,i)=>{
   let a=old.find(a=>identity(a)===id);
   if(a){partyRosterStats.retained++;if(!keepTrail){a.x=anchor.x;a.z=anchor.z;}}

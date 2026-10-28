@@ -27,7 +27,7 @@ document.addEventListener('keydown',e=>{if(!resultsPage)return;if(['Enter',' ','
 const sideCameraStats={angle:0,cinematic:0};
 updateCamera=function(dt,instant=false){
  if(!player||!camera)return;let look=V3(player.x,heightAt(player.x,player.z)+1,player.z-.8),offset=V3(1.2,25,36),fov=32;
- if(activeScene?.kind==='overworld'){offset.set(2,42,34);fov=37;look.y+=1;}
+ if(activeScene?.kind==='overworld'){offset.set(3,35,40);fov=35;look.y+=1;}
  if(activeScene?.kind==='interior'){look.set(0,.7,-.5);offset.set(.3,18,22);fov=34;}
  if(state.mode==='title'){const p=PLACES[state.scene]??POIS.brookstead.spawn;look.set(p[0],groundAt(p[0],p[1])+2,p[1]);offset.set(.8,28,43);fov=34;}
  if(battle){const c=battle.center;look.set(c.x,heightAt(c.x,c.z)+1.15,c.z);offset.set(0,6.3,27);fov=36;const cue=battle.animation;if(cue&&['cast','attack'].includes(cue.actor.action)&&state.settings.motion!==false&&cue.duration>.9){const p=clamp(cue.time/cue.duration,0,1),blend=Math.sin(p*Math.PI)**2,yaw=blend*(cue.actor.characterId==='lysa'?-.11:.075);offset.applyAxisAngle(V3(0,1,0),yaw);offset.multiplyScalar(1-blend*.07);look.x+=blend*(cue.actor.x-c.x)*.12;sideCameraStats.cinematic=blend;}}

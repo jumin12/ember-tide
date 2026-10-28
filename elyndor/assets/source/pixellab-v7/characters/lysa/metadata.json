@@ -368,6 +368,23 @@
               "Idle/animations/recoil-v7/west/frame_004.png",
               "Idle/animations/recoil-v7/west/frame_005.png"
             ]
+          },
+          "cast-v13-staff": {
+            "west": [
+              "Idle/animations/cast-v13-staff/west/frame_000.png",
+              "Idle/animations/cast-v13-staff/west/frame_001.png",
+              "Idle/animations/cast-v13-staff/west/frame_002.png",
+              "Idle/animations/cast-v13-staff/west/frame_003.png",
+              "Idle/animations/cast-v13-staff/west/frame_004.png",
+              "Idle/animations/cast-v13-staff/west/frame_005.png",
+              "Idle/animations/cast-v13-staff/west/frame_006.png",
+              "Idle/animations/cast-v13-staff/west/frame_007.png",
+              "Idle/animations/cast-v13-staff/west/frame_008.png",
+              "Idle/animations/cast-v13-staff/west/frame_009.png",
+              "Idle/animations/cast-v13-staff/west/frame_010.png",
+              "Idle/animations/cast-v13-staff/west/frame_011.png",
+              "Idle/animations/cast-v13-staff/west/frame_012.png"
+            ]
           }
         }
       }

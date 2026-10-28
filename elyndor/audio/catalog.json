@@ -1037,12 +1037,6 @@
       "role": "merchant"
     },
     {
-      "key": "2ae82377f6a793d15cac",
-      "speaker": "Innkeeper",
-      "text": "You look like you have come a long way. There is a warm bed and a meal waiting for you.",
-      "role": "merchant"
-    },
-    {
       "key": "6de8f6b41dff8df50ed5",
       "speaker": "bren",
       "text": "I’ll hold the line.",
@@ -1445,12 +1439,6 @@
       "role": "elder"
     },
     {
-      "key": "ae37068fb88745d8f55c",
-      "speaker": "The innkeeper",
-      "text": "A warm meal and a little rest can make the next road easier.",
-      "role": "merchant"
-    },
-    {
       "key": "61d0d19adba1e6d12d09",
       "speaker": "The potter",
       "text": "Take care on the road.",
@@ -1539,6 +1527,42 @@
       "speaker": "The quartermaster",
       "text": "I’m checking the joinery. An open path is worth more than a pile of spare timber.",
       "role": "merchant"
+    },
+    {
+      "key": "4c3824d0b17fac58b237",
+      "speaker": "Inn steward",
+      "text": "Welcome in. The hearth is warm, and there is supper on the table. Take a moment to rest.",
+      "role": "merchant"
+    },
+    {
+      "key": "60eb4a17b9d540de2247",
+      "speaker": "Apprentice",
+      "text": "We are checking the stock for travelers. Let the clerk know what you need.",
+      "role": "merchant"
+    },
+    {
+      "key": "fd40e849321a18604047",
+      "speaker": "Potter",
+      "text": "I make the jars for the salves. The clerk keeps the remedies stocked.",
+      "role": "healer"
+    },
+    {
+      "key": "089455454e441d3c84b0",
+      "speaker": "The innkeeper",
+      "text": "A warm meal and a little rest can make the next road easier.",
+      "role": "healer"
+    },
+    {
+      "key": "5b889b372f6b4dcddd9b",
+      "speaker": "Highmere outfitter",
+      "text": "A good blade and a full satchel. What can I help you find?",
+      "role": "healer"
+    },
+    {
+      "key": "f61214e5ffc090ab36f2",
+      "speaker": "Innkeeper",
+      "text": "Welcome in. The hearth is warm, and there is supper on the table. Take a moment to rest.",
+      "role": "healer"
     }
   ]
 }

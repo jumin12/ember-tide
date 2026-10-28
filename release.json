@@ -1,61 +1,67 @@
 {
-  "release": "elyndor-2026-10-27-overworld-voices-v12",
+  "release": "elyndor-2026-10-28-native-combat-soundscape-v13",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 11500746,
-    "sha256": "565f465ad2604555fb557f4504d22692fc0e490192893e0f9e44033525c9a32d",
+    "bytes": 24584259,
+    "sha256": "249d4ec1d68e1a034d4ea7adb4be6944bf5a0016a9eee1bb21b6cf6ef84d076a",
     "offline": true
   },
   "changes": [
-    "Traditional side-view battle staging with controlled cinematic spell dolly/yaw and textured 3D sigils",
-    "Two-page battle results and growth, transparent detailed portraits, true level-up stats and once-only rewards",
-    "Physical miniature overworld with 14 separately loaded settlements, ruins, trails and Light clearings",
-    "Eight complete inns, provision shops, council and archives interiors with real exterior return points",
-    "Front-facing downward town camera; all five party members run in eight native directions at a slower 9 FPS animation cadence",
-    "244 offline ElevenLabs dialogue and battle performances across 12 cast roles; no runtime synthesis or embedded credentials",
-    "Persistent natural day/night and automatic cloud, rain, thunder and snow weather with visible projected cloud shadows on scenery and sprites",
-    "Denser instanced planting, wind-matched grass shadows, overhead lighting, far ridgelines and four-edge diorama focus",
-    "Four new native PixelLab assets for water, clouds, interior stone and magic sigils",
-    "Visible marked location exits, interior entrances and atlas destinations; global interaction leakage removed",
-    "Broader navigable overworld hills, bridge deck/ground agreement, validated physical routes and corrected path graph step tests",
-    "Bounded shader retention and released unloaded geometry; recorded audio compressed to independently decodable Opus; new real game loading photographs"
+    "Shift uses the same native eight-direction running cycles at 11 FPS instead of 9 and moves at 5.9 instead of 4.8 metres per second",
+    "Upright lit sprite cards, .48 metre party collision clearance and .5 metre route clearance keep characters out of fixtures and railings",
+    "Multiple authored gold floor exits, local-map markers and jade save circles; manual saving removed from the Escape menu",
+    "Inns redecorated as travelers lounges with hearths, tables, reading shelves and rest service",
+    "Ordinary interactions use small world speech bubbles while main-story conversations retain full portraits",
+    "New native party, Ascended, guard and Commander attacks and casting; reviewed full-staff poses and complete wolf tails",
+    "Approved horned/quill-maned Duskfang Wolf and bark-armored Briartusk Boar with eight-direction native gait and idle cycles",
+    "Contact-timed three-hit chains with melee approach/recovery and layered pooled 3D fire, smoke, ribbons, lightning, ice and wards",
+    "Thirteen original ElevenLabs music cues, ten environmental loops and thirty-five effect/foley clips alongside 248 recorded voice performances",
+    "Area/battle music, dialogue ducking, spatial water/hearth/weather ambience, running footsteps and independent mix controls",
+    "Location-local dense meadows, exact-coordinate construction caches, preaudited thresholds and warmed graphics reduce scene loading",
+    "Seven 256 by 256 PixelLab surface textures, two floor markers, stable material variation and new actual game loading photographs",
+    "Distinct miniature settlement plans, complete roofs, bridge clearances, stronger wooded groves and an overhead cloud layer",
+    "Overhead lighting, matched cloud shadows, rain streaks, wind gusts, fireflies, persistent weather and day/night"
   ],
   "art": {
     "generator": "PixelLab",
-    "nativeDesignFamilies": 41,
-    "spriteFamilies": 42,
-    "packedSpritePoses": 4917,
-    "portraits": 38,
-    "dedicatedHudPortraits": 5,
-    "worldImages": 47,
-    "materials": 15,
-    "logicalTileSizes": [
-      64,
-      128
-    ],
-    "runtimeTileSize": 512,
-    "paletteColors": 60,
-    "incompleteClips": 0,
-    "previousGameArtworkUsed": false,
-    "prompts": "MATERIAL_PROMPTS.json",
-    "combatTextures": 4,
-    "loadingPhotographs": 3,
     "nativeSelectedFamilies": 41,
     "runtimeFamilies": 42,
-    "newPixelLabImages": 4
+    "packedSpritePoses": 4878,
+    "portraits": 38,
+    "dedicatedHudPortraits": 5,
+    "worldImages": 49,
+    "newPixelLabSurfaceAndMarkerImages": 9,
+    "sourceCropWarnings": 0,
+    "loadingPhotographs": 3
   },
-  "voice": {
+  "audio": {
     "provider": "ElevenLabs",
-    "clips": 244,
-    "roles": 12,
-    "codec": "Ogg Opus mono 40 kbps",
-    "bytes": 3501718,
+    "recordedVoices": 248,
+    "voiceRoles": 12,
+    "soundAssets": 58,
+    "music": 13,
+    "ambience": 10,
+    "effectsAndFoley": 35,
+    "bytes": 13120842,
+    "codec": "Ogg Opus",
     "offline": true,
     "embeddedCredential": false
   },
   "validation": {
     "checks": [
+      {
+        "name": "locations",
+        "pass": true
+      },
+      {
+        "name": "sprint-and-save",
+        "pass": true
+      },
+      {
+        "name": "soundtrack",
+        "pass": true
+      },
       {
         "name": "navigation",
         "pass": true
@@ -123,8 +129,7 @@
     ],
     "sourceMatchesArtifact": true,
     "nativeSpritePixelAudit": true,
-    "sourceCropWarnings": 0,
-    "decodedAudioClips": 244,
+    "decodedAudioAssets": 306,
     "storyProgressionSteps": 45,
     "storyBattles": 6,
     "restoredLights": 4,
@@ -137,7 +142,9 @@
       "lights": true,
       "region": true
     },
-    "locationsAndInteriors": 22,
+    "auditedLocations": 22,
+    "outdoorExits": 43,
+    "outdoorSaveCircles": 14,
     "overworldRoutes": 14,
     "bridgeRoutes": 4,
     "allPartyDirectionCases": 40,
@@ -145,81 +152,150 @@
     "nativeAttackFamilies": 7,
     "abilityVariants": 14,
     "cloudShadowMeasuredLuminance": {
-      "clear": 0.1527222301930557,
-      "cloud": 0.10521505567762587
+      "clear": 0.17758817861109605,
+      "cloud": 0.11966215910734954
     },
-    "oldInnSaveMigrated": true,
-    "mobileGrowthFooter": true,
-    "waterJoinMaxGapMetres": 8.024994323728734e-06,
-    "missingVoices": 0,
-    "browserErrors": []
+    "waterJoinMaxGapMetres": 8.024994323728734e-06
   },
   "performance": {
-    "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-    "viewport": [
-      1440,
-      900
-    ],
-    "exploration": [
+    "device": {
+      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "software": false
+    },
+    "nativeScenarios": [
       {
-        "area": "bridge",
-        "fps": 72.1,
-        "p95FrameMs": 14.6,
-        "renderCpuMs": 6.19,
+        "name": "bridge",
+        "fps": 71.9586237921773,
+        "p95FrameMs": 14.800000011920929,
+        "meanRenderCpuMs": 6.031597223132849,
+        "ticks": 292,
+        "calls": 1512.25,
+        "triangles": 3330257.5,
         "buffer": [
           1440,
           900
-        ]
+        ],
+        "scale": 1,
+        "shadow": [
+          2048,
+          2048
+        ],
+        "programs": 131,
+        "worldSerial": 3
       },
       {
-        "area": "square",
-        "fps": 72.0,
-        "p95FrameMs": 14.8,
-        "renderCpuMs": 4.23,
+        "name": "square",
+        "fps": 71.9910011248594,
+        "p95FrameMs": 14.900000035762787,
+        "meanRenderCpuMs": 4.053819444444445,
+        "ticks": 290,
+        "calls": 732.9548611111111,
+        "triangles": 1280829.9097222222,
         "buffer": [
           1440,
           900
-        ]
+        ],
+        "scale": 1,
+        "shadow": [
+          2048,
+          2048
+        ],
+        "programs": 131,
+        "worldSerial": 4
       },
       {
-        "area": "forest",
-        "fps": 72.0,
-        "p95FrameMs": 14.8,
-        "renderCpuMs": 1.86,
+        "name": "forest",
+        "fps": 71.98380364460901,
+        "p95FrameMs": 14.799999952316284,
+        "meanRenderCpuMs": 1.4684027791437175,
+        "ticks": 291,
+        "calls": 379.68055555555554,
+        "triangles": 739534.3611111111,
         "buffer": [
           1440,
           900
-        ]
+        ],
+        "scale": 1,
+        "shadow": [
+          2048,
+          2048
+        ],
+        "programs": 129,
+        "worldSerial": 5
       },
       {
-        "area": "overworld",
-        "fps": 72.0,
-        "p95FrameMs": 15,
-        "renderCpuMs": 4.33,
+        "name": "overworld",
+        "fps": 72.23194201449637,
+        "p95FrameMs": 14.5,
+        "meanRenderCpuMs": 4.369550174289096,
+        "ticks": 289,
+        "calls": 562.5432525951558,
+        "triangles": 1105019.0865051902,
         "buffer": [
           1440,
           900
-        ]
+        ],
+        "scale": 1,
+        "shadow": [
+          2048,
+          2048
+        ],
+        "programs": 145,
+        "worldSerial": 6
       },
       {
-        "area": "shop",
-        "fps": 72.0,
-        "p95FrameMs": 15.3,
-        "renderCpuMs": 0.57,
+        "name": "shop",
+        "fps": 72.23194201449637,
+        "p95FrameMs": 15.300000011920929,
+        "meanRenderCpuMs": 0.5311418685121108,
+        "ticks": 290,
+        "calls": 49.9757785467128,
+        "triangles": 10127.951557093425,
         "buffer": [
           1440,
           900
-        ]
+        ],
+        "scale": 1,
+        "shadow": [
+          2048,
+          2048
+        ],
+        "programs": 151,
+        "worldSerial": 7
       }
     ],
-    "combat": {
-      "renderCpuP95Ms": 4.5,
-      "renderCpuMaxMs": 44.3,
-      "entryMs": 7.4,
-      "newPrograms": 0,
-      "longFramesMs": []
+    "combatRenderCPU": {
+      "samples": 856,
+      "p95": 3.699999988079071,
+      "max": 49.89999997615814,
+      "mean": 3.524883176678809
     },
-    "scope": "Short local native Chrome hardware-accelerated samples with actual rendered-frame counts. Lower-powered devices and software WebGL remain slower."
-  },
-  "status": "Playable documented regional arc through the northern assignment; later regions remain future content"
+    "combatEntryMs": 8.5,
+    "newCombatPrograms": 0,
+    "sceneTransitionMs": {
+      "brookstead": 1150.6,
+      "fern": 617.8,
+      "depths": 413.9,
+      "highmere": 899.4,
+      "alder": 473.8,
+      "patrol": 457.1,
+      "alderRemnant": 1441.8,
+      "relief": 683,
+      "nearbySite": 465.9,
+      "snow": 350.9,
+      "fernClearing": 446.1,
+      "alderClearing": 349.9,
+      "reliefClearing": 403.9,
+      "siteClearing": 418.1,
+      "brookInn": 93.6,
+      "brookShop": 97.9,
+      "highmereInn": 94,
+      "highmereShop": 108.9,
+      "fernShop": 117.2,
+      "alderShop": 81.7,
+      "council": 80.5,
+      "archives": 80.3
+    },
+    "scope": "Measurements from native Chrome on the tested GPU; not a guarantee for all hardware."
+  }
 }

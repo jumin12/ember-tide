@@ -35,13 +35,16 @@ def main():
  voice_file=ROOT/'elyndor/audio/manifest.json'
  if voice_file.exists():
   voice=json.loads(voice_file.read_text(encoding='utf-8'));assets['voices']={q['speaker'].strip().lower()+'|'+' '.join(q['text'].split()):'data:audio/ogg;base64,'+base64.b64encode((ROOT/q['file']).read_bytes()).decode() for q in voice['lines']};assets['voiceProvider']='ElevenLabs'
+ sound_file=ROOT/'elyndor/audio/sound-manifest.json'
+ if sound_file.exists():
+  sounds=json.loads(sound_file.read_text(encoding='utf-8'));assets['sounds']={q['id']:'data:audio/ogg;base64,'+base64.b64encode((ROOT/q['file']).read_bytes()).decode() for q in sounds['sounds']};assets['soundProvider']='ElevenLabs'
  parts={
-  'STYLE':read('style.css')+'\n'+read('visual-v7.css')+'\n'+read('town-v8.css')+'\n'+read('loading-v11.css')+'\n'+read('journey-v12.css'),
+  'STYLE':read('style.css')+'\n'+read('visual-v7.css')+'\n'+read('town-v8.css')+'\n'+read('loading-v11.css')+'\n'+read('journey-v12.css')+'\n'+read('experience-v13.css'),
   'THREE':(ROOT/'three.vendor.js').read_text(encoding='utf-8'),'ASSETS':json.dumps(assets,separators=(',',':')),
   'DATA':read('data.js'),'WORLD':'\n'.join(read(n) for n in ['world.js','detail.js','scene-polish.js','water.js']),
   'GAME':'\n'.join(read(n) for n in ['game.js','movement.js','combat.js']),'UI':read('ui.js'),
   'OPEN_WORLD':read('open-world.js'),
-  'POLISH':'\n'.join(read(n) for n in ['polish.js','scenery.js','render-v4.js','review-v5.js','visual-v7.js','town-v8.js','town-events.js','world-design.js','party-v11.js','effects-v11.js','combat-v11.js','placement-v11.js','visibility-v11.js','hydraulics-v11.js','loading-v11.js','journey-v12.js','interiors-v12.js','battle-v12.js','weather-v12.js','voices-v12.js'])}
+  'POLISH':'\n'.join(read(n) for n in ['polish.js','scenery.js','render-v4.js','review-v5.js','visual-v7.js','town-v8.js','town-events.js','world-design.js','party-v11.js','effects-v11.js','combat-v11.js','placement-v11.js','visibility-v11.js','hydraulics-v11.js','loading-v11.js','journey-v12.js','interiors-v12.js','battle-v12.js','weather-v12.js','voices-v12.js','level-layout-v13.js','experience-v13.js','audio-v13.js','environment-v13.js','battle-v13.js','performance-v13.js','overworld-v13.js'])}
  shots=manifest.get('loadingScreens',{})
  if FINAL and len(shots)<3:raise ValueError('Three actual in-game loading screenshots are required')
  for q in shots.values():

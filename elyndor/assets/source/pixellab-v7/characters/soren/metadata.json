@@ -446,6 +446,40 @@
               "Idle/animations/attack-v7/west/frame_007.png",
               "Idle/animations/attack-v7/west/frame_008.png"
             ]
+          },
+          "cast-v13-staff": {
+            "east": [
+              "Idle/animations/cast-v13-staff/east/frame_000.png",
+              "Idle/animations/cast-v13-staff/east/frame_001.png",
+              "Idle/animations/cast-v13-staff/east/frame_002.png",
+              "Idle/animations/cast-v13-staff/east/frame_003.png",
+              "Idle/animations/cast-v13-staff/east/frame_004.png",
+              "Idle/animations/cast-v13-staff/east/frame_005.png",
+              "Idle/animations/cast-v13-staff/east/frame_006.png",
+              "Idle/animations/cast-v13-staff/east/frame_007.png",
+              "Idle/animations/cast-v13-staff/east/frame_008.png",
+              "Idle/animations/cast-v13-staff/east/frame_009.png",
+              "Idle/animations/cast-v13-staff/east/frame_010.png",
+              "Idle/animations/cast-v13-staff/east/frame_011.png",
+              "Idle/animations/cast-v13-staff/east/frame_012.png"
+            ]
+          },
+          "cast-v13-staff-68511ac9": {
+            "west": [
+              "Idle/animations/cast-v13-staff-68511ac9/west/frame_000.png",
+              "Idle/animations/cast-v13-staff-68511ac9/west/frame_001.png",
+              "Idle/animations/cast-v13-staff-68511ac9/west/frame_002.png",
+              "Idle/animations/cast-v13-staff-68511ac9/west/frame_003.png",
+              "Idle/animations/cast-v13-staff-68511ac9/west/frame_004.png",
+              "Idle/animations/cast-v13-staff-68511ac9/west/frame_005.png",
+              "Idle/animations/cast-v13-staff-68511ac9/west/frame_006.png",
+              "Idle/animations/cast-v13-staff-68511ac9/west/frame_007.png",
+              "Idle/animations/cast-v13-staff-68511ac9/west/frame_008.png",
+              "Idle/animations/cast-v13-staff-68511ac9/west/frame_009.png",
+              "Idle/animations/cast-v13-staff-68511ac9/west/frame_010.png",
+              "Idle/animations/cast-v13-staff-68511ac9/west/frame_011.png",
+              "Idle/animations/cast-v13-staff-68511ac9/west/frame_012.png"
+            ]
           }
         }
       }

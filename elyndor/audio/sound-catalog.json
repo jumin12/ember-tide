@@ -1,0 +1,688 @@
+{
+  "provider": "ElevenLabs",
+  "tasks": [
+    {
+      "id": "theme-title",
+      "kind": "music",
+      "endpoint": "music",
+      "request": {
+        "prompt": "Original instrumental fantasy JRPG soundtrack. Warm expressive piano, delicate harp, lyrical chamber strings and solo flute. Sunlight over a terraced river town and a thoughtful journey. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
+        "music_length_ms": 64000,
+        "force_instrumental": true,
+        "model_id": "music_v1"
+      }
+    },
+    {
+      "id": "theme-overworld",
+      "kind": "music",
+      "endpoint": "music",
+      "request": {
+        "prompt": "Original instrumental fantasy JRPG soundtrack. A hopeful adventurous travel theme, lyrical strings and French horn, rippling harp and woodwinds, light timpani. 104 BPM, D Dorian, a memorable rising D E G A B melody. Vast green valleys, rivers and clouds. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
+        "music_length_ms": 64000,
+        "force_instrumental": true,
+        "model_id": "music_v1"
+      }
+    },
+    {
+      "id": "theme-town",
+      "kind": "music",
+      "endpoint": "music",
+      "request": {
+        "prompt": "Original instrumental fantasy JRPG soundtrack. Intimate warm village chamber music, wooden flute, plucked acoustic guitar, pizzicato strings, gentle hand percussion and soft violin melody. 92 BPM, D Dorian. Busy peaceful river town, markets and gardens. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
+        "music_length_ms": 64000,
+        "force_instrumental": true,
+        "model_id": "music_v1"
+      }
+    },
+    {
+      "id": "theme-forest",
+      "kind": "music",
+      "endpoint": "music",
+      "request": {
+        "prompt": "Original instrumental fantasy JRPG soundtrack. Peaceful woodland village theme, alto flute, soft marimba, pizzicato cello, muted hand drum and delicate strings. 88 BPM, D Dorian, warm human connection and natural beauty. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
+        "music_length_ms": 64000,
+        "force_instrumental": true,
+        "model_id": "music_v1"
+      }
+    },
+    {
+      "id": "theme-capital",
+      "kind": "music",
+      "endpoint": "music",
+      "request": {
+        "prompt": "Original instrumental fantasy JRPG soundtrack. Elegant hopeful royal-city chamber theme, strings, oboe, harp and expressive piano with restrained French horn. 96 BPM, dignified and compassionate, open courtyards and people helping one another. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
+        "music_length_ms": 64000,
+        "force_instrumental": true,
+        "model_id": "music_v1"
+      }
+    },
+    {
+      "id": "theme-ruins",
+      "kind": "music",
+      "endpoint": "music",
+      "request": {
+        "prompt": "Original instrumental fantasy JRPG soundtrack. Mysterious ancient open-air ruins under trees. Low strings, glassy celesta, bass clarinet, quiet harp harmonics and sparse low percussion. D Dorian, a sense of listening and discovery, never horror. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
+        "music_length_ms": 64000,
+        "force_instrumental": true,
+        "model_id": "music_v1"
+      }
+    },
+    {
+      "id": "theme-interior",
+      "kind": "music",
+      "endpoint": "music",
+      "request": {
+        "prompt": "Original instrumental fantasy JRPG soundtrack. A welcoming travelers lounge and shop theme: intimate nylon guitar, soft piano, clarinet and warm cello. Relaxed 80 BPM, fireside calm and a beautiful unhurried melody. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
+        "music_length_ms": 64000,
+        "force_instrumental": true,
+        "model_id": "music_v1"
+      }
+    },
+    {
+      "id": "theme-snow",
+      "kind": "music",
+      "endpoint": "music",
+      "request": {
+        "prompt": "Original instrumental fantasy JRPG soundtrack. Quiet snowbound mountain journey, soft felt piano, glassy bells, lyrical cello and suspended strings. 84 BPM, cold clear air, resolve and hope rather than sadness. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
+        "music_length_ms": 64000,
+        "force_instrumental": true,
+        "model_id": "music_v1"
+      }
+    },
+    {
+      "id": "theme-battle",
+      "kind": "music",
+      "endpoint": "music",
+      "request": {
+        "prompt": "Original instrumental fantasy JRPG soundtrack. An exhilarating stylish turn-based RPG battle theme, propulsive staccato strings, powerful low brass, agile solo violin and French horn, punchy orchestral percussion. 144 BPM, D minor, intricate heroic melody and urgent rhythmic drive. Energetic from the start, no long introduction. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
+        "music_length_ms": 64000,
+        "force_instrumental": true,
+        "model_id": "music_v1"
+      }
+    },
+    {
+      "id": "theme-boss",
+      "kind": "music",
+      "endpoint": "music",
+      "request": {
+        "prompt": "Original instrumental fantasy JRPG soundtrack. An intense epic JRPG boss battle, rapid strings, heavy brass answering a soaring violin melody, thunderous orchestral drums and piano ostinato. 152 BPM, D minor, dramatic shifting harmony, emotional confrontation and defiant hope. Strong immediate groove, no slow introduction. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
+        "music_length_ms": 64000,
+        "force_instrumental": true,
+        "model_id": "music_v1"
+      }
+    },
+    {
+      "id": "theme-victory",
+      "kind": "music",
+      "endpoint": "music",
+      "request": {
+        "prompt": "Original instrumental fantasy JRPG soundtrack. A concise triumphant orchestral victory flourish: bright brass, flowing strings, harp and a satisfying warm final cadence, joyful and elegant. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
+        "music_length_ms": 8000,
+        "force_instrumental": true,
+        "model_id": "music_v1"
+      }
+    },
+    {
+      "id": "theme-defeat",
+      "kind": "music",
+      "endpoint": "music",
+      "request": {
+        "prompt": "Original instrumental fantasy JRPG soundtrack. A concise gentle orchestral setback cue: soft piano, low strings and a suspended hopeful final chord, no dramatic horror. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
+        "music_length_ms": 8000,
+        "force_instrumental": true,
+        "model_id": "music_v1"
+      }
+    },
+    {
+      "id": "theme-rest",
+      "kind": "music",
+      "endpoint": "music",
+      "request": {
+        "prompt": "Original instrumental fantasy JRPG soundtrack. A delicate warm harp and celesta rest-and-recovery flourish, soft ascending notes and peaceful resolution. Beautiful detailed acoustic orchestration, clean balanced studio sound. No vocals, no choir, no speech. A cyclical continuous arrangement suitable for a game loop, restrained beginning and ending.",
+        "music_length_ms": 5000,
+        "force_instrumental": true,
+        "model_id": "music_v1"
+      }
+    },
+    {
+      "id": "step-stone",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "One pair of soft leather boot footsteps running over old stone paving, dry natural foley, close perspective, no voice or music.",
+        "duration_seconds": 0.7,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "step-earth",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "One single leather boot footfall on soft dry woodland earth, a quiet crunch of tiny grit and leaves, close natural foley, no voice.",
+        "duration_seconds": 0.5,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "step-wood",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "One single soft leather boot footfall on a solid timber floor, warm short wooden knock and slight leather shuffle, no creaking rhythm, no voice.",
+        "duration_seconds": 0.5,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ui-move",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A tiny elegant muted wooden tick with a delicate glass overtone, single understated fantasy game menu cursor movement, no music.",
+        "duration_seconds": 0.5,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ui-confirm",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A short elegant crystalline two-note confirmation chime with a soft warm attack, premium fantasy RPG interface, no speech.",
+        "duration_seconds": 0.6,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ui-cancel",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A quiet descending wooden and glass interface click, concise premium fantasy game back action.",
+        "duration_seconds": 0.5,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ui-open",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A soft parchment unfurl and a tiny warm metallic glint, elegant fantasy menu opening, concise and gentle.",
+        "duration_seconds": 0.7,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ui-save",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A beautiful soft rising crystal flourish with a warm resonant finish, recording a journey at a fantasy save circle, magical but understated.",
+        "duration_seconds": 2.4,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "item",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A gentle glass bottle uncork and a small sparkling restorative shimmer, premium RPG healing item.",
+        "duration_seconds": 1.1,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "equip",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A clean leather strap adjustment and light metal clasp clicking shut, concise fantasy equipment foley.",
+        "duration_seconds": 0.8,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "chest",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A small old wooden treasure chest opening, warm wood creak, latch click and a delicate discovery glint.",
+        "duration_seconds": 1.6,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "discovery",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A short beautiful bright harp and bell discovery flourish, elegant fantasy adventure, no speech.",
+        "duration_seconds": 2.1,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "blade-swing",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A single powerful clean longsword whoosh, tight low wind cutting to a crisp metallic edge, cinematic fantasy combat, no hit or voices.",
+        "duration_seconds": 0.65,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "blade-impact",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A sharp dramatic fantasy sword contact, ringing steel layered with a weighty dry impact and a short magical shimmer, no gore, no voice.",
+        "duration_seconds": 0.8,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "heavy-impact",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A forceful deep armored impact, a short stone and metal crack with a cinematic bass thump and tiny debris, no gore or voice.",
+        "duration_seconds": 1,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "bow",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A taut bowstring drawn and released in one clean elastic twang followed by a fast arrow air-whistle, natural detailed foley.",
+        "duration_seconds": 0.8,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "arrow-impact",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A crisp arrow impact with a tight wooden snap, small thud and a short bright magical ping, no gore or voice.",
+        "duration_seconds": 0.65,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "arcane",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A powerful compact magical energy pulse, a deep resonant charge rising into a crisp luminous crystalline burst with an airy tail, cinematic and clean.",
+        "duration_seconds": 1.5,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "fire-charge",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A fierce magical flame gathering in a palm, a quick rising hot-air rush and a tight ignition crack, no ambient fire bed or speech.",
+        "duration_seconds": 0.9,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "fire-impact",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A spectacular concentrated fantasy fire blast, powerful ignition punch with roaring flame and fast fading crackling embers, no voices.",
+        "duration_seconds": 1.8,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ice-impact",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "An explosive eruption of luminous ice crystals, sharp glassy crystalline cracks, deep cold impact and tiny delicate falling shards, no voices.",
+        "duration_seconds": 1.8,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "heal",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A beautiful swirling healing spell, soft airy rising shimmer, layered crystalline bells and a warm gentle resolving hum, no voices.",
+        "duration_seconds": 1.8,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ward",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "An elegant protective magical barrier forming, deep smooth tonal swell, clear resonant glass ring and a soft shimmering tail, no voice.",
+        "duration_seconds": 1.6,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ascension",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "An extraordinary heroic armor transformation, rising crystalline energy, layered metallic armor locks, a huge radiant bass impact and glittering clear resonance, no vocals.",
+        "duration_seconds": 3,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "miss",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A quick airy sword dodge whoosh passing harmlessly by, short soft cloth flutter, no impact or voice.",
+        "duration_seconds": 0.6,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "monster-wolf",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A short powerful wolf snarl and bark, animal breath and natural throat texture, tense but not supernatural or demonic.",
+        "duration_seconds": 1,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "monster-boar",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A short deep wild-boar grunt, snort and forceful exhale, natural animal sound, no monstrous electronic voice.",
+        "duration_seconds": 1,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "monster-hit",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A brief natural distressed animal yelp and breath after a nonlethal impact, no gore, no prolonged suffering.",
+        "duration_seconds": 0.7,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "enemy-swing",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A heavy wooden weapon whipping through the air, an intense short whoosh, no impact or voice.",
+        "duration_seconds": 0.7,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "gate",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "An old timber sluice crank turning with rusty gear strain, then a decisive wooden release and heavy latch clunk, no water bed.",
+        "duration_seconds": 3.2,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "water-release",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A river sluice releasing built-up water, deep rushing surge blooming into a smooth flowing current, natural clear water, no voice.",
+        "duration_seconds": 3,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "repair",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "Careful cooperative repair foley, wood settling and a few small tool clicks followed by a gentle magical stabilizing hum, no hammer rhythm or voice.",
+        "duration_seconds": 2,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "light-restore",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A beautiful restrained fantasy crystal restoration, layered glass harmonics clearing into a steady warm luminous tone and a soft final sparkle, no voices.",
+        "duration_seconds": 3,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "thunder",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A single distant natural thunder crack followed by a broad low rolling rumble across a valley, cinematic but realistic, no rain bed.",
+        "duration_seconds": 5,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "sheep",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "One soft friendly sheep bleat, close and natural, no voices or background music.",
+        "duration_seconds": 1,
+        "loop": false,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ambient-forest",
+      "kind": "ambience",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "Quiet lush forest ambience, layered distant songbirds, subtle leaves rustling in a mild breeze and tiny insects, no voices or music.",
+        "duration_seconds": 15,
+        "loop": true,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ambient-town",
+      "kind": "ambience",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "Quiet friendly village ambience, distant indistinct crowd murmur without intelligible words, a little wooden activity and birds far away, no music.",
+        "duration_seconds": 15,
+        "loop": true,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ambient-river",
+      "kind": "ambience",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "Beautiful clear shallow river flowing continuously over natural stones, soft layered water movement with delicate close detail, no bird or voices.",
+        "duration_seconds": 14,
+        "loop": true,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ambient-waterfall",
+      "kind": "ambience",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A broad gentle mill waterfall flowing continuously into a small river pool, textured rushing water and soft bubbling foam, no voices.",
+        "duration_seconds": 14,
+        "loop": true,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ambient-rain",
+      "kind": "ambience",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "Steady natural rain falling on grass and leaves with sparse tiny stone splashes, soft detailed stereo atmosphere, no thunder or voices.",
+        "duration_seconds": 16,
+        "loop": true,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ambient-wind",
+      "kind": "ambience",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A gentle natural wind through tree leaves and tall grass, smooth changing gusts with no tonal whistle, no voices or birds.",
+        "duration_seconds": 16,
+        "loop": true,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ambient-storm",
+      "kind": "ambience",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "Strong natural wind through a wooded valley, changing low gusts and shaking leaves, no thunder, rain or voices.",
+        "duration_seconds": 15,
+        "loop": true,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ambient-hearth",
+      "kind": "ambience",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "A small welcoming hearth fire, gentle layered crackle, occasional soft wood tick and warm low flame, no voice or music.",
+        "duration_seconds": 12,
+        "loop": true,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ambient-ruins",
+      "kind": "ambience",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "Soft wind through ancient stone ruins, very faint grass and leaf movement, a few distant tiny bird calls, calm mysterious outdoor atmosphere.",
+        "duration_seconds": 15,
+        "loop": true,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    },
+    {
+      "id": "ambient-snow",
+      "kind": "ambience",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "Cold mountain breeze, soft natural gusts and a few delicate icy grains rustling across a stony pass, no howling, no music or voices.",
+        "duration_seconds": 15,
+        "loop": true,
+        "prompt_influence": 0.65,
+        "model_id": "eleven_text_to_sound_v2"
+      }
+    }
+  ]
+}

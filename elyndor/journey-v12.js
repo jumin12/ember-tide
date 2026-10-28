@@ -34,7 +34,7 @@ buildSolidTree=function(x,z,...args){if(sceneBuildFilter&&!inSceneBounds(x,z,20)
 const scenePlant=plant;
 plant=function(x,z,...args){if(sceneBuildFilter&&!inSceneBounds(x,z,15))return;return scenePlant(x,z,...args);};
 const sceneNature=buildNature;
-buildNature=function(){sceneNature();if(activeScene?.kind!=='poi')return;const[a,b,c,d]=activeScene.bounds,random=seeded(48531+a*13+c);for(let i=0;i<5500;i++){const x=mix(a,b,random()),z=mix(c,d,random());if(roadDistance(x,z)<3.65||waterGround(x,z)||!staticFree(x,z,.18))continue;plant(x,z,.45+random()*.45,i%13===0?'flower':i%17===0?'fern':'grassBlades');}};
+buildNature=function(){sceneNature();if(activeScene?.kind!=='poi'||world.userData.localMeadow)return;const[a,b,c,d]=activeScene.bounds,random=seeded(48531+a*13+c);for(let i=0;i<5500;i++){const x=mix(a,b,random()),z=mix(c,d,random());if(roadDistance(x,z)<3.65||waterGround(x,z)||!staticFree(x,z,.18))continue;plant(x,z,.45+random()*.45,i%13===0?'flower':i%17===0?'fern':'grassBlades');}};
 function trimPoiWorld(){
  const bounds=new THREE.Box3(V3(activeScene.bounds[0]-24,-100,activeScene.bounds[2]-24),V3(activeScene.bounds[1]+24,200,activeScene.bounds[3]+24));world.updateMatrixWorld(true);const remove=[];
  world.traverse(o=>{if(!o.isMesh||o.userData.dynamicWater||o.userData.dynamicFX||o.isInstancedMesh||o.userData.terrain)return;const box=new THREE.Box3().setFromObject(o);if(!box.intersectsBox(bounds))remove.push(o);});
@@ -66,8 +66,8 @@ function buildJourneyOverworld(spawn){
  buildWater({waterX:0});water.geometry.dispose();const geo=new THREE.PlaneGeometry(1000,1000,60,60);geo.rotateX(-Math.PI/2);geo.setAttribute('riverAcross',new THREE.Float32BufferAttribute(new Float32Array(geo.attributes.position.count),1));water.geometry=geo;water.position.y=-1.4;world.userData.waterPatches=[new THREE.Box3(V3(-500,-1.5,-500),V3(500,-1.3,500))];world.userData.connectedWater=true;
  for(const z of[97,-8,-80,-180])makeBridge(riverX(z),z,35,8,true);
  for(const[key,p]of Object.entries(POIS)){if(p.kind==='town')worldTownModel(key,p);else{const[x,z]=p.node,g=new THREE.Group();g.position.set(x,macroGround(x,z),z);world.add(g);if(p.kind==='clearing'){mesh(new THREE.OctahedronGeometry(1.7,0),material('lightFacets','#9cdbce',{emissive:'#78aca6',emissiveIntensity:.4}),0,3,0,g);}else for(let i=0;i<4;i++){const s=i*TAU/4;box(Math.cos(s)*2,1.4,Math.sin(s)*2,.8,2.8,.9,'wall','#a2b0a6',g);}createInteraction('location',x,z+5,'Enter '+p.name);Object.assign(interactables.at(-1),{poi:key,radius:6.5,visualHeight:2});}}
- for(let i=0;i<3000;i++){const x=mix(LAND.minX+12,LAND.maxX-12,random()),z=mix(LAND.minZ+12,LAND.maxZ-12,random());if(macroGround(x,z)<0||roadDistance(x,z)<6||Object.values(POIS).some(p=>Math.hypot(x-p.node[0],z-p.node[1])<13))continue;buildSolidTree(x,z,.35+random()*.35,z<-170?'pine':random()<.35?'pine':'oak',random);}
- for(let i=0;i<28000;i++){const x=mix(LAND.minX,LAND.maxX,random()),z=mix(LAND.minZ,LAND.maxZ,random());if(macroGround(x,z)<0||roadDistance(x,z)<3.8)continue;plant(x,z,.35+random()*.4,i%12===0?'flower':'grassBlades');}
+ for(let i=0;i<6000;i++){const x=mix(LAND.minX+12,LAND.maxX-12,random()),z=mix(LAND.minZ+12,LAND.maxZ-12,random());if(macroGround(x,z)<0||roadDistance(x,z)<6||Object.values(POIS).some(p=>Math.hypot(x-p.node[0],z-p.node[1])<22))continue;if(Math.sin(x*.035+Math.sin(z*.021))*Math.cos(z*.031)<-.15&&random()>.15)continue;buildSolidTree(x,z,.6+random()*.5,z<-170?'pine':random()<.35?'pine':'oak',random);}
+ for(let i=0;i<42000;i++){const x=mix(LAND.minX,LAND.maxX,random()),z=mix(LAND.minZ,LAND.maxZ,random());if(macroGround(x,z)<0||roadDistance(x,z)<3.8)continue;plant(x,z,.35+random()*.4,i%12===0?'flower':'grassBlades');}
  buildPlants();batchLandscape();sceneBuildFilter=false;const q=spawn??state.overworldPosition??PLACES.overworld;finishJourneyWorld(q);state.poi='overworld';
 }
 const sceneBuildBeforeJourney=buildWorld;

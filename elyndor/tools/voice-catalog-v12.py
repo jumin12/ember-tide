@@ -17,6 +17,7 @@ cast={
  'narrator':('SAz9YHcvj6GT2YYXdXww','River','Quiet, clear story narration',.98)}
 def role(s):
  s=s.lower().strip()
+ if s in ['innkeeper','the innkeeper','highmere outfitter']:return 'healer'
  if s in cast:return s
  if not s:return 'narrator'
  if 'commander' in s:return 'commander'
@@ -25,11 +26,12 @@ def role(s):
  if any(q in s for q in ['guard','watch']):return 'guard'
  if any(q in s for q in ['healer','medic','herbal','mother','potter']):return 'healer'
  return 'merchant'
-def key(s,t):return hashlib.sha256((s.strip().lower()+'|'+re.sub(r'\s+',' ',t).strip()).encode()).hexdigest()[:20]
+def key(s,t):return hashlib.sha256((s.strip().lower()+'|'+re.sub(r'\s+',' ',t).strip()+('|healer-v13' if s.strip().lower() in ['innkeeper','the innkeeper','highmere outfitter'] else '')).encode()).hexdigest()[:20]
 pattern=re.compile(r'''\[\s*('(?:\\.|[^'\\])*'|"(?:\\.|[^"\\])*")\s*,\s*('(?:\\.|[^'\\])*'|"(?:\\.|[^"\\])*")\s*\]''')
-speakers=set(['','Bren','Soren','Tavin','Mira','Lysa','Commander','Guard','Council official','Archivist','Station official','Community leader','Local representative','Representative','Elder','Innkeeper','Shopkeeper','Merchant','Weapon shop clerk','Inn steward','Route marker','Road marker','Affected person','Village representative','Resident','Displaced woman','Scout'])
+speakers=set(['','Bren','Soren','Tavin','Mira','Lysa','Commander','Guard','Council official','Archivist','Station official','Community leader','Local representative','Representative','Elder','Innkeeper','Shopkeeper','Merchant','Weapon shop clerk','Inn steward','Apprentice','Potter','The innkeeper','Highmere outfitter','Route marker','Road marker','Affected person','Village representative','Resident','Displaced woman','Scout'])
 existing=root/'elyndor/audio/catalog.json'
 records={q['key']:q for q in json.loads(existing.read_text(encoding='utf-8')).get('lines',[])} if existing.exists() else {}
+records={k:q for k,q in records.items() if q['speaker'].strip().lower() not in ['innkeeper','the innkeeper','highmere outfitter']}
 for name in ['data.js','game.js','combat.js','open-world.js','town-events.js','scenery.js','combat-v11.js','journey-v12.js','interiors-v12.js','battle-v12.js']:
  p=root/'elyndor'/name
  if not p.exists():continue

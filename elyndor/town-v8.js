@@ -219,6 +219,7 @@ function brookFountain(){
 const priorBrookSettlements=buildSettlements;
 buildSettlements=function(){
  priorBrookSettlements();
+ if(sceneBuildFilter&&activeScene?.key!=='brookstead')return;
  for(const spec of BROOK.houses)brookHouse(...spec);
  brookWall(-135,-94,76,1.3,3.8,[[-128,-120],[-105,-97]]);brookWall(-157,-132,72,3.8,6.2,[[-144,-136]]);
  brookStairs(-124,79.5,5.2,7,1.3,3.8);brookStairs(-101,79.5,5,7,1.3,3.8);brookStairs(-140,75.5,4.8,7,3.8,6.2);

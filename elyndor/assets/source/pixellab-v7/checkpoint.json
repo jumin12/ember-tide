@@ -3,18 +3,20 @@
   "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
   "characterFamilies": 41,
   "runtimeFamilies": 42,
-  "nativeSelectedPoses": 4917,
+  "nativeSelectedPoses": 4878,
   "portraits": 38,
   "dedicatedHudPortraits": 5,
-  "worldImages": 47,
+  "worldImages": 49,
   "artifact": {
     "file": "index.html",
-    "bytes": 11500746,
-    "sha256": "565f465ad2604555fb557f4504d22692fc0e490192893e0f9e44033525c9a32d",
+    "bytes": 24584259,
+    "sha256": "249d4ec1d68e1a034d4ea7adb4be6944bf5a0016a9eee1bb21b6cf6ef84d076a",
     "offline": true
   },
   "incompleteClips": {},
   "worldSystem": "Overworld with 14 points of interest and eight interiors",
-  "voiceClips": 244,
-  "voiceProvider": "ElevenLabs"
+  "voiceClips": 248,
+  "voiceProvider": "ElevenLabs",
+  "soundAssets": 58,
+  "soundProvider": "ElevenLabs"
 }

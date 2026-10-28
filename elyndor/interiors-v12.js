@@ -6,18 +6,20 @@ const INTERIORS={
  fernShop:{name:'Fern Hollow Provisions',type:'shop',poi:'fern'},alderShop:{name:'Alderbridge Trading House',type:'shop',poi:'alder'},
  council:{name:'Highmere Council Chamber',type:'council',poi:'highmere'},archives:{name:'The Royal Archives',type:'archives',poi:'highmere'}
 };
-for(const[id,q]of Object.entries(INTERIORS))SCENES[id]={name:q.name,sub:'Interior · '+(q.type==='shop'?'Equipment and provisions':q.type==='inn'?'A warm meal and a safe bed':q.type==='archives'?'Records of the old network':'The royal council'),view:'interior',kit:q.type,seed:741,path:[],interact:[]};
+for(const[id,q]of Object.entries(INTERIORS))SCENES[id]={name:q.name,sub:'Interior · '+(q.type==='shop'?'Equipment and provisions':q.type==='inn'?'A warm hearth and a place to rest':q.type==='archives'?'Records of the old network':'The royal council'),view:'interior',kit:q.type,seed:741,path:[],interact:[]};
 function addInteriorDoors(){
  if(activeScene.kind!=='poi')return;const key=activeScene.key;
  const links=key==='brookstead'?[['shop','brookShop'],['inn','brookInn']]:key==='highmere'?[['innDoor','highmereInn'],['councilDoor','council'],['archiveDoor','archives'],['shop','highmereShop']]:key==='fern'?[['shop','fernShop']]:key==='alder'?[['shop','alderShop']]:[];
  for(const[type,id]of links){const o=interactables.find(o=>o.type===type);if(o){o.interior=id;o.label='Enter '+INTERIORS[id].name;o.radius=2.6;}}
  if(key==='alder'&&!interactables.some(o=>o.interior==='alderShop')){createInteraction('interiorDoor',119,-96,'Enter Alderbridge Trading House');Object.assign(interactables.at(-1),{interior:'alderShop',radius:2.7});}
 }
+const INTERIOR_CHATTER={apprentice:['Apprentice','We are checking the stock for travelers. Let the clerk know what you need.'],potter:['Potter','I make the jars for the salves. The clerk keeps the remedies stocked.'],innkeeper:['The innkeeper','A warm meal and a little rest can make the next road easier.']};
 function handleInteriorInteraction(o){
+ if(activeScene?.kind==='interior'&&o.type==='villager'){const[speaker,text]=INTERIOR_CHATTER[activeScene.key==='fernShop'?'potter':'apprentice'];showSpeechBubble(o.actor,text,speaker);return true;}
  if(o.type==='interiorExit'){const r=state.interiorReturn??{id:'entrance',poi:'brookstead',spawn:POIS.brookstead.spawn};changeJourneyScene(r.id,r.spawn);return true;}
  if(activeScene?.kind==='poi'&&o.interior){state.interiorReturn={id:state.scene,poi:activeScene.key,spawn:[player.x,player.z]};changeJourneyScene(o.interior,[0,5]);return true;}
- if(activeScene?.kind==='interior'&&o.type==='shop'){startDialogue([['Weapon shop clerk','A good blade and a full satchel. What can I help you find?']],()=>openMenu('shop'));return true;}
- if(activeScene?.kind==='interior'&&o.type==='inn'){startDialogue([['Innkeeper','You look like you have come a long way. There is a warm bed and a meal waiting for you.']],()=>openMenu('inn'));return true;}
+ if(activeScene?.kind==='interior'&&o.type==='shop'){if(activeScene.key==='highmereShop'){startDialogue([['Highmere outfitter','A good blade and a full satchel. What can I help you find?']],()=>openMenu('shop'));return true;}startDialogue([['Weapon shop clerk','A good blade and a full satchel. What can I help you find?']],()=>openMenu('shop'));return true;}
+ if(activeScene?.kind==='interior'&&o.type==='inn'){if(activeScene.key==='highmereInn'){startDialogue([['Inn steward','Welcome in. The hearth is warm, and there is supper on the table. Take a moment to rest.']],()=>openMenu('inn'));return true;}startDialogue([['Innkeeper','Welcome in. The hearth is warm, and there is supper on the table. Take a moment to rest.']],()=>openMenu('inn'));return true;}
  return false;
 }
 function interiorShelf(x,z,width=3.2){for(const side of[-1,1])box(x+side*width/2,2.3,z,.16,4.6,.2,'darkWood','#a1794b');for(const y of[.3,1.4,2.5,3.6]){box(x,y,z,width,.13,.9,'wood','#bc9363');for(let i=0;i<5;i++){const px=x-width*.36+i*width*.18,k=i%3;if(k===0){mesh(new THREE.CylinderGeometry(.14,.21,.32,8),material('metal','#8aa8a1',{roughness:.35}),px,y+.22,z);mesh(new THREE.SphereGeometry(.18,8,6),material('lightFacets','#6ba79d',{emissive:'#55887d',emissiveIntensity:.18}),px,y+.35,z);}else box(px,y+.3,z,.22,.5,.48,k===1?'cloth':'wood',k===1?'#667a87':'#c4a171');}}}
@@ -38,14 +40,17 @@ function buildJourneyInterior(id,spawn){
   for(let i=0;i<6;i++){const x=-4.8+i*1.9,y=3.2;box(x,y,-8.8,.1,2,.1,'metal','#bbc6be');const sword=box(x,y+.4,-8.65,.12,1.8,.09,'metal','#cbd8cf');sword.rotation.z=(i%2-.5)*.12;box(x,y-.25,-8.6,.6,.09,.13,'metal','#c9aa68');box(x,y-.5,-8.65,.12,.45,.14,'wood','#8f7155');}
   for(const x of[-9.7,9.7]){roomCrate(x,1.7,1.25);roomCrate(x,3.1,1.1);barrel(x,-5.9);}
   for(const x of[-5,5])roomCandle(x,1.92,-3.5);
-  createInteraction('shop',0,-5,'Browse equipment and provisions','merchant');interactables.at(-1).actor.scripted=true;
-  createInteraction('villager',5,-5.3,'Talk to the apprentice','worker');interactables.at(-1).actor.scripted=true;
+  createInteraction('shop',0,-5,'Browse equipment and provisions',({brookShop:'merchant',highmereShop:'capital-stall',fernShop:'fern-hunter',alderShop:'alder-market'})[id]);interactables.at(-1).actor.scripted=true;
+  createInteraction('villager',5,-5.3,id==='fernShop'?'Talk to the potter':'Talk to the apprentice',({brookShop:'worker',highmereShop:'capital-post',fernShop:'fern-potter',alderShop:'alder-orchard'})[id]);interactables.at(-1).actor.scripted=true;
  }else if(spec.type==='inn'){
   box(-4.7,.85,-4,10.5,1.7,1.5,'darkWood','#947855');box(-4.7,1.78,-4,11,.16,1.8,'wood','#d2b986');obstacle(-4.7,-4,10.6,1.8,'inn counter');interiorShelf(-6,-8.1,8);
-  createInteraction('inn',-4.5,-5.6,'Rest at the inn','innkeeper');interactables.at(-1).actor.scripted=true;
-  for(const z of[-5.8,0]){box(7,.4,z,3.4,.8,4.4,'wood','#b18a5d');box(7,.87,z,3.3,.18,4.3,'cloth','#687d8d');box(7,1.02,z-1.35,2.8,.28,.8,'plaster','#e9debc');obstacle(7,z,3.5,4.5,'bed');box(9.4,.6,z-1.5,1,1.2,1,'wood','#9b7c55');roomCandle(9.4,1.25,z-1.5);}
-  for(const[x,z]of[[-7,1.3],[-1,1.5]]){mesh(new THREE.CylinderGeometry(1.5,1.5,.18,12),material('wood','#d2b080'),x,1.05,z);mesh(new THREE.CylinderGeometry(.13,.22,1,7),material('darkWood','#8a6847'),x,.5,z);obstacle(x,z,3,3,'table');roomCandle(x,1.18,z);for(const s of[-1,1]){box(x+s*1.8,.55,z,.8,.15,.8,'wood','#b29970');for(const a of[-1,1])box(x+s*1.8+a*.28,.28,z,.08,.55,.65,'darkWood','#9c7f55');}}
-  createInteraction('sleep',2.2,-.8,'Rest until morning');createInteraction('save',-10,5,'Record your journey');
+  createInteraction('inn',-4.5,-5.6,'Rest at the inn',id==='highmereInn'?'capital-inn':'innkeeper');interactables.at(-1).actor.scripted=true;
+  // A travelers' lounge: hearth, maps, reading shelves and a music corner.
+  box(8,1.5,-7,5,3,1.4,'wall','#aab4a6');box(8,3.1,-7,5.5,.25,1.8,'wood','#bda170');box(8,1.2,-6.2,2.3,1.8,.14,'darkWood','#272b29');obstacle(8,-7,5.5,2,'hearth');
+  for(const x of[6.6,9.4])roomCandle(x,3.3,-7);for(const x of[5.2,10.5]){box(x,.7,-3.2,.6,1.4,.6,'wood','#9f815a');box(x,1.4,-3.2,.9,.18,.9,'wood','#c8ab78');obstacle(x,-3.2,1,1,'lounge stand');}
+  interiorShelf(8,-.3,4.5);obstacle(8,-.3,4.8,1.5,'reading shelf');box(8,2.4,1.5,4.1,2.6,.13,'wood','#b8a174');box(8,2.4,1.6,3.7,2.2,.12,'cloth','#cdd3b4');
+  for(const[x,z]of[[-7,1.3],[-1,1.5]]){mesh(new THREE.CylinderGeometry(1.5,1.5,.18,12),material('wood','#d2b080'),x,1.05,z);mesh(new THREE.CylinderGeometry(.13,.22,1,7),material('darkWood','#8a6847'),x,.5,z);obstacle(x,z,3,3,'table');roomCandle(x,1.18,z);for(const s of[-1,1]){box(x+s*1.8,.55,z,.8,.15,.8,'wood','#b29970');obstacle(x+s*1.8,z,.9,.9,'chair');for(const a of[-1,1])box(x+s*1.8+a*.28,.28,z,.08,.55,.65,'darkWood','#9c7f55');}}
+  createInteraction('sleep',3.5,3.5,'Rest by the hearth until morning');
  }else if(spec.type==='archives'){
   for(const x of[-8,-3,3,8])interiorShelf(x,-8.1,3.8);for(const x of[-10,10])for(const z of[-4,1]){interiorShelf(x,z,2);obstacle(x,z,2.2,1.3,'bookcase');}
   box(0,.8,-3,9,1.6,2,'wood','#a58b63');obstacle(0,-3,9,2,'archive desk');for(const x of[-2.5,2.5])roomCandle(x,1.75,-3);createInteraction('archivist',0,-5.3,'Speak with the archivist','courier');interactables.at(-1).actor.scripted=true;createInteraction('records',2,-1.6,'Read the connected records');
@@ -54,7 +59,7 @@ function buildJourneyInterior(id,spawn){
  }
  for(const o of interactables){if(['shop','inn','archivist','council'].includes(o.type))o.radius=o.type==='council'?4.6:o.type==='archivist'?4.2:3.7;}
  for(const o of interactables)if(o.actor){o.actor.face='south';o.actor.home={x:o.actor.x,z:o.actor.z};o.actor.action='idle';npcs.push(o.actor);}
- createInteraction('interiorExit',0,8,'Return outside');Object.assign(interactables.at(-1),{radius:2.3,visualHeight:.2});const mat=new THREE.MeshStandardMaterial({map:textures.runeSeal??textures.cloth,color:'#b4cbd0',roughness:.8,transparent:true,alphaTest:.05,side:THREE.DoubleSide});const rug=mesh(new THREE.PlaneGeometry(3,2.3),mat,0,.014,6.7);rug.rotation.x=-Math.PI/2;
+ createInteraction('interiorExit',0,8,'Return outside');Object.assign(interactables.at(-1),{radius:2.3,visualHeight:.2});
  // Opaque fixtures batch by texture; actors and candle flames stay independent.
  const fixtures=new THREE.Group(),dynamic=new Set(actors.flatMap(a=>[a.mesh,a.shadow]));fixtures.userData.center=V3();fixtures.userData.chunk=true;world.add(fixtures);for(const o of [...world.children])if(o.isMesh&&!dynamic.has(o)&&o!==floor&&!world.userData.candles?.some(c=>c.mesh===o))fixtures.attach(o);mergeGroup(fixtures);world.userData.staticChunks=[fixtures];world.userData.lampSources=[];const oldLamps=[];world.traverse(o=>{if(o.isPointLight){world.userData.lampSources.push(o.position.clone());oldLamps.push(o);}});for(const l of oldLamps)l.removeFromParent();for(let i=0;i<6;i++){const l=new THREE.PointLight(i%2?'#accfca':'#ffc58a',i<4?12:0,20,2);l.position.set(i%2?8:-8,4,i<2?-5:3);world.add(l);world.userData.lanterns.push(l);}sceneBuildFilter=false;finishJourneyWorld(spawn??[0,5]);scene.background.set('#111315');scene.fog.near=70;scene.fog.far=160;
 }

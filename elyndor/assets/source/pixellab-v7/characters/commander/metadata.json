@@ -227,6 +227,22 @@
               "Idle/animations/recoil-v7/east/frame_004.png",
               "Idle/animations/recoil-v7/east/frame_005.png"
             ]
+          },
+          "attack-v13": {
+            "east": [
+              "Idle/animations/attack-v13/east/frame_000.png",
+              "Idle/animations/attack-v13/east/frame_001.png",
+              "Idle/animations/attack-v13/east/frame_002.png",
+              "Idle/animations/attack-v13/east/frame_003.png",
+              "Idle/animations/attack-v13/east/frame_004.png",
+              "Idle/animations/attack-v13/east/frame_005.png",
+              "Idle/animations/attack-v13/east/frame_006.png",
+              "Idle/animations/attack-v13/east/frame_007.png",
+              "Idle/animations/attack-v13/east/frame_008.png",
+              "Idle/animations/attack-v13/east/frame_009.png",
+              "Idle/animations/attack-v13/east/frame_010.png",
+              "Idle/animations/attack-v13/east/frame_011.png"
+            ]
           }
         }
       }

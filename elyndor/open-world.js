@@ -69,37 +69,37 @@ function rebuildColliderGrid(){colliderGrid.clear();for(const c of colliders){fo
 staticFree=function(x,z,r=.4){if(x<LAND.minX+r||x>LAND.maxX-r||z<LAND.minZ+r||z>LAND.maxZ-r||waterGround(x,z))return false;for(const c of colliderGrid.get(colliderKey(x,z))??(colliderGrid.size?[]:colliders)){if(Math.abs(x-c.x)<c.w+r&&Math.abs(z-c.z)<c.d+r)return false;}return true;};
 const localFindRoute=findRoute;
 let roadNavGraph=null;
-function roadGraph(){if(roadNavGraph)return roadNavGraph;const nodes=ROADS.flatMap(r=>r.p.filter((p,i)=>i%5===0||i===r.p.length-1).map(p=>({x:p[0],z:p[1]}))).filter(p=>staticFree(p.x,p.z,.42));
- for(const c of colliders){if(!['building','hall wall','fountain','planter','market stall','bench','mechanism','ruin pillar'].includes(c.type)||roadDistance(c.x,c.z)>Math.hypot(c.w,c.d)+5)continue;for(const[dx,dz]of[[-1,-1],[-1,1],[1,-1],[1,1],[-1,0],[1,0],[0,-1],[0,1]]){const p={x:c.x+dx*(c.w+.85),z:c.z+dz*(c.d+.85)};if(staticFree(p.x,p.z,.42)&&roadDistance(p.x,p.z)<12)nodes.push(p);}}
+function roadGraph(){if(roadNavGraph)return roadNavGraph;const nodes=ROADS.flatMap(r=>r.p.filter((p,i)=>i%5===0||i===r.p.length-1).map(p=>({x:p[0],z:p[1]}))).filter(p=>staticFree(p.x,p.z,.5));
+ for(const c of colliders){if(!['building','hall wall','fountain','planter','market stall','bench','mechanism','ruin pillar'].includes(c.type)||roadDistance(c.x,c.z)>Math.hypot(c.w,c.d)+5)continue;for(const[dx,dz]of[[-1,-1],[-1,1],[1,-1],[1,1],[-1,0],[1,0],[0,-1],[0,1]]){const p={x:c.x+dx*(c.w+.85),z:c.z+dz*(c.d+.85)};if(staticFree(p.x,p.z,.5)&&roadDistance(p.x,p.z)<12)nodes.push(p);}}
  const edges=nodes.map(()=>[]),checked=new Set();for(let i=0;i<nodes.length;i++){
   // Two nearest neighbors in each direction preserve route branches without
   // testing every pair of dense building-corner nodes across the whole town.
   const sectors=Array.from({length:8},()=>[]);for(let j=0;j<nodes.length;j++){if(i===j)continue;const d=dist(nodes[i],nodes[j]);if(d>34||d<.05)continue;const a=(Math.round(Math.atan2(nodes[j].z-nodes[i].z,nodes[j].x-nodes[i].x)/(Math.PI/4))+8)%8;sectors[a].push({j,d});}
   for(const sector of sectors)for(const{j,d}of sector.sort((a,b)=>a.d-b.d).slice(0,3)){const key=Math.min(i,j)+','+Math.max(i,j);if(checked.has(key))continue;checked.add(key);if(!graphEdgeFree(nodes[i],nodes[j]))continue;edges[i].push([j,d]);edges[j].push([i,d]);}
  }roadNavGraph={nodes,edges};return roadNavGraph;}
-function graphEdgeFree(a,b){return edgeFree(a,b,.4);}
+function graphEdgeFree(a,b){return edgeFree(a,b,.5);}
 findRoute=function(from,to,avoid=[]){
  if(!staticFree(to.x,to.z,.37))return null;
  if(dist(from,to)<40)return localFindRoute(from,to,avoid);
  // Long routes use the same physical road network as the map. Local A* handles doors and corners.
- const graph=roadGraph(),nodes=graph.nodes,nearest=p=>nodes.map((q,i)=>({q,i,d:dist(p,q)})).filter(q=>q.d<36).sort((a,b)=>a.d-b.d),links=p=>{const result=[];for(const n of nearest(p).slice(0,9)){const r=localFindRoute(p,n.q,avoid);if(r)result.push({...n,route:r});if(result.length>=3)break;}return result;},starts=links(from),ends=links(to);if(!starts.length||!ends.length)return null;
+ const graph=roadGraph(),nodes=graph.nodes,nearest=p=>nodes.map((q,i)=>({q,i,d:dist(p,q)})).filter(q=>q.d<36).sort((a,b)=>a.d-b.d),links=p=>{const candidates=nearest(p).slice(0,9),result=[];for(const n of candidates){if(edgeFree(p,n.q,.5)&&!avoid.some(a=>segmentDistance(a.x,a.z,[p.x,p.z],[n.q.x,n.q.z])<.95))result.push({...n,route:[n.q]});if(result.length>=3)break;}if(!result.length)for(const n of candidates.slice(0,2)){const r=localFindRoute(p,n.q,avoid);if(r)result.push({...n,route:r});if(result.length>=2)break;}return result;},starts=links(from),ends=links(to);if(!starts.length||!ends.length)return null;
  const cost=Array(nodes.length).fill(Infinity),prev=Array(nodes.length).fill(-1),done=new Set(),roots=new Map();for(const n of starts){cost[n.i]=n.d;roots.set(n.i,n.route);}let goal=-1,bestEnd=null;
  for(let k=0;k<nodes.length;k++){let best=-1;for(let i=0;i<nodes.length;i++)if(!done.has(i)&&(best<0||cost[i]<cost[best]))best=i;if(best<0||cost[best]===Infinity)break;const end=ends.find(n=>n.i===best);if(end){goal=best;bestEnd=end;break;}done.add(best);for(const[j,d]of graph.edges[best])if(cost[best]+d<cost[j]){cost[j]=cost[best]+d;prev[j]=best;}}
  if(goal<0)return null;let i=goal,path=[];while(prev[i]>=0){path.push(nodes[i]);i=prev[i];}return [...roots.get(i),...path.reverse(),...bestEnd.route.slice(0,-1).reverse(),to];
 };
 function addContinuousTerrain(){
  const chunk=55;world.userData.terrainChunks=[];world.userData.walkSurfaces=[];
- for(let ox=-245;ox<280;ox+=chunk)for(let oz=-285;oz<210;oz+=chunk){const divisions=typeof activeScene!=='undefined'&&activeScene?.kind==='overworld'?18:typeof sceneTerrainVisible==='function'&&!sceneTerrainVisible(ox,oz,chunk)?12:42,g=new THREE.PlaneGeometry(chunk,chunk,divisions,divisions);g.rotateX(-Math.PI/2);const p=g.attributes.position,blend=[],town=[],snow=[],river=[];
+ for(let ox=-245;ox<280;ox+=chunk)for(let oz=-285;oz<210;oz+=chunk){const divisions=typeof activeScene!=='undefined'&&activeScene?.kind==='overworld'?18:typeof sceneTerrainVisible==='function'&&!sceneTerrainVisible(ox,oz,chunk)?4:42,g=new THREE.PlaneGeometry(chunk,chunk,divisions,divisions);g.rotateX(-Math.PI/2);const p=g.attributes.position,blend=[],town=[],snow=[],river=[];
   for(let i=0;i<p.count;i++){const x=p.getX(i)+ox+chunk/2,z=p.getZ(i)+oz+chunk/2,r=roadInfo(x,z);p.setXYZ(i,x,groundAt(x,z),z);const jitter=noise(x*1.8,z*1.8)*.34;blend.push(1-smooth((r.kind==='trail'?1.6:2.7)+jitter,(r.kind==='trail'?2.8:4.1)+jitter,r.d));town.push(r.kind==='trail'?0:1);snow.push(winterAt(x,z));}
   for(let i=0;i<p.count;i++)river.push(1-smooth(-1,2.2,channelDistance(p.getX(i),p.getZ(i))));
   g.setAttribute('riverMix',new THREE.Float32BufferAttribute(river,1));g.setAttribute('pathMix',new THREE.Float32BufferAttribute(blend,1));g.setAttribute('townMix',new THREE.Float32BufferAttribute(town,1));g.setAttribute('snowMix',new THREE.Float32BufferAttribute(snow,1));g.computeVertexNormals();
   const m=new THREE.MeshStandardMaterial({map:textures.grass,roughness:.94,color:'#f0f1ee'});
-  m.onBeforeCompile=sh=>{Object.assign(sh.uniforms,{earthTex:{value:textures.earth},rockTex:{value:textures.rock},roadTex:{value:textures.cobble}});sh.vertexShader='attribute float pathMix,townMix,snowMix;varying vec3 vGround,vGroundN;varying vec3 vGroundBlend;\n'+sh.vertexShader;sh.vertexShader=sh.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvGround=position;vGroundN=normal;vGroundBlend=vec3(pathMix,townMix,snowMix);');sh.fragmentShader='float groundHash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}float groundNoise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(groundHash(i),groundHash(i+vec2(1.,0.)),f.x),mix(groundHash(i+vec2(0.,1.)),groundHash(i+vec2(1.,1.)),f.x),f.y);}vec4 organicSample(sampler2D t,vec2 uv,vec2 world){float blend=.22+.56*groundNoise(world*.09);return mix(texture2D(t,uv),texture2D(t,vec2(-uv.y,uv.x)*.79+vec2(17.37,41.91)),blend); }uniform sampler2D earthTex,rockTex,roadTex;varying vec3 vGround,vGroundN,vGroundBlend;\n'+sh.fragmentShader;sh.fragmentShader=sh.fragmentShader.replace('#include <map_fragment>',`
+  m.onBeforeCompile=sh=>{Object.assign(sh.uniforms,{earthTex:{value:textures.earth},rockTex:{value:textures.rock},roadTex:{value:textures.cobble}});sh.vertexShader='attribute float pathMix,townMix,snowMix;varying vec3 vGround,vGroundN;varying vec3 vGroundBlend;\n'+sh.vertexShader;sh.vertexShader=sh.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvGround=position;vGroundN=normal;vGroundBlend=vec3(pathMix,townMix,snowMix);');sh.fragmentShader='float groundHash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}float groundNoise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(groundHash(i),groundHash(i+vec2(1.,0.)),f.x),mix(groundHash(i+vec2(0.,1.)),groundHash(i+vec2(1.,1.)),f.x),f.y);}vec4 organicSample(sampler2D t,vec2 uv,vec2 world){vec2 grid=world*.11,cell=floor(grid),f=fract(grid);f=f*f*(3.-2.*f);vec2 a=vec2(groundHash(cell),groundHash(cell+19.17))*31.,b=vec2(groundHash(cell+vec2(1.,0.)),groundHash(cell+vec2(20.17,19.17)))*31.,c=vec2(groundHash(cell+vec2(0.,1.)),groundHash(cell+vec2(19.17,20.17)))*31.,d=vec2(groundHash(cell+1.),groundHash(cell+20.17))*31.;return mix(mix(texture2D(t,uv+a),texture2D(t,uv+b),f.x),mix(texture2D(t,uv+c),texture2D(t,uv+d),f.x),f.y);}uniform sampler2D earthTex,rockTex,roadTex;varying vec3 vGround,vGroundN,vGroundBlend;\n'+sh.fragmentShader;sh.fragmentShader=sh.fragmentShader.replace('#include <map_fragment>',`
    vec3 gn=pow(abs(normalize(vGroundN)),vec3(5.));gn/=gn.x+gn.y+gn.z;
    vec4 stone=texture2D(rockTex,vGround.zy*.35)*gn.x+texture2D(rockTex,vGround.xz*.35)*gn.y+texture2D(rockTex,vGround.xy*.35)*gn.z;
    vec4 grass=organicSample(map,vGround.xz*.31,vGround.xz);float mottling=sin(vGround.x*.16+sin(vGround.z*.11))*sin(vGround.z*.13)*.5+.5;
-   grass.rgb*=mix(vec3(.70,.89,.72),vec3(1.00,1.10,.91),mottling);
-   vec4 earth=organicSample(earthTex,vGround.xz*.25,vGround.xz+13.7);vec4 road=mix(earth*vec4(1.12,1.06,.87,1.),texture2D(roadTex,vGround.xz*.4),vGroundBlend.y);
+   grass.rgb*=mix(vec3(.52,1.05,.68),vec3(.83,1.25,.92),mottling);
+   vec4 earth=organicSample(earthTex,vGround.xz*.25,vGround.xz+13.7);vec4 road=mix(earth*vec4(1.12,1.06,.87,1.),organicSample(roadTex,vGround.xz*.48,vGround.xz+72.3),vGroundBlend.y);
    vec4 surface=mix(grass,earth,.08+mottling*.08);float edge=4.*vGroundBlend.x*(1.-vGroundBlend.x),pathBlend=clamp(vGroundBlend.x+(groundNoise(vGround.xz*1.7)-.5)*.48*edge,0.,1.);surface=mix(surface,road,pathBlend);
    surface=mix(surface,stone,1.-smoothstep(.52,.88,abs(vGroundN.y)));
    float riverbed=1.-smoothstep(-2.8,-1.1,vGround.y);surface=mix(surface,mix(earth,stone,.6)*vec4(.72,.82,.81,1.),riverbed);
@@ -123,13 +123,14 @@ function mergeGroup(group){
  for(const o of removed)o.removeFromParent();for(const {m,g:list}of buckets.values()){const out=new THREE.BufferGeometry();for(const a of ['position','normal','uv']){const size=a==='uv'?2:3,total=list.reduce((n,g)=>n+(g.attributes[a]?.array.length??g.attributes.position.count*size),0),arr=new Float32Array(total);let at=0;for(const g of list){const src=g.attributes[a]?.array??new Float32Array(g.attributes.position.count*size);arr.set(src,at);at+=src.length;}out.setAttribute(a,new THREE.BufferAttribute(arr,size));}const o=new THREE.Mesh(out,m);o.castShadow=o.receiveShadow=true;group.add(o);for(const g of list)g.dispose();}
 }
 function makeHouse(x,z,w,d,variant,kit='brook'){
+ if(sceneBuildFilter&&!inSceneBounds(x,z,26))return null;
  const original={x,z},radius=Math.hypot(w,d)/2;let best=null;
  for(let r=0;r<=26&&!best;r+=1)for(let j=0;j<(r?24:1);j++){const a=j*TAU/24,q={x:original.x+Math.cos(a)*r,z:original.z+Math.sin(a)*r};if(roadDistance(q.x,q.z)<radius+3.8||channelDistance(q.x,q.z)<radius+2.5||colliders.some(c=>Math.abs(q.x-c.x)<c.w+w/2+1.2&&Math.abs(q.z-c.z)<c.d+d/2+1.2))continue;best=q;break;}
  if(!best)return null;x=best.x;z=best.z;const g=building(x,z,w,d,variant,kit);g.userData.worldHouse=true;if(!world.userData.buildings.includes(g))world.userData.buildings.push(g);if(kit==='brook'||kit==='capital'){
  const rear=new THREE.Group();rear.rotation.y=Math.PI;g.add(rear);for(const yy of[.5,2.5,4.75])box(0,yy,d/2+.05,w,.14,.16,'wood','#6f5d42',rear);for(let xx=-w/2+.2;xx<w/2;xx+=1.7)box(xx,2.5,d/2+.06,.13,4.7,.14,'wood','#796446',rear);for(const xx of[-w*.27,w*.27]){smallWindow(rear,xx,1.55,d/2+.1);smallWindow(rear,xx,3.75,d/2+.1);}const left=new THREE.Group();left.rotation.y=Math.PI;g.add(left);for(const zz of[-d*.23,d*.23]){smallWindow(left,w/2+.08,1.6,zz,true);smallWindow(left,w/2+.08,3.8,zz,true);}
  if(variant===2){const veranda=new THREE.Group();veranda.position.set(0,0,d/2+.9);g.add(veranda);for(const xx of[-w*.35,w*.35]){box(xx,1.5,0,.22,3,.22,'wall','#c3b99c',veranda);box(xx,2.9,0,.45,.25,.45,'wall','#d7ceb5',veranda);}box(0,3.1,0,w*.82,.2,1.7,'slate','#9baeb0',veranda);}
  }return g;}
-function openHall(id,w,d,kind){const p=AT(id),y=groundAt(p.x,p.z),g=new THREE.Group();g.position.set(p.x,y,p.z);world.add(g);const floor=box(0,-.08,0,w,.16,d,kind==='inn'?'wood':'cobble','#c6bda0',g);world.userData.walkSurfaces.push(floor);
+function openHall(id,w,d,kind){const p=AT(id);if(sceneBuildFilter&&!inSceneBounds(p.x,p.z,20))return null;const y=groundAt(p.x,p.z),g=new THREE.Group();g.position.set(p.x,y,p.z);world.add(g);const floor=box(0,-.08,0,w,.16,d,kind==='inn'?'wood':'cobble','#c6bda0',g);world.userData.walkSurfaces.push(floor);
  const facade=new THREE.Group();g.add(facade);g.userData.facadeShell=facade;for(const xx of[-w/2,w/2])box(xx,2.5,0,.6,5,d,'wall','#b8b49d',xx>0?facade:g);box(0,2.5,-d/2,w,5,.6,'wall','#b9b79e',g);
  for(const xx of[-w*.34,w*.34])box(xx,2.5,d/2,w*.32,5,.5,'plaster','#d3c5a9',facade);
  for(const zz of[-d*.28,d*.2]){smallWindow(g,w/2+.32,3,zz,true);smallWindow(g,-w/2-.32,3,zz,true);}
@@ -183,21 +184,22 @@ function buildWorkingCanal(){
  const wheelG=new THREE.Group();wheelG.position.set(-128,-.5,66);world.add(wheelG);for(const xx of[-.4,.4]){const o=mesh(new THREE.TorusGeometry(2.1,.13,6,32),material('wood','#8c7752'),xx,0,0,wheelG);o.rotation.y=Math.PI/2;}for(let i=0;i<18;i++){const a=i*TAU/18,o=box(0,Math.cos(a)*2.05,Math.sin(a)*2.05,1.2,.24,.7,'wood','#a08c60',wheelG);o.rotation.x=-a;beam(V3(),V3(0,Math.cos(a)*2,Math.sin(a)*2),.07,'wood','#a69164',wheelG);}world.userData.waterwheel=wheelG;
 }
 function buildNature(){
- const rand=seeded(66042),buildingSafe=(x,z,r)=>!roomAt(x,z)&&!colliders.some(c=>Math.abs(c.x-x)<c.w+r&&Math.abs(c.z-z)<c.d+r);
+ if(activeScene?.kind==='poi'&&typeof buildLocalNature==='function')return buildLocalNature();
+ const visible=(x,z,pad=24)=>!sceneBuildFilter||inSceneBounds(x,z,pad),rand=seeded(66042),buildingSafe=(x,z,r)=>!roomAt(x,z)&&staticFree(x,z,r);
  for(let k=0;k<1700;k++){
-  const x=mix(LAND.minX-15,LAND.maxX+15,rand()),z=mix(LAND.minZ-10,LAND.maxZ+15,rand()),rd=roadDistance(x,z),cd=channelDistance(x,z);if(rd<5.8||cd<2.3||!buildingSafe(x,z,2.5)||Math.hypot(x+64,z-88)<25)continue;
+  const x=mix(LAND.minX-15,LAND.maxX+15,rand()),z=mix(LAND.minZ-10,LAND.maxZ+15,rand());if(!visible(x,z))continue;const rd=roadDistance(x,z),cd=channelDistance(x,z);if(rd<5.8||cd<2.3||!buildingSafe(x,z,2.5)||Math.hypot(x+64,z-88)<25)continue;
   if(TOWNS.some(t=>Math.hypot(x-t.x,z-t.z)<t.r*.72)&&rand()>.12)continue;
   const type=z<-185?'pine':rand()<.3?'pine':'oak',size=.8+rand()*.7;
   originalTree(x,z,size,type,rand);
  }
- for(let i=0;i<1100;i++){const x=mix(LAND.minX,LAND.maxX,rand()),z=mix(LAND.minZ,LAND.maxZ,rand()),d=roadDistance(x,z);if(d<4.2||channelDistance(x,z)<1.5||!buildingSafe(x,z,1.8)||Math.hypot(x+64,z-88)<25)continue;const s=.8+rand()*2.6;if(d<s*1.05+4.5||TOWNS.some(t=>t.id!=='fern'&&Math.hypot(x-t.x,z-t.z)<t.r*.95))continue;const y=groundAt(x,z),o=mesh(sharedGeo.rock??=new THREE.IcosahedronGeometry(1,1),material('rock','#a9af91'),x,y+s*.15,z);o.scale.set(s,s*.6,s*.8);o.rotation.set(rand(),rand()*TAU,rand());if(s>2)obstacle(x,z,s*.9,s*.8,'boulder');}
+ for(let i=0;i<1100;i++){const x=mix(LAND.minX,LAND.maxX,rand()),z=mix(LAND.minZ,LAND.maxZ,rand());if(!visible(x,z))continue;const d=roadDistance(x,z);if(d<4.2||channelDistance(x,z)<1.5||!buildingSafe(x,z,1.8)||Math.hypot(x+64,z-88)<25)continue;const s=.8+rand()*2.6;if(d<s*1.05+4.5||TOWNS.some(t=>t.id!=='fern'&&Math.hypot(x-t.x,z-t.z)<t.r*.95))continue;const y=groundAt(x,z),o=mesh(sharedGeo.rock??=new THREE.IcosahedronGeometry(1,1),material('rock','#a9af91'),x,y+s*.15,z);o.scale.set(s,s*.6,s*.8);o.rotation.set(rand(),rand()*TAU,rand());if(s>2)obstacle(x,z,s*.9,s*.8,'boulder');}
  // Forest shoulders create framed vistas instead of solitary evenly spaced trees.
- for(const r of ROADS)for(let k=0;k<r.p.length;k+=3){const p=r.p[k],q=r.p[Math.min(k+1,r.p.length-1)],angle=Math.atan2(q[1]-p[1],q[0]-p[0]);for(let j=0;j<3;j++){const side=j%2?1:-1,d=9+rand()*15,x=p[0]-Math.sin(angle)*d*side+(rand()-.5)*6,z=p[1]+Math.cos(angle)*d*side+(rand()-.5)*6;if(Math.hypot(x+64,z-88)<25||roadDistance(x,z)<6||channelDistance(x,z)<2.5||!buildingSafe(x,z,2.7)||TOWNS.some(t=>Math.hypot(x-t.x,z-t.z)<t.r*.85))continue;originalTree(x,z,.9+rand()*.7,z<-190?'pine':rand()<.45?'pine':'oak',rand);}}
+ for(const r of ROADS)for(let k=0;k<r.p.length;k+=3){if(!visible(r.p[k][0],r.p[k][1],32))continue;const p=r.p[k],q=r.p[Math.min(k+1,r.p.length-1)],angle=Math.atan2(q[1]-p[1],q[0]-p[0]);for(let j=0;j<3;j++){const side=j%2?1:-1,d=9+rand()*15,x=p[0]-Math.sin(angle)*d*side+(rand()-.5)*6,z=p[1]+Math.cos(angle)*d*side+(rand()-.5)*6;if(Math.hypot(x+64,z-88)<25||roadDistance(x,z)<6||channelDistance(x,z)<2.5||!buildingSafe(x,z,2.7)||TOWNS.some(t=>Math.hypot(x-t.x,z-t.z)<t.r*.85))continue;originalTree(x,z,.9+rand()*.7,z<-190?'pine':rand()<.45?'pine':'oak',rand);}}
  rebuildColliderGrid();
- for(let i=0;i<44000;i++){let x=mix(LAND.minX,LAND.maxX,rand()),z=mix(LAND.minZ,LAND.maxZ,rand()),rd=roadDistance(x,z),cd=channelDistance(x,z);if(cd<1.1||rd<2.5||!staticFree(x,z,.2))continue;if(rd>30&&rand()>.18)continue;if(winterAt(x,z)>.75&&rand()>.18)continue;const f=rand();plant(x,z,.32+rand()*.48,f<.18?'flower':f<.32?'fern':f<.38?'shrub':'grassBlades');}
+ for(let i=0;i<44000;i++){let x=mix(LAND.minX,LAND.maxX,rand()),z=mix(LAND.minZ,LAND.maxZ,rand());if(!visible(x,z,15))continue;const rd=roadDistance(x,z),cd=channelDistance(x,z);if(cd<1.1||rd<2.5||!staticFree(x,z,.2))continue;if(rd>30&&rand()>.18)continue;if(winterAt(x,z)>.75&&rand()>.18)continue;const f=rand();plant(x,z,.32+rand()*.48,f<.18?'flower':f<.32?'fern':f<.38?'shrub':'grassBlades');}
  // Deliberate verge gardens are clusters, with clear centers on every usable path.
- for(const r of ROADS)for(let k=0;k<r.p.length;k+=4){const p=r.p[k],q=r.p[Math.min(k+1,r.p.length-1)],angle=Math.atan2(q[1]-p[1],q[0]-p[0]);for(let j=0;j<18;j++){const side=j%2?1:-1,d=(r.kind==='trail'?3.5:4.9)+rand()*2.2,x=p[0]-Math.sin(angle)*d*side+(rand()-.5)*3,z=p[1]+Math.cos(angle)*d*side+(rand()-.5)*3;if(channelDistance(x,z)>1.5&&staticFree(x,z,.25)&&winterAt(x,z)<.25)plant(x,z,.4+rand()*.45,j%5?'flower':'shrub');}}
- for(const r of ROADS)for(let k=0;k<r.p.length;k++){const p=r.p[k],q=r.p[Math.min(k+1,r.p.length-1)],a=Math.atan2(q[1]-p[1],q[0]-p[0]);for(let j=0;j<95;j++){const side=j%2?1:-1,d=(r.kind==='trail'?2.6:3.7)+rand()*10,x=p[0]-Math.sin(a)*d*side+(rand()-.5)*3,z=p[1]+Math.cos(a)*d*side+(rand()-.5)*3;if(channelDistance(x,z)<1.1||roadDistance(x,z)<2.8||!staticFree(x,z,.15)||winterAt(x,z)>.8)continue;plant(x,z,.25+rand()*.4,'grassBlades');if(j%17===0&&winterAt(x,z)<.25)for(let n=0;n<7;n++){const xx=x+(rand()-.5)*1.2,zz=z+(rand()-.5)*1.2;if(roadDistance(xx,zz)>3.3&&staticFree(xx,zz,.2))plant(xx,zz,.2+rand()*.18,'flower');}}}
+ for(const r of ROADS)for(let k=0;k<r.p.length;k+=4){if(!visible(r.p[k][0],r.p[k][1],32))continue;const p=r.p[k],q=r.p[Math.min(k+1,r.p.length-1)],angle=Math.atan2(q[1]-p[1],q[0]-p[0]);for(let j=0;j<18;j++){const side=j%2?1:-1,d=(r.kind==='trail'?3.5:4.9)+rand()*2.2,x=p[0]-Math.sin(angle)*d*side+(rand()-.5)*3,z=p[1]+Math.cos(angle)*d*side+(rand()-.5)*3;if(channelDistance(x,z)>1.5&&staticFree(x,z,.25)&&winterAt(x,z)<.25)plant(x,z,.4+rand()*.45,j%5?'flower':'shrub');}}
+ for(const r of ROADS)for(let k=0;k<r.p.length;k++){if(!visible(r.p[k][0],r.p[k][1],32))continue;const p=r.p[k],q=r.p[Math.min(k+1,r.p.length-1)],a=Math.atan2(q[1]-p[1],q[0]-p[0]);for(let j=0;j<95;j++){const side=j%2?1:-1,d=(r.kind==='trail'?2.6:3.7)+rand()*10,x=p[0]-Math.sin(a)*d*side+(rand()-.5)*3,z=p[1]+Math.cos(a)*d*side+(rand()-.5)*3;if(channelDistance(x,z)<1.1||roadDistance(x,z)<2.8||!staticFree(x,z,.15)||winterAt(x,z)>.8)continue;plant(x,z,.25+rand()*.4,'grassBlades');if(j%17===0&&winterAt(x,z)<.25)for(let n=0;n<7;n++){const xx=x+(rand()-.5)*1.2,zz=z+(rand()-.5)*1.2;if(roadDistance(xx,zz)>3.3&&staticFree(xx,zz,.2))plant(xx,zz,.2+rand()*.18,'flower');}}}
 }
 function grassGeometry(){const pos=[],uv=[],normal=[];for(let n=0;n<3;n++){const a=n*TAU/3;for(let j=0;j<3;j++){const t0=j/3,t1=(j+1)/3,w0=.13*(1-t0)+.01,w1=.13*(1-t1)+.005;const p=(t,s)=>[Math.cos(a)*s+Math.sin(a)*t*t*.18,t-.5,Math.sin(a)*s-Math.cos(a)*t*t*.18],v=[p(t0,-w0),p(t1,-w1),p(t0,w0),p(t1,-w1),p(t1,w1),p(t0,w0)];for(const q of v)pos.push(...q);uv.push(0,t0,0,t1,1,t0,0,t1,1,t1,1,t0);}}const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));g.computeVertexNormals();return g;}
 buildPlants=function(){
@@ -231,7 +233,7 @@ function lightModel(s){
 }
 function buildRuins(){
  for(const[id,rx,rz]of[['depths',110,25],['alderRemnant',208,-101],['relief',24,-153],['nearbySite',-76,-196]]){
-  const y=groundAt(rx,rz),g=new THREE.Group();g.position.set(rx,y,rz);world.add(g);g.userData.mechanism=true;
+  if(sceneBuildFilter&&!inSceneBounds(rx,rz,22))continue;const y=groundAt(rx,rz),g=new THREE.Group();g.position.set(rx,y,rz);world.add(g);g.userData.mechanism=true;
   for(let i=0;i<12;i++){let a=i*TAU/12,o=box(Math.cos(a)*2.1,.25,Math.sin(a)*2.1,.9,.5,.55,'wall','#a8b19a',g);o.rotation.y=-a;}
   box(0,.5,0,1.8,1,1.8,'wall','#9ca691',g);for(const r of[.6,1.1]){const o=mesh(new THREE.TorusGeometry(r,.06,5,32),material('metal','#a89e77',{metalness:.4}),0,1.1,0,g);o.rotation.x=Math.PI/2;}
   for(const x of[-1.4,1.4])box(x,.8,0,.4,1.6,.7,'rock','#b7bea8',g);obstacle(rx,rz,3.8,3.8,'mechanism');
@@ -240,7 +242,7 @@ function buildRuins(){
  }
  // A broken rock overhang frames the walk down into the first remnant, not a loading door.
  for(const side of[-1,1])for(let i=0;i<12;i++){const x=110+side*(12+Math.sin(i)*2),z=14+i*2.6,y=groundAt(x,z);const o=mesh(new THREE.IcosahedronGeometry(1,1),material('rock','#9caa8f'),x,y+1.5,z);o.scale.set(2.5,3.3,2.7);}
- for(const s of LIGHT_SITES)lightModel(s);
+ for(const s of LIGHT_SITES)if(!sceneBuildFilter||inSceneBounds(s.x,s.z,18))lightModel(s);
 }
 const INTERACTION_POS={
  representative:[-126,66],shop:[-116,54.3],inn:[-111,101.5],chest:[-98,119],gate:[-160,70],pump:[-123,50],water:[-127,54],wildlife:[-62,89],aftermath:[-68,93],
@@ -252,16 +254,17 @@ const INTERACTION_POS={
 function addWorldInteractions(){
  const used=new Set();for(const[id,s]of Object.entries(OLD_SCENES))for(const spec of s.interact??[]){let[type,x,z,label,actorId]=spec;if(type==='guard')actorId='guardEnemy';if(used.has(type)&&!['shop','chest'].includes(type))continue;
   if(used.has(type)){const p=AT(id,x,z);x=p.x;z=p.z;}else{const p=INTERACTION_POS[type]??[...PLACES[id]];[x,z]=p;}
+  if(sceneBuildFilter&&!inSceneBounds(x,z)){used.add(type);continue;}
   if(actorId&&interactables.some(o=>o.actorId===actorId))actorId=null; // A named actor has one persistent body in the world.
   createInteraction(type,x,z,label,actorId);const o=interactables.at(-1);o.area=id;if(o.actor)o.actor.story=true;used.add(type);
  }
- for(const[type,area,x,z]of[['sign','worldRidge',20,73],['sign','capitalRoad',23,-79],['sign','worldMeadow',-139,6]]){createInteraction(type,x,z,'Read the signpost');interactables.at(-1).area=area;}
+ for(const[type,area,x,z]of[['sign','worldRidge',20,73],['sign','capitalRoad',23,-79],['sign','worldMeadow',-139,6]]){if(sceneBuildFilter&&!inSceneBounds(x,z))continue;createInteraction(type,x,z,'Read the signpost');interactables.at(-1).area=area;}
  for(const o of interactables.filter(o=>o.type==='sign')){const g=new THREE.Group();g.position.set(o.x,groundAt(o.x,o.z),o.z);world.add(g);box(0,1.2,0,.16,2.4,.16,'wood','#786748',g);box(0,2,0,1.8,.45,.13,'wood','#a08b60',g);}
 }
 function setupWorldVillagers(){
  const ids=['merchant','worker','healer','guard','courier','farmer','elder','innkeeper'],tasks={merchant:['Tending the market','Checking the storehouse'],worker:['Inspecting the canal joinery','Checking bridge timbers'],healer:['Tending the herb garden','Checking on a neighbor'],guard:['Patrolling the entrance','Watching the market'],courier:['Collecting a report','Delivering the village post'],farmer:['Bringing produce to market','Tending the verge garden'],elder:['Resting beside the fountain','Visiting the market'],innkeeper:['Collecting the inn’s supplies','Checking the lanterns']};
  const paths={merchant:[[-98,98],[-109,104]],worker:[[-124,58],[-125,70]],healer:[[-84,91],[-74,84]],guard:[[-141,102],[-118,96]],courier:[[-89,85],[-108,91],[-121,96]],farmer:[[-116,110],[-106,107]],elder:[[-102,80],[-98,91]],innkeeper:[[-74,90],[-85,96]]};
- for(let i=0;i<ids.length;i++){const id=ids[i];let a=actors.find(a=>a.id===id&&a.npc);const p=safePoint({x:paths[id][0][0],z:paths[id][0][1]});if(!a){a=createActor(id,p.x,p.z,2.15);a.npc=true;createVillagerInteraction(a);}else if(a.story)continue;a.x=p.x;a.z=p.z;a.home={...p};a.routine=i;a.wait=i*.55;a.tasks=0;a.task=tasks[id][0];a.workTasks=tasks[id];a.workRoute=paths[id].map(p=>safePoint({x:p[0],z:p[1]}));a.workIndex=0;npcs.push(a);}
+ for(let i=0;i<ids.length;i++){const id=ids[i];if(sceneBuildFilter&&!inSceneBounds(paths[id][0][0],paths[id][0][1]))continue;let a=actors.find(a=>a.id===id&&a.npc);const p=safePoint({x:paths[id][0][0],z:paths[id][0][1]});if(!a){a=createActor(id,p.x,p.z,2.15);a.npc=true;createVillagerInteraction(a);}else if(a.story)continue;a.x=p.x;a.z=p.z;a.home={...p};a.routine=i;a.wait=i*.55;a.tasks=0;a.task=tasks[id][0];a.workTasks=tasks[id];a.workRoute=paths[id].map(p=>safePoint({x:p[0],z:p[1]}));a.workIndex=0;npcs.push(a);}
  // Combat-only sentries stand beside the route, never in its walking lane.
  for(const a of actors.filter(a=>a.npc&&(assets.sprites[a.id].frames.north?.length??0)<2)){
   let post=null;for(let r=1;r<=8&&!post;r+=.5)for(let k=0;k<24;k++){const angle=k*TAU/24,p={x:a.x+Math.cos(angle)*r,z:a.z+Math.sin(angle)*r};if(roadDistance(p.x,p.z)>5&&staticFree(p.x,p.z,.55)&&!actors.some(b=>b!==a&&b.npc&&dist(b,p)<1.4)){post=p;break;}}
@@ -293,7 +296,7 @@ function addRegionalResidents(){
  ['relief-scribe','courier','Station recorder',31,-146,'#ae856d',[[31,-146],[27,-148]]],
  ['relief-quarter','worker','Quartermaster',35,-158,'#759e8b',[[35,-158],[29,-160]]]
  ];
- for(const[instanceId,id,name,x,z,color,routePoints]of specs){const p=safePoint({x,z},.55);if(actors.some(a=>a.npc&&Math.hypot(a.x-p.x,a.z-p.z)<1.2))p.x+=1.5;const a=createActor(id,p.x,p.z,2.15);a.npc=true;a.resident=true;a.instanceId=instanceId;a.home={x:p.x,z:p.z};a.routine=npcs.length;a.tasks=0;a.workIndex=0;a.workTasks=[name+' · At work',name+' · Checking supplies'];a.workRoute=routePoints.map(p=>safePoint({x:p[0],z:p[1]}));a.wait=1+npcs.length%4;a.task=a.workTasks[0];residentTint(a,color);npcs.push(a);createVillagerInteraction(a);a.interaction.id=instanceId;a.interaction.label='Talk to the '+name.toLowerCase();
+ for(const[instanceId,id,name,x,z,color,routePoints]of specs){if(sceneBuildFilter&&!inSceneBounds(x,z))continue;const p=safePoint({x,z},.55);if(actors.some(a=>a.npc&&Math.hypot(a.x-p.x,a.z-p.z)<1.2))p.x+=1.5;const a=createActor(id,p.x,p.z,2.15);a.npc=true;a.resident=true;a.instanceId=instanceId;a.home={x:p.x,z:p.z};a.routine=npcs.length;a.tasks=0;a.workIndex=0;a.workTasks=[name+' · At work',name+' · Checking supplies'];a.workRoute=routePoints.map(p=>safePoint({x:p[0],z:p[1]}));a.wait=1+npcs.length%4;a.task=a.workTasks[0];residentTint(a,color);npcs.push(a);createVillagerInteraction(a);a.interaction.id=instanceId;a.interaction.label='Talk to the '+name.toLowerCase();
   const target=instanceId==='capital-steward'?'council':instanceId==='capital-archivist'?'archivist':null;if(target){const o=interactables.find(o=>o.type===target);if(o&&!o.actor){o.actor=a;o.actorId=id;a.storyTarget=o;}}
  }
 }

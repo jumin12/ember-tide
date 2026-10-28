@@ -236,6 +236,19 @@
               "Idle/animations/cast-v7/east/frame_007.png",
               "Idle/animations/cast-v7/east/frame_008.png"
             ]
+          },
+          "attack-v13-thrust": {
+            "east": [
+              "Idle/animations/attack-v13-thrust/east/frame_000.png",
+              "Idle/animations/attack-v13-thrust/east/frame_001.png",
+              "Idle/animations/attack-v13-thrust/east/frame_002.png",
+              "Idle/animations/attack-v13-thrust/east/frame_003.png",
+              "Idle/animations/attack-v13-thrust/east/frame_004.png",
+              "Idle/animations/attack-v13-thrust/east/frame_005.png",
+              "Idle/animations/attack-v13-thrust/east/frame_006.png",
+              "Idle/animations/attack-v13-thrust/east/frame_007.png",
+              "Idle/animations/attack-v13-thrust/east/frame_008.png"
+            ]
           }
         }
       }

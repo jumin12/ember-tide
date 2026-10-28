@@ -264,19 +264,17 @@
     },
     {
       "id": "wolf",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/wolf",
-      "characterId": "f6503f4f-3272-49e5-bb73-f488e6820830",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/wolf-v13",
+      "characterId": "8e36ac6d-31f7-4a81-8ace-90efe7c5931c",
       "human": false,
-      "combatOnly": false,
-      "bodyUnit": 62
+      "combatOnly": false
     },
     {
       "id": "boar",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/boar",
-      "characterId": "d8ce6ea8-b859-44b7-a5ab-01eb34fadae6",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/boar-v13",
+      "characterId": "5e7d05e2-2dd0-4383-a965-628a9d412be6",
       "human": false,
-      "combatOnly": false,
-      "bodyUnit": 62
+      "combatOnly": false
     },
     {
       "id": "sheepEwe",
@@ -296,15 +294,15 @@
     }
   ],
   "images": {
-    "cobble": "elyndor/assets/source/pixellab-v7/images/material-cobble/000.png",
-    "wood": "elyndor/assets/source/pixellab-v7/images/material-wood/000.png",
+    "cobble": "elyndor/assets/source/pixellab-v7/images/v13-cobble.png",
+    "wood": "elyndor/assets/source/pixellab-v7/images/v13-wood.png",
     "darkWood": "elyndor/assets/source/pixellab-v7/images/material-darkWood/000.png",
-    "slate": "elyndor/assets/source/pixellab-v7/images/material-slate/000.png",
+    "slate": "elyndor/assets/source/pixellab-v7/images/v13-slate.png",
     "plaster": "elyndor/assets/source/pixellab-v7/images/material-plaster/000.png",
-    "wall": "elyndor/assets/source/pixellab-v7/images/material-wall/000.png",
-    "rock": "elyndor/assets/source/pixellab-v7/images/rock-v10/000.png",
-    "earth": "elyndor/assets/source/pixellab-v7/images/earth-surface-v9/image.png",
-    "grass": "elyndor/assets/source/pixellab-v7/images/grass-surface-v9/image.png",
+    "wall": "elyndor/assets/source/pixellab-v7/images/v13-wall.png",
+    "rock": "elyndor/assets/source/pixellab-v7/images/v13-rock.png",
+    "earth": "elyndor/assets/source/pixellab-v7/images/v13-earth.png",
+    "grass": "elyndor/assets/source/pixellab-v7/images/v13-grass.png",
     "bark": "elyndor/assets/source/pixellab-v7/images/material-bark/001.png",
     "cloth": "elyndor/assets/source/pixellab-v7/images/material-cloth/000.png",
     "metal": "elyndor/assets/source/pixellab-v7/images/material-metal-v8/000.png",
@@ -342,7 +340,9 @@
     "cloudMask": "elyndor/assets/source/pixellab-v7/images/v12-cloud/000.png",
     "waterAlbedo": "elyndor/assets/source/pixellab-v7/images/v12-water/000.png",
     "interiorFloor": "elyndor/assets/source/pixellab-v7/images/v12-floor/000.png",
-    "runeSeal": "elyndor/assets/source/pixellab-v7/images/v12-rune/000.png"
+    "runeSeal": "elyndor/assets/source/pixellab-v7/images/v12-rune/000.png",
+    "exitMarker": "elyndor/assets/source/pixellab-v7/images/v13-exit.png",
+    "saveSeal": "elyndor/assets/source/pixellab-v7/images/v13-save.png"
   },
   "materialKeys": [
     "cobble",
@@ -425,8 +425,8 @@
     "ogre": "elyndor/assets/source/pixellab-v7/images/guide-ogre/000.png",
     "wisp": "elyndor/assets/source/pixellab-v7/images/guide-wisp/000.png",
     "stone": "elyndor/assets/source/pixellab-v7/images/guide-stone/000.png",
-    "wolf": "elyndor/assets/source/pixellab-v7/characters/wolf/Idle/rotations/south-east.png",
-    "boar": "elyndor/assets/source/pixellab-v7/characters/boar/Idle/rotations/south-east.png"
+    "wolf": "elyndor/assets/source/pixellab-v7/characters/wolf-v13/Idle/rotations/south-east.png",
+    "boar": "elyndor/assets/source/pixellab-v7/characters/boar-v13/Idle/rotations/south-east.png"
   },
   "hudPortraits": {
     "bren": "elyndor/assets/source/pixellab-v7/images/hud-bren-v10/000.png",

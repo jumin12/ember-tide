@@ -6,6 +6,7 @@ function terrainDetailGeometry(g,step){
  // Preserve every original perimeter vertex. Border fans stitch coarse interiors
  // to full-detail neighbours without cracks or artificial vertical skirts.
  const grid=Math.round(Math.sqrt(g.attributes.position.count))-1,stride=grid+1,out=new THREE.BufferGeometry(),points=[],lookup=new Map(),indices=[];
+ step=Math.min(step,grid);while(grid%step!==0&&step>1)step--;
  const vertex=(x,y)=>{const key=x+','+y;if(!lookup.has(key)){lookup.set(key,points.length);points.push([x,y]);}return lookup.get(key);};
  for(let y=0;y<grid;y+=step)for(let x=0;x<grid;x+=step){const polygon=[[x,y]];
   for(let j=x===0?1:step;j<=step;j+=x===0?1:step)polygon.push([x,y+j]);

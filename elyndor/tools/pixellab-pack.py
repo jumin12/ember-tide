@@ -26,7 +26,7 @@ def pack_character(root,item,encode,audit,strict):
  # every actual native per-frame PNG already exported for the same identity.
  for clip_dir in (folder/'Idle/animations').glob('*'):
   if not clip_dir.is_dir():continue
-  clip_name=re.sub(r'(-v\d+)-[0-9a-f]{8}$',r'\1',clip_dir.name)
+  clip_name=re.sub(r'-[0-9a-f]{8}$','',clip_dir.name)
   group=animations.setdefault(clip_name,{})
   for direction in DIRECTIONS:
    files=sorted((clip_dir/direction).glob('frame_*.png'))
@@ -62,6 +62,12 @@ def pack_character(root,item,encode,audit,strict):
   # flinch and recovery poses retain the reviewed left-facing helmet profile.
   recoil=animations.get('recoil-v10',{}).get('west',[])
   if len(recoil)==9:animations['recoil-v10']['west']=[recoil[i] for i in [0,1,7,8]]
+ # A released painted arrow leaves Tavin's source canvas in poses 7-8.
+ # Use the clean nock, draw, release and recovery frames; the actual projectile
+ # is rendered as a complete 3D arrow by the game.
+ if name=='tavin':
+  clip=animations.get('attack-v13',{}).get('west',[])
+  if len(clip)==12:animations['attack-v13']['west']=[clip[i] for i in [0,1,2,3,4,5,6,9,10,11]]
  native={}
  def load(path):
   p=(folder/path).resolve();p.relative_to((root/'elyndor/assets/source/pixellab-v7').resolve())
@@ -75,7 +81,7 @@ def pack_character(root,item,encode,audit,strict):
  if item.get('human',True) and not 42<=unit<=90:raise ValueError(f'{name}: suspect body scale {unit}')
  keys={};missing=[]
  for direction in DIRECTIONS:
-  key=direction.replace('-','');walk=animations.get('walk-v8',{}).get(direction) or animations.get('walk-v7',{}).get(direction,[]);idle=animations.get('idle-v8',{}).get(direction) or animations.get('idle-v7',{}).get(direction,[]);run=animations.get('run-v8',{}).get(direction) or animations.get('run-v7',{}).get(direction,[])
+  key=direction.replace('-','');walk=animations.get('walk-v14',{}).get(direction) or animations.get('walk-v13',{}).get(direction) or animations.get('walk-v8',{}).get(direction) or animations.get('walk-v7',{}).get(direction,[]);idle=animations.get('idle-v13',{}).get(direction) or animations.get('idle-v8',{}).get(direction) or animations.get('idle-v7',{}).get(direction,[]);run=animations.get('run-v8',{}).get(direction) or animations.get('run-v7',{}).get(direction,[])
   if not item.get('combatOnly') and len(walk)<4:missing.append('walk:'+direction)
   if not item.get('combatOnly') and len(idle)<2:missing.append('idle:'+direction)
   if name in PARTY and len(run)<4:missing.append('run:'+direction)
@@ -83,7 +89,12 @@ def pack_character(root,item,encode,audit,strict):
   if run:keys['run_'+key]=run
  direction='west' if name in PARTY or name.endswith('Ascended') else 'east'
  for action in ['battleIdle','attack','cast','recoil']:
-  group=animations.get(action+'-v10',animations.get(action+'-v8',animations.get(action+'-v7',{})))
+  group=animations.get(action+'-v13',animations.get(action+'-v10',animations.get(action+'-v8',animations.get(action+'-v7',{}))))
+  if name=='soren' and action in ['attack','cast']:group=animations.get('cast-v13-staff',group)
+  if name=='mira' and action=='cast':group=animations.get('attack-v13',group)
+  if name=='lysa' and action in ['attack','cast']:group=animations.get('cast-v13-staff',group)
+  if name in ['wolf','boar'] and action=='battleIdle':group=animations.get('idle-v13',group)
+  if name=='commander3' and action=='attack':group=animations.get('attack-v13-thrust',animations.get('attack-v7',group))
   for view,clip in group.items():keys[action+'_'+view.replace('-','')]=clip
   clip=group.get(direction,[])
   if name in FIGHTERS and not clip:missing.append(action+':'+direction)
@@ -117,7 +128,12 @@ def pack_character(root,item,encode,audit,strict):
  meta={'url':encode(atlas),'w':width,'h':height,'unit':unit,'gutter':gutter,'cols':cols,'rows':rows,'frames':{k:[index[p] for p in clip] for k,clip in keys.items()},'frameRate':{k:3 for k in keys if k.startswith('idle_')},'pixelLab':True,'sourceCharacterId':expected}
  meta['impactFrame']={'attack':round((len(keys['attack'])-1)*(.75 if name in ['bren','brenAscended','tavin','tavinAscended'] else .55)),'cast':round((len(keys['cast'])-1)*.5)}
  if name in ['bren','brenAscended'] and animations.get('attack-v10'):meta['impactFrame']['attack']=4
- if name in ['mira','lysa']:meta['sourceClipAliases']={'cast-v8':'attack-v8'}
+ if animations.get('attack-v13'):
+  meta['impactFrame']['attack']={'bren':8,'brenAscended':8,'tavin':7,'tavinAscended':7,'mira':7,'lysa':8,'soren':8,'commander':5,'commander2':7,'tribeMale':8,'tribeFemale':8,'wolf':7,'boar':6,'guardEnemy':8}.get(name,5)
+  meta['impactFrame']['cast']=min(len(keys['cast'])-1,8)
+ if name=='mira':meta['sourceClipAliases']={'cast':'attack-v13'}
+ if name=='lysa':meta['sourceClipAliases']={'attack':'cast-v13-staff','cast':'cast-v13-staff'}
+ if name=='soren':meta['sourceClipAliases']={'attack':'cast-v13-staff','cast':'cast-v13-staff'}
  return meta,load(rotations['south']),records,missing
 
 def build_assets(root,encode,audit,warnings,strict):

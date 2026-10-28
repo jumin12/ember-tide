@@ -32,7 +32,7 @@ function applyLiveChainHit(c,hit){
 }
 function advanceLiveChain(dt){
  const c=battle.combo,a=c.actor;voiceTimer-=dt;if(voiceTimer<=0)$('#battle-callout').textContent='';
- if(c.contactAt&&!c.applied&&clock>=c.contactAt)applyLiveChainHit(c,c.hitIntent);
+ if(c.pendingContact!==undefined&&c.t/c.duration>=.72){const intent=c.pendingContact;delete c.pendingContact;applyLiveChainHit(c,intent);}if(c.contactAt&&!c.applied&&clock>=c.contactAt)applyLiveChainHit(c,c.hitIntent);
  if(c.ending){
   if(c.contactAt&&!c.applied&&c.target.hp>0)return;
   if(c.input==='hit'&&c.step+1<c.chain&&c.target.hp>0){c.step++;c.t=0;c.input=null;c.applied=false;c.ending=false;c.impactUntil=0;c.projectileStarted=false;c.contactAt=0;a.actionTime=0;}
@@ -40,7 +40,7 @@ function advanceLiveChain(dt){
  }
  c.t=Math.min(c.duration,c.t+dt);const p=c.t/c.duration;
  if(c.input==='miss'&&p>=.72&&!c.applied)applyLiveChainHit(c,false);if(!c.input&&p>=.85){c.input='miss';applyLiveChainHit(c,false);}
- if(c.id==='bren'){const d=dist(c.start,c.target.actor),amount=Math.min(.55,Math.max(0,d-2.6)),pulse=p<.76?smooth(.18,.76,p):1-smooth(.79,1,p);a.x=c.start.x+(c.target.actor.x-c.start.x)/Math.max(.001,d)*amount*pulse;a.z=c.start.z+(c.target.actor.z-c.start.z)/Math.max(.001,d)*amount*pulse;}
+ if(c.id==='bren'){const d=dist(c.start,c.target.actor),amount=edgeFree(c.start,c.target.actor,.5)?Math.max(0,d-2.2):0,pulse=p<.86?smooth(.12,.52,p):1-smooth(.86,1,p);a.x=c.start.x+(c.target.actor.x-c.start.x)/Math.max(.001,d)*amount*pulse;a.z=c.start.z+(c.target.actor.z-c.start.z)/Math.max(.001,d)*amount*pulse;}
  $('#timing-needle').style.left=(p*100)+'%';$('#combo-progress').textContent=(c.step+1)+' / '+c.chain+' · '+c.success+' precise hits';if(p>=1){c.ending=true;c.launched=false;}
 }
 const updateBeforeLiveChain=updateBattle;
@@ -48,7 +48,7 @@ updateBattle=function(dt){if(battle?.status==='combo'&&battle.combo)return advan
 const actorBeforeLiveChain=updateActor;
 updateActor=function(a,dt){actorBeforeLiveChain(a,dt);const c=battle?.combo;if(c?.actor!==a||battle.status!=='combo')return;
  const meta=assets.sprites[a.visualId??a.id],clip=meta.frames.attack,peak=meta.impactFrame?.attack??4,p=c.t/c.duration;
- let frame=p<.52?peak*.5*p/.52:p<.7?peak*.5+peak*.5*(p-.52)/.18:p<.83?peak:peak+(clip.length-1-peak)*(p-.83)/.17;
+ let frame=p<.52?peak*.5*p/.52:p<.7?peak*.5+peak*.5*(p-.52)/.18:p<.87?peak:peak+(clip.length-1-peak)*(p-.87)/.13;
  if(clock<c.impactUntil)frame=peak;setActorFrame(a,'attack',Math.min(clip.length-1,Math.floor(frame+.0001)));
 };
 // The existing normal abilities keep their powered-up Ascended counterparts.

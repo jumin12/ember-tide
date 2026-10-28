@@ -17,3 +17,6 @@ output/
 # Local generation dependencies and intermediate recordings.
 /.tools/
 /elyndor/audio/clips/
+
+# ElevenLabs generation originals; compact offline Ogg files are published.
+elyndor/audio/source-v13/

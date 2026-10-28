@@ -1,0 +1,7 @@
+#chatter-layer{position:fixed;inset:0;pointer-events:none;z-index:22}.npc-bubble{position:absolute;max-width:240px;min-width:130px;transform:translate(-50%,-100%);padding:12px 15px;border:1px solid #cfba86;border-radius:8px;background:linear-gradient(135deg,#f4e7c9f7,#ddd0aff5);box-shadow:0 5px 20px #07181a55;color:#263537;font:13px/1.55 Georgia,serif;text-align:center}.npc-bubble:after{content:'';position:absolute;left:calc(50% - 6px);bottom:-7px;width:12px;height:12px;background:#ddd0af;border-right:1px solid #cfba86;border-bottom:1px solid #cfba86;transform:rotate(45deg)}
+
+.map-view-tabs { margin: 12px 0; }
+.map-view-tabs .active { color: #fff0bd; border-color: #bda475; background: #264b4d; }
+.map-legend { color: #d7ceb3; font-size: 13px; letter-spacing: .04em; }
+body:has(#menu:not(.hidden)) #chatter-layer { visibility: hidden; }
+#continuous-map { border: 1px solid #ab9572; box-shadow: inset 0 0 50px #283b35; background: #9cac87; }
