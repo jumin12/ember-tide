@@ -1,13 +1,14 @@
 {
-  "release": "elyndor-2026-10-28-voices-relief-atlas-diorama-v15",
+  "release": "elyndor-2026-10-28-v15.1-dialogue-qa",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 33238090,
-    "sha256": "a13020c5b4a6e7f950e0d0828d971a7db6507602f029ef74d6cba7acc0261aa1",
+    "bytes": 33238298,
+    "sha256": "e4f0cc652fe2f838b8735ca91d2a447100f7274ee13568c7cfc2265af2d47bed",
     "offline": true
   },
   "changes": [
+    "All 259 selected performances transcribed with ElevenLabs Scribe v2; one Tavin line replaced for clearer past-tense articulation and reverified in the dialogue UI",
     "Forty-eight newly generated native PixelLab world textures; 512-pixel surface pages and native prop sizes with consistent UV density",
     "All 259 dialogue and battle performances regenerated using Eleven v4, portrait-grounded casting, scene context and emotional direction",
     "All 92 music, ambience and effects cues regenerated, with layered environments, physical footsteps, multiple impact variants and voice ducking",
@@ -45,10 +46,14 @@
     "music": 13,
     "ambience": 14,
     "effectsAndFoley": 65,
-    "bytes": 17718417,
+    "bytes": 17718575,
     "codec": "Ogg Opus",
     "offline": true,
-    "embeddedCredential": false
+    "embeddedCredential": false,
+    "transcribedVoices": 259,
+    "transcriptionModel": "scribe_v2",
+    "correctedPerformances": 1,
+    "transcriptionAudit": "elyndor/audio/transcription-audit.json"
   },
   "validation": {
     "checks": [
@@ -238,7 +243,37 @@
         "footer": true
       }
     },
-    "waterJoinMaxGapMetres": 8.024994323728734e-06
+    "waterJoinMaxGapMetres": 8.024994323728734e-06,
+    "fullRegressionArtifactSha256": "a13020c5b4a6e7f950e0d0828d971a7db6507602f029ef74d6cba7acc0261aa1",
+    "postPatchChecks": {
+      "runtimeCodeIdentical": true,
+      "onlyOneVoiceAssetChanged": true,
+      "all259Transcribed": true,
+      "unresolvedWordDifferences": 0,
+      "all259VoiceDecodes": true,
+      "nativeDialoguePlayback": {
+        "clip": {
+          "speaker": "Tavin",
+          "text": "Something is pulling at my people. I stopped them, but I haven’t found what’s causing it.",
+          "seconds": 5.9265,
+          "ready": 4,
+          "playing": true,
+          "position": 0.436547,
+          "missing": []
+        },
+        "finished": {
+          "ended": true,
+          "position": 5.9265,
+          "seconds": 5.9265,
+          "errors": []
+        },
+        "errors": [],
+        "pass": true
+      },
+      "officialInputSmoke": true,
+      "sourceMatchesArtifact": true
+    },
+    "scope": "The 22-check full regression applies to the stated V15 baseline. This audio-only patch has identical runtime code and non-voice assets, with focused transcription, decode, playback, input and source-parity verification."
   },
   "performance": {
     "device": {

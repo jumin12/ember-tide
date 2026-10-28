@@ -539,12 +539,14 @@
       "speaker": "Tavin",
       "text": "Something is pulling at my people. I stopped them, but I haven’t found what’s causing it.",
       "role": "tavin",
-      "performance": "[frustrated]",
+      "performance": "[concerned]",
       "contextBefore": "Then we keep looking.",
       "contextAfter": "We’ve seen the water and wildlife change too.",
       "key": "96c5a70aeec73ac67d18",
+      "seed": 152809,
+      "deliveryText": "Something is pulling at my people. I stopped them. But I haven’t found what’s causing it.",
       "file": "elyndor/audio/opus/96c5a70aeec73ac67d18.ogg",
-      "bytes": 27115
+      "bytes": 27273
     },
     {
       "speaker": "Bren",

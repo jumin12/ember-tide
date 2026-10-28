@@ -70,6 +70,8 @@ authored +=[{**q,'speaker':'Smith'}for q in old['lines']if q['speaker']=='Weapon
 authored +=[{**q,'speaker':'Local representative'}for q in old['lines']if q['speaker']=='Elder']
 for original in authored:
  q={k:original[k]for k in ['speaker','text']};q['role']=assignment[q['speaker'].strip().lower()];q['performance']=direction(q);q['contextBefore'],q['contextAfter']=contexts.get((q['speaker'].lower(),q['text']),('',''));q['key']=hashlib.sha256((q['speaker'].lower()+'|'+q['text']+'|v15-eleven-v4|'+q['role']).encode()).hexdigest()[:20];records[q['key']]=q
+if '96c5a70aeec73ac67d18'in records:
+ q=records['96c5a70aeec73ac67d18'];q.update(performance='[concerned]',seed=152809,deliveryText=q['text'].replace('them, but','them. But'))
 catalog={'provider':'ElevenLabs','model':'eleven_v4','casting':roles,'speakerAssignments':assignment,'lines':list(records.values())}
 (FOLDER/'catalog.json').write_text(json.dumps(catalog,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
 if '--catalog-only' in sys.argv:print('Explicitly cast',len(records),'lines across',len(roles),'roles');sys.exit()
@@ -77,7 +79,7 @@ key=get_key()
 def make(q):
  out=FOLDER/'clips'/(q['key']+'.mp3')
  if out.exists() and out.stat().st_size>1000:return {'key':q['key'],'cached':True}
- body={'text':q['performance']+' '+q['text'],'model_id':'eleven_v4','language_code':'en','seed':150187+int(q['key'][:4],16)}
+ body={'text':q['performance']+' '+q.get('deliveryText',q['text']),'model_id':'eleven_v4','language_code':'en','seed':q.get('seed',150187+int(q['key'][:4],16))}
  if q['contextBefore']:body['previous_text']=q['contextBefore']
  if q['contextAfter']:body['next_text']=q['contextAfter']
  for attempt in range(4):

@@ -16,8 +16,8 @@
   },
   {
     "file": "ASSET_NOTES.md",
-    "bytes": 3064,
-    "sha256": "36eb35f731a599e83700a64dbdb30ab96cbca78d202e86cb87242f68b5c14f13"
+    "bytes": 3543,
+    "sha256": "270f05625824cad3f01f377dfce05a9671f363806594ad8d0fece86b27e7b45b"
   },
   {
     "file": "elyndor/arena-v14.js",
@@ -28137,7 +28137,7 @@
   {
     "file": "elyndor/assets/source/pixellab-v7/checkpoint.json",
     "bytes": 777,
-    "sha256": "fd45a133738946ebd1bd7a8d6be4002441b37ea8c121d6723948e1f2d3896bed"
+    "sha256": "22ce5649c045ecb33e11ea11bbdfdfb2bb2f479f65d500fc90cbb45c20c7f283"
   },
   {
     "file": "elyndor/assets/source/pixellab-v7/images/guide-bird/000.png",
@@ -28711,13 +28711,13 @@
   },
   {
     "file": "elyndor/audio/catalog.json",
-    "bytes": 102142,
-    "sha256": "eafcf8c1c853de0664fbbbf1617cf81fba4805f11e108606076cfc88e3c96827"
+    "bytes": 102284,
+    "sha256": "838ed5d7c7a1f9aa086bc961173a2b641b91dc33e73d3d1c22de5c6378228482"
   },
   {
     "file": "elyndor/audio/manifest.json",
-    "bytes": 122358,
-    "sha256": "7a8abba3faeba1ae470b6a5ce34a4d82e21b3a904a79c8f218d6d1a341cd72d5"
+    "bytes": 122500,
+    "sha256": "90f3e0c5351052bd50a23b184a53d6329ead6e30892f4def44222dcdb5d2b3ff"
   },
   {
     "file": "elyndor/audio/opus/00458a49caa4fed9461a.ogg",
@@ -29491,8 +29491,8 @@
   },
   {
     "file": "elyndor/audio/opus/96c5a70aeec73ac67d18.ogg",
-    "bytes": 27115,
-    "sha256": "24bcb7b35926a0541c8e4ec8e23ad2a7de553b41798f8c577584b4b36e7cd09f"
+    "bytes": 27273,
+    "sha256": "d51af23104143e6d57c37df6e1b4e159a6418590fa0437b89193f87cfb51dab4"
   },
   {
     "file": "elyndor/audio/opus/97289ae33a6c56ec78be.ogg",
@@ -30485,6 +30485,11 @@
     "sha256": "91abd94a27868cfaf9e41a0ae9e8d1268146ee1c0371a5ea7043184fe49954cd"
   },
   {
+    "file": "elyndor/audio/transcription-audit.json",
+    "bytes": 36322,
+    "sha256": "05e0a63ef6a78e7c09ca85eb59843a59b60e3b917ec5da8ac9d12cc54feeeabd"
+  },
+  {
     "file": "elyndor/audio-v13.js",
     "bytes": 9630,
     "sha256": "c4a6300d931b7b22db8d8dbad004e47ba8141116718fb4323264548fd2f11e50"
@@ -30803,6 +30808,11 @@
     "file": "elyndor/previews/pixellab-v15/title.png",
     "bytes": 1993784,
     "sha256": "7c8ec29f32c669e2c183277ff1dceb418b6999e220e9ff716149503666b8e123"
+  },
+  {
+    "file": "elyndor/previews/pixellab-v15/voice-qa-tavin.png",
+    "bytes": 1827481,
+    "sha256": "9cc667831cb890f5296166a4c51b9a3519ff7aa0f24915bb1617cd64f98c423d"
   },
   {
     "file": "elyndor/previews/pixellab-v15/weather-rain.png",
@@ -31306,8 +31316,8 @@
   },
   {
     "file": "elyndor/tools/prepare-pixellab-v15.py",
-    "bytes": 7711,
-    "sha256": "60d8219638323b68b4d872f5efb46178d7aaa35449ccf30c005c6c4c602bbf7e"
+    "bytes": 7880,
+    "sha256": "c107333bb8107c1393a9a1af2e9ad730997fb50bf6406ab719e27330286574c4"
   },
   {
     "file": "elyndor/tools/presentation-v15.mjs",
@@ -31386,8 +31396,13 @@
   },
   {
     "file": "elyndor/tools/recast-voices-v15.py",
-    "bytes": 11404,
-    "sha256": "e7ea5819d96930db60676bebc6a537439952945ccc2b87f8eb3484b0ca747aae"
+    "bytes": 11616,
+    "sha256": "0361244af0bce8f73db976fa49e0b89a041e68b44a384f698e4b57c4aff9b76d"
+  },
+  {
+    "file": "elyndor/tools/refine-dialogue-v15.py",
+    "bytes": 1642,
+    "sha256": "86fc418eb971483d0be492ecd8152f6999184f8a061f771fa4bdaff618777424"
   },
   {
     "file": "elyndor/tools/regression-v10.py",
@@ -31485,6 +31500,11 @@
     "sha256": "2ba66d82c7d403933560b75406efddbccd2c61cb53b17acb246b6258115036c8"
   },
   {
+    "file": "elyndor/tools/transcript-audit-v15.py",
+    "bytes": 4220,
+    "sha256": "ae1513eba8c6f65f5a44bc0f9754221166b2f77014970e55ebf11a506aa8fcbb"
+  },
+  {
     "file": "elyndor/tools/traversal-v12.mjs",
     "bytes": 7007,
     "sha256": "d975ff6964108747f7d60e98992204b1bc1deb9f4a4a1fba143187961dd000ac"
@@ -31523,6 +31543,11 @@
     "file": "elyndor/tools/voice-design-v14.py",
     "bytes": 4160,
     "sha256": "9c7b2f586207e57ff189c045c471eb5f8131cd15304d0e0583794e6dabe7f7a5"
+  },
+  {
+    "file": "elyndor/tools/voice-qa-v15.mjs",
+    "bytes": 2379,
+    "sha256": "944db6b4a1296b3498933af5d8c40edd0b0875dbbd6fe1bb7af8498f08a90c6e"
   },
   {
     "file": "elyndor/tools/voice_credentials.py",
@@ -31578,6 +31603,11 @@
     "file": "elyndor/tools/write-v9-release.py",
     "bytes": 4581,
     "sha256": "40c48a2403649a295dd831380cf280006a006cff039140628cb184f5362410b1"
+  },
+  {
+    "file": "elyndor/tools/write-voice-qa-v15.py",
+    "bytes": 2552,
+    "sha256": "5ff576f34c85359c7b2be083157eefa09c3e8f7673fe5696920207de560d54c1"
   },
   {
     "file": "elyndor/town-events.js",
@@ -31651,8 +31681,8 @@
   },
   {
     "file": "index.html",
-    "bytes": 33238090,
-    "sha256": "a13020c5b4a6e7f950e0d0828d971a7db6507602f029ef74d6cba7acc0261aa1"
+    "bytes": 33238298,
+    "sha256": "e4f0cc652fe2f838b8735ca91d2a447100f7274ee13568c7cfc2265af2d47bed"
   },
   {
     "file": "MATERIAL_PROMPTS.json",
@@ -31666,13 +31696,13 @@
   },
   {
     "file": "README.md",
-    "bytes": 4678,
-    "sha256": "34497735c7bbd102b9d65a5b5623f9065ca7985e405cd9a041d4164a1a567ca3"
+    "bytes": 5191,
+    "sha256": "d008358896fb07b00f32dd3147194d2b235d9f2ada511a10828be577ae9097eb"
   },
   {
     "file": "release.json",
-    "bytes": 10396,
-    "sha256": "b1a0806c56a79e37e33eb52502f13537c6ddb69dc5836b3895de44992c5cbd00"
+    "bytes": 11913,
+    "sha256": "531028ac5c74167b633ffed8db2cd8dfe1fd57f4ab01caa0960cf2629f2ad15e"
   },
   {
     "file": "three.vendor.js",
