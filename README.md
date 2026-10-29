@@ -1,10 +1,16 @@
 # The Last Light of Elyndor
 
-## Alpha Version 1.0
+## Alpha Version 1.1
+
+### Lighting, weather and smaller screens
+
+Character silhouettes now cast animated alpha-tested shadows through the actual scene light; the separate projected ground silhouettes no longer render. The sluice and its frame retain dynamic transforms and visibility. Ground-conforming rain puddles avoid canopy footprints and use irregular edges, ripples, sky reflection and gradual wetness; foliage has a separate damp response without painted specular patches. Dimensional world-height cloud volumes share the moving density field with cloud shade and soft shafts. The relief-station pavilion uses continuous ground rather than an overlapping circular floor fan.
+
+The HUD scales for laptop and short screens, with compact horizontal party cards and scrollable menu navigation on phones. Interaction prompts sit above the party. The title now shows two dated, plain release-note entries, with Alpha Version 1.1 above the initial Alpha Version 1.0 history.
 
 ### Sharp world rendering
 
-The exploration camera uses a lower oblique view (about -18 degrees of yaw and 33 degrees of pitch in POIs), placing the west end of Brookstead’s bridge at the lower left. Battle and interior framing remain authored separately. The playable scene stays sharp at all depths, with four-sample geometry antialiasing and native pixel sprites. Warm directional light, cool sky fill, moving cloud shadows, world-space shafts and dust shape the outdoor atmosphere.
+The exploration camera faces straight ahead, with about 23 degrees of downward pitch in POIs, bringing it closer to the side-on battle view. Battle and interior framing remain authored separately. The playable scene stays sharp at all depths, with four-sample geometry antialiasing and native pixel sprites. Warm directional light, cool sky fill, moving cloud shadows, world-space shafts and dust shape the outdoor atmosphere.
 
 All fifteen POIs have larger exploration bounds, retaining their story courts and adding wooded approaches, separated floor exits and residential outskirts. Local maps show the actual new routes and exit markers. The original PixelLab gold compass, four navigation icons and framed ink panels are integrated into the HUD. Selected native PixelLab slate, limestone, lime plaster and olive leaves support detailed west façades, correctly wound porch roofs, continuous roof UVs and folded three-dimensional canopy geometry. The expanded road audit checks both clearance and continuous walking heights.
 
@@ -39,7 +45,7 @@ ElevenLabs supplies 259 directed v4 story and battle performances, including fiv
 
 The renderer uses instanced vegetation, reactive grass, individual tree/building cutaways, bounded 3D effect pools, cloud shadows, overhead sun/moon light and persistent weather/day/night. Rain, snow, pollen and fireflies use stable world positions rather than camera-centered overlays. Characters receive real scene shadows and cloud lighting. Arena searches, texture uploads and likely combat views are prepared during loading, and the atlas shares the game's WebGL renderer.
 
-Build with `python elyndor/tools/build.py --final`. Run `python elyndor/tools/verify-v24.py` for the sequential native Chrome/Playwright checks. Building uses Pillow and NumPy; audio audits also use `imageio-ffmpeg`. Existing recordings require no API access to build. Optional generation helpers read `ELEVENLABS_API_KEY` or Windows Credential Manager's `Codex/ElevenLabs` entry.
+Build with `python elyndor/tools/build.py --final`. Run `python elyndor/tools/verify-v25.py` for the sequential native Chrome/Playwright checks. Building uses Pillow and NumPy; audio audits also use `imageio-ffmpeg`. Existing recordings require no API access to build. Optional generation helpers read `ELEVENLABS_API_KEY` or Windows Credential Manager's `Codex/ElevenLabs` entry.
 
 See [asset notes](ASSET_NOTES.md), [build details](PIXELLAB_REBUILD.md) and `release.json` for selected-art provenance, exact artifact identity and measured validation. Performance measurements describe the tested device.
 
@@ -58,4 +64,4 @@ V19 replaces open stair bases with solid textured stone and aligns extended lowe
 The title screen pairs left-side navigation with a right-side changelog or three journey cards. A shuffled set of eight live POI views cycles behind the interface, with the main cast and gameplay markers hidden. Load records from the title; save at an inn chronicle circle. Each manual slot shows location, chapter, party, level, timestamp and playtime. Existing records require confirmation before replacement or deletion; loading during play also asks before replacing unsaved progress. Unreadable records can be deleted. Legacy records and the automatic inn checkpoint remain supported. Background changes pause while browsing records, and record actions are guarded during manual scene changes.
 
 
-V20 closes the remaining terrain seam with continuous ground beneath the masonry. The extended stair flight joins its actual lower tread with eleven sub-25cm steps; native keyboard tests cross every flight in both directions. A single downstream water shader replaces accumulated periodic bands, fixed foam points and gate smoke. Cascade reflections use their actual adjacent pools and sampled fill-time levels, with water effects excluded from their own reflection views. This historical repair is included in Alpha Version 1.0. Run `python elyndor/tools/verify-v24.py` for the current sequential checks.
+V20 closes the remaining terrain seam with continuous ground beneath the masonry. The extended stair flight joins its actual lower tread with eleven sub-25cm steps; native keyboard tests cross every flight in both directions. A single downstream water shader replaces accumulated periodic bands, fixed foam points and gate smoke. Cascade reflections use their actual adjacent pools and sampled fill-time levels, with water effects excluded from their own reflection views. This historical repair is included in Alpha Version 1.0. Run `python elyndor/tools/verify-v25.py` for the current sequential checks.

@@ -1,5 +1,5 @@
 {
-  "status": "Alpha Version 1.0: concept-matched atmosphere, PixelLab interface, detailed architecture and expanded points of interest",
+  "status": "Alpha Version 1.1: real character shadows, dimensional cloud atmosphere, grounded rain and responsive interface",
   "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
   "characterFamilies": 41,
   "runtimeFamilies": 42,
@@ -9,8 +9,8 @@
   "worldImages": 68,
   "artifact": {
     "file": "index.html",
-    "bytes": 34284426,
-    "sha256": "fc7e6eabbc757b5f8fa441e8e592fdf2ba9a2be82c892caf0040261b45014afa",
+    "bytes": 34297123,
+    "sha256": "5d18ff61bf8f6bcdff423b2cf8e748b3d45003b251f6d656b7d2db94574091a0",
     "offline": true
   },
   "incompleteClips": {},

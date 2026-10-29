@@ -1,4 +1,4 @@
-// A lower south-east-facing view puts the west bridge landing at screen SW.
+// A forward-facing exploration view sits slightly above the side-on battle view.
 // Screen-relative movement, sprite facing, picking and cutaways use this matrix.
 const atmosphere24={rays:0,refreshes:0};
 const atmosphereCameraBefore24=updateCamera;
@@ -6,8 +6,8 @@ const look24=V3(),offset24=V3(),axis24=V3(0,1,0);
 updateCamera=function(dt,instant=false){
  if(!player||battle||restoration||activeScene?.kind==='interior'||state.mode==='title')return atmosphereCameraBefore24(dt,instant);
  const macro=activeScene.kind==='overworld',zoom=state.settings.zoom??1;
- look24.set(player.x,heightAt(player.x,player.z)+1.3,player.z-(macro?3:3.8));
- offset24.set(macro?-28:-8,macro?47:17,macro?57:25).multiplyScalar(zoom);
+ look24.set(player.x,heightAt(player.x,player.z)+1.3,player.z-(macro?6:5.8));
+ offset24.set(0,macro?36:13.5,macro?61:32).multiplyScalar(zoom);
  cameraTarget.lerp(look24,instant?1:1-Math.exp(-dt*7));camera.position.copy(cameraTarget).add(offset24);camera.fov=macro?37:35;
  camera.lookAt(cameraTarget);camera.updateProjectionMatrix();camera.updateMatrixWorld();focusPoint.copy(cameraTarget);post.material.uniforms.focus.value=offset24.length();
  const yaw=Math.atan2(offset24.x,offset24.z),pitch=Math.atan2(offset24.y,Math.hypot(offset24.x,offset24.z));
@@ -31,7 +31,7 @@ function buildShafts24(){
  if(activeScene.kind==='interior')return;
  for(const o of world.userData.sunshafts?.beams??[])o.visible=false;
  const g=new THREE.CylinderGeometry(.45,2.6,19,12,1,true);g.translate(0,9.5,0);
- const m=new THREE.ShaderMaterial({transparent:true,depthWrite:false,side:THREE.DoubleSide,blending:THREE.AdditiveBlending,uniforms:{time:weather.time,day:cinema22.day,rain:weather.rain,cloud:weather.cloud,map:weather.cloudMap,sun:weather.sun},vertexShader:'varying vec3 wp24;varying vec2 tex24;void main(){tex24=uv;wp24=(modelMatrix*vec4(position,1.)).xyz;gl_Position=projectionMatrix*viewMatrix*vec4(wp24,1.);}',fragmentShader:`uniform sampler2D map;uniform float time,day,rain,cloud;uniform vec3 sun;varying vec3 wp24;varying vec2 tex24;void main(){vec2 uv=(wp24.xz+sun.xz/max(.35,sun.y)*max(0.,55.-wp24.y))*.006+vec2(time*.0013,time*.00037);float cover=texture2D(map,uv).r;float rim=pow(sin(tex24.x*3.14159265),3.);float fade=smoothstep(0.,.25,tex24.y)*(1.-smoothstep(.6,1.,tex24.y));float a=rim*fade*.038*day*(1.-rain)*(1.-cover*cloud*.9);if(a<.0007)discard;gl_FragColor=vec4(vec3(1.24,1.08,.73),a);}`});
+ const m=new THREE.ShaderMaterial({transparent:true,depthWrite:false,side:THREE.DoubleSide,blending:THREE.AdditiveBlending,uniforms:{time:weather.time,day:cinema22.day,rain:weather.rain,cloud:weather.cloud,map:weather.cloudMap,sun:weather.sun},vertexShader:'varying vec3 wp24;varying vec2 tex24;void main(){tex24=uv;wp24=(modelMatrix*vec4(position,1.)).xyz;gl_Position=projectionMatrix*viewMatrix*vec4(wp24,1.);}',fragmentShader:`uniform sampler2D map;uniform float time,day,rain,cloud;uniform vec3 sun;varying vec3 wp24;varying vec2 tex24;void main(){vec2 uv=(wp24.xz+sun.xz/max(.35,sun.y)*max(0.,55.-wp24.y))*.006+vec2(time*.0013,time*.00037);float cover=texture2D(map,uv).r;float rim=pow(sin(tex24.x*3.14159265),3.);float fade=smoothstep(0.,.25,tex24.y)*(1.-smoothstep(.6,1.,tex24.y));float a=rim*fade*.036*smoothstep(4.,12.,distance(wp24,cameraPosition))*day*(1.-rain)*(1.-cover*cloud*.9);if(a<.0007)discard;gl_FragColor=vec4(vec3(1.24,1.08,.73),a);}`});
  const group=new THREE.Group();group.userData.dynamicFX=true;world.add(group);
  for(let i=0;i<12;i++){const o=new THREE.Mesh(g,m);o.visible=false;o.renderOrder=3;o.userData.dynamicFX=true;group.add(o);}
  world.userData.shafts24={group,key:'',trees:[],last:-1};atmosphere24.rays=12;
