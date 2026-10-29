@@ -1,5 +1,5 @@
 {
-  "status": "Guided village, local requests and persistent atlas landmarks",
+  "status": "Directed narration, progressive river, exact terrain edges and shared expanded overworld",
   "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
   "characterFamilies": 41,
   "runtimeFamilies": 42,
@@ -9,14 +9,14 @@
   "worldImages": 60,
   "artifact": {
     "file": "index.html",
-    "bytes": 33296545,
-    "sha256": "cf165c27db5a4ce107d54b2d8b654c5d6d859d02b59abe9d848517372543515c",
+    "bytes": 34575177,
+    "sha256": "439435b194b76b7355a8204e3aa9772d8e3a105c67917919bc9ab5970bf6872a",
     "offline": true
   },
   "incompleteClips": {},
   "worldSystem": "Reference-atlas overworld with 15 points of interest and seven interiors",
   "voiceModel": "eleven_v4",
-  "voiceClips": 259,
+  "voiceClips": 282,
   "voiceProvider": "ElevenLabs",
   "soundAssets": 92,
   "soundProvider": "ElevenLabs"

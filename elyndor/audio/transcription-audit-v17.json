@@ -1,0 +1,124 @@
+{
+  "clips": 23,
+  "transcriptionModel": "scribe_v2",
+  "unresolvedWordDifferences": 0,
+  "spokenActingTags": 0,
+  "scope": "23 additional world-narrator tutorial lessons. Name spellings and draughts/drafts are equivalent in the recording. Original 259 recordings retain their V15.1 verification.",
+  "recordings": [
+    {
+      "key": "d80f26195cd53492e94d",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "5802c3bdf96cae832bfe",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "553da82652d30e3b6982",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "4f2bc8445d2628886fe7",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "ef29f618b91a4b5ae39a",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "650e39cf4d04001b2c80",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "cfe56aa63a44ff5a75e0",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "63e9f61eb09e0fa676c9",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "450163ea72fa400ead2f",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "0f4f09a7d3583d31537f",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "f8e36f6b47c6e553e5b3",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "b51623a049dca1618ed5",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "94bc55f1e16c9a67ad11",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "32e37e0377e63a698d00",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "e051e2e6e67d15e43960",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "d90f111689faaa20906a",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "a5c57c830214041043f0",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "9d61de2470f7f927a159",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "d5b4e6d7b33c67cfec82",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "633fd196896ba6ce471b",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "d157e31d2f0295bab8c3",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "f4c3615904718e199e23",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    },
+    {
+      "key": "d96aa8841d0c562d26bb",
+      "source": "ElevenLabs Scribe v2",
+      "matchesSpokenContent": true
+    }
+  ]
+}
