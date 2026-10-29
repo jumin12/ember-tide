@@ -31931,8 +31931,8 @@
   },
   {
     "file": "elyndor/tools/live-release-v24.mjs",
-    "bytes": 5095,
-    "sha256": "fd58c4e2ff657bc2b051d641ac4112c050ec2cdbfbe0128aee07e4c32bf926ca"
+    "bytes": 5226,
+    "sha256": "3bee75cc64d7951b492c2b4bc1ffc6957a26c583f8581df483ec57781feefcc9"
   },
   {
     "file": "elyndor/tools/load-profile-v13.mjs",
