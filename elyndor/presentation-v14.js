@@ -5,9 +5,9 @@ function atJourneyInn(){return activeScene?.kind==='interior'&&INTERIORS[activeS
 const textureBeforeImmutableCopies=actorTexture;
 actorTexture=function(id){const base=animationTextures.get(id),version=base?.source.version,result=textureBeforeImmutableCopies(id);if(base)base.source.version=version;return result;};
 const saveBeforeInnChronicles=saveSlot;
-saveSlot=function(slot,silent=false){if(!atJourneyInn()){if(!silent)toast('Record your journey at an inn.');return false;}return saveBeforeInnChronicles(slot,silent);};
+saveSlot=function(slot,silent=false){if(!canRecordJourney22()){if(!silent)toast('Use a wayfarer seal at a location entrance or an inn.');return false;}return saveBeforeInnChronicles(slot,silent);};
 const openBeforeInnChronicles=openMenu;
-openMenu=function(tab){if(tab==='save'&&!atJourneyInn())return toast('Journey records are kept at inns.');return openBeforeInnChronicles(tab);};
+openMenu=function(tab){if(tab==='save'&&!canRecordJourney22())return toast('Use a wayfarer seal or an inn chronicle.');return openBeforeInnChronicles(tab);};
 const menuBeforeInnChronicles=renderMenu;
 renderMenu=function(){menuBeforeInnChronicles();if(menu){$('#menu-status').textContent=atJourneyInn()?'An inn is a safe place to record your journey.':'Record your journey at an inn.';if(menu.tab==='save')$('#menu-title').textContent='Inn chronicle';}};
 

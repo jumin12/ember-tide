@@ -1,0 +1,11 @@
+{
+  "provider": "ElevenLabs Scribe v2",
+  "clips": 49,
+  "speaker": "Bren",
+  "revision": "clear-dawn-v22",
+  "sourceHashes": [
+    "afe2839c7cdf705c27c3dfe8108e39cff17802728bc233b2701dd31901f63930",
+    "0ef55a862833387be0e03de9fcd41eb81d7037fc50de97a0681f510f8a9d401a"
+  ],
+  "unresolvedWordDifferences": []
+}

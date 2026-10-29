@@ -1,5 +1,5 @@
 {
-  "status": "Alpha Version 1.0: paced rendering, serialized speech, clear combat sightlines and world cloud lighting",
+  "status": "Alpha Version 1.0: cinematic HDR lighting, entrance saves, inn recovery, text-only tutorials and a new Bren voice",
   "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
   "characterFamilies": 41,
   "runtimeFamilies": 42,
@@ -9,14 +9,14 @@
   "worldImages": 62,
   "artifact": {
     "file": "index.html",
-    "bytes": 35939775,
-    "sha256": "e193a31a43313fd6a72f85039a8e9a0fb546816e45f41651555a3e99e36ad2a3",
+    "bytes": 34282505,
+    "sha256": "924947a20e736161d8c886a01a137a1a69659f351357e6cd4e604127708332e8",
     "offline": true
   },
   "incompleteClips": {},
   "worldSystem": "Reference-atlas overworld with 15 points of interest and seven interiors",
   "voiceModel": "eleven_v4",
-  "voiceClips": 292,
+  "voiceClips": 259,
   "voiceProvider": "ElevenLabs",
   "soundAssets": 93,
   "soundProvider": "ElevenLabs"

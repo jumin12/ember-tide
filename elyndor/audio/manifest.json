@@ -1,16 +1,17 @@
 {
   "provider": "ElevenLabs",
   "model": "eleven_v4",
-  "codec": "Ogg Opus mono 40 kbps",
+  "codec": "Ogg Opus mono 24 kHz",
   "casting": {
     "bren": {
-      "voiceId": "Ns5QEOBF1SCXJvrWnJ6k",
-      "voiceName": "Elyndor Bren",
-      "direction": "An original male fantasy RPG protagonist in his mid twenties. Youthful natural mid-low speaking voice, subtle gravel on stressed words, warm and grounded, impulsive and quietly angsty. A brave young adult carrying frustration and responsibility beneath a dry sense of humor. Intimate believable acting, conversational short phrases, flexible emotion, relaxed neutral English with a light British inflection. Never a booming trailer announcer, no old man's bass or forced theatrical growl. Pristine dry studio audio.",
+      "voiceId": "yuvTjTWhbE9FMYIRRY2s",
+      "voiceName": "Elyndor Bren - Clear Dawn",
+      "direction": "A young adult male adventure-game hero, twenty two years old. Clear warm light baritone in a youthful mid register, relaxed soft English accent. Spontaneous intimate conversation, quick wit, stubborn courage and vulnerable sincerity. Clean bright consonants, natural breaths, varied human rhythm and understated emotion. A believable friend talking nearby. No gravel, rasp, booming bass, announcer cadence, theatrical growling or over-enunciation. Excellent dry studio recording.",
       "speed": 1,
       "gender": "male",
       "age": "young adult",
-      "portrait": "bren"
+      "portrait": "bren",
+      "revision": "clear-dawn-v22"
     },
     "soren": {
       "voiceId": "YIbnML8At2ERrzrDbmdC",
@@ -346,7 +347,8 @@
       "contextAfter": "Together.",
       "key": "8ca8575c073b6134350b",
       "file": "elyndor/audio/opus/8ca8575c073b6134350b.ogg",
-      "bytes": 21069
+      "bytes": 23520,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Tavin",
@@ -401,7 +403,8 @@
       "contextAfter": "Show us the water control.",
       "key": "8f292e04951eaee69de1",
       "file": "elyndor/audio/opus/8f292e04951eaee69de1.ogg",
-      "bytes": 18023
+      "bytes": 18971,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Soren",
@@ -434,7 +437,8 @@
       "contextAfter": "The gate’s free. The pump is still broken.",
       "key": "e24749a3a0547ea28eaa",
       "file": "elyndor/audio/opus/e24749a3a0547ea28eaa.ogg",
-      "bytes": 9622
+      "bytes": 11306,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Soren",
@@ -456,7 +460,8 @@
       "contextAfter": "Thank you. We needed that.",
       "key": "a90ae3cde274b4efd12b",
       "file": "elyndor/audio/opus/a90ae3cde274b4efd12b.ogg",
-      "bytes": 11342
+      "bytes": 13177,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Local representative",
@@ -489,7 +494,8 @@
       "contextAfter": "Keep them away from the homes.",
       "key": "1a00e4d6f6011611afe5",
       "file": "elyndor/audio/opus/1a00e4d6f6011611afe5.ogg",
-      "bytes": 9046
+      "bytes": 9896,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Soren",
@@ -533,7 +539,8 @@
       "contextAfter": "Something is pulling at my people. I stopped them, but I haven’t found what’s causing it.",
       "key": "f1b80a92409cfcabe2e2",
       "file": "elyndor/audio/opus/f1b80a92409cfcabe2e2.ogg",
-      "bytes": 6562
+      "bytes": 8807,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Tavin",
@@ -557,7 +564,8 @@
       "contextAfter": "Then we may be following the same disturbance.",
       "key": "c0f2e6166e3c001a784b",
       "file": "elyndor/audio/opus/c0f2e6166e3c001a784b.ogg",
-      "bytes": 14986
+      "bytes": 18644,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Soren",
@@ -645,7 +653,8 @@
       "contextAfter": "At activation, the responses converge under a single imposed command.",
       "key": "defd3d0e6c09a8b8c243",
       "file": "elyndor/audio/opus/defd3d0e6c09a8b8c243.ogg",
-      "bytes": 6776
+      "bytes": 9668,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "",
@@ -678,7 +687,8 @@
       "contextAfter": "We are. A system that refuses to cooperate still has to be made safe.",
       "key": "807a65986cc33f27bec0",
       "file": "elyndor/audio/opus/807a65986cc33f27bec0.ogg",
-      "bytes": 10562
+      "bytes": 13569,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Soren",
@@ -700,7 +710,8 @@
       "contextAfter": "tavin",
       "key": "8e5800ee5130fa9721e1",
       "file": "elyndor/audio/opus/8e5800ee5130fa9721e1.ogg",
-      "bytes": 11595
+      "bytes": 12574,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Tavin",
@@ -766,7 +777,8 @@
       "contextAfter": "Where do you need them?",
       "key": "a43caa19c2545a5dfba8",
       "file": "elyndor/audio/opus/a43caa19c2545a5dfba8.ogg",
-      "bytes": 5774
+      "bytes": 6057,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Tavin",
@@ -810,7 +822,8 @@
       "contextAfter": "Stay where you are. And if they lose control?",
       "key": "05aa44cd440907f32fb5",
       "file": "elyndor/audio/opus/05aa44cd440907f32fb5.ogg",
-      "bytes": 6374
+      "bytes": 6373,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Guard",
@@ -876,7 +889,8 @@
       "contextAfter": "I knew where I was. Then, for a moment, I didn’t.",
       "key": "1270ba8f9fe231010279",
       "file": "elyndor/audio/opus/1270ba8f9fe231010279.ogg",
-      "bytes": 8838
+      "bytes": 10102,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Resident",
@@ -931,7 +945,8 @@
       "contextAfter": "Wait. Which way—",
       "key": "1ac828f04aaa28666148",
       "file": "elyndor/audio/opus/1ac828f04aaa28666148.ogg",
-      "bytes": 13265
+      "bytes": 14933,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Guard",
@@ -1041,7 +1056,8 @@
       "contextAfter": "Come toward me. There’s room in the court.",
       "key": "82bbdd4c8e69818d5cc5",
       "file": "elyndor/audio/opus/82bbdd4c8e69818d5cc5.ogg",
-      "bytes": 6144
+      "bytes": 8262,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Mira",
@@ -1063,7 +1079,8 @@
       "contextAfter": "This way. Stay together.",
       "key": "7f93a05b3385b155b3e1",
       "file": "elyndor/audio/opus/7f93a05b3385b155b3e1.ogg",
-      "bytes": 11823
+      "bytes": 15290,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Tavin",
@@ -1107,7 +1124,8 @@
       "contextAfter": "We’ll stay together.",
       "key": "18ded2cae38077c0131f",
       "file": "elyndor/audio/opus/18ded2cae38077c0131f.ogg",
-      "bytes": 6976
+      "bytes": 8838,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Tavin",
@@ -1162,7 +1180,8 @@
       "contextAfter": "The party and community complete the mechanism repair. The path east leads to the separate Elder Light; it still needs our help.",
       "key": "543de602c232dcd6eaf5",
       "file": "elyndor/audio/opus/543de602c232dcd6eaf5.ogg",
-      "bytes": 15344
+      "bytes": 16530,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "",
@@ -1217,7 +1236,8 @@
       "contextAfter": "The corrections are logged here. We’ve kept the refuge open through all of this.",
       "key": "d593d3c1c88e797bedb2",
       "file": "elyndor/audio/opus/d593d3c1c88e797bedb2.ogg",
-      "bytes": 13940
+      "bytes": 15724,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Station official",
@@ -1250,7 +1270,8 @@
       "contextAfter": "We need to see what happens when the corrections stop.",
       "key": "eeba3a20086cbd5731bf",
       "file": "elyndor/audio/opus/eeba3a20086cbd5731bf.ogg",
-      "bytes": 32729
+      "bytes": 36258,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Tavin",
@@ -1316,7 +1337,8 @@
       "contextAfter": "Read these together: an account of listening, a rare whisper, and a Light refusing a command.",
       "key": "21b50818a6e605f4e236",
       "file": "elyndor/audio/opus/21b50818a6e605f4e236.ogg",
-      "bytes": 20382
+      "bytes": 20901,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Archivist",
@@ -1360,7 +1382,8 @@
       "contextAfter": "The records are fragments. Take what you observed beside what they say.",
       "key": "e944fad66c6f3ddc76c5",
       "file": "elyndor/audio/opus/e944fad66c6f3ddc76c5.ogg",
-      "bytes": 13164
+      "bytes": 14782,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Archivist",
@@ -1415,7 +1438,8 @@
       "contextAfter": "I knew what waiting would cost.",
       "key": "558d8179fa19c133f594",
       "file": "elyndor/audio/opus/558d8179fa19c133f594.ogg",
-      "bytes": 16337
+      "bytes": 17736,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Soren",
@@ -1437,7 +1461,8 @@
       "contextAfter": "I can’t.",
       "key": "f477ded5400edd708bb2",
       "file": "elyndor/audio/opus/f477ded5400edd708bb2.ogg",
-      "bytes": 14162
+      "bytes": 15609,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Soren",
@@ -1492,7 +1517,8 @@
       "contextAfter": "I need to know how far this has spread.",
       "key": "af596807c88d545285c2",
       "file": "elyndor/audio/opus/af596807c88d545285c2.ogg",
-      "bytes": 4930
+      "bytes": 5607,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Tavin",
@@ -1514,7 +1540,8 @@
       "contextAfter": "I know.",
       "key": "fbf47fa74a1daa3cc8d8",
       "file": "elyndor/audio/opus/fbf47fa74a1daa3cc8d8.ogg",
-      "bytes": 11098
+      "bytes": 11612,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Tavin",
@@ -1558,7 +1585,8 @@
       "contextAfter": "One site reference in these notes matches a royal relief station. It is open and sheltering people.",
       "key": "02b9fcf043cd245eec7d",
       "file": "elyndor/audio/opus/02b9fcf043cd245eec7d.ogg",
-      "bytes": 5911
+      "bytes": 8132,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Council official",
@@ -1580,7 +1608,8 @@
       "contextAfter": "Your observations matter. We won’t extend this practice to other stations without stronger evidence.",
       "key": "956729b2ccb037354063",
       "file": "elyndor/audio/opus/956729b2ccb037354063.ogg",
-      "bytes": 16666
+      "bytes": 19170,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Council official",
@@ -1635,7 +1664,8 @@
       "contextAfter": "Credible, but not conclusive. We authorize a limited listening-first trial at that station. Return with the results.",
       "key": "a1ef0a47b9100c034903",
       "file": "elyndor/audio/opus/a1ef0a47b9100c034903.ogg",
-      "bytes": 26928
+      "bytes": 30731,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Council official",
@@ -1679,7 +1709,8 @@
       "contextAfter": "Then let’s go.",
       "key": "ac4e9860190f34cb3c99",
       "file": "elyndor/audio/opus/ac4e9860190f34cb3c99.ogg",
-      "bytes": 19265
+      "bytes": 22517,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Tavin",
@@ -1701,7 +1732,8 @@
       "contextAfter": "This recovered field order points toward an operation serving Soren’s agenda in the snowy region. Intercept it before it advances.",
       "key": "40d989d4751eab4d497e",
       "file": "elyndor/audio/opus/40d989d4751eab4d497e.ogg",
-      "bytes": 27924
+      "bytes": 31955,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Council official",
@@ -1756,7 +1788,8 @@
       "contextAfter": "A cold light takes shape around Bren. Armor closes over him; his sword changes in his hand.",
       "key": "8c548b7c0715577d14aa",
       "file": "elyndor/audio/opus/8c548b7c0715577d14aa.ogg",
-      "bytes": 21782
+      "bytes": 24312,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "",
@@ -1833,7 +1866,8 @@
       "contextAfter": "Tell us what you need.",
       "key": "c0624430915f94386103",
       "file": "elyndor/audio/opus/c0624430915f94386103.ogg",
-      "bytes": 8144
+      "bytes": 10282,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Mira",
@@ -1866,7 +1900,8 @@
       "contextAfter": "The Light responds to Tavin’s trust in the party. Keep building charge. Click Ascend when it is ready.",
       "key": "4398f81d2f2552295e60",
       "file": "elyndor/audio/opus/4398f81d2f2552295e60.ogg",
-      "bytes": 7902
+      "bytes": 9290,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "",
@@ -1910,7 +1945,8 @@
       "contextAfter": "I can’t let it happen again.",
       "key": "b6c1100c52eb7e812ff6",
       "file": "elyndor/audio/opus/b6c1100c52eb7e812ff6.ogg",
-      "bytes": 12361
+      "bytes": 12496,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Soren",
@@ -2031,7 +2067,8 @@
       "contextAfter": "",
       "key": "56b06d384be9606615c4",
       "file": "elyndor/audio/opus/56b06d384be9606615c4.ogg",
-      "bytes": 13416
+      "bytes": 14942,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "Soren",
@@ -2059,12 +2096,13 @@
       "speaker": "bren",
       "text": "I’ll hold the line.",
       "role": "bren",
-      "performance": "[forcefully]",
+      "performance": "[determined]",
       "contextBefore": "",
       "contextAfter": "",
       "key": "ce29f91c8986b2d6b793",
       "file": "elyndor/audio/opus/ce29f91c8986b2d6b793.ogg",
-      "bytes": 8600
+      "bytes": 9062,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "bren",
@@ -2075,7 +2113,8 @@
       "contextAfter": "",
       "key": "1204a618ed9ce271a345",
       "file": "elyndor/audio/opus/1204a618ed9ce271a345.ogg",
-      "bytes": 6643
+      "bytes": 7759,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "bren",
@@ -2086,18 +2125,20 @@
       "contextAfter": "",
       "key": "4d5bc9b08651a2e8dc22",
       "file": "elyndor/audio/opus/4d5bc9b08651a2e8dc22.ogg",
-      "bytes": 9179
+      "bytes": 10826,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "bren",
       "text": "Driving slash!",
       "role": "bren",
-      "performance": "[forcefully]",
+      "performance": "[determined]",
       "contextBefore": "",
       "contextAfter": "",
       "key": "2de03e044d17a074a575",
       "file": "elyndor/audio/opus/2de03e044d17a074a575.ogg",
-      "bytes": 8134
+      "bytes": 9657,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "bren",
@@ -2108,18 +2149,20 @@
       "contextAfter": "",
       "key": "9a5d3fe04e0e693abc9c",
       "file": "elyndor/audio/opus/9a5d3fe04e0e693abc9c.ogg",
-      "bytes": 8181
+      "bytes": 9356,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "bren",
       "text": "A perfect opening!",
       "role": "bren",
-      "performance": "[forcefully]",
+      "performance": "[determined]",
       "contextBefore": "",
       "contextAfter": "",
       "key": "fda537bf5baee43ea192",
       "file": "elyndor/audio/opus/fda537bf5baee43ea192.ogg",
-      "bytes": 8612
+      "bytes": 9555,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "bren",
@@ -2130,18 +2173,20 @@
       "contextAfter": "",
       "key": "5b88e8d4ffbb251d0726",
       "file": "elyndor/audio/opus/5b88e8d4ffbb251d0726.ogg",
-      "bytes": 7394
+      "bytes": 8716,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "bren",
       "text": "Now!",
       "role": "bren",
-      "performance": "[forcefully]",
+      "performance": "[determined]",
       "contextBefore": "",
       "contextAfter": "",
       "key": "406014ca1e2dea82d2ce",
       "file": "elyndor/audio/opus/406014ca1e2dea82d2ce.ogg",
-      "bytes": 5368
+      "bytes": 5502,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "bren",
@@ -2152,29 +2197,32 @@
       "contextAfter": "",
       "key": "6a5d9744ed6716245ec7",
       "file": "elyndor/audio/opus/6a5d9744ed6716245ec7.ogg",
-      "bytes": 13157
+      "bytes": 16204,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "bren",
       "text": "Driving slash",
       "role": "bren",
-      "performance": "[forcefully]",
+      "performance": "[determined]",
       "contextBefore": "",
       "contextAfter": "",
       "key": "69f2abe20c8839ccd592",
       "file": "elyndor/audio/opus/69f2abe20c8839ccd592.ogg",
-      "bytes": 8070
+      "bytes": 9573,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "bren",
       "text": "Sundering slash",
       "role": "bren",
-      "performance": "[forcefully]",
+      "performance": "[determined]",
       "contextBefore": "",
       "contextAfter": "",
       "key": "e2c6697989107a86c4cf",
       "file": "elyndor/audio/opus/e2c6697989107a86c4cf.ogg",
-      "bytes": 9234
+      "bytes": 10986,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "bren",
@@ -2185,7 +2233,8 @@
       "contextAfter": "",
       "key": "f193371ae3f5b105f559",
       "file": "elyndor/audio/opus/f193371ae3f5b105f559.ogg",
-      "bytes": 6060
+      "bytes": 7222,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "bren",
@@ -2196,7 +2245,8 @@
       "contextAfter": "",
       "key": "cae186ae65bcb7eb63d0",
       "file": "elyndor/audio/opus/cae186ae65bcb7eb63d0.ogg",
-      "bytes": 9956
+      "bytes": 11496,
+      "voiceRevision": "clear-dawn-v22"
     },
     {
       "speaker": "soren",
@@ -3143,369 +3193,6 @@
       "key": "47bab6bc805c9716018b",
       "file": "elyndor/audio/opus/47bab6bc805c9716018b.ogg",
       "bytes": 35278
-    },
-    {
-      "speaker": "World voice",
-      "text": "Hold Shift as you move to sprint. Release Shift to return to your usual running pace.",
-      "role": "narrator",
-      "key": "d80f26195cd53492e94d",
-      "lesson": "sprint",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/d80f26195cd53492e94d.ogg",
-      "bytes": 27041,
-      "sha256": "8f5e54f67e201e181d46278769d61848e9acccce3c580010366f92669a4af6a8"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Follow the gold arrow to the local representative. When you are close, press E, or click the highlighted interaction button.",
-      "role": "narrator",
-      "key": "5802c3bdf96cae832bfe",
-      "lesson": "report",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/5802c3bdf96cae832bfe.ogg",
-      "bytes": 35601,
-      "sha256": "d073e6b953b201851e3f0e6874c5e10cfb025545815737addbc4bfc856320fbd"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Run across the bridge using W A S D, the arrow keys, or click clear ground. Your companions will follow your route.",
-      "role": "narrator",
-      "key": "553da82652d30e3b6982",
-      "lesson": "move",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/553da82652d30e3b6982.ogg",
-      "bytes": 39174,
-      "sha256": "126d69fc6e56e84a8dd3fc07fb3fbfa3df61db6b2759e09fc2b63310b83f46ea"
-    },
-    {
-      "speaker": "World voice",
-      "text": "The gate is open. Follow the arrow to the pump, and interact. Soren can use magic to repair it.",
-      "role": "narrator",
-      "key": "4f2bc8445d2628886fe7",
-      "lesson": "pump",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/4f2bc8445d2628886fe7.ogg",
-      "bytes": 31585,
-      "sha256": "b3fc4fa3bfa8dcbb79ba16660025cb87aa62a26c0199503e9d6e3c6404057d3b"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Follow the arrow up the stone steps to the jammed gate. Interact with its crank, and Bren will use his strength to free it.",
-      "role": "narrator",
-      "key": "ef29f618b91a4b5ae39a",
-      "lesson": "gate",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/ef29f618b91a4b5ae39a.ogg",
-      "bytes": 34766,
-      "sha256": "e89175573fa03c44ae79da3856e5ebdbe618111b96a029ebc098ea45fda24db8"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Open Inventory using I, or the highlighted button. Choose Supplies to see herbs for health, tinctures for magic, and revival draughts.",
-      "role": "narrator",
-      "key": "650e39cf4d04001b2c80",
-      "lesson": "inventory",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/650e39cf4d04001b2c80.ogg",
-      "bytes": 42980,
-      "sha256": "480922e162486f9cc8891028cb9d9e1b838ca813f71ce05c8f81e85068589a66"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Open Equipment. Select a companion to inspect their weapon and armor fittings. You can buy new fittings at the smithy.",
-      "role": "narrator",
-      "key": "cfe56aa63a44ff5a75e0",
-      "lesson": "equipment",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/cfe56aa63a44ff5a75e0.ogg",
-      "bytes": 33398,
-      "sha256": "968451f8b22790da1617b58961b184d637c77f5b9ba13ccbc51e2796b575c9c5"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Open Party to inspect each companion. Select Bren or Soren to see their health, magic, level, and role.",
-      "role": "narrator",
-      "key": "63e9f61eb09e0fa676c9",
-      "lesson": "party",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/63e9f61eb09e0fa676c9.ogg",
-      "bytes": 35873,
-      "sha256": "5f2df2d26fb53101411c0879ee53f60f00f77b6ce869b8b5ee6887903aaf3828"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Open Abilities. Read your companions’ skills and magic costs. Offensive skills target enemies; healing and protection target allies.",
-      "role": "narrator",
-      "key": "450163ea72fa400ead2f",
-      "lesson": "abilities",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/450163ea72fa400ead2f.ogg",
-      "bytes": 43301,
-      "sha256": "349eae747840ecf56debad05fcae43fd795c25d8fdefd75f080972af31d52bb9"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Open the Journal to review the current story objective. Optional local requests have a separate page, and open after you help Brookstead.",
-      "role": "narrator",
-      "key": "0f4f09a7d3583d31537f",
-      "lesson": "journal",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/0f4f09a7d3583d31537f.ogg",
-      "bytes": 40774,
-      "sha256": "9d115c48aaae77190a6f143e13c86f650cb449185e51928afa88e708bbabf183"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Open the map with M. This is the same landscape you can explore. Drag to pan, right-drag to rotate, and scroll to zoom.",
-      "role": "narrator",
-      "key": "f8e36f6b47c6e553e5b3",
-      "lesson": "map",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/f8e36f6b47c6e553e5b3.ogg",
-      "bytes": 41160,
-      "sha256": "96463847e3b30878f506b7beb28a3c454feaf343758812865310751fb3d1ecdb"
-    },
-    {
-      "speaker": "World voice",
-      "text": "You are ready. Follow the arrow to the crossed swords on the outer-yard floor, then interact to protect the residents.",
-      "role": "narrator",
-      "key": "b51623a049dca1618ed5",
-      "lesson": "protect",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/b51623a049dca1618ed5.ogg",
-      "bytes": 36975,
-      "sha256": "5d92914bf712eb7e300b9243f3a29d9b664f0e87e6e47e5fdd5e1d47615c5cd2"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Select an enemy by clicking its sprite or name. The arrow marks your target. Choose Attack, then strike when the indicator reaches gold.",
-      "role": "narrator",
-      "key": "94bc55f1e16c9a67ad11",
-      "lesson": "attack",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/94bc55f1e16c9a67ad11.ogg",
-      "bytes": 42379,
-      "sha256": "0e955b932da0523a8fc63667f79e4f03d8bc46ef49ebc97616f7febb3c361df7"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Press Space, E, or the Strike button as the indicator crosses the gold window. Each successful timing continues your attack chain.",
-      "role": "narrator",
-      "key": "32e37e0377e63a698d00",
-      "lesson": "chain",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/32e37e0377e63a698d00.ogg",
-      "bytes": 40139,
-      "sha256": "811f3bf9fc4237df5e69c23759134613e076b3bac89c575ad33c5bd0e100194d"
-    },
-    {
-      "speaker": "World voice",
-      "text": "On your next turn, choose Skills. Select an ability and its target. Abilities spend magic points, so check the cost before committing.",
-      "role": "narrator",
-      "key": "e051e2e6e67d15e43960",
-      "lesson": "skill",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/e051e2e6e67d15e43960.ogg",
-      "bytes": 42675,
-      "sha256": "ab29c3b499386723e945a30f2351bf1dbf8b3b0191bf87ec98b2d849434f8717"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Choose Defend to reduce the next incoming damage. Sometimes protecting a companion matters more than one extra attack.",
-      "role": "narrator",
-      "key": "d90f111689faaa20906a",
-      "lesson": "defend",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/d90f111689faaa20906a.ogg",
-      "bytes": 37347,
-      "sha256": "f540360e8ca779a2245b5a2e3ef6a4584f0847894ecf3721527bd5e58e5e7840"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Choose Items, then select the companion who needs help. Herbs restore health, tinctures restore magic, and revival draughts revive fallen allies.",
-      "role": "narrator",
-      "key": "a5c57c830214041043f0",
-      "lesson": "item",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/a5c57c830214041043f0.ogg",
-      "bytes": 46679,
-      "sha256": "03fb79b5caee341f3f33effa8db6b87f6fa8e1a043c288997b14a0e0d39f39ce"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Review your rewards, then choose View Growth to see each companion’s experience. Continue Journey applies the rewards once and returns you to the world.",
-      "role": "narrator",
-      "key": "9d61de2470f7f927a159",
-      "lesson": "results",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/9d61de2470f7f927a159.ogg",
-      "bytes": 47225,
-      "sha256": "28466fa435c642c6ce64b749d6b5c65df2d4b0663ff0f0bc2d7ef998a5ef7b86"
-    },
-    {
-      "speaker": "World voice",
-      "text": "The local representative is coming to speak with you. He will explain what Brookstead has learned, and where your investigation leads next.",
-      "role": "narrator",
-      "key": "d5b4e6d7b33c67cfec82",
-      "lesson": "aftermath",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/d5b4e6d7b33c67cfec82.ogg",
-      "bytes": 36249,
-      "sha256": "4dfd1e2b4a9046d70742b0a2314ee7e6aff8e311dbbffc0275d1bdc5cf09c501"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Before the next road, visit the inn. Its blue chronicle circle lets you save your journey. Recording is available only inside inns.",
-      "role": "narrator",
-      "key": "633fd196896ba6ce471b",
-      "lesson": "inn",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/633fd196896ba6ce471b.ogg",
-      "bytes": 41481,
-      "sha256": "157b371e12a3121029afcc2226c9476f2dad79f6002bdfc97759af601eea37c9"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Clouds, wind, rain, and daylight change as you travel. Rain darkens stone and leaves puddles. You can adjust motion and sound in Settings.",
-      "role": "narrator",
-      "key": "d157e31d2f0295bab8c3",
-      "lesson": "weather",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/d157e31d2f0295bab8c3.ogg",
-      "bytes": 48150,
-      "sha256": "54013f70bbf132b3391ece707ec0c2f97d013d455eb443981b92a61319061f6e"
-    },
-    {
-      "speaker": "World voice",
-      "text": "When the story awakens a companion’s Light, a full charge allows Ascension. Ascended abilities are stronger, and last for a limited time in combat.",
-      "role": "narrator",
-      "key": "f4c3615904718e199e23",
-      "lesson": "ascend",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/f4c3615904718e199e23.ogg",
-      "bytes": 45925,
-      "sha256": "629d221b1fb973525abf0c29fdb4096b1719424b3ba778cfaa4cddbb6daeb2fa"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Leave by a ground exit to reach the overworld. Enter a settlement at its ground arrows. Discovered places allow fast travel from the map.",
-      "role": "narrator",
-      "key": "d96aa8841d0c562d26bb",
-      "lesson": "travel",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/d96aa8841d0c562d26bb.ogg",
-      "bytes": 41614,
-      "sha256": "e62f420c7c4f1d42009955f2b993c06a07b38fcc09e0e39e50554510d1e4be5d"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Choose Attack. Bren will move into range and begin a three-strike chain.",
-      "role": "narrator",
-      "key": "38835a917a06dd6c97b4",
-      "lesson": "attack",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/38835a917a06dd6c97b4.ogg",
-      "bytes": 21828,
-      "sha256": "3fd0531fd58f4cd1460247e6fca9e1a42086f4e356b6cc2981d0922ef0cb016d"
-    },
-    {
-      "speaker": "World voice",
-      "text": "This first encounter will teach you one action at a time. Nothing attacks while you read. Start with Bren, then try Soren's magic, healing, and defense.",
-      "role": "narrator",
-      "key": "8cfa2253dbce4f67e9ad",
-      "lesson": "welcome",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/8cfa2253dbce4f67e9ad.ogg",
-      "bytes": 47645,
-      "sha256": "07cfef06219c96df8890c48c0087a0699d68a712ce81e860fc949f92dbb5a24e"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Choose the Duskfang Wolf. Click its name or its sprite, or focus its name with the keyboard and press Enter. The gold arrow marks your selected foe.",
-      "role": "narrator",
-      "key": "037fcbbc80ad903e6f2b",
-      "lesson": "target",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/037fcbbc80ad903e6f2b.ogg",
-      "bytes": 45228,
-      "sha256": "15baf5a5d5d29841a3c35094ea0e4acc02363720069c46953ad6421b25a371a9"
-    },
-    {
-      "speaker": "World voice",
-      "text": "For this first strike, the marker waits inside the gold window. Press Space, E, or the Strike button. The next two strikes run more slowly so you can practice timing them yourself.",
-      "role": "narrator",
-      "key": "7e55aa82a19358d8dd3a",
-      "lesson": "timing",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/7e55aa82a19358d8dd3a.ogg",
-      "bytes": 53279,
-      "sha256": "919c27f3530e3627ba3ace865e94e5c9db0c674b81315f85e52ce1dc8b5f9bf2"
-    },
-    {
-      "speaker": "World voice",
-      "text": "The wolf is preparing to hit Bren. Watch his HP bar on the right. After the hit, we'll use a healing herb.",
-      "role": "narrator",
-      "key": "afaf584271bc5912ffa8",
-      "lesson": "incoming",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/afaf584271bc5912ffa8.ogg",
-      "bytes": 32465,
-      "sha256": "4c1762829fe93bb42ffc577d6449383b977e5a8bca9c6a74b9f59afd941c2436"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Now choose Skills, then Arcane pulse. This spends eight magic points. Watch Soren's MP bar and the selected enemy's health.",
-      "role": "narrator",
-      "key": "ec2f46b07cf9ddd15470",
-      "lesson": "skill",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/ec2f46b07cf9ddd15470.ogg",
-      "bytes": 41645,
-      "sha256": "fcb74781efbf70dc98e7545e3955d991a3d615ba69e8b0aa11fe2298927a756c"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Choose Defend. It reduces the next incoming hit without spending magic. Watch how much less damage Bren takes this time.",
-      "role": "narrator",
-      "key": "d9b9d7469f7a5b4a1432",
-      "lesson": "defend",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/d9b9d7469f7a5b4a1432.ogg",
-      "bytes": 36995,
-      "sha256": "0f5d30552d52e658326044afc30de4c48f4fa7a9a53e80d41a6c240d117e9275"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Bren is hurt. Choose Items, then Healing herb, then Bren. A practice herb is provided for this lesson, so your own supplies are kept.",
-      "role": "narrator",
-      "key": "5029b839673fcd3ec47e",
-      "lesson": "item",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/5029b839673fcd3ec47e.ogg",
-      "bytes": 44616,
-      "sha256": "418df55996980c79821f9caa4abf7e5d365233859ed1cf0c5a4d6fb17dabebbf"
-    },
-    {
-      "speaker": "World voice",
-      "text": "Bren is braced. The same attack now deals less damage. Guarding can buy the time you need to heal or prepare your next move.",
-      "role": "narrator",
-      "key": "c9b42a6711059ad8e94a",
-      "lesson": "guardHit",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/c9b42a6711059ad8e94a.ogg",
-      "bytes": 40413,
-      "sha256": "67de58d732f361e92f13f0ecc4e608f97a554e8937b6d4a1b126ad6dec10c61a"
-    },
-    {
-      "speaker": "World voice",
-      "text": "You know the essentials. Select your foes, time attack chains, watch HP and MP, use items when needed, and defend against incoming damage. Finish driving the wildlife away.",
-      "role": "narrator",
-      "key": "1e609a03d59c96655a38",
-      "lesson": "free",
-      "performance": "Clear warm practical guidance",
-      "file": "elyndor/audio/opus/1e609a03d59c96655a38.ogg",
-      "bytes": 57692,
-      "sha256": "eb869b2484a7767244fcfcd2f7c339196eb55fcd4025af5676c90c0871ff75cc"
     }
   ]
 }
