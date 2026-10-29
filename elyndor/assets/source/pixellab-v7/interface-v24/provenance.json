@@ -1,0 +1,126 @@
+{
+  "generator": "PixelLab",
+  "reference": "User-provided atmo2 concept; no earlier generated assets used as generation references",
+  "selected": [
+    {
+      "key": "panel",
+      "job": "a7449d80-9848-4841-b6fd-8e219f7a6b49",
+      "candidate": 0,
+      "size": [
+        512,
+        288
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        107,
+        129,
+        406,
+        279
+      ]
+    },
+    {
+      "key": "compass",
+      "job": "6e674377-5c1c-435d-843c-d2f4561f90de",
+      "candidate": 0,
+      "size": [
+        256,
+        256
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        2,
+        1,
+        254,
+        253
+      ]
+    },
+    {
+      "key": "map",
+      "job": "a3acce27-2ad5-4e27-85a4-11206629c8c0",
+      "candidate": 0,
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        5,
+        5,
+        123,
+        123
+      ]
+    },
+    {
+      "key": "inventory",
+      "job": "d7edba23-b842-49a0-81c3-39e9b7b7a905",
+      "candidate": 2,
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        3,
+        2,
+        126,
+        126
+      ]
+    },
+    {
+      "key": "party",
+      "job": "d732e973-dd4a-42d8-85fe-7403c0b0551e",
+      "candidate": 0,
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        2,
+        2,
+        125,
+        126
+      ]
+    },
+    {
+      "key": "journal",
+      "job": "50c16f33-a6f0-41a7-898f-98ef7a92f100",
+      "candidate": 0,
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        7,
+        6,
+        122,
+        121
+      ]
+    }
+  ],
+  "panelCrop": [
+    107,
+    129,
+    406,
+    279
+  ]
+}

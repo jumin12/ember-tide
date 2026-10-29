@@ -98,11 +98,6 @@ function brookHouse(x,z,w,d,kind){
  for(let zz=-d/2+1.6;zz<d/2;zz+=2.4)box(w/2+.1,h/2,zz,.18,h,.16,'wood','#8a6041',g);
  for(const xx of[-w*.08,w*.08])beam(V3(xx,h*.55,d/2+.16),V3(xx+(xx<0?1:-1),h*.94,d/2+.16),.075,'darkWood','#674737',g);
  const roofHeight=w*.31,roof=archRoof(roofShell,w+1.25,d+1.4,roofHeight,'brook');roof.position.y=h+.15;
- // Thin raised slate courses make the silhouette and light-catching eaves physical.
- for(const side of[-1,1])for(let row=1;row<=8;row++){
-  const t=row/8,xx=side*t*(w/2+.62),yy=h+.2+roofHeight*(1-t);
-  beam(V3(xx,yy,-d/2-.75),V3(xx,yy,d/2+.75),.027,'slate','#84929b',roofShell);
- }
  for(const zz of[-d/2-.73,d/2+.73]){beam(V3(-w/2-.62,h+.14,zz),V3(0,h+roofHeight+.22,zz),.12,'wood','#674737',roofShell);beam(V3(0,h+roofHeight+.22,zz),V3(w/2+.62,h+.14,zz),.12,'wood','#674737',roofShell);}
  // Exposed pegged trusses follow each gable's actual triangular profile.
  for(const side of[-1,1]){const zz=side*(d/2+.04);
@@ -170,8 +165,8 @@ function brookHouse(x,z,w,d,kind){
  if(kind==='inn'||kind==='home'){
   const pw=w*.58,pz=front+1.55;
   for(const xx of[-pw/2,pw/2]){box(xx,1.5,pz+.8,.19,3,.19,'wood','#aa7d51',g);beam(V3(xx,2.0,pz+.8),V3(xx,2.9,pz+.12),.075,'wood','#c59b69',g);}
-  const porch=box(0,3.18,pz,pw+.7,.16,3.1,'slate','#6184a3',g);porch.rotation.x=.13;
-  for(let row=0;row<5;row++)beam(V3(-pw/2-.35,3.2-row*.08,front+.2+row*.6),V3(pw/2+.35,3.2-row*.08,front+.2+row*.6),.022,'slate','#84929b',g);
+  const roofGeo=new THREE.BufferGeometry(),rw=pw/2+.45,rz=front-.05,fz=front+3.15;roofGeo.setAttribute('position',new THREE.Float32BufferAttribute([-rw,3.8,rz,-rw,3.26,fz,rw,3.8,rz,rw,3.8,rz,-rw,3.26,fz,rw,3.26,fz],3));roofGeo.setAttribute('uv',new THREE.Float32BufferAttribute([0,0,0,.54,pw*.17,0,pw*.17,0,0,.54,pw*.17,.54],2));roofGeo.computeVertexNormals();mesh(roofGeo,material('slate','#c9d9e7',{side:THREE.DoubleSide}),0,0,0,g);beam(V3(-rw,3.25,fz),V3(rw,3.25,fz),.075,'wood','#987349',g);
+
   for(const xx of[-pw/2,pw/2])obstacle(x+xx,z+pz+.8,.23,.23,'porch post');
  }
  if(kind==='inn'||kind==='forge'){

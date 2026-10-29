@@ -1,16 +1,16 @@
 {
-  "status": "Alpha Version 1.0: native sharp rendering, warm daylight, oblique exploration and sustained-play optimization",
+  "status": "Alpha Version 1.0: concept-matched atmosphere, PixelLab interface, detailed architecture and expanded points of interest",
   "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
   "characterFamilies": 41,
   "runtimeFamilies": 42,
   "nativeSelectedPoses": 4878,
   "portraits": 38,
   "dedicatedHudPortraits": 5,
-  "worldImages": 62,
+  "worldImages": 68,
   "artifact": {
     "file": "index.html",
-    "bytes": 34302048,
-    "sha256": "2598d3310748d24bff2988fe02637a44ed85c2a32eb4d8480f84e124cb25a0db",
+    "bytes": 34284426,
+    "sha256": "fc7e6eabbc757b5f8fa441e8e592fdf2ba9a2be82c892caf0040261b45014afa",
     "offline": true
   },
   "incompleteClips": {},

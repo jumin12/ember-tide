@@ -1,0 +1,55 @@
+[
+  {
+    "material": "plaster",
+    "generator": "PixelLab Pro",
+    "job": "030ba701-9a39-4ade-b0d9-84a033bc5f5f",
+    "nativeSize": [
+      512,
+      512
+    ],
+    "selectedNativeCrop": null,
+    "sha256": "32c6d34a041ce48aca9781fd5b33cce5528448d0051daa8be4e54deda4a568db",
+    "reviewed": true
+  },
+  {
+    "material": "oakCanopy",
+    "generator": "PixelLab Pro",
+    "job": "38bf4a11-2c0c-4290-a3b5-60ff4d70477a",
+    "nativeSize": [
+      512,
+      512
+    ],
+    "selectedNativeCrop": null,
+    "sha256": "31f15d990e1509acedcb33c73d4fb5ee5b3eb391329c3093e9d7c77b077a5a7c",
+    "reviewed": true
+  },
+  {
+    "material": "slate",
+    "generator": "PixelLab Pro",
+    "job": "38b07597-8144-4bec-a659-269a183e2d03",
+    "nativeSize": [
+      512,
+      512
+    ],
+    "selectedNativeCrop": [
+      0,
+      120,
+      512,
+      512
+    ],
+    "sha256": "2d186da08beb9ccc3f870f96f16cbc8420ce7114fda9be035d77c3f081b99456",
+    "reviewed": true
+  },
+  {
+    "material": "cobble",
+    "generator": "PixelLab Pro",
+    "job": "8caef4e7-435b-4212-88c0-9c80f77d3ff2",
+    "nativeSize": [
+      512,
+      512
+    ],
+    "selectedNativeCrop": null,
+    "sha256": "b387bd94785da31f7e9aac9d7bb1d470ccbe4562d74c5bfbfb215c0bc59bf6f3",
+    "reviewed": true
+  }
+]
