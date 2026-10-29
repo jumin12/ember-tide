@@ -40,7 +40,7 @@ const ROAD_GRID=new Map();for(const s of ROAD_SEGMENTS)for(let x=Math.floor((s.m
 const TOWNS=[{id:'square',x:-98,z:83,r:42,h:1.3},{id:'fern',x:100,z:67,r:29,h:3.2},{id:'highmere',x:-70,z:-94,r:42,h:5.2},{id:'alder',x:127,z:-83,r:28,h:2.4},{id:'relief',x:24,z:-153,r:24,h:3.1}];
 let openWorldReady=false,worldBuildSerial=0,worldRevision=1,colliderGrid=new Map(),waypoint=null,restoration=null,worldLastArea=null;
 const openWorldDebug={builds:0,crossings:0,battles:0,restorations:0};
-function roadInfo(x,z){let d=65,kind='trail';for(const q of ROAD_GRID.get(Math.floor(x/32)+','+Math.floor(z/32))??[]){if(x<q.minX-55||x>q.maxX+55||z<q.minZ-55||z>q.maxZ+55)continue;const k=segmentDistance(x,z,q.a,q.b);if(k<d){d=k;kind=q.kind;}}for(const t of TOWNS){const p=Math.max(0,Math.hypot(x-t.x,z-t.z)-(t.id==='highmere'?8:t.id==='square'?7:t.id==='fern'?6:4));if(p<d){d=p;kind='lane';}}return{d,kind};}
+function roadInfo(x,z){let squared=65*65,kind='trail';for(const q of ROAD_GRID.get(Math.floor(x/32)+','+Math.floor(z/32))??[]){const ax=q.a[0],az=q.a[1],bx=q.b[0],bz=q.b[1],boundX=Math.max(Math.min(ax,bx)-x,0,x-Math.max(ax,bx)),boundZ=Math.max(Math.min(az,bz)-z,0,z-Math.max(az,bz));if(boundX*boundX+boundZ*boundZ>=squared)continue;const dx=bx-ax,dz=bz-az,length=dx*dx+dz*dz,t=length?Math.max(0,Math.min(1,((x-ax)*dx+(z-az)*dz)/length)):0,ex=x-ax-dx*t,ez=z-az-dz*t,d=ex*ex+ez*ez;if(d<squared){squared=d;kind=q.kind;}}let d=Math.sqrt(squared);for(const t of TOWNS){const p=Math.max(0,Math.hypot(x-t.x,z-t.z)-(t.id==='highmere'?8:t.id==='square'?7:t.id==='fern'?6:4));if(p<d){d=p;kind='lane';}}return{d,kind};}
 roadDistance=(x,z)=>roadInfo(x,z).d;
 function riverX(z){return -43+Math.sin(z*.017)*17+Math.sin(z*.039)*4;}
 function riverWidth(z){return 5.5+Math.sin(z*.013)*1.5;}

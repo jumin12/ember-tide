@@ -1,0 +1,18 @@
+"""Run one GPU browser at a time against the exact final artifact."""
+from pathlib import Path
+import hashlib,json,os,subprocess,sys
+root=Path(__file__).resolve().parents[2];out=root/'output/elyndor/pixellab-v23'
+sha=hashlib.sha256((root/'index.html').read_bytes()).hexdigest()
+commands=[('regression',['python','elyndor/tools/regression-v23.py','--resume'],None),('native-clarity',['node','elyndor/tools/clarity-v23.mjs'],'clarity/report.json'),('resident-navigation',['node','elyndor/tools/resident-navigation-v23.mjs'],'resident-navigation/report.json'),('extended-endurance',['node','elyndor/tools/endurance-v23.mjs'],'endurance/report.json')]
+for name,args,report in commands:
+ if report and (out/report).exists():
+  q=json.loads((out/report).read_text(encoding='utf-8'))
+  if q.get('sha256')==sha and q.get('pass'):
+   print(name+': PASS (same artifact)',flush=True);continue
+ print(name+': running',flush=True)
+ with (out/(name+'-final.log')).open('w',encoding='utf-8') as log:r=subprocess.run(args,cwd=root,env={**os.environ,'ELY_NATIVE':'1'},stdout=log,stderr=subprocess.STDOUT)
+ if r.returncode:
+  print((out/(name+'-final.log')).read_text(encoding='utf-8')[-3500:],flush=True);sys.exit(r.returncode)
+ assert hashlib.sha256((root/'index.html').read_bytes()).hexdigest()==sha
+ print(name+': PASS',flush=True)
+print('All 34 release checks passed: '+sha,flush=True)

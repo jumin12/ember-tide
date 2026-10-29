@@ -1,11 +1,11 @@
 {
-  "release": "elyndor-alpha-1.0-2026-10-29-cinematic-v22",
+  "release": "elyndor-alpha-1.0-2026-10-29-clarity-v23",
   "version": "Alpha Version 1.0",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 34282505,
-    "sha256": "924947a20e736161d8c886a01a137a1a69659f351357e6cd4e604127708332e8",
+    "bytes": 34302048,
+    "sha256": "2598d3310748d24bff2988fe02637a44ed85c2a32eb4d8480f84e124cb25a0db",
     "offline": true
   },
   "featureCatalogue": {
@@ -125,17 +125,18 @@
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "8946a1172b79b374252e4c300f15405979178645"
+    "previousRelease": "5758c72749025d54889a3206c7a4d49ee97e84bc"
   },
   "changes": [
-    "Selective HDR highlight bloom uses two reusable quarter-resolution targets; depth-aware diorama focus preserves the party and softens foreground, distance and all four edges",
-    "Warm directional light, cooler soft shadows, earthy color grading and readable night combat fill refine the existing world lighting",
-    "Every outdoor POI and the overworld have moving cloud shadows plus world-cell-anchored, cloud-lit dust and fireflies; drift runs on the GPU",
-    "All 33 tutorial World voice recordings and replay-voice controls are removed; guided text, highlights, world arrows and scripted combat practice remain",
-    "A clear, original youthful Bren voice replaces the previous identity; all 49 story and combat performances are regenerated and pass spoken-word QA",
-    "All 15 POI entrances have accessible floor save seals using the existing three-slot save/load, overwrite and delete interface",
-    "Both inns retain chronicle circles and have explicit Rest and Journey records services; resting fully restores stat-based party HP and MP for 15 coins, advances to morning and writes one inn checkpoint",
-    "Stable static world transforms, visibility budgets, reflection scheduling and prewarmed effects are retained; no world texture or character art is replaced"
+    "Full native 1920x1080 on the tested device replaces the hidden 1.4-megapixel rendering cap; four-sample scene antialiasing smooths geometry silhouettes",
+    "World textures retain their native source detail with mipmapped filtering and up to16x anisotropy; sprite atlases retain nearest filtering and native frame padding",
+    "The playable scene stays sharp at every depth; subtle focus is confined to the extreme lens edges, with restrained bloom and vignette",
+    "Warm front-side sunlight, stronger sky bounce and balanced daylight brighten facades and sprites; canopy grading restores restrained olive greens",
+    "A downward oblique exploration camera shows the starting bridge diagonally and exposes building side faces; screen-relative WASD, arrows and eight-direction art remain consistent",
+    "Forest batches share material programs; static transforms are cached across all POIs, and individual-tree cutaways use a nearby spatial grid",
+    "Padded visibility budgets and offscreen-water rejection reduce repeated scene work; bounded asynchronous GPU queries control pixel pressure without reacting to quest or garbage-collection CPU spikes",
+    "NPC errands use resumable A-star jobs with one shared per-frame budget, removing the measured 84ms synchronous route-planning hitch",
+    "Existing tutorial text, entrance and inn saves, inn recovery, voiced story, battle effects and side-on battle staging are preserved"
   ],
   "art": {
     "generator": "PixelLab",
@@ -309,8 +310,1376 @@
       {
         "name": "atlas-performance",
         "pass": true
+      },
+      {
+        "name": "native-1080p-clarity-camera-input",
+        "pass": true
+      },
+      {
+        "name": "extended-native-1080p-endurance",
+        "pass": true
+      },
+      {
+        "name": "bounded-resident-route-planning",
+        "pass": true
       }
     ],
+    "sourceMatchesArtifact": true,
+    "sharpRenderingAndControls": {
+      "sha256": "2598d3310748d24bff2988fe02637a44ed85c2a32eb4d8480f84e124cb25a0db",
+      "graphics": {
+        "buffer": [
+          1920,
+          1080
+        ],
+        "samples": 4,
+        "scale": 1,
+        "yaw": 27.439727948199295,
+        "pitch": 40.476169071538855,
+        "sun": 3.806647061901682,
+        "hemi": 1.23,
+        "bounce": 1.24,
+        "spriteNearest": true,
+        "worldAnisotropy": 16,
+        "forestMaterials": 1,
+        "fullSceneBlur": false,
+        "replay": false
+      },
+      "roads": {
+        "points": 1200,
+        "maxError": 1.4210854715202004e-14
+      },
+      "directions": [
+        {
+          "key": "w",
+          "x": -133.40551743816945,
+          "z": 119.21900345241443,
+          "face": "north",
+          "followers": [
+            0.8099125734731843
+          ],
+          "screenProgress": 0.8800000000000578
+        },
+        {
+          "key": "d",
+          "x": -132.21900345241443,
+          "z": 119.59448256183055,
+          "face": "east",
+          "followers": [
+            1.458504617409923
+          ],
+          "screenProgress": 0.8800000000000578
+        },
+        {
+          "key": "s",
+          "x": -132.59448256183055,
+          "z": 120.78099654758557,
+          "face": "south",
+          "followers": [
+            1.289046788650481
+          ],
+          "screenProgress": 0.8800000000000578
+        },
+        {
+          "key": "a",
+          "x": -133.78099654758557,
+          "z": 120.40551743816945,
+          "face": "west",
+          "followers": [
+            0.43630755321677356
+          ],
+          "screenProgress": 0.8800000000000578
+        },
+        {
+          "key": "ArrowUp",
+          "x": -133.40551743816945,
+          "z": 119.21900345241443,
+          "face": "north",
+          "followers": [
+            0.8099125734731843
+          ],
+          "screenProgress": 0.8800000000000578
+        },
+        {
+          "key": "ArrowRight",
+          "x": -132.21900345241443,
+          "z": 119.59448256183055,
+          "face": "east",
+          "followers": [
+            1.458504617409923
+          ],
+          "screenProgress": 0.8800000000000578
+        },
+        {
+          "key": "ArrowDown",
+          "x": -132.59448256183055,
+          "z": 120.78099654758557,
+          "face": "south",
+          "followers": [
+            1.289046788650481
+          ],
+          "screenProgress": 0.8800000000000578
+        },
+        {
+          "key": "ArrowLeft",
+          "x": -133.78099654758557,
+          "z": 120.40551743816945,
+          "face": "west",
+          "followers": [
+            0.43630755321677356
+          ],
+          "screenProgress": 0.8800000000000578
+        }
+      ],
+      "battle": {
+        "yaw": 0,
+        "frames": [
+          {
+            "id": "bren",
+            "action": "battleIdle"
+          },
+          {
+            "id": "soren",
+            "action": "battleIdle"
+          },
+          {
+            "id": "wolf",
+            "action": "enemyIdle"
+          },
+          {
+            "id": "boar",
+            "action": "enemyIdle"
+          }
+        ],
+        "cover": {
+          "trees": 26,
+          "plants": 1073,
+          "buildings": 4
+        }
+      },
+      "overworld": {
+        "gpuMs": 3.258550919630977,
+        "gpuSamples": 67,
+        "queries": 0,
+        "allTrees": 17597,
+        "cutawayCandidates": 680,
+        "buffer": [
+          1920,
+          1080
+        ],
+        "scale": 1
+      },
+      "errors": [],
+      "pass": true
+    },
+    "endurance": {
+      "phases": [
+        {
+          "name": "warm-town",
+          "seconds": 30.013,
+          "fps": 72.50191583647087,
+          "frame": {
+            "mean": 13.794206896551039,
+            "p95": 15.799999997019768,
+            "p99": 19,
+            "max": 21.599999997764826
+          },
+          "renderCPU": {
+            "mean": 8.130101102982948,
+            "p95": 11.099999997764826,
+            "p99": 12.199999999254942,
+            "max": 16.399999998509884
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.564718776620085,
+          "fx": 9,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        {
+          "name": "after-travel-and-battle-0",
+          "seconds": 10.00089999999851,
+          "fps": 72.49347558720795,
+          "frame": {
+            "mean": 13.770165745853266,
+            "p95": 14.800000000745058,
+            "p99": 15.600000001490116,
+            "max": 16
+          },
+          "renderCPU": {
+            "mean": 3.573379310451705,
+            "p95": 4,
+            "p99": 4.400000002235174,
+            "max": 6.5
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.333460503699319,
+          "fx": 8,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        {
+          "name": "after-travel-and-battle-1",
+          "seconds": 10.0005,
+          "fps": 72.49637518124094,
+          "frame": {
+            "mean": 13.775414364643972,
+            "p95": 14.700000002980232,
+            "p99": 15.899999998509884,
+            "max": 19.899999998509884
+          },
+          "renderCPU": {
+            "mean": 3.43613793101804,
+            "p95": 3.800000000745058,
+            "p99": 4.100000001490116,
+            "max": 5.100000001490116
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.574672500242954,
+          "fx": 13,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        {
+          "name": "after-travel-and-battle-2",
+          "seconds": 10.003800000000744,
+          "fps": 72.5724224794524,
+          "frame": {
+            "mean": 13.769517241377255,
+            "p95": 14.699999999254942,
+            "p99": 15.800000000745058,
+            "max": 16.5
+          },
+          "renderCPU": {
+            "mean": 3.385674931216708,
+            "p95": 3.699999999254942,
+            "p99": 3.800000000745058,
+            "max": 4
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.2496227062382905,
+          "fx": 10,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        {
+          "name": "after-travel-and-battle-3",
+          "seconds": 10.005100000001491,
+          "fps": 72.56299287362364,
+          "frame": {
+            "mean": 13.770206896549668,
+            "p95": 14.800000000745058,
+            "p99": 15.700000002980232,
+            "max": 18
+          },
+          "renderCPU": {
+            "mean": 3.5680440771226714,
+            "p95": 4.100000001490116,
+            "p99": 4.799999997019768,
+            "max": 7.5
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.258169799409393,
+          "fx": 5,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        {
+          "name": "town-after-thirty-minutes",
+          "seconds": 45.00260000000149,
+          "fps": 72.50692182229231,
+          "frame": {
+            "mean": 13.794206008583462,
+            "p95": 14.699999999254942,
+            "p99": 15.800000000745058,
+            "max": 20.699999999254942
+          },
+          "renderCPU": {
+            "mean": 4.165154765519607,
+            "p95": 6.599999997764826,
+            "p99": 7.5,
+            "max": 9.300000000745058
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 2.40368301582077,
+          "fx": 5,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        {
+          "name": "overworld-extended",
+          "seconds": 60.00040000000224,
+          "fps": 72.44951700321728,
+          "frame": {
+            "mean": 13.801035434881966,
+            "p95": 14.600000001490116,
+            "p99": 15.399999998509884,
+            "max": 16.399999998509884
+          },
+          "renderCPU": {
+            "mean": 4.2746031746218565,
+            "p95": 4.800000000745058,
+            "p99": 5.200000002980232,
+            "max": 6
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 2.4866376570287296,
+          "fx": 7,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        {
+          "name": "storm-overworld-extended",
+          "seconds": 60.000699999999256,
+          "fps": 72.44915475986204,
+          "frame": {
+            "mean": 13.80276115968724,
+            "p95": 14.600000001490116,
+            "p99": 15.400000002235174,
+            "max": 42.100000001490116
+          },
+          "renderCPU": {
+            "mean": 4.5253508166189995,
+            "p95": 5.800000000745058,
+            "p99": 7.300000000745058,
+            "max": 10.799999997019768
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 2.483265160098788,
+          "fx": 11,
+          "weather": "Thunderstorm",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        {
+          "name": "continuous-battle-skills",
+          "seconds": 60.00789999999851,
+          "fps": 72.4404620058377,
+          "frame": {
+            "mean": 13.804003681546078,
+            "p95": 15.599999997764826,
+            "p99": 16.600000001490116,
+            "max": 41.69999999925494
+          },
+          "renderCPU": {
+            "mean": 4.820243846370567,
+            "p95": 5.300000000745058,
+            "p99": 5.600000001490116,
+            "max": 8.5
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 3.9019629259845012,
+          "fx": 0,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        {
+          "name": "final-town",
+          "seconds": 30.00770000000298,
+          "fps": 72.51472122154594,
+          "frame": {
+            "mean": 13.792459770115627,
+            "p95": 14.699999999254942,
+            "p99": 15.800000000745058,
+            "max": 16.700000002980232
+          },
+          "renderCPU": {
+            "mean": 4.765808823556119,
+            "p95": 6.300000000745058,
+            "p99": 8.400000002235174,
+            "max": 10.199999999254942
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.77063695449664,
+          "fx": 10,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        }
+      ],
+      "resources": [
+        {
+          "name": "warm",
+          "heap": 730751970,
+          "geometries": 2247,
+          "textures": 76,
+          "programs": 197,
+          "keepers": 61,
+          "queries": 0,
+          "fx": 9,
+          "nav": 0,
+          "roadCache": 50000
+        },
+        {
+          "name": "round-0",
+          "heap": 731664398,
+          "geometries": 2243,
+          "textures": 76,
+          "programs": 199,
+          "keepers": 62,
+          "queries": 0,
+          "fx": 8,
+          "nav": 0,
+          "roadCache": 50000
+        },
+        {
+          "name": "round-1",
+          "heap": 732193074,
+          "geometries": 2248,
+          "textures": 76,
+          "programs": 199,
+          "keepers": 62,
+          "queries": 0,
+          "fx": 13,
+          "nav": 0,
+          "roadCache": 50000
+        },
+        {
+          "name": "round-2",
+          "heap": 732529834,
+          "geometries": 2245,
+          "textures": 76,
+          "programs": 199,
+          "keepers": 62,
+          "queries": 0,
+          "fx": 10,
+          "nav": 0,
+          "roadCache": 50000
+        },
+        {
+          "name": "round-3",
+          "heap": 732796578,
+          "geometries": 2240,
+          "textures": 76,
+          "programs": 199,
+          "keepers": 62,
+          "queries": 0,
+          "fx": 5,
+          "nav": 0,
+          "roadCache": 50000
+        },
+        {
+          "name": "after-thirty-minutes",
+          "heap": 732949292,
+          "geometries": 2240,
+          "textures": 76,
+          "programs": 199,
+          "keepers": 62,
+          "queries": 0,
+          "fx": 5,
+          "nav": 0,
+          "roadCache": 50000
+        },
+        {
+          "name": "final",
+          "heap": 733176523,
+          "geometries": 2245,
+          "textures": 76,
+          "programs": 199,
+          "keepers": 62,
+          "queries": 0,
+          "fx": 10,
+          "nav": 0,
+          "roadCache": 50000
+        }
+      ],
+      "acceleratedSeconds": 1800,
+      "sha256": "2598d3310748d24bff2988fe02637a44ed85c2a32eb4d8480f84e124cb25a0db",
+      "growth": {
+        "heap": 983449,
+        "geometries": -3,
+        "textures": 0,
+        "programs": 0
+      },
+      "scope": "Native Chrome at 1920x1080 on recorded device; uncapped monitor cadence, four repeated travel/combat rounds, thirty simulated minutes plus sustained real-time town, overworld, storm and skill battles. Garbage collection is test-only for retained-memory comparison.",
+      "pass": true,
+      "errors": []
+    },
+    "residentNavigation": {
+      "sha256": "2598d3310748d24bff2988fe02637a44ed85c2a32eb4d8480f84e124cb25a0db",
+      "test": {
+        "fps": 72.29783106506265,
+        "tick": {
+          "p95": 2.5,
+          "p99": 3.800000000745058,
+          "max": 7.400000002235174,
+          "mean": 1.6617335177590464
+        },
+        "render": {
+          "p95": 3.600000001490116,
+          "p99": 3.800000000745058,
+          "max": 4.699999999254942,
+          "mean": 3.288658367876099
+        },
+        "frame": {
+          "p95": 14.899999998509884,
+          "p99": 15.699999999254942,
+          "max": 103.80000000074506,
+          "mean": 13.831642066420665
+        },
+        "exhaustedSearch": {
+          "done": true,
+          "expansions": 6501,
+          "found": false,
+          "destinationFree": true
+        },
+        "planner": {
+          "completed": 34,
+          "failed": 1,
+          "maxSliceMs": 2.399999998509884,
+          "pending": 0
+        },
+        "residents": [
+          {
+            "id": "worker",
+            "tasks": 3,
+            "free": true
+          },
+          {
+            "id": "guard",
+            "tasks": 1,
+            "free": true
+          },
+          {
+            "id": "courier",
+            "tasks": 1,
+            "free": true
+          },
+          {
+            "id": "farmer",
+            "tasks": 1,
+            "free": true
+          },
+          {
+            "id": "elder",
+            "tasks": 4,
+            "free": true
+          },
+          {
+            "id": "innkeeper",
+            "tasks": 3,
+            "free": true
+          },
+          {
+            "id": "representative",
+            "tasks": 4,
+            "free": true
+          },
+          {
+            "id": "merchant",
+            "tasks": 4,
+            "free": true
+          },
+          {
+            "id": "healer",
+            "tasks": 3,
+            "free": true
+          },
+          {
+            "id": "sheepEwe",
+            "tasks": 2,
+            "free": true
+          },
+          {
+            "id": "sheepLamb",
+            "tasks": 4,
+            "free": true
+          }
+        ]
+      },
+      "errors": [],
+      "pass": true
+    },
+    "locations": {
+      "locations": [
+        {
+          "key": "brookstead",
+          "active": "brookstead",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 2,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
+            {
+              "x": -188,
+              "z": 140,
+              "label": "Leave for the overworld"
+            },
+            {
+              "x": -42,
+              "z": 95.16666666666666,
+              "label": "East road · Overworld"
+            },
+            {
+              "x": -155.33333333333331,
+              "z": 28,
+              "label": "North road · Overworld"
+            },
+            {
+              "x": -168.66666666666666,
+              "z": 152,
+              "label": "South road · Overworld"
+            }
+          ],
+          "exits": 4,
+          "saves": 1,
+          "actors": 13,
+          "meshCount": 937,
+          "loadMs": 1332.699999999255,
+          "warmupMs": 238.5,
+          "geometries": 2236,
+          "textures": 75,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "fern",
+          "active": "fern",
+          "kind": "poi",
+          "facility18": {
+            "name": "Gathering pavilion",
+            "x": 123,
+            "z": 55
+          },
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
+            {
+              "x": 65,
+              "z": 76,
+              "label": "Leave for the overworld"
+            },
+            {
+              "x": 117,
+              "z": 48,
+              "label": "North road · Overworld"
+            },
+            {
+              "x": 135,
+              "z": 78,
+              "label": "East road · Overworld"
+            },
+            {
+              "x": 105,
+              "z": 108,
+              "label": "South road · Overworld"
+            }
+          ],
+          "exits": 4,
+          "saves": 1,
+          "actors": 7,
+          "meshCount": 510,
+          "loadMs": 893.7000000029802,
+          "warmupMs": 426.80000000074506,
+          "geometries": 1640,
+          "textures": 64,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "depths",
+          "active": "depths",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
+            {
+              "x": 108,
+              "z": 39,
+              "label": "Leave for the overworld"
+            },
+            {
+              "x": 124,
+              "z": 21.125,
+              "label": "East road · Overworld"
+            },
+            {
+              "x": 119.375,
+              "z": 39,
+              "label": "South road · Overworld"
+            }
+          ],
+          "exits": 3,
+          "saves": 1,
+          "actors": 3,
+          "meshCount": 379,
+          "loadMs": 746.6999999992549,
+          "warmupMs": 219.59999999776483,
+          "geometries": 1472,
+          "textures": 60,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "highmere",
+          "active": "highmere",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 2,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
+            {
+              "x": -84,
+              "z": -60,
+              "label": "Leave for the overworld"
+            },
+            {
+              "x": -22,
+              "z": -83.25,
+              "label": "East road · Overworld"
+            },
+            {
+              "x": -111.25,
+              "z": -147,
+              "label": "North road · Overworld"
+            },
+            {
+              "x": -124,
+              "z": -87,
+              "label": "West road · Overworld"
+            }
+          ],
+          "exits": 4,
+          "saves": 1,
+          "actors": 12,
+          "meshCount": 631,
+          "loadMs": 999.8999999985099,
+          "warmupMs": 320,
+          "geometries": 1774,
+          "textures": 72,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "alder",
+          "active": "alder",
+          "kind": "poi",
+          "facility18": {
+            "name": "Shelter and care court",
+            "x": 137,
+            "z": -91.5
+          },
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
+            {
+              "x": 102,
+              "z": -80,
+              "label": "Leave for the overworld"
+            },
+            {
+              "x": 137,
+              "z": -126,
+              "label": "North road · Overworld"
+            },
+            {
+              "x": 158,
+              "z": -65.16666666666666,
+              "label": "East road · Overworld"
+            },
+            {
+              "x": 158,
+              "z": -53,
+              "label": "South road · Overworld"
+            }
+          ],
+          "exits": 4,
+          "saves": 1,
+          "actors": 9,
+          "meshCount": 523,
+          "loadMs": 582.6999999992549,
+          "warmupMs": 117.60000000149012,
+          "geometries": 1625,
+          "textures": 67,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "patrol",
+          "active": "patrol",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
+            {
+              "x": 157,
+              "z": -57,
+              "label": "Leave for the overworld"
+            },
+            {
+              "x": 157,
+              "z": -67,
+              "label": "West road · Overworld"
+            },
+            {
+              "x": 190,
+              "z": -65.5,
+              "label": "East road · Overworld"
+            }
+          ],
+          "exits": 3,
+          "saves": 1,
+          "actors": 3,
+          "meshCount": 387,
+          "loadMs": 431.6000000014901,
+          "warmupMs": 76.30000000074506,
+          "geometries": 1455,
+          "textures": 60,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "alderRemnant",
+          "active": "alderRemnant",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
+            {
+              "x": 187,
+              "z": -94,
+              "label": "Leave for the overworld"
+            },
+            {
+              "x": 202.375,
+              "z": -82,
+              "label": "South road · Overworld"
+            },
+            {
+              "x": 226.875,
+              "z": -118,
+              "label": "North road · Overworld"
+            }
+          ],
+          "exits": 3,
+          "saves": 1,
+          "actors": 4,
+          "meshCount": 405,
+          "loadMs": 467,
+          "warmupMs": 85.19999999925494,
+          "geometries": 1516,
+          "textures": 60,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "relief",
+          "active": "relief",
+          "kind": "poi",
+          "facility18": {
+            "name": "Staff observation bay",
+            "x": 41.5,
+            "z": -152
+          },
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
+            {
+              "x": 8,
+              "z": -145,
+              "label": "Leave for the overworld"
+            },
+            {
+              "x": 52.5,
+              "z": -176,
+              "label": "North road · Overworld"
+            },
+            {
+              "x": 0,
+              "z": -172.33333333333334,
+              "label": "West road · Overworld"
+            },
+            {
+              "x": 60,
+              "z": -157.66666666666666,
+              "label": "East road · Overworld"
+            }
+          ],
+          "exits": 4,
+          "saves": 1,
+          "actors": 6,
+          "meshCount": 444,
+          "loadMs": 874.7000000029802,
+          "warmupMs": 254.59999999776483,
+          "geometries": 1567,
+          "textures": 65,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "nearbySite",
+          "active": "nearbySite",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 2,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
+            {
+              "x": -93,
+              "z": -185,
+              "label": "Leave for the overworld"
+            },
+            {
+              "x": -48,
+              "z": -179.58333333333331,
+              "label": "East road · Overworld"
+            },
+            {
+              "x": -56.666666666666664,
+              "z": -216,
+              "label": "North road · Overworld"
+            }
+          ],
+          "exits": 3,
+          "saves": 1,
+          "actors": 4,
+          "meshCount": 411,
+          "loadMs": 530.4000000022352,
+          "warmupMs": 112.69999999925494,
+          "geometries": 1509,
+          "textures": 62,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "snow",
+          "active": "snow",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
+            {
+              "x": 138,
+              "z": -216,
+              "label": "Leave for the overworld"
+            },
+            {
+              "x": 129.16666666666666,
+              "z": -210,
+              "label": "South road · Overworld"
+            },
+            {
+              "x": 119,
+              "z": -210,
+              "label": "West road · Overworld"
+            }
+          ],
+          "exits": 3,
+          "saves": 1,
+          "actors": 2,
+          "meshCount": 358,
+          "loadMs": 470.19999999925494,
+          "warmupMs": 72.09999999776483,
+          "geometries": 1413,
+          "textures": 60,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "fernClearing",
+          "active": "fernClearing",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
+            {
+              "x": 144,
+              "z": 44,
+              "label": "Leave for the overworld"
+            },
+            {
+              "x": 123,
+              "z": 21.458333333333336,
+              "label": "West road · Overworld"
+            }
+          ],
+          "exits": 2,
+          "saves": 1,
+          "actors": 2,
+          "meshCount": 379,
+          "loadMs": 432.3999999985099,
+          "warmupMs": 101.69999999925494,
+          "geometries": 1463,
+          "textures": 60,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "alderClearing",
+          "active": "alderClearing",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
+            {
+              "x": 234,
+              "z": -115,
+              "label": "Leave for the overworld"
+            },
+            {
+              "x": 223.66666666666666,
+              "z": -113,
+              "label": "South road · Overworld"
+            }
+          ],
+          "exits": 2,
+          "saves": 1,
+          "actors": 2,
+          "meshCount": 367,
+          "loadMs": 418.8999999985099,
+          "warmupMs": 77.5,
+          "geometries": 1459,
+          "textures": 60,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "reliefClearing",
+          "active": "reliefClearing",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
+            {
+              "x": 62,
+              "z": -143,
+              "label": "Leave for the overworld"
+            },
+            {
+              "x": 42.333333333333336,
+              "z": -172,
+              "label": "North road · Overworld"
+            }
+          ],
+          "exits": 2,
+          "saves": 1,
+          "actors": 4,
+          "meshCount": 361,
+          "loadMs": 660.3000000007451,
+          "warmupMs": 193.89999999850988,
+          "geometries": 1439,
+          "textures": 62,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "siteClearing",
+          "active": "siteClearing",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 2,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
+            {
+              "x": -45.84775906502257,
+              "z": -208.23463313526983,
+              "label": "Leave for the overworld"
+            },
+            {
+              "x": -65,
+              "z": -212.16666666666666,
+              "label": "West road · Overworld"
+            }
+          ],
+          "exits": 2,
+          "saves": 1,
+          "actors": 2,
+          "meshCount": 372,
+          "loadMs": 482.70000000298023,
+          "warmupMs": 106.40000000223517,
+          "geometries": 1448,
+          "textures": 61,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "harbor",
+          "active": "harbor",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
+            {
+              "x": 281,
+              "z": 69,
+              "label": "West road · Overworld"
+            },
+            {
+              "x": 315,
+              "z": 34,
+              "label": "North road · Overworld"
+            },
+            {
+              "x": 359,
+              "z": 65,
+              "label": "Coast road · Overworld"
+            }
+          ],
+          "exits": 3,
+          "saves": 1,
+          "actors": 5,
+          "meshCount": 175,
+          "loadMs": 316.8999999985099,
+          "warmupMs": 240.20000000298023,
+          "geometries": 1277,
+          "textures": 63,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "brookInn",
+          "active": "brookInn",
+          "kind": "interior",
+          "facility18": null,
+          "background18": false,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [],
+          "exits": 0,
+          "saves": 1,
+          "actors": 3,
+          "meshCount": 54,
+          "loadMs": 637.1999999992549,
+          "warmupMs": 45.19999999925494,
+          "geometries": 1130,
+          "textures": 61,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "brookShop",
+          "active": "brookShop",
+          "kind": "interior",
+          "facility18": null,
+          "background18": false,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [],
+          "exits": 0,
+          "saves": 0,
+          "actors": 4,
+          "meshCount": 49,
+          "loadMs": 544.1999999992549,
+          "warmupMs": 62.399999998509884,
+          "geometries": 1130,
+          "textures": 63,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "highmereInn",
+          "active": "highmereInn",
+          "kind": "interior",
+          "facility18": null,
+          "background18": false,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [],
+          "exits": 0,
+          "saves": 1,
+          "actors": 3,
+          "meshCount": 54,
+          "loadMs": 76.40000000223517,
+          "warmupMs": 33.29999999701977,
+          "geometries": 1130,
+          "textures": 62,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "council",
+          "active": "council",
+          "kind": "interior",
+          "facility18": null,
+          "background18": false,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [],
+          "exits": 0,
+          "saves": 0,
+          "actors": 3,
+          "meshCount": 50,
+          "loadMs": 498,
+          "warmupMs": 34.80000000074506,
+          "geometries": 1128,
+          "textures": 62,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "archives",
+          "active": "archives",
+          "kind": "interior",
+          "facility18": null,
+          "background18": false,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [],
+          "exits": 0,
+          "saves": 0,
+          "actors": 3,
+          "meshCount": 47,
+          "loadMs": 87.60000000149012,
+          "warmupMs": 37.5,
+          "geometries": 1127,
+          "textures": 62,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "brookForge",
+          "active": "brookForge",
+          "kind": "interior",
+          "facility18": null,
+          "background18": false,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [],
+          "exits": 0,
+          "saves": 0,
+          "actors": 4,
+          "meshCount": 49,
+          "loadMs": 89.69999999925494,
+          "warmupMs": 41.19999999925494,
+          "geometries": 1130,
+          "textures": 63,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "aidOffice",
+          "active": "aidOffice",
+          "kind": "interior",
+          "facility18": null,
+          "background18": false,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [],
+          "exits": 0,
+          "saves": 0,
+          "actors": 3,
+          "meshCount": 50,
+          "loadMs": 99.29999999701977,
+          "warmupMs": 38.900000002235174,
+          "geometries": 1128,
+          "textures": 62,
+          "weather": true,
+          "shadows": 55
+        }
+      ],
+      "voiceMissing": [],
+      "audio": [
+        {
+          "id": "theme-title",
+          "duration": 96.1065
+        },
+        {
+          "id": "theme-battle",
+          "duration": 96.1065
+        },
+        {
+          "id": "ambient-rain",
+          "duration": 20.0065
+        },
+        {
+          "id": "blade-impact",
+          "duration": 0.8065
+        },
+        {
+          "id": "step-stone",
+          "duration": 0.68675
+        },
+        {
+          "id": "ui-save",
+          "duration": 2.4065
+        }
+      ],
+      "errors": [],
+      "pass": true
+    },
     "newFeatures": {
       "tutorial": {
         "text": "FIELD GUIDE · GUIDED JOURNEY×Welcome to BrooksteadUse WASD, arrows, or click the path. Follow the gold objective marker.◇ Move 3 metresOpenAll lessons · F1Skip lesson",
@@ -547,7 +1916,7 @@
         }
       ],
       "cinema": {
-        "bloom": 734,
+        "bloom": 685,
         "buffers": [
           360,
           225
@@ -564,7 +1933,7 @@
         "text": "FIELD GUIDE · COMBAT PRACTICESkip practiceStand togetherThis opening encounter pauses between lessons. Follow the highlighted commands; the wildlife cannot defeat the party during practice.◇ Begin the combat lessonBegin lesson",
         "replay": false,
         "plays": 0,
-        "nightFill": 0.6
+        "nightFill": 0.65
       },
       "voice": {
         "speaker": "Bren",
@@ -576,3193 +1945,6 @@
       "errors": [],
       "pass": true
     },
-    "titleAndRecords": {
-      "title": {
-        "left": true,
-        "news": true,
-        "party": false,
-        "index": 1,
-        "scene": "brookstead"
-      },
-      "scenes": [
-        {
-          "index": 7,
-          "scene": "fernClearing",
-          "party": false
-        },
-        {
-          "index": 4,
-          "scene": "alder",
-          "party": false
-        },
-        {
-          "index": 0,
-          "scene": "brookstead",
-          "party": false
-        }
-      ],
-      "autoScene": {
-        "index": 2,
-        "party": false
-      },
-      "empty": {
-        "slots": 3,
-        "disabled": true
-      },
-      "steps": [
-        {
-          "x": -128.85,
-          "z": 66.35,
-          "gap": 2.0217895535523667e-07
-        },
-        {
-          "x": -129.55,
-          "z": 66.35,
-          "gap": 4.577636669722551e-08
-        },
-        {
-          "x": -130.25,
-          "z": 66.35,
-          "gap": 1.831054685652589e-07
-        },
-        {
-          "x": -130.95,
-          "z": 66.35,
-          "gap": 6.484985348720329e-08
-        },
-        {
-          "x": -131.65,
-          "z": 66.35,
-          "gap": 1.6403198266345953e-07
-        },
-        {
-          "x": -132.35,
-          "z": 66.35,
-          "gap": 8.392333938900265e-08
-        },
-        {
-          "x": -133.05,
-          "z": 66.35,
-          "gap": 1.4495849676166017e-07
-        },
-        {
-          "x": -133.75,
-          "z": 66.35,
-          "gap": 1.0299682529080201e-07
-        },
-        {
-          "x": -134.45,
-          "z": 66.35,
-          "gap": 1.258850099716824e-07
-        },
-        {
-          "x": -135.15,
-          "z": 66.35,
-          "gap": 1.2207031208077979e-07
-        },
-        {
-          "x": -128.85,
-          "z": 68.5,
-          "gap": 2.0217895535523667e-07
-        },
-        {
-          "x": -129.55,
-          "z": 68.5,
-          "gap": 4.577636669722551e-08
-        },
-        {
-          "x": -130.25,
-          "z": 68.5,
-          "gap": 1.831054685652589e-07
-        },
-        {
-          "x": -130.95,
-          "z": 68.5,
-          "gap": 6.484985348720329e-08
-        },
-        {
-          "x": -131.65,
-          "z": 68.5,
-          "gap": 1.6403198266345953e-07
-        },
-        {
-          "x": -132.35,
-          "z": 68.5,
-          "gap": 8.392333938900265e-08
-        },
-        {
-          "x": -133.05,
-          "z": 68.5,
-          "gap": 1.4495849676166017e-07
-        },
-        {
-          "x": -133.75,
-          "z": 68.5,
-          "gap": 1.0299682529080201e-07
-        },
-        {
-          "x": -134.45,
-          "z": 68.5,
-          "gap": 1.258850099716824e-07
-        },
-        {
-          "x": -135.15,
-          "z": 68.5,
-          "gap": 1.2207031208077979e-07
-        },
-        {
-          "x": -128.85,
-          "z": 70.65,
-          "gap": 2.0217895535523667e-07
-        },
-        {
-          "x": -129.55,
-          "z": 70.65,
-          "gap": 4.577636669722551e-08
-        },
-        {
-          "x": -130.25,
-          "z": 70.65,
-          "gap": 1.831054685652589e-07
-        },
-        {
-          "x": -130.95,
-          "z": 70.65,
-          "gap": 6.484985348720329e-08
-        },
-        {
-          "x": -131.65,
-          "z": 70.65,
-          "gap": 1.6403198266345953e-07
-        },
-        {
-          "x": -132.35,
-          "z": 70.65,
-          "gap": 8.392333938900265e-08
-        },
-        {
-          "x": -133.05,
-          "z": 70.65,
-          "gap": 1.4495849676166017e-07
-        },
-        {
-          "x": -133.75,
-          "z": 70.65,
-          "gap": 1.0299682529080201e-07
-        },
-        {
-          "x": -134.45,
-          "z": 70.65,
-          "gap": 1.258850099716824e-07
-        },
-        {
-          "x": -135.15,
-          "z": 70.65,
-          "gap": 1.2207031208077979e-07
-        },
-        {
-          "toe": true,
-          "gap": 1.1825561552214481e-07
-        },
-        {
-          "x": -126.236,
-          "z": 82.65,
-          "gap": 2.6702880795426154e-08
-        },
-        {
-          "x": -126.236,
-          "z": 81.95,
-          "gap": 2.6702880795426154e-08
-        },
-        {
-          "x": -126.236,
-          "z": 81.25,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -126.236,
-          "z": 80.55,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -126.236,
-          "z": 79.85,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -126.236,
-          "z": 79.15,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -126.236,
-          "z": 78.45,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -126.236,
-          "z": 77.75,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -126.236,
-          "z": 77.05,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -126.236,
-          "z": 76.35,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -124,
-          "z": 82.65,
-          "gap": 2.6702880795426154e-08
-        },
-        {
-          "x": -124,
-          "z": 81.95,
-          "gap": 2.6702880795426154e-08
-        },
-        {
-          "x": -124,
-          "z": 81.25,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -124,
-          "z": 80.55,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -124,
-          "z": 79.85,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -124,
-          "z": 79.15,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -124,
-          "z": 78.45,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -124,
-          "z": 77.75,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -124,
-          "z": 77.05,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -124,
-          "z": 76.35,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -121.764,
-          "z": 82.65,
-          "gap": 2.6702880795426154e-08
-        },
-        {
-          "x": -121.764,
-          "z": 81.95,
-          "gap": 2.6702880795426154e-08
-        },
-        {
-          "x": -121.764,
-          "z": 81.25,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -121.764,
-          "z": 80.55,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -121.764,
-          "z": 79.85,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -121.764,
-          "z": 79.15,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -121.764,
-          "z": 78.45,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -121.764,
-          "z": 77.75,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -121.764,
-          "z": 77.05,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -121.764,
-          "z": 76.35,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "toe": true,
-          "gap": 9.53674028636442e-10
-        },
-        {
-          "x": -103.15,
-          "z": 82.65,
-          "gap": 2.6702880795426154e-08
-        },
-        {
-          "x": -103.15,
-          "z": 81.95,
-          "gap": 2.6702880795426154e-08
-        },
-        {
-          "x": -103.15,
-          "z": 81.25,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -103.15,
-          "z": 80.55,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -103.15,
-          "z": 79.85,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -103.15,
-          "z": 79.15,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -103.15,
-          "z": 78.45,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -103.15,
-          "z": 77.75,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -103.15,
-          "z": 77.05,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -103.15,
-          "z": 76.35,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -101,
-          "z": 82.65,
-          "gap": 2.6702880795426154e-08
-        },
-        {
-          "x": -101,
-          "z": 81.95,
-          "gap": 2.6702880795426154e-08
-        },
-        {
-          "x": -101,
-          "z": 81.25,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -101,
-          "z": 80.55,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -101,
-          "z": 79.85,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -101,
-          "z": 79.15,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -101,
-          "z": 78.45,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -101,
-          "z": 77.75,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -101,
-          "z": 77.05,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -101,
-          "z": 76.35,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -98.85,
-          "z": 82.65,
-          "gap": 2.6702880795426154e-08
-        },
-        {
-          "x": -98.85,
-          "z": 81.95,
-          "gap": 2.6702880795426154e-08
-        },
-        {
-          "x": -98.85,
-          "z": 81.25,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -98.85,
-          "z": 80.55,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -98.85,
-          "z": 79.85,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -98.85,
-          "z": 79.15,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -98.85,
-          "z": 78.45,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -98.85,
-          "z": 77.75,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -98.85,
-          "z": 77.05,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "x": -98.85,
-          "z": 76.35,
-          "gap": 2.6702881239515364e-08
-        },
-        {
-          "toe": true,
-          "gap": 9.53674028636442e-10
-        },
-        {
-          "x": -142.064,
-          "z": 78.65,
-          "gap": 2.0217895535523667e-07
-        },
-        {
-          "x": -142.064,
-          "z": 77.95,
-          "gap": 4.577636669722551e-08
-        },
-        {
-          "x": -142.064,
-          "z": 77.25,
-          "gap": 1.8310547211797257e-07
-        },
-        {
-          "x": -142.064,
-          "z": 76.55,
-          "gap": 6.484985348720329e-08
-        },
-        {
-          "x": -142.064,
-          "z": 75.85,
-          "gap": 1.6403198266345953e-07
-        },
-        {
-          "x": -142.064,
-          "z": 75.15,
-          "gap": 8.392333938900265e-08
-        },
-        {
-          "x": -142.064,
-          "z": 74.45,
-          "gap": 1.4495849676166017e-07
-        },
-        {
-          "x": -142.064,
-          "z": 73.75,
-          "gap": 1.0299682173808833e-07
-        },
-        {
-          "x": -142.064,
-          "z": 73.05,
-          "gap": 1.258850099716824e-07
-        },
-        {
-          "x": -142.064,
-          "z": 72.35,
-          "gap": 1.2207031208077979e-07
-        },
-        {
-          "x": -140,
-          "z": 78.65,
-          "gap": 2.0217895535523667e-07
-        },
-        {
-          "x": -140,
-          "z": 77.95,
-          "gap": 4.577636669722551e-08
-        },
-        {
-          "x": -140,
-          "z": 77.25,
-          "gap": 1.8310547211797257e-07
-        },
-        {
-          "x": -140,
-          "z": 76.55,
-          "gap": 6.484985348720329e-08
-        },
-        {
-          "x": -140,
-          "z": 75.85,
-          "gap": 1.6403198266345953e-07
-        },
-        {
-          "x": -140,
-          "z": 75.15,
-          "gap": 8.392333938900265e-08
-        },
-        {
-          "x": -140,
-          "z": 74.45,
-          "gap": 1.4495849676166017e-07
-        },
-        {
-          "x": -140,
-          "z": 73.75,
-          "gap": 1.0299682173808833e-07
-        },
-        {
-          "x": -140,
-          "z": 73.05,
-          "gap": 1.258850099716824e-07
-        },
-        {
-          "x": -140,
-          "z": 72.35,
-          "gap": 1.2207031208077979e-07
-        },
-        {
-          "x": -137.936,
-          "z": 78.65,
-          "gap": 2.0217895535523667e-07
-        },
-        {
-          "x": -137.936,
-          "z": 77.95,
-          "gap": 4.577636669722551e-08
-        },
-        {
-          "x": -137.936,
-          "z": 77.25,
-          "gap": 1.8310547211797257e-07
-        },
-        {
-          "x": -137.936,
-          "z": 76.55,
-          "gap": 6.484985348720329e-08
-        },
-        {
-          "x": -137.936,
-          "z": 75.85,
-          "gap": 1.6403198266345953e-07
-        },
-        {
-          "x": -137.936,
-          "z": 75.15,
-          "gap": 8.392333938900265e-08
-        },
-        {
-          "x": -137.936,
-          "z": 74.45,
-          "gap": 1.4495849676166017e-07
-        },
-        {
-          "x": -137.936,
-          "z": 73.75,
-          "gap": 1.0299682173808833e-07
-        },
-        {
-          "x": -137.936,
-          "z": 73.05,
-          "gap": 1.258850099716824e-07
-        },
-        {
-          "x": -137.936,
-          "z": 72.35,
-          "gap": 1.2207031208077979e-07
-        },
-        {
-          "extraToe": true,
-          "gap": 1.0785189230588799e-07
-        },
-        {
-          "extraToe": true,
-          "gap": 1.3524839470591132e-08
-        },
-        {
-          "extraToe": true,
-          "gap": 8.080222713147123e-08
-        },
-        {
-          "extraToe": true,
-          "gap": 6.328929558208074e-08
-        },
-        {
-          "extraToe": true,
-          "gap": 3.103776347046505e-08
-        },
-        {
-          "extraToe": true,
-          "gap": 1.1305375569037324e-07
-        },
-        {
-          "extraToe": true,
-          "gap": 1.8726695749649025e-08
-        },
-        {
-          "extraToe": true,
-          "gap": 7.560036374698598e-08
-        },
-        {
-          "extraToe": true,
-          "gap": 5.071813369283973e-08
-        },
-        {
-          "extraToe": true,
-          "gap": 2.583590363869348e-08
-        },
-        {
-          "extraToe": true,
-          "gap": 9.53674028636442e-10
-        },
-        {
-          "toe": true,
-          "gap": 1.0785189230588799e-07
-        }
-      ],
-      "bridge": {
-        "len": 8,
-        "road": 8.968100940422726e-16,
-        "blend": [
-          0.9939894676208496,
-          0.9836519360542297,
-          0.9686395525932312,
-          0.9492862224578857,
-          0.9259259104728699,
-          0.8988925218582153,
-          0.8685199022293091,
-          0.8351420760154724,
-          0.7990928888320923,
-          0.7607062458992004,
-          0.7203161120414734,
-          0.6782563924789429,
-          0.6348609924316406,
-          0.5904638767242432,
-          0.5453988909721375,
-          0.5,
-          0.45460110902786255,
-          0.40953612327575684,
-          0.3651390075683594,
-          0.32174360752105713,
-          0.2796838879585266,
-          0.23929376900196075,
-          0.2009071558713913,
-          0.16485793888568878,
-          0.13148008286952972,
-          0.9939894676208496,
-          0.9836519360542297,
-          0.9686395525932312,
-          0.9492862224578857,
-          0.9259259104728699,
-          0.8988925218582153,
-          0.8685199022293091,
-          0.8351420760154724,
-          0.7990928888320923,
-          0.7607062458992004,
-          0.7203161120414734,
-          0.6782563924789429,
-          0.6348609924316406,
-          0.5904638767242432,
-          0.5453988909721375,
-          0.5,
-          0.45460110902786255,
-          0.40953612327575684,
-          0.3651390075683594,
-          0.32174360752105713,
-          0.2796838879585266,
-          0.23929376900196075,
-          0.2009071558713913,
-          0.16485793888568878,
-          0.13148008286952972,
-          0.9939894676208496,
-          0.9836519360542297,
-          0.9686395525932312,
-          0.9492862224578857,
-          0.9259259104728699,
-          0.8988925218582153,
-          0.8685199022293091,
-          0.8351420760154724,
-          0.7990928888320923,
-          0.7607062458992004,
-          0.7203161120414734,
-          0.6782563924789429,
-          0.6348609924316406,
-          0.5904638767242432,
-          0.5453988909721375,
-          0.5,
-          0.45460110902786255,
-          0.40953612327575684,
-          0.3651390075683594,
-          0.32174360752105713,
-          0.2796838879585266,
-          0.23929376900196075,
-          0.2009071558713913,
-          0.16485793888568878,
-          0.13148008286952972,
-          0.9939894676208496,
-          0.9836519360542297,
-          0.9686395525932312,
-          0.9492862224578857,
-          0.9259259104728699,
-          0.8988925218582153,
-          0.8685199022293091,
-          0.8351420760154724,
-          0.7990928888320923,
-          0.7607062458992004,
-          0.7203161120414734,
-          0.6782563924789429,
-          0.6348609924316406,
-          0.5904638767242432,
-          0.5453988909721375,
-          0.5,
-          0.45460110902786255,
-          0.40953612327575684,
-          0.3651390075683594,
-          0.32174360752105713,
-          0.2796838879585266,
-          0.23929376900196075,
-          0.2009071558713913,
-          0.16485793888568878,
-          0.13148008286952972,
-          0.9939894676208496,
-          0.9836519360542297,
-          0.9686395525932312,
-          0.9492862224578857,
-          0.9259259104728699,
-          0.8988925218582153,
-          0.8685199022293091,
-          0.8351420760154724,
-          0.7990928888320923,
-          0.7607062458992004,
-          0.7203161120414734,
-          0.6782563924789429,
-          0.6348609924316406,
-          0.5904638767242432,
-          0.5453988909721375,
-          0.5,
-          0.45460110902786255,
-          0.40953612327575684,
-          0.3651390075683594,
-          0.32174360752105713,
-          0.2796838879585266,
-          0.23929376900196075,
-          0.2009071558713913,
-          0.16485793888568878,
-          0.13148008286952972,
-          0.9939894676208496,
-          0.9836519360542297,
-          0.9686395525932312,
-          0.9492862224578857,
-          0.9259259104728699,
-          0.8988925218582153,
-          0.8685199022293091,
-          0.8351420760154724,
-          0.7990928888320923,
-          0.7607062458992004,
-          0.7203161120414734,
-          0.6782563924789429,
-          0.6348609924316406,
-          0.5904638767242432,
-          0.5453988909721375,
-          0.5,
-          0.45460110902786255,
-          0.40953612327575684,
-          0.3651390075683594,
-          0.32174360752105713,
-          0.2796838879585266,
-          0.23929376900196075,
-          0.2009071558713913,
-          0.16485793888568878,
-          0.13148008286952972,
-          0.9939894676208496,
-          0.9836519360542297,
-          0.9686395525932312,
-          0.9492862224578857,
-          0.9259259104728699,
-          0.8988925218582153,
-          0.8685199022293091,
-          0.8351420760154724,
-          0.7990928888320923,
-          0.7607062458992004,
-          0.7203161120414734,
-          0.6782563924789429,
-          0.6348609924316406,
-          0.5904638767242432,
-          0.5453988909721375,
-          0.5,
-          0.45460110902786255,
-          0.40953612327575684,
-          0.3651390075683594,
-          0.32174360752105713,
-          0.2796838879585266,
-          0.23929376900196075,
-          0.2009071558713913,
-          0.16485793888568878,
-          0.13148008286952972,
-          0.9939894676208496,
-          0.9836519360542297,
-          0.9686395525932312,
-          0.9492862224578857,
-          0.9259259104728699,
-          0.8988925218582153,
-          0.8685199022293091,
-          0.8351420760154724,
-          0.7990928888320923,
-          0.7607062458992004,
-          0.7203161120414734,
-          0.6782563924789429,
-          0.6348609924316406,
-          0.5904638767242432,
-          0.5453988909721375,
-          0.5,
-          0.45460110902786255,
-          0.40953612327575684,
-          0.3651390075683594,
-          0.32174360752105713,
-          0.2796838879585266,
-          0.23929376900196075,
-          0.2009071558713913,
-          0.16485793888568878,
-          0.13148008286952972,
-          0.9939894676208496,
-          0.9836519360542297,
-          0.9686395525932312,
-          0.9492862224578857,
-          0.9259259104728699,
-          0.8988925218582153,
-          0.8685199022293091,
-          0.8351420760154724,
-          0.7990928888320923,
-          0.7607062458992004,
-          0.7203161120414734,
-          0.6782563924789429,
-          0.6348609924316406,
-          0.5904638767242432,
-          0.5453988909721375,
-          0.5,
-          0.45460110902786255,
-          0.40953612327575684,
-          0.3651390075683594,
-          0.32174360752105713,
-          0.2796838879585266,
-          0.23929376900196075,
-          0.2009071558713913,
-          0.16485793888568878,
-          0.13148008286952972,
-          0.9939894676208496,
-          0.9836519360542297,
-          0.9686395525932312,
-          0.9492862224578857,
-          0.9259259104728699,
-          0.8988925218582153,
-          0.8685199022293091,
-          0.8351420760154724,
-          0.7990928888320923,
-          0.7607062458992004,
-          0.7203161120414734,
-          0.6782563924789429,
-          0.6348609924316406,
-          0.5904638767242432,
-          0.5453988909721375,
-          0.5,
-          0.45460110902786255,
-          0.40953612327575684,
-          0.3651390075683594,
-          0.32174360752105713,
-          0.2796838879585266,
-          0.23929376900196075,
-          0.2009071558713913,
-          0.16485793888568878,
-          0.13148008286952972,
-          0.9939894676208496,
-          0.9836519360542297,
-          0.9686395525932312,
-          0.9492862224578857,
-          0.9259259104728699,
-          0.8988925218582153,
-          0.8685199022293091,
-          0.8351420760154724,
-          0.7990928888320923,
-          0.7607062458992004,
-          0.7203161120414734,
-          0.6782563924789429,
-          0.6348609924316406,
-          0.5904638767242432,
-          0.5453988909721375,
-          0.5,
-          0.45460110902786255,
-          0.40953612327575684,
-          0.3651390075683594,
-          0.32174360752105713,
-          0.2796838879585266,
-          0.23929376900196075,
-          0.2009071558713913,
-          0.16485793888568878,
-          0.13148008286952972,
-          0.9939894676208496,
-          0.9836519360542297,
-          0.9686395525932312,
-          0.9492862224578857,
-          0.9259259104728699,
-          0.8988925218582153,
-          0.8685199022293091,
-          0.8351420760154724,
-          0.7990928888320923,
-          0.7607062458992004,
-          0.7203161120414734,
-          0.6782563924789429,
-          0.6348609924316406,
-          0.5904638767242432,
-          0.5453988909721375,
-          0.5,
-          0.45460110902786255,
-          0.40953612327575684,
-          0.3651390075683594,
-          0.32174360752105713,
-          0.2796838879585266,
-          0.23929376900196075,
-          0.2009071558713913,
-          0.16485793888568878,
-          0.13148008286952972,
-          0.9939894676208496,
-          0.9836519360542297,
-          0.9686395525932312,
-          0.9492862224578857,
-          0.9259259104728699,
-          0.8988925218582153,
-          0.8685199022293091,
-          0.8351420760154724,
-          0.7990928888320923,
-          0.7607062458992004,
-          0.7203161120414734,
-          0.6782563924789429,
-          0.6348609924316406,
-          0.5904638767242432,
-          0.5453988909721375,
-          0.5,
-          0.45460110902786255,
-          0.40953612327575684,
-          0.3651390075683594,
-          0.32174360752105713,
-          0.2796838879585266,
-          0.23929376900196075,
-          0.2009071558713913,
-          0.16485793888568878,
-          0.13148008286952972,
-          0.9939894676208496,
-          0.9836519360542297,
-          0.9686395525932312,
-          0.9492862224578857,
-          0.9259259104728699,
-          0.8988925218582153,
-          0.8685199022293091,
-          0.8351420760154724,
-          0.7990928888320923,
-          0.7607062458992004,
-          0.7203161120414734,
-          0.6782563924789429,
-          0.6348609924316406,
-          0.5904638767242432,
-          0.5453988909721375,
-          0.5,
-          0.45460110902786255,
-          0.40953612327575684,
-          0.3651390075683594,
-          0.32174360752105713,
-          0.2796838879585266,
-          0.23929376900196075,
-          0.2009071558713913,
-          0.16485793888568878,
-          0.13148008286952972,
-          0.9939894676208496,
-          0.9836519360542297,
-          0.9686395525932312,
-          0.9492862224578857,
-          0.9259259104728699,
-          0.8988925218582153,
-          0.8685199022293091,
-          0.8351420760154724,
-          0.7990928888320923,
-          0.7607062458992004,
-          0.7203161120414734,
-          0.6782563924789429,
-          0.6348609924316406,
-          0.5904638767242432,
-          0.5453988909721375,
-          0.5,
-          0.45460110902786255,
-          0.40953612327575684,
-          0.3651390075683594,
-          0.32174360752105713,
-          0.2796838879585266,
-          0.23929376900196075,
-          0.2009071558713913,
-          0.16485793888568878,
-          0.13148008286952972,
-          0.9939894676208496,
-          0.9836519360542297,
-          0.9686395525932312,
-          0.9492862224578857,
-          0.9259259104728699,
-          0.8988925218582153,
-          0.8685199022293091,
-          0.8351420760154724,
-          0.7990928888320923,
-          0.7607062458992004,
-          0.7203161120414734,
-          0.6782563924789429,
-          0.6348609924316406,
-          0.5904638767242432,
-          0.5453988909721375,
-          0.5,
-          0.45460110902786255,
-          0.40953612327575684,
-          0.3651390075683594,
-          0.32174360752105713,
-          0.2796838879585266,
-          0.23929376900196075,
-          0.2009071558713913,
-          0.16485793888568878,
-          0.13148008286952972,
-          0.9939894676208496,
-          0.9836519360542297,
-          0.9686395525932312,
-          0.9492862224578857,
-          0.9259259104728699,
-          0.8988925218582153,
-          0.8685199022293091,
-          0.8351420760154724,
-          0.7990928888320923,
-          0.7607062458992004,
-          0.7203161120414734,
-          0.6782563924789429,
-          0.6348609924316406,
-          0.5904638767242432,
-          0.5453988909721375,
-          0.5,
-          0.45460110902786255,
-          0.40953612327575684,
-          0.3651390075683594,
-          0.32174360752105713,
-          0.2796838879585266,
-          0.23929376900196075,
-          0.2009071558713913,
-          0.16485793888568878,
-          0.13148008286952972
-        ],
-        "phase": true,
-        "route": true
-      },
-      "current": {
-        "active": 920,
-        "speed": 3.46,
-        "front": 222,
-        "direction": "downstream",
-        "gpu": true,
-        "deltaZ": 1.2500000000000568,
-        "validShaders": true,
-        "oldSheetGone": true
-      },
-      "records": {
-        "count": 3,
-        "initial": [
-          201,
-          202,
-          203
-        ],
-        "overwriteCancelled": true,
-        "overwrite": true,
-        "deleteCancelled": true,
-        "deletedOnlyTwo": true,
-        "scenePaused": true,
-        "transitionGuard": true,
-        "loaded": {
-          "gold": 203,
-          "inn": true,
-          "visible": true
-        }
-      },
-      "corrupt": {
-        "text": "02UNREADABLE RECORDThis record could not be readYou can replace or delete this record.Load journey ↗Delete",
-        "load": true,
-        "delete": true,
-        "removed": true
-      },
-      "mobile": {
-        "overflow": false,
-        "titleOverflow": false,
-        "news": true,
-        "nav": true
-      },
-      "errors": [],
-      "pass": true
-    },
-    "stairAndRiverRepairs": {
-      "changelog": true,
-      "edges": [
-        {
-          "x": -132,
-          "z": 68.5,
-          "count": 663,
-          "maxRise": 0.2400000000000002,
-          "failures": [],
-          "physicalEdges": [
-            {
-              "u": -4.1,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -4.05,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -4,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -3.95,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -3.9000000000000004,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -3.8500000000000005,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -3.8000000000000007,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -3.750000000000001,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -3.700000000000001,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -3.6500000000000012,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -3.6000000000000014,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -3.5500000000000016,
-              "v": -1.25,
-              "rise": 0.02200000000000113,
-              "free": false
-            },
-            {
-              "u": -3.5000000000000018,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -3.450000000000002,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -3.400000000000002,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -3.3500000000000023,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -3.3000000000000025,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -3.2500000000000027,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -3.200000000000003,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -3.150000000000003,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -3.100000000000003,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -3.0500000000000034,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -3.0000000000000036,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -2.9500000000000037,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -2.900000000000004,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -2.850000000000004,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -2.8000000000000043,
-              "v": -1.25,
-              "rise": 0.2400000000000002,
-              "free": false
-            },
-            {
-              "u": -2.7500000000000044,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -2.7000000000000046,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -2.650000000000005,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -2.600000000000005,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -2.550000000000005,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -2.5000000000000053,
-              "v": -1.25,
-              "rise": 0,
-              "free": false
-            },
-            {
-              "u": -2.4500000000000055,
-              "v": -1.25,
-              "rise": 0,
-              "free": true
-            }
-          ],
-          "backing": true
-        },
-        {
-          "x": -124,
-          "z": 79.5,
-          "count": 663,
-          "maxRise": 0.25,
-          "failures": [],
-          "physicalEdges": [],
-          "backing": true
-        },
-        {
-          "x": -101,
-          "z": 79.5,
-          "count": 663,
-          "maxRise": 0.25,
-          "failures": [],
-          "physicalEdges": [],
-          "backing": true
-        },
-        {
-          "x": -140,
-          "z": 75.5,
-          "count": 855,
-          "maxRise": 0.2489090909090912,
-          "failures": [],
-          "physicalEdges": [],
-          "backing": true
-        }
-      ],
-      "walks": [
-        {
-          "i": 0,
-          "direction": -1,
-          "start": 6.75,
-          "end": -3.95,
-          "key": "a",
-          "ms": 1651.5151515151513,
-          "route": true,
-          "u": -4.243893976771204,
-          "passed": true,
-          "party": [
-            {
-              "id": "soren",
-              "gap": 1.5000000000000009,
-              "stuck": 0
-            }
-          ]
-        },
-        {
-          "i": 0,
-          "direction": 1,
-          "start": -4.243893976771204,
-          "end": 6.75,
-          "key": "d",
-          "ms": 1651.5151515151513,
-          "route": true,
-          "u": 6.75,
-          "passed": true,
-          "party": [
-            {
-              "id": "soren",
-              "gap": 1.5000000000000016,
-              "stuck": 0
-            }
-          ]
-        },
-        {
-          "i": 1,
-          "direction": -1,
-          "start": 6.75,
-          "end": -3.95,
-          "key": "w",
-          "ms": 1651.5151515151513,
-          "route": true,
-          "u": -4.243893976770153,
-          "passed": true,
-          "party": [
-            {
-              "id": "soren",
-              "gap": 1.5000000000000016,
-              "stuck": 0
-            }
-          ]
-        },
-        {
-          "i": 1,
-          "direction": 1,
-          "start": -4.243893976770153,
-          "end": 6.75,
-          "key": "s",
-          "ms": 1651.5151515151513,
-          "route": true,
-          "u": 6.75,
-          "passed": true,
-          "party": [
-            {
-              "id": "soren",
-              "gap": 1.4999999999999873,
-              "stuck": 0
-            }
-          ]
-        },
-        {
-          "i": 2,
-          "direction": -1,
-          "start": 6.75,
-          "end": -3.95,
-          "key": "w",
-          "ms": 1651.5151515151513,
-          "route": true,
-          "u": -4.243893976770153,
-          "passed": true,
-          "party": [
-            {
-              "id": "soren",
-              "gap": 1.5000000000000016,
-              "stuck": 0
-            }
-          ]
-        },
-        {
-          "i": 2,
-          "direction": 1,
-          "start": -4.243893976770153,
-          "end": 6.75,
-          "key": "s",
-          "ms": 1651.5151515151513,
-          "route": true,
-          "u": 6.75,
-          "passed": true,
-          "party": [
-            {
-              "id": "soren",
-              "gap": 1.4999999999999873,
-              "stuck": 0
-            }
-          ]
-        },
-        {
-          "i": 3,
-          "direction": -1,
-          "start": 10,
-          "end": -3.95,
-          "key": "w",
-          "ms": 2143.939393939394,
-          "route": true,
-          "u": -4.182123230033497,
-          "passed": true,
-          "party": [
-            {
-              "id": "soren",
-              "gap": 1.5000000000000016,
-              "stuck": 0
-            }
-          ]
-        },
-        {
-          "i": 3,
-          "direction": 1,
-          "start": -4.182123230033497,
-          "end": 10,
-          "key": "s",
-          "ms": 2143.939393939394,
-          "route": true,
-          "u": 10,
-          "passed": true,
-          "party": [
-            {
-              "id": "soren",
-              "gap": 1.50000000000003,
-              "stuck": 0
-            }
-          ]
-        }
-      ],
-      "water": [
-        {
-          "age": 0,
-          "opening": 0,
-          "pools": {
-            "headrace": 2.92,
-            "millrace": -0.17,
-            "lowerBrook": -3.48
-          },
-          "joins": [
-            {
-              "z": 70,
-              "top": 6.15,
-              "bottom": 2.92,
-              "width": 0.065,
-              "gap": 0
-            },
-            {
-              "z": 80,
-              "top": 2.92,
-              "bottom": -0.17,
-              "width": 0.065,
-              "gap": 0
-            },
-            {
-              "z": 98,
-              "top": -0.17,
-              "bottom": -3.48,
-              "width": 0.065,
-              "gap": 0
-            }
-          ],
-          "clean": true,
-          "oldFoam": 0
-        },
-        {
-          "age": 1.0000000000000013,
-          "opening": 0.9391899373747825,
-          "pools": {
-            "headrace": 2.949977196724045,
-            "millrace": -0.17,
-            "lowerBrook": -3.48
-          },
-          "joins": [
-            {
-              "z": 70,
-              "top": 5.893274437351224,
-              "bottom": 3.0516827928223718,
-              "width": 0.1342592592592594,
-              "gap": 0
-            },
-            {
-              "z": 80,
-              "top": 2.921206311276533,
-              "bottom": -0.17,
-              "width": 0.065,
-              "gap": 0
-            },
-            {
-              "z": 98,
-              "top": -0.17,
-              "bottom": -3.48,
-              "width": 0.065,
-              "gap": 0
-            }
-          ],
-          "clean": true,
-          "oldFoam": 0
-        },
-        {
-          "age": 2.9999999999999942,
-          "opening": 0.9997751326758214,
-          "pools": {
-            "headrace": 2.969937117326238,
-            "millrace": -0.17,
-            "lowerBrook": -3.48
-          },
-          "joins": [
-            {
-              "z": 70,
-              "top": 5.521906734839214,
-              "bottom": 2.9900424073500975,
-              "width": 0.5324999999999986,
-              "gap": 0
-            },
-            {
-              "z": 80,
-              "top": 2.97014997968151,
-              "bottom": -0.1699999999999997,
-              "width": 0.065,
-              "gap": 0
-            },
-            {
-              "z": 98,
-              "top": -0.17,
-              "bottom": -3.48,
-              "width": 0.065,
-              "gap": 0
-            }
-          ],
-          "clean": true,
-          "oldFoam": 0
-        },
-        {
-          "age": 5.999999999999984,
-          "opening": 0.9999999494346864,
-          "pools": {
-            "headrace": 3.1375750506365727,
-            "millrace": -0.16739635571750938,
-            "lowerBrook": -3.48
-          },
-          "joins": [
-            {
-              "z": 70,
-              "top": 5.197275892555611,
-              "bottom": 3.1746874999999988,
-              "width": 1,
-              "gap": 0
-            },
-            {
-              "z": 80,
-              "top": 3.1027618634259246,
-              "bottom": -0.029869781571231713,
-              "width": 0.1342592592592572,
-              "gap": 0
-            },
-            {
-              "z": 98,
-              "top": -0.1699997981499182,
-              "bottom": -3.48,
-              "width": 0.065,
-              "gap": 0
-            }
-          ],
-          "clean": true,
-          "oldFoam": 0
-        },
-        {
-          "age": 12.000000000000176,
-          "opening": 0.9999999999999959,
-          "pools": {
-            "headrace": 3.684091977719925,
-            "millrace": 0.10595188284307686,
-            "lowerBrook": -3.48
-          },
-          "joins": [
-            {
-              "z": 70,
-              "top": 4.942769650423301,
-              "bottom": 3.7350000000000176,
-              "width": 1,
-              "gap": 0
-            },
-            {
-              "z": 80,
-              "top": 3.6333608217592768,
-              "bottom": 0.18360532407408972,
-              "width": 1,
-              "gap": 0
-            },
-            {
-              "z": 98,
-              "top": 0.03562479354012346,
-              "bottom": -3.478715583261138,
-              "width": 0.065,
-              "gap": 0
-            }
-          ],
-          "clean": true,
-          "oldFoam": 0
-        },
-        {
-          "age": 23.99999999999992,
-          "opening": 0.9999999999999959,
-          "pools": {
-            "headrace": 4.547907081886573,
-            "millrace": 1.288381100950052,
-            "lowerBrook": -3.2283978845005916
-          },
-          "joins": [
-            {
-              "z": 70,
-              "top": 4.856620160030509,
-              "bottom": 4.55,
-              "width": 1,
-              "gap": 0
-            },
-            {
-              "z": 80,
-              "top": 4.541746238425924,
-              "bottom": 1.3571469907407352,
-              "width": 1,
-              "gap": 0
-            },
-            {
-              "z": 98,
-              "top": 1.2120685178199393,
-              "bottom": -2.4400000000000106,
-              "width": 1,
-              "gap": 0
-            }
-          ],
-          "clean": true,
-          "oldFoam": 0
-        },
-        {
-          "age": 59.999999999997875,
-          "opening": 0.9999999999999959,
-          "pools": {
-            "headrace": 4.55,
-            "millrace": 1.55,
-            "lowerBrook": -1.4
-          },
-          "joins": [
-            {
-              "z": 70,
-              "top": 4.850002405781553,
-              "bottom": 4.55,
-              "width": 1,
-              "gap": 0
-            },
-            {
-              "z": 80,
-              "top": 4.55,
-              "bottom": 1.55,
-              "width": 1,
-              "gap": 0
-            },
-            {
-              "z": 98,
-              "top": 1.55,
-              "bottom": -1.4,
-              "width": 1,
-              "gap": 0
-            }
-          ],
-          "clean": true,
-          "oldFoam": 0
-        }
-      ],
-      "errors": [],
-      "pass": true
-    },
-    "coachedBattleRegression": {
-      "gate": {
-        "half": 5.539661070539241,
-        "bank": 3.7896610705392413,
-        "seal": 3.3000000000000003,
-        "bed": 3.572496506638441,
-        "geometry": [
-          11.230522155761719,
-          4.313600063323975,
-          0.5892811119556427
-        ]
-      },
-      "water": [
-        {
-          "age": 0,
-          "joins": [
-            {
-              "fall": 70,
-              "row": 0,
-              "gap": 8.024994323728734e-06
-            },
-            {
-              "fall": 70,
-              "row": 32,
-              "gap": 4.546808178844547e-06
-            },
-            {
-              "fall": 80,
-              "row": 0,
-              "gap": 7.841946497137814e-06
-            },
-            {
-              "fall": 80,
-              "row": 32,
-              "gap": 6.9597670797260414e-06
-            },
-            {
-              "fall": 98,
-              "row": 0,
-              "gap": 7.983296343351903e-06
-            },
-            {
-              "fall": 98,
-              "row": 32,
-              "gap": 8.004173338039604e-06
-            }
-          ],
-          "pools": [
-            {
-              "role": "headrace",
-              "x": -170.7672119140625,
-              "sourceX": -170.7672119140625,
-              "wet": 126,
-              "total": 195
-            },
-            {
-              "role": "millrace",
-              "x": -170.6589813232422,
-              "sourceX": -170.6589813232422,
-              "wet": 234,
-              "total": 338
-            },
-            {
-              "role": "lowerBrook",
-              "x": -163.87179565429688,
-              "sourceX": -163.87179565429688,
-              "wet": 4482,
-              "total": 6474
-            }
-          ],
-          "surge": 0,
-          "flow": 0
-        },
-        {
-          "age": 0.5,
-          "joins": [
-            {
-              "fall": 70,
-              "row": 0,
-              "gap": 8.024994323728734e-06
-            },
-            {
-              "fall": 70,
-              "row": 32,
-              "gap": 4.547340112572241e-06
-            },
-            {
-              "fall": 80,
-              "row": 0,
-              "gap": 7.8419464974412e-06
-            },
-            {
-              "fall": 80,
-              "row": 32,
-              "gap": 6.959238245505114e-06
-            },
-            {
-              "fall": 98,
-              "row": 0,
-              "gap": 7.983296343351903e-06
-            },
-            {
-              "fall": 98,
-              "row": 32,
-              "gap": 8.004173338039604e-06
-            }
-          ],
-          "pools": [
-            {
-              "role": "headrace",
-              "x": -170.7672119140625,
-              "sourceX": -170.7672119140625,
-              "wet": 126,
-              "total": 195
-            },
-            {
-              "role": "millrace",
-              "x": -170.6589813232422,
-              "sourceX": -170.6589813232422,
-              "wet": 234,
-              "total": 338
-            },
-            {
-              "role": "lowerBrook",
-              "x": -163.87179565429688,
-              "sourceX": -163.87179565429688,
-              "wet": 4482,
-              "total": 6474
-            }
-          ],
-          "surge": 1,
-          "flow": 1
-        },
-        {
-          "age": 1.5,
-          "joins": [
-            {
-              "fall": 70,
-              "row": 0,
-              "gap": 8.024994323728734e-06
-            },
-            {
-              "fall": 70,
-              "row": 32,
-              "gap": 4.54692889183031e-06
-            },
-            {
-              "fall": 80,
-              "row": 0,
-              "gap": 7.84210422557694e-06
-            },
-            {
-              "fall": 80,
-              "row": 32,
-              "gap": 6.959802875466386e-06
-            },
-            {
-              "fall": 98,
-              "row": 0,
-              "gap": 7.983296343351903e-06
-            },
-            {
-              "fall": 98,
-              "row": 32,
-              "gap": 8.004173338039604e-06
-            }
-          ],
-          "pools": [
-            {
-              "role": "headrace",
-              "x": -170.7672119140625,
-              "sourceX": -170.7672119140625,
-              "wet": 126,
-              "total": 195
-            },
-            {
-              "role": "millrace",
-              "x": -170.6589813232422,
-              "sourceX": -170.6589813232422,
-              "wet": 234,
-              "total": 338
-            },
-            {
-              "role": "lowerBrook",
-              "x": -163.87179565429688,
-              "sourceX": -163.87179565429688,
-              "wet": 4482,
-              "total": 6474
-            }
-          ],
-          "surge": 1,
-          "flow": 1
-        },
-        {
-          "age": 4,
-          "joins": [
-            {
-              "fall": 70,
-              "row": 0,
-              "gap": 8.024994323728734e-06
-            },
-            {
-              "fall": 70,
-              "row": 32,
-              "gap": 4.548480637030624e-06
-            },
-            {
-              "fall": 80,
-              "row": 0,
-              "gap": 7.841961536515616e-06
-            },
-            {
-              "fall": 80,
-              "row": 32,
-              "gap": 6.960034455766123e-06
-            },
-            {
-              "fall": 98,
-              "row": 0,
-              "gap": 7.983296343351903e-06
-            },
-            {
-              "fall": 98,
-              "row": 32,
-              "gap": 8.004173338039604e-06
-            }
-          ],
-          "pools": [
-            {
-              "role": "headrace",
-              "x": -170.7672119140625,
-              "sourceX": -170.7672119140625,
-              "wet": 126,
-              "total": 195
-            },
-            {
-              "role": "millrace",
-              "x": -170.6589813232422,
-              "sourceX": -170.6589813232422,
-              "wet": 234,
-              "total": 338
-            },
-            {
-              "role": "lowerBrook",
-              "x": -163.87179565429688,
-              "sourceX": -163.87179565429688,
-              "wet": 4482,
-              "total": 6474
-            }
-          ],
-          "surge": 0.7574651283969664,
-          "flow": 1
-        },
-        {
-          "age": 10,
-          "joins": [
-            {
-              "fall": 70,
-              "row": 0,
-              "gap": 8.024994323728734e-06
-            },
-            {
-              "fall": 70,
-              "row": 32,
-              "gap": 4.548036110896197e-06
-            },
-            {
-              "fall": 80,
-              "row": 0,
-              "gap": 7.842042681791141e-06
-            },
-            {
-              "fall": 80,
-              "row": 32,
-              "gap": 6.959351665433938e-06
-            },
-            {
-              "fall": 98,
-              "row": 0,
-              "gap": 7.983313971137764e-06
-            },
-            {
-              "fall": 98,
-              "row": 32,
-              "gap": 8.004034895388677e-06
-            }
-          ],
-          "pools": [
-            {
-              "role": "headrace",
-              "x": -170.7672119140625,
-              "sourceX": -170.7672119140625,
-              "wet": 163,
-              "total": 195
-            },
-            {
-              "role": "millrace",
-              "x": -170.6589813232422,
-              "sourceX": -170.6589813232422,
-              "wet": 234,
-              "total": 338
-            },
-            {
-              "role": "lowerBrook",
-              "x": -163.87179565429688,
-              "sourceX": -163.87179565429688,
-              "wet": 4482,
-              "total": 6474
-            }
-          ],
-          "surge": 0.3888955639892229,
-          "flow": 1
-        },
-        {
-          "age": 24,
-          "joins": [
-            {
-              "fall": 70,
-              "row": 0,
-              "gap": 8.024994323728734e-06
-            },
-            {
-              "fall": 70,
-              "row": 32,
-              "gap": 4.546853370233834e-06
-            },
-            {
-              "fall": 80,
-              "row": 0,
-              "gap": 7.841956271321597e-06
-            },
-            {
-              "fall": 80,
-              "row": 32,
-              "gap": 6.959907047812825e-06
-            },
-            {
-              "fall": 98,
-              "row": 0,
-              "gap": 7.983408425708016e-06
-            },
-            {
-              "fall": 98,
-              "row": 32,
-              "gap": 8.004077231224596e-06
-            }
-          ],
-          "pools": [
-            {
-              "role": "headrace",
-              "x": -170.7672119140625,
-              "sourceX": -170.7672119140625,
-              "wet": 185,
-              "total": 195
-            },
-            {
-              "role": "millrace",
-              "x": -170.6589813232422,
-              "sourceX": -170.6589813232422,
-              "wet": 307,
-              "total": 338
-            },
-            {
-              "role": "lowerBrook",
-              "x": -163.87179565429688,
-              "sourceX": -163.87179565429688,
-              "wet": 4673,
-              "total": 6474
-            }
-          ],
-          "surge": 0.0820849986238988,
-          "flow": 1
-        },
-        {
-          "age": 60,
-          "joins": [
-            {
-              "fall": 70,
-              "row": 0,
-              "gap": 8.024994323728734e-06
-            },
-            {
-              "fall": 70,
-              "row": 32,
-              "gap": 4.546830682080258e-06
-            },
-            {
-              "fall": 80,
-              "row": 0,
-              "gap": 7.841946497137814e-06
-            },
-            {
-              "fall": 80,
-              "row": 32,
-              "gap": 6.959237810059668e-06
-            },
-            {
-              "fall": 98,
-              "row": 0,
-              "gap": 7.983296343351903e-06
-            },
-            {
-              "fall": 98,
-              "row": 32,
-              "gap": 8.004110842636442e-06
-            }
-          ],
-          "pools": [
-            {
-              "role": "headrace",
-              "x": -170.7672119140625,
-              "sourceX": -170.7672119140625,
-              "wet": 185,
-              "total": 195
-            },
-            {
-              "role": "millrace",
-              "x": -170.6589813232422,
-              "sourceX": -170.6589813232422,
-              "wet": 338,
-              "total": 338
-            },
-            {
-              "role": "lowerBrook",
-              "x": -163.87179565429688,
-              "sourceX": -163.87179565429688,
-              "wet": 5228,
-              "total": 6474
-            }
-          ],
-          "surge": 0.0015034391929775724,
-          "flow": 1
-        },
-        {
-          "age": 100,
-          "joins": [
-            {
-              "fall": 70,
-              "row": 0,
-              "gap": 8.024994323728734e-06
-            },
-            {
-              "fall": 70,
-              "row": 32,
-              "gap": 4.546830682080258e-06
-            },
-            {
-              "fall": 80,
-              "row": 0,
-              "gap": 7.841946497137814e-06
-            },
-            {
-              "fall": 80,
-              "row": 32,
-              "gap": 6.959237810059668e-06
-            },
-            {
-              "fall": 98,
-              "row": 0,
-              "gap": 7.983296343351903e-06
-            },
-            {
-              "fall": 98,
-              "row": 32,
-              "gap": 8.004110842636442e-06
-            }
-          ],
-          "pools": [
-            {
-              "role": "headrace",
-              "x": -170.7672119140625,
-              "sourceX": -170.7672119140625,
-              "wet": 185,
-              "total": 195
-            },
-            {
-              "role": "millrace",
-              "x": -170.6589813232422,
-              "sourceX": -170.6589813232422,
-              "wet": 338,
-              "total": 338
-            },
-            {
-              "role": "lowerBrook",
-              "x": -163.87179565429688,
-              "sourceX": -163.87179565429688,
-              "wet": 5300,
-              "total": 6474
-            }
-          ],
-          "surge": 1.765583129005265e-05,
-          "flow": 1
-        }
-      ],
-      "lesson": {
-        "initial": "welcome",
-        "entry": {
-          "items": 6,
-          "mp": 84,
-          "hp": 260
-        },
-        "paused": {
-          "step": "welcome",
-          "hp": 260,
-          "status": "intro"
-        },
-        "target": "attack",
-        "waiting": {
-          "step": "timing",
-          "waiting": true,
-          "t": 0.972,
-          "duration": 1.35
-        },
-        "afterAttack": "skill",
-        "afterSkill": "incoming",
-        "afterHit": {
-          "step": "item",
-          "hp": 182,
-          "damage": 78
-        },
-        "afterItem": "defend",
-        "afterGuard": {
-          "active": true,
-          "step": "free",
-          "hold": true,
-          "demonstrationDamage": 78,
-          "entryItems": 6,
-          "started": false,
-          "windowPaused": false,
-          "firstHit": true,
-          "unguardedDamage": 78,
-          "practiceHerb": false,
-          "healed": 78,
-          "guardedDamage": 35,
-          "items": 6,
-          "mp": 76,
-          "hp": 225
-        },
-        "complete": {
-          "flag": true,
-          "active": false,
-          "items": 6
-        }
-      },
-      "visibility": {
-        "hidden": true,
-        "stillHidden": true,
-        "restored": true
-      },
-      "atlas": {
-        "points": 22,
-        "rows": [
-          {
-            "id": "brookstead",
-            "key": "brookstead",
-            "error": 0
-          },
-          {
-            "id": "fern",
-            "key": "fern",
-            "error": 0
-          },
-          {
-            "id": "fern-remnant",
-            "key": "depths",
-            "error": 0
-          },
-          {
-            "id": "fern-light",
-            "key": "fernClearing",
-            "error": 0
-          },
-          {
-            "id": "highmere",
-            "key": "highmere",
-            "error": 0
-          },
-          {
-            "id": "alderbridge",
-            "key": "alder",
-            "error": 0
-          },
-          {
-            "id": "patrol",
-            "key": "patrol",
-            "error": 0
-          },
-          {
-            "id": "alder-remnant",
-            "key": "alderRemnant",
-            "error": 0
-          },
-          {
-            "id": "alder-light",
-            "key": "alderClearing",
-            "error": 0
-          },
-          {
-            "id": "relief",
-            "key": "relief",
-            "error": 0
-          },
-          {
-            "id": "station-light",
-            "key": "reliefClearing",
-            "error": 0
-          },
-          {
-            "id": "network",
-            "key": "nearbySite",
-            "error": 0
-          },
-          {
-            "id": "harbor",
-            "key": "harbor",
-            "error": 0
-          }
-        ],
-        "oceanUVRange": 79.11111450195312,
-        "roads": 7,
-        "bridges": 5,
-        "shared": true,
-        "source": "actual playable overworld",
-        "facilities": "Capital of ValenneRoyal aid office · Aid courtyard · Royal Archives · Council · Inn · lodgingLocal places · Highmere aid courtyard · Royal aid office · Royal Archives · Valenne’s council · Highmere inn"
-      },
-      "errors": [],
-      "pass": true
-    },
-    "locations": {
-      "locations": [
-        {
-          "key": "brookstead",
-          "active": "brookstead",
-          "kind": "poi",
-          "facility18": null,
-          "background18": true,
-          "landings18": 2,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [
-            {
-              "x": -188,
-              "z": 140,
-              "label": "Leave for the overworld"
-            },
-            {
-              "x": -42,
-              "z": 95.16666666666666,
-              "label": "East road · Overworld"
-            },
-            {
-              "x": -155.33333333333331,
-              "z": 28,
-              "label": "North road · Overworld"
-            },
-            {
-              "x": -168.66666666666666,
-              "z": 152,
-              "label": "South road · Overworld"
-            }
-          ],
-          "exits": 4,
-          "saves": 1,
-          "actors": 13,
-          "meshCount": 937,
-          "loadMs": 4123.29999999702,
-          "warmupMs": 546.6999999992549,
-          "geometries": 2232,
-          "textures": 76,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "fern",
-          "active": "fern",
-          "kind": "poi",
-          "facility18": {
-            "name": "Gathering pavilion",
-            "x": 123,
-            "z": 55
-          },
-          "background18": true,
-          "landings18": 0,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [
-            {
-              "x": 65,
-              "z": 76,
-              "label": "Leave for the overworld"
-            },
-            {
-              "x": 117,
-              "z": 48,
-              "label": "North road · Overworld"
-            },
-            {
-              "x": 135,
-              "z": 78,
-              "label": "East road · Overworld"
-            },
-            {
-              "x": 105,
-              "z": 108,
-              "label": "South road · Overworld"
-            }
-          ],
-          "exits": 4,
-          "saves": 1,
-          "actors": 7,
-          "meshCount": 510,
-          "loadMs": 1408,
-          "warmupMs": 244.5,
-          "geometries": 1643,
-          "textures": 64,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "depths",
-          "active": "depths",
-          "kind": "poi",
-          "facility18": null,
-          "background18": true,
-          "landings18": 0,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [
-            {
-              "x": 108,
-              "z": 39,
-              "label": "Leave for the overworld"
-            },
-            {
-              "x": 124,
-              "z": 21.125,
-              "label": "East road · Overworld"
-            },
-            {
-              "x": 119.375,
-              "z": 39,
-              "label": "South road · Overworld"
-            }
-          ],
-          "exits": 3,
-          "saves": 1,
-          "actors": 3,
-          "meshCount": 379,
-          "loadMs": 1058.5,
-          "warmupMs": 140.30000000074506,
-          "geometries": 1477,
-          "textures": 60,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "highmere",
-          "active": "highmere",
-          "kind": "poi",
-          "facility18": null,
-          "background18": true,
-          "landings18": 2,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [
-            {
-              "x": -84,
-              "z": -60,
-              "label": "Leave for the overworld"
-            },
-            {
-              "x": -22,
-              "z": -83.25,
-              "label": "East road · Overworld"
-            },
-            {
-              "x": -111.25,
-              "z": -147,
-              "label": "North road · Overworld"
-            },
-            {
-              "x": -124,
-              "z": -87,
-              "label": "West road · Overworld"
-            }
-          ],
-          "exits": 4,
-          "saves": 1,
-          "actors": 12,
-          "meshCount": 631,
-          "loadMs": 2663.300000000745,
-          "warmupMs": 473.20000000298023,
-          "geometries": 1777,
-          "textures": 72,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "alder",
-          "active": "alder",
-          "kind": "poi",
-          "facility18": {
-            "name": "Shelter and care court",
-            "x": 137,
-            "z": -91.5
-          },
-          "background18": true,
-          "landings18": 0,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [
-            {
-              "x": 102,
-              "z": -80,
-              "label": "Leave for the overworld"
-            },
-            {
-              "x": 137,
-              "z": -126,
-              "label": "North road · Overworld"
-            },
-            {
-              "x": 158,
-              "z": -65.16666666666666,
-              "label": "East road · Overworld"
-            },
-            {
-              "x": 158,
-              "z": -53,
-              "label": "South road · Overworld"
-            }
-          ],
-          "exits": 4,
-          "saves": 1,
-          "actors": 9,
-          "meshCount": 523,
-          "loadMs": 1489.5,
-          "warmupMs": 208.30000000074506,
-          "geometries": 1630,
-          "textures": 67,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "patrol",
-          "active": "patrol",
-          "kind": "poi",
-          "facility18": null,
-          "background18": true,
-          "landings18": 0,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [
-            {
-              "x": 157,
-              "z": -57,
-              "label": "Leave for the overworld"
-            },
-            {
-              "x": 157,
-              "z": -67,
-              "label": "West road · Overworld"
-            },
-            {
-              "x": 190,
-              "z": -65.5,
-              "label": "East road · Overworld"
-            }
-          ],
-          "exits": 3,
-          "saves": 1,
-          "actors": 3,
-          "meshCount": 387,
-          "loadMs": 1268.6000000014901,
-          "warmupMs": 221.19999999925494,
-          "geometries": 1460,
-          "textures": 60,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "alderRemnant",
-          "active": "alderRemnant",
-          "kind": "poi",
-          "facility18": null,
-          "background18": true,
-          "landings18": 0,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [
-            {
-              "x": 187,
-              "z": -94,
-              "label": "Leave for the overworld"
-            },
-            {
-              "x": 202.375,
-              "z": -82,
-              "label": "South road · Overworld"
-            },
-            {
-              "x": 226.875,
-              "z": -118,
-              "label": "North road · Overworld"
-            }
-          ],
-          "exits": 3,
-          "saves": 1,
-          "actors": 4,
-          "meshCount": 405,
-          "loadMs": 1133.5,
-          "warmupMs": 149.19999999925494,
-          "geometries": 1518,
-          "textures": 60,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "relief",
-          "active": "relief",
-          "kind": "poi",
-          "facility18": {
-            "name": "Staff observation bay",
-            "x": 41.5,
-            "z": -152
-          },
-          "background18": true,
-          "landings18": 0,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [
-            {
-              "x": 8,
-              "z": -145,
-              "label": "Leave for the overworld"
-            },
-            {
-              "x": 52.5,
-              "z": -176,
-              "label": "North road · Overworld"
-            },
-            {
-              "x": 0,
-              "z": -172.33333333333334,
-              "label": "West road · Overworld"
-            },
-            {
-              "x": 60,
-              "z": -157.66666666666666,
-              "label": "East road · Overworld"
-            }
-          ],
-          "exits": 4,
-          "saves": 1,
-          "actors": 6,
-          "meshCount": 444,
-          "loadMs": 1577.699999999255,
-          "warmupMs": 253.5,
-          "geometries": 1569,
-          "textures": 65,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "nearbySite",
-          "active": "nearbySite",
-          "kind": "poi",
-          "facility18": null,
-          "background18": true,
-          "landings18": 2,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [
-            {
-              "x": -93,
-              "z": -185,
-              "label": "Leave for the overworld"
-            },
-            {
-              "x": -48,
-              "z": -179.58333333333331,
-              "label": "East road · Overworld"
-            },
-            {
-              "x": -56.666666666666664,
-              "z": -216,
-              "label": "North road · Overworld"
-            }
-          ],
-          "exits": 3,
-          "saves": 1,
-          "actors": 4,
-          "meshCount": 411,
-          "loadMs": 1782.300000000745,
-          "warmupMs": 284.8999999985099,
-          "geometries": 1511,
-          "textures": 62,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "snow",
-          "active": "snow",
-          "kind": "poi",
-          "facility18": null,
-          "background18": true,
-          "landings18": 0,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [
-            {
-              "x": 138,
-              "z": -216,
-              "label": "Leave for the overworld"
-            },
-            {
-              "x": 129.16666666666666,
-              "z": -210,
-              "label": "South road · Overworld"
-            },
-            {
-              "x": 119,
-              "z": -210,
-              "label": "West road · Overworld"
-            }
-          ],
-          "exits": 3,
-          "saves": 1,
-          "actors": 2,
-          "meshCount": 358,
-          "loadMs": 1326.7999999970198,
-          "warmupMs": 175.19999999925494,
-          "geometries": 1416,
-          "textures": 60,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "fernClearing",
-          "active": "fernClearing",
-          "kind": "poi",
-          "facility18": null,
-          "background18": true,
-          "landings18": 0,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [
-            {
-              "x": 144,
-              "z": 44,
-              "label": "Leave for the overworld"
-            },
-            {
-              "x": 123,
-              "z": 21.458333333333336,
-              "label": "West road · Overworld"
-            }
-          ],
-          "exits": 2,
-          "saves": 1,
-          "actors": 2,
-          "meshCount": 379,
-          "loadMs": 1228.199999999255,
-          "warmupMs": 216.10000000149012,
-          "geometries": 1467,
-          "textures": 60,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "alderClearing",
-          "active": "alderClearing",
-          "kind": "poi",
-          "facility18": null,
-          "background18": true,
-          "landings18": 0,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [
-            {
-              "x": 234,
-              "z": -115,
-              "label": "Leave for the overworld"
-            },
-            {
-              "x": 223.66666666666666,
-              "z": -113,
-              "label": "South road · Overworld"
-            }
-          ],
-          "exits": 2,
-          "saves": 1,
-          "actors": 2,
-          "meshCount": 367,
-          "loadMs": 1081.699999999255,
-          "warmupMs": 180.5,
-          "geometries": 1461,
-          "textures": 60,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "reliefClearing",
-          "active": "reliefClearing",
-          "kind": "poi",
-          "facility18": null,
-          "background18": true,
-          "landings18": 0,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [
-            {
-              "x": 62,
-              "z": -143,
-              "label": "Leave for the overworld"
-            },
-            {
-              "x": 42.333333333333336,
-              "z": -172,
-              "label": "North road · Overworld"
-            }
-          ],
-          "exits": 2,
-          "saves": 1,
-          "actors": 4,
-          "meshCount": 361,
-          "loadMs": 1301.699999999255,
-          "warmupMs": 135.60000000149012,
-          "geometries": 1445,
-          "textures": 62,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "siteClearing",
-          "active": "siteClearing",
-          "kind": "poi",
-          "facility18": null,
-          "background18": true,
-          "landings18": 2,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [
-            {
-              "x": -45.84775906502257,
-              "z": -208.23463313526983,
-              "label": "Leave for the overworld"
-            },
-            {
-              "x": -65,
-              "z": -212.16666666666666,
-              "label": "West road · Overworld"
-            }
-          ],
-          "exits": 2,
-          "saves": 1,
-          "actors": 2,
-          "meshCount": 372,
-          "loadMs": 1468.4000000022352,
-          "warmupMs": 221,
-          "geometries": 1451,
-          "textures": 61,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "harbor",
-          "active": "harbor",
-          "kind": "poi",
-          "facility18": null,
-          "background18": true,
-          "landings18": 0,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [
-            {
-              "x": 281,
-              "z": 69,
-              "label": "West road · Overworld"
-            },
-            {
-              "x": 315,
-              "z": 34,
-              "label": "North road · Overworld"
-            },
-            {
-              "x": 359,
-              "z": 65,
-              "label": "Coast road · Overworld"
-            }
-          ],
-          "exits": 3,
-          "saves": 1,
-          "actors": 5,
-          "meshCount": 175,
-          "loadMs": 549.1000000014901,
-          "warmupMs": 387.1000000014901,
-          "geometries": 1283,
-          "textures": 63,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "brookInn",
-          "active": "brookInn",
-          "kind": "interior",
-          "facility18": null,
-          "background18": false,
-          "landings18": 0,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [],
-          "exits": 0,
-          "saves": 1,
-          "actors": 3,
-          "meshCount": 54,
-          "loadMs": 1128,
-          "warmupMs": 72,
-          "geometries": 1130,
-          "textures": 61,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "brookShop",
-          "active": "brookShop",
-          "kind": "interior",
-          "facility18": null,
-          "background18": false,
-          "landings18": 0,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [],
-          "exits": 0,
-          "saves": 0,
-          "actors": 4,
-          "meshCount": 49,
-          "loadMs": 882.1000000014901,
-          "warmupMs": 100.19999999925494,
-          "geometries": 1130,
-          "textures": 63,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "highmereInn",
-          "active": "highmereInn",
-          "kind": "interior",
-          "facility18": null,
-          "background18": false,
-          "landings18": 0,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [],
-          "exits": 0,
-          "saves": 1,
-          "actors": 3,
-          "meshCount": 54,
-          "loadMs": 130.69999999925494,
-          "warmupMs": 57.5,
-          "geometries": 1130,
-          "textures": 62,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "council",
-          "active": "council",
-          "kind": "interior",
-          "facility18": null,
-          "background18": false,
-          "landings18": 0,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [],
-          "exits": 0,
-          "saves": 0,
-          "actors": 3,
-          "meshCount": 50,
-          "loadMs": 862.7999999970198,
-          "warmupMs": 46.100000001490116,
-          "geometries": 1128,
-          "textures": 62,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "archives",
-          "active": "archives",
-          "kind": "interior",
-          "facility18": null,
-          "background18": false,
-          "landings18": 0,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [],
-          "exits": 0,
-          "saves": 0,
-          "actors": 3,
-          "meshCount": 47,
-          "loadMs": 134.60000000149012,
-          "warmupMs": 42.30000000074506,
-          "geometries": 1127,
-          "textures": 62,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "brookForge",
-          "active": "brookForge",
-          "kind": "interior",
-          "facility18": null,
-          "background18": false,
-          "landings18": 0,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [],
-          "exits": 0,
-          "saves": 0,
-          "actors": 4,
-          "meshCount": 49,
-          "loadMs": 120,
-          "warmupMs": 45.600000001490116,
-          "geometries": 1130,
-          "textures": 63,
-          "weather": true,
-          "shadows": 55
-        },
-        {
-          "key": "aidOffice",
-          "active": "aidOffice",
-          "kind": "interior",
-          "facility18": null,
-          "background18": false,
-          "landings18": 0,
-          "free": true,
-          "badRoutes": [],
-          "exitPositions": [],
-          "exits": 0,
-          "saves": 0,
-          "actors": 3,
-          "meshCount": 50,
-          "loadMs": 126.89999999850988,
-          "warmupMs": 56,
-          "geometries": 1128,
-          "textures": 62,
-          "weather": true,
-          "shadows": 55
-        }
-      ],
-      "voiceMissing": [],
-      "audio": [
-        {
-          "id": "theme-title",
-          "duration": 96.1065
-        },
-        {
-          "id": "theme-battle",
-          "duration": 96.1065
-        },
-        {
-          "id": "ambient-rain",
-          "duration": 20.0065
-        },
-        {
-          "id": "blade-impact",
-          "duration": 0.8065
-        },
-        {
-          "id": "step-stone",
-          "duration": 0.68675
-        },
-        {
-          "id": "ui-save",
-          "duration": 2.4065
-        }
-      ],
-      "errors": [],
-      "pass": true
-    },
-    "sourceMatchesArtifact": true,
     "storyProgressionSteps": 45,
     "storyBattles": 6,
     "restoredLights": 4,
@@ -3773,485 +1955,1545 @@
       "time": true,
       "lights": true,
       "region": true
-    },
-    "waterJoinMaxGapMetres": 8.024994323728734e-06
+    }
   },
   "performance": {
-    "device": {
-      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-      "software": false
-    },
-    "nativeScenarios": [
-      {
-        "name": "bridge",
-        "fps": 71.90306769834211,
-        "p95FrameMs": 19.199999999254942,
-        "meanRenderCpuMs": 9.118685121109845,
-        "ticks": 289,
-        "calls": 869.6574394463668,
-        "triangles": 1905778.9688581314,
-        "buffer": [
-          1440,
-          900
-        ],
-        "scale": 1,
-        "shadow": [
-          2048,
-          2048
-        ],
-        "programs": 131,
-        "worldSerial": 4
-      },
-      {
-        "name": "square",
-        "fps": 67.85072839751282,
-        "p95FrameMs": 16.600000001490116,
-        "meanRenderCpuMs": 9.404044117682668,
-        "ticks": 272,
-        "calls": 761.0073529411765,
-        "triangles": 1309118.0147058824,
-        "buffer": [
-          936,
-          585
-        ],
-        "scale": 0.6499999999999997,
-        "shadow": [
-          2048,
-          2048
-        ],
-        "programs": 131,
-        "worldSerial": 5
-      },
-      {
-        "name": "forest",
-        "fps": 72.6392251816386,
-        "p95FrameMs": 20.100000001490116,
-        "meanRenderCpuMs": 4.852920962158347,
-        "ticks": 291,
-        "calls": 416.65635738831617,
-        "triangles": 825725.3127147766,
-        "buffer": [
-          936,
-          585
-        ],
-        "scale": 0.6499999999999997,
-        "shadow": [
-          2048,
-          2048
-        ],
-        "programs": 136,
-        "worldSerial": 6
-      },
-      {
-        "name": "overworld",
-        "fps": 69.86573843858777,
-        "p95FrameMs": 16.599999997764826,
-        "meanRenderCpuMs": 12.142348754368856,
-        "ticks": 281,
-        "calls": 724.9679715302491,
-        "triangles": 4815084.935943061,
-        "buffer": [
-          922,
-          576
-        ],
-        "scale": 0.64,
-        "shadow": [
-          2048,
-          2048
-        ],
-        "programs": 154,
-        "worldSerial": 7
-      },
-      {
-        "name": "shop",
-        "fps": 72.45290561139309,
-        "p95FrameMs": 19.899999998509884,
-        "meanRenderCpuMs": 1.7220689654992571,
-        "ticks": 290,
-        "calls": 62.779310344827586,
-        "triangles": 9577.558620689655,
-        "buffer": [
-          950,
-          594
-        ],
-        "scale": 0.66,
-        "shadow": [
-          2048,
-          2048
-        ],
-        "programs": 164,
-        "worldSerial": 8
-      }
-    ],
-    "repeatedDryPlay": {
-      "pass": true,
-      "scope": "Native Chrome on recorded device; 72 Hz draw target, heavy storm and 20 simultaneous spells, repeated scene loads",
-      "phases": [
+    "nativeScenarios": {
+      "software": false,
+      "scenarios": [
         {
-          "label": "fresh",
-          "drawFPS": 70.66666666666667,
-          "render": {
-            "p95": 4.400000002235174,
-            "max": 5.199999999254942,
-            "mean": 4.1287735848916025,
-            "n": 212
-          },
-          "tick": {
-            "p95": 2.699999999254942,
-            "max": 5.600000001490116,
-            "mean": 1.9367924528547897,
-            "n": 212
-          },
-          "memory": {
-            "geometries": 2236,
-            "textures": 75
-          },
-          "liveHeap": 728647302,
+          "name": "bridge",
+          "fps": 72.41508025382605,
+          "p95FrameMs": 16,
+          "meanRenderCpuMs": 6.389003436436358,
+          "ticks": 291,
+          "calls": 637.7182130584192,
+          "triangles": 1616561.1580756013,
+          "buffer": [
+            1440,
+            900
+          ],
           "scale": 1,
-          "weather": {
-            "name": "Clear skies",
-            "rain": 0,
-            "snow": 0,
-            "wet": 0
-          }
+          "shadow": [
+            2048,
+            2048
+          ],
+          "programs": 176,
+          "worldSerial": 5
         },
         {
-          "label": "flow",
-          "drawFPS": 72.66666666666667,
-          "render": {
-            "p95": 6.100000001490116,
-            "max": 7.599999997764826,
-            "mean": 5.383944953971226,
-            "n": 218
-          },
-          "tick": {
-            "p95": 2.800000000745058,
-            "max": 3.800000000745058,
-            "mean": 2.0600917432115438,
-            "n": 218
-          },
-          "memory": {
-            "geometries": 2238,
-            "textures": 75
-          },
-          "liveHeap": 729980806,
+          "name": "square",
+          "fps": 72.5794383199751,
+          "p95FrameMs": 15.5,
+          "meanRenderCpuMs": 7.528178694232325,
+          "ticks": 291,
+          "calls": 634.6357388316151,
+          "triangles": 1157986.9793814432,
+          "buffer": [
+            1440,
+            900
+          ],
           "scale": 1,
-          "weather": {
-            "name": "Clear skies",
-            "rain": 0,
-            "snow": 0,
-            "wet": 0
-          }
+          "shadow": [
+            2048,
+            2048
+          ],
+          "programs": 176,
+          "worldSerial": 6
         },
         {
-          "label": "round-0",
-          "drawFPS": 72.66666666666667,
-          "render": {
-            "p95": 5.5,
-            "max": 7.5,
-            "mean": 4.32018348612233,
-            "n": 218
-          },
-          "tick": {
-            "p95": 2.399999998509884,
-            "max": 5.5,
-            "mean": 1.7403669725556712,
-            "n": 218
-          },
-          "memory": {
-            "geometries": 2245,
-            "textures": 76
-          },
-          "liveHeap": 731339217,
+          "name": "forest",
+          "fps": 71.343045300326,
+          "p95FrameMs": 20.599999997764826,
+          "meanRenderCpuMs": 3.4409090910575815,
+          "ticks": 286,
+          "calls": 352.76223776223776,
+          "triangles": 741502.5244755244,
+          "buffer": [
+            1440,
+            900
+          ],
           "scale": 1,
-          "weather": {
-            "name": "Clear skies",
-            "rain": 0,
-            "snow": 0,
-            "wet": 0
-          }
+          "shadow": [
+            2048,
+            2048
+          ],
+          "programs": 174,
+          "worldSerial": 7
         },
         {
-          "label": "round-1",
-          "drawFPS": 72.33333333333333,
-          "render": {
-            "p95": 5.600000001490116,
-            "max": 5.899999998509884,
-            "mean": 4.450691244071392,
-            "n": 217
-          },
-          "tick": {
-            "p95": 2.300000000745058,
-            "max": 4.699999999254942,
-            "mean": 1.7004608295617565,
-            "n": 217
-          },
-          "memory": {
-            "geometries": 2245,
-            "textures": 76
-          },
-          "liveHeap": 731409689,
+          "name": "overworld",
+          "fps": 72.49626307922271,
+          "p95FrameMs": 14.800000000745058,
+          "meanRenderCpuMs": 8.765292096140561,
+          "ticks": 291,
+          "calls": 679.6735395189004,
+          "triangles": 4569998.347079038,
+          "buffer": [
+            1440,
+            900
+          ],
           "scale": 1,
-          "weather": {
-            "name": "Clear skies",
-            "rain": 0,
-            "snow": 0,
-            "wet": 0
-          }
+          "shadow": [
+            2048,
+            2048
+          ],
+          "programs": 192,
+          "worldSerial": 8
         },
         {
-          "label": "battle-effects",
-          "drawFPS": 72,
-          "render": {
-            "p95": 5.900000002235174,
-            "max": 7.699999999254942,
-            "mean": 4.741666666594231,
-            "n": 216
-          },
-          "tick": {
-            "p95": 3.300000000745058,
-            "max": 18.5,
-            "mean": 2.205555555548657,
-            "n": 216
-          },
-          "memory": {
-            "geometries": 2243,
-            "textures": 76
-          },
-          "liveHeap": 737320061,
+          "name": "shop",
+          "fps": 72.4927507249545,
+          "p95FrameMs": 14.299999997019768,
+          "meanRenderCpuMs": 1.1034482758235316,
+          "ticks": 290,
+          "calls": 57.0551724137931,
+          "triangles": 9566.110344827586,
+          "buffer": [
+            1440,
+            900
+          ],
           "scale": 1,
-          "weather": {
-            "name": "Clear skies",
-            "rain": 0,
-            "snow": 0,
-            "wet": 0
-          }
-        },
-        {
-          "label": "after-battle",
-          "drawFPS": 72.33333333333333,
-          "render": {
-            "p95": 6.300000000745058,
-            "max": 7.299999997019768,
-            "mean": 5.083410138169879,
-            "n": 217
-          },
-          "tick": {
-            "p95": 2.300000000745058,
-            "max": 31.800000000745058,
-            "mean": 1.6930875575624853,
-            "n": 217
-          },
-          "memory": {
-            "geometries": 2245,
-            "textures": 76
-          },
-          "liveHeap": 732501806,
-          "scale": 1,
-          "weather": {
-            "name": "Clear skies",
-            "rain": 0,
-            "snow": 0,
-            "wet": 0
-          }
+          "shadow": [
+            2048,
+            2048
+          ],
+          "programs": 202,
+          "worldSerial": 9
         }
       ],
+      "loadMs": 9577,
+      "device": {
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "software": false
+      },
+      "errors": [],
+      "pass": true
+    },
+    "extended1080p": {
+      "phases": [
+        {
+          "name": "warm-town",
+          "seconds": 30.013,
+          "fps": 72.50191583647087,
+          "frame": {
+            "mean": 13.794206896551039,
+            "p95": 15.799999997019768,
+            "p99": 19,
+            "max": 21.599999997764826
+          },
+          "renderCPU": {
+            "mean": 8.130101102982948,
+            "p95": 11.099999997764826,
+            "p99": 12.199999999254942,
+            "max": 16.399999998509884
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.564718776620085,
+          "fx": 9,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        {
+          "name": "after-travel-and-battle-0",
+          "seconds": 10.00089999999851,
+          "fps": 72.49347558720795,
+          "frame": {
+            "mean": 13.770165745853266,
+            "p95": 14.800000000745058,
+            "p99": 15.600000001490116,
+            "max": 16
+          },
+          "renderCPU": {
+            "mean": 3.573379310451705,
+            "p95": 4,
+            "p99": 4.400000002235174,
+            "max": 6.5
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.333460503699319,
+          "fx": 8,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        {
+          "name": "after-travel-and-battle-1",
+          "seconds": 10.0005,
+          "fps": 72.49637518124094,
+          "frame": {
+            "mean": 13.775414364643972,
+            "p95": 14.700000002980232,
+            "p99": 15.899999998509884,
+            "max": 19.899999998509884
+          },
+          "renderCPU": {
+            "mean": 3.43613793101804,
+            "p95": 3.800000000745058,
+            "p99": 4.100000001490116,
+            "max": 5.100000001490116
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.574672500242954,
+          "fx": 13,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        {
+          "name": "after-travel-and-battle-2",
+          "seconds": 10.003800000000744,
+          "fps": 72.5724224794524,
+          "frame": {
+            "mean": 13.769517241377255,
+            "p95": 14.699999999254942,
+            "p99": 15.800000000745058,
+            "max": 16.5
+          },
+          "renderCPU": {
+            "mean": 3.385674931216708,
+            "p95": 3.699999999254942,
+            "p99": 3.800000000745058,
+            "max": 4
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.2496227062382905,
+          "fx": 10,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        {
+          "name": "after-travel-and-battle-3",
+          "seconds": 10.005100000001491,
+          "fps": 72.56299287362364,
+          "frame": {
+            "mean": 13.770206896549668,
+            "p95": 14.800000000745058,
+            "p99": 15.700000002980232,
+            "max": 18
+          },
+          "renderCPU": {
+            "mean": 3.5680440771226714,
+            "p95": 4.100000001490116,
+            "p99": 4.799999997019768,
+            "max": 7.5
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.258169799409393,
+          "fx": 5,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        {
+          "name": "town-after-thirty-minutes",
+          "seconds": 45.00260000000149,
+          "fps": 72.50692182229231,
+          "frame": {
+            "mean": 13.794206008583462,
+            "p95": 14.699999999254942,
+            "p99": 15.800000000745058,
+            "max": 20.699999999254942
+          },
+          "renderCPU": {
+            "mean": 4.165154765519607,
+            "p95": 6.599999997764826,
+            "p99": 7.5,
+            "max": 9.300000000745058
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 2.40368301582077,
+          "fx": 5,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        {
+          "name": "overworld-extended",
+          "seconds": 60.00040000000224,
+          "fps": 72.44951700321728,
+          "frame": {
+            "mean": 13.801035434881966,
+            "p95": 14.600000001490116,
+            "p99": 15.399999998509884,
+            "max": 16.399999998509884
+          },
+          "renderCPU": {
+            "mean": 4.2746031746218565,
+            "p95": 4.800000000745058,
+            "p99": 5.200000002980232,
+            "max": 6
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 2.4866376570287296,
+          "fx": 7,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        {
+          "name": "storm-overworld-extended",
+          "seconds": 60.000699999999256,
+          "fps": 72.44915475986204,
+          "frame": {
+            "mean": 13.80276115968724,
+            "p95": 14.600000001490116,
+            "p99": 15.400000002235174,
+            "max": 42.100000001490116
+          },
+          "renderCPU": {
+            "mean": 4.5253508166189995,
+            "p95": 5.800000000745058,
+            "p99": 7.300000000745058,
+            "max": 10.799999997019768
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 2.483265160098788,
+          "fx": 11,
+          "weather": "Thunderstorm",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        {
+          "name": "continuous-battle-skills",
+          "seconds": 60.00789999999851,
+          "fps": 72.4404620058377,
+          "frame": {
+            "mean": 13.804003681546078,
+            "p95": 15.599999997764826,
+            "p99": 16.600000001490116,
+            "max": 41.69999999925494
+          },
+          "renderCPU": {
+            "mean": 4.820243846370567,
+            "p95": 5.300000000745058,
+            "p99": 5.600000001490116,
+            "max": 8.5
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 3.9019629259845012,
+          "fx": 0,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        {
+          "name": "final-town",
+          "seconds": 30.00770000000298,
+          "fps": 72.51472122154594,
+          "frame": {
+            "mean": 13.792459770115627,
+            "p95": 14.699999999254942,
+            "p99": 15.800000000745058,
+            "max": 16.700000002980232
+          },
+          "renderCPU": {
+            "mean": 4.765808823556119,
+            "p95": 6.300000000745058,
+            "p99": 8.400000002235174,
+            "max": 10.199999999254942
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.77063695449664,
+          "fx": 10,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        }
+      ],
+      "resources": [
+        {
+          "name": "warm",
+          "heap": 730751970,
+          "geometries": 2247,
+          "textures": 76,
+          "programs": 197,
+          "keepers": 61,
+          "queries": 0,
+          "fx": 9,
+          "nav": 0,
+          "roadCache": 50000
+        },
+        {
+          "name": "round-0",
+          "heap": 731664398,
+          "geometries": 2243,
+          "textures": 76,
+          "programs": 199,
+          "keepers": 62,
+          "queries": 0,
+          "fx": 8,
+          "nav": 0,
+          "roadCache": 50000
+        },
+        {
+          "name": "round-1",
+          "heap": 732193074,
+          "geometries": 2248,
+          "textures": 76,
+          "programs": 199,
+          "keepers": 62,
+          "queries": 0,
+          "fx": 13,
+          "nav": 0,
+          "roadCache": 50000
+        },
+        {
+          "name": "round-2",
+          "heap": 732529834,
+          "geometries": 2245,
+          "textures": 76,
+          "programs": 199,
+          "keepers": 62,
+          "queries": 0,
+          "fx": 10,
+          "nav": 0,
+          "roadCache": 50000
+        },
+        {
+          "name": "round-3",
+          "heap": 732796578,
+          "geometries": 2240,
+          "textures": 76,
+          "programs": 199,
+          "keepers": 62,
+          "queries": 0,
+          "fx": 5,
+          "nav": 0,
+          "roadCache": 50000
+        },
+        {
+          "name": "after-thirty-minutes",
+          "heap": 732949292,
+          "geometries": 2240,
+          "textures": 76,
+          "programs": 199,
+          "keepers": 62,
+          "queries": 0,
+          "fx": 5,
+          "nav": 0,
+          "roadCache": 50000
+        },
+        {
+          "name": "final",
+          "heap": 733176523,
+          "geometries": 2245,
+          "textures": 76,
+          "programs": 199,
+          "keepers": 62,
+          "queries": 0,
+          "fx": 10,
+          "nav": 0,
+          "roadCache": 50000
+        }
+      ],
+      "acceleratedSeconds": 1800,
+      "sha256": "2598d3310748d24bff2988fe02637a44ed85c2a32eb4d8480f84e124cb25a0db",
+      "growth": {
+        "heap": 983449,
+        "geometries": -3,
+        "textures": 0,
+        "programs": 0
+      },
+      "scope": "Native Chrome at 1920x1080 on recorded device; uncapped monitor cadence, four repeated travel/combat rounds, thirty simulated minutes plus sustained real-time town, overworld, storm and skill battles. Garbage collection is test-only for retained-memory comparison.",
+      "pass": true,
       "errors": []
     },
-    "repeatedStormPlay": {
-      "pass": true,
-      "scope": "Native Chrome on recorded device; 72 Hz draw target, heavy storm and 20 simultaneous spells, repeated scene loads",
+    "repeatedDryPlay": {
+      "label": "release-dry",
       "phases": [
         {
           "label": "fresh",
           "drawFPS": 70.33333333333333,
+          "frames": {
+            "p95": 7.100000000000364,
+            "max": 131.89999999999964,
+            "mean": 7.24975845410628,
+            "n": 414
+          },
           "render": {
-            "p95": 4.299999997019768,
-            "max": 5.600000001490116,
-            "mean": 3.8777251185681583,
+            "p95": 6.899999998509884,
+            "max": 7.600000001490116,
+            "mean": 4.2796208530982245,
             "n": 211
           },
           "tick": {
-            "p95": 2.699999999254942,
-            "max": 5.800000000745058,
-            "mean": 1.8578199050896824,
+            "p95": 2,
+            "max": 4.399999998509884,
+            "mean": 1.4075829382826932,
             "n": 211
           },
-          "memory": {
-            "geometries": 2241,
-            "textures": 75
-          },
-          "liveHeap": 727612556,
-          "scale": 1,
-          "weather": {
-            "name": "Thunderstorm",
-            "rain": 1,
-            "snow": 0,
-            "wet": 1
-          }
-        },
-        {
-          "label": "flow",
-          "drawFPS": 72.66666666666667,
-          "render": {
-            "p95": 5.800000000745058,
-            "max": 6.800000000745058,
-            "mean": 5.26192660542598,
-            "n": 218
-          },
-          "tick": {
-            "p95": 2.599999997764826,
-            "max": 3.7000000029802322,
-            "mean": 1.959174311762556,
-            "n": 218
+          "cost": {
+            "updateWorldFX": {
+              "p95": 0.10000000149011612,
+              "max": 0.4000000022351742,
+              "mean": 0.052132701421800945,
+              "n": 211
+            },
+            "updateCutaways": {
+              "p95": 0.19999999925494194,
+              "max": 0.30000000074505806,
+              "mean": 0.07061611381646299,
+              "n": 422
+            },
+            "updateRenderBudget": {
+              "p95": 0.10000000149011612,
+              "max": 0.4000000022351742,
+              "mean": 0.018777292628475672,
+              "n": 229
+            },
+            "updateLighting": {
+              "p95": 0.10000000149011612,
+              "max": 0.10000000149011612,
+              "mean": 0.039999999850988385,
+              "n": 10
+            },
+            "updateFollowers": {
+              "p95": 0,
+              "max": 0.10000000149011612,
+              "mean": 0.004739336439924783,
+              "n": 211
+            },
+            "updateGuide16": {
+              "p95": 0.10000000149011612,
+              "max": 0.10000000149011612,
+              "mean": 0.010526315750260102,
+              "n": 19
+            },
+            "updateSoundscape": {
+              "p95": 0.10000000149011612,
+              "max": 0.19999999925494194,
+              "mean": 0.041706161035039414,
+              "n": 211
+            }
           },
           "memory": {
             "geometries": 2239,
             "textures": 75
           },
-          "liveHeap": 728816188,
-          "scale": 1,
+          "programs": 133,
+          "keepers": 45,
+          "heap": 888363007,
+          "meshes": 996,
+          "calls": 1,
+          "nav": 0,
+          "fx": 8,
           "weather": {
-            "name": "Thunderstorm",
-            "rain": 1,
+            "name": "Clear skies",
+            "rain": 0,
             "snow": 0,
-            "wet": 1
-          }
+            "wet": 0
+          },
+          "scale": 1,
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "liveHeap": 726255928
+        },
+        {
+          "label": "flow",
+          "drawFPS": 72.66666666666667,
+          "frames": {
+            "p95": 13.900000000001455,
+            "max": 20.899999999999636,
+            "mean": 7.715938303341902,
+            "n": 389
+          },
+          "render": {
+            "p95": 11.100000001490116,
+            "max": 14.400000002235174,
+            "mean": 9.92201834877765,
+            "n": 218
+          },
+          "tick": {
+            "p95": 2.900000002235174,
+            "max": 5,
+            "mean": 1.8862385319870547,
+            "n": 218
+          },
+          "cost": {
+            "updateWorldFX": {
+              "p95": 0.20000000298023224,
+              "max": 0.30000000074505806,
+              "mean": 0.08715596338819473,
+              "n": 218
+            },
+            "updateCutaways": {
+              "p95": 0.20000000298023224,
+              "max": 0.5,
+              "mean": 0.12385321098354159,
+              "n": 436
+            },
+            "updateRenderBudget": {
+              "p95": 0.19999999925494194,
+              "max": 0.3999999985098839,
+              "mean": 0.02288135581539344,
+              "n": 236
+            },
+            "updateLighting": {
+              "p95": 0.6000000014901161,
+              "max": 0.6000000014901161,
+              "mean": 0.11818181723356247,
+              "n": 11
+            },
+            "updateFollowers": {
+              "p95": 0.09999999776482582,
+              "max": 0.10000000149011612,
+              "mean": 0.005963302755711276,
+              "n": 218
+            },
+            "updateGuide16": {
+              "p95": 0,
+              "max": 0,
+              "mean": 0,
+              "n": 19
+            },
+            "updateSoundscape": {
+              "p95": 0.19999999925494194,
+              "max": 0.30000000074505806,
+              "mean": 0.06834862391472957,
+              "n": 218
+            }
+          },
+          "memory": {
+            "geometries": 2240,
+            "textures": 75
+          },
+          "programs": 133,
+          "keepers": 45,
+          "heap": 730431012,
+          "meshes": 997,
+          "calls": 1,
+          "nav": 0,
+          "fx": 9,
+          "weather": {
+            "name": "Clear skies",
+            "rain": 0,
+            "snow": 0,
+            "wet": 0
+          },
+          "scale": 1,
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "liveHeap": 726558968
         },
         {
           "label": "round-0",
-          "drawFPS": 72.33333333333333,
+          "drawFPS": 72.66666666666667,
+          "frames": {
+            "p95": 7,
+            "max": 14,
+            "mean": 6.996495327102804,
+            "n": 428
+          },
           "render": {
-            "p95": 5.300000000745058,
-            "max": 5.699999999254942,
-            "mean": 4.24193548392247,
-            "n": 217
+            "p95": 6.600000001490116,
+            "max": 11.600000001490116,
+            "mean": 4.198165137662527,
+            "n": 218
           },
           "tick": {
-            "p95": 2.300000000745058,
-            "max": 6.099999997764826,
-            "mean": 1.7198156682508332,
-            "n": 217
+            "p95": 1.9000000022351742,
+            "max": 3.300000000745058,
+            "mean": 1.21192660538155,
+            "n": 218
+          },
+          "cost": {
+            "updateWorldFX": {
+              "p95": 0.10000000149011612,
+              "max": 0.30000000074505806,
+              "mean": 0.047247706305816636,
+              "n": 218
+            },
+            "updateCutaways": {
+              "p95": 0.19999999925494194,
+              "max": 0.30000000074505806,
+              "mean": 0.07568807339449542,
+              "n": 436
+            },
+            "updateRenderBudget": {
+              "p95": 0.10000000149011612,
+              "max": 0.30000000074505806,
+              "mean": 0.011440677978729798,
+              "n": 236
+            },
+            "updateLighting": {
+              "p95": 0.10000000149011612,
+              "max": 0.10000000149011612,
+              "mean": 0.045454545454545456,
+              "n": 11
+            },
+            "updateFollowers": {
+              "p95": 0.09999999776482582,
+              "max": 0.10000000149011612,
+              "mean": 0.005963302738622788,
+              "n": 218
+            },
+            "updateGuide16": {
+              "p95": 0,
+              "max": 0,
+              "mean": 0,
+              "n": 20
+            },
+            "updateSoundscape": {
+              "p95": 0.10000000149011612,
+              "max": 0.20000000298023224,
+              "mean": 0.038532110033642264,
+              "n": 218
+            }
           },
           "memory": {
             "geometries": 2245,
             "textures": 76
           },
-          "liveHeap": 730583964,
-          "scale": 1,
+          "programs": 158,
+          "keepers": 58,
+          "heap": 1296023965,
+          "meshes": 996,
+          "calls": 1,
+          "nav": 0,
+          "fx": 8,
           "weather": {
-            "name": "Thunderstorm",
-            "rain": 1,
+            "name": "Clear skies",
+            "rain": 0,
             "snow": 0,
-            "wet": 1
-          }
+            "wet": 0
+          },
+          "scale": 1,
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "liveHeap": 729092648
         },
         {
           "label": "round-1",
           "drawFPS": 72.33333333333333,
+          "frames": {
+            "p95": 7,
+            "max": 7.100000000005821,
+            "mean": 6.947795823665893,
+            "n": 431
+          },
           "render": {
-            "p95": 5.600000001490116,
-            "max": 6.300000000745058,
-            "mean": 4.517972350240715,
+            "p95": 4.600000001490116,
+            "max": 4.800000000745058,
+            "mean": 3.6115207373409226,
             "n": 217
           },
           "tick": {
-            "p95": 2.399999998509884,
-            "max": 4.5,
-            "mean": 1.7262672811300248,
+            "p95": 1.699999999254942,
+            "max": 2.800000000745058,
+            "mean": 1.0764976957907324,
             "n": 217
+          },
+          "cost": {
+            "updateWorldFX": {
+              "p95": 0.10000000149011612,
+              "max": 0.19999999925494194,
+              "mean": 0.0382488479640352,
+              "n": 217
+            },
+            "updateCutaways": {
+              "p95": 0.19999999925494194,
+              "max": 0.20000000298023224,
+              "mean": 0.056682027610284944,
+              "n": 434
+            },
+            "updateRenderBudget": {
+              "p95": 0.09999999776482582,
+              "max": 0.10000000149011612,
+              "mean": 0.006808510644638792,
+              "n": 235
+            },
+            "updateLighting": {
+              "p95": 0.10000000149011612,
+              "max": 0.10000000149011612,
+              "mean": 0.036363636228171264,
+              "n": 11
+            },
+            "updateFollowers": {
+              "p95": 0.09999999776482582,
+              "max": 0.10000000149011612,
+              "mean": 0.006451612913526149,
+              "n": 217
+            },
+            "updateGuide16": {
+              "p95": 0.09999999776482582,
+              "max": 0.09999999776482582,
+              "mean": 0.005263157777096096,
+              "n": 19
+            },
+            "updateSoundscape": {
+              "p95": 0.10000000149011612,
+              "max": 0.19999999925494194,
+              "mean": 0.024884792671362926,
+              "n": 217
+            }
+          },
+          "memory": {
+            "geometries": 2243,
+            "textures": 76
+          },
+          "programs": 160,
+          "keepers": 59,
+          "heap": 1357854230,
+          "meshes": 994,
+          "calls": 1,
+          "nav": 0,
+          "fx": 6,
+          "weather": {
+            "name": "Clear skies",
+            "rain": 0,
+            "snow": 0,
+            "wet": 0
+          },
+          "scale": 1,
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "liveHeap": 729112164
+        },
+        {
+          "label": "battle-effects",
+          "drawFPS": 72,
+          "frames": {
+            "p95": 7.099999999998545,
+            "max": 48.5,
+            "mean": 7.11232227488152,
+            "n": 422
+          },
+          "render": {
+            "p95": 5.300000000745058,
+            "max": 6.800000000745058,
+            "mean": 4.401388888712972,
+            "n": 216
+          },
+          "tick": {
+            "p95": 2.900000002235174,
+            "max": 14,
+            "mean": 1.586111111342217,
+            "n": 216
+          },
+          "cost": {
+            "updateWorldFX": {
+              "p95": 0.30000000074505806,
+              "max": 0.6000000014901161,
+              "mean": 0.0777777777467337,
+              "n": 216
+            },
+            "updateCutaways": {
+              "p95": 1.5,
+              "max": 2,
+              "mean": 0.3041666665252436,
+              "n": 432
+            },
+            "updateRenderBudget": {
+              "p95": 0.10000000149011612,
+              "max": 0.19999999925494194,
+              "mean": 0.008974358980726993,
+              "n": 234
+            },
+            "updateLighting": {
+              "p95": 0.10000000149011612,
+              "max": 0.10000000149011612,
+              "mean": 0.054545455358245155,
+              "n": 11
+            },
+            "updateFollowers": {
+              "mean": 0,
+              "n": 0
+            },
+            "updateGuide16": {
+              "p95": 0,
+              "max": 0,
+              "mean": 0,
+              "n": 20
+            },
+            "updateSoundscape": {
+              "p95": 0.10000000149011612,
+              "max": 0.19999999925494194,
+              "mean": 0.030555555614194384,
+              "n": 216
+            }
           },
           "memory": {
             "geometries": 2248,
             "textures": 76
           },
-          "liveHeap": 730662884,
-          "scale": 1,
+          "programs": 162,
+          "keepers": 59,
+          "heap": 744565052,
+          "meshes": 1000,
+          "calls": 1,
+          "nav": 0,
+          "fx": 0,
           "weather": {
-            "name": "Thunderstorm",
-            "rain": 1,
+            "name": "Clear skies",
+            "rain": 0,
             "snow": 0,
-            "wet": 1
-          }
-        },
-        {
-          "label": "battle-effects",
-          "drawFPS": 72,
-          "render": {
-            "p95": 5.899999998509884,
-            "max": 6.900000002235174,
-            "mean": 4.706944444199541,
-            "n": 216
+            "wet": 0
           },
-          "tick": {
-            "p95": 3.300000000745058,
-            "max": 17.899999998509884,
-            "mean": 2.189814814987282,
-            "n": 216
-          },
-          "memory": {
-            "geometries": 2258,
-            "textures": 76
-          },
-          "liveHeap": 736560612,
           "scale": 1,
-          "weather": {
-            "name": "Thunderstorm",
-            "rain": 1,
-            "snow": 0,
-            "wet": 1
-          }
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "liveHeap": 735063612
         },
         {
           "label": "after-battle",
           "drawFPS": 72.33333333333333,
+          "frames": {
+            "p95": 7.099999999998545,
+            "max": 34.799999999995634,
+            "mean": 7.062117647058827,
+            "n": 425
+          },
           "render": {
-            "p95": 6.199999999254942,
-            "max": 7.399999998509884,
-            "mean": 5.05115207377392,
+            "p95": 5.200000002980232,
+            "max": 5.900000002235174,
+            "mean": 4.1953917049077525,
             "n": 217
           },
           "tick": {
-            "p95": 2.300000000745058,
-            "max": 32.80000000074506,
-            "mean": 1.7336405530777945,
+            "p95": 2.399999998509884,
+            "max": 26,
+            "mean": 1.4359447005535326,
             "n": 217
           },
+          "cost": {
+            "updateWorldFX": {
+              "p95": 0.10000000149011612,
+              "max": 0.20000000298023224,
+              "mean": 0.03732718904996248,
+              "n": 217
+            },
+            "updateCutaways": {
+              "p95": 0.19999999925494194,
+              "max": 0.20000000298023224,
+              "mean": 0.0730414746269103,
+              "n": 434
+            },
+            "updateRenderBudget": {
+              "p95": 0.10000000149011612,
+              "max": 0.19999999925494194,
+              "mean": 0.009322033926718315,
+              "n": 236
+            },
+            "updateLighting": {
+              "p95": 0.20000000298023224,
+              "max": 0.20000000298023224,
+              "mean": 0.045454545793208206,
+              "n": 11
+            },
+            "updateFollowers": {
+              "p95": 0,
+              "max": 0.10000000149011612,
+              "mean": 0.004608294948042812,
+              "n": 217
+            },
+            "updateGuide16": {
+              "p95": 0.10000000149011612,
+              "max": 0.10000000149011612,
+              "mean": 0.009999999962747096,
+              "n": 20
+            },
+            "updateSoundscape": {
+              "p95": 0.10000000149011612,
+              "max": 0.10000000149011612,
+              "mean": 0.03317972367054307,
+              "n": 217
+            }
+          },
           "memory": {
-            "geometries": 2260,
+            "geometries": 2250,
             "textures": 76
           },
-          "liveHeap": 731760133,
+          "programs": 160,
+          "keepers": 59,
+          "heap": 753656457,
+          "meshes": 1002,
+          "calls": 1,
+          "nav": 0,
+          "fx": 8,
+          "weather": {
+            "name": "Clear skies",
+            "rain": 0,
+            "snow": 0,
+            "wet": 0
+          },
           "scale": 1,
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "liveHeap": 730206021
+        }
+      ],
+      "errors": [],
+      "pass": true,
+      "scope": "Native Chrome on recorded device; 72 Hz draw target, heavy storm and 20 simultaneous spells, repeated scene loads"
+    },
+    "repeatedStormPlay": {
+      "label": "release-storm",
+      "phases": [
+        {
+          "label": "fresh",
+          "drawFPS": 70.33333333333333,
+          "frames": {
+            "p95": 7.100000000000364,
+            "max": 7.199999999998909,
+            "mean": 6.947961630695442,
+            "n": 417
+          },
+          "render": {
+            "p95": 3.400000002235174,
+            "max": 3.899999998509884,
+            "mean": 3.1236966824891725,
+            "n": 211
+          },
+          "tick": {
+            "p95": 2,
+            "max": 2.899999998509884,
+            "mean": 1.1725118483518255,
+            "n": 211
+          },
+          "cost": {
+            "updateWorldFX": {
+              "p95": 0.10000000149011612,
+              "max": 0.30000000074505806,
+              "mean": 0.038388625528857606,
+              "n": 211
+            },
+            "updateCutaways": {
+              "p95": 0.10000000149011612,
+              "max": 0.20000000298023224,
+              "mean": 0.06042654018725547,
+              "n": 422
+            },
+            "updateRenderBudget": {
+              "p95": 0.10000000149011612,
+              "max": 0.30000000074505806,
+              "mean": 0.01659388643360034,
+              "n": 229
+            },
+            "updateLighting": {
+              "p95": 0.10000000149011612,
+              "max": 0.10000000149011612,
+              "mean": 0.04999999962747097,
+              "n": 10
+            },
+            "updateFollowers": {
+              "p95": 0.09999999776482582,
+              "max": 0.10000000149011612,
+              "mean": 0.005687203752627305,
+              "n": 211
+            },
+            "updateGuide16": {
+              "p95": 0.10000000149011612,
+              "max": 0.10000000149011612,
+              "mean": 0.021052631500520204,
+              "n": 19
+            },
+            "updateSoundscape": {
+              "p95": 0.10000000149011612,
+              "max": 0.10000000149011612,
+              "mean": 0.03412322288652732,
+              "n": 211
+            }
+          },
+          "memory": {
+            "geometries": 2240,
+            "textures": 75
+          },
+          "programs": 174,
+          "keepers": 49,
+          "heap": 908137213,
+          "meshes": 996,
+          "calls": 1,
+          "nav": 0,
+          "fx": 8,
           "weather": {
             "name": "Thunderstorm",
             "rain": 1,
             "snow": 0,
             "wet": 1
-          }
+          },
+          "scale": 1,
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "liveHeap": 727065795
+        },
+        {
+          "label": "flow",
+          "drawFPS": 72.66666666666667,
+          "frames": {
+            "p95": 7,
+            "max": 7.100000000000364,
+            "mean": 6.947685185185184,
+            "n": 432
+          },
+          "render": {
+            "p95": 5,
+            "max": 6.199999999254942,
+            "mean": 4.527981651485513,
+            "n": 218
+          },
+          "tick": {
+            "p95": 1.800000000745058,
+            "max": 3.400000002235174,
+            "mean": 1.1628440366801591,
+            "n": 218
+          },
+          "cost": {
+            "updateWorldFX": {
+              "p95": 0.19999999925494194,
+              "max": 0.30000000074505806,
+              "mean": 0.05642201831786457,
+              "n": 218
+            },
+            "updateCutaways": {
+              "p95": 0.19999999925494194,
+              "max": 0.3999999985098839,
+              "mean": 0.0669724770368786,
+              "n": 436
+            },
+            "updateRenderBudget": {
+              "p95": 0.10000000149011612,
+              "max": 0.20000000298023224,
+              "mean": 0.010593220307412794,
+              "n": 236
+            },
+            "updateLighting": {
+              "p95": 0.10000000149011612,
+              "max": 0.10000000149011612,
+              "mean": 0.05454545468091965,
+              "n": 11
+            },
+            "updateFollowers": {
+              "p95": 0,
+              "max": 0.10000000149011612,
+              "mean": 0.002752293567728559,
+              "n": 218
+            },
+            "updateGuide16": {
+              "p95": 0.09999999776482582,
+              "max": 0.09999999776482582,
+              "mean": 0.010526315554192192,
+              "n": 19
+            },
+            "updateSoundscape": {
+              "p95": 0.10000000149011612,
+              "max": 0.19999999925494194,
+              "mean": 0.03853211010199621,
+              "n": 218
+            }
+          },
+          "memory": {
+            "geometries": 2240,
+            "textures": 75
+          },
+          "programs": 174,
+          "keepers": 49,
+          "heap": 732382867,
+          "meshes": 996,
+          "calls": 1,
+          "nav": 0,
+          "fx": 8,
+          "weather": {
+            "name": "Thunderstorm",
+            "rain": 1,
+            "snow": 0,
+            "wet": 1
+          },
+          "scale": 1,
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "liveHeap": 727350435
+        },
+        {
+          "label": "round-0",
+          "drawFPS": 71.33333333333333,
+          "frames": {
+            "p95": 7.099999999998545,
+            "max": 62.29999999999927,
+            "mean": 7.112351543942991,
+            "n": 421
+          },
+          "render": {
+            "p95": 4.399999998509884,
+            "max": 5.900000002235174,
+            "mean": 3.4261682241737286,
+            "n": 214
+          },
+          "tick": {
+            "p95": 1.800000000745058,
+            "max": 2.7000000029802322,
+            "mean": 1.054205607431375,
+            "n": 214
+          },
+          "cost": {
+            "updateWorldFX": {
+              "p95": 0.10000000149011612,
+              "max": 0.19999999925494194,
+              "mean": 0.04018691582518203,
+              "n": 214
+            },
+            "updateCutaways": {
+              "p95": 0.10000000149011612,
+              "max": 0.30000000074505806,
+              "mean": 0.05934579446737733,
+              "n": 428
+            },
+            "updateRenderBudget": {
+              "p95": 0.10000000149011612,
+              "max": 0.19999999925494194,
+              "mean": 0.010775862052908232,
+              "n": 232
+            },
+            "updateLighting": {
+              "p95": 0.10000000149011612,
+              "max": 0.10000000149011612,
+              "mean": 0.045454545454545456,
+              "n": 11
+            },
+            "updateFollowers": {
+              "p95": 0,
+              "max": 0.10000000149011612,
+              "mean": 0.004205607452264456,
+              "n": 214
+            },
+            "updateGuide16": {
+              "p95": 0.10000000149011612,
+              "max": 0.10000000149011612,
+              "mean": 0.009999999962747096,
+              "n": 20
+            },
+            "updateSoundscape": {
+              "p95": 0.10000000149011612,
+              "max": 0.19999999925494194,
+              "mean": 0.03084112143265867,
+              "n": 214
+            }
+          },
+          "memory": {
+            "geometries": 2247,
+            "textures": 76
+          },
+          "programs": 195,
+          "keepers": 60,
+          "heap": 1321504903,
+          "meshes": 998,
+          "calls": 1,
+          "nav": 0,
+          "fx": 10,
+          "weather": {
+            "name": "Thunderstorm",
+            "rain": 1,
+            "snow": 0,
+            "wet": 1
+          },
+          "scale": 1,
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "liveHeap": 729929481
+        },
+        {
+          "label": "round-1",
+          "drawFPS": 72.66666666666667,
+          "frames": {
+            "p95": 7.099999999998545,
+            "max": 14,
+            "mean": 6.980419580419577,
+            "n": 429
+          },
+          "render": {
+            "p95": 4.800000000745058,
+            "max": 5.300000000745058,
+            "mean": 3.851376146624941,
+            "n": 218
+          },
+          "tick": {
+            "p95": 1.800000000745058,
+            "max": 2.600000001490116,
+            "mean": 1.080275229460329,
+            "n": 218
+          },
+          "cost": {
+            "updateWorldFX": {
+              "p95": 0.10000000149011612,
+              "max": 0.20000000298023224,
+              "mean": 0.030733945019064693,
+              "n": 218
+            },
+            "updateCutaways": {
+              "p95": 0.19999999925494194,
+              "max": 0.20000000298023224,
+              "mean": 0.0754587154220277,
+              "n": 436
+            },
+            "updateRenderBudget": {
+              "p95": 0.09999999776482582,
+              "max": 0.20000000298023224,
+              "mean": 0.008050847482883323,
+              "n": 236
+            },
+            "updateLighting": {
+              "p95": 0.10000000149011612,
+              "max": 0.10000000149011612,
+              "mean": 0.03636363690549677,
+              "n": 11
+            },
+            "updateFollowers": {
+              "p95": 0.09999999776482582,
+              "max": 0.10000000149011612,
+              "mean": 0.005504587169634093,
+              "n": 218
+            },
+            "updateGuide16": {
+              "p95": 0.10000000149011612,
+              "max": 0.10000000149011612,
+              "mean": 0.015789473723424107,
+              "n": 19
+            },
+            "updateSoundscape": {
+              "p95": 0.10000000149011612,
+              "max": 0.30000000074505806,
+              "mean": 0.03394495418995892,
+              "n": 218
+            }
+          },
+          "memory": {
+            "geometries": 2244,
+            "textures": 76
+          },
+          "programs": 197,
+          "keepers": 61,
+          "heap": 1285238919,
+          "meshes": 995,
+          "calls": 1,
+          "nav": 0,
+          "fx": 7,
+          "weather": {
+            "name": "Thunderstorm",
+            "rain": 1,
+            "snow": 0,
+            "wet": 1
+          },
+          "scale": 1,
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "liveHeap": 729851805
+        },
+        {
+          "label": "battle-effects",
+          "drawFPS": 72,
+          "frames": {
+            "p95": 7.099999999998545,
+            "max": 55.700000000004366,
+            "mean": 7.078588235294121,
+            "n": 425
+          },
+          "render": {
+            "p95": 5.399999998509884,
+            "max": 7.100000001490116,
+            "mean": 4.363425926132886,
+            "n": 216
+          },
+          "tick": {
+            "p95": 2.600000001490116,
+            "max": 13.5,
+            "mean": 1.545833333309188,
+            "n": 216
+          },
+          "cost": {
+            "updateWorldFX": {
+              "p95": 0.30000000074505806,
+              "max": 0.5,
+              "mean": 0.08287037024274468,
+              "n": 216
+            },
+            "updateCutaways": {
+              "p95": 1.300000000745058,
+              "max": 1.699999999254942,
+              "mean": 0.27199074084422104,
+              "n": 432
+            },
+            "updateRenderBudget": {
+              "p95": 0.10000000149011612,
+              "max": 0.20000000298023224,
+              "mean": 0.011538461551197574,
+              "n": 234
+            },
+            "updateLighting": {
+              "p95": 0.10000000149011612,
+              "max": 0.10000000149011612,
+              "mean": 0.054545455019582405,
+              "n": 11
+            },
+            "updateFollowers": {
+              "mean": 0,
+              "n": 0
+            },
+            "updateGuide16": {
+              "p95": 0.10000000149011612,
+              "max": 0.10000000149011612,
+              "mean": 0.005000000074505806,
+              "n": 20
+            },
+            "updateSoundscape": {
+              "p95": 0.10000000149011612,
+              "max": 0.20000000298023224,
+              "mean": 0.038888888881990206,
+              "n": 216
+            }
+          },
+          "memory": {
+            "geometries": 2265,
+            "textures": 76
+          },
+          "programs": 199,
+          "keepers": 61,
+          "heap": 745716873,
+          "meshes": 1000,
+          "calls": 1,
+          "nav": 0,
+          "fx": 0,
+          "weather": {
+            "name": "Thunderstorm",
+            "rain": 1,
+            "snow": 0,
+            "wet": 1
+          },
+          "scale": 1,
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "liveHeap": 735827541
+        },
+        {
+          "label": "after-battle",
+          "drawFPS": 72.33333333333333,
+          "frames": {
+            "p95": 7,
+            "max": 34.700000000004366,
+            "mean": 7.01261682242991,
+            "n": 428
+          },
+          "render": {
+            "p95": 5.099999997764826,
+            "max": 6.100000001490116,
+            "mean": 4.086635944600891,
+            "n": 217
+          },
+          "tick": {
+            "p95": 2.399999998509884,
+            "max": 25.299999997019768,
+            "mean": 1.4110599078650023,
+            "n": 217
+          },
+          "cost": {
+            "updateWorldFX": {
+              "p95": 0.10000000149011612,
+              "max": 0.20000000298023224,
+              "mean": 0.024884792688530163,
+              "n": 217
+            },
+            "updateCutaways": {
+              "p95": 0.19999999925494194,
+              "max": 0.20000000298023224,
+              "mean": 0.07718894008358228,
+              "n": 434
+            },
+            "updateRenderBudget": {
+              "p95": 0.10000000149011612,
+              "max": 0.19999999925494194,
+              "mean": 0.012765957399251614,
+              "n": 235
+            },
+            "updateLighting": {
+              "p95": 0.10000000149011612,
+              "max": 0.10000000149011612,
+              "mean": 0.045454546131870964,
+              "n": 11
+            },
+            "updateFollowers": {
+              "p95": 0,
+              "max": 0.10000000149011612,
+              "mean": 0.0032258064653466925,
+              "n": 217
+            },
+            "updateGuide16": {
+              "p95": 0,
+              "max": 0,
+              "mean": 0,
+              "n": 20
+            },
+            "updateSoundscape": {
+              "p95": 0.10000000149011612,
+              "max": 0.10000000149011612,
+              "mean": 0.02580645172277354,
+              "n": 217
+            }
+          },
+          "memory": {
+            "geometries": 2269,
+            "textures": 76
+          },
+          "programs": 197,
+          "keepers": 61,
+          "heap": 749028042,
+          "meshes": 1003,
+          "calls": 1,
+          "nav": 0,
+          "fx": 9,
+          "weather": {
+            "name": "Thunderstorm",
+            "rain": 1,
+            "snow": 0,
+            "wet": 1
+          },
+          "scale": 1,
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "liveHeap": 730976106
         }
       ],
-      "errors": []
+      "errors": [],
+      "pass": true,
+      "scope": "Native Chrome on recorded device; 72 Hz draw target, heavy storm and 20 simultaneous spells, repeated scene loads"
     },
     "pump": {
       "frames": {
-        "max": 180.5,
-        "p95": 21,
-        "samples": 625
+        "max": 97.20000000000073,
+        "p95": 7.099999999998545,
+        "samples": 1557
       },
       "tick": {
-        "max": 41.399999998509884,
-        "p95": 5.900000002235174,
-        "samples": 626
+        "max": 13.199999999254942,
+        "p95": 2,
+        "samples": 793
       },
       "render": {
-        "max": 20.199999999254942,
-        "p95": 14.899999998509884,
-        "samples": 626
+        "max": 9.099999997764826,
+        "p95": 5.399999998509884,
+        "samples": 793
       },
       "routeTimes": [
         {
-          "ms": 28.099999997764826,
+          "ms": 6.300000000745058,
           "from": [
             -126.5,
             53
@@ -4301,10 +3543,10 @@
           ]
         },
         {
-          "ms": 15.899999998509884,
+          "ms": 3.699999999254942,
           "from": [
-            -120.75581875732509,
-            51.87545481247631
+            -120.7521191270024,
+            51.8790375019005
           ],
           "to": [
             -126.5,
@@ -4349,166 +3591,6 @@
               "z": 53
             }
           ]
-        },
-        {
-          "ms": 8.5,
-          "from": [
-            -114,
-            101.5
-          ],
-          "to": [
-            -117,
-            102
-          ],
-          "nodes": 5,
-          "path": [
-            {
-              "x": -114.1,
-              "z": 100.8
-            },
-            {
-              "x": -114.8,
-              "z": 100.8
-            },
-            {
-              "x": -115.49999999999999,
-              "z": 100.8
-            },
-            {
-              "x": -116.19999999999999,
-              "z": 101.5
-            },
-            {
-              "x": -117,
-              "z": 102
-            }
-          ]
-        },
-        {
-          "ms": 6.300000000745058,
-          "from": [
-            -129,
-            65
-          ],
-          "to": [
-            -124,
-            90
-          ],
-          "nodes": 1,
-          "path": [
-            {
-              "x": -124,
-              "z": 90
-            }
-          ]
-        },
-        {
-          "ms": 2.900000002235174,
-          "from": [
-            -95,
-            106
-          ],
-          "to": [
-            -90,
-            100
-          ],
-          "nodes": 1,
-          "path": [
-            {
-              "x": -90,
-              "z": 100
-            }
-          ]
-        },
-        {
-          "ms": 2,
-          "from": [
-            -145,
-            72
-          ],
-          "to": [
-            -149,
-            72
-          ],
-          "nodes": 1,
-          "path": [
-            {
-              "x": -149,
-              "z": 72
-            }
-          ]
-        },
-        {
-          "ms": 1.5,
-          "from": [
-            -94,
-            124
-          ],
-          "to": [
-            -91,
-            127
-          ],
-          "nodes": 1,
-          "path": [
-            {
-              "x": -91,
-              "z": 127
-            }
-          ]
-        },
-        {
-          "ms": 1.3999999985098839,
-          "from": [
-            -87,
-            127
-          ],
-          "to": [
-            -89,
-            124
-          ],
-          "nodes": 1,
-          "path": [
-            {
-              "x": -89,
-              "z": 124
-            }
-          ]
-        },
-        {
-          "ms": 1,
-          "from": [
-            -146,
-            120
-          ],
-          "to": [
-            -125,
-            120
-          ],
-          "nodes": 1,
-          "path": [
-            {
-              "x": -125,
-              "z": 120
-            }
-          ]
-        },
-        {
-          "ms": 0.8000000007450581,
-          "from": [
-            -116,
-            54.3
-          ],
-          "to": [
-            -114.6,
-            55.099999999999994
-          ],
-          "nodes": 1,
-          "path": [
-            {
-              "x": -114.6,
-              "z": 55.099999999999994
-            }
-          ]
         }
       ],
       "newPrograms": [],
@@ -4520,23 +3602,23 @@
       "operations": [
         {
           "name": "story-report",
-          "ms": 3.5
+          "ms": 1.699999999254942
         },
         {
           "name": "gate-objective",
-          "ms": 2.399999998509884
+          "ms": 1.4000000022351742
         },
         {
           "name": "pump-objective",
-          "ms": 2.199999999254942
+          "ms": 1.3999999985098839
         },
         {
           "name": "unlock-local-requests",
-          "ms": 14.699999999254942
+          "ms": 6.400000002235174
         },
         {
           "name": "accept-request",
-          "ms": 0.30000000074505806
+          "ms": 0.19999999925494194
         },
         {
           "name": "complete-local-task",
@@ -4560,18 +3642,18 @@
         }
       ],
       "frame": {
-        "p95": 18.600000001490116,
-        "max": 26,
-        "mean": 13.92361111111111,
-        "samples": 216
-      },
-      "tick": {
-        "p95": 5.300000000745058,
-        "max": 10.099999997764826,
-        "mean": 3.5202764977576546,
+        "p95": 14.5,
+        "max": 29.100000001490116,
+        "mean": 13.771889400921658,
         "samples": 217
       },
-      "fps": 71.82044887780549,
+      "tick": {
+        "p95": 1.800000000745058,
+        "max": 3,
+        "mean": 1.15458715613077,
+        "samples": 218
+      },
+      "fps": 72.61167809938097,
       "newPrograms": [],
       "rebuilds": 0,
       "newGeometries": 9,
@@ -4590,25 +3672,55 @@
       "errors": [],
       "pass": true
     },
-    "combatRenderCPU": {
-      "samples": 824,
-      "p95": 11.200000002980232,
-      "max": 20.099999997764826,
-      "mean": 8.949514563114029
-    },
-    "newCombatPrograms": 0,
-    "atlas": {
-      "openMs": 32.5,
-      "fps": 28.854640505118645,
+    "combat": {
+      "frames": {
+        "samples": 1486,
+        "p95": 13.900000000001455,
+        "max": 166.8000000000011,
+        "mean": 8.097981157469718
+      },
       "cpu": {
-        "p95": 14.599999997764826,
-        "max": 15.699999999254942,
-        "mean": 8.05176470573334
+        "samples": 849,
+        "p95": 9.200000002980232,
+        "max": 14,
+        "mean": 7.923792697252317
+      },
+      "longFrames": [
+        166.8000000000011,
+        97.29999999999927
+      ],
+      "programsBefore": 176,
+      "programsAfter": 176,
+      "warmed": true,
+      "entryMs": 4,
+      "newPrograms": [],
+      "actions": [
+        "bren",
+        "soren",
+        "tavin",
+        "mira",
+        "lysa",
+        "bren",
+        "soren",
+        "tavin"
+      ],
+      "events": [],
+      "fx": 0,
+      "calls": 1,
+      "errors": []
+    },
+    "atlas": {
+      "openMs": 35.20000000298023,
+      "fps": 28.98648420908531,
+      "cpu": {
+        "p95": 7.800000000745058,
+        "max": 8.100000001490116,
+        "mean": 7.133720930405827
       },
       "frames": {
-        "p95": 41.600000001490116,
-        "max": 41.900000002235174,
-        "mean": 35.06904761905649
+        "p95": 35.600000001490116,
+        "max": 42.100000001490116,
+        "mean": 34.90470588237924
       },
       "webglContexts": 1,
       "sceneObjects": 8044,
@@ -4616,6 +3728,19 @@
       "errors": [],
       "pass": true
     },
-    "scope": "Native Chrome 1440x900 on the recorded RTX 4080 device. Draw target follows monitor cadence, about 72 Hz here. Performance varies by hardware; retained heap GC is test-only."
+    "scope": "Native Chrome at 1920x1080 on recorded device; uncapped monitor cadence, four repeated travel/combat rounds, thirty simulated minutes plus sustained real-time town, overworld, storm and skill battles. Garbage collection is test-only for retained-memory comparison."
+  },
+  "graphics": {
+    "sceneSamples": 4,
+    "worldAnisotropy": 16,
+    "spritesKeepNativeNearestFiltering": true,
+    "camera": {
+      "yawDegrees": 27.439727948199295,
+      "pitchDegrees": 40.476169071538855
+    },
+    "fullSceneDepthBlur": false,
+    "balancedPixelCeiling": 3700000,
+    "highPixelCeiling": 5500000,
+    "sourceArtRegenerated": false
   }
 }

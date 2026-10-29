@@ -34,3 +34,6 @@ Alpha Version 1.0 (internal V21) reuses the approved PixelLab material/character
 
 
 V22 reuses the approved PixelLab sprite, portrait and material bank. Cinematic bloom, focus, grade, cloud-lit world particles and lighting changes are renderer code. ElevenLabs Voice Design created an original new Bren identity from a text-only casting brief; all 49 Bren story/combat clips were regenerated with Eleven v4, encoded as offline Opus and checked with Scribe v2. All 49 passed exact spoken-word comparison. The 33 tutorial World voice recordings are excluded from the selected catalogue and embedded build; story narration and the other characters are retained. Current selection: 259 voices plus 93 music, ambience and effects recordings. Private auditions, raw takes and detailed transcripts remain unpublished.
+
+
+V23 preserves the approved PixelLab source pixels and native sprite padding. World surfaces use mipmapped linear filtering and up to16x anisotropy; character atlases keep nearest filtering. The standalone scene renders at full1080p with4xMSAA on the tested native device. Brightness, olive canopy grading, edge-only focus and camera changes are code-driven; no source artwork was upscaled or regenerated for this pass.

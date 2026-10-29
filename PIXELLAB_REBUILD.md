@@ -1,4 +1,4 @@
-# Integrated V15 build
+# Integrated Alpha Version 1.0 build
 
 `index.html` embeds the renderer, game code, all selected art and all selected audio. Edit runtime modules under `elyndor`; rebuild with `python elyndor/tools/build.py --final`. The native packer rejects clipped source frames and records its selected sources in the asset manifest. `release.json` identifies the exact tested artifact.
 
@@ -6,7 +6,7 @@ The V15 modules are `relief-data-v15.js`, `geography-v15.js`, `settlements-v15.j
 
 The atlas uses the same overworld height function, roads and river. A small separate Three.js scene shares the existing WebGL renderer; a 2D canvas presents its viewport inside the menu without creating a second WebGL context. It renders at a bounded cadence, supports mouse/keyboard controls and stores a 256Ã—144 exploration field in journey records. Discovered landmarks can be tracked or fast-traveled to; hidden landmarks stay absent. Local maps retain actual floor exits and inn-circle positions.
 
-All saves, including automatic checkpoints, are guarded by the actual inn interior identity. Outdoor save circles are removed. Existing save migrations remain supported. Monster dissolution uses five preallocated 256-fragment batches, with native sprite colors, stable pixel thresholds and fading grounded shadows. Spell/attack origins follow moving actors, and art swaps keep their emissive and shadow maps aligned.
+Manual records are available at each of the15 POI entrance seals and at inn circles. Automatic checkpoints remain guarded by the actual inn interior identity. Existing save migrations remain supported. Monster dissolution uses five preallocated 256-fragment batches, with native sprite colors, stable pixel thresholds and fading grounded shadows. Spell/attack origins follow moving actors, and art swaps keep their emissive and shadow maps aligned.
 
 Likely encounter arenas are searched during destination loading. Flat staging is preferred, collision clearance is shared with navigation, and likely side/reflected views are uploaded before controls return. The world keeps visible foliage while using instancing and distance geometry budgets. The river bed remains continuous beneath hills; bridge approaches share the same terrain function.
 
@@ -36,3 +36,8 @@ Overworld vegetation is grouped into padded spatial branches. Visibility include
 
 
 V22 adds services-v22.js and cinematic-v22.js. Entrance seals use authored spawns with local clearance checks, share the existing three-slot record UI and appear in local maps. Inn rest restores stat-based HP and MP, charges 15 coins once and advances to morning; inn automatic checkpoints remain guarded. Tutorial and combat coaching retain their text, highlights and controls, with no narration or replay-voice buttons. Selective HDR bloom uses two quarter-resolution reusable targets and three small full-screen passes. The depth-aware post effect synchronizes near/far to the actual camera so the party stays sharp. Seeded 32-metre cells anchor dust/fireflies in world space with GPU drift and cloud lighting. The replacement Bren voice uses a new identity; audio QA verifies all selected files and their embedded payloads.
+
+
+V23 adds `clarity-v23.js` after the V22 services and cinematic modules. Its post shader keeps the full playable world sharp, with subtle softening only at the extreme lens edges. It restores full native1080p, adds4xMSAA, retains native-nearest sprite filtering, increases world anisotropy and uses an oblique exploration camera. Shared forest material programs, cached static transforms, nearby tree cutaway grids, padded visibility budgets and asynchronous bounded GPU queries reduce repeated work. Run `regression-v23.py`, `clarity-v23.mjs` and `endurance-v23.mjs` against the final standalone; evidence belongs in `output/elyndor/pixellab-v23`.
+
+`navigation-v23.js` follows the clarity module and schedules resumable resident route searches within a shared1.15ms budget. Physical collider/crowd checks remain live on each movement step. `resident-navigation-v23.mjs` forces an unreachable destination and confirms the exhausted search does not block frames while other residents finish errands.

@@ -1,5 +1,5 @@
 {
-  "status": "Alpha Version 1.0: cinematic HDR lighting, entrance saves, inn recovery, text-only tutorials and a new Bren voice",
+  "status": "Alpha Version 1.0: native sharp rendering, warm daylight, oblique exploration and sustained-play optimization",
   "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
   "characterFamilies": 41,
   "runtimeFamilies": 42,
@@ -9,8 +9,8 @@
   "worldImages": 62,
   "artifact": {
     "file": "index.html",
-    "bytes": 34282505,
-    "sha256": "924947a20e736161d8c886a01a137a1a69659f351357e6cd4e604127708332e8",
+    "bytes": 34302048,
+    "sha256": "2598d3310748d24bff2988fe02637a44ed85c2a32eb4d8480f84e124cb25a0db",
     "offline": true
   },
   "incompleteClips": {},
