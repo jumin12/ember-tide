@@ -22,3 +22,6 @@ V17 reuses the selected approved-concept-derived PixelLab art. No earlier genera
 
 
 V18 adds two native 512 by 512 PixelLab materials: fine jade river surface and wet river stone. The water material is a clean texture generated from a text-only specification; the approved current-atlas waterworks concept guided the wet stone. Two water candidates containing scene elements and a derivative normal were rejected and remain unpublished. Ten additional Eleven v4 narrator performances and one original sluice foley cue bring the selected offline total to 385 recordings (292 voices, 93 music/sound cues). All ten new lines passed Scribe v2 word verification; every selected sound is decoded and peak checked.
+
+
+V19 reuses the existing approved PixelLab artwork and all 385 offline ElevenLabs recordings. Stair foundations, curved landing geometry, moving water currents, reflection validation and title/save interfaces are renderer and code changes. No newly generated art replaces the approved cast or palette; no earlier game assets were uploaded as generation references.

@@ -18,3 +18,8 @@ V17 integrates the same selected character and material bank into a wider geogra
 
 
 V18 modules: atlas-data-v18.js, relief-data-v18.js, atlas-v18.js, lesson-v18.js, hydraulics-v18.js, world-v18.js and visibility-v18.js, plus experience-v18.css. Geography is traced from the current atlas and its published volcanic revision; concept paintings are not pasted over gameplay. First-combat practice has a finite sequence and records completion in existing inn saves. Legacy regression fixtures explicitly opt out; revision-v18.mjs exercises the real default lesson through mouse/keyboard commands and measures all moving cascade joins, target/HP/MP/item changes, combat obstruction restoration and canonical atlas positions.
+
+
+V19 adds ground-v19.js, current-v19.js, title-v19.js and title-v19.css. The title director freezes legacy Brookstead-only cycling, chooses from a shuffled POI bag, and hides party/story-cast meshes without changing saved membership. Save deletion removes only the chosen manual slot’s current and legacy keys. The 27-check suite includes the new title/record/stair/current interaction audit and the existing coached-battle regression.
+
+River trails use a static instanced seed buffer with GPU vertex advection. Loading warms the hidden current and sluice spray, avoiding first-release shader compilation and per-frame terrain sampling.
