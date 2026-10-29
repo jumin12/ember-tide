@@ -28,3 +28,6 @@ V19 reuses the existing approved PixelLab artwork and all 385 offline ElevenLabs
 
 
 V20 reuses the approved native PixelLab artwork and all 385 selected ElevenLabs recordings. The stair backing, regraded join, coherent water surface and reflection corrections are geometry and shader changes; no new generation or reference upload was required.
+
+
+Alpha Version 1.0 (internal V21) reuses the approved PixelLab material/character bank and all 385 selected ElevenLabs recordings. Elemental effects, cloud lighting, color-only foliage masks, reflection budgets and speech serialization are code and shader changes. No new art generation, external reference upload, voice regeneration or credential access was needed.

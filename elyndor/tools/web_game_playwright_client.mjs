@@ -13,11 +13,14 @@ function parseArgs(argv) {
     actionsJson: null,
     click: null,
     clickSelector: null,
+    muteVoices: false,
   };
   for (let i = 2; i < argv.length; i++) {
     const arg = argv[i];
     const next = argv[i + 1];
-    if (arg === "--url" && next) {
+    if (arg === "--mute-voices") {
+      args.muteVoices = true;
+    } else if (arg === "--url" && next) {
       args.url = next;
       i++;
     } else if (arg === "--iterations" && next) {
@@ -280,6 +283,7 @@ async function main() {
   });
 
   await page.addInitScript({ content: makeVirtualTimeShim() });
+  if (args.muteVoices) await page.addInitScript(() => { const key="elyndor-settings-v3"; const s=JSON.parse(localStorage.getItem(key)??"{}"); s.voices=false; s.volume=0; localStorage.setItem(key,JSON.stringify(s)); });
   await page.goto(args.url, { waitUntil: "domcontentloaded" });
   await page.waitForTimeout(500);
   await page.evaluate(() => {

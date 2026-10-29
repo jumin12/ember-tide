@@ -1,5 +1,5 @@
 {
-  "status": "Traversable terrace stairs, closed terrain seams and a coherent downstream river",
+  "status": "Alpha Version 1.0: paced rendering, serialized speech, clear combat sightlines and world cloud lighting",
   "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
   "characterFamilies": 41,
   "runtimeFamilies": 42,
@@ -9,8 +9,8 @@
   "worldImages": 62,
   "artifact": {
     "file": "index.html",
-    "bytes": 35906199,
-    "sha256": "e5942b154ef30a34aba0ed9a7a9163563068efd8b7cf9ed7fe3732336ec6053e",
+    "bytes": 35939775,
+    "sha256": "e193a31a43313fd6a72f85039a8e9a0fb546816e45f41651555a3e99e36ad2a3",
     "offline": true
   },
   "incompleteClips": {},
