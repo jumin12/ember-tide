@@ -1,23 +1,23 @@
 {
-  "status": "Directed narration, progressive river, exact terrain edges and shared expanded overworld",
+  "status": "Full-span sluice, joined release wave, coached first combat and current atlas geography",
   "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
   "characterFamilies": 41,
   "runtimeFamilies": 42,
   "nativeSelectedPoses": 4878,
   "portraits": 38,
   "dedicatedHudPortraits": 5,
-  "worldImages": 60,
+  "worldImages": 62,
   "artifact": {
     "file": "index.html",
-    "bytes": 34575177,
-    "sha256": "439435b194b76b7355a8204e3aa9772d8e3a105c67917919bc9ab5970bf6872a",
+    "bytes": 35861299,
+    "sha256": "16513003a8c648288da59049ba39ce85c4a9a183bc6593c7fc1deb30b7c9097e",
     "offline": true
   },
   "incompleteClips": {},
   "worldSystem": "Reference-atlas overworld with 15 points of interest and seven interiors",
   "voiceModel": "eleven_v4",
-  "voiceClips": 282,
+  "voiceClips": 292,
   "voiceProvider": "ElevenLabs",
-  "soundAssets": 92,
+  "soundAssets": 93,
   "soundProvider": "ElevenLabs"
 }

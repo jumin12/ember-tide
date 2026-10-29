@@ -3396,6 +3396,116 @@
       "file": "elyndor/audio/opus/d96aa8841d0c562d26bb.ogg",
       "bytes": 41614,
       "sha256": "e62f420c7c4f1d42009955f2b993c06a07b38fcc09e0e39e50554510d1e4be5d"
+    },
+    {
+      "speaker": "World voice",
+      "text": "Choose Attack. Bren will move into range and begin a three-strike chain.",
+      "role": "narrator",
+      "key": "38835a917a06dd6c97b4",
+      "lesson": "attack",
+      "performance": "Clear warm practical guidance",
+      "file": "elyndor/audio/opus/38835a917a06dd6c97b4.ogg",
+      "bytes": 21828,
+      "sha256": "3fd0531fd58f4cd1460247e6fca9e1a42086f4e356b6cc2981d0922ef0cb016d"
+    },
+    {
+      "speaker": "World voice",
+      "text": "This first encounter will teach you one action at a time. Nothing attacks while you read. Start with Bren, then try Soren's magic, healing, and defense.",
+      "role": "narrator",
+      "key": "8cfa2253dbce4f67e9ad",
+      "lesson": "welcome",
+      "performance": "Clear warm practical guidance",
+      "file": "elyndor/audio/opus/8cfa2253dbce4f67e9ad.ogg",
+      "bytes": 47645,
+      "sha256": "07cfef06219c96df8890c48c0087a0699d68a712ce81e860fc949f92dbb5a24e"
+    },
+    {
+      "speaker": "World voice",
+      "text": "Choose the Duskfang Wolf. Click its name or its sprite, or focus its name with the keyboard and press Enter. The gold arrow marks your selected foe.",
+      "role": "narrator",
+      "key": "037fcbbc80ad903e6f2b",
+      "lesson": "target",
+      "performance": "Clear warm practical guidance",
+      "file": "elyndor/audio/opus/037fcbbc80ad903e6f2b.ogg",
+      "bytes": 45228,
+      "sha256": "15baf5a5d5d29841a3c35094ea0e4acc02363720069c46953ad6421b25a371a9"
+    },
+    {
+      "speaker": "World voice",
+      "text": "For this first strike, the marker waits inside the gold window. Press Space, E, or the Strike button. The next two strikes run more slowly so you can practice timing them yourself.",
+      "role": "narrator",
+      "key": "7e55aa82a19358d8dd3a",
+      "lesson": "timing",
+      "performance": "Clear warm practical guidance",
+      "file": "elyndor/audio/opus/7e55aa82a19358d8dd3a.ogg",
+      "bytes": 53279,
+      "sha256": "919c27f3530e3627ba3ace865e94e5c9db0c674b81315f85e52ce1dc8b5f9bf2"
+    },
+    {
+      "speaker": "World voice",
+      "text": "The wolf is preparing to hit Bren. Watch his HP bar on the right. After the hit, we'll use a healing herb.",
+      "role": "narrator",
+      "key": "afaf584271bc5912ffa8",
+      "lesson": "incoming",
+      "performance": "Clear warm practical guidance",
+      "file": "elyndor/audio/opus/afaf584271bc5912ffa8.ogg",
+      "bytes": 32465,
+      "sha256": "4c1762829fe93bb42ffc577d6449383b977e5a8bca9c6a74b9f59afd941c2436"
+    },
+    {
+      "speaker": "World voice",
+      "text": "Now choose Skills, then Arcane pulse. This spends eight magic points. Watch Soren's MP bar and the selected enemy's health.",
+      "role": "narrator",
+      "key": "ec2f46b07cf9ddd15470",
+      "lesson": "skill",
+      "performance": "Clear warm practical guidance",
+      "file": "elyndor/audio/opus/ec2f46b07cf9ddd15470.ogg",
+      "bytes": 41645,
+      "sha256": "fcb74781efbf70dc98e7545e3955d991a3d615ba69e8b0aa11fe2298927a756c"
+    },
+    {
+      "speaker": "World voice",
+      "text": "Choose Defend. It reduces the next incoming hit without spending magic. Watch how much less damage Bren takes this time.",
+      "role": "narrator",
+      "key": "d9b9d7469f7a5b4a1432",
+      "lesson": "defend",
+      "performance": "Clear warm practical guidance",
+      "file": "elyndor/audio/opus/d9b9d7469f7a5b4a1432.ogg",
+      "bytes": 36995,
+      "sha256": "0f5d30552d52e658326044afc30de4c48f4fa7a9a53e80d41a6c240d117e9275"
+    },
+    {
+      "speaker": "World voice",
+      "text": "Bren is hurt. Choose Items, then Healing herb, then Bren. A practice herb is provided for this lesson, so your own supplies are kept.",
+      "role": "narrator",
+      "key": "5029b839673fcd3ec47e",
+      "lesson": "item",
+      "performance": "Clear warm practical guidance",
+      "file": "elyndor/audio/opus/5029b839673fcd3ec47e.ogg",
+      "bytes": 44616,
+      "sha256": "418df55996980c79821f9caa4abf7e5d365233859ed1cf0c5a4d6fb17dabebbf"
+    },
+    {
+      "speaker": "World voice",
+      "text": "Bren is braced. The same attack now deals less damage. Guarding can buy the time you need to heal or prepare your next move.",
+      "role": "narrator",
+      "key": "c9b42a6711059ad8e94a",
+      "lesson": "guardHit",
+      "performance": "Clear warm practical guidance",
+      "file": "elyndor/audio/opus/c9b42a6711059ad8e94a.ogg",
+      "bytes": 40413,
+      "sha256": "67de58d732f361e92f13f0ecc4e608f97a554e8937b6d4a1b126ad6dec10c61a"
+    },
+    {
+      "speaker": "World voice",
+      "text": "You know the essentials. Select your foes, time attack chains, watch HP and MP, use items when needed, and defend against incoming damage. Finish driving the wildlife away.",
+      "role": "narrator",
+      "key": "1e609a03d59c96655a38",
+      "lesson": "free",
+      "performance": "Clear warm practical guidance",
+      "file": "elyndor/audio/opus/1e609a03d59c96655a38.ogg",
+      "bytes": 57692,
+      "sha256": "eb869b2484a7767244fcfcd2f7c339196eb55fcd4025af5676c90c0871ff75cc"
     }
   ]
 }

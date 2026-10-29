@@ -1092,6 +1092,17 @@
         "prompt_influence": 0.8,
         "model_id": "eleven_text_to_sound_v2"
       }
+    },
+    {
+      "id": "sluice-release",
+      "kind": "effect",
+      "endpoint": "sound-generation",
+      "request": {
+        "text": "An old wooden river sluice lifting: a short deep timber and iron-chain creak followed immediately by a powerful natural rush of pressurized river water spilling through a gate into a rocky channel. Rich stereo whitewater and small clear splashes. Eight-second graceful transition from forceful initial surge to steady flowing water. Real outdoor game foley, no speech, no music, no explosion.",
+        "duration_seconds": 8,
+        "prompt_influence": 0.7,
+        "model_id": "eleven_text_to_sound_v2"
+      }
     }
   ]
 }

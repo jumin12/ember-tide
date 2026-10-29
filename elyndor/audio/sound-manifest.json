@@ -921,6 +921,16 @@
       "sha256": "27726ab4ff542a172f876e3a08ff7bcee0da2d4297a368e58416998b4ccec0a7",
       "model": "eleven_text_to_sound_v2",
       "prompt": "A shallow flowing stream passing close over varied stones, clear small bubbles, gentle splashes and layered fast ripples, natural detailed stereo. Studio-quality detailed game sound, no music, no spoken words, no clipping."
+    },
+    {
+      "id": "sluice-release",
+      "kind": "effect",
+      "loop": false,
+      "file": "elyndor/audio/sound/sluice-release.ogg",
+      "bytes": 66017,
+      "sha256": "6a61a299d09de7c219258050cda64e4cc0f6652ae79c01da468a1d342cb74152",
+      "model": "eleven_text_to_sound_v2",
+      "prompt": "An old wooden river sluice lifting: a short deep timber and iron-chain creak followed immediately by a powerful natural rush of pressurized river water spilling through a gate into a rocky channel. Rich stereo whitewater and small clear splashes. Eight-second graceful transition from forceful initial surge to steady flowing water. Real outdoor game foley, no speech, no music, no explosion."
     }
   ]
 }

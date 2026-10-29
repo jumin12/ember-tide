@@ -1,0 +1,51 @@
+import {chromium} from 'playwright';import fs from 'node:fs';import path from 'node:path';import {pathToFileURL} from 'node:url';
+const out='output/elyndor/pixellab-v18/campaign';fs.mkdirSync(out,{recursive:true});const report={};const errors=[];
+const browser=await chromium.launch({headless:true,...(process.env.ELY_NATIVE?{channel:'chrome'}:{}),args:['--allow-file-access-from-files','--enable-webgl','--ignore-gpu-blocklist',process.env.ELY_NATIVE?'--use-angle=d3d11':'--use-angle=swiftshader']});const page=await browser.newPage({viewport:{width:1280,height:800}});page.setDefaultTimeout(240000);page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
+try{
+ await page.goto(pathToFileURL(path.resolve(process.argv[2]??'elyndor.preview.html')).href,{timeout:240000});await page.waitForFunction(()=>!!window.__ely);await page.click('#start-btn');await page.waitForFunction(()=>document.querySelector('#load-screen').classList.contains('hidden'),null,{timeout:120000});await page.keyboard.press('Space');await page.keyboard.press('Space');
+ await page.evaluate(()=>{__ely.state.settings.voices=false;state.flags.combat_tutorial_complete=true;__ely.state.settings.volume=0;__ely.state.encounterDistance=-100000;});
+ console.log('Controls');
+ report.controls=[];
+ for(const[key,face]of[['w','north'],['d','east'],['s','south'],['a','west']]){const before=await page.evaluate(()=>({x:__ely.player.x,z:__ely.player.z}));await page.keyboard.down(key);await page.evaluate(()=>advanceTime(350,false));const after=await page.evaluate(()=>({x:__ely.player.x,z:__ely.player.z,face:__ely.player.face,frame:__ely.player.frame}));await page.keyboard.up(key);report.controls.push({key,expected:face,actual:after.face,distance:Math.hypot(after.x-before.x,after.z-before.z)});}
+ console.log('Navigation');
+ report.navigation=await page.evaluate(()=>{
+  const g=__ely,issues=[],rows=[],start={x:g.player.x,z:g.player.z};
+  const approach=o=>{const candidates=[];for(let i=0;i<24;i++){const a=i*Math.PI/12,p={x:o.x+Math.cos(a)*1.9,z:o.z+Math.sin(a)*1.9};if(g.staticFree(p.x,p.z,.4))candidates.push(p);}return candidates;};
+  for(const o of g.interactions.filter(o=>!['villager','elderLight','shop','chest','save','sign','end','water','inn'].includes(o.type))){let found=null;for(const p of approach(o).sort((a,b)=>Math.hypot(a.x-start.x,a.z-start.z)-Math.hypot(b.x-start.x,b.z-start.z))){found=g.findRoute(start,p);if(found)break;}rows.push({type:o.type,route:!!found,steps:found?.length});if(!found)issues.push(o.type);}
+  for(const b of world.userData.bridges){const p={x:b.x-b.length/2-1,z:b.z},q={x:b.x+b.length/2+1,z:b.z};rows.push({type:'bridge',x:b.x,z:b.z,route:!!g.findRoute(p,q)});}
+  return{rows,issues};
+ });console.log(JSON.stringify(report.navigation));
+ console.log('Continuous walking');
+ report.walking=await page.evaluate(()=>{const g=__ely,startBuild=world.userData.serial,legs=[],target=g.interactions.find(o=>o.type==='representative');const pts=[{x:-141,z:99},{x:-119,z:94},{x:-97,z:87}];let maxJump=0,blocked=0;for(const p of pts){const found=g.walkTo(p.x,p.z);if(!found){legs.push({p,found});continue;}for(let i=0;i<6000&&Math.hypot(g.player.x-p.x,g.player.z-p.z)>.3;i++){const f=g.followers[0],before={x:f.x,z:f.z};g.tick(1/60);if(g.dialogue){while(g.dialogue)g.nextDialogue();}maxJump=Math.max(maxJump,Math.hypot(f.x-before.x,f.z-before.z));if(!g.staticFree(f.x,f.z,.35))blocked++;}legs.push({p,found,remaining:Math.hypot(g.player.x-p.x,g.player.z-p.z),area:g.state.scene});}return{legs,buildUnchanged:world.userData.serial===startBuild,noTransition:!transition,maxFollowerStep:maxJump,blocked,debug:openWorldDebug};});console.log(JSON.stringify(report.walking));
+ await page.evaluate(()=>{toastTime=0;__ely.render();});await page.screenshot({path:out+'/brookstead.png'});
+ console.log('Campaign');
+ report.campaign=await page.evaluate(async()=>{
+  const g=__ely,log=[],battles=[],build=world.userData.serial;const wait=s=>{for(let i=0;i<Math.ceil(s*60);i++)g.tick(1/60);},drain=()=>{for(let i=0;i<100&&g.dialogue;i++)g.nextDialogue();};
+  const place=o=>{const p=safePoint({x:o.x+1.8,z:o.z+1.4},.45);g.player.x=p.x;g.player.z=p.z;for(const a of g.followers){a.x=p.x-1.5;a.z=p.z;}spawnPartyTrail([p.x,p.z]);state.scene=activeScene.kind==='interior'?activeScene.key:o.area??areaAt(p.x,p.z);};
+  function fight(){if(!g.battle)return;const start=g.battle.kind,origin={x:g.battle.origin.x,z:g.battle.origin.z};let turns=0,phase=false,asc=false;wait(2.2);
+   for(let loops=0;loops<9000&&g.battle;loops++){drain();const b=g.battle;if(!b)break;phase||=b.phase===2;asc||=Object.values(g.state.characters).some(c=>c.ascended);
+    if(b.status==='victory'){if(b.kind==='wildlife'){for(let i=0;i<1200&&document.querySelector('#victory-continue').disabled;i++)g.tick(1/60);}openBattleResults();advanceBattleResults();advanceBattleResults();drain();battles.push({kind:start,turns,phase,asc,sameWorld:world.userData.serial===build,returned:Math.hypot(g.player.x-origin.x,g.player.z-origin.z)<.01});return;}
+    if(b.status==='defeat')throw Error('Defeated '+b.kind+' @round '+b.round);
+    if(b.status==='choose'){const q=b.queue[b.turn];if(q&&!q.startsWith('enemy:')){turns++;const c=g.state.characters[q],alive=g.state.members.filter(id=>g.state.characters[id].hp>0),fallen=g.state.members.find(id=>g.state.characters[id].hp===0),low=alive.sort((a,z)=>g.state.characters[a].hp/g.stats(a).hp-g.state.characters[z].hp/g.stats(z).hp)[0];
+     if(fallen&&g.state.items.revive>0){g.battleAction('item','revive');g.battleAllyTarget(g.state.members.indexOf(fallen));}
+     else if(g.state.characters[low].hp/g.stats(low).hp<.46&&q==='mira'&&c.mp>=14)g.battleAction('skill',1);
+     else if(g.state.characters[low].hp/g.stats(low).hp<.4&&q==='bren'&&c.mp>=9){g.battleAction('skill',1);g.battleAllyTarget(g.state.members.indexOf(low));}
+     else if(g.state.characters[low].hp/g.stats(low).hp<.4&&q==='tavin'&&c.mp>=8){g.battleAction('skill',1);g.battleAllyTarget(g.state.members.indexOf(low));}
+     else if(g.state.characters[low].hp/g.stats(low).hp<.35&&g.state.items.herb>0){g.battleAction('item','herb');g.battleAllyTarget(g.state.members.indexOf(low));}
+     else if(c.charge>=100&&!c.ascended&&isAwake(q)){document.querySelector('[data-action="ascend"]').click();asc=true;}
+       else g.battleAction('attack');
+      }}if(b.status==='combo'&&b.combo&&!b.combo.input&&b.combo.t/b.combo.duration>=.67&&b.combo.t/b.combo.duration<=.84)g.comboHit();wait(.05);
+   }throw Error('Battle did not finish '+start);
+  }
+  drain();state.beat=0;state.flags={combat_tutorial_complete:true};state.restoredLights=[];state.members=['bren','soren'];setupParty([player.x,player.z]);restoreParty();
+  const seq=['representative','gate','pump','wildlife','aftermath','ENTER_FERN','tavin','tavin','commander1','stabilize','activation','evacuees','fernRepair','LIGHT_fern','mira','council','standoff','patients','guard','leader','rescue','lysa','commander2','brace','alderRepair','LIGHT_alder','returnLysa','council','logs','relay','pause','council','sleep','archivist','council','ENTER_RELIEF','reliefRepair','LIGHT_relief','council','sorenSite','commander3','siteRepair','LIGHT_site','council','ENTER_SNOW'];
+  for(const type of seq){const before=currentBeat()[0],beforeAid=!!state.flags.mira_aid_helped;if(type.startsWith('ENTER_')){const area=type.slice(6).toLowerCase();await changeJourneyScene(area);manualUntil=performance.now()+600000;drain();}else{const destination=objectiveScene();if(activeScene.key!==(INTERIORS[destination]?destination:poiFor(destination))){await changeJourneyScene(destination);manualUntil=performance.now()+600000;drain();}const o=type.startsWith('LIGHT_')?g.interactions.find(o=>o.type==='elderLight'&&o.site===type.slice(6)):g.interactions.find(o=>o.type===type);if(!o)throw Error('Missing '+type);place(o);g.act(o);for(let i=0;i<2400&&(eventAction||state.mode==='scene');i++)g.tick(1/60);drain();wait(3);drain();fight();if(restoration)wait(23);drain();}
+   const after=currentBeat()[0];log.push({type,before,after,members:[...state.members]});if(before===after&&!(type==='mira'&&!beforeAid&&state.flags.mira_aid_helped))throw Error('No progression '+type+' @'+before);if(['highmere','reportNotes'].includes(after)){g.openMenu('rest');document.querySelector('#rest-confirm').click();}
+  }
+  g.closeMenu();return{log,battles,final:currentBeat()[0],restored:[...state.restoredLights],regionRestored:state.flags.region_restored,sameWorld:world.userData.serial===build,party:state.members,builds:openWorldDebug.builds};
+ });console.log(JSON.stringify(report.campaign));await page.screenshot({path:out+'/campaign-complete.png'});
+ console.log('Menus and persistence');
+ report.persistence=await page.evaluate(async()=>{await changeJourneyScene('highmereInn',[0,5]);const g=__ely;g.openMenu('inventory');const gold=state.gold,p={x:player.x,z:player.z},mins=state.worldMinutes,lights=[...state.restoredLights];g.closeMenu();g.saveSlot('3',true);state.gold=0;state.worldMinutes=0;g.player.x=-150;const loaded=g.loadSlot('3');return{loaded,gold:state.gold===gold,position:Math.hypot(player.x-p.x,player.z-p.z)<.01,time:state.worldMinutes===mins,lights:JSON.stringify(lights)===JSON.stringify(state.restoredLights),region:state.flags.region_restored};});
+ await page.waitForFunction(()=>!gameLoading);report.voiceMissing=await page.evaluate(()=>[...recordedVoice.missing.values()]);report.errors=errors;fs.writeFileSync(out+'/report.json',JSON.stringify(report,null,2));console.log('DONE',JSON.stringify({persistence:report.persistence,errors}));
+ if(report.navigation.issues.length||!report.walking.buildUnchanged||report.walking.blocked||report.campaign.final!=='complete'||report.campaign.battles.length!==6||Object.values(report.persistence).some(x=>!x)||errors.length)process.exitCode=1;
+}catch(e){report.failure=e.stack;await page.waitForFunction(()=>!gameLoading);report.voiceMissing=await page.evaluate(()=>[...recordedVoice.missing.values()]);report.errors=errors;fs.writeFileSync(out+'/report.json',JSON.stringify(report,null,2));console.error(e.stack);await page.screenshot({path:out+'/failure.png'}).catch(()=>{});process.exitCode=1;}finally{await browser.close();}

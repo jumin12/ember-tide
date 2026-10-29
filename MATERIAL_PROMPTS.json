@@ -764,5 +764,28 @@
         "sha256": "9073e84d3ed571ee4dad093169709afa2b12dde598285697df8cb45637ca1f77"
       }
     ]
+  },
+  "v18": {
+    "generator": "PixelLab Pro",
+    "nativeSize": [
+      512,
+      512
+    ],
+    "selected": [
+      {
+        "key": "riverStone18",
+        "job": "a61c8b93-e1ec-4669-a038-1e55cfd4bb93",
+        "reference": "Current approved Elyndor atlas waterworks concept",
+        "description": "Fine wet irregular river stone with moss, matching the selected riverland palette."
+      },
+      {
+        "key": "riverSurface18",
+        "job": "412e2104-4b2e-494c-9358-7af722f140a7",
+        "reference": "Text-only material specification",
+        "description": "Muted sage jade river water, delicate silver-green ripples, high-resolution pixel-art albedo with water surface only."
+      }
+    ],
+    "nativePixelsPreserved": true,
+    "rejectedCandidatesPublished": false
   }
 }

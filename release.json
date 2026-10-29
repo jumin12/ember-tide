@@ -1,25 +1,23 @@
 {
-  "release": "elyndor-2026-10-28-river-guidance-shared-overworld-v17",
+  "release": "elyndor-2026-10-28-sluice-coached-battle-current-atlas-v18",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 34575177,
-    "sha256": "439435b194b76b7355a8204e3aa9772d8e3a105c67917919bc9ab5970bf6872a",
+    "bytes": 35861299,
+    "sha256": "16513003a8c648288da59049ba39ce85c4a9a183bc6593c7fc1deb30b7c9097e",
     "offline": true
   },
   "changes": [
-    "Bridge deck and graded approaches share the actual town paving material, texture scale and phase; a paved inn approach clears the entry garden",
-    "Exact terrain cuts under four town stairways remove coplanar surfaces without exposing triangular gaps; merged masonry faces are separated",
-    "Building cutaways require actual mesh occlusion inside the solid house and roof footprint; approaches, awnings and chimneys alone do not hide a building",
-    "Validated representative approach avoids the synchronous post-pump pathfinding search; steady water geometry stops uploading redundant vertex buffers",
-    "Directed action-based tutorial with 23 recorded world-narrator lessons, pulsing UI highlights, Open/Continue controls, replay, optional skip and projected interaction arrows",
-    "Persistent selected-enemy arrow, enemies and readable title/turn-order backplates at top left, party status at top right",
-    "Larger textured attack ribbons, impact rings, sparks, smoke, spell beams and pooled dynamic lighting",
-    "Depleted downstream channels progressively widen, rise and flow after gate repair; reservoir, cascade endpoints and reflection planes share the hydraulic state",
-    "Continuous non-pixel cloud density, opposite-side overhead key light, sky bounce, world-space rain puddles, wet surfaces and synchronized foliage/shadow wind gusts",
-    "Normal running at 6.6 m/s and Shift sprint at 8.25 m/s, retaining native 10/12 FPS eight-direction cycles",
-    "Overworld horizontal dimensions doubled to 2048 by 1152 metres, retaining physical building size, with 16464 trees, more meadow and geological dressing",
-    "M renders the actual playable overworld terrain, roads, bridges, river meshes and settlement models, with distance LOD, saved discovery fog and existing fast travel; legacy positions migrate"
+    "Full-width timber-and-iron sluice seals into both banks with a continuous sill and matching support frame",
+    "Carved river bathymetry and depth-clipped shores retain natural stream width; a pressure wave, world-space spray and foam travel downstream as the gate lifts",
+    "Reservoir, headrace, millrace, lower river and all cascade endpoints sample one animated hydraulic model; the river continues beyond the local scene",
+    "Two reviewed native 512-pixel PixelLab water and wet-stone materials; all water surfaces use the selected river palette",
+    "The first wildlife battle is a scripted, narrated practice sequence for target selection, Attack, timing, Soren’s MP ability, taking damage, a practice herb and Defend, followed by normal combat",
+    "Reading and the first timing window pause; practice cannot defeat the party or wildlife, consumes no net herbs, and can be skipped",
+    "Foreground buildings, trees and vegetation clear across the battle formation and restore when combat ends; the render budget preserves visibility decisions",
+    "Current published atlas version 7 supplies 22 named places, exact established landmark coordinates and seven primary roads, including the current connected volcanic geography",
+    "Fern gathering pavilion, Alderbridge shelter/care court and relief-station observation bay reserve clear ground before foliage planting; civic facilities and child locations appear in the atlas",
+    "Bridge decks and both approaches share world-space terrain material; local landscapes continue through fog with fitted background geometry"
   ],
   "art": {
     "generator": "PixelLab",
@@ -27,138 +25,77 @@
     "runtimeFamilies": 42,
     "packedSpritePoses": 4878,
     "sourceCropWarnings": 0,
-    "newPixelLabAssets": 0,
-    "note": "V17 reuses the approved-concept-derived selected art; clouds, terrain edges and world effects are rendered procedurally."
+    "newNativeMaterialPages": 2,
+    "materialSize": [
+      512,
+      512
+    ],
+    "rejectedCandidatesExcluded": true
   },
   "audio": {
     "provider": "ElevenLabs",
-    "speechModel": "eleven_v4",
-    "recordedVoices": 282,
-    "soundAssets": 92,
-    "newNarration": 23,
+    "recordedVoices": 292,
+    "soundAssets": 93,
+    "newNarration": 10,
+    "newSoundEffects": 1,
     "offline": true,
     "embeddedCredential": false,
     "transcription": {
-      "clips": 23,
+      "clips": 10,
       "transcriptionModel": "scribe_v2",
       "unresolvedWordDifferences": 0,
       "spokenActingTags": 0,
-      "scope": "23 additional world-narrator tutorial lessons. Name spellings and draughts/drafts are equivalent in the recording. Original 259 recordings retain their V15.1 verification.",
+      "scope": "Ten new coached-combat narrator performances; all selected words independently transcribed. Original 282 recordings retain their previous verification.",
       "recordings": [
         {
-          "key": "d80f26195cd53492e94d",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
+          "key": "38835a917a06dd6c97b4",
+          "matchesSpokenContent": true,
+          "sha256": "3fd0531fd58f4cd1460247e6fca9e1a42086f4e356b6cc2981d0922ef0cb016d"
         },
         {
-          "key": "5802c3bdf96cae832bfe",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
+          "key": "8cfa2253dbce4f67e9ad",
+          "matchesSpokenContent": true,
+          "sha256": "07cfef06219c96df8890c48c0087a0699d68a712ce81e860fc949f92dbb5a24e"
         },
         {
-          "key": "553da82652d30e3b6982",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
+          "key": "037fcbbc80ad903e6f2b",
+          "matchesSpokenContent": true,
+          "sha256": "15baf5a5d5d29841a3c35094ea0e4acc02363720069c46953ad6421b25a371a9"
         },
         {
-          "key": "4f2bc8445d2628886fe7",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
+          "key": "7e55aa82a19358d8dd3a",
+          "matchesSpokenContent": true,
+          "sha256": "919c27f3530e3627ba3ace865e94e5c9db0c674b81315f85e52ce1dc8b5f9bf2"
         },
         {
-          "key": "ef29f618b91a4b5ae39a",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
+          "key": "afaf584271bc5912ffa8",
+          "matchesSpokenContent": true,
+          "sha256": "4c1762829fe93bb42ffc577d6449383b977e5a8bca9c6a74b9f59afd941c2436"
         },
         {
-          "key": "650e39cf4d04001b2c80",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
+          "key": "ec2f46b07cf9ddd15470",
+          "matchesSpokenContent": true,
+          "sha256": "fcb74781efbf70dc98e7545e3955d991a3d615ba69e8b0aa11fe2298927a756c"
         },
         {
-          "key": "cfe56aa63a44ff5a75e0",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
+          "key": "d9b9d7469f7a5b4a1432",
+          "matchesSpokenContent": true,
+          "sha256": "0f5d30552d52e658326044afc30de4c48f4fa7a9a53e80d41a6c240d117e9275"
         },
         {
-          "key": "63e9f61eb09e0fa676c9",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
+          "key": "5029b839673fcd3ec47e",
+          "matchesSpokenContent": true,
+          "sha256": "418df55996980c79821f9caa4abf7e5d365233859ed1cf0c5a4d6fb17dabebbf"
         },
         {
-          "key": "450163ea72fa400ead2f",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
+          "key": "c9b42a6711059ad8e94a",
+          "matchesSpokenContent": true,
+          "sha256": "67de58d732f361e92f13f0ecc4e608f97a554e8937b6d4a1b126ad6dec10c61a"
         },
         {
-          "key": "0f4f09a7d3583d31537f",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
-        },
-        {
-          "key": "f8e36f6b47c6e553e5b3",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
-        },
-        {
-          "key": "b51623a049dca1618ed5",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
-        },
-        {
-          "key": "94bc55f1e16c9a67ad11",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
-        },
-        {
-          "key": "32e37e0377e63a698d00",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
-        },
-        {
-          "key": "e051e2e6e67d15e43960",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
-        },
-        {
-          "key": "d90f111689faaa20906a",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
-        },
-        {
-          "key": "a5c57c830214041043f0",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
-        },
-        {
-          "key": "9d61de2470f7f927a159",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
-        },
-        {
-          "key": "d5b4e6d7b33c67cfec82",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
-        },
-        {
-          "key": "633fd196896ba6ce471b",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
-        },
-        {
-          "key": "d157e31d2f0295bab8c3",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
-        },
-        {
-          "key": "f4c3615904718e199e23",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
-        },
-        {
-          "key": "d96aa8841d0c562d26bb",
-          "source": "ElevenLabs Scribe v2",
-          "matchesSpokenContent": true
+          "key": "1e609a03d59c96655a38",
+          "matchesSpokenContent": true,
+          "sha256": "eb869b2484a7767244fcfcd2f7c339196eb55fcd4025af5676c90c0871ff75cc"
         }
       ]
     }
@@ -271,1503 +208,1382 @@
       }
     ],
     "revisionFeatures": {
-      "surfaces": {
-        "repair": {
-          "stairs": 4,
-          "bridgeDecks": 1,
-          "aprons": [
-            {
-              "edge": -143.5,
-              "side": -1,
-              "len": 4,
-              "width": 9,
-              "z": 120,
-              "left": 1.3000000000000003
-            },
-            {
-              "edge": -122.5,
-              "side": 1,
-              "len": 4,
-              "width": 9,
-              "z": 120,
-              "left": 1.3000000000000003
-            }
-          ]
-        },
-        "innRoad": 0,
-        "decks": [
-          {
-            "sameMaterial": true,
-            "blend": 1,
-            "worldPhase": true
-          }
-        ],
-        "steps": 0,
-        "speed": 6.6
+      "gate": {
+        "half": 5.539661070539241,
+        "bank": 3.7896610705392413,
+        "seal": 3.3000000000000003,
+        "bed": 3.572496506638441,
+        "geometry": [
+          11.230522155761719,
+          4.313600063323975,
+          0.5892811119556427
+        ]
       },
-      "cutaway": [
-        {
-          "type": "inn",
-          "samples": [
-            {
-              "front": true,
-              "hidden": false,
-              "position": [
-                -111,
-                101.25
-              ]
-            },
-            {
-              "front": false,
-              "hidden": true,
-              "position": [
-                -111,
-                87.75
-              ]
-            },
-            {
-              "front": false,
-              "hidden": true,
-              "position": [
-                -111,
-                85.75
-              ]
-            }
-          ],
-          "core": [
-            13,
-            10.18,
-            10.5
-          ]
-        },
-        {
-          "type": "shop",
-          "samples": [
-            {
-              "front": true,
-              "hidden": false,
-              "position": [
-                -116,
-                52
-              ]
-            },
-            {
-              "front": false,
-              "hidden": true,
-              "position": [
-                -116,
-                41
-              ]
-            },
-            {
-              "front": false,
-              "hidden": true,
-              "position": [
-                -116,
-                39
-              ]
-            }
-          ],
-          "core": [
-            9,
-            7.84,
-            8
-          ]
-        },
-        {
-          "type": "forge",
-          "samples": [
-            {
-              "front": true,
-              "hidden": false,
-              "position": [
-                -141,
-                69
-              ]
-            },
-            {
-              "front": false,
-              "hidden": true,
-              "position": [
-                -141,
-                57
-              ]
-            },
-            {
-              "front": false,
-              "hidden": true,
-              "position": [
-                -141,
-                55
-              ]
-            }
-          ],
-          "core": [
-            12,
-            9.27,
-            9
-          ]
-        },
-        {
-          "type": "mill",
-          "samples": [
-            {
-              "front": true,
-              "hidden": false,
-              "position": [
-                -154,
-                96
-              ]
-            },
-            {
-              "front": false,
-              "hidden": true,
-              "position": [
-                -154,
-                86
-              ]
-            },
-            {
-              "front": false,
-              "hidden": true,
-              "position": [
-                -154,
-                84
-              ]
-            }
-          ],
-          "core": [
-            8,
-            6.030000000000001,
-            7
-          ]
-        },
-        {
-          "type": "home",
-          "samples": [
-            {
-              "front": true,
-              "hidden": false,
-              "position": [
-                -149,
-                43
-              ]
-            },
-            {
-              "front": false,
-              "hidden": true,
-              "position": [
-                -149,
-                32
-              ]
-            },
-            {
-              "front": false,
-              "hidden": true,
-              "position": [
-                -149,
-                30
-              ]
-            }
-          ],
-          "core": [
-            9,
-            8.34,
-            8
-          ]
-        },
-        {
-          "type": "home",
-          "samples": [
-            {
-              "front": true,
-              "hidden": false,
-              "position": [
-                -128,
-                35
-              ]
-            },
-            {
-              "front": false,
-              "hidden": true,
-              "position": [
-                -128,
-                24
-              ]
-            },
-            {
-              "front": false,
-              "hidden": true,
-              "position": [
-                -128,
-                22
-              ]
-            }
-          ],
-          "core": [
-            10,
-            8.65,
-            8
-          ]
-        },
-        {
-          "type": "home",
-          "samples": [
-            {
-              "front": true,
-              "hidden": false,
-              "position": [
-                -98,
-                52.5
-              ]
-            },
-            {
-              "front": false,
-              "hidden": true,
-              "position": [
-                -98,
-                42.5
-              ]
-            },
-            {
-              "front": false,
-              "hidden": true,
-              "position": [
-                -98,
-                40.5
-              ]
-            }
-          ],
-          "core": [
-            8,
-            8.030000000000001,
-            7
-          ]
-        },
-        {
-          "type": "home",
-          "samples": [
-            {
-              "front": true,
-              "hidden": false,
-              "position": [
-                -86,
-                113.5
-              ]
-            },
-            {
-              "front": false,
-              "hidden": true,
-              "position": [
-                -86,
-                103.5
-              ]
-            },
-            {
-              "front": false,
-              "hidden": true,
-              "position": [
-                -86,
-                101.5
-              ]
-            }
-          ],
-          "core": [
-            8,
-            8.030000000000001,
-            7
-          ]
-        }
-      ],
       "water": [
         {
           "age": 0,
-          "released": false,
-          "settled": false,
-          "levels": {
-            "reservoir": 6.15,
-            "headrace": 2.92,
-            "millrace": -0.17,
-            "lowerBrook": -3.48
-          },
-          "cascades": [
-            0.065,
-            0.065,
-            0.065
+          "joins": [
+            {
+              "fall": 70,
+              "row": 0,
+              "gap": 8.024994323728734e-06
+            },
+            {
+              "fall": 70,
+              "row": 32,
+              "gap": 4.546808178844547e-06
+            },
+            {
+              "fall": 80,
+              "row": 0,
+              "gap": 7.841946497137814e-06
+            },
+            {
+              "fall": 80,
+              "row": 32,
+              "gap": 6.9597670797260414e-06
+            },
+            {
+              "fall": 98,
+              "row": 0,
+              "gap": 7.983296343351903e-06
+            },
+            {
+              "fall": 98,
+              "row": 32,
+              "gap": 8.004173338039604e-06
+            }
           ],
-          "widths": [
+          "pools": [
             {
               "role": "headrace",
-              "width": 0.6535186767578125,
-              "level": 2.92
+              "x": -170.7672119140625,
+              "sourceX": -170.7672119140625,
+              "wet": 126,
+              "total": 195
             },
             {
               "role": "millrace",
-              "width": 0.758941650390625,
-              "level": -0.17
+              "x": -170.6589813232422,
+              "sourceX": -170.6589813232422,
+              "wet": 234,
+              "total": 338
             },
             {
               "role": "lowerBrook",
-              "width": 1.012481689453125,
-              "level": -3.48
+              "x": -163.87179565429688,
+              "sourceX": -163.87179565429688,
+              "wet": 4482,
+              "total": 6474
             }
-          ]
+          ],
+          "surge": 0,
+          "flow": 0
         },
         {
-          "age": 2,
-          "released": true,
-          "settled": false,
-          "levels": {
-            "reservoir": 6.15,
-            "headrace": 2.933070418428342,
-            "millrace": -0.17,
-            "lowerBrook": -3.48
-          },
-          "cascades": [
-            0.3074074074074074,
-            0.065,
-            0.065
+          "age": 0.5,
+          "joins": [
+            {
+              "fall": 70,
+              "row": 0,
+              "gap": 8.024994323728734e-06
+            },
+            {
+              "fall": 70,
+              "row": 32,
+              "gap": 4.547340112572241e-06
+            },
+            {
+              "fall": 80,
+              "row": 0,
+              "gap": 7.8419464974412e-06
+            },
+            {
+              "fall": 80,
+              "row": 32,
+              "gap": 6.959238245505114e-06
+            },
+            {
+              "fall": 98,
+              "row": 0,
+              "gap": 7.983296343351903e-06
+            },
+            {
+              "fall": 98,
+              "row": 32,
+              "gap": 8.004173338039604e-06
+            }
           ],
-          "widths": [
+          "pools": [
             {
               "role": "headrace",
-              "width": 2.98095703125,
-              "level": 2.933070418428342
+              "x": -170.7672119140625,
+              "sourceX": -170.7672119140625,
+              "wet": 126,
+              "total": 195
             },
             {
               "role": "millrace",
-              "width": 0.758941650390625,
-              "level": -0.17
+              "x": -170.6589813232422,
+              "sourceX": -170.6589813232422,
+              "wet": 234,
+              "total": 338
             },
             {
               "role": "lowerBrook",
-              "width": 1.012481689453125,
-              "level": -3.48
+              "x": -163.87179565429688,
+              "sourceX": -163.87179565429688,
+              "wet": 4482,
+              "total": 6474
             }
-          ]
+          ],
+          "surge": 1,
+          "flow": 1
         },
         {
-          "age": 12,
-          "released": true,
-          "settled": false,
-          "levels": {
-            "reservoir": 6.15,
-            "headrace": 3.3049832337075373,
-            "millrace": -0.016406181659134017,
-            "lowerBrook": -3.48
-          },
-          "cascades": [
-            1,
-            1,
-            0.065
+          "age": 1.5,
+          "joins": [
+            {
+              "fall": 70,
+              "row": 0,
+              "gap": 8.024994323728734e-06
+            },
+            {
+              "fall": 70,
+              "row": 32,
+              "gap": 4.54692889183031e-06
+            },
+            {
+              "fall": 80,
+              "row": 0,
+              "gap": 7.84210422557694e-06
+            },
+            {
+              "fall": 80,
+              "row": 32,
+              "gap": 6.959802875466386e-06
+            },
+            {
+              "fall": 98,
+              "row": 0,
+              "gap": 7.983296343351903e-06
+            },
+            {
+              "fall": 98,
+              "row": 32,
+              "gap": 8.004173338039604e-06
+            }
           ],
-          "widths": [
+          "pools": [
             {
               "role": "headrace",
-              "width": 9.758148193359375,
-              "level": 3.3049832337075373
+              "x": -170.7672119140625,
+              "sourceX": -170.7672119140625,
+              "wet": 126,
+              "total": 195
             },
             {
               "role": "millrace",
-              "width": 10.834716796875,
-              "level": -0.016406181659134017
+              "x": -170.6589813232422,
+              "sourceX": -170.6589813232422,
+              "wet": 234,
+              "total": 338
             },
             {
               "role": "lowerBrook",
-              "width": 1.012481689453125,
-              "level": -3.48
+              "x": -163.87179565429688,
+              "sourceX": -163.87179565429688,
+              "wet": 4482,
+              "total": 6474
             }
-          ]
+          ],
+          "surge": 1,
+          "flow": 1
         },
         {
-          "age": 30,
-          "released": true,
-          "settled": false,
-          "levels": {
-            "reservoir": 6.15,
-            "headrace": 4.363687126403265,
-            "millrace": 1.0838270884968657,
-            "lowerBrook": -2.522029450357195
-          },
-          "cascades": [
-            1,
-            1,
-            1
+          "age": 4,
+          "joins": [
+            {
+              "fall": 70,
+              "row": 0,
+              "gap": 8.024994323728734e-06
+            },
+            {
+              "fall": 70,
+              "row": 32,
+              "gap": 4.548480637030624e-06
+            },
+            {
+              "fall": 80,
+              "row": 0,
+              "gap": 7.841961536515616e-06
+            },
+            {
+              "fall": 80,
+              "row": 32,
+              "gap": 6.960034455766123e-06
+            },
+            {
+              "fall": 98,
+              "row": 0,
+              "gap": 7.983296343351903e-06
+            },
+            {
+              "fall": 98,
+              "row": 32,
+              "gap": 8.004173338039604e-06
+            }
           ],
-          "widths": [
+          "pools": [
             {
               "role": "headrace",
-              "width": 9.758148193359375,
-              "level": 4.363687126403265
+              "x": -170.7672119140625,
+              "sourceX": -170.7672119140625,
+              "wet": 126,
+              "total": 195
             },
             {
               "role": "millrace",
-              "width": 10.834716796875,
-              "level": 1.0838270884968657
+              "x": -170.6589813232422,
+              "sourceX": -170.6589813232422,
+              "wet": 234,
+              "total": 338
             },
             {
               "role": "lowerBrook",
-              "width": 3.9065093994140625,
-              "level": -2.522029450357195
+              "x": -163.87179565429688,
+              "sourceX": -163.87179565429688,
+              "wet": 4482,
+              "total": 6474
             }
-          ]
+          ],
+          "surge": 0.7574651283969664,
+          "flow": 1
         },
         {
-          "age": 80,
-          "released": true,
-          "settled": true,
-          "levels": {
-            "reservoir": 6.15,
-            "headrace": 4.55,
-            "millrace": 1.55,
-            "lowerBrook": -1.4
-          },
-          "cascades": [
-            1,
-            1,
-            1
+          "age": 10,
+          "joins": [
+            {
+              "fall": 70,
+              "row": 0,
+              "gap": 8.024994323728734e-06
+            },
+            {
+              "fall": 70,
+              "row": 32,
+              "gap": 4.548036110896197e-06
+            },
+            {
+              "fall": 80,
+              "row": 0,
+              "gap": 7.842042681791141e-06
+            },
+            {
+              "fall": 80,
+              "row": 32,
+              "gap": 6.959351665433938e-06
+            },
+            {
+              "fall": 98,
+              "row": 0,
+              "gap": 7.983313971137764e-06
+            },
+            {
+              "fall": 98,
+              "row": 32,
+              "gap": 8.004034895388677e-06
+            }
           ],
-          "widths": [
+          "pools": [
             {
               "role": "headrace",
-              "width": 9.758148193359375,
-              "level": 4.55
+              "x": -170.7672119140625,
+              "sourceX": -170.7672119140625,
+              "wet": 163,
+              "total": 195
             },
             {
               "role": "millrace",
-              "width": 10.834716796875,
-              "level": 1.55
+              "x": -170.6589813232422,
+              "sourceX": -170.6589813232422,
+              "wet": 234,
+              "total": 338
             },
             {
               "role": "lowerBrook",
-              "width": 3.9065093994140625,
-              "level": -1.4
+              "x": -163.87179565429688,
+              "sourceX": -163.87179565429688,
+              "wet": 4482,
+              "total": 6474
             }
-          ]
+          ],
+          "surge": 0.3888955639892229,
+          "flow": 1
+        },
+        {
+          "age": 24,
+          "joins": [
+            {
+              "fall": 70,
+              "row": 0,
+              "gap": 8.024994323728734e-06
+            },
+            {
+              "fall": 70,
+              "row": 32,
+              "gap": 4.546853370233834e-06
+            },
+            {
+              "fall": 80,
+              "row": 0,
+              "gap": 7.841956271321597e-06
+            },
+            {
+              "fall": 80,
+              "row": 32,
+              "gap": 6.959907047812825e-06
+            },
+            {
+              "fall": 98,
+              "row": 0,
+              "gap": 7.983408425708016e-06
+            },
+            {
+              "fall": 98,
+              "row": 32,
+              "gap": 8.004077231224596e-06
+            }
+          ],
+          "pools": [
+            {
+              "role": "headrace",
+              "x": -170.7672119140625,
+              "sourceX": -170.7672119140625,
+              "wet": 185,
+              "total": 195
+            },
+            {
+              "role": "millrace",
+              "x": -170.6589813232422,
+              "sourceX": -170.6589813232422,
+              "wet": 307,
+              "total": 338
+            },
+            {
+              "role": "lowerBrook",
+              "x": -163.87179565429688,
+              "sourceX": -163.87179565429688,
+              "wet": 4673,
+              "total": 6474
+            }
+          ],
+          "surge": 0.0820849986238988,
+          "flow": 1
+        },
+        {
+          "age": 60,
+          "joins": [
+            {
+              "fall": 70,
+              "row": 0,
+              "gap": 8.024994323728734e-06
+            },
+            {
+              "fall": 70,
+              "row": 32,
+              "gap": 4.546830682080258e-06
+            },
+            {
+              "fall": 80,
+              "row": 0,
+              "gap": 7.841946497137814e-06
+            },
+            {
+              "fall": 80,
+              "row": 32,
+              "gap": 6.959237810059668e-06
+            },
+            {
+              "fall": 98,
+              "row": 0,
+              "gap": 7.983296343351903e-06
+            },
+            {
+              "fall": 98,
+              "row": 32,
+              "gap": 8.004110842636442e-06
+            }
+          ],
+          "pools": [
+            {
+              "role": "headrace",
+              "x": -170.7672119140625,
+              "sourceX": -170.7672119140625,
+              "wet": 185,
+              "total": 195
+            },
+            {
+              "role": "millrace",
+              "x": -170.6589813232422,
+              "sourceX": -170.6589813232422,
+              "wet": 338,
+              "total": 338
+            },
+            {
+              "role": "lowerBrook",
+              "x": -163.87179565429688,
+              "sourceX": -163.87179565429688,
+              "wet": 5228,
+              "total": 6474
+            }
+          ],
+          "surge": 0.0015034391929775724,
+          "flow": 1
+        },
+        {
+          "age": 100,
+          "joins": [
+            {
+              "fall": 70,
+              "row": 0,
+              "gap": 8.024994323728734e-06
+            },
+            {
+              "fall": 70,
+              "row": 32,
+              "gap": 4.546830682080258e-06
+            },
+            {
+              "fall": 80,
+              "row": 0,
+              "gap": 7.841946497137814e-06
+            },
+            {
+              "fall": 80,
+              "row": 32,
+              "gap": 6.959237810059668e-06
+            },
+            {
+              "fall": 98,
+              "row": 0,
+              "gap": 7.983296343351903e-06
+            },
+            {
+              "fall": 98,
+              "row": 32,
+              "gap": 8.004110842636442e-06
+            }
+          ],
+          "pools": [
+            {
+              "role": "headrace",
+              "x": -170.7672119140625,
+              "sourceX": -170.7672119140625,
+              "wet": 185,
+              "total": 195
+            },
+            {
+              "role": "millrace",
+              "x": -170.6589813232422,
+              "sourceX": -170.6589813232422,
+              "wet": 338,
+              "total": 338
+            },
+            {
+              "role": "lowerBrook",
+              "x": -163.87179565429688,
+              "sourceX": -163.87179565429688,
+              "wet": 5300,
+              "total": 6474
+            }
+          ],
+          "surge": 1.765583129005265e-05,
+          "flow": 1
         }
       ],
-      "weather": {
-        "wet": 0.9327944872602415,
-        "rain": 0.9999796004965888,
-        "puddles": 41,
-        "worldPosition": [
-          0,
-          0,
-          0
+      "lesson": {
+        "initial": "welcome",
+        "entry": {
+          "items": 6,
+          "mp": 84,
+          "hp": 260
+        },
+        "paused": {
+          "step": "welcome",
+          "hp": 260,
+          "status": "intro"
+        },
+        "target": "attack",
+        "waiting": {
+          "step": "timing",
+          "waiting": true,
+          "t": 0.972,
+          "duration": 1.35
+        },
+        "afterAttack": "skill",
+        "afterSkill": "incoming",
+        "afterHit": {
+          "step": "item",
+          "hp": 182,
+          "damage": 78
+        },
+        "afterItem": "defend",
+        "afterGuard": {
+          "active": true,
+          "step": "free",
+          "hold": true,
+          "demonstrationDamage": 78,
+          "entryItems": 6,
+          "started": false,
+          "windowPaused": false,
+          "firstHit": true,
+          "unguardedDamage": 78,
+          "practiceHerb": false,
+          "healed": 78,
+          "guardedDamage": 35,
+          "items": 6,
+          "mp": 76,
+          "hp": 225
+        },
+        "complete": {
+          "flag": true,
+          "active": false,
+          "items": 6
+        }
+      },
+      "visibility": {
+        "hidden": true,
+        "stillHidden": true,
+        "restored": true
+      },
+      "atlas": {
+        "points": 22,
+        "rows": [
+          {
+            "id": "brookstead",
+            "key": "brookstead",
+            "error": 0
+          },
+          {
+            "id": "fern",
+            "key": "fern",
+            "error": 0
+          },
+          {
+            "id": "fern-remnant",
+            "key": "depths",
+            "error": 0
+          },
+          {
+            "id": "fern-light",
+            "key": "fernClearing",
+            "error": 0
+          },
+          {
+            "id": "highmere",
+            "key": "highmere",
+            "error": 0
+          },
+          {
+            "id": "alderbridge",
+            "key": "alder",
+            "error": 0
+          },
+          {
+            "id": "patrol",
+            "key": "patrol",
+            "error": 0
+          },
+          {
+            "id": "alder-remnant",
+            "key": "alderRemnant",
+            "error": 0
+          },
+          {
+            "id": "alder-light",
+            "key": "alderClearing",
+            "error": 0
+          },
+          {
+            "id": "relief",
+            "key": "relief",
+            "error": 0
+          },
+          {
+            "id": "station-light",
+            "key": "reliefClearing",
+            "error": 0
+          },
+          {
+            "id": "network",
+            "key": "nearbySite",
+            "error": 0
+          },
+          {
+            "id": "harbor",
+            "key": "harbor",
+            "error": 0
+          }
         ],
-        "linear": true,
-        "maskSize": 512,
-        "wind": true,
-        "key": [
-          -0.3068965424149901,
-          0.9206896272449704,
-          -0.24113299761177795
-        ]
-      },
-      "tutorialBefore": {
-        "lesson": "inventory",
-        "highlight": "inventory",
-        "voice": true
-      },
-      "tutorialOpen": {
-        "tab": "inventory",
-        "lesson": "inventory",
-        "highlight": true
-      },
-      "tutorialContinue": {
-        "closed": true,
-        "done": true
-      },
-      "objective": {
-        "key": "protect",
-        "arrow": true,
-        "target": "wildlife"
-      },
-      "battle": {
-        "target": 1,
-        "arrow": true,
-        "arrowX": 303.759,
-        "party": {
-          "x": 1151,
-          "y": 20,
-          "w": 265,
-          "h": 267.3125
-        },
-        "enemies": {
-          "x": 24,
-          "y": 160,
-          "w": 300,
-          "h": 178.375
-        },
-        "title": {
-          "x": 24,
-          "y": 20,
-          "w": 340,
-          "h": 120.1875
-        },
-        "plate": "linear-gradient(120deg, rgba(16, 36, 45, 0.937), rgba(28, 48, 49, 0.918))",
-        "guide": "attack",
-        "highlight": "attack"
-      },
-      "effects": {
-        "active": 123,
-        "emitted": 124,
-        "ribbons": 6,
-        "rings": 5,
-        "newPrograms": 0
-      },
-      "geography": {
-        "bounds": {
-          "minX": -1024,
-          "maxX": 1024,
-          "minZ": -576,
-          "maxZ": 576
-        },
-        "source": {
-          "geographyVersion": 17,
-          "source": "actual playable overworld",
-          "originalMeshes": 242,
-          "staticBatches": 173
-        },
-        "sharedScene": true,
-        "heightError": 0,
-        "field": 8,
+        "oceanUVRange": 79.11111450195312,
+        "roads": 7,
         "bridges": 5,
-        "nodes": 15,
-        "trees": 16464
+        "shared": true,
+        "source": "actual playable overworld",
+        "facilities": "Capital of ValenneRoyal aid office · Aid courtyard · Royal Archives · Council · Inn · lodgingLocal places · Highmere aid courtyard · Royal aid office · Royal Archives · Valenne’s council · Highmere inn"
       },
       "errors": [],
       "pass": true
     },
-    "tutorialAndRequests": {
-      "movement": {
-        "seen": {
-          "move": true,
-          "sprint": true
-        },
-        "distance": 9.40500000000012,
-        "sprint": 4.124999999999689,
-        "lesson": "report",
-        "requestsLocked": true,
-        "propsHidden": true,
-        "requestCount": 4,
-        "lockedTargets": 0
-      },
-      "representative": {
-        "beat": "gate",
-        "flag": {},
-        "ms": 0.19999998807907104
-      },
-      "gate": {
-        "beat": "pump",
-        "flag": {
-          "gate_open": true
-        },
-        "ms": 0.19999998807907104
-      },
-      "pump": {
-        "beat": "wildlife",
-        "flag": {
-          "gate_open": true,
-          "temporary_water_available": true,
-          "pump_repaired": true
-        },
-        "escort": "representative",
-        "ms": 0.19999998807907104
-      },
-      "marker": {
-        "exists": true,
-        "visible": true,
-        "escort": "representative"
-      },
-      "battle": {
-        "before": "target",
-        "chain": "chain",
-        "seen": {
-          "move": true,
-          "sprint": true,
-          "report": true,
-          "gate": true,
-          "pump": true,
-          "inventory": true,
-          "party": true,
-          "equipment": true,
-          "abilities": true,
-          "journal": true,
-          "map": true,
-          "target": true,
-          "chain": true,
-          "skill": true,
-          "defend": true
-        },
-        "markerHidden": true
-      },
-      "escort": {
-        "actor": "representative",
-        "seconds": 6.766666666666667,
-        "dialogue": [
-          "Soren",
-          "Local representative",
-          "Bren"
-        ],
-        "distance": 2.2876498127250073,
-        "at": "aftermath"
-      },
-      "unlock": {
-        "beat": "travelFern",
-        "complete": true,
-        "markerHidden": true,
-        "boardVisible": true
-      },
-      "mouseAccept": true,
-      "mouseTask": true,
-      "jobs": [
+    "locations": {
+      "locations": [
         {
           "key": "brookstead",
-          "props": 4,
-          "routes": [
-            true,
-            true,
-            true,
-            true
-          ],
-          "done": [
-            0,
-            1,
-            2
-          ],
-          "reward": 45,
-          "expected": 45,
-          "claimed": true,
-          "positions": [
+          "active": "brookstead",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 2,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
             {
-              "x": -140.50559116309236,
-              "z": 118.33328930094119,
-              "type": "localBoard"
+              "x": -188,
+              "z": 140,
+              "label": "Leave for the overworld"
             },
             {
-              "x": -133.1921471959677,
-              "z": 121.95090322016128,
-              "type": "localTask",
-              "taskIndex": 0
+              "x": -42,
+              "z": 95.16666666666666,
+              "label": "East road · Overworld"
             },
             {
-              "x": -129.26900607435476,
-              "z": 122.73126450822579,
-              "type": "localTask",
-              "taskIndex": 1
+              "x": -155.33333333333331,
+              "z": 28,
+              "label": "North road · Overworld"
             },
             {
-              "x": -157.96645302144583,
-              "z": 130.00026419435284,
-              "type": "localTask",
-              "taskIndex": 2
+              "x": -168.66666666666666,
+              "z": 152,
+              "label": "South road · Overworld"
             }
-          ]
+          ],
+          "exits": 4,
+          "saves": 0,
+          "actors": 13,
+          "meshCount": 921,
+          "loadMs": 1762.300000011921,
+          "warmupMs": 242.89999997615814,
+          "geometries": 1619,
+          "textures": 71,
+          "weather": true,
+          "shadows": 55
         },
         {
           "key": "fern",
-          "props": 4,
-          "routes": [
-            true,
-            true,
-            true,
-            true
-          ],
-          "done": [
-            0,
-            1,
-            2
-          ],
-          "reward": 35,
-          "expected": 35,
-          "claimed": true,
-          "positions": [
+          "active": "fern",
+          "kind": "poi",
+          "facility18": {
+            "name": "Gathering pavilion",
+            "x": 123,
+            "z": 55
+          },
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
             {
-              "x": 70.49440883690764,
-              "z": 74.33328930094119,
-              "type": "localBoard"
+              "x": 65,
+              "z": 76,
+              "label": "Leave for the overworld"
             },
             {
-              "x": 79.27903072463715,
-              "z": 73.75646129681452,
-              "type": "localTask",
-              "taskIndex": 0
+              "x": 117,
+              "z": 48,
+              "label": "North road · Overworld"
             },
             {
-              "x": 79.64057457223564,
-              "z": 68.22201673772557,
-              "type": "localTask",
-              "taskIndex": 1
+              "x": 135,
+              "z": 78,
+              "label": "East road · Overworld"
             },
             {
-              "x": 82.96645302144582,
-              "z": 86.00026419435284,
-              "type": "localTask",
-              "taskIndex": 2
+              "x": 105,
+              "z": 108,
+              "label": "South road · Overworld"
             }
-          ]
+          ],
+          "exits": 4,
+          "saves": 0,
+          "actors": 7,
+          "meshCount": 508,
+          "loadMs": 1006.3999999761581,
+          "warmupMs": 405.4000000357628,
+          "geometries": 1415,
+          "textures": 60,
+          "weather": true,
+          "shadows": 55
         },
         {
           "key": "depths",
-          "props": 4,
-          "routes": [
-            true,
-            true,
-            true,
-            true
-          ],
-          "done": [
-            0,
-            1,
-            2
-          ],
-          "reward": 35,
-          "expected": 35,
-          "claimed": true,
-          "positions": [
+          "active": "depths",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
             {
-              "x": 114.73043092917672,
-              "z": 33.166512553294176,
-              "type": "localBoard"
+              "x": 108,
+              "z": 39,
+              "label": "Leave for the overworld"
             },
             {
-              "x": 117.27903072463715,
-              "z": 36.75646129681452,
-              "type": "localTask",
-              "taskIndex": 0
+              "x": 124,
+              "z": 21.125,
+              "label": "East road · Overworld"
             },
             {
-              "x": 118.88777899068945,
-              "z": 30.388661388196166,
-              "type": "localTask",
-              "taskIndex": 1
-            },
-            {
-              "x": 116.83361954388224,
-              "z": 22.786342560100362,
-              "type": "localTask",
-              "taskIndex": 2
+              "x": 119.375,
+              "z": 39,
+              "label": "South road · Overworld"
             }
-          ]
+          ],
+          "exits": 3,
+          "saves": 0,
+          "actors": 3,
+          "meshCount": 377,
+          "loadMs": 560.6999999880791,
+          "warmupMs": 75.5,
+          "geometries": 1363,
+          "textures": 56,
+          "weather": true,
+          "shadows": 55
         },
         {
           "key": "highmere",
-          "props": 4,
-          "routes": [
-            true,
-            true,
-            true,
-            true
-          ],
-          "done": [
-            0,
-            1,
-            2
-          ],
-          "reward": 60,
-          "expected": 60,
-          "claimed": true,
-          "positions": [
+          "active": "highmere",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 2,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
             {
-              "x": -85.66671069905881,
-              "z": -63.49440883690764,
-              "type": "localBoard"
+              "x": -84,
+              "z": -60,
+              "label": "Leave for the overworld"
             },
             {
-              "x": -82.04909677983872,
-              "z": -70.80785280403231,
-              "type": "localTask",
-              "taskIndex": 0
+              "x": -22,
+              "z": -83.25,
+              "label": "East road · Overworld"
             },
             {
-              "x": -86.7312645082258,
-              "z": -74.73099392564522,
-              "type": "localTask",
-              "taskIndex": 1
+              "x": -111.25,
+              "z": -147,
+              "label": "North road · Overworld"
             },
             {
-              "x": -72.33302510658837,
-              "z": -78.46086185835345,
-              "type": "localTask",
-              "taskIndex": 2
+              "x": -124,
+              "z": -87,
+              "label": "West road · Overworld"
             }
-          ]
+          ],
+          "exits": 4,
+          "saves": 0,
+          "actors": 12,
+          "meshCount": 629,
+          "loadMs": 1301.3999999761581,
+          "warmupMs": 319.5999999642372,
+          "geometries": 1453,
+          "textures": 68,
+          "weather": true,
+          "shadows": 55
         },
         {
           "key": "alder",
-          "props": 4,
-          "routes": [
-            true,
-            true,
-            true,
-            true
-          ],
-          "done": [
-            0,
-            1,
-            2
-          ],
-          "reward": 45,
-          "expected": 45,
-          "claimed": true,
-          "positions": [
+          "active": "alder",
+          "kind": "poi",
+          "facility18": {
+            "name": "Shelter and care court",
+            "x": 137,
+            "z": -91.5
+          },
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
             {
-              "x": 104.58527096604838,
-              "z": -82.94235584120969,
-              "type": "localBoard"
+              "x": 102,
+              "z": -80,
+              "label": "Leave for the overworld"
             },
             {
-              "x": 105.95090322016128,
-              "z": -89.80785280403231,
-              "type": "localTask",
-              "taskIndex": 0
+              "x": 137,
+              "z": -126,
+              "label": "North road · Overworld"
             },
             {
-              "x": 117.73099392564522,
-              "z": -77.26873549177421,
-              "type": "localTask",
-              "taskIndex": 1
+              "x": 158,
+              "z": -65.16666666666666,
+              "label": "East road · Overworld"
             },
             {
-              "x": 121.65413504725814,
-              "z": -83.51162579629032,
-              "type": "localTask",
-              "taskIndex": 2
+              "x": 158,
+              "z": -53,
+              "label": "South road · Overworld"
             }
-          ]
+          ],
+          "exits": 4,
+          "saves": 0,
+          "actors": 9,
+          "meshCount": 521,
+          "loadMs": 876.5,
+          "warmupMs": 153.79999995231628,
+          "geometries": 1398,
+          "textures": 63,
+          "weather": true,
+          "shadows": 55
         },
         {
           "key": "patrol",
-          "props": 4,
-          "routes": [
-            true,
-            true,
-            true,
-            true
-          ],
-          "done": [
-            0,
-            1,
-            2
-          ],
-          "reward": 40,
-          "expected": 40,
-          "claimed": true,
-          "positions": [
+          "active": "patrol",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
             {
-              "x": 160.33342139811762,
-              "z": -61.98881767381528,
-              "type": "localBoard"
+              "x": 157,
+              "z": -57,
+              "label": "Leave for the overworld"
             },
             {
-              "x": 165.31469612302544,
-              "z": -62.55570233019602,
-              "type": "localTask",
-              "taskIndex": 0
+              "x": 157,
+              "z": -67,
+              "label": "West road · Overworld"
             },
             {
-              "x": 170.73099392564524,
-              "z": -59.731264508225806,
-              "type": "localTask",
-              "taskIndex": 1
-            },
-            {
-              "x": 180.53884672967752,
-              "z": -61.682167728387086,
-              "type": "localTask",
-              "taskIndex": 2
+              "x": 190,
+              "z": -65.5,
+              "label": "East road · Overworld"
             }
-          ]
+          ],
+          "exits": 3,
+          "saves": 0,
+          "actors": 3,
+          "meshCount": 385,
+          "loadMs": 519.3000000119209,
+          "warmupMs": 69.10000002384186,
+          "geometries": 1344,
+          "textures": 56,
+          "weather": true,
+          "shadows": 55
         },
         {
           "key": "alderRemnant",
-          "props": 4,
-          "routes": [
-            true,
-            true,
-            true,
-            true
-          ],
-          "done": [
-            0,
-            1,
-            2
-          ],
-          "reward": 35,
-          "expected": 35,
-          "claimed": true,
-          "positions": [
+          "active": "alderRemnant",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
             {
-              "x": 197.97763534763055,
-              "z": -87.33315720376477,
-              "type": "localBoard"
+              "x": 187,
+              "z": -94,
+              "label": "Leave for the overworld"
             },
             {
-              "x": 203.6925644864517,
-              "z": -90.87855484774195,
-              "type": "localTask",
-              "taskIndex": 0
+              "x": 202.375,
+              "z": -82,
+              "label": "South road · Overworld"
             },
             {
-              "x": 207.61570560806462,
-              "z": -90.09819355967744,
-              "type": "localTask",
-              "taskIndex": 1
-            },
-            {
-              "x": 198.00026419435284,
-              "z": -79.03354697855418,
-              "type": "localTask",
-              "taskIndex": 2
+              "x": 226.875,
+              "z": -118,
+              "label": "North road · Overworld"
             }
-          ]
+          ],
+          "exits": 3,
+          "saves": 0,
+          "actors": 4,
+          "meshCount": 403,
+          "loadMs": 533.1000000238419,
+          "warmupMs": 69.30000001192093,
+          "geometries": 1387,
+          "textures": 56,
+          "weather": true,
+          "shadows": 55
         },
         {
           "key": "relief",
-          "props": 4,
-          "routes": [
-            true,
-            true,
-            true,
-            true
-          ],
-          "done": [
-            0,
-            1,
-            2
-          ],
-          "reward": 50,
-          "expected": 50,
-          "claimed": true,
-          "positions": [
+          "active": "relief",
+          "kind": "poi",
+          "facility18": {
+            "name": "Staff observation bay",
+            "x": 41.5,
+            "z": -152
+          },
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
             {
-              "x": 13.884711682419383,
-              "z": -143.82945806790323,
-              "type": "localBoard"
+              "x": 8,
+              "z": -145,
+              "label": "Leave for the overworld"
             },
             {
-              "x": 13.555702330196018,
-              "z": -153.31469612302544,
-              "type": "localTask",
-              "taskIndex": 0
+              "x": 52.5,
+              "z": -176,
+              "label": "North road · Overworld"
             },
             {
-              "x": 15.777983262274425,
-              "z": -156.64057457223564,
-              "type": "localTask",
-              "taskIndex": 1
+              "x": 0,
+              "z": -172.33333333333334,
+              "label": "West road · Overworld"
             },
             {
-              "x": 11.51162579629031,
-              "z": -162.65413504725814,
-              "type": "localTask",
-              "taskIndex": 2
+              "x": 60,
+              "z": -157.66666666666666,
+              "label": "East road · Overworld"
             }
-          ]
+          ],
+          "exits": 4,
+          "saves": 0,
+          "actors": 6,
+          "meshCount": 442,
+          "loadMs": 893.6000000238419,
+          "warmupMs": 183.89999997615814,
+          "geometries": 1414,
+          "textures": 61,
+          "weather": true,
+          "shadows": 55
         },
         {
           "key": "nearbySite",
-          "props": 4,
-          "routes": [
-            true,
-            true,
-            true,
-            true
-          ],
-          "done": [
-            0,
-            1,
-            2
-          ],
-          "reward": 35,
-          "expected": 35,
-          "claimed": true,
-          "positions": [
+          "active": "nearbySite",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 2,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
             {
-              "x": -88.25838674463854,
-              "z": -182.49993395141178,
-              "type": "localBoard"
+              "x": -93,
+              "z": -185,
+              "label": "Leave for the overworld"
             },
             {
-              "x": -83.68530387697454,
-              "z": -190.55570233019603,
-              "type": "localTask",
-              "taskIndex": 0
+              "x": -48,
+              "z": -179.58333333333331,
+              "label": "East road · Overworld"
             },
             {
-              "x": -76.79782815374993,
-              "z": -188.02389999125,
-              "type": "localTask",
-              "taskIndex": 1
-            },
-            {
-              "x": -88.4883742037097,
-              "z": -202.65413504725814,
-              "type": "localTask",
-              "taskIndex": 2
+              "x": -56.666666666666664,
+              "z": -216,
+              "label": "North road · Overworld"
             }
-          ]
+          ],
+          "exits": 3,
+          "saves": 0,
+          "actors": 4,
+          "meshCount": 409,
+          "loadMs": 675.3999999761581,
+          "warmupMs": 109.10000002384186,
+          "geometries": 1375,
+          "textures": 58,
+          "weather": true,
+          "shadows": 55
         },
         {
           "key": "snow",
-          "props": 4,
-          "routes": [
-            true,
-            true,
-            true,
-            true
-          ],
-          "done": [
-            0,
-            1,
-            2
-          ],
-          "reward": 35,
-          "expected": 35,
-          "claimed": true,
-          "positions": [
+          "active": "snow",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
             {
-              "x": 142.49440883690764,
-              "z": -217.6667106990588,
-              "type": "localBoard"
+              "x": 138,
+              "z": -216,
+              "label": "Leave for the overworld"
             },
             {
-              "x": 145.55570233019603,
-              "z": -224.31469612302544,
-              "type": "localTask",
-              "taskIndex": 0
+              "x": 129.16666666666666,
+              "z": -210,
+              "label": "South road · Overworld"
             },
             {
-              "x": 127.11222100931055,
-              "z": -207.38866138819617,
-              "type": "localTask",
-              "taskIndex": 1
-            },
-            {
-              "x": 154.9664530214458,
-              "z": -226.00026419435284,
-              "type": "localTask",
-              "taskIndex": 2
+              "x": 119,
+              "z": -210,
+              "label": "West road · Overworld"
             }
-          ]
+          ],
+          "exits": 3,
+          "saves": 0,
+          "actors": 2,
+          "meshCount": 356,
+          "loadMs": 545.8999999761581,
+          "warmupMs": 60.19999998807907,
+          "geometries": 1348,
+          "textures": 56,
+          "weather": true,
+          "shadows": 55
         },
         {
           "key": "fernClearing",
-          "props": 4,
-          "routes": [
-            true,
-            true,
-            true,
-            true
-          ],
-          "done": [
-            0,
-            1,
-            2
-          ],
-          "reward": 35,
-          "expected": 35,
-          "claimed": true,
-          "positions": [
+          "active": "fernClearing",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
             {
-              "x": 136.65891613580646,
-              "z": 30.230576635161235,
-              "type": "localBoard"
+              "x": 144,
+              "z": 44,
+              "label": "Leave for the overworld"
             },
             {
-              "x": 141.24353870318546,
-              "z": 30.72096927536285,
-              "type": "localTask",
-              "taskIndex": 0
-            },
-            {
-              "x": 135.6834645257258,
-              "z": 25.326650233145084,
-              "type": "localTask",
-              "taskIndex": 1
-            },
-            {
-              "x": 127.33302510658835,
-              "z": 24.53913814164655,
-              "type": "localTask",
-              "taskIndex": 2
+              "x": 123,
+              "z": 21.458333333333336,
+              "label": "West road · Overworld"
             }
-          ]
+          ],
+          "exits": 2,
+          "saves": 0,
+          "actors": 2,
+          "meshCount": 377,
+          "loadMs": 507.5,
+          "warmupMs": 84.80000001192093,
+          "geometries": 1381,
+          "textures": 56,
+          "weather": true,
+          "shadows": 55
         },
         {
           "key": "alderClearing",
-          "props": 4,
-          "routes": [
-            true,
-            true,
-            true,
-            true
-          ],
-          "done": [
-            0,
-            1,
-            2
-          ],
-          "reward": 35,
-          "expected": 35,
-          "claimed": true,
-          "positions": [
+          "active": "alderClearing",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
             {
-              "x": 226.50559116309236,
-              "z": -115.33328930094119,
-              "type": "localBoard"
+              "x": 234,
+              "z": -115,
+              "label": "Leave for the overworld"
             },
             {
-              "x": 226.7564612968145,
-              "z": -128.27903072463715,
-              "type": "localTask",
-              "taskIndex": 0
-            },
-            {
-              "x": 231.7312645082258,
-              "z": -130.73099392564524,
-              "type": "localTask",
-              "taskIndex": 1
-            },
-            {
-              "x": 225.4883742037097,
-              "z": -134.65413504725814,
-              "type": "localTask",
-              "taskIndex": 2
+              "x": 223.66666666666666,
+              "z": -113,
+              "label": "South road · Overworld"
             }
-          ]
+          ],
+          "exits": 2,
+          "saves": 0,
+          "actors": 2,
+          "meshCount": 365,
+          "loadMs": 598.8999999761581,
+          "warmupMs": 122.69999998807907,
+          "geometries": 1378,
+          "textures": 56,
+          "weather": true,
+          "shadows": 55
         },
         {
           "key": "reliefClearing",
-          "props": 4,
-          "routes": [
-            true,
-            true,
-            true,
-            true
-          ],
-          "done": [
-            0,
-            1,
-            2
-          ],
-          "reward": 35,
-          "expected": 35,
-          "claimed": true,
-          "positions": [
+          "active": "reliefClearing",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
             {
-              "x": 50.76397790773091,
-              "z": -149.16677674764702,
-              "type": "localBoard"
+              "x": 62,
+              "z": -143,
+              "label": "Leave for the overworld"
             },
             {
-              "x": 51.44429766980398,
-              "z": -153.31469612302544,
-              "type": "localTask",
-              "taskIndex": 0
-            },
-            {
-              "x": 43.26900607435478,
-              "z": -147.7312645082258,
-              "type": "localTask",
-              "taskIndex": 1
-            },
-            {
-              "x": 39.34586495274185,
-              "z": -148.5116257962903,
-              "type": "localTask",
-              "taskIndex": 2
+              "x": 42.333333333333336,
+              "z": -172,
+              "label": "North road · Overworld"
             }
-          ]
+          ],
+          "exits": 2,
+          "saves": 0,
+          "actors": 4,
+          "meshCount": 359,
+          "loadMs": 546.1999999880791,
+          "warmupMs": 72.19999998807907,
+          "geometries": 1367,
+          "textures": 58,
+          "weather": true,
+          "shadows": 55
         },
         {
           "key": "siteClearing",
-          "props": 4,
-          "routes": [
-            true,
-            true,
-            true,
-            true
-          ],
-          "done": [
-            0,
-            1,
-            2
-          ],
-          "reward": 35,
-          "expected": 35,
-          "claimed": true,
-          "positions": [
+          "active": "siteClearing",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 2,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
             {
-              "x": -55.23602209226909,
-              "z": -215.16677674764702,
-              "type": "localBoard"
+              "x": -45.84775906502257,
+              "z": -208.23463313526983,
+              "label": "Leave for the overworld"
             },
             {
-              "x": -54.55570233019602,
-              "z": -219.31469612302544,
-              "type": "localTask",
-              "taskIndex": 0
-            },
-            {
-              "x": -67.14452768745977,
-              "z": -214.60917095729837,
-              "type": "localTask",
-              "taskIndex": 1
-            },
-            {
-              "x": -66.65413504725815,
-              "z": -207.4883742037097,
-              "type": "localTask",
-              "taskIndex": 2
+              "x": -65,
+              "z": -212.16666666666666,
+              "label": "West road · Overworld"
             }
-          ]
+          ],
+          "exits": 2,
+          "saves": 0,
+          "actors": 2,
+          "meshCount": 370,
+          "loadMs": 574.6999999880791,
+          "warmupMs": 106.5,
+          "geometries": 1373,
+          "textures": 57,
+          "weather": true,
+          "shadows": 55
         },
         {
           "key": "harbor",
-          "props": 4,
-          "routes": [
-            true,
-            true,
-            true,
-            true
-          ],
-          "done": [
-            0,
-            1,
-            2
-          ],
-          "reward": 60,
-          "expected": 60,
-          "claimed": true,
-          "positions": [
+          "active": "harbor",
+          "kind": "poi",
+          "facility18": null,
+          "background18": true,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [
             {
-              "x": 313.3332893009412,
-              "z": 73.50559116309236,
-              "type": "localBoard"
+              "x": 281,
+              "z": 69,
+              "label": "West road · Overworld"
             },
             {
-              "x": 309.444297669804,
-              "z": 67.68530387697454,
-              "type": "localTask",
-              "taskIndex": 0
+              "x": 315,
+              "z": 34,
+              "label": "North road · Overworld"
             },
             {
-              "x": 302.11222100931053,
-              "z": 67.38866138819617,
-              "type": "localTask",
-              "taskIndex": 1
-            },
-            {
-              "x": 332.65413504725814,
-              "z": 72.48837420370968,
-              "type": "localTask",
-              "taskIndex": 2
+              "x": 359,
+              "z": 65,
+              "label": "Coast road · Overworld"
             }
-          ]
+          ],
+          "exits": 3,
+          "saves": 0,
+          "actors": 5,
+          "meshCount": 173,
+          "loadMs": 295.69999998807907,
+          "warmupMs": 220.5,
+          "geometries": 1271,
+          "textures": 59,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "brookInn",
+          "active": "brookInn",
+          "kind": "interior",
+          "facility18": null,
+          "background18": false,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [],
+          "exits": 0,
+          "saves": 1,
+          "actors": 3,
+          "meshCount": 54,
+          "loadMs": 625.5,
+          "warmupMs": 47.19999998807907,
+          "geometries": 1188,
+          "textures": 58,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "brookShop",
+          "active": "brookShop",
+          "kind": "interior",
+          "facility18": null,
+          "background18": false,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [],
+          "exits": 0,
+          "saves": 0,
+          "actors": 4,
+          "meshCount": 49,
+          "loadMs": 482.89999997615814,
+          "warmupMs": 51.39999997615814,
+          "geometries": 1191,
+          "textures": 60,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "highmereInn",
+          "active": "highmereInn",
+          "kind": "interior",
+          "facility18": null,
+          "background18": false,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [],
+          "exits": 0,
+          "saves": 1,
+          "actors": 3,
+          "meshCount": 54,
+          "loadMs": 80.30000001192093,
+          "warmupMs": 31.5,
+          "geometries": 1194,
+          "textures": 59,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "council",
+          "active": "council",
+          "kind": "interior",
+          "facility18": null,
+          "background18": false,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [],
+          "exits": 0,
+          "saves": 0,
+          "actors": 3,
+          "meshCount": 50,
+          "loadMs": 487.69999998807907,
+          "warmupMs": 37.30000001192093,
+          "geometries": 1195,
+          "textures": 59,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "archives",
+          "active": "archives",
+          "kind": "interior",
+          "facility18": null,
+          "background18": false,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [],
+          "exits": 0,
+          "saves": 0,
+          "actors": 3,
+          "meshCount": 47,
+          "loadMs": 92,
+          "warmupMs": 48,
+          "geometries": 1197,
+          "textures": 59,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "brookForge",
+          "active": "brookForge",
+          "kind": "interior",
+          "facility18": null,
+          "background18": false,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [],
+          "exits": 0,
+          "saves": 0,
+          "actors": 4,
+          "meshCount": 49,
+          "loadMs": 80.19999998807907,
+          "warmupMs": 34.39999997615814,
+          "geometries": 1203,
+          "textures": 60,
+          "weather": true,
+          "shadows": 55
+        },
+        {
+          "key": "aidOffice",
+          "active": "aidOffice",
+          "kind": "interior",
+          "facility18": null,
+          "background18": false,
+          "landings18": 0,
+          "free": true,
+          "badRoutes": [],
+          "exitPositions": [],
+          "exits": 0,
+          "saves": 0,
+          "actors": 3,
+          "meshCount": 50,
+          "loadMs": 83.69999998807907,
+          "warmupMs": 35.60000002384186,
+          "geometries": 1204,
+          "textures": 59,
+          "weather": true,
+          "shadows": 55
         }
       ],
-      "visibility": {
-        "cutaways": 0,
-        "rows": [
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          },
-          {
-            "hidden": 0,
-            "visible": true,
-            "persistent": true
-          }
-        ],
-        "trees": 16464
-      },
-      "atlas": {
-        "landmarks": 0,
-        "geology": 0,
-        "terrain": true
-      },
-      "persistence": {
-        "saved": true,
-        "jobs": true,
-        "tutorial": true
-      },
-      "metrics": {
-        "updates": 20,
-        "maxMs": 0.19999998807907104
-      },
+      "voiceMissing": [],
+      "audio": [
+        {
+          "id": "theme-title",
+          "duration": 96.1065
+        },
+        {
+          "id": "theme-battle",
+          "duration": 96.1065
+        },
+        {
+          "id": "ambient-rain",
+          "duration": 20.0065
+        },
+        {
+          "id": "blade-impact",
+          "duration": 0.8065
+        },
+        {
+          "id": "step-stone",
+          "duration": 0.68675
+        },
+        {
+          "id": "ui-save",
+          "duration": 2.4065
+        }
+      ],
       "errors": [],
       "pass": true
     },
@@ -1784,12 +1600,6 @@
       "region": true
     },
     "waterJoinMaxGapMetres": 8.024994323728734e-06,
-    "spriteLuminance": {
-      "sun": 0.08439307934508036,
-      "shadow": 0.06210159737723216,
-      "cloud": 0.043889217205436835,
-      "night": 0.01361823549465258
-    },
     "overworldApproaches": {
       "views": [
         {
@@ -1851,12 +1661,12 @@
     "nativeScenarios": [
       {
         "name": "bridge",
-        "fps": 72.22111155494756,
-        "p95FrameMs": 15.199999988079071,
-        "meanRenderCpuMs": 8.425605536950913,
-        "ticks": 292,
-        "calls": 2147.9757785467127,
-        "triangles": 4545420.951557093,
+        "fps": 66.84625361688039,
+        "p95FrameMs": 23.400000035762787,
+        "meanRenderCpuMs": 10.20932835918754,
+        "ticks": 314,
+        "calls": 2168.7462686567164,
+        "triangles": 4605577.492537313,
         "buffer": [
           1440,
           900
@@ -1866,17 +1676,17 @@
           2048,
           2048
         ],
-        "programs": 168,
+        "programs": 170,
         "worldSerial": 4
       },
       {
         "name": "square",
-        "fps": 71.72310383606148,
-        "p95FrameMs": 15.599999964237213,
-        "meanRenderCpuMs": 4.316376305831018,
+        "fps": 71.97301012120455,
+        "p95FrameMs": 15.099999964237213,
+        "meanRenderCpuMs": 4.456944445562032,
         "ticks": 292,
-        "calls": 806.2020905923345,
-        "triangles": 1467727.4041811847,
+        "calls": 828.8159722222222,
+        "triangles": 1450280.6319444445,
         "buffer": [
           1440,
           900
@@ -1886,17 +1696,17 @@
           2048,
           2048
         ],
-        "programs": 168,
+        "programs": 170,
         "worldSerial": 5
       },
       {
         "name": "forest",
-        "fps": 71.99280072035708,
-        "p95FrameMs": 15,
-        "meanRenderCpuMs": 1.5309027776949935,
-        "ticks": 291,
-        "calls": 398.77777777777777,
-        "triangles": 839883.5555555555,
+        "fps": 72.22111155494756,
+        "p95FrameMs": 14.799999952316284,
+        "meanRenderCpuMs": 2.0422145317995013,
+        "ticks": 290,
+        "calls": 415.8304498269896,
+        "triangles": 825585.660899654,
         "buffer": [
           1440,
           900
@@ -1906,17 +1716,17 @@
           2048,
           2048
         ],
-        "programs": 169,
+        "programs": 172,
         "worldSerial": 6
       },
       {
         "name": "overworld",
-        "fps": 71.73744594717304,
-        "p95FrameMs": 14.900000035762787,
-        "meanRenderCpuMs": 10.474912893066007,
-        "ticks": 294,
-        "calls": 1220.658536585366,
-        "triangles": 5214091.317073171,
+        "fps": 66.07602454939921,
+        "p95FrameMs": 19.899999976158142,
+        "meanRenderCpuMs": 12.274531834804163,
+        "ticks": 314,
+        "calls": 895.2584269662922,
+        "triangles": 4899345.516853932,
         "buffer": [
           1440,
           900
@@ -1926,17 +1736,17 @@
           2048,
           2048
         ],
-        "programs": 183,
+        "programs": 190,
         "worldSerial": 7
       },
       {
         "name": "shop",
-        "fps": 71.73744594717304,
-        "p95FrameMs": 15.300000011920929,
-        "meanRenderCpuMs": 0.637630663266996,
-        "ticks": 291,
-        "calls": 54.81184668989547,
-        "triangles": 9561.623693379792,
+        "fps": 71.95682590488596,
+        "p95FrameMs": 14.700000047683716,
+        "meanRenderCpuMs": 0.8701388895925548,
+        "ticks": 289,
+        "calls": 55.423611111111114,
+        "triangles": 9562.847222222223,
         "buffer": [
           1440,
           900
@@ -1946,29 +1756,47 @@
           2048,
           2048
         ],
-        "programs": 193,
+        "programs": 200,
         "worldSerial": 8
       }
     ],
     "pump": {
       "frames": {
-        "max": 97.20000000000073,
-        "p95": 7.100000000000364,
-        "samples": 1564
+        "max": 187.60000000000036,
+        "p95": 27.80000000000291,
+        "samples": 738
       },
       "tick": {
-        "max": 18.899999976158142,
-        "p95": 4.899999976158142,
-        "samples": 796
+        "max": 29.19999998807907,
+        "p95": 9.100000023841858,
+        "samples": 900
       },
       "render": {
-        "max": 6,
-        "p95": 4.800000011920929,
-        "samples": 785
+        "max": 150.5,
+        "p95": 11.299999952316284,
+        "samples": 597
       },
       "routeTimes": [
         {
-          "ms": 13.299999952316284,
+          "ms": 15.099999964237213,
+          "from": [
+            -129,
+            65
+          ],
+          "to": [
+            -124,
+            90
+          ],
+          "nodes": 1,
+          "path": [
+            {
+              "x": -124,
+              "z": 90
+            }
+          ]
+        },
+        {
+          "ms": 14.199999988079071,
           "from": [
             -126.5,
             53
@@ -2018,10 +1846,10 @@
           ]
         },
         {
-          "ms": 6.800000011920929,
+          "ms": 13.200000047683716,
           "from": [
-            -120.75463538179794,
-            51.88150956729294
+            -120.7525152590147,
+            51.876730583237126
           ],
           "to": [
             -126.5,
@@ -2068,7 +1896,7 @@
           ]
         },
         {
-          "ms": 4,
+          "ms": 6.899999976158142,
           "from": [
             -114,
             101.5
@@ -2102,25 +1930,7 @@
           ]
         },
         {
-          "ms": 2.299999952316284,
-          "from": [
-            -129,
-            65
-          ],
-          "to": [
-            -124,
-            90
-          ],
-          "nodes": 1,
-          "path": [
-            {
-              "x": -124,
-              "z": 90
-            }
-          ]
-        },
-        {
-          "ms": 1.100000023841858,
+          "ms": 2.100000023841858,
           "from": [
             -95,
             106
@@ -2138,25 +1948,7 @@
           ]
         },
         {
-          "ms": 0.5,
-          "from": [
-            -145,
-            72
-          ],
-          "to": [
-            -149,
-            72
-          ],
-          "nodes": 1,
-          "path": [
-            {
-              "x": -149,
-              "z": 72
-            }
-          ]
-        },
-        {
-          "ms": 0.5,
+          "ms": 1.0999999642372131,
           "from": [
             -94,
             124
@@ -2174,7 +1966,7 @@
           ]
         },
         {
-          "ms": 0.40000003576278687,
+          "ms": 0.800000011920929,
           "from": [
             -146,
             120
@@ -2192,7 +1984,25 @@
           ]
         },
         {
-          "ms": 0.40000003576278687,
+          "ms": 0.6000000238418579,
+          "from": [
+            -145,
+            72
+          ],
+          "to": [
+            -149,
+            72
+          ],
+          "nodes": 1,
+          "path": [
+            {
+              "x": -149,
+              "z": 72
+            }
+          ]
+        },
+        {
+          "ms": 0.5999999642372131,
           "from": [
             -87,
             127
@@ -2210,7 +2020,7 @@
           ]
         },
         {
-          "ms": 0.40000003576278687,
+          "ms": 0.5999999642372131,
           "from": [
             -128.8,
             60
@@ -2228,7 +2038,16 @@
           ]
         }
       ],
-      "newPrograms": [],
+      "newPrograms": [
+        {
+          "name": "",
+          "key": "e,false,false,false,false,,,false,0,,2,6,0,0,1,0,1,0,0,0,0,2,0,1,0,0,3,2561,srgb,onBeforeCompile(){}"
+        },
+        {
+          "name": "",
+          "key": "se,false,false,false,false,,,false,0,,2,6,0,0,1,0,1,0,0,0,0,2,0,1,0,0,7,515,srgb,onBeforeCompile(){}"
+        }
+      ],
       "beat": "wildlife",
       "pump": true,
       "errors": []
@@ -2237,7 +2056,7 @@
       "operations": [
         {
           "name": "story-report",
-          "ms": 2
+          "ms": 2.100000023841858
         },
         {
           "name": "gate-objective",
@@ -2245,19 +2064,19 @@
         },
         {
           "name": "pump-objective",
-          "ms": 1.5
+          "ms": 1.399999976158142
         },
         {
           "name": "unlock-local-requests",
-          "ms": 12.800000011920929
+          "ms": 12.300000011920929
         },
         {
           "name": "accept-request",
-          "ms": 0.09999996423721313
+          "ms": 0.19999998807907104
         },
         {
           "name": "complete-local-task",
-          "ms": 0.10000002384185791
+          "ms": 0
         },
         {
           "name": "complete-local-task",
@@ -2277,24 +2096,24 @@
         }
       ],
       "frame": {
-        "p95": 15.100000023841858,
-        "max": 23.600000023841858,
-        "mean": 13.923255813953489,
-        "samples": 215
+        "p95": 22.400000035762787,
+        "max": 28.600000023841858,
+        "mean": 14.755172413851827,
+        "samples": 203
       },
       "tick": {
-        "p95": 2.699999988079071,
-        "max": 4.100000023841858,
-        "mean": 1.8600000007586046,
-        "samples": 220
+        "p95": 3.600000023841858,
+        "max": 6.300000011920929,
+        "mean": 2.4905349766766585,
+        "samples": 243
       },
-      "fps": 71.82228161015533,
+      "fps": 67.77284412218879,
       "newPrograms": [],
       "rebuilds": 0,
       "newGeometries": 11,
       "guide": {
         "updates": 2,
-        "maxMs": 0.10000002384185791
+        "maxMs": 0.20000004768371582
       },
       "controls": {
         "help": "guide",
@@ -2308,31 +2127,31 @@
       "pass": true
     },
     "combatRenderCPU": {
-      "samples": 856,
-      "p95": 4.599999964237213,
-      "max": 7.300000011920929,
-      "mean": 4.256658879256694
+      "samples": 839,
+      "p95": 9.5,
+      "max": 10.5,
+      "mean": 6.146722288680162
     },
     "newCombatPrograms": 0,
     "atlas": {
-      "openMs": 19.5,
-      "fps": 29.123912086658663,
+      "openMs": 29.30000001192093,
+      "fps": 29.11208151359328,
       "cpu": {
-        "p95": 5.200000047683716,
-        "max": 6,
-        "mean": 3.802325582088426
+        "p95": 8,
+        "max": 8.799999952316284,
+        "mean": 5.713953485322553
       },
       "frames": {
-        "p95": 35.09999996423721,
-        "max": 37.89999997615814,
-        "mean": 34.73999999971951
+        "p95": 34.90000003576279,
+        "max": 35.799999952316284,
+        "mean": 34.754117647339314
       },
       "webglContexts": 1,
-      "sceneObjects": 7637,
-      "textures": 71,
+      "sceneObjects": 8044,
+      "textures": 72,
       "errors": [],
       "pass": true
     },
-    "scope": "Native Chrome measurements on the tested GPU; performance varies by hardware."
+    "scope": "Native Chrome on the recorded test GPU; performance varies by hardware."
   }
 }

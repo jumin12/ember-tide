@@ -1,0 +1,59 @@
+{
+  "clips": 10,
+  "transcriptionModel": "scribe_v2",
+  "unresolvedWordDifferences": 0,
+  "spokenActingTags": 0,
+  "scope": "Ten new coached-combat narrator performances; all selected words independently transcribed. Original 282 recordings retain their previous verification.",
+  "recordings": [
+    {
+      "key": "38835a917a06dd6c97b4",
+      "matchesSpokenContent": true,
+      "sha256": "3fd0531fd58f4cd1460247e6fca9e1a42086f4e356b6cc2981d0922ef0cb016d"
+    },
+    {
+      "key": "8cfa2253dbce4f67e9ad",
+      "matchesSpokenContent": true,
+      "sha256": "07cfef06219c96df8890c48c0087a0699d68a712ce81e860fc949f92dbb5a24e"
+    },
+    {
+      "key": "037fcbbc80ad903e6f2b",
+      "matchesSpokenContent": true,
+      "sha256": "15baf5a5d5d29841a3c35094ea0e4acc02363720069c46953ad6421b25a371a9"
+    },
+    {
+      "key": "7e55aa82a19358d8dd3a",
+      "matchesSpokenContent": true,
+      "sha256": "919c27f3530e3627ba3ace865e94e5c9db0c674b81315f85e52ce1dc8b5f9bf2"
+    },
+    {
+      "key": "afaf584271bc5912ffa8",
+      "matchesSpokenContent": true,
+      "sha256": "4c1762829fe93bb42ffc577d6449383b977e5a8bca9c6a74b9f59afd941c2436"
+    },
+    {
+      "key": "ec2f46b07cf9ddd15470",
+      "matchesSpokenContent": true,
+      "sha256": "fcb74781efbf70dc98e7545e3955d991a3d615ba69e8b0aa11fe2298927a756c"
+    },
+    {
+      "key": "d9b9d7469f7a5b4a1432",
+      "matchesSpokenContent": true,
+      "sha256": "0f5d30552d52e658326044afc30de4c48f4fa7a9a53e80d41a6c240d117e9275"
+    },
+    {
+      "key": "5029b839673fcd3ec47e",
+      "matchesSpokenContent": true,
+      "sha256": "418df55996980c79821f9caa4abf7e5d365233859ed1cf0c5a4d6fb17dabebbf"
+    },
+    {
+      "key": "c9b42a6711059ad8e94a",
+      "matchesSpokenContent": true,
+      "sha256": "67de58d732f361e92f13f0ecc4e608f97a554e8937b6d4a1b126ad6dec10c61a"
+    },
+    {
+      "key": "1e609a03d59c96655a38",
+      "matchesSpokenContent": true,
+      "sha256": "eb869b2484a7767244fcfcd2f7c339196eb55fcd4025af5676c90c0871ff75cc"
+    }
+  ]
+}
