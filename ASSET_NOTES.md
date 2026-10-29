@@ -25,3 +25,6 @@ V18 adds two native 512 by 512 PixelLab materials: fine jade river surface and w
 
 
 V19 reuses the existing approved PixelLab artwork and all 385 offline ElevenLabs recordings. Stair foundations, curved landing geometry, moving water currents, reflection validation and title/save interfaces are renderer and code changes. No newly generated art replaces the approved cast or palette; no earlier game assets were uploaded as generation references.
+
+
+V20 reuses the approved native PixelLab artwork and all 385 selected ElevenLabs recordings. The stair backing, regraded join, coherent water surface and reflection corrections are geometry and shader changes; no new generation or reference upload was required.

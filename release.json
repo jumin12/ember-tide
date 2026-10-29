@@ -1,22 +1,30 @@
 {
-  "release": "elyndor-2026-10-29-solid-stairs-current-title-records-v19",
+  "release": "elyndor-2026-10-29-stair-traversal-coherent-river-v20",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 35898004,
-    "sha256": "a3443777381259b15878b3044a7ef7a5b4926d103eb4cb4a4d90e44c48c7b29a",
+    "bytes": 35906199,
+    "sha256": "e5942b154ef30a34aba0ed9a7a9163563068efd8b7cf9ed7fe3732336ec6053e",
     "offline": true
   },
+  "comparison": {
+    "baselineCommit": "1a62326614e7727eabb1698d62ad6d4329a244b7",
+    "at": "2026-10-28T10:00:00-04:00",
+    "timezone": "America/New_York",
+    "deploymentRun": 40644508527,
+    "baselineRecordings": 306,
+    "currentRecordings": 385,
+    "label": "Most recent 10 AM before the overnight October 29 update"
+  },
   "changes": [
-    "Four terrace stairways use solid textured foundations instead of open sky below their lower treads; the steep lower approach has nine additional treads",
-    "Rendered stair and landing geometry shares the same height queries as feet and navigation",
-    "Western starting-bridge approach follows the actual curved road, fading paving into earth with the same world-space material",
-    "920 GPU-animated world-space foam streamlines move downstream from the gate, over cascades and through the lower stream; release shaders warm during loading",
-    "Removed the obsolete broad surface sheet and reject uninitialised or out-of-frame projective reflection samples",
-    "Title navigation is on the left; a versioned changelog and three journey cards occupy the right panel",
-    "Eight live POI views cycle in a shuffled nonrepeating bag, with the full main cast and gameplay markers hidden; NPCs and environment continue animating",
-    "Three manual slots support metadata and party previews, loading, saving at inn circles, overwrite confirmation, deletion confirmation and unreadable-record cleanup",
-    "Background changes pause while browsing records; save actions cannot race scene rebuilds; legacy records, automatic inn checkpoints and preferences remain supported"
+    "The extended stair flight is graded from the actual first tread rather than the nominal lower terrace, eliminating the 0.518 metre impassable join",
+    "Eleven extended lower treads limit the join and each rise to less than 0.25 metres; existing building collision is retained",
+    "Continuous textured ground backing closes the small sky gap beside the neighboring stairs",
+    "One coherent world-space water shader replaces stacked periodic ripple and shoreline bands; low river water has irregular moving surface detail",
+    "Legacy gate combat-smoke emission and old fixed foam points are removed; sluice spray uses an additive material without dark droplets",
+    "Cascade reflection sources are relinked to their actual upper and lower pools; water effects do not reflect into themselves and fill-time reflection planes match the sampled level",
+    "Opening the full-width gate retains the propagating river release, connected falls and downstream filling; foam and surface texture move downstream",
+    "The title changelog compares the current game with the GitHub build verified live at 10 AM Eastern on October 28, including materials, voices and sound, atlas, tutorials, combat, saves and runtime preparation"
   ],
   "art": {
     "generator": "PixelLab",
@@ -101,6 +109,10 @@
   },
   "validation": {
     "checks": [
+      {
+        "name": "stair-traversal-river",
+        "pass": true
+      },
       {
         "name": "coached-battle-regression",
         "pass": true
@@ -215,8 +227,8 @@
         "left": true,
         "news": true,
         "party": false,
-        "index": 2,
-        "scene": "fern"
+        "index": 0,
+        "scene": "brookstead"
       },
       "scenes": [
         {
@@ -225,13 +237,13 @@
           "party": false
         },
         {
-          "index": 5,
-          "scene": "relief",
+          "index": 7,
+          "scene": "fernClearing",
           "party": false
         },
         {
-          "index": 0,
-          "scene": "brookstead",
+          "index": 3,
+          "scene": "highmere",
           "party": false
         }
       ],
@@ -858,43 +870,51 @@
         },
         {
           "extraToe": true,
-          "gap": 1.0575188502670585e-07
+          "gap": 1.0785189230588799e-07
         },
         {
           "extraToe": true,
-          "gap": 2.1192780863543703e-10
+          "gap": 1.3524839470591132e-08
         },
         {
           "extraToe": true,
-          "gap": 1.0617574064397672e-07
+          "gap": 8.080222713147123e-08
         },
         {
           "extraToe": true,
-          "gap": 2.627902562224449e-08
+          "gap": 6.328929558208074e-08
         },
         {
           "extraToe": true,
-          "gap": 7.968479076581048e-08
+          "gap": 3.103776347046505e-08
         },
         {
           "extraToe": true,
-          "gap": 5.2769979053124416e-08
+          "gap": 1.1305375569037324e-07
         },
         {
           "extraToe": true,
-          "gap": 5.319383378221687e-08
+          "gap": 1.8726695749649025e-08
         },
         {
           "extraToe": true,
-          "gap": 3.9948353736107833e-08
+          "gap": 7.560036374698598e-08
         },
         {
           "extraToe": true,
-          "gap": 9.536704759227632e-10
+          "gap": 5.071813369283973e-08
+        },
+        {
+          "extraToe": true,
+          "gap": 2.583590363869348e-08
+        },
+        {
+          "extraToe": true,
+          "gap": 9.53674028636442e-10
         },
         {
           "toe": true,
-          "gap": 1.0575188502670585e-07
+          "gap": 1.0785189230588799e-07
         }
       ],
       "bridge": {
@@ -1374,6 +1394,642 @@
       "errors": [],
       "pass": true
     },
+    "stairAndRiverRepairs": {
+      "changelog": true,
+      "edges": [
+        {
+          "x": -132,
+          "z": 68.5,
+          "count": 663,
+          "maxRise": 0.2400000000000002,
+          "failures": [],
+          "physicalEdges": [
+            {
+              "u": -4.1,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -4.05,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -4,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -3.95,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -3.9000000000000004,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -3.8500000000000005,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -3.8000000000000007,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -3.750000000000001,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -3.700000000000001,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -3.6500000000000012,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -3.6000000000000014,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -3.5500000000000016,
+              "v": -1.25,
+              "rise": 0.02200000000000113,
+              "free": false
+            },
+            {
+              "u": -3.5000000000000018,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -3.450000000000002,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -3.400000000000002,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -3.3500000000000023,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -3.3000000000000025,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -3.2500000000000027,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -3.200000000000003,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -3.150000000000003,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -3.100000000000003,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -3.0500000000000034,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -3.0000000000000036,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -2.9500000000000037,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -2.900000000000004,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -2.850000000000004,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -2.8000000000000043,
+              "v": -1.25,
+              "rise": 0.2400000000000002,
+              "free": false
+            },
+            {
+              "u": -2.7500000000000044,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -2.7000000000000046,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -2.650000000000005,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -2.600000000000005,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -2.550000000000005,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -2.5000000000000053,
+              "v": -1.25,
+              "rise": 0,
+              "free": false
+            },
+            {
+              "u": -2.4500000000000055,
+              "v": -1.25,
+              "rise": 0,
+              "free": true
+            }
+          ],
+          "backing": true
+        },
+        {
+          "x": -124,
+          "z": 79.5,
+          "count": 663,
+          "maxRise": 0.25,
+          "failures": [],
+          "physicalEdges": [],
+          "backing": true
+        },
+        {
+          "x": -101,
+          "z": 79.5,
+          "count": 663,
+          "maxRise": 0.25,
+          "failures": [],
+          "physicalEdges": [],
+          "backing": true
+        },
+        {
+          "x": -140,
+          "z": 75.5,
+          "count": 855,
+          "maxRise": 0.2489090909090912,
+          "failures": [],
+          "physicalEdges": [],
+          "backing": true
+        }
+      ],
+      "walks": [
+        {
+          "i": 0,
+          "direction": -1,
+          "start": 6.75,
+          "end": -3.95,
+          "key": "a",
+          "ms": 1651.5151515151513,
+          "route": true,
+          "u": -4.243893976771204,
+          "passed": true,
+          "party": [
+            {
+              "id": "soren",
+              "gap": 1.5000000000000009,
+              "stuck": 0
+            }
+          ]
+        },
+        {
+          "i": 0,
+          "direction": 1,
+          "start": -4.243893976771204,
+          "end": 6.75,
+          "key": "d",
+          "ms": 1651.5151515151513,
+          "route": true,
+          "u": 6.75,
+          "passed": true,
+          "party": [
+            {
+              "id": "soren",
+              "gap": 1.5000000000000016,
+              "stuck": 0
+            }
+          ]
+        },
+        {
+          "i": 1,
+          "direction": -1,
+          "start": 6.75,
+          "end": -3.95,
+          "key": "w",
+          "ms": 1651.5151515151513,
+          "route": true,
+          "u": -4.243893976770153,
+          "passed": true,
+          "party": [
+            {
+              "id": "soren",
+              "gap": 1.5000000000000016,
+              "stuck": 0
+            }
+          ]
+        },
+        {
+          "i": 1,
+          "direction": 1,
+          "start": -4.243893976770153,
+          "end": 6.75,
+          "key": "s",
+          "ms": 1651.5151515151513,
+          "route": true,
+          "u": 6.75,
+          "passed": true,
+          "party": [
+            {
+              "id": "soren",
+              "gap": 1.4999999999999873,
+              "stuck": 0
+            }
+          ]
+        },
+        {
+          "i": 2,
+          "direction": -1,
+          "start": 6.75,
+          "end": -3.95,
+          "key": "w",
+          "ms": 1651.5151515151513,
+          "route": true,
+          "u": -4.243893976770153,
+          "passed": true,
+          "party": [
+            {
+              "id": "soren",
+              "gap": 1.5000000000000016,
+              "stuck": 0
+            }
+          ]
+        },
+        {
+          "i": 2,
+          "direction": 1,
+          "start": -4.243893976770153,
+          "end": 6.75,
+          "key": "s",
+          "ms": 1651.5151515151513,
+          "route": true,
+          "u": 6.75,
+          "passed": true,
+          "party": [
+            {
+              "id": "soren",
+              "gap": 1.4999999999999873,
+              "stuck": 0
+            }
+          ]
+        },
+        {
+          "i": 3,
+          "direction": -1,
+          "start": 10,
+          "end": -3.95,
+          "key": "w",
+          "ms": 2143.939393939394,
+          "route": true,
+          "u": -4.182123230033497,
+          "passed": true,
+          "party": [
+            {
+              "id": "soren",
+              "gap": 1.5000000000000016,
+              "stuck": 0
+            }
+          ]
+        },
+        {
+          "i": 3,
+          "direction": 1,
+          "start": -4.182123230033497,
+          "end": 10,
+          "key": "s",
+          "ms": 2143.939393939394,
+          "route": true,
+          "u": 10,
+          "passed": true,
+          "party": [
+            {
+              "id": "soren",
+              "gap": 1.50000000000003,
+              "stuck": 0
+            }
+          ]
+        }
+      ],
+      "water": [
+        {
+          "age": 0,
+          "opening": 0,
+          "pools": {
+            "headrace": 2.92,
+            "millrace": -0.17,
+            "lowerBrook": -3.48
+          },
+          "joins": [
+            {
+              "z": 70,
+              "top": 6.15,
+              "bottom": 2.92,
+              "width": 0.065,
+              "gap": 0
+            },
+            {
+              "z": 80,
+              "top": 2.92,
+              "bottom": -0.17,
+              "width": 0.065,
+              "gap": 0
+            },
+            {
+              "z": 98,
+              "top": -0.17,
+              "bottom": -3.48,
+              "width": 0.065,
+              "gap": 0
+            }
+          ],
+          "clean": true,
+          "oldFoam": 0
+        },
+        {
+          "age": 1.0000000000000013,
+          "opening": 0.9391899373747825,
+          "pools": {
+            "headrace": 2.949977196724045,
+            "millrace": -0.17,
+            "lowerBrook": -3.48
+          },
+          "joins": [
+            {
+              "z": 70,
+              "top": 5.893274437351224,
+              "bottom": 3.0516827928223718,
+              "width": 0.1342592592592594,
+              "gap": 0
+            },
+            {
+              "z": 80,
+              "top": 2.921206311276533,
+              "bottom": -0.17,
+              "width": 0.065,
+              "gap": 0
+            },
+            {
+              "z": 98,
+              "top": -0.17,
+              "bottom": -3.48,
+              "width": 0.065,
+              "gap": 0
+            }
+          ],
+          "clean": true,
+          "oldFoam": 0
+        },
+        {
+          "age": 2.9999999999999942,
+          "opening": 0.9997751326758214,
+          "pools": {
+            "headrace": 2.969937117326238,
+            "millrace": -0.17,
+            "lowerBrook": -3.48
+          },
+          "joins": [
+            {
+              "z": 70,
+              "top": 5.521906734839214,
+              "bottom": 2.9900424073500975,
+              "width": 0.5324999999999986,
+              "gap": 0
+            },
+            {
+              "z": 80,
+              "top": 2.97014997968151,
+              "bottom": -0.1699999999999997,
+              "width": 0.065,
+              "gap": 0
+            },
+            {
+              "z": 98,
+              "top": -0.17,
+              "bottom": -3.48,
+              "width": 0.065,
+              "gap": 0
+            }
+          ],
+          "clean": true,
+          "oldFoam": 0
+        },
+        {
+          "age": 5.999999999999984,
+          "opening": 0.9999999494346864,
+          "pools": {
+            "headrace": 3.1375750506365727,
+            "millrace": -0.16739635571750938,
+            "lowerBrook": -3.48
+          },
+          "joins": [
+            {
+              "z": 70,
+              "top": 5.197275892555611,
+              "bottom": 3.1746874999999988,
+              "width": 1,
+              "gap": 0
+            },
+            {
+              "z": 80,
+              "top": 3.1027618634259246,
+              "bottom": -0.029869781571231713,
+              "width": 0.1342592592592572,
+              "gap": 0
+            },
+            {
+              "z": 98,
+              "top": -0.1699997981499182,
+              "bottom": -3.48,
+              "width": 0.065,
+              "gap": 0
+            }
+          ],
+          "clean": true,
+          "oldFoam": 0
+        },
+        {
+          "age": 12.000000000000176,
+          "opening": 0.9999999999999959,
+          "pools": {
+            "headrace": 3.684091977719925,
+            "millrace": 0.10595188284307686,
+            "lowerBrook": -3.48
+          },
+          "joins": [
+            {
+              "z": 70,
+              "top": 4.942769650423301,
+              "bottom": 3.7350000000000176,
+              "width": 1,
+              "gap": 0
+            },
+            {
+              "z": 80,
+              "top": 3.6333608217592768,
+              "bottom": 0.18360532407408972,
+              "width": 1,
+              "gap": 0
+            },
+            {
+              "z": 98,
+              "top": 0.03562479354012346,
+              "bottom": -3.478715583261138,
+              "width": 0.065,
+              "gap": 0
+            }
+          ],
+          "clean": true,
+          "oldFoam": 0
+        },
+        {
+          "age": 23.99999999999992,
+          "opening": 0.9999999999999959,
+          "pools": {
+            "headrace": 4.547907081886573,
+            "millrace": 1.288381100950052,
+            "lowerBrook": -3.2283978845005916
+          },
+          "joins": [
+            {
+              "z": 70,
+              "top": 4.856620160030509,
+              "bottom": 4.55,
+              "width": 1,
+              "gap": 0
+            },
+            {
+              "z": 80,
+              "top": 4.541746238425924,
+              "bottom": 1.3571469907407352,
+              "width": 1,
+              "gap": 0
+            },
+            {
+              "z": 98,
+              "top": 1.2120685178199393,
+              "bottom": -2.4400000000000106,
+              "width": 1,
+              "gap": 0
+            }
+          ],
+          "clean": true,
+          "oldFoam": 0
+        },
+        {
+          "age": 59.999999999997875,
+          "opening": 0.9999999999999959,
+          "pools": {
+            "headrace": 4.55,
+            "millrace": 1.55,
+            "lowerBrook": -1.4
+          },
+          "joins": [
+            {
+              "z": 70,
+              "top": 4.850002405781553,
+              "bottom": 4.55,
+              "width": 1,
+              "gap": 0
+            },
+            {
+              "z": 80,
+              "top": 4.55,
+              "bottom": 1.55,
+              "width": 1,
+              "gap": 0
+            },
+            {
+              "z": 98,
+              "top": 1.55,
+              "bottom": -1.4,
+              "width": 1,
+              "gap": 0
+            }
+          ],
+          "clean": true,
+          "oldFoam": 0
+        }
+      ],
+      "errors": [],
+      "pass": true
+    },
+    "keyboardStairCrossings": 8,
+    "stairEdgeSamples": 2844,
     "coachedBattleRegression": {
       "gate": {
         "half": 5.539661070539241,
@@ -2039,11 +2695,11 @@
           "exits": 4,
           "saves": 0,
           "actors": 13,
-          "meshCount": 934,
-          "loadMs": 1847.699999988079,
-          "warmupMs": 302.4000000357628,
-          "geometries": 1637,
-          "textures": 73,
+          "meshCount": 935,
+          "loadMs": 1846.300000011921,
+          "warmupMs": 264.4000000357628,
+          "geometries": 1640,
+          "textures": 72,
           "weather": true,
           "shadows": 55
         },
@@ -2086,8 +2742,8 @@
           "saves": 0,
           "actors": 7,
           "meshCount": 508,
-          "loadMs": 733.6000000238419,
-          "warmupMs": 132.39999997615814,
+          "loadMs": 983.8000000119209,
+          "warmupMs": 386.5,
           "geometries": 1418,
           "textures": 61,
           "weather": true,
@@ -2123,8 +2779,8 @@
           "saves": 0,
           "actors": 3,
           "meshCount": 377,
-          "loadMs": 555,
-          "warmupMs": 72.69999998807907,
+          "loadMs": 562.1999999880791,
+          "warmupMs": 72.09999996423721,
           "geometries": 1366,
           "textures": 57,
           "weather": true,
@@ -2165,8 +2821,8 @@
           "saves": 0,
           "actors": 12,
           "meshCount": 629,
-          "loadMs": 1152.6000000238419,
-          "warmupMs": 172.69999998807907,
+          "loadMs": 1320.800000011921,
+          "warmupMs": 331.5999999642372,
           "geometries": 1456,
           "textures": 69,
           "weather": true,
@@ -2211,8 +2867,8 @@
           "saves": 0,
           "actors": 9,
           "meshCount": 521,
-          "loadMs": 870.1000000238419,
-          "warmupMs": 169.89999997615814,
+          "loadMs": 958.1999999880791,
+          "warmupMs": 223.80000001192093,
           "geometries": 1401,
           "textures": 64,
           "weather": true,
@@ -2248,8 +2904,8 @@
           "saves": 0,
           "actors": 3,
           "meshCount": 385,
-          "loadMs": 508.89999997615814,
-          "warmupMs": 66.80000001192093,
+          "loadMs": 645,
+          "warmupMs": 117.19999998807907,
           "geometries": 1347,
           "textures": 57,
           "weather": true,
@@ -2285,8 +2941,8 @@
           "saves": 0,
           "actors": 4,
           "meshCount": 403,
-          "loadMs": 553.8000000119209,
-          "warmupMs": 73.80000001192093,
+          "loadMs": 528.9000000357628,
+          "warmupMs": 70,
           "geometries": 1390,
           "textures": 57,
           "weather": true,
@@ -2331,8 +2987,8 @@
           "saves": 0,
           "actors": 6,
           "meshCount": 442,
-          "loadMs": 804.5,
-          "warmupMs": 143.5999999642372,
+          "loadMs": 766.3999999761581,
+          "warmupMs": 115.59999996423721,
           "geometries": 1417,
           "textures": 62,
           "weather": true,
@@ -2368,8 +3024,8 @@
           "saves": 0,
           "actors": 4,
           "meshCount": 409,
-          "loadMs": 891.5,
-          "warmupMs": 236.89999997615814,
+          "loadMs": 871.8000000119209,
+          "warmupMs": 203.30000001192093,
           "geometries": 1378,
           "textures": 59,
           "weather": true,
@@ -2405,8 +3061,8 @@
           "saves": 0,
           "actors": 2,
           "meshCount": 356,
-          "loadMs": 534.8000000119209,
-          "warmupMs": 60.30000001192093,
+          "loadMs": 546.5999999642372,
+          "warmupMs": 64.69999998807907,
           "geometries": 1351,
           "textures": 57,
           "weather": true,
@@ -2437,8 +3093,8 @@
           "saves": 0,
           "actors": 2,
           "meshCount": 377,
-          "loadMs": 488.89999997615814,
-          "warmupMs": 79.89999997615814,
+          "loadMs": 500.19999998807907,
+          "warmupMs": 77.5,
           "geometries": 1384,
           "textures": 57,
           "weather": true,
@@ -2469,8 +3125,8 @@
           "saves": 0,
           "actors": 2,
           "meshCount": 365,
-          "loadMs": 492.0999999642372,
-          "warmupMs": 66.40000003576279,
+          "loadMs": 550.7000000476837,
+          "warmupMs": 82.09999996423721,
           "geometries": 1381,
           "textures": 57,
           "weather": true,
@@ -2501,8 +3157,8 @@
           "saves": 0,
           "actors": 4,
           "meshCount": 359,
-          "loadMs": 718.9000000357628,
-          "warmupMs": 173.60000002384186,
+          "loadMs": 571.8999999761581,
+          "warmupMs": 72.30000001192093,
           "geometries": 1370,
           "textures": 59,
           "weather": true,
@@ -2533,8 +3189,8 @@
           "saves": 0,
           "actors": 2,
           "meshCount": 370,
-          "loadMs": 580.2999999523163,
-          "warmupMs": 107.19999998807907,
+          "loadMs": 795.3000000119209,
+          "warmupMs": 212.5,
           "geometries": 1376,
           "textures": 58,
           "weather": true,
@@ -2570,8 +3226,8 @@
           "saves": 0,
           "actors": 5,
           "meshCount": 173,
-          "loadMs": 299,
-          "warmupMs": 227.80000001192093,
+          "loadMs": 290.4000000357628,
+          "warmupMs": 220.5999999642372,
           "geometries": 1274,
           "textures": 60,
           "weather": true,
@@ -2591,8 +3247,8 @@
           "saves": 1,
           "actors": 3,
           "meshCount": 54,
-          "loadMs": 626.8999999761581,
-          "warmupMs": 45.09999996423721,
+          "loadMs": 633.5,
+          "warmupMs": 48.69999998807907,
           "geometries": 1191,
           "textures": 59,
           "weather": true,
@@ -2612,8 +3268,8 @@
           "saves": 0,
           "actors": 4,
           "meshCount": 49,
-          "loadMs": 486.10000002384186,
-          "warmupMs": 50.40000003576279,
+          "loadMs": 485,
+          "warmupMs": 51.89999997615814,
           "geometries": 1194,
           "textures": 61,
           "weather": true,
@@ -2633,8 +3289,8 @@
           "saves": 1,
           "actors": 3,
           "meshCount": 54,
-          "loadMs": 80.30000001192093,
-          "warmupMs": 31.80000001192093,
+          "loadMs": 79.60000002384186,
+          "warmupMs": 33.200000047683716,
           "geometries": 1197,
           "textures": 60,
           "weather": true,
@@ -2654,8 +3310,8 @@
           "saves": 0,
           "actors": 3,
           "meshCount": 50,
-          "loadMs": 488.19999998807907,
-          "warmupMs": 36.90000003576279,
+          "loadMs": 483.30000001192093,
+          "warmupMs": 33.5,
           "geometries": 1198,
           "textures": 60,
           "weather": true,
@@ -2675,8 +3331,8 @@
           "saves": 0,
           "actors": 3,
           "meshCount": 47,
-          "loadMs": 77.80000001192093,
-          "warmupMs": 31.5,
+          "loadMs": 83.5,
+          "warmupMs": 33.80000001192093,
           "geometries": 1200,
           "textures": 60,
           "weather": true,
@@ -2696,8 +3352,8 @@
           "saves": 0,
           "actors": 4,
           "meshCount": 49,
-          "loadMs": 81.40000003576279,
-          "warmupMs": 35.39999997615814,
+          "loadMs": 118.39999997615814,
+          "warmupMs": 68.80000001192093,
           "geometries": 1206,
           "textures": 61,
           "weather": true,
@@ -2717,8 +3373,8 @@
           "saves": 0,
           "actors": 3,
           "meshCount": 50,
-          "loadMs": 83.19999998807907,
-          "warmupMs": 34.39999997615814,
+          "loadMs": 86.80000001192093,
+          "warmupMs": 36.90000003576279,
           "geometries": 1207,
           "textures": 60,
           "weather": true,
@@ -2829,12 +3485,12 @@
     "nativeScenarios": [
       {
         "name": "bridge",
-        "fps": 71.21973161321537,
-        "p95FrameMs": 15.699999988079071,
-        "meanRenderCpuMs": 7.864561404261672,
-        "ticks": 296,
-        "calls": 2224.5438596491226,
-        "triangles": 4610819.087719298,
+        "fps": 71.98380364353663,
+        "p95FrameMs": 14.899999976158142,
+        "meanRenderCpuMs": 8.521527777115503,
+        "ticks": 291,
+        "calls": 2206.871527777778,
+        "triangles": 4643499.743055556,
         "buffer": [
           1440,
           900
@@ -2844,37 +3500,17 @@
           2048,
           2048
         ],
-        "programs": 174,
-        "worldSerial": 4
-      },
-      {
-        "name": "square",
-        "fps": 71.95862379110567,
-        "p95FrameMs": 15,
-        "meanRenderCpuMs": 4.276388890420397,
-        "ticks": 289,
-        "calls": 830.3402777777778,
-        "triangles": 1448421.6805555555,
-        "buffer": [
-          1440,
-          900
-        ],
-        "scale": 1,
-        "shadow": [
-          2048,
-          2048
-        ],
-        "programs": 174,
+        "programs": 191,
         "worldSerial": 5
       },
       {
-        "name": "forest",
-        "fps": 71.46605362495411,
+        "name": "square",
+        "fps": 71.9928007192844,
         "p95FrameMs": 14.900000035762787,
-        "meanRenderCpuMs": 1.610139861598715,
+        "meanRenderCpuMs": 4.655555555389987,
         "ticks": 292,
-        "calls": 418.8531468531468,
-        "triangles": 825591.7062937063,
+        "calls": 861.9097222222222,
+        "triangles": 1460484.8194444445,
         "buffer": [
           1440,
           900
@@ -2884,17 +3520,17 @@
           2048,
           2048
         ],
-        "programs": 176,
+        "programs": 191,
         "worldSerial": 6
       },
       {
-        "name": "overworld",
-        "fps": 71.480342905275,
-        "p95FrameMs": 15,
-        "meanRenderCpuMs": 10.347902095192795,
-        "ticks": 297,
-        "calls": 878.5174825174826,
-        "triangles": 4899312.034965035,
+        "name": "forest",
+        "fps": 71.98020544307413,
+        "p95FrameMs": 14.699999988079071,
+        "meanRenderCpuMs": 1.648611110324661,
+        "ticks": 292,
+        "calls": 410.0138888888889,
+        "triangles": 825574.0277777778,
         "buffer": [
           1440,
           900
@@ -2904,17 +3540,17 @@
           2048,
           2048
         ],
-        "programs": 194,
+        "programs": 189,
         "worldSerial": 7
       },
       {
-        "name": "shop",
-        "fps": 71.98740220482868,
-        "p95FrameMs": 15,
-        "meanRenderCpuMs": 0.6052083346164889,
-        "ticks": 290,
-        "calls": 48.6875,
-        "triangles": 9549.375,
+        "name": "overworld",
+        "fps": 62.98859732167819,
+        "p95FrameMs": 18.700000047683716,
+        "meanRenderCpuMs": 12.786561266000092,
+        "ticks": 324,
+        "calls": 895.9249011857708,
+        "triangles": 4899273.849802371,
         "buffer": [
           1440,
           900
@@ -2924,29 +3560,49 @@
           2048,
           2048
         ],
-        "programs": 204,
+        "programs": 207,
         "worldSerial": 8
+      },
+      {
+        "name": "shop",
+        "fps": 71.99640018020555,
+        "p95FrameMs": 14.199999988079071,
+        "meanRenderCpuMs": 0.6458333298150036,
+        "ticks": 289,
+        "calls": 53.19444444444444,
+        "triangles": 9558.388888888889,
+        "buffer": [
+          1440,
+          900
+        ],
+        "scale": 1,
+        "shadow": [
+          2048,
+          2048
+        ],
+        "programs": 217,
+        "worldSerial": 9
       }
     ],
     "pump": {
       "frames": {
-        "max": 139,
-        "p95": 27.799999999999272,
-        "samples": 766
+        "max": 97.29999999999927,
+        "p95": 7.100000000000364,
+        "samples": 1554
       },
       "tick": {
-        "max": 24.400000035762787,
-        "p95": 8.600000023841858,
-        "samples": 909
+        "max": 20.600000023841858,
+        "p95": 4.599999964237213,
+        "samples": 801
       },
       "render": {
-        "max": 17.299999952316284,
-        "p95": 11.300000011920929,
-        "samples": 633
+        "max": 10.600000023841858,
+        "p95": 5.800000011920929,
+        "samples": 785
       },
       "routeTimes": [
         {
-          "ms": 15.699999988079071,
+          "ms": 13.400000035762787,
           "from": [
             -126.5,
             53
@@ -2996,10 +3652,10 @@
           ]
         },
         {
-          "ms": 7.699999988079071,
+          "ms": 7.799999952316284,
           "from": [
-            -120.75181113915136,
-            51.87612192639587
+            -120.7420707094573,
+            51.86291346581941
           ],
           "to": [
             -126.5,
@@ -3046,25 +3702,7 @@
           ]
         },
         {
-          "ms": 5.200000047683716,
-          "from": [
-            -129,
-            65
-          ],
-          "to": [
-            -124,
-            90
-          ],
-          "nodes": 1,
-          "path": [
-            {
-              "x": -124,
-              "z": 90
-            }
-          ]
-        },
-        {
-          "ms": 4.099999964237213,
+          "ms": 3.699999988079071,
           "from": [
             -114,
             101.5
@@ -3098,7 +3736,25 @@
           ]
         },
         {
-          "ms": 1.899999976158142,
+          "ms": 3.200000047683716,
+          "from": [
+            -129,
+            65
+          ],
+          "to": [
+            -124,
+            90
+          ],
+          "nodes": 1,
+          "path": [
+            {
+              "x": -124,
+              "z": 90
+            }
+          ]
+        },
+        {
+          "ms": 1,
           "from": [
             -95,
             106
@@ -3116,61 +3772,7 @@
           ]
         },
         {
-          "ms": 1.0999999642372131,
-          "from": [
-            -94,
-            124
-          ],
-          "to": [
-            -91,
-            127
-          ],
-          "nodes": 1,
-          "path": [
-            {
-              "x": -91,
-              "z": 127
-            }
-          ]
-        },
-        {
-          "ms": 1,
-          "from": [
-            -146,
-            120
-          ],
-          "to": [
-            -125,
-            120
-          ],
-          "nodes": 1,
-          "path": [
-            {
-              "x": -125,
-              "z": 120
-            }
-          ]
-        },
-        {
-          "ms": 0.8999999761581421,
-          "from": [
-            -87,
-            127
-          ],
-          "to": [
-            -89,
-            124
-          ],
-          "nodes": 1,
-          "path": [
-            {
-              "x": -89,
-              "z": 124
-            }
-          ]
-        },
-        {
-          "ms": 0.699999988079071,
+          "ms": 0.6000000238418579,
           "from": [
             -145,
             72
@@ -3188,7 +3790,43 @@
           ]
         },
         {
-          "ms": 0.6000000238418579,
+          "ms": 0.5,
+          "from": [
+            -94,
+            124
+          ],
+          "to": [
+            -91,
+            127
+          ],
+          "nodes": 1,
+          "path": [
+            {
+              "x": -91,
+              "z": 127
+            }
+          ]
+        },
+        {
+          "ms": 0.5,
+          "from": [
+            -87,
+            127
+          ],
+          "to": [
+            -89,
+            124
+          ],
+          "nodes": 1,
+          "path": [
+            {
+              "x": -89,
+              "z": 124
+            }
+          ]
+        },
+        {
+          "ms": 0.40000003576278687,
           "from": [
             -128.8,
             60
@@ -3204,6 +3842,24 @@
               "z": 60.5
             }
           ]
+        },
+        {
+          "ms": 0.3999999761581421,
+          "from": [
+            -146,
+            120
+          ],
+          "to": [
+            -125,
+            120
+          ],
+          "nodes": 1,
+          "path": [
+            {
+              "x": -125,
+              "z": 120
+            }
+          ]
         }
       ],
       "newPrograms": [],
@@ -3215,27 +3871,27 @@
       "operations": [
         {
           "name": "story-report",
-          "ms": 2.300000011920929
+          "ms": 2
         },
         {
           "name": "gate-objective",
-          "ms": 1.800000011920929
+          "ms": 1.5
         },
         {
           "name": "pump-objective",
-          "ms": 1.600000023841858
+          "ms": 1.399999976158142
         },
         {
           "name": "unlock-local-requests",
-          "ms": 13.599999964237213
+          "ms": 12.100000023841858
         },
         {
           "name": "accept-request",
-          "ms": 0.30000001192092896
+          "ms": 0.09999996423721313
         },
         {
           "name": "complete-local-task",
-          "ms": 0
+          "ms": 0.10000002384185791
         },
         {
           "name": "complete-local-task",
@@ -3247,7 +3903,7 @@
         },
         {
           "name": "claim-once",
-          "ms": 0.10000002384185791
+          "ms": 0
         },
         {
           "name": "claim-duplicate",
@@ -3255,21 +3911,21 @@
         }
       ],
       "frame": {
-        "p95": 27.899999976158142,
-        "max": 33.40000003576279,
-        "mean": 16.865730337212593,
-        "samples": 178
+        "p95": 15,
+        "max": 24.19999998807907,
+        "mean": 13.90511627890343,
+        "samples": 215
       },
       "tick": {
-        "p95": 4.199999988079071,
-        "max": 7.199999988079071,
-        "mean": 2.7157676375753157,
-        "samples": 241
+        "p95": 2.699999988079071,
+        "max": 4.800000011920929,
+        "mean": 1.8945701359623697,
+        "samples": 221
       },
-      "fps": 59.29182905252536,
+      "fps": 71.91597538218221,
       "newPrograms": [],
       "rebuilds": 0,
-      "newGeometries": 11,
+      "newGeometries": 7,
       "guide": {
         "updates": 2,
         "maxMs": 0.10000002384185791
@@ -3286,28 +3942,28 @@
       "pass": true
     },
     "combatRenderCPU": {
-      "samples": 856,
-      "p95": 4.399999976158142,
-      "max": 6.199999988079071,
-      "mean": 4.064953270777363
+      "samples": 857,
+      "p95": 6.300000011920929,
+      "max": 10.5,
+      "mean": 5.1050175029171525
     },
     "newCombatPrograms": 0,
     "atlas": {
-      "openMs": 19.30000001192093,
-      "fps": 29.104199803950692,
+      "openMs": 20,
+      "fps": 29.124898401399623,
       "cpu": {
-        "p95": 5.900000035762787,
-        "max": 7.800000011920929,
-        "mean": 4.098837207916171
+        "p95": 4.199999988079071,
+        "max": 4.5,
+        "mean": 3.7418604624825855
       },
       "frames": {
-        "p95": 35.5,
-        "max": 36.80000001192093,
-        "mean": 34.763529411484214
+        "p95": 35.10000002384186,
+        "max": 36.69999998807907,
+        "mean": 34.73882352955201
       },
       "webglContexts": 1,
       "sceneObjects": 8044,
-      "textures": 74,
+      "textures": 73,
       "errors": [],
       "pass": true
     },

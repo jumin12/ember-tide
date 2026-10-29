@@ -1,5 +1,5 @@
 {
-  "status": "Solid terrace stairs, downstream currents, live-POI title and three journey slots",
+  "status": "Traversable terrace stairs, closed terrain seams and a coherent downstream river",
   "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
   "characterFamilies": 41,
   "runtimeFamilies": 42,
@@ -9,8 +9,8 @@
   "worldImages": 62,
   "artifact": {
     "file": "index.html",
-    "bytes": 35898004,
-    "sha256": "a3443777381259b15878b3044a7ef7a5b4926d103eb4cb4a4d90e44c48c7b29a",
+    "bytes": 35906199,
+    "sha256": "e5942b154ef30a34aba0ed9a7a9163563068efd8b7cf9ed7fe3732336ec6053e",
     "offline": true
   },
   "incompleteClips": {},

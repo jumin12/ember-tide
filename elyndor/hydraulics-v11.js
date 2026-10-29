@@ -22,5 +22,5 @@ updateWorldFX=function(dt){
   for(let row=0;row<=32;row++){const t=row/32,y=(join.bottom-head)*t*t*(3-2*t),normal=V3(0,1,-(join.bottom-head)*6*t*(1-t)/(join.halfSpan*2)).normalize();for(let col=0;col<13;col++){const i=row*13+col;p.setY(i,y);n.setXYZ(i,normal.x,normal.y,normal.z);}}
   p.needsUpdate=n.needsUpdate=true;g.computeBoundingBox();g.computeBoundingSphere();fall.userData.joinBounds.copy(g.boundingBox).translate(fall.position);
  }
- if(state.flags.gate_open&&brookHydraulics.flow.value>.1&&clock-lastSluiceMist>.12&&Math.hypot(player.x-fall.position.x,player.z-70)<45){lastSluiceMist=clock;emitParticles('smoke',V3(fall.position.x+(Math.random()-.5)*5,4.8,70.7),'#b9d9dc',1,.35,{size:.3,endSize:1.1,speed:.28,gravity:-.12,duration:.85});}
+ // The sluice uses its own water spray; combat smoke is never emitted here.
 };

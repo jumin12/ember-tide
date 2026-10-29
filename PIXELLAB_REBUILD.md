@@ -23,3 +23,6 @@ V18 modules: atlas-data-v18.js, relief-data-v18.js, atlas-v18.js, lesson-v18.js,
 V19 adds ground-v19.js, current-v19.js, title-v19.js and title-v19.css. The title director freezes legacy Brookstead-only cycling, chooses from a shuffled POI bag, and hides party/story-cast meshes without changing saved membership. Save deletion removes only the chosen manual slot’s current and legacy keys. The 27-check suite includes the new title/record/stair/current interaction audit and the existing coached-battle regression.
 
 River trails use a static instanced seed buffer with GPU vertex advection. Loading warms the hidden current and sluice spray, avoiding first-release shader compilation and per-frame terrain sampling.
+
+
+V20 adds water-v20.js and updates the stair, current and legacy sluice modules. The regression includes 2,844 bidirectional stair-edge samples, eight actual keyboard crossings with the follower, and gate-release views at 0, 1, 3, 6, 12, 24 and 60 seconds. Samples inside the visible forge retain its structural collision. Changelog provenance uses the last successful GitHub Pages deployment before 2026-10-28 10:00 America/New_York (1a62326).
