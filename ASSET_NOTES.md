@@ -54,3 +54,5 @@ No character frames, portraits, voices or recordings were regenerated. Sluice ca
 Terrain replacements update all owned LOD references, and scene teardown releases instance buffers. Repeated traversal and combat checks verify stable retained geometry counts.
 
 V27 interface art: eight native PixelLab Pro images in interface-v27; 448×600 Bren/Soren menu portraits use crops of the user-supplied equipment concept. Six 192×192 icons depict charm, shield, slash, rally, bronze blade and forest blade. No earlier generated images were used as generation references. Existing NPC, party animation and voice assets are retained.
+
+V28 material art: twenty selected native PixelLab assets in materials-v28/provenance.json: ten 512x512 albedos (nine surfaces plus waterfall detail), nine matching 512x512 normal maps and one transparent 192x192 parchment Map icon. Prompts describe a coherent woodland village material palette; no earlier generated artwork was submitted as a reference. Native source pixels are embedded without enlargement. Character animations, portraits and audio remain the approved existing assets.

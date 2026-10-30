@@ -37,7 +37,8 @@ const sceneNature=buildNature;
 buildNature=function(){sceneNature();if(activeScene?.kind!=='poi'||world.userData.localMeadow)return;const[a,b,c,d]=activeScene.bounds,random=seeded(48531+a*13+c);for(let i=0;i<5500;i++){const x=mix(a,b,random()),z=mix(c,d,random());if(roadDistance(x,z)<3.65||waterGround(x,z)||!staticFree(x,z,.18))continue;plant(x,z,.45+random()*.45,i%13===0?'flower':i%17===0?'fern':'grassBlades');}};
 function trimPoiWorld(){
  const bounds=new THREE.Box3(V3(activeScene.bounds[0]-24,-100,activeScene.bounds[2]-24),V3(activeScene.bounds[1]+24,200,activeScene.bounds[3]+24));world.updateMatrixWorld(true);const remove=[];
- world.traverse(o=>{if(!o.isMesh||o.userData.dynamicWater||o.userData.dynamicFX||o.isInstancedMesh||o.userData.terrain)return;const box=new THREE.Box3().setFromObject(o);if(!box.intersectsBox(bounds))remove.push(o);});
+ const characterMeshes=new Set(actors.flatMap(a=>[a.mesh,a.shadow]));
+ world.traverse(o=>{if(!o.isMesh||characterMeshes.has(o)||o.userData.dynamicWater||o.userData.dynamicFX||o.isInstancedMesh||o.userData.terrain)return;const box=new THREE.Box3().setFromObject(o);if(!box.intersectsBox(bounds))remove.push(o);});
  for(const o of remove){o.removeFromParent();sceneStats.removedMeshes++;}
  colliders=colliders.filter(c=>inSceneBounds(c.x,c.z,Math.max(c.w,c.d)+5));
  const outsiders=actors.filter(a=>!a.party&&!inSceneBounds(a.x,a.z));for(const a of outsiders){a.mesh.removeFromParent();a.shadow.removeFromParent();a.mesh.geometry.dispose();a.mesh.material.map.dispose();a.mesh.material.dispose();a.shadow.geometry.dispose();a.shadow.material.dispose();}actors=actors.filter(a=>!outsiders.includes(a));npcs=npcs.filter(a=>actors.includes(a));interactables=interactables.filter(o=>inSceneBounds(o.x,o.z)&&(!o.actor||actors.includes(o.actor))&&(POIS[activeScene.key].kind==='clearing'?o.type==='elderLight'&&o.site+'Clearing'===activeScene.key:o.type!=='elderLight'));

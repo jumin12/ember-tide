@@ -1,7 +1,7 @@
 """Build the actual standalone game exclusively from curated new PixelLab art."""
 from pathlib import Path
 from PIL import Image
-import json,hashlib,base64,io,sys,importlib.util
+import json,hashlib,base64,io,sys,importlib.util,time
 ROOT=Path(__file__).resolve().parents[2];SRC=ROOT/'elyndor/assets/source/pixellab-v7'
 OUT=ROOT/'elyndor/assets/packed';OUT.mkdir(parents=True,exist_ok=True)
 FINAL='--final' in sys.argv
@@ -45,8 +45,8 @@ def main():
   'GAME':'\n'.join(read(n) for n in ['game.js','movement.js','combat.js']),'UI':read('ui.js'),
   'OPEN_WORLD':read('open-world.js'),
   'POLISH':'\n'.join(read(n) for n in ['polish.js','scenery.js','render-v4.js','review-v5.js','visual-v7.js','town-v8.js','town-events.js','world-design.js','party-v11.js','effects-v11.js','combat-v11.js','placement-v11.js','visibility-v11.js','hydraulics-v11.js','loading-v11.js','journey-v12.js','interiors-v12.js','battle-v12.js','weather-v12.js','voices-v12.js','level-layout-v13.js','experience-v13.js','audio-v13.js','environment-v13.js','battle-v13.js','performance-v13.js','overworld-v13.js','materials-v14.js','presentation-v14.js','atlas-v14.js','loading-v14.js','arena-v14.js'])}
- parts['POLISH']+='\n'+'\n'.join(read(n)for n in ['relief-data-v15.js','geography-v15.js','settlements-v15.js','travel-v15.js','combat-input-v15.js','weather-v15.js','clearance-v15.js','audio-v15.js','casting-v15.js','overworld-v16.js','onboarding-v16.js','requests-v16.js','surfaces-v17.js','river-v17.js','weather-v17.js','battle-v17.js','tutorial-v17.js','geography-v17.js','atlas-data-v18.js','relief-data-v18.js','atlas-v18.js','lesson-v18.js','hydraulics-v18.js','world-v18.js','visibility-v18.js','ground-v19.js','current-v19.js','title-v19.js','water-v20.js','performance-v21.js','speech-v21.js','visibility-v21.js','clouds-v21.js','combat-v21.js','services-v22.js','cinematic-v22.js','clarity-v23.js','navigation-v23.js','architecture-v24.js','districts-v24.js','atmosphere-v24.js','interface-v24.js','presentation-v25.js','world-v26.js','title-v26.js','distance-v26.js','landscape-v26.js','menus-v26.js','world-v27.js','districts-v27.js','combat-v27.js','menus-v27.js'])
- parts['STYLE']+='\n'+read('experience-v15.css')+'\n'+read('experience-v16.css')+'\n'+read('experience-v17.css')+'\n'+read('experience-v18.css')+'\n'+read('title-v19.css')+'\n'+read('interface-v24.css')+'\n'+read('responsive-v25.css')+'\n'+read('title-v26.css')+'\n'+read('menus-v26.css')+'\n'+read('menus-v27.css')
+ parts['POLISH']+='\n'+'\n'.join(read(n)for n in ['relief-data-v15.js','geography-v15.js','settlements-v15.js','travel-v15.js','combat-input-v15.js','weather-v15.js','clearance-v15.js','audio-v15.js','casting-v15.js','overworld-v16.js','onboarding-v16.js','requests-v16.js','surfaces-v17.js','river-v17.js','weather-v17.js','battle-v17.js','tutorial-v17.js','geography-v17.js','atlas-data-v18.js','relief-data-v18.js','atlas-v18.js','lesson-v18.js','hydraulics-v18.js','world-v18.js','visibility-v18.js','ground-v19.js','current-v19.js','title-v19.js','water-v20.js','performance-v21.js','speech-v21.js','visibility-v21.js','clouds-v21.js','combat-v21.js','services-v22.js','cinematic-v22.js','clarity-v23.js','navigation-v23.js','architecture-v24.js','districts-v24.js','atmosphere-v24.js','interface-v24.js','presentation-v25.js','world-v26.js','title-v26.js','distance-v26.js','landscape-v26.js','menus-v26.js','world-v27.js','districts-v27.js','combat-v27.js','menus-v27.js','runtime-v28.js','materials-v28.js','water-v28.js','atmosphere-v28.js'])
+ parts['STYLE']+='\n'+read('experience-v15.css')+'\n'+read('experience-v16.css')+'\n'+read('experience-v17.css')+'\n'+read('experience-v18.css')+'\n'+read('title-v19.css')+'\n'+read('interface-v24.css')+'\n'+read('responsive-v25.css')+'\n'+read('title-v26.css')+'\n'+read('menus-v26.css')+'\n'+read('menus-v27.css')+'\n'+read('interface-v28.css')
  shots=manifest.get('loadingScreens',{})
  if FINAL and not shots:raise ValueError('An actual in-game river loading screenshot is required')
  for q in shots.values():
@@ -59,7 +59,14 @@ def main():
  for key,value in parts.items():src=src.replace('/*__'+key+'__*/',value)
  if '/*__' in src:raise ValueError('Unresolved standalone build markers')
  name='index.html' if FINAL or DRAFT else 'elyndor.preview.html';out=ROOT/name;temp=out.with_suffix('.build.html')
- temp.write_text(src,encoding='utf-8',newline='\n');temp.replace(out)
+ temp.write_text(src,encoding='utf-8',newline='\n')
+ # Antivirus/indexers can hold a just-read large HTML file briefly on Windows.
+ # Preserve atomic replacement and retry only that transient sharing failure.
+ for attempt in range(12):
+  try:temp.replace(out);break
+  except PermissionError:
+   if attempt==11:raise
+   time.sleep(.2)
  (OUT/'assets.cache.json').write_text(json.dumps(assets,separators=(',',':')),encoding='utf-8')
  (OUT/'audit.json').write_text(json.dumps({'poses':audit,'sourceBoundaryWarnings':warnings,'spriteCount':len(assets['sprites'])},indent=2))
  print(json.dumps({'file':name,'bytes':out.stat().st_size,'artRevision':assets['artRevision'],'families':len(assets['sprites']),'nativePoses':len(audit),'missingClips':len(assets['pixelLabAudit']['incompleteClips'])}))

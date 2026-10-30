@@ -1,16 +1,16 @@
 {
-  "status": "Alpha Version 1.3: stable sluice, larger graded POI roads, illustrated gear menus, glowing silhouette targeting and batched foliage",
+  "status": "Alpha Version 1.4: party travel, responsive rendering, native surface detail and atmosphere",
   "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
   "characterFamilies": 41,
   "runtimeFamilies": 42,
   "nativeSelectedPoses": 4878,
   "portraits": 38,
   "dedicatedHudPortraits": 5,
-  "worldImages": 87,
+  "worldImages": 97,
   "artifact": {
     "file": "index.html",
-    "bytes": 40881092,
-    "sha256": "a932b6054ad1a3bc969b7f0718b1613b34ab31c0e85cbf4aabe272c623ffe10e",
+    "bytes": 42165491,
+    "sha256": "c2d30b10d5eceb78c91024aea3a84fdead4035675e800aa3f29e7b6317eba7f3",
     "offline": true
   },
   "incompleteClips": {},

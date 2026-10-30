@@ -1,5 +1,14 @@
 # The Last Light of Elyndor
 
+## Alpha Version 1.4 — Surfaces, atmosphere and reliable travel
+
+Fast travel preserves every live party mesh, including followers that were incorrectly detached by the scenery trimmer. The Map button uses a clear native PixelLab parchment icon and an opaque hover/focus plate. Rendering now presents once per browser animation frame, resizes buffers only when their dimensions change, and sizes reflection and shadow buffers to laptop and phone viewports.
+
+Ten new native 512×512 PixelLab material images and nine matching normal maps support physically based masonry, plaster, timber, slate, rock, ground and water. Instanced crowns have folded leaf fans; path shoulders have flower clusters. Water adds depth colour, downstream surface normals, broken reflections, textured cascades and mist. Warm directional light, cool sky fill, moving cloud shade, 600 world-space dust particles and controlled depth focus shape the atmosphere. This update retains the existing scene layouts and camera framing. It does not claim visual parity with the supplied concept illustration.
+
+Validation and device-scoped frame/resource measurements are recorded in release.json. Responsive checks include high-DPI laptop, phone portrait and phone landscape sizes, repeated five-member fast travel, and real camera draw checks for every member.
+
+
 ## Alpha Version 1.2
 
 ### The riverlands, in motion
@@ -77,3 +86,4 @@ The sluice frame stays with its gate across batching and camera passes. Outdoor 
 Ground cover now uses 32-metre spatial batches with the same authored plant instances, per-instance combat visibility, building ownership and wind. Run `python elyndor/tools/verify-v27.py` for the current sequential regression and native-renderer checks.
 
 Whole-building cutaways use each house’s main footprint through its roof peak in every settlement. Roofs that cover the party clear correctly, while awnings and other projecting ornaments retain their separate treatment.
+

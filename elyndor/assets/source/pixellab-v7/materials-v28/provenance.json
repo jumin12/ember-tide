@@ -1,0 +1,140 @@
+[
+  {
+    "key": "cobble",
+    "kind": "albedo",
+    "job": "b91a3fa4-51fc-465e-b4a4-a9afb6069dff",
+    "file": "elyndor/assets/source/pixellab-v7/materials-v28/cobble.png",
+    "sha256": "61b141c9c9a3e606bfb89061e8f53d7afa3b2d9cd8ab5a689b432f57759d26dd"
+  },
+  {
+    "key": "cobble",
+    "kind": "normal",
+    "job": "af84f1d8-142a-40bf-8180-1e18dffab1a5",
+    "file": "elyndor/assets/source/pixellab-v7/materials-v28/cobble-normal.png",
+    "sha256": "615c67c5368243f32ab6198e281453354dc290db0f034056e26d524df2e21aab"
+  },
+  {
+    "key": "plaster",
+    "kind": "albedo",
+    "job": "0c384955-e8f9-45e2-a836-3434ac834c12",
+    "file": "elyndor/assets/source/pixellab-v7/materials-v28/plaster.png",
+    "sha256": "4e93bacb0e6ef18c895703d1e3becd7d63b639155f5a0d5e568a688dd65ba948"
+  },
+  {
+    "key": "plaster",
+    "kind": "normal",
+    "job": "b714af48-c52e-4484-aa6f-1ca8fa08d149",
+    "file": "elyndor/assets/source/pixellab-v7/materials-v28/plaster-normal.png",
+    "sha256": "6f235207f6f454c552a40e892787403f5bdc3501834d7013d83a9c3398eb1c4b"
+  },
+  {
+    "key": "slate",
+    "kind": "albedo",
+    "job": "1bbf8f9a-2383-4f60-bdbc-df751117134d",
+    "file": "elyndor/assets/source/pixellab-v7/materials-v28/slate.png",
+    "sha256": "b0f7869d15100f84abf008a9803a6a6c3486666356e285aba9954dd0475bf6de"
+  },
+  {
+    "key": "slate",
+    "kind": "normal",
+    "job": "7dac7443-b03f-46a3-94ee-2e43763ffe9e",
+    "file": "elyndor/assets/source/pixellab-v7/materials-v28/slate-normal.png",
+    "sha256": "3796920130989ffab0e59bc4a3b5ad0a16b554a69cdb2bd4c175716432383039"
+  },
+  {
+    "key": "wood",
+    "kind": "albedo",
+    "job": "e99b511f-4b93-4a7c-ae5b-221eae6ad807",
+    "file": "elyndor/assets/source/pixellab-v7/materials-v28/wood.png",
+    "sha256": "5a47c772af690cc2cc0dec75f712c5fe33bd749b387b2f5a8836e65203df44cf"
+  },
+  {
+    "key": "wood",
+    "kind": "normal",
+    "job": "5613a462-b615-4a80-a603-0c941e93861d",
+    "file": "elyndor/assets/source/pixellab-v7/materials-v28/wood-normal.png",
+    "sha256": "0f1ae9ef59771f1eabf48bfb398504efd9bc4f2230d3aa56a79d7e0a311bec0f"
+  },
+  {
+    "key": "rock",
+    "kind": "albedo",
+    "job": "ad264a47-1482-4b1f-924b-9a3c2fa3fa34",
+    "file": "elyndor/assets/source/pixellab-v7/materials-v28/rock.png",
+    "sha256": "10dcf617044ba5500a36310de970c5990da8d9594059b634d74ef5da8514a57b"
+  },
+  {
+    "key": "rock",
+    "kind": "normal",
+    "job": "bc8b4138-7f65-4309-ac96-eb9423826730",
+    "file": "elyndor/assets/source/pixellab-v7/materials-v28/rock-normal.png",
+    "sha256": "dec1608c109f8aa05bf5dff28c3c5c3c0e72802347b9dbb8036226aad5570b99"
+  },
+  {
+    "key": "oakCanopy",
+    "kind": "albedo",
+    "job": "ebb0af5c-95f4-4224-a427-7a7e0adb8ce4",
+    "file": "elyndor/assets/source/pixellab-v7/materials-v28/oakCanopy.png",
+    "sha256": "c960e27aa769fba10f460623e17d9a794b723e2b871fa6bfbde0f3766d4dfd0a"
+  },
+  {
+    "key": "oakCanopy",
+    "kind": "normal",
+    "job": "96beece8-44d8-4936-9ba6-5be27a6840b4",
+    "file": "elyndor/assets/source/pixellab-v7/materials-v28/oakCanopy-normal.png",
+    "sha256": "cab1ea3a9de859b5b04ec66fbc503bb534cf056abd2cdada02030b79b95045af"
+  },
+  {
+    "key": "grass",
+    "kind": "albedo",
+    "job": "1b6e91c7-9c69-4d7c-a14f-c1499a30c8ab",
+    "file": "elyndor/assets/source/pixellab-v7/materials-v28/grass.png",
+    "sha256": "6138c2740d232438286f3f3ce32119f87fc84493389f440535d661f174976e80"
+  },
+  {
+    "key": "grass",
+    "kind": "normal",
+    "job": "c8ae6efd-4a42-4cb0-82ab-4f2b2b497e1a",
+    "file": "elyndor/assets/source/pixellab-v7/materials-v28/grass-normal.png",
+    "sha256": "0f60f0e74486818c13c56599eeb965486f2a0819c2b22609dc71f3886972bd5d"
+  },
+  {
+    "key": "earth",
+    "kind": "albedo",
+    "job": "e49b9022-7668-407b-ad86-7664a0a0c82c",
+    "file": "elyndor/assets/source/pixellab-v7/materials-v28/earth.png",
+    "sha256": "e9c499da11a2ca18b4b81a8f7a2a3915de569c85713d8d4c4d0990148d16ac94"
+  },
+  {
+    "key": "earth",
+    "kind": "normal",
+    "job": "1c10bd76-f9a1-4540-8db4-8677f32809be",
+    "file": "elyndor/assets/source/pixellab-v7/materials-v28/earth-normal.png",
+    "sha256": "b21e8d7c15cdeb4ff29bf1c0b87c4f26a5ca56b8dc3f9c2a550b9a4105f03b33"
+  },
+  {
+    "key": "wall",
+    "kind": "albedo",
+    "job": "f51783ad-1751-4199-91fe-9a55f5f96fc8",
+    "file": "elyndor/assets/source/pixellab-v7/materials-v28/wall.png",
+    "sha256": "8612dc06fac82e26266db3d47f17a8458b0beba0e6bd67b7a449e639ccd8032c"
+  },
+  {
+    "key": "wall",
+    "kind": "normal",
+    "job": "bd4725e4-1d1b-433f-a2f7-bb8d45386b0f",
+    "file": "elyndor/assets/source/pixellab-v7/materials-v28/wall-normal.png",
+    "sha256": "ab7503f274a46a2aaf8ee96d29e3d10c9cc4992db623465303ed8b31fd3c6d3f"
+  },
+  {
+    "key": "map-icon",
+    "job": "1a7cdc7c-e59a-4d62-948c-3d758bbadef6",
+    "file": "elyndor/assets/source/pixellab-v7/materials-v28/map-icon.png",
+    "sha256": "58f65bcf40be39a63ace7c8c5effc1c326666f0e28b9102e65a0b1d5383371e0"
+  },
+  {
+    "key": "fall28",
+    "job": "0fda5b24-277f-4dcc-b31b-7f544b4db097",
+    "file": "elyndor/assets/source/pixellab-v7/materials-v28/fall28.png",
+    "sha256": "af4db9c68f56cc594223d763e658e739a6f4833f97642e72ebcd72b5e15e81c3"
+  }
+]
