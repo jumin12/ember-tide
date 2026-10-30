@@ -1,16 +1,16 @@
 {
-  "status": "Alpha Version 1.1: real character shadows, dimensional cloud atmosphere, grounded rain and responsive interface",
+  "status": "Alpha Version 1.2: live riverlands title, matching loading still, stable sluice masonry, complete stair rails and persistent world atmosphere",
   "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
   "characterFamilies": 41,
   "runtimeFamilies": 42,
   "nativeSelectedPoses": 4878,
   "portraits": 38,
   "dedicatedHudPortraits": 5,
-  "worldImages": 68,
+  "worldImages": 79,
   "artifact": {
     "file": "index.html",
-    "bytes": 34297123,
-    "sha256": "5d18ff61bf8f6bcdff423b2cf8e748b3d45003b251f6d656b7d2db94574091a0",
+    "bytes": 40714032,
+    "sha256": "e1cafafa6ba7ccdb37dccef8a48d2aeffdd956bb9f31c7478cfc82fcc8fedfe9",
     "offline": true
   },
   "incompleteClips": {},

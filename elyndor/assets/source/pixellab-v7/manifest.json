@@ -306,7 +306,7 @@
     "bark": "elyndor/assets/source/pixellab-v7/images/v15-bark.png",
     "cloth": "elyndor/assets/source/pixellab-v7/images/v15-cloth.png",
     "metal": "elyndor/assets/source/pixellab-v7/images/v15-metal.png",
-    "oakCanopy": "elyndor/assets/source/pixellab-v7/materials-v24/oakCanopy.png",
+    "oakCanopy": "elyndor/assets/source/pixellab-v7/presentation-v26/canopy.png",
     "pineCanopy": "elyndor/assets/source/pixellab-v7/images/v15-pineCanopy.png",
     "lightFacets": "elyndor/assets/source/pixellab-v7/images/v15-lightFacets.png",
     "door": "elyndor/assets/source/pixellab-v7/images/v15-door.png",
@@ -323,11 +323,11 @@
     "grassBlades": "elyndor/assets/source/pixellab-v7/images/v15-grassBlades.png",
     "shrub": "elyndor/assets/source/pixellab-v7/images/v15-shrub.png",
     "uiFrame": "elyndor/assets/source/pixellab-v7/images/ui-frame/000.png",
-    "icon_herb": "elyndor/assets/source/pixellab-v7/images/icon-herb/000.png",
-    "icon_ether": "elyndor/assets/source/pixellab-v7/images/icon-ether/000.png",
-    "icon_revive": "elyndor/assets/source/pixellab-v7/images/icon-revive/000.png",
-    "icon_blade": "elyndor/assets/source/pixellab-v7/images/icon-blade/000.png",
-    "icon_coat": "elyndor/assets/source/pixellab-v7/images/icon-coat/000.png",
+    "icon_herb": "elyndor/assets/source/pixellab-v7/interface-v26/icon-herb.png",
+    "icon_ether": "elyndor/assets/source/pixellab-v7/interface-v26/icon-ether.png",
+    "icon_revive": "elyndor/assets/source/pixellab-v7/interface-v26/icon-revive.png",
+    "icon_blade": "elyndor/assets/source/pixellab-v7/interface-v26/icon-blade.png",
+    "icon_coat": "elyndor/assets/source/pixellab-v7/interface-v26/icon-coat.png",
     "icon_report": "elyndor/assets/source/pixellab-v7/images/icon-report/000.png",
     "icon_notes": "elyndor/assets/source/pixellab-v7/images/icon-notes/000.png",
     "icon_component": "elyndor/assets/source/pixellab-v7/images/icon-component/000.png",
@@ -361,7 +361,18 @@
     "ui24_map": "elyndor/assets/source/pixellab-v7/interface-v24/map.png",
     "ui24_inventory": "elyndor/assets/source/pixellab-v7/interface-v24/inventory.png",
     "ui24_party": "elyndor/assets/source/pixellab-v7/interface-v24/party.png",
-    "ui24_journal": "elyndor/assets/source/pixellab-v7/interface-v24/journal.png"
+    "ui24_journal": "elyndor/assets/source/pixellab-v7/interface-v24/journal.png",
+    "ui26_crystal": "elyndor/assets/source/pixellab-v7/presentation-v26/crystal.png",
+    "ui26_button": "elyndor/assets/source/pixellab-v7/interface-v26/button.png",
+    "ui26_backdrop": "elyndor/assets/source/pixellab-v7/interface-v26/backdrop.png",
+    "ui26_compass": "elyndor/assets/source/pixellab-v7/interface-v26/compass.png",
+    "ui26_logo": "elyndor/assets/source/pixellab-v7/interface-v26/logo.png",
+    "ui26_frame": "elyndor/assets/source/pixellab-v7/interface-v26/frame.png",
+    "ui26_nav_map": "elyndor/assets/source/pixellab-v7/interface-v26/icon-map.png",
+    "ui26_nav_journal": "elyndor/assets/source/pixellab-v7/interface-v26/icon-journal.png",
+    "ui26_nav_inventory": "elyndor/assets/source/pixellab-v7/interface-v26/icon-inventory.png",
+    "ui26_nav_party": "elyndor/assets/source/pixellab-v7/interface-v26/icon-party.png",
+    "ui26_nav_equipment": "elyndor/assets/source/pixellab-v7/interface-v26/icon-equipment.png"
   },
   "materialKeys": [
     "cobble",
@@ -455,33 +466,10 @@
     "lysa": "elyndor/assets/source/pixellab-v7/images/hud-lysa-v10/002.png"
   },
   "loadingScreens": {
-    "bren": {
-      "file": "elyndor/assets/source/pixellab-v7/loading/v14-bren.webp",
-      "name": "Bren — A friend before a hero",
-      "illustration": true,
-      "provider": "PixelLab",
-      "reference": "Approved Google Drive concepts"
-    },
-    "soren": {
-      "file": "elyndor/assets/source/pixellab-v7/loading/v14-soren.webp",
-      "name": "Soren — Questions worth crossing a world for",
-      "illustration": true,
-      "provider": "PixelLab",
-      "reference": "Approved Google Drive concepts"
-    },
-    "inn": {
-      "file": "elyndor/assets/source/pixellab-v7/loading/v14-inn.webp",
-      "name": "A light in the window",
-      "illustration": true,
-      "provider": "PixelLab",
-      "reference": "Approved Google Drive concepts"
-    },
-    "light": {
-      "file": "elyndor/assets/source/pixellab-v7/loading/v14-light.webp",
-      "name": "The Elder Lights",
-      "illustration": true,
-      "provider": "PixelLab",
-      "reference": "Approved Google Drive concepts"
+    "river": {
+      "file": "elyndor/assets/source/pixellab-v7/presentation-v26/river-still.webp",
+      "name": "Brookstead · The riverlands",
+      "provenance": "Still captured from the live in-game title camera, with no interface or party."
     }
   },
   "textureRevision": "pixellab-v15"

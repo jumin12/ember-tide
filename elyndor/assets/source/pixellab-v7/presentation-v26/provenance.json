@@ -1,0 +1,28 @@
+{
+  "provider": "PixelLab",
+  "model": "pro",
+  "referencePolicy": "Only the user supplied screen1.png and screen2.png concepts were provided as references. No older generated artwork was supplied.",
+  "assets": [
+    {
+      "file": "canopy.png",
+      "size": [
+        256,
+        256
+      ],
+      "sha256": "8e5606440520614b6dcc71840c25b130d6faf3e462c7bc602911ae9fa997fcec"
+    },
+    {
+      "file": "crystal.png",
+      "size": [
+        256,
+        256
+      ],
+      "sha256": "6ba694aabb94f0a66bebaa89aa41e172a18a6962134599e814b30c5f1fa65ddd"
+    }
+  ],
+  "use": {
+    "crystal": "Original transparent Elder Light title/loading emblem",
+    "canopy": "Native oak surface on dimensional, wind-reactive crowns"
+  },
+  "backgroundPolicy": "Only textured 3D terrain and trees; the rejected panorama images are not embedded."
+}

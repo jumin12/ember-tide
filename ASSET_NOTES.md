@@ -41,3 +41,14 @@ V23 preserves the approved PixelLab source pixels and native sprite padding. Wor
 V24 uses the configured PixelLab MCP server for six original gold/ink HUD assets and four selected world materials. Only the user-provided atmo2 concept and cropped material details from that same image were uploaded as references. No earlier generated artwork was supplied as a generation reference. Native RGBA and surface images remain in interface-v24 and materials-v24; public provenance records identify selected jobs and candidates. Technical preparation trims transparent panel padding and excludes the compressed perspective rows at the top of the slate texture, without repainting or enlarging source pixels. Rejected generations and temporary upload endpoints remain outside the public selection. The cast, portraits and all 4,878 selected native poses are unchanged in this pass.
 
 V25 / Alpha Version 1.1 preserves all approved PixelLab sprite, portrait and world pixels and the selected ElevenLabs catalogue. Real sprite shadow-map casting, cloud-volume integration, material-specific wetness, ground-conforming puddles, dynamic sluice visibility, camera and responsive UI changes are code and shader work. No new art generation, reference upload or credential access was required.
+
+
+## V26 — Riverlands and interface
+
+PixelLab Pro generated a new oak canopy, a gold crystal study, a fine menu frame, a selected-button panel, a navy forest-and-castle menu illustration, a compass, navigation glyphs and inventory icons. References are the user-supplied menu/loading concepts and latest interface mockups only; earlier generated artwork was never uploaded as a reference. The rejected painted world panoramas and the first checkerboard-framed UI candidate remain outside the selected public assets. Public provenance identifies the selected provider jobs.
+
+The exact user-supplied high-resolution transparent crystal wordmark is retained so its lettering remains accurate. Menu labels, numbers, tabs, tooltips, controls, comparisons and quest state are live HTML. The navy PixelLab illustration appears behind menus only. Outdoor backgrounds use the foreground's actual terrain material, house meshes and native multi-cluster foliage, with continuous 3D terrain and upstream water. The loading image is an actual native 1920×1080 capture from the live title scene.
+
+No character frames, portraits, voices or recordings were regenerated. Sluice caps and abutments are separated physically; complete fitted rails follow the real stair heights. Puddles, clouds, world shafts and particles share the live lighting and bounded buffers.
+
+Terrain replacements update all owned LOD references, and scene teardown releases instance buffers. Repeated traversal and combat checks verify stable retained geometry counts.

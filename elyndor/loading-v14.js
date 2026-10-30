@@ -7,6 +7,7 @@ const LOADING_LORE=[
 ];
 let loadingLoreIndex=0;
 function setLoadingLore(id=null){
+ if(!$('#loading-lore-tag'))return;
  const key=id&&INTERIORS[id]?.type==='inn'?'inn':id&&INTERIORS[id]?'soren':id&&['depths','alderRemnant','nearbySite'].includes(id)?'light':LOADING_LORE[(loadingLoreIndex++)%LOADING_LORE.length].key,q=LOADING_LORE.find(q=>q.key===key),screen=$('#load-screen');screen.dataset.lore=key;$('#loading-lore-tag').textContent=q.tag;$('#loading-lore-title').textContent=q.name;$('#loading-lore-subtitle').textContent=q.subtitle;$('#loading-lore-body').textContent=q.body;$('#loading-lore-tip').textContent=q.tip;for(const f of $$('.loading-scenery figure'))f.classList.toggle('lore-active',f.dataset.lore===key);
 }
 const loadBeforeLore=setJourneyLoading;

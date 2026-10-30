@@ -1,0 +1,109 @@
+{
+  "referenceSource": "Latest user-supplied UI mockups; no earlier generated artwork used as a generation reference.",
+  "assets": [
+    {
+      "file": "frame.png",
+      "provider": "PixelLab",
+      "model": "Pro",
+      "jobId": "5db810b4-9459-4393-ad3b-368828ed0215",
+      "sha256": "d4adad0ef23328238ad296f844bcc4e198b28a1a357b11b933775caa43c2474c"
+    },
+    {
+      "file": "button.png",
+      "provider": "PixelLab",
+      "model": "UI panel",
+      "jobId": "6f0ccbe8-78e6-41dc-8183-baa055f3bbff",
+      "sha256": "267c4602c712b674fb782d869e6a3d9ed0e425ade0d4fdbe1ddabb08a5e943c9"
+    },
+    {
+      "file": "backdrop.png",
+      "provider": "PixelLab",
+      "model": "Pro",
+      "jobId": "6533b6c3-7e68-4371-8374-2dcc7d3142f6",
+      "sha256": "f20e19741ff7b03c6783f4a577c10e58c68a622351cbe2a27316c2599d4cb032"
+    },
+    {
+      "file": "compass.png",
+      "provider": "PixelLab",
+      "model": "Pro",
+      "jobId": "17e842be-3b35-4d9f-94b6-19b0bee5a7b3",
+      "sha256": "3bee7b29928df5f52d211287cd1e4883f27bb9ef3962d0ed8f5e461ce3e5f3ba"
+    },
+    {
+      "file": "icon-herb.png",
+      "provider": "PixelLab",
+      "model": "Pro",
+      "jobId": "2a11b50b-91b6-47fe-85f2-1b182f0fe488",
+      "sha256": "b086fdbcd0af30faf924509228dc4d4c7142978e88a33198b1317b84c2c4c104"
+    },
+    {
+      "file": "icon-ether.png",
+      "provider": "PixelLab",
+      "model": "Pro",
+      "jobId": "4552f1ce-00c6-48dd-a8eb-ca6d90f94a28",
+      "sha256": "7ec7bfeccef6695dbab9fbf2aa8528a9838d741a876211b5405854eb22ce2db4"
+    },
+    {
+      "file": "icon-revive.png",
+      "provider": "PixelLab",
+      "model": "Pro",
+      "jobId": "f7295688-4338-44a1-84f5-d4c41632e9da",
+      "sha256": "21a40fc743788ca9be6b4e0459febe6bc0334b97641421870f3c59d2078336b5"
+    },
+    {
+      "file": "icon-blade.png",
+      "provider": "PixelLab",
+      "model": "Pro",
+      "jobId": "da899630-4bb5-4ccf-b565-ef0e92f2f083",
+      "sha256": "1a36cd4c1d948b28ff41d43ec7532a71950cb590fb79ccf96579a511c2eded0c"
+    },
+    {
+      "file": "icon-coat.png",
+      "provider": "PixelLab",
+      "model": "Pro",
+      "jobId": "774352cf-b987-4183-9902-0f8ac6a896b7",
+      "sha256": "4d9662bb937a915652d8e334821b816a923ffd9890376dcf68610f152e861313"
+    },
+    {
+      "file": "icon-map.png",
+      "provider": "PixelLab",
+      "model": "Pro",
+      "jobId": "a277557b-2d33-4543-adc7-dbb49b650ad0",
+      "sha256": "b4419be9db64c8b2bcdbdc6919939c6636d0763f260105d44f686cb6e17a4135"
+    },
+    {
+      "file": "icon-journal.png",
+      "provider": "PixelLab",
+      "model": "Pro",
+      "jobId": "2e8b20d3-17e7-4d31-8b8c-301baf6e564f",
+      "sha256": "e6e995dadb42b3d4f53d12508913e3fabb0a0d65489f5d6618cc782e5cfc7904"
+    },
+    {
+      "file": "icon-inventory.png",
+      "provider": "PixelLab",
+      "model": "Pro",
+      "jobId": "e7241c09-33e4-42e5-ba5c-a02c819a5bdf",
+      "sha256": "17a705d9bbe863d5e7646a1668e8a994697e5ead40d63b026c9d7968b02b802f"
+    },
+    {
+      "file": "icon-party.png",
+      "provider": "PixelLab",
+      "model": "Pro",
+      "jobId": "19ae078a-8174-43ef-bdf7-029056cba236",
+      "sha256": "34256dd2c5840ae15ada6ca92c52aa48c0e6d6e7cc5b1bc5cd450568dda6e4eb"
+    },
+    {
+      "file": "icon-equipment.png",
+      "provider": "PixelLab",
+      "model": "Pro",
+      "jobId": "e8654834-f266-4aec-8182-1d5fd2dd0aa9",
+      "sha256": "b8450c1ed4b51b91adadcfe211caae1b00250351467e1b227243bcc72b80bc02"
+    },
+    {
+      "file": "logo.png",
+      "provider": "User-supplied original",
+      "note": "Exact transparent high-resolution crystal wordmark preserved for accurate lettering.",
+      "sha256": "db26b33b1b755fbfbe6312583e0d26ae945559ea58f88cafc5ad61680d92fd12"
+    }
+  ]
+}

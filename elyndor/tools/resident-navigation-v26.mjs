@@ -1,0 +1,18 @@
+import {chromium} from 'playwright';import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {pathToFileURL} from 'node:url';
+const out='output/elyndor/pixellab-v26/resident-navigation';fs.mkdirSync(out,{recursive:true});const r={sha256:crypto.createHash('sha256').update(fs.readFileSync('index.html')).digest('hex')},errors=[];
+const b=await chromium.launch({headless:true,channel:'chrome',args:['--allow-file-access-from-files','--enable-webgl','--ignore-gpu-blocklist','--use-angle=d3d11']});const p=await b.newPage({viewport:{width:1920,height:1080}});p.setDefaultTimeout(180000);p.on('pageerror',e=>errors.push(e.stack));
+try{
+ await p.addInitScript(()=>localStorage.setItem('elyndor-settings-v3',JSON.stringify({voices:false,volume:0})));await p.goto(pathToFileURL(path.resolve('index.html')).href);await p.waitForFunction(()=>window.__ely);await p.click('#start-btn');await p.waitForFunction(()=>!gameLoading);
+ r.test=await p.evaluate(async()=>{
+  state.settings.voices=false;state.settings.volume=0;stopRecordedVoice(true);while(dialogue)nextDialogue();state.encounterDistance=-100000;state.worldMinutes=14*60;state.settings.weather='clear';setupParty([-133,120]);updateCamera(1,true);
+  // The destination itself is free but enclosed. This deliberately forces a
+  // failed search through thousands of nodes while normal residents continue.
+  const goal=safePoint({x:-62,z:89}),beforeColliders=colliders.length;
+  for(const [x,z,w,d]of [[goal.x-2,goal.z,.2,4.4],[goal.x+2,goal.z,.2,4.4],[goal.x,goal.z-2,4.4,.2],[goal.x,goal.z+2,4.4,.2]])colliders.push({x,z,w:w/2,d:d/2,type:'test enclosure'});
+  rebuildColliderGrid();const worker=npcs.find(a=>a.id==='worker'),fixture={x:worker.x,z:worker.z,mesh:{visible:true},workRoute:[goal],workIndex:0},job=requestResidentRoute23(fixture,goal,[]);
+  const baseTick=tick,baseRender=render,ticks=[],frames=[],renders=[];let last=0;
+  tick=function(...args){const start=performance.now();const result=baseTick(...args);ticks.push(performance.now()-start);return result;};render=function(...args){const start=performance.now();if(last)frames.push(start-last);last=start;const result=baseRender(...args);renders.push(performance.now()-start);return result;};manualUntil=0;const start=performance.now();await new Promise(r=>setTimeout(r,30000));const elapsed=performance.now()-start;manualUntil=performance.now()+3600000;tick=baseTick;render=baseRender;
+  colliders.length=beforeColliders;rebuildColliderGrid();const stats=a=>{a.sort((a,b)=>a-b);return{p95:a[Math.floor(a.length*.95)],p99:a[Math.floor(a.length*.99)],max:a.at(-1),mean:a.reduce((s,v)=>s+v,0)/a.length};};
+  return {fps:renders.length/elapsed*1000,tick:stats(ticks),render:stats(renders),frame:stats(frames),exhaustedSearch:{done:!!job.done,expansions:job.count,found:!!fixture.route?.length,destinationFree:staticFree(goal.x,goal.z,.5)},planner:{completed:navigation23.completed,failed:navigation23.failed,maxSliceMs:navigation23.maxSliceMs,pending:navigation23.jobs.length},residents:npcs.map(a=>({id:a.id,tasks:a.tasks,free:staticFree(a.x,a.z,.35)}))};
+ });r.errors=errors;r.pass=!errors.length&&r.test.exhaustedSearch.done&&!r.test.exhaustedSearch.found&&r.test.exhaustedSearch.expansions>1000&&r.test.exhaustedSearch.destinationFree&&r.test.planner.maxSliceMs<6&&r.test.fps>=59&&r.test.frame.p95<23&&r.test.residents.reduce((s,a)=>s+a.tasks,0)>5&&r.test.residents.every(a=>a.free);fs.writeFileSync(out+'/report.json',JSON.stringify(r,null,2));console.log(JSON.stringify(r));if(!r.pass)process.exitCode=1;
+}catch(e){r.failure=e.stack;r.errors=errors;fs.writeFileSync(out+'/report.json',JSON.stringify(r,null,2));console.error(e);process.exitCode=1;}finally{await b.close();}

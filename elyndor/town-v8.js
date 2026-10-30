@@ -197,7 +197,7 @@ function brookStairs(x,z,w,len,lo,hi){
   const o=box(x,(top+lo)/2-.03,zz,w,top-lo+.06,depth+.035,'cobble','#d9dccb');world.userData.walkSurfaces.push(o);
   box(x,top+.01,zz+depth*.43,w+.06,.06,.13,'wall','#edf0e5');
  }
- for(const s of[-1,1]){const xx=x+s*(w/2+.32);beam(V3(xx,lo+.9,z+len/2),V3(xx,hi+.9,z-len/2),.07,'wood','#c59b69');for(const dz of[-len/2,len/2])box(xx,heightAt(xx,z+dz)+.55,z+dz,.4,1.1,.4,'wall','#d9dccb');}
+
 }
 function brookFountain(){
  const {x,z,r}=BROOK.plaza,y=heightAt(x,z),g=new THREE.Group();g.position.set(x,y+.025,z);world.add(g);
@@ -279,8 +279,8 @@ buildGlobalWater=function(){
  const random=seeded(38211);
  for(let z=30;z<160;z+=1.45)for(const side of[-1,1]){
   const x=brookChannel(z)+side*(brookWidth(z)+.65),y=baseLand(x,z),level=brookWaterLevel(z),bridge=world.userData.bridges.some(b=>Math.abs(z-b.z)<b.width/2+.5&&Math.abs(x-b.x)<b.length/2);
-  if(!bridge){
-   if(z<98||z>113&&z<126){const top=Math.max(level+.5,y+.08);for(let row=0;row<(top-level+1.5)/.5;row++)box(x,level-1.25+row*.5,z,.85,.46,1.43,'wall',row%3?'#b6c0c4':'#a8b2a7');box(x,top,z,.96,.2,1.49,'wall','#d9dccb');obstacle(x,z,.8,1.45,'canal parapet');}
+  if(!bridge&&Math.abs(z-70)>1.65){
+   if(z<98||z>113&&z<126){const top=Math.max(level+.5,y+.08);for(let row=0;row<(top-level+1.5)/.5;row++)box(x,level-1.25+row*.5,z,.85,.46,1.43,'wall',row%3?'#b6c0c4':'#a8b2a7');box(x,top,z,.96,.2,1.43,'wall','#d9dccb');obstacle(x,z,.8,1.45,'canal parapet');}
    else for(let k=0;k<3;k++){const rx=x+side*(random()*.8-.2),rz=z+(random()-.5)*1.3;if(roadDistance(rx,rz)<3.5)continue;const s=.42+random()*.62,o=mesh(sharedGeo.brookBankRock??=new THREE.IcosahedronGeometry(1,1),material('rock','#c3c9b8'),rx,groundAt(rx,rz)+s*.12,rz);o.scale.set(s*.8,s*.65,s*1.2);o.rotation.set(random()*.3,random()*TAU,random()*.3);}
   }
   if(random()<.4&&!bridge){const rx=x+side*(.4+random()*.8),rz=z+random()*.5;if(roadDistance(rx,rz)>3){plant(rx,rz,.55+random()*.3,'fern');plant(rx+side*.3,rz+.4,.4,'flower');}}
