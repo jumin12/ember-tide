@@ -1,24 +1,26 @@
 {
-  "release": "elyndor-alpha-1.5-2026-10-30-v29",
-  "version": "Alpha Version 1.5",
+  "release": "elyndor-alpha-1.6-2026-10-30-v30",
+  "version": "Alpha Version 1.6",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 41629834,
-    "sha256": "23c6caa327de851a3e3784eb26cee2cbbb50f9eac0c17fe4475446849367ebf9",
+    "bytes": 42878879,
+    "sha256": "e28eb19abc12a10c926fc2582fc2034eff863eb5d19ad0ea667ecb29513c2933",
     "offline": true
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "243ecf085512788d05bf3c258424d58abb99e33b"
+    "previousRelease": "5adea0b7f9cb49152911c8891dc9f1565c1e1b18"
   },
   "changes": [
-    "Rebuilt all seven active interiors with a closer, front-facing camera pitched down 25 degrees, including responsive tracking on narrow screens.",
-    "Added four native PixelLab interior assets: chestnut wall panels, detailed hearth stone, a woven rug and framed riverland artwork. Stocked shelves, table settings, chairs, banners and plants bring the rooms to life.",
-    "Added an open, animated fireplace and warm pooled lighting that affects characters and furnishings. Counter heights keep hosts readable, with clear routes to services, exits and inn save seals.",
-    "Fixed the missing objective for A choice of restraint. Tavin now has a visible encounter seal and affected villagers at the gathering ground; the marker clears after victory.",
-    "Replaced the old loading still with four fresh 1080p captures of the actual village, inn, shop and archives. Loading artwork now follows the destination, with no interface baked into the images."
+    "Fixed trees failing to reveal the party: every foliage detail level now shares the same individual-tree cutaway mask, while real shadows and water reflections retain the complete tree.",
+    "Rebuilt the forest as branched 3D crowns of folded, transparent PixelLab leaf sprays. Oaks, birches, maples, willows, spruces and flowering trees vary in shape, height, colour and placement.",
+    "Added five flower forms, curved grass tufts, folded ferns and leafy shrubs, planted in stable roadside and garden clusters. Removed the black distant shrub geometry.",
+    "Integrated 17 native 512px PixelLab assets, including paving, mossy paving, slate, plaster and meadow textures with matching normal maps. Material scale makes individual stones and roof courses more readable.",
+    "Moved the sun to illuminate building fronts, balanced warm sunlight against cool fill, reduced pale haze and broad additive rays, and preserved fine detail through gentler focus and bloom.",
+    "Adjusted the exploration lens for a closer diorama view with a slight diagonal angle. Forest batching uses larger cells and shared detail levels; loading stills now show the current in-game artwork.",
+    "Optimized live water reflections with a cropped reflected view that draws only scenery sampled by visible water, preserving the full projective image and immediate updates. Inactive botanical detail levels are released during travel."
   ],
   "art": {
     "generator": "PixelLab",
@@ -68,8 +70,16 @@
     "embeddedCredential": false
   },
   "validation": {
-    "sha256": "23c6caa327de851a3e3784eb26cee2cbbb50f9eac0c17fe4475446849367ebf9",
+    "sha256": "e28eb19abc12a10c926fc2582fc2034eff863eb5d19ad0ea667ecb29513c2933",
     "checks": [
+      {
+        "name": "water-reflection-crop",
+        "pass": true
+      },
+      {
+        "name": "native-foliage-visibility",
+        "pass": true
+      },
       {
         "name": "interiors-and-restraint",
         "pass": true
@@ -147,8 +157,447 @@
         "pass": true
       }
     ],
+    "nativeWaterReflections": {
+      "sha256": "e28eb19abc12a10c926fc2582fc2034eff863eb5d19ad0ea667ecb29513c2933",
+      "views": [
+        {
+          "name": "closed-river",
+          "full": {
+            "calls": 851,
+            "triangles": 4619135,
+            "crop": null
+          },
+          "crop": {
+            "calls": 713,
+            "triangles": 4430843,
+            "crop": {
+              "x": 366,
+              "y": 178,
+              "width": 274,
+              "height": 96,
+              "w": 640,
+              "h": 360,
+              "area": 0.11416666666666667
+            }
+          }
+        },
+        {
+          "name": "closed-gate",
+          "full": {
+            "calls": 814,
+            "triangles": 4308224,
+            "crop": null
+          },
+          "crop": {
+            "calls": 658,
+            "triangles": 4030740,
+            "crop": {
+              "x": 464,
+              "y": 0,
+              "width": 176,
+              "height": 133,
+              "w": 640,
+              "h": 360,
+              "area": 0.10159722222222223
+            }
+          }
+        },
+        {
+          "name": "closed-bridge",
+          "full": {
+            "calls": 1049,
+            "triangles": 5379354,
+            "crop": null
+          },
+          "crop": {
+            "calls": 879,
+            "triangles": 5165720,
+            "crop": {
+              "x": 23,
+              "y": 0,
+              "width": 489,
+              "height": 191,
+              "w": 512,
+              "h": 320,
+              "area": 0.570062255859375
+            }
+          }
+        },
+        {
+          "name": "surge-river",
+          "full": {
+            "calls": 860,
+            "triangles": 4631225,
+            "crop": null
+          },
+          "crop": {
+            "calls": 689,
+            "triangles": 4356227,
+            "crop": {
+              "x": 318,
+              "y": 0,
+              "width": 322,
+              "height": 168,
+              "w": 640,
+              "h": 360,
+              "area": 0.23479166666666668
+            }
+          }
+        },
+        {
+          "name": "surge-gate",
+          "full": {
+            "calls": 832,
+            "triangles": 4305452,
+            "crop": null
+          },
+          "crop": {
+            "calls": 666,
+            "triangles": 4036556,
+            "crop": {
+              "x": 465,
+              "y": 0,
+              "width": 175,
+              "height": 135,
+              "w": 640,
+              "h": 360,
+              "area": 0.1025390625
+            }
+          }
+        },
+        {
+          "name": "surge-bridge",
+          "full": {
+            "calls": 1031,
+            "triangles": 5345928,
+            "crop": null
+          },
+          "crop": {
+            "calls": 858,
+            "triangles": 5120632,
+            "crop": {
+              "x": 435,
+              "y": 346,
+              "width": 186,
+              "height": 14,
+              "w": 640,
+              "h": 360,
+              "area": 0.011302083333333334
+            }
+          }
+        },
+        {
+          "name": "river",
+          "full": {
+            "calls": 863,
+            "triangles": 4598135,
+            "crop": null
+          },
+          "crop": {
+            "calls": 749,
+            "triangles": 4455857,
+            "crop": {
+              "x": 290,
+              "y": 281,
+              "width": 300,
+              "height": 79,
+              "w": 640,
+              "h": 360,
+              "area": 0.10286458333333333
+            }
+          }
+        },
+        {
+          "name": "gate",
+          "full": {
+            "calls": 833,
+            "triangles": 4305120,
+            "crop": null
+          },
+          "crop": {
+            "calls": 740,
+            "triangles": 4201012,
+            "crop": {
+              "x": 289,
+              "y": 147,
+              "width": 351,
+              "height": 213,
+              "w": 640,
+              "h": 360,
+              "area": 0.3244921875
+            }
+          }
+        },
+        {
+          "name": "bridge",
+          "full": {
+            "calls": 1070,
+            "triangles": 5347056,
+            "crop": null
+          },
+          "crop": {
+            "calls": 914,
+            "triangles": 5183088,
+            "crop": {
+              "x": 0,
+              "y": 0,
+              "width": 512,
+              "height": 212,
+              "w": 512,
+              "h": 320,
+              "area": 0.6625
+            }
+          }
+        }
+      ],
+      "performance": [
+        {
+          "width": 844,
+          "height": 390,
+          "enabled": false,
+          "fps": 99.57098673051979,
+          "p95": 11.700000002980232,
+          "calls": 1574.8396793587174
+        },
+        {
+          "width": 844,
+          "height": 390,
+          "enabled": true,
+          "fps": 134.76550801597188,
+          "p95": 9.400000005960464,
+          "calls": 1064.722962962963
+        },
+        {
+          "width": 1366,
+          "height": 768,
+          "enabled": false,
+          "fps": 141.98134872288213,
+          "p95": 8.200000002980232,
+          "calls": 1120.3895921237693
+        },
+        {
+          "width": 1366,
+          "height": 768,
+          "enabled": true,
+          "fps": 143.9453007855299,
+          "p95": 7.899999991059303,
+          "calls": 888.5236111111111
+        }
+      ],
+      "pixels": [
+        {
+          "view": "bridge",
+          "meanAbsoluteChannelDifference": 0,
+          "fractionAbove24": 0,
+          "pass": true
+        },
+        {
+          "view": "closed-bridge",
+          "meanAbsoluteChannelDifference": 1.059309465819897e-06,
+          "fractionAbove24": 0,
+          "pass": true
+        },
+        {
+          "view": "closed-gate",
+          "meanAbsoluteChannelDifference": 2.1186189316397937e-06,
+          "fractionAbove24": 0,
+          "pass": true
+        },
+        {
+          "view": "closed-river",
+          "meanAbsoluteChannelDifference": 0.1416610311403085,
+          "fractionAbove24": 0.0014491353492416192,
+          "pass": true
+        },
+        {
+          "view": "gate",
+          "meanAbsoluteChannelDifference": 3.813514076951629e-06,
+          "fractionAbove24": 0,
+          "pass": true
+        },
+        {
+          "view": "river",
+          "meanAbsoluteChannelDifference": 1.6948951453118353e-05,
+          "fractionAbove24": 0,
+          "pass": true
+        },
+        {
+          "view": "surge-bridge",
+          "meanAbsoluteChannelDifference": 2.1186189316397941e-07,
+          "fractionAbove24": 0,
+          "pass": true
+        },
+        {
+          "view": "surge-gate",
+          "meanAbsoluteChannelDifference": 4.2372378632795883e-07,
+          "fractionAbove24": 0,
+          "pass": true
+        },
+        {
+          "view": "surge-river",
+          "meanAbsoluteChannelDifference": 2.542342717967753e-06,
+          "fractionAbove24": 0,
+          "pass": true
+        }
+      ],
+      "errors": [],
+      "pass": true
+    },
+    "nativeFoliageVisibility": {
+      "sha256": "e28eb19abc12a10c926fc2582fc2034eff863eb5d19ad0ea667ecb29513c2933",
+      "proof": {
+        "cases": [
+          {
+            "tree": [
+              -130.821944234105,
+              102.61807490262325
+            ],
+            "species": 1,
+            "lods": [
+              {
+                "lod": 0,
+                "reference": 2216,
+                "cut": 2196,
+                "obstructed": 1434,
+                "ratio": 0.9909747292418772,
+                "hidden": 3
+              },
+              {
+                "lod": 1,
+                "reference": 2216,
+                "cut": 2196,
+                "obstructed": 1434,
+                "ratio": 0.9909747292418772,
+                "hidden": 3
+              },
+              {
+                "lod": 2,
+                "reference": 2216,
+                "cut": 2197,
+                "obstructed": 1435,
+                "ratio": 0.9914259927797834,
+                "hidden": 3
+              }
+            ]
+          },
+          {
+            "tree": [
+              -132.33886656625157,
+              101.80314247471006
+            ],
+            "species": 0,
+            "lods": [
+              {
+                "lod": 0,
+                "reference": 3193,
+                "cut": 3175,
+                "obstructed": 1431,
+                "ratio": 0.9943626683369872,
+                "hidden": 3
+              },
+              {
+                "lod": 1,
+                "reference": 3193,
+                "cut": 3176,
+                "obstructed": 1427,
+                "ratio": 0.9946758534293768,
+                "hidden": 3
+              },
+              {
+                "lod": 2,
+                "reference": 3193,
+                "cut": 3177,
+                "obstructed": 1432,
+                "ratio": 0.9949890385217663,
+                "hidden": 3
+              }
+            ]
+          },
+          {
+            "tree": [
+              -111.6193892236607,
+              116.29316716160884
+            ],
+            "species": 2,
+            "lods": [
+              {
+                "lod": 0,
+                "reference": 3386,
+                "cut": 3324,
+                "obstructed": 1610,
+                "ratio": 0.9816893089190786,
+                "hidden": 3
+              },
+              {
+                "lod": 1,
+                "reference": 3386,
+                "cut": 3330,
+                "obstructed": 1436,
+                "ratio": 0.9834613112817484,
+                "hidden": 3
+              },
+              {
+                "lod": 2,
+                "reference": 3386,
+                "cut": 3332,
+                "obstructed": 1428,
+                "ratio": 0.9840519787359716,
+                "hidden": 3
+              }
+            ]
+          }
+        ],
+        "maskLods": true,
+        "species": {
+          "species": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "trees": 1368,
+          "clusters": 10071,
+          "batches": 160
+        },
+        "botany": {
+          "gardenClumps": 4824,
+          "flowerForms": 5,
+          "groundCover": [
+            "grass tufts",
+            "cupped daisies",
+            "buttercups",
+            "pink clover",
+            "bluebells",
+            "lavender",
+            "folded ferns",
+            "leafy shrubs"
+          ]
+        }
+      },
+      "reflection": {
+        "hidden": 2,
+        "stable": true,
+        "allShadowMaterials": true,
+        "maskCounts": true
+      },
+      "recovery": {
+        "hidden": 0,
+        "total": 1368,
+        "finite": true
+      },
+      "atlas": {
+        "meshes": 1020,
+        "native": true,
+        "attributes": true,
+        "bark": true
+      },
+      "errors": [],
+      "pass": true
+    },
     "interiorsAndRestraint": {
-      "sha256": "23c6caa327de851a3e3784eb26cee2cbbb50f9eac0c17fe4475446849367ebf9",
+      "sha256": "e28eb19abc12a10c926fc2582fc2034eff863eb5d19ad0ea667ecb29513c2933",
       "rooms": [
         {
           "id": "brookInn",
@@ -160,7 +609,7 @@
           "exitRoute": true,
           "saveRoute": true,
           "pitch": 24.962789830807015,
-          "geometry": 1154,
+          "geometry": 1185,
           "draws": 1,
           "actors": [
             {
@@ -192,7 +641,7 @@
           "exitRoute": true,
           "saveRoute": true,
           "pitch": 24.962789830807015,
-          "geometry": 1151,
+          "geometry": 1189,
           "draws": 1,
           "actors": [
             {
@@ -224,7 +673,7 @@
           "exitRoute": true,
           "saveRoute": true,
           "pitch": 24.962789830807015,
-          "geometry": 1144,
+          "geometry": 1179,
           "draws": 1,
           "actors": [
             {
@@ -261,7 +710,7 @@
           "exitRoute": true,
           "saveRoute": true,
           "pitch": 24.962789830807015,
-          "geometry": 1144,
+          "geometry": 1181,
           "draws": 1,
           "actors": [
             {
@@ -298,7 +747,7 @@
           "exitRoute": true,
           "saveRoute": true,
           "pitch": 24.962789830807015,
-          "geometry": 1144,
+          "geometry": 1180,
           "draws": 1,
           "actors": [
             {
@@ -329,7 +778,7 @@
           "exitRoute": true,
           "saveRoute": true,
           "pitch": 24.962789830807015,
-          "geometry": 1144,
+          "geometry": 1179,
           "draws": 1,
           "actors": [
             {
@@ -359,7 +808,7 @@
           "exitRoute": true,
           "saveRoute": true,
           "pitch": 24.962789830807015,
-          "geometry": 1143,
+          "geometry": 1176,
           "draws": 1,
           "actors": [
             {
@@ -433,7 +882,7 @@
       "pass": true
     },
     "loadingAndRoomSoak": {
-      "sha256": "23c6caa327de851a3e3784eb26cee2cbbb50f9eac0c17fe4475446849367ebf9",
+      "sha256": "e28eb19abc12a10c926fc2582fc2034eff863eb5d19ad0ea667ecb29513c2933",
       "loading": [
         {
           "id": "entrance",
@@ -942,22 +1391,22 @@
         }
       ],
       "before": {
-        "heap": 282837652,
-        "geometries": 1139,
-        "textures": 73,
-        "programs": 164,
-        "cache": 389
+        "heap": 240844648,
+        "geometries": 1174,
+        "textures": 77,
+        "programs": 174,
+        "cache": 462
       },
       "after": {
-        "heap": 282320204,
-        "geometries": 1143,
-        "textures": 73,
-        "programs": 164,
-        "cache": 389
+        "heap": 240247160,
+        "geometries": 1176,
+        "textures": 77,
+        "programs": 174,
+        "cache": 462
       },
       "pacing": {
-        "fps": 143.9368410918019,
-        "p95": 7,
+        "fps": 143.93684109180165,
+        "p95": 7.099999999998545,
         "max": 7.100000000002183,
         "buffer": [
           1920,
@@ -968,7 +1417,7 @@
       "pass": true
     },
     "travelAndHighDpi": {
-      "sha256": "23c6caa327de851a3e3784eb26cee2cbbb50f9eac0c17fe4475446849367ebf9",
+      "sha256": "e28eb19abc12a10c926fc2582fc2034eff863eb5d19ad0ea667ecb29513c2933",
       "travel": [
         {
           "key": "fern",
@@ -1440,9 +1889,9 @@
           "width": 1366,
           "height": 768,
           "dpr": 2,
-          "fps": 97.30225509945367,
-          "p95": 12.099999994039536,
-          "p99": 12.800000011920929,
+          "fps": 143.9510566406564,
+          "p95": 7.600000008940697,
+          "p99": 8.700000002980232,
           "buffer": [
             1708,
             960
@@ -1451,19 +1900,19 @@
           "reflection": 820,
           "resizes": 0,
           "scale": 1,
-          "gpu": 3.6560157281722425,
+          "gpu": 4.009850060414201,
           "shadowSpan": [
-            232,
-            168
+            168,
+            120
           ]
         },
         {
           "width": 1024,
           "height": 768,
           "dpr": 2,
-          "fps": 109.28961748627384,
-          "p95": 10.700000002980232,
-          "p99": 11.5,
+          "fps": 143.34552869935058,
+          "p95": 7.799999997019768,
+          "p99": 8.700000002980232,
           "buffer": [
             1024,
             768
@@ -1472,19 +1921,19 @@
           "reflection": 614,
           "resizes": 0,
           "scale": 1,
-          "gpu": 3.025932903965755,
+          "gpu": 3.4660086402759833,
           "shadowSpan": [
-            208,
-            144
+            160,
+            112
           ]
         },
         {
           "width": 800,
           "height": 600,
           "dpr": 2,
-          "fps": 114.60059496469313,
-          "p95": 10.099999994039536,
-          "p99": 11,
+          "fps": 143.90643088091716,
+          "p95": 7.899999991059303,
+          "p99": 8.5,
           "buffer": [
             800,
             600
@@ -1493,19 +1942,19 @@
           "reflection": 480,
           "resizes": 0,
           "scale": 1,
-          "gpu": 2.7680546576084213,
+          "gpu": 4.063244331191312,
           "shadowSpan": [
-            208,
-            144
+            160,
+            112
           ]
         },
         {
           "width": 390,
           "height": 844,
           "dpr": 2,
-          "fps": 143.71377173695782,
+          "fps": 143.95969128626822,
           "p95": 7.799999997019768,
-          "p99": 8.800000011920929,
+          "p99": 8.600000008940697,
           "buffer": [
             390,
             844
@@ -1514,19 +1963,19 @@
           "reflection": 320,
           "resizes": 0,
           "scale": 1,
-          "gpu": 2.762483886625771,
+          "gpu": 2.868861037831772,
           "shadowSpan": [
-            168,
-            120
+            136,
+            80
           ]
         },
         {
           "width": 844,
           "height": 390,
           "dpr": 2,
-          "fps": 97.4860947749409,
-          "p95": 11.799999997019768,
-          "p99": 12.900000005960464,
+          "fps": 140.56665934515192,
+          "p95": 8.200000002980232,
+          "p99": 9.100000008940697,
           "buffer": [
             844,
             390
@@ -1535,10 +1984,10 @@
           "reflection": 506,
           "resizes": 0,
           "scale": 1,
-          "gpu": 2.9112695044527652,
+          "gpu": 3.0259784825563316,
           "shadowSpan": [
-            248,
-            176
+            184,
+            136
           ]
         }
       ],
@@ -1552,7 +2001,7 @@
       "pass": true
     },
     "cutaways": {
-      "sha256": "23c6caa327de851a3e3784eb26cee2cbbb50f9eac0c17fe4475446849367ebf9",
+      "sha256": "e28eb19abc12a10c926fc2582fc2034eff863eb5d19ad0ea667ecb29513c2933",
       "cycles": [
         {
           "side": "behind",
@@ -1761,7 +2210,7 @@
       "pass": true
     },
     "targets": {
-      "sha256": "23c6caa327de851a3e3784eb26cee2cbbb50f9eac0c17fe4475446849367ebf9",
+      "sha256": "e28eb19abc12a10c926fc2582fc2034eff863eb5d19ad0ea667ecb29513c2933",
       "structure": {
         "roots": 3,
         "meshes": 3,
@@ -1818,14 +2267,14 @@
         "enemies": 2,
         "below": true,
         "arrow": 34,
-        "glow": 0.25116926173668075,
+        "glow": 0.25145389181770855,
         "turns": 4,
         "queue": 4
       },
       "selection": {
         "target": 1,
         "first": 0,
-        "second": 0.25116926173668075
+        "second": 0.25145389181770855
       },
       "redraws": [
         {
@@ -1860,7 +2309,7 @@
       "pass": true
     },
     "menus": {
-      "sha256": "23c6caa327de851a3e3784eb26cee2cbbb50f9eac0c17fe4475446849367ebf9",
+      "sha256": "e28eb19abc12a10c926fc2582fc2034eff863eb5d19ad0ea667ecb29513c2933",
       "views": [
         {
           "tab": "journal",
@@ -2103,10 +2552,10 @@
       "pass": true
     },
     "routes": {
-      "sha256": "23c6caa327de851a3e3784eb26cee2cbbb50f9eac0c17fe4475446849367ebf9",
+      "sha256": "e28eb19abc12a10c926fc2582fc2034eff863eb5d19ad0ea667ecb29513c2933",
       "camera": {
-        "yaw": 0,
-        "pitch": 22.873665190626713,
+        "yaw": 4.782532484473921,
+        "pitch": 23.972876142711147,
         "buffer": [
           1920,
           1080
@@ -2121,43 +2570,43 @@
       "directions": [
         {
           "key": "w",
-          "progress": 0.8799999999999955,
-          "gap": 1.07647573126383
+          "progress": 0.8800000000000378,
+          "gap": 1.0333548491595077
         },
         {
           "key": "d",
-          "progress": 0.8800000000001091,
-          "gap": 1.5
+          "progress": 0.8800000000000283,
+          "gap": 1.4987330631367266
         },
         {
           "key": "s",
-          "progress": 0.8799999999999955,
-          "gap": 1.07647573126383
+          "progress": 0.8800000000000378,
+          "gap": 1.1179345936675074
         },
         {
           "key": "a",
-          "progress": 0.8800000000001091,
-          "gap": 0.2600000000002183
+          "progress": 0.8800000000000283,
+          "gap": 0.26720629756958464
         },
         {
           "key": "ArrowUp",
-          "progress": 0.8799999999999955,
-          "gap": 1.07647573126383
+          "progress": 0.8800000000000378,
+          "gap": 1.0333548491595077
         },
         {
           "key": "ArrowRight",
-          "progress": 0.8800000000001091,
-          "gap": 1.5
+          "progress": 0.8800000000000283,
+          "gap": 1.4987330631367266
         },
         {
           "key": "ArrowDown",
-          "progress": 0.8799999999999955,
-          "gap": 1.07647573126383
+          "progress": 0.8800000000000378,
+          "gap": 1.1179345936675074
         },
         {
           "key": "ArrowLeft",
-          "progress": 0.8800000000001091,
-          "gap": 0.2600000000002183
+          "progress": 0.8800000000000283,
+          "gap": 0.26720629756958464
         }
       ],
       "locations": [
@@ -2249,7 +2698,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 3573
+          "loadMs": 4046
         },
         {
           "edgeFailures": [],
@@ -2343,7 +2792,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 3340
+          "loadMs": 3814
         },
         {
           "edgeFailures": [],
@@ -2416,7 +2865,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 1829
+          "loadMs": 1907
         },
         {
           "edgeFailures": [],
@@ -2510,7 +2959,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 3669
+          "loadMs": 3553
         },
         {
           "edgeFailures": [],
@@ -2604,7 +3053,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 2478
+          "loadMs": 2862
         },
         {
           "edgeFailures": [],
@@ -2677,7 +3126,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 1718
+          "loadMs": 1826
         },
         {
           "edgeFailures": [],
@@ -2750,7 +3199,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 1852
+          "loadMs": 1993
         },
         {
           "edgeFailures": [],
@@ -2836,7 +3285,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 3127
+          "loadMs": 3160
         },
         {
           "edgeFailures": [],
@@ -2909,7 +3358,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 2067
+          "loadMs": 2097
         },
         {
           "edgeFailures": [],
@@ -2970,7 +3419,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 1659
+          "loadMs": 1851
         },
         {
           "edgeFailures": [],
@@ -3031,7 +3480,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 2029
+          "loadMs": 2390
         },
         {
           "edgeFailures": [],
@@ -3092,7 +3541,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 1674
+          "loadMs": 1843
         },
         {
           "edgeFailures": [],
@@ -3153,7 +3602,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 1859
+          "loadMs": 1946
         },
         {
           "edgeFailures": [],
@@ -3214,7 +3663,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 1827
+          "loadMs": 1826
         },
         {
           "edgeFailures": [],
@@ -3284,7 +3733,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 466
+          "loadMs": 473
         }
       ],
       "errors": [],
@@ -3294,342 +3743,340 @@
       "phases": [
         {
           "name": "warm-town",
-          "seconds": 30.01620000000298,
-          "fps": 81.55595978170977,
+          "seconds": 30.00140000000596,
+          "fps": 141.96004186468477,
           "frame": {
-            "mean": 12.26162648140702,
-            "p95": 14.5,
-            "p99": 16.399999991059303,
-            "max": 26.099999994039536
+            "mean": 7.0444105213701365,
+            "p95": 8.100000008940697,
+            "p99": 8.900000005960464,
+            "max": 13.299999997019768
           },
           "renderCPU": {
-            "mean": 10.567933006601688,
-            "p95": 12.599999994039536,
-            "p99": 14,
-            "max": 23.599999994039536
+            "mean": 4.938764968411579,
+            "p95": 6.299999997019768,
+            "p99": 6.799999997019768,
+            "max": 10.100000008940697
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 4.707305509854827,
-          "fx": 11,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P0, 43, 35, 1800, 11201, 60.95",
-            "P3, 43, 40, 1695, 5001, 69.53",
-            "P0, 44, 42, 1860, 11201, 71.89",
-            "P0, 44, 39, 1815, 11201, 73.24",
-            "P0, 44, 36, 1875, 11201, 73.08"
-          ]
-        },
-        {
-          "name": "after-travel-and-battle-0",
-          "seconds": 10.0165,
-          "fps": 85.7584984775121,
-          "frame": {
-            "mean": 11.628904428914849,
-            "p95": 13.300000011920929,
-            "p99": 14,
-            "max": 15.099999994039536
-          },
-          "renderCPU": {
-            "mean": 10.045867287342428,
-            "p95": 11.299999997019768,
-            "p99": 12,
-            "max": 13
-          },
-          "scale": 1,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 4.605566690297779,
-          "fx": 11,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P0, 44, 38, 1725, 11201, 73.66",
-            "P0, 44, 43, 1845, 11201, 71.63"
-          ]
-        },
-        {
-          "name": "after-travel-and-battle-1",
-          "seconds": 10.013799999997019,
-          "fps": 84.48341289023665,
-          "frame": {
-            "mean": 11.80437869822838,
-            "p95": 13.300000011920929,
-            "p99": 14.100000008940697,
-            "max": 14.900000005960464
-          },
-          "renderCPU": {
-            "mean": 10.245626477273644,
-            "p95": 11.399999991059303,
-            "p99": 12,
-            "max": 13.200000002980232
-          },
-          "scale": 1,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 4.721067464643312,
-          "fx": 12,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P3, 44, 40, 1710, 5001, 71.31",
-            "P3, 44, 41, 1710, 5001, 63.16"
-          ]
-        },
-        {
-          "name": "after-travel-and-battle-2",
-          "seconds": 10.01009999999404,
-          "fps": 81.5176671562208,
-          "frame": {
-            "mean": 12.232760736199976,
-            "p95": 14,
-            "p99": 15.299999997019768,
-            "max": 15.700000002980232
-          },
-          "renderCPU": {
-            "mean": 10.626348039135337,
-            "p95": 12.400000005960464,
-            "p99": 13.399999991059303,
-            "max": 14.099999994039536
-          },
-          "scale": 1,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 5.173258330282953,
-          "fx": 13,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P0, 44, 39, 1755, 11201, 72.84",
-            "P3, 43, 38, 1590, 5001, 59.58"
-          ]
-        },
-        {
-          "name": "after-travel-and-battle-3",
-          "seconds": 10.021400000005961,
-          "fps": 81.9246811822212,
-          "frame": {
-            "mean": 12.172682926821999,
-            "p95": 13.700000002980232,
-            "p99": 14.599999994039536,
-            "max": 17.099999994039536
-          },
-          "renderCPU": {
-            "mean": 10.57442143759106,
-            "p95": 11.900000005960464,
-            "p99": 12.5,
-            "max": 15.699999988079071
-          },
-          "scale": 1,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 4.645490080724606,
+          "gpuMs": 3.884402160755725,
           "fx": 18,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P3, 43, 36, 1650, 5001, 59.42",
-            "P3, 44, 37, 1680, 5001, 73.14"
+            "P0, 47, 40, 2040, 11201, 79.38",
+            "P0, 48, 36, 2115, 11201, 82.60",
+            "P0, 48, 39, 1995, 11201, 82.43",
+            "P0, 48, 39, 1935, 11201, 81.85",
+            "P0, 48, 40, 2070, 11201, 82.51"
           ]
         },
         {
-          "name": "town-after-thirty-minutes",
-          "seconds": 45.021,
-          "fps": 87.98116434552765,
+          "name": "after-travel-and-battle-0",
+          "seconds": 10.003599999994039,
+          "fps": 142.54868247439418,
           "frame": {
-            "mean": 11.365808080806575,
-            "p95": 12.899999991059303,
-            "p99": 13.799999997019768,
-            "max": 36.099999994039536
+            "mean": 6.995929824563495,
+            "p95": 7.899999991059303,
+            "p99": 9,
+            "max": 43.20000000298023
           },
           "renderCPU": {
-            "mean": 9.782706387169853,
-            "p95": 10.899999991059303,
-            "p99": 11.699999988079071,
-            "max": 24.799999997019768
+            "mean": 4.332468443172677,
+            "p95": 5,
+            "p99": 5.5,
+            "max": 32.5
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 4.81811590721642,
-          "fx": 14,
+          "gpuMs": 3.907367277380059,
+          "fx": 17,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 42, 34, 1935, 11201, 76.34",
-            "P0, 43, 37, 1845, 11201, 74.17",
-            "P0, 43, 38, 1740, 11201, 74.98",
-            "P0, 43, 38, 1725, 11201, 71.64",
-            "P0, 43, 40, 1785, 11201, 75.14",
-            "P0, 44, 37, 1845, 11201, 74.68",
-            "P0, 43, 39, 1770, 11201, 75.23",
-            "P3, 43, 39, 1710, 5001, 63.04"
+            "P0, 48, 40, 2070, 11201, 82.59",
+            "P0, 48, 37, 2085, 11201, 82.46"
+          ]
+        },
+        {
+          "name": "after-travel-and-battle-1",
+          "seconds": 10.000800000011921,
+          "fps": 143.4885209181555,
+          "frame": {
+            "mean": 6.94839609483961,
+            "p95": 7.699999988079071,
+            "p99": 8.600000008940697,
+            "max": 10.299999997019768
+          },
+          "renderCPU": {
+            "mean": 4.3502439024971755,
+            "p95": 5,
+            "p99": 5.299999997019768,
+            "max": 5.5
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.373370170536649,
+          "fx": 18,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P0, 47, 41, 1980, 11201, 82.19"
+          ]
+        },
+        {
+          "name": "after-travel-and-battle-2",
+          "seconds": 10.00180000001192,
+          "fps": 143.47417464839228,
+          "frame": {
+            "mean": 6.95034867503279,
+            "p95": 7.800000011920929,
+            "p99": 8.700000002980232,
+            "max": 11.599999994039536
+          },
+          "renderCPU": {
+            "mean": 4.776236933625533,
+            "p95": 5.5999999940395355,
+            "p99": 5.9000000059604645,
+            "max": 7.600000008940697
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 3.51091115406432,
+          "fx": 18,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P0, 47, 38, 2040, 11201, 82.16",
+            "P0, 47, 37, 2040, 11201, 82.51"
+          ]
+        },
+        {
+          "name": "after-travel-and-battle-3",
+          "seconds": 10.00290000000596,
+          "fps": 143.5583680731732,
+          "frame": {
+            "mean": 6.946620209063387,
+            "p95": 7.799999997019768,
+            "p99": 8.699999988079071,
+            "max": 9.099999994039536
+          },
+          "renderCPU": {
+            "mean": 4.651880222546523,
+            "p95": 5.4000000059604645,
+            "p99": 5.799999997019768,
+            "max": 6.4000000059604645
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 3.5265762468301287,
+          "fx": 20,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P0, 46, 39, 2085, 11201, 82.58",
+            "P0, 47, 38, 2100, 11201, 82.93"
+          ]
+        },
+        {
+          "name": "town-after-thirty-minutes",
+          "seconds": 45.0045,
+          "fps": 143.63008143630083,
+          "frame": {
+            "mean": 6.962540615811706,
+            "p95": 7.799999997019768,
+            "p99": 8.700000002980232,
+            "max": 16.200000002980232
+          },
+          "renderCPU": {
+            "mean": 4.5677599009970145,
+            "p95": 5.300000011920929,
+            "p99": 5.799999997019768,
+            "max": 7.0999999940395355
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.135675321269807,
+          "fx": 15,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P0, 45, 38, 1995, 11201, 81.30",
+            "P0, 45, 39, 2100, 11201, 83.00",
+            "P0, 45, 36, 2100, 11201, 82.43",
+            "P0, 46, 38, 1995, 11201, 82.14",
+            "P0, 46, 38, 1965, 11201, 81.89",
+            "P0, 46, 38, 2115, 11201, 82.76",
+            "P0, 46, 34, 2340, 11201, 83.28",
+            "P0, 46, 39, 1980, 11201, 82.71"
           ]
         },
         {
           "name": "overworld-extended",
           "seconds": 60.00090000000596,
-          "fps": 143.8645086990219,
+          "fps": 143.93117436570355,
           "frame": {
-            "mean": 6.950816823079597,
-            "p95": 7.200000002980232,
-            "p99": 7.5999999940395355,
-            "max": 32
+            "mean": 6.947550665893925,
+            "p95": 7.9000000059604645,
+            "p99": 8.200000002980232,
+            "max": 10.900000005960464
           },
           "renderCPU": {
-            "mean": 3.4836886005857624,
-            "p95": 4.200000002980232,
-            "p99": 4.5999999940395355,
-            "max": 8.099999994039536
+            "mean": 3.3953450672818506,
+            "p95": 4.100000008940697,
+            "p99": 4.5,
+            "max": 5
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 4.594896164377525,
-          "fx": 24,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P3, 44, 41, 1710, 5001, 67.23",
-            "P0, 44, 38, 1785, 11201, 73.30",
-            "P0, 44, 36, 1815, 11201, 77.03",
-            "P3, 44, 38, 1695, 5001, 71.11",
-            "P3, 44, 40, 1695, 5001, 67.27",
-            "P0, 45, 39, 1785, 11201, 73.74",
-            "P0, 45, 36, 1815, 11201, 76.77",
-            "P3, 45, 38, 1680, 5001, 69.10",
-            "P3, 44, 38, 1695, 5001, 66.97",
-            "P0, 45, 37, 1830, 11201, 71.60",
-            "P0, 45, 34, 1815, 11201, 76.93"
-          ]
-        },
-        {
-          "name": "storm-overworld-extended",
-          "seconds": 60.0005,
-          "fps": 143.7654686210948,
-          "frame": {
-            "mean": 6.955802898550379,
-            "p95": 7.200000002980232,
-            "p99": 7.600000008940697,
-            "max": 55.20000000298023
-          },
-          "renderCPU": {
-            "mean": 3.552063528808521,
-            "p95": 4.200000002980232,
-            "p99": 4.5999999940395355,
-            "max": 54
-          },
-          "scale": 1,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 4.651655489282054,
-          "fx": 17,
-          "weather": "Thunderstorm",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P3, 45, 39, 1680, 5001, 67.21",
-            "P0, 45, 36, 1815, 11201, 77.35",
-            "P3, 45, 39, 1710, 5001, 74.75",
-            "P3, 45, 39, 1695, 5001, 67.41",
-            "P0, 45, 39, 1830, 11201, 68.28",
-            "P0, 46, 35, 1845, 11201, 77.69",
-            "P3, 45, 39, 1710, 5001, 74.29",
-            "P0, 46, 41, 2070, 11201, 68.80",
-            "P0, 46, 38, 1770, 11201, 77.42",
-            "P0, 46, 35, 1800, 11201, 77.21",
-            "P3, 46, 39, 1680, 5001, 67.67"
-          ]
-        },
-        {
-          "name": "continuous-battle-skills",
-          "seconds": 60.01359999999404,
-          "fps": 138.10203020650025,
-          "frame": {
-            "mean": 7.238457825509116,
-            "p95": 10.300000011920929,
-            "p99": 11.799999997019768,
-            "max": 57.3999999910593
-          },
-          "renderCPU": {
-            "mean": 5.0446428570637485,
-            "p95": 5.9000000059604645,
-            "p99": 6.4000000059604645,
-            "max": 26.099999994039536
-          },
-          "scale": 1,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 3.128704005164925,
-          "fx": 0,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P0, 48, 35, 2565, 11201, 109.54",
-            "P0, 51, 35, 2790, 11201, 125.22",
-            "P0, 49, 40, 2595, 11201, 106.39",
-            "P0, 51, 39, 2700, 11201, 131.21",
-            "P0, 51, 38, 2670, 11201, 122.37",
-            "P0, 51, 41, 2715, 11201, 116.39",
-            "P0, 53, 40, 2775, 11201, 132.71",
-            "P0, 51, 34, 2685, 11201, 118.60",
-            "P0, 51, 40, 2580, 11201, 111.80",
-            "P0, 51, 42, 2550, 11201, 109.49",
-            "P0, 53, 39, 2670, 11201, 128.18",
-            "P0, 51, 39, 2595, 11201, 107.17"
-          ]
-        },
-        {
-          "name": "final-town",
-          "seconds": 30.02229999999702,
-          "fps": 89.00050962119042,
-          "frame": {
-            "mean": 11.235866716585548,
-            "p95": 13,
-            "p99": 14,
-            "max": 15.299999997019768
-          },
-          "renderCPU": {
-            "mean": 9.648315868228897,
-            "p95": 10.899999991059303,
-            "p99": 11.700000002980232,
-            "max": 12.5
-          },
-          "scale": 1,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 4.387735500820918,
+          "gpuMs": 4.38728353242729,
           "fx": 16,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 49, 39, 1875, 11201, 74.74",
-            "P0, 49, 39, 1755, 11201, 72.05",
-            "P0, 48, 37, 1785, 11201, 76.78",
-            "P0, 48, 38, 1785, 11201, 76.89",
-            "P0, 48, 40, 1890, 11201, 76.70"
+            "P0, 47, 40, 1860, 11201, 80.41",
+            "P0, 47, 37, 1815, 11201, 80.53",
+            "P0, 47, 39, 1935, 11201, 81.20",
+            "P0, 47, 36, 1965, 11201, 81.01",
+            "P0, 47, 39, 1845, 11201, 80.92",
+            "P0, 48, 38, 1815, 11201, 80.71",
+            "P0, 47, 40, 1950, 11201, 81.46",
+            "P0, 47, 37, 1950, 11201, 80.98",
+            "P0, 48, 38, 1845, 11201, 80.75",
+            "P0, 48, 39, 1830, 11201, 80.40",
+            "P0, 49, 40, 1950, 11201, 81.88"
+          ]
+        },
+        {
+          "name": "storm-overworld-extended",
+          "seconds": 60.00060000000894,
+          "fps": 143.79856201435842,
+          "frame": {
+            "mean": 6.954178741161815,
+            "p95": 7.9000000059604645,
+            "p99": 8.299999997019768,
+            "max": 56.29999999701977
+          },
+          "renderCPU": {
+            "mean": 3.472218358776099,
+            "p95": 4.200000002980232,
+            "p99": 4.600000008940697,
+            "max": 14.5
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.729772836638822,
+          "fx": 26,
+          "weather": "Thunderstorm",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P0, 48, 40, 1830, 11201, 80.87",
+            "P0, 48, 40, 1815, 11201, 80.75",
+            "P0, 49, 39, 1845, 11201, 81.51",
+            "P0, 49, 38, 1815, 11201, 80.58",
+            "P0, 49, 41, 1920, 11201, 80.53",
+            "P0, 48, 37, 1965, 11201, 81.36",
+            "P0, 49, 37, 1980, 11201, 81.68",
+            "P0, 49, 36, 1950, 11201, 78.81",
+            "P0, 49, 39, 1815, 11201, 80.94",
+            "P0, 49, 36, 1950, 11201, 81.36",
+            "P0, 49, 36, 1950, 11201, 81.13"
+          ]
+        },
+        {
+          "name": "continuous-battle-skills",
+          "seconds": 60.01629999999702,
+          "fps": 143.36105358045108,
+          "frame": {
+            "mean": 6.972370103451937,
+            "p95": 10.599999994039536,
+            "p99": 11.099999994039536,
+            "max": 48.20000000298023
+          },
+          "renderCPU": {
+            "mean": 3.617619711763703,
+            "p95": 4.299999997019768,
+            "p99": 4.5999999940395355,
+            "max": 6.700000002980232
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 3.071024640463617,
+          "fx": 0,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P0, 50, 33, 2445, 11201, 95.58",
+            "P0, 50, 37, 2400, 11201, 93.92",
+            "P0, 51, 40, 2235, 11201, 93.15",
+            "P0, 51, 39, 2415, 11201, 94.11",
+            "P0, 51, 37, 2460, 11201, 94.91",
+            "P0, 51, 36, 2460, 11201, 94.75",
+            "P0, 51, 37, 2310, 11201, 94.18",
+            "P0, 51, 42, 2460, 11201, 94.70",
+            "P0, 51, 35, 2430, 11201, 93.73",
+            "P0, 51, 36, 2460, 11201, 95.24",
+            "P0, 51, 39, 2310, 11201, 94.11"
+          ]
+        },
+        {
+          "name": "final-town",
+          "seconds": 30.003,
+          "fps": 143.71896143718962,
+          "frame": {
+            "mean": 6.95833913245325,
+            "p95": 7.899999991059303,
+            "p99": 8.700000002980232,
+            "max": 14.700000002980232
+          },
+          "renderCPU": {
+            "mean": 4.514842300601511,
+            "p95": 5.299999997019768,
+            "p99": 5.799999997019768,
+            "max": 6.399999991059303
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 3.6949978902440836,
+          "fx": 21,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P0, 50, 37, 1980, 11201, 82.18",
+            "P0, 50, 38, 1920, 11201, 82.12",
+            "P0, 50, 37, 2025, 11201, 82.30",
+            "P0, 50, 37, 2055, 11201, 82.07",
+            "P0, 50, 38, 1920, 11201, 82.31"
           ]
         }
       ],
@@ -3637,62 +4084,36 @@
         {
           "name": "warm",
           "scene": "brookstead",
-          "heap": 1146311190,
-          "geometries": 2864,
-          "textures": 88,
-          "programs": 193,
-          "keepers": 75,
+          "heap": 1063246382,
+          "geometries": 2539,
+          "textures": 92,
+          "programs": 205,
+          "keepers": 77,
           "queries": 0,
-          "fx": 11,
+          "fx": 18,
           "nav": 0,
           "roadCache": 50000
         },
         {
           "name": "round-0",
           "scene": "brookstead",
-          "heap": 1147475127,
-          "geometries": 2858,
-          "textures": 88,
-          "programs": 196,
-          "keepers": 77,
+          "heap": 1317738010,
+          "geometries": 2531,
+          "textures": 92,
+          "programs": 208,
+          "keepers": 79,
           "queries": 0,
-          "fx": 11,
+          "fx": 17,
           "nav": 0,
           "roadCache": 50000
         },
         {
           "name": "round-1",
           "scene": "brookstead",
-          "heap": 1148190203,
-          "geometries": 2859,
-          "textures": 88,
-          "programs": 198,
-          "keepers": 78,
-          "queries": 0,
-          "fx": 12,
-          "nav": 0,
-          "roadCache": 50000
-        },
-        {
-          "name": "round-2",
-          "scene": "brookstead",
-          "heap": 1149323931,
-          "geometries": 2860,
-          "textures": 88,
-          "programs": 200,
-          "keepers": 79,
-          "queries": 0,
-          "fx": 13,
-          "nav": 0,
-          "roadCache": 50000
-        },
-        {
-          "name": "round-3",
-          "scene": "brookstead",
-          "heap": 1149990119,
-          "geometries": 2865,
-          "textures": 88,
-          "programs": 202,
+          "heap": 1318492754,
+          "geometries": 2531,
+          "textures": 92,
+          "programs": 210,
           "keepers": 80,
           "queries": 0,
           "fx": 18,
@@ -3700,37 +4121,63 @@
           "roadCache": 50000
         },
         {
+          "name": "round-2",
+          "scene": "brookstead",
+          "heap": 1320288942,
+          "geometries": 2533,
+          "textures": 92,
+          "programs": 212,
+          "keepers": 81,
+          "queries": 0,
+          "fx": 18,
+          "nav": 0,
+          "roadCache": 50000
+        },
+        {
+          "name": "round-3",
+          "scene": "brookstead",
+          "heap": 1320414938,
+          "geometries": 2535,
+          "textures": 92,
+          "programs": 214,
+          "keepers": 82,
+          "queries": 0,
+          "fx": 20,
+          "nav": 0,
+          "roadCache": 50000
+        },
+        {
           "name": "after-thirty-minutes",
           "scene": "brookstead",
-          "heap": 1150036265,
-          "geometries": 2861,
-          "textures": 88,
-          "programs": 202,
-          "keepers": 80,
+          "heap": 1320969532,
+          "geometries": 2529,
+          "textures": 92,
+          "programs": 214,
+          "keepers": 82,
           "queries": 0,
-          "fx": 14,
+          "fx": 15,
           "nav": 0,
           "roadCache": 50000
         },
         {
           "name": "final",
           "scene": "brookstead",
-          "heap": 1149893112,
-          "geometries": 2867,
-          "textures": 88,
-          "programs": 204,
-          "keepers": 81,
+          "heap": 1320481887,
+          "geometries": 2542,
+          "textures": 92,
+          "programs": 216,
+          "keepers": 83,
           "queries": 0,
-          "fx": 16,
+          "fx": 21,
           "nav": 0,
           "roadCache": 50000
         }
       ],
       "acceleratedSeconds": 1800,
-      "sha256": "23c6caa327de851a3e3784eb26cee2cbbb50f9eac0c17fe4475446849367ebf9",
+      "sha256": "e28eb19abc12a10c926fc2582fc2034eff863eb5d19ad0ea667ecb29513c2933",
       "growth": {
-        "heap": 1702909,
-        "geometries": 8,
+        "heap": 1989133,
+        "geometries": 11,
         "textures": 0,
         "programs": 6
       },
@@ -3744,25 +4191,25 @@
           "key": "w",
           "expected": "north",
           "actual": "north",
-          "distance": 2.309999999999988
+          "distance": 2.3100000000000995
         },
         {
           "key": "d",
           "expected": "east",
           "actual": "east",
-          "distance": 2.3100000000002865
+          "distance": 2.3100000000000747
         },
         {
           "key": "s",
           "expected": "south",
           "actual": "south",
-          "distance": 2.309999999999988
+          "distance": 2.3100000000000995
         },
         {
           "key": "a",
           "expected": "west",
           "actual": "west",
-          "distance": 2.3100000000002865
+          "distance": 2.3100000000000747
         }
       ],
       "navigation": {
@@ -4444,12 +4891,12 @@
       "scenarios": [
         {
           "name": "bridge",
-          "fps": 103.25734523853558,
-          "p95FrameMs": 11.5,
-          "meanRenderCpuMs": 8.189130434235514,
-          "ticks": 414,
-          "calls": 1751.4299516908213,
-          "triangles": 8654298.314009663,
+          "fps": 142.66083697688944,
+          "p95FrameMs": 7.9000000059604645,
+          "meanRenderCpuMs": 4.628721540842708,
+          "ticks": 571,
+          "calls": 869.3660245183888,
+          "triangles": 4930071.544658494,
           "buffer": [
             1440,
             900
@@ -4459,17 +4906,17 @@
             2048,
             2048
           ],
-          "programs": 162,
+          "programs": 174,
           "worldSerial": 4
         },
         {
           "name": "square",
-          "fps": 112.6395534286925,
-          "p95FrameMs": 10.400000005960464,
-          "meanRenderCpuMs": 7.104646017989226,
-          "ticks": 452,
-          "calls": 1345.725663716814,
-          "triangles": 7067736.451327434,
+          "fps": 141.97515434841216,
+          "p95FrameMs": 8.100000008940697,
+          "meanRenderCpuMs": 4.653345070254635,
+          "ticks": 568,
+          "calls": 823.6021126760563,
+          "triangles": 4466387.204225352,
           "buffer": [
             1440,
             900
@@ -4479,17 +4926,17 @@
             2048,
             2048
           ],
-          "programs": 164,
+          "programs": 176,
           "worldSerial": 5
         },
         {
           "name": "forest",
-          "fps": 143.99640009021232,
-          "p95FrameMs": 7.700000002980232,
-          "meanRenderCpuMs": 2.2847222220152617,
+          "fps": 143.93522914699108,
+          "p95FrameMs": 7.5,
+          "meanRenderCpuMs": 1.891145833172939,
           "ticks": 576,
-          "calls": 578.6840277777778,
-          "triangles": 3627790.548611111,
+          "calls": 468.43055555555554,
+          "triangles": 2850579.861111111,
           "buffer": [
             1440,
             900
@@ -4499,17 +4946,17 @@
             2048,
             2048
           ],
-          "programs": 169,
+          "programs": 179,
           "worldSerial": 6
         },
         {
           "name": "overworld",
-          "fps": 143.97120575841925,
-          "p95FrameMs": 7.5,
-          "meanRenderCpuMs": 5.434895833824864,
+          "fps": 143.9424230310021,
+          "p95FrameMs": 7.9000000059604645,
+          "meanRenderCpuMs": 4.790798611136982,
           "ticks": 576,
-          "calls": 1071.001736111111,
-          "triangles": 10194528.986111112,
+          "calls": 787.8177083333334,
+          "triangles": 5222099.875,
           "buffer": [
             1440,
             900
@@ -4519,17 +4966,17 @@
             2048,
             2048
           ],
-          "programs": 189,
+          "programs": 200,
           "worldSerial": 7
         },
         {
           "name": "shop",
-          "fps": 142.71788847541202,
-          "p95FrameMs": 7.299999997019768,
-          "meanRenderCpuMs": 0.7318739052568343,
-          "ticks": 571,
-          "calls": 153.40630472854642,
-          "triangles": 32572.812609457094,
+          "fps": 143.97120575895548,
+          "p95FrameMs": 7.199999988079071,
+          "meanRenderCpuMs": 0.8472222222222222,
+          "ticks": 576,
+          "calls": 156.69444444444446,
+          "triangles": 32579.38888888889,
           "buffer": [
             1440,
             900
@@ -4539,11 +4986,11 @@
             2048,
             2048
           ],
-          "programs": 190,
+          "programs": 200,
           "worldSerial": 8
         }
       ],
-      "loadMs": 10686,
+      "loadMs": 11370,
       "device": {
         "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
         "software": false
@@ -4553,7 +5000,7 @@
       "pass": true
     },
     "atmosphere": {
-      "sha256": "23c6caa327de851a3e3784eb26cee2cbbb50f9eac0c17fe4475446849367ebf9",
+      "sha256": "e28eb19abc12a10c926fc2582fc2034eff863eb5d19ad0ea667ecb29513c2933",
       "clouds": {
         "anchorsFixed": true,
         "cloudFixed": true,
@@ -4562,7 +5009,7 @@
         "field": true
       },
       "lanterns": {
-        "jumps": 5,
+        "jumps": 10,
         "bad": 0
       },
       "exit": {
@@ -4596,9 +5043,9 @@
           "nativeNormals": true,
           "batchCells": 32
         },
-        "forest": 3348,
-        "sun": 3.5841931033171437,
-        "hemi": 1.5
+        "forest": 0,
+        "sun": 3.6944571877551384,
+        "hemi": 0.95
       },
       "gate": {
         "player": [
@@ -4610,9 +5057,9 @@
           "nativeNormals": true,
           "batchCells": 32
         },
-        "forest": 3348,
-        "sun": 3.583575689626257,
-        "hemi": 1.5
+        "forest": 0,
+        "sun": 3.693820459558646,
+        "hemi": 0.95
       },
       "mill": {
         "player": [
@@ -4624,9 +5071,9 @@
           "nativeNormals": true,
           "batchCells": 32
         },
-        "forest": 3348,
-        "sun": 3.5829581033078415,
-        "hemi": 1.5
+        "forest": 0,
+        "sun": 3.6931835533343302,
+        "hemi": 0.95
       },
       "bridge": {
         "player": [
@@ -4638,9 +5085,9 @@
           "nativeNormals": true,
           "batchCells": 32
         },
-        "forest": 3348,
-        "sun": 3.582340344285627,
-        "hemi": 1.5
+        "forest": 0,
+        "sun": 3.692546469003535,
+        "hemi": 0.95
       },
       "square": {
         "player": [
@@ -4652,9 +5099,9 @@
           "nativeNormals": true,
           "batchCells": 32
         },
-        "forest": 3348,
-        "sun": 3.5817224124832636,
-        "hemi": 1.5
+        "forest": 0,
+        "sun": 3.6919092064875216,
+        "hemi": 0.95
       },
       "hover": {
         "background": "linear-gradient(rgb(38, 59, 67), rgb(17, 41, 54))",
@@ -4662,14 +5109,14 @@
         "icon": 192
       },
       "perf": {
-        "gpu": 3.308649568469601,
-        "cpu": 9.420510858793499,
+        "gpu": 3.261990379561702,
+        "cpu": 6.7596387226037296,
         "buffer": [
           1672,
           941
         ],
         "scale": 1,
-        "programs": 160
+        "programs": 172
       },
       "errors": []
     },
@@ -4681,12 +5128,12 @@
       "scenarios": [
         {
           "name": "bridge",
-          "fps": 103.25734523853558,
-          "p95FrameMs": 11.5,
-          "meanRenderCpuMs": 8.189130434235514,
-          "ticks": 414,
-          "calls": 1751.4299516908213,
-          "triangles": 8654298.314009663,
+          "fps": 142.66083697688944,
+          "p95FrameMs": 7.9000000059604645,
+          "meanRenderCpuMs": 4.628721540842708,
+          "ticks": 571,
+          "calls": 869.3660245183888,
+          "triangles": 4930071.544658494,
           "buffer": [
             1440,
             900
@@ -4696,17 +5143,17 @@
             2048,
             2048
           ],
-          "programs": 162,
+          "programs": 174,
           "worldSerial": 4
         },
         {
           "name": "square",
-          "fps": 112.6395534286925,
-          "p95FrameMs": 10.400000005960464,
-          "meanRenderCpuMs": 7.104646017989226,
-          "ticks": 452,
-          "calls": 1345.725663716814,
-          "triangles": 7067736.451327434,
+          "fps": 141.97515434841216,
+          "p95FrameMs": 8.100000008940697,
+          "meanRenderCpuMs": 4.653345070254635,
+          "ticks": 568,
+          "calls": 823.6021126760563,
+          "triangles": 4466387.204225352,
           "buffer": [
             1440,
             900
@@ -4716,17 +5163,17 @@
             2048,
             2048
           ],
-          "programs": 164,
+          "programs": 176,
           "worldSerial": 5
         },
         {
           "name": "forest",
-          "fps": 143.99640009021232,
-          "p95FrameMs": 7.700000002980232,
-          "meanRenderCpuMs": 2.2847222220152617,
+          "fps": 143.93522914699108,
+          "p95FrameMs": 7.5,
+          "meanRenderCpuMs": 1.891145833172939,
           "ticks": 576,
-          "calls": 578.6840277777778,
-          "triangles": 3627790.548611111,
+          "calls": 468.43055555555554,
+          "triangles": 2850579.861111111,
           "buffer": [
             1440,
             900
@@ -4736,17 +5183,17 @@
             2048,
             2048
           ],
-          "programs": 169,
+          "programs": 179,
           "worldSerial": 6
         },
         {
           "name": "overworld",
-          "fps": 143.97120575841925,
-          "p95FrameMs": 7.5,
-          "meanRenderCpuMs": 5.434895833824864,
+          "fps": 143.9424230310021,
+          "p95FrameMs": 7.9000000059604645,
+          "meanRenderCpuMs": 4.790798611136982,
           "ticks": 576,
-          "calls": 1071.001736111111,
-          "triangles": 10194528.986111112,
+          "calls": 787.8177083333334,
+          "triangles": 5222099.875,
           "buffer": [
             1440,
             900
@@ -4756,17 +5203,17 @@
             2048,
             2048
           ],
-          "programs": 189,
+          "programs": 200,
           "worldSerial": 7
         },
         {
           "name": "shop",
-          "fps": 142.71788847541202,
-          "p95FrameMs": 7.299999997019768,
-          "meanRenderCpuMs": 0.7318739052568343,
-          "ticks": 571,
-          "calls": 153.40630472854642,
-          "triangles": 32572.812609457094,
+          "fps": 143.97120575895548,
+          "p95FrameMs": 7.199999988079071,
+          "meanRenderCpuMs": 0.8472222222222222,
+          "ticks": 576,
+          "calls": 156.69444444444446,
+          "triangles": 32579.38888888889,
           "buffer": [
             1440,
             900
@@ -4776,11 +5223,11 @@
             2048,
             2048
           ],
-          "programs": 190,
+          "programs": 200,
           "worldSerial": 8
         }
       ],
-      "loadMs": 10686,
+      "loadMs": 11370,
       "device": {
         "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
         "software": false
@@ -4793,342 +5240,340 @@
       "phases": [
         {
           "name": "warm-town",
-          "seconds": 30.01620000000298,
-          "fps": 81.55595978170977,
+          "seconds": 30.00140000000596,
+          "fps": 141.96004186468477,
           "frame": {
-            "mean": 12.26162648140702,
-            "p95": 14.5,
-            "p99": 16.399999991059303,
-            "max": 26.099999994039536
+            "mean": 7.0444105213701365,
+            "p95": 8.100000008940697,
+            "p99": 8.900000005960464,
+            "max": 13.299999997019768
           },
           "renderCPU": {
-            "mean": 10.567933006601688,
-            "p95": 12.599999994039536,
-            "p99": 14,
-            "max": 23.599999994039536
+            "mean": 4.938764968411579,
+            "p95": 6.299999997019768,
+            "p99": 6.799999997019768,
+            "max": 10.100000008940697
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 4.707305509854827,
-          "fx": 11,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P0, 43, 35, 1800, 11201, 60.95",
-            "P3, 43, 40, 1695, 5001, 69.53",
-            "P0, 44, 42, 1860, 11201, 71.89",
-            "P0, 44, 39, 1815, 11201, 73.24",
-            "P0, 44, 36, 1875, 11201, 73.08"
-          ]
-        },
-        {
-          "name": "after-travel-and-battle-0",
-          "seconds": 10.0165,
-          "fps": 85.7584984775121,
-          "frame": {
-            "mean": 11.628904428914849,
-            "p95": 13.300000011920929,
-            "p99": 14,
-            "max": 15.099999994039536
-          },
-          "renderCPU": {
-            "mean": 10.045867287342428,
-            "p95": 11.299999997019768,
-            "p99": 12,
-            "max": 13
-          },
-          "scale": 1,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 4.605566690297779,
-          "fx": 11,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P0, 44, 38, 1725, 11201, 73.66",
-            "P0, 44, 43, 1845, 11201, 71.63"
-          ]
-        },
-        {
-          "name": "after-travel-and-battle-1",
-          "seconds": 10.013799999997019,
-          "fps": 84.48341289023665,
-          "frame": {
-            "mean": 11.80437869822838,
-            "p95": 13.300000011920929,
-            "p99": 14.100000008940697,
-            "max": 14.900000005960464
-          },
-          "renderCPU": {
-            "mean": 10.245626477273644,
-            "p95": 11.399999991059303,
-            "p99": 12,
-            "max": 13.200000002980232
-          },
-          "scale": 1,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 4.721067464643312,
-          "fx": 12,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P3, 44, 40, 1710, 5001, 71.31",
-            "P3, 44, 41, 1710, 5001, 63.16"
-          ]
-        },
-        {
-          "name": "after-travel-and-battle-2",
-          "seconds": 10.01009999999404,
-          "fps": 81.5176671562208,
-          "frame": {
-            "mean": 12.232760736199976,
-            "p95": 14,
-            "p99": 15.299999997019768,
-            "max": 15.700000002980232
-          },
-          "renderCPU": {
-            "mean": 10.626348039135337,
-            "p95": 12.400000005960464,
-            "p99": 13.399999991059303,
-            "max": 14.099999994039536
-          },
-          "scale": 1,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 5.173258330282953,
-          "fx": 13,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P0, 44, 39, 1755, 11201, 72.84",
-            "P3, 43, 38, 1590, 5001, 59.58"
-          ]
-        },
-        {
-          "name": "after-travel-and-battle-3",
-          "seconds": 10.021400000005961,
-          "fps": 81.9246811822212,
-          "frame": {
-            "mean": 12.172682926821999,
-            "p95": 13.700000002980232,
-            "p99": 14.599999994039536,
-            "max": 17.099999994039536
-          },
-          "renderCPU": {
-            "mean": 10.57442143759106,
-            "p95": 11.900000005960464,
-            "p99": 12.5,
-            "max": 15.699999988079071
-          },
-          "scale": 1,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 4.645490080724606,
+          "gpuMs": 3.884402160755725,
           "fx": 18,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P3, 43, 36, 1650, 5001, 59.42",
-            "P3, 44, 37, 1680, 5001, 73.14"
+            "P0, 47, 40, 2040, 11201, 79.38",
+            "P0, 48, 36, 2115, 11201, 82.60",
+            "P0, 48, 39, 1995, 11201, 82.43",
+            "P0, 48, 39, 1935, 11201, 81.85",
+            "P0, 48, 40, 2070, 11201, 82.51"
           ]
         },
         {
-          "name": "town-after-thirty-minutes",
-          "seconds": 45.021,
-          "fps": 87.98116434552765,
+          "name": "after-travel-and-battle-0",
+          "seconds": 10.003599999994039,
+          "fps": 142.54868247439418,
           "frame": {
-            "mean": 11.365808080806575,
-            "p95": 12.899999991059303,
-            "p99": 13.799999997019768,
-            "max": 36.099999994039536
+            "mean": 6.995929824563495,
+            "p95": 7.899999991059303,
+            "p99": 9,
+            "max": 43.20000000298023
           },
           "renderCPU": {
-            "mean": 9.782706387169853,
-            "p95": 10.899999991059303,
-            "p99": 11.699999988079071,
-            "max": 24.799999997019768
+            "mean": 4.332468443172677,
+            "p95": 5,
+            "p99": 5.5,
+            "max": 32.5
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 4.81811590721642,
-          "fx": 14,
+          "gpuMs": 3.907367277380059,
+          "fx": 17,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 42, 34, 1935, 11201, 76.34",
-            "P0, 43, 37, 1845, 11201, 74.17",
-            "P0, 43, 38, 1740, 11201, 74.98",
-            "P0, 43, 38, 1725, 11201, 71.64",
-            "P0, 43, 40, 1785, 11201, 75.14",
-            "P0, 44, 37, 1845, 11201, 74.68",
-            "P0, 43, 39, 1770, 11201, 75.23",
-            "P3, 43, 39, 1710, 5001, 63.04"
+            "P0, 48, 40, 2070, 11201, 82.59",
+            "P0, 48, 37, 2085, 11201, 82.46"
+          ]
+        },
+        {
+          "name": "after-travel-and-battle-1",
+          "seconds": 10.000800000011921,
+          "fps": 143.4885209181555,
+          "frame": {
+            "mean": 6.94839609483961,
+            "p95": 7.699999988079071,
+            "p99": 8.600000008940697,
+            "max": 10.299999997019768
+          },
+          "renderCPU": {
+            "mean": 4.3502439024971755,
+            "p95": 5,
+            "p99": 5.299999997019768,
+            "max": 5.5
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.373370170536649,
+          "fx": 18,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P0, 47, 41, 1980, 11201, 82.19"
+          ]
+        },
+        {
+          "name": "after-travel-and-battle-2",
+          "seconds": 10.00180000001192,
+          "fps": 143.47417464839228,
+          "frame": {
+            "mean": 6.95034867503279,
+            "p95": 7.800000011920929,
+            "p99": 8.700000002980232,
+            "max": 11.599999994039536
+          },
+          "renderCPU": {
+            "mean": 4.776236933625533,
+            "p95": 5.5999999940395355,
+            "p99": 5.9000000059604645,
+            "max": 7.600000008940697
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 3.51091115406432,
+          "fx": 18,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P0, 47, 38, 2040, 11201, 82.16",
+            "P0, 47, 37, 2040, 11201, 82.51"
+          ]
+        },
+        {
+          "name": "after-travel-and-battle-3",
+          "seconds": 10.00290000000596,
+          "fps": 143.5583680731732,
+          "frame": {
+            "mean": 6.946620209063387,
+            "p95": 7.799999997019768,
+            "p99": 8.699999988079071,
+            "max": 9.099999994039536
+          },
+          "renderCPU": {
+            "mean": 4.651880222546523,
+            "p95": 5.4000000059604645,
+            "p99": 5.799999997019768,
+            "max": 6.4000000059604645
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 3.5265762468301287,
+          "fx": 20,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P0, 46, 39, 2085, 11201, 82.58",
+            "P0, 47, 38, 2100, 11201, 82.93"
+          ]
+        },
+        {
+          "name": "town-after-thirty-minutes",
+          "seconds": 45.0045,
+          "fps": 143.63008143630083,
+          "frame": {
+            "mean": 6.962540615811706,
+            "p95": 7.799999997019768,
+            "p99": 8.700000002980232,
+            "max": 16.200000002980232
+          },
+          "renderCPU": {
+            "mean": 4.5677599009970145,
+            "p95": 5.300000011920929,
+            "p99": 5.799999997019768,
+            "max": 7.0999999940395355
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.135675321269807,
+          "fx": 15,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P0, 45, 38, 1995, 11201, 81.30",
+            "P0, 45, 39, 2100, 11201, 83.00",
+            "P0, 45, 36, 2100, 11201, 82.43",
+            "P0, 46, 38, 1995, 11201, 82.14",
+            "P0, 46, 38, 1965, 11201, 81.89",
+            "P0, 46, 38, 2115, 11201, 82.76",
+            "P0, 46, 34, 2340, 11201, 83.28",
+            "P0, 46, 39, 1980, 11201, 82.71"
           ]
         },
         {
           "name": "overworld-extended",
           "seconds": 60.00090000000596,
-          "fps": 143.8645086990219,
+          "fps": 143.93117436570355,
           "frame": {
-            "mean": 6.950816823079597,
-            "p95": 7.200000002980232,
-            "p99": 7.5999999940395355,
-            "max": 32
+            "mean": 6.947550665893925,
+            "p95": 7.9000000059604645,
+            "p99": 8.200000002980232,
+            "max": 10.900000005960464
           },
           "renderCPU": {
-            "mean": 3.4836886005857624,
-            "p95": 4.200000002980232,
-            "p99": 4.5999999940395355,
-            "max": 8.099999994039536
+            "mean": 3.3953450672818506,
+            "p95": 4.100000008940697,
+            "p99": 4.5,
+            "max": 5
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 4.594896164377525,
-          "fx": 24,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P3, 44, 41, 1710, 5001, 67.23",
-            "P0, 44, 38, 1785, 11201, 73.30",
-            "P0, 44, 36, 1815, 11201, 77.03",
-            "P3, 44, 38, 1695, 5001, 71.11",
-            "P3, 44, 40, 1695, 5001, 67.27",
-            "P0, 45, 39, 1785, 11201, 73.74",
-            "P0, 45, 36, 1815, 11201, 76.77",
-            "P3, 45, 38, 1680, 5001, 69.10",
-            "P3, 44, 38, 1695, 5001, 66.97",
-            "P0, 45, 37, 1830, 11201, 71.60",
-            "P0, 45, 34, 1815, 11201, 76.93"
-          ]
-        },
-        {
-          "name": "storm-overworld-extended",
-          "seconds": 60.0005,
-          "fps": 143.7654686210948,
-          "frame": {
-            "mean": 6.955802898550379,
-            "p95": 7.200000002980232,
-            "p99": 7.600000008940697,
-            "max": 55.20000000298023
-          },
-          "renderCPU": {
-            "mean": 3.552063528808521,
-            "p95": 4.200000002980232,
-            "p99": 4.5999999940395355,
-            "max": 54
-          },
-          "scale": 1,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 4.651655489282054,
-          "fx": 17,
-          "weather": "Thunderstorm",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P3, 45, 39, 1680, 5001, 67.21",
-            "P0, 45, 36, 1815, 11201, 77.35",
-            "P3, 45, 39, 1710, 5001, 74.75",
-            "P3, 45, 39, 1695, 5001, 67.41",
-            "P0, 45, 39, 1830, 11201, 68.28",
-            "P0, 46, 35, 1845, 11201, 77.69",
-            "P3, 45, 39, 1710, 5001, 74.29",
-            "P0, 46, 41, 2070, 11201, 68.80",
-            "P0, 46, 38, 1770, 11201, 77.42",
-            "P0, 46, 35, 1800, 11201, 77.21",
-            "P3, 46, 39, 1680, 5001, 67.67"
-          ]
-        },
-        {
-          "name": "continuous-battle-skills",
-          "seconds": 60.01359999999404,
-          "fps": 138.10203020650025,
-          "frame": {
-            "mean": 7.238457825509116,
-            "p95": 10.300000011920929,
-            "p99": 11.799999997019768,
-            "max": 57.3999999910593
-          },
-          "renderCPU": {
-            "mean": 5.0446428570637485,
-            "p95": 5.9000000059604645,
-            "p99": 6.4000000059604645,
-            "max": 26.099999994039536
-          },
-          "scale": 1,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 3.128704005164925,
-          "fx": 0,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P0, 48, 35, 2565, 11201, 109.54",
-            "P0, 51, 35, 2790, 11201, 125.22",
-            "P0, 49, 40, 2595, 11201, 106.39",
-            "P0, 51, 39, 2700, 11201, 131.21",
-            "P0, 51, 38, 2670, 11201, 122.37",
-            "P0, 51, 41, 2715, 11201, 116.39",
-            "P0, 53, 40, 2775, 11201, 132.71",
-            "P0, 51, 34, 2685, 11201, 118.60",
-            "P0, 51, 40, 2580, 11201, 111.80",
-            "P0, 51, 42, 2550, 11201, 109.49",
-            "P0, 53, 39, 2670, 11201, 128.18",
-            "P0, 51, 39, 2595, 11201, 107.17"
-          ]
-        },
-        {
-          "name": "final-town",
-          "seconds": 30.02229999999702,
-          "fps": 89.00050962119042,
-          "frame": {
-            "mean": 11.235866716585548,
-            "p95": 13,
-            "p99": 14,
-            "max": 15.299999997019768
-          },
-          "renderCPU": {
-            "mean": 9.648315868228897,
-            "p95": 10.899999991059303,
-            "p99": 11.700000002980232,
-            "max": 12.5
-          },
-          "scale": 1,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 4.387735500820918,
+          "gpuMs": 4.38728353242729,
           "fx": 16,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 49, 39, 1875, 11201, 74.74",
-            "P0, 49, 39, 1755, 11201, 72.05",
-            "P0, 48, 37, 1785, 11201, 76.78",
-            "P0, 48, 38, 1785, 11201, 76.89",
-            "P0, 48, 40, 1890, 11201, 76.70"
+            "P0, 47, 40, 1860, 11201, 80.41",
+            "P0, 47, 37, 1815, 11201, 80.53",
+            "P0, 47, 39, 1935, 11201, 81.20",
+            "P0, 47, 36, 1965, 11201, 81.01",
+            "P0, 47, 39, 1845, 11201, 80.92",
+            "P0, 48, 38, 1815, 11201, 80.71",
+            "P0, 47, 40, 1950, 11201, 81.46",
+            "P0, 47, 37, 1950, 11201, 80.98",
+            "P0, 48, 38, 1845, 11201, 80.75",
+            "P0, 48, 39, 1830, 11201, 80.40",
+            "P0, 49, 40, 1950, 11201, 81.88"
+          ]
+        },
+        {
+          "name": "storm-overworld-extended",
+          "seconds": 60.00060000000894,
+          "fps": 143.79856201435842,
+          "frame": {
+            "mean": 6.954178741161815,
+            "p95": 7.9000000059604645,
+            "p99": 8.299999997019768,
+            "max": 56.29999999701977
+          },
+          "renderCPU": {
+            "mean": 3.472218358776099,
+            "p95": 4.200000002980232,
+            "p99": 4.600000008940697,
+            "max": 14.5
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.729772836638822,
+          "fx": 26,
+          "weather": "Thunderstorm",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P0, 48, 40, 1830, 11201, 80.87",
+            "P0, 48, 40, 1815, 11201, 80.75",
+            "P0, 49, 39, 1845, 11201, 81.51",
+            "P0, 49, 38, 1815, 11201, 80.58",
+            "P0, 49, 41, 1920, 11201, 80.53",
+            "P0, 48, 37, 1965, 11201, 81.36",
+            "P0, 49, 37, 1980, 11201, 81.68",
+            "P0, 49, 36, 1950, 11201, 78.81",
+            "P0, 49, 39, 1815, 11201, 80.94",
+            "P0, 49, 36, 1950, 11201, 81.36",
+            "P0, 49, 36, 1950, 11201, 81.13"
+          ]
+        },
+        {
+          "name": "continuous-battle-skills",
+          "seconds": 60.01629999999702,
+          "fps": 143.36105358045108,
+          "frame": {
+            "mean": 6.972370103451937,
+            "p95": 10.599999994039536,
+            "p99": 11.099999994039536,
+            "max": 48.20000000298023
+          },
+          "renderCPU": {
+            "mean": 3.617619711763703,
+            "p95": 4.299999997019768,
+            "p99": 4.5999999940395355,
+            "max": 6.700000002980232
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 3.071024640463617,
+          "fx": 0,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P0, 50, 33, 2445, 11201, 95.58",
+            "P0, 50, 37, 2400, 11201, 93.92",
+            "P0, 51, 40, 2235, 11201, 93.15",
+            "P0, 51, 39, 2415, 11201, 94.11",
+            "P0, 51, 37, 2460, 11201, 94.91",
+            "P0, 51, 36, 2460, 11201, 94.75",
+            "P0, 51, 37, 2310, 11201, 94.18",
+            "P0, 51, 42, 2460, 11201, 94.70",
+            "P0, 51, 35, 2430, 11201, 93.73",
+            "P0, 51, 36, 2460, 11201, 95.24",
+            "P0, 51, 39, 2310, 11201, 94.11"
+          ]
+        },
+        {
+          "name": "final-town",
+          "seconds": 30.003,
+          "fps": 143.71896143718962,
+          "frame": {
+            "mean": 6.95833913245325,
+            "p95": 7.899999991059303,
+            "p99": 8.700000002980232,
+            "max": 14.700000002980232
+          },
+          "renderCPU": {
+            "mean": 4.514842300601511,
+            "p95": 5.299999997019768,
+            "p99": 5.799999997019768,
+            "max": 6.399999991059303
+          },
+          "scale": 1,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 3.6949978902440836,
+          "fx": 21,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P0, 50, 37, 1980, 11201, 82.18",
+            "P0, 50, 38, 1920, 11201, 82.12",
+            "P0, 50, 37, 2025, 11201, 82.30",
+            "P0, 50, 37, 2055, 11201, 82.07",
+            "P0, 50, 38, 1920, 11201, 82.31"
           ]
         }
       ],
@@ -5136,62 +5581,36 @@
         {
           "name": "warm",
           "scene": "brookstead",
-          "heap": 1146311190,
-          "geometries": 2864,
-          "textures": 88,
-          "programs": 193,
-          "keepers": 75,
+          "heap": 1063246382,
+          "geometries": 2539,
+          "textures": 92,
+          "programs": 205,
+          "keepers": 77,
           "queries": 0,
-          "fx": 11,
+          "fx": 18,
           "nav": 0,
           "roadCache": 50000
         },
         {
           "name": "round-0",
           "scene": "brookstead",
-          "heap": 1147475127,
-          "geometries": 2858,
-          "textures": 88,
-          "programs": 196,
-          "keepers": 77,
+          "heap": 1317738010,
+          "geometries": 2531,
+          "textures": 92,
+          "programs": 208,
+          "keepers": 79,
           "queries": 0,
-          "fx": 11,
+          "fx": 17,
           "nav": 0,
           "roadCache": 50000
         },
         {
           "name": "round-1",
           "scene": "brookstead",
-          "heap": 1148190203,
-          "geometries": 2859,
-          "textures": 88,
-          "programs": 198,
-          "keepers": 78,
-          "queries": 0,
-          "fx": 12,
-          "nav": 0,
-          "roadCache": 50000
-        },
-        {
-          "name": "round-2",
-          "scene": "brookstead",
-          "heap": 1149323931,
-          "geometries": 2860,
-          "textures": 88,
-          "programs": 200,
-          "keepers": 79,
-          "queries": 0,
-          "fx": 13,
-          "nav": 0,
-          "roadCache": 50000
-        },
-        {
-          "name": "round-3",
-          "scene": "brookstead",
-          "heap": 1149990119,
-          "geometries": 2865,
-          "textures": 88,
-          "programs": 202,
+          "heap": 1318492754,
+          "geometries": 2531,
+          "textures": 92,
+          "programs": 210,
           "keepers": 80,
           "queries": 0,
           "fx": 18,
@@ -5199,37 +5618,63 @@
           "roadCache": 50000
         },
         {
+          "name": "round-2",
+          "scene": "brookstead",
+          "heap": 1320288942,
+          "geometries": 2533,
+          "textures": 92,
+          "programs": 212,
+          "keepers": 81,
+          "queries": 0,
+          "fx": 18,
+          "nav": 0,
+          "roadCache": 50000
+        },
+        {
+          "name": "round-3",
+          "scene": "brookstead",
+          "heap": 1320414938,
+          "geometries": 2535,
+          "textures": 92,
+          "programs": 214,
+          "keepers": 82,
+          "queries": 0,
+          "fx": 20,
+          "nav": 0,
+          "roadCache": 50000
+        },
+        {
           "name": "after-thirty-minutes",
           "scene": "brookstead",
-          "heap": 1150036265,
-          "geometries": 2861,
-          "textures": 88,
-          "programs": 202,
-          "keepers": 80,
+          "heap": 1320969532,
+          "geometries": 2529,
+          "textures": 92,
+          "programs": 214,
+          "keepers": 82,
           "queries": 0,
-          "fx": 14,
+          "fx": 15,
           "nav": 0,
           "roadCache": 50000
         },
         {
           "name": "final",
           "scene": "brookstead",
-          "heap": 1149893112,
-          "geometries": 2867,
-          "textures": 88,
-          "programs": 204,
-          "keepers": 81,
+          "heap": 1320481887,
+          "geometries": 2542,
+          "textures": 92,
+          "programs": 216,
+          "keepers": 83,
           "queries": 0,
-          "fx": 16,
+          "fx": 21,
           "nav": 0,
           "roadCache": 50000
         }
       ],
       "acceleratedSeconds": 1800,
-      "sha256": "23c6caa327de851a3e3784eb26cee2cbbb50f9eac0c17fe4475446849367ebf9",
+      "sha256": "e28eb19abc12a10c926fc2582fc2034eff863eb5d19ad0ea667ecb29513c2933",
       "growth": {
-        "heap": 1702909,
-        "geometries": 8,
+        "heap": 1989133,
+        "geometries": 11,
         "textures": 0,
         "programs": 6
       },
@@ -5242,9 +5687,9 @@
         "width": 1366,
         "height": 768,
         "dpr": 2,
-        "fps": 97.30225509945367,
-        "p95": 12.099999994039536,
-        "p99": 12.800000011920929,
+        "fps": 143.9510566406564,
+        "p95": 7.600000008940697,
+        "p99": 8.700000002980232,
         "buffer": [
           1708,
           960
@@ -5253,19 +5698,19 @@
         "reflection": 820,
         "resizes": 0,
         "scale": 1,
-        "gpu": 3.6560157281722425,
+        "gpu": 4.009850060414201,
         "shadowSpan": [
-          232,
-          168
+          168,
+          120
         ]
       },
       {
         "width": 1024,
         "height": 768,
         "dpr": 2,
-        "fps": 109.28961748627384,
-        "p95": 10.700000002980232,
-        "p99": 11.5,
+        "fps": 143.34552869935058,
+        "p95": 7.799999997019768,
+        "p99": 8.700000002980232,
         "buffer": [
           1024,
           768
@@ -5274,19 +5719,19 @@
         "reflection": 614,
         "resizes": 0,
         "scale": 1,
-        "gpu": 3.025932903965755,
+        "gpu": 3.4660086402759833,
         "shadowSpan": [
-          208,
-          144
+          160,
+          112
         ]
       },
       {
         "width": 800,
         "height": 600,
         "dpr": 2,
-        "fps": 114.60059496469313,
-        "p95": 10.099999994039536,
-        "p99": 11,
+        "fps": 143.90643088091716,
+        "p95": 7.899999991059303,
+        "p99": 8.5,
         "buffer": [
           800,
           600
@@ -5295,19 +5740,19 @@
         "reflection": 480,
         "resizes": 0,
         "scale": 1,
-        "gpu": 2.7680546576084213,
+        "gpu": 4.063244331191312,
         "shadowSpan": [
-          208,
-          144
+          160,
+          112
         ]
       },
       {
         "width": 390,
         "height": 844,
         "dpr": 2,
-        "fps": 143.71377173695782,
+        "fps": 143.95969128626822,
         "p95": 7.799999997019768,
-        "p99": 8.800000011920929,
+        "p99": 8.600000008940697,
         "buffer": [
           390,
           844
@@ -5316,19 +5761,19 @@
         "reflection": 320,
         "resizes": 0,
         "scale": 1,
-        "gpu": 2.762483886625771,
+        "gpu": 2.868861037831772,
         "shadowSpan": [
-          168,
-          120
+          136,
+          80
         ]
       },
       {
         "width": 844,
         "height": 390,
         "dpr": 2,
-        "fps": 97.4860947749409,
-        "p95": 11.799999997019768,
-        "p99": 12.900000005960464,
+        "fps": 140.56665934515192,
+        "p95": 8.200000002980232,
+        "p99": 9.100000008940697,
         "buffer": [
           844,
           390
@@ -5337,15 +5782,15 @@
         "reflection": 506,
         "resizes": 0,
         "scale": 1,
-        "gpu": 2.9112695044527652,
+        "gpu": 3.0259784825563316,
         "shadowSpan": [
-          248,
-          176
+          184,
+          136
         ]
       }
     ],
     "interiorSoak": {
-      "sha256": "23c6caa327de851a3e3784eb26cee2cbbb50f9eac0c17fe4475446849367ebf9",
+      "sha256": "e28eb19abc12a10c926fc2582fc2034eff863eb5d19ad0ea667ecb29513c2933",
       "loading": [
         {
           "id": "entrance",
@@ -5854,22 +6299,22 @@
         }
       ],
       "before": {
-        "heap": 282837652,
-        "geometries": 1139,
-        "textures": 73,
-        "programs": 164,
-        "cache": 389
+        "heap": 240844648,
+        "geometries": 1174,
+        "textures": 77,
+        "programs": 174,
+        "cache": 462
       },
       "after": {
-        "heap": 282320204,
-        "geometries": 1143,
-        "textures": 73,
-        "programs": 164,
-        "cache": 389
+        "heap": 240247160,
+        "geometries": 1176,
+        "textures": 77,
+        "programs": 174,
+        "cache": 462
       },
       "pacing": {
-        "fps": 143.9368410918019,
-        "p95": 7,
+        "fps": 143.93684109180165,
+        "p95": 7.099999999998545,
         "max": 7.100000000002183,
         "buffer": [
           1920,
@@ -5903,7 +6348,7 @@
     "fullSceneDepthBlur": false,
     "balancedPixelCeiling": 3700000,
     "highPixelCeiling": 5500000,
-    "newPixelLabAssets": 4,
+    "newPixelLabAssets": 17,
     "suppliedHighResolutionWordmark": true,
     "functionalNavyGoldMenus": true,
     "newInGameStill": 1,
@@ -5944,9 +6389,34 @@
     "interiorsRebuilt": 7,
     "interiorCameraPitchDegrees": 25,
     "chairsFaceTablesAndHearths": true,
-    "existingOutdoorSceneLayoutPreserved": true
+    "existingOutdoorSceneLayoutPreserved": true,
+    "botanicalSpecies": 6,
+    "flowerForms": 5,
+    "nativeBotanicalResolution": [
+      512,
+      512
+    ],
+    "materialNormalMaps": 5,
+    "treeCutawaysEveryLod": true,
+    "realShadowsAndReflectionsPreserved": true,
+    "explorationCameraPitchDegrees": 23.97,
+    "explorationCameraYawDegrees": 4.78
   },
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.6",
+      "date": "October 30, 2026",
+      "title": "Living gardens, clearer light",
+      "items": [
+        "Fixed trees failing to reveal the party: every foliage detail level now shares the same individual-tree cutaway mask, while real shadows and water reflections retain the complete tree.",
+        "Rebuilt the forest as branched 3D crowns of folded, transparent PixelLab leaf sprays. Oaks, birches, maples, willows, spruces and flowering trees vary in shape, height, colour and placement.",
+        "Added five flower forms, curved grass tufts, folded ferns and leafy shrubs, planted in stable roadside and garden clusters. Removed the black distant shrub geometry.",
+        "Integrated 17 native 512px PixelLab assets, including paving, mossy paving, slate, plaster and meadow textures with matching normal maps. Material scale makes individual stones and roof courses more readable.",
+        "Moved the sun to illuminate building fronts, balanced warm sunlight against cool fill, reduced pale haze and broad additive rays, and preserved fine detail through gentler focus and bloom.",
+        "Adjusted the exploration lens for a closer diorama view with a slight diagonal angle. Forest batching uses larger cells and shared detail levels; loading stills now show the current in-game artwork.",
+        "Optimized live water reflections with a cropped reflected view that draws only scenery sampled by visible water, preserving the full projective image and immediate updates. Inactive botanical detail levels are released during travel."
+      ]
+    },
     {
       "version": "Alpha Version 1.5",
       "date": "October 30, 2026",

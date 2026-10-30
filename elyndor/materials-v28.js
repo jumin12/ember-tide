@@ -31,7 +31,7 @@ const materialLoadBefore28=loadAssets;
 loadAssets=async function(){
  await materialLoadBefore28();
  const size=512,pixels=new Uint8Array(size*size*4*terrainTileNames.length),canvas=document.createElement('canvas');canvas.width=canvas.height=size;const ctx=canvas.getContext('2d',{willReadFrequently:true});
- const aliases={cobbleA:'cobble',cobbleB:'cobble',plasterA:'plaster',rockA:'rock',rockB:'rock',grassA:'grass',earthA:'earth',wallA:'wall'};
+ const aliases={cobbleA:'cobbleMoss30',cobbleB:'cobbleMoss30',plasterA:'plaster',rockA:'rock',rockB:'rock',grassA:'grass',earthA:'earth',wallA:'wall'};
  terrainTileNames.forEach((key,i)=>{
   const source=aliases[key]??key,tex=textures['normal28_'+source],rough=source==='slate'?.74:source==='wood'?.84:source==='metal'?.4:.91;
   let data=null;if(tex){tex.colorSpace=THREE.NoColorSpace;tex.needsUpdate=true;ctx.clearRect(0,0,size,size);ctx.drawImage(tex.image,0,0,size,size);data=ctx.getImageData(0,0,size,size).data;}

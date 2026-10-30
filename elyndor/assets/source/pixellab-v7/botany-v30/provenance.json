@@ -1,0 +1,249 @@
+{
+  "provider": "PixelLab MCP",
+  "model": "Pro",
+  "referencePolicy": "Original user atmosphere concept guided detail and palette; isolated native botanical assets; scenery-contaminated candidates were rejected and are not selected. No earlier generated game artwork used as references.",
+  "jobs": {
+    "leafOak30": "305eff7a-dd3e-4e93-a50b-3871e6efe6c8",
+    "leafBirch30": "f8864a79-7d3d-4ab5-9797-465be22d29e5",
+    "leafMaple30": "6f4b919c-b254-484c-8783-db3d2f80f027",
+    "leafWillow30": "2faccadf-1c7e-47cb-872a-b0fa6f3f5d73",
+    "leafPine30": "f16f5362-f3e6-4b7b-afcc-49c7a2103086",
+    "leafBlossom30": "813a3d04-c8c2-4026-818b-58e15d631b55",
+    "cobble30": "83666bbb-2bae-4d25-9082-dc05c6d11733",
+    "cobbleMoss30": "e7a46db2-c9ca-40a5-b2d9-fefd7ac6db82",
+    "slate30": "279d31cf-f82d-4bd3-876b-6bccead6df59",
+    "plaster30": "4581c313-389b-4e63-b623-dbb0683e0b10",
+    "meadow30": "d83c5805-a294-4688-be2b-7242d37204a5",
+    "petal30": "cc563b4f-4ad4-4ddb-97a2-53bf6b6ddbbd"
+  },
+  "normalJobs": {
+    "cobble30": "0f881485-e37e-422e-92c5-7f5612a6eb57",
+    "cobbleMoss30": "47fc0880-7243-4974-9bf6-1787c6263bc0",
+    "slate30": "cf34e682-7867-4cce-9eb9-ac24c3bd89cf",
+    "plaster30": "763bbf99-3ed3-4521-b1fb-5573d2defc7b",
+    "meadow30": "6cb2411b-ee41-4bd4-b6a7-825c344b1ec6"
+  },
+  "nativeAudit": {
+    "leafOak30": {
+      "size": [
+        512,
+        512
+      ],
+      "coverage": 0.3709869384765625,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "leafBirch30": {
+      "size": [
+        512,
+        512
+      ],
+      "coverage": 0.1469879150390625,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "leafMaple30": {
+      "size": [
+        512,
+        512
+      ],
+      "coverage": 0.3872184753417969,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "leafWillow30": {
+      "size": [
+        512,
+        512
+      ],
+      "coverage": 0.24213027954101562,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "leafPine30": {
+      "size": [
+        512,
+        512
+      ],
+      "coverage": 0.3504295349121094,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "leafBlossom30": {
+      "size": [
+        512,
+        512
+      ],
+      "coverage": 0.17690658569335938,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "cobble30": {
+      "size": [
+        512,
+        512
+      ],
+      "coverage": 1.0,
+      "cornerAlpha": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    "cobbleMoss30": {
+      "size": [
+        512,
+        512
+      ],
+      "coverage": 1.0,
+      "cornerAlpha": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    "slate30": {
+      "size": [
+        512,
+        512
+      ],
+      "coverage": 1.0,
+      "cornerAlpha": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    "plaster30": {
+      "size": [
+        512,
+        512
+      ],
+      "coverage": 1.0,
+      "cornerAlpha": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    "meadow30": {
+      "size": [
+        512,
+        512
+      ],
+      "coverage": 1.0,
+      "cornerAlpha": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    "petal30": {
+      "size": [
+        512,
+        512
+      ],
+      "coverage": 1.0,
+      "cornerAlpha": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    "cobble30-normal": {
+      "size": [
+        512,
+        512
+      ],
+      "coverage": 1.0,
+      "cornerAlpha": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    "cobbleMoss30-normal": {
+      "size": [
+        512,
+        512
+      ],
+      "coverage": 1.0,
+      "cornerAlpha": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    "slate30-normal": {
+      "size": [
+        512,
+        512
+      ],
+      "coverage": 1.0,
+      "cornerAlpha": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    "plaster30-normal": {
+      "size": [
+        512,
+        512
+      ],
+      "coverage": 1.0,
+      "cornerAlpha": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    "meadow30-normal": {
+      "size": [
+        512,
+        512
+      ],
+      "coverage": 1.0,
+      "cornerAlpha": [
+        255,
+        255,
+        255,
+        255
+      ]
+    }
+  }
+}

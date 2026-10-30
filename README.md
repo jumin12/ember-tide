@@ -1,5 +1,15 @@
 # The Last Light of Elyndor
 
+## Alpha Version 1.6 — Living gardens, clearer light
+
+Individual tree cutaways now work on all three foliage detail levels. Folded, alpha-cut leaf sprays replace opaque canopy cores; the forest includes oaks, birches, maples, willows, spruces and flowering trees with varied branching and proportions. Five flower forms, curved grass, ferns and shrubs create stable roadside and garden patches. Cutaways affect the main view while retaining the trees in light-generated shadows and water reflections.
+
+Seventeen native 512px PixelLab images supply six botanical sprays, petal detail, paving, mossy paving, slate, plaster, meadow and matching surface normal maps. Rejected candidates containing scenery were excluded. Warmer front-facing sunlight, cooler fill, reduced haze and gentler focus/bloom improve readability. A closer lens and slight diagonal angle retain screen-relative movement. Loading stills show the updated in-game artwork.
+
+Validation includes actual GPU pixel counts for party visibility through three tree types at every detail level, route and campaign checks, responsive views, combat and repeated-travel performance/resource measurements. Device-scoped results are recorded in `release.json`. The scene remains a playable interpretation of the concept: its models, composition and material variety are not identical to the supplied illustration.
+
+Live water reflections crop their reflected frustum to the visible water footprint and render into the matching portion of the original target. This reduces draw submissions while retaining the complete projective mapping, resolution and immediate updates. Native full-versus-cropped image comparisons are included in validation. Travel releases inactive botanical detail levels as well as the currently attached geometry.
+
 ## Alpha Version 1.5 — A warmer welcome indoors
 
 All seven active interiors now use a closer, front-facing camera pitched down 25 degrees. Narrow screens track the party across each room. Native PixelLab wall panels, hearth masonry, woven rugs and framed artwork complement stocked shelves, table settings, chairs, plants and warm lighting. Dining chairs face their tables; lounge chairs face the fire. Clear aisles still connect services, exits and inn save seals.

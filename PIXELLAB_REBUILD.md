@@ -1,5 +1,7 @@
 # Integrated Alpha Version 1.0 build
 
+Alpha 1.6 replaces opaque tree cores with six species of folded transparent leaf sprays, fixes cutaway masks through every LOD, and adds stable garden variation. Seventeen native PixelLab files and four current in-game loading captures are selected in the manifest. The GPU visibility proof compares rendered character pixels with and without occluding foliage. Full release checks and hardware-scoped performance/resource results are in `release.json`; the supplied concept remains a visual target, without a claim of identical fidelity.
+
 `index.html` embeds the renderer, game code, all selected art and all selected audio. Edit runtime modules under `elyndor`; rebuild with `python elyndor/tools/build.py --final`. The native packer rejects clipped source frames and records its selected sources in the asset manifest. `release.json` identifies the exact tested artifact.
 
 The V15 modules are `relief-data-v15.js`, `geography-v15.js`, `settlements-v15.js`, `travel-v15.js`, `combat-input-v15.js`, `weather-v15.js`, `clearance-v15.js`, `audio-v15.js` and `casting-v15.js`, with `experience-v15.css`. They extend the established story, traversal, combat and audio systems.

@@ -294,15 +294,15 @@
     }
   ],
   "images": {
-    "cobble": "elyndor/assets/source/pixellab-v7/materials-v28/cobble.png",
+    "cobble": "elyndor/assets/source/pixellab-v7/botany-v30/cobble30.png",
     "wood": "elyndor/assets/source/pixellab-v7/materials-v28/wood.png",
     "darkWood": "elyndor/assets/source/pixellab-v7/images/v15-darkWood.png",
-    "slate": "elyndor/assets/source/pixellab-v7/materials-v28/slate.png",
-    "plaster": "elyndor/assets/source/pixellab-v7/materials-v28/plaster.png",
+    "slate": "elyndor/assets/source/pixellab-v7/botany-v30/slate30.png",
+    "plaster": "elyndor/assets/source/pixellab-v7/botany-v30/plaster30.png",
     "wall": "elyndor/assets/source/pixellab-v7/materials-v28/wall.png",
     "rock": "elyndor/assets/source/pixellab-v7/materials-v28/rock.png",
     "earth": "elyndor/assets/source/pixellab-v7/materials-v28/earth.png",
-    "grass": "elyndor/assets/source/pixellab-v7/materials-v28/grass.png",
+    "grass": "elyndor/assets/source/pixellab-v7/botany-v30/meadow30.png",
     "bark": "elyndor/assets/source/pixellab-v7/images/v15-bark.png",
     "cloth": "elyndor/assets/source/pixellab-v7/images/v15-cloth.png",
     "metal": "elyndor/assets/source/pixellab-v7/images/v15-metal.png",
@@ -343,12 +343,12 @@
     "runeSeal": "elyndor/assets/source/pixellab-v7/images/v15-runeSeal.png",
     "exitMarker": "elyndor/assets/source/pixellab-v7/images/v15-exitMarker.png",
     "saveSeal": "elyndor/assets/source/pixellab-v7/images/v15-saveSeal.png",
-    "cobbleA": "elyndor/assets/source/pixellab-v7/materials-v28/cobble.png",
-    "cobbleB": "elyndor/assets/source/pixellab-v7/materials-v28/cobble.png",
+    "cobbleA": "elyndor/assets/source/pixellab-v7/botany-v30/cobbleMoss30.png",
+    "cobbleB": "elyndor/assets/source/pixellab-v7/botany-v30/cobbleMoss30.png",
     "wallA": "elyndor/assets/source/pixellab-v7/materials-v28/wall.png",
-    "plasterA": "elyndor/assets/source/pixellab-v7/materials-v28/plaster.png",
+    "plasterA": "elyndor/assets/source/pixellab-v7/botany-v30/plaster30.png",
     "earthA": "elyndor/assets/source/pixellab-v7/materials-v28/earth.png",
-    "grassA": "elyndor/assets/source/pixellab-v7/materials-v28/grass.png",
+    "grassA": "elyndor/assets/source/pixellab-v7/botany-v30/meadow30.png",
     "desert": "elyndor/assets/source/pixellab-v7/images/v15-desert.png",
     "barren": "elyndor/assets/source/pixellab-v7/images/v15-barren.png",
     "lava": "elyndor/assets/source/pixellab-v7/images/v15-lava.png",
@@ -381,20 +381,28 @@
     "ui27_portrait_soren": "elyndor/assets/source/pixellab-v7/interface-v27/portrait-soren.png",
     "icon_bronze": "elyndor/assets/source/pixellab-v7/interface-v27/bronze.png",
     "icon_forestBlade": "elyndor/assets/source/pixellab-v7/interface-v27/forestBlade.png",
-    "normal28_cobble": "elyndor/assets/source/pixellab-v7/materials-v28/cobble-normal.png",
-    "normal28_plaster": "elyndor/assets/source/pixellab-v7/materials-v28/plaster-normal.png",
-    "normal28_slate": "elyndor/assets/source/pixellab-v7/materials-v28/slate-normal.png",
+    "normal28_cobble": "elyndor/assets/source/pixellab-v7/botany-v30/cobble30-normal.png",
+    "normal28_plaster": "elyndor/assets/source/pixellab-v7/botany-v30/plaster30-normal.png",
+    "normal28_slate": "elyndor/assets/source/pixellab-v7/botany-v30/slate30-normal.png",
     "normal28_wood": "elyndor/assets/source/pixellab-v7/materials-v28/wood-normal.png",
     "normal28_rock": "elyndor/assets/source/pixellab-v7/materials-v28/rock-normal.png",
     "normal28_oakCanopy": "elyndor/assets/source/pixellab-v7/materials-v28/oakCanopy-normal.png",
-    "normal28_grass": "elyndor/assets/source/pixellab-v7/materials-v28/grass-normal.png",
+    "normal28_grass": "elyndor/assets/source/pixellab-v7/botany-v30/meadow30-normal.png",
     "normal28_earth": "elyndor/assets/source/pixellab-v7/materials-v28/earth-normal.png",
     "normal28_wall": "elyndor/assets/source/pixellab-v7/materials-v28/wall-normal.png",
     "fall28": "elyndor/assets/source/pixellab-v7/materials-v28/fall28.png",
     "rug29": "elyndor/assets/source/pixellab-v7/interiors-v29/rug29.png",
     "panel29": "elyndor/assets/source/pixellab-v7/interiors-v29/panel29.png",
     "hearth29": "elyndor/assets/source/pixellab-v7/interiors-v29/hearth29.png",
-    "landscape29": "elyndor/assets/source/pixellab-v7/interiors-v29/landscape29.png"
+    "landscape29": "elyndor/assets/source/pixellab-v7/interiors-v29/landscape29.png",
+    "leafOak30": "elyndor/assets/source/pixellab-v7/botany-v30/leafOak30.png",
+    "leafBirch30": "elyndor/assets/source/pixellab-v7/botany-v30/leafBirch30.png",
+    "leafMaple30": "elyndor/assets/source/pixellab-v7/botany-v30/leafMaple30.png",
+    "leafWillow30": "elyndor/assets/source/pixellab-v7/botany-v30/leafWillow30.png",
+    "leafPine30": "elyndor/assets/source/pixellab-v7/botany-v30/leafPine30.png",
+    "leafBlossom30": "elyndor/assets/source/pixellab-v7/botany-v30/leafBlossom30.png",
+    "petal30": "elyndor/assets/source/pixellab-v7/botany-v30/petal30.png",
+    "normal28_cobbleMoss30": "elyndor/assets/source/pixellab-v7/botany-v30/cobbleMoss30-normal.png"
   },
   "materialKeys": [
     "cobble",
@@ -489,22 +497,22 @@
   },
   "loadingScreens": {
     "river": {
-      "file": "elyndor/assets/source/pixellab-v7/presentation-v29/river-still.webp",
+      "file": "elyndor/assets/source/pixellab-v7/presentation-v30/river-still.webp",
       "name": "Brookstead \u00b7 The riverlands",
       "provenance": "Fresh 1920\u00d71080 actual in-game capture; no HUD, no concept art, no synthetic scene."
     },
     "inn": {
-      "file": "elyndor/assets/source/pixellab-v7/presentation-v29/inn-still.webp",
+      "file": "elyndor/assets/source/pixellab-v7/presentation-v30/inn-still.webp",
       "name": "The Lantern Inn \u00b7 A warm hearth",
       "provenance": "Fresh 1920\u00d71080 actual in-game capture; no HUD, no concept art, no synthetic scene."
     },
     "shop": {
-      "file": "elyndor/assets/source/pixellab-v7/presentation-v29/shop-still.webp",
+      "file": "elyndor/assets/source/pixellab-v7/presentation-v30/shop-still.webp",
       "name": "Riverstone Supplies \u00b7 Provisions for the road",
       "provenance": "Fresh 1920\u00d71080 actual in-game capture; no HUD, no concept art, no synthetic scene."
     },
     "archives": {
-      "file": "elyndor/assets/source/pixellab-v7/presentation-v29/archives-still.webp",
+      "file": "elyndor/assets/source/pixellab-v7/presentation-v30/archives-still.webp",
       "name": "The Royal Archives \u00b7 Records of the old network",
       "provenance": "Fresh 1920\u00d71080 actual in-game capture; no HUD, no concept art, no synthetic scene."
     }

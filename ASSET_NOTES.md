@@ -1,5 +1,7 @@
 # Selected artwork and recorded audio
 
+Alpha 1.6 adds 17 native PixelLab 512×512 files in `botany-v30`: six transparent botanical sprays, one petal texture, five material albedos and five matching normal maps. The original user atmosphere concept guided the palette and level of detail; candidates that copied houses or characters into botanical textures were rejected. The selected files and native alpha/dimension audit are recorded in `botany-v30/provenance.json`. Four destination loading images in `presentation-v30` are fresh 1920×1080 captures of actual gameplay, with the HUD hidden during capture.
+
 The approved Google Drive character, portrait, environment and storyboard concepts guide the art. Only approved concepts were sent to PixelLab as references for this update. Earlier generated game assets were not used as reference inputs. Private source documents, uploaded-reference receipts, credentials, auditions and rejected candidates are excluded from the public checkpoint.
 
 The runtime retains 41 selected native families plus Soren's explicitly authored opponent direction, 4,878 reviewed native poses, 38 dialogue portraits and five dedicated HUD portraits. Source margins and packed RGBA pixels are audited. The approved Duskfang Wolf has charcoal-blue fur, ivory brow horns and a quill mane; the Briartusk Boar has rusty umber fur, natural bark-like armor and thorn-like tusks. Their defeat fragments sample actual sprite colors.
