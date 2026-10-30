@@ -1,5 +1,11 @@
 # Integrated Alpha Version 1.0 build
 
+## V31 — Celestial atmosphere and fitted architecture
+
+The atmosphere is implemented in shaders and real scene geometry, using the existing native PixelLab assets. One world-space cloud field controls the sky volume, directional-light transmittance, landscape shafts and dust. Solar direction moves through the day; moonlight fades in beyond twilight. Interiors retain their authored warm lighting and add a small world-space dust population.
+
+Architecture is rebuilt from textured components with consistent roof charts, deliberate openings and unobstructed entry approaches. Plant ownership follows building cutaways; removed buildings cannot leave invisible entry-step height bumps. Open halls and relief shelters preserve physical walk-through space. Four new loading stills are actual native game renders. Generated concepts are references, not substituted scene backgrounds.
+
 Alpha 1.6 replaces opaque tree cores with six species of folded transparent leaf sprays, fixes cutaway masks through every LOD, and adds stable garden variation. Seventeen native PixelLab files and four current in-game loading captures are selected in the manifest. The GPU visibility proof compares rendered character pixels with and without occluding foliage. Full release checks and hardware-scoped performance/resource results are in `release.json`; the supplied concept remains a visual target, without a claim of identical fidelity.
 
 `index.html` embeds the renderer, game code, all selected art and all selected audio. Edit runtime modules under `elyndor`; rebuild with `python elyndor/tools/build.py --final`. The native packer rejects clipped source frames and records its selected sources in the asset manifest. `release.json` identifies the exact tested artifact.

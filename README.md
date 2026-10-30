@@ -1,5 +1,13 @@
 # The Last Light of Elyndor
 
+## Alpha Version 1.7 — A moving sky, a better-built world
+
+A continuous east-to-west solar orbit now drives the visible sun, directional lighting, moving shadows, sunrise, dusk and moonlit nights. Fourteen continuously blended colour keys coordinate direct light, sky gradients, cloud highlights, ambient fill, haze and dust from violet predawn through peach sunrise, blue midday, amber golden hour, rose dusk and cool moonlight. Volumetric clouds, projected cloud shade, persistent world-space sun shafts and airborne dust use the same cloud density field. Ambient fill stays visible in cloud shadow; indoor dust catches warm room light. The game clock persists through travel and interiors.
+
+Settlement houses use fitted roofs, framed windows, recessed doors, matched porches, entry steps and seated chimneys. Intersecting inn additions and redundant facade layers have been removed. Forest homes have complete curved roof ends; open relief canopies use physical post and furniture colliders. Hall entrances retain their walk-through openings. Shop and smithy layouts keep back doors clear, and the aid office has a separate service desk and waiting area.
+
+Validation covers all 15 outdoor locations, seven interiors, the complete solar cycle, cloud and dust stability, entry approaches, campaign progression, combat, repeated travel and device-scoped performance. Current native in-game loading stills show the rebuilt village and interiors. This release reuses the approved native PixelLab material set; no new AI artwork was required for the geometry and lighting changes.
+
 ## Alpha Version 1.6 — Living gardens, clearer light
 
 Individual tree cutaways now work on all three foliage detail levels. Folded, alpha-cut leaf sprays replace opaque canopy cores; the forest includes oaks, birches, maples, willows, spruces and flowering trees with varied branching and proportions. Five flower forms, curved grass, ferns and shrubs create stable roadside and garden patches. Cutaways affect the main view while retaining the trees in light-generated shadows and water reflections.

@@ -497,22 +497,22 @@
   },
   "loadingScreens": {
     "river": {
-      "file": "elyndor/assets/source/pixellab-v7/presentation-v30/river-still.webp",
+      "file": "elyndor/assets/source/pixellab-v7/presentation-v31/river-still.webp",
       "name": "Brookstead \u00b7 The riverlands",
       "provenance": "Fresh 1920\u00d71080 actual in-game capture; no HUD, no concept art, no synthetic scene."
     },
     "inn": {
-      "file": "elyndor/assets/source/pixellab-v7/presentation-v30/inn-still.webp",
+      "file": "elyndor/assets/source/pixellab-v7/presentation-v31/inn-still.webp",
       "name": "The Lantern Inn \u00b7 A warm hearth",
       "provenance": "Fresh 1920\u00d71080 actual in-game capture; no HUD, no concept art, no synthetic scene."
     },
     "shop": {
-      "file": "elyndor/assets/source/pixellab-v7/presentation-v30/shop-still.webp",
+      "file": "elyndor/assets/source/pixellab-v7/presentation-v31/shop-still.webp",
       "name": "Riverstone Supplies \u00b7 Provisions for the road",
       "provenance": "Fresh 1920\u00d71080 actual in-game capture; no HUD, no concept art, no synthetic scene."
     },
     "archives": {
-      "file": "elyndor/assets/source/pixellab-v7/presentation-v30/archives-still.webp",
+      "file": "elyndor/assets/source/pixellab-v7/presentation-v31/archives-still.webp",
       "name": "The Royal Archives \u00b7 Records of the old network",
       "provenance": "Fresh 1920\u00d71080 actual in-game capture; no HUD, no concept art, no synthetic scene."
     }

@@ -1,5 +1,9 @@
 # Selected artwork and recorded audio
 
+## Alpha 1.7 rendering and architecture
+
+No new generated art is introduced in this release. Existing native PixelLab botanical sprays, paving, plaster, timber, roofing, interior panels, rugs and normal maps remain in use. New house and hall construction, sun/moon motion, cloud lighting and dust are code-authored 3D geometry and shaders. The presentation-v31 loading images are native 1920×1080 in-game captures with the interface temporarily hidden; their provenance records scene and camera values.
+
 Alpha 1.6 adds 17 native PixelLab 512×512 files in `botany-v30`: six transparent botanical sprays, one petal texture, five material albedos and five matching normal maps. The original user atmosphere concept guided the palette and level of detail; candidates that copied houses or characters into botanical textures were rejected. The selected files and native alpha/dimension audit are recorded in `botany-v30/provenance.json`. Four destination loading images in `presentation-v30` are fresh 1920×1080 captures of actual gameplay, with the HUD hidden during capture.
 
 The approved Google Drive character, portrait, environment and storyboard concepts guide the art. Only approved concepts were sent to PixelLab as references for this update. Earlier generated game assets were not used as reference inputs. Private source documents, uploaded-reference receipts, credentials, auditions and rejected candidates are excluded from the public checkpoint.

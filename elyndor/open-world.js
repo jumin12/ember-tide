@@ -126,7 +126,7 @@ function makeHouse(x,z,w,d,variant,kit='brook'){
  if(sceneBuildFilter&&!inSceneBounds(x,z,26))return null;
  const original={x,z},radius=Math.hypot(w,d)/2;let best=null;
  for(let r=0;r<=26&&!best;r+=1)for(let j=0;j<(r?24:1);j++){const a=j*TAU/24,q={x:original.x+Math.cos(a)*r,z:original.z+Math.sin(a)*r};if(roadDistance(q.x,q.z)<radius+3.8||channelDistance(q.x,q.z)<radius+2.5||colliders.some(c=>Math.abs(q.x-c.x)<c.w+w/2+1.2&&Math.abs(q.z-c.z)<c.d+d/2+1.2))continue;best=q;break;}
- if(!best)return null;x=best.x;z=best.z;const g=building(x,z,w,d,variant,kit);g.userData.worldHouse=true;if(!world.userData.buildings.includes(g))world.userData.buildings.push(g);if(kit==='brook'||kit==='capital'){
+ if(!best)return null;x=best.x;z=best.z;const g=building(x,z,w,d,variant,kit);g.userData.worldHouse=true;if(!world.userData.buildings.includes(g))world.userData.buildings.push(g);if((kit==='brook'||kit==='capital')&&!g.userData.architecture31){
  const rear=new THREE.Group();rear.rotation.y=Math.PI;g.add(rear);for(const yy of[.5,2.5,4.75])box(0,yy,d/2+.05,w,.14,.16,'wood','#6f5d42',rear);for(let xx=-w/2+.2;xx<w/2;xx+=1.7)box(xx,2.5,d/2+.06,.13,4.7,.14,'wood','#796446',rear);for(const xx of[-w*.27,w*.27]){smallWindow(rear,xx,1.55,d/2+.1);smallWindow(rear,xx,3.75,d/2+.1);}const left=new THREE.Group();left.rotation.y=Math.PI;g.add(left);for(const zz of[-d*.23,d*.23]){smallWindow(left,w/2+.08,1.6,zz,true);smallWindow(left,w/2+.08,3.8,zz,true);}
  if(variant===2){const veranda=new THREE.Group();veranda.position.set(0,0,d/2+.9);g.add(veranda);for(const xx of[-w*.35,w*.35]){box(xx,1.5,0,.22,3,.22,'wall','#c3b99c',veranda);box(xx,2.9,0,.45,.25,.45,'wall','#d7ceb5',veranda);}box(0,3.1,0,w*.82,.2,1.7,'slate','#9baeb0',veranda);}
  }return g;}
