@@ -1,16 +1,16 @@
 {
-  "status": "Alpha Version 1.4: party travel, responsive rendering, native surface detail and atmosphere",
+  "status": "Alpha Version 1.5: warmer detailed interiors, fresh loading captures and a reachable Tavin encounter",
   "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
   "characterFamilies": 41,
   "runtimeFamilies": 42,
   "nativeSelectedPoses": 4878,
   "portraits": 38,
   "dedicatedHudPortraits": 5,
-  "worldImages": 97,
+  "worldImages": 101,
   "artifact": {
     "file": "index.html",
-    "bytes": 42165491,
-    "sha256": "c2d30b10d5eceb78c91024aea3a84fdead4035675e800aa3f29e7b6317eba7f3",
+    "bytes": 41629834,
+    "sha256": "23c6caa327de851a3e3784eb26cee2cbbb50f9eac0c17fe4475446849367ebf9",
     "offline": true
   },
   "incompleteClips": {},

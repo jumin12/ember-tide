@@ -1,0 +1,11 @@
+{
+  "provider": "PixelLab MCP",
+  "model": "Pro",
+  "purpose": "Native interior materials and framed painting; no legacy generated artwork used as references",
+  "jobs": {
+    "rug29": "21ac03d3-199d-45ff-9f8c-98ea714535fb",
+    "panel29": "43331d42-4e3d-40e4-b748-9c8d0614ddbf",
+    "hearth29": "f75221e3-8dfa-4711-94cc-3897fc991632",
+    "landscape29": "2be9a51d-98df-49a0-ab25-548c8c33183a"
+  }
+}

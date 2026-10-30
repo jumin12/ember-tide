@@ -390,7 +390,11 @@
     "normal28_grass": "elyndor/assets/source/pixellab-v7/materials-v28/grass-normal.png",
     "normal28_earth": "elyndor/assets/source/pixellab-v7/materials-v28/earth-normal.png",
     "normal28_wall": "elyndor/assets/source/pixellab-v7/materials-v28/wall-normal.png",
-    "fall28": "elyndor/assets/source/pixellab-v7/materials-v28/fall28.png"
+    "fall28": "elyndor/assets/source/pixellab-v7/materials-v28/fall28.png",
+    "rug29": "elyndor/assets/source/pixellab-v7/interiors-v29/rug29.png",
+    "panel29": "elyndor/assets/source/pixellab-v7/interiors-v29/panel29.png",
+    "hearth29": "elyndor/assets/source/pixellab-v7/interiors-v29/hearth29.png",
+    "landscape29": "elyndor/assets/source/pixellab-v7/interiors-v29/landscape29.png"
   },
   "materialKeys": [
     "cobble",
@@ -485,9 +489,24 @@
   },
   "loadingScreens": {
     "river": {
-      "file": "elyndor/assets/source/pixellab-v7/presentation-v26/river-still.webp",
+      "file": "elyndor/assets/source/pixellab-v7/presentation-v29/river-still.webp",
       "name": "Brookstead \u00b7 The riverlands",
-      "provenance": "Still captured from the live in-game title camera, with no interface or party."
+      "provenance": "Fresh 1920\u00d71080 actual in-game capture; no HUD, no concept art, no synthetic scene."
+    },
+    "inn": {
+      "file": "elyndor/assets/source/pixellab-v7/presentation-v29/inn-still.webp",
+      "name": "The Lantern Inn \u00b7 A warm hearth",
+      "provenance": "Fresh 1920\u00d71080 actual in-game capture; no HUD, no concept art, no synthetic scene."
+    },
+    "shop": {
+      "file": "elyndor/assets/source/pixellab-v7/presentation-v29/shop-still.webp",
+      "name": "Riverstone Supplies \u00b7 Provisions for the road",
+      "provenance": "Fresh 1920\u00d71080 actual in-game capture; no HUD, no concept art, no synthetic scene."
+    },
+    "archives": {
+      "file": "elyndor/assets/source/pixellab-v7/presentation-v29/archives-still.webp",
+      "name": "The Royal Archives \u00b7 Records of the old network",
+      "provenance": "Fresh 1920\u00d71080 actual in-game capture; no HUD, no concept art, no synthetic scene."
     }
   },
   "textureRevision": "pixellab-v15"

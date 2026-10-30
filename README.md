@@ -1,5 +1,13 @@
 # The Last Light of Elyndor
 
+## Alpha Version 1.5 — A warmer welcome indoors
+
+All seven active interiors now use a closer, front-facing camera pitched down 25 degrees. Narrow screens track the party across each room. Native PixelLab wall panels, hearth masonry, woven rugs and framed artwork complement stocked shelves, table settings, chairs, plants and warm lighting. Dining chairs face their tables; lounge chairs face the fire. Clear aisles still connect services, exits and inn save seals.
+
+The missing objective for **A choice of restraint** now points to a visible gathering-ground encounter. Tavin can leave, save at an inn and return, retreat and retry, win, then join Bren and Soren. The encounter marker disappears after victory. Four new 1920×1080 in-game captures replace the old loading still and match village, inn, shop and archive destinations.
+
+The release includes functional checks for every interior, the full campaign, responsive views, real movement and rendering, plus repeated interior/resource and outdoor performance checks. Results and hardware-scoped measurements are in release.json. The interiors are a playable interpretation of the concept, without a claim of identical visual fidelity.
+
 ## Alpha Version 1.4 — Surfaces, atmosphere and reliable travel
 
 Fast travel preserves every live party mesh, including followers that were incorrectly detached by the scenery trimmer. The Map button uses a clear native PixelLab parchment icon and an opaque hover/focus plate. Rendering now presents once per browser animation frame, resizes buffers only when their dimensions change, and sizes reflection and shadow buffers to laptop and phone viewports.

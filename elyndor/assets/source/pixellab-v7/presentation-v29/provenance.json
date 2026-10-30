@@ -1,0 +1,108 @@
+{
+  "captures": [
+    {
+      "key": "river",
+      "scene": "entrance",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "camera": [
+        -131,
+        41,
+        170
+      ],
+      "look": [
+        -153,
+        5,
+        96
+      ],
+      "renderer": [
+        1920,
+        1080
+      ],
+      "clock": 0.9986000000000018,
+      "source": "Actual native in-game render, interface hidden only during capture"
+    },
+    {
+      "key": "inn",
+      "scene": "brookInn",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "camera": [
+        -1.2600000000000002,
+        12.350000000000001,
+        19.57
+      ],
+      "look": [
+        -1.2600000000000002,
+        1.55,
+        -3.63
+      ],
+      "renderer": [
+        1920,
+        1080
+      ],
+      "clock": 1.7485999999999993,
+      "source": "Actual native in-game render, interface hidden only during capture"
+    },
+    {
+      "key": "shop",
+      "scene": "brookShop",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "camera": [
+        0,
+        12.350000000000001,
+        19.75
+      ],
+      "look": [
+        0,
+        1.55,
+        -3.45
+      ],
+      "renderer": [
+        1920,
+        1080
+      ],
+      "clock": 2.4985999999999966,
+      "source": "Actual native in-game render, interface hidden only during capture"
+    },
+    {
+      "key": "archives",
+      "scene": "archives",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "camera": [
+        0,
+        12.350000000000001,
+        20.5
+      ],
+      "look": [
+        0,
+        1.55,
+        -2.7
+      ],
+      "renderer": [
+        1920,
+        1080
+      ],
+      "clock": 3.248599999999994,
+      "source": "Actual native in-game render, interface hidden only during capture"
+    }
+  ],
+  "errors": [],
+  "pass": true,
+  "files": {
+    "archives-still.webp": "c574100838339623b839154d6ad29bd244b50f92ce08e3e9a1584757011c9983",
+    "inn-still.webp": "921b5ea703c8dbe0b52e9aabffd13fa5133d523cc0fbe3029cc00bbbf40e463c",
+    "river-still.webp": "e7d7c0220068fb3b0f03aa31cc21f3bc3fce4c69c055ee217ffc8b5024952125",
+    "shop-still.webp": "9af4456a72f4358297d2a01a45c0ed5191af314409fde80089ea52c684baba30"
+  }
+}
