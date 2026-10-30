@@ -312,7 +312,7 @@ updateVillagers=function(dt){for(const a of npcs){a.speed=0;const o=a.interactio
  }};
 function batchLandscape(){
  for(const g of world.userData.buildings){const shells=[g.userData.roofShell,g.userData.facadeShell].filter(Boolean);for(const shell of shells)g.remove(shell);mergeGroup(g);for(const shell of shells){g.add(shell);mergeGroup(shell);}}
- const protectedGroups=new Set([...world.userData.buildings,...world.userData.lightSites.map(s=>s.group),world.userData.gate,world.userData.crank,world.userData.pump,world.userData.waterwheel].filter(Boolean));
+ const protectedGroups=new Set([...world.userData.buildings,...world.userData.lightSites.map(s=>s.group),world.userData.gate,world.userData.crank,world.userData.pump,world.userData.waterwheel,world.userData.sluice18?.frame,world.userData.sluiceAbutment26].filter(Boolean));
  const buckets=new Map(),meshes=[];world.updateMatrixWorld(true);
  world.traverse(o=>{if(!o.isMesh||o.isInstancedMesh||o===water||o.userData.terrain||o.userData.terracedWater||o.userData.dynamicWater)return;let p=o;while(p&&p!==world){if(protectedGroups.has(p))return;p=p.parent;}meshes.push(o);});
  for(const o of meshes){const p=o.getWorldPosition(V3()),k=Math.floor(p.x/40)+','+Math.floor(p.z/40);if(!buckets.has(k)){const g=new THREE.Group();g.userData.chunk=true;g.userData.center=V3(Math.floor(p.x/40)*40+20,0,Math.floor(p.z/40)*40+20);world.add(g);buckets.set(k,g);}buckets.get(k).attach(o);}

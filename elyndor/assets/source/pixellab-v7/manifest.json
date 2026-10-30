@@ -372,7 +372,15 @@
     "ui26_nav_journal": "elyndor/assets/source/pixellab-v7/interface-v26/icon-journal.png",
     "ui26_nav_inventory": "elyndor/assets/source/pixellab-v7/interface-v26/icon-inventory.png",
     "ui26_nav_party": "elyndor/assets/source/pixellab-v7/interface-v26/icon-party.png",
-    "ui26_nav_equipment": "elyndor/assets/source/pixellab-v7/interface-v26/icon-equipment.png"
+    "ui26_nav_equipment": "elyndor/assets/source/pixellab-v7/interface-v26/icon-equipment.png",
+    "icon_charm": "elyndor/assets/source/pixellab-v7/interface-v27/charm.png",
+    "icon_shield": "elyndor/assets/source/pixellab-v7/interface-v27/shield.png",
+    "icon_slash": "elyndor/assets/source/pixellab-v7/interface-v27/slash.png",
+    "icon_rally": "elyndor/assets/source/pixellab-v7/interface-v27/rally.png",
+    "ui27_portrait_bren": "elyndor/assets/source/pixellab-v7/interface-v27/portrait-bren.png",
+    "ui27_portrait_soren": "elyndor/assets/source/pixellab-v7/interface-v27/portrait-soren.png",
+    "icon_bronze": "elyndor/assets/source/pixellab-v7/interface-v27/bronze.png",
+    "icon_forestBlade": "elyndor/assets/source/pixellab-v7/interface-v27/forestBlade.png"
   },
   "materialKeys": [
     "cobble",
@@ -468,7 +476,7 @@
   "loadingScreens": {
     "river": {
       "file": "elyndor/assets/source/pixellab-v7/presentation-v26/river-still.webp",
-      "name": "Brookstead · The riverlands",
+      "name": "Brookstead \u00b7 The riverlands",
       "provenance": "Still captured from the live in-game title camera, with no interface or party."
     }
   },

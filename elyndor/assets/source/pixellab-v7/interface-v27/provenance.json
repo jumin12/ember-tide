@@ -1,0 +1,38 @@
+{
+  "provider": "PixelLab",
+  "referencePolicy": "Original user-supplied equipment concept crops only; no earlier generated assets used as references.",
+  "assets": [
+    {
+      "key": "charm",
+      "id": "d34e574f-b573-4d65-a3ff-4ae2f4d3e109"
+    },
+    {
+      "key": "shield",
+      "id": "23bf6c59-e042-47ab-94c8-b79f6500df88"
+    },
+    {
+      "key": "slash",
+      "id": "83e9a558-6fab-491c-8129-176ee7dda288"
+    },
+    {
+      "key": "rally",
+      "id": "aba91d1f-7ce9-4ae7-8afb-830d2294970c"
+    },
+    {
+      "key": "portrait-bren",
+      "id": "94d927b0-d605-4677-a20d-7fe7dbb32f14"
+    },
+    {
+      "key": "portrait-soren",
+      "id": "803e2e52-1ad5-4b14-a9fb-e91f28a9253e"
+    },
+    {
+      "key": "bronze",
+      "id": "be08a68f-94e9-4137-ab4a-516bcea3c4d6"
+    },
+    {
+      "key": "forestBlade",
+      "id": "aedfaa7e-8a84-43a2-98a5-092783bb16e1"
+    }
+  ]
+}

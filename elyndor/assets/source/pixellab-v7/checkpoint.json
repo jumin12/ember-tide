@@ -1,16 +1,16 @@
 {
-  "status": "Alpha Version 1.2: live riverlands title, matching loading still, stable sluice masonry, complete stair rails and persistent world atmosphere",
+  "status": "Alpha Version 1.3: stable sluice, larger graded POI roads, illustrated gear menus, glowing silhouette targeting and batched foliage",
   "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
   "characterFamilies": 41,
   "runtimeFamilies": 42,
   "nativeSelectedPoses": 4878,
   "portraits": 38,
   "dedicatedHudPortraits": 5,
-  "worldImages": 79,
+  "worldImages": 87,
   "artifact": {
     "file": "index.html",
-    "bytes": 40714032,
-    "sha256": "e1cafafa6ba7ccdb37dccef8a48d2aeffdd956bb9f31c7478cfc82fcc8fedfe9",
+    "bytes": 40881092,
+    "sha256": "a932b6054ad1a3bc969b7f0718b1613b34ab31c0e85cbf4aabe272c623ffe10e",
     "offline": true
   },
   "incompleteClips": {},

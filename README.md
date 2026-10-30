@@ -69,3 +69,11 @@ The title screen pairs left-side navigation with a right-side changelog or three
 V20 closes the remaining terrain seam with continuous ground beneath the masonry. The extended stair flight joins its actual lower tread with eleven sub-25cm steps; native keyboard tests cross every flight in both directions. A single downstream water shader replaces accumulated periodic bands, fixed foam points and gate smoke. Cascade reflections use their actual adjacent pools and sampled fill-time levels, with water effects excluded from their own reflection views. This historical repair is included in Alpha Version 1.0. Run `python elyndor/tools/verify-v26.py` for the current sequential checks.
 
 Alpha 1.2 rebuilds the main interface from the latest navy-and-gold references: functional journal, inventory, equipment comparisons, party, settings, title and loading screens. The supplied crystal wordmark is preserved at native resolution. PixelLab menu illustration and trim are separate from the fully 3D world: distant houses, foliage and terrain reuse foreground assets and materials. Three journey records remain available at entrance seals and inns.
+
+### Alpha 1.3 — clearer battles and larger POIs
+
+The sluice frame stays with its gate across batching and camera passes. Outdoor approaches and departures extend along graded roads, with outward-facing luminous floor exits. Equipment and Inventory offer live comparisons, recipient selection, sorting, inspectable items and two additional gear slots. Eight new native PixelLab assets include 448×600 character portraits and distinct 192×192 icons. Selected foes keep their original colors inside a red silhouette outline, with health bars below and a complete round timeline.
+
+Ground cover now uses 32-metre spatial batches with the same authored plant instances, per-instance combat visibility, building ownership and wind. Run `python elyndor/tools/verify-v27.py` for the current sequential regression and native-renderer checks.
+
+Whole-building cutaways use each house’s main footprint through its roof peak in every settlement. Roofs that cover the party clear correctly, while awnings and other projecting ornaments retain their separate treatment.

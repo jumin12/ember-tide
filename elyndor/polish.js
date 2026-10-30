@@ -30,10 +30,12 @@ mergeGroup=function(group){
  group.traverse(o=>{if(!o.isMesh||o.isInstancedMesh||Array.isArray(o.material))return;const source=o.material,m=compatibleMaterial(source)??source,key=m.uuid;if(!buckets.has(key))buckets.set(key,{m,g:[]});const g=o.geometry.index?o.geometry.toNonIndexed():o.geometry.clone();g.applyMatrix4(inverse.clone().multiply(o.matrixWorld));if(m!==source){const colors=new Float32Array(g.attributes.position.count*3);for(let i=0;i<colors.length;i+=3){colors[i]=source.color.r;colors[i+1]=source.color.g;colors[i+2]=source.color.b;}g.setAttribute('color',new THREE.BufferAttribute(colors,3));}buckets.get(key).g.push(g);removed.push(o);});
  for(const o of removed)o.removeFromParent();for(const{m,g:list}of buckets.values()){const out=new THREE.BufferGeometry();for(const a of['position','normal','uv',...(m.vertexColors?['color']:[])]){const size=a==='uv'?2:3,arr=new Float32Array(list.reduce((n,g)=>n+g.attributes.position.count*size,0));let at=0;for(const g of list){const src=g.attributes[a]?.array??new Float32Array(g.attributes.position.count*size).fill(a==='color'?1:0);arr.set(src,at);at+=src.length;}out.setAttribute(a,new THREE.BufferAttribute(arr,size));}out.computeBoundingSphere();const o=new THREE.Mesh(out,m);o.castShadow=o.receiveShadow=true;group.add(o);for(const g of list)g.dispose();}
 };
-// Smaller foliage cells and distance-dependent geometry reduce hidden-instance work.
+// Batch a full patch of ground cover per draw. Sixteen-metre cells created
+// hundreds of tiny colour and shadow submissions around a single town view.
+// Per-instance masks, wind and building ownership remain independent.
 buildPlants=function(){
  const card=sharedGeo.card??=new THREE.PlaneGeometry(1,1,1,3);perf.plants=[];
- const cellSize=scenery.software?32:16,make=(matrices,key,leaf=false)=>{const cells=new Map();matrices.forEach((m,index)=>{const e=m.elements,k=Math.floor(e[12]/cellSize)+','+Math.floor(e[14]/cellSize);if(!cells.has(k))cells.set(k,[]);cells.get(k).push({m,index});});
+ const cellSize=32,make=(matrices,key,leaf=false)=>{const cells=new Map();matrices.forEach((m,index)=>{const e=m.elements,k=Math.floor(e[12]/cellSize)+','+Math.floor(e[14]/cellSize);if(!cells.has(k))cells.set(k,[]);cells.get(k).push({m,index});});
   for(const list of cells.values()){
    // Stable interleaving keeps density reductions evenly spread, including crossed cards.
    list.sort((a,b)=>((a.index*2654435761)>>>0)-((b.index*2654435761)>>>0));

@@ -42,7 +42,7 @@ roadInfo=function(x,z){let r=districtRoadBefore24(x,z);if(activeScene?.kind!=='p
 // boundary had a single hard height jump; both the mesh and walking query now
 // sample the same continuous grade with feathered shoulders.
 const districtGroundBefore24=groundAt;
-groundAt=function(x,z,...args){const base=districtGroundBefore24(x,z,...args);if(activeScene?.key!=='brookstead'||z>35||z<-5||x<-165||x>-134)return base;const points=districts24.brookstead.roads[2].p,heights=[7.198090594858874,.2541818618774414,-1.06];let distance=Infinity,target=base;for(let i=1;i<points.length;i++){const a=points[i-1],b=points[i],dx=b[0]-a[0],dz=b[1]-a[1],t=clamp(((x-a[0])*dx+(z-a[1])*dz)/(dx*dx+dz*dz),0,1),d=Math.hypot(x-mix(a[0],b[0],t),z-mix(a[1],b[1],t));if(d<distance){distance=d;target=mix(heights[i-1],heights[i],t);}}return mix(target,base,smooth(2.8,7,distance));};
+groundAt=function(x,z,...args){const base=districtGroundBefore24(x,z,...args);if(activeScene?.key!=='brookstead'||z>35||z<-5||x<-165||x>-134)return base;const points=districts24.brookstead.roads[2].p,heights=[7.198090594858874,.2541818618774414,-1.06];let distance=Infinity,target=base;for(let i=1;i<points.length;i++){const a=points[i-1],b=points[i],dx=b[0]-a[0],dz=b[1]-a[1],t=clamp(((x-a[0])*dx+(z-a[1])*dz)/(dx*dx+dz*dz),0,1),d=Math.hypot(x-mix(a[0],b[0],t),z-mix(a[1],b[1],t));if(d<distance){distance=d;target=mix(heights[i-1]??base,heights[i]??base,t);}}return mix(target,base,smooth(2.8,7,distance));};
 // Reserve the outer road shoulders before placing any tree or obstruction.
 const districtTreeBefore24=buildSolidTree;
 buildSolidTree=function(x,z,...args){if(activeScene?.kind==='poi'&&!insideRect24(x,z,districtCore24[activeScene.key],2)&&roadDistance(x,z)<5.4)return null;return districtTreeBefore24(x,z,...args);};
@@ -50,7 +50,7 @@ const districtSettlementsBefore24=buildSettlements;
 buildSettlements=function(){districtSettlementsBefore24();buildDistrictPlots24();};
 function buildDistrictPlots24(){
  if(activeScene?.kind!=='poi'||world.userData.districtPlots24)return;const q=districts24[activeScene.key];world.userData.districtPlots24=[];if(!q||POIS[activeScene.key].kind!=='town'||activeScene.key==='harbor')return;
- const b=q.bounds,core=q.core,plots=[],rng=seeded(240780+core[0]*17),max=activeScene.key==='brookstead'?3:2;
+ const b=q.bounds,core=q.core,plots=[],rng=seeded(240780+core[0]*17),max=activeScene.key==='brookstead'?6:5;
  for(let j=0;j<750&&plots.length<max;j++){
   const x=mix(b[0]+12,b[1]-12,rng()),z=mix(b[2]+12,b[3]-12,rng()),d=roadDistance(x,z),h=groundAt(x,z);
   if(insideRect24(x,z,core,7)||d<9||d>17||h<.6||waterGround(x,z)||plots.some(p=>Math.hypot(p.x-x,p.z-z)<22))continue;

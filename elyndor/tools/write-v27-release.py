@@ -1,0 +1,11 @@
+from pathlib import Path
+import json,hashlib
+R=Path(__file__).resolve().parents[2];O=R/'output/elyndor/pixellab-v27';read=lambda n:json.loads((O/n).read_text(encoding='utf-8'));sha=hashlib.sha256((R/'index.html').read_bytes()).hexdigest();v=read('verification.json')
+assert v['sha256']==sha and len(v['checks'])==15 and all(q['pass']for q in v['checks'])
+proof={n:read(p)for n,p in {'cutaways':'cutaway/report.json','targets':'targets/report.json','menus':'interface/report.json','routes':'revision/report.json','endurance':'endurance/report.json','campaign':'campaign/report.json','performance':'performance/native.json','atmosphere':'atmosphere/report.json'}.items()}
+assert proof['targets']['pass']and proof['menus']['pass']and proof['routes']['pass']and len(proof['routes']['locations'])==15 and proof['endurance']['pass']and proof['campaign']['campaign']['final']=='complete'
+for n in ['cutaways','targets','menus','routes','atmosphere','endurance']:assert proof[n]['sha256']==sha
+s=(R/'elyndor/title-v19.js').read_text(encoding='utf-8');notes,_=json.JSONDecoder().raw_decode(s.split('const CHANGELOG19=',1)[1]);r=json.loads((R/'release.json').read_text(encoding='utf-8'));r.update(release='elyndor-alpha-1.3-2026-10-30-v27',version='Alpha Version 1.3',artifact={'file':'index.html','bytes':(R/'index.html').stat().st_size,'sha256':sha,'offline':True},releaseNotes=notes,changes=notes[0]['items'])
+r['githubHistory']['previousRelease']='f54c8807dd7d4bfba57a21c214096924ec8ebd48';r['graphics'].update(newPixelLabAssets=8,menuPortraitResolution=[448,600],itemIconResolution=[192,192],selectedEnemy='Alpha-tested glowing red silhouette outline; original sprite colors preserved',completeSluiceProtectedFromBatching=True,persistentShaftHeight=48,cloudRayShadowField='Shared world-space density',largerPoiRoads=True,fullMainRoofCutawaysInAllTowns=True,foliageBatchMetres=32)
+r['validation']={**v,**proof,'sourceMatchesArtifact':True};r['performance']={'nativeScenarios':proof['performance'],'extended1080p':proof['endurance'],'scope':proof['endurance']['scope']}
+(R/'release.json').write_text(json.dumps(r,indent=2,ensure_ascii=False)+'\n',encoding='utf-8',newline='\n');print(json.dumps({'version':r['version'],'artifact':r['artifact'],'checks':len(v['checks'])}))

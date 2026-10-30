@@ -52,3 +52,5 @@ The exact user-supplied high-resolution transparent crystal wordmark is retained
 No character frames, portraits, voices or recordings were regenerated. Sluice caps and abutments are separated physically; complete fitted rails follow the real stair heights. Puddles, clouds, world shafts and particles share the live lighting and bounded buffers.
 
 Terrain replacements update all owned LOD references, and scene teardown releases instance buffers. Repeated traversal and combat checks verify stable retained geometry counts.
+
+V27 interface art: eight native PixelLab Pro images in interface-v27; 448×600 Bren/Soren menu portraits use crops of the user-supplied equipment concept. Six 192×192 icons depict charm, shield, slash, rally, bronze blade and forest blade. No earlier generated images were used as generation references. Existing NPC, party animation and voice assets are retained.
