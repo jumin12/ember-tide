@@ -264,13 +264,13 @@ buildGlobalWater=function(){
  const branch=brookRibbon(98.8,221,brookChannel,z=>brookWidth(z)+1.05),merged=new THREE.BufferGeometry(),a=main.geometry.toNonIndexed(),b=branch.toNonIndexed();
  for(const key of['position','normal','uv','riverAcross']){const aa=a.attributes[key],bb=b.attributes[key],data=new Float32Array(aa.array.length+bb.array.length);data.set(aa.array);data.set(bb.array,aa.array.length);merged.setAttribute(key,new THREE.BufferAttribute(data,aa.itemSize));}main.geometry.dispose();main.geometry=merged;a.dispose();b.dispose();branch.dispose();
  world.userData.waterPools=[];
- for(const [z0,z1,level]of[[-290,69.8,initialHead],[70.2,79.2,4.55],[80.8,97.2,1.55]]){
+ for(const [z0,z1,level]of[[-290,69.2,initialHead],[70.8,79.2,4.55],[80.8,97.2,1.55]]){
   buildWater({waterX:-139});const pool=water;pool.geometry.dispose();pool.geometry=brookRibbon(z0,z1,brookChannel,z=>brookWidth(z)+1.05);pool.position.y=level;pool.userData.terracedWater=true;pool.userData.waterRole=z1<70?'reservoir':z0<80?'headrace':'millrace';
   const target=new THREE.WebGLRenderTarget(scenery.software?256:640,scenery.software?144:360),compile=pool.material.onBeforeCompile;pool.userData.poolTarget=target;
   pool.material.onBeforeCompile=sh=>{compile(sh);sh.uniforms.reflectionTex.value=target.texture;};pool.material.customProgramCacheKey=()=> 'brook-pool-'+level;
   pool.geometry.computeBoundingBox();pool.userData.poolBounds=pool.geometry.boundingBox.clone().translate(V3(0,level,0));pool.userData.poolPatches=[];for(let z=z0;z<z1;z+=20){const xs=[brookChannel(z),brookChannel(Math.min(z+20,z1))];pool.userData.poolPatches.push(new THREE.Box3(V3(Math.min(...xs)-6,level-.1,z),V3(Math.max(...xs)+6,level+.1,Math.min(z+20,z1))));}pool.userData.levelPatchCount=pool.userData.poolPatches.length;world.userData.waterPools.push(pool);
  }
- water=main;brookWaterfall(70,initialHead,4.55,.2);brookWaterfall(80,4.55,1.55);brookWaterfall(98,1.55,-1.4);
+ water=main;brookWaterfall(70,initialHead,4.55,.8);brookWaterfall(80,4.55,1.55);brookWaterfall(98,1.55,-1.4);
  world.userData.connectedWater=true;world.userData.waterCourse=CANAL_COURSE;world.userData.waterPatches=[];
  for(let z=-290;z<210;z+=24){const a=riverX(z),b=riverX(z+24);world.userData.waterPatches.push(new THREE.Box3(V3(Math.min(a,b)-10,-1.6,z),V3(Math.max(a,b)+10,-1.2,z+24)));}
  for(let z=98;z<221;z+=20){const a=brookChannel(z),b=brookChannel(z+20);world.userData.waterPatches.push(new THREE.Box3(V3(Math.min(a,b)-6,-1.6,z),V3(Math.max(a,b)+6,-1.2,z+20)));}

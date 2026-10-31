@@ -21,7 +21,7 @@ function refineWater28(o){
    float shade28=dot(art20,vec3(.21,.56,.23));
    diffuseColor.rgb*=body28*mix(.92,1.08,shade28);
    float fallFace28=1.-abs(normalize(cross(dFdx(worldWater20),dFdy(worldWater20))).y);
-   vec2 fallUV28=vec2(worldWater20.x*.22,worldWater20.y*.30+time20*.65);
+   vec2 fallUV28=vec2(worldWater20.x*.22,worldWater20.y*.30+time20*.24);
    vec3 fallArt28=texture2D(fall28,fallUV28).rgb;
    if(cascade20>0.)diffuseColor.rgb=mix(diffuseColor.rgb,fallArt28,fallFace28*.93);`);
   sh.fragmentShader=sh.fragmentShader.replace('#include <roughnessmap_fragment>','#include <roughnessmap_fragment>\nif(cascade20>0.)roughnessFactor=.68;');

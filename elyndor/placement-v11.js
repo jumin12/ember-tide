@@ -25,7 +25,7 @@ batchLandscape=function(){
  for(const o of rocks){const old=o.position.clone(),box=new THREE.Box3().setFromObject(o),radius=Math.max(box.max.x-box.min.x,box.max.z-box.min.z)/2;
   if(!clear(old.x,old.z,radius)){
    let found=null;for(let r=1;r<=16&&!found;r+=.7)for(let i=0;i<20;i++){const a=i*TAU/20,x=old.x+Math.cos(a)*r,z=old.z+Math.sin(a)*r;if(!clear(x,z,radius)||(!o.userData.bankRock&&waterGround(x,z))||!staticFree(x,z,radius*.65))continue;if(o.userData.bankRock&&Math.abs(channelDistance(x,z))>4)continue;found={x,z};break;}
-   if(found){o.position.x=found.x;o.position.z=found.z;o.position.y=groundAt(found.x,found.z)+Math.max(.04,o.scale.y*.12);for(const c of colliders)if(c.type==='boulder'&&Math.abs(c.x-old.x)<.01&&Math.abs(c.z-old.z)<.01){c.x=found.x;c.z=found.z;}world.userData.rockPlacement.moved++;}
+   if(found){o.position.x=found.x;o.position.z=found.z;o.position.y=groundAt(found.x,found.z)+Math.max(.04,o.scale.y*.12);for(const c of colliders)if(c.type==='boulder'&&Math.abs(c.x-old.x)<.01&&Math.abs(c.z-old.z)<.01){c.x=found.x;c.z=found.z;}world.userData.rockPlacement.moved++;}else{o.removeFromParent();colliders=colliders.filter(c=>!(c.type==='boulder'&&Math.hypot(c.x-old.x,c.z-old.z)<.1));continue;}
   }
   world.userData.rockPlacement.records.push({x:o.position.x,z:o.position.z,radius,bank:o.userData.bankRock});
  }

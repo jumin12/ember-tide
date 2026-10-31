@@ -1,25 +1,28 @@
 {
-  "release": "elyndor-alpha-1.7-2026-10-30-v31",
-  "version": "Alpha Version 1.7",
+  "release": "elyndor-alpha-1.8-2026-10-30-v32",
+  "version": "Alpha Version 1.8",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 42883362,
-    "sha256": "c04ec9fe4cd43b57ee6ad5dac0b69e0fd4fac8dd5b5b0099358bc4e8a3e03102",
+    "bytes": 42831827,
+    "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
     "offline": true
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "fd5611432bdb9ccda472137c07d9f8d55d586343"
+    "previousRelease": "6df203d070ccef73724986bd5e5891a458e67e88"
   },
   "changes": [
-    "The sun now crosses the sky from east to west. Fourteen smoothly blended colour keys tint direct light, sky, clouds, ambient fill, haze, shafts and dust: violet predawn, peach sunrise, blue midday, amber golden hour, rose dusk and cool moonlight.",
-    "Moving volumetric clouds share one world-space field with surface shadows, sunlight shafts and airborne dust. Clouds interrupt the light, while persistent rays stay anchored in the landscape.",
-    "Rebuilt settlement facades with recessed doors, fitted awnings, complete roof ends, framed windows, properly seated chimneys and clear entry steps. Removed overlapping inn additions and duplicate facade layers.",
-    "Forest homes now have closed curved roof ends and fitted porches. Relief pavilions have colliders around real posts, rear panels and furniture, allowing passage under the open canopy.",
-    "Rearranged shop and smithy shelving, weapon displays and service counters. Back doors remain clear, and the aid office now has its own desk, waiting area and storage.",
-    "Window light changes at dusk. Outdoor pollen, night fireflies, cool ambient fill and cloud-filtered sunbeams respond to the continuous clock and weather. Loading stills show the rebuilt in-game village and rooms."
+    "Removed the mismatched front-facing Soren idle poses while preserving the complete native coat animation.",
+    "Kept physical bridge decks visible through scene trimming and cutaways, and extended terrain beneath enlarged approaches.",
+    "Removed stray neighbouring road strips, continued roads past exit markers and rerouted the Network approach around its cliff.",
+    "Matched walking heights to the fine road surfaces and removed road-blocking rocks without a valid relocation.",
+    "Restricted the remnant rock overhang to its own location, reserved full road clearance and moved noticeboards to walkable shoulders with collision only while visible.",
+    "Slowed the sluice release and downstream recovery; water now clears the stone sill before the lower pools fill.",
+    "Removed the sweeping current ribbon and obsolete spray, with slower flowing surface and cascade textures.",
+    "Replaced overlapping old cloud planes with a bounded, rounded cloud volume linked to the moving sun, shadows and light shafts.",
+    "Cleaned up previous weather chunks during repeated setup and kept outdoor light, dust and cloud colours tied to the day/night cycle."
   ],
   "art": {
     "generator": "PixelLab",
@@ -69,8 +72,24 @@
     "embeddedCredential": false
   },
   "validation": {
-    "sha256": "c04ec9fe4cd43b57ee6ad5dac0b69e0fd4fac8dd5b5b0099358bc4e8a3e03102",
+    "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
     "checks": [
+      {
+        "name": "solid-road-clearance",
+        "pass": true
+      },
+      {
+        "name": "route-connections",
+        "pass": true
+      },
+      {
+        "name": "water-motion",
+        "pass": true
+      },
+      {
+        "name": "world-fixes",
+        "pass": true
+      },
       {
         "name": "solar-cloud-cycle",
         "pass": true
@@ -164,8 +183,2045 @@
         "pass": true
       }
     ],
+    "solidRoadClearance": {
+      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "locations": [
+        {
+          "key": "brookstead",
+          "samples": 444,
+          "bad": [],
+          "boards": [
+            {
+              "x": -145.00892326277145,
+              "z": 115.7332893009412,
+              "hiddenFree": true,
+              "solid": true,
+              "reachable": true
+            }
+          ]
+        },
+        {
+          "key": "fern",
+          "samples": 495,
+          "bad": [],
+          "boards": [
+            {
+              "x": 73.25212528353518,
+              "z": 77.09100574756873,
+              "hiddenFree": true,
+              "solid": true,
+              "reachable": true
+            }
+          ]
+        },
+        {
+          "key": "depths",
+          "samples": 444,
+          "bad": [],
+          "boards": [
+            {
+              "x": 113.60459790425695,
+              "z": 33.816512553294174,
+              "hiddenFree": true,
+              "solid": true,
+              "reachable": true
+            }
+          ]
+        },
+        {
+          "key": "highmere",
+          "samples": 477,
+          "bad": [],
+          "boards": [
+            {
+              "x": -88.59171069905881,
+              "z": -68.5606574490466,
+              "hiddenFree": true,
+              "solid": true,
+              "reachable": true
+            }
+          ]
+        },
+        {
+          "key": "alder",
+          "samples": 477,
+          "bad": [],
+          "boards": [
+            {
+              "x": 101.77068840374896,
+              "z": -84.56735584120969,
+              "hiddenFree": true,
+              "solid": true,
+              "reachable": true
+            }
+          ]
+        },
+        {
+          "key": "patrol",
+          "samples": 420,
+          "bad": [],
+          "boards": [
+            {
+              "x": 161.34281567401746,
+              "z": -58.22170695128791,
+              "hiddenFree": true,
+              "solid": true,
+              "reachable": true
+            }
+          ]
+        },
+        {
+          "key": "alderRemnant",
+          "samples": 420,
+          "bad": [],
+          "boards": [
+            {
+              "x": 197.97763534763055,
+              "z": -87.33315720376477,
+              "hiddenFree": true,
+              "solid": true,
+              "reachable": true
+            }
+          ]
+        },
+        {
+          "key": "relief",
+          "samples": 477,
+          "bad": [],
+          "boards": [
+            {
+              "x": 11.126995235791847,
+              "z": -141.0717416212757,
+              "hiddenFree": true,
+              "solid": true,
+              "reachable": true
+            }
+          ]
+        },
+        {
+          "key": "nearbySite",
+          "samples": 492,
+          "bad": [],
+          "boards": [
+            {
+              "x": -93.3246353567775,
+              "z": -179.57493395141177,
+              "hiddenFree": true,
+              "solid": true,
+              "reachable": true
+            }
+          ]
+        },
+        {
+          "key": "snow",
+          "samples": 291,
+          "bad": [],
+          "boards": [
+            {
+              "x": 144.33288646799267,
+              "z": -215.82823306797377,
+              "hiddenFree": true,
+              "solid": true,
+              "reachable": true
+            }
+          ]
+        },
+        {
+          "key": "fernClearing",
+          "samples": 285,
+          "bad": [],
+          "boards": [
+            {
+              "x": 135.03391613580646,
+              "z": 33.04515919746066,
+              "hiddenFree": true,
+              "solid": true,
+              "reachable": true
+            }
+          ]
+        },
+        {
+          "key": "alderClearing",
+          "samples": 372,
+          "bad": [],
+          "boards": [
+            {
+              "x": 226.50559116309236,
+              "z": -115.33328930094119,
+              "hiddenFree": true,
+              "solid": true,
+              "reachable": true
+            }
+          ]
+        },
+        {
+          "key": "reliefClearing",
+          "samples": 285,
+          "bad": [],
+          "boards": [
+            {
+              "x": 52.38897790773091,
+              "z": -146.3521941853476,
+              "hiddenFree": true,
+              "solid": true,
+              "reachable": true
+            }
+          ]
+        },
+        {
+          "key": "siteClearing",
+          "samples": 339,
+          "bad": [],
+          "boards": [
+            {
+              "x": -50.68602209226909,
+              "z": -215.16677674764702,
+              "hiddenFree": true,
+              "solid": true,
+              "reachable": true
+            }
+          ]
+        },
+        {
+          "key": "harbor",
+          "samples": 537,
+          "bad": [],
+          "boards": [
+            {
+              "x": 312.15566264572476,
+              "z": 77.90055367270762,
+              "hiddenFree": true,
+              "solid": true,
+              "reachable": true
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "pass": true
+    },
+    "routeConnections": {
+      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "locations": [
+        {
+          "key": "brookstead",
+          "paths": [
+            {
+              "x": -258.38008504205084,
+              "z": 172.0578155742448,
+              "nodes": 7,
+              "failures": 0
+            },
+            {
+              "x": 24.497512559933828,
+              "z": 90.64274216420174,
+              "nodes": 11,
+              "failures": 0
+            },
+            {
+              "x": -122.08780743252927,
+              "z": -33.97978619673136,
+              "nodes": 15,
+              "failures": 0
+            }
+          ]
+        },
+        {
+          "key": "fern",
+          "paths": [
+            {
+              "x": -12.831950026445114,
+              "z": 70.78503548216479,
+              "nodes": 3,
+              "failures": 0
+            },
+            {
+              "x": 162.46764354207914,
+              "z": 0.08847600471961314,
+              "nodes": 11,
+              "failures": 0
+            },
+            {
+              "x": 201.0677013912512,
+              "z": 69.19977827330331,
+              "nodes": 10,
+              "failures": 0
+            }
+          ]
+        },
+        {
+          "key": "depths",
+          "paths": [
+            {
+              "x": 108.1505279914946,
+              "z": 109.96742371932208,
+              "nodes": 3,
+              "failures": 0
+            },
+            {
+              "x": 179.637874704774,
+              "z": 10.266327850067203,
+              "nodes": 9,
+              "failures": 0
+            },
+            {
+              "x": 165.47180986321527,
+              "z": 69.23366015033851,
+              "nodes": 4,
+              "failures": 0
+            }
+          ]
+        },
+        {
+          "key": "highmere",
+          "paths": [
+            {
+              "x": -104.98941385307535,
+              "z": 17.233269816008132,
+              "nodes": 3,
+              "failures": 0
+            },
+            {
+              "x": 43.04638178103448,
+              "z": -68.71200540795029,
+              "nodes": 12,
+              "failures": 0
+            },
+            {
+              "x": -127.44,
+              "z": -208,
+              "nodes": 16,
+              "failures": 0
+            }
+          ]
+        },
+        {
+          "key": "alder",
+          "paths": [
+            {
+              "x": 29.37878552567777,
+              "z": -48.493264999730556,
+              "nodes": 4,
+              "failures": 0
+            },
+            {
+              "x": 146.8077999178613,
+              "z": -191.92565608572858,
+              "nodes": 9,
+              "failures": 0
+            },
+            {
+              "x": 215.6642892748599,
+              "z": -31.741903212188223,
+              "nodes": 9,
+              "failures": 0
+            }
+          ]
+        },
+        {
+          "key": "patrol",
+          "paths": [
+            {
+              "x": 86.13003673918544,
+              "z": -52.704850711465795,
+              "nodes": 3,
+              "failures": 0
+            },
+            {
+              "x": 104.37287112251981,
+              "z": -88.06820278611697,
+              "nodes": 47,
+              "failures": 0
+            },
+            {
+              "x": 238.46971507334928,
+              "z": -94.89677844989474,
+              "nodes": 6,
+              "failures": 0
+            }
+          ]
+        },
+        {
+          "key": "alderRemnant",
+          "paths": [
+            {
+              "x": 119.8586441024128,
+              "z": -74.05618851777932,
+              "nodes": 1,
+              "failures": 0
+            },
+            {
+              "x": 190.58943916273063,
+              "z": -26.551064768790397,
+              "nodes": 5,
+              "failures": 0
+            },
+            {
+              "x": 262.3940385914716,
+              "z": -162.1801059308532,
+              "nodes": 6,
+              "failures": 0
+            }
+          ]
+        },
+        {
+          "key": "relief",
+          "paths": [
+            {
+              "x": -28.096,
+              "z": -88.23,
+              "nodes": 3,
+              "failures": 0
+            },
+            {
+              "x": 93.5864569271346,
+              "z": -228.48131216668722,
+              "nodes": 8,
+              "failures": 0
+            },
+            {
+              "x": -10,
+              "z": -225,
+              "nodes": 6,
+              "failures": 0
+            }
+          ]
+        },
+        {
+          "key": "nearbySite",
+          "paths": [
+            {
+              "x": -145,
+              "z": -220,
+              "nodes": 41,
+              "failures": 0
+            },
+            {
+              "x": 10.627416997969519,
+              "z": -149.37258300203047,
+              "nodes": 8,
+              "failures": 0
+            },
+            {
+              "x": -66,
+              "z": -275,
+              "nodes": 6,
+              "failures": 0
+            }
+          ]
+        },
+        {
+          "key": "snow",
+          "paths": [
+            {
+              "x": 104.57352441444684,
+              "z": -154.46980556193404,
+              "nodes": 1,
+              "failures": 0
+            },
+            {
+              "x": 77.68271357367693,
+              "z": -171.18807264655572,
+              "nodes": 3,
+              "failures": 0
+            }
+          ]
+        },
+        {
+          "key": "fernClearing",
+          "paths": [
+            {
+              "x": 139,
+              "z": 111,
+              "nodes": 3,
+              "failures": 0
+            },
+            {
+              "x": 70.6952131296153,
+              "z": -0.3978587633583306,
+              "nodes": 6,
+              "failures": 0
+            }
+          ]
+        },
+        {
+          "key": "alderClearing",
+          "paths": [
+            {
+              "x": 229,
+              "z": -48,
+              "nodes": 3,
+              "failures": 0
+            },
+            {
+              "x": 229,
+              "z": -202,
+              "nodes": 6,
+              "failures": 0
+            }
+          ]
+        },
+        {
+          "key": "reliefClearing",
+          "paths": [
+            {
+              "x": 57,
+              "z": -76,
+              "nodes": 3,
+              "failures": 0
+            },
+            {
+              "x": -1.2254089659942835,
+              "z": -208.2783658924244,
+              "nodes": 6,
+              "failures": 0
+            }
+          ]
+        },
+        {
+          "key": "siteClearing",
+          "paths": [
+            {
+              "x": -124.87244227960743,
+              "z": -190.58024301465252,
+              "nodes": 3,
+              "failures": 0
+            },
+            {
+              "x": -115.62741699796952,
+              "z": -267.62741699796953,
+              "nodes": 6,
+              "failures": 0
+            }
+          ]
+        },
+        {
+          "key": "harbor",
+          "paths": [
+            {
+              "x": 428,
+              "z": 66,
+              "nodes": 8,
+              "failures": 0
+            },
+            {
+              "x": 296.68096672322235,
+              "z": -30.08430454773519,
+              "nodes": 8,
+              "failures": 0
+            },
+            {
+              "x": 208,
+              "z": 66,
+              "nodes": 3,
+              "failures": 0
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "pass": true
+    },
+    "waterMotion": {
+      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "idle": [
+        {
+          "clock": 100,
+          "frame": {
+            "action": "idle_south",
+            "index": 0,
+            "cell": 8
+          }
+        },
+        {
+          "clock": 100.17,
+          "frame": {
+            "action": "idle_south",
+            "index": 1,
+            "cell": 9
+          }
+        },
+        {
+          "clock": 100.34,
+          "frame": {
+            "action": "idle_south",
+            "index": 1,
+            "cell": 9
+          }
+        },
+        {
+          "clock": 100.51,
+          "frame": {
+            "action": "idle_south",
+            "index": 0,
+            "cell": 8
+          }
+        },
+        {
+          "clock": 100.68,
+          "frame": {
+            "action": "idle_south",
+            "index": 0,
+            "cell": 8
+          }
+        },
+        {
+          "clock": 100.85,
+          "frame": {
+            "action": "idle_south",
+            "index": 1,
+            "cell": 9
+          }
+        },
+        {
+          "clock": 101.02,
+          "frame": {
+            "action": "idle_south",
+            "index": 1,
+            "cell": 9
+          }
+        },
+        {
+          "clock": 101.19,
+          "frame": {
+            "action": "idle_south",
+            "index": 0,
+            "cell": 8
+          }
+        }
+      ],
+      "flow": [
+        {
+          "age": 0,
+          "event": true,
+          "gate": 5.45
+        },
+        {
+          "age": 0,
+          "event": true,
+          "gate": 5.45
+        },
+        {
+          "age": 0,
+          "event": true,
+          "gate": 5.45
+        },
+        {
+          "age": 0,
+          "event": true,
+          "gate": 5.45
+        },
+        {
+          "age": 0,
+          "event": true,
+          "gate": 5.45
+        },
+        {
+          "age": 0,
+          "event": true,
+          "gate": 5.45
+        },
+        {
+          "age": 0,
+          "event": true,
+          "gate": 5.45
+        },
+        {
+          "age": 0,
+          "event": true,
+          "gate": 5.45
+        },
+        {
+          "age": 0,
+          "event": true,
+          "gate": 5.45
+        },
+        {
+          "age": 0,
+          "event": true,
+          "gate": 5.45
+        },
+        {
+          "age": 0,
+          "event": true,
+          "gate": 5.45
+        },
+        {
+          "age": 0,
+          "event": true,
+          "gate": 5.45
+        },
+        {
+          "age": 0.11666666666666665,
+          "event": false,
+          "gate": 6.049153089671274
+        },
+        {
+          "age": 0.31666666666666665,
+          "event": false,
+          "gate": 6.7141421881783
+        },
+        {
+          "age": 0.5166666666666666,
+          "event": false,
+          "gate": 7.093989988606167
+        },
+        {
+          "age": 0.7166666666666672,
+          "event": false,
+          "gate": 7.310962495093602
+        },
+        {
+          "age": 0.9166666666666679,
+          "event": false,
+          "gate": 7.434899157405219
+        },
+        {
+          "age": 1.1166666666666676,
+          "event": false,
+          "gate": 7.505692902260784
+        },
+        {
+          "age": 1.3166666666666669,
+          "event": false,
+          "gate": 7.5461309309860845
+        },
+        {
+          "age": 1.5166666666666662,
+          "event": false,
+          "gate": 7.569229499518153
+        },
+        {
+          "age": 1.7166666666666655,
+          "event": false,
+          "gate": 7.582423611225605
+        },
+        {
+          "age": 1.9166666666666647,
+          "event": false,
+          "gate": 7.589960207422335
+        },
+        {
+          "age": 2.116666666666664,
+          "event": false,
+          "gate": 7.594265179480475
+        },
+        {
+          "age": 2.3166666666666633,
+          "event": false,
+          "gate": 7.5967242185397
+        },
+        {
+          "age": 2.5166666666666626,
+          "event": false,
+          "gate": 7.598128843938689
+        },
+        {
+          "age": 2.716666666666662,
+          "event": false,
+          "gate": 7.598931178697903
+        },
+        {
+          "age": 2.916666666666661,
+          "event": false,
+          "gate": 7.599389479584608
+        },
+        {
+          "age": 3.1166666666666605,
+          "event": false,
+          "gate": 7.599651265205064
+        },
+        {
+          "age": 3.3166666666666598,
+          "event": false,
+          "gate": 7.599800799524252
+        },
+        {
+          "age": 3.516666666666659,
+          "event": false,
+          "gate": 7.59988621488273
+        },
+        {
+          "age": 3.7166666666666583,
+          "event": false,
+          "gate": 7.599935004909684
+        },
+        {
+          "age": 3.9166666666666576,
+          "event": false,
+          "gate": 7.599962874215306
+        },
+        {
+          "age": 4.116666666666657,
+          "event": false,
+          "gate": 7.59997879341528
+        },
+        {
+          "age": 4.316666666666657,
+          "event": false,
+          "gate": 7.599987886606594
+        },
+        {
+          "age": 4.516666666666656,
+          "event": false,
+          "gate": 7.5999930807198925
+        },
+        {
+          "age": 4.716666666666655,
+          "event": false,
+          "gate": 7.5999960476444866
+        },
+        {
+          "age": 4.9166666666666545,
+          "event": false,
+          "gate": 7.599997742378707
+        },
+        {
+          "age": 5.116666666666654,
+          "event": false,
+          "gate": 7.599998710426253
+        },
+        {
+          "age": 5.316666666666653,
+          "event": false,
+          "gate": 7.599999263383786
+        },
+        {
+          "age": 5.516666666666652,
+          "event": false,
+          "gate": 7.599999579238142
+        },
+        {
+          "age": 5.716666666666652,
+          "event": false,
+          "gate": 7.599999759657013
+        },
+        {
+          "age": 5.916666666666651,
+          "event": false,
+          "gate": 7.599999862713907
+        },
+        {
+          "age": 6.11666666666665,
+          "event": false,
+          "gate": 7.599999921580939
+        },
+        {
+          "age": 6.3166666666666496,
+          "event": false,
+          "gate": 7.5999999552063215
+        },
+        {
+          "age": 6.516666666666649,
+          "event": false,
+          "gate": 7.5999999744134445
+        },
+        {
+          "age": 6.716666666666648,
+          "event": false,
+          "gate": 7.599999985384728
+        },
+        {
+          "age": 6.916666666666647,
+          "event": false,
+          "gate": 7.599999991651623
+        },
+        {
+          "age": 7.116666666666647,
+          "event": false,
+          "gate": 7.599999995231332
+        },
+        {
+          "age": 7.316666666666646,
+          "event": false,
+          "gate": 7.599999997276093
+        },
+        {
+          "age": 7.516666666666645,
+          "event": false,
+          "gate": 7.599999998444081
+        }
+      ],
+      "weather": {
+        "retainedChunks": 49,
+        "renderedChunks": 49,
+        "cloudVolumes": 1
+      },
+      "migration": {
+        "released": true,
+        "age": 360,
+        "model32": 1
+      },
+      "errors": [],
+      "pass": true
+    },
+    "worldFixes": {
+      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "water": [
+        {
+          "age": 0,
+          "front": 70,
+          "levels": [
+            {
+              "role": "headrace",
+              "near": 2.92,
+              "far": 2.92
+            },
+            {
+              "role": "millrace",
+              "near": -0.17,
+              "far": -0.17
+            },
+            {
+              "role": "lowerBrook",
+              "near": -3.48,
+              "far": -3.48
+            }
+          ],
+          "sill": [
+            {
+              "z": 69.84999999403954,
+              "y": 4.983895921707154
+            },
+            {
+              "z": 69.89999999850988,
+              "y": 4.836235308647156
+            },
+            {
+              "z": 69.94999999925494,
+              "y": 4.686209106445313
+            },
+            {
+              "z": 70,
+              "y": 4.534999990463257
+            },
+            {
+              "z": 70.05000000074506,
+              "y": 4.3837908744812015
+            },
+            {
+              "z": 70.10000000149012,
+              "y": 4.233764672279358
+            },
+            {
+              "z": 70.15000000596046,
+              "y": 4.086104059219361
+            },
+            {
+              "z": 70.20000000298023,
+              "y": 3.9419921875000004
+            },
+            {
+              "z": 70.25,
+              "y": 3.8026117324829105
+            },
+            {
+              "z": 70.30000001192093,
+              "y": 3.669145488739014
+            },
+            {
+              "z": 70.34999999403954,
+              "y": 3.542776489257813
+            },
+            {
+              "z": 70.40000000596046,
+              "y": 3.42468752861023
+            },
+            {
+              "z": 70.44999998807907,
+              "y": 3.316061401367188
+            },
+            {
+              "z": 70.5,
+              "y": 3.218081140518189
+            },
+            {
+              "z": 70.55000001192093,
+              "y": 3.1319293022155765
+            }
+          ],
+          "width": 0.065,
+          "ribbon": false,
+          "bore": false
+        },
+        {
+          "age": 1,
+          "front": 71.6,
+          "levels": [
+            {
+              "role": "headrace",
+              "near": 2.9204492098600365,
+              "far": 2.92
+            },
+            {
+              "role": "millrace",
+              "near": -0.17,
+              "far": -0.17
+            },
+            {
+              "role": "lowerBrook",
+              "near": -3.48,
+              "far": -3.48
+            }
+          ],
+          "sill": [
+            {
+              "z": 69.84999999403954,
+              "y": 4.939604824686636
+            },
+            {
+              "z": 69.89999999850988,
+              "y": 4.795145219469656
+            },
+            {
+              "z": 69.94999999925494,
+              "y": 4.648371165896048
+            },
+            {
+              "z": 70,
+              "y": 4.50043994774877
+            },
+            {
+              "z": 70.05000000074506,
+              "y": 4.352508729601492
+            },
+            {
+              "z": 70.10000000149012,
+              "y": 4.205734676027884
+            },
+            {
+              "z": 70.15000000596046,
+              "y": 4.0612749516016144
+            },
+            {
+              "z": 70.20000000298023,
+              "y": 4.055389588976492
+            },
+            {
+              "z": 70.25,
+              "y": 4.055389588976492
+            },
+            {
+              "z": 70.30000001192093,
+              "y": 4.055389588976492
+            },
+            {
+              "z": 70.34999999403954,
+              "y": 4.055389588976492
+            },
+            {
+              "z": 70.40000000596046,
+              "y": 4.055389588976492
+            },
+            {
+              "z": 70.44999998807907,
+              "y": 4.055389588976492
+            },
+            {
+              "z": 70.5,
+              "y": 4.055389588976492
+            },
+            {
+              "z": 70.55000001192093,
+              "y": 4.055389588976492
+            }
+          ],
+          "width": 0.07309265670553936,
+          "ribbon": false,
+          "bore": false
+        },
+        {
+          "age": 3,
+          "front": 74.8,
+          "levels": [
+            {
+              "role": "headrace",
+              "near": 2.9309404336879834,
+              "far": 2.92
+            },
+            {
+              "role": "millrace",
+              "near": -0.17,
+              "far": -0.17
+            },
+            {
+              "role": "lowerBrook",
+              "near": -3.48,
+              "far": -3.48
+            }
+          ],
+          "sill": [
+            {
+              "z": 69.84999999403954,
+              "y": 4.861495504622457
+            },
+            {
+              "z": 69.89999999850988,
+              "y": 4.7233747341680505
+            },
+            {
+              "z": 69.94999999925494,
+              "y": 4.583041200881002
+            },
+            {
+              "z": 70,
+              "y": 4.4416011669683435
+            },
+            {
+              "z": 70.05000000074506,
+              "y": 4.300161133055685
+            },
+            {
+              "z": 70.10000000149012,
+              "y": 4.159827480559347
+            },
+            {
+              "z": 70.15000000596046,
+              "y": 4.069943914656637
+            },
+            {
+              "z": 70.20000000298023,
+              "y": 4.069943914656637
+            },
+            {
+              "z": 70.25,
+              "y": 4.069943914656637
+            },
+            {
+              "z": 70.30000001192093,
+              "y": 4.069943914656637
+            },
+            {
+              "z": 70.34999999403954,
+              "y": 4.069943914656637
+            },
+            {
+              "z": 70.40000000596046,
+              "y": 4.069943914656637
+            },
+            {
+              "z": 70.44999998807907,
+              "y": 4.069943914656637
+            },
+            {
+              "z": 70.5,
+              "y": 4.069943914656637
+            },
+            {
+              "z": 70.55000001192093,
+              "y": 4.069943914656637
+            }
+          ],
+          "width": 0.3755024599125364,
+          "ribbon": false,
+          "bore": false
+        },
+        {
+          "age": 7,
+          "front": 81.2,
+          "levels": [
+            {
+              "role": "headrace",
+              "near": 2.9900390625,
+              "far": 2.922780391674016
+            },
+            {
+              "role": "millrace",
+              "near": -0.16988111451695495,
+              "far": -0.17
+            },
+            {
+              "role": "lowerBrook",
+              "near": -3.48,
+              "far": -3.48
+            }
+          ],
+          "sill": [
+            {
+              "z": 69.84999999403954,
+              "y": 4.743741458131333
+            },
+            {
+              "z": 69.89999999850988,
+              "y": 4.618273561669846
+            },
+            {
+              "z": 69.94999999925494,
+              "y": 4.490795558167954
+            },
+            {
+              "z": 70,
+              "y": 4.362312501145859
+            },
+            {
+              "z": 70.05000000074506,
+              "y": 4.233829324914475
+            },
+            {
+              "z": 70.10000000149012,
+              "y": 4.106351321412583
+            },
+            {
+              "z": 70.15000000596046,
+              "y": 4.099999969674607
+            },
+            {
+              "z": 70.20000000298023,
+              "y": 4.099999969674607
+            },
+            {
+              "z": 70.25,
+              "y": 4.099999969674607
+            },
+            {
+              "z": 70.30000001192093,
+              "y": 4.099999969674607
+            },
+            {
+              "z": 70.34999999403954,
+              "y": 4.099999969674607
+            },
+            {
+              "z": 70.40000000596046,
+              "y": 4.099999969674607
+            },
+            {
+              "z": 70.44999998807907,
+              "y": 4.099999969674607
+            },
+            {
+              "z": 70.5,
+              "y": 4.099999969674607
+            },
+            {
+              "z": 70.55000001192093,
+              "y": 4.099999969674607
+            }
+          ],
+          "width": 1,
+          "ribbon": false,
+          "bore": false
+        },
+        {
+          "age": 14,
+          "front": 92.4,
+          "levels": [
+            {
+              "role": "headrace",
+              "near": 3.192542867404415,
+              "far": 3.030067645955422
+            },
+            {
+              "role": "millrace",
+              "near": -0.07901896584831584,
+              "far": -0.17
+            },
+            {
+              "role": "lowerBrook",
+              "near": -3.48,
+              "far": -3.48
+            }
+          ],
+          "sill": [
+            {
+              "z": 69.84999999403954,
+              "y": 4.636231060936707
+            },
+            {
+              "z": 69.89999999850988,
+              "y": 4.532943066075104
+            },
+            {
+              "z": 69.94999999925494,
+              "y": 4.4280001482513125
+            },
+            {
+              "z": 70,
+              "y": 4.322229917958039
+            },
+            {
+              "z": 70.05000000074506,
+              "y": 4.216459687664765
+            },
+            {
+              "z": 70.10000000149012,
+              "y": 4.111516769840973
+            },
+            {
+              "z": 70.15000000596046,
+              "y": 4.099999960377472
+            },
+            {
+              "z": 70.20000000298023,
+              "y": 4.099999960377472
+            },
+            {
+              "z": 70.25,
+              "y": 4.099999960377472
+            },
+            {
+              "z": 70.30000001192093,
+              "y": 4.099999960377472
+            },
+            {
+              "z": 70.34999999403954,
+              "y": 4.099999960377472
+            },
+            {
+              "z": 70.40000000596046,
+              "y": 4.099999960377472
+            },
+            {
+              "z": 70.44999998807907,
+              "y": 4.099999960377472
+            },
+            {
+              "z": 70.5,
+              "y": 4.099999960377472
+            },
+            {
+              "z": 70.55000001192093,
+              "y": 4.099999960377472
+            }
+          ],
+          "width": 1,
+          "ribbon": false,
+          "bore": false
+        },
+        {
+          "age": 28,
+          "front": 114.80000000000001,
+          "levels": [
+            {
+              "role": "headrace",
+              "near": 3.8054505966943557,
+              "far": 3.559900532419919
+            },
+            {
+              "role": "millrace",
+              "near": 0.45694890226729623,
+              "far": 0.028339212562585342
+            },
+            {
+              "role": "lowerBrook",
+              "near": -3.278816568047337,
+              "far": -3.48
+            }
+          ],
+          "sill": [
+            {
+              "z": 69.84999999403954,
+              "y": 4.650973681118835
+            },
+            {
+              "z": 69.89999999850988,
+              "y": 4.590481105950225
+            },
+            {
+              "z": 69.94999999925494,
+              "y": 4.529019359257568
+            },
+            {
+              "z": 70,
+              "y": 4.467073026802886
+            },
+            {
+              "z": 70.05000000074506,
+              "y": 4.405126694348205
+            },
+            {
+              "z": 70.10000000149012,
+              "y": 4.343664947655547
+            },
+            {
+              "z": 70.15000000596046,
+              "y": 4.283172372486938
+            },
+            {
+              "z": 70.20000000298023,
+              "y": 4.2241335546044
+            },
+            {
+              "z": 70.25,
+              "y": 4.167033079769958
+            },
+            {
+              "z": 70.30000001192093,
+              "y": 4.112355533745635
+            },
+            {
+              "z": 70.34999999403954,
+              "y": 4.099999967720855
+            },
+            {
+              "z": 70.40000000596046,
+              "y": 4.099999967720855
+            },
+            {
+              "z": 70.44999998807907,
+              "y": 4.099999967720855
+            },
+            {
+              "z": 70.5,
+              "y": 4.099999967720855
+            },
+            {
+              "z": 70.55000001192093,
+              "y": 4.099999967720855
+            }
+          ],
+          "width": 1,
+          "ribbon": false,
+          "bore": false
+        },
+        {
+          "age": 60,
+          "front": 166,
+          "levels": [
+            {
+              "role": "headrace",
+              "near": 4.55,
+              "far": 4.55
+            },
+            {
+              "role": "millrace",
+              "near": 1.55,
+              "far": 1.4132641101502048
+            },
+            {
+              "role": "lowerBrook",
+              "near": -1.6011834319526626,
+              "far": -3.48
+            }
+          ],
+          "sill": [
+            {
+              "z": 69.84999999403954,
+              "y": 4.772330866821479
+            },
+            {
+              "z": 69.89999999850988,
+              "y": 4.75642429447956
+            },
+            {
+              "z": 69.94999999925494,
+              "y": 4.740262882478904
+            },
+            {
+              "z": 70,
+              "y": 4.72397406555004
+            },
+            {
+              "z": 70.05000000074506,
+              "y": 4.7076852337200155
+            },
+            {
+              "z": 70.10000000149012,
+              "y": 4.691523821719359
+            },
+            {
+              "z": 70.15000000596046,
+              "y": 4.67561724937744
+            },
+            {
+              "z": 70.20000000298023,
+              "y": 4.66009296632595
+            },
+            {
+              "z": 70.25,
+              "y": 4.645078362591933
+            },
+            {
+              "z": 70.30000001192093,
+              "y": 4.63070085800476
+            },
+            {
+              "z": 70.34999999403954,
+              "y": 4.61708790219612
+            },
+            {
+              "z": 70.40000000596046,
+              "y": 4.604366900094222
+            },
+            {
+              "z": 70.44999998807907,
+              "y": 4.5926652566272725
+            },
+            {
+              "z": 70.5,
+              "y": 4.582110436328124
+            },
+            {
+              "z": 70.55000001192093,
+              "y": 4.572829844124984
+            }
+          ],
+          "width": 1,
+          "ribbon": false,
+          "bore": false
+        },
+        {
+          "age": 120,
+          "front": 262,
+          "levels": [
+            {
+              "role": "headrace",
+              "near": 4.55,
+              "far": 4.55
+            },
+            {
+              "role": "millrace",
+              "near": 1.55,
+              "far": 1.55
+            },
+            {
+              "role": "lowerBrook",
+              "near": -1.4,
+              "far": -2.4624984398113905
+            }
+          ],
+          "sill": [
+            {
+              "z": 69.84999999403954,
+              "y": 4.742823131080095
+            },
+            {
+              "z": 69.89999999850988,
+              "y": 4.729027688200895
+            },
+            {
+              "z": 69.94999999925494,
+              "y": 4.715011223848287
+            },
+            {
+              "z": 70,
+              "y": 4.700884237583105
+            },
+            {
+              "z": 70.05000000074506,
+              "y": 4.686757266219083
+            },
+            {
+              "z": 70.10000000149012,
+              "y": 4.672740786965314
+            },
+            {
+              "z": 70.15000000596046,
+              "y": 4.658945351536695
+            },
+            {
+              "z": 70.20000000298023,
+              "y": 4.645481437142316
+            },
+            {
+              "z": 70.25,
+              "y": 4.632459565694753
+            },
+            {
+              "z": 70.30000001192093,
+              "y": 4.619990244205419
+            },
+            {
+              "z": 70.34999999403954,
+              "y": 4.608183994586889
+            },
+            {
+              "z": 70.40000000596046,
+              "y": 4.597151323850576
+            },
+            {
+              "z": 70.44999998807907,
+              "y": 4.587002739007894
+            },
+            {
+              "z": 70.5,
+              "y": 4.577848747070257
+            },
+            {
+              "z": 70.55000001192093,
+              "y": 4.5697998848514
+            }
+          ],
+          "width": 1,
+          "ribbon": false,
+          "bore": false
+        },
+        {
+          "age": 280,
+          "front": 430,
+          "levels": [
+            {
+              "role": "headrace",
+              "near": 4.55,
+              "far": 4.55
+            },
+            {
+              "role": "millrace",
+              "near": 1.55,
+              "far": 1.55
+            },
+            {
+              "role": "lowerBrook",
+              "near": -1.4,
+              "far": -1.4
+            }
+          ],
+          "sill": [
+            {
+              "z": 69.84999999403954,
+              "y": 4.741693284945022
+            },
+            {
+              "z": 69.89999999850988,
+              "y": 4.727978673414718
+            },
+            {
+              "z": 69.94999999925494,
+              "y": 4.71404433681203
+            },
+            {
+              "z": 70,
+              "y": 4.7000001264972795
+            },
+            {
+              "z": 70.05000000074506,
+              "y": 4.68595593108369
+            },
+            {
+              "z": 70.10000000149012,
+              "y": 4.672021587030422
+            },
+            {
+              "z": 70.15000000596046,
+              "y": 4.658306975500118
+            },
+            {
+              "z": 70.20000000298023,
+              "y": 4.64492196275426
+            },
+            {
+              "z": 70.25,
+              "y": 4.63197638525201
+            },
+            {
+              "z": 70.30000001192093,
+              "y": 4.61958013905717
+            },
+            {
+              "z": 70.34999999403954,
+              "y": 4.607843075530063
+            },
+            {
+              "z": 70.40000000596046,
+              "y": 4.596875046031009
+            },
+            {
+              "z": 70.44999998807907,
+              "y": 4.586785916821491
+            },
+            {
+              "z": 70.5,
+              "y": 4.577685569064151
+            },
+            {
+              "z": 70.55000001192093,
+              "y": 4.569683854119312
+            }
+          ],
+          "width": 1,
+          "ribbon": false,
+          "bore": false
+        }
+      ],
+      "clouds": [
+        {
+          "hour": 8,
+          "colour": "ffe7be",
+          "rounded": true
+        },
+        {
+          "hour": 12,
+          "colour": "fff7e6",
+          "rounded": true
+        },
+        {
+          "hour": 17,
+          "colour": "ffbf7a",
+          "rounded": true
+        },
+        {
+          "hour": 18.5,
+          "colour": "ff9e78",
+          "rounded": true
+        }
+      ],
+      "routes": [
+        {
+          "key": "brookstead",
+          "bad": [],
+          "blocked": [],
+          "bridges": 2,
+          "bridgeGroups": 2,
+          "rocks": [],
+          "exits": [
+            {
+              "x": -258.38008504205084,
+              "z": 172.0578155742448,
+              "free": true
+            },
+            {
+              "x": 24.497512559933828,
+              "z": 90.64274216420174,
+              "free": true
+            },
+            {
+              "x": -122.08780743252927,
+              "z": -33.97978619673136,
+              "free": true
+            }
+          ]
+        },
+        {
+          "key": "fern",
+          "bad": [],
+          "blocked": [],
+          "bridges": 0,
+          "bridgeGroups": 0,
+          "rocks": [],
+          "exits": [
+            {
+              "x": -12.831950026445114,
+              "z": 70.78503548216479,
+              "free": true
+            },
+            {
+              "x": 162.46764354207914,
+              "z": 0.08847600471961314,
+              "free": true
+            },
+            {
+              "x": 201.0677013912512,
+              "z": 69.19977827330331,
+              "free": true
+            }
+          ]
+        },
+        {
+          "key": "depths",
+          "bad": [],
+          "blocked": [],
+          "bridges": 0,
+          "bridgeGroups": 0,
+          "rocks": [],
+          "exits": [
+            {
+              "x": 108.1505279914946,
+              "z": 109.96742371932208,
+              "free": true
+            },
+            {
+              "x": 179.637874704774,
+              "z": 10.266327850067203,
+              "free": true
+            },
+            {
+              "x": 165.47180986321527,
+              "z": 69.23366015033851,
+              "free": true
+            }
+          ]
+        },
+        {
+          "key": "highmere",
+          "bad": [],
+          "blocked": [],
+          "bridges": 1,
+          "bridgeGroups": 1,
+          "rocks": [],
+          "exits": [
+            {
+              "x": -104.98941385307535,
+              "z": 17.233269816008132,
+              "free": true
+            },
+            {
+              "x": 43.04638178103448,
+              "z": -68.71200540795029,
+              "free": true
+            },
+            {
+              "x": -127.44,
+              "z": -208,
+              "free": true
+            }
+          ]
+        },
+        {
+          "key": "alder",
+          "bad": [],
+          "blocked": [],
+          "bridges": 0,
+          "bridgeGroups": 0,
+          "rocks": [],
+          "exits": [
+            {
+              "x": 29.37878552567777,
+              "z": -48.493264999730556,
+              "free": true
+            },
+            {
+              "x": 146.8077999178613,
+              "z": -191.92565608572858,
+              "free": true
+            },
+            {
+              "x": 215.6642892748599,
+              "z": -31.741903212188223,
+              "free": true
+            }
+          ]
+        },
+        {
+          "key": "patrol",
+          "bad": [],
+          "blocked": [],
+          "bridges": 0,
+          "bridgeGroups": 0,
+          "rocks": [],
+          "exits": [
+            {
+              "x": 86.13003673918544,
+              "z": -52.704850711465795,
+              "free": true
+            },
+            {
+              "x": 104.37287112251981,
+              "z": -88.06820278611697,
+              "free": true
+            },
+            {
+              "x": 238.46971507334928,
+              "z": -94.89677844989474,
+              "free": true
+            }
+          ]
+        },
+        {
+          "key": "alderRemnant",
+          "bad": [],
+          "blocked": [],
+          "bridges": 0,
+          "bridgeGroups": 0,
+          "rocks": [],
+          "exits": [
+            {
+              "x": 119.8586441024128,
+              "z": -74.05618851777932,
+              "free": true
+            },
+            {
+              "x": 190.58943916273063,
+              "z": -26.551064768790397,
+              "free": true
+            },
+            {
+              "x": 262.3940385914716,
+              "z": -162.1801059308532,
+              "free": true
+            }
+          ]
+        },
+        {
+          "key": "relief",
+          "bad": [],
+          "blocked": [],
+          "bridges": 0,
+          "bridgeGroups": 0,
+          "rocks": [],
+          "exits": [
+            {
+              "x": -28.096,
+              "z": -88.23,
+              "free": true
+            },
+            {
+              "x": 93.5864569271346,
+              "z": -228.48131216668722,
+              "free": true
+            },
+            {
+              "x": -10,
+              "z": -225,
+              "free": true
+            }
+          ]
+        },
+        {
+          "key": "nearbySite",
+          "bad": [],
+          "blocked": [],
+          "bridges": 1,
+          "bridgeGroups": 1,
+          "rocks": [],
+          "exits": [
+            {
+              "x": -145,
+              "z": -220,
+              "free": true
+            },
+            {
+              "x": 10.627416997969519,
+              "z": -149.37258300203047,
+              "free": true
+            },
+            {
+              "x": -66,
+              "z": -275,
+              "free": true
+            }
+          ]
+        },
+        {
+          "key": "snow",
+          "bad": [],
+          "blocked": [],
+          "bridges": 0,
+          "bridgeGroups": 0,
+          "rocks": [],
+          "exits": [
+            {
+              "x": 104.57352441444684,
+              "z": -154.46980556193404,
+              "free": true
+            },
+            {
+              "x": 77.68271357367693,
+              "z": -171.18807264655572,
+              "free": true
+            }
+          ]
+        },
+        {
+          "key": "fernClearing",
+          "bad": [],
+          "blocked": [],
+          "bridges": 0,
+          "bridgeGroups": 0,
+          "rocks": [],
+          "exits": [
+            {
+              "x": 139,
+              "z": 111,
+              "free": true
+            },
+            {
+              "x": 70.6952131296153,
+              "z": -0.3978587633583306,
+              "free": true
+            }
+          ]
+        },
+        {
+          "key": "alderClearing",
+          "bad": [],
+          "blocked": [],
+          "bridges": 0,
+          "bridgeGroups": 0,
+          "rocks": [],
+          "exits": [
+            {
+              "x": 229,
+              "z": -48,
+              "free": true
+            },
+            {
+              "x": 229,
+              "z": -202,
+              "free": true
+            }
+          ]
+        },
+        {
+          "key": "reliefClearing",
+          "bad": [],
+          "blocked": [],
+          "bridges": 0,
+          "bridgeGroups": 0,
+          "rocks": [],
+          "exits": [
+            {
+              "x": 57,
+              "z": -76,
+              "free": true
+            },
+            {
+              "x": -1.2254089659942835,
+              "z": -208.2783658924244,
+              "free": true
+            }
+          ]
+        },
+        {
+          "key": "siteClearing",
+          "bad": [],
+          "blocked": [],
+          "bridges": 0,
+          "bridgeGroups": 0,
+          "rocks": [],
+          "exits": [
+            {
+              "x": -124.87244227960743,
+              "z": -190.58024301465252,
+              "free": true
+            },
+            {
+              "x": -115.62741699796952,
+              "z": -267.62741699796953,
+              "free": true
+            }
+          ]
+        },
+        {
+          "key": "harbor",
+          "bad": [],
+          "blocked": [],
+          "bridges": 0,
+          "bridgeGroups": 0,
+          "rocks": [],
+          "exits": [
+            {
+              "x": 428,
+              "z": 66,
+              "free": true
+            },
+            {
+              "x": 296.68096672322235,
+              "z": -30.08430454773519,
+              "free": true
+            },
+            {
+              "x": 208,
+              "z": 66,
+              "free": true
+            }
+          ]
+        }
+      ],
+      "soren": {
+        "frames": [
+          8,
+          9
+        ],
+        "seen": [
+          "idle_south:0",
+          "idle_south:1"
+        ]
+      },
+      "errors": [],
+      "pass": true
+    },
     "solarCycle": {
-      "sha256": "c04ec9fe4cd43b57ee6ad5dac0b69e0fd4fac8dd5b5b0099358bc4e8a3e03102",
+      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
       "samples": [
         {
           "hour": 5,
@@ -186,7 +2242,7 @@
           "day": 0,
           "twilight": 0,
           "night": 1,
-          "shafts": 304
+          "shafts": 307
         },
         {
           "hour": 6.5,
@@ -207,7 +2263,7 @@
           "day": 0.9638618690967979,
           "twilight": 0.8193491785243955,
           "night": 0,
-          "shafts": 304
+          "shafts": 307
         },
         {
           "hour": 9,
@@ -228,7 +2284,7 @@
           "day": 1,
           "twilight": 0,
           "night": 0,
-          "shafts": 304
+          "shafts": 307
         },
         {
           "hour": 12,
@@ -249,7 +2305,7 @@
           "day": 1,
           "twilight": 0,
           "night": 0,
-          "shafts": 304
+          "shafts": 307
         },
         {
           "hour": 16,
@@ -270,7 +2326,7 @@
           "day": 1,
           "twilight": 0,
           "night": 0,
-          "shafts": 304
+          "shafts": 307
         },
         {
           "hour": 18,
@@ -291,7 +2347,7 @@
           "day": 0.3299954483386443,
           "twilight": 1,
           "night": 0.09502213583846186,
-          "shafts": 304
+          "shafts": 307
         },
         {
           "hour": 19.5,
@@ -312,7 +2368,7 @@
           "day": 0,
           "twilight": 0,
           "night": 1,
-          "shafts": 304
+          "shafts": 307
         },
         {
           "hour": 23,
@@ -333,7 +2389,7 @@
           "day": 0,
           "twilight": 0,
           "night": 1,
-          "shafts": 304
+          "shafts": 307
         }
       ],
       "cycle": {
@@ -341,7 +2397,7 @@
         "maxAmbientStep": 0.015090361983599698,
         "maxSkyColourStep": 0.008301279333612355,
         "clockAdvance": 3.40000000001055,
-        "cloudTimeAdvance": 4.899999999999987,
+        "cloudTimeAdvance": 4.899999999999986,
         "anchorsFixed": true,
         "dustWorldSpace": true,
         "skyClouds": true,
@@ -357,7 +2413,7 @@
       "pass": true
     },
     "architecture": {
-      "sha256": "c04ec9fe4cd43b57ee6ad5dac0b69e0fd4fac8dd5b5b0099358bc4e8a3e03102",
+      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
       "locations": [
         {
           "key": "brookstead",
@@ -515,25 +2571,6 @@
               "free": true
             },
             {
-              "x": -4.204170148367268,
-              "z": 0.44814358727133197,
-              "kind": "home",
-              "fitted": true,
-              "walkThrough": false,
-              "footprintAligned": true,
-              "overlaps": [],
-              "door": [
-                -5.554170148367268,
-                1.5037443993233155,
-                5.548143587271332
-              ],
-              "approach": [
-                -5.554170148367268,
-                7.048143587271332
-              ],
-              "free": true
-            },
-            {
               "x": -10.513093561399302,
               "z": 85.81147477024894,
               "kind": "home",
@@ -551,44 +2588,6 @@
                 92.41147477024893
               ],
               "free": true
-            },
-            {
-              "x": 8.280464313871164,
-              "z": 57.71505238526361,
-              "kind": "home",
-              "fitted": true,
-              "walkThrough": false,
-              "footprintAligned": true,
-              "overlaps": [],
-              "door": [
-                6.930464313871164,
-                2.4877215406729536,
-                62.81505238526361
-              ],
-              "approach": [
-                6.930464313871164,
-                64.31505238526361
-              ],
-              "free": true
-            },
-            {
-              "x": -5.759386487771735,
-              "z": 25.61987304231844,
-              "kind": "home",
-              "fitted": true,
-              "walkThrough": false,
-              "footprintAligned": true,
-              "overlaps": [],
-              "door": [
-                -7.109386487771735,
-                2.0060429174785663,
-                30.71987304231844
-              ],
-              "approach": [
-                -7.109386487771735,
-                32.21987304231844
-              ],
-              "free": true
             }
           ],
           "services": [
@@ -600,7 +2599,7 @@
               "route": true
             }
           ],
-          "steps": 17
+          "steps": 14
         },
         {
           "key": "fern",
@@ -652,13 +2651,13 @@
               "footprintAligned": true,
               "overlaps": [],
               "door": [
-                112.1,
+                106.56,
                 2.947114133895036,
-                50.44
+                53.1
               ],
               "approach": [
-                113.6,
-                50.44
+                106.56,
+                54.6
               ],
               "free": true
             },
@@ -739,21 +2738,59 @@
               "free": true
             },
             {
-              "x": 151.3408856226373,
-              "z": 33.49957440927086,
+              "x": 148.57882284644774,
+              "z": 25.628573486140972,
               "kind": "forest-home",
               "fitted": true,
               "walkThrough": false,
               "footprintAligned": true,
               "overlaps": [],
               "door": [
-                149.9008856226373,
-                0.7994244899129419,
-                37.89957440927086
+                147.13882284644774,
+                0.7049144467023676,
+                30.028573486140974
               ],
               "approach": [
-                149.9008856226373,
-                39.39957440927086
+                147.13882284644774,
+                31.528573486140974
+              ],
+              "free": true
+            },
+            {
+              "x": 47.55674555514321,
+              "z": 58.69056349416971,
+              "kind": "forest-home",
+              "fitted": true,
+              "walkThrough": false,
+              "footprintAligned": true,
+              "overlaps": [],
+              "door": [
+                46.11674555514321,
+                2.722905934283323,
+                63.09056349416971
+              ],
+              "approach": [
+                46.11674555514321,
+                64.59056349416971
+              ],
+              "free": true
+            },
+            {
+              "x": 45.76534126216143,
+              "z": 82.09342949154767,
+              "kind": "forest-home",
+              "fitted": true,
+              "walkThrough": false,
+              "footprintAligned": true,
+              "overlaps": [],
+              "door": [
+                44.32534126216143,
+                1.8194244647290625,
+                86.49342949154766
+              ],
+              "approach": [
+                44.32534126216143,
+                87.99342949154766
               ],
               "free": true
             },
@@ -766,25 +2803,6 @@
               "footprintAligned": true,
               "overlaps": [],
               "approach": null,
-              "free": true
-            },
-            {
-              "x": 3.392750448766975,
-              "z": 37.05247590972321,
-              "kind": "forest-home",
-              "fitted": true,
-              "walkThrough": false,
-              "footprintAligned": true,
-              "overlaps": [],
-              "door": [
-                1.9527504487669751,
-                2.718551792064774,
-                41.45247590972321
-              ],
-              "approach": [
-                1.9527504487669751,
-                42.95247590972321
-              ],
               "free": true
             },
             {
@@ -807,40 +2825,21 @@
               "free": true
             },
             {
-              "x": 4.191353295651343,
-              "z": 98.89209184632556,
+              "x": -5.865621447100056,
+              "z": 87.78477409509529,
               "kind": "forest-home",
               "fitted": true,
               "walkThrough": false,
               "footprintAligned": true,
               "overlaps": [],
               "door": [
-                2.751353295651343,
-                0.6024556086226425,
-                103.29209184632555
+                -7.305621447100055,
+                1.148210427376593,
+                92.18477409509528
               ],
               "approach": [
-                2.751353295651343,
-                104.79209184632555
-              ],
-              "free": true
-            },
-            {
-              "x": 23.977190374862253,
-              "z": 28.00181892016761,
-              "kind": "forest-home",
-              "fitted": true,
-              "walkThrough": false,
-              "footprintAligned": true,
-              "overlaps": [],
-              "door": [
-                22.537190374862252,
-                3.6221187069556415,
-                32.401818920167614
-              ],
-              "approach": [
-                22.537190374862252,
-                33.901818920167614
+                -7.305621447100055,
+                93.68477409509528
               ],
               "free": true
             }
@@ -860,13 +2859,13 @@
               "footprintAligned": true,
               "overlaps": [],
               "door": [
-                77.74,
-                3.2446860708536165,
-                58.1
+                83.1,
+                3.2974479882160845,
+                55.26
               ],
               "approach": [
-                77.74,
-                59.6
+                84.6,
+                55.26
               ],
               "free": true
             },
@@ -890,21 +2889,21 @@
               "free": true
             },
             {
-              "x": 94.4115427318801,
-              "z": 40.00000000000001,
+              "x": 118,
+              "z": 62.856406460551014,
               "kind": "forest-home",
               "fitted": true,
               "walkThrough": false,
               "footprintAligned": true,
               "overlaps": [],
               "door": [
-                98.5115427318801,
-                2.1216973567208846,
-                41.440000000000005
+                119.44,
+                3.2000000000000006,
+                58.75640646055101
               ],
               "approach": [
-                100.0115427318801,
-                41.440000000000005
+                119.44,
+                57.25640646055101
               ],
               "free": true
             },
@@ -917,13 +2916,13 @@
               "footprintAligned": true,
               "overlaps": [],
               "door": [
-                122.9,
+                128.26,
                 3.1368868317938294,
-                63.74
+                60.9
               ],
               "approach": [
-                121.4,
-                63.74
+                128.26,
+                59.4
               ],
               "free": true
             }
@@ -1193,21 +3192,21 @@
               "free": true
             },
             {
-              "x": 16.984896015598025,
-              "z": 18.106473887406935,
+              "x": 40.68170649274026,
+              "z": -149.2389082788157,
               "kind": "home",
               "fitted": true,
               "walkThrough": false,
               "footprintAligned": true,
               "overlaps": [],
               "door": [
-                15.634896015598025,
-                3.400779529891049,
-                23.206473887406936
+                39.33170649274026,
+                3.100000000000001,
+                -144.1389082788157
               ],
               "approach": [
-                15.634896015598025,
-                24.706473887406936
+                39.33170649274026,
+                -142.6389082788157
               ],
               "free": true
             },
@@ -1231,40 +3230,40 @@
               "free": true
             },
             {
-              "x": 47.34419691731824,
-              "z": -161.46830642012443,
+              "x": -122.17109031669014,
+              "z": 16.617604887083303,
               "kind": "home",
               "fitted": true,
               "walkThrough": false,
               "footprintAligned": true,
               "overlaps": [],
               "door": [
-                45.99419691731824,
-                3.088055124452802,
-                -156.36830642012444
+                -123.52109031669013,
+                1.2697361756698,
+                21.717604887083304
               ],
               "approach": [
-                45.99419691731824,
-                -154.86830642012444
+                -123.52109031669013,
+                23.217604887083304
               ],
               "free": true
             },
             {
-              "x": -74.60809377076009,
-              "z": -199.5300604513563,
+              "x": 17.47535629185083,
+              "z": -165.43249835754085,
               "kind": "home",
               "fitted": true,
               "walkThrough": false,
               "footprintAligned": true,
               "overlaps": [],
               "door": [
-                -75.95809377076009,
-                4.5,
-                -194.4300604513563
+                16.125356291850828,
+                3.099999999999999,
+                -160.33249835754086
               ],
               "approach": [
-                -75.95809377076009,
-                -192.9300604513563
+                16.125356291850828,
+                -158.83249835754086
               ],
               "free": true
             },
@@ -1483,7 +3482,7 @@
               "overlaps": [],
               "door": [
                 125.4693769802064,
-                2.3593968807323074,
+                2.35940862693394,
                 -135.7171522018282
               ],
               "approach": [
@@ -1521,29 +3520,10 @@
                 -172.3682026118045
               ],
               "free": true
-            },
-            {
-              "x": 194.0651184582457,
-              "z": -95.8221190802373,
-              "kind": "home",
-              "fitted": true,
-              "walkThrough": false,
-              "footprintAligned": true,
-              "overlaps": [],
-              "door": [
-                192.7151184582457,
-                1.6350828538836448,
-                -90.7221190802373
-              ],
-              "approach": [
-                192.7151184582457,
-                -89.2221190802373
-              ],
-              "free": true
             }
           ],
           "services": [],
-          "steps": 12
+          "steps": 11
         },
         {
           "key": "patrol",
@@ -1688,6 +3668,44 @@
               "free": true
             },
             {
+              "x": 0.3782680560049556,
+              "z": -223.54786084045253,
+              "kind": "relief-pavilion",
+              "fitted": true,
+              "walkThrough": true,
+              "footprintAligned": true,
+              "overlaps": [],
+              "door": [
+                0.3782680560049556,
+                2.784469638754335,
+                -220.04786084045253
+              ],
+              "approach": [
+                0.3782680560049556,
+                -218.54786084045253
+              ],
+              "free": true
+            },
+            {
+              "x": -46.9685893117026,
+              "z": -85.20897143165686,
+              "kind": "relief-pavilion",
+              "fitted": true,
+              "walkThrough": true,
+              "footprintAligned": true,
+              "overlaps": [],
+              "door": [
+                -46.9685893117026,
+                5.200000000000001,
+                -81.70897143165686
+              ],
+              "approach": [
+                -46.9685893117026,
+                -80.20897143165686
+              ],
+              "free": true
+            },
+            {
               "x": 80.67711769747783,
               "z": -228.89993231022316,
               "kind": "relief-pavilion",
@@ -1707,21 +3725,21 @@
               "free": true
             },
             {
-              "x": -52.004090152120796,
-              "z": -231.75310931140976,
+              "x": -71.85472605259005,
+              "z": -114.74730986350137,
               "kind": "relief-pavilion",
               "fitted": true,
               "walkThrough": true,
               "footprintAligned": true,
               "overlaps": [],
               "door": [
-                -52.004090152120796,
-                5.800000000000001,
-                -228.25310931140976
+                -71.85472605259005,
+                5.199999999999999,
+                -111.24730986350137
               ],
               "approach": [
-                -52.004090152120796,
-                -226.75310931140976
+                -71.85472605259005,
+                -109.74730986350137
               ],
               "free": true
             },
@@ -1783,7 +3801,7 @@
               "free": true
             },
             {
-              "x": 127,
+              "x": 124,
               "z": 65,
               "kind": "forest-home",
               "fitted": true,
@@ -1791,12 +3809,12 @@
               "footprintAligned": true,
               "overlaps": [],
               "door": [
-                122.9,
-                3.1368868317938294,
+                119.9,
+                3.19185160182832,
                 63.74
               ],
               "approach": [
-                121.4,
+                118.4,
                 63.74
               ],
               "free": true
@@ -1815,21 +3833,21 @@
           "key": "reliefClearing",
           "houses": [
             {
-              "x": 21.5,
-              "z": -172.59807621135332,
+              "x": 20.878679656440355,
+              "z": -172.12132034355963,
               "kind": "relief-pavilion",
               "fitted": true,
               "walkThrough": true,
               "footprintAligned": true,
               "overlaps": [],
               "door": [
-                21.5,
-                2.906665706273508,
-                -168.49807621135332
+                20.878679656440355,
+                2.958131262193415,
+                -168.02132034355964
               ],
               "approach": [
-                21.5,
-                -166.99807621135332
+                20.878679656440355,
+                -166.52132034355964
               ],
               "free": true
             },
@@ -2109,165 +4127,165 @@
       "pass": true
     },
     "nativeWaterReflections": {
-      "sha256": "c04ec9fe4cd43b57ee6ad5dac0b69e0fd4fac8dd5b5b0099358bc4e8a3e03102",
+      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
       "views": [
         {
           "name": "closed-river",
           "full": {
-            "calls": 746,
-            "triangles": 4621571,
+            "calls": 753,
+            "triangles": 4561264,
             "crop": null
           },
           "crop": {
-            "calls": 633,
-            "triangles": 4389645,
+            "calls": 658,
+            "triangles": 4393762,
             "crop": {
-              "x": 318,
-              "y": 0,
-              "width": 322,
-              "height": 168,
+              "x": 368,
+              "y": 178,
+              "width": 272,
+              "height": 96,
               "w": 640,
               "h": 360,
-              "area": 0.23479166666666668
+              "area": 0.11333333333333333
             }
           }
         },
         {
           "name": "closed-gate",
           "full": {
-            "calls": 746,
-            "triangles": 4509015,
+            "calls": 744,
+            "triangles": 4335936,
             "crop": null
           },
           "crop": {
-            "calls": 620,
-            "triangles": 4236553,
+            "calls": 605,
+            "triangles": 4059840,
             "crop": {
-              "x": 464,
+              "x": 534,
               "y": 0,
-              "width": 176,
-              "height": 133,
+              "width": 106,
+              "height": 11,
               "w": 640,
               "h": 360,
-              "area": 0.10159722222222223
+              "area": 0.005060763888888889
             }
           }
         },
         {
           "name": "closed-bridge",
           "full": {
-            "calls": 909,
-            "triangles": 5554217,
+            "calls": 1770,
+            "triangles": 5407710,
             "crop": null
           },
           "crop": {
-            "calls": 775,
-            "triangles": 5314905,
+            "calls": 1369,
+            "triangles": 5137242,
             "crop": {
-              "x": 497,
+              "x": 495,
               "y": 349,
-              "width": 122,
+              "width": 127,
               "height": 11,
               "w": 640,
               "h": 360,
-              "area": 0.0058246527777777776
+              "area": 0.006063368055555555
             }
           }
         },
         {
           "name": "surge-river",
           "full": {
-            "calls": 759,
-            "triangles": 4616051,
+            "calls": 757,
+            "triangles": 4561272,
             "crop": null
           },
           "crop": {
-            "calls": 666,
-            "triangles": 4466229,
+            "calls": 660,
+            "triangles": 4393766,
             "crop": {
-              "x": 366,
-              "y": 181,
-              "width": 274,
-              "height": 97,
+              "x": 368,
+              "y": 178,
+              "width": 272,
+              "height": 96,
               "w": 640,
               "h": 360,
-              "area": 0.11535590277777778
+              "area": 0.11333333333333333
             }
           }
         },
         {
           "name": "surge-gate",
           "full": {
-            "calls": 761,
-            "triangles": 4503855,
+            "calls": 745,
+            "triangles": 4353236,
             "crop": null
           },
           "crop": {
-            "calls": 629,
-            "triangles": 4241641,
+            "calls": 684,
+            "triangles": 4233804,
             "crop": {
-              "x": 465,
-              "y": 0,
-              "width": 175,
-              "height": 135,
+              "x": 289,
+              "y": 149,
+              "width": 351,
+              "height": 211,
               "w": 640,
               "h": 360,
-              "area": 0.1025390625
+              "area": 0.3214453125
             }
           }
         },
         {
           "name": "surge-bridge",
           "full": {
-            "calls": 977,
-            "triangles": 5604583,
+            "calls": 1750,
+            "triangles": 5417472,
             "crop": null
           },
           "crop": {
-            "calls": 802,
-            "triangles": 5350953,
+            "calls": 1380,
+            "triangles": 5160040,
             "crop": {
-              "x": 475,
-              "y": 225,
-              "width": 165,
-              "height": 81,
+              "x": 495,
+              "y": 348,
+              "width": 126,
+              "height": 12,
               "w": 640,
               "h": 360,
-              "area": 0.0580078125
+              "area": 0.0065625
             }
           }
         },
         {
           "name": "river",
           "full": {
-            "calls": 772,
-            "triangles": 4613033,
+            "calls": 782,
+            "triangles": 4582535,
             "crop": null
           },
           "crop": {
-            "calls": 677,
-            "triangles": 4459503,
+            "calls": 655,
+            "triangles": 4350375,
             "crop": {
-              "x": 367,
-              "y": 209,
-              "width": 273,
-              "height": 94,
+              "x": 318,
+              "y": 0,
+              "width": 322,
+              "height": 196,
               "w": 640,
               "h": 360,
-              "area": 0.11138020833333333
+              "area": 0.27392361111111113
             }
           }
         },
         {
           "name": "gate",
           "full": {
-            "calls": 764,
-            "triangles": 4498567,
+            "calls": 743,
+            "triangles": 4322136,
             "crop": null
           },
           "crop": {
-            "calls": 622,
-            "triangles": 4178941,
+            "calls": 606,
+            "triangles": 4023458,
             "crop": {
               "x": 541,
               "y": 0,
@@ -2282,21 +4300,21 @@
         {
           "name": "bridge",
           "full": {
-            "calls": 966,
-            "triangles": 5563581,
+            "calls": 1797,
+            "triangles": 5431410,
             "crop": null
           },
           "crop": {
-            "calls": 814,
-            "triangles": 5354635,
+            "calls": 1384,
+            "triangles": 5171998,
             "crop": {
-              "x": 477,
-              "y": 246,
-              "width": 163,
-              "height": 75,
+              "x": 485,
+              "y": 322,
+              "width": 155,
+              "height": 38,
               "w": 640,
               "h": 360,
-              "area": 0.053059895833333336
+              "area": 0.02556423611111111
             }
           }
         }
@@ -2306,33 +4324,33 @@
           "width": 844,
           "height": 390,
           "enabled": false,
-          "fps": 120.22687330273071,
-          "p95": 9.700000002980232,
-          "calls": 1391.5232558139535
+          "fps": 106.77577088114958,
+          "p95": 10.700000017881393,
+          "calls": 2334.3700934579438
         },
         {
           "width": 844,
           "height": 390,
           "enabled": true,
-          "fps": 140.94644035249803,
-          "p95": 8.5,
-          "calls": 1011.9106382978723
+          "fps": 132.68058747127583,
+          "p95": 9.400000005960464,
+          "calls": 1644.4246987951808
         },
         {
           "width": 1366,
           "height": 768,
           "enabled": false,
-          "fps": 143.93666786605314,
-          "p95": 7.799999997019768,
-          "calls": 1007.7083333333334
+          "fps": 142.41831890516437,
+          "p95": 8.5,
+          "calls": 1795.7633053221289
         },
         {
           "width": 1366,
           "height": 768,
           "enabled": true,
-          "fps": 143.93091316193966,
-          "p95": 7.700000002980232,
-          "calls": 842.3625
+          "fps": 143.72813593203398,
+          "p95": 7.699999988079071,
+          "calls": 1466.923504867872
         }
       ],
       "pixels": [
@@ -2395,7 +4413,7 @@
       "pass": true
     },
     "nativeFoliageVisibility": {
-      "sha256": "c04ec9fe4cd43b57ee6ad5dac0b69e0fd4fac8dd5b5b0099358bc4e8a3e03102",
+      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
       "proof": {
         "cases": [
           {
@@ -2407,93 +4425,93 @@
             "lods": [
               {
                 "lod": 0,
-                "reference": 3053,
-                "cut": 3045,
-                "obstructed": 1991,
-                "ratio": 0.99737962659679,
-                "hidden": 3
+                "reference": 3081,
+                "cut": 3066,
+                "obstructed": 2012,
+                "ratio": 0.9951314508276533,
+                "hidden": 2
               },
               {
                 "lod": 1,
-                "reference": 3053,
-                "cut": 3044,
-                "obstructed": 1990,
-                "ratio": 0.9970520799213888,
-                "hidden": 3
+                "reference": 3081,
+                "cut": 3067,
+                "obstructed": 2013,
+                "ratio": 0.9954560207724765,
+                "hidden": 2
               },
               {
                 "lod": 2,
-                "reference": 3053,
-                "cut": 3045,
-                "obstructed": 1991,
-                "ratio": 0.99737962659679,
-                "hidden": 3
+                "reference": 3081,
+                "cut": 3069,
+                "obstructed": 2015,
+                "ratio": 0.9961051606621227,
+                "hidden": 2
               }
             ]
           },
           {
             "tree": [
-              -132.33886656625157,
-              101.80314247471006
-            ],
-            "species": 0,
-            "lods": [
-              {
-                "lod": 0,
-                "reference": 2744,
-                "cut": 2738,
-                "obstructed": 1098,
-                "ratio": 0.9978134110787172,
-                "hidden": 3
-              },
-              {
-                "lod": 1,
-                "reference": 2744,
-                "cut": 2738,
-                "obstructed": 1096,
-                "ratio": 0.9978134110787172,
-                "hidden": 3
-              },
-              {
-                "lod": 2,
-                "reference": 2744,
-                "cut": 2738,
-                "obstructed": 1099,
-                "ratio": 0.9978134110787172,
-                "hidden": 3
-              }
-            ]
-          },
-          {
-            "tree": [
-              -111.6193892236607,
-              116.29316716160884
+              -110.18412455930925,
+              114.66670142818572
             ],
             "species": 2,
             "lods": [
               {
                 "lod": 0,
-                "reference": 2924,
-                "cut": 2888,
-                "obstructed": 1348,
-                "ratio": 0.987688098495212,
-                "hidden": 3
+                "reference": 3160,
+                "cut": 3145,
+                "obstructed": 1280,
+                "ratio": 0.995253164556962,
+                "hidden": 4
               },
               {
                 "lod": 1,
-                "reference": 2924,
-                "cut": 2893,
-                "obstructed": 1195,
-                "ratio": 0.9893980848153214,
-                "hidden": 3
+                "reference": 3160,
+                "cut": 3145,
+                "obstructed": 1300,
+                "ratio": 0.995253164556962,
+                "hidden": 4
               },
               {
                 "lod": 2,
-                "reference": 2924,
-                "cut": 2894,
-                "obstructed": 1182,
-                "ratio": 0.9897400820793434,
-                "hidden": 3
+                "reference": 3160,
+                "cut": 3143,
+                "obstructed": 1271,
+                "ratio": 0.9946202531645569,
+                "hidden": 4
+              }
+            ]
+          },
+          {
+            "tree": [
+              -107.28395756142302,
+              115.06866215109073
+            ],
+            "species": 0,
+            "lods": [
+              {
+                "lod": 0,
+                "reference": 3114,
+                "cut": 3103,
+                "obstructed": 488,
+                "ratio": 0.9964675658317277,
+                "hidden": 5
+              },
+              {
+                "lod": 1,
+                "reference": 3114,
+                "cut": 3105,
+                "obstructed": 418,
+                "ratio": 0.9971098265895953,
+                "hidden": 5
+              },
+              {
+                "lod": 2,
+                "reference": 3114,
+                "cut": 3104,
+                "obstructed": 388,
+                "ratio": 0.9967886962106616,
+                "hidden": 5
               }
             ]
           }
@@ -2508,12 +4526,12 @@
             4,
             5
           ],
-          "trees": 1364,
-          "clusters": 10034,
+          "trees": 1440,
+          "clusters": 10585,
           "batches": 160
         },
         "botany": {
-          "gardenClumps": 4921,
+          "gardenClumps": 3492,
           "flowerForms": 5,
           "groundCover": [
             "grass tufts",
@@ -2535,7 +4553,7 @@
       },
       "recovery": {
         "hidden": 0,
-        "total": 1364,
+        "total": 1440,
         "finite": true
       },
       "atlas": {
@@ -2548,7 +4566,7 @@
       "pass": true
     },
     "interiorsAndRestraint": {
-      "sha256": "c04ec9fe4cd43b57ee6ad5dac0b69e0fd4fac8dd5b5b0099358bc4e8a3e03102",
+      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
       "rooms": [
         {
           "id": "brookInn",
@@ -2560,7 +4578,7 @@
           "exitRoute": true,
           "saveRoute": true,
           "pitch": 24.962789830807015,
-          "geometry": 1188,
+          "geometry": 1190,
           "draws": 1,
           "actors": [
             {
@@ -2624,7 +4642,7 @@
           "exitRoute": true,
           "saveRoute": true,
           "pitch": 24.962789830807015,
-          "geometry": 1177,
+          "geometry": 1180,
           "draws": 1,
           "actors": [
             {
@@ -2661,7 +4679,7 @@
           "exitRoute": true,
           "saveRoute": true,
           "pitch": 24.962789830807015,
-          "geometry": 1179,
+          "geometry": 1177,
           "draws": 1,
           "actors": [
             {
@@ -2698,7 +4716,7 @@
           "exitRoute": true,
           "saveRoute": true,
           "pitch": 24.962789830807015,
-          "geometry": 1174,
+          "geometry": 1176,
           "draws": 1,
           "actors": [
             {
@@ -2729,7 +4747,7 @@
           "exitRoute": true,
           "saveRoute": true,
           "pitch": 24.962789830807015,
-          "geometry": 1179,
+          "geometry": 1177,
           "draws": 1,
           "actors": [
             {
@@ -2800,7 +4818,7 @@
       },
       "walk": {
         "ok": true,
-        "distance": 1.5443556781293308,
+        "distance": 1.5494996558315637,
         "nearest": "tavin"
       },
       "fight": {
@@ -2833,7 +4851,7 @@
       "pass": true
     },
     "loadingAndRoomSoak": {
-      "sha256": "c04ec9fe4cd43b57ee6ad5dac0b69e0fd4fac8dd5b5b0099358bc4e8a3e03102",
+      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
       "loading": [
         {
           "id": "entrance",
@@ -3342,23 +5360,23 @@
         }
       ],
       "before": {
-        "heap": 238934976,
-        "geometries": 1175,
+        "heap": 238728492,
+        "geometries": 1176,
         "textures": 77,
-        "programs": 173,
-        "cache": 426
+        "programs": 176,
+        "cache": 425
       },
       "after": {
-        "heap": 238443160,
-        "geometries": 1179,
+        "heap": 239577024,
+        "geometries": 1176,
         "textures": 77,
-        "programs": 173,
-        "cache": 426
+        "programs": 176,
+        "cache": 425
       },
       "pacing": {
-        "fps": 143.92991239048828,
+        "fps": 143.9368410918019,
         "p95": 7,
-        "max": 7.5,
+        "max": 7.100000000002183,
         "buffer": [
           1920,
           1080
@@ -3368,7 +5386,7 @@
       "pass": true
     },
     "travelAndHighDpi": {
-      "sha256": "c04ec9fe4cd43b57ee6ad5dac0b69e0fd4fac8dd5b5b0099358bc4e8a3e03102",
+      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
       "travel": [
         {
           "key": "fern",
@@ -3840,9 +5858,9 @@
           "width": 1366,
           "height": 768,
           "dpr": 2,
-          "fps": 83.86916410379811,
-          "p95": 14.199999988079071,
-          "p99": 15.700000002980232,
+          "fps": 143.97984282234816,
+          "p95": 7.5999999940395355,
+          "p99": 8,
           "buffer": [
             1708,
             960
@@ -3851,7 +5869,7 @@
           "reflection": 820,
           "resizes": 0,
           "scale": 1,
-          "gpu": 5.097690769836198,
+          "gpu": 3.3648375954400653,
           "shadowSpan": [
             168,
             96
@@ -3861,9 +5879,9 @@
           "width": 1024,
           "height": 768,
           "dpr": 2,
-          "fps": 87.22380790812956,
-          "p95": 14.099999994039536,
-          "p99": 15.400000005960464,
+          "fps": 143.95105664108524,
+          "p95": 7.5999999940395355,
+          "p99": 8.200000017881393,
           "buffer": [
             1024,
             768
@@ -3872,7 +5890,7 @@
           "reflection": 614,
           "resizes": 0,
           "scale": 1,
-          "gpu": 3.586952418838585,
+          "gpu": 2.8468460951526207,
           "shadowSpan": [
             160,
             80
@@ -3882,9 +5900,9 @@
           "width": 800,
           "height": 600,
           "dpr": 2,
-          "fps": 91.49935071421436,
-          "p95": 12.799999997019768,
-          "p99": 14.299999997019768,
+          "fps": 143.9424230307877,
+          "p95": 7.5999999940395355,
+          "p99": 8.099999994039536,
           "buffer": [
             800,
             600
@@ -3893,7 +5911,7 @@
           "reflection": 480,
           "resizes": 0,
           "scale": 1,
-          "gpu": 4.650857408593032,
+          "gpu": 2.6922691612109455,
           "shadowSpan": [
             160,
             80
@@ -3903,9 +5921,9 @@
           "width": 390,
           "height": 844,
           "dpr": 2,
-          "fps": 116.84479183275877,
-          "p95": 10.200000002980232,
-          "p99": 11.700000002980232,
+          "fps": 143.94817865534088,
+          "p95": 7.5,
+          "p99": 8.199999988079071,
           "buffer": [
             390,
             844
@@ -3914,7 +5932,7 @@
           "reflection": 320,
           "resizes": 0,
           "scale": 1,
-          "gpu": 1.4410273137547622,
+          "gpu": 3.197278428376372,
           "shadowSpan": [
             144,
             56
@@ -3924,9 +5942,9 @@
           "width": 844,
           "height": 390,
           "dpr": 2,
-          "fps": 121.93905043200283,
-          "p95": 13.899999991059303,
-          "p99": 15.299999997019768,
+          "fps": 143.86335973855478,
+          "p95": 7.799999982118607,
+          "p99": 8.399999976158142,
           "buffer": [
             844,
             390
@@ -3935,7 +5953,7 @@
           "reflection": 506,
           "resizes": 0,
           "scale": 1,
-          "gpu": 3.105185281221079,
+          "gpu": 2.6616227172882008,
           "shadowSpan": [
             176,
             120
@@ -3952,7 +5970,7 @@
       "pass": true
     },
     "cutaways": {
-      "sha256": "c04ec9fe4cd43b57ee6ad5dac0b69e0fd4fac8dd5b5b0099358bc4e8a3e03102",
+      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
       "cycles": [
         {
           "side": "behind",
@@ -4161,7 +6179,7 @@
       "pass": true
     },
     "targets": {
-      "sha256": "c04ec9fe4cd43b57ee6ad5dac0b69e0fd4fac8dd5b5b0099358bc4e8a3e03102",
+      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
       "structure": {
         "roots": 3,
         "meshes": 3,
@@ -4218,14 +6236,14 @@
         "enemies": 2,
         "below": true,
         "arrow": 34,
-        "glow": 0.253122981929008,
+        "glow": 0.2514595743575683,
         "turns": 4,
         "queue": 4
       },
       "selection": {
         "target": 1,
         "first": 0,
-        "second": 0.253122981929008
+        "second": 0.2514595743575683
       },
       "redraws": [
         {
@@ -4260,7 +6278,7 @@
       "pass": true
     },
     "menus": {
-      "sha256": "c04ec9fe4cd43b57ee6ad5dac0b69e0fd4fac8dd5b5b0099358bc4e8a3e03102",
+      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
       "views": [
         {
           "tab": "journal",
@@ -4503,7 +6521,7 @@
       "pass": true
     },
     "routes": {
-      "sha256": "c04ec9fe4cd43b57ee6ad5dac0b69e0fd4fac8dd5b5b0099358bc4e8a3e03102",
+      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
       "camera": {
         "yaw": 4.782532484473921,
         "pitch": 23.972876142711147,
@@ -4625,23 +6643,11 @@
           },
           "plots": [
             {
-              "x": -4.204170148367268,
-              "z": 0.44814358727133197
-            },
-            {
               "x": -10.513093561399302,
               "z": 85.81147477024894
-            },
-            {
-              "x": 8.280464313871164,
-              "z": 57.71505238526361
-            },
-            {
-              "x": -5.759386487771735,
-              "z": 25.61987304231844
             }
           ],
-          "trees": 1364,
+          "trees": 1440,
           "cloud": {
             "width": 900,
             "depth": 792.6197861967314,
@@ -4649,7 +6655,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 4176
+          "loadMs": 3265
         },
         {
           "edgeFailures": [],
@@ -4715,27 +6721,27 @@
           },
           "plots": [
             {
-              "x": 151.3408856226373,
-              "z": 33.49957440927086
-            },
-            {
-              "x": 3.392750448766975,
-              "z": 37.05247590972321
-            },
-            {
               "x": 23.3988315296992,
               "z": 84.14082684155692
             },
             {
-              "x": 4.191353295651343,
-              "z": 98.89209184632556
+              "x": 148.57882284644774,
+              "z": 25.628573486140972
             },
             {
-              "x": 23.977190374862253,
-              "z": 28.00181892016761
+              "x": -5.865621447100056,
+              "z": 87.78477409509529
+            },
+            {
+              "x": 47.55674555514321,
+              "z": 58.69056349416971
+            },
+            {
+              "x": 45.76534126216143,
+              "z": 82.09342949154767
             }
           ],
-          "trees": 944,
+          "trees": 994,
           "cloud": {
             "width": 900,
             "depth": 750,
@@ -4743,7 +6749,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 3654
+          "loadMs": 2500
         },
         {
           "edgeFailures": [],
@@ -4808,7 +6814,7 @@
             ]
           },
           "plots": [],
-          "trees": 676,
+          "trees": 705,
           "cloud": {
             "width": 900,
             "depth": 750,
@@ -4816,7 +6822,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 1858
+          "loadMs": 1094
         },
         {
           "edgeFailures": [],
@@ -4882,27 +6888,27 @@
           },
           "plots": [
             {
-              "x": 16.984896015598025,
-              "z": 18.106473887406935
+              "x": 40.68170649274026,
+              "z": -149.2389082788157
             },
             {
               "x": -140.146017175978,
               "z": -181.1697137689927
             },
             {
-              "x": 47.34419691731824,
-              "z": -161.46830642012443
+              "x": -122.17109031669014,
+              "z": 16.617604887083303
             },
             {
-              "x": -74.60809377076009,
-              "z": -199.5300604513563
+              "x": 17.47535629185083,
+              "z": -165.43249835754085
             },
             {
               "x": -117.94996959223216,
               "z": -187.48493094094147
             }
           ],
-          "trees": 1086,
+          "trees": 1251,
           "cloud": {
             "width": 900,
             "depth": 811.2332698160081,
@@ -4910,7 +6916,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 4283
+          "loadMs": 3111
         },
         {
           "edgeFailures": [],
@@ -4988,15 +6994,11 @@
               "z": -55.94189028723699
             },
             {
-              "x": 194.0651184582457,
-              "z": -95.8221190802373
-            },
-            {
               "x": 126.8193769802064,
               "z": -140.8171522018282
             }
           ],
-          "trees": 953,
+          "trees": 1060,
           "cloud": {
             "width": 900,
             "depth": 750,
@@ -5004,7 +7006,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 2901
+          "loadMs": 2074
         },
         {
           "edgeFailures": [],
@@ -5069,7 +7071,7 @@
             ]
           },
           "plots": [],
-          "trees": 621,
+          "trees": 652,
           "cloud": {
             "width": 900,
             "depth": 750,
@@ -5077,7 +7079,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 1977
+          "loadMs": 1093
         },
         {
           "edgeFailures": [],
@@ -5142,7 +7144,7 @@
             ]
           },
           "plots": [],
-          "trees": 836,
+          "trees": 917,
           "cloud": {
             "width": 900,
             "depth": 750,
@@ -5150,7 +7152,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 2107
+          "loadMs": 1332
         },
         {
           "edgeFailures": [],
@@ -5216,19 +7218,27 @@
           },
           "plots": [
             {
+              "x": 0.3782680560049556,
+              "z": -223.54786084045253
+            },
+            {
+              "x": -46.9685893117026,
+              "z": -85.20897143165686
+            },
+            {
               "x": 80.67711769747783,
               "z": -228.89993231022316
             },
             {
-              "x": -52.004090152120796,
-              "z": -231.75310931140976
+              "x": -71.85472605259005,
+              "z": -114.74730986350137
             },
             {
               "x": 89.46267676679349,
               "z": -204.96300817495876
             }
           ],
-          "trees": 701,
+          "trees": 818,
           "cloud": {
             "width": 900,
             "depth": 750,
@@ -5236,7 +7246,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 3846
+          "loadMs": 2225
         },
         {
           "edgeFailures": [],
@@ -5249,29 +7259,29 @@
             -127.61628606800869
           ],
           "spawn": [
-            -117.79355912447315,
-            -167.8042939170179
+            -120,
+            -191
           ],
           "free": true,
           "blocked": [],
           "exits": [
             {
-              "x": -151.07557089798686,
-              "z": -145.6162860680087,
+              "x": -145,
+              "z": -220,
               "free": true,
-              "distance": 40,
+              "distance": 38.28837943815329,
               "glow": true,
-              "angle": 2.1587989303424657,
+              "angle": 0,
               "dir": [
-                -0.8320502943378429,
-                0.5547001962252304
+                0,
+                -1
               ]
             },
             {
               "x": 10.627416997969519,
               "z": -149.37258300203047,
               "free": true,
-              "distance": 129.73694568431407,
+              "distance": 137.09983193820577,
               "glow": true,
               "angle": -2.3561944901923453,
               "dir": [
@@ -5283,7 +7293,7 @@
               "x": -66,
               "z": -275,
               "free": true,
-              "distance": 119.05247653622911,
+              "distance": 99.85990186255944,
               "glow": true,
               "angle": 0,
               "dir": [
@@ -5293,15 +7303,15 @@
             }
           ],
           "seal": {
-            "x": -114.43792968604043,
-            "z": -170.8025852757627,
+            "x": -115.80458082899408,
+            "z": -192.62740836287514,
             "spawn": [
-              -117.79355912447315,
-              -167.8042939170179
+              -120,
+              -191
             ]
           },
           "plots": [],
-          "trees": 797,
+          "trees": 789,
           "cloud": {
             "width": 900,
             "depth": 750,
@@ -5309,7 +7319,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 2111
+          "loadMs": 1443
         },
         {
           "edgeFailures": [],
@@ -5362,7 +7372,7 @@
             ]
           },
           "plots": [],
-          "trees": 776,
+          "trees": 799,
           "cloud": {
             "width": 900,
             "depth": 750,
@@ -5370,7 +7380,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 1704
+          "loadMs": 928
         },
         {
           "edgeFailures": [],
@@ -5423,7 +7433,7 @@
             ]
           },
           "plots": [],
-          "trees": 692,
+          "trees": 729,
           "cloud": {
             "width": 900,
             "depth": 750,
@@ -5431,7 +7441,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 1810
+          "loadMs": 1059
         },
         {
           "edgeFailures": [],
@@ -5484,7 +7494,7 @@
             ]
           },
           "plots": [],
-          "trees": 722,
+          "trees": 743,
           "cloud": {
             "width": 900,
             "depth": 750,
@@ -5492,7 +7502,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 1838
+          "loadMs": 1105
         },
         {
           "edgeFailures": [],
@@ -5545,7 +7555,7 @@
             ]
           },
           "plots": [],
-          "trees": 637,
+          "trees": 752,
           "cloud": {
             "width": 900,
             "depth": 750,
@@ -5553,7 +7563,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 2043
+          "loadMs": 1121
         },
         {
           "edgeFailures": [],
@@ -5606,7 +7616,7 @@
             ]
           },
           "plots": [],
-          "trees": 610,
+          "trees": 660,
           "cloud": {
             "width": 900,
             "depth": 750,
@@ -5614,7 +7624,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 1740
+          "loadMs": 980
         },
         {
           "edgeFailures": [],
@@ -5656,6 +7666,18 @@
                 -0.3495638932001636,
                 -0.936912527705092
               ]
+            },
+            {
+              "x": 208,
+              "z": 66,
+              "free": true,
+              "distance": 51,
+              "glow": true,
+              "angle": 1.5707963267948966,
+              "dir": [
+                -1,
+                0
+              ]
             }
           ],
           "seal": {
@@ -5676,7 +7698,7 @@
               "z": 50
             }
           ],
-          "trees": 66,
+          "trees": 62,
           "cloud": {
             "width": 900,
             "depth": 750,
@@ -5684,7 +7706,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 417
+          "loadMs": 436
         }
       ],
       "errors": [],
@@ -5694,339 +7716,341 @@
       "phases": [
         {
           "name": "warm-town",
-          "seconds": 30.00829999999702,
-          "fps": 141.79410363134275,
+          "seconds": 30.01009999999404,
+          "fps": 131.08919996936967,
           "frame": {
-            "mean": 7.052703338031988,
-            "p95": 8.100000008940697,
-            "p99": 9,
-            "max": 13.5
+            "mean": 7.627917620143362,
+            "p95": 9.5,
+            "p99": 10.699999988079071,
+            "max": 13.200000017881393
           },
           "renderCPU": {
-            "mean": 4.777532314914514,
-            "p95": 6.0999999940395355,
-            "p99": 6.5,
-            "max": 10.699999988079071
+            "mean": 5.890950686278899,
+            "p95": 7.5,
+            "p99": 8.200000017881393,
+            "max": 10
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.2058725149503546,
-          "fx": 20,
+          "gpuMs": 3.5819135459449347,
+          "fx": 24,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 43, 38, 1860, 11201, 77.99",
-            "P0, 44, 37, 1875, 11201, 80.98",
-            "P0, 44, 41, 1980, 11201, 81.17",
-            "P0, 44, 37, 1995, 11201, 81.52",
-            "P0, 45, 39, 1890, 11201, 80.41"
+            "P0, 45, 39, 1770, 11201, 75.91",
+            "P0, 45, 34, 1860, 11201, 77.25",
+            "P0, 46, 41, 1710, 11201, 73.89",
+            "P0, 45, 33, 1725, 11201, 75.20",
+            "P0, 46, 39, 1860, 11201, 80.41"
           ]
         },
         {
           "name": "after-travel-and-battle-0",
-          "seconds": 10.01140000000596,
-          "fps": 142.6373933714715,
+          "seconds": 10.00930000001192,
+          "fps": 143.26676191125176,
           "frame": {
-            "mean": 6.990259285209558,
-            "p95": 7.899999991059303,
-            "p99": 9,
-            "max": 41.8999999910593
+            "mean": 6.957990230294432,
+            "p95": 7.799999982118607,
+            "p99": 8.300000011920929,
+            "max": 13.800000011920929
           },
           "renderCPU": {
-            "mean": 4.342997199002685,
-            "p95": 4.9000000059604645,
-            "p99": 5.200000002980232,
-            "max": 32.69999998807907
+            "mean": 5.0435146443140555,
+            "p95": 5.799999982118607,
+            "p99": 6.199999988079071,
+            "max": 6.699999988079071
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.5851988700151884,
-          "fx": 12,
+          "gpuMs": 3.3275934696779115,
+          "fx": 17,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 45, 36, 1980, 11201, 81.11",
-            "P0, 45, 38, 1890, 11201, 81.12"
+            "P0, 45, 39, 1920, 11201, 81.34",
+            "P0, 46, 40, 1890, 11201, 82.00"
           ]
         },
         {
           "name": "after-travel-and-battle-1",
-          "seconds": 10.00029999999702,
-          "fps": 143.59569212927892,
+          "seconds": 10.011699999988078,
+          "fps": 143.03265179756735,
           "frame": {
-            "mean": 6.943832752617394,
-            "p95": 7.799999997019768,
-            "p99": 8.700000002980232,
-            "max": 9.200000002980232
+            "mean": 6.970160726772831,
+            "p95": 7.799999982118607,
+            "p99": 8.400000005960464,
+            "max": 9.800000011920929
           },
           "renderCPU": {
-            "mean": 4.280153203402804,
-            "p95": 4.9000000059604645,
-            "p99": 5.200000002980232,
-            "max": 7
+            "mean": 5.142877095071963,
+            "p95": 5.9000000059604645,
+            "p99": 6.4000000059604645,
+            "max": 8
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.441245089687029,
-          "fx": 16,
+          "gpuMs": 3.680214385115706,
+          "fx": 18,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 44, 39, 1905, 11201, 81.89"
+            "P0, 45, 38, 1950, 11201, 81.53",
+            "P0, 45, 39, 1920, 11201, 82.25"
           ]
         },
         {
           "name": "after-travel-and-battle-2",
-          "seconds": 10.00229999999702,
-          "fps": 143.56697959473598,
+          "seconds": 10.007200000017882,
+          "fps": 141.5980494041758,
           "frame": {
-            "mean": 6.945714285710132,
-            "p95": 7.799999997019768,
-            "p99": 8.700000002980232,
-            "max": 9.200000002980232
+            "mean": 7.040466101703334,
+            "p95": 7.9000000059604645,
+            "p99": 8.400000005960464,
+            "max": 9.700000017881393
           },
           "renderCPU": {
-            "mean": 4.301601671190896,
-            "p95": 4.899999991059303,
-            "p99": 5.0999999940395355,
-            "max": 5.700000002980232
+            "mean": 5.224206069046625,
+            "p95": 6,
+            "p99": 6.4000000059604645,
+            "max": 7.800000011920929
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.5470326034035873,
-          "fx": 19,
+          "gpuMs": 3.456897160269059,
+          "fx": 17,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 44, 36, 2070, 11201, 83.02",
-            "P0, 45, 38, 1950, 11201, 83.52"
+            "P0, 45, 31, 2505, 11201, 86.04",
+            "P0, 45, 37, 1935, 11201, 82.13"
           ]
         },
         {
           "name": "after-travel-and-battle-3",
-          "seconds": 10.00439999999106,
-          "fps": 143.53684378886123,
+          "seconds": 10.0095,
+          "fps": 142.66446875468304,
           "frame": {
-            "mean": 6.946968641108752,
-            "p95": 7.700000002980232,
-            "p99": 8.599999994039536,
-            "max": 10
+            "mean": 6.988297126847877,
+            "p95": 7.799999982118607,
+            "p99": 8.300000011920929,
+            "max": 9.400000005960464
           },
           "renderCPU": {
-            "mean": 4.068245125368943,
-            "p95": 4.700000002980232,
-            "p99": 5,
-            "max": 5.300000011920929
+            "mean": 5.213795518006931,
+            "p95": 5.9000000059604645,
+            "p99": 6.300000011920929,
+            "max": 7.299999982118607
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.358601411237995,
-          "fx": 29,
+          "gpuMs": 3.435243814771773,
+          "fx": 15,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 45, 44, 2040, 11201, 84.15"
+            "P0, 45, 38, 1950, 11201, 83.47",
+            "P0, 46, 38, 2040, 11201, 83.80"
           ]
         },
         {
           "name": "town-after-thirty-minutes",
-          "seconds": 45.00779999999702,
-          "fps": 142.35310323989228,
+          "seconds": 45.0075,
+          "fps": 140.9098483586069,
           "frame": {
-            "mean": 7.024914142990015,
-            "p95": 8,
-            "p99": 10.599999994039536,
-            "max": 22.100000008940697
+            "mean": 7.096830152972717,
+            "p95": 8.199999988079071,
+            "p99": 8.899999976158142,
+            "max": 24.19999998807907
           },
           "renderCPU": {
-            "mean": 4.302528484381266,
-            "p95": 5,
-            "p99": 8,
-            "max": 13.899999991059303
+            "mean": 5.254935351358118,
+            "p95": 6.199999988079071,
+            "p99": 6.699999988079071,
+            "max": 8.900000005960464
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.364863654038902,
-          "fx": 20,
+          "gpuMs": 3.6853653115661045,
+          "fx": 15,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 44, 36, 2265, 11201, 86.79",
-            "P0, 44, 38, 2145, 11201, 85.81",
-            "P0, 44, 39, 2250, 11201, 86.70",
-            "P0, 45, 36, 2220, 11201, 86.43",
-            "P0, 46, 39, 2160, 11201, 87.63",
-            "P0, 46, 38, 2130, 11201, 87.61",
-            "P0, 46, 45, 2295, 11201, 87.64",
-            "P0, 46, 41, 2235, 11201, 85.14"
+            "P0, 43, 38, 2115, 11201, 85.62",
+            "P0, 43, 37, 1950, 11201, 81.98",
+            "P0, 44, 40, 1995, 11201, 86.42",
+            "P0, 44, 34, 2040, 11201, 84.88",
+            "P0, 45, 38, 2025, 11201, 85.86",
+            "P0, 45, 39, 2070, 11201, 88.39",
+            "P0, 45, 39, 2085, 11201, 88.49",
+            "P0, 45, 38, 2100, 11201, 88.79"
           ]
         },
         {
           "name": "overworld-extended",
-          "seconds": 60.00009999999404,
-          "fps": 143.93309344485854,
+          "seconds": 60.00140000000596,
+          "fps": 143.92997496723646,
           "frame": {
-            "mean": 6.947515923566534,
-            "p95": 7.9000000059604645,
-            "p99": 8.200000002980232,
-            "max": 11.099999994039536
+            "mean": 6.947620150552158,
+            "p95": 8,
+            "p99": 8.200000017881393,
+            "max": 9.299999982118607
           },
           "renderCPU": {
-            "mean": 3.4440250115925486,
-            "p95": 4.199999988079071,
-            "p99": 4.5,
-            "max": 7.700000002980232
+            "mean": 3.792079666478455,
+            "p95": 4.4000000059604645,
+            "p99": 4.699999988079071,
+            "max": 6.100000023841858
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 5.64391624474783,
-          "fx": 19,
+          "gpuMs": 5.73283397644974,
+          "fx": 22,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 47, 36, 2085, 11201, 86.23",
-            "P0, 47, 37, 2100, 11201, 85.30",
-            "P0, 46, 38, 1935, 11201, 84.48",
-            "P0, 47, 39, 1920, 11201, 83.62",
-            "P0, 47, 38, 2010, 11201, 84.27",
-            "P0, 47, 37, 1980, 11201, 83.58",
-            "P0, 47, 38, 1845, 11201, 82.38",
-            "P0, 47, 39, 1845, 11201, 81.97",
-            "P0, 47, 37, 2040, 11201, 84.72",
-            "P0, 48, 37, 1995, 11201, 84.79",
-            "P0, 48, 38, 1905, 11201, 84.77"
+            "P0, 46, 39, 1935, 11201, 87.53",
+            "P0, 46, 38, 1905, 11201, 87.23",
+            "P0, 47, 38, 1920, 11201, 86.43",
+            "P0, 46, 41, 1920, 11201, 86.35",
+            "P0, 46, 40, 1905, 11201, 86.01",
+            "P0, 47, 39, 1875, 11201, 85.38",
+            "P0, 47, 39, 1815, 11201, 84.16",
+            "P0, 47, 40, 2175, 11201, 84.95",
+            "P0, 48, 40, 1845, 11201, 86.01",
+            "P0, 48, 39, 1875, 11201, 86.90",
+            "P0, 47, 40, 1875, 11201, 87.08"
           ]
         },
         {
           "name": "storm-overworld-extended",
-          "seconds": 60,
-          "fps": 143.78333333333336,
+          "seconds": 60.00109999999404,
+          "fps": 143.79736371501284,
           "frame": {
-            "mean": 6.954973336425799,
+            "mean": 6.954097600556393,
             "p95": 7.9000000059604645,
-            "p99": 8.299999997019768,
-            "max": 59.099999994039536
+            "p99": 8.200000017881393,
+            "max": 55.400000005960464
           },
           "renderCPU": {
-            "mean": 3.314118465244376,
-            "p95": 4.0999999940395355,
-            "p99": 4.5,
-            "max": 10.599999994039536
+            "mean": 3.5707579971630925,
+            "p95": 4.300000011920929,
+            "p99": 4.699999988079071,
+            "max": 10.800000011920929
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 4.131110720820813,
-          "fx": 19,
+          "gpuMs": 4.4162955255944585,
+          "fx": 21,
           "weather": "Thunderstorm",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 48, 39, 2025, 11201, 84.68",
-            "P0, 48, 35, 2010, 11201, 84.96",
-            "P0, 49, 40, 1905, 11201, 85.19",
-            "P0, 48, 40, 1875, 11201, 85.23",
-            "P0, 49, 36, 2085, 11201, 85.88",
-            "P0, 48, 36, 2085, 11201, 86.12",
-            "P0, 48, 36, 2010, 11201, 85.42",
-            "P0, 48, 38, 1920, 11201, 85.00",
-            "P0, 49, 38, 1890, 11201, 84.53",
-            "P0, 49, 37, 2040, 11201, 85.13",
-            "P0, 49, 37, 2040, 11201, 84.87"
+            "P0, 48, 40, 1845, 11201, 86.21",
+            "P0, 48, 39, 1875, 11201, 86.57",
+            "P0, 48, 40, 1875, 11201, 86.65",
+            "P0, 48, 40, 1875, 11201, 86.89",
+            "P0, 48, 38, 1905, 11201, 87.29",
+            "P0, 48, 38, 1905, 11201, 87.19",
+            "P0, 48, 39, 1890, 11201, 87.11",
+            "P0, 48, 40, 1890, 11201, 83.88",
+            "P0, 49, 39, 1890, 11201, 86.86",
+            "P0, 49, 40, 1905, 11201, 85.88",
+            "P0, 48, 39, 1905, 11201, 86.32"
           ]
         },
         {
           "name": "continuous-battle-skills",
-          "seconds": 60.00020000000298,
-          "fps": 143.21618927936194,
+          "seconds": 60.01840000000596,
+          "fps": 136.09159857642305,
           "frame": {
-            "mean": 6.979713687151185,
-            "p95": 10.5,
-            "p99": 11.299999997019768,
-            "max": 56
+            "mean": 7.346308313947829,
+            "p95": 10.799999982118607,
+            "p99": 14.5,
+            "max": 59.400000005960464
           },
           "renderCPU": {
-            "mean": 3.3530082624671373,
-            "p95": 4,
-            "p99": 4.5,
-            "max": 11.900000005960464
+            "mean": 4.304187071410233,
+            "p95": 5.699999988079071,
+            "p99": 8.599999994039536,
+            "max": 12.400000005960464
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 2.981150019142876,
+          "gpuMs": 3.4044625396590695,
           "fx": 0,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 49, 36, 2295, 11201, 93.84",
-            "P0, 50, 39, 2175, 11201, 93.33",
-            "P0, 50, 39, 2385, 11201, 93.60",
-            "P0, 50, 37, 2385, 11201, 93.18",
-            "P0, 50, 38, 2235, 11201, 93.35",
-            "P0, 51, 39, 2220, 11201, 93.13",
-            "P0, 50, 37, 2415, 11201, 93.48",
-            "P0, 51, 37, 2445, 11201, 96.20",
-            "P0, 50, 38, 2250, 11201, 93.11",
-            "P0, 51, 40, 2235, 11201, 93.36",
-            "P0, 50, 37, 2415, 11201, 94.09"
+            "P0, 49, 39, 2340, 11201, 96.91",
+            "P0, 50, 38, 2325, 11201, 97.18",
+            "P0, 55, 55, 2775, 11201, 172.09",
+            "P0, 58, 62, 2775, 11201, 183.36",
+            "P0, 55, 44, 2775, 11201, 139.62",
+            "P0, 55, 40, 2775, 11201, 140.01",
+            "P0, 55, 43, 2775, 11201, 141.49",
+            "P0, 56, 44, 2775, 11201, 141.13",
+            "P0, 57, 43, 2775, 11201, 141.59",
+            "P0, 57, 46, 2775, 11201, 142.89",
+            "P0, 57, 45, 2775, 11201, 140.06"
           ]
         },
         {
           "name": "final-town",
-          "seconds": 30.00939999999106,
-          "fps": 143.58834231944937,
+          "seconds": 30.00329999998212,
+          "fps": 141.98438171809562,
           "frame": {
-            "mean": 6.964623955430372,
-            "p95": 7.899999991059303,
-            "p99": 8.799999997019768,
-            "max": 13.299999997019768
+            "mean": 7.043202629725288,
+            "p95": 8,
+            "p99": 9.299999982118607,
+            "max": 14.600000023841858
           },
           "renderCPU": {
-            "mean": 4.39178463674167,
-            "p95": 5.0999999940395355,
-            "p99": 5.5,
-            "max": 10.399999991059303
+            "mean": 5.037723004699033,
+            "p95": 5.9000000059604645,
+            "p99": 6.9000000059604645,
+            "max": 12.400000005960464
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.0828160027005524,
+          "gpuMs": 3.58254521172642,
           "fx": 23,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 50, 40, 2085, 11201, 81.53",
-            "P0, 49, 36, 2115, 11201, 81.88",
-            "P0, 49, 37, 2115, 11201, 81.30",
-            "P0, 49, 39, 1965, 11201, 81.17",
-            "P0, 49, 40, 2070, 11201, 81.19"
+            "P0, 51, 40, 1830, 11201, 81.41",
+            "P0, 51, 39, 1875, 11201, 80.88",
+            "P0, 54, 38, 2790, 11201, 121.13",
+            "P0, 55, 40, 2760, 11201, 116.15",
+            "P0, 54, 40, 2715, 11201, 115.56"
           ]
         }
       ],
@@ -6034,89 +8058,89 @@
         {
           "name": "warm",
           "scene": "brookstead",
-          "heap": 1047475843,
-          "geometries": 2417,
+          "heap": 1044526728,
+          "geometries": 2408,
           "textures": 92,
-          "programs": 204,
-          "keepers": 77,
+          "programs": 207,
+          "keepers": 78,
           "queries": 0,
-          "fx": 20,
+          "fx": 24,
           "nav": 0,
           "roadCache": 50000
         },
         {
           "name": "round-0",
           "scene": "brookstead",
-          "heap": 1301839912,
-          "geometries": 2406,
+          "heap": 1298850877,
+          "geometries": 2397,
           "textures": 92,
-          "programs": 207,
-          "keepers": 79,
-          "queries": 1,
-          "fx": 12,
+          "programs": 210,
+          "keepers": 80,
+          "queries": 0,
+          "fx": 17,
           "nav": 0,
           "roadCache": 50000
         },
         {
           "name": "round-1",
           "scene": "brookstead",
-          "heap": 1302539468,
-          "geometries": 2411,
+          "heap": 1299722253,
+          "geometries": 2397,
           "textures": 92,
-          "programs": 209,
-          "keepers": 80,
+          "programs": 212,
+          "keepers": 81,
           "queries": 0,
-          "fx": 16,
+          "fx": 18,
           "nav": 0,
           "roadCache": 50000
         },
         {
           "name": "round-2",
           "scene": "brookstead",
-          "heap": 1304409080,
-          "geometries": 2417,
+          "heap": 1301040193,
+          "geometries": 2398,
           "textures": 92,
-          "programs": 211,
-          "keepers": 81,
+          "programs": 214,
+          "keepers": 82,
           "queries": 0,
-          "fx": 19,
+          "fx": 17,
           "nav": 0,
           "roadCache": 50000
         },
         {
           "name": "round-3",
           "scene": "brookstead",
-          "heap": 1304840196,
-          "geometries": 2423,
+          "heap": 1302110341,
+          "geometries": 2397,
           "textures": 92,
-          "programs": 213,
-          "keepers": 82,
+          "programs": 216,
+          "keepers": 83,
           "queries": 0,
-          "fx": 29,
+          "fx": 15,
           "nav": 0,
           "roadCache": 50000
         },
         {
           "name": "after-thirty-minutes",
           "scene": "brookstead",
-          "heap": 1305058150,
-          "geometries": 2416,
+          "heap": 1302118039,
+          "geometries": 2397,
           "textures": 92,
-          "programs": 213,
-          "keepers": 82,
+          "programs": 216,
+          "keepers": 83,
           "queries": 0,
-          "fx": 20,
+          "fx": 15,
           "nav": 0,
           "roadCache": 50000
         },
         {
           "name": "final",
           "scene": "brookstead",
-          "heap": 1304824749,
-          "geometries": 2428,
+          "heap": 1301665978,
+          "geometries": 2410,
           "textures": 92,
-          "programs": 215,
-          "keepers": 83,
+          "programs": 218,
+          "keepers": 84,
           "queries": 0,
           "fx": 23,
           "nav": 0,
@@ -6124,10 +8148,10 @@
         }
       ],
       "acceleratedSeconds": 1800,
-      "sha256": "c04ec9fe4cd43b57ee6ad5dac0b69e0fd4fac8dd5b5b0099358bc4e8a3e03102",
+      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
       "growth": {
-        "heap": 2285281,
-        "geometries": 17,
+        "heap": 1943725,
+        "geometries": 13,
         "textures": 0,
         "programs": 6
       },
@@ -6192,7 +8216,7 @@
           {
             "type": "poiExit",
             "route": true,
-            "steps": 6
+            "steps": 7
           },
           {
             "type": "routeDoor",
@@ -6207,12 +8231,12 @@
           {
             "type": "poiExit",
             "route": true,
-            "steps": 12
+            "steps": 11
           },
           {
             "type": "poiExit",
             "route": true,
-            "steps": 14
+            "steps": 15
           },
           {
             "type": "localBoard",
@@ -6244,24 +8268,6 @@
             "x": -28.445252639412164,
             "z": 97,
             "route": true
-          },
-          {
-            "type": "bridge",
-            "x": -46.53273023171577,
-            "z": -8,
-            "route": true
-          },
-          {
-            "type": "bridge",
-            "x": -59.71006214430476,
-            "z": -80,
-            "route": false
-          },
-          {
-            "type": "bridge",
-            "x": -47.07326556265602,
-            "z": -180,
-            "route": false
           },
           {
             "type": "bridge",
@@ -6841,12 +8847,12 @@
       "scenarios": [
         {
           "name": "bridge",
-          "fps": 143.4211183853155,
-          "p95FrameMs": 7.800000011920929,
-          "meanRenderCpuMs": 4.180836237162247,
-          "ticks": 574,
-          "calls": 766.2351916376307,
-          "triangles": 4784809.256097561,
+          "fps": 139.3563184001044,
+          "p95FrameMs": 8.400000005960464,
+          "meanRenderCpuMs": 5.253309481152481,
+          "ticks": 559,
+          "calls": 1281.432915921288,
+          "triangles": 4644249.05724508,
           "buffer": [
             1440,
             900
@@ -6856,37 +8862,17 @@
             2048,
             2048
           ],
-          "programs": 172,
+          "programs": 175,
           "worldSerial": 4
         },
         {
           "name": "square",
-          "fps": 143.97120575895548,
-          "p95FrameMs": 7.799999997019768,
-          "meanRenderCpuMs": 4.053472222139438,
-          "ticks": 576,
-          "calls": 726.5868055555555,
-          "triangles": 4326253.201388889,
-          "buffer": [
-            1440,
-            900
-          ],
-          "scale": 1,
-          "shadow": [
-            2048,
-            2048
-          ],
-          "programs": 174,
-          "worldSerial": 5
-        },
-        {
-          "name": "forest",
-          "fps": 143.98920081004653,
-          "p95FrameMs": 7.5,
-          "meanRenderCpuMs": 2.252604166382096,
-          "ticks": 576,
-          "calls": 476.13194444444446,
-          "triangles": 2896146.3333333335,
+          "fps": 142.4572628215781,
+          "p95FrameMs": 7.800000011920929,
+          "meanRenderCpuMs": 4.283157896211272,
+          "ticks": 570,
+          "calls": 711.8035087719298,
+          "triangles": 4138075.50877193,
           "buffer": [
             1440,
             900
@@ -6897,16 +8883,36 @@
             2048
           ],
           "programs": 177,
+          "worldSerial": 5
+        },
+        {
+          "name": "forest",
+          "fps": 143.95681295546984,
+          "p95FrameMs": 7.300000011920929,
+          "meanRenderCpuMs": 1.7642361111421552,
+          "ticks": 576,
+          "calls": 455.31597222222223,
+          "triangles": 2923777.513888889,
+          "buffer": [
+            1440,
+            900
+          ],
+          "scale": 1,
+          "shadow": [
+            2048,
+            2048
+          ],
+          "programs": 180,
           "worldSerial": 6
         },
         {
           "name": "overworld",
-          "fps": 95.13583699567607,
-          "p95FrameMs": 12.599999994039536,
-          "meanRenderCpuMs": 9.306036745352069,
-          "ticks": 381,
-          "calls": 759.8083989501313,
-          "triangles": 5107538.671916011,
+          "fps": 144.0267585236445,
+          "p95FrameMs": 7.800000011920929,
+          "meanRenderCpuMs": 4.932409012493269,
+          "ticks": 577,
+          "calls": 781.9133448873483,
+          "triangles": 5117861.840554593,
           "buffer": [
             1440,
             900
@@ -6916,17 +8922,17 @@
             2048,
             2048
           ],
-          "programs": 196,
+          "programs": 199,
           "worldSerial": 7
         },
         {
           "name": "shop",
-          "fps": 143.86332983676226,
-          "p95FrameMs": 7.4000000059604645,
-          "meanRenderCpuMs": 2.250520832888368,
+          "fps": 143.93522914752705,
+          "p95FrameMs": 7.200000017881393,
+          "meanRenderCpuMs": 0.7489583334471617,
           "ticks": 576,
-          "calls": 135.41319444444446,
-          "triangles": 28770.82638888889,
+          "calls": 124.11111111111111,
+          "triangles": 28748.222222222223,
           "buffer": [
             1440,
             900
@@ -6936,11 +8942,11 @@
             2048,
             2048
           ],
-          "programs": 198,
+          "programs": 201,
           "worldSerial": 8
         }
       ],
-      "loadMs": 12232,
+      "loadMs": 11671,
       "device": {
         "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
         "software": false
@@ -6950,7 +8956,7 @@
       "pass": true
     },
     "atmosphere": {
-      "sha256": "c04ec9fe4cd43b57ee6ad5dac0b69e0fd4fac8dd5b5b0099358bc4e8a3e03102",
+      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
       "clouds": {
         "anchorsFixed": true,
         "cloudFixed": true,
@@ -6959,7 +8965,7 @@
         "field": true
       },
       "lanterns": {
-        "jumps": 8,
+        "jumps": 5,
         "bad": 0
       },
       "exit": {
@@ -7059,24 +9065,24 @@
         "icon": 192
       },
       "perf": {
-        "gpu": 3.225110820386205,
-        "cpu": 6.1778124894125614,
+        "gpu": 2.9834178585952973,
+        "cpu": 5.705845550170605,
         "buffer": [
           1672,
           941
         ],
         "scale": 1,
-        "programs": 170
+        "programs": 173
       },
       "errors": []
     },
     "comparisons": {
       "before": {
-        "commit": "fd5611432bdb9ccda472137c07d9f8d55d586343",
-        "sha256": "e28eb19abc12a10c926fc2582fc2034eff863eb5d19ad0ea667ecb29513c2933"
+        "commit": "6df203d070ccef73724986bd5e5891a458e67e88",
+        "sha256": "c04ec9fe4cd43b57ee6ad5dac0b69e0fd4fac8dd5b5b0099358bc4e8a3e03102"
       },
       "after": {
-        "sha256": "c04ec9fe4cd43b57ee6ad5dac0b69e0fd4fac8dd5b5b0099358bc4e8a3e03102"
+        "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83"
       },
       "views": [
         {
@@ -7291,8 +9297,8 @@
               {
                 "type": "routeDoor",
                 "label": "Follow the trail to Fern Hollow",
-                "x": -100.57402514854763,
-                "z": 42.61418070123307,
+                "x": -100.8333553495294,
+                "z": 42.75279558154618,
                 "active": true
               },
               {
@@ -7489,7 +9495,7 @@
             "battle": null,
             "terrain": {
               "sculpted": true,
-              "leafInstances": 10071,
+              "leafInstances": 10034,
               "litSprites": true,
               "fixedCamera": true,
               "fov": 35
@@ -7826,8 +9832,8 @@
               {
                 "type": "routeDoor",
                 "label": "Follow the trail to Fern Hollow",
-                "x": -100.57402514854763,
-                "z": 42.61418070123307,
+                "x": -100.8333553495294,
+                "z": 42.75279558154618,
                 "active": true
               },
               {
@@ -8024,7 +10030,7 @@
             "battle": null,
             "terrain": {
               "sculpted": true,
-              "leafInstances": 10071,
+              "leafInstances": 10034,
               "litSprites": true,
               "fixedCamera": true,
               "fov": 35
@@ -8441,7 +10447,7 @@
                 "frame": {
                   "action": "idle_east",
                   "index": 1,
-                  "cell": 130
+                  "cell": 128
                 }
               }
             ],
@@ -8633,8 +10639,8 @@
               {
                 "type": "localBoard",
                 "label": "Read local requests",
-                "x": -140.50559116309236,
-                "z": 118.33328930094119,
+                "x": -145.00892326277145,
+                "z": 115.7332893009412,
                 "active": false
               },
               {
@@ -8803,7 +10809,7 @@
             "battle": null,
             "terrain": {
               "sculpted": true,
-              "leafInstances": 10034,
+              "leafInstances": 10585,
               "litSprites": true,
               "fixedCamera": true,
               "fov": 35
@@ -8820,7 +10826,7 @@
               "age": 180,
               "settled": true,
               "levels": {
-                "reservoir": 6.133918609799792,
+                "reservoir": 6.145963053345767,
                 "headrace": 4.55,
                 "millrace": 1.55,
                 "lowerBrook": -1.4
@@ -8920,9 +10926,9 @@
               ]
             },
             "waterCurrent": {
-              "active": 920,
-              "speed": 3.46,
-              "front": 222,
+              "active": 0,
+              "speed": 1.6,
+              "front": 358,
               "direction": "downstream",
               "gpu": true
             }
@@ -8976,7 +10982,7 @@
                 "frame": {
                   "action": "idle_east",
                   "index": 1,
-                  "cell": 130
+                  "cell": 128
                 }
               }
             ],
@@ -9168,8 +11174,8 @@
               {
                 "type": "localBoard",
                 "label": "Read local requests",
-                "x": -140.50559116309236,
-                "z": 118.33328930094119,
+                "x": -145.00892326277145,
+                "z": 115.7332893009412,
                 "active": false
               },
               {
@@ -9338,7 +11344,7 @@
             "battle": null,
             "terrain": {
               "sculpted": true,
-              "leafInstances": 10034,
+              "leafInstances": 10585,
               "litSprites": true,
               "fixedCamera": true,
               "fov": 35
@@ -9355,7 +11361,7 @@
               "age": 180,
               "settled": true,
               "levels": {
-                "reservoir": 6.118013145525279,
+                "reservoir": 6.141937193044112,
                 "headrace": 4.55,
                 "millrace": 1.55,
                 "lowerBrook": -1.4
@@ -9455,9 +11461,9 @@
               ]
             },
             "waterCurrent": {
-              "active": 920,
-              "speed": 3.46,
-              "front": 222,
+              "active": 0,
+              "speed": 1.6,
+              "front": 358,
               "direction": "downstream",
               "gpu": true
             }
@@ -9511,7 +11517,7 @@
                 "frame": {
                   "action": "idle_east",
                   "index": 1,
-                  "cell": 130
+                  "cell": 128
                 }
               }
             ],
@@ -9913,12 +11919,12 @@
       "scenarios": [
         {
           "name": "bridge",
-          "fps": 143.4211183853155,
-          "p95FrameMs": 7.800000011920929,
-          "meanRenderCpuMs": 4.180836237162247,
-          "ticks": 574,
-          "calls": 766.2351916376307,
-          "triangles": 4784809.256097561,
+          "fps": 139.3563184001044,
+          "p95FrameMs": 8.400000005960464,
+          "meanRenderCpuMs": 5.253309481152481,
+          "ticks": 559,
+          "calls": 1281.432915921288,
+          "triangles": 4644249.05724508,
           "buffer": [
             1440,
             900
@@ -9928,37 +11934,17 @@
             2048,
             2048
           ],
-          "programs": 172,
+          "programs": 175,
           "worldSerial": 4
         },
         {
           "name": "square",
-          "fps": 143.97120575895548,
-          "p95FrameMs": 7.799999997019768,
-          "meanRenderCpuMs": 4.053472222139438,
-          "ticks": 576,
-          "calls": 726.5868055555555,
-          "triangles": 4326253.201388889,
-          "buffer": [
-            1440,
-            900
-          ],
-          "scale": 1,
-          "shadow": [
-            2048,
-            2048
-          ],
-          "programs": 174,
-          "worldSerial": 5
-        },
-        {
-          "name": "forest",
-          "fps": 143.98920081004653,
-          "p95FrameMs": 7.5,
-          "meanRenderCpuMs": 2.252604166382096,
-          "ticks": 576,
-          "calls": 476.13194444444446,
-          "triangles": 2896146.3333333335,
+          "fps": 142.4572628215781,
+          "p95FrameMs": 7.800000011920929,
+          "meanRenderCpuMs": 4.283157896211272,
+          "ticks": 570,
+          "calls": 711.8035087719298,
+          "triangles": 4138075.50877193,
           "buffer": [
             1440,
             900
@@ -9969,16 +11955,36 @@
             2048
           ],
           "programs": 177,
+          "worldSerial": 5
+        },
+        {
+          "name": "forest",
+          "fps": 143.95681295546984,
+          "p95FrameMs": 7.300000011920929,
+          "meanRenderCpuMs": 1.7642361111421552,
+          "ticks": 576,
+          "calls": 455.31597222222223,
+          "triangles": 2923777.513888889,
+          "buffer": [
+            1440,
+            900
+          ],
+          "scale": 1,
+          "shadow": [
+            2048,
+            2048
+          ],
+          "programs": 180,
           "worldSerial": 6
         },
         {
           "name": "overworld",
-          "fps": 95.13583699567607,
-          "p95FrameMs": 12.599999994039536,
-          "meanRenderCpuMs": 9.306036745352069,
-          "ticks": 381,
-          "calls": 759.8083989501313,
-          "triangles": 5107538.671916011,
+          "fps": 144.0267585236445,
+          "p95FrameMs": 7.800000011920929,
+          "meanRenderCpuMs": 4.932409012493269,
+          "ticks": 577,
+          "calls": 781.9133448873483,
+          "triangles": 5117861.840554593,
           "buffer": [
             1440,
             900
@@ -9988,17 +11994,17 @@
             2048,
             2048
           ],
-          "programs": 196,
+          "programs": 199,
           "worldSerial": 7
         },
         {
           "name": "shop",
-          "fps": 143.86332983676226,
-          "p95FrameMs": 7.4000000059604645,
-          "meanRenderCpuMs": 2.250520832888368,
+          "fps": 143.93522914752705,
+          "p95FrameMs": 7.200000017881393,
+          "meanRenderCpuMs": 0.7489583334471617,
           "ticks": 576,
-          "calls": 135.41319444444446,
-          "triangles": 28770.82638888889,
+          "calls": 124.11111111111111,
+          "triangles": 28748.222222222223,
           "buffer": [
             1440,
             900
@@ -10008,11 +12014,11 @@
             2048,
             2048
           ],
-          "programs": 198,
+          "programs": 201,
           "worldSerial": 8
         }
       ],
-      "loadMs": 12232,
+      "loadMs": 11671,
       "device": {
         "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
         "software": false
@@ -10025,339 +12031,341 @@
       "phases": [
         {
           "name": "warm-town",
-          "seconds": 30.00829999999702,
-          "fps": 141.79410363134275,
+          "seconds": 30.01009999999404,
+          "fps": 131.08919996936967,
           "frame": {
-            "mean": 7.052703338031988,
-            "p95": 8.100000008940697,
-            "p99": 9,
-            "max": 13.5
+            "mean": 7.627917620143362,
+            "p95": 9.5,
+            "p99": 10.699999988079071,
+            "max": 13.200000017881393
           },
           "renderCPU": {
-            "mean": 4.777532314914514,
-            "p95": 6.0999999940395355,
-            "p99": 6.5,
-            "max": 10.699999988079071
+            "mean": 5.890950686278899,
+            "p95": 7.5,
+            "p99": 8.200000017881393,
+            "max": 10
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.2058725149503546,
-          "fx": 20,
+          "gpuMs": 3.5819135459449347,
+          "fx": 24,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 43, 38, 1860, 11201, 77.99",
-            "P0, 44, 37, 1875, 11201, 80.98",
-            "P0, 44, 41, 1980, 11201, 81.17",
-            "P0, 44, 37, 1995, 11201, 81.52",
-            "P0, 45, 39, 1890, 11201, 80.41"
+            "P0, 45, 39, 1770, 11201, 75.91",
+            "P0, 45, 34, 1860, 11201, 77.25",
+            "P0, 46, 41, 1710, 11201, 73.89",
+            "P0, 45, 33, 1725, 11201, 75.20",
+            "P0, 46, 39, 1860, 11201, 80.41"
           ]
         },
         {
           "name": "after-travel-and-battle-0",
-          "seconds": 10.01140000000596,
-          "fps": 142.6373933714715,
+          "seconds": 10.00930000001192,
+          "fps": 143.26676191125176,
           "frame": {
-            "mean": 6.990259285209558,
-            "p95": 7.899999991059303,
-            "p99": 9,
-            "max": 41.8999999910593
+            "mean": 6.957990230294432,
+            "p95": 7.799999982118607,
+            "p99": 8.300000011920929,
+            "max": 13.800000011920929
           },
           "renderCPU": {
-            "mean": 4.342997199002685,
-            "p95": 4.9000000059604645,
-            "p99": 5.200000002980232,
-            "max": 32.69999998807907
+            "mean": 5.0435146443140555,
+            "p95": 5.799999982118607,
+            "p99": 6.199999988079071,
+            "max": 6.699999988079071
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.5851988700151884,
-          "fx": 12,
+          "gpuMs": 3.3275934696779115,
+          "fx": 17,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 45, 36, 1980, 11201, 81.11",
-            "P0, 45, 38, 1890, 11201, 81.12"
+            "P0, 45, 39, 1920, 11201, 81.34",
+            "P0, 46, 40, 1890, 11201, 82.00"
           ]
         },
         {
           "name": "after-travel-and-battle-1",
-          "seconds": 10.00029999999702,
-          "fps": 143.59569212927892,
+          "seconds": 10.011699999988078,
+          "fps": 143.03265179756735,
           "frame": {
-            "mean": 6.943832752617394,
-            "p95": 7.799999997019768,
-            "p99": 8.700000002980232,
-            "max": 9.200000002980232
+            "mean": 6.970160726772831,
+            "p95": 7.799999982118607,
+            "p99": 8.400000005960464,
+            "max": 9.800000011920929
           },
           "renderCPU": {
-            "mean": 4.280153203402804,
-            "p95": 4.9000000059604645,
-            "p99": 5.200000002980232,
-            "max": 7
+            "mean": 5.142877095071963,
+            "p95": 5.9000000059604645,
+            "p99": 6.4000000059604645,
+            "max": 8
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.441245089687029,
-          "fx": 16,
+          "gpuMs": 3.680214385115706,
+          "fx": 18,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 44, 39, 1905, 11201, 81.89"
+            "P0, 45, 38, 1950, 11201, 81.53",
+            "P0, 45, 39, 1920, 11201, 82.25"
           ]
         },
         {
           "name": "after-travel-and-battle-2",
-          "seconds": 10.00229999999702,
-          "fps": 143.56697959473598,
+          "seconds": 10.007200000017882,
+          "fps": 141.5980494041758,
           "frame": {
-            "mean": 6.945714285710132,
-            "p95": 7.799999997019768,
-            "p99": 8.700000002980232,
-            "max": 9.200000002980232
+            "mean": 7.040466101703334,
+            "p95": 7.9000000059604645,
+            "p99": 8.400000005960464,
+            "max": 9.700000017881393
           },
           "renderCPU": {
-            "mean": 4.301601671190896,
-            "p95": 4.899999991059303,
-            "p99": 5.0999999940395355,
-            "max": 5.700000002980232
+            "mean": 5.224206069046625,
+            "p95": 6,
+            "p99": 6.4000000059604645,
+            "max": 7.800000011920929
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.5470326034035873,
-          "fx": 19,
+          "gpuMs": 3.456897160269059,
+          "fx": 17,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 44, 36, 2070, 11201, 83.02",
-            "P0, 45, 38, 1950, 11201, 83.52"
+            "P0, 45, 31, 2505, 11201, 86.04",
+            "P0, 45, 37, 1935, 11201, 82.13"
           ]
         },
         {
           "name": "after-travel-and-battle-3",
-          "seconds": 10.00439999999106,
-          "fps": 143.53684378886123,
+          "seconds": 10.0095,
+          "fps": 142.66446875468304,
           "frame": {
-            "mean": 6.946968641108752,
-            "p95": 7.700000002980232,
-            "p99": 8.599999994039536,
-            "max": 10
+            "mean": 6.988297126847877,
+            "p95": 7.799999982118607,
+            "p99": 8.300000011920929,
+            "max": 9.400000005960464
           },
           "renderCPU": {
-            "mean": 4.068245125368943,
-            "p95": 4.700000002980232,
-            "p99": 5,
-            "max": 5.300000011920929
+            "mean": 5.213795518006931,
+            "p95": 5.9000000059604645,
+            "p99": 6.300000011920929,
+            "max": 7.299999982118607
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.358601411237995,
-          "fx": 29,
+          "gpuMs": 3.435243814771773,
+          "fx": 15,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 45, 44, 2040, 11201, 84.15"
+            "P0, 45, 38, 1950, 11201, 83.47",
+            "P0, 46, 38, 2040, 11201, 83.80"
           ]
         },
         {
           "name": "town-after-thirty-minutes",
-          "seconds": 45.00779999999702,
-          "fps": 142.35310323989228,
+          "seconds": 45.0075,
+          "fps": 140.9098483586069,
           "frame": {
-            "mean": 7.024914142990015,
-            "p95": 8,
-            "p99": 10.599999994039536,
-            "max": 22.100000008940697
+            "mean": 7.096830152972717,
+            "p95": 8.199999988079071,
+            "p99": 8.899999976158142,
+            "max": 24.19999998807907
           },
           "renderCPU": {
-            "mean": 4.302528484381266,
-            "p95": 5,
-            "p99": 8,
-            "max": 13.899999991059303
+            "mean": 5.254935351358118,
+            "p95": 6.199999988079071,
+            "p99": 6.699999988079071,
+            "max": 8.900000005960464
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.364863654038902,
-          "fx": 20,
+          "gpuMs": 3.6853653115661045,
+          "fx": 15,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 44, 36, 2265, 11201, 86.79",
-            "P0, 44, 38, 2145, 11201, 85.81",
-            "P0, 44, 39, 2250, 11201, 86.70",
-            "P0, 45, 36, 2220, 11201, 86.43",
-            "P0, 46, 39, 2160, 11201, 87.63",
-            "P0, 46, 38, 2130, 11201, 87.61",
-            "P0, 46, 45, 2295, 11201, 87.64",
-            "P0, 46, 41, 2235, 11201, 85.14"
+            "P0, 43, 38, 2115, 11201, 85.62",
+            "P0, 43, 37, 1950, 11201, 81.98",
+            "P0, 44, 40, 1995, 11201, 86.42",
+            "P0, 44, 34, 2040, 11201, 84.88",
+            "P0, 45, 38, 2025, 11201, 85.86",
+            "P0, 45, 39, 2070, 11201, 88.39",
+            "P0, 45, 39, 2085, 11201, 88.49",
+            "P0, 45, 38, 2100, 11201, 88.79"
           ]
         },
         {
           "name": "overworld-extended",
-          "seconds": 60.00009999999404,
-          "fps": 143.93309344485854,
+          "seconds": 60.00140000000596,
+          "fps": 143.92997496723646,
           "frame": {
-            "mean": 6.947515923566534,
-            "p95": 7.9000000059604645,
-            "p99": 8.200000002980232,
-            "max": 11.099999994039536
+            "mean": 6.947620150552158,
+            "p95": 8,
+            "p99": 8.200000017881393,
+            "max": 9.299999982118607
           },
           "renderCPU": {
-            "mean": 3.4440250115925486,
-            "p95": 4.199999988079071,
-            "p99": 4.5,
-            "max": 7.700000002980232
+            "mean": 3.792079666478455,
+            "p95": 4.4000000059604645,
+            "p99": 4.699999988079071,
+            "max": 6.100000023841858
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 5.64391624474783,
-          "fx": 19,
+          "gpuMs": 5.73283397644974,
+          "fx": 22,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 47, 36, 2085, 11201, 86.23",
-            "P0, 47, 37, 2100, 11201, 85.30",
-            "P0, 46, 38, 1935, 11201, 84.48",
-            "P0, 47, 39, 1920, 11201, 83.62",
-            "P0, 47, 38, 2010, 11201, 84.27",
-            "P0, 47, 37, 1980, 11201, 83.58",
-            "P0, 47, 38, 1845, 11201, 82.38",
-            "P0, 47, 39, 1845, 11201, 81.97",
-            "P0, 47, 37, 2040, 11201, 84.72",
-            "P0, 48, 37, 1995, 11201, 84.79",
-            "P0, 48, 38, 1905, 11201, 84.77"
+            "P0, 46, 39, 1935, 11201, 87.53",
+            "P0, 46, 38, 1905, 11201, 87.23",
+            "P0, 47, 38, 1920, 11201, 86.43",
+            "P0, 46, 41, 1920, 11201, 86.35",
+            "P0, 46, 40, 1905, 11201, 86.01",
+            "P0, 47, 39, 1875, 11201, 85.38",
+            "P0, 47, 39, 1815, 11201, 84.16",
+            "P0, 47, 40, 2175, 11201, 84.95",
+            "P0, 48, 40, 1845, 11201, 86.01",
+            "P0, 48, 39, 1875, 11201, 86.90",
+            "P0, 47, 40, 1875, 11201, 87.08"
           ]
         },
         {
           "name": "storm-overworld-extended",
-          "seconds": 60,
-          "fps": 143.78333333333336,
+          "seconds": 60.00109999999404,
+          "fps": 143.79736371501284,
           "frame": {
-            "mean": 6.954973336425799,
+            "mean": 6.954097600556393,
             "p95": 7.9000000059604645,
-            "p99": 8.299999997019768,
-            "max": 59.099999994039536
+            "p99": 8.200000017881393,
+            "max": 55.400000005960464
           },
           "renderCPU": {
-            "mean": 3.314118465244376,
-            "p95": 4.0999999940395355,
-            "p99": 4.5,
-            "max": 10.599999994039536
+            "mean": 3.5707579971630925,
+            "p95": 4.300000011920929,
+            "p99": 4.699999988079071,
+            "max": 10.800000011920929
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 4.131110720820813,
-          "fx": 19,
+          "gpuMs": 4.4162955255944585,
+          "fx": 21,
           "weather": "Thunderstorm",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 48, 39, 2025, 11201, 84.68",
-            "P0, 48, 35, 2010, 11201, 84.96",
-            "P0, 49, 40, 1905, 11201, 85.19",
-            "P0, 48, 40, 1875, 11201, 85.23",
-            "P0, 49, 36, 2085, 11201, 85.88",
-            "P0, 48, 36, 2085, 11201, 86.12",
-            "P0, 48, 36, 2010, 11201, 85.42",
-            "P0, 48, 38, 1920, 11201, 85.00",
-            "P0, 49, 38, 1890, 11201, 84.53",
-            "P0, 49, 37, 2040, 11201, 85.13",
-            "P0, 49, 37, 2040, 11201, 84.87"
+            "P0, 48, 40, 1845, 11201, 86.21",
+            "P0, 48, 39, 1875, 11201, 86.57",
+            "P0, 48, 40, 1875, 11201, 86.65",
+            "P0, 48, 40, 1875, 11201, 86.89",
+            "P0, 48, 38, 1905, 11201, 87.29",
+            "P0, 48, 38, 1905, 11201, 87.19",
+            "P0, 48, 39, 1890, 11201, 87.11",
+            "P0, 48, 40, 1890, 11201, 83.88",
+            "P0, 49, 39, 1890, 11201, 86.86",
+            "P0, 49, 40, 1905, 11201, 85.88",
+            "P0, 48, 39, 1905, 11201, 86.32"
           ]
         },
         {
           "name": "continuous-battle-skills",
-          "seconds": 60.00020000000298,
-          "fps": 143.21618927936194,
+          "seconds": 60.01840000000596,
+          "fps": 136.09159857642305,
           "frame": {
-            "mean": 6.979713687151185,
-            "p95": 10.5,
-            "p99": 11.299999997019768,
-            "max": 56
+            "mean": 7.346308313947829,
+            "p95": 10.799999982118607,
+            "p99": 14.5,
+            "max": 59.400000005960464
           },
           "renderCPU": {
-            "mean": 3.3530082624671373,
-            "p95": 4,
-            "p99": 4.5,
-            "max": 11.900000005960464
+            "mean": 4.304187071410233,
+            "p95": 5.699999988079071,
+            "p99": 8.599999994039536,
+            "max": 12.400000005960464
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 2.981150019142876,
+          "gpuMs": 3.4044625396590695,
           "fx": 0,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 49, 36, 2295, 11201, 93.84",
-            "P0, 50, 39, 2175, 11201, 93.33",
-            "P0, 50, 39, 2385, 11201, 93.60",
-            "P0, 50, 37, 2385, 11201, 93.18",
-            "P0, 50, 38, 2235, 11201, 93.35",
-            "P0, 51, 39, 2220, 11201, 93.13",
-            "P0, 50, 37, 2415, 11201, 93.48",
-            "P0, 51, 37, 2445, 11201, 96.20",
-            "P0, 50, 38, 2250, 11201, 93.11",
-            "P0, 51, 40, 2235, 11201, 93.36",
-            "P0, 50, 37, 2415, 11201, 94.09"
+            "P0, 49, 39, 2340, 11201, 96.91",
+            "P0, 50, 38, 2325, 11201, 97.18",
+            "P0, 55, 55, 2775, 11201, 172.09",
+            "P0, 58, 62, 2775, 11201, 183.36",
+            "P0, 55, 44, 2775, 11201, 139.62",
+            "P0, 55, 40, 2775, 11201, 140.01",
+            "P0, 55, 43, 2775, 11201, 141.49",
+            "P0, 56, 44, 2775, 11201, 141.13",
+            "P0, 57, 43, 2775, 11201, 141.59",
+            "P0, 57, 46, 2775, 11201, 142.89",
+            "P0, 57, 45, 2775, 11201, 140.06"
           ]
         },
         {
           "name": "final-town",
-          "seconds": 30.00939999999106,
-          "fps": 143.58834231944937,
+          "seconds": 30.00329999998212,
+          "fps": 141.98438171809562,
           "frame": {
-            "mean": 6.964623955430372,
-            "p95": 7.899999991059303,
-            "p99": 8.799999997019768,
-            "max": 13.299999997019768
+            "mean": 7.043202629725288,
+            "p95": 8,
+            "p99": 9.299999982118607,
+            "max": 14.600000023841858
           },
           "renderCPU": {
-            "mean": 4.39178463674167,
-            "p95": 5.0999999940395355,
-            "p99": 5.5,
-            "max": 10.399999991059303
+            "mean": 5.037723004699033,
+            "p95": 5.9000000059604645,
+            "p99": 6.9000000059604645,
+            "max": 12.400000005960464
           },
           "scale": 1,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.0828160027005524,
+          "gpuMs": 3.58254521172642,
           "fx": 23,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 50, 40, 2085, 11201, 81.53",
-            "P0, 49, 36, 2115, 11201, 81.88",
-            "P0, 49, 37, 2115, 11201, 81.30",
-            "P0, 49, 39, 1965, 11201, 81.17",
-            "P0, 49, 40, 2070, 11201, 81.19"
+            "P0, 51, 40, 1830, 11201, 81.41",
+            "P0, 51, 39, 1875, 11201, 80.88",
+            "P0, 54, 38, 2790, 11201, 121.13",
+            "P0, 55, 40, 2760, 11201, 116.15",
+            "P0, 54, 40, 2715, 11201, 115.56"
           ]
         }
       ],
@@ -10365,89 +12373,89 @@
         {
           "name": "warm",
           "scene": "brookstead",
-          "heap": 1047475843,
-          "geometries": 2417,
+          "heap": 1044526728,
+          "geometries": 2408,
           "textures": 92,
-          "programs": 204,
-          "keepers": 77,
+          "programs": 207,
+          "keepers": 78,
           "queries": 0,
-          "fx": 20,
+          "fx": 24,
           "nav": 0,
           "roadCache": 50000
         },
         {
           "name": "round-0",
           "scene": "brookstead",
-          "heap": 1301839912,
-          "geometries": 2406,
+          "heap": 1298850877,
+          "geometries": 2397,
           "textures": 92,
-          "programs": 207,
-          "keepers": 79,
-          "queries": 1,
-          "fx": 12,
+          "programs": 210,
+          "keepers": 80,
+          "queries": 0,
+          "fx": 17,
           "nav": 0,
           "roadCache": 50000
         },
         {
           "name": "round-1",
           "scene": "brookstead",
-          "heap": 1302539468,
-          "geometries": 2411,
+          "heap": 1299722253,
+          "geometries": 2397,
           "textures": 92,
-          "programs": 209,
-          "keepers": 80,
+          "programs": 212,
+          "keepers": 81,
           "queries": 0,
-          "fx": 16,
+          "fx": 18,
           "nav": 0,
           "roadCache": 50000
         },
         {
           "name": "round-2",
           "scene": "brookstead",
-          "heap": 1304409080,
-          "geometries": 2417,
+          "heap": 1301040193,
+          "geometries": 2398,
           "textures": 92,
-          "programs": 211,
-          "keepers": 81,
+          "programs": 214,
+          "keepers": 82,
           "queries": 0,
-          "fx": 19,
+          "fx": 17,
           "nav": 0,
           "roadCache": 50000
         },
         {
           "name": "round-3",
           "scene": "brookstead",
-          "heap": 1304840196,
-          "geometries": 2423,
+          "heap": 1302110341,
+          "geometries": 2397,
           "textures": 92,
-          "programs": 213,
-          "keepers": 82,
+          "programs": 216,
+          "keepers": 83,
           "queries": 0,
-          "fx": 29,
+          "fx": 15,
           "nav": 0,
           "roadCache": 50000
         },
         {
           "name": "after-thirty-minutes",
           "scene": "brookstead",
-          "heap": 1305058150,
-          "geometries": 2416,
+          "heap": 1302118039,
+          "geometries": 2397,
           "textures": 92,
-          "programs": 213,
-          "keepers": 82,
+          "programs": 216,
+          "keepers": 83,
           "queries": 0,
-          "fx": 20,
+          "fx": 15,
           "nav": 0,
           "roadCache": 50000
         },
         {
           "name": "final",
           "scene": "brookstead",
-          "heap": 1304824749,
-          "geometries": 2428,
+          "heap": 1301665978,
+          "geometries": 2410,
           "textures": 92,
-          "programs": 215,
-          "keepers": 83,
+          "programs": 218,
+          "keepers": 84,
           "queries": 0,
           "fx": 23,
           "nav": 0,
@@ -10455,10 +12463,10 @@
         }
       ],
       "acceleratedSeconds": 1800,
-      "sha256": "c04ec9fe4cd43b57ee6ad5dac0b69e0fd4fac8dd5b5b0099358bc4e8a3e03102",
+      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
       "growth": {
-        "heap": 2285281,
-        "geometries": 17,
+        "heap": 1943725,
+        "geometries": 13,
         "textures": 0,
         "programs": 6
       },
@@ -10471,9 +12479,9 @@
         "width": 1366,
         "height": 768,
         "dpr": 2,
-        "fps": 83.86916410379811,
-        "p95": 14.199999988079071,
-        "p99": 15.700000002980232,
+        "fps": 143.97984282234816,
+        "p95": 7.5999999940395355,
+        "p99": 8,
         "buffer": [
           1708,
           960
@@ -10482,7 +12490,7 @@
         "reflection": 820,
         "resizes": 0,
         "scale": 1,
-        "gpu": 5.097690769836198,
+        "gpu": 3.3648375954400653,
         "shadowSpan": [
           168,
           96
@@ -10492,9 +12500,9 @@
         "width": 1024,
         "height": 768,
         "dpr": 2,
-        "fps": 87.22380790812956,
-        "p95": 14.099999994039536,
-        "p99": 15.400000005960464,
+        "fps": 143.95105664108524,
+        "p95": 7.5999999940395355,
+        "p99": 8.200000017881393,
         "buffer": [
           1024,
           768
@@ -10503,7 +12511,7 @@
         "reflection": 614,
         "resizes": 0,
         "scale": 1,
-        "gpu": 3.586952418838585,
+        "gpu": 2.8468460951526207,
         "shadowSpan": [
           160,
           80
@@ -10513,9 +12521,9 @@
         "width": 800,
         "height": 600,
         "dpr": 2,
-        "fps": 91.49935071421436,
-        "p95": 12.799999997019768,
-        "p99": 14.299999997019768,
+        "fps": 143.9424230307877,
+        "p95": 7.5999999940395355,
+        "p99": 8.099999994039536,
         "buffer": [
           800,
           600
@@ -10524,7 +12532,7 @@
         "reflection": 480,
         "resizes": 0,
         "scale": 1,
-        "gpu": 4.650857408593032,
+        "gpu": 2.6922691612109455,
         "shadowSpan": [
           160,
           80
@@ -10534,9 +12542,9 @@
         "width": 390,
         "height": 844,
         "dpr": 2,
-        "fps": 116.84479183275877,
-        "p95": 10.200000002980232,
-        "p99": 11.700000002980232,
+        "fps": 143.94817865534088,
+        "p95": 7.5,
+        "p99": 8.199999988079071,
         "buffer": [
           390,
           844
@@ -10545,7 +12553,7 @@
         "reflection": 320,
         "resizes": 0,
         "scale": 1,
-        "gpu": 1.4410273137547622,
+        "gpu": 3.197278428376372,
         "shadowSpan": [
           144,
           56
@@ -10555,9 +12563,9 @@
         "width": 844,
         "height": 390,
         "dpr": 2,
-        "fps": 121.93905043200283,
-        "p95": 13.899999991059303,
-        "p99": 15.299999997019768,
+        "fps": 143.86335973855478,
+        "p95": 7.799999982118607,
+        "p99": 8.399999976158142,
         "buffer": [
           844,
           390
@@ -10566,7 +12574,7 @@
         "reflection": 506,
         "resizes": 0,
         "scale": 1,
-        "gpu": 3.105185281221079,
+        "gpu": 2.6616227172882008,
         "shadowSpan": [
           176,
           120
@@ -10574,7 +12582,7 @@
       }
     ],
     "interiorSoak": {
-      "sha256": "c04ec9fe4cd43b57ee6ad5dac0b69e0fd4fac8dd5b5b0099358bc4e8a3e03102",
+      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
       "loading": [
         {
           "id": "entrance",
@@ -11083,23 +13091,23 @@
         }
       ],
       "before": {
-        "heap": 238934976,
-        "geometries": 1175,
+        "heap": 238728492,
+        "geometries": 1176,
         "textures": 77,
-        "programs": 173,
-        "cache": 426
+        "programs": 176,
+        "cache": 425
       },
       "after": {
-        "heap": 238443160,
-        "geometries": 1179,
+        "heap": 239577024,
+        "geometries": 1176,
         "textures": 77,
-        "programs": 173,
-        "cache": 426
+        "programs": 176,
+        "cache": 425
       },
       "pacing": {
-        "fps": 143.92991239048828,
+        "fps": 143.9368410918019,
         "p95": 7,
-        "max": 7.5,
+        "max": 7.100000000002183,
         "buffer": [
           1920,
           1080
@@ -11108,44 +13116,7 @@
       "errors": [],
       "pass": true
     },
-    "scope": "Native headless Chrome with Windows occlusion detection disabled at 1920x1080 on recorded device; uncapped monitor cadence, four repeated travel/combat rounds, thirty simulated minutes plus sustained real-time town, overworld, storm and skill battles. Garbage collection is test-only for retained-memory comparison.",
-    "initialColdSample": {
-      "sample": {
-        "name": "warm-town",
-        "seconds": 30.02279999999702,
-        "fps": 64.05132099604937,
-        "frame": {
-          "mean": 15.614151925073392,
-          "p95": 31.900000005960464,
-          "p99": 57.70000000298023,
-          "max": 98.90000000596046
-        },
-        "renderCPU": {
-          "mean": 12.182527301068797,
-          "p95": 27.400000005960464,
-          "p99": 50.29999999701977,
-          "max": 75.70000000298023
-        },
-        "scale": 1,
-        "buffer": [
-          1920,
-          1080
-        ],
-        "gpuMs": 6.654029127664138,
-        "fx": 9,
-        "weather": "Clear skies",
-        "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-        "hardware": [
-          "P5, 40, 54, 1335, 810, 25.12",
-          "P3, 41, 38, 810, 5001, 44.21",
-          "P3, 41, 33, 765, 5001, 43.02",
-          "P3, 41, 34, 915, 5001, 46.78",
-          "P3, 42, 33, 1005, 5001, 47.03",
-          "P3, 42, 36, 930, 5001, 48.47"
-        ]
-      },
-      "note": "The first 1080p run missed the frame-time threshold during its initial sample. The same artifact was repeated without code changes; that complete repeated run passed. This initial observation is retained rather than implying a universal 60 FPS guarantee."
-    }
+    "scope": "Native headless Chrome with Windows occlusion detection disabled at 1920x1080 on recorded device; uncapped monitor cadence, four repeated travel/combat rounds, thirty simulated minutes plus sustained real-time town, overworld, storm and skill battles. Garbage collection is test-only for retained-memory comparison."
   },
   "graphics": {
     "sceneSamples": 4,
@@ -11228,6 +13199,22 @@
     "fittedArchitecture": true
   },
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.8",
+      "date": "October 30, 2026",
+      "title": "Clearer routes, steady characters and flowing water",
+      "items": [
+        "Removed the mismatched front-facing Soren idle poses while preserving the complete native coat animation.",
+        "Kept physical bridge decks visible through scene trimming and cutaways, and extended terrain beneath enlarged approaches.",
+        "Removed stray neighbouring road strips, continued roads past exit markers and rerouted the Network approach around its cliff.",
+        "Matched walking heights to the fine road surfaces and removed road-blocking rocks without a valid relocation.",
+        "Restricted the remnant rock overhang to its own location, reserved full road clearance and moved noticeboards to walkable shoulders with collision only while visible.",
+        "Slowed the sluice release and downstream recovery; water now clears the stone sill before the lower pools fill.",
+        "Removed the sweeping current ribbon and obsolete spray, with slower flowing surface and cascade textures.",
+        "Replaced overlapping old cloud planes with a bounded, rounded cloud volume linked to the moving sun, shadows and light shafts.",
+        "Cleaned up previous weather chunks during repeated setup and kept outdoor light, dust and cloud colours tied to the day/night cycle."
+      ]
+    },
     {
       "version": "Alpha Version 1.7",
       "date": "October 30, 2026",

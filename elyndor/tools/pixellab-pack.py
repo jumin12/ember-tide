@@ -37,6 +37,10 @@ def pack_character(root,item,encode,audit,strict):
  if name in ['mira','lysa'] and animations.get('attack-v8'):
   animations['cast-v8']=copy.deepcopy(animations['attack-v8'])
  if name=='soren':
+  # Front idle poses 1/3 replace his lapelled coat with a different tunic.
+  # Keep the complete native inhale/exhale poses, with unchanged source pixels.
+  front=animations.get('idle-v7',{}).get('south',[])
+  if len(front)==4:animations['idle-v7']['south']=[front[0],front[2]]
   # Reviewed stable crescent/orb poses; omit the middle failed staff turn.
   ready=animations.get('battleIdle-v8',{}).get('east',[])
   if len(ready)==9:animations['battleIdle-v8']['east']=[ready[i] for i in [0,1,7,8]]

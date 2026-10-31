@@ -1,5 +1,11 @@
 # The Last Light of Elyndor
 
+## Alpha Version 1.8 — Clearer routes, steadier characters
+
+Soren's front idle now uses only the complete native coat poses. Enlarged POI approaches retain physical bridge groups and fine ground support, roads continue beyond their exit markers, and neighbouring settlements' stray road strips are removed. The Network approach follows the valley, and lowland exits keep their own biome. Rocks with no safe relocation are removed from the road.
+
+The sluice now spills over its full stone sill before downstream pools recover. The wetting front travels at 1.6 metres per second, followed by 52 seconds of gradual local filling. The moving white ribbon and old spray are removed; surface and cascade motion are slower. Repeated weather setup removes obsolete clouds and rain chunks. Rounded cloud volumes, coloured sunlight, shafts and dust share a continuous world-space cloud field.
+
 ## Alpha Version 1.7 — A moving sky, a better-built world
 
 A continuous east-to-west solar orbit now drives the visible sun, directional lighting, moving shadows, sunrise, dusk and moonlit nights. Fourteen continuously blended colour keys coordinate direct light, sky gradients, cloud highlights, ambient fill, haze and dust from violet predawn through peach sunrise, blue midday, amber golden hour, rose dusk and cool moonlight. Volumetric clouds, projected cloud shade, persistent world-space sun shafts and airborne dust use the same cloud density field. Ambient fill stays visible in cloud shadow; indoor dust catches warm room light. The game clock persists through travel and interiors.

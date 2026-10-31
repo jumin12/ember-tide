@@ -89,7 +89,8 @@ findRoute=function(from,to,avoid=[]){
 };
 function addContinuousTerrain(){
  const chunk=55;world.userData.terrainChunks=[];world.userData.walkSurfaces=[];
- for(let ox=-245;ox<280;ox+=chunk)for(let oz=-285;oz<210;oz+=chunk){const divisions=typeof activeScene!=='undefined'&&activeScene?.kind==='overworld'?18:typeof sceneTerrainVisible==='function'&&!sceneTerrainVisible(ox,oz,chunk)?4:42,g=new THREE.PlaneGeometry(chunk,chunk,divisions,divisions);g.rotateX(-Math.PI/2);const p=g.attributes.position,blend=[],town=[],snow=[],river=[];
+ const bounds32=typeof activeScene!=='undefined'&&activeScene?.kind==='poi'?activeScene.bounds:[-245,280,-285,210];const x0=Math.min(-245,-245+Math.floor((bounds32[0]-35+245)/chunk)*chunk),x1=Math.max(280,bounds32[1]+35),z0=Math.min(-285,-285+Math.floor((bounds32[2]-35+285)/chunk)*chunk),z1=Math.max(210,bounds32[3]+35);
+ for(let ox=x0;ox<x1;ox+=chunk)for(let oz=z0;oz<z1;oz+=chunk){if(typeof sceneTerrainVisible==='function'&&!sceneTerrainVisible(ox,oz,chunk))continue;const divisions=typeof activeScene!=='undefined'&&activeScene?.kind==='overworld'?18:typeof sceneTerrainVisible==='function'&&!sceneTerrainVisible(ox,oz,chunk)?4:42,g=new THREE.PlaneGeometry(chunk,chunk,divisions,divisions);g.rotateX(-Math.PI/2);const p=g.attributes.position,blend=[],town=[],snow=[],river=[];
   for(let i=0;i<p.count;i++){const x=p.getX(i)+ox+chunk/2,z=p.getZ(i)+oz+chunk/2,r=roadInfo(x,z);p.setXYZ(i,x,groundAt(x,z),z);const jitter=noise(x*1.8,z*1.8)*.34;blend.push(1-smooth((r.kind==='trail'?1.6:2.7)+jitter,(r.kind==='trail'?2.8:4.1)+jitter,r.d));town.push(r.kind==='trail'?0:1);snow.push(winterAt(x,z));}
   for(let i=0;i<p.count;i++)river.push(1-smooth(-1,2.2,channelDistance(p.getX(i),p.getZ(i))));
   g.setAttribute('riverMix',new THREE.Float32BufferAttribute(river,1));g.setAttribute('pathMix',new THREE.Float32BufferAttribute(blend,1));g.setAttribute('townMix',new THREE.Float32BufferAttribute(town,1));g.setAttribute('snowMix',new THREE.Float32BufferAttribute(snow,1));g.computeVertexNormals();
@@ -241,7 +242,7 @@ function buildRuins(){
   for(let k=0;k<35;k++){const a=k*2.399,r=8+k%5*1.1,x=rx+Math.cos(a)*r,z=rz+Math.sin(a)*r;if(roadDistance(x,z)>3.6)plant(x,z,.7,k%2?'ivy':'flower');}
  }
  // A broken rock overhang frames the walk down into the first remnant, not a loading door.
- for(const side of[-1,1])for(let i=0;i<12;i++){const x=110+side*(12+Math.sin(i)*2),z=14+i*2.6,y=groundAt(x,z);const o=mesh(new THREE.IcosahedronGeometry(1,1),material('rock','#9caa8f'),x,y+1.5,z);o.scale.set(2.5,3.3,2.7);}
+ if(!sceneBuildFilter||activeScene?.key==='depths')for(const side of[-1,1])for(let i=0;i<12;i++){const x=110+side*(12+Math.sin(i)*2),z=14+i*2.6;if(roadDistance(x,z)<6)continue;const y=groundAt(x,z);const o=mesh(new THREE.IcosahedronGeometry(1,1),material('rock','#9caa8f'),x,y+1.5,z);o.scale.set(2.5,3.3,2.7);}
  for(const s of LIGHT_SITES)if(!sceneBuildFilter||inSceneBounds(s.x,s.z,18))lightModel(s);
 }
 const INTERACTION_POS={
@@ -312,7 +313,7 @@ updateVillagers=function(dt){for(const a of npcs){a.speed=0;const o=a.interactio
  }};
 function batchLandscape(){
  for(const g of world.userData.buildings){const shells=[g.userData.roofShell,g.userData.facadeShell].filter(Boolean);for(const shell of shells)g.remove(shell);mergeGroup(g);for(const shell of shells){g.add(shell);mergeGroup(shell);}}
- const protectedGroups=new Set([...world.userData.buildings,...world.userData.lightSites.map(s=>s.group),world.userData.gate,world.userData.crank,world.userData.pump,world.userData.waterwheel,world.userData.sluice18?.frame,world.userData.sluiceAbutment26].filter(Boolean));
+ const protectedGroups=new Set([...world.userData.buildings,...world.userData.lightSites.map(s=>s.group),world.userData.gate,world.userData.crank,world.userData.pump,world.userData.waterwheel,world.userData.sluice18?.frame,world.userData.sluiceAbutment26,...world.userData.bridgeGroups32??[]].filter(Boolean));
  const buckets=new Map(),meshes=[];world.updateMatrixWorld(true);
  world.traverse(o=>{if(!o.isMesh||o.isInstancedMesh||o===water||o.userData.terrain||o.userData.terracedWater||o.userData.dynamicWater)return;let p=o;while(p&&p!==world){if(protectedGroups.has(p))return;p=p.parent;}meshes.push(o);});
  for(const o of meshes){const p=o.getWorldPosition(V3()),k=Math.floor(p.x/40)+','+Math.floor(p.z/40);if(!buckets.has(k)){const g=new THREE.Group();g.userData.chunk=true;g.userData.center=V3(Math.floor(p.x/40)*40+20,0,Math.floor(p.z/40)*40+20);world.add(g);buckets.set(k,g);}buckets.get(k).attach(o);}

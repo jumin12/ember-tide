@@ -1,5 +1,9 @@
 # Integrated Alpha Version 1.0 build
 
+## V32 — Native idle repair and coherent routes
+
+Reviewed all four Soren south idle frames. Frames 1 and 3 lose the coat lapels and sash; the packer now selects unchanged native frames 0 and 2. This corrects the outfit flash without synthesizing or slicing limbs. Bridge roots survive static batching, trimming and exploration cutaways; rendered road support and character heights share triangle interpolation. Gate spill geometry extends over the downstream sill and joins the adjacent pools. Obsolete cloud planes and weather chunks are disposed during repeated setup.
+
 ## V31 — Celestial atmosphere and fitted architecture
 
 The atmosphere is implemented in shaders and real scene geometry, using the existing native PixelLab assets. One world-space cloud field controls the sky volume, directional-light transmittance, landscape shafts and dust. Solar direction moves through the day; moonlight fades in beyond twilight. Interiors retain their authored warm lighting and add a small world-space dust population.

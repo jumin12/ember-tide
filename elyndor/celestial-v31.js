@@ -23,7 +23,7 @@ function skyPalette31(h){let i=1;while(i<SKY_PHASES31.length-1&&h>SKY_PHASES31[i
 // map wrapped unrelated samples, producing straight seams in distant clouds.
 let cloudTexture31=null;
 cloudDensityTexture17=function(){if(cloudTexture31)return cloudTexture31;const size=512,data=new Uint8Array(size*size*4),fade=t=>t*t*t*(t*(t*6-15)+10),hash=(x,z,n)=>{x=(x%n+n)%n;z=(z%n+n)%n;let q=Math.imul(x+31,374761393)^Math.imul(z+97,668265263);q=Math.imul(q^(q>>>13),1274126177);return((q^(q>>>16))>>>0)/4294967295;};for(let z=0;z<size;z++)for(let x=0;x<size;x++){let value=0,total=0,weight=1;for(let k=0;k<5;k++){const n=4*2**k,px=x/size*n,pz=z/size*n,ix=Math.floor(px),iz=Math.floor(pz),u=fade(px-ix),v=fade(pz-iz);value+=mix(mix(hash(ix,iz,n),hash(ix+1,iz,n),u),mix(hash(ix,iz+1,n),hash(ix+1,iz+1,n),u),v)*weight;total+=weight;weight*=.48;}const c=Math.round(smooth(.23,.78,value/total)*255);data.set([c,c,c,255],(z*size+x)*4);}const t=new THREE.DataTexture(data,size,size);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.magFilter=THREE.LinearFilter;t.minFilter=THREE.LinearMipmapLinearFilter;t.generateMipmaps=true;t.needsUpdate=true;climate17.texture=t;return cloudTexture31=t;};
-const CLOUD31=`float cloudMask31(float raw,float cover){float edge=mix(.77,.32,cover);return smoothstep(edge,edge+.20,raw);}float cloudField31(sampler2D tex,vec2 p,float t,float cover){vec2 uv=p*.0022+vec2(t*.0013,t*.00037);float raw=max(texture2D(tex,uv).r,texture2D(tex,uv*.67+vec2(.31,.62)).r*.7);raw=raw*.84+texture2D(tex,uv*3.7+vec2(.11,.29)).r*.16;return cloudMask31(raw,cover);}`;
+const CLOUD31=`float cloudMask31(float raw,float cover){float edge=mix(.68,.12,cover);return smoothstep(edge,edge+.22,raw)*smoothstep(0.,.12,cover);}float cloudField31(sampler2D tex,vec2 p,float t,float cover){vec2 uv=p*.0045+vec2(t*.00072,t*.00024);vec2 warp=vec2(texture2D(tex,uv*.71+vec2(.13,.41)).r,texture2D(tex,uv*.83+vec2(.57,.19)).r)-.5;uv+=warp*.19;float broad=texture2D(tex,uv).r,medium=texture2D(tex,uv*1.91+vec2(.23,.72)).r,small=texture2D(tex,uv*5.7+vec2(.11,.29)).r;float raw=broad*.65+medium*.25+small*.10;return cloudMask31(raw,cover);}`;
 const cloudMaterialBefore31=addCloudLighting;
 addCloudLighting=function(m){cloudMaterialBefore31(m);if(!m?.userData.weatherV12||m.userData.cloud31)return;m.userData.cloud31=true;const before=m.onBeforeCompile,key=m.customProgramCacheKey();m.onBeforeCompile=sh=>{before(sh);sh.fragmentShader=CLOUD31+'\n'+sh.fragmentShader;
  sh.fragmentShader=sh.fragmentShader.replace('max(.35,cloudSun.y)','max(.12,cloudSun.y)').replace('shadowWorld*.006','shadowWorld*.0022').replace(/float cloudShade=1\.-smoothstep\(\.05,\.85,cloudDensity\)\*cloudAmount\*\.(?:48|70)\*weatherExterior;/,'float cloudShade=1.-cloudField31(cloudTexture,shadowWorld,weatherTime,cloudAmount)*.82*weatherExterior;').replace('outgoingLight*=cloudShade;','outgoingLight=max(vec3(0.),outgoingLight-(reflectedLight.directDiffuse+reflectedLight.directSpecular)*(1.-cloudShade));');};m.customProgramCacheKey=()=>key+'-cloud-transmission31';m.needsUpdate=true;};
@@ -49,12 +49,29 @@ void main(){vec3 d=normalize(skyRay31);float up=smoothstep(-.05,.8,d.y);vec3 c=m
  #include <colorspace_fragment>
 }`;
 const cloudsBefore31=cloudShelf21;
-cloudShelf21=function(){cloudsBefore31();const o=world.userData.weather?.cloud;if(!o)return;Object.assign(o.material.uniforms,{cloudLight31:celestial31.cloudLight,cloudShade31:celestial31.cloudShade});o.material.fragmentShader=`uniform sampler2D map;uniform float time,amount,day,bottom25,thickness25;uniform vec3 sun,cloudLight31,cloudShade31;varying vec3 worldP;${CLOUD31}
- float density31(vec3 p){float h=(p.y-bottom25)/thickness25;float body=smoothstep(0.,.22,h)*(1.-smoothstep(.55,1.,h));float detail=.65+.35*texture2D(map,p.xz*.019+vec2(p.y*.013,time*.0007)).r;return cloudField31(map,p.xz,time,amount)*body*detail;}
- void main(){vec3 ray=normalize(worldP-cameraPosition),p=worldP;float stepSize=min(10.,thickness25/(max(.06,abs(ray.y))*16.)),trans=1.;p+=ray*stepSize*.35;vec3 sum=vec3(0.);for(int i=0;i<16;i++){p+=ray*stepSize;float rho=density31(p);float lit=exp(-density31(p+normalize(sun)*11.)*2.7);float scatter=.45+.55*pow(max(0.,dot(ray,normalize(sun))),8.);float absorb=1.-exp(-rho*stepSize*.14);vec3 ambient=cloudShade31,light=cloudLight31;sum+=mix(ambient,light,lit*scatter)*absorb*trans;trans*=1.-absorb;}float alpha=1.-trans;if(alpha<.005)discard;gl_FragColor=vec4(sum/max(.001,alpha),alpha);
- #include <tonemapping_fragment>
- #include <colorspace_fragment>
- }`;o.material.needsUpdate=true;o.userData.cloud31=true;};
+cloudShelf21=function(){cloudsBefore31();const o=world.userData.weather?.cloud;if(!o)return;const q=world.userData.cloud21;o.geometry.computeBoundingBox();const bounds=new THREE.Box3().setFromObject(o);Object.assign(o.material.uniforms,{cloudLight31:celestial31.cloudLight,cloudShade31:celestial31.cloudShade,cloudMin32:{value:bounds.min},cloudMax32:{value:bounds.max}});o.material.side=THREE.BackSide;
+o.material.vertexShader='varying vec3 worldP;void main(){worldP=(modelMatrix*vec4(position,1.)).xyz;gl_Position=projectionMatrix*viewMatrix*vec4(worldP,1.);gl_Position.z=min(gl_Position.z,gl_Position.w*.99999);}';
+o.material.fragmentShader=`uniform sampler2D map;uniform float time,amount,day,bottom25,thickness25;uniform vec3 sun,cloudLight31,cloudShade31,cloudMin32,cloudMax32;varying vec3 worldP;${CLOUD31}
+ float density31(vec3 p){
+  float column=cloudField31(map,p.xz,time,amount);if(column<.004)return 0.;
+  vec2 drift=vec2(time*.00072,time*.00024);float lobe=texture2D(map,p.xz*.011+drift+vec2(.34,.71)).r;
+  float base=bottom25+thickness25*(.06+.20*lobe),height=thickness25*(.25+.67*sqrt(column));float h=(p.y-base)/height;
+  float vertical=smoothstep(0.,.20,h)*(1.-smoothstep(.43,1.,h));
+  float erosion=texture2D(map,p.xz*.043+vec2(p.y*.026,-p.y*.019)+drift*2.).r;
+  float rho=column*(.62+.38*erosion)*vertical;
+  vec2 edge=min(p.xz-cloudMin32.xz,cloudMax32.xz-p.xz);return rho*smoothstep(0.,95.,min(edge.x,edge.y));
+ }
+ void main(){
+  vec3 ray=normalize(worldP-cameraPosition),inv=sign(ray)/max(abs(ray),vec3(.00001));vec3 a=(cloudMin32-cameraPosition)*inv,b=(cloudMax32-cameraPosition)*inv;
+  vec3 near32=min(a,b),far32=max(a,b);float start=max(0.,max(near32.x,max(near32.y,near32.z))),end=min(far32.x,min(far32.y,far32.z));if(end<=start)discard;
+  float stepSize=(end-start)/20.,trans=1.;vec3 p=cameraPosition+ray*(start+stepSize*.5),sum=vec3(0.),lightDir=normalize(sun);
+  for(int i=0;i<20;i++){
+   float rho=density31(p);if(rho>.001){float shadow=density31(p+lightDir*9.)*1.2+density31(p+lightDir*23.)*.85;float lit=exp(-shadow*2.2);float scatter=.52+.48*pow(max(0.,dot(ray,lightDir)),6.);float absorb=1.-exp(-rho*stepSize*.19);vec3 colour=mix(cloudShade31,cloudLight31,lit*scatter);sum+=colour*absorb*trans;trans*=1.-absorb;}p+=ray*stepSize;
+  }
+  float alpha=1.-trans;if(alpha<.005)discard;gl_FragColor=vec4(sum/max(.001,alpha),alpha);
+  #include <tonemapping_fragment>
+  #include <colorspace_fragment>
+ }`;o.material.needsUpdate=true;o.userData.cloud31=true;o.userData.roundedCloud32=true;};
 buildShafts24=function(){if(activeScene.kind==='interior')return;const old=world.userData.sunshafts?.beams??[];for(const g of new Set(old.map(o=>o.geometry)))g.dispose();for(const o of old)o.removeFromParent();if(world.userData.sunshafts)world.userData.sunshafts.beams=[];
  const g=new THREE.CylinderGeometry(.35,1.6,1,10,1,true);g.translate(0,.5,0);const m=new THREE.ShaderMaterial({transparent:true,depthWrite:false,depthTest:true,side:THREE.DoubleSide,blending:THREE.AdditiveBlending,uniforms:{map:weather.cloudMap,time:weather.time,cover:weather.cloud,height:weather.height,sun:weather.sun,day:celestial31.day,colour:celestial31.colour,rain:weather.rain},vertexShader:'varying vec3 wp31,radial31;varying vec2 uv31;void main(){uv31=uv;radial31=normalize(mat3(modelMatrix)*mat3(instanceMatrix)*vec3(normal.x,0.,normal.z));wp31=(modelMatrix*instanceMatrix*vec4(position,1.)).xyz;gl_Position=projectionMatrix*viewMatrix*vec4(wp31,1.);}',fragmentShader:`uniform sampler2D map;uniform float time,cover,height,day,rain;uniform vec3 sun,colour;varying vec3 wp31,radial31;varying vec2 uv31;${CLOUD31}
  void main(){vec2 source=wp31.xz+sun.xz/max(.12,sun.y)*max(0.,height-wp31.y);float cloud=cloudField31(map,source,time,cover),trans=exp(-cloud*6.);float rim=pow(sin(uv31.x*3.14159265),2.);float ends=smoothstep(0.,.08,uv31.y)*(1.-smoothstep(.72,1.,uv31.y));float phase=.45+.55*pow(max(0.,dot(normalize(wp31-cameraPosition),normalize(sun))),2.);float a=rim*ends*trans*day*(1.-rain*.85)*phase*.025*pow(abs(dot(normalize(radial31),normalize(cameraPosition-wp31))),2.);a*=1.-smoothstep(180.,500.,distance(wp31,cameraPosition));if(a<.0001)discard;gl_FragColor=vec4(colour*1.3,a);}`});

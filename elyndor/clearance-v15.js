@@ -11,6 +11,7 @@ staticFree=function(x,z,r=.4){
  if(x<LAND.minX+r||x>LAND.maxX-r||z<LAND.minZ+r||z>LAND.maxZ-r||waterGround(x,z))return false;
  if(!sceneBuildFilter&&activeScene?.kind!=='overworld'&&!inSceneBounds(x,z,-r))return false;
  const floor=heightAt(x,z);for(const c of colliderGrid.get(colliderKey(x,z))??(colliderGrid.size?[]:colliders)){
+  if(c.requestBoard32&&!state.flags.prologue_complete)continue;
   if(Math.abs(x-c.x)>=c.w+r||Math.abs(z-c.z)>=c.d+r)continue;
   if(c.verticalExtent&&(c.top<=floor+.2||c.bottom>=floor+2.7))continue;
   return false;

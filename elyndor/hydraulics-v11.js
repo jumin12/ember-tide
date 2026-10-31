@@ -14,13 +14,11 @@ buildWorld=function(...args){worldBeforeMovingWater(...args);for(const o of [wor
 const advanceBeforeReservoir=updateWorldFX;let lastSluiceMist=-1;
 updateWorldFX=function(dt){
  advanceBeforeReservoir(dt);const pool=world.userData.waterPools?.find(p=>p.userData.waterRole==='reservoir'),fall=world.userData.brookFallObjects?.find(p=>p.userData.join.z===70);if(!pool||!fall)return;
- const target=state.flags.gate_open?(state.flags.pump_repaired?4.68:4.85):6.15,head=mix(brookHydraulics.head.value,target,1-Math.exp(-dt*.22)),delta=head-pool.position.y;brookHydraulics.head.value=head;
+ const target=state.flags.gate_open?(state.flags.pump_repaired?4.68:4.85):6.15,head=mix(brookHydraulics.head.value,target,1-Math.exp(-dt*.055)),delta=head-pool.position.y;brookHydraulics.head.value=head;
  if(Math.abs(delta)>.00001){
   pool.position.y=head;pool.userData.poolBounds.min.y+=delta;pool.userData.poolBounds.max.y+=delta;
   for(let i=0;i<pool.userData.levelPatchCount;i++){pool.userData.poolPatches[i].min.y+=delta;pool.userData.poolPatches[i].max.y+=delta;}
-  const g=fall.geometry,p=g.attributes.position,n=g.attributes.normal,join=fall.userData.join;fall.position.y=head;join.top=head;
-  for(let row=0;row<=32;row++){const t=row/32,y=(join.bottom-head)*t*t*(3-2*t),normal=V3(0,1,-(join.bottom-head)*6*t*(1-t)/(join.halfSpan*2)).normalize();for(let col=0;col<13;col++){const i=row*13+col;p.setY(i,y);n.setXYZ(i,normal.x,normal.y,normal.z);}}
-  p.needsUpdate=n.needsUpdate=true;g.computeBoundingBox();g.computeBoundingSphere();fall.userData.joinBounds.copy(g.boundingBox).translate(fall.position);
+
  }
  // The sluice uses its own water spray; combat smoke is never emitted here.
 };

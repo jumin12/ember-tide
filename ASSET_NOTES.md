@@ -1,5 +1,9 @@
 # Selected artwork and recorded audio
 
+## Alpha 1.8 native frame selection
+
+No new AI assets were needed. Soren's two mismatched front idle poses are excluded from the runtime atlas; the complete native inhale/exhale poses retain their original pixels and identity. Existing approved PixelLab textures remain in use for road support, masonry, water and foliage. presentation-v32 loading images are fresh native 1920×1080 game captures. The cloud volume, shared shadow field, wetting model and atmospheric particles are authored in the game shaders and geometry.
+
 ## Alpha 1.7 rendering and architecture
 
 No new generated art is introduced in this release. Existing native PixelLab botanical sprays, paving, plaster, timber, roofing, interior panels, rugs and normal maps remain in use. New house and hall construction, sun/moon motion, cloud lighting and dust are code-authored 3D geometry and shaders. The presentation-v31 loading images are native 1920×1080 in-game captures with the interface temporarily hidden; their provenance records scene and camera values.

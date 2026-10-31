@@ -94,7 +94,7 @@ localJourneyMap=function(){let s=districtMapBefore24();if(activeScene.kind!=='po
 const baseRoads24=ROADS.slice(),districtBuildBefore24=buildWorld;
 buildWorld=function(id='approach',...args){
  const plan=scenePlan(id),extra=plan.kind==='poi'?districts24[plan.key]?.roads??[]:[];
- ROADS.splice(0,ROADS.length,...baseRoads24,...extra.map(r=>{const points=[];for(let i=1;i<r.p.length;i++){const a=r.p[i-1],b=r.p[i],n=Math.ceil(Math.hypot(b[0]-a[0],b[1]-a[1])/3);for(let j=0;j<n;j++)points.push([mix(a[0],b[0],j/n),mix(a[1],b[1],j/n)]);}points.push([...r.p.at(-1)]);return{kind:r.kind,p:points,district24:true};}));
+ ROADS.splice(0,ROADS.length,...localRoads32(plan),...extra.map(r=>{const points=[];for(let i=1;i<r.p.length;i++){const a=r.p[i-1],b=r.p[i],n=Math.ceil(Math.hypot(b[0]-a[0],b[1]-a[1])/3);for(let j=0;j<n;j++)points.push([mix(a[0],b[0],j/n),mix(a[1],b[1],j/n)]);}points.push([...r.p.at(-1)]);return{kind:r.kind,p:points,district24:true};}));
  ROAD_SEGMENTS.splice(0,ROAD_SEGMENTS.length,...ROADS.flatMap(r=>r.p.slice(1).map((b,i)=>{const a=r.p[i];return{a,b,kind:r.kind,minX:Math.min(a[0],b[0])-14,maxX:Math.max(a[0],b[0])+14,minZ:Math.min(a[1],b[1])-14,maxZ:Math.max(a[1],b[1])+14};})));ROAD_GRID.clear();
  for(const s of ROAD_SEGMENTS)for(let x=Math.floor((s.minX-55)/32);x<=Math.floor((s.maxX+55)/32);x++)for(let z=Math.floor((s.minZ-55)/32);z<=Math.floor((s.maxZ+55)/32);z++){const key=x+','+z;if(!ROAD_GRID.has(key))ROAD_GRID.set(key,[]);ROAD_GRID.get(key).push(s);}
  roadNavGraph=null;constructionCache.roads.clear();return districtBuildBefore24(id,...args);
