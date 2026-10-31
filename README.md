@@ -1,5 +1,13 @@
 # The Last Light of Elyndor
 
+## Alpha Version 1.9 — Warmer light, stable display budgets
+
+The solar palette now separates amber direct light from readable blue shade and moonlight. Warm windows and a world-space lamp-bounce field remain visible at a distance. Depth-aware focus keeps the party sharp; its radius follows display density. Existing pooled spell lights illuminate the real scene with brighter, longer pulses.
+
+The renderer uses coalesced resizing, fixed light counts, stable shadow/reflection allocations and independent CPU/GPU detail budgets. Meadow visibility extends to 185 metres locally and 230 metres on the overworld. Larger foliage batches, a bounded live road cache and native frame-sized character textures reduce submissions and memory while preserving the artwork. Portrait and landscape layouts add compact navigation, expandable objectives, touch movement/sprinting and separated combat targets. Performance claims are device-scoped; emulated phone views do not establish physical-phone frame rates.
+
+Run `python elyndor/tools/verify-v33.py` for the 30 sequential checks. Validation includes actual touch input, repeated orientation changes, the complete campaign, native frame inspection, cloud/solar continuity, water reflections, and an extended 1080p travel/combat/weather soak with thirty simulated minutes. The final soak retained about 2 MB of additional heap, no additional textures and three additional geometries. The recorded PC maintained roughly 71–73 FPS at full render scale in those samples; a four-times CPU-throttled stress test fell below 60 FPS. This is not a guarantee for every device. Matched native before/after and time-of-day captures accompany the release.
+
 ## Alpha Version 1.8 — Clearer routes, steadier characters
 
 Soren's front idle now uses only the complete native coat poses. Enlarged POI approaches retain physical bridge groups and fine ground support, roads continue beyond their exit markers, and neighbouring settlements' stray road strips are removed. The Network approach follows the valley, and lowland exits keep their own biome. Rocks with no safe relocation are removed from the road.

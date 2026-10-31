@@ -69,7 +69,7 @@ function forestDepth30(){
 }
 buildSolidForest=function(){
  scenery.trees=world.userData.solidTrees??[];scenery.forestMeshes=[];world.userData.treePoints=scenery.trees.map(t=>V3(t.x,t.y,t.z));const buckets=new Map();
- for(const t of scenery.trees)for(const trunk of[true,false]){const key=Math.floor(t.x/40)+','+Math.floor(t.z/40)+','+trunk;let q=buckets.get(key);if(!q){q={entries:[],trunk,center:V3(Math.floor(t.x/40)*40+20,0,Math.floor(t.z/40)*40+20)};buckets.set(key,q);}for(const matrix of trunk?t.trunks:t.crowns)q.entries.push({t,matrix});}
+ for(const t of scenery.trees)for(const trunk of[true,false]){const key=Math.floor(t.x/64)+','+Math.floor(t.z/64)+','+trunk;let q=buckets.get(key);if(!q){q={entries:[],trunk,center:V3(Math.floor(t.x/64)*64+32,0,Math.floor(t.z/64)*64+32)};buckets.set(key,q);}for(const matrix of trunk?t.trunks:t.crowns)q.entries.push({t,matrix});}
  for(const q of buckets.values()){
   const {entries,trunk,center}=q,n=entries.length,mask=new THREE.InstancedBufferAttribute(new Float32Array(n),1).setUsage(THREE.DynamicDrawUsage),kind=new THREE.InstancedBufferAttribute(new Float32Array(n).fill(trunk?1:0),1),species=new THREE.InstancedBufferAttribute(Float32Array.from(entries,e=>e.t.species30??0),1);
   const make=g=>{g=g.clone();g.setAttribute('treeKind',kind);g.setAttribute('treeSpecies30',species);g.setAttribute('treeViewHidden',mask);return g;};

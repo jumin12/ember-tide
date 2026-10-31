@@ -1,5 +1,5 @@
 {
-  "status": "Alpha Version 1.8: steady idle poses, clear routes, gradual sluice flow and shaped clouds",
+  "status": "Alpha Version 1.9: warm diurnal light, adaptive display budgets and a touch interface",
   "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
   "characterFamilies": 41,
   "runtimeFamilies": 42,
@@ -9,8 +9,8 @@
   "worldImages": 109,
   "artifact": {
     "file": "index.html",
-    "bytes": 42831827,
-    "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+    "bytes": 42833914,
+    "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
     "offline": true
   },
   "incompleteClips": {},

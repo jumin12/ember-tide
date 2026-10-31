@@ -107,7 +107,7 @@ disposeContinuousWorld=function(){for(const bank of [...Object.values(combatVfx.
 async function prepareGameplayGraphics(){
  $('#load-label').textContent='Preparing your journey…';await new Promise(requestAnimationFrame);
  const ids=['bren','soren','tavin','mira','lysa','brenAscended','tavinAscended','wolf','boar','commander','commander2','commander3','tribeMale','tribeFemale','guardEnemy'],warm=[];
- for(let i=0;i<(combatVfx.stats.warmed?0:ids.length);i++){const id=ids[i];if(!assets.sprites[id])continue;const a=createActor(id,player.x,player.z,2.15);a.mesh.frustumCulled=false;updateActor(a,0);warm.push(a);renderer.initTexture(animationTextures.get(id));if(i%4===0)await new Promise(requestAnimationFrame);}
+ for(let i=0;i<(combatVfx.stats.warmed?0:ids.length);i++){const id=ids[i];if(!assets.sprites[id])continue;const a=createActor(id,player.x,player.z,2.15);a.mesh.frustumCulled=false;updateActor(a,0);warm.push(a);renderer.initTexture(a.mesh.material.map);if(i%4===0)await new Promise(requestAnimationFrame);}
  const warmPosition=camera.position.clone().addScaledVector(camera.getWorldDirection(V3()),2),banks=[...Object.values(combatVfx.banks),...Object.values(combatVfx.shapes)];
  // A battle camera can reveal materials outside the opening view. Draw one
  // tiny representative of each geometry/material permutation under the loader.

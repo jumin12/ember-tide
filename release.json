@@ -1,28 +1,28 @@
 {
-  "release": "elyndor-alpha-1.8-2026-10-30-v32",
-  "version": "Alpha Version 1.8",
+  "release": "elyndor-alpha-1.9-2026-10-30-v33",
+  "version": "Alpha Version 1.9",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 42831827,
-    "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+    "bytes": 42833914,
+    "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
     "offline": true
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "6df203d070ccef73724986bd5e5891a458e67e88"
+    "previousRelease": "fe04039acf1c46b8ac779f8dc8a397c4dc0bbeb9"
   },
   "changes": [
-    "Removed the mismatched front-facing Soren idle poses while preserving the complete native coat animation.",
-    "Kept physical bridge decks visible through scene trimming and cutaways, and extended terrain beneath enlarged approaches.",
-    "Removed stray neighbouring road strips, continued roads past exit markers and rerouted the Network approach around its cliff.",
-    "Matched walking heights to the fine road surfaces and removed road-blocking rocks without a valid relocation.",
-    "Restricted the remnant rock overhang to its own location, reserved full road clearance and moved noticeboards to walkable shoulders with collision only while visible.",
-    "Slowed the sluice release and downstream recovery; water now clears the stone sill before the lower pools fill.",
-    "Removed the sweeping current ribbon and obsolete spray, with slower flowing surface and cascade textures.",
-    "Replaced overlapping old cloud planes with a bounded, rounded cloud volume linked to the moving sun, shadows and light shafts.",
-    "Cleaned up previous weather chunks during repeated setup and kept outdoor light, dust and cloud colours tied to the day/night cycle."
+    "Rebalanced the continuous solar cycle with amber dawn and golden hour, clear midday, readable blue moonlight, glowing windows and warm light reaching nearby surfaces across the scene.",
+    "Added depth-aware lens focus that keeps the party and playable middle ground sharp, with a consistent blur radius across display densities.",
+    "Extended meadow coverage to 185 metres in locations and 230 metres on the overworld, with lower-detail distant foliage and conservative spatial visibility.",
+    "Coalesced window and orientation changes, removed resolution-dependent shadow-map thrashing and kept shadow, reflection and scene buffers within stable budgets.",
+    "Added CPU/GPU-aware detail tiers and render scaling with slow recovery, refresh-divisor pacing and fixed light slots to avoid compiling a new lighting variant during attacks.",
+    "Character textures now upload only the current native frame on an individual canvas, preserving the authored pixels, frame borders, facing and separate character sizes.",
+    "Enlarged foliage batches, cached bounded live road queries and tightened scene resource cleanup for repeated travel and extended play.",
+    "Rebuilt compact portrait and landscape layouts with journey shortcuts, expandable objectives, compact party cards, a touch joystick, sprint toggle and interaction button. Touch cancellation clears held movement.",
+    "Added larger separated touch targets for enemy selection and kept the full battle in frame in portrait mode. Strengthened pooled attack lights and highlight bloom so abilities illuminate the actual environment."
   ],
   "art": {
     "generator": "PixelLab",
@@ -72,8 +72,20 @@
     "embeddedCredential": false
   },
   "validation": {
-    "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+    "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
     "checks": [
+      {
+        "name": "mobile-controls",
+        "pass": true
+      },
+      {
+        "name": "device-sizes-and-resize",
+        "pass": true
+      },
+      {
+        "name": "lighting-and-phone-layout",
+        "pass": true
+      },
       {
         "name": "solid-road-clearance",
         "pass": true
@@ -183,8 +195,1102 @@
         "pass": true
       }
     ],
+    "mobileControls": {
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
+      "errors": [],
+      "run": {
+        "distance": 2.3100000000000747,
+        "keys": [
+          "d"
+        ],
+        "follow": 1.5000000000000195
+      },
+      "released": {
+        "keys": [],
+        "pointer": null
+      },
+      "sprint": {
+        "distance": 2.887500000000248,
+        "keys": [
+          "d",
+          "shift"
+        ],
+        "follow": 1.9369773941816626
+      },
+      "inventory": true,
+      "menuProbe": {
+        "calls": [
+          {
+            "args": [
+              "inventory"
+            ],
+            "transition": false,
+            "dialogue": false,
+            "event": false,
+            "battle": false,
+            "mode": "explore"
+          }
+        ],
+        "hit": {
+          "pe": "auto",
+          "parentPe": "auto",
+          "hit": "<div class=\"menu-meta\"><span id=\"menu-gold\">◉ 180</span><span id=\"menu-playtime\">00:00:02</span><button id=\"close-menu\" aria-label=\"Close menu\">✕ <kbd>Esc</kbd></button></div>"
+        },
+        "tab": "inventory",
+        "transition": false,
+        "dialogue": false,
+        "event": false
+      },
+      "quest": true,
+      "rotation": {
+        "clear": true,
+        "landscape": true,
+        "overflow": false
+      },
+      "target": true,
+      "fighters": true,
+      "targetBoxes": [
+        {
+          "x": 52,
+          "y": 674,
+          "w": 140,
+          "h": 48
+        },
+        {
+          "x": 198,
+          "y": 674,
+          "w": 140,
+          "h": 48
+        }
+      ],
+      "targetBoxesValid": true,
+      "fullParty": {
+        "eyeClear": true,
+        "groundVisible": true,
+        "members": 5,
+        "cards": 5,
+        "fighters": [
+          {
+            "id": "bren",
+            "x": 0.1230933324606912,
+            "y": -0.04428022624532973
+          },
+          {
+            "id": "soren",
+            "x": 0.2423187514952354,
+            "y": -0.01584188017784642
+          },
+          {
+            "id": "tavin",
+            "x": 0.34522971143270126,
+            "y": 0.008945392064387865
+          },
+          {
+            "id": "mira",
+            "x": 0.43499123970023995,
+            "y": 0.03078684238450541
+          },
+          {
+            "id": "lysa",
+            "x": 0.5139984847579689,
+            "y": 0.050214249906001464
+          },
+          {
+            "id": "commander3",
+            "x": -0.2903399120231276,
+            "y": 0.03951095247427014
+          },
+          {
+            "id": "tribeMale",
+            "x": -0.5460519765447002,
+            "y": 0.0164701738705156
+          },
+          {
+            "id": "tribeFemale",
+            "x": -0.41200682887028867,
+            "y": -0.028138306808043675
+          }
+        ],
+        "pass": true
+      },
+      "frames": [
+        {
+          "id": "representative",
+          "size": [
+            64,
+            80
+          ],
+          "source": [
+            768,
+            720
+          ],
+          "cell": 8,
+          "native": true
+        },
+        {
+          "id": "merchant",
+          "size": [
+            56,
+            80
+          ],
+          "source": [
+            672,
+            720
+          ],
+          "cell": 10,
+          "native": true
+        },
+        {
+          "id": "healer",
+          "size": [
+            56,
+            88
+          ],
+          "source": [
+            896,
+            616
+          ],
+          "cell": 9,
+          "native": true
+        },
+        {
+          "id": "worker",
+          "size": [
+            64,
+            80
+          ],
+          "source": [
+            768,
+            720
+          ],
+          "cell": 34,
+          "native": true
+        },
+        {
+          "id": "guard",
+          "size": [
+            64,
+            80
+          ],
+          "source": [
+            768,
+            720
+          ],
+          "cell": 81,
+          "native": true
+        },
+        {
+          "id": "courier",
+          "size": [
+            56,
+            80
+          ],
+          "source": [
+            672,
+            720
+          ],
+          "cell": 11,
+          "native": true
+        },
+        {
+          "id": "farmer",
+          "size": [
+            56,
+            88
+          ],
+          "source": [
+            896,
+            616
+          ],
+          "cell": 70,
+          "native": true
+        },
+        {
+          "id": "elder",
+          "size": [
+            56,
+            88
+          ],
+          "source": [
+            896,
+            616
+          ],
+          "cell": 9,
+          "native": true
+        },
+        {
+          "id": "innkeeper",
+          "size": [
+            56,
+            88
+          ],
+          "source": [
+            896,
+            616
+          ],
+          "cell": 8,
+          "native": true
+        },
+        {
+          "id": "sheepEwe",
+          "size": [
+            96,
+            80
+          ],
+          "source": [
+            1152,
+            880
+          ],
+          "cell": 121,
+          "native": true
+        },
+        {
+          "id": "sheepLamb",
+          "size": [
+            96,
+            88
+          ],
+          "source": [
+            1152,
+            968
+          ],
+          "cell": 12,
+          "native": true
+        },
+        {
+          "id": "bren",
+          "size": [
+            96,
+            80
+          ],
+          "source": [
+            1536,
+            1040
+          ],
+          "cell": 162,
+          "native": true
+        },
+        {
+          "id": "soren",
+          "size": [
+            80,
+            88
+          ],
+          "source": [
+            1280,
+            1232
+          ],
+          "cell": 164,
+          "native": true
+        },
+        {
+          "id": "tavin",
+          "size": [
+            96,
+            80
+          ],
+          "source": [
+            1536,
+            1040
+          ],
+          "cell": 161,
+          "native": true
+        },
+        {
+          "id": "mira",
+          "size": [
+            96,
+            88
+          ],
+          "source": [
+            1536,
+            1056
+          ],
+          "cell": 162,
+          "native": true
+        },
+        {
+          "id": "lysa",
+          "size": [
+            80,
+            88
+          ],
+          "source": [
+            1280,
+            1056
+          ],
+          "cell": 166,
+          "native": true
+        },
+        {
+          "id": "commander3",
+          "size": [
+            80,
+            80
+          ],
+          "source": [
+            960,
+            880
+          ],
+          "cell": 97,
+          "native": true
+        },
+        {
+          "id": "tribeMale",
+          "size": [
+            88,
+            80
+          ],
+          "source": [
+            1056,
+            880
+          ],
+          "cell": 97,
+          "native": true
+        },
+        {
+          "id": "tribeFemale",
+          "size": [
+            88,
+            88
+          ],
+          "source": [
+            1056,
+            968
+          ],
+          "cell": 98,
+          "native": true
+        }
+      ],
+      "pass": true
+    },
+    "deviceSizes": {
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
+      "samples": [
+        {
+          "name": "desktop",
+          "w": 1920,
+          "h": 1080,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 2,
+          "scale": 1,
+          "frameCount": 432,
+          "seconds": 6,
+          "fps": 72,
+          "cpu": 4.344572549812897,
+          "gpu": 3.866645011529363,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "resizes": 2,
+          "allocations": 6,
+          "programs": 173,
+          "geometry": 1514,
+          "textures": 91
+        },
+        {
+          "name": "desktop",
+          "w": 1366,
+          "h": 768,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 2,
+          "scale": 1,
+          "frameCount": 426,
+          "seconds": 6,
+          "fps": 71,
+          "cpu": 4.22661639293249,
+          "gpu": 2.9403288894176423,
+          "buffer": [
+            1366,
+            768
+          ],
+          "resizes": 3,
+          "allocations": 6,
+          "programs": 173,
+          "geometry": 1512,
+          "textures": 91
+        },
+        {
+          "name": "desktop",
+          "w": 960,
+          "h": 540,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 2,
+          "scale": 1,
+          "frameCount": 427,
+          "seconds": 6,
+          "fps": 71.16666666666667,
+          "cpu": 4.289088365499242,
+          "gpu": 3.455069405586105,
+          "buffer": [
+            960,
+            540
+          ],
+          "resizes": 4,
+          "allocations": 6,
+          "programs": 173,
+          "geometry": 1514,
+          "textures": 91
+        },
+        {
+          "name": "desktop",
+          "w": 800,
+          "h": 600,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 2,
+          "scale": 1,
+          "frameCount": 432,
+          "seconds": 6,
+          "fps": 72,
+          "cpu": 3.11457920873523,
+          "gpu": 3.244081845598457,
+          "buffer": [
+            800,
+            600
+          ],
+          "resizes": 5,
+          "allocations": 6,
+          "programs": 173,
+          "geometry": 1514,
+          "textures": 91
+        },
+        {
+          "name": "desktop",
+          "w": 1280,
+          "h": 720,
+          "throttle": 4,
+          "dpr": 1,
+          "tier": 0,
+          "scale": 0.6,
+          "frameCount": 238,
+          "seconds": 6,
+          "fps": 39.666666666666664,
+          "cpu": 21.09140260292756,
+          "gpu": 7.6122794589703835,
+          "buffer": [
+            645,
+            363
+          ],
+          "resizes": 12,
+          "allocations": 11,
+          "programs": 173,
+          "geometry": 1508,
+          "textures": 91
+        },
+        {
+          "name": "phone-high-dpi",
+          "w": 390,
+          "h": 844,
+          "throttle": 1,
+          "dpr": 3,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 432,
+          "seconds": 6,
+          "fps": 72,
+          "cpu": 3.711172323438865,
+          "gpu": 1.8683084156309844,
+          "buffer": [
+            585,
+            1266
+          ],
+          "resizes": 2,
+          "allocations": 5,
+          "programs": 173,
+          "geometry": 1494,
+          "textures": 91
+        },
+        {
+          "name": "phone-high-dpi",
+          "w": 844,
+          "h": 390,
+          "throttle": 1,
+          "dpr": 3,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 428,
+          "seconds": 6,
+          "fps": 71.33333333333333,
+          "cpu": 4.37007821470902,
+          "gpu": 2.3741421118168304,
+          "buffer": [
+            1266,
+            585
+          ],
+          "resizes": 3,
+          "allocations": 5,
+          "programs": 173,
+          "geometry": 1503,
+          "textures": 91
+        },
+        {
+          "name": "phone-high-dpi",
+          "w": 390,
+          "h": 844,
+          "throttle": 4,
+          "dpr": 3,
+          "tier": 0,
+          "scale": 0.6,
+          "frameCount": 273,
+          "seconds": 6,
+          "fps": 45.5,
+          "cpu": 16.71993686777168,
+          "gpu": 6.729556123011191,
+          "buffer": [
+            329,
+            712
+          ],
+          "resizes": 10,
+          "allocations": 7,
+          "programs": 173,
+          "geometry": 1494,
+          "textures": 90
+        }
+      ],
+      "errors": [],
+      "desktopResize": {
+        "cold": {
+          "allocations": 11,
+          "geometries": 1510,
+          "textures": 91
+        },
+        "before": {
+          "allocations": 11,
+          "geometries": 1510,
+          "textures": 91
+        },
+        "after": {
+          "allocations": 11,
+          "geometries": 1510,
+          "textures": 91
+        },
+        "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
+        "pass": true
+      },
+      "phone-high-dpiResize": {
+        "cold": {
+          "allocations": 7,
+          "geometries": 1493,
+          "textures": 90
+        },
+        "before": {
+          "allocations": 7,
+          "geometries": 1500,
+          "textures": 91
+        },
+        "after": {
+          "allocations": 7,
+          "geometries": 1500,
+          "textures": 91
+        },
+        "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
+        "pass": true
+      },
+      "pass": true
+    },
+    "newLighting": {
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
+      "times": [
+        {
+          "label": "predawn",
+          "h": 5,
+          "sun": 0.38799653837595005,
+          "hemi": 0.66,
+          "fill": 0.69,
+          "focus": 23.62005495390693,
+          "glow": 3.8886297376093295
+        },
+        {
+          "label": "dawn",
+          "h": 6.5,
+          "sun": 3.6400337923320576,
+          "hemi": 0.9491585607290394,
+          "fill": 0.9695199420380713,
+          "focus": 23.62005495390693,
+          "glow": 2.323398468190597
+        },
+        {
+          "label": "morning",
+          "h": 9,
+          "sun": 5.503975240559909,
+          "hemi": 0.96,
+          "fill": 0.98,
+          "focus": 23.62005495390693,
+          "glow": 0.7
+        },
+        {
+          "label": "noon",
+          "h": 12,
+          "sun": 5.699999999999999,
+          "hemi": 0.96,
+          "fill": 0.98,
+          "focus": 23.62005495390693,
+          "glow": 0.7
+        },
+        {
+          "label": "afternoon",
+          "h": 16,
+          "sun": 5.108821041957774,
+          "hemi": 0.96,
+          "fill": 0.98,
+          "focus": 23.62005495390693,
+          "glow": 1.3803999999999985
+        },
+        {
+          "label": "golden",
+          "h": 17.5,
+          "sun": 3.6400337923320705,
+          "hemi": 0.9491585607290397,
+          "fill": 0.9695199420380717,
+          "focus": 23.62005495390693,
+          "glow": 2.2456282057999237
+        },
+        {
+          "label": "dusk",
+          "h": 18.5,
+          "sun": 0.27553613996544396,
+          "hemi": 0.66,
+          "fill": 0.69,
+          "focus": 23.62005495390693,
+          "glow": 4.145600000000002
+        },
+        {
+          "label": "night",
+          "h": 23,
+          "sun": 0.7495517538561755,
+          "hemi": 0.66,
+          "fill": 0.69,
+          "focus": 23.62005495390693,
+          "glow": 3.8
+        }
+      ],
+      "sizes": [
+        {
+          "w": 390,
+          "h": 844,
+          "buffer": [
+            390,
+            844
+          ],
+          "shadow": 1024,
+          "allocations": 5,
+          "overflow": false,
+          "buttons": [
+            {
+              "label": "Map",
+              "box": {
+                "x": 242,
+                "y": 8,
+                "width": 44,
+                "height": 49,
+                "top": 8,
+                "right": 286,
+                "bottom": 57,
+                "left": 242
+              },
+              "visible": true
+            },
+            {
+              "label": "Bag",
+              "box": {
+                "x": 290,
+                "y": 8,
+                "width": 44,
+                "height": 49,
+                "top": 8,
+                "right": 334,
+                "bottom": 57,
+                "left": 290
+              },
+              "visible": true
+            },
+            {
+              "label": "Menu",
+              "box": {
+                "x": 338,
+                "y": 8,
+                "width": 44,
+                "height": 49,
+                "top": 8,
+                "right": 382,
+                "bottom": 57,
+                "left": 338
+              },
+              "visible": true
+            },
+            {
+              "label": "Toggle sprint",
+              "box": {
+                "x": 232,
+                "y": 769,
+                "width": 54,
+                "height": 54,
+                "top": 769,
+                "right": 286,
+                "bottom": 823,
+                "left": 232
+              },
+              "visible": true
+            },
+            {
+              "label": "Interact",
+              "box": {
+                "x": 292,
+                "y": 742,
+                "width": 76,
+                "height": 76,
+                "top": 742,
+                "right": 368,
+                "bottom": 818,
+                "left": 292
+              },
+              "visible": true
+            }
+          ]
+        },
+        {
+          "w": 844,
+          "h": 390,
+          "buffer": [
+            844,
+            390
+          ],
+          "shadow": 1024,
+          "allocations": 5,
+          "overflow": false,
+          "buttons": [
+            {
+              "label": "Map",
+              "box": {
+                "x": 696,
+                "y": 8,
+                "width": 44,
+                "height": 49,
+                "top": 8,
+                "right": 740,
+                "bottom": 57,
+                "left": 696
+              },
+              "visible": true
+            },
+            {
+              "label": "Bag",
+              "box": {
+                "x": 744,
+                "y": 8,
+                "width": 44,
+                "height": 49,
+                "top": 8,
+                "right": 788,
+                "bottom": 57,
+                "left": 744
+              },
+              "visible": true
+            },
+            {
+              "label": "Menu",
+              "box": {
+                "x": 792,
+                "y": 8,
+                "width": 44,
+                "height": 49,
+                "top": 8,
+                "right": 836,
+                "bottom": 57,
+                "left": 792
+              },
+              "visible": true
+            },
+            {
+              "label": "Toggle sprint",
+              "box": {
+                "x": 686,
+                "y": 315,
+                "width": 54,
+                "height": 54,
+                "top": 315,
+                "right": 740,
+                "bottom": 369,
+                "left": 686
+              },
+              "visible": true
+            },
+            {
+              "label": "Interact",
+              "box": {
+                "x": 756,
+                "y": 301,
+                "width": 66,
+                "height": 66,
+                "top": 301,
+                "right": 822,
+                "bottom": 367,
+                "left": 756
+              },
+              "visible": true
+            }
+          ]
+        },
+        {
+          "w": 768,
+          "h": 1024,
+          "buffer": [
+            768,
+            1024
+          ],
+          "shadow": 1024,
+          "allocations": 5,
+          "overflow": false,
+          "buttons": [
+            {
+              "label": "Map",
+              "box": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "visible": false
+            },
+            {
+              "label": "Bag",
+              "box": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "visible": false
+            },
+            {
+              "label": "Menu",
+              "box": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "visible": false
+            },
+            {
+              "label": "Toggle sprint",
+              "box": {
+                "x": 610,
+                "y": 949,
+                "width": 54,
+                "height": 54,
+                "top": 949,
+                "right": 664,
+                "bottom": 1003,
+                "left": 610
+              },
+              "visible": true
+            },
+            {
+              "label": "Interact",
+              "box": {
+                "x": 670,
+                "y": 922,
+                "width": 76,
+                "height": 76,
+                "top": 922,
+                "right": 746,
+                "bottom": 998,
+                "left": 670
+              },
+              "visible": true
+            }
+          ]
+        },
+        {
+          "w": 1280,
+          "h": 720,
+          "buffer": [
+            1280,
+            720
+          ],
+          "shadow": 1024,
+          "allocations": 5,
+          "overflow": false,
+          "buttons": [
+            {
+              "label": "Map",
+              "box": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "visible": false
+            },
+            {
+              "label": "Bag",
+              "box": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "visible": false
+            },
+            {
+              "label": "Menu",
+              "box": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "visible": false
+            },
+            {
+              "label": "Toggle sprint",
+              "box": {
+                "x": 1122,
+                "y": 645,
+                "width": 54,
+                "height": 54,
+                "top": 645,
+                "right": 1176,
+                "bottom": 699,
+                "left": 1122
+              },
+              "visible": true
+            },
+            {
+              "label": "Interact",
+              "box": {
+                "x": 1182,
+                "y": 618,
+                "width": 76,
+                "height": 76,
+                "top": 618,
+                "right": 1258,
+                "bottom": 694,
+                "left": 1182
+              },
+              "visible": true
+            }
+          ]
+        },
+        {
+          "w": 1920,
+          "h": 1080,
+          "buffer": [
+            1366,
+            769
+          ],
+          "shadow": 1024,
+          "allocations": 5,
+          "overflow": false,
+          "buttons": [
+            {
+              "label": "Map",
+              "box": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "visible": false
+            },
+            {
+              "label": "Bag",
+              "box": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "visible": false
+            },
+            {
+              "label": "Menu",
+              "box": {
+                "x": 0,
+                "y": 0,
+                "width": 0,
+                "height": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "visible": false
+            },
+            {
+              "label": "Toggle sprint",
+              "box": {
+                "x": 1762,
+                "y": 1005,
+                "width": 54,
+                "height": 54,
+                "top": 1005,
+                "right": 1816,
+                "bottom": 1059,
+                "left": 1762
+              },
+              "visible": true
+            },
+            {
+              "label": "Interact",
+              "box": {
+                "x": 1822,
+                "y": 978,
+                "width": 76,
+                "height": 76,
+                "top": 978,
+                "right": 1898,
+                "bottom": 1054,
+                "left": 1822
+              },
+              "visible": true
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "pass": true
+    },
     "solidRoadClearance": {
-      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
       "locations": [
         {
           "key": "brookstead",
@@ -220,8 +1326,8 @@
           "bad": [],
           "boards": [
             {
-              "x": 113.60459790425695,
-              "z": 33.816512553294174,
+              "x": 114.08043092917671,
+              "z": 33.166512553294176,
               "hiddenFree": true,
               "solid": true,
               "reachable": true
@@ -401,7 +1507,7 @@
       "pass": true
     },
     "routeConnections": {
-      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
       "locations": [
         {
           "key": "brookstead",
@@ -723,7 +1829,7 @@
       "pass": true
     },
     "waterMotion": {
-      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
       "idle": [
         {
           "clock": 100,
@@ -1056,7 +2162,7 @@
       "pass": true
     },
     "worldFixes": {
-      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
       "water": [
         {
           "age": 0,
@@ -1836,22 +2942,22 @@
       "clouds": [
         {
           "hour": 8,
-          "colour": "ffe7be",
+          "colour": "ffe5af",
           "rounded": true
         },
         {
           "hour": 12,
-          "colour": "fff7e6",
+          "colour": "fff5da",
           "rounded": true
         },
         {
           "hour": 17,
-          "colour": "ffbf7a",
+          "colour": "ffbc63",
           "rounded": true
         },
         {
           "hour": 18.5,
-          "colour": "ff9e78",
+          "colour": "ffaf7e",
           "rounded": true
         }
       ],
@@ -2213,30 +3319,30 @@
           9
         ],
         "seen": [
-          "idle_south:0",
-          "idle_south:1"
+          "idle_south:1",
+          "idle_south:0"
         ]
       },
       "errors": [],
       "pass": true
     },
     "solarCycle": {
-      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
       "samples": [
         {
           "hour": 5,
           "sun": [
-            0.9597226758986482,
-            -0.2571569159648789,
-            -0.11314904302454672
+            0.8355559662535228,
+            -0.22388654638863784,
+            0.501718089771846
           ],
           "light": [
-            -0.9597226758986482,
-            0.2571569159648789,
-            0.11314904302454672
+            -0.8355559662535228,
+            0.22388654638863784,
+            -0.501718089771846
           ],
-          "intensity": 0.15213192444992965,
-          "lightColour": "a9c8ef",
+          "intensity": 0.38799653837595005,
+          "lightColour": "a1c8ff",
           "skyColour": "2e3a5f",
           "horizonColour": "b17b92",
           "day": 0,
@@ -2247,17 +3353,17 @@
         {
           "hour": 6.5,
           "sun": [
-            0.9898138141682508,
-            0.1303114607817567,
-            0.05733704274397295
+            0.8576307275216909,
+            0.11290922728592595,
+            0.501718089771846
           ],
           "light": [
-            0.9898138141682508,
-            0.1303114607817567,
-            0.05733704274397295
+            0.8576307275216909,
+            0.11290922728592595,
+            0.501718089771846
           ],
-          "intensity": 1.877131295231823,
-          "lightColour": "ffc88a",
+          "intensity": 3.6400337923320576,
+          "lightColour": "ffc77c",
           "skyColour": "537fb0",
           "horizonColour": "eecab0",
           "day": 0.9638618690967979,
@@ -2268,17 +3374,17 @@
         {
           "hour": 9,
           "sun": [
-            0.6751826616182939,
-            0.6751826616182938,
-            0.2970803711120492
+            0.611669419864885,
+            0.6116694198648849,
+            0.501718089771846
           ],
           "light": [
-            0.6751826616182939,
-            0.6751826616182938,
-            0.2970803711120492
+            0.611669419864885,
+            0.6116694198648849,
+            0.501718089771846
           ],
-          "intensity": 4.272813963907002,
-          "lightColour": "fff0d4",
+          "intensity": 5.503975240559909,
+          "lightColour": "ffedc3",
           "skyColour": "3684c4",
           "horizonColour": "acd5e8",
           "day": 1,
@@ -2289,17 +3395,17 @@
         {
           "hour": 12,
           "sun": [
-            5.604688123339978e-17,
-            0.9153150324227656,
-            0.40273861426601687
+            5.2967883854604786e-17,
+            0.8650311892618033,
+            0.501718089771846
           ],
           "light": [
-            5.604688123339978e-17,
-            0.9153150324227656,
-            0.40273861426601687
+            5.2967883854604786e-17,
+            0.8650311892618033,
+            0.501718089771846
           ],
-          "intensity": 4.974949092876387,
-          "lightColour": "fff7e6",
+          "intensity": 5.699999999999999,
+          "lightColour": "fff5da",
           "skyColour": "2577bd",
           "horizonColour": "b6dbee",
           "day": 1,
@@ -2310,17 +3416,17 @@
         {
           "hour": 16,
           "sun": [
-            -0.8457989186321132,
-            0.4883222333525449,
-            0.21486178267511974
+            -0.7491389849665865,
+            0.4325155946309016,
+            0.501718089771846
           ],
           "light": [
-            -0.8457989186321132,
-            0.4883222333525449,
-            0.21486178267511974
+            -0.7491389849665865,
+            0.4325155946309016,
+            0.501718089771846
           ],
-          "intensity": 3.6337629517970504,
-          "lightColour": "ffd69a",
+          "intensity": 5.108821041957774,
+          "lightColour": "ffd183",
           "skyColour": "5c81ab",
           "horizonColour": "e4c8b2",
           "day": 1,
@@ -2331,17 +3437,17 @@
         {
           "hour": 18,
           "sun": [
-            -1,
-            1.2246467991473532e-16,
-            5.388445916248354e-17
+            -0.8650311892618033,
+            1.0593576770920957e-16,
+            0.501718089771846
           ],
           "light": [
-            -1,
-            1.2246467991473532e-16,
-            5.388445916248354e-17
+            -0.8650311892618033,
+            1.0593576770920957e-16,
+            0.501718089771846
           ],
-          "intensity": 2.2014650614513013e-08,
-          "lightColour": "ffa171",
+          "intensity": 6.049567927575255e-30,
+          "lightColour": "ffad71",
           "skyColour": "474a70",
           "horizonColour": "d68a88",
           "day": 0.3299954483386443,
@@ -2352,17 +3458,17 @@
         {
           "hour": 19.5,
           "sun": [
-            -0.9110546602373664,
-            -0.37737119633352917,
-            -0.16604332638675284
+            -0.7991846107428774,
+            -0.3310331046095624,
+            0.501718089771846
           ],
           "light": [
-            0.9110546602373664,
-            0.37737119633352917,
-            0.16604332638675284
+            0.7991846107428774,
+            0.3310331046095624,
+            -0.501718089771846
           ],
-          "intensity": 0.18429163754771302,
-          "lightColour": "a9c8ef",
+          "intensity": 0.47179090658836326,
+          "lightColour": "a1c8ff",
           "skyColour": "182343",
           "horizonColour": "625575",
           "day": 0,
@@ -2373,17 +3479,17 @@
         {
           "hour": 23,
           "sun": [
-            -0.23819853808951802,
-            -0.8889690464387122,
-            -0.39114638043303335
+            -0.22388654638863772,
+            -0.8355559662535228,
+            0.501718089771846
           ],
           "light": [
-            0.23819853808951802,
-            0.8889690464387122,
-            0.39114638043303335
+            0.22388654638863772,
+            0.8355559662535228,
+            -0.501718089771846
           ],
-          "intensity": 0.2828554651752094,
-          "lightColour": "a9c8ef",
+          "intensity": 0.7495517538561755,
+          "lightColour": "a1c8ff",
           "skyColour": "081732",
           "horizonColour": "243f60",
           "day": 0,
@@ -2393,11 +3499,11 @@
         }
       ],
       "cycle": {
-        "maxIntensityStep": 0.15475663548847182,
-        "maxAmbientStep": 0.015090361983599698,
+        "maxIntensityStep": 0.1619989166123217,
+        "maxAmbientStep": 0.007545180991799794,
         "maxSkyColourStep": 0.008301279333612355,
         "clockAdvance": 3.40000000001055,
-        "cloudTimeAdvance": 4.899999999999986,
+        "cloudTimeAdvance": 4.899999999999987,
         "anchorsFixed": true,
         "dustWorldSpace": true,
         "skyClouds": true,
@@ -2413,7 +3519,7 @@
       "pass": true
     },
     "architecture": {
-      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
       "locations": [
         {
           "key": "brookstead",
@@ -4127,60 +5233,60 @@
       "pass": true
     },
     "nativeWaterReflections": {
-      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
       "views": [
         {
           "name": "closed-river",
           "full": {
-            "calls": 753,
-            "triangles": 4561264,
+            "calls": 480,
+            "triangles": 3963929,
             "crop": null
           },
           "crop": {
-            "calls": 658,
-            "triangles": 4393762,
+            "calls": 416,
+            "triangles": 3790749,
             "crop": {
-              "x": 368,
-              "y": 178,
-              "width": 272,
-              "height": 96,
+              "x": 290,
+              "y": 286,
+              "width": 300,
+              "height": 74,
               "w": 640,
               "h": 360,
-              "area": 0.11333333333333333
+              "area": 0.09635416666666667
             }
           }
         },
         {
           "name": "closed-gate",
           "full": {
-            "calls": 744,
-            "triangles": 4335936,
+            "calls": 481,
+            "triangles": 3729174,
             "crop": null
           },
           "crop": {
-            "calls": 605,
-            "triangles": 4059840,
+            "calls": 422,
+            "triangles": 3591416,
             "crop": {
-              "x": 534,
-              "y": 0,
-              "width": 106,
-              "height": 11,
+              "x": 289,
+              "y": 150,
+              "width": 351,
+              "height": 210,
               "w": 640,
               "h": 360,
-              "area": 0.005060763888888889
+              "area": 0.319921875
             }
           }
         },
         {
           "name": "closed-bridge",
           "full": {
-            "calls": 1770,
-            "triangles": 5407710,
+            "calls": 1380,
+            "triangles": 4670982,
             "crop": null
           },
           "crop": {
-            "calls": 1369,
-            "triangles": 5137242,
+            "calls": 995,
+            "triangles": 4387174,
             "crop": {
               "x": 495,
               "y": 349,
@@ -4195,55 +5301,55 @@
         {
           "name": "surge-river",
           "full": {
-            "calls": 757,
-            "triangles": 4561272,
+            "calls": 516,
+            "triangles": 3997921,
             "crop": null
           },
           "crop": {
-            "calls": 660,
-            "triangles": 4393766,
+            "calls": 385,
+            "triangles": 3794851,
             "crop": {
-              "x": 368,
-              "y": 178,
-              "width": 272,
-              "height": 96,
+              "x": 318,
+              "y": 0,
+              "width": 322,
+              "height": 168,
               "w": 640,
               "h": 360,
-              "area": 0.11333333333333333
+              "area": 0.23479166666666668
             }
           }
         },
         {
           "name": "surge-gate",
           "full": {
-            "calls": 745,
-            "triangles": 4353236,
+            "calls": 487,
+            "triangles": 3734360,
             "crop": null
           },
           "crop": {
-            "calls": 684,
-            "triangles": 4233804,
+            "calls": 362,
+            "triangles": 3444152,
             "crop": {
-              "x": 289,
-              "y": 149,
-              "width": 351,
-              "height": 211,
+              "x": 534,
+              "y": 0,
+              "width": 106,
+              "height": 11,
               "w": 640,
               "h": 360,
-              "area": 0.3214453125
+              "area": 0.005060763888888889
             }
           }
         },
         {
           "name": "surge-bridge",
           "full": {
-            "calls": 1750,
-            "triangles": 5417472,
+            "calls": 1218,
+            "triangles": 4693972,
             "crop": null
           },
           "crop": {
-            "calls": 1380,
-            "triangles": 5160040,
+            "calls": 1011,
+            "triangles": 4388774,
             "crop": {
               "x": 495,
               "y": 348,
@@ -4258,13 +5364,13 @@
         {
           "name": "river",
           "full": {
-            "calls": 782,
-            "triangles": 4582535,
+            "calls": 514,
+            "triangles": 3993187,
             "crop": null
           },
           "crop": {
-            "calls": 655,
-            "triangles": 4350375,
+            "calls": 390,
+            "triangles": 3796707,
             "crop": {
               "x": 318,
               "y": 0,
@@ -4279,42 +5385,42 @@
         {
           "name": "gate",
           "full": {
-            "calls": 743,
-            "triangles": 4322136,
+            "calls": 490,
+            "triangles": 3729622,
             "crop": null
           },
           "crop": {
-            "calls": 606,
-            "triangles": 4023458,
+            "calls": 428,
+            "triangles": 3591858,
             "crop": {
-              "x": 541,
-              "y": 0,
-              "width": 99,
-              "height": 11,
+              "x": 289,
+              "y": 148,
+              "width": 351,
+              "height": 212,
               "w": 640,
               "h": 360,
-              "area": 0.0047265625
+              "area": 0.32296875
             }
           }
         },
         {
           "name": "bridge",
           "full": {
-            "calls": 1797,
-            "triangles": 5431410,
+            "calls": 1418,
+            "triangles": 4673496,
             "crop": null
           },
           "crop": {
-            "calls": 1384,
-            "triangles": 5171998,
+            "calls": 1024,
+            "triangles": 4398284,
             "crop": {
-              "x": 485,
-              "y": 322,
-              "width": 155,
-              "height": 38,
+              "x": 435,
+              "y": 348,
+              "width": 184,
+              "height": 12,
               "w": 640,
               "h": 360,
-              "area": 0.02556423611111111
+              "area": 0.009583333333333333
             }
           }
         }
@@ -4324,33 +5430,33 @@
           "width": 844,
           "height": 390,
           "enabled": false,
-          "fps": 106.77577088114958,
-          "p95": 10.700000017881393,
-          "calls": 2334.3700934579438
+          "fps": 71.1018794063345,
+          "p95": 14.5,
+          "calls": 1826.4241573033707
         },
         {
           "width": 844,
           "height": 390,
           "enabled": true,
-          "fps": 132.68058747127583,
-          "p95": 9.400000005960464,
-          "calls": 1644.4246987951808
+          "fps": 70.58588282343531,
+          "p95": 14.900000005960464,
+          "calls": 1157.2351274787536
         },
         {
           "width": 1366,
           "height": 768,
           "enabled": false,
-          "fps": 142.41831890516437,
-          "p95": 8.5,
-          "calls": 1795.7633053221289
+          "fps": 70.94608097828736,
+          "p95": 14.900000005960464,
+          "calls": 1379.3267605633803
         },
         {
           "width": 1366,
           "height": 768,
           "enabled": true,
-          "fps": 143.72813593203398,
-          "p95": 7.699999988079071,
-          "calls": 1466.923504867872
+          "fps": 71.37430524993985,
+          "p95": 15,
+          "calls": 1052.717086834734
         }
       ],
       "pixels": [
@@ -4413,7 +5519,7 @@
       "pass": true
     },
     "nativeFoliageVisibility": {
-      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
       "proof": {
         "cases": [
           {
@@ -4425,26 +5531,26 @@
             "lods": [
               {
                 "lod": 0,
-                "reference": 3081,
-                "cut": 3066,
-                "obstructed": 2012,
-                "ratio": 0.9951314508276533,
+                "reference": 2314,
+                "cut": 2303,
+                "obstructed": 1512,
+                "ratio": 0.9952463267070009,
                 "hidden": 2
               },
               {
                 "lod": 1,
-                "reference": 3081,
-                "cut": 3067,
-                "obstructed": 2013,
-                "ratio": 0.9954560207724765,
+                "reference": 2314,
+                "cut": 2303,
+                "obstructed": 1512,
+                "ratio": 0.9952463267070009,
                 "hidden": 2
               },
               {
                 "lod": 2,
-                "reference": 3081,
-                "cut": 3069,
-                "obstructed": 2015,
-                "ratio": 0.9961051606621227,
+                "reference": 2314,
+                "cut": 2303,
+                "obstructed": 1512,
+                "ratio": 0.9952463267070009,
                 "hidden": 2
               }
             ]
@@ -4458,26 +5564,26 @@
             "lods": [
               {
                 "lod": 0,
-                "reference": 3160,
-                "cut": 3145,
-                "obstructed": 1280,
-                "ratio": 0.995253164556962,
+                "reference": 2331,
+                "cut": 2322,
+                "obstructed": 874,
+                "ratio": 0.9961389961389961,
                 "hidden": 4
               },
               {
                 "lod": 1,
-                "reference": 3160,
-                "cut": 3145,
-                "obstructed": 1300,
-                "ratio": 0.995253164556962,
+                "reference": 2331,
+                "cut": 2322,
+                "obstructed": 877,
+                "ratio": 0.9961389961389961,
                 "hidden": 4
               },
               {
                 "lod": 2,
-                "reference": 3160,
-                "cut": 3143,
-                "obstructed": 1271,
-                "ratio": 0.9946202531645569,
+                "reference": 2331,
+                "cut": 2321,
+                "obstructed": 866,
+                "ratio": 0.9957099957099957,
                 "hidden": 4
               }
             ]
@@ -4491,26 +5597,26 @@
             "lods": [
               {
                 "lod": 0,
-                "reference": 3114,
-                "cut": 3103,
-                "obstructed": 488,
-                "ratio": 0.9964675658317277,
+                "reference": 1716,
+                "cut": 1709,
+                "obstructed": 167,
+                "ratio": 0.995920745920746,
                 "hidden": 5
               },
               {
                 "lod": 1,
-                "reference": 3114,
-                "cut": 3105,
-                "obstructed": 418,
-                "ratio": 0.9971098265895953,
+                "reference": 1716,
+                "cut": 1710,
+                "obstructed": 123,
+                "ratio": 0.9965034965034965,
                 "hidden": 5
               },
               {
                 "lod": 2,
-                "reference": 3114,
-                "cut": 3104,
-                "obstructed": 388,
-                "ratio": 0.9967886962106616,
+                "reference": 1716,
+                "cut": 1710,
+                "obstructed": 137,
+                "ratio": 0.9965034965034965,
                 "hidden": 5
               }
             ]
@@ -4528,7 +5634,7 @@
           ],
           "trees": 1440,
           "clusters": 10585,
-          "batches": 160
+          "batches": 72
         },
         "botany": {
           "gardenClumps": 3492,
@@ -4557,7 +5663,7 @@
         "finite": true
       },
       "atlas": {
-        "meshes": 1020,
+        "meshes": 446,
         "native": true,
         "attributes": true,
         "bark": true
@@ -4566,7 +5672,7 @@
       "pass": true
     },
     "interiorsAndRestraint": {
-      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
       "rooms": [
         {
           "id": "brookInn",
@@ -4578,7 +5684,7 @@
           "exitRoute": true,
           "saveRoute": true,
           "pitch": 24.962789830807015,
-          "geometry": 1190,
+          "geometry": 652,
           "draws": 1,
           "actors": [
             {
@@ -4610,7 +5716,7 @@
           "exitRoute": true,
           "saveRoute": true,
           "pitch": 24.962789830807015,
-          "geometry": 1188,
+          "geometry": 652,
           "draws": 1,
           "actors": [
             {
@@ -4642,7 +5748,7 @@
           "exitRoute": true,
           "saveRoute": true,
           "pitch": 24.962789830807015,
-          "geometry": 1180,
+          "geometry": 645,
           "draws": 1,
           "actors": [
             {
@@ -4679,7 +5785,7 @@
           "exitRoute": true,
           "saveRoute": true,
           "pitch": 24.962789830807015,
-          "geometry": 1177,
+          "geometry": 642,
           "draws": 1,
           "actors": [
             {
@@ -4716,7 +5822,7 @@
           "exitRoute": true,
           "saveRoute": true,
           "pitch": 24.962789830807015,
-          "geometry": 1176,
+          "geometry": 639,
           "draws": 1,
           "actors": [
             {
@@ -4747,7 +5853,7 @@
           "exitRoute": true,
           "saveRoute": true,
           "pitch": 24.962789830807015,
-          "geometry": 1177,
+          "geometry": 643,
           "draws": 1,
           "actors": [
             {
@@ -4777,7 +5883,7 @@
           "exitRoute": true,
           "saveRoute": true,
           "pitch": 24.962789830807015,
-          "geometry": 1179,
+          "geometry": 641,
           "draws": 1,
           "actors": [
             {
@@ -4851,7 +5957,7 @@
       "pass": true
     },
     "loadingAndRoomSoak": {
-      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
       "loading": [
         {
           "id": "entrance",
@@ -5360,23 +6466,23 @@
         }
       ],
       "before": {
-        "heap": 238728492,
-        "geometries": 1176,
-        "textures": 77,
-        "programs": 176,
+        "heap": 214513756,
+        "geometries": 640,
+        "textures": 81,
+        "programs": 177,
         "cache": 425
       },
       "after": {
-        "heap": 239577024,
-        "geometries": 1176,
-        "textures": 77,
-        "programs": 176,
+        "heap": 214130068,
+        "geometries": 642,
+        "textures": 81,
+        "programs": 177,
         "cache": 425
       },
       "pacing": {
-        "fps": 143.9368410918019,
-        "p95": 7,
-        "max": 7.100000000002183,
+        "fps": 142.5166825548141,
+        "p95": 7.600000000002183,
+        "max": 28.69999999999709,
         "buffer": [
           1920,
           1080
@@ -5386,7 +6492,7 @@
       "pass": true
     },
     "travelAndHighDpi": {
-      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
       "travel": [
         {
           "key": "fern",
@@ -5858,39 +6964,39 @@
           "width": 1366,
           "height": 768,
           "dpr": 2,
-          "fps": 143.97984282234816,
-          "p95": 7.5999999940395355,
-          "p99": 8,
+          "fps": 71.79138503388153,
+          "p95": 14.900000005960464,
+          "p99": 15.600000023841858,
           "buffer": [
-            1708,
-            960
+            2049,
+            1152
           ],
-          "shadow": 2048,
-          "reflection": 820,
+          "shadow": 1536,
+          "reflection": 768,
           "resizes": 0,
           "scale": 1,
-          "gpu": 3.3648375954400653,
+          "gpu": 4.44041994950446,
           "shadowSpan": [
             168,
-            96
+            80
           ]
         },
         {
           "width": 1024,
           "height": 768,
           "dpr": 2,
-          "fps": 143.95105664108524,
-          "p95": 7.5999999940395355,
-          "p99": 8.200000017881393,
+          "fps": 71.94100837321972,
+          "p95": 15,
+          "p99": 15.600000023841858,
           "buffer": [
-            1024,
-            768
+            1536,
+            1152
           ],
           "shadow": 1536,
-          "reflection": 614,
+          "reflection": 768,
           "resizes": 0,
           "scale": 1,
-          "gpu": 2.8468460951526207,
+          "gpu": 3.556774831825842,
           "shadowSpan": [
             160,
             80
@@ -5900,18 +7006,18 @@
           "width": 800,
           "height": 600,
           "dpr": 2,
-          "fps": 143.9424230307877,
-          "p95": 7.5999999940395355,
-          "p99": 8.099999994039536,
+          "fps": 71.52990069765738,
+          "p95": 15.099999994039536,
+          "p99": 17,
           "buffer": [
-            800,
-            600
+            1200,
+            900
           ],
-          "shadow": 1024,
-          "reflection": 480,
+          "shadow": 1536,
+          "reflection": 768,
           "resizes": 0,
           "scale": 1,
-          "gpu": 2.6922691612109455,
+          "gpu": 1.948940998380564,
           "shadowSpan": [
             160,
             80
@@ -5921,42 +7027,42 @@
           "width": 390,
           "height": 844,
           "dpr": 2,
-          "fps": 143.94817865534088,
-          "p95": 7.5,
-          "p99": 8.199999988079071,
+          "fps": 71.5928407159284,
+          "p95": 15.5,
+          "p99": 19.299999982118607,
           "buffer": [
-            390,
-            844
+            585,
+            1266
           ],
-          "shadow": 1024,
-          "reflection": 320,
+          "shadow": 1536,
+          "reflection": 768,
           "resizes": 0,
           "scale": 1,
-          "gpu": 3.197278428376372,
+          "gpu": 3.9223929925690197,
           "shadowSpan": [
-            144,
-            56
+            288,
+            120
           ]
         },
         {
           "width": 844,
           "height": 390,
           "dpr": 2,
-          "fps": 143.86335973855478,
-          "p95": 7.799999982118607,
-          "p99": 8.399999976158142,
+          "fps": 71.56278735023663,
+          "p95": 15,
+          "p99": 18.700000017881393,
           "buffer": [
-            844,
-            390
+            1266,
+            585
           ],
-          "shadow": 1024,
-          "reflection": 506,
+          "shadow": 1536,
+          "reflection": 768,
           "resizes": 0,
           "scale": 1,
-          "gpu": 2.6616227172882008,
+          "gpu": 3.01088956848865,
           "shadowSpan": [
-            176,
-            120
+            184,
+            104
           ]
         }
       ],
@@ -5970,7 +7076,7 @@
       "pass": true
     },
     "cutaways": {
-      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
       "cycles": [
         {
           "side": "behind",
@@ -6179,7 +7285,7 @@
       "pass": true
     },
     "targets": {
-      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
       "structure": {
         "roots": 3,
         "meshes": 3,
@@ -6236,14 +7342,14 @@
         "enemies": 2,
         "below": true,
         "arrow": 34,
-        "glow": 0.2514595743575683,
+        "glow": 0.26929199186858477,
         "turns": 4,
         "queue": 4
       },
       "selection": {
         "target": 1,
         "first": 0,
-        "second": 0.2514595743575683
+        "second": 0.26929199186858477
       },
       "redraws": [
         {
@@ -6278,7 +7384,7 @@
       "pass": true
     },
     "menus": {
-      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
       "views": [
         {
           "tab": "journal",
@@ -6521,7 +7627,7 @@
       "pass": true
     },
     "routes": {
-      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
       "camera": {
         "yaw": 4.782532484473921,
         "pitch": 23.972876142711147,
@@ -6655,7 +7761,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 3265
+          "loadMs": 3896
         },
         {
           "edgeFailures": [],
@@ -6749,7 +7855,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 2500
+          "loadMs": 3061
         },
         {
           "edgeFailures": [],
@@ -6822,7 +7928,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 1094
+          "loadMs": 1621
         },
         {
           "edgeFailures": [],
@@ -6916,7 +8022,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 3111
+          "loadMs": 4512
         },
         {
           "edgeFailures": [],
@@ -7006,7 +8112,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 2074
+          "loadMs": 2636
         },
         {
           "edgeFailures": [],
@@ -7079,7 +8185,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 1093
+          "loadMs": 2059
         },
         {
           "edgeFailures": [],
@@ -7152,7 +8258,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 1332
+          "loadMs": 1944
         },
         {
           "edgeFailures": [],
@@ -7246,7 +8352,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 2225
+          "loadMs": 2716
         },
         {
           "edgeFailures": [],
@@ -7319,7 +8425,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 1443
+          "loadMs": 2192
         },
         {
           "edgeFailures": [],
@@ -7380,7 +8486,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 928
+          "loadMs": 1432
         },
         {
           "edgeFailures": [],
@@ -7441,7 +8547,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 1059
+          "loadMs": 1597
         },
         {
           "edgeFailures": [],
@@ -7502,7 +8608,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 1105
+          "loadMs": 2066
         },
         {
           "edgeFailures": [],
@@ -7563,7 +8669,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 1121
+          "loadMs": 1742
         },
         {
           "edgeFailures": [],
@@ -7624,7 +8730,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 980
+          "loadMs": 1375
         },
         {
           "edgeFailures": [],
@@ -7706,7 +8812,7 @@
             "worldSpace": true
           },
           "rays": 12,
-          "loadMs": 436
+          "loadMs": 645
         }
       ],
       "errors": [],
@@ -7716,341 +8822,350 @@
       "phases": [
         {
           "name": "warm-town",
-          "seconds": 30.01009999999404,
-          "fps": 131.08919996936967,
+          "seconds": 30.00280000001192,
+          "fps": 72.92652685746432,
           "frame": {
-            "mean": 7.627917620143362,
-            "p95": 9.5,
-            "p99": 10.699999988079071,
-            "max": 13.200000017881393
+            "mean": 13.716140832184765,
+            "p95": 14.5,
+            "p99": 15.100000023841858,
+            "max": 45
           },
           "renderCPU": {
-            "mean": 5.890950686278899,
-            "p95": 7.5,
-            "p99": 8.200000017881393,
-            "max": 10
+            "mean": 4.763985374550824,
+            "p95": 5.9000000059604645,
+            "p99": 6.299999982118607,
+            "max": 12.399999976158142
           },
           "scale": 1,
+          "tier": 2,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.5819135459449347,
-          "fx": 24,
+          "gpuMs": 5.051164088670338,
+          "fx": 12,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 45, 39, 1770, 11201, 75.91",
-            "P0, 45, 34, 1860, 11201, 77.25",
-            "P0, 46, 41, 1710, 11201, 73.89",
-            "P0, 45, 33, 1725, 11201, 75.20",
-            "P0, 46, 39, 1860, 11201, 80.41"
+            "P3, 44, 32, 1140, 5001, 45.48",
+            "P3, 44, 37, 900, 5001, 44.87",
+            "P3, 43, 39, 870, 5001, 44.21",
+            "P3, 43, 38, 885, 5001, 44.75",
+            "P3, 43, 40, 885, 5001, 44.17"
           ]
         },
         {
           "name": "after-travel-and-battle-0",
-          "seconds": 10.00930000001192,
-          "fps": 143.26676191125176,
+          "seconds": 10.001,
+          "fps": 71.19288071192881,
           "frame": {
-            "mean": 6.957990230294432,
-            "p95": 7.799999982118607,
-            "p99": 8.300000011920929,
-            "max": 13.800000011920929
+            "mean": 13.908438818531868,
+            "p95": 14.5,
+            "p99": 15.400000005960464,
+            "max": 18.899999976158142
           },
           "renderCPU": {
-            "mean": 5.0435146443140555,
-            "p95": 5.799999982118607,
-            "p99": 6.199999988079071,
-            "max": 6.699999988079071
+            "mean": 4.448735955935181,
+            "p95": 5.199999988079071,
+            "p99": 5.5999999940395355,
+            "max": 8.800000011920929
           },
           "scale": 1,
+          "tier": 2,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.3275934696779115,
-          "fx": 17,
+          "gpuMs": 5.179751032931938,
+          "fx": 14,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 45, 39, 1920, 11201, 81.34",
-            "P0, 46, 40, 1890, 11201, 82.00"
+            "P3, 42, 34, 990, 5001, 44.62",
+            "P3, 42, 38, 855, 5001, 43.72"
           ]
         },
         {
           "name": "after-travel-and-battle-1",
-          "seconds": 10.011699999988078,
-          "fps": 143.03265179756735,
+          "seconds": 10.001299999982118,
+          "fps": 71.59069321001071,
           "frame": {
-            "mean": 6.970160726772831,
-            "p95": 7.799999982118607,
-            "p99": 8.400000005960464,
-            "max": 9.800000011920929
+            "mean": 13.891468531476868,
+            "p95": 14.5,
+            "p99": 15.100000023841858,
+            "max": 15.599999994039536
           },
           "renderCPU": {
-            "mean": 5.142877095071963,
-            "p95": 5.9000000059604645,
-            "p99": 6.4000000059604645,
-            "max": 8
+            "mean": 4.05446927378464,
+            "p95": 4.700000017881393,
+            "p99": 4.9000000059604645,
+            "max": 7.9000000059604645
           },
           "scale": 1,
+          "tier": 2,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.680214385115706,
-          "fx": 18,
+          "gpuMs": 4.255593442559747,
+          "fx": 11,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 45, 38, 1950, 11201, 81.53",
-            "P0, 45, 39, 1920, 11201, 82.25"
+            "P3, 42, 34, 975, 5001, 43.88",
+            "P3, 42, 39, 870, 5001, 43.37"
           ]
         },
         {
           "name": "after-travel-and-battle-2",
-          "seconds": 10.007200000017882,
-          "fps": 141.5980494041758,
+          "seconds": 10.000200000017882,
+          "fps": 71.49857002847159,
           "frame": {
-            "mean": 7.040466101703334,
-            "p95": 7.9000000059604645,
-            "p99": 8.400000005960464,
-            "max": 9.700000017881393
+            "mean": 13.8952380952214,
+            "p95": 14.5,
+            "p99": 15.100000023841858,
+            "max": 16.099999994039536
           },
           "renderCPU": {
-            "mean": 5.224206069046625,
-            "p95": 6,
-            "p99": 6.4000000059604645,
-            "max": 7.800000011920929
+            "mean": 4.164195803870688,
+            "p95": 4.9000000059604645,
+            "p99": 5.300000011920929,
+            "max": 9.099999994039536
           },
           "scale": 1,
+          "tier": 2,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.456897160269059,
-          "fx": 17,
+          "gpuMs": 4.871509631298398,
+          "fx": 12,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 45, 31, 2505, 11201, 86.04",
-            "P0, 45, 37, 1935, 11201, 82.13"
+            "P3, 41, 36, 915, 5001, 44.71",
+            "P3, 42, 38, 870, 5001, 44.52"
           ]
         },
         {
           "name": "after-travel-and-battle-3",
-          "seconds": 10.0095,
-          "fps": 142.66446875468304,
+          "seconds": 10.0005,
+          "fps": 71.49642517874106,
           "frame": {
-            "mean": 6.988297126847877,
-            "p95": 7.799999982118607,
-            "p99": 8.300000011920929,
-            "max": 9.400000005960464
+            "mean": 13.89117647060493,
+            "p95": 14.5,
+            "p99": 15.099999994039536,
+            "max": 15.800000011920929
           },
           "renderCPU": {
-            "mean": 5.213795518006931,
-            "p95": 5.9000000059604645,
-            "p99": 6.300000011920929,
-            "max": 7.299999982118607
+            "mean": 4.036783216966616,
+            "p95": 4.600000023841858,
+            "p99": 5.0999999940395355,
+            "max": 9.099999994039536
           },
           "scale": 1,
+          "tier": 2,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.435243814771773,
-          "fx": 15,
+          "gpuMs": 5.364775652246778,
+          "fx": 9,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 45, 38, 1950, 11201, 83.47",
-            "P0, 46, 38, 2040, 11201, 83.80"
+            "P3, 41, 32, 1005, 5001, 44.52"
           ]
         },
         {
           "name": "town-after-thirty-minutes",
-          "seconds": 45.0075,
-          "fps": 140.9098483586069,
+          "seconds": 45.00040000000596,
+          "fps": 71.5771415365102,
           "frame": {
-            "mean": 7.096830152972717,
-            "p95": 8.199999988079071,
-            "p99": 8.899999976158142,
-            "max": 24.19999998807907
+            "mean": 13.968633540372672,
+            "p95": 14.5,
+            "p99": 15.100000023841858,
+            "max": 47.099999994039536
           },
           "renderCPU": {
-            "mean": 5.254935351358118,
-            "p95": 6.199999988079071,
-            "p99": 6.699999988079071,
-            "max": 8.900000005960464
+            "mean": 4.097981993140215,
+            "p95": 4.799999982118607,
+            "p99": 5.0999999940395355,
+            "max": 6.200000017881393
           },
           "scale": 1,
+          "tier": 2,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.6853653115661045,
-          "fx": 15,
+          "gpuMs": 5.240455736445186,
+          "fx": 7,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 43, 38, 2115, 11201, 85.62",
-            "P0, 43, 37, 1950, 11201, 81.98",
-            "P0, 44, 40, 1995, 11201, 86.42",
-            "P0, 44, 34, 2040, 11201, 84.88",
-            "P0, 45, 38, 2025, 11201, 85.86",
-            "P0, 45, 39, 2070, 11201, 88.39",
-            "P0, 45, 39, 2085, 11201, 88.49",
-            "P0, 45, 38, 2100, 11201, 88.79"
+            "P3, 41, 33, 1125, 5001, 47.09",
+            "P3, 41, 40, 960, 5001, 46.74",
+            "P3, 41, 39, 930, 5001, 46.54",
+            "P3, 41, 38, 945, 5001, 46.37",
+            "P3, 41, 37, 945, 5001, 46.81",
+            "P3, 41, 40, 930, 5001, 46.48",
+            "P3, 41, 40, 930, 5001, 46.30",
+            "P3, 41, 37, 990, 5001, 47.18"
           ]
         },
         {
           "name": "overworld-extended",
-          "seconds": 60.00140000000596,
-          "fps": 143.92997496723646,
+          "seconds": 60.00059999999404,
+          "fps": 71.96594700720374,
           "frame": {
-            "mean": 6.947620150552158,
-            "p95": 8,
-            "p99": 8.200000017881393,
-            "max": 9.299999982118607
+            "mean": 13.895320824645365,
+            "p95": 15,
+            "p99": 15.800000011920929,
+            "max": 18.299999982118607
           },
           "renderCPU": {
-            "mean": 3.792079666478455,
-            "p95": 4.4000000059604645,
-            "p99": 4.699999988079071,
-            "max": 6.100000023841858
+            "mean": 2.3826540062318746,
+            "p95": 3,
+            "p99": 3.300000011920929,
+            "max": 4.0999999940395355
           },
           "scale": 1,
+          "tier": 2,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 5.73283397644974,
-          "fx": 22,
+          "gpuMs": 3.7263211289973857,
+          "fx": 8,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 46, 39, 1935, 11201, 87.53",
-            "P0, 46, 38, 1905, 11201, 87.23",
-            "P0, 47, 38, 1920, 11201, 86.43",
-            "P0, 46, 41, 1920, 11201, 86.35",
-            "P0, 46, 40, 1905, 11201, 86.01",
-            "P0, 47, 39, 1875, 11201, 85.38",
-            "P0, 47, 39, 1815, 11201, 84.16",
-            "P0, 47, 40, 2175, 11201, 84.95",
-            "P0, 48, 40, 1845, 11201, 86.01",
-            "P0, 48, 39, 1875, 11201, 86.90",
-            "P0, 47, 40, 1875, 11201, 87.08"
+            "P3, 41, 30, 1155, 5001, 48.61",
+            "P3, 42, 30, 1230, 5001, 50.78",
+            "P0, 42, 19, 2505, 11201, 55.33",
+            "P3, 41, 34, 975, 5001, 47.88",
+            "P3, 42, 30, 1140, 5001, 48.34",
+            "P3, 43, 18, 1395, 5001, 62.78",
+            "P3, 42, 23, 1725, 5001, 46.46",
+            "P3, 42, 26, 1290, 5001, 57.53",
+            "P0, 43, 16, 2505, 11201, 53.72",
+            "P3, 42, 38, 945, 5001, 47.22",
+            "P3, 42, 30, 1050, 5001, 47.65"
           ]
         },
         {
           "name": "storm-overworld-extended",
-          "seconds": 60.00109999999404,
-          "fps": 143.79736371501284,
+          "seconds": 60.00069999998808,
+          "fps": 71.93249412091622,
           "frame": {
-            "mean": 6.954097600556393,
-            "p95": 7.9000000059604645,
-            "p99": 8.200000017881393,
-            "max": 55.400000005960464
+            "mean": 13.901853997682503,
+            "p95": 15,
+            "p99": 15.600000023841858,
+            "max": 45.099999994039536
           },
           "renderCPU": {
-            "mean": 3.5707579971630925,
-            "p95": 4.300000011920929,
-            "p99": 4.699999988079071,
-            "max": 10.800000011920929
+            "mean": 2.370412418737911,
+            "p95": 2.9000000059604645,
+            "p99": 3.4000000059604645,
+            "max": 6.5
           },
           "scale": 1,
+          "tier": 2,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 4.4162955255944585,
-          "fx": 21,
+          "gpuMs": 4.136007470138216,
+          "fx": 7,
           "weather": "Thunderstorm",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 48, 40, 1845, 11201, 86.21",
-            "P0, 48, 39, 1875, 11201, 86.57",
-            "P0, 48, 40, 1875, 11201, 86.65",
-            "P0, 48, 40, 1875, 11201, 86.89",
-            "P0, 48, 38, 1905, 11201, 87.29",
-            "P0, 48, 38, 1905, 11201, 87.19",
-            "P0, 48, 39, 1890, 11201, 87.11",
-            "P0, 48, 40, 1890, 11201, 83.88",
-            "P0, 49, 39, 1890, 11201, 86.86",
-            "P0, 49, 40, 1905, 11201, 85.88",
-            "P0, 48, 39, 1905, 11201, 86.32"
+            "P0, 43, 17, 2505, 11201, 56.46",
+            "P3, 42, 35, 930, 5001, 47.21",
+            "P3, 42, 30, 1080, 5001, 46.48",
+            "P3, 42, 27, 1215, 5001, 51.06",
+            "P0, 44, 18, 2505, 11201, 59.42",
+            "P3, 42, 34, 915, 5001, 46.40",
+            "P3, 42, 31, 1005, 5001, 47.27",
+            "P3, 42, 31, 1185, 5001, 48.05",
+            "P0, 44, 15, 2805, 11201, 78.72",
+            "P3, 42, 34, 930, 5001, 46.46",
+            "P3, 42, 32, 990, 5001, 46.45"
           ]
         },
         {
           "name": "continuous-battle-skills",
-          "seconds": 60.01840000000596,
-          "fps": 136.09159857642305,
+          "seconds": 60.00240000000596,
+          "fps": 71.88045811500159,
           "frame": {
-            "mean": 7.346308313947829,
-            "p95": 10.799999982118607,
-            "p99": 14.5,
-            "max": 59.400000005960464
+            "mean": 13.906354359923023,
+            "p95": 17.700000017881393,
+            "p99": 18.299999982118607,
+            "max": 44.599999994039536
           },
           "renderCPU": {
-            "mean": 4.304187071410233,
-            "p95": 5.699999988079071,
-            "p99": 8.599999994039536,
-            "max": 12.400000005960464
+            "mean": 3.6226060749095303,
+            "p95": 4.199999988079071,
+            "p99": 4.5,
+            "max": 7.299999982118607
           },
           "scale": 1,
+          "tier": 2,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.4044625396590695,
+          "gpuMs": 5.110328783401897,
           "fx": 0,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 49, 39, 2340, 11201, 96.91",
-            "P0, 50, 38, 2325, 11201, 97.18",
-            "P0, 55, 55, 2775, 11201, 172.09",
-            "P0, 58, 62, 2775, 11201, 183.36",
-            "P0, 55, 44, 2775, 11201, 139.62",
-            "P0, 55, 40, 2775, 11201, 140.01",
-            "P0, 55, 43, 2775, 11201, 141.49",
-            "P0, 56, 44, 2775, 11201, 141.13",
-            "P0, 57, 43, 2775, 11201, 141.59",
-            "P0, 57, 46, 2775, 11201, 142.89",
-            "P0, 57, 45, 2775, 11201, 140.06"
+            "P3, 43, 36, 1275, 5001, 53.71",
+            "P3, 42, 38, 1110, 5001, 52.43",
+            "P3, 43, 42, 1110, 5001, 52.62",
+            "P3, 43, 36, 1110, 5001, 52.51",
+            "P3, 43, 39, 1095, 5001, 53.24",
+            "P3, 42, 37, 1110, 5001, 53.26",
+            "P3, 42, 41, 1095, 5001, 52.71",
+            "P3, 42, 39, 1110, 5001, 52.55",
+            "P3, 42, 40, 1095, 5001, 52.26",
+            "P3, 43, 39, 1110, 5001, 52.58",
+            "P3, 43, 32, 1140, 5001, 52.99"
           ]
         },
         {
           "name": "final-town",
-          "seconds": 30.00329999998212,
-          "fps": 141.98438171809562,
+          "seconds": 30.001,
+          "fps": 71.96426785773808,
           "frame": {
-            "mean": 7.043202629725288,
-            "p95": 8,
-            "p99": 9.299999982118607,
-            "max": 14.600000023841858
+            "mean": 13.894763670067636,
+            "p95": 14.5,
+            "p99": 15.100000023841858,
+            "max": 15.800000011920929
           },
           "renderCPU": {
-            "mean": 5.037723004699033,
-            "p95": 5.9000000059604645,
-            "p99": 6.9000000059604645,
-            "max": 12.400000005960464
+            "mean": 4.236961556576976,
+            "p95": 4.9000000059604645,
+            "p99": 5.199999988079071,
+            "max": 7.699999988079071
           },
           "scale": 1,
+          "tier": 2,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.58254521172642,
-          "fx": 23,
+          "gpuMs": 5.210300767572452,
+          "fx": 11,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 51, 40, 1830, 11201, 81.41",
-            "P0, 51, 39, 1875, 11201, 80.88",
-            "P0, 54, 38, 2790, 11201, 121.13",
-            "P0, 55, 40, 2760, 11201, 116.15",
-            "P0, 54, 40, 2715, 11201, 115.56"
+            "P3, 42, 35, 990, 5001, 44.83",
+            "P3, 42, 39, 855, 5001, 43.98",
+            "P3, 41, 39, 870, 5001, 43.87",
+            "P3, 42, 39, 840, 5001, 43.60",
+            "P3, 42, 40, 840, 5001, 43.38"
           ]
         }
       ],
@@ -8058,104 +9173,111 @@
         {
           "name": "warm",
           "scene": "brookstead",
-          "heap": 1044526728,
-          "geometries": 2408,
-          "textures": 92,
-          "programs": 207,
+          "heap": 901019855,
+          "geometries": 1519,
+          "textures": 97,
+          "programs": 206,
           "keepers": 78,
           "queries": 0,
-          "fx": 24,
+          "fx": 12,
           "nav": 0,
-          "roadCache": 50000
+          "roadCache": 50000,
+          "liveRoadCache": 12000
         },
         {
           "name": "round-0",
           "scene": "brookstead",
-          "heap": 1298850877,
-          "geometries": 2397,
-          "textures": 92,
+          "heap": 1104586871,
+          "geometries": 1521,
+          "textures": 97,
           "programs": 210,
           "keepers": 80,
           "queries": 0,
-          "fx": 17,
+          "fx": 14,
           "nav": 0,
-          "roadCache": 50000
+          "roadCache": 50000,
+          "liveRoadCache": 12000
         },
         {
           "name": "round-1",
           "scene": "brookstead",
-          "heap": 1299722253,
-          "geometries": 2397,
-          "textures": 92,
+          "heap": 1104939243,
+          "geometries": 1518,
+          "textures": 97,
           "programs": 212,
           "keepers": 81,
           "queries": 0,
-          "fx": 18,
+          "fx": 11,
           "nav": 0,
-          "roadCache": 50000
+          "roadCache": 50000,
+          "liveRoadCache": 12000
         },
         {
           "name": "round-2",
           "scene": "brookstead",
-          "heap": 1301040193,
-          "geometries": 2398,
-          "textures": 92,
+          "heap": 1106391283,
+          "geometries": 1518,
+          "textures": 97,
           "programs": 214,
           "keepers": 82,
-          "queries": 0,
-          "fx": 17,
+          "queries": 1,
+          "fx": 12,
           "nav": 0,
-          "roadCache": 50000
+          "roadCache": 50000,
+          "liveRoadCache": 12000
         },
         {
           "name": "round-3",
           "scene": "brookstead",
-          "heap": 1302110341,
-          "geometries": 2397,
-          "textures": 92,
+          "heap": 1107437639,
+          "geometries": 1514,
+          "textures": 97,
           "programs": 216,
           "keepers": 83,
           "queries": 0,
-          "fx": 15,
+          "fx": 9,
           "nav": 0,
-          "roadCache": 50000
+          "roadCache": 50000,
+          "liveRoadCache": 12000
         },
         {
           "name": "after-thirty-minutes",
           "scene": "brookstead",
-          "heap": 1302118039,
-          "geometries": 2397,
-          "textures": 92,
+          "heap": 1106867169,
+          "geometries": 1514,
+          "textures": 97,
           "programs": 216,
           "keepers": 83,
           "queries": 0,
-          "fx": 15,
+          "fx": 7,
           "nav": 0,
-          "roadCache": 50000
+          "roadCache": 50000,
+          "liveRoadCache": 12000
         },
         {
           "name": "final",
           "scene": "brookstead",
-          "heap": 1301665978,
-          "geometries": 2410,
-          "textures": 92,
+          "heap": 1106936315,
+          "geometries": 1521,
+          "textures": 97,
           "programs": 218,
           "keepers": 84,
           "queries": 0,
-          "fx": 23,
+          "fx": 11,
           "nav": 0,
-          "roadCache": 50000
+          "roadCache": 50000,
+          "liveRoadCache": 12000
         }
       ],
       "acceleratedSeconds": 1800,
-      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
       "growth": {
-        "heap": 1943725,
-        "geometries": 13,
+        "heap": 1997072,
+        "geometries": 3,
         "textures": 0,
         "programs": 6
       },
-      "scope": "Native headless Chrome with Windows occlusion detection disabled at 1920x1080 on recorded device; uncapped monitor cadence, four repeated travel/combat rounds, thirty simulated minutes plus sustained real-time town, overworld, storm and skill battles. Garbage collection is test-only for retained-memory comparison.",
+      "scope": "Native headless Chrome with Windows occlusion detection disabled at 1920x1080 on recorded device; monitor-divisor frame pacing, four repeated travel/combat rounds, thirty simulated minutes plus sustained real-time town, overworld, storm and skill battles. Garbage collection is test-only for retained-memory comparison.",
       "pass": true,
       "errors": []
     },
@@ -8847,106 +9969,111 @@
       "scenarios": [
         {
           "name": "bridge",
-          "fps": 139.3563184001044,
-          "p95FrameMs": 8.400000005960464,
-          "meanRenderCpuMs": 5.253309481152481,
-          "ticks": 559,
-          "calls": 1281.432915921288,
-          "triangles": 4644249.05724508,
+          "fps": 70.21313810260075,
+          "p95FrameMs": 16.19999998807907,
+          "meanRenderCpuMs": 4.00427046248497,
+          "ticks": 281,
+          "calls": 1014.6049822064057,
+          "triangles": 4265886.370106761,
           "buffer": [
             1440,
             900
           ],
           "scale": 1,
+          "tier": 2,
           "shadow": [
-            2048,
-            2048
+            1536,
+            1536
           ],
           "programs": 175,
           "worldSerial": 4
         },
         {
           "name": "square",
-          "fps": 142.4572628215781,
-          "p95FrameMs": 7.800000011920929,
-          "meanRenderCpuMs": 4.283157896211272,
-          "ticks": 570,
-          "calls": 711.8035087719298,
-          "triangles": 4138075.50877193,
+          "fps": 71.98740220482868,
+          "p95FrameMs": 14.800000011920929,
+          "meanRenderCpuMs": 3.654166666790843,
+          "ticks": 288,
+          "calls": 498.7673611111111,
+          "triangles": 3994424.3055555555,
           "buffer": [
             1440,
             900
           ],
           "scale": 1,
+          "tier": 2,
           "shadow": [
-            2048,
-            2048
+            1536,
+            1536
           ],
           "programs": 177,
           "worldSerial": 5
         },
         {
           "name": "forest",
-          "fps": 143.95681295546984,
-          "p95FrameMs": 7.300000011920929,
-          "meanRenderCpuMs": 1.7642361111421552,
-          "ticks": 576,
-          "calls": 455.31597222222223,
-          "triangles": 2923777.513888889,
+          "fps": 71.96941299915363,
+          "p95FrameMs": 15,
+          "meanRenderCpuMs": 1.579513888599144,
+          "ticks": 288,
+          "calls": 262.7916666666667,
+          "triangles": 2542287.3055555555,
           "buffer": [
             1440,
             900
           ],
           "scale": 1,
+          "tier": 2,
           "shadow": [
-            2048,
-            2048
+            1536,
+            1536
           ],
           "programs": 180,
           "worldSerial": 6
         },
         {
           "name": "overworld",
-          "fps": 144.0267585236445,
-          "p95FrameMs": 7.800000011920929,
-          "meanRenderCpuMs": 4.932409012493269,
-          "ticks": 577,
-          "calls": 781.9133448873483,
-          "triangles": 5117861.840554593,
+          "fps": 71.96042176770608,
+          "p95FrameMs": 14.800000011920929,
+          "meanRenderCpuMs": 3.5472222207528024,
+          "ticks": 288,
+          "calls": 401.43055555555554,
+          "triangles": 4938191.777777778,
           "buffer": [
             1440,
             900
           ],
           "scale": 1,
+          "tier": 2,
           "shadow": [
-            2048,
-            2048
+            1536,
+            1536
           ],
           "programs": 199,
           "worldSerial": 7
         },
         {
           "name": "shop",
-          "fps": 143.93522914752705,
-          "p95FrameMs": 7.200000017881393,
-          "meanRenderCpuMs": 0.7489583334471617,
-          "ticks": 576,
-          "calls": 124.11111111111111,
-          "triangles": 28748.222222222223,
+          "fps": 71.99640018020555,
+          "p95FrameMs": 15.199999988079071,
+          "meanRenderCpuMs": 0.8444444440926114,
+          "ticks": 288,
+          "calls": 112.43055555555556,
+          "triangles": 28724.86111111111,
           "buffer": [
             1440,
             900
           ],
           "scale": 1,
+          "tier": 2,
           "shadow": [
-            2048,
-            2048
+            1536,
+            1536
           ],
           "programs": 201,
           "worldSerial": 8
         }
       ],
-      "loadMs": 11671,
+      "loadMs": 12650,
       "device": {
         "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
         "software": false
@@ -8956,7 +10083,7 @@
       "pass": true
     },
     "atmosphere": {
-      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
       "clouds": {
         "anchorsFixed": true,
         "cloudFixed": true,
@@ -8965,7 +10092,7 @@
         "field": true
       },
       "lanterns": {
-        "jumps": 5,
+        "jumps": 4,
         "bad": 0
       },
       "exit": {
@@ -9000,7 +10127,7 @@
           "batchCells": 32
         },
         "forest": 0,
-        "sun": 3.425639262098084,
+        "sun": 4.9927511636487845,
         "hemi": 0.96
       },
       "gate": {
@@ -9014,7 +10141,7 @@
           "batchCells": 32
         },
         "forest": 0,
-        "sun": 3.4250182753996077,
+        "sun": 4.992424656772399,
         "hemi": 0.96
       },
       "mill": {
@@ -9028,7 +10155,7 @@
           "batchCells": 32
         },
         "forest": 0,
-        "sun": 3.4243970937769217,
+        "sun": 4.992098174008283,
         "hemi": 0.96
       },
       "bridge": {
@@ -9042,7 +10169,7 @@
           "batchCells": 32
         },
         "forest": 0,
-        "sun": 3.423775717146165,
+        "sun": 4.991771715497143,
         "hemi": 0.96
       },
       "square": {
@@ -9056,7 +10183,7 @@
           "batchCells": 32
         },
         "forest": 0,
-        "sun": 3.423154145423393,
+        "sun": 4.991445281379743,
         "hemi": 0.96
       },
       "hover": {
@@ -9065,8 +10192,8 @@
         "icon": 192
       },
       "perf": {
-        "gpu": 2.9834178585952973,
-        "cpu": 5.705845550170605,
+        "gpu": 2.959287906330024,
+        "cpu": 5.251425945441787,
         "buffer": [
           1672,
           941
@@ -9078,11 +10205,11 @@
     },
     "comparisons": {
       "before": {
-        "commit": "6df203d070ccef73724986bd5e5891a458e67e88",
-        "sha256": "c04ec9fe4cd43b57ee6ad5dac0b69e0fd4fac8dd5b5b0099358bc4e8a3e03102"
+        "commit": "fe04039acf1c46b8ac779f8dc8a397c4dc0bbeb9",
+        "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83"
       },
       "after": {
-        "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83"
+        "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae"
       },
       "views": [
         {
@@ -9133,7 +10260,7 @@
                 "frame": {
                   "action": "idle_east",
                   "index": 1,
-                  "cell": 130
+                  "cell": 128
                 }
               }
             ],
@@ -9325,8 +10452,8 @@
               {
                 "type": "localBoard",
                 "label": "Read local requests",
-                "x": -140.50559116309236,
-                "z": 118.33328930094119,
+                "x": -145.00892326277145,
+                "z": 115.7332893009412,
                 "active": false
               },
               {
@@ -9495,7 +10622,7 @@
             "battle": null,
             "terrain": {
               "sculpted": true,
-              "leafInstances": 10034,
+              "leafInstances": 10585,
               "litSprites": true,
               "fixedCamera": true,
               "fov": 35
@@ -9512,7 +10639,7 @@
               "age": 180,
               "settled": true,
               "levels": {
-                "reservoir": 6.133918609799792,
+                "reservoir": 6.145963053345767,
                 "headrace": 4.55,
                 "millrace": 1.55,
                 "lowerBrook": -1.4
@@ -9612,9 +10739,9 @@
               ]
             },
             "waterCurrent": {
-              "active": 920,
-              "speed": 3.46,
-              "front": 222,
+              "active": 0,
+              "speed": 1.6,
+              "front": 358,
               "direction": "downstream",
               "gpu": true
             }
@@ -9668,7 +10795,7 @@
                 "frame": {
                   "action": "idle_east",
                   "index": 1,
-                  "cell": 130
+                  "cell": 128
                 }
               }
             ],
@@ -9860,8 +10987,8 @@
               {
                 "type": "localBoard",
                 "label": "Read local requests",
-                "x": -140.50559116309236,
-                "z": 118.33328930094119,
+                "x": -145.00892326277145,
+                "z": 115.7332893009412,
                 "active": false
               },
               {
@@ -10030,7 +11157,7 @@
             "battle": null,
             "terrain": {
               "sculpted": true,
-              "leafInstances": 10034,
+              "leafInstances": 10585,
               "litSprites": true,
               "fixedCamera": true,
               "fov": 35
@@ -10047,7 +11174,7 @@
               "age": 180,
               "settled": true,
               "levels": {
-                "reservoir": 6.118013145525279,
+                "reservoir": 6.141937193044112,
                 "headrace": 4.55,
                 "millrace": 1.55,
                 "lowerBrook": -1.4
@@ -10147,9 +11274,9 @@
               ]
             },
             "waterCurrent": {
-              "active": 920,
-              "speed": 3.46,
-              "front": 222,
+              "active": 0,
+              "speed": 1.6,
+              "front": 358,
               "direction": "downstream",
               "gpu": true
             }
@@ -10203,7 +11330,7 @@
                 "frame": {
                   "action": "idle_east",
                   "index": 1,
-                  "cell": 130
+                  "cell": 128
                 }
               }
             ],
@@ -11729,14 +12856,14 @@
             101.6
           ],
           "sun": [
-            0.9597226758986482,
-            -0.2571569159648789,
-            -0.11314904302454672
+            0.8355559662535228,
+            -0.22388654638863784,
+            0.501718089771846
           ],
           "light": [
-            -207.37504083087833,
-            24.444122436839102,
-            116.1834138722092
+            -200.37781679408465,
+            22.569221906920596,
+            58.336781471674634
           ]
         },
         {
@@ -11753,14 +12880,14 @@
             101.6
           ],
           "sun": [
-            0.9898138141682508,
-            0.1303114607817567,
-            0.05733704274397295
+            0.8576307275216909,
+            0.11290922728592595,
+            0.501718089771846
           ],
           "light": [
-            -31.916756724857436,
-            13.028031470358105,
-            111.16033384695757
+            -39.525080885439365,
+            12.026376592162967,
+            153.66321852832536
           ]
         },
         {
@@ -11777,14 +12904,14 @@
             101.6
           ],
           "sun": [
-            0.6751826616182939,
-            0.6751826616182938,
-            0.2970803711120492
+            0.611669419864885,
+            0.6116694198648849,
+            0.501718089771846
           ],
           "light": [
-            -60.23356045435355,
-            62.06643954564644,
-            132.73723340008442
+            -62.891405112835926,
+            59.408594887164064,
+            153.66321852832536
           ]
         },
         {
@@ -11801,14 +12928,14 @@
             101.6
           ],
           "sun": [
-            5.604688123339978e-17,
-            0.9153150324227656,
-            0.40273861426601687
+            5.2967883854604786e-17,
+            0.8650311892618033,
+            0.501718089771846
           ],
           "light": [
             -121,
-            83.6783529180489,
-            142.24647528394152
+            83.47796297987131,
+            153.66321852832536
           ]
         },
         {
@@ -11825,14 +12952,14 @@
             101.6
           ],
           "sun": [
-            -0.8457989186321132,
-            0.4883222333525449,
-            0.21486178267511974
+            -0.7491389849665865,
+            0.4325155946309016,
+            0.501718089771846
           ],
           "light": [
-            -197.1219026768902,
-            45.249001001729034,
-            125.33756044076077
+            -192.1682035718257,
+            42.38898148993565,
+            153.66321852832536
           ]
         },
         {
@@ -11849,14 +12976,14 @@
             101.6
           ],
           "sun": [
-            -0.9898138141682508,
-            0.13031146078175712,
-            0.05733704274397314
+            -0.8576307275216909,
+            0.11290922728592631,
+            0.501718089771846
           ],
           "light": [
-            -210.08324327514256,
-            13.028031470358142,
-            111.16033384695758
+            -202.47491911456063,
+            12.026376592163,
+            153.66321852832536
           ]
         },
         {
@@ -11873,14 +13000,14 @@
             101.6
           ],
           "sun": [
-            -0.9898138141682508,
-            -0.1303114607817569,
-            -0.057337042743973034
+            -0.8576307275216909,
+            -0.11290922728592612,
+            0.501718089771846
           ],
           "light": [
-            -31.916756724857436,
-            13.02803147035812,
-            111.16033384695757
+            -39.525080885439365,
+            12.026376592162983,
+            58.336781471674634
           ]
         },
         {
@@ -11897,14 +13024,14 @@
             101.6
           ],
           "sun": [
-            -0.23819853808951802,
-            -0.8889690464387122,
-            -0.39114638043303335
+            -0.22388654638863772,
+            -0.8355559662535228,
+            0.501718089771846
           ],
           "light": [
-            -99.56213157194338,
-            81.30721417948409,
-            141.203174238973
+            -99.73077809307941,
+            80.67781679408466,
+            58.336781471674634
           ]
         }
       ],
@@ -11919,106 +13046,111 @@
       "scenarios": [
         {
           "name": "bridge",
-          "fps": 139.3563184001044,
-          "p95FrameMs": 8.400000005960464,
-          "meanRenderCpuMs": 5.253309481152481,
-          "ticks": 559,
-          "calls": 1281.432915921288,
-          "triangles": 4644249.05724508,
+          "fps": 70.21313810260075,
+          "p95FrameMs": 16.19999998807907,
+          "meanRenderCpuMs": 4.00427046248497,
+          "ticks": 281,
+          "calls": 1014.6049822064057,
+          "triangles": 4265886.370106761,
           "buffer": [
             1440,
             900
           ],
           "scale": 1,
+          "tier": 2,
           "shadow": [
-            2048,
-            2048
+            1536,
+            1536
           ],
           "programs": 175,
           "worldSerial": 4
         },
         {
           "name": "square",
-          "fps": 142.4572628215781,
-          "p95FrameMs": 7.800000011920929,
-          "meanRenderCpuMs": 4.283157896211272,
-          "ticks": 570,
-          "calls": 711.8035087719298,
-          "triangles": 4138075.50877193,
+          "fps": 71.98740220482868,
+          "p95FrameMs": 14.800000011920929,
+          "meanRenderCpuMs": 3.654166666790843,
+          "ticks": 288,
+          "calls": 498.7673611111111,
+          "triangles": 3994424.3055555555,
           "buffer": [
             1440,
             900
           ],
           "scale": 1,
+          "tier": 2,
           "shadow": [
-            2048,
-            2048
+            1536,
+            1536
           ],
           "programs": 177,
           "worldSerial": 5
         },
         {
           "name": "forest",
-          "fps": 143.95681295546984,
-          "p95FrameMs": 7.300000011920929,
-          "meanRenderCpuMs": 1.7642361111421552,
-          "ticks": 576,
-          "calls": 455.31597222222223,
-          "triangles": 2923777.513888889,
+          "fps": 71.96941299915363,
+          "p95FrameMs": 15,
+          "meanRenderCpuMs": 1.579513888599144,
+          "ticks": 288,
+          "calls": 262.7916666666667,
+          "triangles": 2542287.3055555555,
           "buffer": [
             1440,
             900
           ],
           "scale": 1,
+          "tier": 2,
           "shadow": [
-            2048,
-            2048
+            1536,
+            1536
           ],
           "programs": 180,
           "worldSerial": 6
         },
         {
           "name": "overworld",
-          "fps": 144.0267585236445,
-          "p95FrameMs": 7.800000011920929,
-          "meanRenderCpuMs": 4.932409012493269,
-          "ticks": 577,
-          "calls": 781.9133448873483,
-          "triangles": 5117861.840554593,
+          "fps": 71.96042176770608,
+          "p95FrameMs": 14.800000011920929,
+          "meanRenderCpuMs": 3.5472222207528024,
+          "ticks": 288,
+          "calls": 401.43055555555554,
+          "triangles": 4938191.777777778,
           "buffer": [
             1440,
             900
           ],
           "scale": 1,
+          "tier": 2,
           "shadow": [
-            2048,
-            2048
+            1536,
+            1536
           ],
           "programs": 199,
           "worldSerial": 7
         },
         {
           "name": "shop",
-          "fps": 143.93522914752705,
-          "p95FrameMs": 7.200000017881393,
-          "meanRenderCpuMs": 0.7489583334471617,
-          "ticks": 576,
-          "calls": 124.11111111111111,
-          "triangles": 28748.222222222223,
+          "fps": 71.99640018020555,
+          "p95FrameMs": 15.199999988079071,
+          "meanRenderCpuMs": 0.8444444440926114,
+          "ticks": 288,
+          "calls": 112.43055555555556,
+          "triangles": 28724.86111111111,
           "buffer": [
             1440,
             900
           ],
           "scale": 1,
+          "tier": 2,
           "shadow": [
-            2048,
-            2048
+            1536,
+            1536
           ],
           "programs": 201,
           "worldSerial": 8
         }
       ],
-      "loadMs": 11671,
+      "loadMs": 12650,
       "device": {
         "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
         "software": false
@@ -12031,341 +13163,350 @@
       "phases": [
         {
           "name": "warm-town",
-          "seconds": 30.01009999999404,
-          "fps": 131.08919996936967,
+          "seconds": 30.00280000001192,
+          "fps": 72.92652685746432,
           "frame": {
-            "mean": 7.627917620143362,
-            "p95": 9.5,
-            "p99": 10.699999988079071,
-            "max": 13.200000017881393
+            "mean": 13.716140832184765,
+            "p95": 14.5,
+            "p99": 15.100000023841858,
+            "max": 45
           },
           "renderCPU": {
-            "mean": 5.890950686278899,
-            "p95": 7.5,
-            "p99": 8.200000017881393,
-            "max": 10
+            "mean": 4.763985374550824,
+            "p95": 5.9000000059604645,
+            "p99": 6.299999982118607,
+            "max": 12.399999976158142
           },
           "scale": 1,
+          "tier": 2,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.5819135459449347,
-          "fx": 24,
+          "gpuMs": 5.051164088670338,
+          "fx": 12,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 45, 39, 1770, 11201, 75.91",
-            "P0, 45, 34, 1860, 11201, 77.25",
-            "P0, 46, 41, 1710, 11201, 73.89",
-            "P0, 45, 33, 1725, 11201, 75.20",
-            "P0, 46, 39, 1860, 11201, 80.41"
+            "P3, 44, 32, 1140, 5001, 45.48",
+            "P3, 44, 37, 900, 5001, 44.87",
+            "P3, 43, 39, 870, 5001, 44.21",
+            "P3, 43, 38, 885, 5001, 44.75",
+            "P3, 43, 40, 885, 5001, 44.17"
           ]
         },
         {
           "name": "after-travel-and-battle-0",
-          "seconds": 10.00930000001192,
-          "fps": 143.26676191125176,
+          "seconds": 10.001,
+          "fps": 71.19288071192881,
           "frame": {
-            "mean": 6.957990230294432,
-            "p95": 7.799999982118607,
-            "p99": 8.300000011920929,
-            "max": 13.800000011920929
+            "mean": 13.908438818531868,
+            "p95": 14.5,
+            "p99": 15.400000005960464,
+            "max": 18.899999976158142
           },
           "renderCPU": {
-            "mean": 5.0435146443140555,
-            "p95": 5.799999982118607,
-            "p99": 6.199999988079071,
-            "max": 6.699999988079071
+            "mean": 4.448735955935181,
+            "p95": 5.199999988079071,
+            "p99": 5.5999999940395355,
+            "max": 8.800000011920929
           },
           "scale": 1,
+          "tier": 2,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.3275934696779115,
-          "fx": 17,
+          "gpuMs": 5.179751032931938,
+          "fx": 14,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 45, 39, 1920, 11201, 81.34",
-            "P0, 46, 40, 1890, 11201, 82.00"
+            "P3, 42, 34, 990, 5001, 44.62",
+            "P3, 42, 38, 855, 5001, 43.72"
           ]
         },
         {
           "name": "after-travel-and-battle-1",
-          "seconds": 10.011699999988078,
-          "fps": 143.03265179756735,
+          "seconds": 10.001299999982118,
+          "fps": 71.59069321001071,
           "frame": {
-            "mean": 6.970160726772831,
-            "p95": 7.799999982118607,
-            "p99": 8.400000005960464,
-            "max": 9.800000011920929
+            "mean": 13.891468531476868,
+            "p95": 14.5,
+            "p99": 15.100000023841858,
+            "max": 15.599999994039536
           },
           "renderCPU": {
-            "mean": 5.142877095071963,
-            "p95": 5.9000000059604645,
-            "p99": 6.4000000059604645,
-            "max": 8
+            "mean": 4.05446927378464,
+            "p95": 4.700000017881393,
+            "p99": 4.9000000059604645,
+            "max": 7.9000000059604645
           },
           "scale": 1,
+          "tier": 2,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.680214385115706,
-          "fx": 18,
+          "gpuMs": 4.255593442559747,
+          "fx": 11,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 45, 38, 1950, 11201, 81.53",
-            "P0, 45, 39, 1920, 11201, 82.25"
+            "P3, 42, 34, 975, 5001, 43.88",
+            "P3, 42, 39, 870, 5001, 43.37"
           ]
         },
         {
           "name": "after-travel-and-battle-2",
-          "seconds": 10.007200000017882,
-          "fps": 141.5980494041758,
+          "seconds": 10.000200000017882,
+          "fps": 71.49857002847159,
           "frame": {
-            "mean": 7.040466101703334,
-            "p95": 7.9000000059604645,
-            "p99": 8.400000005960464,
-            "max": 9.700000017881393
+            "mean": 13.8952380952214,
+            "p95": 14.5,
+            "p99": 15.100000023841858,
+            "max": 16.099999994039536
           },
           "renderCPU": {
-            "mean": 5.224206069046625,
-            "p95": 6,
-            "p99": 6.4000000059604645,
-            "max": 7.800000011920929
+            "mean": 4.164195803870688,
+            "p95": 4.9000000059604645,
+            "p99": 5.300000011920929,
+            "max": 9.099999994039536
           },
           "scale": 1,
+          "tier": 2,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.456897160269059,
-          "fx": 17,
+          "gpuMs": 4.871509631298398,
+          "fx": 12,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 45, 31, 2505, 11201, 86.04",
-            "P0, 45, 37, 1935, 11201, 82.13"
+            "P3, 41, 36, 915, 5001, 44.71",
+            "P3, 42, 38, 870, 5001, 44.52"
           ]
         },
         {
           "name": "after-travel-and-battle-3",
-          "seconds": 10.0095,
-          "fps": 142.66446875468304,
+          "seconds": 10.0005,
+          "fps": 71.49642517874106,
           "frame": {
-            "mean": 6.988297126847877,
-            "p95": 7.799999982118607,
-            "p99": 8.300000011920929,
-            "max": 9.400000005960464
+            "mean": 13.89117647060493,
+            "p95": 14.5,
+            "p99": 15.099999994039536,
+            "max": 15.800000011920929
           },
           "renderCPU": {
-            "mean": 5.213795518006931,
-            "p95": 5.9000000059604645,
-            "p99": 6.300000011920929,
-            "max": 7.299999982118607
+            "mean": 4.036783216966616,
+            "p95": 4.600000023841858,
+            "p99": 5.0999999940395355,
+            "max": 9.099999994039536
           },
           "scale": 1,
+          "tier": 2,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.435243814771773,
-          "fx": 15,
+          "gpuMs": 5.364775652246778,
+          "fx": 9,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 45, 38, 1950, 11201, 83.47",
-            "P0, 46, 38, 2040, 11201, 83.80"
+            "P3, 41, 32, 1005, 5001, 44.52"
           ]
         },
         {
           "name": "town-after-thirty-minutes",
-          "seconds": 45.0075,
-          "fps": 140.9098483586069,
+          "seconds": 45.00040000000596,
+          "fps": 71.5771415365102,
           "frame": {
-            "mean": 7.096830152972717,
-            "p95": 8.199999988079071,
-            "p99": 8.899999976158142,
-            "max": 24.19999998807907
+            "mean": 13.968633540372672,
+            "p95": 14.5,
+            "p99": 15.100000023841858,
+            "max": 47.099999994039536
           },
           "renderCPU": {
-            "mean": 5.254935351358118,
-            "p95": 6.199999988079071,
-            "p99": 6.699999988079071,
-            "max": 8.900000005960464
+            "mean": 4.097981993140215,
+            "p95": 4.799999982118607,
+            "p99": 5.0999999940395355,
+            "max": 6.200000017881393
           },
           "scale": 1,
+          "tier": 2,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.6853653115661045,
-          "fx": 15,
+          "gpuMs": 5.240455736445186,
+          "fx": 7,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 43, 38, 2115, 11201, 85.62",
-            "P0, 43, 37, 1950, 11201, 81.98",
-            "P0, 44, 40, 1995, 11201, 86.42",
-            "P0, 44, 34, 2040, 11201, 84.88",
-            "P0, 45, 38, 2025, 11201, 85.86",
-            "P0, 45, 39, 2070, 11201, 88.39",
-            "P0, 45, 39, 2085, 11201, 88.49",
-            "P0, 45, 38, 2100, 11201, 88.79"
+            "P3, 41, 33, 1125, 5001, 47.09",
+            "P3, 41, 40, 960, 5001, 46.74",
+            "P3, 41, 39, 930, 5001, 46.54",
+            "P3, 41, 38, 945, 5001, 46.37",
+            "P3, 41, 37, 945, 5001, 46.81",
+            "P3, 41, 40, 930, 5001, 46.48",
+            "P3, 41, 40, 930, 5001, 46.30",
+            "P3, 41, 37, 990, 5001, 47.18"
           ]
         },
         {
           "name": "overworld-extended",
-          "seconds": 60.00140000000596,
-          "fps": 143.92997496723646,
+          "seconds": 60.00059999999404,
+          "fps": 71.96594700720374,
           "frame": {
-            "mean": 6.947620150552158,
-            "p95": 8,
-            "p99": 8.200000017881393,
-            "max": 9.299999982118607
+            "mean": 13.895320824645365,
+            "p95": 15,
+            "p99": 15.800000011920929,
+            "max": 18.299999982118607
           },
           "renderCPU": {
-            "mean": 3.792079666478455,
-            "p95": 4.4000000059604645,
-            "p99": 4.699999988079071,
-            "max": 6.100000023841858
+            "mean": 2.3826540062318746,
+            "p95": 3,
+            "p99": 3.300000011920929,
+            "max": 4.0999999940395355
           },
           "scale": 1,
+          "tier": 2,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 5.73283397644974,
-          "fx": 22,
+          "gpuMs": 3.7263211289973857,
+          "fx": 8,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 46, 39, 1935, 11201, 87.53",
-            "P0, 46, 38, 1905, 11201, 87.23",
-            "P0, 47, 38, 1920, 11201, 86.43",
-            "P0, 46, 41, 1920, 11201, 86.35",
-            "P0, 46, 40, 1905, 11201, 86.01",
-            "P0, 47, 39, 1875, 11201, 85.38",
-            "P0, 47, 39, 1815, 11201, 84.16",
-            "P0, 47, 40, 2175, 11201, 84.95",
-            "P0, 48, 40, 1845, 11201, 86.01",
-            "P0, 48, 39, 1875, 11201, 86.90",
-            "P0, 47, 40, 1875, 11201, 87.08"
+            "P3, 41, 30, 1155, 5001, 48.61",
+            "P3, 42, 30, 1230, 5001, 50.78",
+            "P0, 42, 19, 2505, 11201, 55.33",
+            "P3, 41, 34, 975, 5001, 47.88",
+            "P3, 42, 30, 1140, 5001, 48.34",
+            "P3, 43, 18, 1395, 5001, 62.78",
+            "P3, 42, 23, 1725, 5001, 46.46",
+            "P3, 42, 26, 1290, 5001, 57.53",
+            "P0, 43, 16, 2505, 11201, 53.72",
+            "P3, 42, 38, 945, 5001, 47.22",
+            "P3, 42, 30, 1050, 5001, 47.65"
           ]
         },
         {
           "name": "storm-overworld-extended",
-          "seconds": 60.00109999999404,
-          "fps": 143.79736371501284,
+          "seconds": 60.00069999998808,
+          "fps": 71.93249412091622,
           "frame": {
-            "mean": 6.954097600556393,
-            "p95": 7.9000000059604645,
-            "p99": 8.200000017881393,
-            "max": 55.400000005960464
+            "mean": 13.901853997682503,
+            "p95": 15,
+            "p99": 15.600000023841858,
+            "max": 45.099999994039536
           },
           "renderCPU": {
-            "mean": 3.5707579971630925,
-            "p95": 4.300000011920929,
-            "p99": 4.699999988079071,
-            "max": 10.800000011920929
+            "mean": 2.370412418737911,
+            "p95": 2.9000000059604645,
+            "p99": 3.4000000059604645,
+            "max": 6.5
           },
           "scale": 1,
+          "tier": 2,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 4.4162955255944585,
-          "fx": 21,
+          "gpuMs": 4.136007470138216,
+          "fx": 7,
           "weather": "Thunderstorm",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 48, 40, 1845, 11201, 86.21",
-            "P0, 48, 39, 1875, 11201, 86.57",
-            "P0, 48, 40, 1875, 11201, 86.65",
-            "P0, 48, 40, 1875, 11201, 86.89",
-            "P0, 48, 38, 1905, 11201, 87.29",
-            "P0, 48, 38, 1905, 11201, 87.19",
-            "P0, 48, 39, 1890, 11201, 87.11",
-            "P0, 48, 40, 1890, 11201, 83.88",
-            "P0, 49, 39, 1890, 11201, 86.86",
-            "P0, 49, 40, 1905, 11201, 85.88",
-            "P0, 48, 39, 1905, 11201, 86.32"
+            "P0, 43, 17, 2505, 11201, 56.46",
+            "P3, 42, 35, 930, 5001, 47.21",
+            "P3, 42, 30, 1080, 5001, 46.48",
+            "P3, 42, 27, 1215, 5001, 51.06",
+            "P0, 44, 18, 2505, 11201, 59.42",
+            "P3, 42, 34, 915, 5001, 46.40",
+            "P3, 42, 31, 1005, 5001, 47.27",
+            "P3, 42, 31, 1185, 5001, 48.05",
+            "P0, 44, 15, 2805, 11201, 78.72",
+            "P3, 42, 34, 930, 5001, 46.46",
+            "P3, 42, 32, 990, 5001, 46.45"
           ]
         },
         {
           "name": "continuous-battle-skills",
-          "seconds": 60.01840000000596,
-          "fps": 136.09159857642305,
+          "seconds": 60.00240000000596,
+          "fps": 71.88045811500159,
           "frame": {
-            "mean": 7.346308313947829,
-            "p95": 10.799999982118607,
-            "p99": 14.5,
-            "max": 59.400000005960464
+            "mean": 13.906354359923023,
+            "p95": 17.700000017881393,
+            "p99": 18.299999982118607,
+            "max": 44.599999994039536
           },
           "renderCPU": {
-            "mean": 4.304187071410233,
-            "p95": 5.699999988079071,
-            "p99": 8.599999994039536,
-            "max": 12.400000005960464
+            "mean": 3.6226060749095303,
+            "p95": 4.199999988079071,
+            "p99": 4.5,
+            "max": 7.299999982118607
           },
           "scale": 1,
+          "tier": 2,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.4044625396590695,
+          "gpuMs": 5.110328783401897,
           "fx": 0,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 49, 39, 2340, 11201, 96.91",
-            "P0, 50, 38, 2325, 11201, 97.18",
-            "P0, 55, 55, 2775, 11201, 172.09",
-            "P0, 58, 62, 2775, 11201, 183.36",
-            "P0, 55, 44, 2775, 11201, 139.62",
-            "P0, 55, 40, 2775, 11201, 140.01",
-            "P0, 55, 43, 2775, 11201, 141.49",
-            "P0, 56, 44, 2775, 11201, 141.13",
-            "P0, 57, 43, 2775, 11201, 141.59",
-            "P0, 57, 46, 2775, 11201, 142.89",
-            "P0, 57, 45, 2775, 11201, 140.06"
+            "P3, 43, 36, 1275, 5001, 53.71",
+            "P3, 42, 38, 1110, 5001, 52.43",
+            "P3, 43, 42, 1110, 5001, 52.62",
+            "P3, 43, 36, 1110, 5001, 52.51",
+            "P3, 43, 39, 1095, 5001, 53.24",
+            "P3, 42, 37, 1110, 5001, 53.26",
+            "P3, 42, 41, 1095, 5001, 52.71",
+            "P3, 42, 39, 1110, 5001, 52.55",
+            "P3, 42, 40, 1095, 5001, 52.26",
+            "P3, 43, 39, 1110, 5001, 52.58",
+            "P3, 43, 32, 1140, 5001, 52.99"
           ]
         },
         {
           "name": "final-town",
-          "seconds": 30.00329999998212,
-          "fps": 141.98438171809562,
+          "seconds": 30.001,
+          "fps": 71.96426785773808,
           "frame": {
-            "mean": 7.043202629725288,
-            "p95": 8,
-            "p99": 9.299999982118607,
-            "max": 14.600000023841858
+            "mean": 13.894763670067636,
+            "p95": 14.5,
+            "p99": 15.100000023841858,
+            "max": 15.800000011920929
           },
           "renderCPU": {
-            "mean": 5.037723004699033,
-            "p95": 5.9000000059604645,
-            "p99": 6.9000000059604645,
-            "max": 12.400000005960464
+            "mean": 4.236961556576976,
+            "p95": 4.9000000059604645,
+            "p99": 5.199999988079071,
+            "max": 7.699999988079071
           },
           "scale": 1,
+          "tier": 2,
           "buffer": [
             1920,
             1080
           ],
-          "gpuMs": 3.58254521172642,
-          "fx": 23,
+          "gpuMs": 5.210300767572452,
+          "fx": 11,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P0, 51, 40, 1830, 11201, 81.41",
-            "P0, 51, 39, 1875, 11201, 80.88",
-            "P0, 54, 38, 2790, 11201, 121.13",
-            "P0, 55, 40, 2760, 11201, 116.15",
-            "P0, 54, 40, 2715, 11201, 115.56"
+            "P3, 42, 35, 990, 5001, 44.83",
+            "P3, 42, 39, 855, 5001, 43.98",
+            "P3, 41, 39, 870, 5001, 43.87",
+            "P3, 42, 39, 840, 5001, 43.60",
+            "P3, 42, 40, 840, 5001, 43.38"
           ]
         }
       ],
@@ -12373,104 +13514,111 @@
         {
           "name": "warm",
           "scene": "brookstead",
-          "heap": 1044526728,
-          "geometries": 2408,
-          "textures": 92,
-          "programs": 207,
+          "heap": 901019855,
+          "geometries": 1519,
+          "textures": 97,
+          "programs": 206,
           "keepers": 78,
           "queries": 0,
-          "fx": 24,
+          "fx": 12,
           "nav": 0,
-          "roadCache": 50000
+          "roadCache": 50000,
+          "liveRoadCache": 12000
         },
         {
           "name": "round-0",
           "scene": "brookstead",
-          "heap": 1298850877,
-          "geometries": 2397,
-          "textures": 92,
+          "heap": 1104586871,
+          "geometries": 1521,
+          "textures": 97,
           "programs": 210,
           "keepers": 80,
           "queries": 0,
-          "fx": 17,
+          "fx": 14,
           "nav": 0,
-          "roadCache": 50000
+          "roadCache": 50000,
+          "liveRoadCache": 12000
         },
         {
           "name": "round-1",
           "scene": "brookstead",
-          "heap": 1299722253,
-          "geometries": 2397,
-          "textures": 92,
+          "heap": 1104939243,
+          "geometries": 1518,
+          "textures": 97,
           "programs": 212,
           "keepers": 81,
           "queries": 0,
-          "fx": 18,
+          "fx": 11,
           "nav": 0,
-          "roadCache": 50000
+          "roadCache": 50000,
+          "liveRoadCache": 12000
         },
         {
           "name": "round-2",
           "scene": "brookstead",
-          "heap": 1301040193,
-          "geometries": 2398,
-          "textures": 92,
+          "heap": 1106391283,
+          "geometries": 1518,
+          "textures": 97,
           "programs": 214,
           "keepers": 82,
-          "queries": 0,
-          "fx": 17,
+          "queries": 1,
+          "fx": 12,
           "nav": 0,
-          "roadCache": 50000
+          "roadCache": 50000,
+          "liveRoadCache": 12000
         },
         {
           "name": "round-3",
           "scene": "brookstead",
-          "heap": 1302110341,
-          "geometries": 2397,
-          "textures": 92,
+          "heap": 1107437639,
+          "geometries": 1514,
+          "textures": 97,
           "programs": 216,
           "keepers": 83,
           "queries": 0,
-          "fx": 15,
+          "fx": 9,
           "nav": 0,
-          "roadCache": 50000
+          "roadCache": 50000,
+          "liveRoadCache": 12000
         },
         {
           "name": "after-thirty-minutes",
           "scene": "brookstead",
-          "heap": 1302118039,
-          "geometries": 2397,
-          "textures": 92,
+          "heap": 1106867169,
+          "geometries": 1514,
+          "textures": 97,
           "programs": 216,
           "keepers": 83,
           "queries": 0,
-          "fx": 15,
+          "fx": 7,
           "nav": 0,
-          "roadCache": 50000
+          "roadCache": 50000,
+          "liveRoadCache": 12000
         },
         {
           "name": "final",
           "scene": "brookstead",
-          "heap": 1301665978,
-          "geometries": 2410,
-          "textures": 92,
+          "heap": 1106936315,
+          "geometries": 1521,
+          "textures": 97,
           "programs": 218,
           "keepers": 84,
           "queries": 0,
-          "fx": 23,
+          "fx": 11,
           "nav": 0,
-          "roadCache": 50000
+          "roadCache": 50000,
+          "liveRoadCache": 12000
         }
       ],
       "acceleratedSeconds": 1800,
-      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
       "growth": {
-        "heap": 1943725,
-        "geometries": 13,
+        "heap": 1997072,
+        "geometries": 3,
         "textures": 0,
         "programs": 6
       },
-      "scope": "Native headless Chrome with Windows occlusion detection disabled at 1920x1080 on recorded device; uncapped monitor cadence, four repeated travel/combat rounds, thirty simulated minutes plus sustained real-time town, overworld, storm and skill battles. Garbage collection is test-only for retained-memory comparison.",
+      "scope": "Native headless Chrome with Windows occlusion detection disabled at 1920x1080 on recorded device; monitor-divisor frame pacing, four repeated travel/combat rounds, thirty simulated minutes plus sustained real-time town, overworld, storm and skill battles. Garbage collection is test-only for retained-memory comparison.",
       "pass": true,
       "errors": []
     },
@@ -12479,39 +13627,39 @@
         "width": 1366,
         "height": 768,
         "dpr": 2,
-        "fps": 143.97984282234816,
-        "p95": 7.5999999940395355,
-        "p99": 8,
+        "fps": 71.79138503388153,
+        "p95": 14.900000005960464,
+        "p99": 15.600000023841858,
         "buffer": [
-          1708,
-          960
+          2049,
+          1152
         ],
-        "shadow": 2048,
-        "reflection": 820,
+        "shadow": 1536,
+        "reflection": 768,
         "resizes": 0,
         "scale": 1,
-        "gpu": 3.3648375954400653,
+        "gpu": 4.44041994950446,
         "shadowSpan": [
           168,
-          96
+          80
         ]
       },
       {
         "width": 1024,
         "height": 768,
         "dpr": 2,
-        "fps": 143.95105664108524,
-        "p95": 7.5999999940395355,
-        "p99": 8.200000017881393,
+        "fps": 71.94100837321972,
+        "p95": 15,
+        "p99": 15.600000023841858,
         "buffer": [
-          1024,
-          768
+          1536,
+          1152
         ],
         "shadow": 1536,
-        "reflection": 614,
+        "reflection": 768,
         "resizes": 0,
         "scale": 1,
-        "gpu": 2.8468460951526207,
+        "gpu": 3.556774831825842,
         "shadowSpan": [
           160,
           80
@@ -12521,18 +13669,18 @@
         "width": 800,
         "height": 600,
         "dpr": 2,
-        "fps": 143.9424230307877,
-        "p95": 7.5999999940395355,
-        "p99": 8.099999994039536,
+        "fps": 71.52990069765738,
+        "p95": 15.099999994039536,
+        "p99": 17,
         "buffer": [
-          800,
-          600
+          1200,
+          900
         ],
-        "shadow": 1024,
-        "reflection": 480,
+        "shadow": 1536,
+        "reflection": 768,
         "resizes": 0,
         "scale": 1,
-        "gpu": 2.6922691612109455,
+        "gpu": 1.948940998380564,
         "shadowSpan": [
           160,
           80
@@ -12542,47 +13690,47 @@
         "width": 390,
         "height": 844,
         "dpr": 2,
-        "fps": 143.94817865534088,
-        "p95": 7.5,
-        "p99": 8.199999988079071,
+        "fps": 71.5928407159284,
+        "p95": 15.5,
+        "p99": 19.299999982118607,
         "buffer": [
-          390,
-          844
+          585,
+          1266
         ],
-        "shadow": 1024,
-        "reflection": 320,
+        "shadow": 1536,
+        "reflection": 768,
         "resizes": 0,
         "scale": 1,
-        "gpu": 3.197278428376372,
+        "gpu": 3.9223929925690197,
         "shadowSpan": [
-          144,
-          56
+          288,
+          120
         ]
       },
       {
         "width": 844,
         "height": 390,
         "dpr": 2,
-        "fps": 143.86335973855478,
-        "p95": 7.799999982118607,
-        "p99": 8.399999976158142,
+        "fps": 71.56278735023663,
+        "p95": 15,
+        "p99": 18.700000017881393,
         "buffer": [
-          844,
-          390
+          1266,
+          585
         ],
-        "shadow": 1024,
-        "reflection": 506,
+        "shadow": 1536,
+        "reflection": 768,
         "resizes": 0,
         "scale": 1,
-        "gpu": 2.6616227172882008,
+        "gpu": 3.01088956848865,
         "shadowSpan": [
-          176,
-          120
+          184,
+          104
         ]
       }
     ],
     "interiorSoak": {
-      "sha256": "48cbc6a8ff76db97b2dea7e1eda7eb45b4d36ec590dafdfeb1422daf1c8cff83",
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
       "loading": [
         {
           "id": "entrance",
@@ -13091,23 +14239,23 @@
         }
       ],
       "before": {
-        "heap": 238728492,
-        "geometries": 1176,
-        "textures": 77,
-        "programs": 176,
+        "heap": 214513756,
+        "geometries": 640,
+        "textures": 81,
+        "programs": 177,
         "cache": 425
       },
       "after": {
-        "heap": 239577024,
-        "geometries": 1176,
-        "textures": 77,
-        "programs": 176,
+        "heap": 214130068,
+        "geometries": 642,
+        "textures": 81,
+        "programs": 177,
         "cache": 425
       },
       "pacing": {
-        "fps": 143.9368410918019,
-        "p95": 7,
-        "max": 7.100000000002183,
+        "fps": 142.5166825548141,
+        "p95": 7.600000000002183,
+        "max": 28.69999999999709,
         "buffer": [
           1920,
           1080
@@ -13116,7 +14264,236 @@
       "errors": [],
       "pass": true
     },
-    "scope": "Native headless Chrome with Windows occlusion detection disabled at 1920x1080 on recorded device; uncapped monitor cadence, four repeated travel/combat rounds, thirty simulated minutes plus sustained real-time town, overworld, storm and skill battles. Garbage collection is test-only for retained-memory comparison."
+    "scope": "Native headless Chrome with Windows occlusion detection disabled at 1920x1080 on recorded device; monitor-divisor frame pacing, four repeated travel/combat rounds, thirty simulated minutes plus sustained real-time town, overworld, storm and skill battles. Garbage collection is test-only for retained-memory comparison.",
+    "deviceSizes": {
+      "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae",
+      "samples": [
+        {
+          "name": "desktop",
+          "w": 1920,
+          "h": 1080,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 2,
+          "scale": 1,
+          "frameCount": 432,
+          "seconds": 6,
+          "fps": 72,
+          "cpu": 4.344572549812897,
+          "gpu": 3.866645011529363,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "resizes": 2,
+          "allocations": 6,
+          "programs": 173,
+          "geometry": 1514,
+          "textures": 91
+        },
+        {
+          "name": "desktop",
+          "w": 1366,
+          "h": 768,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 2,
+          "scale": 1,
+          "frameCount": 426,
+          "seconds": 6,
+          "fps": 71,
+          "cpu": 4.22661639293249,
+          "gpu": 2.9403288894176423,
+          "buffer": [
+            1366,
+            768
+          ],
+          "resizes": 3,
+          "allocations": 6,
+          "programs": 173,
+          "geometry": 1512,
+          "textures": 91
+        },
+        {
+          "name": "desktop",
+          "w": 960,
+          "h": 540,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 2,
+          "scale": 1,
+          "frameCount": 427,
+          "seconds": 6,
+          "fps": 71.16666666666667,
+          "cpu": 4.289088365499242,
+          "gpu": 3.455069405586105,
+          "buffer": [
+            960,
+            540
+          ],
+          "resizes": 4,
+          "allocations": 6,
+          "programs": 173,
+          "geometry": 1514,
+          "textures": 91
+        },
+        {
+          "name": "desktop",
+          "w": 800,
+          "h": 600,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 2,
+          "scale": 1,
+          "frameCount": 432,
+          "seconds": 6,
+          "fps": 72,
+          "cpu": 3.11457920873523,
+          "gpu": 3.244081845598457,
+          "buffer": [
+            800,
+            600
+          ],
+          "resizes": 5,
+          "allocations": 6,
+          "programs": 173,
+          "geometry": 1514,
+          "textures": 91
+        },
+        {
+          "name": "desktop",
+          "w": 1280,
+          "h": 720,
+          "throttle": 4,
+          "dpr": 1,
+          "tier": 0,
+          "scale": 0.6,
+          "frameCount": 238,
+          "seconds": 6,
+          "fps": 39.666666666666664,
+          "cpu": 21.09140260292756,
+          "gpu": 7.6122794589703835,
+          "buffer": [
+            645,
+            363
+          ],
+          "resizes": 12,
+          "allocations": 11,
+          "programs": 173,
+          "geometry": 1508,
+          "textures": 91
+        },
+        {
+          "name": "phone-high-dpi",
+          "w": 390,
+          "h": 844,
+          "throttle": 1,
+          "dpr": 3,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 432,
+          "seconds": 6,
+          "fps": 72,
+          "cpu": 3.711172323438865,
+          "gpu": 1.8683084156309844,
+          "buffer": [
+            585,
+            1266
+          ],
+          "resizes": 2,
+          "allocations": 5,
+          "programs": 173,
+          "geometry": 1494,
+          "textures": 91
+        },
+        {
+          "name": "phone-high-dpi",
+          "w": 844,
+          "h": 390,
+          "throttle": 1,
+          "dpr": 3,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 428,
+          "seconds": 6,
+          "fps": 71.33333333333333,
+          "cpu": 4.37007821470902,
+          "gpu": 2.3741421118168304,
+          "buffer": [
+            1266,
+            585
+          ],
+          "resizes": 3,
+          "allocations": 5,
+          "programs": 173,
+          "geometry": 1503,
+          "textures": 91
+        },
+        {
+          "name": "phone-high-dpi",
+          "w": 390,
+          "h": 844,
+          "throttle": 4,
+          "dpr": 3,
+          "tier": 0,
+          "scale": 0.6,
+          "frameCount": 273,
+          "seconds": 6,
+          "fps": 45.5,
+          "cpu": 16.71993686777168,
+          "gpu": 6.729556123011191,
+          "buffer": [
+            329,
+            712
+          ],
+          "resizes": 10,
+          "allocations": 7,
+          "programs": 173,
+          "geometry": 1494,
+          "textures": 90
+        }
+      ],
+      "errors": [],
+      "desktopResize": {
+        "cold": {
+          "allocations": 11,
+          "geometries": 1510,
+          "textures": 91
+        },
+        "before": {
+          "allocations": 11,
+          "geometries": 1510,
+          "textures": 91
+        },
+        "after": {
+          "allocations": 11,
+          "geometries": 1510,
+          "textures": 91
+        },
+        "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
+        "pass": true
+      },
+      "phone-high-dpiResize": {
+        "cold": {
+          "allocations": 7,
+          "geometries": 1493,
+          "textures": 90
+        },
+        "before": {
+          "allocations": 7,
+          "geometries": 1500,
+          "textures": 91
+        },
+        "after": {
+          "allocations": 7,
+          "geometries": 1500,
+          "textures": 91
+        },
+        "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
+        "pass": true
+      },
+      "pass": true
+    }
   },
   "graphics": {
     "sceneSamples": 4,
@@ -13199,6 +14576,22 @@
     "fittedArchitecture": true
   },
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.9",
+      "date": "October 30, 2026",
+      "title": "Warmer light, steadier frames, a journey in your hand",
+      "items": [
+        "Rebalanced the continuous solar cycle with amber dawn and golden hour, clear midday, readable blue moonlight, glowing windows and warm light reaching nearby surfaces across the scene.",
+        "Added depth-aware lens focus that keeps the party and playable middle ground sharp, with a consistent blur radius across display densities.",
+        "Extended meadow coverage to 185 metres in locations and 230 metres on the overworld, with lower-detail distant foliage and conservative spatial visibility.",
+        "Coalesced window and orientation changes, removed resolution-dependent shadow-map thrashing and kept shadow, reflection and scene buffers within stable budgets.",
+        "Added CPU/GPU-aware detail tiers and render scaling with slow recovery, refresh-divisor pacing and fixed light slots to avoid compiling a new lighting variant during attacks.",
+        "Character textures now upload only the current native frame on an individual canvas, preserving the authored pixels, frame borders, facing and separate character sizes.",
+        "Enlarged foliage batches, cached bounded live road queries and tightened scene resource cleanup for repeated travel and extended play.",
+        "Rebuilt compact portrait and landscape layouts with journey shortcuts, expandable objectives, compact party cards, a touch joystick, sprint toggle and interaction button. Touch cancellation clears held movement.",
+        "Added larger separated touch targets for enemy selection and kept the full battle in frame in portrait mode. Strengthened pooled attack lights and highlight bloom so abilities illuminate the actual environment."
+      ]
+    },
     {
       "version": "Alpha Version 1.8",
       "date": "October 30, 2026",

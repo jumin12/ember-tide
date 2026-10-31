@@ -35,7 +35,7 @@ mergeGroup=function(group){
 // Per-instance masks, wind and building ownership remain independent.
 buildPlants=function(){
  const card=sharedGeo.card??=new THREE.PlaneGeometry(1,1,1,3);perf.plants=[];
- const cellSize=32,make=(matrices,key,leaf=false)=>{const cells=new Map();matrices.forEach((m,index)=>{const e=m.elements,k=Math.floor(e[12]/cellSize)+','+Math.floor(e[14]/cellSize);if(!cells.has(k))cells.set(k,[]);cells.get(k).push({m,index});});
+ const cellSize=48,make=(matrices,key,leaf=false)=>{const cells=new Map();matrices.forEach((m,index)=>{const e=m.elements,k=Math.floor(e[12]/cellSize)+','+Math.floor(e[14]/cellSize);if(!cells.has(k))cells.set(k,[]);cells.get(k).push({m,index});});
   for(const list of cells.values()){
    // Stable interleaving keeps density reductions evenly spread, including crossed cards.
    list.sort((a,b)=>((a.index*2654435761)>>>0)-((b.index*2654435761)>>>0));

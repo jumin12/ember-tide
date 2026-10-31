@@ -1,0 +1,28 @@
+// Touch controls use the same screen-relative key input as desktop controls.
+// Pointer capture, cancellation and scene changes cannot leave movement held.
+const mobile33={root:null,pointer:null,held:new Set(),mode:'',quest:false,sprint:false};
+function releaseTouch33(){for(const k of mobile33.held)keys.delete(k);mobile33.held.clear();mobile33.pointer=null;const knob=$('#touch-knob33');if(knob)knob.style.transform='translate(-50%,-50%)';}
+function layoutMobile33(){
+ const compact=innerWidth<700||innerHeight<480,touch=touchDevice33(),changed=document.body.classList.contains('compact33')!==compact;document.body.classList.toggle('compact33',compact);document.body.classList.toggle('touch33',touch);document.body.classList.toggle('portrait33',innerHeight>innerWidth);
+ document.documentElement.style.setProperty('--view-height33',innerHeight+'px');releaseTouch33();
+ if(changed&&player){hudValue='';updateHUD();}
+}
+const cardBefore33=card;
+card=function(id){if(!battle||!document.body.classList.contains('compact33'))return cardBefore33(id);const c=state.characters[id],s=stats(id),a=CAST[id];return `<button class="party-card battle-mini33" data-ally="${state.members.indexOf(id)}" aria-label="${esc(a.name)} · HP ${c.hp} of ${s.hp} · MP ${c.mp} of ${s.mp}"><img class="mini-face33" src="${face26(id)}" alt=""><span class="mini-info33"><b>${esc(a.name)} <small>Lv ${c.level}</small></b><span>HP ${c.hp} / ${s.hp}</span><i><em style="width:${clamp(c.hp/s.hp*100,0,100)}%"></em></i><span>MP ${c.mp} / ${s.mp}</span><i class="mini-mp33"><em style="width:${clamp(c.mp/s.mp*100,0,100)}%"></em></i></span></button>`;};
+function updateMobile33(){if(!mobile33.root)return;const key=[state.mode,!!menu,!!dialogue,!!battle,!!eventAction,!!gameLoading,!!transition,battle?.status].join('|');if(key===mobile33.mode)return;mobile33.mode=key;
+ const playing=state.mode==='explore'&&!menu&&!dialogue&&!battle&&!eventAction&&!gameLoading&&!transition;mobile33.root.hidden=!playing;document.body.classList.toggle('battle33',!!battle);document.body.classList.toggle('dialogue33',!!dialogue);document.body.classList.toggle('menu33',!!menu);
+ if(!playing)releaseTouch33();
+}
+const inputBefore33=setupInput;
+setupInput=function(){inputBefore33();
+ const nav=document.createElement('nav');nav.id='mobile-nav33';nav.setAttribute('aria-label','Journey shortcuts');
+ for(const [id,label]of[['map','Map'],['inventory','Bag'],['journal','Menu']]){const b=document.createElement('button');b.dataset.open=id;b.setAttribute('aria-label',label);const original=$('.hud-actions button[data-open="'+id+'"] img');if(original){const im=original.cloneNode(true);im.alt='';im.draggable=false;im.style.pointerEvents='none';b.append(im);}else{const s=document.createElement('span');s.textContent=id==='map'?'◇':id==='inventory'?'♧':'☰';b.append(s);}b.append(document.createTextNode(label));let touchAt=-1000;b.addEventListener('pointerup',e=>{if(e.pointerType!=='touch')return;e.preventDefault();e.stopPropagation();touchAt=performance.now();openMenu(id);});b.onclick=e=>{e.preventDefault();e.stopPropagation();if(performance.now()-touchAt>500)openMenu(id);};nav.append(b);}$('#hud').append(nav);
+ const root=document.createElement('div');root.id='touch-controls33';root.hidden=true;root.innerHTML='<div id="touch-stick33" role="group" aria-label="Movement joystick"><span id="touch-knob33"></span><small>MOVE</small></div><button id="touch-sprint33" aria-label="Toggle sprint" aria-pressed="false">Sprint</button><button id="touch-action33" aria-label="Interact">Interact</button>';document.body.append(root);mobile33.root=root;
+ const stick=$('#touch-stick33');const move=e=>{if(e.pointerId!==mobile33.pointer)return;e.preventDefault();const b=stick.getBoundingClientRect(),dx=(e.clientX-b.left-b.width/2)/(b.width*.36),dy=(e.clientY-b.top-b.height/2)/(b.height*.36),len=Math.hypot(dx,dy),x=dx/Math.max(1,len),y=dy/Math.max(1,len);for(const k of mobile33.held)keys.delete(k);mobile33.held.clear();if(len>.17){if(x<-.28)mobile33.held.add('a');if(x>.28)mobile33.held.add('d');if(y<-.28)mobile33.held.add('w');if(y>.28)mobile33.held.add('s');if(mobile33.sprint)mobile33.held.add('shift');route=null;for(const k of mobile33.held)keys.add(k);}$('#touch-knob33').style.transform=`translate(calc(-50% + ${x*27}px),calc(-50% + ${y*27}px))`;};
+ stick.addEventListener('pointerdown',e=>{if(mobile33.pointer!==null)return;mobile33.pointer=e.pointerId;stick.setPointerCapture(e.pointerId);initAudio();move(e);});stick.addEventListener('pointermove',move);for(const type of['pointerup','pointercancel','lostpointercapture'])stick.addEventListener(type,releaseTouch33);
+ $('#touch-sprint33').onclick=()=>{mobile33.sprint=!mobile33.sprint;$('#touch-sprint33').setAttribute('aria-pressed',String(mobile33.sprint));};$('#touch-action33').onclick=()=>{initAudio();act(nearestInteraction());};
+ $('#objective').tabIndex=0;$('#objective').setAttribute('role','button');$('#objective').setAttribute('aria-label','Expand current objective');const expand=()=>{if(!document.body.classList.contains('compact33'))return;mobile33.quest=!mobile33.quest;document.body.classList.toggle('quest-open33',mobile33.quest);$('#objective').setAttribute('aria-expanded',String(mobile33.quest));};$('#objective').addEventListener('click',expand);$('#objective').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();expand();}});
+ window.addEventListener('blur',releaseTouch33);document.addEventListener('visibilitychange',releaseTouch33);window.addEventListener('orientationchange',()=>{releaseTouch33();device33.resizeAt=performance.now()+150;});layoutMobile33();
+};
+const mobileHUDbefore33=updateHUD;
+updateHUD=function(...args){const r=mobileHUDbefore33(...args);updateMobile33();return r;};

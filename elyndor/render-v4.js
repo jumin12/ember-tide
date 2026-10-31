@@ -54,11 +54,7 @@ updateReflection=function(){
  if(clock-perf.lastReflection<interval||channelDistance(player.x,player.z)>32&&!restoration)return;perf.lastReflection=clock;const pending=renderer.shadowMap.needsUpdate;renderer.shadowMap.needsUpdate=false;const hidden=scenery.trees.filter(t=>t.hidden);for(const t of hidden)hideTree(t,false);try{physicalReflection();}finally{for(const t of hidden)hideTree(t,true);renderer.shadowMap.needsUpdate=pending;}
 };
 const completeSceneRender=render;
-render=function(){
- if(!softwareBudget())return completeSceneRender();const lights=world?.userData.lanterns??[],receiver=lights[1],effect=lights.slice(2).filter((l,i)=>(l.userData.effectUntil??0)>clock||battle&&i<2).sort((a,b)=>b.intensity-a.intensity)[0];
- let saved;if(effect&&receiver){saved={position:receiver.position.clone(),color:receiver.color.clone(),intensity:receiver.intensity,distance:receiver.distance};receiver.position.copy(effect.position);receiver.color.copy(effect.color);receiver.intensity=effect.intensity;receiver.distance=effect.distance;}
- lights.forEach((l,i)=>l.visible=i<2);try{completeSceneRender();}finally{if(saved){receiver.position.copy(saved.position);receiver.color.copy(saved.color);receiver.intensity=saved.intensity;receiver.distance=saved.distance;}}
-};
+render=function(){return completeSceneRender();};
 const displayPacing={last:0,samples:[],period:1000/60};
 loop=function(now){
  requestAnimationFrame(loop);const interval=now-displayPacing.last;displayPacing.last=now;if(!scenery.software&&interval>3&&interval<25){displayPacing.samples.push(interval);if(displayPacing.samples.length>60)displayPacing.samples.shift();if(displayPacing.samples.length>=30){const sorted=displayPacing.samples.slice().sort((a,b)=>a-b),refresh=sorted[Math.floor(sorted.length/2)],hz=1000/refresh;let divisor=Math.max(1,Math.round(hz/60));if(hz/divisor<50)divisor=Math.max(1,divisor-1);displayPacing.period=refresh*divisor;}}

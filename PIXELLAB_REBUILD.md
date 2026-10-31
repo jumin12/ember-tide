@@ -1,5 +1,9 @@
 # Integrated Alpha Version 1.0 build
 
+## Alpha Version 1.9
+
+No new generated art is required for this lighting, performance and touch-interface revision. The native source boundary remains unchanged. Runtime frame textures preserve every selected PixelLab pose; source atlases remain available for portraits and turn-order thumbnails. World material colour, weather and attack lighting are retained across adaptive rendering tiers.
+
 ## V32 — Native idle repair and coherent routes
 
 Reviewed all four Soren south idle frames. Frames 1 and 3 lose the coat lapels and sash; the packer now selects unchanged native frames 0 and 2. This corrects the outfit flash without synthesizing or slicing limbs. Bridge roots survive static batching, trimming and exploration cutaways; rendered road support and character heights share triangle interpolation. Gate spill geometry extends over the downstream sill and joins the adjacent pools. Obsolete cloud planes and weather chunks are disposed during repeated setup.

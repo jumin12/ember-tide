@@ -1,5 +1,9 @@
 # Selected artwork and recorded audio
 
+## Alpha Version 1.9
+
+Reuses the approved native PixelLab artwork and UI icons. Per-actor canvases copy the complete current packed frame at its native dimensions without scaling, slicing or repainting. The procedural lamp field stores light intensity and ground height, not replacement art. New loading stills and comparison images are actual in-game captures.
+
 ## Alpha 1.8 native frame selection
 
 No new AI assets were needed. Soren's two mismatched front idle poses are excluded from the runtime atlas; the complete native inhale/exhale poses retain their original pixels and identity. Existing approved PixelLab textures remain in use for road support, masonry, water and foliage. presentation-v32 loading images are fresh native 1920×1080 game captures. The cloud volume, shared shadow field, wetting model and atmospheric particles are authored in the game shaders and geometry.

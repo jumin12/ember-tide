@@ -4,7 +4,7 @@ const architecture31={houses:0,windows:0,doors:0};
 function window31(parent,x,y,z,angle=0,scale=1){
  const g=new THREE.Group();g.position.set(x,y,z);g.rotation.y=angle;g.scale.setScalar(scale);parent.add(g);
  box(0,0,0,1.45,1.74,.16,'darkWood','#3c302a',g);
- box(0,0,.095,1.13,1.43,.035,'plaster','#95aaae',g,{emissive:'#ffc376',emissiveIntensity:.36,roughness:.27,metalness:.12});
+ box(0,0,.095,1.13,1.43,.035,'plaster','#665239',g,{emissive:'#ff9e38',emissiveIntensity:.82,roughness:.27,metalness:.12});
  for(const xx of[-.59,0,.59])box(xx,0,.16,.075,1.5,.075,'wood','#8c6945',g);
  for(const yy of[-.73,0,.73])box(0,yy,.17,1.26,.075,.09,'wood','#9d764a',g);
  for(const side of[-1,1]){box(side*.87,0,.04,.36,1.68,.13,'wood',side<0?'#7b6247':'#8b6d4a',g);for(const yy of[-.53,.53])box(side*.87,yy,.12,.34,.06,.045,'metal','#586265',g);}
