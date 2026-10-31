@@ -31221,8 +31221,8 @@
   },
   {
     "file": "elyndor/previews/pixellab-v32/day-night-cycle.jpg",
-    "bytes": 1427148,
-    "sha256": "f4643d385329bf20257637ef0ed8f6c986c644bf6b8db48242e9a3801cfa2a62"
+    "bytes": 1425895,
+    "sha256": "8a92a611f7b575583c3ce7075f0a796825e15dc537816418ab99875ff29f31dd"
   },
   {
     "file": "elyndor/previews/pixellab-v32/foliage-party-behind-canopy.png",
@@ -31356,13 +31356,13 @@
   },
   {
     "file": "elyndor/previews/pixellab-v32/smithy-comparison.jpg",
-    "bytes": 820463,
-    "sha256": "d891269cdc9345048b8187dfda7d813fef746ad0bb767e2c79187a9f76b6411e"
+    "bytes": 820436,
+    "sha256": "b0f4ee87f84991ddd314fca067b76d20534a74f9de2ae8b391f64133a77d688c"
   },
   {
     "file": "elyndor/previews/pixellab-v32/street-comparison.jpg",
-    "bytes": 919242,
-    "sha256": "4432301fbea679c7da3492ed2767f3efe30a5c61d330275ad2d30350576d27e9"
+    "bytes": 919742,
+    "sha256": "9e3875f1573365c78e887def1a6d20f48e4acff940ca91faab30d3f05f3d969a"
   },
   {
     "file": "elyndor/previews/pixellab-v32/targets-battle-selected.png",
@@ -31416,8 +31416,8 @@
   },
   {
     "file": "elyndor/previews/pixellab-v32/waterworks-comparison.jpg",
-    "bytes": 887858,
-    "sha256": "686c0e00c6edaa6f224da7d34337a2548701918a3e528c0cbf6abf9a1156df6b"
+    "bytes": 887597,
+    "sha256": "875c00601117c1f5168135deebf46f1ef27aea6d993f76a27730ef6eccbf45d1"
   },
   {
     "file": "elyndor/previews/pixellab-v32/world-fixes-cloud-sky-0.png",
@@ -32286,8 +32286,8 @@
   },
   {
     "file": "elyndor/tools/compare-v32.mjs",
-    "bytes": 5101,
-    "sha256": "af050877d4e07feb7a52568efca6411111733bc178878d69807bba324d73de07"
+    "bytes": 5133,
+    "sha256": "115fde1107be759356ea9d8176a34e28fa29ad182bde0aee706973ae8844357d"
   },
   {
     "file": "elyndor/tools/comparison-v28.mjs",
@@ -33016,8 +33016,8 @@
   },
   {
     "file": "elyndor/tools/live-release-v32.mjs",
-    "bytes": 8698,
-    "sha256": "fa3137c14c6dcda81002a6d3e53641fd25233d3e85e40ad6361244b06af0eea8"
+    "bytes": 8961,
+    "sha256": "1da5fc684f37621c9f53d6e9c088449cddac7a958ab85e3a94259bf87f5d5ae2"
   },
   {
     "file": "elyndor/tools/load-profile-v13.mjs",
