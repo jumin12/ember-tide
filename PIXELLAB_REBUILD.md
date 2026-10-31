@@ -1,5 +1,9 @@
 # Integrated Alpha Version 1.0 build
 
+## Alpha Version 1.10
+
+Combat art is split by projection: eight-direction world creatures and separately authored strict side-profile battle creatures. Six new PixelLab Pro effects are emitted into fixed world-space particle pools, with GPU trajectories, native alpha, geometric depth testing, real light and bounded cleanup.
+
 ## Alpha Version 1.9
 
 No new generated art is required for this lighting, performance and touch-interface revision. The native source boundary remains unchanged. Runtime frame textures preserve every selected PixelLab pose; source atlases remain available for portraits and turn-order thumbnails. World material colour, weather and attack lighting are retained across adaptive rendering tiers.

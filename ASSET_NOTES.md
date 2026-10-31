@@ -1,5 +1,9 @@
 # Selected artwork and recorded audio
 
+## Alpha Version 1.10
+
+Added two PixelLab Pro Flash side-profile combat sets with reviewed V3 idle, attack, recoil and recovery frames, and six native PixelLab Pro effect images (512px square; fire slash 688×384). World creature navigation keeps the existing eight-direction set. Newly generated art uses textual design descriptions and no earlier generated assets as style references.
+
 ## Alpha Version 1.9
 
 Reuses the approved native PixelLab artwork and UI icons. Per-actor canvases copy the complete current packed frame at its native dimensions without scaling, slicing or repainting. The procedural lamp field stores light intensity and ground height, not replacement art. New loading stills and comparison images are actual in-game captures.

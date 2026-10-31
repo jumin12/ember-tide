@@ -5,7 +5,7 @@ import json,math,hashlib,copy,re,numpy as np
 
 DIRECTIONS=['south','south-west','west','north-west','north','north-east','east','south-east']
 PARTY={'bren','soren','tavin','mira','lysa'}
-FIGHTERS=PARTY|{'brenAscended','tavinAscended','tribeMale','tribeFemale','guardEnemy','commander','commander2','commander3','wolf','boar'}
+FIGHTERS=PARTY|{'brenAscended','tavinAscended','tribeMale','tribeFemale','guardEnemy','commander','commander2','commander3','wolf','boar','wolfBattle35','boarBattle35'}
 def body_anchor(im):
  a=np.array(im.getchannel('A'))>127;ys,xs=np.nonzero(a)
  if not len(ys):raise ValueError('Empty native character')
@@ -36,6 +36,9 @@ def pack_character(root,item,encode,audit,strict):
  # Share the reviewed complete-staff frames; the game supplies each spell's VFX.
  if name in ['mira','lysa'] and animations.get('attack-v8'):
   animations['cast-v8']=copy.deepcopy(animations['attack-v8'])
+ if name in ['wolfBattle35','boarBattle35']:
+  animations['attack-v13']['east']+=animations['recovery-v35']['east'][1:]
+  animations['cast-v13']=copy.deepcopy(animations['attack-v13'])
  if name=='soren':
   # Front idle poses 1/3 replace his lapelled coat with a different tunic.
   # Keep the complete native inhale/exhale poses, with unchanged source pixels.
@@ -131,9 +134,10 @@ def pack_character(root,item,encode,audit,strict):
  out=root/'elyndor/assets/packed';atlas.resize((atlas.width*2,atlas.height*2),Image.Resampling.NEAREST).save(out/(name+'.png'))
  meta={'url':encode(atlas),'w':width,'h':height,'unit':unit,'gutter':gutter,'cols':cols,'rows':rows,'frames':{k:[index[p] for p in clip] for k,clip in keys.items()},'frameRate':{k:3 for k in keys if k.startswith('idle_')},'pixelLab':True,'sourceCharacterId':expected}
  meta['impactFrame']={'attack':round((len(keys['attack'])-1)*(.75 if name in ['bren','brenAscended','tavin','tavinAscended'] else .55)),'cast':round((len(keys['cast'])-1)*.5)}
+ if name in ['wolfBattle35','boarBattle35']:meta['impactFrame']['attack']=8
  if name in ['bren','brenAscended'] and animations.get('attack-v10'):meta['impactFrame']['attack']=4
  if animations.get('attack-v13'):
-  meta['impactFrame']['attack']={'bren':8,'brenAscended':8,'tavin':7,'tavinAscended':7,'mira':7,'lysa':8,'soren':8,'commander':5,'commander2':7,'tribeMale':8,'tribeFemale':8,'wolf':7,'boar':6,'guardEnemy':8}.get(name,5)
+  meta['impactFrame']['attack']={'bren':8,'brenAscended':8,'tavin':7,'tavinAscended':7,'mira':7,'lysa':8,'soren':8,'commander':5,'commander2':7,'tribeMale':8,'tribeFemale':8,'wolf':7,'boar':6,'guardEnemy':8,'wolfBattle35':8,'boarBattle35':8}.get(name,5)
   meta['impactFrame']['cast']=min(len(keys['cast'])-1,8)
  if name=='mira':meta['sourceClipAliases']={'cast':'attack-v13'}
  if name=='lysa':meta['sourceClipAliases']={'attack':'cast-v13-staff','cast':'cast-v13-staff'}

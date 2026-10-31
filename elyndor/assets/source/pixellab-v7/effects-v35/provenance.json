@@ -1,0 +1,68 @@
+[
+  {
+    "key": "fx35FlameSlash",
+    "jobId": "ce7235f1-740e-40f8-b5bd-2a155db2768a",
+    "file": "elyndor/assets/source/pixellab-v7/effects-v35/fx35FlameSlash.png",
+    "size": [
+      688,
+      384
+    ],
+    "sha256": "83a08ac7aa225f6e15849e8589356dad4c21be902d1aee2e456babe1985a32db",
+    "provider": "PixelLab Pro"
+  },
+  {
+    "key": "fx35Impact",
+    "jobId": "1a8eeada-2063-48bb-ba0f-33c55c178e44",
+    "file": "elyndor/assets/source/pixellab-v7/effects-v35/fx35Impact.png",
+    "size": [
+      512,
+      512
+    ],
+    "sha256": "4a35d2ff2e720a766d10d02c8fc30ffefc6ca1e9b323fd7a7a914e8ffe9e4ca9",
+    "provider": "PixelLab Pro"
+  },
+  {
+    "key": "fx35Arcane",
+    "jobId": "5cc24816-102e-42af-a53d-5994c0815ee9",
+    "file": "elyndor/assets/source/pixellab-v7/effects-v35/fx35Arcane.png",
+    "size": [
+      512,
+      512
+    ],
+    "sha256": "fe33af6b06a7a15fc378b2d3c8e4fcf1ae22732061eadbe59dbb5802af6ae8b6",
+    "provider": "PixelLab Pro"
+  },
+  {
+    "key": "fx35Frost",
+    "jobId": "57e27f43-12d2-43fc-894b-b0020e9c2009",
+    "file": "elyndor/assets/source/pixellab-v7/effects-v35/fx35Frost.png",
+    "size": [
+      512,
+      512
+    ],
+    "sha256": "c2149c347cafb1886175f52351ba83f5d675f90a85dc24e93b4a40b8ff725d43",
+    "provider": "PixelLab Pro"
+  },
+  {
+    "key": "fx35Healing",
+    "jobId": "119d3b52-b64c-4750-8ccc-ec6a6c9381d0",
+    "file": "elyndor/assets/source/pixellab-v7/effects-v35/fx35Healing.png",
+    "size": [
+      512,
+      512
+    ],
+    "sha256": "01a8262b6774ea2f43a73f50a30127e22f6ba0ce8e3fb9ec3f48c91487b67ff2",
+    "provider": "PixelLab Pro"
+  },
+  {
+    "key": "fx35Smoke",
+    "jobId": "bbaa8020-5a47-4025-824e-9624fc489a8d",
+    "file": "elyndor/assets/source/pixellab-v7/effects-v35/fx35Smoke.png",
+    "size": [
+      512,
+      512
+    ],
+    "sha256": "3c6c8c16d48beafcd2855621b6a7ef7be1d0a8dfa487ca9bd62418b9fb496422",
+    "provider": "PixelLab Pro"
+  }
+]

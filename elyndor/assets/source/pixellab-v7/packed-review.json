@@ -60699,5 +60699,919 @@
       "cell": 128,
       "sha256": "dec6087aa73c93148dab085841440423f511b5a9715ccf2484458453a4499db7"
     }
+  ],
+  "wolfBattle35": [
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\rotations\\south.png",
+      "sourceSize": [
+        128,
+        128
+      ],
+      "offset": [
+        8,
+        -16
+      ],
+      "cell": 0,
+      "sha256": "3b8f7c7d17cf3e4599858b726711da0cfdde14a39592c87dcf8492392b035769"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\rotations\\south-west.png",
+      "sourceSize": [
+        128,
+        128
+      ],
+      "offset": [
+        8,
+        -16
+      ],
+      "cell": 1,
+      "sha256": "66754cde89d16cb39cc4e952032452d0a3710c4f07178da98b749aa68adc8a96"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\rotations\\west.png",
+      "sourceSize": [
+        128,
+        128
+      ],
+      "offset": [
+        8,
+        -16
+      ],
+      "cell": 2,
+      "sha256": "65b6e42834448fbd30d3b5126e2c2caa5df9bbc89d5c94c053fd49bbee6e601d"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\rotations\\north-west.png",
+      "sourceSize": [
+        128,
+        128
+      ],
+      "offset": [
+        8,
+        -16
+      ],
+      "cell": 3,
+      "sha256": "84abf5f502ed9ceadf1f09d7a28f989ab7d76e334f6e5263da758dc21ea038ee"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\rotations\\north.png",
+      "sourceSize": [
+        128,
+        128
+      ],
+      "offset": [
+        8,
+        -16
+      ],
+      "cell": 4,
+      "sha256": "5d2bd95f8cf220ef2c3462e0df492fae0c0669599524c347a0208f9796d28e66"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\rotations\\north-east.png",
+      "sourceSize": [
+        128,
+        128
+      ],
+      "offset": [
+        8,
+        -16
+      ],
+      "cell": 5,
+      "sha256": "01f0b5673b928cfed03e6b578de3f9e73340e55d3edc1b5b91222715a8df982f"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\rotations\\east.png",
+      "sourceSize": [
+        128,
+        128
+      ],
+      "offset": [
+        8,
+        -16
+      ],
+      "cell": 6,
+      "sha256": "d04e0af278ac2339e41376751196c7637a979bf89aa704c04696bddef26eab0d"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\rotations\\south-east.png",
+      "sourceSize": [
+        128,
+        128
+      ],
+      "offset": [
+        8,
+        -16
+      ],
+      "cell": 7,
+      "sha256": "324a47f95b97446d77e4919f2862f54f0873c4d7ff3eaceda07793348ee2ffe8"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\battleIdle-v13\\east\\frame_000.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 8,
+      "sha256": "f80fc00d868a073e1fa84ff80fd913e84993c0d134f15ab2fbf1e48182e66e1a"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\battleIdle-v13\\east\\frame_001.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 9,
+      "sha256": "ad7a064b8b09ea0369e2a73bf7c9bc0f49efa5f63a880d6ed8c02362af0c681b"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\battleIdle-v13\\east\\frame_002.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 10,
+      "sha256": "037ef5c5c853bcb0412a9d518b105299ad10879cad7524f8bedf09884a9f2251"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\battleIdle-v13\\east\\frame_003.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 11,
+      "sha256": "0517847a692b843fdb5ee6cdc79b0671b33e1d33ab37e8c16e5bfe5215881d9d"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\battleIdle-v13\\east\\frame_004.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 12,
+      "sha256": "e8024b9e678d4990f14e8ad39fb09fce903ac1fbca221fc30eed265f04cf618a"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_000.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 13,
+      "sha256": "f80fc00d868a073e1fa84ff80fd913e84993c0d134f15ab2fbf1e48182e66e1a"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_001.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 14,
+      "sha256": "540828b763f2bb2db1a38b929f962c394c6d8e5d9a18b7c4e07ea89840afee39"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_002.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 15,
+      "sha256": "dcc0e17ac4d02b5eeccbdb34d41f8dbd71deadc6c67df0a0fe676f011e1964d6"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_003.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 16,
+      "sha256": "be81a5f762851725377c039c73c9e9615a6a68e768e0985375f894d888d2f632"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_004.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 17,
+      "sha256": "18ef7aa2409f9a8734c83cba91a6485b4a33b3aa4ad7034c5d6bb479dc83a121"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_005.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 18,
+      "sha256": "e9a5e1fab1c050a4fc01e21ee09687d7fe1b7ea0c2e0063537e344c98b5e1002"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_006.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 19,
+      "sha256": "caba8f27a6282bbc06bdcb2e5c3ed8f42be91ab924355e58ee9d667c2e9961cc"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_007.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 20,
+      "sha256": "98eae4ebaf70f65456181e84904f342f52562e49caacb685187a979f9a6e12ba"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_008.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 21,
+      "sha256": "a21571b631a6d806d16f4148441ee6ffc162089b3ed5fe38f7ffdb69402a52d0"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_009.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 22,
+      "sha256": "188da648a30200c42259f393774a9fdb8cc4207304a54afee08481e71bdc0b8c"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_010.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 23,
+      "sha256": "4dcdfda165ab55e750dfe830007ec34a93f2375def65f3c4f6328014279ed80e"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_011.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 24,
+      "sha256": "9d78b9da52968f92bc84bb83625f8f8055ae17865e54b44968fba3593f842092"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_012.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 25,
+      "sha256": "6662540fe1170b83fb54add78883d693980b50476b02ea80614a51735ec877ec"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\recovery-v35\\east\\frame_001.png",
+      "sourceSize": [
+        152,
+        140
+      ],
+      "offset": [
+        -4,
+        -22
+      ],
+      "cell": 26,
+      "sha256": "56e2d089ee75ba639a07202ea3bae5d1b0324341bd7ed68e5bbddea55ef5a0a5"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\recovery-v35\\east\\frame_002.png",
+      "sourceSize": [
+        152,
+        140
+      ],
+      "offset": [
+        -4,
+        -22
+      ],
+      "cell": 27,
+      "sha256": "282f2675e423c98fd525d9717dc3ecb11211ae25429ffcefd26c93f8b40997b2"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\recovery-v35\\east\\frame_003.png",
+      "sourceSize": [
+        152,
+        140
+      ],
+      "offset": [
+        -4,
+        -22
+      ],
+      "cell": 28,
+      "sha256": "216c444e3b5190a43b0a411837ceaecc8571a3fa3751fa4cb81fdf5713630d49"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\recovery-v35\\east\\frame_004.png",
+      "sourceSize": [
+        152,
+        140
+      ],
+      "offset": [
+        -4,
+        -22
+      ],
+      "cell": 29,
+      "sha256": "9379a0f154f39a158d4ca50fd88780fa90956a54e4a7d6c4ce5722891d539922"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\recoil-v13\\east\\frame_000.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 30,
+      "sha256": "f80fc00d868a073e1fa84ff80fd913e84993c0d134f15ab2fbf1e48182e66e1a"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\recoil-v13\\east\\frame_001.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 31,
+      "sha256": "e0e3b5f17f11e7d38bb006ebbbb52b81fd3f7d1cc254273381a6726d325b1968"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\recoil-v13\\east\\frame_002.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 32,
+      "sha256": "6119368a3b9d83cd65d74bc04b5d446432a96f29153fbf44fa47ac24a3611497"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\recoil-v13\\east\\frame_003.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 33,
+      "sha256": "e58d538d8b73b992c68e37f3218f4e4f7bfbf2f5b899e96ba1578e4475e89883"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\wolf-combat-v35\\Idle\\animations\\recoil-v13\\east\\frame_004.png",
+      "sourceSize": [
+        140,
+        140
+      ],
+      "offset": [
+        2,
+        -22
+      ],
+      "cell": 34,
+      "sha256": "8869b4bc10b1517bd3c1a3953a5298fd792f7867710b1978612e0b468146feda"
+    }
+  ],
+  "boarBattle35": [
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\rotations\\south.png",
+      "sourceSize": [
+        128,
+        128
+      ],
+      "offset": [
+        8,
+        -14
+      ],
+      "cell": 0,
+      "sha256": "c1960d45db2317453726623b08b4bdef64c4b077e9f179e0bda5d653108d0ddd"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\rotations\\south-west.png",
+      "sourceSize": [
+        128,
+        128
+      ],
+      "offset": [
+        8,
+        -14
+      ],
+      "cell": 1,
+      "sha256": "6a41e90f336caffd7e1f36034d503d8ab2afcc58a5ca66945331c68f11e9703a"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\rotations\\west.png",
+      "sourceSize": [
+        128,
+        128
+      ],
+      "offset": [
+        8,
+        -14
+      ],
+      "cell": 2,
+      "sha256": "3a7c8b22b67620714e50cc81627fcb9da453b59952c758e6c25062f8dbadf7f9"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\rotations\\north-west.png",
+      "sourceSize": [
+        128,
+        128
+      ],
+      "offset": [
+        8,
+        -14
+      ],
+      "cell": 3,
+      "sha256": "cc870f7c6a492b7efd2caa043ea30584bfe51f620283a518f04439752600b49d"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\rotations\\north.png",
+      "sourceSize": [
+        128,
+        128
+      ],
+      "offset": [
+        8,
+        -14
+      ],
+      "cell": 4,
+      "sha256": "a71b6d9f39d606301babaf32b3f00dd334d0c991ee7e95150770660fa0360b4b"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\rotations\\north-east.png",
+      "sourceSize": [
+        128,
+        128
+      ],
+      "offset": [
+        8,
+        -14
+      ],
+      "cell": 5,
+      "sha256": "f32d243e8fa784e4e8bf4aa0797576fb862bf021a20a84742c8b0bfd86cfd2f7"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\rotations\\east.png",
+      "sourceSize": [
+        128,
+        128
+      ],
+      "offset": [
+        8,
+        -14
+      ],
+      "cell": 6,
+      "sha256": "21de06e26c335b0ef89316d2129d7018062e204f38113a5a117765457ec480e9"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\rotations\\south-east.png",
+      "sourceSize": [
+        128,
+        128
+      ],
+      "offset": [
+        8,
+        -14
+      ],
+      "cell": 7,
+      "sha256": "3a1d6ef83379be5ace0a1228b14a2b0d65020da806814f32d4d08a5683d344c2"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\battleIdle-v13\\east\\frame_000.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 8,
+      "sha256": "7676eb00c19ac837d7b80c4add6f2b63532f515b533fb5b0dc015f8683fa17b0"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\battleIdle-v13\\east\\frame_001.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 9,
+      "sha256": "20dcda75ed87079a5507c1c06d3cd9f0520cd819c3b8ee98472be29db8fd28aa"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\battleIdle-v13\\east\\frame_002.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 10,
+      "sha256": "a044b445259f0287346e01eb5a0ec2663e4257c91abdb813ee8339caea0a4bfd"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\battleIdle-v13\\east\\frame_003.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 11,
+      "sha256": "5a1768819d7f88531d5ed6cc9467b8aa62f180cb7f5a8d0c92ff0ad89e8a8fd4"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\battleIdle-v13\\east\\frame_004.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 12,
+      "sha256": "c2d67f3c1e5036004a6397e854085ae68a367dbab943a76c714d45599a081255"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_000.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 13,
+      "sha256": "7676eb00c19ac837d7b80c4add6f2b63532f515b533fb5b0dc015f8683fa17b0"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_001.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 14,
+      "sha256": "a5d34528e7f3628228da29335c0d22c4c07cb6da699145d68aca85c90d72be39"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_002.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 15,
+      "sha256": "97335c51ce8f0bb8c468f6c4dbff076eb7456f50810dcf5fb905ced9842264d5"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_003.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 16,
+      "sha256": "edf73ffda4cff201af0a2d7b01e4467203e0b8168968dfe973e9bd0f18aaf261"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_004.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 17,
+      "sha256": "c9b2d9a060db4ec9bd844e8252fbd37cdb67c0d300023675c96d900f355fd627"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_005.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 18,
+      "sha256": "a667a506430437405378b15e790f40c0030cb21086b5d5c46b64a9533a908de8"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_006.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 19,
+      "sha256": "356b367535208d00346a671e3953f43c31f2cb6fcd756bf3bc7355ae416ed026"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_007.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 20,
+      "sha256": "42ad4c7f361a5a212cc5d294a045c9cd9682afd3fa1ba88ea812514cfbb5215a"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_008.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 21,
+      "sha256": "b453a4dd8d90d51c37dbc69d29ac332723f84e0c82b354d164337b5a4a36d2a9"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_009.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 22,
+      "sha256": "b67fcc003822849a4fd49fae84e1dd939b696a4b3f33ece80977f12b3ab98cbc"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_010.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 23,
+      "sha256": "3351a86908209bf3bf292b35da8731fb1d5d46eb6a3155d74992bcf92cfa5b66"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_011.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 24,
+      "sha256": "ab472cdb3008650071b7e10a5a9180cd409ce41ecd585c491d01b9403ec028bd"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\attack-v13\\east\\frame_012.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 25,
+      "sha256": "41832b6a56e1006de78802bc0153b9f367cfbe87f36e58be37d8c698e0436c6b"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\recovery-v35\\east\\frame_001.png",
+      "sourceSize": [
+        168,
+        164
+      ],
+      "offset": [
+        -12,
+        -32
+      ],
+      "cell": 26,
+      "sha256": "18f5dc135fe3e8b1edcf6861bd69b0891983e3528eabf32096462215888756be"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\recovery-v35\\east\\frame_002.png",
+      "sourceSize": [
+        168,
+        164
+      ],
+      "offset": [
+        -12,
+        -32
+      ],
+      "cell": 27,
+      "sha256": "ca27b48c8eb6262275d005f7e33bb60f02b5dc042b30df5f183a44f01971cda1"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\recovery-v35\\east\\frame_003.png",
+      "sourceSize": [
+        168,
+        164
+      ],
+      "offset": [
+        -12,
+        -32
+      ],
+      "cell": 28,
+      "sha256": "3d5c7262aa461dd2cca292a6d091bb9cdb273713365d3a7ada7e92a90ba22366"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\recovery-v35\\east\\frame_004.png",
+      "sourceSize": [
+        168,
+        164
+      ],
+      "offset": [
+        -12,
+        -32
+      ],
+      "cell": 29,
+      "sha256": "1639f7b8220323167e25f6c3c599cfab852c4a0d19f565dc4155d4b3e746637c"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\recoil-v13\\east\\frame_000.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 30,
+      "sha256": "7676eb00c19ac837d7b80c4add6f2b63532f515b533fb5b0dc015f8683fa17b0"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\recoil-v13\\east\\frame_001.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 31,
+      "sha256": "841981cb06aeb6e6eb8f52c3451b8a24479213ec49eff0fd21c782ba1df2dddb"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\recoil-v13\\east\\frame_002.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 32,
+      "sha256": "cecb95a7c5abe102778fbbdefef33eed50bbce04dde7d23f11b04ec7d3f82164"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\recoil-v13\\east\\frame_003.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 33,
+      "sha256": "69d1926e3d6a5c287bba9cc425ac9d0d63af2cf96bcd3ec21b4872e27a939978"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\characters\\boar-combat-v35\\Idle\\animations\\recoil-v13\\east\\frame_004.png",
+      "sourceSize": [
+        164,
+        164
+      ],
+      "offset": [
+        -10,
+        -32
+      ],
+      "cell": 34,
+      "sha256": "24a5fda8816d537d1af02324e6f79d47fe30c9aefc96f1f2a93e63813c155098"
+    }
   ]
 }

@@ -1,5 +1,9 @@
 # The Last Light of Elyndor
 
+## Alpha Version 1.10 — Elemental effects and performance
+
+New PixelLab creature profiles and six native effect textures support grand layered abilities. Pooled contact shadows and depth-integrated sun/cloud scattering ground the characters in the scene. Bridge stones are batched while native deck attributes remain intact. Performance results are recorded for native PC and synthetic CPU stress; frame rates on arbitrary hardware are not guaranteed.
+
 ## Alpha Version 1.9 — Lighting reference refinement
 
 The October 31 refinement replaces nearly uniform lighting with authored, continuously interpolated illumination for amber dawn, cream daylight, golden hour, violet dusk and blue moonlight. Night lamps now stay local instead of washing entire facades. Sunlit foliage gains a restrained transmission lift; selective HDR bloom catches highlights. The exploration lens is closer and places the party lower in frame. Actual eight-time captures wait for the real lamp handoffs to settle.

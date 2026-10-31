@@ -1,16 +1,16 @@
 {
-  "status": "Alpha Version 1.9: reference lighting refinement",
+  "status": "Alpha Version 1.10: elemental power and grounded creatures",
   "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
-  "characterFamilies": 41,
-  "runtimeFamilies": 42,
-  "nativeSelectedPoses": 4874,
+  "characterFamilies": 43,
+  "runtimeFamilies": 44,
+  "nativeSelectedPoses": 4944,
   "portraits": 38,
   "dedicatedHudPortraits": 5,
-  "worldImages": 109,
+  "worldImages": 115,
   "artifact": {
     "file": "index.html",
-    "bytes": 42840720,
-    "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+    "bytes": 43251256,
+    "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
     "offline": true
   },
   "incompleteClips": {},

@@ -1,30 +1,32 @@
 {
-  "release": "elyndor-alpha-1.9-lighting-refinement-2026-10-31-v34",
-  "version": "Alpha Version 1.9",
+  "release": "elyndor-alpha-1.10-elemental-atmosphere-2026-10-31-v35",
+  "version": "Alpha Version 1.10",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 42840720,
-    "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+    "bytes": 43251256,
+    "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
     "offline": true
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "e062d2bbf9a9d1f8dc20b4d7eac4b832069094d5"
+    "previousRelease": "2fbc70ff72363c6be2a6346f6147b2346ee150a3"
   },
   "changes": [
-    "Authored continuous warm dawn and golden hour, bright cream daylight, violet dusk and blue moonlight with restrained local night lamps.",
-    "Reduced broad facade wash, strengthened sunlit botanical highlights and selective HDR bloom.",
-    "Moved the exploration camera closer, framed the party lower, and moved the desktop tutorial card aside so it does not cover the party."
+    "New native PixelLab side-profile wolf and boar combat sets with reviewed breathing, lunge, recoil and recovery frames.",
+    "Six high resolution PixelLab effects animate in bounded depth-tested world pools with real scene lighting.",
+    "Pooled actor contact occlusion and cloud/shadow-aware volumetric light scattering.",
+    "Batched bridge stonework while retaining authored deck geometry, walking surfaces and collision.",
+    "Cached particle uploads, bounded diagnostics and scalable rendering detail."
   ],
   "art": {
     "generator": "PixelLab",
-    "nativeSelectedFamilies": 41,
-    "runtimeFamilies": 42,
-    "packedSpritePoses": 4878,
+    "nativeSelectedFamilies": 43,
+    "runtimeFamilies": 44,
+    "packedSpritePoses": 4944,
     "sourceCropWarnings": 0,
-    "newGeneratedAssets": 0,
+    "newGeneratedAssets": 8,
     "approvedConceptPaletteRetained": true
   },
   "audio": {
@@ -67,7 +69,7 @@
   },
   "validation": {
     "gameplaySuite": {
-      "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+      "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
       "checks": [
         {
           "name": "mobile-controls",
@@ -79,6 +81,18 @@
         },
         {
           "name": "lighting-and-phone-layout",
+          "pass": true
+        },
+        {
+          "name": "solid-road-clearance",
+          "pass": true
+        },
+        {
+          "name": "route-connections",
+          "pass": true
+        },
+        {
+          "name": "world-fixes",
           "pass": true
         },
         {
@@ -123,6 +137,14 @@
         },
         {
           "name": "world-atmosphere-and-exit",
+          "pass": true
+        },
+        {
+          "name": "new-art-and-abilities",
+          "pass": true
+        },
+        {
+          "name": "before-after-performance",
           "pass": true
         }
       ]
@@ -254,7 +276,7 @@
       ]
     },
     "lighting": {
-      "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+      "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
       "times": [
         {
           "label": "predawn",
@@ -750,7 +772,7 @@
       "pass": true
     },
     "solarCycle": {
-      "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+      "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
       "samples": [
         {
           "hour": 5,
@@ -1010,7 +1032,7 @@
       "pass": true
     },
     "foliageVisibility": {
-      "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+      "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
       "proof": {
         "cases": [
           {
@@ -1022,26 +1044,26 @@
             "lods": [
               {
                 "lod": 0,
-                "reference": 3952,
-                "cut": 3945,
-                "obstructed": 2526,
-                "ratio": 0.9982287449392713,
+                "reference": 3964,
+                "cut": 3956,
+                "obstructed": 2529,
+                "ratio": 0.9979818365287588,
                 "hidden": 2
               },
               {
                 "lod": 1,
-                "reference": 3952,
-                "cut": 3944,
-                "obstructed": 2526,
-                "ratio": 0.9979757085020243,
+                "reference": 3964,
+                "cut": 3954,
+                "obstructed": 2527,
+                "ratio": 0.9974772956609486,
                 "hidden": 2
               },
               {
                 "lod": 2,
-                "reference": 3952,
-                "cut": 3944,
-                "obstructed": 2525,
-                "ratio": 0.9979757085020243,
+                "reference": 3964,
+                "cut": 3954,
+                "obstructed": 2527,
+                "ratio": 0.9974772956609486,
                 "hidden": 2
               }
             ]
@@ -1055,26 +1077,26 @@
             "lods": [
               {
                 "lod": 0,
-                "reference": 3834,
-                "cut": 3826,
-                "obstructed": 1243,
-                "ratio": 0.9979134063641106,
+                "reference": 3811,
+                "cut": 3804,
+                "obstructed": 1238,
+                "ratio": 0.9981632117554448,
                 "hidden": 3
               },
               {
                 "lod": 1,
-                "reference": 3834,
-                "cut": 3826,
-                "obstructed": 1255,
-                "ratio": 0.9979134063641106,
+                "reference": 3811,
+                "cut": 3804,
+                "obstructed": 1245,
+                "ratio": 0.9981632117554448,
                 "hidden": 3
               },
               {
                 "lod": 2,
-                "reference": 3834,
-                "cut": 3825,
-                "obstructed": 1173,
-                "ratio": 0.9976525821596244,
+                "reference": 3811,
+                "cut": 3803,
+                "obstructed": 1163,
+                "ratio": 0.997900813434794,
                 "hidden": 3
               }
             ]
@@ -1088,26 +1110,26 @@
             "lods": [
               {
                 "lod": 0,
-                "reference": 2476,
-                "cut": 2474,
-                "obstructed": 38,
-                "ratio": 0.9991922455573505,
+                "reference": 2448,
+                "cut": 2444,
+                "obstructed": 48,
+                "ratio": 0.9983660130718954,
                 "hidden": 4
               },
               {
                 "lod": 1,
-                "reference": 2476,
-                "cut": 2474,
-                "obstructed": 54,
-                "ratio": 0.9991922455573505,
+                "reference": 2448,
+                "cut": 2444,
+                "obstructed": 52,
+                "ratio": 0.9983660130718954,
                 "hidden": 4
               },
               {
                 "lod": 2,
-                "reference": 2476,
-                "cut": 2473,
-                "obstructed": 39,
-                "ratio": 0.9987883683360258,
+                "reference": 2448,
+                "cut": 2443,
+                "obstructed": 50,
+                "ratio": 0.9979575163398693,
                 "hidden": 4
               }
             ]
@@ -1163,39 +1185,39 @@
       "pass": true
     },
     "waterReflections": {
-      "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+      "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
       "views": [
         {
           "name": "closed-river",
           "full": {
-            "calls": 455,
-            "triangles": 3803782,
+            "calls": 452,
+            "triangles": 3777440,
             "crop": null
           },
           "crop": {
-            "calls": 403,
-            "triangles": 3666516,
+            "calls": 355,
+            "triangles": 3600610,
             "crop": {
-              "x": 291,
-              "y": 291,
-              "width": 349,
-              "height": 69,
+              "x": 329,
+              "y": 0,
+              "width": 311,
+              "height": 136,
               "w": 640,
               "h": 360,
-              "area": 0.10451822916666667
+              "area": 0.1835763888888889
             }
           }
         },
         {
           "name": "closed-gate",
           "full": {
-            "calls": 451,
-            "triangles": 3649872,
+            "calls": 435,
+            "triangles": 3620318,
             "crop": null
           },
           "crop": {
-            "calls": 335,
-            "triangles": 3426956,
+            "calls": 334,
+            "triangles": 3416630,
             "crop": {
               "x": 528,
               "y": 0,
@@ -1210,34 +1232,34 @@
         {
           "name": "closed-bridge",
           "full": {
-            "calls": 1109,
-            "triangles": 4431997,
+            "calls": 589,
+            "triangles": 4530266,
             "crop": null
           },
           "crop": {
-            "calls": 839,
-            "triangles": 4193061,
+            "calls": 442,
+            "triangles": 4261604,
             "crop": {
-              "x": 505,
-              "y": 299,
-              "width": 135,
-              "height": 61,
+              "x": 518,
+              "y": 349,
+              "width": 122,
+              "height": 11,
               "w": 640,
               "h": 360,
-              "area": 0.0357421875
+              "area": 0.0058246527777777776
             }
           }
         },
         {
           "name": "surge-river",
           "full": {
-            "calls": 481,
-            "triangles": 3817956,
+            "calls": 475,
+            "triangles": 3790596,
             "crop": null
           },
           "crop": {
-            "calls": 405,
-            "triangles": 3666520,
+            "calls": 403,
+            "triangles": 3644528,
             "crop": {
               "x": 291,
               "y": 291,
@@ -1252,55 +1274,55 @@
         {
           "name": "surge-gate",
           "full": {
-            "calls": 440,
-            "triangles": 3638556,
+            "calls": 452,
+            "triangles": 3633174,
             "crop": null
           },
           "crop": {
-            "calls": 391,
-            "triangles": 3508598,
+            "calls": 336,
+            "triangles": 3417398,
             "crop": {
-              "x": 298,
-              "y": 111,
-              "width": 342,
-              "height": 249,
+              "x": 528,
+              "y": 0,
+              "width": 112,
+              "height": 96,
               "w": 640,
               "h": 360,
-              "area": 0.369609375
+              "area": 0.04666666666666667
             }
           }
         },
         {
           "name": "surge-bridge",
           "full": {
-            "calls": 1009,
-            "triangles": 4462735,
+            "calls": 617,
+            "triangles": 4533170,
             "crop": null
           },
           "crop": {
-            "calls": 851,
-            "triangles": 4194509,
+            "calls": 458,
+            "triangles": 4263060,
             "crop": {
-              "x": 505,
-              "y": 300,
-              "width": 135,
-              "height": 60,
+              "x": 518,
+              "y": 349,
+              "width": 122,
+              "height": 11,
               "w": 640,
               "h": 360,
-              "area": 0.03515625
+              "area": 0.0058246527777777776
             }
           }
         },
         {
           "name": "river",
           "full": {
-            "calls": 459,
-            "triangles": 3803790,
+            "calls": 469,
+            "triangles": 3786612,
             "crop": null
           },
           "crop": {
-            "calls": 362,
-            "triangles": 3623954,
+            "calls": 364,
+            "triangles": 3604826,
             "crop": {
               "x": 330,
               "y": 0,
@@ -1315,34 +1337,34 @@
         {
           "name": "gate",
           "full": {
-            "calls": 440,
-            "triangles": 3638556,
+            "calls": 449,
+            "triangles": 3625932,
             "crop": null
           },
           "crop": {
-            "calls": 391,
-            "triangles": 3508598,
+            "calls": 343,
+            "triangles": 3444638,
             "crop": {
-              "x": 298,
-              "y": 109,
-              "width": 342,
-              "height": 251,
+              "x": 535,
+              "y": 0,
+              "width": 105,
+              "height": 130,
               "w": 640,
               "h": 360,
-              "area": 0.372578125
+              "area": 0.059244791666666664
             }
           }
         },
         {
           "name": "bridge",
           "full": {
-            "calls": 1137,
-            "triangles": 4428493,
+            "calls": 615,
+            "triangles": 4497328,
             "crop": null
           },
           "crop": {
-            "calls": 855,
-            "triangles": 4193379,
+            "calls": 469,
+            "triangles": 4270442,
             "crop": {
               "x": 508,
               "y": 330,
@@ -1360,33 +1382,33 @@
           "width": 844,
           "height": 390,
           "enabled": false,
-          "fps": 69.99300069993001,
-          "p95": 14.900000005960464,
-          "calls": 1187.4685714285715
+          "fps": 70.99432045470215,
+          "p95": 15.099999994039536,
+          "calls": 637.6591549295774
         },
         {
           "width": 844,
           "height": 390,
           "enabled": true,
-          "fps": 70.73068392966461,
-          "p95": 14.900000005960464,
-          "calls": 906.2344632768362
+          "fps": 71.59570425757384,
+          "p95": 15,
+          "calls": 502.77653631284915
         },
         {
           "width": 1366,
           "height": 768,
           "enabled": false,
-          "fps": 70.98864181714,
+          "fps": 71.39286071392861,
           "p95": 14.900000005960464,
-          "calls": 1154.5971830985916
+          "calls": 600.2156862745098
         },
         {
           "width": 1366,
           "height": 768,
           "enabled": true,
-          "fps": 71.5584960726191,
-          "p95": 15.099999994039536,
-          "calls": 872.6061452513967
+          "fps": 71.17010855449195,
+          "p95": 14.899999976158142,
+          "calls": 471.15168539325845
         }
       ],
       "pixels": [
@@ -1449,7 +1471,7 @@
       "pass": true
     },
     "cutaways": {
-      "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+      "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
       "cycles": [
         {
           "side": "behind",
@@ -1658,7 +1680,7 @@
       "pass": true
     },
     "atmosphere": {
-      "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+      "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
       "clouds": {
         "anchorsFixed": true,
         "cloudFixed": true,
@@ -1691,7 +1713,7 @@
       "pass": true
     },
     "controls": {
-      "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+      "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
       "errors": [],
       "run": {
         "distance": 2.3100000000000747,
@@ -1858,7 +1880,7 @@
             768,
             720
           ],
-          "cell": 33,
+          "cell": 34,
           "native": true
         },
         {
@@ -1897,7 +1919,7 @@
             896,
             616
           ],
-          "cell": 69,
+          "cell": 70,
           "native": true
         },
         {
@@ -1910,7 +1932,7 @@
             896,
             616
           ],
-          "cell": 80,
+          "cell": 8,
           "native": true
         },
         {
@@ -1923,7 +1945,7 @@
             896,
             616
           ],
-          "cell": 11,
+          "cell": 8,
           "native": true
         },
         {
@@ -1936,7 +1958,7 @@
             1152,
             880
           ],
-          "cell": 124,
+          "cell": 121,
           "native": true
         },
         {
@@ -1949,7 +1971,7 @@
             1152,
             968
           ],
-          "cell": 63,
+          "cell": 11,
           "native": true
         },
         {
@@ -2053,14 +2075,14 @@
             1056,
             968
           ],
-          "cell": 100,
+          "cell": 99,
           "native": true
         }
       ],
       "pass": true
     },
     "menus": {
-      "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+      "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
       "views": [
         {
           "tab": "journal",
@@ -2308,7 +2330,7 @@
           "key": "w",
           "expected": "north",
           "actual": "north",
-          "distance": 2.4010800000000994
+          "distance": 2.3555400000001137
         },
         {
           "key": "d",
@@ -2429,7 +2451,7 @@
               "z": 99
             },
             "found": true,
-            "remaining": 0.22310595545218986,
+            "remaining": 0.22380738364802996,
             "area": "lane"
           },
           {
@@ -2438,7 +2460,7 @@
               "z": 94
             },
             "found": true,
-            "remaining": 0.2623969434964603,
+            "remaining": 0.26178351132717675,
             "area": "lane"
           },
           {
@@ -2447,13 +2469,13 @@
               "z": 87
             },
             "found": true,
-            "remaining": 0.2450108965376759,
+            "remaining": 0.24484090936662273,
             "area": "lane"
           }
         ],
         "buildUnchanged": true,
         "noTransition": true,
-        "maxFollowerStep": 0.11000000000002744,
+        "maxFollowerStep": 0.11000000000002466,
         "blocked": 0,
         "debug": {
           "builds": 3,
@@ -2990,12 +3012,12 @@
       "scenarios": [
         {
           "name": "bridge",
-          "fps": 71.49285071482198,
-          "p95FrameMs": 14.899999976158142,
-          "meanRenderCpuMs": 3.9374125878085624,
-          "ticks": 286,
-          "calls": 830.2727272727273,
-          "triangles": 4136301.7342657344,
+          "fps": 71.24109486314211,
+          "p95FrameMs": 15.099999994039536,
+          "meanRenderCpuMs": 3.292982455722073,
+          "ticks": 285,
+          "calls": 443.93684210526317,
+          "triangles": 4128801.1649122806,
           "buffer": [
             1440,
             900
@@ -3006,17 +3028,17 @@
             1536,
             1536
           ],
-          "programs": 175,
+          "programs": 166,
           "worldSerial": 4
         },
         {
           "name": "square",
-          "fps": 70.94678990756933,
-          "p95FrameMs": 14.900000005960464,
-          "meanRenderCpuMs": 4.033450704645103,
+          "fps": 70.9822544363909,
+          "p95FrameMs": 15.099999994039536,
+          "meanRenderCpuMs": 3.48204225375199,
           "ticks": 285,
-          "calls": 471.0845070422535,
-          "triangles": 3879456.1690140846,
+          "calls": 474.9507042253521,
+          "triangles": 3868431.9014084507,
           "buffer": [
             1440,
             900
@@ -3027,17 +3049,17 @@
             1536,
             1536
           ],
-          "programs": 177,
+          "programs": 168,
           "worldSerial": 5
         },
         {
           "name": "forest",
-          "fps": 71.99640017966917,
-          "p95FrameMs": 15.099999994039536,
-          "meanRenderCpuMs": 1.540277777446641,
+          "fps": 71.99280071982074,
+          "p95FrameMs": 15,
+          "meanRenderCpuMs": 1.5607638891993298,
           "ticks": 288,
-          "calls": 242.29861111111111,
-          "triangles": 2333768.7430555555,
+          "calls": 245.72222222222223,
+          "triangles": 2330358.5625,
           "buffer": [
             1440,
             900
@@ -3048,17 +3070,17 @@
             1536,
             1536
           ],
-          "programs": 180,
+          "programs": 171,
           "worldSerial": 6
         },
         {
           "name": "overworld",
-          "fps": 71.97840647773492,
-          "p95FrameMs": 14.699999988079071,
-          "meanRenderCpuMs": 3.88506944425818,
+          "fps": 71.98380364460901,
+          "p95FrameMs": 14.5,
+          "meanRenderCpuMs": 3.640277777591513,
           "ticks": 288,
-          "calls": 399.68055555555554,
-          "triangles": 4937553.111111111,
+          "calls": 401.0729166666667,
+          "triangles": 4923606.402777778,
           "buffer": [
             1440,
             900
@@ -3069,17 +3091,17 @@
             1536,
             1536
           ],
-          "programs": 199,
+          "programs": 190,
           "worldSerial": 7
         },
         {
           "name": "shop",
-          "fps": 71.99280072035708,
-          "p95FrameMs": 14.800000011920929,
-          "meanRenderCpuMs": 0.8409722220773498,
+          "fps": 71.98380364407282,
+          "p95FrameMs": 14.599999994039536,
+          "meanRenderCpuMs": 0.6465277785642279,
           "ticks": 288,
-          "calls": 116.05555555555556,
-          "triangles": 28732.11111111111,
+          "calls": 109.78472222222223,
+          "triangles": 28725.569444444445,
           "buffer": [
             1440,
             900
@@ -3090,11 +3112,11 @@
             1536,
             1536
           ],
-          "programs": 201,
+          "programs": 192,
           "worldSerial": 8
         }
       ],
-      "loadMs": 12094,
+      "loadMs": 12637,
       "device": {
         "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
         "software": false
@@ -3107,19 +3129,19 @@
       "phases": [
         {
           "name": "warm-town",
-          "seconds": 30.005900000005962,
-          "fps": 72.68570514464044,
+          "seconds": 30.00109999999404,
+          "fps": 73.03065554264461,
           "frame": {
-            "mean": 13.760871559627558,
+            "mean": 13.695707762554356,
             "p95": 14.5,
-            "p99": 15.199999988079071,
-            "max": 16.900000005960464
+            "p99": 15.099999994039536,
+            "max": 20.400000005960464
           },
           "renderCPU": {
-            "mean": 4.776295277693577,
-            "p95": 5.800000011920929,
-            "p99": 6.4000000059604645,
-            "max": 11.5
+            "mean": 4.241214057412773,
+            "p95": 5.199999988079071,
+            "p99": 5.5,
+            "max": 10.5
           },
           "scale": 1,
           "tier": 2,
@@ -3127,33 +3149,33 @@
             1920,
             1080
           ],
-          "gpuMs": 4.222633192015765,
-          "fx": 5,
+          "gpuMs": 4.15412431393216,
+          "fx": 14,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P3, 44, 33, 1140, 5001, 46.60",
-            "P3, 44, 36, 900, 5001, 45.37",
-            "P3, 44, 40, 975, 5001, 45.84",
-            "P3, 44, 35, 975, 5001, 45.48",
-            "P3, 43, 38, 885, 5001, 44.98"
+            "P3, 41, 30, 1350, 5001, 48.49",
+            "P3, 41, 35, 915, 5001, 42.40",
+            "P3, 41, 36, 855, 5001, 41.97",
+            "P3, 41, 37, 840, 5001, 42.38",
+            "P3, 41, 40, 915, 5001, 42.11"
           ]
         },
         {
           "name": "after-travel-and-battle-0",
-          "seconds": 10.000800000011921,
-          "fps": 71.594272458118,
+          "seconds": 10.00040000000596,
+          "fps": 71.59713611451274,
           "frame": {
-            "mean": 13.889230769247442,
-            "p95": 14.599999994039536,
-            "p99": 15.099999994039536,
-            "max": 15.5
+            "mean": 13.891048951040615,
+            "p95": 14.5,
+            "p99": 15.199999988079071,
+            "max": 16
           },
           "renderCPU": {
-            "mean": 3.699860335520193,
-            "p95": 4.200000017881393,
-            "p99": 4.5,
-            "max": 8
+            "mean": 3.3343575428651033,
+            "p95": 3.7000000178813934,
+            "p99": 4,
+            "max": 6.9000000059604645
           },
           "scale": 1,
           "tier": 2,
@@ -3161,196 +3183,28 @@
             1920,
             1080
           ],
-          "gpuMs": 4.455409695275187,
+          "gpuMs": 3.6942946211831202,
           "fx": 9,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P3, 43, 35, 1020, 5001, 45.87"
+            "P3, 40, 36, 1005, 5001, 43.40"
           ]
         },
         {
           "name": "after-travel-and-battle-1",
-          "seconds": 10.001300000011922,
-          "fps": 71.59069320979738,
+          "seconds": 10.0015,
+          "fps": 71.58926161075838,
           "frame": {
-            "mean": 13.890769230777567,
+            "mean": 13.885594405619415,
             "p95": 14.5,
-            "p99": 15.199999988079071,
-            "max": 15.799999982118607
+            "p99": 15.200000017881393,
+            "max": 15.400000005960464
           },
           "renderCPU": {
-            "mean": 3.7305865931694067,
-            "p95": 4.200000017881393,
-            "p99": 4.4000000059604645,
-            "max": 5.0999999940395355
-          },
-          "scale": 1,
-          "tier": 2,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 3.9384513969688677,
-          "fx": 13,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P3, 42, 37, 1035, 5001, 45.33",
-            "P3, 42, 33, 945, 5001, 44.95"
-          ]
-        },
-        {
-          "name": "after-travel-and-battle-2",
-          "seconds": 10.002400000005961,
-          "fps": 71.58282012312777,
-          "frame": {
-            "mean": 13.89356643357477,
-            "p95": 14.5,
-            "p99": 15.199999988079071,
-            "max": 15.5
-          },
-          "renderCPU": {
-            "mean": 3.7254189947547194,
-            "p95": 4.300000011920929,
-            "p99": 4.5,
-            "max": 4.5999999940395355
-          },
-          "scale": 1,
-          "tier": 2,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 4.572671402904273,
-          "fx": 6,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P3, 41, 38, 1020, 5001, 44.55"
-          ]
-        },
-        {
-          "name": "after-travel-and-battle-3",
-          "seconds": 10.000199999988078,
-          "fps": 71.59856802872477,
-          "frame": {
-            "mean": 13.885734265709257,
-            "p95": 14.599999994039536,
-            "p99": 15.199999988079071,
-            "max": 15.700000017881393
-          },
-          "renderCPU": {
-            "mean": 3.6604748602602735,
-            "p95": 4.199999988079071,
-            "p99": 4.300000011920929,
-            "max": 4.699999988079071
-          },
-          "scale": 1,
-          "tier": 2,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 4.821148409755514,
-          "fx": 8,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P3, 41, 37, 1005, 5001, 45.26"
-          ]
-        },
-        {
-          "name": "town-after-thirty-minutes",
-          "seconds": 45.001299999982116,
-          "fps": 71.95347689958483,
-          "frame": {
-            "mean": 13.898239110294668,
-            "p95": 14.400000005960464,
-            "p99": 15.100000023841858,
-            "max": 29
-          },
-          "renderCPU": {
-            "mean": 3.720660902186998,
-            "p95": 4.200000017881393,
-            "p99": 4.5,
-            "max": 9.400000005960464
-          },
-          "scale": 1,
-          "tier": 2,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 4.921882908334793,
-          "fx": 8,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P3, 40, 34, 1155, 5001, 46.52",
-            "P3, 40, 37, 1035, 5001, 46.31",
-            "P3, 40, 35, 1005, 5001, 46.14",
-            "P3, 40, 37, 945, 5001, 45.68",
-            "P3, 40, 37, 945, 5001, 45.75",
-            "P3, 40, 38, 945, 5001, 46.15",
-            "P3, 40, 40, 915, 5001, 46.85",
-            "P3, 40, 37, 945, 5001, 46.92"
-          ]
-        },
-        {
-          "name": "overworld-extended",
-          "seconds": 60.00059999999404,
-          "fps": 71.91594750719874,
-          "frame": {
-            "mean": 13.90347705145898,
-            "p95": 14.899999976158142,
-            "p99": 15.700000017881393,
-            "max": 30.19999998807907
-          },
-          "renderCPU": {
-            "mean": 2.374090382563833,
-            "p95": 3,
-            "p99": 3.399999976158142,
-            "max": 5.5
-          },
-          "scale": 1,
-          "tier": 2,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 3.9809208651149657,
-          "fx": 10,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P3, 41, 31, 1230, 5001, 49.67",
-            "P3, 41, 28, 1320, 5001, 55.43",
-            "P0, 41, 17, 2505, 11201, 51.44",
-            "P3, 41, 32, 1110, 5001, 48.79",
-            "P3, 41, 28, 1305, 5001, 54.33",
-            "P0, 41, 17, 2505, 11201, 50.19",
-            "P3, 42, 32, 1095, 5001, 47.94",
-            "P3, 42, 28, 1200, 5001, 48.34",
-            "P0, 43, 17, 2505, 11201, 62.54",
-            "P5, 41, 78, 945, 810, 47.37",
-            "P3, 41, 31, 1020, 5001, 47.90"
-          ]
-        },
-        {
-          "name": "storm-overworld-extended",
-          "seconds": 60.00009999999404,
-          "fps": 71.89988016687353,
-          "frame": {
-            "mean": 13.908277301176943,
-            "p95": 15,
-            "p99": 15.799999982118607,
-            "max": 48.69999998807907
-          },
-          "renderCPU": {
-            "mean": 2.357000463688379,
-            "p95": 2.9000000059604645,
-            "p99": 3.199999988079071,
+            "mean": 3.342597764921921,
+            "p95": 3.7999999821186066,
+            "p99": 3.9000000059604645,
             "max": 4.199999988079071
           },
           "scale": 1,
@@ -3359,79 +3213,29 @@
             1920,
             1080
           ],
-          "gpuMs": 4.343475936656505,
-          "fx": 10,
-          "weather": "Thunderstorm",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P0, 43, 18, 2505, 11201, 62.24",
-            "P0, 41, 26, 2505, 11201, 47.34",
-            "P3, 41, 33, 1005, 5001, 47.36",
-            "P3, 41, 30, 1140, 5001, 47.90",
-            "P3, 41, 25, 1395, 5001, 61.31",
-            "P0, 42, 17, 2505, 11201, 49.62",
-            "P3, 41, 33, 990, 5001, 47.39",
-            "P3, 42, 32, 1110, 5001, 46.83",
-            "P3, 41, 26, 1365, 5001, 58.58",
-            "P0, 42, 16, 2505, 11201, 53.35",
-            "P3, 42, 35, 975, 5001, 47.76"
-          ]
-        },
-        {
-          "name": "continuous-battle-skills",
-          "seconds": 60.001,
-          "fps": 71.848802519958,
-          "frame": {
-            "mean": 13.912157772623193,
-            "p95": 18.099999994039536,
-            "p99": 18.600000023841858,
-            "max": 49.60000002384186
-          },
-          "renderCPU": {
-            "mean": 3.578775226240284,
-            "p95": 4.199999988079071,
-            "p99": 4.5,
-            "max": 6.799999982118607
-          },
-          "scale": 1,
-          "tier": 2,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 5.566896608581256,
-          "fx": 0,
+          "gpuMs": 4.262557593976499,
+          "fx": 7,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P3, 42, 34, 1290, 5001, 53.63",
-            "P3, 42, 42, 1125, 5001, 52.94",
-            "P3, 42, 37, 1170, 5001, 53.09",
-            "P3, 42, 43, 1125, 5001, 53.41",
-            "P3, 43, 39, 1140, 5001, 53.74",
-            "P3, 42, 41, 1125, 5001, 52.95",
-            "P3, 42, 40, 1155, 5001, 53.93",
-            "P3, 42, 41, 1185, 5001, 53.85",
-            "P3, 42, 42, 1110, 5001, 53.46",
-            "P3, 42, 36, 1200, 5001, 53.45",
-            "P3, 42, 37, 1185, 5001, 53.75"
+            "P3, 40, 34, 975, 5001, 42.58"
           ]
         },
         {
-          "name": "final-town",
-          "seconds": 30.0005,
-          "fps": 71.93213446442559,
+          "name": "after-travel-and-battle-2",
+          "seconds": 10.00040000000596,
+          "fps": 71.59713611451274,
           "frame": {
-            "mean": 13.90125173852573,
+            "mean": 13.887692307675636,
             "p95": 14.5,
-            "p99": 15.199999988079071,
-            "max": 20.900000005960464
+            "p99": 15.099999994039536,
+            "max": 15.5
           },
           "renderCPU": {
-            "mean": 4.0430027800814985,
-            "p95": 4.5999999940395355,
-            "p99": 4.9000000059604645,
-            "max": 17.099999994039536
+            "mean": 3.173463686842825,
+            "p95": 3.600000023841858,
+            "p99": 3.800000011920929,
+            "max": 4.799999982118607
           },
           "scale": 1,
           "tier": 2,
@@ -3439,16 +3243,233 @@
             1920,
             1080
           ],
-          "gpuMs": 5.2461694349343775,
+          "gpuMs": 4.043569436520099,
+          "fx": 6,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P3, 40, 31, 1020, 5001, 42.32"
+          ]
+        },
+        {
+          "name": "after-travel-and-battle-3",
+          "seconds": 10.000299999982118,
+          "fps": 71.5978520645661,
+          "frame": {
+            "mean": 13.886293706277034,
+            "p95": 14.5,
+            "p99": 15.200000017881393,
+            "max": 15.599999994039536
+          },
+          "renderCPU": {
+            "mean": 3.2994413402077205,
+            "p95": 3.7999999821186066,
+            "p99": 4,
+            "max": 4.199999988079071
+          },
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.1487127334901865,
+          "fx": 13,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P3, 40, 30, 1125, 5001, 43.51"
+          ]
+        },
+        {
+          "name": "town-after-thirty-minutes",
+          "seconds": 45.00039999997616,
+          "fps": 71.64380761063697,
+          "frame": {
+            "mean": 13.958051504812882,
+            "p95": 14.400000005960464,
+            "p99": 15.099999994039536,
+            "max": 89.90000000596046
+          },
+          "renderCPU": {
+            "mean": 3.4279156327894693,
+            "p95": 3.9000000059604645,
+            "p99": 4.299999982118607,
+            "max": 5.800000011920929
+          },
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.261483865375574,
           "fx": 8,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P3, 41, 33, 1020, 5001, 44.62",
-            "P3, 41, 40, 840, 5001, 43.69",
-            "P3, 41, 38, 840, 5001, 43.76",
-            "P3, 41, 39, 825, 5001, 43.65",
-            "P3, 41, 38, 870, 5001, 44.10"
+            "P3, 40, 31, 1410, 5001, 55.29",
+            "P3, 39, 34, 1005, 5001, 45.37",
+            "P3, 40, 38, 900, 5001, 44.21",
+            "P3, 40, 39, 885, 5001, 43.62",
+            "P3, 39, 39, 990, 5001, 44.52",
+            "P3, 40, 36, 990, 5001, 44.47",
+            "P3, 40, 39, 915, 5001, 45.02",
+            "P3, 40, 38, 1035, 5001, 45.91"
+          ]
+        },
+        {
+          "name": "overworld-extended",
+          "seconds": 60.00109999999404,
+          "fps": 71.79868369080614,
+          "frame": {
+            "mean": 13.925725563035533,
+            "p95": 14.699999988079071,
+            "p99": 15.400000005960464,
+            "max": 131
+          },
+          "renderCPU": {
+            "mean": 2.5158077996282966,
+            "p95": 3.5999999940395355,
+            "p99": 4.299999982118607,
+            "max": 5.200000017881393
+          },
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.445120624847749,
+          "fx": 8,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P3, 40, 35, 1095, 5001, 48.04",
+            "P3, 41, 29, 1275, 5001, 49.29",
+            "P0, 41, 17, 2505, 11201, 51.89",
+            "P3, 41, 33, 1020, 5001, 47.53",
+            "P3, 41, 35, 1215, 5001, 47.94",
+            "P0, 41, 17, 2505, 11201, 60.19",
+            "P3, 40, 34, 960, 5001, 46.40",
+            "P3, 41, 31, 1125, 5001, 47.86",
+            "P3, 41, 29, 1350, 5001, 56.48",
+            "P0, 41, 20, 2505, 11201, 55.22",
+            "P3, 42, 34, 1155, 5001, 47.68"
+          ]
+        },
+        {
+          "name": "storm-overworld-extended",
+          "seconds": 60.00069999998808,
+          "fps": 71.88249470424275,
+          "frame": {
+            "mean": 13.909972170682309,
+            "p95": 14.800000011920929,
+            "p99": 15.699999988079071,
+            "max": 46.80000001192093
+          },
+          "renderCPU": {
+            "mean": 2.6282170179366733,
+            "p95": 4.199999988079071,
+            "p99": 4.800000011920929,
+            "max": 6
+          },
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 5.005981637241332,
+          "fx": 9,
+          "weather": "Thunderstorm",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P3, 42, 25, 1425, 5001, 61.44",
+            "P0, 42, 18, 2505, 11201, 50.40",
+            "P3, 41, 34, 1155, 5001, 47.86",
+            "P3, 41, 28, 1365, 5001, 53.58",
+            "P0, 41, 17, 2505, 11201, 49.12",
+            "P3, 41, 34, 1005, 5001, 47.56",
+            "P3, 42, 35, 1200, 5001, 47.98",
+            "P0, 42, 19, 2505, 11201, 58.47",
+            "P3, 41, 36, 990, 5001, 47.40",
+            "P3, 41, 33, 1155, 5001, 47.57",
+            "P0, 42, 17, 2505, 11201, 62.23"
+          ]
+        },
+        {
+          "name": "continuous-battle-skills",
+          "seconds": 60.00259999999404,
+          "fps": 71.86355257939536,
+          "frame": {
+            "mean": 13.909533750869867,
+            "p95": 18,
+            "p99": 18.600000023841858,
+            "max": 54.30000001192093
+          },
+          "renderCPU": {
+            "mean": 3.4022263448637027,
+            "p95": 3.9000000059604645,
+            "p99": 4.299999982118607,
+            "max": 6
+          },
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 5.119083386972026,
+          "fx": 0,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P3, 42, 38, 1290, 5001, 53.05",
+            "P3, 42, 35, 1185, 5001, 51.90",
+            "P3, 43, 35, 1185, 5001, 52.20",
+            "P3, 42, 33, 1185, 5001, 52.64",
+            "P3, 42, 36, 1155, 5001, 53.08",
+            "P3, 42, 37, 1125, 5001, 51.82",
+            "P3, 42, 39, 1230, 5001, 53.10",
+            "P3, 42, 36, 1155, 5001, 52.70",
+            "P3, 42, 40, 1155, 5001, 53.01",
+            "P3, 42, 36, 1110, 5001, 52.54",
+            "P3, 42, 37, 1260, 5001, 53.18"
+          ]
+        },
+        {
+          "name": "final-town",
+          "seconds": 30.00080000001192,
+          "fps": 71.96474760670189,
+          "frame": {
+            "mean": 13.89541241889811,
+            "p95": 14.599999994039536,
+            "p99": 15.200000017881393,
+            "max": 17.599999994039536
+          },
+          "renderCPU": {
+            "mean": 3.9102362206463686,
+            "p95": 6.0999999940395355,
+            "p99": 7.200000017881393,
+            "max": 8.400000005960464
+          },
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.414051508056003,
+          "fx": 9,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P3, 41, 34, 1020, 5001, 43.25",
+            "P0, 42, 21, 2505, 11201, 54.25",
+            "P3, 41, 30, 1155, 5001, 43.63",
+            "P3, 41, 37, 855, 5001, 42.11",
+            "P3, 41, 39, 825, 5001, 41.88"
           ]
         }
       ],
@@ -3456,13 +3477,13 @@
         {
           "name": "warm",
           "scene": "brookstead",
-          "heap": 902048353,
-          "geometries": 1511,
-          "textures": 97,
-          "programs": 206,
-          "keepers": 78,
+          "heap": 907903732,
+          "geometries": 1551,
+          "textures": 104,
+          "programs": 197,
+          "keepers": 73,
           "queries": 0,
-          "fx": 5,
+          "fx": 14,
           "nav": 0,
           "roadCache": 50000,
           "liveRoadCache": 12000
@@ -3470,11 +3491,11 @@
         {
           "name": "round-0",
           "scene": "brookstead",
-          "heap": 1104697122,
-          "geometries": 1511,
-          "textures": 97,
-          "programs": 210,
-          "keepers": 80,
+          "heap": 1111369024,
+          "geometries": 1545,
+          "textures": 104,
+          "programs": 200,
+          "keepers": 75,
           "queries": 0,
           "fx": 9,
           "nav": 0,
@@ -3484,13 +3505,13 @@
         {
           "name": "round-1",
           "scene": "brookstead",
-          "heap": 1105130214,
-          "geometries": 1514,
-          "textures": 97,
-          "programs": 212,
-          "keepers": 81,
+          "heap": 1111756120,
+          "geometries": 1542,
+          "textures": 104,
+          "programs": 202,
+          "keepers": 76,
           "queries": 0,
-          "fx": 13,
+          "fx": 7,
           "nav": 0,
           "roadCache": 50000,
           "liveRoadCache": 12000
@@ -3498,12 +3519,12 @@
         {
           "name": "round-2",
           "scene": "brookstead",
-          "heap": 1107009354,
-          "geometries": 1507,
-          "textures": 97,
-          "programs": 214,
-          "keepers": 82,
-          "queries": 0,
+          "heap": 1112938924,
+          "geometries": 1540,
+          "textures": 104,
+          "programs": 204,
+          "keepers": 77,
+          "queries": 1,
           "fx": 6,
           "nav": 0,
           "roadCache": 50000,
@@ -3512,13 +3533,13 @@
         {
           "name": "round-3",
           "scene": "brookstead",
-          "heap": 1107381982,
-          "geometries": 1509,
-          "textures": 97,
-          "programs": 216,
-          "keepers": 83,
-          "queries": 0,
-          "fx": 8,
+          "heap": 1113473040,
+          "geometries": 1544,
+          "textures": 104,
+          "programs": 206,
+          "keepers": 78,
+          "queries": 1,
+          "fx": 13,
           "nav": 0,
           "roadCache": 50000,
           "liveRoadCache": 12000
@@ -3526,12 +3547,12 @@
         {
           "name": "after-thirty-minutes",
           "scene": "brookstead",
-          "heap": 1107742260,
-          "geometries": 1509,
-          "textures": 97,
-          "programs": 216,
-          "keepers": 83,
-          "queries": 0,
+          "heap": 1113775094,
+          "geometries": 1542,
+          "textures": 104,
+          "programs": 206,
+          "keepers": 78,
+          "queries": 1,
           "fx": 8,
           "nav": 0,
           "roadCache": 50000,
@@ -3540,23 +3561,23 @@
         {
           "name": "final",
           "scene": "brookstead",
-          "heap": 1106709978,
-          "geometries": 1514,
-          "textures": 97,
-          "programs": 218,
-          "keepers": 84,
-          "queries": 0,
-          "fx": 8,
+          "heap": 1113559892,
+          "geometries": 1545,
+          "textures": 104,
+          "programs": 208,
+          "keepers": 79,
+          "queries": 1,
+          "fx": 9,
           "nav": 0,
           "roadCache": 50000,
           "liveRoadCache": 12000
         }
       ],
       "acceleratedSeconds": 1800,
-      "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+      "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
       "growth": {
-        "heap": 1579764,
-        "geometries": 0,
+        "heap": 1803772,
+        "geometries": 3,
         "textures": 0,
         "programs": 6
       },
@@ -3565,7 +3586,7 @@
       "errors": []
     },
     "deviceSizes": {
-      "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+      "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
       "samples": [
         {
           "name": "desktop",
@@ -3575,20 +3596,20 @@
           "dpr": 1,
           "tier": 2,
           "scale": 1,
-          "frameCount": 403,
+          "frameCount": 430,
           "seconds": 6,
-          "fps": 67.16666666666667,
-          "cpu": 7.512224283689761,
-          "gpu": 5.984271587922877,
+          "fps": 71.66666666666667,
+          "cpu": 2.9459574944093987,
+          "gpu": 5.073559595225186,
           "buffer": [
             1920,
             1080
           ],
           "resizes": 2,
           "allocations": 6,
-          "programs": 173,
-          "geometry": 1510,
-          "textures": 91
+          "programs": 164,
+          "geometry": 1545,
+          "textures": 98
         },
         {
           "name": "desktop",
@@ -3598,20 +3619,20 @@
           "dpr": 1,
           "tier": 2,
           "scale": 1,
-          "frameCount": 411,
+          "frameCount": 431,
           "seconds": 6,
-          "fps": 68.5,
-          "cpu": 5.844135889429501,
-          "gpu": 6.103537958219938,
+          "fps": 71.83333333333333,
+          "cpu": 2.8414909838024354,
+          "gpu": 4.029290142600896,
           "buffer": [
             1366,
             768
           ],
           "resizes": 3,
           "allocations": 6,
-          "programs": 173,
-          "geometry": 1512,
-          "textures": 91
+          "programs": 164,
+          "geometry": 1545,
+          "textures": 98
         },
         {
           "name": "desktop",
@@ -3621,20 +3642,20 @@
           "dpr": 1,
           "tier": 2,
           "scale": 1,
-          "frameCount": 424,
+          "frameCount": 433,
           "seconds": 6,
-          "fps": 70.66666666666667,
-          "cpu": 3.218275358248038,
-          "gpu": 3.8925685933586984,
+          "fps": 72.16666666666667,
+          "cpu": 2.77302191948458,
+          "gpu": 2.977537674281053,
           "buffer": [
             960,
             540
           ],
           "resizes": 4,
           "allocations": 6,
-          "programs": 173,
-          "geometry": 1514,
-          "textures": 91
+          "programs": 164,
+          "geometry": 1541,
+          "textures": 98
         },
         {
           "name": "desktop",
@@ -3644,20 +3665,20 @@
           "dpr": 1,
           "tier": 2,
           "scale": 1,
-          "frameCount": 433,
+          "frameCount": 432,
           "seconds": 6,
-          "fps": 72.16666666666667,
-          "cpu": 2.93366527371554,
-          "gpu": 2.5476370152496437,
+          "fps": 72,
+          "cpu": 2.6969646083625545,
+          "gpu": 4.449168539066167,
           "buffer": [
             800,
             600
           ],
           "resizes": 5,
           "allocations": 6,
-          "programs": 173,
-          "geometry": 1510,
-          "textures": 91
+          "programs": 164,
+          "geometry": 1545,
+          "textures": 98
         },
         {
           "name": "desktop",
@@ -3667,20 +3688,20 @@
           "dpr": 1,
           "tier": 0,
           "scale": 0.8400000000000001,
-          "frameCount": 386,
+          "frameCount": 380,
           "seconds": 6,
-          "fps": 64.33333333333333,
-          "cpu": 12.081904144343394,
-          "gpu": 7.971444129463415,
+          "fps": 63.333333333333336,
+          "cpu": 11.15610838050408,
+          "gpu": 6.254027047299317,
           "buffer": [
             903,
             508
           ],
           "resizes": 9,
           "allocations": 11,
-          "programs": 173,
-          "geometry": 1510,
-          "textures": 90
+          "programs": 164,
+          "geometry": 1554,
+          "textures": 97
         },
         {
           "name": "phone-high-dpi",
@@ -3690,20 +3711,20 @@
           "dpr": 3,
           "tier": 1,
           "scale": 1,
-          "frameCount": 408,
+          "frameCount": 432,
           "seconds": 6,
-          "fps": 68,
-          "cpu": 7.430132023260247,
-          "gpu": 1.9915501688119266,
+          "fps": 72,
+          "cpu": 3.320344258935337,
+          "gpu": 1.6959959321961067,
           "buffer": [
             585,
             1266
           ],
           "resizes": 2,
           "allocations": 5,
-          "programs": 173,
-          "geometry": 1492,
-          "textures": 91
+          "programs": 164,
+          "geometry": 1517,
+          "textures": 98
         },
         {
           "name": "phone-high-dpi",
@@ -3713,20 +3734,20 @@
           "dpr": 3,
           "tier": 1,
           "scale": 1,
-          "frameCount": 422,
+          "frameCount": 429,
           "seconds": 6,
-          "fps": 70.33333333333333,
-          "cpu": 8.099845522819882,
-          "gpu": 3.1912255056174383,
+          "fps": 71.5,
+          "cpu": 3.682226812769255,
+          "gpu": 4.153233696487868,
           "buffer": [
             1266,
             585
           ],
           "resizes": 3,
           "allocations": 5,
-          "programs": 173,
-          "geometry": 1496,
-          "textures": 91
+          "programs": 164,
+          "geometry": 1513,
+          "textures": 98
         },
         {
           "name": "phone-high-dpi",
@@ -3736,38 +3757,38 @@
           "dpr": 3,
           "tier": 0,
           "scale": 0.6,
-          "frameCount": 165,
+          "frameCount": 258,
           "seconds": 6,
-          "fps": 27.5,
-          "cpu": 25.503706509374695,
-          "gpu": 12.224789450957468,
+          "fps": 43,
+          "cpu": 19.744172184010747,
+          "gpu": 8.005582957892438,
           "buffer": [
             329,
             712
           ],
           "resizes": 10,
           "allocations": 7,
-          "programs": 173,
-          "geometry": 1493,
-          "textures": 90
+          "programs": 164,
+          "geometry": 1516,
+          "textures": 97
         }
       ],
       "errors": [],
       "desktopResize": {
         "cold": {
           "allocations": 11,
-          "geometries": 1510,
-          "textures": 90
+          "geometries": 1554,
+          "textures": 97
         },
         "before": {
           "allocations": 11,
-          "geometries": 1511,
-          "textures": 91
+          "geometries": 1557,
+          "textures": 98
         },
         "after": {
           "allocations": 11,
-          "geometries": 1511,
-          "textures": 91
+          "geometries": 1557,
+          "textures": 98
         },
         "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
         "pass": true
@@ -3775,1349 +3796,339 @@
       "phone-high-dpiResize": {
         "cold": {
           "allocations": 7,
-          "geometries": 1494,
-          "textures": 90
+          "geometries": 1516,
+          "textures": 97
         },
         "before": {
           "allocations": 7,
-          "geometries": 1500,
-          "textures": 91
+          "geometries": 1518,
+          "textures": 98
         },
         "after": {
           "allocations": 7,
-          "geometries": 1500,
-          "textures": 91
+          "geometries": 1518,
+          "textures": 98
         },
         "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
         "pass": true
       },
       "pass": true
     },
+    "abilities": {
+      "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
+      "errors": [],
+      "world": {
+        "contacts": 13,
+        "visible": 13,
+        "batches": {
+          "sources": 383,
+          "batches": 3
+        },
+        "bridgeDecks": [
+          {
+            "path": 205,
+            "road": 205
+          }
+        ],
+        "pool": true,
+        "air": 270,
+        "airSize": [
+          360,
+          225
+        ]
+      },
+      "contactRenderChanged": true,
+      "monsters": [
+        {
+          "id": "wolf",
+          "art": "wolfBattle35",
+          "unit": 60,
+          "frame": {
+            "action": "enemyIdle",
+            "index": 0,
+            "cell": 8
+          },
+          "xScale": 1,
+          "profile": true,
+          "attackFrames": 17,
+          "shadow": true
+        },
+        {
+          "id": "boar",
+          "art": "boarBattle35",
+          "unit": 58,
+          "frame": {
+            "action": "enemyIdle",
+            "index": 1,
+            "cell": 9
+          },
+          "xScale": 1,
+          "profile": true,
+          "attackFrames": 17,
+          "shadow": true
+        }
+      ],
+      "before": {
+        "hp": 150,
+        "mp": 80
+      },
+      "spell": {
+        "hp": 92,
+        "mp": 71,
+        "burst": 2,
+        "fire": 3,
+        "light": [
+          {
+            "intensity": 17.431946584488966,
+            "expires": 4.786866666666655
+          },
+          {
+            "intensity": 17.431946584488966,
+            "expires": 4.786866666666655
+          }
+        ],
+        "uploads": 67,
+        "skipped": 383,
+        "clock": 4.221199999999988
+      },
+      "elements": [
+        {
+          "kind": "ice",
+          "artBursts": 13,
+          "active": 183,
+          "finite": true
+        },
+        {
+          "kind": "arcane",
+          "artBursts": 16,
+          "active": 102,
+          "finite": true
+        },
+        {
+          "kind": "heal",
+          "artBursts": 20,
+          "active": 165,
+          "finite": true
+        },
+        {
+          "kind": "blade",
+          "artBursts": 21,
+          "active": 39,
+          "finite": true
+        },
+        {
+          "kind": "ward",
+          "artBursts": 25,
+          "active": 165,
+          "finite": true
+        }
+      ],
+      "settled": {
+        "active": 0,
+        "pools": [
+          "arc",
+          "ring",
+          "beam",
+          "lance",
+          "ice",
+          "arrow",
+          "sigil",
+          "ribbon",
+          "nova",
+          "shield",
+          "inferno35"
+        ],
+        "contacts": 15
+      },
+      "pass": true
+    },
+    "beforeAfterPerformance": {
+      "scope": "Sequential native Chrome on this PC, 8-second steady-state samples. CPU 4x is synthetic stress, not a physical slow-PC or phone benchmark.",
+      "runs": [
+        {
+          "label": "before",
+          "width": 1920,
+          "height": 1080,
+          "throttle": 1,
+          "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+          "fps": 71.99820004510616,
+          "p95": 15,
+          "renderCpu": 3.5322916672772005,
+          "draws": 836.3993055555555,
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "resources": {
+            "geometry": 1505,
+            "textures": 91
+          }
+        },
+        {
+          "label": "before",
+          "width": 1366,
+          "height": 768,
+          "throttle": 1,
+          "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+          "fps": 70.87234228732264,
+          "p95": 15.200000017881393,
+          "renderCpu": 3.5312169304074854,
+          "draws": 840.9911816578483,
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            1366,
+            768
+          ],
+          "resources": {
+            "geometry": 1510,
+            "textures": 91
+          }
+        },
+        {
+          "label": "before",
+          "width": 960,
+          "height": 600,
+          "throttle": 1,
+          "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+          "fps": 71.83908045977012,
+          "p95": 15.099999994039536,
+          "renderCpu": 3.3448695657045944,
+          "draws": 814.8747826086957,
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            960,
+            600
+          ],
+          "resources": {
+            "geometry": 1511,
+            "textures": 91
+          }
+        },
+        {
+          "label": "before",
+          "width": 1366,
+          "height": 768,
+          "throttle": 4,
+          "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+          "fps": 41.9407586783044,
+          "p95": 31.5,
+          "renderCpu": 16.608333334326744,
+          "draws": 800.1636904761905,
+          "scale": 0.6800000000000002,
+          "tier": 0,
+          "buffer": [
+            731,
+            411
+          ],
+          "resources": {
+            "geometry": 1508,
+            "textures": 90
+          }
+        },
+        {
+          "label": "after",
+          "width": 1920,
+          "height": 1080,
+          "throttle": 1,
+          "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
+          "fps": 71.97301012120455,
+          "p95": 14.799999982118607,
+          "renderCpu": 3.2060763887647123,
+          "draws": 447.21875,
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "resources": {
+            "geometry": 1546,
+            "textures": 98
+          }
+        },
+        {
+          "label": "after",
+          "width": 1366,
+          "height": 768,
+          "throttle": 1,
+          "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
+          "fps": 71.4964251786878,
+          "p95": 15.099999994039536,
+          "renderCpu": 3.0087412587933606,
+          "draws": 439.9318181818182,
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            1366,
+            768
+          ],
+          "resources": {
+            "geometry": 1541,
+            "textures": 98
+          }
+        },
+        {
+          "label": "after",
+          "width": 960,
+          "height": 600,
+          "throttle": 1,
+          "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
+          "fps": 70.87234228732264,
+          "p95": 15.400000005960464,
+          "renderCpu": 2.9615520278297405,
+          "draws": 426.70899470899474,
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            960,
+            600
+          ],
+          "resources": {
+            "geometry": 1541,
+            "textures": 98
+          }
+        },
+        {
+          "label": "after",
+          "width": 1366,
+          "height": 768,
+          "throttle": 4,
+          "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
+          "fps": 45.809721147330926,
+          "p95": 27.599999994039536,
+          "renderCpu": 14.545504087567005,
+          "draws": 394.1934604904632,
+          "scale": 0.6800000000000002,
+          "tier": 0,
+          "buffer": [
+            731,
+            411
+          ],
+          "resources": {
+            "geometry": 1550,
+            "textures": 97
+          }
+        }
+      ],
+      "errors": [],
+      "drawReduction": 0.47688890469151013,
+      "pass": true
+    },
     "comparisons": {
       "before": {
-        "commit": "d38931ad21ba2e897add1e701925ed7ae9a5faba",
-        "sha256": "c3f03b3ed5bf83c7029fde8bc4a33a0bae12446b71c96e5f285e9bdfd60a2cae"
+        "commit": "2fbc70ff72363c6be2a6346f6147b2346ee150a3",
+        "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44"
       },
       "after": {
-        "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44"
+        "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c"
       },
       "views": [
         {
           "version": "before",
-          "name": "street",
-          "camera": [
-            -118.9,
-            13.75,
-            126.69999999999999
-          ],
-          "look": [
-            -121,
-            2.5500000000000003,
-            101.6
-          ],
-          "hour": 9,
-          "scene": "lane",
-          "cloud": 0.18,
-          "buffer": [
-            1672,
-            941
-          ],
-          "text": {
-            "title": "The Last Light of Elyndor",
-            "mode": "explore",
-            "scene": "lane",
-            "view": "town",
-            "chapter": "Prologue",
-            "beat": "arrival",
-            "objective": "Speak to the local representative.",
-            "coordinates": "X east, Z south, Y height. Fixed oblique camera; keys follow the screen axes.",
-            "player": {
-              "x": -121,
-              "z": 106,
-              "height": 1.3,
-              "face": "south",
-              "frame": {
-                "action": "idle_south",
-                "index": 1,
-                "cell": 9
-              }
-            },
-            "followers": [
-              {
-                "id": "soren",
-                "x": -122.5,
-                "z": 106,
-                "frame": {
-                  "action": "idle_east",
-                  "index": 1,
-                  "cell": 128
-                }
-              }
-            ],
-            "party": [
-              {
-                "id": "bren",
-                "hp": 260,
-                "mp": 44,
-                "level": 1,
-                "xp": 0,
-                "charge": 0,
-                "ascended": false,
-                "gear": {
-                  "weapon": null,
-                  "armor": null
-                }
-              },
-              {
-                "id": "soren",
-                "hp": 210,
-                "mp": 84,
-                "level": 1,
-                "xp": 0,
-                "charge": 0,
-                "ascended": false,
-                "gear": {
-                  "weapon": null,
-                  "armor": null
-                }
-              }
-            ],
-            "flags": {
-              "pump_repaired": true,
-              "gate_open": true
-            },
-            "items": {
-              "herb": 6,
-              "ether": 4,
-              "revive": 2
-            },
-            "gold": 180,
-            "worldMinutes": 540,
-            "discovered": [
-              "Brookstead"
-            ],
-            "dialogue": null,
-            "menu": null,
-            "interactions": [
-              {
-                "type": "representative",
-                "label": "Local representative",
-                "x": -126,
-                "z": 66,
-                "active": true
-              },
-              {
-                "type": "shop",
-                "label": "Enter Riverstone Supplies",
-                "x": -116,
-                "z": 54.3,
-                "active": true
-              },
-              {
-                "type": "inn",
-                "label": "Enter The Lantern Inn",
-                "x": -111,
-                "z": 101.5,
-                "active": true
-              },
-              {
-                "type": "chest",
-                "label": "Open supply chest",
-                "x": -98,
-                "z": 119,
-                "active": true
-              },
-              {
-                "type": "gate",
-                "label": "Free the jammed gate",
-                "x": -158.6,
-                "z": 68.5,
-                "active": false
-              },
-              {
-                "type": "pump",
-                "label": "Repair the broken pump",
-                "x": -123,
-                "z": 50,
-                "active": false
-              },
-              {
-                "type": "water",
-                "label": "Check the water supply",
-                "x": -127,
-                "z": 54,
-                "active": true
-              },
-              {
-                "type": "wildlife",
-                "label": "Protect the residents",
-                "x": -62,
-                "z": 89,
-                "active": false
-              },
-              {
-                "type": "aftermath",
-                "label": "Speak with the representative",
-                "x": -68,
-                "z": 93,
-                "active": false
-              },
-              {
-                "type": "villager",
-                "label": "Talk to the carpenter",
-                "x": -145,
-                "z": 72,
-                "active": true
-              },
-              {
-                "type": "villager",
-                "label": "Talk to the watchkeeper",
-                "x": -146,
-                "z": 120,
-                "active": true
-              },
-              {
-                "type": "villager",
-                "label": "Talk to the courier",
-                "x": -129,
-                "z": 65,
-                "active": true
-              },
-              {
-                "type": "villager",
-                "label": "Talk to the farmer",
-                "x": -95,
-                "z": 106,
-                "active": true
-              },
-              {
-                "type": "villager",
-                "label": "Talk to the elder",
-                "x": -128.8,
-                "z": 60,
-                "active": true
-              },
-              {
-                "type": "villager",
-                "label": "Talk to the innkeeper",
-                "x": -114,
-                "z": 101.5,
-                "active": true
-              },
-              {
-                "type": "poiExit",
-                "label": "Leave for the overworld",
-                "x": -258.38008504205084,
-                "z": 172.0578155742448,
-                "active": true
-              },
-              {
-                "type": "routeDoor",
-                "label": "Follow the trail to Fern Hollow",
-                "x": -100.8333553495294,
-                "z": 42.75279558154618,
-                "active": true
-              },
-              {
-                "type": "interiorDoor",
-                "label": "Enter Brookstead Smithy",
-                "x": -139.2,
-                "z": 73,
-                "active": true
-              },
-              {
-                "type": "poiExit",
-                "label": "Far road · Overworld",
-                "x": 24.497512559933828,
-                "z": 90.64274216420174,
-                "active": true
-              },
-              {
-                "type": "poiExit",
-                "label": "Upper trail · Overworld",
-                "x": -122.08780743252927,
-                "z": -33.97978619673136,
-                "active": true
-              },
-              {
-                "type": "localBoard",
-                "label": "Read local requests",
-                "x": -145.00892326277145,
-                "z": 115.7332893009412,
-                "active": false
-              },
-              {
-                "type": "localTask",
-                "label": "Check the path · 1/3",
-                "x": -133.1921471959677,
-                "z": 121.95090322016128,
-                "active": false
-              },
-              {
-                "type": "localTask",
-                "label": "Check the path · 2/3",
-                "x": -129.26900607435476,
-                "z": 122.73126450822579,
-                "active": false
-              },
-              {
-                "type": "localTask",
-                "label": "Check the path · 3/3",
-                "x": -157.96645302144583,
-                "z": 130.00026419435284,
-                "active": false
-              },
-              {
-                "type": "saveCircle",
-                "label": "Wayfarer seal · Save journey",
-                "x": -139.27531782543613,
-                "z": 117.4747786832663,
-                "active": true
-              }
-            ],
-            "npcs": [
-              {
-                "id": "worker",
-                "x": -145,
-                "z": 72,
-                "task": "Inspecting the canal joinery",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 1,
-                  "cell": 9
-                }
-              },
-              {
-                "id": "guard",
-                "x": -146,
-                "z": 120,
-                "task": "Patrolling the entrance",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 0,
-                  "cell": 8
-                }
-              },
-              {
-                "id": "courier",
-                "x": -129,
-                "z": 65,
-                "task": "Collecting a report",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 2,
-                  "cell": 10
-                }
-              },
-              {
-                "id": "farmer",
-                "x": -95,
-                "z": 106,
-                "task": "Bringing produce to market",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 1,
-                  "cell": 9
-                }
-              },
-              {
-                "id": "elder",
-                "x": -128.8,
-                "z": 60,
-                "task": "Resting beside the fountain",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 0,
-                  "cell": 8
-                }
-              },
-              {
-                "id": "innkeeper",
-                "x": -114,
-                "z": 101.5,
-                "task": "Collecting the inn’s supplies",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 3,
-                  "cell": 11
-                }
-              },
-              {
-                "id": "representative",
-                "x": -126,
-                "z": 66,
-                "task": "Looking after the settlement",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 3,
-                  "cell": 11
-                }
-              },
-              {
-                "id": "merchant",
-                "x": -116,
-                "z": 54.3,
-                "task": "Looking after the settlement",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 0,
-                  "cell": 8
-                }
-              },
-              {
-                "id": "healer",
-                "x": -111,
-                "z": 101.5,
-                "task": "Looking after the settlement",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 0,
-                  "cell": 8
-                }
-              },
-              {
-                "id": "sheepEwe",
-                "x": -94,
-                "z": 124,
-                "task": "Grazing in the meadow",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 4,
-                  "cell": 12
-                }
-              },
-              {
-                "id": "sheepLamb",
-                "x": -87,
-                "z": 127,
-                "task": "Grazing in the meadow",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 7,
-                  "cell": 15
-                }
-              }
-            ],
-            "battle": null,
-            "terrain": {
-              "sculpted": true,
-              "leafInstances": 10585,
-              "litSprites": true,
-              "fixedCamera": true,
-              "fov": 35
-            },
-            "event": null,
-            "tutorial": {
-              "lesson": "move",
-              "hidden": true,
-              "practised": [],
-              "complete": false
-            },
-            "riverRecovery": {
-              "released": true,
-              "age": 180,
-              "settled": true,
-              "levels": {
-                "reservoir": 6.145963053345767,
-                "headrace": 4.55,
-                "millrace": 1.55,
-                "lowerBrook": -1.4
-              },
-              "opening": 0.13064176460119414,
-              "model": "carved bed, pressure wave and shared reflection levels"
-            },
-            "overworld": {
-              "width": 2048,
-              "depth": 1152,
-              "atlasSource": "actual playable overworld",
-              "sameLandscape": true
-            },
-            "atlasReference": {
-              "version": 7,
-              "locations": 22,
-              "roads": 7,
-              "source": "https://elyndor-world-atlas.maplecloud21.chatgpt.site/"
-            },
-            "combatLesson": null,
-            "localRequests": {
-              "unlocked": false,
-              "tracked": null,
-              "requests": {
-                "brookstead": {
-                  "accepted": false,
-                  "done": [],
-                  "claimed": false
-                }
-              }
-            },
-            "openingEscort": null,
-            "encounterFloorMark": false,
-            "worldSystem": "overworld-and-points-of-interest",
-            "location": "brookstead",
-            "locationKind": "poi",
-            "weather": {
-              "name": "Clear skies",
-              "rain": 0,
-              "snow": 0,
-              "clouds": 0.18
-            },
-            "results": null,
-            "voice": {
-              "provider": "ElevenLabs",
-              "recordedClips": 259,
-              "played": 0,
-              "model": "eleven_v4"
-            },
-            "camera": {
-              "pitch": 23.972876142711147,
-              "cinematic": 0
-            },
-            "saving": {
-              "allowed": false,
-              "location": "Location entrances and inns",
-              "seals": [
-                {
-                  "x": -139.27531782543613,
-                  "z": 117.4747786832663,
-                  "entrance": true
-                }
-              ]
-            },
-            "atlas": {
-              "threeDimensional": true,
-              "active": false,
-              "exploredCells": 18,
-              "tracked": null
-            },
-            "presentation": {
-              "pixelDefeats": 0,
-              "materialVariations": 6,
-              "actorLighting": "PBR, sunlight, cloud and scene shadows"
-            },
-            "tutorialVoice": false,
-            "titleScreen": {
-              "scene": "brookstead",
-              "partyVisible": false,
-              "panel": "news",
-              "slots": [
-                {
-                  "slot": "1",
-                  "raw": false,
-                  "valid": false
-                },
-                {
-                  "slot": "2",
-                  "raw": false,
-                  "valid": false
-                },
-                {
-                  "slot": "3",
-                  "raw": false,
-                  "valid": false
-                }
-              ]
-            },
-            "waterCurrent": {
-              "active": 0,
-              "speed": 1.6,
-              "front": 358,
-              "direction": "downstream",
-              "gpu": true
-            }
-          }
-        },
-        {
-          "version": "before",
-          "name": "waterworks",
-          "camera": [
-            -151.9,
-            14.172927639161676,
-            106.69999999999999
-          ],
-          "look": [
-            -154,
-            2.9729276391616763,
-            81.6
-          ],
-          "hour": 9,
-          "scene": "waterworks",
-          "cloud": 0.18,
-          "buffer": [
-            1672,
-            941
-          ],
-          "text": {
-            "title": "The Last Light of Elyndor",
-            "mode": "explore",
-            "scene": "waterworks",
-            "view": "town",
-            "chapter": "Prologue",
-            "beat": "arrival",
-            "objective": "Speak to the local representative.",
-            "coordinates": "X east, Z south, Y height. Fixed oblique camera; keys follow the screen axes.",
-            "player": {
-              "x": -154,
-              "z": 86,
-              "height": 1.72,
-              "face": "south",
-              "frame": {
-                "action": "idle_south",
-                "index": 1,
-                "cell": 9
-              }
-            },
-            "followers": [
-              {
-                "id": "soren",
-                "x": -155.5,
-                "z": 86,
-                "frame": {
-                  "action": "idle_east",
-                  "index": 1,
-                  "cell": 128
-                }
-              }
-            ],
-            "party": [
-              {
-                "id": "bren",
-                "hp": 260,
-                "mp": 44,
-                "level": 1,
-                "xp": 0,
-                "charge": 0,
-                "ascended": false,
-                "gear": {
-                  "weapon": null,
-                  "armor": null
-                }
-              },
-              {
-                "id": "soren",
-                "hp": 210,
-                "mp": 84,
-                "level": 1,
-                "xp": 0,
-                "charge": 0,
-                "ascended": false,
-                "gear": {
-                  "weapon": null,
-                  "armor": null
-                }
-              }
-            ],
-            "flags": {
-              "pump_repaired": true,
-              "gate_open": true
-            },
-            "items": {
-              "herb": 6,
-              "ether": 4,
-              "revive": 2
-            },
-            "gold": 180,
-            "worldMinutes": 540,
-            "discovered": [
-              "Brookstead"
-            ],
-            "dialogue": null,
-            "menu": null,
-            "interactions": [
-              {
-                "type": "representative",
-                "label": "Local representative",
-                "x": -126,
-                "z": 66,
-                "active": true
-              },
-              {
-                "type": "shop",
-                "label": "Enter Riverstone Supplies",
-                "x": -116,
-                "z": 54.3,
-                "active": true
-              },
-              {
-                "type": "inn",
-                "label": "Enter The Lantern Inn",
-                "x": -111,
-                "z": 101.5,
-                "active": true
-              },
-              {
-                "type": "chest",
-                "label": "Open supply chest",
-                "x": -98,
-                "z": 119,
-                "active": true
-              },
-              {
-                "type": "gate",
-                "label": "Free the jammed gate",
-                "x": -158.6,
-                "z": 68.5,
-                "active": false
-              },
-              {
-                "type": "pump",
-                "label": "Repair the broken pump",
-                "x": -123,
-                "z": 50,
-                "active": false
-              },
-              {
-                "type": "water",
-                "label": "Check the water supply",
-                "x": -127,
-                "z": 54,
-                "active": true
-              },
-              {
-                "type": "wildlife",
-                "label": "Protect the residents",
-                "x": -62,
-                "z": 89,
-                "active": false
-              },
-              {
-                "type": "aftermath",
-                "label": "Speak with the representative",
-                "x": -68,
-                "z": 93,
-                "active": false
-              },
-              {
-                "type": "villager",
-                "label": "Talk to the carpenter",
-                "x": -145,
-                "z": 72,
-                "active": true
-              },
-              {
-                "type": "villager",
-                "label": "Talk to the watchkeeper",
-                "x": -146,
-                "z": 120,
-                "active": true
-              },
-              {
-                "type": "villager",
-                "label": "Talk to the courier",
-                "x": -129,
-                "z": 65,
-                "active": true
-              },
-              {
-                "type": "villager",
-                "label": "Talk to the farmer",
-                "x": -95,
-                "z": 106,
-                "active": true
-              },
-              {
-                "type": "villager",
-                "label": "Talk to the elder",
-                "x": -128.8,
-                "z": 60,
-                "active": true
-              },
-              {
-                "type": "villager",
-                "label": "Talk to the innkeeper",
-                "x": -114,
-                "z": 101.5,
-                "active": true
-              },
-              {
-                "type": "poiExit",
-                "label": "Leave for the overworld",
-                "x": -258.38008504205084,
-                "z": 172.0578155742448,
-                "active": true
-              },
-              {
-                "type": "routeDoor",
-                "label": "Follow the trail to Fern Hollow",
-                "x": -100.8333553495294,
-                "z": 42.75279558154618,
-                "active": true
-              },
-              {
-                "type": "interiorDoor",
-                "label": "Enter Brookstead Smithy",
-                "x": -139.2,
-                "z": 73,
-                "active": true
-              },
-              {
-                "type": "poiExit",
-                "label": "Far road · Overworld",
-                "x": 24.497512559933828,
-                "z": 90.64274216420174,
-                "active": true
-              },
-              {
-                "type": "poiExit",
-                "label": "Upper trail · Overworld",
-                "x": -122.08780743252927,
-                "z": -33.97978619673136,
-                "active": true
-              },
-              {
-                "type": "localBoard",
-                "label": "Read local requests",
-                "x": -145.00892326277145,
-                "z": 115.7332893009412,
-                "active": false
-              },
-              {
-                "type": "localTask",
-                "label": "Check the path · 1/3",
-                "x": -133.1921471959677,
-                "z": 121.95090322016128,
-                "active": false
-              },
-              {
-                "type": "localTask",
-                "label": "Check the path · 2/3",
-                "x": -129.26900607435476,
-                "z": 122.73126450822579,
-                "active": false
-              },
-              {
-                "type": "localTask",
-                "label": "Check the path · 3/3",
-                "x": -157.96645302144583,
-                "z": 130.00026419435284,
-                "active": false
-              },
-              {
-                "type": "saveCircle",
-                "label": "Wayfarer seal · Save journey",
-                "x": -139.27531782543613,
-                "z": 117.4747786832663,
-                "active": true
-              }
-            ],
-            "npcs": [
-              {
-                "id": "worker",
-                "x": -145,
-                "z": 72,
-                "task": "Inspecting the canal joinery",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 1,
-                  "cell": 9
-                }
-              },
-              {
-                "id": "guard",
-                "x": -146,
-                "z": 120,
-                "task": "Patrolling the entrance",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 0,
-                  "cell": 8
-                }
-              },
-              {
-                "id": "courier",
-                "x": -129,
-                "z": 65,
-                "task": "Collecting a report",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 2,
-                  "cell": 10
-                }
-              },
-              {
-                "id": "farmer",
-                "x": -95,
-                "z": 106,
-                "task": "Bringing produce to market",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 1,
-                  "cell": 9
-                }
-              },
-              {
-                "id": "elder",
-                "x": -128.8,
-                "z": 60,
-                "task": "Resting beside the fountain",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 0,
-                  "cell": 8
-                }
-              },
-              {
-                "id": "innkeeper",
-                "x": -114,
-                "z": 101.5,
-                "task": "Collecting the inn’s supplies",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 3,
-                  "cell": 11
-                }
-              },
-              {
-                "id": "representative",
-                "x": -126,
-                "z": 66,
-                "task": "Looking after the settlement",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 3,
-                  "cell": 11
-                }
-              },
-              {
-                "id": "merchant",
-                "x": -116,
-                "z": 54.3,
-                "task": "Looking after the settlement",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 0,
-                  "cell": 8
-                }
-              },
-              {
-                "id": "healer",
-                "x": -111,
-                "z": 101.5,
-                "task": "Looking after the settlement",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 0,
-                  "cell": 8
-                }
-              },
-              {
-                "id": "sheepEwe",
-                "x": -94,
-                "z": 124,
-                "task": "Grazing in the meadow",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 4,
-                  "cell": 12
-                }
-              },
-              {
-                "id": "sheepLamb",
-                "x": -87,
-                "z": 127,
-                "task": "Grazing in the meadow",
-                "tasks": 0,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 7,
-                  "cell": 15
-                }
-              }
-            ],
-            "battle": null,
-            "terrain": {
-              "sculpted": true,
-              "leafInstances": 10585,
-              "litSprites": true,
-              "fixedCamera": true,
-              "fov": 35
-            },
-            "event": null,
-            "tutorial": {
-              "lesson": "move",
-              "hidden": true,
-              "practised": [],
-              "complete": false
-            },
-            "riverRecovery": {
-              "released": true,
-              "age": 180,
-              "settled": true,
-              "levels": {
-                "reservoir": 6.141937193044112,
-                "headrace": 4.55,
-                "millrace": 1.55,
-                "lowerBrook": -1.4
-              },
-              "opening": 0.2442162585442743,
-              "model": "carved bed, pressure wave and shared reflection levels"
-            },
-            "overworld": {
-              "width": 2048,
-              "depth": 1152,
-              "atlasSource": "actual playable overworld",
-              "sameLandscape": true
-            },
-            "atlasReference": {
-              "version": 7,
-              "locations": 22,
-              "roads": 7,
-              "source": "https://elyndor-world-atlas.maplecloud21.chatgpt.site/"
-            },
-            "combatLesson": null,
-            "localRequests": {
-              "unlocked": false,
-              "tracked": null,
-              "requests": {
-                "brookstead": {
-                  "accepted": false,
-                  "done": [],
-                  "claimed": false
-                }
-              }
-            },
-            "openingEscort": null,
-            "encounterFloorMark": false,
-            "worldSystem": "overworld-and-points-of-interest",
-            "location": "brookstead",
-            "locationKind": "poi",
-            "weather": {
-              "name": "Clear skies",
-              "rain": 0,
-              "snow": 0,
-              "clouds": 0.18
-            },
-            "results": null,
-            "voice": {
-              "provider": "ElevenLabs",
-              "recordedClips": 259,
-              "played": 0,
-              "model": "eleven_v4"
-            },
-            "camera": {
-              "pitch": 23.972876142711147,
-              "cinematic": 0
-            },
-            "saving": {
-              "allowed": false,
-              "location": "Location entrances and inns",
-              "seals": [
-                {
-                  "x": -139.27531782543613,
-                  "z": 117.4747786832663,
-                  "entrance": true
-                }
-              ]
-            },
-            "atlas": {
-              "threeDimensional": true,
-              "active": false,
-              "exploredCells": 18,
-              "tracked": null
-            },
-            "presentation": {
-              "pixelDefeats": 0,
-              "materialVariations": 6,
-              "actorLighting": "PBR, sunlight, cloud and scene shadows"
-            },
-            "tutorialVoice": false,
-            "titleScreen": {
-              "scene": "brookstead",
-              "partyVisible": false,
-              "panel": "news",
-              "slots": [
-                {
-                  "slot": "1",
-                  "raw": false,
-                  "valid": false
-                },
-                {
-                  "slot": "2",
-                  "raw": false,
-                  "valid": false
-                },
-                {
-                  "slot": "3",
-                  "raw": false,
-                  "valid": false
-                }
-              ]
-            },
-            "waterCurrent": {
-              "active": 0,
-              "speed": 1.6,
-              "front": 358,
-              "direction": "downstream",
-              "gpu": true
-            }
-          }
-        },
-        {
-          "version": "before",
-          "name": "smithy",
-          "camera": [
-            0,
-            12.350000000000001,
-            21.099999999999998
-          ],
-          "look": [
-            0,
-            1.55,
-            -2.1
-          ],
-          "hour": 9,
-          "scene": "brookForge",
-          "cloud": 0.18,
-          "buffer": [
-            1672,
-            941
-          ],
-          "text": {
-            "title": "The Last Light of Elyndor",
-            "mode": "explore",
-            "scene": "brookForge",
-            "view": "interior",
-            "chapter": "Prologue",
-            "beat": "arrival",
-            "objective": "Speak to the local representative.",
-            "coordinates": "X east, Z south, Y height. Fixed oblique camera; keys follow the screen axes.",
-            "player": {
-              "x": 0,
-              "z": 3,
-              "height": 0,
-              "face": "south",
-              "frame": {
-                "action": "idle_south",
-                "index": 1,
-                "cell": 9
-              }
-            },
-            "followers": [
-              {
-                "id": "soren",
-                "x": -1.5,
-                "z": 3,
-                "frame": {
-                  "action": "idle_east",
-                  "index": 1,
-                  "cell": 128
-                }
-              }
-            ],
-            "party": [
-              {
-                "id": "bren",
-                "hp": 260,
-                "mp": 44,
-                "level": 1,
-                "xp": 0,
-                "charge": 0,
-                "ascended": false,
-                "gear": {
-                  "weapon": null,
-                  "armor": null
-                }
-              },
-              {
-                "id": "soren",
-                "hp": 210,
-                "mp": 84,
-                "level": 1,
-                "xp": 0,
-                "charge": 0,
-                "ascended": false,
-                "gear": {
-                  "weapon": null,
-                  "armor": null
-                }
-              }
-            ],
-            "flags": {
-              "pump_repaired": true,
-              "gate_open": true
-            },
-            "items": {
-              "herb": 6,
-              "ether": 4,
-              "revive": 2
-            },
-            "gold": 180,
-            "worldMinutes": 540,
-            "discovered": [
-              "Brookstead"
-            ],
-            "dialogue": null,
-            "menu": null,
-            "interactions": [
-              {
-                "type": "shop",
-                "label": "Browse weapons and armor",
-                "x": 0,
-                "z": -5,
-                "active": true
-              },
-              {
-                "type": "villager",
-                "label": "Talk to the apprentice",
-                "x": 5,
-                "z": -5.3,
-                "active": true
-              },
-              {
-                "type": "interiorExit",
-                "label": "Return outside",
-                "x": 0,
-                "z": 8,
-                "active": true
-              }
-            ],
-            "npcs": [
-              {
-                "id": "worker",
-                "x": 0,
-                "z": -5,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 2,
-                  "cell": 10
-                }
-              },
-              {
-                "id": "capital-post",
-                "x": 5,
-                "z": -5.3,
-                "frame": {
-                  "action": "idle_south",
-                  "index": 3,
-                  "cell": 11
-                }
-              }
-            ],
-            "battle": null,
-            "terrain": {
-              "sculpted": true,
-              "litSprites": true,
-              "fixedCamera": true,
-              "fov": 38
-            },
-            "event": null,
-            "tutorial": {
-              "lesson": "move",
-              "hidden": true,
-              "practised": [],
-              "complete": false
-            },
-            "riverRecovery": null,
-            "overworld": {
-              "width": 2048,
-              "depth": 1152,
-              "atlasSource": "actual playable overworld",
-              "sameLandscape": true
-            },
-            "atlasReference": {
-              "version": 7,
-              "locations": 22,
-              "roads": 7,
-              "source": "https://elyndor-world-atlas.maplecloud21.chatgpt.site/"
-            },
-            "combatLesson": null,
-            "localRequests": {
-              "unlocked": false,
-              "tracked": null,
-              "requests": {
-                "brookstead": {
-                  "accepted": false,
-                  "done": [],
-                  "claimed": false
-                }
-              }
-            },
-            "openingEscort": null,
-            "encounterFloorMark": false,
-            "worldSystem": "overworld-and-points-of-interest",
-            "location": "brookForge",
-            "locationKind": "interior",
-            "weather": {
-              "name": "Clear skies",
-              "rain": 0,
-              "snow": 0,
-              "clouds": 0.18
-            },
-            "results": null,
-            "voice": {
-              "provider": "ElevenLabs",
-              "recordedClips": 259,
-              "played": 0,
-              "model": "eleven_v4"
-            },
-            "camera": {
-              "pitch": 24.962789830807015,
-              "cinematic": 0
-            },
-            "saving": {
-              "allowed": false,
-              "location": "Location entrances and inns",
-              "seals": []
-            },
-            "atlas": {
-              "threeDimensional": true,
-              "active": false,
-              "exploredCells": 18,
-              "tracked": null
-            },
-            "presentation": {
-              "pixelDefeats": 0,
-              "materialVariations": 6,
-              "actorLighting": "PBR, sunlight, cloud and scene shadows"
-            },
-            "tutorialVoice": false,
-            "titleScreen": {
-              "scene": "brookstead",
-              "partyVisible": false,
-              "panel": "news",
-              "slots": [
-                {
-                  "slot": "1",
-                  "raw": false,
-                  "valid": false
-                },
-                {
-                  "slot": "2",
-                  "raw": false,
-                  "valid": false
-                },
-                {
-                  "slot": "3",
-                  "raw": false,
-                  "valid": false
-                }
-              ]
-            },
-            "waterCurrent": null
-          }
-        },
-        {
-          "version": "after",
           "name": "street",
           "camera": [
             -119.236,
@@ -5652,7 +4663,7 @@
           }
         },
         {
-          "version": "after",
+          "version": "before",
           "name": "waterworks",
           "camera": [
             -152.236,
@@ -6187,7 +5198,7 @@
           }
         },
         {
-          "version": "after",
+          "version": "before",
           "name": "smithy",
           "camera": [
             0,
@@ -6429,6 +5440,1320 @@
             },
             "waterCurrent": null
           }
+        },
+        {
+          "version": "after",
+          "name": "street",
+          "camera": [
+            -119.236,
+            11.958,
+            119.884
+          ],
+          "look": [
+            -121,
+            2.5500000000000003,
+            98.8
+          ],
+          "hour": 9,
+          "scene": "lane",
+          "cloud": 0.18,
+          "buffer": [
+            1672,
+            941
+          ],
+          "text": {
+            "title": "The Last Light of Elyndor",
+            "mode": "explore",
+            "scene": "lane",
+            "view": "town",
+            "chapter": "Prologue",
+            "beat": "arrival",
+            "objective": "Speak to the local representative.",
+            "coordinates": "X east, Z south, Y height. Fixed oblique camera; keys follow the screen axes.",
+            "player": {
+              "x": -121,
+              "z": 106,
+              "height": 1.3,
+              "face": "south",
+              "frame": {
+                "action": "idle_south",
+                "index": 1,
+                "cell": 9
+              }
+            },
+            "followers": [
+              {
+                "id": "soren",
+                "x": -122.5,
+                "z": 106,
+                "frame": {
+                  "action": "idle_east",
+                  "index": 1,
+                  "cell": 128
+                }
+              }
+            ],
+            "party": [
+              {
+                "id": "bren",
+                "hp": 260,
+                "mp": 44,
+                "level": 1,
+                "xp": 0,
+                "charge": 0,
+                "ascended": false,
+                "gear": {
+                  "weapon": null,
+                  "armor": null
+                }
+              },
+              {
+                "id": "soren",
+                "hp": 210,
+                "mp": 84,
+                "level": 1,
+                "xp": 0,
+                "charge": 0,
+                "ascended": false,
+                "gear": {
+                  "weapon": null,
+                  "armor": null
+                }
+              }
+            ],
+            "flags": {
+              "pump_repaired": true,
+              "gate_open": true
+            },
+            "items": {
+              "herb": 6,
+              "ether": 4,
+              "revive": 2
+            },
+            "gold": 180,
+            "worldMinutes": 540,
+            "discovered": [
+              "Brookstead"
+            ],
+            "dialogue": null,
+            "menu": null,
+            "interactions": [
+              {
+                "type": "representative",
+                "label": "Local representative",
+                "x": -126,
+                "z": 66,
+                "active": true
+              },
+              {
+                "type": "shop",
+                "label": "Enter Riverstone Supplies",
+                "x": -116,
+                "z": 54.3,
+                "active": true
+              },
+              {
+                "type": "inn",
+                "label": "Enter The Lantern Inn",
+                "x": -111,
+                "z": 101.5,
+                "active": true
+              },
+              {
+                "type": "chest",
+                "label": "Open supply chest",
+                "x": -98,
+                "z": 119,
+                "active": true
+              },
+              {
+                "type": "gate",
+                "label": "Free the jammed gate",
+                "x": -158.6,
+                "z": 68.5,
+                "active": false
+              },
+              {
+                "type": "pump",
+                "label": "Repair the broken pump",
+                "x": -123,
+                "z": 50,
+                "active": false
+              },
+              {
+                "type": "water",
+                "label": "Check the water supply",
+                "x": -127,
+                "z": 54,
+                "active": true
+              },
+              {
+                "type": "wildlife",
+                "label": "Protect the residents",
+                "x": -62,
+                "z": 89,
+                "active": false
+              },
+              {
+                "type": "aftermath",
+                "label": "Speak with the representative",
+                "x": -68,
+                "z": 93,
+                "active": false
+              },
+              {
+                "type": "villager",
+                "label": "Talk to the carpenter",
+                "x": -145,
+                "z": 72,
+                "active": true
+              },
+              {
+                "type": "villager",
+                "label": "Talk to the watchkeeper",
+                "x": -146,
+                "z": 120,
+                "active": true
+              },
+              {
+                "type": "villager",
+                "label": "Talk to the courier",
+                "x": -129,
+                "z": 65,
+                "active": true
+              },
+              {
+                "type": "villager",
+                "label": "Talk to the farmer",
+                "x": -95,
+                "z": 106,
+                "active": true
+              },
+              {
+                "type": "villager",
+                "label": "Talk to the elder",
+                "x": -128.8,
+                "z": 60,
+                "active": true
+              },
+              {
+                "type": "villager",
+                "label": "Talk to the innkeeper",
+                "x": -114,
+                "z": 101.5,
+                "active": true
+              },
+              {
+                "type": "poiExit",
+                "label": "Leave for the overworld",
+                "x": -258.38008504205084,
+                "z": 172.0578155742448,
+                "active": true
+              },
+              {
+                "type": "routeDoor",
+                "label": "Follow the trail to Fern Hollow",
+                "x": -100.8333553495294,
+                "z": 42.75279558154618,
+                "active": true
+              },
+              {
+                "type": "interiorDoor",
+                "label": "Enter Brookstead Smithy",
+                "x": -139.2,
+                "z": 73,
+                "active": true
+              },
+              {
+                "type": "poiExit",
+                "label": "Far road · Overworld",
+                "x": 24.497512559933828,
+                "z": 90.64274216420174,
+                "active": true
+              },
+              {
+                "type": "poiExit",
+                "label": "Upper trail · Overworld",
+                "x": -122.08780743252927,
+                "z": -33.97978619673136,
+                "active": true
+              },
+              {
+                "type": "localBoard",
+                "label": "Read local requests",
+                "x": -145.00892326277145,
+                "z": 115.7332893009412,
+                "active": false
+              },
+              {
+                "type": "localTask",
+                "label": "Check the path · 1/3",
+                "x": -133.1921471959677,
+                "z": 121.95090322016128,
+                "active": false
+              },
+              {
+                "type": "localTask",
+                "label": "Check the path · 2/3",
+                "x": -129.26900607435476,
+                "z": 122.73126450822579,
+                "active": false
+              },
+              {
+                "type": "localTask",
+                "label": "Check the path · 3/3",
+                "x": -157.96645302144583,
+                "z": 130.00026419435284,
+                "active": false
+              },
+              {
+                "type": "saveCircle",
+                "label": "Wayfarer seal · Save journey",
+                "x": -139.27531782543613,
+                "z": 117.4747786832663,
+                "active": true
+              }
+            ],
+            "npcs": [
+              {
+                "id": "worker",
+                "x": -145,
+                "z": 72,
+                "task": "Inspecting the canal joinery",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 1,
+                  "cell": 9
+                }
+              },
+              {
+                "id": "guard",
+                "x": -146,
+                "z": 120,
+                "task": "Patrolling the entrance",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 0,
+                  "cell": 8
+                }
+              },
+              {
+                "id": "courier",
+                "x": -129,
+                "z": 65,
+                "task": "Collecting a report",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 2,
+                  "cell": 10
+                }
+              },
+              {
+                "id": "farmer",
+                "x": -95,
+                "z": 106,
+                "task": "Bringing produce to market",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 1,
+                  "cell": 9
+                }
+              },
+              {
+                "id": "elder",
+                "x": -128.8,
+                "z": 60,
+                "task": "Resting beside the fountain",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 0,
+                  "cell": 8
+                }
+              },
+              {
+                "id": "innkeeper",
+                "x": -114,
+                "z": 101.5,
+                "task": "Collecting the inn’s supplies",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 3,
+                  "cell": 11
+                }
+              },
+              {
+                "id": "representative",
+                "x": -126,
+                "z": 66,
+                "task": "Looking after the settlement",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 3,
+                  "cell": 11
+                }
+              },
+              {
+                "id": "merchant",
+                "x": -116,
+                "z": 54.3,
+                "task": "Looking after the settlement",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 0,
+                  "cell": 8
+                }
+              },
+              {
+                "id": "healer",
+                "x": -111,
+                "z": 101.5,
+                "task": "Looking after the settlement",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 0,
+                  "cell": 8
+                }
+              },
+              {
+                "id": "sheepEwe",
+                "x": -94,
+                "z": 124,
+                "task": "Grazing in the meadow",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 4,
+                  "cell": 12
+                }
+              },
+              {
+                "id": "sheepLamb",
+                "x": -87,
+                "z": 127,
+                "task": "Grazing in the meadow",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 7,
+                  "cell": 15
+                }
+              }
+            ],
+            "battle": null,
+            "terrain": {
+              "sculpted": true,
+              "leafInstances": 10585,
+              "litSprites": true,
+              "fixedCamera": true,
+              "fov": 35
+            },
+            "event": null,
+            "tutorial": {
+              "lesson": "move",
+              "hidden": true,
+              "practised": [],
+              "complete": false
+            },
+            "riverRecovery": {
+              "released": true,
+              "age": 180,
+              "settled": true,
+              "levels": {
+                "reservoir": 6.145963053345767,
+                "headrace": 4.55,
+                "millrace": 1.55,
+                "lowerBrook": -1.4
+              },
+              "opening": 0.13064176460119414,
+              "model": "carved bed, pressure wave and shared reflection levels"
+            },
+            "overworld": {
+              "width": 2048,
+              "depth": 1152,
+              "atlasSource": "actual playable overworld",
+              "sameLandscape": true
+            },
+            "atlasReference": {
+              "version": 7,
+              "locations": 22,
+              "roads": 7,
+              "source": "https://elyndor-world-atlas.maplecloud21.chatgpt.site/"
+            },
+            "combatLesson": null,
+            "localRequests": {
+              "unlocked": false,
+              "tracked": null,
+              "requests": {
+                "brookstead": {
+                  "accepted": false,
+                  "done": [],
+                  "claimed": false
+                }
+              }
+            },
+            "openingEscort": null,
+            "encounterFloorMark": false,
+            "worldSystem": "overworld-and-points-of-interest",
+            "location": "brookstead",
+            "locationKind": "poi",
+            "weather": {
+              "name": "Clear skies",
+              "rain": 0,
+              "snow": 0,
+              "clouds": 0.18
+            },
+            "results": null,
+            "voice": {
+              "provider": "ElevenLabs",
+              "recordedClips": 259,
+              "played": 0,
+              "model": "eleven_v4"
+            },
+            "camera": {
+              "pitch": 23.972876142711147,
+              "cinematic": 0
+            },
+            "saving": {
+              "allowed": false,
+              "location": "Location entrances and inns",
+              "seals": [
+                {
+                  "x": -139.27531782543613,
+                  "z": 117.4747786832663,
+                  "entrance": true
+                }
+              ]
+            },
+            "atlas": {
+              "threeDimensional": true,
+              "active": false,
+              "exploredCells": 18,
+              "tracked": null
+            },
+            "presentation": {
+              "pixelDefeats": 0,
+              "materialVariations": 6,
+              "actorLighting": "PBR, sunlight, cloud and scene shadows"
+            },
+            "tutorialVoice": false,
+            "titleScreen": {
+              "scene": "brookstead",
+              "partyVisible": false,
+              "panel": "news",
+              "slots": [
+                {
+                  "slot": "1",
+                  "raw": false,
+                  "valid": false
+                },
+                {
+                  "slot": "2",
+                  "raw": false,
+                  "valid": false
+                },
+                {
+                  "slot": "3",
+                  "raw": false,
+                  "valid": false
+                }
+              ]
+            },
+            "waterCurrent": {
+              "active": 0,
+              "speed": 1.6,
+              "front": 358,
+              "direction": "downstream",
+              "gpu": true
+            }
+          }
+        },
+        {
+          "version": "after",
+          "name": "waterworks",
+          "camera": [
+            -152.236,
+            12.380927639161676,
+            99.884
+          ],
+          "look": [
+            -154,
+            2.9729276391616763,
+            78.8
+          ],
+          "hour": 9,
+          "scene": "waterworks",
+          "cloud": 0.18,
+          "buffer": [
+            1672,
+            941
+          ],
+          "text": {
+            "title": "The Last Light of Elyndor",
+            "mode": "explore",
+            "scene": "waterworks",
+            "view": "town",
+            "chapter": "Prologue",
+            "beat": "arrival",
+            "objective": "Speak to the local representative.",
+            "coordinates": "X east, Z south, Y height. Fixed oblique camera; keys follow the screen axes.",
+            "player": {
+              "x": -154,
+              "z": 86,
+              "height": 1.72,
+              "face": "south",
+              "frame": {
+                "action": "idle_south",
+                "index": 1,
+                "cell": 9
+              }
+            },
+            "followers": [
+              {
+                "id": "soren",
+                "x": -155.5,
+                "z": 86,
+                "frame": {
+                  "action": "idle_east",
+                  "index": 1,
+                  "cell": 128
+                }
+              }
+            ],
+            "party": [
+              {
+                "id": "bren",
+                "hp": 260,
+                "mp": 44,
+                "level": 1,
+                "xp": 0,
+                "charge": 0,
+                "ascended": false,
+                "gear": {
+                  "weapon": null,
+                  "armor": null
+                }
+              },
+              {
+                "id": "soren",
+                "hp": 210,
+                "mp": 84,
+                "level": 1,
+                "xp": 0,
+                "charge": 0,
+                "ascended": false,
+                "gear": {
+                  "weapon": null,
+                  "armor": null
+                }
+              }
+            ],
+            "flags": {
+              "pump_repaired": true,
+              "gate_open": true
+            },
+            "items": {
+              "herb": 6,
+              "ether": 4,
+              "revive": 2
+            },
+            "gold": 180,
+            "worldMinutes": 540,
+            "discovered": [
+              "Brookstead"
+            ],
+            "dialogue": null,
+            "menu": null,
+            "interactions": [
+              {
+                "type": "representative",
+                "label": "Local representative",
+                "x": -126,
+                "z": 66,
+                "active": true
+              },
+              {
+                "type": "shop",
+                "label": "Enter Riverstone Supplies",
+                "x": -116,
+                "z": 54.3,
+                "active": true
+              },
+              {
+                "type": "inn",
+                "label": "Enter The Lantern Inn",
+                "x": -111,
+                "z": 101.5,
+                "active": true
+              },
+              {
+                "type": "chest",
+                "label": "Open supply chest",
+                "x": -98,
+                "z": 119,
+                "active": true
+              },
+              {
+                "type": "gate",
+                "label": "Free the jammed gate",
+                "x": -158.6,
+                "z": 68.5,
+                "active": false
+              },
+              {
+                "type": "pump",
+                "label": "Repair the broken pump",
+                "x": -123,
+                "z": 50,
+                "active": false
+              },
+              {
+                "type": "water",
+                "label": "Check the water supply",
+                "x": -127,
+                "z": 54,
+                "active": true
+              },
+              {
+                "type": "wildlife",
+                "label": "Protect the residents",
+                "x": -62,
+                "z": 89,
+                "active": false
+              },
+              {
+                "type": "aftermath",
+                "label": "Speak with the representative",
+                "x": -68,
+                "z": 93,
+                "active": false
+              },
+              {
+                "type": "villager",
+                "label": "Talk to the carpenter",
+                "x": -145,
+                "z": 72,
+                "active": true
+              },
+              {
+                "type": "villager",
+                "label": "Talk to the watchkeeper",
+                "x": -146,
+                "z": 120,
+                "active": true
+              },
+              {
+                "type": "villager",
+                "label": "Talk to the courier",
+                "x": -129,
+                "z": 65,
+                "active": true
+              },
+              {
+                "type": "villager",
+                "label": "Talk to the farmer",
+                "x": -95,
+                "z": 106,
+                "active": true
+              },
+              {
+                "type": "villager",
+                "label": "Talk to the elder",
+                "x": -128.8,
+                "z": 60,
+                "active": true
+              },
+              {
+                "type": "villager",
+                "label": "Talk to the innkeeper",
+                "x": -114,
+                "z": 101.5,
+                "active": true
+              },
+              {
+                "type": "poiExit",
+                "label": "Leave for the overworld",
+                "x": -258.38008504205084,
+                "z": 172.0578155742448,
+                "active": true
+              },
+              {
+                "type": "routeDoor",
+                "label": "Follow the trail to Fern Hollow",
+                "x": -100.8333553495294,
+                "z": 42.75279558154618,
+                "active": true
+              },
+              {
+                "type": "interiorDoor",
+                "label": "Enter Brookstead Smithy",
+                "x": -139.2,
+                "z": 73,
+                "active": true
+              },
+              {
+                "type": "poiExit",
+                "label": "Far road · Overworld",
+                "x": 24.497512559933828,
+                "z": 90.64274216420174,
+                "active": true
+              },
+              {
+                "type": "poiExit",
+                "label": "Upper trail · Overworld",
+                "x": -122.08780743252927,
+                "z": -33.97978619673136,
+                "active": true
+              },
+              {
+                "type": "localBoard",
+                "label": "Read local requests",
+                "x": -145.00892326277145,
+                "z": 115.7332893009412,
+                "active": false
+              },
+              {
+                "type": "localTask",
+                "label": "Check the path · 1/3",
+                "x": -133.1921471959677,
+                "z": 121.95090322016128,
+                "active": false
+              },
+              {
+                "type": "localTask",
+                "label": "Check the path · 2/3",
+                "x": -129.26900607435476,
+                "z": 122.73126450822579,
+                "active": false
+              },
+              {
+                "type": "localTask",
+                "label": "Check the path · 3/3",
+                "x": -157.96645302144583,
+                "z": 130.00026419435284,
+                "active": false
+              },
+              {
+                "type": "saveCircle",
+                "label": "Wayfarer seal · Save journey",
+                "x": -139.27531782543613,
+                "z": 117.4747786832663,
+                "active": true
+              }
+            ],
+            "npcs": [
+              {
+                "id": "worker",
+                "x": -145,
+                "z": 72,
+                "task": "Inspecting the canal joinery",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 1,
+                  "cell": 9
+                }
+              },
+              {
+                "id": "guard",
+                "x": -146,
+                "z": 120,
+                "task": "Patrolling the entrance",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 0,
+                  "cell": 8
+                }
+              },
+              {
+                "id": "courier",
+                "x": -129,
+                "z": 65,
+                "task": "Collecting a report",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 2,
+                  "cell": 10
+                }
+              },
+              {
+                "id": "farmer",
+                "x": -95,
+                "z": 106,
+                "task": "Bringing produce to market",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 1,
+                  "cell": 9
+                }
+              },
+              {
+                "id": "elder",
+                "x": -128.8,
+                "z": 60,
+                "task": "Resting beside the fountain",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 0,
+                  "cell": 8
+                }
+              },
+              {
+                "id": "innkeeper",
+                "x": -114,
+                "z": 101.5,
+                "task": "Collecting the inn’s supplies",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 3,
+                  "cell": 11
+                }
+              },
+              {
+                "id": "representative",
+                "x": -126,
+                "z": 66,
+                "task": "Looking after the settlement",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 3,
+                  "cell": 11
+                }
+              },
+              {
+                "id": "merchant",
+                "x": -116,
+                "z": 54.3,
+                "task": "Looking after the settlement",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 0,
+                  "cell": 8
+                }
+              },
+              {
+                "id": "healer",
+                "x": -111,
+                "z": 101.5,
+                "task": "Looking after the settlement",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 0,
+                  "cell": 8
+                }
+              },
+              {
+                "id": "sheepEwe",
+                "x": -94,
+                "z": 124,
+                "task": "Grazing in the meadow",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 4,
+                  "cell": 12
+                }
+              },
+              {
+                "id": "sheepLamb",
+                "x": -87,
+                "z": 127,
+                "task": "Grazing in the meadow",
+                "tasks": 0,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 7,
+                  "cell": 15
+                }
+              }
+            ],
+            "battle": null,
+            "terrain": {
+              "sculpted": true,
+              "leafInstances": 10585,
+              "litSprites": true,
+              "fixedCamera": true,
+              "fov": 35
+            },
+            "event": null,
+            "tutorial": {
+              "lesson": "move",
+              "hidden": true,
+              "practised": [],
+              "complete": false
+            },
+            "riverRecovery": {
+              "released": true,
+              "age": 180,
+              "settled": true,
+              "levels": {
+                "reservoir": 6.141937193044112,
+                "headrace": 4.55,
+                "millrace": 1.55,
+                "lowerBrook": -1.4
+              },
+              "opening": 0.2442162585442743,
+              "model": "carved bed, pressure wave and shared reflection levels"
+            },
+            "overworld": {
+              "width": 2048,
+              "depth": 1152,
+              "atlasSource": "actual playable overworld",
+              "sameLandscape": true
+            },
+            "atlasReference": {
+              "version": 7,
+              "locations": 22,
+              "roads": 7,
+              "source": "https://elyndor-world-atlas.maplecloud21.chatgpt.site/"
+            },
+            "combatLesson": null,
+            "localRequests": {
+              "unlocked": false,
+              "tracked": null,
+              "requests": {
+                "brookstead": {
+                  "accepted": false,
+                  "done": [],
+                  "claimed": false
+                }
+              }
+            },
+            "openingEscort": null,
+            "encounterFloorMark": false,
+            "worldSystem": "overworld-and-points-of-interest",
+            "location": "brookstead",
+            "locationKind": "poi",
+            "weather": {
+              "name": "Clear skies",
+              "rain": 0,
+              "snow": 0,
+              "clouds": 0.18
+            },
+            "results": null,
+            "voice": {
+              "provider": "ElevenLabs",
+              "recordedClips": 259,
+              "played": 0,
+              "model": "eleven_v4"
+            },
+            "camera": {
+              "pitch": 23.972876142711147,
+              "cinematic": 0
+            },
+            "saving": {
+              "allowed": false,
+              "location": "Location entrances and inns",
+              "seals": [
+                {
+                  "x": -139.27531782543613,
+                  "z": 117.4747786832663,
+                  "entrance": true
+                }
+              ]
+            },
+            "atlas": {
+              "threeDimensional": true,
+              "active": false,
+              "exploredCells": 18,
+              "tracked": null
+            },
+            "presentation": {
+              "pixelDefeats": 0,
+              "materialVariations": 6,
+              "actorLighting": "PBR, sunlight, cloud and scene shadows"
+            },
+            "tutorialVoice": false,
+            "titleScreen": {
+              "scene": "brookstead",
+              "partyVisible": false,
+              "panel": "news",
+              "slots": [
+                {
+                  "slot": "1",
+                  "raw": false,
+                  "valid": false
+                },
+                {
+                  "slot": "2",
+                  "raw": false,
+                  "valid": false
+                },
+                {
+                  "slot": "3",
+                  "raw": false,
+                  "valid": false
+                }
+              ]
+            },
+            "waterCurrent": {
+              "active": 0,
+              "speed": 1.6,
+              "front": 358,
+              "direction": "downstream",
+              "gpu": true
+            }
+          }
+        },
+        {
+          "version": "after",
+          "name": "smithy",
+          "camera": [
+            0,
+            12.350000000000001,
+            21.099999999999998
+          ],
+          "look": [
+            0,
+            1.55,
+            -2.1
+          ],
+          "hour": 9,
+          "scene": "brookForge",
+          "cloud": 0.18,
+          "buffer": [
+            1672,
+            941
+          ],
+          "text": {
+            "title": "The Last Light of Elyndor",
+            "mode": "explore",
+            "scene": "brookForge",
+            "view": "interior",
+            "chapter": "Prologue",
+            "beat": "arrival",
+            "objective": "Speak to the local representative.",
+            "coordinates": "X east, Z south, Y height. Fixed oblique camera; keys follow the screen axes.",
+            "player": {
+              "x": 0,
+              "z": 3,
+              "height": 0,
+              "face": "south",
+              "frame": {
+                "action": "idle_south",
+                "index": 1,
+                "cell": 9
+              }
+            },
+            "followers": [
+              {
+                "id": "soren",
+                "x": -1.5,
+                "z": 3,
+                "frame": {
+                  "action": "idle_east",
+                  "index": 1,
+                  "cell": 128
+                }
+              }
+            ],
+            "party": [
+              {
+                "id": "bren",
+                "hp": 260,
+                "mp": 44,
+                "level": 1,
+                "xp": 0,
+                "charge": 0,
+                "ascended": false,
+                "gear": {
+                  "weapon": null,
+                  "armor": null
+                }
+              },
+              {
+                "id": "soren",
+                "hp": 210,
+                "mp": 84,
+                "level": 1,
+                "xp": 0,
+                "charge": 0,
+                "ascended": false,
+                "gear": {
+                  "weapon": null,
+                  "armor": null
+                }
+              }
+            ],
+            "flags": {
+              "pump_repaired": true,
+              "gate_open": true
+            },
+            "items": {
+              "herb": 6,
+              "ether": 4,
+              "revive": 2
+            },
+            "gold": 180,
+            "worldMinutes": 540,
+            "discovered": [
+              "Brookstead"
+            ],
+            "dialogue": null,
+            "menu": null,
+            "interactions": [
+              {
+                "type": "shop",
+                "label": "Browse weapons and armor",
+                "x": 0,
+                "z": -5,
+                "active": true
+              },
+              {
+                "type": "villager",
+                "label": "Talk to the apprentice",
+                "x": 5,
+                "z": -5.3,
+                "active": true
+              },
+              {
+                "type": "interiorExit",
+                "label": "Return outside",
+                "x": 0,
+                "z": 8,
+                "active": true
+              }
+            ],
+            "npcs": [
+              {
+                "id": "worker",
+                "x": 0,
+                "z": -5,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 2,
+                  "cell": 10
+                }
+              },
+              {
+                "id": "capital-post",
+                "x": 5,
+                "z": -5.3,
+                "frame": {
+                  "action": "idle_south",
+                  "index": 3,
+                  "cell": 11
+                }
+              }
+            ],
+            "battle": null,
+            "terrain": {
+              "sculpted": true,
+              "litSprites": true,
+              "fixedCamera": true,
+              "fov": 38
+            },
+            "event": null,
+            "tutorial": {
+              "lesson": "move",
+              "hidden": true,
+              "practised": [],
+              "complete": false
+            },
+            "riverRecovery": null,
+            "overworld": {
+              "width": 2048,
+              "depth": 1152,
+              "atlasSource": "actual playable overworld",
+              "sameLandscape": true
+            },
+            "atlasReference": {
+              "version": 7,
+              "locations": 22,
+              "roads": 7,
+              "source": "https://elyndor-world-atlas.maplecloud21.chatgpt.site/"
+            },
+            "combatLesson": null,
+            "localRequests": {
+              "unlocked": false,
+              "tracked": null,
+              "requests": {
+                "brookstead": {
+                  "accepted": false,
+                  "done": [],
+                  "claimed": false
+                }
+              }
+            },
+            "openingEscort": null,
+            "encounterFloorMark": false,
+            "worldSystem": "overworld-and-points-of-interest",
+            "location": "brookForge",
+            "locationKind": "interior",
+            "weather": {
+              "name": "Clear skies",
+              "rain": 0,
+              "snow": 0,
+              "clouds": 0.18
+            },
+            "results": null,
+            "voice": {
+              "provider": "ElevenLabs",
+              "recordedClips": 259,
+              "played": 0,
+              "model": "eleven_v4"
+            },
+            "camera": {
+              "pitch": 24.962789830807015,
+              "cinematic": 0
+            },
+            "saving": {
+              "allowed": false,
+              "location": "Location entrances and inns",
+              "seals": []
+            },
+            "atlas": {
+              "threeDimensional": true,
+              "active": false,
+              "exploredCells": 18,
+              "tracked": null
+            },
+            "presentation": {
+              "pixelDefeats": 0,
+              "materialVariations": 6,
+              "actorLighting": "PBR, sunlight, cloud and scene shadows"
+            },
+            "tutorialVoice": false,
+            "titleScreen": {
+              "scene": "brookstead",
+              "partyVisible": false,
+              "panel": "news",
+              "slots": [
+                {
+                  "slot": "1",
+                  "raw": false,
+                  "valid": false
+                },
+                {
+                  "slot": "2",
+                  "raw": false,
+                  "valid": false
+                },
+                {
+                  "slot": "3",
+                  "raw": false,
+                  "valid": false
+                }
+              ]
+            },
+            "waterCurrent": null
+          }
         }
       ],
       "times": [
@@ -6627,7 +6952,7 @@
       ],
       "errors": [],
       "pass": true,
-      "framingChange": "Exploration deliberately moves closer and places the party lower; interior framing is unchanged."
+      "framingChange": "Same location, fixed camera and time. Native game frames; no image generation or grading was applied to these screenshots."
     },
     "sourceMatchesArtifact": true
   },
@@ -6637,12 +6962,12 @@
       "scenarios": [
         {
           "name": "bridge",
-          "fps": 71.49285071482198,
-          "p95FrameMs": 14.899999976158142,
-          "meanRenderCpuMs": 3.9374125878085624,
-          "ticks": 286,
-          "calls": 830.2727272727273,
-          "triangles": 4136301.7342657344,
+          "fps": 71.24109486314211,
+          "p95FrameMs": 15.099999994039536,
+          "meanRenderCpuMs": 3.292982455722073,
+          "ticks": 285,
+          "calls": 443.93684210526317,
+          "triangles": 4128801.1649122806,
           "buffer": [
             1440,
             900
@@ -6653,17 +6978,17 @@
             1536,
             1536
           ],
-          "programs": 175,
+          "programs": 166,
           "worldSerial": 4
         },
         {
           "name": "square",
-          "fps": 70.94678990756933,
-          "p95FrameMs": 14.900000005960464,
-          "meanRenderCpuMs": 4.033450704645103,
+          "fps": 70.9822544363909,
+          "p95FrameMs": 15.099999994039536,
+          "meanRenderCpuMs": 3.48204225375199,
           "ticks": 285,
-          "calls": 471.0845070422535,
-          "triangles": 3879456.1690140846,
+          "calls": 474.9507042253521,
+          "triangles": 3868431.9014084507,
           "buffer": [
             1440,
             900
@@ -6674,17 +6999,17 @@
             1536,
             1536
           ],
-          "programs": 177,
+          "programs": 168,
           "worldSerial": 5
         },
         {
           "name": "forest",
-          "fps": 71.99640017966917,
-          "p95FrameMs": 15.099999994039536,
-          "meanRenderCpuMs": 1.540277777446641,
+          "fps": 71.99280071982074,
+          "p95FrameMs": 15,
+          "meanRenderCpuMs": 1.5607638891993298,
           "ticks": 288,
-          "calls": 242.29861111111111,
-          "triangles": 2333768.7430555555,
+          "calls": 245.72222222222223,
+          "triangles": 2330358.5625,
           "buffer": [
             1440,
             900
@@ -6695,17 +7020,17 @@
             1536,
             1536
           ],
-          "programs": 180,
+          "programs": 171,
           "worldSerial": 6
         },
         {
           "name": "overworld",
-          "fps": 71.97840647773492,
-          "p95FrameMs": 14.699999988079071,
-          "meanRenderCpuMs": 3.88506944425818,
+          "fps": 71.98380364460901,
+          "p95FrameMs": 14.5,
+          "meanRenderCpuMs": 3.640277777591513,
           "ticks": 288,
-          "calls": 399.68055555555554,
-          "triangles": 4937553.111111111,
+          "calls": 401.0729166666667,
+          "triangles": 4923606.402777778,
           "buffer": [
             1440,
             900
@@ -6716,17 +7041,17 @@
             1536,
             1536
           ],
-          "programs": 199,
+          "programs": 190,
           "worldSerial": 7
         },
         {
           "name": "shop",
-          "fps": 71.99280072035708,
-          "p95FrameMs": 14.800000011920929,
-          "meanRenderCpuMs": 0.8409722220773498,
+          "fps": 71.98380364407282,
+          "p95FrameMs": 14.599999994039536,
+          "meanRenderCpuMs": 0.6465277785642279,
           "ticks": 288,
-          "calls": 116.05555555555556,
-          "triangles": 28732.11111111111,
+          "calls": 109.78472222222223,
+          "triangles": 28725.569444444445,
           "buffer": [
             1440,
             900
@@ -6737,11 +7062,11 @@
             1536,
             1536
           ],
-          "programs": 201,
+          "programs": 192,
           "worldSerial": 8
         }
       ],
-      "loadMs": 12094,
+      "loadMs": 12637,
       "device": {
         "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
         "software": false
@@ -6754,19 +7079,19 @@
       "phases": [
         {
           "name": "warm-town",
-          "seconds": 30.005900000005962,
-          "fps": 72.68570514464044,
+          "seconds": 30.00109999999404,
+          "fps": 73.03065554264461,
           "frame": {
-            "mean": 13.760871559627558,
+            "mean": 13.695707762554356,
             "p95": 14.5,
-            "p99": 15.199999988079071,
-            "max": 16.900000005960464
+            "p99": 15.099999994039536,
+            "max": 20.400000005960464
           },
           "renderCPU": {
-            "mean": 4.776295277693577,
-            "p95": 5.800000011920929,
-            "p99": 6.4000000059604645,
-            "max": 11.5
+            "mean": 4.241214057412773,
+            "p95": 5.199999988079071,
+            "p99": 5.5,
+            "max": 10.5
           },
           "scale": 1,
           "tier": 2,
@@ -6774,33 +7099,33 @@
             1920,
             1080
           ],
-          "gpuMs": 4.222633192015765,
-          "fx": 5,
+          "gpuMs": 4.15412431393216,
+          "fx": 14,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P3, 44, 33, 1140, 5001, 46.60",
-            "P3, 44, 36, 900, 5001, 45.37",
-            "P3, 44, 40, 975, 5001, 45.84",
-            "P3, 44, 35, 975, 5001, 45.48",
-            "P3, 43, 38, 885, 5001, 44.98"
+            "P3, 41, 30, 1350, 5001, 48.49",
+            "P3, 41, 35, 915, 5001, 42.40",
+            "P3, 41, 36, 855, 5001, 41.97",
+            "P3, 41, 37, 840, 5001, 42.38",
+            "P3, 41, 40, 915, 5001, 42.11"
           ]
         },
         {
           "name": "after-travel-and-battle-0",
-          "seconds": 10.000800000011921,
-          "fps": 71.594272458118,
+          "seconds": 10.00040000000596,
+          "fps": 71.59713611451274,
           "frame": {
-            "mean": 13.889230769247442,
-            "p95": 14.599999994039536,
-            "p99": 15.099999994039536,
-            "max": 15.5
+            "mean": 13.891048951040615,
+            "p95": 14.5,
+            "p99": 15.199999988079071,
+            "max": 16
           },
           "renderCPU": {
-            "mean": 3.699860335520193,
-            "p95": 4.200000017881393,
-            "p99": 4.5,
-            "max": 8
+            "mean": 3.3343575428651033,
+            "p95": 3.7000000178813934,
+            "p99": 4,
+            "max": 6.9000000059604645
           },
           "scale": 1,
           "tier": 2,
@@ -6808,196 +7133,28 @@
             1920,
             1080
           ],
-          "gpuMs": 4.455409695275187,
+          "gpuMs": 3.6942946211831202,
           "fx": 9,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P3, 43, 35, 1020, 5001, 45.87"
+            "P3, 40, 36, 1005, 5001, 43.40"
           ]
         },
         {
           "name": "after-travel-and-battle-1",
-          "seconds": 10.001300000011922,
-          "fps": 71.59069320979738,
+          "seconds": 10.0015,
+          "fps": 71.58926161075838,
           "frame": {
-            "mean": 13.890769230777567,
+            "mean": 13.885594405619415,
             "p95": 14.5,
-            "p99": 15.199999988079071,
-            "max": 15.799999982118607
+            "p99": 15.200000017881393,
+            "max": 15.400000005960464
           },
           "renderCPU": {
-            "mean": 3.7305865931694067,
-            "p95": 4.200000017881393,
-            "p99": 4.4000000059604645,
-            "max": 5.0999999940395355
-          },
-          "scale": 1,
-          "tier": 2,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 3.9384513969688677,
-          "fx": 13,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P3, 42, 37, 1035, 5001, 45.33",
-            "P3, 42, 33, 945, 5001, 44.95"
-          ]
-        },
-        {
-          "name": "after-travel-and-battle-2",
-          "seconds": 10.002400000005961,
-          "fps": 71.58282012312777,
-          "frame": {
-            "mean": 13.89356643357477,
-            "p95": 14.5,
-            "p99": 15.199999988079071,
-            "max": 15.5
-          },
-          "renderCPU": {
-            "mean": 3.7254189947547194,
-            "p95": 4.300000011920929,
-            "p99": 4.5,
-            "max": 4.5999999940395355
-          },
-          "scale": 1,
-          "tier": 2,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 4.572671402904273,
-          "fx": 6,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P3, 41, 38, 1020, 5001, 44.55"
-          ]
-        },
-        {
-          "name": "after-travel-and-battle-3",
-          "seconds": 10.000199999988078,
-          "fps": 71.59856802872477,
-          "frame": {
-            "mean": 13.885734265709257,
-            "p95": 14.599999994039536,
-            "p99": 15.199999988079071,
-            "max": 15.700000017881393
-          },
-          "renderCPU": {
-            "mean": 3.6604748602602735,
-            "p95": 4.199999988079071,
-            "p99": 4.300000011920929,
-            "max": 4.699999988079071
-          },
-          "scale": 1,
-          "tier": 2,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 4.821148409755514,
-          "fx": 8,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P3, 41, 37, 1005, 5001, 45.26"
-          ]
-        },
-        {
-          "name": "town-after-thirty-minutes",
-          "seconds": 45.001299999982116,
-          "fps": 71.95347689958483,
-          "frame": {
-            "mean": 13.898239110294668,
-            "p95": 14.400000005960464,
-            "p99": 15.100000023841858,
-            "max": 29
-          },
-          "renderCPU": {
-            "mean": 3.720660902186998,
-            "p95": 4.200000017881393,
-            "p99": 4.5,
-            "max": 9.400000005960464
-          },
-          "scale": 1,
-          "tier": 2,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 4.921882908334793,
-          "fx": 8,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P3, 40, 34, 1155, 5001, 46.52",
-            "P3, 40, 37, 1035, 5001, 46.31",
-            "P3, 40, 35, 1005, 5001, 46.14",
-            "P3, 40, 37, 945, 5001, 45.68",
-            "P3, 40, 37, 945, 5001, 45.75",
-            "P3, 40, 38, 945, 5001, 46.15",
-            "P3, 40, 40, 915, 5001, 46.85",
-            "P3, 40, 37, 945, 5001, 46.92"
-          ]
-        },
-        {
-          "name": "overworld-extended",
-          "seconds": 60.00059999999404,
-          "fps": 71.91594750719874,
-          "frame": {
-            "mean": 13.90347705145898,
-            "p95": 14.899999976158142,
-            "p99": 15.700000017881393,
-            "max": 30.19999998807907
-          },
-          "renderCPU": {
-            "mean": 2.374090382563833,
-            "p95": 3,
-            "p99": 3.399999976158142,
-            "max": 5.5
-          },
-          "scale": 1,
-          "tier": 2,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 3.9809208651149657,
-          "fx": 10,
-          "weather": "Clear skies",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P3, 41, 31, 1230, 5001, 49.67",
-            "P3, 41, 28, 1320, 5001, 55.43",
-            "P0, 41, 17, 2505, 11201, 51.44",
-            "P3, 41, 32, 1110, 5001, 48.79",
-            "P3, 41, 28, 1305, 5001, 54.33",
-            "P0, 41, 17, 2505, 11201, 50.19",
-            "P3, 42, 32, 1095, 5001, 47.94",
-            "P3, 42, 28, 1200, 5001, 48.34",
-            "P0, 43, 17, 2505, 11201, 62.54",
-            "P5, 41, 78, 945, 810, 47.37",
-            "P3, 41, 31, 1020, 5001, 47.90"
-          ]
-        },
-        {
-          "name": "storm-overworld-extended",
-          "seconds": 60.00009999999404,
-          "fps": 71.89988016687353,
-          "frame": {
-            "mean": 13.908277301176943,
-            "p95": 15,
-            "p99": 15.799999982118607,
-            "max": 48.69999998807907
-          },
-          "renderCPU": {
-            "mean": 2.357000463688379,
-            "p95": 2.9000000059604645,
-            "p99": 3.199999988079071,
+            "mean": 3.342597764921921,
+            "p95": 3.7999999821186066,
+            "p99": 3.9000000059604645,
             "max": 4.199999988079071
           },
           "scale": 1,
@@ -7006,79 +7163,29 @@
             1920,
             1080
           ],
-          "gpuMs": 4.343475936656505,
-          "fx": 10,
-          "weather": "Thunderstorm",
-          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
-          "hardware": [
-            "P0, 43, 18, 2505, 11201, 62.24",
-            "P0, 41, 26, 2505, 11201, 47.34",
-            "P3, 41, 33, 1005, 5001, 47.36",
-            "P3, 41, 30, 1140, 5001, 47.90",
-            "P3, 41, 25, 1395, 5001, 61.31",
-            "P0, 42, 17, 2505, 11201, 49.62",
-            "P3, 41, 33, 990, 5001, 47.39",
-            "P3, 42, 32, 1110, 5001, 46.83",
-            "P3, 41, 26, 1365, 5001, 58.58",
-            "P0, 42, 16, 2505, 11201, 53.35",
-            "P3, 42, 35, 975, 5001, 47.76"
-          ]
-        },
-        {
-          "name": "continuous-battle-skills",
-          "seconds": 60.001,
-          "fps": 71.848802519958,
-          "frame": {
-            "mean": 13.912157772623193,
-            "p95": 18.099999994039536,
-            "p99": 18.600000023841858,
-            "max": 49.60000002384186
-          },
-          "renderCPU": {
-            "mean": 3.578775226240284,
-            "p95": 4.199999988079071,
-            "p99": 4.5,
-            "max": 6.799999982118607
-          },
-          "scale": 1,
-          "tier": 2,
-          "buffer": [
-            1920,
-            1080
-          ],
-          "gpuMs": 5.566896608581256,
-          "fx": 0,
+          "gpuMs": 4.262557593976499,
+          "fx": 7,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P3, 42, 34, 1290, 5001, 53.63",
-            "P3, 42, 42, 1125, 5001, 52.94",
-            "P3, 42, 37, 1170, 5001, 53.09",
-            "P3, 42, 43, 1125, 5001, 53.41",
-            "P3, 43, 39, 1140, 5001, 53.74",
-            "P3, 42, 41, 1125, 5001, 52.95",
-            "P3, 42, 40, 1155, 5001, 53.93",
-            "P3, 42, 41, 1185, 5001, 53.85",
-            "P3, 42, 42, 1110, 5001, 53.46",
-            "P3, 42, 36, 1200, 5001, 53.45",
-            "P3, 42, 37, 1185, 5001, 53.75"
+            "P3, 40, 34, 975, 5001, 42.58"
           ]
         },
         {
-          "name": "final-town",
-          "seconds": 30.0005,
-          "fps": 71.93213446442559,
+          "name": "after-travel-and-battle-2",
+          "seconds": 10.00040000000596,
+          "fps": 71.59713611451274,
           "frame": {
-            "mean": 13.90125173852573,
+            "mean": 13.887692307675636,
             "p95": 14.5,
-            "p99": 15.199999988079071,
-            "max": 20.900000005960464
+            "p99": 15.099999994039536,
+            "max": 15.5
           },
           "renderCPU": {
-            "mean": 4.0430027800814985,
-            "p95": 4.5999999940395355,
-            "p99": 4.9000000059604645,
-            "max": 17.099999994039536
+            "mean": 3.173463686842825,
+            "p95": 3.600000023841858,
+            "p99": 3.800000011920929,
+            "max": 4.799999982118607
           },
           "scale": 1,
           "tier": 2,
@@ -7086,16 +7193,233 @@
             1920,
             1080
           ],
-          "gpuMs": 5.2461694349343775,
+          "gpuMs": 4.043569436520099,
+          "fx": 6,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P3, 40, 31, 1020, 5001, 42.32"
+          ]
+        },
+        {
+          "name": "after-travel-and-battle-3",
+          "seconds": 10.000299999982118,
+          "fps": 71.5978520645661,
+          "frame": {
+            "mean": 13.886293706277034,
+            "p95": 14.5,
+            "p99": 15.200000017881393,
+            "max": 15.599999994039536
+          },
+          "renderCPU": {
+            "mean": 3.2994413402077205,
+            "p95": 3.7999999821186066,
+            "p99": 4,
+            "max": 4.199999988079071
+          },
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.1487127334901865,
+          "fx": 13,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P3, 40, 30, 1125, 5001, 43.51"
+          ]
+        },
+        {
+          "name": "town-after-thirty-minutes",
+          "seconds": 45.00039999997616,
+          "fps": 71.64380761063697,
+          "frame": {
+            "mean": 13.958051504812882,
+            "p95": 14.400000005960464,
+            "p99": 15.099999994039536,
+            "max": 89.90000000596046
+          },
+          "renderCPU": {
+            "mean": 3.4279156327894693,
+            "p95": 3.9000000059604645,
+            "p99": 4.299999982118607,
+            "max": 5.800000011920929
+          },
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.261483865375574,
           "fx": 8,
           "weather": "Clear skies",
           "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
           "hardware": [
-            "P3, 41, 33, 1020, 5001, 44.62",
-            "P3, 41, 40, 840, 5001, 43.69",
-            "P3, 41, 38, 840, 5001, 43.76",
-            "P3, 41, 39, 825, 5001, 43.65",
-            "P3, 41, 38, 870, 5001, 44.10"
+            "P3, 40, 31, 1410, 5001, 55.29",
+            "P3, 39, 34, 1005, 5001, 45.37",
+            "P3, 40, 38, 900, 5001, 44.21",
+            "P3, 40, 39, 885, 5001, 43.62",
+            "P3, 39, 39, 990, 5001, 44.52",
+            "P3, 40, 36, 990, 5001, 44.47",
+            "P3, 40, 39, 915, 5001, 45.02",
+            "P3, 40, 38, 1035, 5001, 45.91"
+          ]
+        },
+        {
+          "name": "overworld-extended",
+          "seconds": 60.00109999999404,
+          "fps": 71.79868369080614,
+          "frame": {
+            "mean": 13.925725563035533,
+            "p95": 14.699999988079071,
+            "p99": 15.400000005960464,
+            "max": 131
+          },
+          "renderCPU": {
+            "mean": 2.5158077996282966,
+            "p95": 3.5999999940395355,
+            "p99": 4.299999982118607,
+            "max": 5.200000017881393
+          },
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.445120624847749,
+          "fx": 8,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P3, 40, 35, 1095, 5001, 48.04",
+            "P3, 41, 29, 1275, 5001, 49.29",
+            "P0, 41, 17, 2505, 11201, 51.89",
+            "P3, 41, 33, 1020, 5001, 47.53",
+            "P3, 41, 35, 1215, 5001, 47.94",
+            "P0, 41, 17, 2505, 11201, 60.19",
+            "P3, 40, 34, 960, 5001, 46.40",
+            "P3, 41, 31, 1125, 5001, 47.86",
+            "P3, 41, 29, 1350, 5001, 56.48",
+            "P0, 41, 20, 2505, 11201, 55.22",
+            "P3, 42, 34, 1155, 5001, 47.68"
+          ]
+        },
+        {
+          "name": "storm-overworld-extended",
+          "seconds": 60.00069999998808,
+          "fps": 71.88249470424275,
+          "frame": {
+            "mean": 13.909972170682309,
+            "p95": 14.800000011920929,
+            "p99": 15.699999988079071,
+            "max": 46.80000001192093
+          },
+          "renderCPU": {
+            "mean": 2.6282170179366733,
+            "p95": 4.199999988079071,
+            "p99": 4.800000011920929,
+            "max": 6
+          },
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 5.005981637241332,
+          "fx": 9,
+          "weather": "Thunderstorm",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P3, 42, 25, 1425, 5001, 61.44",
+            "P0, 42, 18, 2505, 11201, 50.40",
+            "P3, 41, 34, 1155, 5001, 47.86",
+            "P3, 41, 28, 1365, 5001, 53.58",
+            "P0, 41, 17, 2505, 11201, 49.12",
+            "P3, 41, 34, 1005, 5001, 47.56",
+            "P3, 42, 35, 1200, 5001, 47.98",
+            "P0, 42, 19, 2505, 11201, 58.47",
+            "P3, 41, 36, 990, 5001, 47.40",
+            "P3, 41, 33, 1155, 5001, 47.57",
+            "P0, 42, 17, 2505, 11201, 62.23"
+          ]
+        },
+        {
+          "name": "continuous-battle-skills",
+          "seconds": 60.00259999999404,
+          "fps": 71.86355257939536,
+          "frame": {
+            "mean": 13.909533750869867,
+            "p95": 18,
+            "p99": 18.600000023841858,
+            "max": 54.30000001192093
+          },
+          "renderCPU": {
+            "mean": 3.4022263448637027,
+            "p95": 3.9000000059604645,
+            "p99": 4.299999982118607,
+            "max": 6
+          },
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 5.119083386972026,
+          "fx": 0,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P3, 42, 38, 1290, 5001, 53.05",
+            "P3, 42, 35, 1185, 5001, 51.90",
+            "P3, 43, 35, 1185, 5001, 52.20",
+            "P3, 42, 33, 1185, 5001, 52.64",
+            "P3, 42, 36, 1155, 5001, 53.08",
+            "P3, 42, 37, 1125, 5001, 51.82",
+            "P3, 42, 39, 1230, 5001, 53.10",
+            "P3, 42, 36, 1155, 5001, 52.70",
+            "P3, 42, 40, 1155, 5001, 53.01",
+            "P3, 42, 36, 1110, 5001, 52.54",
+            "P3, 42, 37, 1260, 5001, 53.18"
+          ]
+        },
+        {
+          "name": "final-town",
+          "seconds": 30.00080000001192,
+          "fps": 71.96474760670189,
+          "frame": {
+            "mean": 13.89541241889811,
+            "p95": 14.599999994039536,
+            "p99": 15.200000017881393,
+            "max": 17.599999994039536
+          },
+          "renderCPU": {
+            "mean": 3.9102362206463686,
+            "p95": 6.0999999940395355,
+            "p99": 7.200000017881393,
+            "max": 8.400000005960464
+          },
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "gpuMs": 4.414051508056003,
+          "fx": 9,
+          "weather": "Clear skies",
+          "device": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4080 (0x00002704) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "hardware": [
+            "P3, 41, 34, 1020, 5001, 43.25",
+            "P0, 42, 21, 2505, 11201, 54.25",
+            "P3, 41, 30, 1155, 5001, 43.63",
+            "P3, 41, 37, 855, 5001, 42.11",
+            "P3, 41, 39, 825, 5001, 41.88"
           ]
         }
       ],
@@ -7103,13 +7427,13 @@
         {
           "name": "warm",
           "scene": "brookstead",
-          "heap": 902048353,
-          "geometries": 1511,
-          "textures": 97,
-          "programs": 206,
-          "keepers": 78,
+          "heap": 907903732,
+          "geometries": 1551,
+          "textures": 104,
+          "programs": 197,
+          "keepers": 73,
           "queries": 0,
-          "fx": 5,
+          "fx": 14,
           "nav": 0,
           "roadCache": 50000,
           "liveRoadCache": 12000
@@ -7117,11 +7441,11 @@
         {
           "name": "round-0",
           "scene": "brookstead",
-          "heap": 1104697122,
-          "geometries": 1511,
-          "textures": 97,
-          "programs": 210,
-          "keepers": 80,
+          "heap": 1111369024,
+          "geometries": 1545,
+          "textures": 104,
+          "programs": 200,
+          "keepers": 75,
           "queries": 0,
           "fx": 9,
           "nav": 0,
@@ -7131,13 +7455,13 @@
         {
           "name": "round-1",
           "scene": "brookstead",
-          "heap": 1105130214,
-          "geometries": 1514,
-          "textures": 97,
-          "programs": 212,
-          "keepers": 81,
+          "heap": 1111756120,
+          "geometries": 1542,
+          "textures": 104,
+          "programs": 202,
+          "keepers": 76,
           "queries": 0,
-          "fx": 13,
+          "fx": 7,
           "nav": 0,
           "roadCache": 50000,
           "liveRoadCache": 12000
@@ -7145,12 +7469,12 @@
         {
           "name": "round-2",
           "scene": "brookstead",
-          "heap": 1107009354,
-          "geometries": 1507,
-          "textures": 97,
-          "programs": 214,
-          "keepers": 82,
-          "queries": 0,
+          "heap": 1112938924,
+          "geometries": 1540,
+          "textures": 104,
+          "programs": 204,
+          "keepers": 77,
+          "queries": 1,
           "fx": 6,
           "nav": 0,
           "roadCache": 50000,
@@ -7159,13 +7483,13 @@
         {
           "name": "round-3",
           "scene": "brookstead",
-          "heap": 1107381982,
-          "geometries": 1509,
-          "textures": 97,
-          "programs": 216,
-          "keepers": 83,
-          "queries": 0,
-          "fx": 8,
+          "heap": 1113473040,
+          "geometries": 1544,
+          "textures": 104,
+          "programs": 206,
+          "keepers": 78,
+          "queries": 1,
+          "fx": 13,
           "nav": 0,
           "roadCache": 50000,
           "liveRoadCache": 12000
@@ -7173,12 +7497,12 @@
         {
           "name": "after-thirty-minutes",
           "scene": "brookstead",
-          "heap": 1107742260,
-          "geometries": 1509,
-          "textures": 97,
-          "programs": 216,
-          "keepers": 83,
-          "queries": 0,
+          "heap": 1113775094,
+          "geometries": 1542,
+          "textures": 104,
+          "programs": 206,
+          "keepers": 78,
+          "queries": 1,
           "fx": 8,
           "nav": 0,
           "roadCache": 50000,
@@ -7187,23 +7511,23 @@
         {
           "name": "final",
           "scene": "brookstead",
-          "heap": 1106709978,
-          "geometries": 1514,
-          "textures": 97,
-          "programs": 218,
-          "keepers": 84,
-          "queries": 0,
-          "fx": 8,
+          "heap": 1113559892,
+          "geometries": 1545,
+          "textures": 104,
+          "programs": 208,
+          "keepers": 79,
+          "queries": 1,
+          "fx": 9,
           "nav": 0,
           "roadCache": 50000,
           "liveRoadCache": 12000
         }
       ],
       "acceleratedSeconds": 1800,
-      "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+      "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
       "growth": {
-        "heap": 1579764,
-        "geometries": 0,
+        "heap": 1803772,
+        "geometries": 3,
         "textures": 0,
         "programs": 6
       },
@@ -7212,7 +7536,7 @@
       "errors": []
     },
     "deviceSizes": {
-      "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+      "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
       "samples": [
         {
           "name": "desktop",
@@ -7222,20 +7546,20 @@
           "dpr": 1,
           "tier": 2,
           "scale": 1,
-          "frameCount": 403,
+          "frameCount": 430,
           "seconds": 6,
-          "fps": 67.16666666666667,
-          "cpu": 7.512224283689761,
-          "gpu": 5.984271587922877,
+          "fps": 71.66666666666667,
+          "cpu": 2.9459574944093987,
+          "gpu": 5.073559595225186,
           "buffer": [
             1920,
             1080
           ],
           "resizes": 2,
           "allocations": 6,
-          "programs": 173,
-          "geometry": 1510,
-          "textures": 91
+          "programs": 164,
+          "geometry": 1545,
+          "textures": 98
         },
         {
           "name": "desktop",
@@ -7245,20 +7569,20 @@
           "dpr": 1,
           "tier": 2,
           "scale": 1,
-          "frameCount": 411,
+          "frameCount": 431,
           "seconds": 6,
-          "fps": 68.5,
-          "cpu": 5.844135889429501,
-          "gpu": 6.103537958219938,
+          "fps": 71.83333333333333,
+          "cpu": 2.8414909838024354,
+          "gpu": 4.029290142600896,
           "buffer": [
             1366,
             768
           ],
           "resizes": 3,
           "allocations": 6,
-          "programs": 173,
-          "geometry": 1512,
-          "textures": 91
+          "programs": 164,
+          "geometry": 1545,
+          "textures": 98
         },
         {
           "name": "desktop",
@@ -7268,20 +7592,20 @@
           "dpr": 1,
           "tier": 2,
           "scale": 1,
-          "frameCount": 424,
+          "frameCount": 433,
           "seconds": 6,
-          "fps": 70.66666666666667,
-          "cpu": 3.218275358248038,
-          "gpu": 3.8925685933586984,
+          "fps": 72.16666666666667,
+          "cpu": 2.77302191948458,
+          "gpu": 2.977537674281053,
           "buffer": [
             960,
             540
           ],
           "resizes": 4,
           "allocations": 6,
-          "programs": 173,
-          "geometry": 1514,
-          "textures": 91
+          "programs": 164,
+          "geometry": 1541,
+          "textures": 98
         },
         {
           "name": "desktop",
@@ -7291,20 +7615,20 @@
           "dpr": 1,
           "tier": 2,
           "scale": 1,
-          "frameCount": 433,
+          "frameCount": 432,
           "seconds": 6,
-          "fps": 72.16666666666667,
-          "cpu": 2.93366527371554,
-          "gpu": 2.5476370152496437,
+          "fps": 72,
+          "cpu": 2.6969646083625545,
+          "gpu": 4.449168539066167,
           "buffer": [
             800,
             600
           ],
           "resizes": 5,
           "allocations": 6,
-          "programs": 173,
-          "geometry": 1510,
-          "textures": 91
+          "programs": 164,
+          "geometry": 1545,
+          "textures": 98
         },
         {
           "name": "desktop",
@@ -7314,20 +7638,20 @@
           "dpr": 1,
           "tier": 0,
           "scale": 0.8400000000000001,
-          "frameCount": 386,
+          "frameCount": 380,
           "seconds": 6,
-          "fps": 64.33333333333333,
-          "cpu": 12.081904144343394,
-          "gpu": 7.971444129463415,
+          "fps": 63.333333333333336,
+          "cpu": 11.15610838050408,
+          "gpu": 6.254027047299317,
           "buffer": [
             903,
             508
           ],
           "resizes": 9,
           "allocations": 11,
-          "programs": 173,
-          "geometry": 1510,
-          "textures": 90
+          "programs": 164,
+          "geometry": 1554,
+          "textures": 97
         },
         {
           "name": "phone-high-dpi",
@@ -7337,20 +7661,20 @@
           "dpr": 3,
           "tier": 1,
           "scale": 1,
-          "frameCount": 408,
+          "frameCount": 432,
           "seconds": 6,
-          "fps": 68,
-          "cpu": 7.430132023260247,
-          "gpu": 1.9915501688119266,
+          "fps": 72,
+          "cpu": 3.320344258935337,
+          "gpu": 1.6959959321961067,
           "buffer": [
             585,
             1266
           ],
           "resizes": 2,
           "allocations": 5,
-          "programs": 173,
-          "geometry": 1492,
-          "textures": 91
+          "programs": 164,
+          "geometry": 1517,
+          "textures": 98
         },
         {
           "name": "phone-high-dpi",
@@ -7360,20 +7684,20 @@
           "dpr": 3,
           "tier": 1,
           "scale": 1,
-          "frameCount": 422,
+          "frameCount": 429,
           "seconds": 6,
-          "fps": 70.33333333333333,
-          "cpu": 8.099845522819882,
-          "gpu": 3.1912255056174383,
+          "fps": 71.5,
+          "cpu": 3.682226812769255,
+          "gpu": 4.153233696487868,
           "buffer": [
             1266,
             585
           ],
           "resizes": 3,
           "allocations": 5,
-          "programs": 173,
-          "geometry": 1496,
-          "textures": 91
+          "programs": 164,
+          "geometry": 1513,
+          "textures": 98
         },
         {
           "name": "phone-high-dpi",
@@ -7383,38 +7707,38 @@
           "dpr": 3,
           "tier": 0,
           "scale": 0.6,
-          "frameCount": 165,
+          "frameCount": 258,
           "seconds": 6,
-          "fps": 27.5,
-          "cpu": 25.503706509374695,
-          "gpu": 12.224789450957468,
+          "fps": 43,
+          "cpu": 19.744172184010747,
+          "gpu": 8.005582957892438,
           "buffer": [
             329,
             712
           ],
           "resizes": 10,
           "allocations": 7,
-          "programs": 173,
-          "geometry": 1493,
-          "textures": 90
+          "programs": 164,
+          "geometry": 1516,
+          "textures": 97
         }
       ],
       "errors": [],
       "desktopResize": {
         "cold": {
           "allocations": 11,
-          "geometries": 1510,
-          "textures": 90
+          "geometries": 1554,
+          "textures": 97
         },
         "before": {
           "allocations": 11,
-          "geometries": 1511,
-          "textures": 91
+          "geometries": 1557,
+          "textures": 98
         },
         "after": {
           "allocations": 11,
-          "geometries": 1511,
-          "textures": 91
+          "geometries": 1557,
+          "textures": 98
         },
         "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
         "pass": true
@@ -7422,25 +7746,201 @@
       "phone-high-dpiResize": {
         "cold": {
           "allocations": 7,
-          "geometries": 1494,
-          "textures": 90
+          "geometries": 1516,
+          "textures": 97
         },
         "before": {
           "allocations": 7,
-          "geometries": 1500,
-          "textures": 91
+          "geometries": 1518,
+          "textures": 98
         },
         "after": {
           "allocations": 7,
-          "geometries": 1500,
-          "textures": 91
+          "geometries": 1518,
+          "textures": 98
         },
         "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
         "pass": true
       },
       "pass": true
     },
-    "scope": "Recorded native PC and emulated touch views. All 14 focused checks exercise the final standalone artifact, including the sun/moon horizon handoff and corrected desktop tutorial placement. Physical-phone frame rates and universal 60 FPS are not established."
+    "beforeAfter": {
+      "scope": "Sequential native Chrome on this PC, 8-second steady-state samples. CPU 4x is synthetic stress, not a physical slow-PC or phone benchmark.",
+      "runs": [
+        {
+          "label": "before",
+          "width": 1920,
+          "height": 1080,
+          "throttle": 1,
+          "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+          "fps": 71.99820004510616,
+          "p95": 15,
+          "renderCpu": 3.5322916672772005,
+          "draws": 836.3993055555555,
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "resources": {
+            "geometry": 1505,
+            "textures": 91
+          }
+        },
+        {
+          "label": "before",
+          "width": 1366,
+          "height": 768,
+          "throttle": 1,
+          "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+          "fps": 70.87234228732264,
+          "p95": 15.200000017881393,
+          "renderCpu": 3.5312169304074854,
+          "draws": 840.9911816578483,
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            1366,
+            768
+          ],
+          "resources": {
+            "geometry": 1510,
+            "textures": 91
+          }
+        },
+        {
+          "label": "before",
+          "width": 960,
+          "height": 600,
+          "throttle": 1,
+          "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+          "fps": 71.83908045977012,
+          "p95": 15.099999994039536,
+          "renderCpu": 3.3448695657045944,
+          "draws": 814.8747826086957,
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            960,
+            600
+          ],
+          "resources": {
+            "geometry": 1511,
+            "textures": 91
+          }
+        },
+        {
+          "label": "before",
+          "width": 1366,
+          "height": 768,
+          "throttle": 4,
+          "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44",
+          "fps": 41.9407586783044,
+          "p95": 31.5,
+          "renderCpu": 16.608333334326744,
+          "draws": 800.1636904761905,
+          "scale": 0.6800000000000002,
+          "tier": 0,
+          "buffer": [
+            731,
+            411
+          ],
+          "resources": {
+            "geometry": 1508,
+            "textures": 90
+          }
+        },
+        {
+          "label": "after",
+          "width": 1920,
+          "height": 1080,
+          "throttle": 1,
+          "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
+          "fps": 71.97301012120455,
+          "p95": 14.799999982118607,
+          "renderCpu": 3.2060763887647123,
+          "draws": 447.21875,
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "resources": {
+            "geometry": 1546,
+            "textures": 98
+          }
+        },
+        {
+          "label": "after",
+          "width": 1366,
+          "height": 768,
+          "throttle": 1,
+          "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
+          "fps": 71.4964251786878,
+          "p95": 15.099999994039536,
+          "renderCpu": 3.0087412587933606,
+          "draws": 439.9318181818182,
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            1366,
+            768
+          ],
+          "resources": {
+            "geometry": 1541,
+            "textures": 98
+          }
+        },
+        {
+          "label": "after",
+          "width": 960,
+          "height": 600,
+          "throttle": 1,
+          "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
+          "fps": 70.87234228732264,
+          "p95": 15.400000005960464,
+          "renderCpu": 2.9615520278297405,
+          "draws": 426.70899470899474,
+          "scale": 1,
+          "tier": 2,
+          "buffer": [
+            960,
+            600
+          ],
+          "resources": {
+            "geometry": 1541,
+            "textures": 98
+          }
+        },
+        {
+          "label": "after",
+          "width": 1366,
+          "height": 768,
+          "throttle": 4,
+          "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
+          "fps": 45.809721147330926,
+          "p95": 27.599999994039536,
+          "renderCpu": 14.545504087567005,
+          "draws": 394.1934604904632,
+          "scale": 0.6800000000000002,
+          "tier": 0,
+          "buffer": [
+            731,
+            411
+          ],
+          "resources": {
+            "geometry": 1550,
+            "textures": 97
+          }
+        }
+      ],
+      "errors": [],
+      "drawReduction": 0.47688890469151013,
+      "pass": true
+    },
+    "scope": "Native PC and emulated touch tests, plus synthetic 4x CPU stress. Physical phone performance and universal 60 FPS are not established."
   },
   "graphics": {
     "sceneSamples": 4,
@@ -7462,9 +7962,9 @@
     "sameVillageLoadingStill": true,
     "backgrounds": "Textured 3D terrain, treelines and atmospheric depth; no painted panoramas",
     "fullSceneDepthBlur": false,
-    "balancedPixelCeiling": 3700000,
-    "highPixelCeiling": 5500000,
-    "newPixelLabAssets": 0,
+    "balancedPixelCeiling": 2400000,
+    "highPixelCeiling": 4200000,
+    "newPixelLabAssets": 8,
     "suppliedHighResolutionWordmark": true,
     "functionalNavyGoldMenus": true,
     "newInGameStill": 1,
@@ -7524,9 +8024,28 @@
     "referenceLightingKeys": 15,
     "closerExplorationLensFactor": 0.84,
     "explorationLookAheadMetres": 7.2,
-    "localNightSpill": true
+    "localNightSpill": true,
+    "forestBatchMetres": 64,
+    "meadowBatchMetres": 48,
+    "sideViewCreatureCombat": true,
+    "nativeEffectImages": 6,
+    "contactShadowDraws": 1,
+    "volumetricLightIntegration": true
   },
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.10",
+      "date": "October 31, 2026",
+      "title": "Elemental power, natural creatures and living light",
+      "items": [
+        "Rebuilt the wolf and boar combat profiles with new PixelLab side-view art, breathing, lunging, recoil and recovery poses. All native frames retain consistent scale and transparent borders.",
+        "Added six high resolution PixelLab effect textures for fire slashes, impacts, arcane lightning, frost, healing and smoke, animated as depth-tested world geometry with real effect lights.",
+        "Added pooled soft contact shadows beneath visible party members, residents and creatures, alongside their dynamic directional shadows.",
+        "Integrated cloud- and shadow-aware volumetric scattering with world-anchored shafts, luminous dust, warm dawn and golden-hour light.",
+        "Batched hundreds of bridge support stones while retaining authored walking decks, collision and texture blends.",
+        "Reduced repeated particle-buffer uploads and temporary effect allocations; retained bounded pools and tiered terrain, foliage, shadow and rendering budgets."
+      ]
+    },
     {
       "version": "Alpha Version 1.9",
       "date": "October 30, 2026",

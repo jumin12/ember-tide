@@ -291,6 +291,22 @@
       "human": false,
       "combatOnly": false,
       "bodyUnit": 62
+    },
+    {
+      "id": "wolfBattle35",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/wolf-combat-v35",
+      "characterId": "a61c34bf-10e6-46e4-b552-4699a5c73126",
+      "human": false,
+      "combatOnly": true,
+      "bodyUnit": 60
+    },
+    {
+      "id": "boarBattle35",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/boar-combat-v35",
+      "characterId": "f52fd08a-d1b8-497b-93a6-efd44527e7f3",
+      "human": false,
+      "combatOnly": true,
+      "bodyUnit": 58
     }
   ],
   "images": {
@@ -402,7 +418,13 @@
     "leafPine30": "elyndor/assets/source/pixellab-v7/botany-v30/leafPine30.png",
     "leafBlossom30": "elyndor/assets/source/pixellab-v7/botany-v30/leafBlossom30.png",
     "petal30": "elyndor/assets/source/pixellab-v7/botany-v30/petal30.png",
-    "normal28_cobbleMoss30": "elyndor/assets/source/pixellab-v7/botany-v30/cobbleMoss30-normal.png"
+    "normal28_cobbleMoss30": "elyndor/assets/source/pixellab-v7/botany-v30/cobbleMoss30-normal.png",
+    "fx35FlameSlash": "elyndor/assets/source/pixellab-v7/effects-v35/fx35FlameSlash.png",
+    "fx35Impact": "elyndor/assets/source/pixellab-v7/effects-v35/fx35Impact.png",
+    "fx35Arcane": "elyndor/assets/source/pixellab-v7/effects-v35/fx35Arcane.png",
+    "fx35Frost": "elyndor/assets/source/pixellab-v7/effects-v35/fx35Frost.png",
+    "fx35Healing": "elyndor/assets/source/pixellab-v7/effects-v35/fx35Healing.png",
+    "fx35Smoke": "elyndor/assets/source/pixellab-v7/effects-v35/fx35Smoke.png"
   },
   "materialKeys": [
     "cobble",

@@ -1,0 +1,112 @@
+{
+  "group_id": "c2e88b06-e7c9-43b6-91c6-972464d0dd45",
+  "states": [
+    {
+      "character": {
+        "id": "f52fd08a-d1b8-497b-93a6-efd44527e7f3",
+        "name": "Idle",
+        "prompt": "Briartusk Boar for a high fidelity pixel art JRPG. Russet umber fur, layered barklike natural armored plates, ivory thorn tusks, heavy bristle ridge. TRUE STRICT SIDE PROFILE view, snout points right, long sturdy boar torso, all four hooves distinguishable and planted, short curly tail, natural stocky anatomy. Full creature with generous transparent margins, no ground or shadow, no aura or writing. Warm ochre highlights, crisp detailed pixel clusters, restrained dark outline. Earthy woodland fantasy palette.",
+        "size": {
+          "width": 128,
+          "height": 128
+        },
+        "template_id": "bear",
+        "directions": 8,
+        "view": "side",
+        "created_at": "2026-10-31T15:24:57.215402+00:00"
+      },
+      "folder": "Idle",
+      "frames": {
+        "rotations": {
+          "south": "Idle/rotations/south.png",
+          "south-east": "Idle/rotations/south-east.png",
+          "east": "Idle/rotations/east.png",
+          "north-east": "Idle/rotations/north-east.png",
+          "north": "Idle/rotations/north.png",
+          "north-west": "Idle/rotations/north-west.png",
+          "west": "Idle/rotations/west.png",
+          "south-west": "Idle/rotations/south-west.png"
+        },
+        "animations": {
+          "attack-v13": {
+            "east": [
+              "Idle/animations/attack-v13/east/frame_000.png",
+              "Idle/animations/attack-v13/east/frame_001.png",
+              "Idle/animations/attack-v13/east/frame_002.png",
+              "Idle/animations/attack-v13/east/frame_003.png",
+              "Idle/animations/attack-v13/east/frame_004.png",
+              "Idle/animations/attack-v13/east/frame_005.png",
+              "Idle/animations/attack-v13/east/frame_006.png",
+              "Idle/animations/attack-v13/east/frame_007.png",
+              "Idle/animations/attack-v13/east/frame_008.png",
+              "Idle/animations/attack-v13/east/frame_009.png",
+              "Idle/animations/attack-v13/east/frame_010.png",
+              "Idle/animations/attack-v13/east/frame_011.png",
+              "Idle/animations/attack-v13/east/frame_012.png",
+              "Idle/animations/recovery-v35/east/frame_001.png",
+              "Idle/animations/recovery-v35/east/frame_002.png",
+              "Idle/animations/recovery-v35/east/frame_003.png",
+              "Idle/animations/recovery-v35/east/frame_004.png"
+            ]
+          },
+          "recovery-v35": {
+            "east": [
+              "Idle/animations/recovery-v35/east/frame_000.png",
+              "Idle/animations/recovery-v35/east/frame_001.png",
+              "Idle/animations/recovery-v35/east/frame_002.png",
+              "Idle/animations/recovery-v35/east/frame_003.png",
+              "Idle/animations/recovery-v35/east/frame_004.png"
+            ]
+          },
+          "recoil-v13": {
+            "east": [
+              "Idle/animations/recoil-v13/east/frame_000.png",
+              "Idle/animations/recoil-v13/east/frame_001.png",
+              "Idle/animations/recoil-v13/east/frame_002.png",
+              "Idle/animations/recoil-v13/east/frame_003.png",
+              "Idle/animations/recoil-v13/east/frame_004.png"
+            ]
+          },
+          "battleIdle-v13": {
+            "east": [
+              "Idle/animations/battleIdle-v13/east/frame_000.png",
+              "Idle/animations/battleIdle-v13/east/frame_001.png",
+              "Idle/animations/battleIdle-v13/east/frame_002.png",
+              "Idle/animations/battleIdle-v13/east/frame_003.png",
+              "Idle/animations/battleIdle-v13/east/frame_004.png"
+            ]
+          },
+          "cast-v13": {
+            "east": [
+              "Idle/animations/attack-v13/east/frame_000.png",
+              "Idle/animations/attack-v13/east/frame_001.png",
+              "Idle/animations/attack-v13/east/frame_002.png",
+              "Idle/animations/attack-v13/east/frame_003.png",
+              "Idle/animations/attack-v13/east/frame_004.png",
+              "Idle/animations/attack-v13/east/frame_005.png",
+              "Idle/animations/attack-v13/east/frame_006.png",
+              "Idle/animations/attack-v13/east/frame_007.png",
+              "Idle/animations/attack-v13/east/frame_008.png",
+              "Idle/animations/attack-v13/east/frame_009.png",
+              "Idle/animations/attack-v13/east/frame_010.png",
+              "Idle/animations/attack-v13/east/frame_011.png",
+              "Idle/animations/attack-v13/east/frame_012.png",
+              "Idle/animations/recovery-v35/east/frame_001.png",
+              "Idle/animations/recovery-v35/east/frame_002.png",
+              "Idle/animations/recovery-v35/east/frame_003.png",
+              "Idle/animations/recovery-v35/east/frame_004.png"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "export_version": "3.1",
+  "export_date": "2026-10-31T16:17:16.288133",
+  "review35": {
+    "trueSideView": true,
+    "recoveryAppended": true,
+    "attackImpactFrame": 8,
+    "reviewedAllFrames": true
+  }
+}
