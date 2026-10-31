@@ -7463,7 +7463,7 @@ updateHUD=function(...args){const r=mobileHUDbefore33(...args);updateMobile33();
 
 // Authored illumination values interpolate continuously. The visible solar
 // orbit, cloud transmission, weather and real shadow maps remain world-space.
-const lighting34={warm:{value:0},night:{value:0},colour:{value:new THREE.Color()},foliage:{value:0},frames:0};
+const lighting34={warm:{value:0},night:{value:0},horizon:{value:1},colour:{value:new THREE.Color()},foliage:{value:0},frames:0};
 const LIGHT_KEYS34=[
  [0,.60,.42,.32,1.20,.115,.90,0,'#85b8ff','#718ebc','#22344b','#82abe1'],
  [4.5,.50,.46,.35,1.22,.10,.90,0,'#91adf3','#8795b0','#303b4a','#a0b0cc'],
@@ -7488,7 +7488,7 @@ updateLighting=function(){lightBefore34();if(!world||!player||activeScene.kind==
  const h=celestial31.hour,q=lightKey34(h),[power,ambient,fill,exposure,spill,lamps,warm]=q.n,rain=weather.rain.value,day=celestial31.day.value;
  lighting34.warm.value=warm;lighting34.night.value=celestial31.night.value;lighting34.colour.value.copy(q.c[0]);lighting34.foliage.value=day*(.24+warm*.20)*(1-rain*.6);
  // A low sun still has a warm, broad sky fill; shadows retain a cool floor.
- sun.color.copy(q.c[0]);sun.intensity=power*(1-rain*.53)+weather.lightning*4;
+ lighting34.horizon.value=smooth(0,.12,Math.abs(celestial31.sun.value.y));sun.color.copy(q.c[0]);sun.intensity=power*lighting34.horizon.value*(1-rain*.53)+weather.lightning*4;
  hemi.color.copy(q.c[1]);hemi.groundColor.copy(q.c[2]);hemi.intensity=ambient*(1-rain*.16);
  if(skyBounce17){skyBounce17.color.copy(q.c[3]);skyBounce17.intensity=fill*(1-rain*.18);}
  for(const o of scene.children)if(o.isAmbientLight)o.intensity=mix(.035,.065,day);
@@ -7500,6 +7500,8 @@ updateLighting=function(){lightBefore34();if(!world||!player||activeScene.kind==
 };
 const forestBefore34=forestMaterial30;
 forestMaterial30=function(trunk){const m=forestBefore34(trunk);if(trunk)return m;const before=m.onBeforeCompile,key=m.customProgramCacheKey();m.onBeforeCompile=sh=>{before(sh);sh.uniforms.leafLight34=lighting34.foliage;sh.uniforms.leafColour34=lighting34.colour;sh.fragmentShader='uniform float leafLight34;uniform vec3 leafColour34;\n'+sh.fragmentShader;sh.fragmentShader=sh.fragmentShader.replace('#include <opaque_fragment>','float leafSun34=clamp(dot(reflectedLight.directDiffuse,vec3(.2126,.7152,.0722)),0.,1.);outgoingLight+=diffuseColor.rgb*leafColour34*leafSun34*leafLight34;\n#include <opaque_fragment>');};m.customProgramCacheKey=()=>key+'-leaf-light34';return m;};
+const shaftsBefore34=buildShafts24;
+buildShafts24=function(...args){const r=shaftsBefore34(...args),m=world.userData.shafts24?.group.children[0]?.material;if(m){m.uniforms.horizon34=lighting34.horizon;m.fragmentShader='uniform float horizon34;\n'+m.fragmentShader.replace('if(a<.0001)discard;','a*=horizon34;if(a<.0001)discard;');m.needsUpdate=true;}return r;};
 const postBefore34=setupPost;
 setupPost=function(){postBefore34();const m=post.material;m.uniforms.warm34=lighting34.warm;m.uniforms.night34=lighting34.night;
  m.fragmentShader='uniform float warm34,night34;\n'+m.fragmentShader.replace('col+=texture2D(bloom22,vUv).rgb*bloomAmount22*.92;',`float shade34=1.-smoothstep(.10,.72,lum);col*=mix(vec3(1.025,1.01,.97),vec3(.68,.85,1.20),shade34*night34*.66);col=pow(max(col,vec3(0.)),vec3(1.065));col*=vec3(1.+warm34*.16,1.+warm34*.02,1.-warm34*.13);col+=texture2D(bloom22,vUv).rgb*bloomAmount22*mix(1.05,1.75,warm34);`);m.needsUpdate=true;

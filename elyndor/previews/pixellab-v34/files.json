@@ -28237,7 +28237,7 @@
   {
     "file": "elyndor/assets/source/pixellab-v7/checkpoint.json",
     "bytes": 777,
-    "sha256": "ba8177295710ab57c88f96c8c89adfb8b4a081d6c8609fd08031878cac98cce2"
+    "sha256": "2294a6a0997876181b4918e4e784f768563fefc29c5a98d51ca2da3a1c2ee7f8"
   },
   {
     "file": "elyndor/assets/source/pixellab-v7/images/guide-bird/000.png",
@@ -31076,8 +31076,8 @@
   },
   {
     "file": "elyndor/lighting-v34.js",
-    "bytes": 5913,
-    "sha256": "4ec7dbdab8f7c54504dd9d79de33b1eeb9a76a6066080d1e6a40a3c41684830f"
+    "bytes": 6393,
+    "sha256": "ad5d6d2b6845dad9208be6a8b5632bcd45998b6d8c7814f74d92963de05be825"
   },
   {
     "file": "elyndor/loading-v11.css",
@@ -31226,118 +31226,118 @@
   },
   {
     "file": "elyndor/previews/pixellab-v34/controls-combat-full-party-portrait.png",
-    "bytes": 1109363,
-    "sha256": "e2af3c1c56fffa70e941f2dce481954f6fa68cd49ce007993c43a583153dd782"
+    "bytes": 1105543,
+    "sha256": "e35808d07640d2f0c71ea0312c724b337ec1b36689d3825b5cd3e9cf1a830280"
   },
   {
     "file": "elyndor/previews/pixellab-v34/controls-combat-landscape-touch.png",
-    "bytes": 1644718,
-    "sha256": "34756a8db3164317e23166714c6c5b7969f92b9b86d0d0f8e6351a534b4cd968"
+    "bytes": 1605559,
+    "sha256": "0d7dc7d85e79981190970b61c531013994d6613c6d2d2887a4eabf3956159834"
   },
   {
     "file": "elyndor/previews/pixellab-v34/controls-combat-portrait-touch.png",
-    "bytes": 1106354,
-    "sha256": "a0646d2b9c62390a961d446eb82f35e062e71a5bf7b2b827f1489123b8dcdfdc"
+    "bytes": 1105682,
+    "sha256": "1ef8443271ec0a9ed2a93d31e3b8367f331eebb3a6a520c61bb665bf73dfd41f"
   },
   {
     "file": "elyndor/previews/pixellab-v34/controls-title-portrait.png",
-    "bytes": 1105219,
-    "sha256": "e0868acff49204b0cde5ed9263364054f62762b0d2af1dee839228b9620d72be"
+    "bytes": 1161753,
+    "sha256": "b8d4c1ef0b6f35976f97a38c5202b88544f6c09a94b5b0cedfcbc30cb95baee9"
   },
   {
     "file": "elyndor/previews/pixellab-v34/cutaway-alder-arrival.png",
-    "bytes": 4011365,
-    "sha256": "46fa5aaffe651d5a586bde033fd2fb450ff0aaa2d6ff7f609a6a86cd8e141713"
+    "bytes": 4012840,
+    "sha256": "2f0b652e18c8dc65163a87e8147761b7db996f824fdedf5fd3ee8ffd5cf7b26b"
   },
   {
     "file": "elyndor/previews/pixellab-v34/day-night-cycle.jpg",
-    "bytes": 1766005,
-    "sha256": "e907032437f2f5902a628665c206ca58d180ac4bb569b0592a5ce6dcddd8d0cc"
+    "bytes": 1766790,
+    "sha256": "a2839922345bb11f3358375888f7848e27721baf322590f6f8e9757dd2a4fec0"
   },
   {
     "file": "elyndor/previews/pixellab-v34/foliage-party-behind-canopy.png",
-    "bytes": 2910619,
-    "sha256": "54db92068206dcce8f25b5d3000b84d8a10e167557e003f7ff621883ea444f30"
+    "bytes": 2913322,
+    "sha256": "519e5f06727932aeaeff62b38c727acc322ab4dbcf2867cc49785ff8d7cb7301"
   },
   {
     "file": "elyndor/previews/pixellab-v34/foliage-street-recovered.png",
-    "bytes": 2558559,
-    "sha256": "dfd8e011a140757695103a529b92a9520896631537ed2b3fe68ca2e01add9e95"
+    "bytes": 2552747,
+    "sha256": "7cc6bc08571d53379a93efecb09816821f0604695b5ee56a18fd6e89f33b0073"
   },
   {
     "file": "elyndor/previews/pixellab-v34/interface-equipment-1672.png",
-    "bytes": 886898,
-    "sha256": "64abe2c61742e0bd4c43208939278f802144a76ab74a85e14437d007a41c434c"
+    "bytes": 886373,
+    "sha256": "727acac99440c03ee56b2e4c8119f99e6a9059881e93ed49d83c4a925ed8b625"
   },
   {
     "file": "elyndor/previews/pixellab-v34/interface-equipment-390.png",
-    "bytes": 214174,
-    "sha256": "b9fd071b64a735c05d30949835c31f2bf6c67c5d6077c0654bf504b2c51afd05"
+    "bytes": 214310,
+    "sha256": "41b36cb3c562284cc2d1fa2cce69a5f69d1cc92af43148808631c7829e01b308"
   },
   {
     "file": "elyndor/previews/pixellab-v34/interface-inventory-1672.png",
-    "bytes": 843394,
-    "sha256": "78215d890948ceb460c4740974b480ca2b70ed72d30ea4bf05e9acd1afa8bc90"
+    "bytes": 842766,
+    "sha256": "c7ed1ca599091491adfec9c389c735e8d3cc569fb4962ba93575cf6e6dbb5f84"
   },
   {
     "file": "elyndor/previews/pixellab-v34/official-shot-0.png",
-    "bytes": 1691412,
-    "sha256": "d99ede2355829a1a5f010468ab7b79abf81bb08fd941f320279f0e44e06eba1a"
+    "bytes": 1690684,
+    "sha256": "6837a5f5967982622825bb650f1545b2404e7fd76f37fe329dfbd127f01be373"
   },
   {
     "file": "elyndor/previews/pixellab-v34/presentation-combat-390.png",
-    "bytes": 339585,
-    "sha256": "02dcff09d7a2efd90b6bf9f6db634697bdb88d3bcb0361260e5d09497bec810e"
+    "bytes": 359200,
+    "sha256": "03fbf6e75cdd5fd38da52754d408327df1140418021381c7d1f5609d524c149d"
   },
   {
     "file": "elyndor/previews/pixellab-v34/presentation-combat-844.png",
-    "bytes": 475968,
-    "sha256": "9658b1b1ca8f5ec839bed9ea76e71028a590f1dfbe11c866d63efa762674b678"
+    "bytes": 483213,
+    "sha256": "766e3f7f2036381f802df77acb893c1371e948b43724f1ac2919e3a58b43ea79"
   },
   {
     "file": "elyndor/previews/pixellab-v34/presentation-inventory-390.png",
-    "bytes": 208158,
-    "sha256": "fb2a0c58c3e8a512e886a63a9fbea6acb53ed5abdc15bdada9a1276891f44ac9"
+    "bytes": 208165,
+    "sha256": "c37778b183d19e6d16cf0c5f4c43090d5833ac8d66a51ce9d47847442105beec"
   },
   {
     "file": "elyndor/previews/pixellab-v34/presentation-world-390.png",
-    "bytes": 560067,
-    "sha256": "a4c2da6c21ba663eb73823ffbc0d65f6d377ef78051c02cb9706bd6145d127f7"
+    "bytes": 559645,
+    "sha256": "54454e61254a5e80940eafe2b3f22645dd378f04f3ea126f4d5d0f6ada6dc294"
   },
   {
     "file": "elyndor/previews/pixellab-v34/presentation-world-844.png",
-    "bytes": 575180,
-    "sha256": "1c0cad544013f5cfcee6caee89cb29f467aa30d865a6a5385646c9c7d3fbb6b8"
+    "bytes": 574420,
+    "sha256": "0a8ba673604bb6b2d31da58320a01e43704bafd96cbc9fe259ef807893fafa20"
   },
   {
     "file": "elyndor/previews/pixellab-v34/sky-hour-16.png",
-    "bytes": 2506039,
-    "sha256": "efd1d28559248d92386256afdb4ea17cefd11f684b7fa7730294ae2a74ff5e93"
+    "bytes": 2505988,
+    "sha256": "26f2f79df4971e70b344924c92d843fe435804dee4e90c224c36582cb9d2639e"
   },
   {
     "file": "elyndor/previews/pixellab-v34/sky-hour-18.png",
-    "bytes": 1885452,
-    "sha256": "2ff50833f613449cf6e5e7c467bc9424bf8bb7565bb51e6ec265ef8f9726154d"
+    "bytes": 1770236,
+    "sha256": "826064a2d3c5969e97996b9786ae032e59653b62022858f3460378a76d92840c"
   },
   {
     "file": "elyndor/previews/pixellab-v34/sky-hour-23.png",
-    "bytes": 1977092,
-    "sha256": "043a853af739268e08e81e0ee942659ef6e50e34228040c5fec964e5a806a140"
+    "bytes": 1977907,
+    "sha256": "66938d4583c7c50938af111bcf39ca8c887487f53051a0b9b8299eff6d9c4a8f"
   },
   {
     "file": "elyndor/previews/pixellab-v34/sky-hour-6.5.png",
-    "bytes": 2251653,
-    "sha256": "86841f5516c97b84efd2ad9a5e1c7c9df64b45335c588cca5b52ffe06b249ed5"
+    "bytes": 2250730,
+    "sha256": "a809704719a154617b5c8d302fb5f5032f7d644564e35456864360440e858a8f"
   },
   {
     "file": "elyndor/previews/pixellab-v34/sky-hour-9.png",
-    "bytes": 2466133,
-    "sha256": "c6ce44e3a43611c62fab527e63f82add55f015dbb6b1465332f8659c46263302"
+    "bytes": 2467191,
+    "sha256": "7499693b2d6f2dd51e3edb133b772f5b2a9fba59d865dbb8fe474ad9ab793279"
   },
   {
     "file": "elyndor/previews/pixellab-v34/sky-sky-volume.png",
-    "bytes": 556926,
-    "sha256": "2fe9b20c7ca5b064feae456d50d0be2e43284b081b4c8892b0c806f6eabcb2dc"
+    "bytes": 557149,
+    "sha256": "9de4fc452b39798eb630ffea8cf63613ece5ac595d1cb3e483e2d4e46e1c9d87"
   },
   {
     "file": "elyndor/previews/pixellab-v34/smithy-comparison.jpg",
@@ -31346,13 +31346,13 @@
   },
   {
     "file": "elyndor/previews/pixellab-v34/street-comparison.jpg",
-    "bytes": 1021129,
-    "sha256": "ef9fae43af72f691ead24b0317fa37ae43f1d0a8a4bbd23de7052c959362f3c1"
+    "bytes": 1021082,
+    "sha256": "55dd98c570d893d7a718572fd807f2280e9707646923ff4cdf2442724279a23c"
   },
   {
     "file": "elyndor/previews/pixellab-v34/waterworks-comparison.jpg",
-    "bytes": 1079900,
-    "sha256": "b512b84dbe2bba086da1bf002abbbb38a5ad9a8bb55ef49cc3ebaee5edda6091"
+    "bytes": 1079342,
+    "sha256": "65e4e79b80d22f4c16f22723e5c9157bad4f126ace65ad76bcc21bda0954340d"
   },
   {
     "file": "elyndor/quests-v29.js",
@@ -34531,8 +34531,8 @@
   },
   {
     "file": "elyndor/tools/sky-v34.mjs",
-    "bytes": 5397,
-    "sha256": "c6413601d0cf20c8eb6449f26032ebb5fdd1257ec4ece81d6b6c5f7c9ce13862"
+    "bytes": 5722,
+    "sha256": "be26f6cd415efa04bbe57a9197824aba040b33504fa58e69d48b36aa72e8db0a"
   },
   {
     "file": "elyndor/tools/sluice-audio-v18.py",
@@ -35091,8 +35091,8 @@
   },
   {
     "file": "elyndor/tools/write-v34-release.py",
-    "bytes": 2976,
-    "sha256": "763691ea5ea6114f3430e21e55a36a6edcb7c637530dabfcc153c9e543509156"
+    "bytes": 2790,
+    "sha256": "ff101e2344194a26a640e72af3245a9786d31997dc2c9f6c036acff24e386057"
   },
   {
     "file": "elyndor/tools/write-v9-release.py",
@@ -35226,8 +35226,8 @@
   },
   {
     "file": "index.html",
-    "bytes": 42840242,
-    "sha256": "0a5da39d1cad0386272612111fc7dca09c5d400e240d00b6c28f938821b69519"
+    "bytes": 42840720,
+    "sha256": "2f0db58daecdb00cc02bd7f681dfcb58e69dc6a5fee83f14fa3ff3983142eb44"
   },
   {
     "file": "MATERIAL_PROMPTS.json",
@@ -35246,8 +35246,8 @@
   },
   {
     "file": "release.json",
-    "bytes": 220783,
-    "sha256": "d7fb8c53941c79b9eafd936fa0292d2829a234198706cf56ebf08bbb796d3b09"
+    "bytes": 222050,
+    "sha256": "dfc787f0039b8002877454dda5e31f88a70f6585b74835491a22dda6f9839f8d"
   },
   {
     "file": "three.vendor.js",
