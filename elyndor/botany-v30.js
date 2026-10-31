@@ -45,7 +45,7 @@ buildPlants=function(){plantsBefore30();const mats=new Map();
    };m.customProgramCacheKey=()=>key+'-botanical-forms30-'+kind;m.needsUpdate=true;mats.set(base,m);
   }im.material=mats.get(base);
   world.userData.botanicalOwned30??=new Set();const owned=world.userData.botanicalOwned30;
-  const clones=new Map(),clone=g=>{if(!g)return g;if(!clones.has(g)){const copy=g.clone();clones.set(g,copy);owned.add(copy);}return clones.get(g);};im.geometry=clone(im.geometry);im.userData.detailedGeometry=clone(im.userData.detailedGeometry);im.userData.distantGeometry=clone(im.userData.distantGeometry);
+  const clones=new Map(),clone=g=>{if(!g)return g;if(!clones.has(g)){const copy=shareGeometry36(g);clones.set(g,copy);owned.add(copy);}return clones.get(g);};im.geometry=clone(im.geometry);im.userData.detailedGeometry=clone(im.userData.detailedGeometry);im.userData.distantGeometry=clone(im.userData.distantGeometry);
   const styles=Float32Array.from({length:im.count},(_,i)=>{const e=im.userData.plantOriginal[i].elements,x=e[12],z=e[14];return Math.floor(Math.abs(Math.sin(Math.floor(x/3.5)*17.3+Math.floor(z/3.5)*31.7)*43758.3)%1*5);}),style=new THREE.InstancedBufferAttribute(styles,1);
   for(const g of new Set([im.geometry,im.userData.detailedGeometry,im.userData.distantGeometry].filter(Boolean))){g.setAttribute('plantStyle30',style);const n=g.attributes.position.count;if(!g.attributes.botanyPart30)g.setAttribute('botanyPart30',new THREE.Float32BufferAttribute(new Float32Array(n),1));if(!g.attributes.botanyCenter30)g.setAttribute('botanyCenter30',new THREE.Float32BufferAttribute(new Float32Array(n*3),3));}
   im.computeBoundingSphere();

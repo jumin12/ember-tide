@@ -21,7 +21,7 @@ applyCapabilityBudget=function(){
  if(sun.shadow.mapSize.x!==size){sun.shadow.map?.dispose();sun.shadow.map=null;sun.shadow.mapSize.set(size,size);renderer.shadowMap.needsUpdate=sun.shadow.needsUpdate=true;device33.allocations++;}
  renderer.shadowMap.type=THREE.PCFSoftShadowMap;
  const width=[384,512,768,1024][t];if(reflectionTarget.width!==width){reflectionTarget.setSize(width,Math.round(width*9/16));device33.allocations++;}
- const samples=Math.min(t<2?2:4,renderer.capabilities.maxSamples);if(post.target.samples!==samples){post.target.dispose();post.target.samples=samples;device33.allocations++;}
+ const samples=Math.min(t===0?0:t===1?2:4,renderer.capabilities.maxSamples);if(post.target.samples!==samples){post.target.dispose();post.target.samples=samples;device33.allocations++;}
  // Keep the light count constant. Zero-intensity slots remain in the shader.
  for(const l of world?.userData.lanterns??[])l.visible=true;
  installPhysicalTreeShadows();
@@ -91,14 +91,14 @@ loop=function(now){
  const divisor=Math.max(1,Math.floor(1000/device33.interval/59));if(++device33.frame%divisor)return;
  if(!lastFrame)lastFrame=now;const elapsed=Math.min((now-lastFrame)/1000,.12);lastFrame=now;
  if(menu){if(scenery.pausedTab!==menu.tab){render();scenery.pausedTab=menu.tab;}return;}scenery.pausedTab=null;
- const live=performance.now()>manualUntil,start=performance.now();if(live)for(let remaining=elapsed;remaining>.00001;remaining-=1/30)tick(Math.min(remaining,1/30));render();
+ const live=performance.now()>manualUntil,start=performance.now();if(live&&elapsed>0)tick(Math.min(elapsed,.05));render();
  const cost=performance.now()-start;device33.cpu=mix(device33.cpu,cost,.06);const gpu=clarity23.gpuSamples?clarity23.gpuMs:0,missed=elapsed*1000>device33.interval*divisor*1.35?elapsed*1000/divisor:0;device33.cost=Math.max(device33.cpu,gpu,missed);
  runtime28.frames++;runtime28.cost=device33.cpu;if(typeof updateMobile33==='function')updateMobile33();
  if(!live||gameLoading||state.mode==='title'||state.settings.quality==='high')return;
  const budget=Math.min(16.1,device33.interval*divisor*.90);device33.slow=device33.cost>budget?device33.slow+elapsed:Math.max(0,device33.slow-elapsed);device33.fast=device33.cost<budget*.60?device33.fast+elapsed:0;
- if(device33.slow>2.2){if(device33.tier>0){device33.tier--;device33.profile='';applyCapabilityBudget();updateRenderBudget(true);}else if(device33.scale>.6)device33.scale=Math.max(.6,device33.scale-.08);device33.slow=device33.fast=0;resizeNow33();}
+ if(device33.slow>2.2){if(profile33()>0&&state.settings.quality==='balanced'){device33.tier--;device33.profile='';applyCapabilityBudget();updateRenderBudget(true);}else if(device33.scale>.6&&(gpu>budget*.85||!clarity23.gpuSamples&&device33.cpu<budget*.70&&missed>budget*1.15))device33.scale=Math.max(.6,device33.scale-.08);device33.slow=device33.fast=0;resizeNow33();}
  else if(device33.fast>24&&device33.scale<1){device33.scale=Math.min(1,device33.scale+.04);device33.fast=0;resizeNow33();}
- else if(device33.fast>36&&device33.tier<(touchDevice33()?1:2)){device33.tier++;device33.profile='';device33.fast=0;resizeNow33();updateRenderBudget(true);}
+ else if(state.settings.quality==='balanced'&&device33.fast>36&&device33.tier<(touchDevice33()?1:2)){device33.tier++;device33.profile='';device33.fast=0;resizeNow33();updateRenderBudget(true);}
 };
 const disposeBefore33=disposeContinuousWorld;
 disposeContinuousWorld=function(...args){

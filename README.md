@@ -1,5 +1,13 @@
 # The Last Light of Elyndor
 
+## Alpha Version 1.11 — Loading and device performance
+
+The standalone now reads its embedded assets in disposable JSON blocks, reports real preparation stages, warms native textures and every scene LOD, and decodes short sound effects before play. The atlas uses the actual baked height field and tree positions without retaining the full continent’s close-up vegetation. Shader programs are cached without keeping departed scenes alive; party replacements release their owned canvases. Shared foliage buffers, reusable sprite planes, one-draw world weather and device budgets reduce runtime work while preserving the existing art.
+
+The loader prepares the current location and reusable resources; weather data for the overworld is prefetched with a bounded cache. Large unvisited locations are prepared behind their own loading screens rather than keeping every level resident. Hardware timings are measured on the test PC; emulated touch/high-DPI and CPU throttling do not establish performance on every physical phone.
+
+After changing the terrain or forest generation inputs, rebuild a draft, run `node elyndor/tools/bake-world-v36.mjs`, then rebuild. Final builds verify the baked input hashes. The baker explicitly regenerates the procedural height field rather than sampling the old cache.
+
 ## Alpha Version 1.10 — Elemental effects and performance
 
 New PixelLab creature profiles and six native effect textures support grand layered abilities. Pooled contact shadows and depth-integrated sun/cloud scattering ground the characters in the scene. Bridge stones are batched while native deck attributes remain intact. Performance results are recorded for native PC and synthetic CPU stress; frame rates on arbitrary hardware are not guaranteed.

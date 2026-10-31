@@ -19,7 +19,7 @@ tick=function(dt){tickBeforeVoiceUpdates(dt);installJourneyText();if(recordedVoi
 // Keep a bounded representative of compiled material programs between levels.
 // Disposing the outgoing scene's geometry still releases its vertex buffers.
 const sceneProgramKeepers=new Map(),warmBeforeProgramCache=prepareGameplayGraphics;
-prepareGameplayGraphics=async function(){const start=performance.now();await warmBeforeProgramCache();warmJourneyViews();world.traverse(o=>{for(const m of o.material?(Array.isArray(o.material)?o.material:[o.material]):[]){if(sceneProgramKeepers.size>=112)continue;const key=[m.type,m.customProgramCacheKey(),m.vertexShader??'',m.fragmentShader??'',!!m.map,!!m.emissiveMap,!!m.vertexColors,m.side,m.alphaTest,!!m.transparent].join('|');if(sceneProgramKeepers.has(key))continue;sceneProgramKeepers.set(key,m);m.userData.retainedProgram=true;m.dispose=()=>{};}});sceneStats.lastWarmupMs=performance.now()-start;};
+prepareGameplayGraphics=async function(){const start=performance.now();await warmBeforeProgramCache();warmJourneyViews();pinPrograms36();sceneStats.lastWarmupMs=performance.now()-start;};
 
 // Exercise real wide and side views of the loaded level behind the loader.
 // Compiling a tiny representative alone does not upload every LOD's buffers.

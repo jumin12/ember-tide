@@ -48,8 +48,8 @@ setLoadingLore=function(){
  $('#loading-lore-tip').textContent=LOADING_LORE[(loadingLoreIndex++)%LOADING_LORE.length].tip.replace('Journey records are kept only at inns.','Record your journey at location entrances and inns.');
 };
 const journeyLoadingBefore26=setJourneyLoading;
-setJourneyLoading=function(value){journeyLoadingBefore26(value);if(value){$('#load-fill').style.width='28%';$('#load-label').textContent='Opening the riverlands…';}else $('#load-fill').style.width='100%';};
+setJourneyLoading=function(value){journeyLoadingBefore26(value);if(value)$('#load-label').textContent='Opening the riverlands…';};
 const prepareGraphicsBefore26=prepareGameplayGraphics;
-prepareGameplayGraphics=async function(...args){if(gameLoading)$('#load-fill').style.width='58%';const r=await prepareGraphicsBefore26(...args);if(gameLoading)$('#load-fill').style.width='100%';return r;};
+prepareGameplayGraphics=async function(...args){const r=await prepareGraphicsBefore26(...args);return r;};
 const loadTitleAssetsBefore26=loadAssets;
 loadAssets=async function(){await loadTitleAssetsBefore26();for(const id of['loading-crystal26']){const n=$('#'+id);if(n)n.src=assets.images.ui26_logo??assets.images.ui26_crystal;}};

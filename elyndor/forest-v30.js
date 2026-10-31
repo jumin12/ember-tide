@@ -72,7 +72,7 @@ buildSolidForest=function(){
  for(const t of scenery.trees)for(const trunk of[true,false]){const key=Math.floor(t.x/64)+','+Math.floor(t.z/64)+','+trunk;let q=buckets.get(key);if(!q){q={entries:[],trunk,center:V3(Math.floor(t.x/64)*64+32,0,Math.floor(t.z/64)*64+32)};buckets.set(key,q);}for(const matrix of trunk?t.trunks:t.crowns)q.entries.push({t,matrix});}
  for(const q of buckets.values()){
   const {entries,trunk,center}=q,n=entries.length,mask=new THREE.InstancedBufferAttribute(new Float32Array(n),1).setUsage(THREE.DynamicDrawUsage),kind=new THREE.InstancedBufferAttribute(new Float32Array(n).fill(trunk?1:0),1),species=new THREE.InstancedBufferAttribute(Float32Array.from(entries,e=>e.t.species30??0),1);
-  const make=g=>{g=g.clone();g.setAttribute('treeKind',kind);g.setAttribute('treeSpecies30',species);g.setAttribute('treeViewHidden',mask);return g;};
+  const make=g=>{g=shareGeometry36(g);g.setAttribute('treeKind',kind);g.setAttribute('treeSpecies30',species);g.setAttribute('treeViewHidden',mask);return g;};
   const lods=trunk?[make(forestGeometry('trunk')),null,null]:[make(sprayGeometry30(42)),make(sprayGeometry30(22)),make(sprayGeometry30(12))];if(trunk)lods[1]=lods[2]=lods[0];
   const m=new THREE.InstancedMesh(lods[0],forestMaterial30(trunk),n);m.userData={forest:true,forestKind:trunk?'trunk':'canopy30',center,entries,nativeLods30:lods,treeViewMask:mask,fullGeometry:lods[0],farGeometry:lods[1],simpleGeometry:lods[2]};m.castShadow=m.receiveShadow=true;m.customDepthMaterial=forestDepth30();
   entries.forEach((e,i)=>{m.setMatrixAt(i,e.matrix);const v=Math.sin(e.t.x*31+e.t.z*17)*.5+.5;const c=new THREE.Color(trunk?'#c7b394':'#ffffff');if(!trunk)c.setRGB(.84+v*.16,.88+v*.12,.76+v*.20);m.setColorAt(i,c);e.t.bindings.push({mesh:m,index:i,matrix:e.matrix});});
@@ -82,14 +82,14 @@ buildSolidForest=function(){
  world.userData.forest30={species:Array.from(new Set(scenery.trees.map(t=>t.species30))).sort(),trees:scenery.trees.length,clusters:world.userData.leafCount,batches:scenery.forestMeshes.length};
 };
 sameForest26=function(entries,kind,parent){
- if(!entries.length)return;const trunk=kind==='trunk',g=(trunk?forestGeometry('trunk'):sprayGeometry30(13)).clone(),n=entries.length;
+ if(!entries.length)return;const trunk=kind==='trunk',g=shareGeometry36(trunk?forestGeometry('trunk'):sprayGeometry30(13)),n=entries.length;
  g.setAttribute('treeKind',new THREE.InstancedBufferAttribute(new Float32Array(n).fill(trunk?1:0),1));g.setAttribute('treeViewHidden',new THREE.InstancedBufferAttribute(new Float32Array(n),1));g.setAttribute('treeSpecies30',new THREE.InstancedBufferAttribute(Float32Array.from(entries,e=>e.species30??(kind==='pine'?4:0)),1));
  world.userData.bgForestMaterials30??=new Map();const cache=world.userData.bgForestMaterials30;if(!cache.has(kind))cache.set(kind,forestMaterial30(trunk));const o=new THREE.InstancedMesh(g,cache.get(kind),n);entries.forEach((e,i)=>{o.setMatrixAt(i,e);o.setColorAt(i,new THREE.Color(trunk?'#c7b394':'#f3f4dd'));});o.onBeforeRender=(r,s,c)=>{forest30.main.value=c===camera?1:0;};o.receiveShadow=true;o.castShadow=false;o.computeBoundingSphere();o.userData.distantScenery26=o.userData.foregroundForest26=true;parent.add(o);
 };
 const distantLeafBefore30=distantLeafMaterial26;
 distantLeafMaterial26=function(...args){const old=distantLeafBefore30(...args),m=physicalMaterial28(old);m.map=textures.leafOak30??textures.oakCanopy;m.alphaTest=.28;m.alphaToCoverage=true;m.color.set('#f1f4d7');m.needsUpdate=true;return m;};
 buildOverworldForestLod26=function(){
- const trees=scenery.trees,n=trees.length,g=sprayGeometry30(9).clone(),m=forestMaterial30(false);m.alphaTest=.16;
+ const trees=scenery.trees,n=trees.length,g=shareGeometry36(sprayGeometry30(9)),m=forestMaterial30(false);m.alphaTest=.16;
  g.setAttribute('treeKind',new THREE.InstancedBufferAttribute(new Float32Array(n),1));g.setAttribute('treeViewHidden',new THREE.InstancedBufferAttribute(new Float32Array(n),1));g.setAttribute('treeSpecies30',new THREE.InstancedBufferAttribute(Float32Array.from(trees,t=>t.species30),1));
  const before=m.onBeforeCompile,key=m.customProgramCacheKey();m.onBeforeCompile=sh=>{before(sh);sh.vertexShader=sh.vertexShader.replace('#include <project_vertex>','transformed*=smoothstep(210.,300.,length(cameraPosition.xz-root30.xz));\n#include <project_vertex>');};m.customProgramCacheKey=()=>key+'-overworld-distance30';
  const o=new THREE.InstancedMesh(g,m,n),d=new THREE.Object3D();trees.forEach((t,i)=>{d.position.set(t.x,t.y+t.h*.75,t.z);d.scale.set(t.scale*2.8,t.scale*2.0,t.scale*2.8);d.rotation.y=t.x*.19+t.z*.21;d.updateMatrix();o.setMatrixAt(i,d.matrix);});o.onBeforeRender=(r,s,c)=>{forest30.main.value=c===camera?1:0;};o.receiveShadow=true;o.castShadow=false;o.computeBoundingSphere();o.userData.distantScenery26=true;world.userData.landscape26.group.add(o);world.userData.overworldForestLod26=o;
@@ -119,8 +119,8 @@ updateCutaways=function(...args){const trees=scenery.trees;scenery.trees=[];let 
 const captureMapBefore30=captureMacroMap17;
 captureMacroMap17=function(...args){const r=captureMapBefore30(...args);if(!macroMap17.scene||macroMap17.scene.userData.botany30)return r;
  for(const o of macroMap17.near)if(o.material.userData.forestNative30)o.onBeforeRender=()=>{forest30.main.value=0;};
- for(const o of macroMap17.far){if(!o.material.userData.forestNative30)continue;const trunk=o.material.alphaTest===0,kind=trunk?'trunk':'canopy30',sources=macroMap17.near.filter(q=>q.userData.forestKind===kind),species=new Float32Array(o.count);let offset=0;
+ for(const o of macroMap17.far){if(o.userData.compactAtlas36||o.userData.compactAtlasBark36||!o.material.userData.forestNative30)continue;const trunk=o.material.alphaTest===0,kind=trunk?'trunk':'canopy30',sources=macroMap17.near.filter(q=>q.userData.forestKind===kind),species=new Float32Array(o.count);let offset=0;
   for(const q of sources){const a=q.geometry.attributes.treeSpecies30;if(a){species.set(a.array.subarray(0,q.count),offset);offset+=q.count;}}
-  const old=o.geometry,g=trunk?old:sprayGeometry30(12).clone();g.setAttribute('treeKind',new THREE.InstancedBufferAttribute(new Float32Array(o.count).fill(trunk?1:0),1));g.setAttribute('treeSpecies30',new THREE.InstancedBufferAttribute(species,1));g.setAttribute('treeViewHidden',new THREE.InstancedBufferAttribute(new Float32Array(o.count),1));o.geometry=g;if(g!==old)old.dispose();o.onBeforeRender=()=>{forest30.main.value=0;};o.computeBoundingSphere();
+  const old=o.geometry,g=trunk?old:shareGeometry36(sprayGeometry30(12));g.setAttribute('treeKind',new THREE.InstancedBufferAttribute(new Float32Array(o.count).fill(trunk?1:0),1));g.setAttribute('treeSpecies30',new THREE.InstancedBufferAttribute(species,1));g.setAttribute('treeViewHidden',new THREE.InstancedBufferAttribute(new Float32Array(o.count),1));o.geometry=g;if(g!==old)old.dispose();o.onBeforeRender=()=>{forest30.main.value=0;};o.computeBoundingSphere();
  }macroMap17.scene.userData.botany30=true;return r;
 };

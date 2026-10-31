@@ -1,5 +1,5 @@
 {
-  "status": "Alpha Version 1.10: elemental power and grounded creatures",
+  "status": "Alpha Version 1.11: faster starts, smaller memory and steadier play",
   "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
   "characterFamilies": 43,
   "runtimeFamilies": 44,
@@ -9,8 +9,8 @@
   "worldImages": 115,
   "artifact": {
     "file": "index.html",
-    "bytes": 43251256,
-    "sha256": "ef18f8a702d0d5067776090077db5d75cad243b5ff3e68c4f5fb7acfaaf7d39c",
+    "bytes": 44643216,
+    "sha256": "64d2b624ea084d811b174b7975cf83ade802ff2ce908c152d9121905b674ff7c",
     "offline": true
   },
   "incompleteClips": {},

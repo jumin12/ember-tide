@@ -1,6 +1,6 @@
 // World creation and GPU warmup happen behind the same in-game photo screen.
 let gameLoading=false;
-function setJourneyLoading(value){gameLoading=value;window.gameLoading=value;$('#load-screen').classList.toggle('hidden',!value);if(value){keys.clear();$('#load-fill').style.width='100%';$('#load-label').textContent='Preparing your journey…';}}
+function setJourneyLoading(value){gameLoading=value;window.gameLoading=value;$('#load-screen').classList.toggle('hidden',!value);if(value){keys.clear();$('#load-label').textContent='Preparing your journey…';}}
 async function warmJourneyGraphics(){
  setJourneyLoading(true);await new Promise(requestAnimationFrame);await new Promise(requestAnimationFrame);
  try{await prepareGameplayGraphics();}finally{setJourneyLoading(false);lastFrame=0;}

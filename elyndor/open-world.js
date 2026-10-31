@@ -322,7 +322,7 @@ function batchLandscape(){
  const sources=[];world.updateMatrixWorld(true);const lamps=[];world.traverse(o=>{if(o.isPointLight&&!world.userData.lightSites.some(s=>s.glow===o))lamps.push(o);});for(const l of lamps){sources.push(l.getWorldPosition(V3()));l.removeFromParent();}world.userData.lampSources=sources;world.userData.lanterns=[];for(let i=0;i<6;i++){const l=new THREE.PointLight('#ffb965',0,10,2);world.add(l);world.userData.lanterns.push(l);}
  world.userData.treePoints=(world.userData.occlusionGroups??[]).map(g=>g.position.clone());world.userData.occlusionGroups=[];
 }
-function disposeContinuousWorld(){if(!world)return;const geometries=new Set(),mats=new Set();world.traverse(o=>{if(o.geometry&&!Object.values(sharedGeo).includes(o.geometry))geometries.add(o.geometry);if(o.material&&!Array.isArray(o.material)&&!Array.from(matCache.values()).includes(o.material))mats.add(o.material);});for(const g of geometries)g.dispose();for(const m of mats)m.dispose();for(const a of actors)a.mesh.material.map?.dispose();for(const t of world.userData.signTextures??[])t.dispose();scene.remove(world);}
+function disposeContinuousWorld(){if(!world)return;const geometries=new Set(),mats=new Set(),shared=new Set(Object.values(sharedGeo)),cachedMaterials=new Set(matCache.values());world.traverse(o=>{if(o.geometry&&!shared.has(o.geometry))geometries.add(o.geometry);if(o.material&&!Array.isArray(o.material)&&!cachedMaterials.has(o.material))mats.add(o.material);});for(const g of geometries)g.dispose();for(const m of mats)m.dispose();for(const a of actors)a.mesh.material.map?.dispose();for(const t of world.userData.signTextures??[])t.dispose();scene.remove(world);}
 buildWorld=function(id='approach',spawn=null){
  if(openWorldReady&&state.mode==='title'){const p=AT(id);player.x=p.x;player.z=p.z;state.scene=id;updateCamera(1,true);return;}
  disposeContinuousWorld();openWorldReady=false;world=new THREE.Group();world.userData={continuous:true,serial:++worldBuildSerial,leafMatrices:[],plantMatrices:{fern:[],flowers:[],ivy:[],grassBlades:[],shrub:[]},buildings:[],lanterns:[],smoke:[],fountains:[],crystals:[],lightSites:[],bridges:[],navCache:new Map()};scene.add(world);
@@ -412,7 +412,7 @@ tick=function(dt){if(!world)return;oldTickContinuous(dt);if(state.mode!=='title'
 };
 const oldUpdateHUDContinuous=updateHUD;
 updateHUD=function(){oldUpdateHUDContinuous();if(!player)return;const goal=waypoint??objectiveTarget(),compass=$('#overworld-compass');if(compass){if(goal){const d=Math.hypot(goal.x-player.x,goal.z-player.z),b=screenBasis(),dx=goal.x-player.x,dz=goal.z-player.z,angle=Math.atan2(dx*b.right.x+dz*b.right.z,-(dx*b.down.x+dz*b.down.z))*180/Math.PI;compass.innerHTML=`<span class="compass-needle" style="transform:rotate(${angle}deg)">↑</span><span>${esc(goal.label??currentBeat()[2])}</span><b>${Math.round(d)} m</b>`;}else compass.innerHTML='<span>◇</span><span>The road is yours</span>';}
- const radar=$('#overworld-radar');if(radar)radar.innerHTML=worldMapSVG('radar');
+ // The journey HUD renders the current location radar once, below this layer.
 };
 function worldMapSVG(mode='region'){
  const local=mode==='local'||mode==='radar',w=local?(mode==='radar'?95:135):LAND.maxX-LAND.minX,h=local?w:LAND.maxZ-LAND.minZ,x0=local?player.x-w/2:LAND.minX,z0=local?player.z-h/2:LAND.minZ,known=new Set(state.visited),target=waypoint??objectiveTarget();
