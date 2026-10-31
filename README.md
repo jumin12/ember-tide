@@ -1,5 +1,11 @@
 # The Last Light of Elyndor
 
+## Alpha Version 1.9 — Lighting reference refinement
+
+The October 31 refinement replaces nearly uniform lighting with authored, continuously interpolated illumination for amber dawn, cream daylight, golden hour, violet dusk and blue moonlight. Night lamps now stay local instead of washing entire facades. Sunlit foliage gains a restrained transmission lift; selective HDR bloom catches highlights. The exploration lens is closer and places the party lower in frame. Actual eight-time captures wait for the real lamp handoffs to settle.
+
+`python elyndor/tools/verify-v34.py` runs 14 focused regressions for the lighting and camera changes, including the campaign, native foliage visibility, water reflection comparison, controls, menus, solar continuity and extended performance/resource tests. The preceding complete world-route audit remains recorded in the Alpha 1.9 baseline.
+
 ## Alpha Version 1.9 — Warmer light, stable display budgets
 
 The solar palette now separates amber direct light from readable blue shade and moonlight. Warm windows and a world-space lamp-bounce field remain visible at a distance. Depth-aware focus keeps the party sharp; its radius follows display density. Existing pooled spell lights illuminate the real scene with brighter, longer pulses.

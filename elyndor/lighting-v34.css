@@ -1,0 +1,4 @@
+/* Keep the guided lesson clear of the lower-framed party. Touch layouts retain
+   their dedicated compact lesson placement and safe-area controls. */
+body:not(.compact33) #journey-guide:not(.in-battle){left:24px;top:145px;bottom:auto;width:350px;max-height:230px;overflow:auto;transform:scale(var(--hud-scale25,1));transform-origin:top left}
+@media(max-height:600px){body:not(.compact33) #journey-guide:not(.in-battle){top:110px;max-height:170px;width:320px}}
