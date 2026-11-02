@@ -1,5 +1,13 @@
 # The Last Light of Elyndor
 
+## Alpha Version 1.16 — Planned paths and a grounded party
+
+All fifteen POIs now have compact, deliberate routes, story courts, visible natural boundaries and road-aligned departures. Buildings keep their authored service entrances; route approaches clear obstructing trees and paint the existing terrain at every detail level. Approved atlas positions and story locations remain intact. Detailed approach chains stay connected in the navigation graph.
+
+Companions match Shift sprinting and keep their collision-safe trail. Wind and weather interpolate with presentation, directional shadows update on wind and actor motion, and slope-aware underfoot shadows remain visible on paving, bridges, stairs and indoor floors. Native regression evidence and the fifteen-location review are recorded in `elyndor/previews/levels-v42/verification.json`.
+
+Severe 4× CPU emulation produced runs below the strict 45 FPS floor during investigation, including a matched test of the preceding published build. The release evidence preserves those failures alongside the final repeated measurements. Performance on physical phones has not been established.
+
 ## Alpha Version 1.15 — Smoother motion, water and light
 
 The camera now interpolates alongside the party at the presentation boundary. Simulation catch-up is bounded after long stalls, exact terrain queries are reused within each step, and a duplicate flat foot-shadow layer is removed. Brookstead uses one cached-row canal update, completes the full downstream refill, and excludes other water surfaces from reflection passes. Directional shadows refresh on each moving frame; atmospheric scattering uses fixed-distance intervals and softer shadow sampling. World-space dust is denser, responds to cloud/canopy shadows and preserves nearby particles across cell boundaries.

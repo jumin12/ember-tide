@@ -101,8 +101,8 @@ updateReflection=function(...args){
 // stationary views can reuse the depth pass between wind-animation samples.
 const shadowFitBefore41=fitVisibleShadows;
 fitVisibleShadows=function(){
- const moving=shadow36.camera.distanceToSquared(camera.position)>1e-6;
- if(moving)shadow36.last=-100;
+ const moving=shadow36.camera.distanceToSquared(camera.position)>1e-6,wind=activeScene.kind!=='interior'&&windUniforms.strength.value>.01;
+ if(moving||wind||actors.some(a=>a.mesh.visible&&a.speed>.025))shadow36.last=-100;
  return shadowFitBefore41();
 };
 const postBefore41=setupPost;

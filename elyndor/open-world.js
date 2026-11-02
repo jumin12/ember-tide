@@ -69,9 +69,9 @@ function rebuildColliderGrid(){colliderGrid.clear();for(const c of colliders){fo
 staticFree=function(x,z,r=.4){if(x<LAND.minX+r||x>LAND.maxX-r||z<LAND.minZ+r||z>LAND.maxZ-r||waterGround(x,z))return false;for(const c of colliderGrid.get(colliderKey(x,z))??(colliderGrid.size?[]:colliders)){if(Math.abs(x-c.x)<c.w+r&&Math.abs(z-c.z)<c.d+r)return false;}return true;};
 const localFindRoute=findRoute;
 let roadNavGraph=null;
-function roadGraph(){if(roadNavGraph)return roadNavGraph;const nodes=ROADS.flatMap(r=>r.p.filter((p,i)=>i%5===0||i===r.p.length-1).map(p=>({x:p[0],z:p[1]}))).filter(p=>staticFree(p.x,p.z,.5));
+function roadGraph(){if(roadNavGraph)return roadNavGraph;const chains=[],nodes=[];for(const road of ROADS){const chain=[];road.p.forEach((p,i)=>{if(!road.navigationDetail&&i%5!==0&&i!==road.p.length-1)return;const q={x:p[0],z:p[1]};if(staticFree(q.x,q.z,.5)){chain.push(nodes.length);nodes.push(q);}else chain.push(-1);});if(road.navigationDetail)chains.push(chain);}
  for(const c of colliders){if(!['building','hall wall','fountain','planter','market stall','bench','mechanism','ruin pillar'].includes(c.type)||roadDistance(c.x,c.z)>Math.hypot(c.w,c.d)+5)continue;for(const[dx,dz]of[[-1,-1],[-1,1],[1,-1],[1,1],[-1,0],[1,0],[0,-1],[0,1]]){const p={x:c.x+dx*(c.w+.85),z:c.z+dz*(c.d+.85)};if(staticFree(p.x,p.z,.5)&&roadDistance(p.x,p.z)<12)nodes.push(p);}}
- const edges=nodes.map(()=>[]),checked=new Set();for(let i=0;i<nodes.length;i++){
+ const edges=nodes.map(()=>[]),checked=new Set();for(const chain of chains)for(let i=1;i<chain.length;i++){const a=chain[i-1],b=chain[i];if(a<0||b<0||!graphEdgeFree(nodes[a],nodes[b]))continue;const d=dist(nodes[a],nodes[b]);edges[a].push([b,d]);edges[b].push([a,d]);checked.add(Math.min(a,b)+','+Math.max(a,b));}for(let i=0;i<nodes.length;i++){
   // Two nearest neighbors in each direction preserve route branches without
   // testing every pair of dense building-corner nodes across the whole town.
   const sectors=Array.from({length:8},()=>[]);for(let j=0;j<nodes.length;j++){if(i===j)continue;const d=dist(nodes[i],nodes[j]);if(d>34||d<.05)continue;const a=(Math.round(Math.atan2(nodes[j].z-nodes[i].z,nodes[j].x-nodes[i].x)/(Math.PI/4))+8)%8;sectors[a].push({j,d});}

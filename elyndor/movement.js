@@ -5,7 +5,7 @@ function facingForMotion(dx,dz){const b=screenBasis(),sx=dx*b.right.x+dz*b.right
 function stableActorFacing(a,dx,dz){const b=screenBasis(),angle=Math.atan2(dx*b.down.x+dz*b.down.z,dx*b.right.x+dz*b.right.z),current=WALK_DIRECTIONS.indexOf(a.face),delta=current<0?Infinity:Math.atan2(Math.sin(angle-current*Math.PI/4),Math.cos(angle-current*Math.PI/4));return Math.abs(delta)<Math.PI/8+.075?a.face:WALK_DIRECTIONS[(Math.round(angle/(Math.PI/4))+8)%8];}
 function actorsCollide(a,b){if(a===b||!b.mesh.visible||b.enemy)return false;if(a.party&&b.party)return false;return true;}
 moveActor=function(a,dx,dz,dt,crowd=true){
- const old={x:a.x,z:a.z},free=q=>edgeFree(a,q,actorRadius(a))&&(!crowd||!actors.some(o=>actorsCollide(a,o)&&dist(o,q)<Math.max(a.npc&&o.npc?.84:.75,actorRadius(a)+actorRadius(o))));
+ const old={x:a.x,z:a.z},free=q=>edgeFree(a,q,actorRadius(a))&&(!crowd||!actors.some(o=>{if(!actorsCollide(a,o))return false;const gap=Math.max(a.npc&&o.npc?.84:.75,actorRadius(a)+actorRadius(o)),before=dist(o,a);return dist(o,q)<gap&&(before>=gap||before>.001&&(a.x-o.x)*(q.x-a.x)+(a.z-o.z)*(q.z-a.z)<=0);}));
  const full={x:a.x+dx,z:a.z+dz};if(free(full)){a.x=full.x;a.z=full.z;}else{
   const candidates=[{x:a.x+dx,z:a.z},{x:a.x,z:a.z+dz}].sort((p,q)=>dist(q,a)-dist(p,a));for(const q of candidates)if(dist(a,q)>.00001&&free(q)){a.x=q.x;a.z=q.z;break;}
  }
@@ -14,8 +14,8 @@ moveActor=function(a,dx,dz,dt,crowd=true){
  return moved;
 };
 function spawnPartyTrail(point){
- const near=interactables.filter(o=>o.type==='exit').sort((a,b)=>dist(a,player)-dist(b,player))[0];let dx=1,dz=0;
- if(near&&dist(near,player)<8){dx=player.x-near.x;dz=player.z-near.z;if(Math.hypot(dx,dz)<.2){const p=currentScene().path.slice().sort((a,b)=>Math.hypot(a[0]-player.x,a[1]-player.z)-Math.hypot(b[0]-player.x,b[1]-player.z))[1];if(p){dx=p[0]-player.x;dz=p[1]-player.z;}}}
+ const near=interactables.filter(o=>['exit','poiExit','interiorExit'].includes(o.type)).sort((a,b)=>dist(a,player)-dist(b,player))[0];let dx=1,dz=0;
+ if(near&&dist(near,player)<12){dx=player.x-near.x;dz=player.z-near.z;if(Math.hypot(dx,dz)<.2){const p=currentScene().path.slice().sort((a,b)=>Math.hypot(a[0]-player.x,a[1]-player.z)-Math.hypot(b[0]-player.x,b[1]-player.z))[1];if(p){dx=p[0]-player.x;dz=p[1]-player.z;}}}
  const len=Math.hypot(dx,dz)||1;dx/=len;dz/=len;const tail=[{x:player.x,z:player.z}];
  let heading=Math.atan2(-dz,-dx);
  for(let k=1;k<=70;k++){
@@ -45,6 +45,6 @@ updateFollowers=function(dt){
   if(gap<.055){a.route=null;continue;}
   const crowd=actors.filter(o=>o.npc&&o.mesh.visible),direct=edgeFree(a,target,actorRadius(a))&&!crowd.some(o=>segmentDistance(o.x,o.z,[a.x,a.z],[target.x,target.z])<.77);
   let q=target;if(!direct){if(a.replan<=0||!a.route?.length){a.route=findRoute(a,target,crowd);a.replan=.35;}while(a.route?.length&&dist(a,a.route[0])<.12)a.route.shift();q=a.route?.[0];if(!q)continue;}else a.route=null;
-  const d=dist(a,q);if(d<.001)continue;const speed=clamp((player.speed||3.2)+Math.max(0,gap-.2)*1.6,2.1,7),step=Math.min(d,speed*dt);moveActor(a,(q.x-a.x)/d*step,(q.z-a.z)/d*step,dt);
+  const d=dist(a,q);if(d<.001)continue;const pace=player.speed||3.2,limit=Math.max(7,movementSpeed()*1.18),speed=clamp(pace+Math.max(0,gap-.2)*1.6,2.1,limit),step=Math.min(d,speed*dt);a.sprinting=keys.has('shift');moveActor(a,(q.x-a.x)/d*step,(q.z-a.z)/d*step,dt);
  }
 };
