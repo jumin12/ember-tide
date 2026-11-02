@@ -33,13 +33,12 @@ prepareGameplayGraphics=async function(...args){
 };
 // Scene builders and shader warm-up own their covered frames. Running the
 // normal update chain alongside them needlessly competed with loader work.
-const loopBefore36=loop;
-loop=function(now){if(gameLoading){requestAnimationFrame(loop);lastFrame=now;device33.last=now;return;}return loopBefore36(now);};
+// Loading is gated by the single systems/runtime.js presentation loop.
 // The map preserves the playable terrain and every tree's real position, but
 // never retains all the continent's grass, close-up canopy buffers and masks.
 function addMapTrees36(parent){
  const rows=bakedFloat36(BAKED_WORLD36.trees.data),n=BAKED_WORLD36.trees.count;
- const g=shareGeometry36(sprayGeometry30(9)),species=new THREE.InstancedBufferAttribute(Float32Array.from({length:n},(_,i)=>rows[i*6+5]),1);
+ const g=shareGeometry36(sprayGeometry30(28)),species=new THREE.InstancedBufferAttribute(Float32Array.from({length:n},(_,i)=>rows[i*6+5]),1);
  g.setAttribute('treeKind',new THREE.InstancedBufferAttribute(new Float32Array(n),1));g.setAttribute('treeSpecies30',species);g.setAttribute('treeViewHidden',new THREE.InstancedBufferAttribute(new Float32Array(n),1));
  const m=forestMaterial30(false);mapFog17(m);const o=new THREE.InstancedMesh(g,m,n),dummy=new THREE.Object3D();
  for(let i=0;i<n;i++){const at=i*6,x=rows[at],y=rows[at+1],z=rows[at+2],h=rows[at+3],scale=rows[at+4];dummy.position.set(x,y+h*.72,z);dummy.rotation.y=x*.17+z*.13;dummy.scale.set(scale*2.9,h*.40,scale*2.9);dummy.updateMatrix();o.setMatrixAt(i,dummy.matrix);}
@@ -47,7 +46,7 @@ function addMapTrees36(parent){
  const bark=new THREE.CylinderGeometry(.11,.22,1,5,1);bark.setAttribute('treeKind',new THREE.InstancedBufferAttribute(new Float32Array(n).fill(1),1));bark.setAttribute('treeSpecies30',species);bark.setAttribute('treeViewHidden',new THREE.InstancedBufferAttribute(new Float32Array(n),1));const bm=forestMaterial30(true);mapFog17(bm);const trunks=new THREE.InstancedMesh(bark,bm,n);
  for(let i=0;i<n;i++){const at=i*6,h=rows[at+3],scale=rows[at+4];dummy.position.set(rows[at],rows[at+1]+h*.36,rows[at+2]);dummy.rotation.set(0,0,0);dummy.scale.set(scale,h*.72,scale);dummy.updateMatrix();trunks.setMatrixAt(i,dummy.matrix);trunks.setColorAt(i,new THREE.Color('#c7b394'));}trunks.computeBoundingSphere();trunks.userData={sameTreePositions17:true,atlasAlways36:true,compactAtlasBark36:true};trunks.onBeforeRender=()=>{forest30.main.value=0;};parent.add(trunks);macroMap17.far.push(trunks);
 }
-function updatePartyCards36(id){const node=$('#'+id);const key=JSON.stringify([!!battle,state.members.map(id=>[id,state.characters[id],stats(id)])]);if(node.dataset.cards36===key)return;node.dataset.cards36=key;node.innerHTML=state.members.map(id=>card(id)).join('');}
+function updatePartyCards36(id){const node=$('#'+id);const key=JSON.stringify([!!battle,document.body.classList.contains('compact33'),state.members.map(id=>[id,state.characters[id],stats(id)])]);if(node.dataset.cards36===key)return;node.dataset.cards36=key;node.innerHTML=state.members.map(id=>card(id)).join('');}
 // Cull complete static branches using all views that can contribute pixels.
 // Keep shadow reach and reflection bounds, including an 8m prefetch margin.
 const static36={main:new THREE.Frustum(),mirror:new THREE.Frustum(),matrix:new THREE.Matrix4(),sphere:new THREE.Sphere(),camera:new THREE.PerspectiveCamera(),at:-1,world:null,visible:0,total:0};
@@ -62,15 +61,18 @@ const budgetBefore36=updateRenderBudget;
 updateRenderBudget=function(force=false){const result=budgetBefore36(force);if(!world||!player||!force&&static36.world===world&&clock-static36.at<.10)return result;static36.world=world;static36.at=clock;
  camera.updateMatrixWorld();const q=static36;q.main.setFromProjectionMatrix(q.matrix.multiplyMatrices(camera.projectionMatrix,camera.matrixWorldInverse));
  q.camera.copy(camera);const level=water?.position.y??0;q.camera.position.y=2*level-camera.position.y;q.camera.up.set(0,-1,0);q.camera.lookAt(cameraTarget.x,2*level-cameraTarget.y,cameraTarget.z);q.camera.updateMatrixWorld();q.mirror.setFromProjectionMatrix(q.matrix.multiplyMatrices(q.camera.projectionMatrix,q.camera.matrixWorldInverse));
- const reflect=!!water?.visible||(world.userData.waterPools??[]).some(p=>p.visible);let visible=0;
- for(const branch of world.userData.branches36??[]){const b=branch.userData.bounds36;q.sphere.copy(b);const reach=clamp((b.center.y-heightAt(player.x,player.z)+b.radius)/Math.max(.15,weather.sun.value.y),0,100);q.sphere.center.addScaledVector(weather.sun.value,-reach);q.sphere.radius+=12;branch.visible=q.main.intersectsSphere(b)||reflect&&q.mirror.intersectsSphere(b)||q.main.intersectsSphere(q.sphere);visible+=branch.visible;}
+ const reflect=!!water?.visible||(world.userData.waterPools??[]).some(p=>p.visible),ground=heightAt(player.x,player.z);let visible=0;
+ for(const branch of world.userData.branches36??[]){const b=branch.userData.bounds36;q.sphere.copy(b);const reach=clamp((b.center.y-ground+b.radius)/Math.max(.15,weather.sun.value.y),0,100);q.sphere.center.addScaledVector(weather.sun.value,-reach);q.sphere.radius+=12;branch.visible=q.main.intersectsSphere(b)||reflect&&q.mirror.intersectsSphere(b)||q.main.intersectsSphere(q.sphere);visible+=branch.visible;}
  q.visible=visible;q.total=world.userData.branches36?.length??0;return result;};
 // Shader recipes are immutable between material revisions. Nested historical
 // shader decorators were rebuilding long cache-key strings for every draw.
 function cacheOneMaterial36(m){if(m.userData.cacheKey36)return;m.userData.cacheKey36=true;const original=m.customProgramCacheKey.bind(m);let revision=-1,key='';m.customProgramCacheKey=function(){if(this.version!==revision){revision=this.version;key=original();}return key;};}
 function cacheMaterialKeys36(root){root?.traverse(o=>{for(const m of [...(o.material?(Array.isArray(o.material)?o.material:[o.material]):[]),o.customDepthMaterial].filter(Boolean))cacheOneMaterial36(m);});}
 const buildKeysBefore36=buildWorld;
-buildWorld=function(...args){const result=buildKeysBefore36(...args);cacheMaterialKeys36(world);cacheMaterialKeys36(atlas3d.scene??macroMap17.scene);return result;};
+buildWorld=function(...args){const result=buildKeysBefore36(...args);cacheMaterialKeys36(world);cacheMaterialKeys36(atlas3d.scene??macroMap17.scene);
+ // Scene roots never move. Avoid marking every descendant transform dirty on
+ // each pass; actors, lights, weather and other children still update normally.
+ scene.matrixAutoUpdate=false;world.matrixAutoUpdate=false;scene.updateMatrix();world.updateMatrix();scene.updateMatrixWorld(true);return result;};
 function bakedFloat36(source){const raw=atob(source),bytes=new Uint8Array(raw.length);for(let i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);return new Float32Array(bytes.buffer);}
 const gridBefore36=prepareMacroGrid15;
 prepareMacroGrid15=function(){if(window.__forceWorldBake36)return gridBefore36();if(!macroGrid15)macroGrid15=bakedFloat36(BAKED_WORLD36.grid.data);};

@@ -54,17 +54,8 @@ brookHouse=function(x,z,w,d,kind){
  for(const side of[-1,1])for(let j=0;j<4;j++)plant(x+side*(w/2+.04),z-d*.15,.55,'ivy',y+.55+j*.65);
  obstacle(x,z,w+.12,d+.12,'building');world.userData.buildings.push(g);architecture31.houses++;return g;
 };
-fernHouse=function(x,z,w,d,variant=0){
- const y=groundAt(x,z),g=new THREE.Group(),front=d/2+.1,dx=-w*.18;g.position.set(x,y,z);g.userData={worldHouse:true,kind:'forest-home',footprint:{w,d},front:V3(0,0,1),door:V3(x+dx,y,z+front+.8),architecture31:{theme:'forest',door:[dx,front],openings:[]}};world.add(g);
- box(0,.15,0,w+.3,.3,d+.3,'wall','#a9ad90',g);box(0,1.7,-d/2+.12,w,3.1,.24,'wood','#9e8860',g);for(const s of[-1,1])box(s*(w/2-.12),1.7,0,.24,3.1,d,'wood','#9e8860',g);
- const dl=dx-.9,dr=dx+.9;box((-w/2+dl)/2,1.7,d/2-.12,dl+w/2,3.1,.24,'wood','#a18b61',g);box((w/2+dr)/2,1.7,d/2-.12,w/2-dr,3.1,.24,'wood','#a18b61',g);box(dx,2.98,d/2-.12,1.8,.54,.24,'wood','#9a8057',g);
- const door=new THREE.Group();door.position.set(dx,0,front);door.scale.setScalar(.78);g.add(door);door31(door,0,0);window31(g,w*.28,1.85,front+.03,0,.70);
- for(const s of[-1,1]){window31(g,s*(w/2+.05),1.85,0,s*Math.PI/2,.68);for(const zz of[-d/2,d/2]){box(s*w/2,1.7,zz,.23,3.4,.23,'darkWood','#77643f',g);ropeWrap(g,s*w/2,2.7,zz,.15);}}
- const p=[],uv=[],indices=[],n=24;for(let i=0;i<=n;i++){const a=i/n*Math.PI;for(const zz of[-d/2-.4,d/2+.4]){p.push(-Math.cos(a)*(w/2+.4),3.15+Math.sin(a)*1.6,zz);uv.push((zz+d/2)*.17,i/n*w*.18);}}for(let i=0;i<n;i++){const a=i*2;indices.push(a,a+1,a+2,a+1,a+3,a+2);}const roof=new THREE.BufferGeometry();roof.setAttribute('position',new THREE.Float32BufferAttribute(p,3));roof.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));roof.setIndex(indices);roof.computeVertexNormals();mesh(roof,material('wood',variant%2?'#8c8056':'#938159',{side:THREE.DoubleSide}),0,0,0,g);
- for(const side of[-1,1]){const verts=[],tex=[],zz=side*(d/2+.05);for(let i=0;i<n;i++){const a=i/n*Math.PI,b=(i+1)/n*Math.PI;for(const v of[[0,3.15,zz],[-Math.cos(a)*w/2,3.15+Math.sin(a)*1.5,zz],[-Math.cos(b)*w/2,3.15+Math.sin(b)*1.5,zz]]){verts.push(...v);tex.push(v[0]*.17,v[1]*.17);}}const end=new THREE.BufferGeometry();end.setAttribute('position',new THREE.Float32BufferAttribute(verts,3));end.setAttribute('uv',new THREE.Float32BufferAttribute(tex,2));end.computeVertexNormals();mesh(end,material('wood','#ac9669',{side:THREE.DoubleSide}),0,0,0,g);}
- leanRoof31(g,dx,front+.01,3.1,1.3,2.96,'wood','#ac976c');for(const s of[-1,1]){box(dx+s*1.4,1.28,front+1.22,.14,2.56,.14,'wood','#9e8657',g);obstacle(x+dx+s*1.4,z+front+1.22,.18,.18,'porch post');}lantern(w*.40,2.4,front+.3,g);
- for(let i=0;i<2;i++)box(dx,.10-i*.06,front+.5+i*.4,2.15,.16,.43,'wood','#baa274',g);obstacle(x,z,w+.12,d+.12,'building');world.userData.buildings.push(g);architecture31.houses++;return g;
-};
+// Woodland housing is owned by systems/world-kit.js.
+
 reliefShelter=function(x,z,w,d){
  const g=new THREE.Group();g.position.set(x,groundAt(x,z),z);g.userData={worldHouse:true,kind:'relief-pavilion',footprint:{w,d},front:V3(0,0,1),door:V3(x,g.position.y,z+d/2),architecture31:{theme:'open pavilion',walkThrough:true}};world.add(g);
  for(const xx of[-w/2,w/2])for(const zz of[-d/2,d/2]){box(xx,1.6,zz,.2,3.2,.2,'wood','#9b8058',g);ropeWrap(g,xx,2.8,zz,.16);obstacle(x+xx,z+zz,.25,.25,'pavilion post');}
@@ -80,12 +71,8 @@ for(const name of ['brook','fern']){
  const build=function(...args){const start=Object.fromEntries(Object.entries(world.userData.plantMatrices).map(([k,a])=>[k,a.length])),g=original(...args);g.userData.plantRanges=Object.fromEntries(Object.entries(world.userData.plantMatrices).map(([k,a])=>[k,{start:start[k],end:a.length}]));return g;};
  if(name==='brook')brookHouse=build;else fernHouse=build;
 }
-building=function(x,z,w,d,v,kit){
- const start=colliders.length,g=kit==='fern'?fernHouse(x,z,w,d,v):kit==='relief'?reliefShelter(x,z,w,d):brookHouse(x,z,w,d,'home'),lane=closestLane(x,z),angle=Math.round(Math.atan2(lane.x-x,lane.z-z)/(Math.PI/2))*Math.PI/2;
- if(kit!=='fern'&&kit!=='relief')for(const xx of[-w*.28,w*.28])window31(g,xx,4.3,-d/2-.1,Math.PI,.83);
- if(Math.abs(angle)>.01){const rotation=new THREE.Matrix4().makeTranslation(x,0,z).multiply(new THREE.Matrix4().makeRotationY(angle)).multiply(new THREE.Matrix4().makeTranslation(-x,0,-z));for(const[k,r]of Object.entries(g.userData.plantRanges??{}))for(let i=r.start;i<r.end;i++)world.userData.plantMatrices[k][i].premultiply(rotation);const swap=Math.abs(Math.sin(angle))>.5;for(const c of colliders.slice(start)){const p=V3(c.x,0,c.z).applyMatrix4(rotation);c.x=p.x;c.z=p.z;if(swap)[c.w,c.d]=[c.d,c.w];}g.rotation.y=angle;}
- g.updateMatrixWorld(true);g.userData.door=g.localToWorld(V3(-w*(kit==='fern'?.18:kit==='relief'?0:.15),0,d/2+1.1));g.userData.front=V3(Math.sin(angle),0,Math.cos(angle));return g;
-};
+// Regional building placement is owned by systems/world-kit.js.
+
 const treeEntranceBefore31=buildSolidTree;
 buildSolidTree=function(x,z,...args){for(const g of world?.userData.buildings??[]){if(g.parent!==world||!g.userData.architecture31||!g.userData.door)continue;const d=g.userData.door,f=g.userData.front,dx=x-d.x,dz=z-d.z,along=dx*f.x+dz*f.z,across=dx*f.z-dz*f.x;if(along>-.4&&along<4.8&&Math.abs(across)<2.2)return null;}return treeEntranceBefore31(x,z,...args);};
 openHall=function(id,w,d,kind){

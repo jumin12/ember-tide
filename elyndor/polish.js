@@ -134,10 +134,8 @@ setupPost=function(){initializePost();post.target.texture.type=THREE.HalfFloatTy
 resize=function(){const high=state.settings.quality==='high',low=state.settings.quality==='low',ratio=Math.min(devicePixelRatio,high?1.5:1.25),scale=low?.78:perf.scale;renderer.setPixelRatio(ratio);const w=Math.max(320,Math.round(innerWidth*scale)),h=Math.max(240,Math.round(innerHeight*scale));renderer.setSize(w,h,false);post.target.setSize(Math.round(w*ratio),Math.round(h*ratio));post.material.uniforms.resolution.value.set(w*ratio,h*ratio);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();};
 const menuBeforeOptimization=renderMenu;
 renderMenu=function(){menuBeforeOptimization();const quality=$('#setting-quality');if(quality){quality.innerHTML='<option value="balanced">Balanced</option><option value="high">Cinematic</option><option value="low">Performance</option>';quality.value=state.settings.quality;quality.onchange=e=>{state.settings.quality=e.target.value;perf.scale=1;saveSettings();resize();const size=state.settings.quality==='high'?1536:1024;if(sun.shadow.mapSize.x!==size){sun.shadow.map?.dispose();sun.shadow.map=null;sun.shadow.mapSize.set(size,size);}renderer.shadowMap.needsUpdate=true;sun.shadow.needsUpdate=true;updateRenderBudget(true);};}};
-loop=function(now){if(!lastFrame)lastFrame=now;const elapsed=Math.min((now-lastFrame)/1000,.12);lastFrame=now;const live=performance.now()>manualUntil;if(live)tick(Math.min(elapsed,.05));render();
- if(live&&state.mode==='explore'&&!menu&&state.settings.quality==='balanced'&&++perf.frames>150){perf.slow=elapsed>.031?perf.slow+1:Math.max(0,perf.slow-1);perf.fast=elapsed<.0175?perf.fast+1:0;if(perf.slow>35&&perf.scale>.76){perf.scale=Math.max(.76,perf.scale-.04);perf.slow=0;resize();}else if(perf.fast>240&&perf.scale<1){perf.scale=Math.min(1,perf.scale+.02);perf.fast=0;resize();}}
- requestAnimationFrame(loop);
-};
+// Presentation pacing is owned by systems/runtime.js.
+
 // Authored landmarks share the same physical roads, heightfield and collision rules.
 function addAuthoredGateway(){
  const x=-84,z=-59,y=exactGround(x,z),g=new THREE.Group();g.position.set(x,y,z);world.add(g);world.userData.buildings.push(g);g.userData.landmark='Highmere gate';

@@ -1,0 +1,33 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+const storage=new Map(),context=vm.createContext({console,Date,Set,Map,Math,JSON,Number,Error,Blob,URL,setTimeout,localStorage:{getItem:k=>storage.get(k)??null,setItem:(k,v)=>storage.set(k,v),removeItem:k=>storage.delete(k)},THREE:{Vector3:class{},Vector2:class{},Raycaster:class{}},MutationObserver:class{observe(){}},document:{addEventListener(){},querySelector:()=>({}),querySelectorAll:()=>[]}});
+vm.runInContext(fs.readFileSync('elyndor/data.js','utf8'),context);
+vm.runInContext(`let readSave,saveSlot,autoSave,loadSlot,removeSave19;const LIGHT_SITES=['fern','alder','relief','site'].map(id=>({id,repair:id+'_repaired',beat:id+'Light',area:'entrance'}));const PLACES={approach:[0,0]};const LOCAL_REQUESTS16={fern:{},harbor:{}};BEATS.push(['siteLight',2,'Light','Light','Site']);`,context);
+vm.runInContext(fs.readFileSync('elyndor/systems/combat.js','utf8'),context);
+vm.runInContext(fs.readFileSync('elyndor/systems/persistence.js','utf8'),context);
+const run=source=>vm.runInContext(source,context);
+run(`globalThis.valid=initialState();valid.version=5;valid.questId='arrival';valid.scene='entrance';valid.position={x:12,z:14};valid.savedAt=Date.now();`);
+assert.equal(run(`normalizeJourneySave(valid).questId`),'arrival');
+run(`BEATS.unshift(['inserted',0,'New quest','New quest','Brookstead']);`);
+assert.equal(run(`normalizeJourneySave(valid).beat`),1,'Stable IDs must survive reordered quests');
+assert.equal(run(`normalizeJourneySave({...valid,version:4,questId:undefined,beat:0}).questId`),'arrival','Legacy numeric IDs must use a frozen migration table');
+assert.throws(()=>run(`normalizeJourneySave({...valid,questId:'unknown'})`),/quest/);
+assert.throws(()=>run(`normalizeJourneySave({...valid,position:{x:null,z:0}})`),/position/);
+assert.throws(()=>run(`normalizeJourneySave({...valid,members:['missing']})`),/party/);
+assert.throws(()=>run(`normalizeJourneySave({...valid,characters:null})`),/character/);
+assert.equal(run(`normalizeJourneySave({...valid,gold:-20}).gold`),0);
+run(`globalThis.encoded=encodeJourneySave(valid);`);assert.equal(run(`parseJourneySave(encoded).questId`),'arrival');
+assert.throws(()=>run(`parseJourneySave(encoded.replace('"gold":180','"gold":9000'))`),/damaged/);
+run(`writeJourneyRecord('1',valid);writeJourneyRecord('1',{...valid,gold:240});localStorage.setItem('elyndor-save-v5-1','broken');`);
+assert.equal(run(`readSave('1').gold`),180,'A corrupt primary must recover the previous valid record');
+assert.equal(run(`saveManager.recovered.has('1')`),true);
+
+run(`globalThis.optional=normalizeJourneySave({...valid,localRequests16:{fern:{accepted:true,done:[0,0,1,99,-1],claimed:true},unknown:{accepted:true,done:[0,1,2],claimed:true}},trackedRequest16:"unknown"});`);assert.deepEqual(JSON.parse(run("JSON.stringify(optional.localRequests16.fern.done)")),[0,1]);assert.equal(run("optional.localRequests16.fern.claimed"),false);assert.equal(run("optional.trackedRequest16"),null);
+
+run(`globalThis.ceremony={...valid,questId:'siteLight',restoredLights:['fern','alder','relief','site'],regionalRestoration:{order:['alder','fern','relief','site'],origin:{scene:'entrance',position:[0,0]}}};`);
+assert.equal(run(`normalizeJourneySave(ceremony).regionalRestoration.order[0]`),'alder');
+assert.throws(()=>run(`normalizeJourneySave({...ceremony,regionalRestoration:{...ceremony.regionalRestoration,order:['fern','fern','relief','site']}})`),/ceremony/);
+assert.throws(()=>run(`normalizeJourneySave({...ceremony,regionalRestoration:{...ceremony.regionalRestoration,origin:{scene:'missing',position:[0,0]}}})`),/ceremony/);
+assert.throws(()=>run(`normalizeJourneySave({...ceremony,regionalRestoration:{...ceremony.regionalRestoration,origin:{scene:'entrance',position:[null,0]}}})`),/ceremony/);
+console.log(JSON.stringify({pass:true,cases:['stable quest identity','frozen legacy migration','unknown quest','invalid position','invalid party','invalid character data','numeric bounds','checksum','backup recovery','optional task validation','ordered ceremony recovery validation']}));

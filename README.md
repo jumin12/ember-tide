@@ -1,5 +1,25 @@
 # The Last Light of Elyndor
 
+## Alpha Version 1.13 — Atlas geography and distinct destinations
+
+The overworld and its interactive 3D atlas share the refreshed current atlas coastline, northern relief, continuous freshwater curves and native forest positions. Four climate weights blend snow, grass, scrub, sand and volcanic rock across irregular transition areas. The southern volcanic island has been moved farther offshore and south at the owner's request; the harbor moves with its native coastal position. The closest mainland-to-island separation is approximately 102 world metres.
+
+The POI pass introduces covered woodland pavilions, stronger stone civic silhouettes, supply courts, a subterranean Fern remnant, ruined arches, secluded crystal pedestals and roadside planting. Neighboring village shells have been removed from patrols, ruins and Light clearings. A new 512-pixel PixelLab cliff texture and normal map replace striped rock surfaces; cliff sampling uses three planes to avoid stretching. Adjacent overworld crossings now share continuous bridges and bank approaches.
+
+The green region’s Valenne and Brook rivers are restored. The desert has a winding main river, two joining tributaries, a headwater oasis and one coastal outlet. Joined water geometry, graded silt banks and a new PixelLab current texture replace broken raster strips. Each POI now has a natural perimeter, usable glowing door/trail thresholds and walk-in or E transitions. Snow coats foliage and retains alternating tracks; visible bodies have pooled contact shadows.
+
+Current reference facts and validation are recorded in `elyndor/docs/world-concept-pass.md` and `output/elyndor/world-v38/`. The 13 named playable atlas destinations retain exact coordinates; the northern opening and Network Light remain derived local destinations. Later regions retain their approved unexplored status. This is a playable 3D interpretation of the concept art, not a pixel-identical rendering of its illustrations.
+
+Validation: all 12 serial checks passed on the standalone, including 15 locations, 112 interaction routes, seven crossings, seven interior round trips and the full approved campaign. Twelve travel/combat circuits retained stable shader/texture counts. The stricter device repeat measured about 71–72 FPS normally, 70 FPS on throttled desktop and 48 FPS in heavily throttled portrait emulation; physical phones remain unmeasured. See the world-concept ledger for the retained initial throttling outlier and measurement scope.
+
+## Alpha Version 1.12 — Campaign systems and regional worlds
+
+The game now uses a fixed 60 Hz simulation and explicit subsystem ownership for timing, saves, events, combat and regional architecture. Journey records use stable quest IDs, validated checksums, recovery copies and portable file import/export. Campaign work has path recovery; the four-Light regional restoration loads each actual location in repair order. Encounters have differentiated rewards, initiative, enemy intentions, weaknesses and consistent growth calculations.
+
+Current Google Drive POI concepts inform pitched woodland houses, pale-stone capital architecture and community delivery work. The live atlas contributes 25 named places and the exact coordinates of three coastal harbor landmarks; later-region story remains outside the approved chapters. Seven native PixelLab creature families include a 256px ogre and detailed heavy stone creature with explicit species heights and collision radii. New native stone/woodland materials and ElevenLabs region/creature sounds are embedded in the single HTML.
+
+Validation and measured hardware scope are recorded in `elyndor/docs/stabilization-plan.md` and `output/elyndor/stabilization/`. Repeated-travel testing removed an old-world reference and repeated water-shader decoration. Fixed-step timing, original-input tutorial, campaign, building clearance, portable saves, interrupted restoration and lifecycle checks pass. The final native run measures about 72 FPS normally and 63 FPS in heavily CPU-throttled portrait emulation; physical phones remain unmeasured. Physical-device performance is not inferred from browser emulation alone.
+
 ## Alpha Version 1.11 — Loading and device performance
 
 The standalone now reads its embedded assets in disposable JSON blocks, reports real preparation stages, warms native textures and every scene LOD, and decodes short sound effects before play. The atlas uses the actual baked height field and tree positions without retaining the full continent’s close-up vegetation. Shader programs are cached without keeping departed scenes alive; party replacements release their owned canvases. Shared foliage buffers, reusable sprite planes, one-draw world weather and device budgets reduce runtime work while preserving the existing art.

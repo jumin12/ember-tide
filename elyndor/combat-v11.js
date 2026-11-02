@@ -22,7 +22,7 @@ comboHit=function(){
  if(hit){c.success++;applyLiveChainHit(c,true);floatText(c.actor,c.step===2?'Perfect chain':'Good timing',true);}else{sfx('miss');$('#combo-progress').textContent='Miss · Recovering';}
 };
 function applyLiveChainHit(c,hit){
- if(c.applied||c.target.hp<=0)return;const a=c.actor,id=c.id,asc=state.characters[id].ascended,from=V3(a.x,heightAt(a.x,a.z)+1,a.z),to=V3(c.target.actor.x,heightAt(c.target.actor.x,c.target.actor.z)+1,c.target.actor.z),kind=id==='bren'?'blade':id==='tavin'?'arrow':id==='lysa'?'fire':'arcane';
+ if(c.applied||c.target.hp<=0)return;const a=c.actor,id=c.id,asc=state.characters[id].ascended,from=V3(a.x,heightAt(a.x,a.z)+1,a.z),to=actorImpactPoint(c.target.actor),kind=id==='bren'?'blade':id==='tavin'?'arrow':id==='lysa'?'fire':'arcane';
  if(id!=='bren'&&!c.projectileStarted){c.projectileStarted=true;c.hitIntent=hit;c.contactAt=clock+.16;c.impactUntil=clock+.045;combatProjectile(kind,from,to,.16,asc||hit&&c.step===2);return;}
  if(id!=='bren'&&clock<c.contactAt)return;c.applied=true;if(id==='bren')c.impactUntil=clock+.045;
  const power=(hit?.42+c.step*.11:.23)*(asc?1.8:1),damage=Math.max(1,Math.round(stats(id).atk*power)),strong=hit&&c.step===2||asc;
@@ -57,14 +57,7 @@ battleAction=function(type,index=0){
  const id=currentFighter();if(type==='skill'&&id==='bren'&&index===1&&battle?.status==='choose'){if(state.characters[id].mp<CAST[id].skill[index][2])return toast('Not enough MP.');executeSkill(id,index,0);return;}
  actBeforePartySkills(type,index);
 };
-const skillBeforeClearTargets=executeSkill;
-executeSkill=function(id,index,targetIndex){
- if(id==='lysa'&&index===1){const c=state.characters[id],sk=CAST[id].skill[index],a=actorFor(id);c.mp-=sk[2];battle.pending=null;a.action='cast';a.actionTime=0;speak(id,sk[0]);startActionAnimation({actor:a,duration:1.05,apply:()=>{for(const e of battle.enemies.filter(e=>e.hp>0)){castFX('ice',V3(a.x,heightAt(a.x,a.z)+1,a.z),V3(e.actor.x,heightAt(e.actor.x,e.actor.z)+1,e.actor.z),c.ascended);damageEnemy(e,Math.round(stats(id).atk*sk[4]*(c.ascended?1.8:1)));}},done:finishTurn});return;}
- skillBeforeClearTargets(id,index,targetIndex);
- if(battle?.animation){const cue=battle.animation,apply=cue.apply;cue.duration=id==='bren'?.95:1.1;
-  if(cue.launch){const target=battle.enemies[battle.target]?.hp>0?battle.enemies[battle.target]:battle.enemies.find(e=>e.hp>0),a=actorFor(id),kind=CAST[id].skill[index][3];cue.launch=()=>combatProjectile(kind,V3(a.x,heightAt(a.x,a.z)+1.1,a.z),V3(target.actor.x,heightAt(target.actor.x,target.actor.z)+1,target.actor.z),cue.duration*.26,state.characters[id].ascended);}
-  if(id==='mira'&&index===1)cue.apply=()=>{apply();for(const k of state.members){const a=actorFor(k);if(a&&state.characters[k].hp>0)castFX('ward',V3(a.x,heightAt(a.x,a.z),a.z),V3(a.x,heightAt(a.x,a.z)+1,a.z),state.characters[id].ascended);}};}
-};
+// Skills are resolved by the shared combat rules.
 CAST.lysa.skill[1][1]='Ice erupts beneath every opponent.';
 const renderBattleBeforeStatuses=renderBattle;
 renderBattle=function(...args){renderBattleBeforeStatuses(...args);if(!battle)return;let node=$('#battle-status-effects');if(!node){node=document.createElement('div');node.id='battle-status-effects';$('#battle-hud').append(node);}node.innerHTML=(battle.ward>0?'<span>◇ Party ward · '+battle.ward+' rounds</span>':'')+[...battle.guards].map(id=>'<span>♜ '+esc(CAST[id].name)+' is guarding</span>').join('');};

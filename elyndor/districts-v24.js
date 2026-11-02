@@ -55,7 +55,7 @@ function buildDistrictPlots24(){
   const x=mix(b[0]+12,b[1]-12,rng()),z=mix(b[2]+12,b[3]-12,rng()),d=roadDistance(x,z),h=groundAt(x,z);
   if(insideRect24(x,z,core,7)||d<9||d>17||h<.6||waterGround(x,z)||plots.some(p=>Math.hypot(p.x-x,p.z-z)<22))continue;
   let free=true;for(const xx of[-5,0,5])for(const zz of[-4,0,4])if(!staticFree(x+xx,z+zz,.6)||Math.abs(groundAt(x+xx,z+zz)-h)>.55)free=false;if(!free)continue;
-  const start=colliders.length,plantStart=Object.fromEntries(Object.entries(world.userData.plantMatrices).map(([k,a])=>[k,a.length])),g=activeScene.key==='fern'?fernHouse(x,z,8,7,j%3):activeScene.key==='relief'?reliefShelter(x,z,9,7):brookHouse(x,z,9,8,'home');
+  const start=colliders.length,plantStart=Object.fromEntries(Object.entries(world.userData.plantMatrices).map(([k,a])=>[k,a.length])),g=activeScene.key==='fern'?fernHouse(x,z,8,7,j%3):activeScene.key==='relief'?reliefShelter(x,z,9,7):activeScene.key==='highmere'?royalHouse(x,z,10,8,j%3):brookHouse(x,z,9,8,'home');
   g.userData.district24=true;g.userData.plantRanges=Object.fromEntries(Object.entries(world.userData.plantMatrices).map(([k,a])=>[k,{start:plantStart[k],end:a.length}]));
   plots.push({x,z,g,colliders:colliders.slice(start)});
  }

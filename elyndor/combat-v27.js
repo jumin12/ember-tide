@@ -12,19 +12,19 @@ function updateEnemyBars27(){
  let host=$('#world-enemy-bars27');if(!host){host=document.createElement('div');host.id='world-enemy-bars27';document.body.append(host);}
  const visible=!!battle&&!menu&&!dialogue&&!resultsPage;host.hidden=!visible;if(!visible)return;
  if(host.dataset.battle27!==String(battle.started??battle.center.x)+':'+battle.enemies.map(e=>e.name).join('|')||host.children.length!==battle.enemies.length){host.dataset.battle27=String(battle.started??battle.center.x)+':'+battle.enemies.map(e=>e.name).join('|');host.innerHTML=battle.enemies.map((e,i)=>`<button class="foe-bar27" data-enemy="${i}" aria-label="Select ${esc(e.name)}"><span>${esc(e.name)}</span><div><i></i></div><small></small></button>`).join('');}
- battle.enemies.forEach((e,i)=>{const node=host.children[i],a=e.actor,p=V3(a.x,a.mesh.position.y-.08,a.z).project(camera);node.hidden=!a.mesh.visible||e.hp<=0||p.z>1;node.style.left=(p.x*.5+.5)*innerWidth+'px';node.style.top=(-p.y*.5+.5)*innerHeight+13+'px';node.classList.toggle('selected',battle.target===i);node.querySelector('i').style.width=clamp(e.hp/e.maxHp*100,0,100)+'%';node.querySelector('small').textContent=e.hp+' / '+e.maxHp;});
+ battle.enemies.forEach((e,i)=>{const node=host.children[i],a=e.actor,p=V3(a.x,a.mesh.position.y-.08,a.z).project(camera);node.hidden=!a.mesh.visible||e.hp<=0||p.z>1;node.style.left=(p.x*.5+.5)*innerWidth+'px';node.style.top=(-p.y*.5+.5)*innerHeight+13+'px';node.classList.toggle('selected',battle.target===i);node.querySelector('i').style.width=clamp(e.hp/e.maxHp*100,0,100)+'%';node.querySelector('small').textContent=e.hp+' / '+e.maxHp;let intent=node.querySelector('.enemy-intent');if(!intent){intent=document.createElement('em');intent.className='enemy-intent';node.append(intent);}const text=e.staggered?'Staggered':e.intent?e.intent.label+(e.intent.target?' → '+CAST[e.intent.target].name:''):'';if(intent.textContent!==text)intent.textContent=text;intent.classList.toggle('heavy',e.intent?.type==='heavy');let weak=node.querySelector('.enemy-weakness');if(!weak){weak=document.createElement('span');weak.className='enemy-weakness';node.append(weak);}weak.textContent=e.exposed?'Armor opened':e.weakness?'Weak point · '+({blade:'Blade',arrow:'Bow',arcane:'Arcane',fire:'Fire',ice:'Ice'}[e.weakness]??e.weakness):'';});
  timeline27();
 }
 // Alpha-tested outline uses the actor's existing lit sprite; no rectangular glow.
 const makeActorBefore27=createActor;
 createActor=function(...args){
  const a=makeActorBefore27(...args),m=a.mesh.material,before=m.onBeforeCompile,key=m.customProgramCacheKey();a.selection27={value:0};
- m.onBeforeCompile=sh=>{before(sh);sh.uniforms.selected27=a.selection27;sh.uniforms.spriteTexel27={value:new THREE.Vector2(1/m.map.image.width,1/m.map.image.height)};
- sh.fragmentShader='uniform float selected27;uniform vec2 spriteTexel27;float selectionEdge27;\n'+sh.fragmentShader;
+ m.onBeforeCompile=sh=>{before(sh);sh.uniforms.selected27=a.selection27;sh.uniforms.outlineScale27={value:Math.min(1,2.3/a.size)};sh.uniforms.spriteTexel27={value:new THREE.Vector2(1/m.map.image.width,1/m.map.image.height)};
+ sh.fragmentShader='uniform float selected27,outlineScale27;uniform vec2 spriteTexel27;float selectionEdge27;\n'+sh.fragmentShader;
  sh.fragmentShader=sh.fragmentShader.replace('#include <alphatest_fragment>',`selectionEdge27=0.;
  #ifdef USE_MAP
  if(selected27>.01 && diffuseColor.a<alphaTest){
-  vec2 d27=spriteTexel27*2.;float near27=0.;
+  vec2 d27=max(fwidth(vMapUv)*1.6,spriteTexel27*.15);float near27=0.;
   near27=max(near27,texture2D(map,vMapUv+vec2(d27.x,0.)).a);near27=max(near27,texture2D(map,vMapUv-vec2(d27.x,0.)).a);
   near27=max(near27,texture2D(map,vMapUv+vec2(0.,d27.y)).a);near27=max(near27,texture2D(map,vMapUv-vec2(0.,d27.y)).a);
   near27=max(near27,texture2D(map,vMapUv+d27*.707).a);near27=max(near27,texture2D(map,vMapUv-d27*.707).a);

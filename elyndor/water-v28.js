@@ -44,7 +44,7 @@ function cascadeMist28(){
  const m=new THREE.ShaderMaterial({transparent:true,depthTest:true,depthWrite:false,blending:THREE.AdditiveBlending,uniforms:{time:weather.time,flow:sluice18.flow,day:cinema22.day},vertexShader:`attribute vec3 mistSeed28;uniform float time,flow;varying float a28;void main(){float age=fract(time*(.14+mistSeed28.y*.1)+mistSeed28.x);vec3 p=position;p.x+=sin(mistSeed28.z*37.)*age*.6;p.y+=sin(age*3.14159)*(.3+mistSeed28.y*.75);p.z+=age*.6;vec4 mv=modelViewMatrix*vec4(p,1.);gl_Position=projectionMatrix*mv;gl_PointSize=clamp((8.+mistSeed28.z*9.)*32./max(5.,-mv.z),2.,19.);a28=sin(age*3.14159)*flow*.075;}`,fragmentShader:`uniform float day;varying float a28;void main(){vec2 p=gl_PointCoord-.5;float a=exp(-dot(p,p)*17.)*a28;if(a<.003)discard;gl_FragColor=vec4(mix(vec3(.15,.25,.36),vec3(.77,.95,1.05),day),a);}`});
  const o=new THREE.Points(g,m);o.userData.dynamicFX=true;o.userData.waterMist28=true;o.frustumCulled=false;world.add(o);world.userData.mist28=o;
 }
-const waterBuildBefore28=buildWorld;
+const streamMaterials28=new WeakSet(),waterBuildBefore28=buildWorld;
 buildWorld=function(...args){
  const r=waterBuildBefore28(...args);
  for(const o of[water,...world.userData.waterPools??[],...world.userData.brookFallObjects??[]]){
@@ -56,7 +56,7 @@ buildWorld=function(...args){
   }refineWater28(o);
  }
  const seen=new Set();world.traverse(o=>{
-  const m=o.material;if(!o.userData.dynamicWater||!m?.isMeshStandardMaterial||seen.has(m)||m.userData.water20)return;seen.add(m);
+  const m=o.material;if(!o.userData.dynamicWater||!m?.isMeshStandardMaterial||seen.has(m)||m.userData.water20||m.userData.flowSurface39||streamMaterials28.has(m))return;seen.add(m);streamMaterials28.add(m);
   const before=m.onBeforeCompile,key=m.customProgramCacheKey();m.roughness=.23;m.metalness=0;
   m.onBeforeCompile=sh=>{before(sh);if(!sh.fragmentShader.includes('streamWorld'))return;sh.fragmentShader=sh.fragmentShader.replace('diffuseColor.rgb+=ripple*.018;','');sh.fragmentShader=sh.fragmentShader.replace('#include <normal_fragment_maps>',`#include <normal_fragment_maps>
    float gx28=sin(streamWorld.x*2.1+sin(streamWorld.z*.9-riverTime*.7))*.045+sin(streamWorld.x*4.7-streamWorld.z*2.3+riverTime)*.018;

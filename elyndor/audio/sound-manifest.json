@@ -931,6 +931,66 @@
       "sha256": "6a61a299d09de7c219258050cda64e4cc0f6652ae79c01da468a1d342cb74152",
       "model": "eleven_text_to_sound_v2",
       "prompt": "An old wooden river sluice lifting: a short deep timber and iron-chain creak followed immediately by a powerful natural rush of pressurized river water spilling through a gate into a rocky channel. Rich stereo whitewater and small clear splashes. Eight-second graceful transition from forceful initial surge to steady flowing water. Real outdoor game foley, no speech, no music, no explosion."
+    },
+    {
+      "id": "stone-heavy-step",
+      "kind": "effect",
+      "loop": false,
+      "file": "elyndor/audio/sound/stone-heavy-step.ogg",
+      "bytes": 34666,
+      "sha256": "23165c2ff597fd476cfefde14a53b44514a2b9b0e9c4c2d247264560e10ff9b9",
+      "model": "eleven_text_to_sound_v2",
+      "prompt": "A single enormous natural stone creature planting its weight: textured granite grind, deep grounded thud and a few small pebbles settling. Rich detailed fantasy RPG foley, powerful but organic. Dry isolated sound, no speech, no music, no reverberant tail."
+    },
+    {
+      "id": "forest-wing-rustle",
+      "kind": "effect",
+      "loop": false,
+      "file": "elyndor/audio/sound/forest-wing-rustle.ogg",
+      "bytes": 31290,
+      "sha256": "92a32dea608f1eb1e714cc3ef79ff02e21f4701303720eddd31d993797b3b076",
+      "model": "eleven_text_to_sound_v2",
+      "prompt": "One large woodland ground bird suddenly flutters its folded wings and scratches earth with two clawed feet. Crisp layered feathers, tiny leaves and a low natural bird chirr. Detailed isolated outdoor wildlife foley. No speech, no music."
+    },
+    {
+      "id": "light-network-chime",
+      "kind": "effect",
+      "loop": false,
+      "file": "elyndor/audio/sound/light-network-chime.ogg",
+      "bytes": 114650,
+      "sha256": "134aa0ac1316787fbb070bfb26d5cbe7bb8cb93eced6cd8d243a955a7260cf75",
+      "model": "eleven_text_to_sound_v2",
+      "prompt": "A beautiful crystalline restoration sound for a fantasy RPG: a delicate clear glass resonance opens into a warm ascending harmonic chord, several separated sparkling chimes answer across a wide space, then a long gentle shimmering release. Grand emotional organic magic with clean high detail and a soft low foundation. No voice, no percussion, no music melody."
+    },
+    {
+      "id": "ambient-highmere-garden",
+      "kind": "ambience",
+      "loop": true,
+      "file": "elyndor/audio/sound/ambience-highmere-garden.ogg",
+      "bytes": 128241,
+      "sha256": "32531fc8ee5194578b12a418ff7e3602969603d94084a1ae0df8c56efa67b71d",
+      "model": "eleven_text_to_sound_v2",
+      "prompt": "Seamless quiet outdoor royal courtyard ambience: light wind across leafy trees, a distant small stone fountain and occasional gentle birds far away. Natural open air stereo space. Calm and detailed, no voices, no footsteps, no music, no sudden events. Seamless loop."
+    },
+    {
+      "id": "ambient-fern-water",
+      "kind": "ambience",
+      "loop": true,
+      "file": "elyndor/audio/sound/ambience-fern-water.ogg",
+      "bytes": 134694,
+      "sha256": "ff0852299ce5c5504737ccbf1b152f6e4f25d1646a5898c8ff1a39548144a2a6",
+      "model": "eleven_text_to_sound_v2",
+      "prompt": "Seamless woodland village ambience: soft river flowing over small mossy stones below a wooden terrace, breeze in broad leaves and a few distant woodland birds. Natural open air stereo space, subdued foreground detail. No voices, no footsteps, no music, no sudden events. Seamless loop."
+    },
+    {
+      "id": "ogre-club-smash",
+      "kind": "effect",
+      "loop": false,
+      "file": "elyndor/audio/sound/ogre-club-smash.ogg",
+      "bytes": 39731,
+      "sha256": "1bef8175911b3d815037dd4c3eb3f391c78582f9278c2c7338e9eb3f17d690d8",
+      "model": "eleven_text_to_sound_v2",
+      "prompt": "An enormous wooden war club smashing into packed earth: a fast heavy air whoosh, explosive deep woody thump, textured cracking impact, small stone debris skittering and a short gritty settling tail. Powerful cinematic fantasy battle foley, detailed and punchy, natural physical sound. No voices, no music, no repeated impacts, no long reverberation."
     }
   ]
 }

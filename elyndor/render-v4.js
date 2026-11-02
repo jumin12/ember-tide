@@ -56,10 +56,5 @@ updateReflection=function(){
 const completeSceneRender=render;
 render=function(){return completeSceneRender();};
 const displayPacing={last:0,samples:[],period:1000/60};
-loop=function(now){
- requestAnimationFrame(loop);const interval=now-displayPacing.last;displayPacing.last=now;if(!scenery.software&&interval>3&&interval<25){displayPacing.samples.push(interval);if(displayPacing.samples.length>60)displayPacing.samples.shift();if(displayPacing.samples.length>=30){const sorted=displayPacing.samples.slice().sort((a,b)=>a-b),refresh=sorted[Math.floor(sorted.length/2)],hz=1000/refresh;let divisor=Math.max(1,Math.round(hz/60));if(hz/divisor<50)divisor=Math.max(1,divisor-1);displayPacing.period=refresh*divisor;}}
- if(document.hidden||now<scenery.lastPaint-.5)return;scenery.lastPaint=Math.max(scenery.lastPaint+displayPacing.period,now+.1);if(!lastFrame)lastFrame=now;const elapsed=Math.min((now-lastFrame)/1000,.25);lastFrame=now;
- if(menu){if(scenery.pausedTab!==menu.tab){render();scenery.pausedTab=menu.tab;}return;}scenery.pausedTab=null;const live=performance.now()>manualUntil;
- if(live)for(let remaining=elapsed;remaining>.00001;remaining-=1/60)tick(Math.min(remaining,1/60));render();
- if(live&&state.mode==='explore'&&state.settings.quality==='balanced'&&++perf.frames>12){const minimum=softwareBudget()?.5:.68,maximum=softwareBudget()?.78:1;perf.slow=elapsed>displayPacing.period/1000*1.6?perf.slow+1:Math.max(0,perf.slow-1);perf.fast=elapsed<displayPacing.period/1000*1.2?perf.fast+1:0;if(perf.slow>5&&perf.scale>minimum){perf.scale=Math.max(minimum,perf.scale-.06);perf.slow=0;resize();}else if(perf.fast>300&&perf.scale<maximum){perf.scale=Math.min(maximum,perf.scale+.02);perf.fast=0;resize();}}
-};
+// Presentation pacing is owned by systems/runtime.js.
+

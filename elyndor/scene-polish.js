@@ -23,22 +23,8 @@ const cutawayUniforms={circles:{value:Array.from({length:4},()=>new THREE.Vector
 function closestLane(x,z,s=currentScene()){
  let best={distance:Infinity,x:0,z:0};for(let i=1;i<s.path.length;i++){const a=s.path[i-1],b=s.path[i],dx=b[0]-a[0],dz=b[1]-a[1],t=clamp(((x-a[0])*dx+(z-a[1])*dz)/(dx*dx+dz*dz),0,1),px=a[0]+dx*t,pz=a[1]+dz*t,d=Math.hypot(x-px,z-pz);if(d<best.distance)best={distance:d,x:px,z:pz};}return best;
 }
-const laneFacingBuilding=building;
-building=function(x,z,w,d,v,kit){
- const objects=new Set(world.children),start=colliders.length,plantStart=Object.fromEntries(Object.entries(world.userData.plantMatrices).map(([k,a])=>[k,a.length])),g=laneFacingBuilding(x,z,w,d,v,kit);
- const lane=closestLane(x,z),angle=Math.round(Math.atan2(lane.x-x,lane.z-z)/(Math.PI/2))*Math.PI/2;
- if(Math.abs(angle)>.01){
-  for(const o of world.children.slice())if(o!==g&&!objects.has(o))g.attach(o);
-  const rotation=new THREE.Matrix4().makeTranslation(x,0,z).multiply(new THREE.Matrix4().makeRotationY(angle)).multiply(new THREE.Matrix4().makeTranslation(-x,0,-z));
-  for(const[k,a]of Object.entries(world.userData.plantMatrices))for(let i=plantStart[k];i<a.length;i++)a[i].premultiply(rotation);
-  const swap=Math.abs(Math.sin(angle))>.5;for(const c of colliders.slice(start)){const p=V3(c.x,0,c.z).applyMatrix4(rotation);c.x=p.x;c.z=p.z;if(swap)[c.w,c.d]=[c.d,c.w];}
-  g.rotation.y=angle;
- }
- g.userData.plantRanges=Object.fromEntries(Object.entries(world.userData.plantMatrices).map(([key,a])=>[key,{start:plantStart[key],end:a.length}]));
- g.updateMatrixWorld(true);g.userData.door=g.localToWorld(V3(-w*.17,0,d/2+.9));g.userData.front=V3(Math.sin(angle),0,Math.cos(angle));
- if(['brook','capital'].includes(kit))architecturalDetails(g,w,d,v,kit);
- return g;
-};
+// Regional building placement is owned by systems/world-kit.js.
+
 function architecturalDetails(g,w,d,v,kit){
  const h=4.9+(v%2)*.8;
  // Individual inset masonry, joinery, shutters and eaves give the shared kit scale.

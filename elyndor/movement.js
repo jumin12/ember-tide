@@ -5,7 +5,7 @@ function facingForMotion(dx,dz){const b=screenBasis(),sx=dx*b.right.x+dz*b.right
 function stableActorFacing(a,dx,dz){const b=screenBasis(),angle=Math.atan2(dx*b.down.x+dz*b.down.z,dx*b.right.x+dz*b.right.z),current=WALK_DIRECTIONS.indexOf(a.face),delta=current<0?Infinity:Math.atan2(Math.sin(angle-current*Math.PI/4),Math.cos(angle-current*Math.PI/4));return Math.abs(delta)<Math.PI/8+.075?a.face:WALK_DIRECTIONS[(Math.round(angle/(Math.PI/4))+8)%8];}
 function actorsCollide(a,b){if(a===b||!b.mesh.visible||b.enemy)return false;if(a.party&&b.party)return false;return true;}
 moveActor=function(a,dx,dz,dt,crowd=true){
- const old={x:a.x,z:a.z},free=q=>edgeFree(a,q,actorRadius(a))&&(!crowd||!actors.some(o=>actorsCollide(a,o)&&dist(o,q)<(a.npc&&o.npc?.84:.75)));
+ const old={x:a.x,z:a.z},free=q=>edgeFree(a,q,actorRadius(a))&&(!crowd||!actors.some(o=>actorsCollide(a,o)&&dist(o,q)<Math.max(a.npc&&o.npc?.84:.75,actorRadius(a)+actorRadius(o))));
  const full={x:a.x+dx,z:a.z+dz};if(free(full)){a.x=full.x;a.z=full.z;}else{
   const candidates=[{x:a.x+dx,z:a.z},{x:a.x,z:a.z+dz}].sort((p,q)=>dist(q,a)-dist(p,a));for(const q of candidates)if(dist(a,q)>.00001&&free(q)){a.x=q.x;a.z=q.z;break;}
  }

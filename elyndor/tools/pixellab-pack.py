@@ -5,7 +5,7 @@ import json,math,hashlib,copy,re,numpy as np
 
 DIRECTIONS=['south','south-west','west','north-west','north','north-east','east','south-east']
 PARTY={'bren','soren','tavin','mira','lysa'}
-FIGHTERS=PARTY|{'brenAscended','tavinAscended','tribeMale','tribeFemale','guardEnemy','commander','commander2','commander3','wolf','boar','wolfBattle35','boarBattle35'}
+FIGHTERS=PARTY|{'brenAscended','tavinAscended','tribeMale','tribeFemale','guardEnemy','commander','commander2','commander3','wolf','boar','wolfBattle35','boarBattle35','bird','ogre'}
 def body_anchor(im):
  a=np.array(im.getchannel('A'))>127;ys,xs=np.nonzero(a)
  if not len(ys):raise ValueError('Empty native character')
@@ -75,6 +75,27 @@ def pack_character(root,item,encode,audit,strict):
  if name=='tavin':
   clip=animations.get('attack-v13',{}).get('west',[])
   if len(clip)==12:animations['attack-v13']['west']=[clip[i] for i in [0,1,2,3,4,5,6,9,10,11]]
+ # The stone creature's raw192 rotations cut off its lowest stones. PixelLab's
+ # generated256 idle poses restore complete feet and safe margins. Use those
+ # reviewed native poses for rotations and omit the cropped reference poses.
+ if name=='earthStone' and folder.name=='earthStoneHD':
+  rotations={d:animations['idle'][d][1] for d in DIRECTIONS}
+  for clip in ['walk','idle']:
+   animations[clip]={d:frames[1:] for d,frames in animations[clip].items()}
+ # New approved regional creatures use descriptive, unversioned clip names.
+ if item.get('regionalCreature'):
+  for clip in ['walk','idle','attack','recoil']:
+   if animations.get(clip):animations[clip+'-v14' if clip=='walk' else clip+'-v13']=copy.deepcopy(animations[clip])
+  for clip in ['walk','idle']:
+   if animations.get(clip+'-clean',{}).get('north-west'):
+    animations[clip+'-v14' if clip=='walk' else clip+'-v13']['north-west']=animations[clip+'-clean']['north-west']
+  if name in ['wisp','waterWisp']:animations['idle-v13']=copy.deepcopy(animations['walk'])
+  if name=='ogre' and animations.get('attack-compact',{}).get('east'):
+   animations['attack-v13']=copy.deepcopy(animations['attack-compact'])
+   clean=animations['recoil-v13']['east'][:3];animations['recoil-v13']['east']=clean+clean[-2::-1]
+  if name in ['bird','ogre']:
+   animations['battleIdle-v13']=copy.deepcopy(animations['idle-v13'])
+   animations['cast-v13']=copy.deepcopy(animations['attack-v13'])
  native={}
  def load(path):
   p=(folder/path).resolve();p.relative_to((root/'elyndor/assets/source/pixellab-v7').resolve())

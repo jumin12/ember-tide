@@ -307,16 +307,72 @@
       "human": false,
       "combatOnly": true,
       "bodyUnit": 58
+    },
+    {
+      "id": "stag",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/stag",
+      "characterId": "5164509f-5f1e-4ffe-be84-4257d605603e",
+      "human": false,
+      "combatOnly": false,
+      "regionalCreature": true
+    },
+    {
+      "id": "bird",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/bird",
+      "characterId": "e9a950fe-4a69-4195-8e8d-49483fdc24fe",
+      "human": false,
+      "combatOnly": false,
+      "regionalCreature": true
+    },
+    {
+      "id": "ogre",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/ogreHD",
+      "characterId": "407cba9f-6c87-4dae-98e2-2b4f9bb8f29d",
+      "human": false,
+      "combatOnly": false,
+      "regionalCreature": true
+    },
+    {
+      "id": "wisp",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/wisp",
+      "characterId": "af1f10f8-5924-42bb-b566-a3c84af3e8d1",
+      "human": false,
+      "combatOnly": false,
+      "regionalCreature": true
+    },
+    {
+      "id": "mossStone",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/mossStone",
+      "characterId": "a6cf85f5-f25a-4d78-a55e-22459aae74de",
+      "human": false,
+      "combatOnly": false,
+      "regionalCreature": true
+    },
+    {
+      "id": "waterWisp",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/waterWisp",
+      "characterId": "5bc0710e-535c-4ddc-9b67-0d742128abb5",
+      "human": false,
+      "combatOnly": false,
+      "regionalCreature": true
+    },
+    {
+      "id": "earthStone",
+      "folder": "elyndor/assets/source/pixellab-v7/characters/earthStoneHD",
+      "characterId": "462d0305-6f09-49f0-a908-371ab2398b37",
+      "human": false,
+      "combatOnly": false,
+      "regionalCreature": true
     }
   ],
   "images": {
-    "cobble": "elyndor/assets/source/pixellab-v7/botany-v30/cobble30.png",
+    "cobble": "elyndor/assets/source/pixellab-v7/materials-v37/fieldstone.png",
     "wood": "elyndor/assets/source/pixellab-v7/materials-v28/wood.png",
     "darkWood": "elyndor/assets/source/pixellab-v7/images/v15-darkWood.png",
     "slate": "elyndor/assets/source/pixellab-v7/botany-v30/slate30.png",
     "plaster": "elyndor/assets/source/pixellab-v7/botany-v30/plaster30.png",
-    "wall": "elyndor/assets/source/pixellab-v7/materials-v28/wall.png",
-    "rock": "elyndor/assets/source/pixellab-v7/materials-v28/rock.png",
+    "wall": "elyndor/assets/source/pixellab-v7/materials-v37/royalstone.png",
+    "rock": "elyndor/assets/source/pixellab-v7/materials-v38/cliff.png",
     "earth": "elyndor/assets/source/pixellab-v7/materials-v28/earth.png",
     "grass": "elyndor/assets/source/pixellab-v7/botany-v30/meadow30.png",
     "bark": "elyndor/assets/source/pixellab-v7/images/v15-bark.png",
@@ -363,7 +419,7 @@
     "cobbleB": "elyndor/assets/source/pixellab-v7/botany-v30/cobbleMoss30.png",
     "wallA": "elyndor/assets/source/pixellab-v7/materials-v28/wall.png",
     "plasterA": "elyndor/assets/source/pixellab-v7/botany-v30/plaster30.png",
-    "earthA": "elyndor/assets/source/pixellab-v7/materials-v28/earth.png",
+    "earthA": "elyndor/assets/source/pixellab-v7/materials-v37/forestfloor.png",
     "grassA": "elyndor/assets/source/pixellab-v7/botany-v30/meadow30.png",
     "desert": "elyndor/assets/source/pixellab-v7/images/v15-desert.png",
     "barren": "elyndor/assets/source/pixellab-v7/images/v15-barren.png",
@@ -371,7 +427,7 @@
     "snow": "elyndor/assets/source/pixellab-v7/images/v15-snow.png",
     "encounterMark16": "elyndor/assets/source/pixellab-v7/world/encounter-mark-v16.png",
     "riverStone18": "elyndor/assets/source/pixellab-v7/images/v18/riverStone18.png",
-    "riverSurface18": "elyndor/assets/source/pixellab-v7/images/v18/riverSurface18-native.png",
+    "riverSurface18": "elyndor/assets/source/pixellab-v7/materials-v38/river-current.png",
     "ui24_panel": "elyndor/assets/source/pixellab-v7/interface-v24/panel-trim.png",
     "ui24_compass": "elyndor/assets/source/pixellab-v7/interface-v24/compass.png",
     "ui24_map": "elyndor/assets/source/pixellab-v7/interface-v24/map.png",
@@ -397,15 +453,15 @@
     "ui27_portrait_soren": "elyndor/assets/source/pixellab-v7/interface-v27/portrait-soren.png",
     "icon_bronze": "elyndor/assets/source/pixellab-v7/interface-v27/bronze.png",
     "icon_forestBlade": "elyndor/assets/source/pixellab-v7/interface-v27/forestBlade.png",
-    "normal28_cobble": "elyndor/assets/source/pixellab-v7/botany-v30/cobble30-normal.png",
+    "normal28_cobble": "elyndor/assets/source/pixellab-v7/materials-v37/fieldstone-normal.png",
     "normal28_plaster": "elyndor/assets/source/pixellab-v7/botany-v30/plaster30-normal.png",
     "normal28_slate": "elyndor/assets/source/pixellab-v7/botany-v30/slate30-normal.png",
     "normal28_wood": "elyndor/assets/source/pixellab-v7/materials-v28/wood-normal.png",
-    "normal28_rock": "elyndor/assets/source/pixellab-v7/materials-v28/rock-normal.png",
+    "normal28_rock": "elyndor/assets/source/pixellab-v7/materials-v38/cliff-normal.png",
     "normal28_oakCanopy": "elyndor/assets/source/pixellab-v7/materials-v28/oakCanopy-normal.png",
     "normal28_grass": "elyndor/assets/source/pixellab-v7/botany-v30/meadow30-normal.png",
     "normal28_earth": "elyndor/assets/source/pixellab-v7/materials-v28/earth-normal.png",
-    "normal28_wall": "elyndor/assets/source/pixellab-v7/materials-v28/wall-normal.png",
+    "normal28_wall": "elyndor/assets/source/pixellab-v7/materials-v37/royalstone-normal.png",
     "fall28": "elyndor/assets/source/pixellab-v7/materials-v28/fall28.png",
     "rug29": "elyndor/assets/source/pixellab-v7/interiors-v29/rug29.png",
     "panel29": "elyndor/assets/source/pixellab-v7/interiors-v29/panel29.png",
@@ -424,7 +480,8 @@
     "fx35Arcane": "elyndor/assets/source/pixellab-v7/effects-v35/fx35Arcane.png",
     "fx35Frost": "elyndor/assets/source/pixellab-v7/effects-v35/fx35Frost.png",
     "fx35Healing": "elyndor/assets/source/pixellab-v7/effects-v35/fx35Healing.png",
-    "fx35Smoke": "elyndor/assets/source/pixellab-v7/effects-v35/fx35Smoke.png"
+    "fx35Smoke": "elyndor/assets/source/pixellab-v7/effects-v35/fx35Smoke.png",
+    "riverNormal39": "elyndor/assets/source/pixellab-v7/materials-v38/river-normal.png"
   },
   "materialKeys": [
     "cobble",

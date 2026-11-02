@@ -1,0 +1,247 @@
+{
+  "version": "Alpha 1.13",
+  "status": "Complete local build",
+  "sha256": "d88753f9277bbe738ea680d5194e959098cec690ad6fb702b20fe7324606df6d",
+  "bytes": 50791467,
+  "qa": {
+    "sha256": "d88753f9277bbe738ea680d5194e959098cec690ad6fb702b20fe7324606df6d",
+    "started": "2026-11-01T19:44:28.081Z",
+    "cases": [
+      {
+        "name": "source",
+        "exit": 0,
+        "seconds": 0.723
+      },
+      {
+        "name": "hydrology",
+        "exit": 0,
+        "seconds": 0.538
+      },
+      {
+        "name": "proof",
+        "exit": 0,
+        "seconds": 54.145
+      },
+      {
+        "name": "world-entries",
+        "exit": 0,
+        "seconds": 38.803
+      },
+      {
+        "name": "locations",
+        "exit": 0,
+        "seconds": 222.511
+      },
+      {
+        "name": "traversal",
+        "exit": 0,
+        "seconds": 504.491
+      },
+      {
+        "name": "architecture",
+        "exit": 0,
+        "seconds": 77.355
+      },
+      {
+        "name": "campaign",
+        "exit": 0,
+        "seconds": 119.253
+      },
+      {
+        "name": "devices",
+        "exit": 0,
+        "seconds": 158.83
+      },
+      {
+        "name": "lifecycle",
+        "exit": 0,
+        "seconds": 96.299
+      },
+      {
+        "name": "soak",
+        "exit": 0,
+        "seconds": 245.042
+      },
+      {
+        "name": "input",
+        "exit": 0,
+        "seconds": 20.124
+      }
+    ],
+    "unchanged": true,
+    "pass": true,
+    "finished": "2026-11-01T20:10:06.756Z"
+  },
+  "strictDeviceRepeat": {
+    "pass": true,
+    "samples": [
+      {
+        "name": "desktop",
+        "w": 1920,
+        "h": 1080,
+        "throttle": 1,
+        "fps": 72.16666666666667,
+        "scale": 1
+      },
+      {
+        "name": "desktop",
+        "w": 1366,
+        "h": 768,
+        "throttle": 1,
+        "fps": 71.33333333333333,
+        "scale": 1
+      },
+      {
+        "name": "desktop",
+        "w": 960,
+        "h": 540,
+        "throttle": 1,
+        "fps": 72.16666666666667,
+        "scale": 1
+      },
+      {
+        "name": "desktop",
+        "w": 800,
+        "h": 600,
+        "throttle": 1,
+        "fps": 72,
+        "scale": 1
+      },
+      {
+        "name": "desktop",
+        "w": 1280,
+        "h": 720,
+        "throttle": 4,
+        "fps": 70.33333333333333,
+        "scale": 1
+      },
+      {
+        "name": "phone-high-dpi",
+        "w": 390,
+        "h": 844,
+        "throttle": 1,
+        "fps": 72,
+        "scale": 1
+      },
+      {
+        "name": "phone-high-dpi",
+        "w": 844,
+        "h": 390,
+        "throttle": 1,
+        "fps": 72,
+        "scale": 1
+      },
+      {
+        "name": "phone-high-dpi",
+        "w": 390,
+        "h": 844,
+        "throttle": 4,
+        "fps": 48.333333333333336,
+        "scale": 1
+      }
+    ],
+    "desktopResize": true,
+    "portraitResize": true
+  },
+  "measurementLimitations": [
+    "Physical phones were not measured. Device-size, touch and CPU throttling are desktop browser emulation.",
+    "An initial 8\u20139 FPS throttled outlier was not reproduced by the matched current/baseline CPU profiles, resize-chain profile or stricter full device repeat. The original sample remains in final-verified-qa/devices.log. No runtime fix is claimed for that transient observation."
+  ],
+  "hydrology": {
+    "islandSeparate": true,
+    "oceanGapMetres": 101.89319026422827,
+    "reliefRange": [
+      -10.4,
+      157.6
+    ],
+    "clippedSummits": 0,
+    "surface": {
+      "vertices": 1155,
+      "triangles": 1139
+    },
+    "downwardTriangles": 0,
+    "degenerateTriangles": 0,
+    "routes": [
+      {
+        "name": "Amber River",
+        "samples": 307,
+        "uphillSegments": 0,
+        "maximumStep": 0.040000000000000036,
+        "length": 637.9972298650048
+      },
+      {
+        "name": "Eastern tributary",
+        "samples": 176,
+        "uphillSegments": 0,
+        "maximumStep": 0.04300000000000015,
+        "length": 364.6682628597032
+      },
+      {
+        "name": "Western tributary",
+        "samples": 149,
+        "uphillSegments": 0,
+        "maximumStep": 0.041999999999999815,
+        "length": 307.665454974632
+      },
+      {
+        "name": "Valenne River",
+        "samples": 368,
+        "uphillSegments": 0,
+        "maximumStep": 0.03200000000000003,
+        "length": 740.087792989528
+      },
+      {
+        "name": "Brook River",
+        "samples": 317,
+        "uphillSegments": 0,
+        "maximumStep": 0.031000000000000583,
+        "length": 636.6843391097266
+      }
+    ],
+    "outlets": [
+      {
+        "name": "Amber River",
+        "oceanConnected": true
+      },
+      {
+        "name": "Valenne River",
+        "oceanConnected": true
+      },
+      {
+        "name": "Brook River",
+        "oceanConnected": true
+      }
+    ],
+    "pass": true
+  },
+  "bakedTreeCount": 18066,
+  "heightSamples": 148257,
+  "lifecycle": {
+    "partyGrowth": {
+      "heap": 107248,
+      "backing": 0,
+      "textures": 0,
+      "geometry": 0
+    },
+    "travelGrowth": {
+      "heap": 1209636,
+      "backing": 0,
+      "textures": 0
+    },
+    "worldOwners": 1
+  },
+  "soak": {
+    "circuits": 12,
+    "heapGrowthBytes": 788488,
+    "backingGrowthBytes": 2804,
+    "geometryVariants": 12,
+    "textureGrowth": 0,
+    "programGrowth": 0,
+    "programs": 206,
+    "textures": 144,
+    "geometryPlateau": 919,
+    "fps": 71.93166491804196
+  },
+  "screenshots": "Native game screenshots, with atlas exploration fog revealed only in the inspection fixture.",
+  "publication": "Approved for GitHub publication; exact tested standalone retained."
+}

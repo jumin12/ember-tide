@@ -64,7 +64,7 @@ updateRenderBudget=function(force=false){
  // Include the reflected view and the projected footprint of tall casters.
  const reflects=(world.userData.waterPools??[]).some(p=>p.visible&&p.userData.poolPatches?.some(b=>frustum33.intersectsBox(b)))||water?.visible&&(world.userData.waterPatches??[]).some(b=>frustum33.intersectsBox(b));
  if(reflects){mirror33.copy(camera);const y=water?.position.y??0;mirror33.position.y=2*y-camera.position.y;mirror33.up.set(0,-1,0);mirror33.lookAt(V3(cameraTarget.x,2*y-cameraTarget.y,cameraTarget.z));mirror33.updateMatrixWorld();mirrorFrustum33.setFromProjectionMatrix(matrix33.multiplyMatrices(mirror33.projectionMatrix,mirror33.matrixWorldInverse));}
- for(const g of world.userData.vegetationBuckets21??[]){const b=g.userData.bounds21;shadowSphere33.copy(b);const reach=clamp((b.center.y-heightAt(p.x,p.z)+b.radius)/Math.max(.15,weather.sun.value.y),0,85);shadowSphere33.center.addScaledVector(weather.sun.value,-reach);shadowSphere33.radius+=18;g.visible=frustum33.intersectsSphere(b)||reflects&&mirrorFrustum33.intersectsSphere(b)||frustum33.intersectsSphere(shadowSphere33);}
+ const ground33=heightAt(p.x,p.z);for(const g of world.userData.vegetationBuckets21??[]){const b=g.userData.bounds21;shadowSphere33.copy(b);const reach=clamp((b.center.y-ground33+b.radius)/Math.max(.15,weather.sun.value.y),0,85);shadowSphere33.center.addScaledVector(weather.sun.value,-reach);shadowSphere33.radius+=18;g.visible=frustum33.intersectsSphere(b)||reflects&&mirrorFrustum33.intersectsSphere(b)||frustum33.intersectsSphere(shadowSphere33);}
  return r;
 };
 // The outer forest cutaway used to visit every tree, despite the spatial grid
@@ -83,23 +83,8 @@ render=function(...args){
  for(const l of lights)l.visible=true;
  const r=renderBefore33(...args);for(const l of lights)l.visible=true;return r;
 };
-loop=function(now){
- requestAnimationFrame(loop);if(document.hidden){lastFrame=0;device33.last=0;keys.clear();return;}
- if(device33.resizeAt&&now>=device33.resizeAt){device33.resizeAt=0;resizeNow33();}
- const gap=device33.last?now-device33.last:16.67;device33.last=now;
- if(gap>3&&gap<24&&device33.samples.length<90){device33.samples.push(gap);if(device33.samples.length===90){const a=device33.samples.slice().sort((a,b)=>a-b);device33.interval=a[Math.floor(a.length*.2)];}}
- const divisor=Math.max(1,Math.floor(1000/device33.interval/59));if(++device33.frame%divisor)return;
- if(!lastFrame)lastFrame=now;const elapsed=Math.min((now-lastFrame)/1000,.12);lastFrame=now;
- if(menu){if(scenery.pausedTab!==menu.tab){render();scenery.pausedTab=menu.tab;}return;}scenery.pausedTab=null;
- const live=performance.now()>manualUntil,start=performance.now();if(live&&elapsed>0)tick(Math.min(elapsed,.05));render();
- const cost=performance.now()-start;device33.cpu=mix(device33.cpu,cost,.06);const gpu=clarity23.gpuSamples?clarity23.gpuMs:0,missed=elapsed*1000>device33.interval*divisor*1.35?elapsed*1000/divisor:0;device33.cost=Math.max(device33.cpu,gpu,missed);
- runtime28.frames++;runtime28.cost=device33.cpu;if(typeof updateMobile33==='function')updateMobile33();
- if(!live||gameLoading||state.mode==='title'||state.settings.quality==='high')return;
- const budget=Math.min(16.1,device33.interval*divisor*.90);device33.slow=device33.cost>budget?device33.slow+elapsed:Math.max(0,device33.slow-elapsed);device33.fast=device33.cost<budget*.60?device33.fast+elapsed:0;
- if(device33.slow>2.2){if(profile33()>0&&state.settings.quality==='balanced'){device33.tier--;device33.profile='';applyCapabilityBudget();updateRenderBudget(true);}else if(device33.scale>.6&&(gpu>budget*.85||!clarity23.gpuSamples&&device33.cpu<budget*.70&&missed>budget*1.15))device33.scale=Math.max(.6,device33.scale-.08);device33.slow=device33.fast=0;resizeNow33();}
- else if(device33.fast>24&&device33.scale<1){device33.scale=Math.min(1,device33.scale+.04);device33.fast=0;resizeNow33();}
- else if(state.settings.quality==='balanced'&&device33.fast>36&&device33.tier<(touchDevice33()?1:2)){device33.tier++;device33.profile='';device33.fast=0;resizeNow33();updateRenderBudget(true);}
-};
+// Device adaptation and the fixed simulation loop live in systems/runtime.js.
+
 const disposeBefore33=disposeContinuousWorld;
 disposeContinuousWorld=function(...args){
  treeCutCache30=null;occlusionCache=null;budgetWorld33=null;device33.samples.length=0;roadCache33.world=null;roadCache33.cells.clear();

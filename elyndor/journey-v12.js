@@ -46,7 +46,7 @@ function trimPoiWorld(){
 }
 function scenePortal(type,x,z,label,data={}){const p=safePoint({x,z},.5);createInteraction(type,p.x,p.z,label);const o=interactables.at(-1);Object.assign(o,data,{radius:type==='location'?7:3.2});const g=new THREE.Group();g.position.set(p.x,heightAt(p.x,p.z),p.z);world.add(g);for(const s of[-1,1])box(s*1.65,1.4,0,.19,2.8,.19,'darkWood','#aa8051',g);box(0,2.9,0,3.8,.3,.27,'wood','#c59b69',g);box(1.5,2.3,0,.35,.55,.35,'metal','#a88b55',g);mesh(new THREE.PlaneGeometry(.18,.33),new THREE.MeshBasicMaterial({color:'#ffce83',side:THREE.DoubleSide}),1.5,2.3,.181,g);world.userData.lampSources?.push(V3(p.x+1.5,heightAt(p.x,p.z)+2.2,p.z));const token=mesh(new THREE.OctahedronGeometry(.2,0),new THREE.MeshStandardMaterial({map:textures.metal,color:'#f7d987',emissive:'#cc9c36',emissiveIntensity:.5}),0,3.5,0,g);token.userData.portalMarker=true;o.visualHeight=2;world.userData.portals??=[];world.userData.portals.push({o,token});return o;}
 function resetJourneyWorld(id){disposeContinuousWorld();openWorldReady=false;world=new THREE.Group();world.userData={continuous:true,serial:++worldBuildSerial,leafMatrices:[],plantMatrices:{fern:[],flowers:[],ivy:[],grassBlades:[],shrub:[]},buildings:[],lanterns:[],smoke:[],fountains:[],crystals:[],lightSites:[],bridges:[],terrainChunks:[],staticChunks:[],waterPools:[],walkSurfaces:[],navCache:new Map(),treePoints:[]};scene.add(world);colliders=[];actors=[];player=null;followers=[];npcs=[];interactables=[];fx=[];water=null;route=null;trail=[];trailLength=0;roadNavGraph=null;colliderGrid.clear();restoration=null;scenery.trees=[];scenery.forestMeshes=[];state.scene=id;perf.heights.clear();}
-function finishJourneyWorld(spawn){rebuildColliderGrid();setupParty(spawn);setupAtmosphere();prepareCutaways();prepareBudgetedWorld();initCombatVfx();openWorldReady=true;state.worldFormat=2;state.lastScene=state.scene;openWorldDebug.builds++;sceneStats.loads++;camera.far=280;post.material.uniforms.nearFar.value.y=280;updateLighting();updateCamera(1,true);updateHUD();if(typeof setupWeather==='function')setupWeather();}
+function finishJourneyWorld(spawn){rebuildColliderGrid();setupParty(spawn);populateRegionalWildlife();setupAtmosphere();prepareCutaways();prepareBudgetedWorld();initCombatVfx();openWorldReady=true;state.worldFormat=2;state.lastScene=state.scene;openWorldDebug.builds++;sceneStats.loads++;camera.far=280;post.material.uniforms.nearFar.value.y=280;updateLighting();updateCamera(1,true);updateHUD();if(typeof setupWeather==='function')setupWeather();}
 function worldTownModel(key,p){
  const[x,z]=p.node,y=macroGround(x,z),g=new THREE.Group();g.position.set(x,y,z);world.add(g);
  const court=mesh(new THREE.CircleGeometry(3.5,24),material('cobble','#d3c9ae'),0,.055,1,g);court.rotation.x=-Math.PI/2;court.castShadow=false;
@@ -78,7 +78,7 @@ buildWorld=function(id='approach',spawn=null){
  const p=POIS[activeScene.key],oldTitle=state.mode==='title';if(oldTitle&&world?.userData.poi===activeScene.key){state.scene=id;const q=spawn??PLACES[id]??p.spawn;setupParty(q);updateCamera(1,true);sceneBuildFilter=false;return;}
  openWorldReady=false;sceneBuildBeforeJourney(id,spawn??p.spawn);trimPoiWorld();world.userData.poi=activeScene.key;state.poi=activeScene.key;state.worldFormat=2;sceneBuildFilter=false;sceneStats.loads++;
  scenePortal('poiExit',...p.exit,'Leave for the overworld',{poi:activeScene.key});if(activeScene.key==='brookstead'){const q=scenePortal('routeDoor',-100,44,'Follow the trail to Fern Hollow',{poi:'fern'});q.toWorld=true;}
- if(typeof addInteriorDoors==='function')addInteriorDoors();if(typeof setupWeather==='function')setupWeather();updateLighting();updateCamera(1,true);updateHUD();
+ if(typeof addInteriorDoors==='function')addInteriorDoors();if(typeof setupWeather==='function')setupWeather();populateRegionalWildlife();updateLighting();updateCamera(1,true);updateHUD();
 };
 async function changeJourneyScene(id,spawn=null){
  if(sceneSwitchPending||gameLoading||battle)return false;sceneSwitchPending=true;const loadStarted=performance.now();setJourneyLoading(true);keys.clear();if(activeScene?.kind==='overworld')state.overworldPosition=[player.x,player.z];
@@ -102,8 +102,6 @@ objectiveTarget=function(){const dest=objectiveScene(),targetPoi=typeof INTERIOR
  return localObjectiveBeforeJourney();};
 const nextBeatBeforeJourney=nextBeat;
 nextBeat=function(){state.trackedPoi=null;nextBeatBeforeJourney();};
-const restoreLightBeforePoi=updateRestoration;
-updateRestoration=function(dt){if(restoration?.phase==='regional')restoration.order=restoration.order.filter(Boolean);restoreLightBeforePoi(dt);if(restoration?.phase==='regional'){restoration.order=restoration.order.filter(Boolean);if(!restoration.order.length)restoration.order=[restoration.site];}};
 const discoverBeforeJourney=discoverArea;
 discoverArea=function(){if(activeScene?.kind==='overworld'||activeScene?.kind==='interior')return;discoverBeforeJourney();};
 travel=function(id){const key=poiFor(id),p=POIS[key];if(!p)return;state.trackedPoi=key;waypoint={x:p.node[0],z:p.node[1],label:p.name};toast('Destination marked · '+p.name);updateHUD();};

@@ -1,0 +1,6 @@
+.journey-portable{grid-column:1/-1;display:flex;gap:.5rem;align-items:center;justify-content:flex-end;padding:.4rem .6rem;border-top:1px solid #bda56633}
+.journey-portable button{font-size:.8rem;padding:.35rem .6rem;min-height:32px}
+.journey-portable small{color:#e4c479}
+.journey-import{max-width:min(520px,90vw);padding:1.5rem;background:#081d2a;color:#f5ead4;border:1px solid #c2a060;box-shadow:0 15px 80px #000b}
+.journey-import::backdrop{background:#020b13bd}
+.journey-import p{line-height:1.6;margin:1rem 0}.journey-import button{margin-right:.7rem}

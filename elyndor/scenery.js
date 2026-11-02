@@ -112,7 +112,7 @@ updateCutaways=function(){if(!world||!player)return;cutawayUniforms.depths.value
  for(const t of scenery.trees){if(Math.hypot(t.x-player.x,t.z-player.z)>42){if(t.hidden)hideTree(t,false);continue;}if(occludes(t.box))t.until=clock+.32;hideTree(t,clock<t.until);}
 };
 const optimizedBatch=batchLandscape;
-batchLandscape=function(){optimizedBatch();world.userData.canopyShadow?.removeFromParent();buildSolidForest();};
+batchLandscape=function(){optimizedBatch();const obsolete=world.userData.canopyShadow;if(obsolete){obsolete.removeFromParent();obsolete.material.dispose();world.userData.canopyShadow=null;}buildSolidForest();};
 const budgetUpdate=updateRenderBudget;let lastPlantBudget=null;
 updateRenderBudget=function(force=false){if(!player)return;const p=restoration?cameraTarget:player,key=state.settings.quality;if(!force&&lastPlantBudget&&lastPlantBudget.world===world&&lastPlantBudget.key===key&&Math.hypot(p.x-lastPlantBudget.x,p.z-lastPlantBudget.z)<.4&&clock-lastPlantBudget.t<.2)return;lastPlantBudget={world,key,x:p.x,z:p.z,t:clock};budgetUpdate(force);for(const mesh of scenery.forestMeshes)mesh.visible=Math.hypot(mesh.userData.center.x-p.x,mesh.userData.center.z-p.z)<(key==='low'?170:220);};
 
@@ -166,7 +166,8 @@ prepareBattlefield=function(kind){const result=prepareAuthoredBattle(kind);resul
 
 updateReflection=function(){if(!water?.visible||!player)return;const interval=state.settings.quality==='high'?.1:state.settings.quality==='low'?.35:.18;if(clock-perf.lastReflection<interval||channelDistance(player.x,player.z)>32&&!restoration)return;perf.lastReflection=clock;const pending=renderer.shadowMap.needsUpdate;renderer.shadowMap.needsUpdate=false;const hidden=scenery.trees.filter(t=>t.hidden);for(const t of hidden)hideTree(t,false);try{physicalReflection();}finally{for(const t of hidden)hideTree(t,true);renderer.shadowMap.needsUpdate=pending;}};
 resize=function(){scenery.pausedTab=null;const high=state.settings.quality==='high',low=state.settings.quality==='low',scale=low?.8:perf.scale,w=Math.max(320,Math.round(innerWidth*scale)),h=Math.max(240,Math.round(innerHeight*scale)),ratio=Math.min(devicePixelRatio,high?1.5:1,Math.sqrt((high?3000000:low?750000:1400000)/(innerWidth*innerHeight)));renderer.setPixelRatio(ratio);renderer.setSize(w,h,false);post.target.setSize(Math.round(w*ratio),Math.round(h*ratio));post.material.uniforms.resolution.value.set(w*ratio,h*ratio);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();};
-loop=function(now){requestAnimationFrame(loop);if(document.hidden||now<scenery.lastPaint-.5)return;scenery.lastPaint=Math.max(scenery.lastPaint+1000/60,now+.1);if(!lastFrame)lastFrame=now;const elapsed=Math.min((now-lastFrame)/1000,.12);lastFrame=now;if(menu){if(scenery.pausedTab!==menu.tab){render();scenery.pausedTab=menu.tab;}return;}scenery.pausedTab=null;const live=performance.now()>manualUntil;if(live)tick(Math.min(elapsed,.05));render();if(live&&state.mode==='explore'&&state.settings.quality==='balanced'&&++perf.frames>24){perf.slow=elapsed>.03?perf.slow+1:Math.max(0,perf.slow-1);perf.fast=elapsed<.019?perf.fast+1:0;if(perf.slow>8&&perf.scale>(scenery.software?.5:.68)){perf.scale=Math.max(scenery.software?.5:.68,perf.scale-.08);perf.slow=0;resize();}else if(perf.fast>300&&perf.scale<1){perf.scale=Math.min(1,perf.scale+.02);perf.fast=0;resize();}}};
+// Presentation pacing is owned by systems/runtime.js.
+
 
 // No moving sprite writes into this map, so a stationary landscape needs no
 // repeated depth pass. Refresh only as the view leaves its cached coverage.

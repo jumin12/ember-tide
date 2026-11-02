@@ -356,7 +356,7 @@ function syncStoryWorld(){if(!world)return;for(const o of interactables){if(!o.a
 }
 const oldActOpenWorld=act;
 act=function(o){if(!o||dialogue||menu||eventAction||battle||restoration)return;
- if(o.type==='elderLight'){const site=LIGHT_SITES.find(s=>s.id===o.site);if(state.restoredLights?.includes(site.id)){toast('The Light is steady.'+(state.flags.region_restored?' Its fractures have healed.':' Its fractures remain.'));return;}if(!state.flags[site.repair]){toast('Repair the separate remnant mechanism first.');return;}if(currentBeat()[0]!==site.beat){toast('Follow the current investigation before restoring this Light.');return;}beginRestoration(site);return;}
+ if(o.type==='elderLight'){const site=LIGHT_SITES.find(s=>s.id===o.site);if(state.restoredLights?.includes(site.id)){if(state.regionalRestoration&&!state.flags.region_restored){resumeCampaignEvents();return;}toast('The Light is steady.'+(state.flags.region_restored?' Its fractures have healed.':' Its fractures remain.'));return;}if(!state.flags[site.repair]){toast('Repair the separate remnant mechanism first.');return;}if(currentBeat()[0]!==site.beat){toast('Follow the current investigation before restoring this Light.');return;}beginRestoration(site);return;}
  if(o.type==='exit'){travel(o.to);return;}
  if(['councilDoor','innDoor','archiveDoor'].includes(o.type)){const id={councilDoor:'council',innDoor:'inn',archiveDoor:'archives'}[o.type];const p=AT(id);route=findRoute(player,p,actors.filter(a=>a.npc&&a.mesh.visible));if(!route)toast('Walk through the open doorway.');return;}
  if(o.type==='sign'){startDialogue([['Road marker',o.x>0?'Fern Hollow lies east through the woodland. The northern road leads to Highmere and Alderbridge.':'Brookstead lies to the south. Highmere and the relief station lie north. The bridges carry the road across the river.']]);return;}
@@ -367,22 +367,7 @@ interactionAvailable=function(o){if(o.type==='elderLight')return currentBeat()[0
 function objectiveTarget(){const beat=currentBeat()[0],mapping={arrival:'representative',travelFern:'tavin',joinTavin:'tavin',evacuate:'evacuees',highmere:state.flags.mira_aid_helped?'council':'mira',patrol:'guard',reportNotes:'council',initialCouncil:'council',dream:'sleep',archives:'archivist',trialCouncil:'council',trialReturn:'logs',councilFindings:'council',nearby:'sorenSite',debrief:'council',snow:'end',betrayal:'activation'};if(beat.endsWith('Light'))return interactables.find(o=>o.type==='elderLight'&&LIGHT_SITES.find(s=>s.id===o.site)?.beat===beat);return interactables.find(o=>o.type===(mapping[beat]??beat));}
 const oldNextBeatOpen=nextBeat;
 nextBeat=function(){oldNextBeatOpen();const o=objectiveTarget();if(o)waypoint={x:o.x,z:o.z,label:currentBeat()[2]};syncStoryWorld();};
-function beginRestoration(site){state.mode='restoration';keys.clear();route=null;const s=world.userData.lightSites.find(s=>s.id===site.id);restoration={site:s,time:0,phase:'individual',order:[],done:false};$('#letterbox').classList.add('active');toast('Listening to the Elder Light…');openWorldDebug.restorations++;}
-function updateRestoration(dt){
- if(!restoration)return;const r=restoration;r.time+=dt;const s=r.site;
- if(r.phase==='individual'){
-  const t=smooth(.5,3.8,r.time);s.core.material.color.set('#6f9caa').lerp(new THREE.Color('#c2f4e7'),t);s.core.material.emissiveIntensity=mix(.15,.55,t);s.inner.material.opacity=mix(.2,.78,t);s.glow.intensity=8+t*20;
-  if(frameIndex%5===0){const a=clock*3,p=V3(s.x+Math.cos(a)*3.2,groundAt(s.x,s.z)+2+Math.sin(a*.7),s.z+Math.sin(a)*3.2);sparks(p,'#b8f9e3',2,.25);}
-  if(r.time>4.8){state.restoredLights??=[];if(!state.restoredLights.includes(s.id))state.restoredLights.push(s.id);state.flags[s.id+'_light_recovered']=true;
-   if(state.restoredLights.length===LIGHT_SITES.length){r.phase='regional';r.time=0;r.order=state.restoredLights.map(id=>world.userData.lightSites.find(s=>s.id===id));r.index=0;toast('The restored Lights answer one another.');}
-   else{restoration=null;state.mode='explore';$('#letterbox').classList.remove('active');nextBeat();toast('Elder Light restored · Steady brightness; fractures remain.');autoSave();}
-  }
- }else if(r.phase==='regional'){
-  const n=Math.min(r.order.length-1,Math.floor(r.time/2.5)),light=r.order[n];r.index=n;const t=clamp((r.time-n*2.5)/2.1,0,1);light.fractures.traverse(o=>{if(o.material)o.material.opacity=.9*(1-t);});light.core.material.emissiveIntensity=.65+Math.sin(t*Math.PI)*1.2;light.glow.intensity=25;
-  if(frameIndex%8===0)sparks(V3(light.x,groundAt(light.x,light.z)+4,light.z),'#fff1b4',6,.6);
-  if(r.time>r.order.length*2.5){r.phase='wave';r.time=0;state.flags.region_restored=true;syncStoryWorld();for(const q of r.order)q.fractures.visible=false;const wave=fxMesh(new THREE.RingGeometry(1,1.15,100),'#c7fbe0',V3(s.x,groundAt(s.x,s.z)+.15,s.z),5,{opacity:.55});wave.mesh.rotation.x=-Math.PI/2;wave.expand=1.3;toast('Nature’s Flow returns to the region.');}
- }else if(r.time>3.5){restoration=null;state.mode='explore';$('#letterbox').classList.remove('active');nextBeat();autoSave();}
-}
+// Restoration sequencing is owned by systems/events.js.
 closestLane=function(x,z){let best={distance:Infinity,x:0,z:0};for(const q of ROAD_SEGMENTS){const dx=q.b[0]-q.a[0],dz=q.b[1]-q.a[1],t=clamp(((x-q.a[0])*dx+(z-q.a[1])*dz)/(dx*dx+dz*dz),0,1),px=q.a[0]+dx*t,pz=q.a[1]+dz*t,d=Math.hypot(x-px,z-pz);if(d<best.distance)best={distance:d,x:px,z:pz};}return best;};
 const baselineLighting=updateLighting;
 updateLighting=function(){if(!world)return;baselineLighting();const h=state.worldMinutes/60%24,day=Math.max(0,Math.sin((h-6)/12*Math.PI)),night=1-smooth(0,.2,day),dusk=Math.max(0,1-Math.abs(h-18)/2.5),focus=restoration?restoration.phase==='regional'?restoration.order[restoration.index]??restoration.site:restoration.site:player;

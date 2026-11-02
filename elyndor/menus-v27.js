@@ -5,8 +5,7 @@ Object.assign(ITEMS,{
  charm:{name:'Sunthread charm',type:'Equipment',icon:'◇',desc:'A leather cord and a small sun charm. Maximum MP +8.',price:85,stat:'mp',value:8,slot:'accessory'},
  shield:{name:'Oak roundshield',type:'Equipment',icon:'♜',desc:'Oak faced in steel, light enough for the road. Defense +4.',price:90,stat:'def',value:4,slot:'offhand'}
 });
-const statsBefore27=stats;
-stats=function(id){const s=statsBefore27(id),c=state.characters[id];for(const slot of['accessory','offhand']){const it=ITEMS[c.gear[slot]];if(it&&it.stat in s)s[it.stat]+=it.value;}return s;};
+// All equipment slots use the shared stats() rule.
 const equipBefore27=equipItem;
 equipItem=function(key){equipBefore27(key);if(!menu)return;const c=state.characters[menu.selected],s=stats(menu.selected);c.hp=Math.min(c.hp,s.hp);c.mp=Math.min(c.mp,s.mp);updateHUD();renderMenu();autoSave();};
 const iconBefore27=itemIcon26;

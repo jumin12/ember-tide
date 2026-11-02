@@ -1,6 +1,7 @@
 // Geographic and civic facts from the published Elyndor atlas (version 7).
 // Future continents remain unexplored; only established story locations open.
-const atlasPoint18=id=>ATLAS18.points.find(p=>p.id===id),atlasXY18=(x,y)=>[x/100*2048-1024,y/100*1152-576];
+const atlasPoint18=id=>ATLAS18.points.find(p=>p.id===id);let atlasXY18=(x,y)=>[x/100*2048-1024,y/100*1152-576];
+reliefScale15=ATLAS_RELIEF18.scale??1/3;reliefOffset15=ATLAS_RELIEF18.offset??-16;
 const reliefBytes18=Uint8Array.from(atob(ATLAS_RELIEF18.bytes),c=>c.charCodeAt(0));
 reliefSample15=function(x,z,channel=0){const{w,h}=ATLAS_RELIEF18,fx=clamp((x+512)/1024*(w-1),0,w-1),fz=clamp((z+288)/576*(h-1),0,h-1),ix=Math.floor(fx),iz=Math.floor(fz),nx=Math.min(w-1,ix+1),nz=Math.min(h-1,iz+1),u=fx-ix,v=fz-iz;return mix(mix(reliefBytes18[(iz*w+ix)*2+channel],reliefBytes18[(iz*w+nx)*2+channel],u),mix(reliefBytes18[(nz*w+ix)*2+channel],reliefBytes18[(nz*w+nx)*2+channel],u),v);};
 const atlasKeys18={brookstead:'brookstead',fern:'fern','fern-remnant':'depths','fern-light':'fernClearing',highmere:'highmere',alderbridge:'alder',patrol:'patrol','alder-remnant':'alderRemnant','alder-light':'alderClearing',relief:'relief','station-light':'reliefClearing',network:'nearbySite',harbor:'harbor'};

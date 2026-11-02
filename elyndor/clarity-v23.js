@@ -182,18 +182,5 @@ prepareGameplayGraphics=async function(...args){
  return r;
 };
 
-loop=function(now){
- requestAnimationFrame(loop);
- if(document.hidden){pacing21.last=now;pacing21.next=now;lastFrame=0;return;}
- const interval=now-pacing21.last;pacing21.last=now;
- if(!pacing21.locked&&interval>3&&interval<25){pacing21.intervals.push(interval);if(pacing21.intervals.length>=45){const sorted=pacing21.intervals.slice().sort((a,b)=>a-b),refresh=sorted[Math.floor(sorted.length*.15)],divisor=Math.max(1,Math.floor(1000/refresh/60));pacing21.period=refresh*divisor;pacing21.locked=true;}}
- if(now+.15<pacing21.next)return;pacing21.next=Math.max(pacing21.next+pacing21.period,now+.1);
- if(!lastFrame)lastFrame=now;const elapsed=Math.min((now-lastFrame)/1000,.05);lastFrame=now;
- if(menu){if(scenery.pausedTab!==menu.tab){render();scenery.pausedTab=menu.tab;}return;}
- scenery.pausedTab=null;const live=performance.now()>manualUntil;if(live&&elapsed>0)tick(elapsed);render();
- if(live&&state.settings.quality==='balanced'&&!softwareBudget()&&clarity23.gpuSamples>10){
-  pacing21.slow=clarity23.gpuMs>17?pacing21.slow+1:0;pacing21.fast=clarity23.gpuMs<10?pacing21.fast+1:0;
-  if(pacing21.slow>180&&perf.scale>.85){perf.scale=Math.max(.85,perf.scale-.05);pacing21.slow=0;resize();}
-  else if(pacing21.fast>300&&perf.scale<1){perf.scale=Math.min(1,perf.scale+.05);pacing21.fast=0;resize();}
- }
-};
+// Presentation pacing is owned by systems/runtime.js.
+

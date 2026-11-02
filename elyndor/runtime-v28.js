@@ -25,21 +25,8 @@ resize=function(){
 // Present once per browser animation frame. The old estimated-refresh deadline
 // could skip a whole refresh after a tiny scheduling delay on otherwise fast
 // frames. Simulation uses elapsed seconds, so movement is refresh-independent.
-loop=function(now){
- requestAnimationFrame(loop);
- if(document.hidden){lastFrame=0;return;}
- if(!lastFrame)lastFrame=now;
- const elapsed=Math.min((now-lastFrame)/1000,.05);lastFrame=now;
- if(menu){if(scenery.pausedTab!==menu.tab){render();scenery.pausedTab=menu.tab;}return;}
- scenery.pausedTab=null;const live=performance.now()>manualUntil,start=performance.now();
- if(live&&elapsed>0)tick(elapsed);render();runtime28.frames++;runtime28.cost=mix(runtime28.cost,performance.now()-start,.04);
- if(live&&state.settings.quality==='balanced'&&!softwareBudget()&&clarity23.gpuSamples>10){
-  pacing21.slow=clarity23.gpuMs>16?pacing21.slow+elapsed:Math.max(0,pacing21.slow-elapsed);
-  pacing21.fast=clarity23.gpuMs<8?pacing21.fast+elapsed:0;
-  if(pacing21.slow>4&&perf.scale>.8){perf.scale=Math.max(.8,perf.scale-.05);pacing21.slow=pacing21.fast=0;resize();}
-  else if(pacing21.fast>15&&perf.scale<1){perf.scale=Math.min(1,perf.scale+.05);pacing21.fast=0;resize();}
- }
-};
+// Presentation pacing is owned by systems/runtime.js.
+
 
 // A loaded scene owns a fresh party. Never inherit a title-preview hide,
 // battle dissolve, clipping range, or a warm-up camera's culling decision.
