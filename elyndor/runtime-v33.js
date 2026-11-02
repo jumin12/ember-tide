@@ -47,6 +47,14 @@ buildWorld=function(...args){const r=buildGroupsBefore33(...args);if(activeScene
  for(const g of groups.values()){const b=new THREE.Sphere();b.makeEmpty();for(const m of g.children){if(!m.boundingSphere)m.computeBoundingSphere();b.union(m.boundingSphere);}b.radius+=12;g.userData.bounds21=b;g.updateMatrixWorld(true);g.matrixAutoUpdate=false;}
  world.userData.vegetationBuckets21=[...groups.values()];
 }return r;};
+// Keep a mesh's detail until it has crossed a real distance band. Tiny camera
+// follow corrections and walking along a threshold must not alternate whole
+// terrain/foliage batches or their shadows every budget update.
+function stableDistanceLod33(mesh,key,distance,thresholds,margin=6){
+ const tier=profile33(),states=mesh.userData.distanceLods33??={},previous=states[key];let level=previous?.tier===tier?previous.level:thresholds.filter(t=>distance>=t).length;
+ if(previous?.tier===tier){while(level<thresholds.length&&distance>thresholds[level]+margin)level++;while(level>0&&distance<thresholds[level-1]-margin)level--;}
+ if(previous){previous.tier=tier;previous.level=level;}else states[key]={tier,level};return level;
+}
 updateRenderBudget=function(force=false){
  if(!world||!player||(!force&&world===budgetWorld33&&clock-budgetAt33<.12))return;const r=budgetBefore33(force);budgetAt33=clock;budgetWorld33=world;
  camera.updateMatrixWorld();frustum33.setFromProjectionMatrix(matrix33.multiplyMatrices(camera.projectionMatrix,camera.matrixWorldInverse));
@@ -54,11 +62,12 @@ updateRenderBudget=function(force=false){
  for(const im of perf.plants){
   const c=im.userData.center,d=Math.hypot(c.x-p.x,c.z-p.z),far=activeScene.kind==='overworld'?230:185;
   im.visible=d<far+35;im.count=im.userData.total??im.count;
-  if(im.userData.detailedGeometry){im.geometry=d<[18,23,34,42][t]?im.userData.detailedGeometry:im.userData.distantGeometry;im.material.uniformsForDistance?.range.value.set(far-35,far);}
-  im.castShadow=t>0&&d<(im.userData.plantKey==='grassBlades'?(t>1?32:20):t>1?65:38);
+  if(im.userData.detailedGeometry){im.geometry=stableDistanceLod33(im,'plant',d,[[18,23,34,42][t]],3)===0?im.userData.detailedGeometry:im.userData.distantGeometry;im.material.uniformsForDistance?.range.value.set(far-35,far);}
+  const shadowDistance=im.userData.plantKey==='grassBlades'?(t>1?32:20):t>1?65:38;
+  im.castShadow=t>0&&stableDistanceLod33(im,'plantShadow',d,[shadowDistance],6)===0;
  }
  for(const m of scenery.forestMeshes){const d=Math.hypot(m.userData.center.x-p.x,m.userData.center.z-p.z),lod=m.userData.nativeLods30;
-  if(lod)m.geometry=lod[d<[35,46,65,85][t]?(t===0?1:0):d<145?1:2];m.visible=d<350;m.castShadow=d<(t<2?85:145);
+  if(lod)m.geometry=lod[Math.max(t===0?1:0,stableDistanceLod33(m,'forest',d,[[35,46,65,85][t],145],8))];m.visible=d<350;m.castShadow=stableDistanceLod33(m,'forestShadow',d,[t<2?85:145],10)===0;
  }
  // Reject complete offscreen branches before Three visits their leaf meshes.
  // Include the reflected view and the projected footprint of tall casters.

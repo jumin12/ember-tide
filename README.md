@@ -1,5 +1,11 @@
 # The Last Light of Elyndor
 
+## Alpha Version 1.14 — Steadier surfaces in motion
+
+Distance-based detail and shadow changes now use separate entry and exit bands, preventing rapid switches when walking along a threshold. Atmospheric scattering uses continuous world-space sampling rather than jumping between random cells. Native textures, animation sheets and the existing scene architecture are unchanged. Focused before/after GPU and detail-boundary checks are recorded in `elyndor/previews/render-v40/verification.json`.
+
+The normal device sweep measured roughly 67–72 FPS on the test PC, including emulated phone layouts. The resize-and-4x-CPU stress sequence still fell below its absolute floor in both the preceding and current builds. Matched fixed-budget measurements showed no patch slowdown; the raw failures remain in the release evidence. Physical phones were not measured.
+
 ## Alpha Version 1.13 — Atlas geography and distinct destinations
 
 The overworld and its interactive 3D atlas share the refreshed current atlas coastline, northern relief, continuous freshwater curves and native forest positions. Four climate weights blend snow, grass, scrub, sand and volcanic rock across irregular transition areas. The southern volcanic island has been moved farther offshore and south at the owner's request; the harbor moves with its native coastal position. The closest mainland-to-island separation is approximately 102 world metres.

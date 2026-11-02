@@ -1,13 +1,13 @@
 {
-  "status": "Alpha Version 1.13: connected rivers, coherent crossings and distinct destinations",
+  "status": "Alpha Version 1.14: stable distance detail, shadows and atmospheric sampling",
   "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
   "characterFamilies": 50,
   "runtimeFamilies": 51,
   "nativeSelectedPoses": 5628,
   "artifact": {
     "file": "index.html",
-    "bytes": 50791467,
-    "sha256": "d88753f9277bbe738ea680d5194e959098cec690ad6fb702b20fe7324606df6d",
+    "bytes": 50793156,
+    "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2",
     "offline": true
   },
   "incompleteClips": {},

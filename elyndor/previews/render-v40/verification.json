@@ -1,0 +1,1285 @@
+{
+  "version": "Alpha Version 1.14",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 50793156,
+    "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2",
+    "offline": true
+  },
+  "qa": {
+    "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2",
+    "cases": [
+      {
+        "name": "source",
+        "exit": 0,
+        "seconds": 0.792
+      },
+      {
+        "name": "stability",
+        "exit": 0,
+        "seconds": 57.657
+      },
+      {
+        "name": "air",
+        "exit": 0,
+        "seconds": 28.633
+      },
+      {
+        "name": "devices",
+        "exit": 1,
+        "seconds": 0,
+        "retainedEvidence": true,
+        "knownLimitation": "The absolute 4x CPU stress floor fails in both published and fixed builds; normal layouts, allocation sweeps and matched patch comparison pass."
+      },
+      {
+        "name": "campaign",
+        "exit": 0,
+        "seconds": 210.045
+      },
+      {
+        "name": "lifecycle",
+        "exit": 0,
+        "seconds": 104.244
+      },
+      {
+        "name": "input",
+        "exit": 0,
+        "seconds": 31.352
+      }
+    ],
+    "started": "2026-11-02T02:34:27.340Z",
+    "previousAttempt": "output/elyndor/flicker-v40/qa/first-run.json",
+    "unchanged": true,
+    "pass": false,
+    "functionalPass": true,
+    "knownStressLimit": true,
+    "renderingHotfixVerified": true,
+    "finished": "2026-11-02T03:08:19.489Z"
+  },
+  "detailStability": {
+    "cases": 19,
+    "tiers": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "oscillationMetres": 0.05,
+    "baselineFlips": 437,
+    "fixedFlips": 0,
+    "largerDistanceChangesRetained": true
+  },
+  "atmosphereContinuity": {
+    "scope": "Native GPU, controlled 40m depth plane and white shadow fixture; native cloud texture; 25 world-cell boundaries. This isolates sampling continuity rather than scoring an entire scene image.",
+    "baselineMaximumJump": 0.00067138671875,
+    "fixedMaximumJump": 1.52587890625e-05,
+    "reductionFactorLowerBound": 22.0,
+    "quantizationLimited": true
+  },
+  "performance": {
+    "scope": "Native test PC and browser CPU/touch emulation. Physical phones were not measured. The initial strict 4x CPU sweep fell below the absolute floor; its raw observations are retained. The controlled original-versus-fixed comparison showed no patch slowdown.",
+    "initialStrictSweep": {
+      "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2",
+      "samples": [
+        {
+          "name": "desktop",
+          "w": 1920,
+          "h": 1080,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 429,
+          "seconds": 6,
+          "fps": 71.5,
+          "cpu": 6.078846156528336,
+          "gpu": 3.2281893092826413,
+          "buffer": [
+            1366,
+            769
+          ],
+          "resizes": 2,
+          "allocations": 8,
+          "programs": 176,
+          "geometry": 903,
+          "textures": 143
+        },
+        {
+          "name": "desktop",
+          "w": 1366,
+          "h": 768,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 430,
+          "seconds": 6,
+          "fps": 71.66666666666667,
+          "cpu": 5.683672204831044,
+          "gpu": 4.283894995708594,
+          "buffer": [
+            1366,
+            768
+          ],
+          "resizes": 3,
+          "allocations": 8,
+          "programs": 176,
+          "geometry": 903,
+          "textures": 143
+        },
+        {
+          "name": "desktop",
+          "w": 960,
+          "h": 540,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 427,
+          "seconds": 6,
+          "fps": 71.16666666666667,
+          "cpu": 6.212874624766786,
+          "gpu": 3.676725127486644,
+          "buffer": [
+            960,
+            540
+          ],
+          "resizes": 4,
+          "allocations": 8,
+          "programs": 176,
+          "geometry": 906,
+          "textures": 143
+        },
+        {
+          "name": "desktop",
+          "w": 800,
+          "h": 600,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 431,
+          "seconds": 6,
+          "fps": 71.83333333333333,
+          "cpu": 5.333170150101708,
+          "gpu": 3.126947894845714,
+          "buffer": [
+            800,
+            600
+          ],
+          "resizes": 5,
+          "allocations": 8,
+          "programs": 176,
+          "geometry": 907,
+          "textures": 143
+        },
+        {
+          "name": "desktop",
+          "w": 1280,
+          "h": 720,
+          "throttle": 4,
+          "dpr": 1,
+          "tier": 0,
+          "scale": 0.6,
+          "frameCount": 238,
+          "seconds": 6,
+          "fps": 39.666666666666664,
+          "cpu": 19.640161666972734,
+          "gpu": 11.724435596965622,
+          "buffer": [
+            645,
+            363
+          ],
+          "resizes": 12,
+          "allocations": 11,
+          "programs": 176,
+          "geometry": 905,
+          "textures": 142
+        },
+        {
+          "name": "phone-high-dpi",
+          "w": 390,
+          "h": 844,
+          "throttle": 1,
+          "dpr": 3,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 430,
+          "seconds": 6,
+          "fps": 71.66666666666667,
+          "cpu": 6.983049594340592,
+          "gpu": 2.7398847170994007,
+          "buffer": [
+            585,
+            1266
+          ],
+          "resizes": 2,
+          "allocations": 5,
+          "programs": 176,
+          "geometry": 906,
+          "textures": 143
+        },
+        {
+          "name": "phone-high-dpi",
+          "w": 844,
+          "h": 390,
+          "throttle": 1,
+          "dpr": 3,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 426,
+          "seconds": 6,
+          "fps": 71,
+          "cpu": 6.975635761138933,
+          "gpu": 4.3649300678760445,
+          "buffer": [
+            1266,
+            585
+          ],
+          "resizes": 3,
+          "allocations": 5,
+          "programs": 176,
+          "geometry": 907,
+          "textures": 143
+        },
+        {
+          "name": "phone-high-dpi",
+          "w": 390,
+          "h": 844,
+          "throttle": 4,
+          "dpr": 3,
+          "tier": 0,
+          "scale": 0.7600000000000001,
+          "frameCount": 151,
+          "seconds": 6,
+          "fps": 25.166666666666668,
+          "cpu": 74.27353831535288,
+          "gpu": 13.81596096075311,
+          "buffer": [
+            417,
+            901
+          ],
+          "resizes": 8,
+          "allocations": 8,
+          "programs": 176,
+          "geometry": 903,
+          "textures": 142
+        }
+      ],
+      "errors": [],
+      "desktopResize": {
+        "cold": {
+          "allocations": 11,
+          "geometries": 903,
+          "textures": 142
+        },
+        "before": {
+          "allocations": 11,
+          "geometries": 905,
+          "textures": 143
+        },
+        "after": {
+          "allocations": 11,
+          "geometries": 905,
+          "textures": 143
+        },
+        "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
+        "pass": true
+      },
+      "phone-high-dpiResize": {
+        "cold": {
+          "allocations": 8,
+          "geometries": 901,
+          "textures": 142
+        },
+        "before": {
+          "allocations": 8,
+          "geometries": 908,
+          "textures": 143
+        },
+        "after": {
+          "allocations": 8,
+          "geometries": 908,
+          "textures": 143
+        },
+        "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
+        "pass": true
+      },
+      "pass": false
+    },
+    "baselineStrictSweep": {
+      "sha256": "d88753f9277bbe738ea680d5194e959098cec690ad6fb702b20fe7324606df6d",
+      "samples": [
+        {
+          "name": "desktop",
+          "w": 1920,
+          "h": 1080,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 424,
+          "seconds": 6,
+          "fps": 70.66666666666667,
+          "cpu": 8.16923649226063,
+          "gpu": 5.223550669529522,
+          "buffer": [
+            1366,
+            769
+          ],
+          "resizes": 2,
+          "allocations": 8,
+          "programs": 176,
+          "geometry": 908,
+          "textures": 143
+        },
+        {
+          "name": "desktop",
+          "w": 1366,
+          "h": 768,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 421,
+          "seconds": 6,
+          "fps": 70.16666666666667,
+          "cpu": 5.397531809039901,
+          "gpu": 4.670344065755059,
+          "buffer": [
+            1366,
+            768
+          ],
+          "resizes": 3,
+          "allocations": 8,
+          "programs": 176,
+          "geometry": 904,
+          "textures": 143
+        },
+        {
+          "name": "desktop",
+          "w": 960,
+          "h": 540,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 414,
+          "seconds": 6,
+          "fps": 69,
+          "cpu": 4.5934656779917855,
+          "gpu": 3.4215506499389647,
+          "buffer": [
+            960,
+            540
+          ],
+          "resizes": 4,
+          "allocations": 8,
+          "programs": 176,
+          "geometry": 906,
+          "textures": 143
+        },
+        {
+          "name": "desktop",
+          "w": 800,
+          "h": 600,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 413,
+          "seconds": 6,
+          "fps": 68.83333333333333,
+          "cpu": 5.044831407211941,
+          "gpu": 6.190490254849447,
+          "buffer": [
+            800,
+            600
+          ],
+          "resizes": 5,
+          "allocations": 8,
+          "programs": 176,
+          "geometry": 905,
+          "textures": 143
+        },
+        {
+          "name": "desktop",
+          "w": 1280,
+          "h": 720,
+          "throttle": 4,
+          "dpr": 1,
+          "tier": 0,
+          "scale": 0.6,
+          "frameCount": 125,
+          "seconds": 6,
+          "fps": 20.833333333333332,
+          "cpu": 46.21171003889661,
+          "gpu": 28.04750616074957,
+          "buffer": [
+            645,
+            363
+          ],
+          "resizes": 12,
+          "allocations": 11,
+          "programs": 176,
+          "geometry": 903,
+          "textures": 142
+        },
+        {
+          "name": "phone-high-dpi",
+          "w": 390,
+          "h": 844,
+          "throttle": 1,
+          "dpr": 3,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 429,
+          "seconds": 6,
+          "fps": 71.5,
+          "cpu": 7.270977420871432,
+          "gpu": 1.4825985409340539,
+          "buffer": [
+            585,
+            1266
+          ],
+          "resizes": 2,
+          "allocations": 5,
+          "programs": 176,
+          "geometry": 905,
+          "textures": 143
+        },
+        {
+          "name": "phone-high-dpi",
+          "w": 844,
+          "h": 390,
+          "throttle": 1,
+          "dpr": 3,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 422,
+          "seconds": 6,
+          "fps": 70.33333333333333,
+          "cpu": 5.668055439353148,
+          "gpu": 3.2129353339287565,
+          "buffer": [
+            1266,
+            585
+          ],
+          "resizes": 3,
+          "allocations": 5,
+          "programs": 176,
+          "geometry": 902,
+          "textures": 143
+        },
+        {
+          "name": "phone-high-dpi",
+          "w": 390,
+          "h": 844,
+          "throttle": 4,
+          "dpr": 3,
+          "tier": 0,
+          "scale": 0.6,
+          "frameCount": 54,
+          "seconds": 6,
+          "fps": 9,
+          "cpu": 119.70730236373633,
+          "gpu": 42.37346978142754,
+          "buffer": [
+            329,
+            712
+          ],
+          "resizes": 10,
+          "allocations": 8,
+          "programs": 176,
+          "geometry": 901,
+          "textures": 142
+        }
+      ],
+      "errors": [],
+      "desktopResize": {
+        "cold": {
+          "allocations": 11,
+          "geometries": 902,
+          "textures": 142
+        },
+        "before": {
+          "allocations": 11,
+          "geometries": 905,
+          "textures": 143
+        },
+        "after": {
+          "allocations": 11,
+          "geometries": 905,
+          "textures": 143
+        },
+        "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
+        "pass": true
+      },
+      "phone-high-dpiResize": {
+        "cold": {
+          "allocations": 8,
+          "geometries": 900,
+          "textures": 142
+        },
+        "before": {
+          "allocations": 8,
+          "geometries": 908,
+          "textures": 143
+        },
+        "after": {
+          "allocations": 8,
+          "geometries": 908,
+          "textures": 143
+        },
+        "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
+        "pass": true
+      },
+      "pass": false
+    },
+    "matchedComparison": {
+      "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2",
+      "baselineSha256": "d88753f9277bbe738ea680d5194e959098cec690ad6fb702b20fe7324606df6d",
+      "scope": "Matched native Chrome measurements on the same PC, 4x CPU emulation, same fixed low detail and render scale. Order is reversed for portrait. This measures patch regression; it is not a physical-phone or universal frame-rate claim.",
+      "samples": [
+        {
+          "name": "desktop",
+          "label": "baseline",
+          "fps": 63.23272636567722,
+          "seconds": 8.018,
+          "frames": 507,
+          "geometry": 906,
+          "textures": 142,
+          "programs": 176,
+          "buffer": [
+            860,
+            484
+          ],
+          "tier": 0,
+          "scale": 0.8
+        },
+        {
+          "name": "desktop",
+          "label": "fixed",
+          "fps": 66.09112829655105,
+          "seconds": 8.004100000023842,
+          "frames": 529,
+          "geometry": 902,
+          "textures": 142,
+          "programs": 176,
+          "buffer": [
+            860,
+            484
+          ],
+          "tier": 0,
+          "scale": 0.8
+        },
+        {
+          "name": "portrait",
+          "label": "fixed",
+          "fps": 46.501218481401665,
+          "seconds": 8.042799999952317,
+          "frames": 374,
+          "geometry": 900,
+          "textures": 142,
+          "programs": 176,
+          "buffer": [
+            438,
+            949
+          ],
+          "tier": 0,
+          "scale": 0.8
+        },
+        {
+          "name": "portrait",
+          "label": "baseline",
+          "fps": 40.52710094480358,
+          "seconds": 8.044,
+          "frames": 326,
+          "geometry": 897,
+          "textures": 142,
+          "programs": 176,
+          "buffer": [
+            438,
+            949
+          ],
+          "tier": 0,
+          "scale": 0.8
+        }
+      ],
+      "errors": [],
+      "comparisons": [
+        {
+          "name": "desktop",
+          "baselineFps": 63.23272636567722,
+          "fixedFps": 66.09112829655105,
+          "ratio": 1.0452044707726753,
+          "sameBudget": true,
+          "pass": true
+        },
+        {
+          "name": "portrait",
+          "baselineFps": 40.52710094480358,
+          "fixedFps": 46.501218481401665,
+          "ratio": 1.147410433939862,
+          "sameBudget": true,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    "devices": {
+      "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2",
+      "samples": [
+        {
+          "name": "desktop",
+          "w": 1920,
+          "h": 1080,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 428,
+          "seconds": 6,
+          "fps": 71.33333333333333,
+          "cpu": 4.982576226742731,
+          "gpu": 4.401944822325154,
+          "buffer": [
+            1366,
+            769
+          ],
+          "resizes": 2,
+          "allocations": 8,
+          "programs": 176,
+          "geometry": 901,
+          "textures": 143
+        },
+        {
+          "name": "desktop",
+          "w": 1366,
+          "h": 768,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 422,
+          "seconds": 6,
+          "fps": 70.33333333333333,
+          "cpu": 5.091596610941123,
+          "gpu": 4.046495044259948,
+          "buffer": [
+            1366,
+            768
+          ],
+          "resizes": 3,
+          "allocations": 8,
+          "programs": 176,
+          "geometry": 907,
+          "textures": 143
+        },
+        {
+          "name": "desktop",
+          "w": 960,
+          "h": 540,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 403,
+          "seconds": 6,
+          "fps": 67.16666666666667,
+          "cpu": 5.194537052326086,
+          "gpu": 7.390269887999003,
+          "buffer": [
+            960,
+            540
+          ],
+          "resizes": 4,
+          "allocations": 8,
+          "programs": 176,
+          "geometry": 904,
+          "textures": 143
+        },
+        {
+          "name": "desktop",
+          "w": 800,
+          "h": 600,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 413,
+          "seconds": 6,
+          "fps": 68.83333333333333,
+          "cpu": 4.999494590599468,
+          "gpu": 4.8444995229475,
+          "buffer": [
+            800,
+            600
+          ],
+          "resizes": 5,
+          "allocations": 8,
+          "programs": 176,
+          "geometry": 903,
+          "textures": 143
+        },
+        {
+          "name": "desktop",
+          "w": 1280,
+          "h": 720,
+          "throttle": 4,
+          "dpr": 1,
+          "tier": 0,
+          "scale": 0.6,
+          "frameCount": 68,
+          "seconds": 6,
+          "fps": 11.333333333333334,
+          "cpu": 79.5562311630456,
+          "gpu": 44.80354460827647,
+          "buffer": [
+            645,
+            363
+          ],
+          "resizes": 12,
+          "allocations": 11,
+          "programs": 176,
+          "geometry": 903,
+          "textures": 142
+        },
+        {
+          "name": "phone-high-dpi",
+          "w": 390,
+          "h": 844,
+          "throttle": 1,
+          "dpr": 3,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 431,
+          "seconds": 6,
+          "fps": 71.83333333333333,
+          "cpu": 6.601557749823192,
+          "gpu": 2.2571321081259645,
+          "buffer": [
+            585,
+            1266
+          ],
+          "resizes": 2,
+          "allocations": 5,
+          "programs": 176,
+          "geometry": 898,
+          "textures": 143
+        },
+        {
+          "name": "phone-high-dpi",
+          "w": 844,
+          "h": 390,
+          "throttle": 1,
+          "dpr": 3,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 428,
+          "seconds": 6,
+          "fps": 71.33333333333333,
+          "cpu": 5.943122748421642,
+          "gpu": 4.262689920849838,
+          "buffer": [
+            1266,
+            585
+          ],
+          "resizes": 3,
+          "allocations": 5,
+          "programs": 176,
+          "geometry": 905,
+          "textures": 143
+        },
+        {
+          "name": "phone-high-dpi",
+          "w": 390,
+          "h": 844,
+          "throttle": 4,
+          "dpr": 3,
+          "tier": 0,
+          "scale": 0.6,
+          "frameCount": 89,
+          "seconds": 6,
+          "fps": 14.833333333333334,
+          "cpu": 76.44207342771661,
+          "gpu": 34.566259877860524,
+          "buffer": [
+            329,
+            712
+          ],
+          "resizes": 10,
+          "allocations": 8,
+          "programs": 176,
+          "geometry": 900,
+          "textures": 142
+        }
+      ],
+      "errors": [],
+      "desktopResize": {
+        "cold": {
+          "allocations": 11,
+          "geometries": 901,
+          "textures": 142
+        },
+        "before": {
+          "allocations": 11,
+          "geometries": 901,
+          "textures": 143
+        },
+        "after": {
+          "allocations": 11,
+          "geometries": 901,
+          "textures": 143
+        },
+        "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
+        "pass": true
+      },
+      "phone-high-dpiResize": {
+        "cold": {
+          "allocations": 8,
+          "geometries": 899,
+          "textures": 142
+        },
+        "before": {
+          "allocations": 8,
+          "geometries": 901,
+          "textures": 143
+        },
+        "after": {
+          "allocations": 8,
+          "geometries": 901,
+          "textures": 143
+        },
+        "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
+        "pass": true
+      },
+      "pass": false
+    },
+    "lifecycle": {
+      "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2",
+      "errors": [],
+      "scope": "Native Chrome; a paced local HTTP response verifies streamed loading feedback. Explicit GC is test-only.",
+      "stream": {
+        "done": 1261439,
+        "total": 39401965,
+        "width": 0.38,
+        "visible": true
+      },
+      "ready": {
+        "progress": 1,
+        "geometry": true,
+        "audio": {
+          "ready": true,
+          "voices": true,
+          "shortEffects": 71,
+          "decoded": 71,
+          "bytes": 4533448
+        },
+        "jsonNodes": 0,
+        "scriptChars": 6220045,
+        "bundleDone": true,
+        "voices": true,
+        "history": [
+          0.39968750000000003,
+          0.39980263157894735,
+          0.39991776315789473,
+          0.4000328947368421,
+          0.4001480263157895,
+          0.4002631578947369,
+          0.4003782894736842,
+          0.4004934210526316,
+          0.40060855263157896,
+          0.40072368421052634,
+          0.40083881578947367,
+          0.40095394736842105,
+          0.40106907894736843,
+          0.4011842105263158,
+          0.4012993421052632,
+          0.4014144736842105,
+          0.4015296052631579,
+          0.4016447368421053,
+          0.40175986842105266,
+          0.401875,
+          0.40199013157894736,
+          0.40210526315789474,
+          0.4022203947368421,
+          0.4023355263157895,
+          0.40245065789473683,
+          0.4025657894736842,
+          0.4026809210526316,
+          0.40279605263157897,
+          0.4029111842105263,
+          0.4030263157894737,
+          0.40314144736842106,
+          0.40325657894736844,
+          0.4033717105263158,
+          0.40348684210526314,
+          0.4036019736842105,
+          0.4037171052631579,
+          0.4038322368421053,
+          0.4039473684210526,
+          0.4040625,
+          0.40417763157894737,
+          0.40429276315789475,
+          0.40440789473684213,
+          0.40452302631578946,
+          0.40463815789473684,
+          0.4047532894736842,
+          0.4048684210526316,
+          0.4049835526315789,
+          0.4050986842105263,
+          0.4052138157894737,
+          0.40532894736842107,
+          0.40544407894736845,
+          0.40555921052631577,
+          0.40567434210526315,
+          0.40578947368421053,
+          0.4059046052631579,
+          0.4060197368421053,
+          0.4061348684210526,
+          0.40625,
+          0.4063651315789474,
+          0.40648026315789476,
+          0.40659539473684214,
+          0.40671052631578947,
+          0.40682565789473685,
+          0.40694078947368423,
+          0.4070559210526316,
+          0.40717105263157893,
+          0.4072861842105263,
+          0.4074013157894737,
+          0.4075164473684211,
+          0.40763157894736846,
+          0.4077467105263158,
+          0.40786184210526316,
+          0.40797697368421054,
+          0.4080921052631579,
+          0.40820723684210525,
+          0.40832236842105263,
+          0.4084375,
+          0.4085526315789474,
+          0.40866776315789477,
+          0.4087828947368421,
+          0.4088980263157895,
+          0.40901315789473686,
+          0.40912828947368424,
+          0.40924342105263156,
+          0.40935855263157894,
+          0.4094736842105263,
+          0.4095888157894737,
+          0.4097039473684211,
+          0.4098190789473684,
+          0.4099342105263158,
+          0.41004934210526317,
+          0.41016447368421055,
+          0.4102796052631579,
+          0.41039473684210526,
+          0.41050986842105264,
+          0.410625,
+          0.4107401315789474,
+          0.4108552631578947,
+          0.4109703947368421,
+          0.4110855263157895,
+          0.41120065789473687,
+          0.4113157894736842,
+          0.41143092105263157,
+          0.41154605263157895,
+          0.41166118421052633,
+          0.4117763157894737,
+          0.41189144736842104,
+          0.4120065789473684,
+          0.4121217105263158,
+          0.4122368421052632,
+          0.4123519736842105,
+          0.4124671052631579,
+          0.41258223684210527,
+          0.41269736842105265,
+          0.4128125,
+          0.4129276315789474,
+          0.41304276315789473,
+          0.4131578947368421,
+          0.4132730263157895,
+          0.4133881578947368,
+          0.4135032894736842,
+          0.4136184210526316,
+          0.41373355263157896,
+          0.41384868421052634,
+          0.4139638157894737,
+          0.41407894736842105,
+          0.4141940789473684,
+          0.4143092105263158,
+          0.4144243421052632,
+          0.4145394736842105,
+          0.4146546052631579,
+          0.4147697368421053,
+          0.41488486842105265,
+          0.41500000000000004,
+          0.42,
+          0.42533333333333334,
+          0.43066666666666664,
+          0.436,
+          0.4413333333333333,
+          0.44666666666666666,
+          0.45199999999999996,
+          0.4573333333333333,
+          0.46266666666666667,
+          0.46799999999999997,
+          0.47333333333333333,
+          0.47866666666666663,
+          0.484,
+          0.4893333333333333,
+          0.49466666666666664,
+          0.5,
+          0.56,
+          0.64,
+          0.7,
+          0.9006565656565657,
+          0.9013131313131313,
+          0.901969696969697,
+          0.9026262626262627,
+          0.9032828282828284,
+          0.9039393939393939,
+          0.9045959595959596,
+          0.9052525252525253,
+          0.9059090909090909,
+          0.9065656565656566,
+          0.9072222222222223,
+          0.907878787878788,
+          0.9085353535353535,
+          0.9091919191919192,
+          0.9098484848484849,
+          0.9105050505050505,
+          0.9111616161616162,
+          0.9118181818181819,
+          0.9124747474747475,
+          0.9131313131313131,
+          0.9137878787878788,
+          0.9144444444444445,
+          0.9151010101010101,
+          0.9157575757575758,
+          0.9164141414141415,
+          0.9170707070707071,
+          0.9177272727272727,
+          0.9183838383838384,
+          0.9190404040404041,
+          0.9196969696969697,
+          0.9203535353535354,
+          0.9210101010101011,
+          0.9216666666666666,
+          0.9223232323232323,
+          0.922979797979798,
+          0.9236363636363637,
+          0.9242929292929293,
+          0.924949494949495,
+          0.9256060606060607,
+          0.9262626262626263,
+          0.9269191919191919,
+          0.9275757575757576,
+          0.9282323232323233,
+          0.9288888888888889,
+          0.9295454545454546,
+          0.9302020202020203,
+          0.9308585858585858,
+          0.9315151515151515,
+          0.9321717171717172,
+          0.9328282828282829,
+          0.9334848484848485,
+          0.9341414141414142,
+          0.9347979797979798,
+          0.9354545454545454,
+          0.9361111111111111,
+          0.9367676767676768,
+          0.9374242424242425,
+          0.9380808080808081,
+          0.9387373737373738,
+          0.9393939393939394,
+          0.940050505050505,
+          0.9407070707070707,
+          0.9413636363636364,
+          0.9420202020202021,
+          0.9426767676767677,
+          0.9433333333333334,
+          0.943989898989899,
+          0.9446464646464646,
+          0.9453030303030303,
+          0.945959595959596,
+          0.9466161616161617,
+          0.9472727272727273,
+          0.947929292929293,
+          0.9485858585858586,
+          0.9492424242424242,
+          0.9498989898989899,
+          0.9505555555555556,
+          0.9512121212121213,
+          0.9518686868686869,
+          0.9525252525252526,
+          0.9531818181818182,
+          0.9538383838383838,
+          0.9544949494949495,
+          0.9551515151515152,
+          0.9558080808080809,
+          0.9564646464646465,
+          0.9571212121212122,
+          0.9577777777777778,
+          0.9584343434343434,
+          0.9590909090909091,
+          0.9597474747474748,
+          0.9604040404040405,
+          0.9610606060606061,
+          0.9617171717171717,
+          0.9623737373737374,
+          0.963030303030303,
+          0.9636868686868687,
+          0.9643434343434344,
+          0.9650000000000001,
+          0.97,
+          0.98,
+          0.99,
+          1
+        ]
+      },
+      "audioPlayback": {
+        "context": "running",
+        "voiceTime": 0.100824,
+        "voiceBlob": true,
+        "effectPlayed": true,
+        "errors": []
+      },
+      "weather": {
+        "draws": 1,
+        "reflection": 0,
+        "chunkParents": 0,
+        "retained": 49,
+        "cached": 304,
+        "samples": 4941
+      },
+      "partyBefore": {
+        "heap": {
+          "usedSize": 90931012,
+          "totalSize": 110215168,
+          "embedderHeapUsedSize": 5995416,
+          "backingStorageSize": 216461323
+        },
+        "gpu": {
+          "geometry": 898,
+          "textures": 143,
+          "programs": 176,
+          "actorGeometries": 29,
+          "programPins": 112
+        }
+      },
+      "partyAfter": {
+        "heap": {
+          "usedSize": 90878568,
+          "totalSize": 93700096,
+          "embedderHeapUsedSize": 5982104,
+          "backingStorageSize": 216461323
+        },
+        "gpu": {
+          "geometry": 898,
+          "textures": 143,
+          "programs": 176,
+          "actorGeometries": 29,
+          "programPins": 112
+        }
+      },
+      "partyGrowth": {
+        "heap": -52444,
+        "backing": 0,
+        "textures": 0,
+        "geometry": 0
+      },
+      "saved": true,
+      "loadAccepted": true,
+      "loaded": {
+        "gold": 777,
+        "members": 2,
+        "location": "brookstead",
+        "paintBeforeBuild": 2,
+        "progress": 1
+      },
+      "travel": [
+        {
+          "heap": {
+            "usedSize": 73802952,
+            "totalSize": 101892096,
+            "embedderHeapUsedSize": 5941216,
+            "backingStorageSize": 171222923
+          },
+          "gpu": {
+            "geometry": 906,
+            "textures": 144,
+            "programs": 206,
+            "actorGeometries": 35,
+            "programPins": 112
+          }
+        },
+        {
+          "heap": {
+            "usedSize": 74658832,
+            "totalSize": 95076352,
+            "embedderHeapUsedSize": 5964992,
+            "backingStorageSize": 171222783
+          },
+          "gpu": {
+            "geometry": 905,
+            "textures": 144,
+            "programs": 206,
+            "actorGeometries": 35,
+            "programPins": 112
+          }
+        },
+        {
+          "heap": {
+            "usedSize": 75080388,
+            "totalSize": 89047040,
+            "embedderHeapUsedSize": 5928920,
+            "backingStorageSize": 171222923
+          },
+          "gpu": {
+            "geometry": 906,
+            "textures": 144,
+            "programs": 206,
+            "actorGeometries": 35,
+            "programPins": 112
+          }
+        }
+      ],
+      "worldOwners": [
+        {
+          "serial": 17,
+          "parent": true,
+          "children": 312
+        }
+      ],
+      "travelGrowth": {
+        "heap": 1277436,
+        "backing": 0,
+        "textures": 0
+      },
+      "pass": true
+    }
+  },
+  "campaign": {
+    "pass": true,
+    "battles": 6,
+    "restoredLights": [
+      "fern",
+      "alder",
+      "relief",
+      "site"
+    ],
+    "persistence": {
+      "loaded": true,
+      "gold": true,
+      "position": true,
+      "time": true,
+      "lights": true,
+      "region": true
+    }
+  },
+  "errors": [],
+  "extraGpuResources": 0,
+  "additionalScatteringSteps": 0
+}
