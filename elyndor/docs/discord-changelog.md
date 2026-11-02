@@ -17,6 +17,7 @@ Keep the URL in the GitHub secret; it is the credential that permits posting to 
 - The workflow records confirmed versions with `discord-announced/<version>-<hash>` Git tags. These are delivery receipts, not game release tags; they do not modify the `main` branch or trigger another Pages build.
 - Only `main` can announce. Failed builds, superseded live files and missing webhook configuration do not send a message. Missing configuration is reported in the Actions log.
 - Automatic mentions are disabled, so text in the changelog will not ping users, roles or everyone.
+- Text channels receive a message. Forum channels receive one titled post for each version. The sender recognizes Discord's explicit forum-title rejection and resubmits with the version title; it never retries an ambiguous delivery. A webhook URL with `thread_id` instead targets that existing forum post.
 - If the webhook's channel changes, future versions go to the new channel; previously announced versions remain marked.
 
 The workflow requires `contents: write` solely to save its delivery receipt. Its dependency is pinned to the verified official checkout v7.0.1 release commit. Jobs are serialized to prevent simultaneous announcements of the same version.

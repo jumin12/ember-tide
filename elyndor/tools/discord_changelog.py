@@ -114,7 +114,22 @@ def discord_send(url, payload, notes):
         with request.urlopen(req, timeout=30) as response:
             result = json.load(response)
     except error.HTTPError as exc:
-        raise NotificationError(f'Discord returned HTTP {exc.code}. No delivery marker was written.') from None
+        status = exc.code
+        try:
+            detail = json.loads(exc.read(16384))
+            code = detail.get('code') if isinstance(detail, dict) else None
+        except (ValueError, OSError):
+            code = None
+        finally:
+            exc.close()
+        # Discord explicitly rejects an untitled forum request before creating
+        # a message (220001). Only that confirmed rejection permits a retry;
+        # timeouts and generic server errors must never duplicate a post.
+        if status == 400 and code == 220001 and 'thread_name' not in payload and 'thread_id' not in parse.parse_qs(parse.urlsplit(url).query):
+            forum_payload = {**payload, 'thread_name': payload['embeds'][0]['title'][:100]}
+            return discord_send(url, forum_payload, notes)
+        detail = f' (code {code})' if isinstance(code, int) else ''
+        raise NotificationError(f'Discord returned HTTP {status}{detail}. No delivery marker was written.') from None
     if not isinstance(result, dict) or not isinstance(result.get('id'), str) or not result['id'].isdigit():
         raise NotificationError('Discord did not confirm a message ID. Check the channel before retrying.')
     return result['id']

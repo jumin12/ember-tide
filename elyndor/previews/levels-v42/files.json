@@ -35181,8 +35181,8 @@
   },
   {
     "file": "elyndor/docs/discord-changelog.md",
-    "bytes": 3815,
-    "sha256": "5a2573df4b2480d72c3a5e7e39e69eb0743337ac168d867da1d501eeb82eefa9"
+    "bytes": 4121,
+    "sha256": "398a1afece3855bcc2f6dd0b22556a49c852444aaa2c94b5c5d12028cbc60c91"
   },
   {
     "file": "elyndor/docs/planned-levels.md",
@@ -35906,8 +35906,8 @@
   },
   {
     "file": "elyndor/tools/discord_changelog.py",
-    "bytes": 9180,
-    "sha256": "25419e068866d094ced9f173f0a89c1d7fd672270bc3eac8978f9d6ae973ed12"
+    "bytes": 10045,
+    "sha256": "bcb0c5b8ca81680b4f9f40ecac0e514dbd50f5dd58edfd38f93d673fdf02192c"
   },
   {
     "file": "elyndor/tools/extended-soak-v37.mjs",
@@ -36016,8 +36016,8 @@
   },
   {
     "file": "elyndor/tools/test_discord_changelog.py",
-    "bytes": 7640,
-    "sha256": "09f164988e30c8d0c5567c1e9a00807f02dd4151893a58da4798bc8fa5c58aad"
+    "bytes": 9611,
+    "sha256": "9bccec8d975f79ab8d80a3c65017faf79ded889fd4eb4af1d926d9e19a4497d4"
   },
   {
     "file": "elyndor/tools/texture-stability-v40.mjs",

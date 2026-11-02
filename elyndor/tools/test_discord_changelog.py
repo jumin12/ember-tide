@@ -105,6 +105,35 @@ class AnnouncementTests(unittest.TestCase):
         self.assertNotIn('test-private-token', str(caught.exception))
         self.assertIn('429', str(caught.exception))
 
+    def test_forum_rejection_retries_with_one_version_post(self):
+        payload, notes, _ = dc.release_payload(RELEASE, 'https://example.com/')
+        calls = []
+        def respond(req, **kwargs):
+            calls.append(req)
+            if len(calls) == 1:
+                raise HTTPError(WEBHOOK, 400, 'forum needs title', {}, io.BytesIO(b'{"code":220001}'))
+            self.assertIn(b'"thread_name": "Elyndor', req.data)
+            self.assertIn(notes.encode('utf-8'), req.data)
+            return io.BytesIO(b'{"id":"123"}')
+        with patch.object(dc.request, 'urlopen', side_effect=respond):
+            self.assertEqual(dc.discord_send(dc.webhook_address(WEBHOOK), payload, notes), '123')
+        self.assertEqual(len(calls), 2)
+        self.assertNotIn('thread_name', payload)
+
+    def test_other_http_errors_never_retry_a_post(self):
+        payload, notes, _ = dc.release_payload(RELEASE, 'https://example.com/')
+        for status, code in [(400,50035),(500,220001)]:
+            with self.subTest(status=status,code=code), patch.object(dc.request, 'urlopen', side_effect=HTTPError(WEBHOOK,status,'rejected',{},io.BytesIO(json.dumps({'code':code}).encode()))) as send, self.assertRaises(dc.NotificationError):
+                dc.discord_send(dc.webhook_address(WEBHOOK), payload, notes)
+            self.assertEqual(send.call_count, 1)
+
+    def test_forum_retry_cannot_loop_or_override_existing_thread(self):
+        payload, notes, _ = dc.release_payload(RELEASE, 'https://example.com/')
+        for url, data in [(dc.webhook_address(WEBHOOK),{**payload,'thread_name':'Already named'}),(dc.webhook_address(WEBHOOK+'?thread_id=456'),payload)]:
+            with self.subTest(url=url), patch.object(dc.request, 'urlopen', side_effect=HTTPError(WEBHOOK,400,'rejected',{},io.BytesIO(b'{"code":220001}'))) as send, self.assertRaises(dc.NotificationError):
+                dc.discord_send(url, data, notes)
+            self.assertEqual(send.call_count, 1)
+
     def test_missing_secret_makes_no_network_requests(self):
         with patch.dict(dc.os.environ, {'DISCORD_WEBHOOK_URL': ''}), patch.object(dc.request, 'urlopen') as network, patch.object(dc.sys, 'argv', ['discord_changelog.py']), patch('builtins.print'):
             self.assertEqual(dc.entry(), 0)
