@@ -35961,8 +35961,8 @@
   },
   {
     "file": "elyndor/tools/prepare-release-v42.py",
-    "bytes": 7758,
-    "sha256": "7b2bd71039d193ffebdfa96b213516bd8ae20d72ab4ca0fa15494b5660292dd2"
+    "bytes": 7966,
+    "sha256": "40837d7003267d466ef3d05240a650466e142a082658a6158355b206e746fc29"
   },
   {
     "file": "elyndor/tools/presentation-v37.mjs",
@@ -36172,7 +36172,7 @@
   {
     "file": "release.json",
     "bytes": 227913,
-    "sha256": "f7bdc9a315056f9b9209947178c357fad63901ea11906b5652371b2b451c508a"
+    "sha256": "741375341b4c23b78241ab859dadb770605f0dbcd837ce4cd152d162174a3ab7"
   },
   {
     "file": "three.vendor.js",
