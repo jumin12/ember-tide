@@ -1,0 +1,45 @@
+name: Discord changelog
+
+on:
+  page_build:
+  workflow_dispatch:
+
+# A durable tag records confirmed delivery without changing the game branch.
+permissions:
+  contents: write
+
+concurrency:
+  group: discord-changelog
+  cancel-in-progress: false
+
+jobs:
+  announce:
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'workflow_dispatch' || github.event.build.status == 'built')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+    steps:
+      - name: Check out the published release record
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.build.commit || github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /release.json
+            /elyndor/tools/discord_changelog.py
+
+      - name: Explain missing channel configuration
+        if: env.DISCORD_WEBHOOK_URL == ''
+        run: echo 'Discord is not configured. Add the DISCORD_WEBHOOK_URL repository secret to enable announcements.'
+
+      - name: Announce a verified live update
+        if: env.DISCORD_WEBHOOK_URL != ''
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          PUBLISHED_SHA: ${{ github.event.build.commit || github.sha }}
+          ELYNDOR_GAME_URL: https://jumin12.github.io/ember-tide/
+        run: python3 elyndor/tools/discord_changelog.py

@@ -27,7 +27,7 @@ release={**old,'release':'elyndor-alpha-1.16-planned-paths-party-2026-11-02','ve
 checkpoint=read('elyndor/assets/source/pixellab-v7/checkpoint.json');checkpoint['status']='Alpha Version 1.16: deliberate POI paths, grounded sprinting party and smooth wind shadows';checkpoint['artifact']=artifact
 (ROOT/'elyndor/assets/source/pixellab-v7/checkpoint.json').write_text(json.dumps(checkpoint,indent=2)+'\n',encoding='utf-8')
 previous_files=read('elyndor/previews/render-v41/files.json');selection=next(q for q in previous_files if q['file']=='elyndor/assets/source/pixellab-v7/manifest.json');assert digest(ROOT/selection['file'])==selection['sha256'],'Approved art selection changed'
-names={q['file'] for q in previous_files}|{'elyndor/previews/render-v41/files.json','elyndor/systems/level-plans.js','elyndor/tools/levels-v42.mjs','elyndor/tools/party-shadow-v42.mjs','elyndor/tools/levels-qa-v42.py','elyndor/tools/prepare-release-v42.py','elyndor/docs/planned-levels.md','elyndor/previews/levels-v42/verification.json'}
+names={q['file'] for q in previous_files}|{'elyndor/previews/render-v41/files.json','elyndor/systems/level-plans.js','elyndor/tools/levels-v42.mjs','elyndor/tools/party-shadow-v42.mjs','elyndor/tools/levels-qa-v42.py','elyndor/tools/prepare-release-v42.py','elyndor/docs/planned-levels.md','elyndor/previews/levels-v42/verification.json','.github/workflows/discord-changelog.yml','elyndor/tools/discord_changelog.py','elyndor/tools/test_discord_changelog.py','elyndor/docs/discord-changelog.md'}
 images=[('before-after.png','before-after.png'),('final/all-pois.png','all-pois.png'),('final/patrol.png','woodland-path.png'),('final/fern.png','fern-layout.png'),('motion/contact-bridge.png','bridge-shadow.png'),('motion/contact-stairs.png','stair-shadow.png'),('motion/contact-inn.png','inn-shadow.png'),('motion/five-party.png','sprinting-party.png'),('qa/input/shot-0.png','input.png')]
 for source,name in images:
  shutil.copyfile(ROOT/'output/elyndor/levels-v42'/source,PRE/name);names.add((PRE/name).relative_to(ROOT).as_posix())
@@ -35,7 +35,7 @@ records=[];errors=[]
 for name in sorted(names):
  p=ROOT/name;assert p.resolve().is_relative_to(ROOT.resolve()) and p.is_file(),name
  assert not name.startswith(('design/','archive/','output/')) and p.name not in ['progress.md','original.zip','source-signature.txt'] and not any(q.startswith('.env') for q in p.parts),name
- if p.suffix in ['.json','.js','.css','.html','.md','.py','.mjs']:
+ if p.suffix in ['.json','.js','.css','.html','.md','.py','.mjs','.yml','.yaml']:
   text=p.read_text(encoding='utf-8')
   for rule,pattern in {'credential':r'(?i)Bearer\s+[A-Za-z0-9._-]{16,}|sk[_-][A-Za-z0-9]{20,}','private_reference':r'upload:[a-f0-9]{8}|googleusercontent\.com|[?&]X-Amz-'}.items():
    if re.search(pattern,text):errors.append(rule+': '+name)

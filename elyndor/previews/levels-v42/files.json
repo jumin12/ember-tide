@@ -1,8 +1,13 @@
 [
   {
     "file": ".gitattributes",
-    "bytes": 445,
-    "sha256": "41a4081f08789c7ff9597723c505f74dc9ecde01406906167a08d2f4263c7951"
+    "bytes": 463,
+    "sha256": "1fc541ca7c15d9587599f1d8403caa2c3ed079a08bfe94813c4bc5c356f13f1b"
+  },
+  {
+    "file": ".github/workflows/discord-changelog.yml",
+    "bytes": 1480,
+    "sha256": "f32e1fbb96b9cad8d8aa4c019cf7d349e5eb89248d41c7b4b5141fab9ba88c1f"
   },
   {
     "file": ".gitignore",
@@ -16,8 +21,8 @@
   },
   {
     "file": "README.md",
-    "bytes": 35680,
-    "sha256": "272a043fd54e7700f6ef6a0cc7c95d520bbd70b0cf386238f0114c982007ddfb"
+    "bytes": 35900,
+    "sha256": "83ee9b8c6e6600a46119504dd178de1eabcf5209b860135f28af6e82eba4f576"
   },
   {
     "file": "elyndor/README.md",
@@ -35175,6 +35180,11 @@
     "sha256": "d8a289f5140682313a06473a30bb454eec47238d5894b96626c23059acea60f8"
   },
   {
+    "file": "elyndor/docs/discord-changelog.md",
+    "bytes": 3815,
+    "sha256": "5a2573df4b2480d72c3a5e7e39e69eb0743337ac168d867da1d501eeb82eefa9"
+  },
+  {
     "file": "elyndor/docs/planned-levels.md",
     "bytes": 4010,
     "sha256": "dbc2fd1b5a7a3973031abe2ee2a0878f4a413b7cd203b6fbf863bbb941674fc3"
@@ -35895,6 +35905,11 @@
     "sha256": "b46a8ed3a960c996442240b7ed35211e47d72c75905205ba3b5eab5cabb59daf"
   },
   {
+    "file": "elyndor/tools/discord_changelog.py",
+    "bytes": 9180,
+    "sha256": "25419e068866d094ced9f173f0a89c1d7fd672270bc3eac8978f9d6ae973ed12"
+  },
+  {
     "file": "elyndor/tools/extended-soak-v37.mjs",
     "bytes": 4447,
     "sha256": "65d3e6c25eb0e6cd7445131b07305fb4a4317edc20cfcba9f962cbf08f628fb3"
@@ -35961,8 +35976,8 @@
   },
   {
     "file": "elyndor/tools/prepare-release-v42.py",
-    "bytes": 7966,
-    "sha256": "40837d7003267d466ef3d05240a650466e142a082658a6158355b206e746fc29"
+    "bytes": 8138,
+    "sha256": "b1876da6ce94e844366846431b46d70ca709cf138c310e4cceff8fa2b345c280"
   },
   {
     "file": "elyndor/tools/presentation-v37.mjs",
@@ -35998,6 +36013,11 @@
     "file": "elyndor/tools/resume-restoration-v37.mjs",
     "bytes": 4047,
     "sha256": "9f96038197266e076b370a5ca873bcfb18706190ccb4f0253f7dcd218e360bda"
+  },
+  {
+    "file": "elyndor/tools/test_discord_changelog.py",
+    "bytes": 7640,
+    "sha256": "09f164988e30c8d0c5567c1e9a00807f02dd4151893a58da4798bc8fa5c58aad"
   },
   {
     "file": "elyndor/tools/texture-stability-v40.mjs",

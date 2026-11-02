@@ -4,6 +4,7 @@ elyndor/assets/source/pixellab-v7/** -text
 elyndor/previews/pixellab-v7/** -text
 
 # Keep reviewed source and release checksums identical across Windows checkouts.
+.github/** -text
 elyndor/** -text
 *.md -text
 release.json -text

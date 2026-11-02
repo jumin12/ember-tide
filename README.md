@@ -1,5 +1,7 @@
 # The Last Light of Elyndor
 
+Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
+
 ## Alpha Version 1.16 — Planned paths and a grounded party
 
 All fifteen POIs now have compact, deliberate routes, story courts, visible natural boundaries and road-aligned departures. Buildings keep their authored service entrances; route approaches clear obstructing trees and paint the existing terrain at every detail level. Approved atlas positions and story locations remain intact. Detailed approach chains stay connected in the navigation graph.
