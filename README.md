@@ -1,5 +1,11 @@
 # The Last Light of Elyndor
 
+## Alpha Version 1.15 — Smoother motion, water and light
+
+The camera now interpolates alongside the party at the presentation boundary. Simulation catch-up is bounded after long stalls, exact terrain queries are reused within each step, and a duplicate flat foot-shadow layer is removed. Brookstead uses one cached-row canal update, completes the full downstream refill, and excludes other water surfaces from reflection passes. Directional shadows refresh on each moving frame; atmospheric scattering uses fixed-distance intervals and softer shadow sampling. World-space dust is denser, responds to cloud/canopy shadows and preserves nearby particles across cell boundaries.
+
+Native regression evidence is in `elyndor/previews/render-v41/verification.json`. Device measurements describe the tested PC and emulated layouts; they are not a guarantee for every GPU or physical phone.
+
 ## Alpha Version 1.14 — Steadier surfaces in motion
 
 Distance-based detail and shadow changes now use separate entry and exit bands, preventing rapid switches when walking along a threshold. Atmospheric scattering uses continuous world-space sampling rather than jumping between random cells. Native textures, animation sheets and the existing scene architecture are unchanged. Focused before/after GPU and detail-boundary checks are recorded in `elyndor/previews/render-v40/verification.json`.

@@ -1,13 +1,13 @@
 {
-  "status": "Alpha Version 1.14: stable distance detail, shadows and atmospheric sampling",
+  "status": "Alpha Version 1.15: smooth camera, coherent canal and shadows, world-space illuminated dust",
   "referencePolicy": "Approved Google Drive concepts and the user-provided town concept only; no earlier generated game artwork",
   "characterFamilies": 50,
   "runtimeFamilies": 51,
   "nativeSelectedPoses": 5628,
   "artifact": {
     "file": "index.html",
-    "bytes": 50793156,
-    "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2",
+    "bytes": 50807305,
+    "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1",
     "offline": true
   },
   "incompleteClips": {},

@@ -144,7 +144,8 @@
       "systems/cartography.js",
       "systems/lifecycle.js",
       "world-art-v38.js",
-      "levels-v39.js"
+      "levels-v39.js",
+      "systems/rendering.js"
     ]
   },
   "styles": [

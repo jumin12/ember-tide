@@ -1,23 +1,40 @@
 {
-  "release": "elyndor-alpha-1.14-render-stability-2026-11-01",
-  "version": "Alpha Version 1.14",
+  "release": "elyndor-alpha-1.15-motion-water-light-2026-11-02",
+  "version": "Alpha Version 1.15",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 50793156,
-    "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2",
+    "bytes": 50807305,
+    "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1",
     "offline": true
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "ff55d2583391b1718eab8b823b794dfaaad3e871"
+    "previousRelease": "a43ffd87f2f9703be752a8f14182c2250ac51886"
   },
   "changes": [
-    "Stopped terrain, trees, ground foliage and their shadows repeatedly changing detail when movement hovered around a distance threshold. Wider entry/exit bands preserve adaptive rendering without rapid visual switches.",
-    "Replaced discontinuous atmospheric ray-sampling noise with continuous world-space variation, reducing movement-triggered brightness flashes without increasing scattering steps."
+    "Synchronized camera and character interpolation across display refresh rates to remove landscape judder while running.",
+    "Bounded simulation catch-up after long stalls, reused exact terrain queries within each step, and removed a duplicate flat foot-shadow layer.",
+    "Replaced layered river geometry rewrites with one cached row update and completed the downstream refill through the end of the channel.",
+    "Prevented water surfaces and mist reflecting back into neighboring water targets; restored transforms after every reflection pass.",
+    "Updated moving directional shadows every presented frame and retained the matching projection when reusing a stationary shadow map.",
+    "Anchored atmospheric scattering to fixed distance intervals with softened shadow sampling. Added denser world-space dust that responds to canopy and cloud shadows, with stable seeds across cell boundaries."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.15",
+      "date": "November 2, 2026",
+      "title": "Smoother motion, water and light",
+      "items": [
+        "Synchronized camera and character interpolation across display refresh rates to remove landscape judder while running.",
+        "Bounded simulation catch-up after long stalls, reused exact terrain queries within each step, and removed a duplicate flat foot-shadow layer.",
+        "Replaced layered river geometry rewrites with one cached row update and completed the downstream refill through the end of the channel.",
+        "Prevented water surfaces and mist reflecting back into neighboring water targets; restored transforms after every reflection pass.",
+        "Updated moving directional shadows every presented frame and retained the matching projection when reusing a stationary shadow map.",
+        "Anchored atmospheric scattering to fixed distance intervals with softened shadow sampling. Added denser world-space dust that responds to canopy and cloud shadows, with stable seeds across cell boundaries."
+      ]
+    },
     {
       "version": "Alpha Version 1.14",
       "date": "November 1, 2026",
@@ -330,1294 +347,291 @@
     }
   },
   "validation": {
-    "version": "Alpha Version 1.14",
     "artifact": {
       "file": "index.html",
-      "bytes": 50793156,
-      "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2",
+      "bytes": 50807305,
+      "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1",
       "offline": true
     },
-    "qa": {
-      "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2",
+    "suite": {
+      "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1",
       "cases": [
         {
           "name": "source",
+          "pass": true,
           "exit": 0,
-          "seconds": 0.792
+          "seconds": 3.94,
+          "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1"
         },
         {
-          "name": "stability",
+          "name": "simulation",
+          "pass": true,
           "exit": 0,
-          "seconds": 57.657
+          "seconds": 0.08,
+          "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1"
+        },
+        {
+          "name": "combat",
+          "pass": true,
+          "exit": 0,
+          "seconds": 0.09,
+          "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1"
+        },
+        {
+          "name": "persistence",
+          "pass": true,
+          "exit": 0,
+          "seconds": 0.09,
+          "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1"
+        },
+        {
+          "name": "rendering",
+          "pass": true,
+          "exit": 0,
+          "seconds": 32.36,
+          "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1"
         },
         {
           "name": "air",
+          "pass": true,
           "exit": 0,
-          "seconds": 28.633
+          "seconds": 19.09,
+          "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1"
         },
         {
           "name": "devices",
-          "exit": 1,
-          "seconds": 0,
-          "retainedEvidence": true,
-          "knownLimitation": "The absolute 4x CPU stress floor fails in both published and fixed builds; normal layouts, allocation sweeps and matched patch comparison pass."
+          "pass": true,
+          "exit": 0,
+          "seconds": 142.81,
+          "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1"
         },
         {
           "name": "campaign",
+          "pass": true,
           "exit": 0,
-          "seconds": 210.045
+          "seconds": 121.98,
+          "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1"
         },
         {
           "name": "lifecycle",
+          "pass": true,
           "exit": 0,
-          "seconds": 104.244
+          "seconds": 63.15,
+          "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1"
         },
         {
           "name": "input",
+          "pass": true,
           "exit": 0,
-          "seconds": 31.352
+          "seconds": 22.82,
+          "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1"
+        },
+        {
+          "name": "terrain",
+          "pass": true,
+          "exit": 0,
+          "seconds": 24.09,
+          "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1"
+        },
+        {
+          "name": "devices-repeat",
+          "pass": true,
+          "exit": 0,
+          "seconds": 141.83,
+          "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1"
         }
       ],
-      "started": "2026-11-02T02:34:27.340Z",
-      "previousAttempt": "output/elyndor/flicker-v40/qa/first-run.json",
-      "unchanged": true,
-      "pass": false,
-      "functionalPass": true,
-      "knownStressLimit": true,
-      "renderingHotfixVerified": true,
-      "finished": "2026-11-02T03:08:19.489Z"
+      "pass": true,
+      "unchanged": true
     },
-    "detailStability": {
-      "cases": 19,
-      "tiers": [
-        0,
-        1,
-        2,
-        3
+    "baseline": {
+      "version": "Alpha Version 1.14",
+      "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2"
+    },
+    "water": {
+      "waterSurfacesSeenInReflectionBefore": 368,
+      "after": 0,
+      "gateOpenedByStoryAction": true,
+      "fullRefill": {
+        "age": 280.000000000074,
+        "levels": {
+          "reservoir": 4.850000266568204,
+          "headrace": 4.55,
+          "millrace": 1.55,
+          "lowerBrook": -1.4
+        },
+        "front": 430,
+        "settled": true,
+        "feedback": 0,
+        "vertices": [
+          {
+            "role": "headrace",
+            "last": 4.55,
+            "expected": 4.55
+          },
+          {
+            "role": "millrace",
+            "last": 1.55,
+            "expected": 1.55
+          },
+          {
+            "role": "lowerBrook",
+            "last": -1.4,
+            "expected": -1.4
+          }
+        ]
+      },
+      "allReflectionTargetsReadyAfterResize": [
+        {
+          "size": [
+            800,
+            600
+          ],
+          "visible": 3,
+          "initialized": true
+        },
+        {
+          "size": [
+            1280,
+            720
+          ],
+          "visible": 3,
+          "initialized": true
+        }
+      ]
+    },
+    "shadows": {
+      "before": [
+        {
+          "tier": 0,
+          "frames": 90,
+          "draws": 38,
+          "mismatch": 0
+        },
+        {
+          "tier": 1,
+          "frames": 90,
+          "draws": 45,
+          "mismatch": 0
+        },
+        {
+          "tier": 2,
+          "frames": 90,
+          "draws": 90,
+          "mismatch": 0
+        }
       ],
-      "oscillationMetres": 0.05,
-      "baselineFlips": 437,
-      "fixedFlips": 0,
-      "largerDistanceChangesRetained": true
+      "after": [
+        {
+          "tier": 0,
+          "frames": 90,
+          "draws": 90,
+          "mismatch": 0
+        },
+        {
+          "tier": 1,
+          "frames": 90,
+          "draws": 90,
+          "mismatch": 0
+        },
+        {
+          "tier": 2,
+          "frames": 90,
+          "draws": 90,
+          "mismatch": 0
+        }
+      ]
     },
-    "atmosphereContinuity": {
-      "scope": "Native GPU, controlled 40m depth plane and white shadow fixture; native cloud texture; 25 world-cell boundaries. This isolates sampling continuity rather than scoring an entire scene image.",
-      "baselineMaximumJump": 0.00067138671875,
-      "fixedMaximumJump": 1.52587890625e-05,
-      "reductionFactorLowerBound": 22.0,
-      "quantizationLimited": true
+    "cameraPresentation": {
+      "scope": "Constant-velocity presentation test inside native Chrome, not five physical monitors. Authoritative simulation values are restored after rendering.",
+      "samples": [
+        {
+          "hz": 60,
+          "heldFrames": 0,
+          "min": 0.09999999999999432,
+          "max": 0.09999999999999432,
+          "expected": 0.1
+        },
+        {
+          "hz": 72,
+          "heldFrames": 0,
+          "min": 0.08333333333331439,
+          "max": 0.08333333333334281,
+          "expected": 0.08333333333333333
+        },
+        {
+          "hz": 90,
+          "heldFrames": 0,
+          "min": 0.06666666666666288,
+          "max": 0.06666666666666288,
+          "expected": 0.06666666666666667
+        },
+        {
+          "hz": 120,
+          "heldFrames": 0,
+          "min": 0.04999999999999716,
+          "max": 0.04999999999999716,
+          "expected": 0.05
+        },
+        {
+          "hz": 144,
+          "heldFrames": 0,
+          "min": 0.04166666666665719,
+          "max": 0.041666666666671404,
+          "expected": 0.041666666666666664
+        }
+      ]
+    },
+    "particles": {
+      "count": 1200,
+      "retained": 960,
+      "shadowLit": true,
+      "draws": 1
+    },
+    "exactTerrainCache": {
+      "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1",
+      "scenes": [
+        {
+          "scene": "brookstead",
+          "samples": 4600,
+          "maxError": 0,
+          "hits": 100,
+          "bounded": true,
+          "invalidated": true,
+          "duplicateShadowRemoved": true,
+          "slopeContacts": true
+        },
+        {
+          "scene": "brookInn",
+          "samples": 4600,
+          "maxError": 0,
+          "hits": 100,
+          "bounded": true,
+          "invalidated": true,
+          "duplicateShadowRemoved": true,
+          "slopeContacts": true
+        },
+        {
+          "scene": "overworld",
+          "samples": 4600,
+          "maxError": 0,
+          "hits": 100,
+          "bounded": true,
+          "invalidated": true,
+          "duplicateShadowRemoved": true,
+          "slopeContacts": true
+        }
+      ],
+      "errors": [],
+      "pass": true
+    },
+    "scattering": {
+      "maxBoundaryDelta": 1.52587890625e-05,
+      "maxControlDelta": 1.52587890625e-05,
+      "format": "half-float"
     },
     "performance": {
-      "scope": "Native test PC and browser CPU/touch emulation. Physical phones were not measured. The initial strict 4x CPU sweep fell below the absolute floor; its raw observations are retained. The controlled original-versus-fixed comparison showed no patch slowdown.",
-      "initialStrictSweep": {
-        "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2",
-        "samples": [
-          {
-            "name": "desktop",
-            "w": 1920,
-            "h": 1080,
-            "throttle": 1,
-            "dpr": 1,
-            "tier": 1,
-            "scale": 1,
-            "frameCount": 429,
-            "seconds": 6,
-            "fps": 71.5,
-            "cpu": 6.078846156528336,
-            "gpu": 3.2281893092826413,
-            "buffer": [
-              1366,
-              769
-            ],
-            "resizes": 2,
-            "allocations": 8,
-            "programs": 176,
-            "geometry": 903,
-            "textures": 143
-          },
-          {
-            "name": "desktop",
-            "w": 1366,
-            "h": 768,
-            "throttle": 1,
-            "dpr": 1,
-            "tier": 1,
-            "scale": 1,
-            "frameCount": 430,
-            "seconds": 6,
-            "fps": 71.66666666666667,
-            "cpu": 5.683672204831044,
-            "gpu": 4.283894995708594,
-            "buffer": [
-              1366,
-              768
-            ],
-            "resizes": 3,
-            "allocations": 8,
-            "programs": 176,
-            "geometry": 903,
-            "textures": 143
-          },
-          {
-            "name": "desktop",
-            "w": 960,
-            "h": 540,
-            "throttle": 1,
-            "dpr": 1,
-            "tier": 1,
-            "scale": 1,
-            "frameCount": 427,
-            "seconds": 6,
-            "fps": 71.16666666666667,
-            "cpu": 6.212874624766786,
-            "gpu": 3.676725127486644,
-            "buffer": [
-              960,
-              540
-            ],
-            "resizes": 4,
-            "allocations": 8,
-            "programs": 176,
-            "geometry": 906,
-            "textures": 143
-          },
-          {
-            "name": "desktop",
-            "w": 800,
-            "h": 600,
-            "throttle": 1,
-            "dpr": 1,
-            "tier": 1,
-            "scale": 1,
-            "frameCount": 431,
-            "seconds": 6,
-            "fps": 71.83333333333333,
-            "cpu": 5.333170150101708,
-            "gpu": 3.126947894845714,
-            "buffer": [
-              800,
-              600
-            ],
-            "resizes": 5,
-            "allocations": 8,
-            "programs": 176,
-            "geometry": 907,
-            "textures": 143
-          },
-          {
-            "name": "desktop",
-            "w": 1280,
-            "h": 720,
-            "throttle": 4,
-            "dpr": 1,
-            "tier": 0,
-            "scale": 0.6,
-            "frameCount": 238,
-            "seconds": 6,
-            "fps": 39.666666666666664,
-            "cpu": 19.640161666972734,
-            "gpu": 11.724435596965622,
-            "buffer": [
-              645,
-              363
-            ],
-            "resizes": 12,
-            "allocations": 11,
-            "programs": 176,
-            "geometry": 905,
-            "textures": 142
-          },
-          {
-            "name": "phone-high-dpi",
-            "w": 390,
-            "h": 844,
-            "throttle": 1,
-            "dpr": 3,
-            "tier": 1,
-            "scale": 1,
-            "frameCount": 430,
-            "seconds": 6,
-            "fps": 71.66666666666667,
-            "cpu": 6.983049594340592,
-            "gpu": 2.7398847170994007,
-            "buffer": [
-              585,
-              1266
-            ],
-            "resizes": 2,
-            "allocations": 5,
-            "programs": 176,
-            "geometry": 906,
-            "textures": 143
-          },
-          {
-            "name": "phone-high-dpi",
-            "w": 844,
-            "h": 390,
-            "throttle": 1,
-            "dpr": 3,
-            "tier": 1,
-            "scale": 1,
-            "frameCount": 426,
-            "seconds": 6,
-            "fps": 71,
-            "cpu": 6.975635761138933,
-            "gpu": 4.3649300678760445,
-            "buffer": [
-              1266,
-              585
-            ],
-            "resizes": 3,
-            "allocations": 5,
-            "programs": 176,
-            "geometry": 907,
-            "textures": 143
-          },
-          {
-            "name": "phone-high-dpi",
-            "w": 390,
-            "h": 844,
-            "throttle": 4,
-            "dpr": 3,
-            "tier": 0,
-            "scale": 0.7600000000000001,
-            "frameCount": 151,
-            "seconds": 6,
-            "fps": 25.166666666666668,
-            "cpu": 74.27353831535288,
-            "gpu": 13.81596096075311,
-            "buffer": [
-              417,
-              901
-            ],
-            "resizes": 8,
-            "allocations": 8,
-            "programs": 176,
-            "geometry": 903,
-            "textures": 142
-          }
-        ],
-        "errors": [],
-        "desktopResize": {
-          "cold": {
-            "allocations": 11,
-            "geometries": 903,
-            "textures": 142
-          },
-          "before": {
-            "allocations": 11,
-            "geometries": 905,
-            "textures": 143
-          },
-          "after": {
-            "allocations": 11,
-            "geometries": 905,
-            "textures": 143
-          },
-          "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
-          "pass": true
-        },
-        "phone-high-dpiResize": {
-          "cold": {
-            "allocations": 8,
-            "geometries": 901,
-            "textures": 142
-          },
-          "before": {
-            "allocations": 8,
-            "geometries": 908,
-            "textures": 143
-          },
-          "after": {
-            "allocations": 8,
-            "geometries": 908,
-            "textures": 143
-          },
-          "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
-          "pass": true
-        },
-        "pass": false
-      },
-      "baselineStrictSweep": {
-        "sha256": "d88753f9277bbe738ea680d5194e959098cec690ad6fb702b20fe7324606df6d",
-        "samples": [
-          {
-            "name": "desktop",
-            "w": 1920,
-            "h": 1080,
-            "throttle": 1,
-            "dpr": 1,
-            "tier": 1,
-            "scale": 1,
-            "frameCount": 424,
-            "seconds": 6,
-            "fps": 70.66666666666667,
-            "cpu": 8.16923649226063,
-            "gpu": 5.223550669529522,
-            "buffer": [
-              1366,
-              769
-            ],
-            "resizes": 2,
-            "allocations": 8,
-            "programs": 176,
-            "geometry": 908,
-            "textures": 143
-          },
-          {
-            "name": "desktop",
-            "w": 1366,
-            "h": 768,
-            "throttle": 1,
-            "dpr": 1,
-            "tier": 1,
-            "scale": 1,
-            "frameCount": 421,
-            "seconds": 6,
-            "fps": 70.16666666666667,
-            "cpu": 5.397531809039901,
-            "gpu": 4.670344065755059,
-            "buffer": [
-              1366,
-              768
-            ],
-            "resizes": 3,
-            "allocations": 8,
-            "programs": 176,
-            "geometry": 904,
-            "textures": 143
-          },
-          {
-            "name": "desktop",
-            "w": 960,
-            "h": 540,
-            "throttle": 1,
-            "dpr": 1,
-            "tier": 1,
-            "scale": 1,
-            "frameCount": 414,
-            "seconds": 6,
-            "fps": 69,
-            "cpu": 4.5934656779917855,
-            "gpu": 3.4215506499389647,
-            "buffer": [
-              960,
-              540
-            ],
-            "resizes": 4,
-            "allocations": 8,
-            "programs": 176,
-            "geometry": 906,
-            "textures": 143
-          },
-          {
-            "name": "desktop",
-            "w": 800,
-            "h": 600,
-            "throttle": 1,
-            "dpr": 1,
-            "tier": 1,
-            "scale": 1,
-            "frameCount": 413,
-            "seconds": 6,
-            "fps": 68.83333333333333,
-            "cpu": 5.044831407211941,
-            "gpu": 6.190490254849447,
-            "buffer": [
-              800,
-              600
-            ],
-            "resizes": 5,
-            "allocations": 8,
-            "programs": 176,
-            "geometry": 905,
-            "textures": 143
-          },
-          {
-            "name": "desktop",
-            "w": 1280,
-            "h": 720,
-            "throttle": 4,
-            "dpr": 1,
-            "tier": 0,
-            "scale": 0.6,
-            "frameCount": 125,
-            "seconds": 6,
-            "fps": 20.833333333333332,
-            "cpu": 46.21171003889661,
-            "gpu": 28.04750616074957,
-            "buffer": [
-              645,
-              363
-            ],
-            "resizes": 12,
-            "allocations": 11,
-            "programs": 176,
-            "geometry": 903,
-            "textures": 142
-          },
-          {
-            "name": "phone-high-dpi",
-            "w": 390,
-            "h": 844,
-            "throttle": 1,
-            "dpr": 3,
-            "tier": 1,
-            "scale": 1,
-            "frameCount": 429,
-            "seconds": 6,
-            "fps": 71.5,
-            "cpu": 7.270977420871432,
-            "gpu": 1.4825985409340539,
-            "buffer": [
-              585,
-              1266
-            ],
-            "resizes": 2,
-            "allocations": 5,
-            "programs": 176,
-            "geometry": 905,
-            "textures": 143
-          },
-          {
-            "name": "phone-high-dpi",
-            "w": 844,
-            "h": 390,
-            "throttle": 1,
-            "dpr": 3,
-            "tier": 1,
-            "scale": 1,
-            "frameCount": 422,
-            "seconds": 6,
-            "fps": 70.33333333333333,
-            "cpu": 5.668055439353148,
-            "gpu": 3.2129353339287565,
-            "buffer": [
-              1266,
-              585
-            ],
-            "resizes": 3,
-            "allocations": 5,
-            "programs": 176,
-            "geometry": 902,
-            "textures": 143
-          },
-          {
-            "name": "phone-high-dpi",
-            "w": 390,
-            "h": 844,
-            "throttle": 4,
-            "dpr": 3,
-            "tier": 0,
-            "scale": 0.6,
-            "frameCount": 54,
-            "seconds": 6,
-            "fps": 9,
-            "cpu": 119.70730236373633,
-            "gpu": 42.37346978142754,
-            "buffer": [
-              329,
-              712
-            ],
-            "resizes": 10,
-            "allocations": 8,
-            "programs": 176,
-            "geometry": 901,
-            "textures": 142
-          }
-        ],
-        "errors": [],
-        "desktopResize": {
-          "cold": {
-            "allocations": 11,
-            "geometries": 902,
-            "textures": 142
-          },
-          "before": {
-            "allocations": 11,
-            "geometries": 905,
-            "textures": 143
-          },
-          "after": {
-            "allocations": 11,
-            "geometries": 905,
-            "textures": 143
-          },
-          "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
-          "pass": true
-        },
-        "phone-high-dpiResize": {
-          "cold": {
-            "allocations": 8,
-            "geometries": 900,
-            "textures": 142
-          },
-          "before": {
-            "allocations": 8,
-            "geometries": 908,
-            "textures": 143
-          },
-          "after": {
-            "allocations": 8,
-            "geometries": 908,
-            "textures": 143
-          },
-          "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
-          "pass": true
-        },
-        "pass": false
-      },
-      "matchedComparison": {
-        "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2",
-        "baselineSha256": "d88753f9277bbe738ea680d5194e959098cec690ad6fb702b20fe7324606df6d",
-        "scope": "Matched native Chrome measurements on the same PC, 4x CPU emulation, same fixed low detail and render scale. Order is reversed for portrait. This measures patch regression; it is not a physical-phone or universal frame-rate claim.",
-        "samples": [
-          {
-            "name": "desktop",
-            "label": "baseline",
-            "fps": 63.23272636567722,
-            "seconds": 8.018,
-            "frames": 507,
-            "geometry": 906,
-            "textures": 142,
-            "programs": 176,
-            "buffer": [
-              860,
-              484
-            ],
-            "tier": 0,
-            "scale": 0.8
-          },
-          {
-            "name": "desktop",
-            "label": "fixed",
-            "fps": 66.09112829655105,
-            "seconds": 8.004100000023842,
-            "frames": 529,
-            "geometry": 902,
-            "textures": 142,
-            "programs": 176,
-            "buffer": [
-              860,
-              484
-            ],
-            "tier": 0,
-            "scale": 0.8
-          },
-          {
-            "name": "portrait",
-            "label": "fixed",
-            "fps": 46.501218481401665,
-            "seconds": 8.042799999952317,
-            "frames": 374,
-            "geometry": 900,
-            "textures": 142,
-            "programs": 176,
-            "buffer": [
-              438,
-              949
-            ],
-            "tier": 0,
-            "scale": 0.8
-          },
-          {
-            "name": "portrait",
-            "label": "baseline",
-            "fps": 40.52710094480358,
-            "seconds": 8.044,
-            "frames": 326,
-            "geometry": 897,
-            "textures": 142,
-            "programs": 176,
-            "buffer": [
-              438,
-              949
-            ],
-            "tier": 0,
-            "scale": 0.8
-          }
-        ],
-        "errors": [],
-        "comparisons": [
-          {
-            "name": "desktop",
-            "baselineFps": 63.23272636567722,
-            "fixedFps": 66.09112829655105,
-            "ratio": 1.0452044707726753,
-            "sameBudget": true,
-            "pass": true
-          },
-          {
-            "name": "portrait",
-            "baselineFps": 40.52710094480358,
-            "fixedFps": 46.501218481401665,
-            "ratio": 1.147410433939862,
-            "sameBudget": true,
-            "pass": true
-          }
-        ],
-        "pass": true
-      },
-      "devices": {
-        "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2",
-        "samples": [
-          {
-            "name": "desktop",
-            "w": 1920,
-            "h": 1080,
-            "throttle": 1,
-            "dpr": 1,
-            "tier": 1,
-            "scale": 1,
-            "frameCount": 428,
-            "seconds": 6,
-            "fps": 71.33333333333333,
-            "cpu": 4.982576226742731,
-            "gpu": 4.401944822325154,
-            "buffer": [
-              1366,
-              769
-            ],
-            "resizes": 2,
-            "allocations": 8,
-            "programs": 176,
-            "geometry": 901,
-            "textures": 143
-          },
-          {
-            "name": "desktop",
-            "w": 1366,
-            "h": 768,
-            "throttle": 1,
-            "dpr": 1,
-            "tier": 1,
-            "scale": 1,
-            "frameCount": 422,
-            "seconds": 6,
-            "fps": 70.33333333333333,
-            "cpu": 5.091596610941123,
-            "gpu": 4.046495044259948,
-            "buffer": [
-              1366,
-              768
-            ],
-            "resizes": 3,
-            "allocations": 8,
-            "programs": 176,
-            "geometry": 907,
-            "textures": 143
-          },
-          {
-            "name": "desktop",
-            "w": 960,
-            "h": 540,
-            "throttle": 1,
-            "dpr": 1,
-            "tier": 1,
-            "scale": 1,
-            "frameCount": 403,
-            "seconds": 6,
-            "fps": 67.16666666666667,
-            "cpu": 5.194537052326086,
-            "gpu": 7.390269887999003,
-            "buffer": [
-              960,
-              540
-            ],
-            "resizes": 4,
-            "allocations": 8,
-            "programs": 176,
-            "geometry": 904,
-            "textures": 143
-          },
-          {
-            "name": "desktop",
-            "w": 800,
-            "h": 600,
-            "throttle": 1,
-            "dpr": 1,
-            "tier": 1,
-            "scale": 1,
-            "frameCount": 413,
-            "seconds": 6,
-            "fps": 68.83333333333333,
-            "cpu": 4.999494590599468,
-            "gpu": 4.8444995229475,
-            "buffer": [
-              800,
-              600
-            ],
-            "resizes": 5,
-            "allocations": 8,
-            "programs": 176,
-            "geometry": 903,
-            "textures": 143
-          },
-          {
-            "name": "desktop",
-            "w": 1280,
-            "h": 720,
-            "throttle": 4,
-            "dpr": 1,
-            "tier": 0,
-            "scale": 0.6,
-            "frameCount": 68,
-            "seconds": 6,
-            "fps": 11.333333333333334,
-            "cpu": 79.5562311630456,
-            "gpu": 44.80354460827647,
-            "buffer": [
-              645,
-              363
-            ],
-            "resizes": 12,
-            "allocations": 11,
-            "programs": 176,
-            "geometry": 903,
-            "textures": 142
-          },
-          {
-            "name": "phone-high-dpi",
-            "w": 390,
-            "h": 844,
-            "throttle": 1,
-            "dpr": 3,
-            "tier": 1,
-            "scale": 1,
-            "frameCount": 431,
-            "seconds": 6,
-            "fps": 71.83333333333333,
-            "cpu": 6.601557749823192,
-            "gpu": 2.2571321081259645,
-            "buffer": [
-              585,
-              1266
-            ],
-            "resizes": 2,
-            "allocations": 5,
-            "programs": 176,
-            "geometry": 898,
-            "textures": 143
-          },
-          {
-            "name": "phone-high-dpi",
-            "w": 844,
-            "h": 390,
-            "throttle": 1,
-            "dpr": 3,
-            "tier": 1,
-            "scale": 1,
-            "frameCount": 428,
-            "seconds": 6,
-            "fps": 71.33333333333333,
-            "cpu": 5.943122748421642,
-            "gpu": 4.262689920849838,
-            "buffer": [
-              1266,
-              585
-            ],
-            "resizes": 3,
-            "allocations": 5,
-            "programs": 176,
-            "geometry": 905,
-            "textures": 143
-          },
-          {
-            "name": "phone-high-dpi",
-            "w": 390,
-            "h": 844,
-            "throttle": 4,
-            "dpr": 3,
-            "tier": 0,
-            "scale": 0.6,
-            "frameCount": 89,
-            "seconds": 6,
-            "fps": 14.833333333333334,
-            "cpu": 76.44207342771661,
-            "gpu": 34.566259877860524,
-            "buffer": [
-              329,
-              712
-            ],
-            "resizes": 10,
-            "allocations": 8,
-            "programs": 176,
-            "geometry": 900,
-            "textures": 142
-          }
-        ],
-        "errors": [],
-        "desktopResize": {
-          "cold": {
-            "allocations": 11,
-            "geometries": 901,
-            "textures": 142
-          },
-          "before": {
-            "allocations": 11,
-            "geometries": 901,
-            "textures": 143
-          },
-          "after": {
-            "allocations": 11,
-            "geometries": 901,
-            "textures": 143
-          },
-          "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
-          "pass": true
-        },
-        "phone-high-dpiResize": {
-          "cold": {
-            "allocations": 8,
-            "geometries": 899,
-            "textures": 142
-          },
-          "before": {
-            "allocations": 8,
-            "geometries": 901,
-            "textures": 143
-          },
-          "after": {
-            "allocations": 8,
-            "geometries": 901,
-            "textures": 143
-          },
-          "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
-          "pass": true
-        },
-        "pass": false
-      },
-      "lifecycle": {
-        "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2",
-        "errors": [],
-        "scope": "Native Chrome; a paced local HTTP response verifies streamed loading feedback. Explicit GC is test-only.",
-        "stream": {
-          "done": 1261439,
-          "total": 39401965,
-          "width": 0.38,
-          "visible": true
-        },
-        "ready": {
-          "progress": 1,
-          "geometry": true,
-          "audio": {
-            "ready": true,
-            "voices": true,
-            "shortEffects": 71,
-            "decoded": 71,
-            "bytes": 4533448
-          },
-          "jsonNodes": 0,
-          "scriptChars": 6220045,
-          "bundleDone": true,
-          "voices": true,
-          "history": [
-            0.39968750000000003,
-            0.39980263157894735,
-            0.39991776315789473,
-            0.4000328947368421,
-            0.4001480263157895,
-            0.4002631578947369,
-            0.4003782894736842,
-            0.4004934210526316,
-            0.40060855263157896,
-            0.40072368421052634,
-            0.40083881578947367,
-            0.40095394736842105,
-            0.40106907894736843,
-            0.4011842105263158,
-            0.4012993421052632,
-            0.4014144736842105,
-            0.4015296052631579,
-            0.4016447368421053,
-            0.40175986842105266,
-            0.401875,
-            0.40199013157894736,
-            0.40210526315789474,
-            0.4022203947368421,
-            0.4023355263157895,
-            0.40245065789473683,
-            0.4025657894736842,
-            0.4026809210526316,
-            0.40279605263157897,
-            0.4029111842105263,
-            0.4030263157894737,
-            0.40314144736842106,
-            0.40325657894736844,
-            0.4033717105263158,
-            0.40348684210526314,
-            0.4036019736842105,
-            0.4037171052631579,
-            0.4038322368421053,
-            0.4039473684210526,
-            0.4040625,
-            0.40417763157894737,
-            0.40429276315789475,
-            0.40440789473684213,
-            0.40452302631578946,
-            0.40463815789473684,
-            0.4047532894736842,
-            0.4048684210526316,
-            0.4049835526315789,
-            0.4050986842105263,
-            0.4052138157894737,
-            0.40532894736842107,
-            0.40544407894736845,
-            0.40555921052631577,
-            0.40567434210526315,
-            0.40578947368421053,
-            0.4059046052631579,
-            0.4060197368421053,
-            0.4061348684210526,
-            0.40625,
-            0.4063651315789474,
-            0.40648026315789476,
-            0.40659539473684214,
-            0.40671052631578947,
-            0.40682565789473685,
-            0.40694078947368423,
-            0.4070559210526316,
-            0.40717105263157893,
-            0.4072861842105263,
-            0.4074013157894737,
-            0.4075164473684211,
-            0.40763157894736846,
-            0.4077467105263158,
-            0.40786184210526316,
-            0.40797697368421054,
-            0.4080921052631579,
-            0.40820723684210525,
-            0.40832236842105263,
-            0.4084375,
-            0.4085526315789474,
-            0.40866776315789477,
-            0.4087828947368421,
-            0.4088980263157895,
-            0.40901315789473686,
-            0.40912828947368424,
-            0.40924342105263156,
-            0.40935855263157894,
-            0.4094736842105263,
-            0.4095888157894737,
-            0.4097039473684211,
-            0.4098190789473684,
-            0.4099342105263158,
-            0.41004934210526317,
-            0.41016447368421055,
-            0.4102796052631579,
-            0.41039473684210526,
-            0.41050986842105264,
-            0.410625,
-            0.4107401315789474,
-            0.4108552631578947,
-            0.4109703947368421,
-            0.4110855263157895,
-            0.41120065789473687,
-            0.4113157894736842,
-            0.41143092105263157,
-            0.41154605263157895,
-            0.41166118421052633,
-            0.4117763157894737,
-            0.41189144736842104,
-            0.4120065789473684,
-            0.4121217105263158,
-            0.4122368421052632,
-            0.4123519736842105,
-            0.4124671052631579,
-            0.41258223684210527,
-            0.41269736842105265,
-            0.4128125,
-            0.4129276315789474,
-            0.41304276315789473,
-            0.4131578947368421,
-            0.4132730263157895,
-            0.4133881578947368,
-            0.4135032894736842,
-            0.4136184210526316,
-            0.41373355263157896,
-            0.41384868421052634,
-            0.4139638157894737,
-            0.41407894736842105,
-            0.4141940789473684,
-            0.4143092105263158,
-            0.4144243421052632,
-            0.4145394736842105,
-            0.4146546052631579,
-            0.4147697368421053,
-            0.41488486842105265,
-            0.41500000000000004,
-            0.42,
-            0.42533333333333334,
-            0.43066666666666664,
-            0.436,
-            0.4413333333333333,
-            0.44666666666666666,
-            0.45199999999999996,
-            0.4573333333333333,
-            0.46266666666666667,
-            0.46799999999999997,
-            0.47333333333333333,
-            0.47866666666666663,
-            0.484,
-            0.4893333333333333,
-            0.49466666666666664,
-            0.5,
-            0.56,
-            0.64,
-            0.7,
-            0.9006565656565657,
-            0.9013131313131313,
-            0.901969696969697,
-            0.9026262626262627,
-            0.9032828282828284,
-            0.9039393939393939,
-            0.9045959595959596,
-            0.9052525252525253,
-            0.9059090909090909,
-            0.9065656565656566,
-            0.9072222222222223,
-            0.907878787878788,
-            0.9085353535353535,
-            0.9091919191919192,
-            0.9098484848484849,
-            0.9105050505050505,
-            0.9111616161616162,
-            0.9118181818181819,
-            0.9124747474747475,
-            0.9131313131313131,
-            0.9137878787878788,
-            0.9144444444444445,
-            0.9151010101010101,
-            0.9157575757575758,
-            0.9164141414141415,
-            0.9170707070707071,
-            0.9177272727272727,
-            0.9183838383838384,
-            0.9190404040404041,
-            0.9196969696969697,
-            0.9203535353535354,
-            0.9210101010101011,
-            0.9216666666666666,
-            0.9223232323232323,
-            0.922979797979798,
-            0.9236363636363637,
-            0.9242929292929293,
-            0.924949494949495,
-            0.9256060606060607,
-            0.9262626262626263,
-            0.9269191919191919,
-            0.9275757575757576,
-            0.9282323232323233,
-            0.9288888888888889,
-            0.9295454545454546,
-            0.9302020202020203,
-            0.9308585858585858,
-            0.9315151515151515,
-            0.9321717171717172,
-            0.9328282828282829,
-            0.9334848484848485,
-            0.9341414141414142,
-            0.9347979797979798,
-            0.9354545454545454,
-            0.9361111111111111,
-            0.9367676767676768,
-            0.9374242424242425,
-            0.9380808080808081,
-            0.9387373737373738,
-            0.9393939393939394,
-            0.940050505050505,
-            0.9407070707070707,
-            0.9413636363636364,
-            0.9420202020202021,
-            0.9426767676767677,
-            0.9433333333333334,
-            0.943989898989899,
-            0.9446464646464646,
-            0.9453030303030303,
-            0.945959595959596,
-            0.9466161616161617,
-            0.9472727272727273,
-            0.947929292929293,
-            0.9485858585858586,
-            0.9492424242424242,
-            0.9498989898989899,
-            0.9505555555555556,
-            0.9512121212121213,
-            0.9518686868686869,
-            0.9525252525252526,
-            0.9531818181818182,
-            0.9538383838383838,
-            0.9544949494949495,
-            0.9551515151515152,
-            0.9558080808080809,
-            0.9564646464646465,
-            0.9571212121212122,
-            0.9577777777777778,
-            0.9584343434343434,
-            0.9590909090909091,
-            0.9597474747474748,
-            0.9604040404040405,
-            0.9610606060606061,
-            0.9617171717171717,
-            0.9623737373737374,
-            0.963030303030303,
-            0.9636868686868687,
-            0.9643434343434344,
-            0.9650000000000001,
-            0.97,
-            0.98,
-            0.99,
-            1
-          ]
-        },
-        "audioPlayback": {
-          "context": "running",
-          "voiceTime": 0.100824,
-          "voiceBlob": true,
-          "effectPlayed": true,
-          "errors": []
-        },
-        "weather": {
-          "draws": 1,
-          "reflection": 0,
-          "chunkParents": 0,
-          "retained": 49,
-          "cached": 304,
-          "samples": 4941
-        },
-        "partyBefore": {
-          "heap": {
-            "usedSize": 90931012,
-            "totalSize": 110215168,
-            "embedderHeapUsedSize": 5995416,
-            "backingStorageSize": 216461323
-          },
-          "gpu": {
-            "geometry": 898,
-            "textures": 143,
-            "programs": 176,
-            "actorGeometries": 29,
-            "programPins": 112
-          }
-        },
-        "partyAfter": {
-          "heap": {
-            "usedSize": 90878568,
-            "totalSize": 93700096,
-            "embedderHeapUsedSize": 5982104,
-            "backingStorageSize": 216461323
-          },
-          "gpu": {
-            "geometry": 898,
-            "textures": 143,
-            "programs": 176,
-            "actorGeometries": 29,
-            "programPins": 112
-          }
-        },
-        "partyGrowth": {
-          "heap": -52444,
-          "backing": 0,
-          "textures": 0,
-          "geometry": 0
-        },
-        "saved": true,
-        "loadAccepted": true,
-        "loaded": {
-          "gold": 777,
-          "members": 2,
-          "location": "brookstead",
-          "paintBeforeBuild": 2,
-          "progress": 1
-        },
-        "travel": [
-          {
-            "heap": {
-              "usedSize": 73802952,
-              "totalSize": 101892096,
-              "embedderHeapUsedSize": 5941216,
-              "backingStorageSize": 171222923
-            },
-            "gpu": {
-              "geometry": 906,
-              "textures": 144,
-              "programs": 206,
-              "actorGeometries": 35,
-              "programPins": 112
-            }
-          },
-          {
-            "heap": {
-              "usedSize": 74658832,
-              "totalSize": 95076352,
-              "embedderHeapUsedSize": 5964992,
-              "backingStorageSize": 171222783
-            },
-            "gpu": {
-              "geometry": 905,
-              "textures": 144,
-              "programs": 206,
-              "actorGeometries": 35,
-              "programPins": 112
-            }
-          },
-          {
-            "heap": {
-              "usedSize": 75080388,
-              "totalSize": 89047040,
-              "embedderHeapUsedSize": 5928920,
-              "backingStorageSize": 171222923
-            },
-            "gpu": {
-              "geometry": 906,
-              "textures": 144,
-              "programs": 206,
-              "actorGeometries": 35,
-              "programPins": 112
-            }
-          }
-        ],
-        "worldOwners": [
-          {
-            "serial": 17,
-            "parent": true,
-            "children": 312
-          }
-        ],
-        "travelGrowth": {
-          "heap": 1277436,
-          "backing": 0,
-          "textures": 0
-        },
-        "pass": true
-      }
-    },
-    "campaign": {
-      "pass": true,
-      "battles": 6,
-      "restoredLights": [
-        "fern",
-        "alder",
-        "relief",
-        "site"
-      ],
-      "persistence": {
-        "loaded": true,
-        "gold": true,
-        "position": true,
-        "time": true,
-        "lights": true,
-        "region": true
-      }
-    },
-    "errors": [],
-    "extraGpuResources": 0,
-    "additionalScatteringSteps": 0
-  },
-  "performance": {
-    "scope": "Native test PC and browser CPU/touch emulation. Physical phones were not measured. The initial strict 4x CPU sweep fell below the absolute floor; its raw observations are retained. The controlled original-versus-fixed comparison showed no patch slowdown.",
-    "initialStrictSweep": {
-      "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2",
+      "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1",
       "samples": [
         {
           "name": "desktop",
@@ -1625,20 +639,20 @@
           "h": 1080,
           "throttle": 1,
           "dpr": 1,
-          "tier": 1,
+          "tier": 2,
           "scale": 1,
-          "frameCount": 429,
+          "frameCount": 431,
           "seconds": 6,
-          "fps": 71.5,
-          "cpu": 6.078846156528336,
-          "gpu": 3.2281893092826413,
+          "fps": 71.83333333333333,
+          "cpu": 2.924234758583131,
+          "gpu": 5.089365720134326,
           "buffer": [
-            1366,
-            769
+            1920,
+            1080
           ],
           "resizes": 2,
-          "allocations": 8,
-          "programs": 176,
+          "allocations": 6,
+          "programs": 175,
           "geometry": 903,
           "textures": 143
         },
@@ -1648,21 +662,21 @@
           "h": 768,
           "throttle": 1,
           "dpr": 1,
-          "tier": 1,
+          "tier": 2,
           "scale": 1,
           "frameCount": 430,
           "seconds": 6,
           "fps": 71.66666666666667,
-          "cpu": 5.683672204831044,
-          "gpu": 4.283894995708594,
+          "cpu": 2.749529572718099,
+          "gpu": 6.207099371350573,
           "buffer": [
             1366,
             768
           ],
           "resizes": 3,
-          "allocations": 8,
-          "programs": 176,
-          "geometry": 903,
+          "allocations": 6,
+          "programs": 175,
+          "geometry": 900,
           "textures": 143
         },
         {
@@ -1671,20 +685,20 @@
           "h": 540,
           "throttle": 1,
           "dpr": 1,
-          "tier": 1,
+          "tier": 2,
           "scale": 1,
-          "frameCount": 427,
+          "frameCount": 433,
           "seconds": 6,
-          "fps": 71.16666666666667,
-          "cpu": 6.212874624766786,
-          "gpu": 3.676725127486644,
+          "fps": 72.16666666666667,
+          "cpu": 2.853019449336455,
+          "gpu": 3.1058550640775673,
           "buffer": [
             960,
             540
           ],
           "resizes": 4,
-          "allocations": 8,
-          "programs": 176,
+          "allocations": 6,
+          "programs": 175,
           "geometry": 906,
           "textures": 143
         },
@@ -1694,21 +708,21 @@
           "h": 600,
           "throttle": 1,
           "dpr": 1,
-          "tier": 1,
+          "tier": 2,
           "scale": 1,
-          "frameCount": 431,
+          "frameCount": 433,
           "seconds": 6,
-          "fps": 71.83333333333333,
-          "cpu": 5.333170150101708,
-          "gpu": 3.126947894845714,
+          "fps": 72.16666666666667,
+          "cpu": 2.9259536227824436,
+          "gpu": 2.897863765271453,
           "buffer": [
             800,
             600
           ],
           "resizes": 5,
-          "allocations": 8,
-          "programs": 176,
-          "geometry": 907,
+          "allocations": 6,
+          "programs": 175,
+          "geometry": 900,
           "textures": 143
         },
         {
@@ -1718,20 +732,20 @@
           "throttle": 4,
           "dpr": 1,
           "tier": 0,
-          "scale": 0.6,
-          "frameCount": 238,
+          "scale": 0.92,
+          "frameCount": 334,
           "seconds": 6,
-          "fps": 39.666666666666664,
-          "cpu": 19.640161666972734,
-          "gpu": 11.724435596965622,
+          "fps": 55.666666666666664,
+          "cpu": 25.379876476433594,
+          "gpu": 13.366513087623801,
           "buffer": [
-            645,
-            363
+            989,
+            556
           ],
-          "resizes": 12,
-          "allocations": 11,
-          "programs": 176,
-          "geometry": 905,
+          "resizes": 8,
+          "allocations": 12,
+          "programs": 175,
+          "geometry": 906,
           "textures": 142
         },
         {
@@ -1742,19 +756,19 @@
           "dpr": 3,
           "tier": 1,
           "scale": 1,
-          "frameCount": 430,
+          "frameCount": 432,
           "seconds": 6,
-          "fps": 71.66666666666667,
-          "cpu": 6.983049594340592,
-          "gpu": 2.7398847170994007,
+          "fps": 72,
+          "cpu": 3.0727000972116185,
+          "gpu": 2.83222765026184,
           "buffer": [
             585,
             1266
           ],
           "resizes": 2,
           "allocations": 5,
-          "programs": 176,
-          "geometry": 906,
+          "programs": 175,
+          "geometry": 899,
           "textures": 143
         },
         {
@@ -1765,19 +779,19 @@
           "dpr": 3,
           "tier": 1,
           "scale": 1,
-          "frameCount": 426,
+          "frameCount": 431,
           "seconds": 6,
-          "fps": 71,
-          "cpu": 6.975635761138933,
-          "gpu": 4.3649300678760445,
+          "fps": 71.83333333333333,
+          "cpu": 3.778933103875633,
+          "gpu": 2.607382468140529,
           "buffer": [
             1266,
             585
           ],
           "resizes": 3,
           "allocations": 5,
-          "programs": 176,
-          "geometry": 907,
+          "programs": 175,
+          "geometry": 904,
           "textures": 143
         },
         {
@@ -1787,38 +801,38 @@
           "throttle": 4,
           "dpr": 3,
           "tier": 0,
-          "scale": 0.7600000000000001,
-          "frameCount": 151,
+          "scale": 1,
+          "frameCount": 396,
           "seconds": 6,
-          "fps": 25.166666666666668,
-          "cpu": 74.27353831535288,
-          "gpu": 13.81596096075311,
+          "fps": 66,
+          "cpu": 12.785944101018952,
+          "gpu": 6.945856060206845,
           "buffer": [
-            417,
-            901
+            548,
+            1186
           ],
-          "resizes": 8,
+          "resizes": 5,
           "allocations": 8,
-          "programs": 176,
-          "geometry": 903,
+          "programs": 175,
+          "geometry": 898,
           "textures": 142
         }
       ],
       "errors": [],
       "desktopResize": {
         "cold": {
-          "allocations": 11,
-          "geometries": 903,
+          "allocations": 12,
+          "geometries": 905,
           "textures": 142
         },
         "before": {
-          "allocations": 11,
-          "geometries": 905,
+          "allocations": 12,
+          "geometries": 906,
           "textures": 143
         },
         "after": {
-          "allocations": 11,
-          "geometries": 905,
+          "allocations": 12,
+          "geometries": 906,
           "textures": 143
         },
         "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
@@ -1827,26 +841,26 @@
       "phone-high-dpiResize": {
         "cold": {
           "allocations": 8,
-          "geometries": 901,
+          "geometries": 898,
           "textures": 142
         },
         "before": {
           "allocations": 8,
-          "geometries": 908,
+          "geometries": 907,
           "textures": 143
         },
         "after": {
           "allocations": 8,
-          "geometries": 908,
+          "geometries": 907,
           "textures": 143
         },
         "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
         "pass": true
       },
-      "pass": false
+      "pass": true
     },
-    "baselineStrictSweep": {
-      "sha256": "d88753f9277bbe738ea680d5194e959098cec690ad6fb702b20fe7324606df6d",
+    "repeatedDeviceSweep": {
+      "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1",
       "samples": [
         {
           "name": "desktop",
@@ -1854,90 +868,90 @@
           "h": 1080,
           "throttle": 1,
           "dpr": 1,
-          "tier": 1,
+          "tier": 2,
           "scale": 1,
-          "frameCount": 424,
+          "frameCount": 433,
           "seconds": 6,
-          "fps": 70.66666666666667,
-          "cpu": 8.16923649226063,
-          "gpu": 5.223550669529522,
+          "fps": 72.16666666666667,
+          "cpu": 2.892369593437398,
+          "gpu": 5.502105954752304,
           "buffer": [
-            1366,
-            769
+            1920,
+            1080
           ],
           "resizes": 2,
-          "allocations": 8,
-          "programs": 176,
+          "allocations": 6,
+          "programs": 175,
+          "geometry": 901,
+          "textures": 143
+        },
+        {
+          "name": "desktop",
+          "w": 1366,
+          "h": 768,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 2,
+          "scale": 1,
+          "frameCount": 431,
+          "seconds": 6,
+          "fps": 71.83333333333333,
+          "cpu": 2.7982550925684624,
+          "gpu": 3.9729779157924874,
+          "buffer": [
+            1366,
+            768
+          ],
+          "resizes": 3,
+          "allocations": 6,
+          "programs": 175,
+          "geometry": 907,
+          "textures": 143
+        },
+        {
+          "name": "desktop",
+          "w": 960,
+          "h": 540,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 2,
+          "scale": 1,
+          "frameCount": 432,
+          "seconds": 6,
+          "fps": 72,
+          "cpu": 2.977806726081169,
+          "gpu": 3.1038464978075413,
+          "buffer": [
+            960,
+            540
+          ],
+          "resizes": 4,
+          "allocations": 6,
+          "programs": 175,
           "geometry": 908,
           "textures": 143
         },
         {
           "name": "desktop",
-          "w": 1366,
-          "h": 768,
-          "throttle": 1,
-          "dpr": 1,
-          "tier": 1,
-          "scale": 1,
-          "frameCount": 421,
-          "seconds": 6,
-          "fps": 70.16666666666667,
-          "cpu": 5.397531809039901,
-          "gpu": 4.670344065755059,
-          "buffer": [
-            1366,
-            768
-          ],
-          "resizes": 3,
-          "allocations": 8,
-          "programs": 176,
-          "geometry": 904,
-          "textures": 143
-        },
-        {
-          "name": "desktop",
-          "w": 960,
-          "h": 540,
-          "throttle": 1,
-          "dpr": 1,
-          "tier": 1,
-          "scale": 1,
-          "frameCount": 414,
-          "seconds": 6,
-          "fps": 69,
-          "cpu": 4.5934656779917855,
-          "gpu": 3.4215506499389647,
-          "buffer": [
-            960,
-            540
-          ],
-          "resizes": 4,
-          "allocations": 8,
-          "programs": 176,
-          "geometry": 906,
-          "textures": 143
-        },
-        {
-          "name": "desktop",
           "w": 800,
           "h": 600,
           "throttle": 1,
           "dpr": 1,
-          "tier": 1,
+          "tier": 2,
           "scale": 1,
-          "frameCount": 413,
+          "frameCount": 431,
           "seconds": 6,
-          "fps": 68.83333333333333,
-          "cpu": 5.044831407211941,
-          "gpu": 6.190490254849447,
+          "fps": 71.83333333333333,
+          "cpu": 2.9282055930437463,
+          "gpu": 3.5374194205655463,
           "buffer": [
             800,
             600
           ],
           "resizes": 5,
-          "allocations": 8,
-          "programs": 176,
-          "geometry": 905,
+          "allocations": 6,
+          "programs": 175,
+          "geometry": 901,
           "textures": 143
         },
         {
@@ -1947,340 +961,20 @@
           "throttle": 4,
           "dpr": 1,
           "tier": 0,
-          "scale": 0.6,
-          "frameCount": 125,
-          "seconds": 6,
-          "fps": 20.833333333333332,
-          "cpu": 46.21171003889661,
-          "gpu": 28.04750616074957,
-          "buffer": [
-            645,
-            363
-          ],
-          "resizes": 12,
-          "allocations": 11,
-          "programs": 176,
-          "geometry": 903,
-          "textures": 142
-        },
-        {
-          "name": "phone-high-dpi",
-          "w": 390,
-          "h": 844,
-          "throttle": 1,
-          "dpr": 3,
-          "tier": 1,
           "scale": 1,
-          "frameCount": 429,
+          "frameCount": 412,
           "seconds": 6,
-          "fps": 71.5,
-          "cpu": 7.270977420871432,
-          "gpu": 1.4825985409340539,
+          "fps": 68.66666666666667,
+          "cpu": 12.085357819901203,
+          "gpu": 8.417943542513955,
           "buffer": [
-            585,
-            1266
+            1075,
+            605
           ],
-          "resizes": 2,
-          "allocations": 5,
-          "programs": 176,
-          "geometry": 905,
-          "textures": 143
-        },
-        {
-          "name": "phone-high-dpi",
-          "w": 844,
-          "h": 390,
-          "throttle": 1,
-          "dpr": 3,
-          "tier": 1,
-          "scale": 1,
-          "frameCount": 422,
-          "seconds": 6,
-          "fps": 70.33333333333333,
-          "cpu": 5.668055439353148,
-          "gpu": 3.2129353339287565,
-          "buffer": [
-            1266,
-            585
-          ],
-          "resizes": 3,
-          "allocations": 5,
-          "programs": 176,
-          "geometry": 902,
-          "textures": 143
-        },
-        {
-          "name": "phone-high-dpi",
-          "w": 390,
-          "h": 844,
-          "throttle": 4,
-          "dpr": 3,
-          "tier": 0,
-          "scale": 0.6,
-          "frameCount": 54,
-          "seconds": 6,
-          "fps": 9,
-          "cpu": 119.70730236373633,
-          "gpu": 42.37346978142754,
-          "buffer": [
-            329,
-            712
-          ],
-          "resizes": 10,
-          "allocations": 8,
-          "programs": 176,
-          "geometry": 901,
-          "textures": 142
-        }
-      ],
-      "errors": [],
-      "desktopResize": {
-        "cold": {
-          "allocations": 11,
-          "geometries": 902,
-          "textures": 142
-        },
-        "before": {
-          "allocations": 11,
-          "geometries": 905,
-          "textures": 143
-        },
-        "after": {
-          "allocations": 11,
-          "geometries": 905,
-          "textures": 143
-        },
-        "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
-        "pass": true
-      },
-      "phone-high-dpiResize": {
-        "cold": {
-          "allocations": 8,
-          "geometries": 900,
-          "textures": 142
-        },
-        "before": {
-          "allocations": 8,
-          "geometries": 908,
-          "textures": 143
-        },
-        "after": {
-          "allocations": 8,
-          "geometries": 908,
-          "textures": 143
-        },
-        "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
-        "pass": true
-      },
-      "pass": false
-    },
-    "matchedComparison": {
-      "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2",
-      "baselineSha256": "d88753f9277bbe738ea680d5194e959098cec690ad6fb702b20fe7324606df6d",
-      "scope": "Matched native Chrome measurements on the same PC, 4x CPU emulation, same fixed low detail and render scale. Order is reversed for portrait. This measures patch regression; it is not a physical-phone or universal frame-rate claim.",
-      "samples": [
-        {
-          "name": "desktop",
-          "label": "baseline",
-          "fps": 63.23272636567722,
-          "seconds": 8.018,
-          "frames": 507,
-          "geometry": 906,
-          "textures": 142,
-          "programs": 176,
-          "buffer": [
-            860,
-            484
-          ],
-          "tier": 0,
-          "scale": 0.8
-        },
-        {
-          "name": "desktop",
-          "label": "fixed",
-          "fps": 66.09112829655105,
-          "seconds": 8.004100000023842,
-          "frames": 529,
-          "geometry": 902,
-          "textures": 142,
-          "programs": 176,
-          "buffer": [
-            860,
-            484
-          ],
-          "tier": 0,
-          "scale": 0.8
-        },
-        {
-          "name": "portrait",
-          "label": "fixed",
-          "fps": 46.501218481401665,
-          "seconds": 8.042799999952317,
-          "frames": 374,
-          "geometry": 900,
-          "textures": 142,
-          "programs": 176,
-          "buffer": [
-            438,
-            949
-          ],
-          "tier": 0,
-          "scale": 0.8
-        },
-        {
-          "name": "portrait",
-          "label": "baseline",
-          "fps": 40.52710094480358,
-          "seconds": 8.044,
-          "frames": 326,
-          "geometry": 897,
-          "textures": 142,
-          "programs": 176,
-          "buffer": [
-            438,
-            949
-          ],
-          "tier": 0,
-          "scale": 0.8
-        }
-      ],
-      "errors": [],
-      "comparisons": [
-        {
-          "name": "desktop",
-          "baselineFps": 63.23272636567722,
-          "fixedFps": 66.09112829655105,
-          "ratio": 1.0452044707726753,
-          "sameBudget": true,
-          "pass": true
-        },
-        {
-          "name": "portrait",
-          "baselineFps": 40.52710094480358,
-          "fixedFps": 46.501218481401665,
-          "ratio": 1.147410433939862,
-          "sameBudget": true,
-          "pass": true
-        }
-      ],
-      "pass": true
-    },
-    "devices": {
-      "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2",
-      "samples": [
-        {
-          "name": "desktop",
-          "w": 1920,
-          "h": 1080,
-          "throttle": 1,
-          "dpr": 1,
-          "tier": 1,
-          "scale": 1,
-          "frameCount": 428,
-          "seconds": 6,
-          "fps": 71.33333333333333,
-          "cpu": 4.982576226742731,
-          "gpu": 4.401944822325154,
-          "buffer": [
-            1366,
-            769
-          ],
-          "resizes": 2,
-          "allocations": 8,
-          "programs": 176,
-          "geometry": 901,
-          "textures": 143
-        },
-        {
-          "name": "desktop",
-          "w": 1366,
-          "h": 768,
-          "throttle": 1,
-          "dpr": 1,
-          "tier": 1,
-          "scale": 1,
-          "frameCount": 422,
-          "seconds": 6,
-          "fps": 70.33333333333333,
-          "cpu": 5.091596610941123,
-          "gpu": 4.046495044259948,
-          "buffer": [
-            1366,
-            768
-          ],
-          "resizes": 3,
-          "allocations": 8,
-          "programs": 176,
-          "geometry": 907,
-          "textures": 143
-        },
-        {
-          "name": "desktop",
-          "w": 960,
-          "h": 540,
-          "throttle": 1,
-          "dpr": 1,
-          "tier": 1,
-          "scale": 1,
-          "frameCount": 403,
-          "seconds": 6,
-          "fps": 67.16666666666667,
-          "cpu": 5.194537052326086,
-          "gpu": 7.390269887999003,
-          "buffer": [
-            960,
-            540
-          ],
-          "resizes": 4,
-          "allocations": 8,
-          "programs": 176,
-          "geometry": 904,
-          "textures": 143
-        },
-        {
-          "name": "desktop",
-          "w": 800,
-          "h": 600,
-          "throttle": 1,
-          "dpr": 1,
-          "tier": 1,
-          "scale": 1,
-          "frameCount": 413,
-          "seconds": 6,
-          "fps": 68.83333333333333,
-          "cpu": 4.999494590599468,
-          "gpu": 4.8444995229475,
-          "buffer": [
-            800,
-            600
-          ],
-          "resizes": 5,
-          "allocations": 8,
-          "programs": 176,
-          "geometry": 903,
-          "textures": 143
-        },
-        {
-          "name": "desktop",
-          "w": 1280,
-          "h": 720,
-          "throttle": 4,
-          "dpr": 1,
-          "tier": 0,
-          "scale": 0.6,
-          "frameCount": 68,
-          "seconds": 6,
-          "fps": 11.333333333333334,
-          "cpu": 79.5562311630456,
-          "gpu": 44.80354460827647,
-          "buffer": [
-            645,
-            363
-          ],
-          "resizes": 12,
-          "allocations": 11,
-          "programs": 176,
-          "geometry": 903,
+          "resizes": 7,
+          "allocations": 12,
+          "programs": 175,
+          "geometry": 909,
           "textures": 142
         },
         {
@@ -2294,16 +988,16 @@
           "frameCount": 431,
           "seconds": 6,
           "fps": 71.83333333333333,
-          "cpu": 6.601557749823192,
-          "gpu": 2.2571321081259645,
+          "cpu": 3.0319270372760725,
+          "gpu": 2.133334587603575,
           "buffer": [
             585,
             1266
           ],
           "resizes": 2,
           "allocations": 5,
-          "programs": 176,
-          "geometry": 898,
+          "programs": 175,
+          "geometry": 902,
           "textures": 143
         },
         {
@@ -2314,19 +1008,19 @@
           "dpr": 3,
           "tier": 1,
           "scale": 1,
-          "frameCount": 428,
+          "frameCount": 432,
           "seconds": 6,
-          "fps": 71.33333333333333,
-          "cpu": 5.943122748421642,
-          "gpu": 4.262689920849838,
+          "fps": 72,
+          "cpu": 3.888823097258652,
+          "gpu": 3.165911947963664,
           "buffer": [
             1266,
             585
           ],
           "resizes": 3,
           "allocations": 5,
-          "programs": 176,
-          "geometry": 905,
+          "programs": 175,
+          "geometry": 906,
           "textures": 143
         },
         {
@@ -2336,19 +1030,19 @@
           "throttle": 4,
           "dpr": 3,
           "tier": 0,
-          "scale": 0.6,
-          "frameCount": 89,
+          "scale": 1,
+          "frameCount": 337,
           "seconds": 6,
-          "fps": 14.833333333333334,
-          "cpu": 76.44207342771661,
-          "gpu": 34.566259877860524,
+          "fps": 56.166666666666664,
+          "cpu": 17.298581761125945,
+          "gpu": 6.6710212153683655,
           "buffer": [
-            329,
-            712
+            548,
+            1186
           ],
-          "resizes": 10,
+          "resizes": 5,
           "allocations": 8,
-          "programs": 176,
+          "programs": 175,
           "geometry": 900,
           "textures": 142
         }
@@ -2356,18 +1050,18 @@
       "errors": [],
       "desktopResize": {
         "cold": {
-          "allocations": 11,
-          "geometries": 901,
+          "allocations": 12,
+          "geometries": 909,
           "textures": 142
         },
         "before": {
-          "allocations": 11,
-          "geometries": 901,
+          "allocations": 12,
+          "geometries": 910,
           "textures": 143
         },
         "after": {
-          "allocations": 11,
-          "geometries": 901,
+          "allocations": 12,
+          "geometries": 910,
           "textures": 143
         },
         "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
@@ -2381,12 +1075,241 @@
         },
         "before": {
           "allocations": 8,
-          "geometries": 901,
+          "geometries": 900,
           "textures": 143
         },
         "after": {
           "allocations": 8,
-          "geometries": 901,
+          "geometries": 900,
+          "textures": 143
+        },
+        "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
+        "pass": true
+      },
+      "pass": true
+    },
+    "initialStressCandidateBeforeCatchupFix": {
+      "sha256": "040d70a6eed8bc33a61683387b23793104cb2bc9263d8fab4696d97d417e7a36",
+      "samples": [
+        {
+          "name": "desktop",
+          "w": 1920,
+          "h": 1080,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 2,
+          "scale": 1,
+          "frameCount": 429,
+          "seconds": 6,
+          "fps": 71.5,
+          "cpu": 2.9082783041856843,
+          "gpu": 4.165388292936859,
+          "buffer": [
+            1920,
+            1080
+          ],
+          "resizes": 2,
+          "allocations": 6,
+          "programs": 178,
+          "geometry": 905,
+          "textures": 143
+        },
+        {
+          "name": "desktop",
+          "w": 1366,
+          "h": 768,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 2,
+          "scale": 1,
+          "frameCount": 430,
+          "seconds": 6,
+          "fps": 71.66666666666667,
+          "cpu": 3.1776928820580452,
+          "gpu": 3.85240037431807,
+          "buffer": [
+            1366,
+            768
+          ],
+          "resizes": 3,
+          "allocations": 6,
+          "programs": 178,
+          "geometry": 910,
+          "textures": 143
+        },
+        {
+          "name": "desktop",
+          "w": 960,
+          "h": 540,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 2,
+          "scale": 1,
+          "frameCount": 432,
+          "seconds": 6,
+          "fps": 72,
+          "cpu": 2.999143335461656,
+          "gpu": 4.43333486180625,
+          "buffer": [
+            960,
+            540
+          ],
+          "resizes": 4,
+          "allocations": 6,
+          "programs": 178,
+          "geometry": 904,
+          "textures": 143
+        },
+        {
+          "name": "desktop",
+          "w": 800,
+          "h": 600,
+          "throttle": 1,
+          "dpr": 1,
+          "tier": 2,
+          "scale": 1,
+          "frameCount": 420,
+          "seconds": 6,
+          "fps": 70,
+          "cpu": 5.500150254888129,
+          "gpu": 4.390003110460888,
+          "buffer": [
+            800,
+            600
+          ],
+          "resizes": 5,
+          "allocations": 6,
+          "programs": 178,
+          "geometry": 905,
+          "textures": 143
+        },
+        {
+          "name": "desktop",
+          "w": 1280,
+          "h": 720,
+          "throttle": 4,
+          "dpr": 1,
+          "tier": 0,
+          "scale": 0.6,
+          "frameCount": 69,
+          "seconds": 6,
+          "fps": 11.5,
+          "cpu": 70.3435207834327,
+          "gpu": 26.383127252541403,
+          "buffer": [
+            645,
+            363
+          ],
+          "resizes": 12,
+          "allocations": 12,
+          "programs": 178,
+          "geometry": 904,
+          "textures": 142
+        },
+        {
+          "name": "phone-high-dpi",
+          "w": 390,
+          "h": 844,
+          "throttle": 1,
+          "dpr": 3,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 432,
+          "seconds": 6,
+          "fps": 72,
+          "cpu": 6.047245274693572,
+          "gpu": 3.3164879775171454,
+          "buffer": [
+            585,
+            1266
+          ],
+          "resizes": 2,
+          "allocations": 5,
+          "programs": 178,
+          "geometry": 904,
+          "textures": 143
+        },
+        {
+          "name": "phone-high-dpi",
+          "w": 844,
+          "h": 390,
+          "throttle": 1,
+          "dpr": 3,
+          "tier": 1,
+          "scale": 1,
+          "frameCount": 433,
+          "seconds": 6,
+          "fps": 72.16666666666667,
+          "cpu": 7.367240089373484,
+          "gpu": 2.34654075956265,
+          "buffer": [
+            1266,
+            585
+          ],
+          "resizes": 3,
+          "allocations": 5,
+          "programs": 178,
+          "geometry": 905,
+          "textures": 143
+        },
+        {
+          "name": "phone-high-dpi",
+          "w": 390,
+          "h": 844,
+          "throttle": 4,
+          "dpr": 3,
+          "tier": 0,
+          "scale": 0.6,
+          "frameCount": 53,
+          "seconds": 6,
+          "fps": 8.833333333333334,
+          "cpu": 115.85069546273395,
+          "gpu": 25.117543519462924,
+          "buffer": [
+            329,
+            712
+          ],
+          "resizes": 10,
+          "allocations": 8,
+          "programs": 178,
+          "geometry": 898,
+          "textures": 142
+        }
+      ],
+      "errors": [],
+      "desktopResize": {
+        "cold": {
+          "allocations": 12,
+          "geometries": 906,
+          "textures": 142
+        },
+        "before": {
+          "allocations": 12,
+          "geometries": 907,
+          "textures": 143
+        },
+        "after": {
+          "allocations": 12,
+          "geometries": 907,
+          "textures": 143
+        },
+        "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
+        "pass": true
+      },
+      "phone-high-dpiResize": {
+        "cold": {
+          "allocations": 8,
+          "geometries": 900,
+          "textures": 142
+        },
+        "before": {
+          "allocations": 8,
+          "geometries": 907,
+          "textures": 143
+        },
+        "after": {
+          "allocations": 8,
+          "geometries": 907,
           "textures": 143
         },
         "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
@@ -2394,8 +1317,8 @@
       },
       "pass": false
     },
-    "lifecycle": {
-      "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2",
+    "cleanup": {
+      "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1",
       "errors": [],
       "scope": "Native Chrome; a paced local HTTP response verifies streamed loading feedback. Explicit GC is test-only.",
       "stream": {
@@ -2415,7 +1338,7 @@
           "bytes": 4533448
         },
         "jsonNodes": 0,
-        "scriptChars": 6220045,
+        "scriptChars": 6234194,
         "bundleDone": true,
         "voices": true,
         "history": [
@@ -2679,7 +1602,7 @@
       },
       "audioPlayback": {
         "context": "running",
-        "voiceTime": 0.100824,
+        "voiceTime": 0.062705,
         "voiceBlob": true,
         "effectPlayed": true,
         "errors": []
@@ -2694,36 +1617,36 @@
       },
       "partyBefore": {
         "heap": {
-          "usedSize": 90931012,
-          "totalSize": 110215168,
-          "embedderHeapUsedSize": 5995416,
-          "backingStorageSize": 216461323
+          "usedSize": 90875152,
+          "totalSize": 97894400,
+          "embedderHeapUsedSize": 6064520,
+          "backingStorageSize": 216502007
         },
         "gpu": {
-          "geometry": 898,
+          "geometry": 897,
           "textures": 143,
-          "programs": 176,
+          "programs": 175,
           "actorGeometries": 29,
           "programPins": 112
         }
       },
       "partyAfter": {
         "heap": {
-          "usedSize": 90878568,
-          "totalSize": 93700096,
-          "embedderHeapUsedSize": 5982104,
-          "backingStorageSize": 216461323
+          "usedSize": 90721860,
+          "totalSize": 92913664,
+          "embedderHeapUsedSize": 5901672,
+          "backingStorageSize": 216502007
         },
         "gpu": {
-          "geometry": 898,
+          "geometry": 897,
           "textures": 143,
-          "programs": 176,
+          "programs": 175,
           "actorGeometries": 29,
           "programPins": 112
         }
       },
       "partyGrowth": {
-        "heap": -52444,
+        "heap": -153292,
         "backing": 0,
         "textures": 0,
         "geometry": 0
@@ -2740,45 +1663,45 @@
       "travel": [
         {
           "heap": {
-            "usedSize": 73802952,
-            "totalSize": 101892096,
-            "embedderHeapUsedSize": 5941216,
-            "backingStorageSize": 171222923
+            "usedSize": 74277992,
+            "totalSize": 79998976,
+            "embedderHeapUsedSize": 6216992,
+            "backingStorageSize": 171266883
           },
           "gpu": {
-            "geometry": 906,
+            "geometry": 904,
             "textures": 144,
-            "programs": 206,
+            "programs": 203,
             "actorGeometries": 35,
             "programPins": 112
           }
         },
         {
           "heap": {
-            "usedSize": 74658832,
-            "totalSize": 95076352,
-            "embedderHeapUsedSize": 5964992,
-            "backingStorageSize": 171222783
+            "usedSize": 74394664,
+            "totalSize": 79347712,
+            "embedderHeapUsedSize": 5902640,
+            "backingStorageSize": 171266883
           },
           "gpu": {
-            "geometry": 905,
+            "geometry": 904,
             "textures": 144,
-            "programs": 206,
+            "programs": 203,
             "actorGeometries": 35,
             "programPins": 112
           }
         },
         {
           "heap": {
-            "usedSize": 75080388,
-            "totalSize": 89047040,
-            "embedderHeapUsedSize": 5928920,
-            "backingStorageSize": 171222923
+            "usedSize": 74610548,
+            "totalSize": 79609856,
+            "embedderHeapUsedSize": 5861488,
+            "backingStorageSize": 171266883
           },
           "gpu": {
-            "geometry": 906,
+            "geometry": 904,
             "textures": 144,
-            "programs": 206,
+            "programs": 203,
             "actorGeometries": 35,
             "programPins": 112
           }
@@ -2788,20 +1711,276 @@
         {
           "serial": 17,
           "parent": true,
-          "children": 312
+          "children": 310
         }
       ],
       "travelGrowth": {
-        "heap": 1277436,
+        "heap": 332556,
         "backing": 0,
         "textures": 0
       },
       "pass": true
-    }
+    },
+    "campaign": {
+      "complete": true,
+      "battles": 6,
+      "regionalLights": 4,
+      "persistence": {
+        "loaded": true,
+        "gold": true,
+        "position": true,
+        "time": true,
+        "lights": true,
+        "region": true
+      },
+      "errors": []
+    },
+    "sprint": {
+      "distance": 13.901801160531415,
+      "fps": 71.91390170071057,
+      "visible": true,
+      "face": "north",
+      "flash": 0,
+      "buffer": [
+        1280,
+        720
+      ],
+      "tier": 2
+    },
+    "scope": "Native Chrome on the test PC and emulated phone layouts. No physical-phone or universal 60 FPS claim."
+  },
+  "performance": {
+    "sha256": "571c29e62dc59d57157a7e23504851cb156330e897e62493ec9df578140e1ca1",
+    "samples": [
+      {
+        "name": "desktop",
+        "w": 1920,
+        "h": 1080,
+        "throttle": 1,
+        "dpr": 1,
+        "tier": 2,
+        "scale": 1,
+        "frameCount": 431,
+        "seconds": 6,
+        "fps": 71.83333333333333,
+        "cpu": 2.924234758583131,
+        "gpu": 5.089365720134326,
+        "buffer": [
+          1920,
+          1080
+        ],
+        "resizes": 2,
+        "allocations": 6,
+        "programs": 175,
+        "geometry": 903,
+        "textures": 143
+      },
+      {
+        "name": "desktop",
+        "w": 1366,
+        "h": 768,
+        "throttle": 1,
+        "dpr": 1,
+        "tier": 2,
+        "scale": 1,
+        "frameCount": 430,
+        "seconds": 6,
+        "fps": 71.66666666666667,
+        "cpu": 2.749529572718099,
+        "gpu": 6.207099371350573,
+        "buffer": [
+          1366,
+          768
+        ],
+        "resizes": 3,
+        "allocations": 6,
+        "programs": 175,
+        "geometry": 900,
+        "textures": 143
+      },
+      {
+        "name": "desktop",
+        "w": 960,
+        "h": 540,
+        "throttle": 1,
+        "dpr": 1,
+        "tier": 2,
+        "scale": 1,
+        "frameCount": 433,
+        "seconds": 6,
+        "fps": 72.16666666666667,
+        "cpu": 2.853019449336455,
+        "gpu": 3.1058550640775673,
+        "buffer": [
+          960,
+          540
+        ],
+        "resizes": 4,
+        "allocations": 6,
+        "programs": 175,
+        "geometry": 906,
+        "textures": 143
+      },
+      {
+        "name": "desktop",
+        "w": 800,
+        "h": 600,
+        "throttle": 1,
+        "dpr": 1,
+        "tier": 2,
+        "scale": 1,
+        "frameCount": 433,
+        "seconds": 6,
+        "fps": 72.16666666666667,
+        "cpu": 2.9259536227824436,
+        "gpu": 2.897863765271453,
+        "buffer": [
+          800,
+          600
+        ],
+        "resizes": 5,
+        "allocations": 6,
+        "programs": 175,
+        "geometry": 900,
+        "textures": 143
+      },
+      {
+        "name": "desktop",
+        "w": 1280,
+        "h": 720,
+        "throttle": 4,
+        "dpr": 1,
+        "tier": 0,
+        "scale": 0.92,
+        "frameCount": 334,
+        "seconds": 6,
+        "fps": 55.666666666666664,
+        "cpu": 25.379876476433594,
+        "gpu": 13.366513087623801,
+        "buffer": [
+          989,
+          556
+        ],
+        "resizes": 8,
+        "allocations": 12,
+        "programs": 175,
+        "geometry": 906,
+        "textures": 142
+      },
+      {
+        "name": "phone-high-dpi",
+        "w": 390,
+        "h": 844,
+        "throttle": 1,
+        "dpr": 3,
+        "tier": 1,
+        "scale": 1,
+        "frameCount": 432,
+        "seconds": 6,
+        "fps": 72,
+        "cpu": 3.0727000972116185,
+        "gpu": 2.83222765026184,
+        "buffer": [
+          585,
+          1266
+        ],
+        "resizes": 2,
+        "allocations": 5,
+        "programs": 175,
+        "geometry": 899,
+        "textures": 143
+      },
+      {
+        "name": "phone-high-dpi",
+        "w": 844,
+        "h": 390,
+        "throttle": 1,
+        "dpr": 3,
+        "tier": 1,
+        "scale": 1,
+        "frameCount": 431,
+        "seconds": 6,
+        "fps": 71.83333333333333,
+        "cpu": 3.778933103875633,
+        "gpu": 2.607382468140529,
+        "buffer": [
+          1266,
+          585
+        ],
+        "resizes": 3,
+        "allocations": 5,
+        "programs": 175,
+        "geometry": 904,
+        "textures": 143
+      },
+      {
+        "name": "phone-high-dpi",
+        "w": 390,
+        "h": 844,
+        "throttle": 4,
+        "dpr": 3,
+        "tier": 0,
+        "scale": 1,
+        "frameCount": 396,
+        "seconds": 6,
+        "fps": 66,
+        "cpu": 12.785944101018952,
+        "gpu": 6.945856060206845,
+        "buffer": [
+          548,
+          1186
+        ],
+        "resizes": 5,
+        "allocations": 8,
+        "programs": 175,
+        "geometry": 898,
+        "textures": 142
+      }
+    ],
+    "errors": [],
+    "desktopResize": {
+      "cold": {
+        "allocations": 12,
+        "geometries": 905,
+        "textures": 142
+      },
+      "before": {
+        "allocations": 12,
+        "geometries": 906,
+        "textures": 143
+      },
+      "after": {
+        "allocations": 12,
+        "geometries": 906,
+        "textures": 143
+      },
+      "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
+      "pass": true
+    },
+    "phone-high-dpiResize": {
+      "cold": {
+        "allocations": 8,
+        "geometries": 898,
+        "textures": 142
+      },
+      "before": {
+        "allocations": 8,
+        "geometries": 907,
+        "textures": 143
+      },
+      "after": {
+        "allocations": 8,
+        "geometries": 907,
+        "textures": 143
+      },
+      "scope": "Two identical orientation sweeps with simulation paused; the first uploads previously unseen LODs, the second must retain stable allocations.",
+      "pass": true
+    },
+    "pass": true
   },
   "previousPublishedRelease": {
-    "commit": "ff55d2583391b1718eab8b823b794dfaaad3e871",
-    "version": "Alpha Version 1.13",
-    "sha256": "d88753f9277bbe738ea680d5194e959098cec690ad6fb702b20fe7324606df6d"
+    "commit": "a43ffd87f2f9703be752a8f14182c2250ac51886",
+    "version": "Alpha Version 1.14",
+    "sha256": "f57e4fe9ed0351341f1886e60a76191a0552cff51c8409681200b3344b58f2c2"
   }
 }

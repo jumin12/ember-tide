@@ -1,5 +1,5 @@
 import {chromium} from 'playwright';import fs from 'node:fs';import path from 'node:path';import {pathToFileURL} from 'node:url';import crypto from 'node:crypto';
-const input=process.argv[2]??'index.html',label=process.argv.includes('--baseline')?'baseline':'fixed',out='output/elyndor/flicker-v40';fs.mkdirSync(out,{recursive:true});
+const input=process.argv[2]??'index.html',label=process.argv.includes('--baseline')?'baseline':'fixed',out=process.env.ELY_AIR_OUT??'output/elyndor/flicker-v40';fs.mkdirSync(out,{recursive:true});
 const report={sha256:crypto.createHash('sha256').update(fs.readFileSync(input)).digest('hex'),errors:[]};
 const b=await chromium.launch({channel:'chrome',headless:true,args:['--use-angle=d3d11']});
 try{
