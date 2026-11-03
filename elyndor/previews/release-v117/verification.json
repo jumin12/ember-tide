@@ -1,0 +1,227 @@
+{
+  "artifact": {
+    "file": "index.html",
+    "bytes": 54254070,
+    "sha256": "f2e9f0c75a97fe47d4f53df6b06433f3e0e478d4b9177c34435bb1c8fb09cfc3",
+    "offline": true
+  },
+  "source": {
+    "strictFinalBuild": true,
+    "sha256": "8b2252edaa8d1330eccaaf8e77bf28c0a6f42b0a424b0baf824ea70d6d4c0966",
+    "modulesAndStyles": 196,
+    "bakedInputs": 22,
+    "mismatches": [],
+    "nativeSpriteFamilies": 51,
+    "nativeSpritePoses": 5628,
+    "incompleteClips": 0,
+    "battleBackgrounds": 40,
+    "nativeBattleSizes": {
+      "(688, 384)": 40
+    }
+  },
+  "verification": {
+    "checks": [
+      {
+        "name": "Published title includes the complete new changelog",
+        "pass": true
+      },
+      {
+        "name": "All forty native day/night battle images are bundled",
+        "pass": true
+      },
+      {
+        "name": "Gameplay post processing no longer blurs the world",
+        "pass": true
+      },
+      {
+        "name": "Repeated actor updates reuse the same cloud and sunlight shaders",
+        "pass": true,
+        "detail": [
+          {
+            "same": true,
+            "key": true,
+            "version": true,
+            "cloud": true,
+            "soft": true
+          },
+          {
+            "same": true,
+            "key": true,
+            "version": true,
+            "cloud": true,
+            "soft": true
+          }
+        ]
+      },
+      {
+        "name": "Constrained detail stays sharp and does not recreate shadows on repeated updates",
+        "pass": true,
+        "detail": {
+          "ratio": 1,
+          "map": 768,
+          "repeatedAllocations": 0
+        }
+      },
+      {
+        "name": "Overworld sustained playback keeps shaders and render targets stable",
+        "pass": true,
+        "detail": {
+          "wall": 10.001799999952317,
+          "simulation": 10.000000000000181,
+          "frames": 1438,
+          "median": 11.099999964237213,
+          "p95": 13,
+          "max": 14.899999976158142,
+          "programsBefore": 202,
+          "programsAfter": 202,
+          "allocations": 0,
+          "resizes": 0,
+          "ratio": 1,
+          "tier": 2,
+          "scale": 1
+        }
+      },
+      {
+        "name": "Overworld stays smooth at full resolution without simulation slowdown",
+        "pass": true,
+        "detail": {
+          "wall": 10.001799999952317,
+          "simulation": 10.000000000000181,
+          "frames": 1438,
+          "median": 11.099999964237213,
+          "p95": 13,
+          "max": 14.899999976158142,
+          "programsBefore": 202,
+          "programsAfter": 202,
+          "allocations": 0,
+          "resizes": 0,
+          "ratio": 1,
+          "tier": 2,
+          "scale": 1
+        }
+      },
+      {
+        "name": "Real keyboard movement responds immediately",
+        "pass": true,
+        "detail": {
+          "distance": 10.449999999999136
+        }
+      },
+      {
+        "name": "Camera continues following the party center",
+        "pass": true,
+        "detail": {
+          "distance": 0
+        }
+      },
+      {
+        "name": "World map opens normally",
+        "pass": true
+      },
+      {
+        "name": "Minimap still opens local map",
+        "pass": true
+      },
+      {
+        "name": "E still enters the town through the real transition",
+        "pass": true
+      },
+      {
+        "name": "POI sustained playback keeps shaders and render targets stable",
+        "pass": true,
+        "detail": {
+          "wall": 8.008,
+          "simulation": 8.016666666666328,
+          "frames": 1149,
+          "median": 8.800000011920929,
+          "p95": 11.299999952316284,
+          "max": 41,
+          "programsBefore": 197,
+          "programsAfter": 197,
+          "allocations": 0,
+          "resizes": 0,
+          "ratio": 1,
+          "tier": 2,
+          "scale": 1
+        }
+      },
+      {
+        "name": "POI stays smooth at full resolution without simulation slowdown",
+        "pass": true,
+        "detail": {
+          "wall": 8.008,
+          "simulation": 8.016666666666328,
+          "frames": 1149,
+          "median": 8.800000011920929,
+          "p95": 11.299999952316284,
+          "max": 41,
+          "programsBefore": 197,
+          "programsAfter": 197,
+          "allocations": 0,
+          "resizes": 0,
+          "ratio": 1,
+          "tier": 2,
+          "scale": 1
+        }
+      },
+      {
+        "name": "Readable night lighting and physical shadows are retained",
+        "pass": true
+      },
+      {
+        "name": "Battle still selects the matching night background",
+        "pass": true
+      },
+      {
+        "name": "Battle return restores the exterior lighting and controls",
+        "pass": true
+      },
+      {
+        "name": "Phone layout remains sharp and within the viewport",
+        "pass": true
+      },
+      {
+        "name": "No browser or shader errors",
+        "pass": true,
+        "detail": []
+      }
+    ],
+    "errors": [],
+    "runs": [
+      {
+        "layer": "Overworld",
+        "wall": 10.001799999952317,
+        "simulation": 10.000000000000181,
+        "frames": 1438,
+        "median": 11.099999964237213,
+        "p95": 13,
+        "max": 14.899999976158142,
+        "programsBefore": 202,
+        "programsAfter": 202,
+        "allocations": 0,
+        "resizes": 0,
+        "ratio": 1,
+        "tier": 2,
+        "scale": 1
+      },
+      {
+        "layer": "POI",
+        "wall": 8.008,
+        "simulation": 8.016666666666328,
+        "frames": 1149,
+        "median": 8.800000011920929,
+        "p95": 11.299999952316284,
+        "max": 41,
+        "programsBefore": 197,
+        "programsAfter": 197,
+        "allocations": 0,
+        "resizes": 0,
+        "ratio": 1,
+        "tier": 2,
+        "scale": 1
+      }
+    ],
+    "pass": true
+  },
+  "scope": "Native Chrome on the test PC; phone layout is emulated. Measurements do not establish performance on every physical device."
+}

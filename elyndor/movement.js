@@ -18,10 +18,10 @@ function spawnPartyTrail(point){
  if(near&&dist(near,player)<12){dx=player.x-near.x;dz=player.z-near.z;if(Math.hypot(dx,dz)<.2){const p=currentScene().path.slice().sort((a,b)=>Math.hypot(a[0]-player.x,a[1]-player.z)-Math.hypot(b[0]-player.x,b[1]-player.z))[1];if(p){dx=p[0]-player.x;dz=p[1]-player.z;}}}
  const len=Math.hypot(dx,dz)||1;dx/=len;dz/=len;const tail=[{x:player.x,z:player.z}];
  let heading=Math.atan2(-dz,-dx);
- for(let k=1;k<=70;k++){
+ for(let k=1;k<=(typeof compactWorld44==='function'&&compactWorld44()?175:70);k++){
   const prev=tail.at(-1);let best=null;
   for(const turn of[0,.22,-.22,.45,-.45,.8,-.8,1.2,-1.2]){const angle=heading+turn,q={x:prev.x+Math.cos(angle)*.12,z:prev.z+Math.sin(angle)*.12};
-   if(!edgeFree(prev,q,.48)||tail.slice(0,-12).some(p=>dist(p,q)<.65))continue;
+   if(!edgeFree(prev,q,actorRadius(player))||tail.slice(0,-12).some(p=>dist(p,q)<.65))continue;
    best={q,angle};break;
   }
   if(!best)break;tail.push(best.q);heading=best.angle;

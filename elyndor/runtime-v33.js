@@ -19,7 +19,7 @@ applyCapabilityBudget=function(){
  if(!renderer||!sun)return;const t=profile33(),size=[768,1024,1536,2048][t],key=t+'|'+world?.uuid;
  if(device33.profile===key&&sun.shadow.mapSize.x===size)return;device33.profile=key;
  if(sun.shadow.mapSize.x!==size){sun.shadow.map?.dispose();sun.shadow.map=null;sun.shadow.mapSize.set(size,size);renderer.shadowMap.needsUpdate=sun.shadow.needsUpdate=true;device33.allocations++;}
- renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+ renderer.shadowMap.type=THREE.PCFShadowMap;
  const width=[384,512,768,1024][t];if(reflectionTarget.width!==width){reflectionTarget.setSize(width,Math.round(width*9/16));device33.allocations++;}
  const samples=Math.min(t===0?0:t===1?2:4,renderer.capabilities.maxSamples);if(post.target.samples!==samples){post.target.dispose();post.target.samples=samples;device33.allocations++;}
  // Keep the light count constant. Zero-intensity slots remain in the shader.
@@ -28,7 +28,10 @@ applyCapabilityBudget=function(){
 };
 resize=function(){
  if(!renderer||!post.target)return;scenery.pausedTab=null;const t=profile33(),pixels=[650000,1050000,2400000,4200000][t],w=Math.max(1,innerWidth),h=Math.max(1,innerHeight);
- const ratio=Math.min(devicePixelRatio||1,t===3?1.75:1.5,Math.sqrt(pixels/(w*h)))*device33.scale;
+ // Keep native desktop pixels while reducing optional effects and geometry.
+ // Applying two independent resolution reductions made the entire game soft.
+ const floor=touchDevice33()?.85:Math.min(1,Math.sqrt(2400000/(w*h))),ceiling=Math.min(devicePixelRatio||1,t===3?1.75:1.25,Math.sqrt(pixels/(w*h)));
+ const ratio=softwareBudget()?ceiling*device33.scale:Math.max(floor,ceiling*device33.scale);
  const rw=Math.max(160,Math.round(w*ratio)),rh=Math.max(160,Math.round(h*ratio)),key=rw+'|'+rh;
  if(device33.key!==key){device33.key=key;renderer.setPixelRatio(1);renderer.setSize(rw,rh,false);post.target.setSize(rw,rh);post.material.uniforms.resolution.value.set(rw,rh);device33.resizes++;}if(post.material.uniforms.pixelRatio33)post.material.uniforms.pixelRatio33.value=rw/w;
  camera.aspect=w/h;camera.updateProjectionMatrix();applyCapabilityBudget();

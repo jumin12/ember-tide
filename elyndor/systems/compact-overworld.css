@@ -1,0 +1,4 @@
+#world-landmarks44{position:fixed;inset:0;pointer-events:none;z-index:7}
+#world-landmarks44>div{position:absolute;transform:translate(-50%,-100%);padding:4px 9px;border-bottom:1px solid #bda66b99;background:#081b22bf;color:#f1e9d1;font:13px Georgia,serif;text-shadow:0 1px 3px #000;white-space:nowrap}
+#world-landmarks44>div.near{border-color:#f3d58a;color:#ffe6a0}
+@media(max-width:650px){#world-landmarks44>div{font-size:11px;padding:3px 6px}}

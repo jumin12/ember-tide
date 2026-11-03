@@ -386,7 +386,9 @@ updateCamera=function(dt,instant=false){if(!player)return;const s=currentScene()
 };
 const oldUpdateWorldFXOpen=updateWorldFX;
 updateWorldFX=function(dt){oldUpdateWorldFXOpen(dt);if(world.userData.waterwheel)world.userData.waterwheel.rotation.x-=dt*(state.flags.gate_open?.44:.12);for(const s of world.userData.lightSites??[]){s.core.position.y=s.base+Math.sin(clock*.9+s.x)*.09;s.core.rotation.y=Math.sin(clock*.12)*.04;s.inner.rotation.y+=dt*.2;if(!state.restoredLights?.includes(s.id)&&!restoration)s.core.material.emissiveIntensity=.15+Math.sin(clock*3+s.x)*.06;}
- if(frameIndex%30===0){const p=restoration?cameraTarget:player;for(const g of world.userData.staticChunks??[])g.visible=Math.hypot(g.userData.center.x-p.x,g.userData.center.z-p.z)<155;for(const g of world.userData.buildings??[])g.visible=Math.hypot(g.position.x-p.x,g.position.z-p.z)<155;for(const a of actors){const should=a.party||a.enemy||Math.hypot(a.x-p.x,a.z-p.z)<95;if(!should||battle?.origin.hidden.includes(a)){a.mesh.visible=false;a.shadow.visible=false;}else if(!a.party&&!a.enemy)a.mesh.visible=!state.members.includes(a.id)&&!(a.story&&a.id==='soren'&&(a.home.x<0||state.beat<BEATS.findIndex(q=>q[0]==='nearby')||state.beat>BEATS.findIndex(q=>q[0]==='nearby')));}
+ // Static visibility belongs to updateRenderBudget and camera frustum culling.
+ // A second distance cutoff here made distant landmarks flash every 30 ticks.
+ if(frameIndex%30===0){const p=restoration?cameraTarget:player;for(const a of actors){const should=a.party||a.enemy||Math.hypot(a.x-p.x,a.z-p.z)<95;if(!should||battle?.origin.hidden.includes(a)){a.mesh.visible=false;a.shadow.visible=false;}else if(!a.party&&!a.enemy)a.mesh.visible=!state.members.includes(a.id)&&!(a.story&&a.id==='soren'&&(a.home.x<0||state.beat<BEATS.findIndex(q=>q[0]==='nearby')||state.beat>BEATS.findIndex(q=>q[0]==='nearby')));}
  }
  if(state.flags.region_restored&&frameIndex%12===0&&player){const p=V3(player.x+(Math.random()-.5)*23,heightAt(player.x,player.z)+.5+Math.random()*2,player.z+(Math.random()-.5)*18),e=fxMesh(new THREE.PlaneGeometry(.035,.035),'#daffe4',p,4,{opacity:.55});e.velocity=V3(.08,.07,.01);}
 };

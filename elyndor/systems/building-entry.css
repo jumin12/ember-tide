@@ -1,0 +1,8 @@
+#building-entry-prompt{z-index:25}
+#building-entry-prompt button{min-width:112px;min-height:42px;background:#111719e8;border-color:#c8c5b58c;font:19px/1.2 system-ui,sans-serif;box-shadow:0 2px 9px #0006}
+#building-entry-prompt button:hover,#building-entry-prompt button:focus-visible{background:#273234;outline:2px solid #e3cf95;outline-offset:2px}
+#interact-btn>span:last-child:not(#interact-label){display:none}
+.quest-tracking48{margin-top:16px;min-height:42px;padding:9px 18px;border:1px solid #c4a165;background:#102b38;color:#f4dfb1;font:15px Georgia,serif}
+.quest-tracking48[aria-pressed="true"]{background:#34423c;border-color:#e1c785}
+#mentor-world-arrow17.hidden,#overworld-compass.hidden{display:none!important}
+@media(max-width:650px){#building-entry-prompt button{min-height:44px;font-size:17px}}

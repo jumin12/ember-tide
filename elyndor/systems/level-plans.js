@@ -52,7 +52,9 @@ const LEVEL_PLANS42={
   [[315,74],[305,70],[289,70],[278,66],[264,66],[254,66]],
   [[333,68],[351,68],[373,66],[386,66]]]}
 };
+Object.assign(LEVEL_PLANS42,JRPG_LAYOUTS46);
 for(const [key,blueprint]of Object.entries(LEVEL_PLANS42)){
+ if(blueprint.core)districtCore24[key]=[...blueprint.core];
  const poi=POIS[key],core=districtCore24[key],pad=blueprint.pad;
  const bounds=[core[0]-pad,core[1]+pad,core[2]-pad,core[3]+pad];
  for(const route of blueprint.routes)for(const [x,z]of route){bounds[0]=Math.min(bounds[0],x-7);bounds[1]=Math.max(bounds[1],x+7);bounds[2]=Math.min(bounds[2],z-7);bounds[3]=Math.max(bounds[3],z+7);}
@@ -75,7 +77,6 @@ function indexLane42(plan,a,b,r){
 function laneDistance42(x,z,s){const dx=s.b[0]-s.a[0],dz=s.b[1]-s.a[1],t=clamp(((x-s.a[0])*dx+(z-s.a[1])*dz)/(dx*dx+dz*dz||1),0,1);return Math.hypot(x-s.a[0]-dx*t,z-s.a[1]-dz*t)-s.r;}
 function laneFree42(x,z,r=0,plan=world?.userData.levelPlan42){if(!plan)return true;for(const s of plan.grid.get(Math.floor(x/16)+','+Math.floor(z/16))??[])if(laneDistance42(x,z,s)<-r*.25)return true;return false;}
 const walkBefore42=staticFree;let wildlifeRouting42=false;
-staticFree=function(x,z,r=.4){const plan=world?.userData.levelPlan42;if(plan?.ready&&activeScene.kind==='poi'&&!sceneBuildFilter&&!wildlifeRouting42&&!laneFree42(x,z,r,plan))return false;return walkBefore42(x,z,r);};
 // Ambient animals use their original collision-checked forest habitats. Public
 // walkway boundaries restrict the party; they must not immobilize wildlife.
 const wildlifeBefore42=updateRegionalWildlife;
@@ -98,6 +99,7 @@ function makeLevelPlan42(){
  const town=POIS[activeScene.key].kind==='town',r=town?4.6:3.1,core=districtCore24[activeScene.key];
  for(const road of ROADS){if(!town&&!road.district24)continue;let strip=[];for(const p of road.p){if(insideRect24(...p,activeScene.bounds,-1))strip.push(p);else{if(strip.length>1)addLane42(plan,strip,r);strip=[];}}if(strip.length>1)addLane42(plan,strip,r);}
  for(const route of spec.routes)addLane42(plan,route,r);
+ for(const route of spec.loops??[])addLane42(plan,route,town?4.6:3.8);
  for(const [x,z,radius]of spec.courts)addLane42(plan,[[x,z]],radius);
  addLane42(plan,[spec.spawn],3.5);
  const start=safePoint({x:spec.spawn[0],z:spec.spawn[1]},.5),targets=[...interactables.filter(o=>!['sign','routeDoor'].includes(o.type)),...npcs.map(a=>({type:'resident',x:a.home.x,z:a.home.z}))];
@@ -130,28 +132,7 @@ function clearRouteCover42(plan){
  for(const tree of scenery.trees){if(laneSigned42(tree.x,tree.z,plan)>-1.8)continue;removed.add(tree);for(const q of tree.bindings){q.mesh.setMatrixAt(q.index,zero);q.mesh.instanceMatrix.needsUpdate=true;}}
  scenery.trees=scenery.trees.filter(t=>!removed.has(t));const removedAt=(x,z)=>[...removed].some(t=>Math.abs(t.x-x)+Math.abs(t.z-z)<.02);colliders=colliders.filter(c=>c.type!=='tree'||!removedAt(c.x,c.z));world.userData.solidTrees=(world.userData.solidTrees??[]).filter(t=>!removed.has(t));world.userData.treePoints=(world.userData.treePoints??[]).filter(t=>!removedAt(t.x,t.z));const q=world.userData.clarity23;if(q){for(const [key,trees]of q.treeGrid)q.treeGrid.set(key,trees.filter(t=>!removed.has(t)));q.nearKey33=null;}treeCutCache30=null;plan.clearedTrees=removed.size;
 }
-function buildRouteBanks42(plan,town){
- const b=activeScene.bounds,points=[],step=3.4;
- for(let x=b[0]+2;x<b[1]-2&&points.length<560;x+=step)for(let z=b[2]+2;z<b[3]-2;z+=step){if(laneFree42(x,z,0,plan)||waterGround(x,z))continue;const around=[[x-step,z],[x+step,z],[x,z-step],[x,z+step]].find(p=>laneFree42(...p,0,plan));if(!around)continue;
-  let a=around,c=[x,z];for(let i=0;i<5;i++){const m=[(a[0]+c[0])/2,(a[1]+c[1])/2];if(laneFree42(...m,0,plan))a=m;else c=m;}const dx=x-around[0],dz=z-around[1],len=Math.hypot(dx,dz),p={x:(a[0]+c[0])/2+dx/len*.7,z:(a[1]+c[1])/2+dz/len*.7,angle:Math.atan2(dz,dx)};
-  if(!walkBefore42(p.x,p.z,.35)||habitatOccupied42(p.x,p.z,1.5)||points.some(q=>Math.hypot(q.x-p.x,q.z-p.z)<2.1))continue;points.push(p);if(points.length>=560)break;
- }
- const root=new THREE.Group();root.name='planned-lane-boundaries42';root.userData.dynamicFX=true;world.add(root);const rng=seeded(42001+Math.round(b[0]*17)),snow=activeScene.key==='snow',ruin=activeScene.key==='depths'||POIS[activeScene.key].kind==='ruin';
- const g=geo16('weathered-rock38',()=>new THREE.IcosahedronGeometry(1,1)).clone(),m=new THREE.MeshStandardMaterial({map:textures.rock,normalMap:textures.normal28_rock,color:snow?'#cbd5cf':ruin?'#a5afa2':'#b1b49a',roughness:.94});addCloudLighting(m);const rocks=new THREE.InstancedMesh(g,m,points.length),dummy=new THREE.Object3D();rocks.castShadow=rocks.receiveShadow=true;root.add(rocks);
- const leaves=sprayGeometry30(25).clone();for(const [key,array]of [['treeKind',new Float32Array(points.length)],['treeViewHidden',new Float32Array(points.length)],['treeSpecies30',Float32Array.from(points,(_,i)=>snow?4:i%3)]])leaves.setAttribute(key,new THREE.InstancedBufferAttribute(array,1));
- const shrubs=new THREE.InstancedMesh(leaves,forestMaterial30(false),points.length);shrubs.customDepthMaterial=forestDepth30();shrubs.castShadow=shrubs.receiveShadow=true;shrubs.onBeforeRender=(_,s,c)=>{forest30.main.value=c===camera?1:0;};root.add(shrubs);
- points.forEach((p,i)=>{const h=town?.42+rng()*.20:ruin?1.15+rng()*.5:.65+rng()*.65,y=groundAt(p.x,p.z);dummy.position.set(p.x,y+h*.42,p.z);dummy.rotation.set(rng()*.15,p.angle,rng()*.13);dummy.scale.set(1.35,h,1.25);dummy.updateMatrix();rocks.setMatrixAt(i,dummy.matrix);dummy.position.set(p.x+Math.cos(p.angle)*.8,y+h*.8,p.z+Math.sin(p.angle)*.8);dummy.scale.set(1.25,snow?1.9:town?.85:1.2,1.25);dummy.rotation.set(0,rng()*TAU,0);dummy.updateMatrix();shrubs.setMatrixAt(i,dummy.matrix);});rocks.computeBoundingSphere();shrubs.computeBoundingSphere();if(activeScene.key!=='depths')routeTrees42(points,root,plan);cacheMaterialKeys36(root);plan.boundaries=root;plan.boundaryCount=points.length;
-}
-function routeTrees42(points,root,plan){
- const trees=[],snow=activeScene.key==='snow',rng=seeded(424242+Math.floor(activeScene.bounds[0]));
- for(const p of points){const x=p.x+Math.cos(p.angle)*3.4,z=p.z+Math.sin(p.angle)*3.4;if(waterGround(x,z)||!walkBefore42(x,z,.7)||laneFree42(x,z,0,plan)||habitatOccupied42(x,z,2.5)||trees.some(t=>Math.hypot(t.x-x,t.z-z)<7.3))continue;trees.push({x,z,y:groundAt(x,z),h:5.3+rng()*2.6,w:1.7+rng()*.7,species:snow?4:Math.floor(rng()*4)});if(trees.length===64)break;}
- if(!trees.length)return;const n=trees.length,mask=new THREE.InstancedBufferAttribute(new Float32Array(n),1),species=new THREE.InstancedBufferAttribute(Float32Array.from(trees,t=>t.species),1),parts=[];
- for(const trunk of [false,true]){const g=(trunk?new THREE.CylinderGeometry(.11,.22,1,6,1):sprayGeometry30(32).clone());g.setAttribute('treeKind',new THREE.InstancedBufferAttribute(new Float32Array(n).fill(Number(trunk)),1));g.setAttribute('treeSpecies30',species);g.setAttribute('treeViewHidden',mask);const mesh=new THREE.InstancedMesh(g,forestMaterial30(trunk),n);mesh.userData.treeViewMask=mask;mesh.castShadow=mesh.receiveShadow=true;mesh.customDepthMaterial=forestDepth30();mesh.onBeforeRender=(_,s,c)=>{forest30.main.value=c===camera?1:0;};root.add(mesh);parts.push(mesh);
-  const d=new THREE.Object3D();trees.forEach((t,i)=>{d.position.set(t.x,t.y+t.h*(trunk?.36:.72),t.z);d.rotation.y=t.x*.13+t.z*.17;d.scale.set(trunk?t.w*.7:t.w*1.45,t.h*(trunk?.72:.40),trunk?t.w*.7:t.w*1.45);d.updateMatrix();mesh.setMatrixAt(i,d.matrix);(t.bindings??=[]).push({mesh,index:i,matrix:d.matrix.clone()});});mesh.computeBoundingSphere();}
- const grid=world.userData.clarity23?.treeGrid;
- for(const t of trees){t.hidden=false;t.until=0;t.box=new THREE.Box3(V3(t.x-t.w*1.5,t.y,t.z-t.w*1.5),V3(t.x+t.w*1.5,t.y+t.h*1.14,t.z+t.w*1.5));t.cover30=[new THREE.Box3(V3(t.x-t.w*1.5,t.y+t.h*.34,t.z-t.w*1.5),t.box.max.clone())];scenery.trees.push(t);if(grid){const key=Math.floor(t.x/32)+','+Math.floor(t.z/32);if(!grid.has(key))grid.set(key,[]);grid.get(key).push(t);}}
- if(world.userData.clarity23)world.userData.clarity23.nearKey33=null;treeCutCache30=null;plan.forestTrees=trees.length;
-}
+function buildRouteBanks42(plan){plan.boundaryCount=0;}
 const levelBuildBefore42=buildWorld;
 buildWorld=function(...args){const result=levelBuildBefore42(...args);makeLevelPlan42();return result;};
 const levelRenderBefore42=render;

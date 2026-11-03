@@ -18,16 +18,20 @@ class AnnouncementTests(unittest.TestCase):
         payload, notes, tag = dc.release_payload(RELEASE, 'https://example.com/')
         self.assertEqual(payload['allowed_mentions'], {'parse': []})
         self.assertIn('Soren’s running animation.', notes)
-        self.assertEqual(payload['attachments'][0]['filename'], 'changelog.md')
+        self.assertNotIn('attachments', payload)
+        self.assertNotIn('attached', json.dumps(payload))
         metadata_fix = {**RELEASE, 'release': 'different-commit-same-version'}
         self.assertEqual(tag, dc.release_payload(metadata_fix, 'https://example.com/')[2])
         self.assertNotEqual(tag, dc.release_payload({**RELEASE, 'version': 'Alpha Version 1.18'}, 'https://example.com/')[2])
 
-    def test_long_changelog_is_attached_in_full(self):
+    def test_long_changelog_links_to_full_history_without_attaching_a_file(self):
         value = {**RELEASE, 'changes': ['A' * 3000, 'B' * 3000]}
         payload, notes, _ = dc.release_payload(value, 'https://example.com/')
         self.assertLessEqual(len(payload['embeds'][0]['description']), 4096)
         self.assertIn('B' * 3000, notes)
+        self.assertIn('Read the complete changelog', payload['embeds'][0]['description'])
+        self.assertIn('A' * 3000, payload['embeds'][0]['description'])
+        self.assertNotIn('attachments', payload)
 
     def test_invalid_release_is_rejected_before_network(self):
         for values in [{'version': ''}, {'version': 1}, {'changes': []}, {'changes': [None]}, {'artifact': None}, {'artifact': {'bytes': 4, 'sha256': 'bad'}}]:
@@ -87,12 +91,16 @@ class AnnouncementTests(unittest.TestCase):
         with patch.object(dc.request, 'urlopen', side_effect=lambda *a, **k: io.BytesIO(b'fake')):
             self.assertFalse(dc.live_matches(RELEASE, 'https://example.com/'))
 
-    def test_multipart_has_full_notes_and_confirmed_message_id(self):
+    def test_json_message_has_notes_without_any_file_and_confirms_message_id(self):
         payload, notes, _ = dc.release_payload(RELEASE, 'https://example.com/')
         def respond(req, **kwargs):
             self.assertEqual(req.get_method(), 'POST')
-            self.assertIn(b'name="files[0]"', req.data)
-            self.assertIn(notes.encode('utf-8'), req.data)
+            self.assertTrue(req.get_header('Content-type').startswith('application/json'))
+            data = json.loads(req.data)
+            self.assertNotIn('attachments', data)
+            self.assertNotIn(b'files[0]', req.data)
+            self.assertIn('Clearer paths.', data['embeds'][0]['description'])
+            self.assertIn('Soren’s running animation.', data['embeds'][0]['description'])
             self.assertIn(b'"allowed_mentions": {"parse": []}', req.data)
             return io.BytesIO(b'{"id":"123"}')
         with patch.object(dc.request, 'urlopen', side_effect=respond):
@@ -113,7 +121,8 @@ class AnnouncementTests(unittest.TestCase):
             if len(calls) == 1:
                 raise HTTPError(WEBHOOK, 400, 'forum needs title', {}, io.BytesIO(b'{"code":220001}'))
             self.assertIn(b'"thread_name": "Elyndor', req.data)
-            self.assertIn(notes.encode('utf-8'), req.data)
+            self.assertIn('Clearer paths.', json.loads(req.data)['embeds'][0]['description'])
+            self.assertNotIn('attachments', json.loads(req.data))
             return io.BytesIO(b'{"id":"123"}')
         with patch.object(dc.request, 'urlopen', side_effect=respond):
             self.assertEqual(dc.discord_send(dc.webhook_address(WEBHOOK), payload, notes), '123')

@@ -120,3 +120,12 @@ document.addEventListener('click',e=>{const button=e.target.closest('[data-world
 // Save a level's identity, rather than a transient discovery label inside it.
 const saveBeforeJourneyIdentity=saveSlot;
 saveSlot=function(...args){const label=state.scene;if(activeScene)state.scene=activeScene.kind==='poi'?POIS[activeScene.key].id:activeScene.key;try{return saveBeforeJourneyIdentity(...args);}finally{state.scene=label;}};
+
+// Local coordinates are reused by separate levels. A nearby coordinate from a
+// different POI must not rename the current location or change its scene rules.
+const areaBeforeJourneyIdentity=areaAt;
+areaAt=function(x,z){
+ if(activeScene?.kind==='overworld'||activeScene?.kind==='interior')return activeScene.key;
+ const nearby=areaBeforeJourneyIdentity(x,z),poi=activeScene?.kind==='poi'&&POIS[activeScene.key];
+ return poi&&!poi.aliases.includes(nearby)?poi.id:nearby;
+};

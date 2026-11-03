@@ -1,0 +1,5 @@
+.poi-travel-prompt{position:fixed;z-index:24;pointer-events:auto;white-space:nowrap}
+.poi-travel-prompt button{display:flex;align-items:center;gap:9px;min-height:39px;padding:6px 13px 6px 7px;background:#101619e8;border:1px solid #d9d5c07a;box-shadow:0 3px 12px #0009;color:#fff6e1;font:19px/1.2 Georgia,serif;cursor:pointer}
+.poi-travel-prompt kbd{display:grid;place-items:center;width:25px;height:25px;border:1px solid #f1e8d8;border-radius:3px;font:16px/1 system-ui;color:#fff8e9;background:#182126}
+.poi-travel-prompt button:hover,.poi-travel-prompt button:focus-visible{outline:1px solid #ead4a3;background:#243035f5}
+@media(max-width:650px){.poi-travel-prompt button{font-size:17px;min-height:44px}}

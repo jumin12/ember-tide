@@ -2,6 +2,31 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.17 — A clearer world, richer maps and distinct battles
+
+November 3, 2026
+
+- Rebuilt the traversal landscape with subtle rolling ground, valleys and mountain ranges. POI foundations, roads, coastlines and the 3D atlas now share the terrain.
+- Made overworld bridges cross real water with submerged riverbeds, dry approaches and walkable decks.
+- Replanned all fifteen POIs with larger connected streets, service courts and clearer boundaries. Moved wilderness destinations away from town miniatures and improved building orientation.
+- Matched invisible boundaries to the expanded pathways. Denser, irregular forests, mixed tree ages and mountain edges blend the impassable areas into the environment.
+- Made POI departures, overworld destination entry and building doors deliberate E interactions, with contextual prompts and scene fades instead of automatic transfers.
+- Grounded buildings, pedestals and crystals across their whole footprint, corrected buried structures and reduced flickering landmark surfaces.
+- Made visible residents available for conversation even outside their current story action, without advancing quests or granting rewards through idle dialogue.
+- Smoothed overworld party movement and kept the camera centered on the traveling party. Preserved collision-aware companions and scene-return positions.
+- Reskinned the world map and shared menus with native PixelLab navy-and-gold artwork, illustrated headers, ornamental frames, buttons and backgrounds.
+- Refined the settlement picker and navigation shortcuts. Town silhouettes remain visible before discovery while local interiors, services and unexplored details stay hidden until learned.
+- Rebuilt the north-up minimap with a matching gold compass, consistent live icons, a complete icon legend, zoom and a time-and-weather strip. Minimap clicks open the local map; M opens the world map.
+- Made quest guidance depend on explicitly tracking a quest. Limited recorded voice requests to combat moves and prevented text or artwork selection during play.
+- Added twenty regional PixelLab battle environments, including ten distinct grasslands, each with matching day and night art: forty native 688 by 384 backgrounds.
+- Moved random encounters into separate staged scenes with a flat combat floor, aligned actor feet and contact shadows. Battle return restores the exploration scene and party position.
+- Authored continuous predawn, dawn, morning, noon, afternoon, golden-hour, dusk and moonlight palettes for POIs and the overworld, with readable night paths, party silhouettes and nearby landmarks.
+- Added depth-aware atmosphere, foliage light and sun rays filtered by actual cloud cover and scene shadows. Softened cloud shadows and stabilized shadow projections during movement.
+- Fixed repeated cloud and sunlight shader decoration that caused growing shader counts and stutter. Reused shadow allocations and verified stable shader counts during sustained play.
+- Removed gameplay lens blur and prevented aggressive render-resolution reductions. Retained live lighting, rays, weather, shadows, battle controls and responsive phone layouts.
+
+Validation covers the exact published standalone, including live movement, map controls, town entry, nighttime lighting, battle entry and return, responsive layout, shader reuse and sustained rendering. In a controlled 1672×941 native Chrome benchmark on the test PC, median overworld frame work fell from 30.5 to 5.7 ms and POI frame work from 40.6 to 3.1 ms. These are local measurements, not a frame-rate guarantee for other devices. PixelLab battle artwork retains its native 688×384 resolution.
+
 ## Alpha Version 1.16 — Planned paths and a grounded party
 
 All fifteen POIs now have compact, deliberate routes, story courts, visible natural boundaries and road-aligned departures. Buildings keep their authored service entrances; route approaches clear obstructing trees and paint the existing terrain at every detail level. Approved atlas positions and story locations remain intact. Detailed approach chains stay connected in the navigation graph.

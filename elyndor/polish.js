@@ -93,7 +93,7 @@ let hudValue='',lastRadar=-10,lastCompass=-10;
 const hudBeforeOptimization=updateHUD;
 updateHUD=function(){if(!player)return;const value=JSON.stringify([state.mode,state.beat,state.scene,state.gold,Math.floor(state.worldMinutes),state.members.map(id=>[id,state.characters[id].hp,state.characters[id].mp,state.characters[id].charge,state.characters[id].level,state.characters[id].ascended])]);
  if(value!==hudValue){hudValue=value;hudBeforeOptimization();lastRadar=clock;return;}
- if(clock-lastRadar>.6){lastRadar=clock;const r=$('#overworld-radar');if(r)r.innerHTML=worldMapSVG('radar');}
+ if(clock-lastRadar>.6){lastRadar=clock;const r=$('#overworld-radar');if(r)updateRadar36(r);}
  if(clock-lastCompass>.2){lastCompass=clock;const g=waypoint??objectiveTarget(),el=$('#overworld-compass');if(g&&el){const b=screenBasis(),dx=g.x-player.x,dz=g.z-player.z,angle=Math.atan2(dx*b.right.x+dz*b.right.z,-(dx*b.down.x+dz*b.down.z))*180/Math.PI;const needle=el.querySelector('.compass-needle'),distance=el.querySelector('b');if(needle)needle.style.transform='rotate('+angle+'deg)';if(distance)distance.textContent=Math.round(Math.hypot(dx,dz))+' m';}}
 };
 updateLighting=function(){if(!world)return;const h=state.worldMinutes/60%24,day=Math.max(0,Math.sin((h-6)/12*Math.PI)),night=1-smooth(0,.18,day),sunset=Math.max(0,1-Math.abs(h-18)/2),dawn=Math.max(0,1-Math.abs(h-6)/1.8),p=restoration?cameraTarget:player??{x:0,z:0},y=heightAt(p.x,p.z);

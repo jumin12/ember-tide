@@ -13,10 +13,12 @@ buildWorld=function(...args){const r=batchWorldBefore35(...args);world.updateMat
 // whose shadows cannot reach the active street. Tiered caster distance keeps
 // the entire playable foreground covered without changing reflection cadence.
 const shadowFitBefore35=fitVisibleShadows;
-fitVisibleShadows=function(){const far=camera.far;camera.far=Math.min(far,[80,110,160,240][profile33()]);try{runtime35.shadowFits++;return shadowFitBefore35();}finally{camera.far=far;}};
+fitVisibleShadows=function(){const far=camera.far;camera.far=Math.min(far,Math.max([80,110,160,240][profile33()],activeScene?.kind==='overworld'?camera.position.distanceTo(cameraTarget)+85:0));try{runtime35.shadowFits++;return shadowFitBefore35();}finally{camera.far=far;}};
 const budgetBefore35=updateRenderBudget;
 updateRenderBudget=function(force=false){const before=budgetAt33,r=budgetBefore35(force);if(!world||!player||(!force&&before===budgetAt33))return r;const t=profile33(),p=restoration?cameraTarget:player;
- for(const m of world.userData.terrainChunks??[]){const c=m.userData.center;if(!c||!m.userData.fullGeometry)continue;const d=Math.hypot(c.x-p.x,c.z-p.z),level=stableDistanceLod33(m,'terrain',d,[[28,38,62,100][t],[70,100,150,220][t]],10);m.geometry=[m.userData.fullGeometry,m.userData.farGeometry,m.userData.simpleGeometry][level];}
+ // Coarser terrain can cut across a graded foundation and bury its building or
+ // crystal. Keep authored ground topology stable at every exterior quality tier.
+ for(const m of world.userData.terrainChunks??[]){if(m.userData.fullGeometry)m.geometry=m.userData.fullGeometry;}
  if(t<2)for(const m of scenery.forestMeshes){const d=Math.hypot(m.userData.center.x-p.x,m.userData.center.z-p.z),lod=m.userData.nativeLods30;if(lod)m.geometry=lod[1+stableDistanceLod33(m,'forestLow',d,[t===0?32:55],8)];}
  return r;};
 

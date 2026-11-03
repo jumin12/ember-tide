@@ -1,0 +1,235 @@
+/* PixelLab's fine gold frames and painted navy surfaces, shared by every menu. */
+body[data-interface50]{--gold50:#e8bf6b;--cream50:#f5e7c7;--navy50:#031d28;--muted50:#b8c8c5}
+body[data-interface50]:has(#menu:not(.hidden)) #journey-guide{display:none!important}
+body[data-interface50] #menu .menu-shell{inset:0;border:0;border-image:none;border-radius:0;padding:0;box-shadow:none;background:#031c27;font-family:Georgia,'Times New Roman',serif;color:var(--cream50);isolation:isolate}
+body[data-interface50] #menu .menu-shell::after{content:'';position:absolute;inset:-20px;z-index:20;border:40px solid transparent;border-image:var(--ui50-frame) 64 stretch;pointer-events:none}
+body[data-interface50] #menu .menu-scrim{background:#02131f;backdrop-filter:none}
+body[data-interface50] #menu .menu-header{height:clamp(90px,10.6vh,110px);min-height:90px;padding:10px 26px 10px 28px;border-bottom:1px solid #d4a956;background-color:#031b26;background-image:linear-gradient(90deg,#031b26 0%,#031b26 30%,transparent 46%,transparent 76%,#031b26 96%),var(--ui50-header);background-repeat:no-repeat;background-position:center,right -5vw center;background-size:100% 100%,75% 100%;box-shadow:0 1px #04111b;z-index:2}
+body[data-interface50] #menu .menu-header>div:first-child{padding-left:88px}
+body[data-interface50] #menu .menu-compass26{width:78px;height:78px;filter:drop-shadow(0 0 5px #f1c76b33)}
+body[data-interface50] #menu .menu-header .eyebrow{font:clamp(11px,.94vw,16px)/1.35 Georgia;letter-spacing:.075em;color:#e9c370;margin:0 0 2px}
+body[data-interface50] #menu #menu-title{font:400 clamp(34px,3vw,51px)/1.04 Georgia;color:#f3e3bf;text-shadow:0 2px 3px #0009}
+body[data-interface50] #menu .menu-meta{gap:25px;font:clamp(14px,1.1vw,19px) Georgia;color:#f0cc7f}
+body[data-interface50] #menu #menu-gold{display:flex;align-items:center;gap:6px}
+body[data-interface50] #menu #menu-gold img{width:23px;height:23px}
+body[data-interface50] #menu #menu-playtime{border-left:1px solid #b1904d;padding-left:24px}
+body[data-interface50] #menu #close-menu{background:none;border:0;padding:0;min-height:30px;gap:9px;font-size:20px;box-shadow:none}
+body[data-interface50] #menu #close-menu kbd{border:1px solid #b68a42;background:#051b26;border-radius:4px;font:16px Georgia;padding:3px 7px;box-shadow:inset 0 0 0 2px #b38c3422;color:#f5ddb0}
+body[data-interface50] #menu .menu-layout,body[data-interface50] #menu .menu-shell:is([data-page=inventory],[data-page=equipment],[data-page=settings],[data-page=map]) .menu-layout{grid-template-columns:15.3% minmax(0,1fr);background:#031c27;min-height:0}
+body[data-interface50] #menu #menu-party{display:none}
+body[data-interface50] #menu #menu-nav{padding:25px 10px 18px;border-right:1px solid #ac8844;background:linear-gradient(#031e2bf5,#031e2b00 72%),var(--ui50-foliage) bottom center/100% auto no-repeat,#031d28;gap:1px;overflow:auto}
+body[data-interface50] #menu #menu-nav button{height:64px;min-height:56px;padding:11px 14px;gap:12px;background:none;border:1px solid transparent;border-radius:0;clip-path:none;font:clamp(16px,1.33vw,24px) Georgia;color:#f8edcf;text-shadow:0 1px 2px #000;box-shadow:none;overflow:visible}
+body[data-interface50] #menu #menu-nav button::after{content:'';position:absolute;left:14px;right:14px;bottom:0;height:1px;background:linear-gradient(90deg,transparent,#a18d593d,transparent)}
+body[data-interface50] #menu #menu-nav button small{font:clamp(11px,.85vw,14px) Georgia;color:#edd19a;margin-right:8px}
+body[data-interface50] #menu #menu-nav .menu-icon26{width:32px;height:34px;filter:drop-shadow(0 1px 1px #0008)}
+body[data-interface50] #menu #menu-nav button.active{background-image:linear-gradient(90deg,#bb873a85,#a5803b28),var(--ui50-button);background-size:100% 100%;background-color:transparent;border-color:transparent;box-shadow:inset 0 0 18px #e8be5c24,0 0 7px #e6af3326;color:#fff5d8}
+body[data-interface50] #menu #menu-nav button.active::after{display:none}
+body[data-interface50] #menu #menu-nav button:hover:enabled{background-color:#c7a25d12;border-color:#c5a25b55;filter:brightness(1.15)}
+body[data-interface50] #menu #menu-content{padding:20px 24px;min-width:0;min-height:0;background:linear-gradient(#031c27cf,#031c27c9),var(--ui50-foliage) right bottom/450px auto no-repeat;scrollbar-color:#b08a46 #051e29;scrollbar-width:thin}
+body[data-interface50] #menu .menu-footer{height:25px;min-height:25px;border-top:1px solid #957a3a55;background:#031924;font:11px Georgia;color:#bdc6b8;padding:5px 24px}
+body[data-interface50] #menu .menu-shell[data-page=map] .menu-footer{display:none}
+body[data-interface50] #menu button,body[data-interface50] #menu select{font-family:Georgia;color:#f1e3c3}
+body[data-interface50] #menu button:not(#close-menu):not(.atlas-pin):not([data-tab]):not(.party-selector26):not(.gear-slot27):not(.catalog-item27):not([data-quest26]):not(.atlas-zoom button){background-color:transparent;background-image:var(--ui50-button);background-size:100% 100%;border:1px solid transparent;border-radius:2px;box-shadow:none}
+body[data-interface50] #menu button:hover:enabled{filter:brightness(1.18);text-shadow:0 0 5px #edc9744d;transform:none}
+body[data-interface50] #menu button:active:enabled{filter:brightness(1.05)}
+body[data-interface50] #menu button:disabled{opacity:.4;filter:saturate(.45);cursor:default}
+body[data-interface50] #menu button:focus-visible,body[data-interface50] #menu select:focus-visible{outline:1px solid #ffe2a0;outline-offset:2px}
+body[data-interface50] #menu .concept-panel50{position:relative;border:1px solid #b28e4555;border-radius:0;background:linear-gradient(105deg,#082631f2,#06222deb),var(--ui50-foliage) right bottom/430px auto no-repeat;isolation:isolate}
+body[data-interface50] #menu .concept-panel50::after{content:'';position:absolute;inset:-16px;border:32px solid transparent;border-image:var(--ui50-frame) 64 stretch;pointer-events:none;z-index:5}
+body[data-interface50] #menu .settings-section26{padding:22px 26px;margin:0 0 20px;grid-template-columns:29% 1fr}
+body[data-interface50] #menu .settings-section26>header{border-right-color:#a88b4b4d}
+body[data-interface50] #menu .settings-section26>header h3{color:#f5dfad;font-weight:400}
+body[data-interface50] #menu .setting-row{border-bottom-color:#9b81442e}
+body[data-interface50] #menu .setting-row select,body[data-interface50] #menu .sort-control27 select{background:#061d29;border:1px solid #bc99585e;color:#eee0c4}
+body[data-interface50] #menu .setting-row input[type=range]{accent-color:#d2ad60}
+body[data-interface50] #menu .equipped-panel27,body[data-interface50] #menu .gear-catalog27,body[data-interface50] #menu .inventory-list27{padding:20px;min-width:0}
+body[data-interface50] #menu .equipment-layout27{grid-template-columns:27% 38% minmax(0,1fr);gap:24px}
+body[data-interface50] #menu .gear-slot27,body[data-interface50] #menu .catalog-item27,body[data-interface50] #menu .inventory-list27 .item-row{border:1px solid #ab8e4c66!important;border-radius:1px;background:linear-gradient(110deg,#19323b99,#06202a99)!important}
+body[data-interface50] #menu .gear-slot27.active,body[data-interface50] #menu .catalog-item27.active,body[data-interface50] #menu .inventory-list27 .item-row.active{border-color:#ebc375!important;box-shadow:inset 0 0 16px #d5ab4122,0 0 5px #b98c3222}
+body[data-interface50] #menu .character-tabs26 button,body[data-interface50] #menu .journal-tabs26 button{border-color:#bd985a55!important;clip-path:none!important;background:#071f2a!important}
+body[data-interface50] #menu .character-tabs26 button.active,body[data-interface50] #menu .journal-tabs26 button.active{background:linear-gradient(90deg,#926d2f77,#0b293399)!important;border-color:#dfb65d!important;box-shadow:0 0 8px #cba74b22}
+body[data-interface50] #menu .party-art26,body[data-interface50] #menu .portrait-stage27{background:radial-gradient(ellipse,#bb965519,transparent 65%),var(--ui50-compass) center/65% auto no-repeat}
+body[data-interface50] #menu .party-details26>section{padding:20px 24px}
+body[data-interface50] #menu .journal-banner26{background:linear-gradient(90deg,#062631f5,#062631b5 65%,#031b2666),var(--ui50-header) right center/auto 100%;border-bottom-color:#b08b4a77}
+body[data-interface50] #menu .quest-list26{background:linear-gradient(#05212c9e,#031c2722),var(--ui50-foliage) left bottom/100% auto no-repeat;border-right-color:#aa874e77}
+body[data-interface50] #menu .quest-list26>button.active{clip-path:none;background:linear-gradient(90deg,#9a713f4d,#09243155);border-color:#caa359}
+body[data-interface50] #menu .item-detail27{max-height:none;position:relative;top:auto}
+
+/* The reference atlas has one large map, a concise selected-place card and a
+   quiet controls rail. The same DOM retains panning, rotation and travel. */
+body[data-interface50] #menu .menu-shell[data-page=map] #menu-content{display:block;padding:20px 22px;overflow:hidden;background:#031c27}
+body[data-interface50] #menu .atlas50{height:100%;min-height:0;display:grid;grid-template-rows:64px minmax(150px,1fr) 132px 23px 40px;gap:12px;background:transparent;color:#f1e3bd}
+body[data-interface50] #menu .atlas50 .atlas3d-header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:8px 16px;margin:0 0 -12px;border:1px solid #9c81433d;border-bottom:0;background:linear-gradient(105deg,#082d38,#05242e 50%,#071f2a);min-width:0}
+body[data-interface50] #menu .atlas50-title{display:grid;grid-template-columns:52px minmax(0,1fr);grid-template-rows:21px 30px;column-gap:15px;align-items:center;min-width:0;flex:1}
+body[data-interface50] #menu .atlas50-title .atlas50-emblem{grid-row:1/3;width:52px;height:52px;filter:drop-shadow(0 0 4px #ddb65a22)}
+body[data-interface50] #menu .atlas50-title .eyebrow{font:clamp(10px,.81vw,14px)/1.25 Georgia;letter-spacing:.045em;white-space:nowrap;margin:0;color:#eac278!important}
+body[data-interface50] #menu .atlas50-title h3{font:clamp(24px,1.75vw,31px)/1.1 Georgia!important;color:#f2e5c4!important;margin:0!important}
+body[data-interface50] #menu .atlas50 .atlas3d-buttons{display:flex;align-items:center;gap:10px;max-width:none;flex-wrap:nowrap;flex-shrink:0}
+body[data-interface50] #menu .atlas50 .atlas3d-buttons button,body[data-interface50] #menu .atlas50 .atlas3d-buttons select{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:39px;padding:8px 15px;font:clamp(11px,.85vw,15px) Georgia;white-space:nowrap;background-color:transparent;background-image:var(--ui50-button);background-size:100% 100%;border:0;border-radius:0;color:#f5e7c9;box-shadow:none}
+body[data-interface50] #menu .atlas50 .atlas3d-buttons button img{width:23px;height:23px;flex-shrink:0}
+body[data-interface50] #menu .atlas50 #atlas-destination{width:clamp(180px,17vw,300px);max-width:none;appearance:auto;padding:8px 13px;color:#f5e8c8}
+body[data-interface50] #menu #atlas-destination option{background:#062432;color:#f1dfb4}
+body[data-interface50] #menu #atlas3d-view{position:relative;min-width:0;min-height:0;overflow:hidden;flex:none;border:1px solid #b58f44;background:#113f50;isolation:isolate;outline-offset:2px}
+body[data-interface50] #menu #atlas3d-view::before{content:'';position:absolute;inset:-16px;border:32px solid transparent;border-image:var(--ui50-frame) 64 stretch;pointer-events:none;z-index:8}
+body[data-interface50] #menu #atlas3d-view::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:2;background:var(--ui50-clouds) 10% 40%/70% auto;opacity:.17;mix-blend-mode:screen;mask-image:radial-gradient(ellipse at 0% 100%,#000 0%,transparent 32%),radial-gradient(ellipse at 100% 0%,#000 0%,transparent 29%);animation:map-mist50 45s linear infinite alternate}
+@keyframes map-mist50{to{background-position:20% 34%}}
+body[data-interface50] #menu #atlas-marker-layer{position:absolute;inset:0;z-index:4;pointer-events:none}
+body[data-interface50] #menu .atlas50 .atlas-pin{position:absolute;pointer-events:auto;background:none!important;border:0;box-shadow:none!important;padding:0!important;min-height:0;font-size:0;transform:translate(-50%,-50%);width:28px;height:28px;overflow:visible;filter:drop-shadow(0 1px 3px #10232c);z-index:3}
+body[data-interface50] #menu .atlas50 .atlas-pin .atlas50-pin-gem{display:block;width:25px;height:25px;filter:drop-shadow(0 0 3px #ffc45377);pointer-events:none}
+body[data-interface50] #menu .atlas50 .atlas-pin span{display:block;position:absolute;left:50%;top:25px;transform:translateX(-50%);font:clamp(11px,.95vw,16px)/1.2 Georgia;white-space:nowrap;color:#fff0c9;background:var(--ui50-button) center/100% 100% no-repeat,#06212a;min-width:110px;border:0;border-radius:16px;padding:7px 17px;box-shadow:0 2px 5px #00131d88;text-shadow:0 1px 2px #00111e}
+body[data-interface50] #menu .atlas50 .atlas-pin.selected span,body[data-interface50] #menu .atlas50 .atlas-pin.tracked span{color:#ffe6a1;filter:brightness(1.12)}
+body[data-interface50] #menu .atlas50 .atlas-pin.distant:not(.selected):not(.tracked) span{display:none}
+body[data-interface50] #menu .atlas50 .atlas-pin:hover span,body[data-interface50] #menu .atlas50 .atlas-pin:focus-visible span{display:block}
+body[data-interface50] #menu .atlas50 .atlas-party{pointer-events:none;color:#fff4ce;font-size:20px;filter:drop-shadow(0 0 3px #092a36)}
+body[data-interface50] #menu .atlas50 .atlas-compass{right:20px;top:14px;width:26px;height:38px;color:#fff0c8;text-shadow:0 1px 3px #052938}
+body[data-interface50] #menu .atlas50 #atlas-heading-north{display:flex;flex-direction:column;align-items:center;gap:1px;font:bold 17px Georgia}
+body[data-interface50] #menu .atlas50 #atlas-heading-north img{height:16px;width:16px}
+body[data-interface50] #menu .atlas50 .atlas-zoom{position:absolute;right:18px;bottom:16px;display:grid;gap:8px;z-index:9}
+body[data-interface50] #menu .atlas50 .atlas-zoom button{width:42px;height:40px;min-height:0;padding:0;border:1px solid #b6934a;border-radius:5px;background:linear-gradient(#0c3040,#031f2d);box-shadow:inset 0 0 0 2px #9e7c382f,0 1px 4px #0006;color:#f1cb76;font:31px/1 Georgia}
+body[data-interface50] #menu .atlas50 .atlas3d-info{display:grid;grid-template-columns:126px minmax(0,1fr) auto;align-items:center;gap:18px;padding:12px 23px;background:linear-gradient(100deg,#052631f5,#062632df 75%,#07242fc9),var(--ui50-foliage) right bottom/410px auto no-repeat;border-color:#bd944c;min-width:0}
+body[data-interface50] #menu .atlas50-vignette{width:124px;height:104px;object-fit:contain;filter:drop-shadow(0 0 4px #c99b3422)}
+body[data-interface50] #menu .atlas50-vignette.light50{width:90px;height:90px;justify-self:center}
+body[data-interface50] #menu .atlas50-copy{min-width:0}
+body[data-interface50] #menu .atlas50 .atlas3d-info .eyebrow{display:flex;align-items:center;gap:6px;font:clamp(10px,.84vw,14px)/1.25 Georgia;letter-spacing:.075em;color:#ecc474!important;margin:0 0 5px}
+body[data-interface50] #menu .atlas50 .atlas3d-info .eyebrow img{width:17px;height:19px}
+body[data-interface50] #menu #atlas-selection{font:clamp(25px,1.95vw,35px)/1.08 Georgia;color:#f8e9c9!important;margin:0 0 6px!important;padding-bottom:6px;border-bottom:1px solid #bd975a8c;max-width:640px}
+body[data-interface50] #menu #atlas-description{font:italic clamp(12px,1.01vw,17px)/1.4 Georgia!important;color:#f1e4c7!important;margin:0;max-width:650px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+body[data-interface50] #menu .atlas50 .atlas-actions{display:flex;align-items:center;gap:13px;justify-content:flex-end;flex-wrap:nowrap;border-left:1px solid #b08f4666;padding-left:30px}
+body[data-interface50] #menu .atlas50 .atlas-actions button{display:flex;align-items:center;justify-content:center;gap:8px;font:clamp(12px,1vw,17px) Georgia;min-height:47px;padding:9px 20px;white-space:nowrap;background-color:transparent;background-image:var(--ui50-button);background-size:100% 100%;border:0;min-width:175px}
+body[data-interface50] #menu .atlas50 .atlas-actions button img{width:25px;height:25px}
+body[data-interface50] #menu .atlas50 .atlas-actions button b{font:25px Georgia;color:#ffdc8e}
+body[data-interface50] #menu .atlas50 #atlas-travel:enabled{filter:brightness(1.35);box-shadow:inset 0 0 16px #e1b24e22,0 0 6px #f2c66544;background-color:#b7892520;text-shadow:0 0 5px #ffd16c3d}
+body[data-interface50] #menu .atlas50 .atlas50-note{display:flex;align-items:center;gap:10px;padding:0 12px;font:clamp(11px,.85vw,14px)/1.2 Georgia;color:#ddd5bd;min-height:0;background:none;border:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+body[data-interface50] #menu .atlas50 .atlas50-note b{font-weight:400;color:#e4c27c}
+body[data-interface50] #menu .atlas50 .atlas50-note span{font-size:inherit;display:inline}
+body[data-interface50] #menu .atlas50 .atlas3d-controls{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:6px 18px;background:linear-gradient(100deg,#092b36,#061f2a);border:1px solid #967c424d;font:clamp(10px,.83vw,14px) Georgia;color:#eee1c7;white-space:nowrap;min-width:0}
+body[data-interface50] #menu .atlas50-mouse-help{display:flex;gap:20px;align-items:center}
+body[data-interface50] #menu .atlas50-mouse-help span{display:flex;align-items:center;gap:5px}
+body[data-interface50] #menu .atlas50-mouse-help img{width:19px;height:24px;object-fit:contain}
+body[data-interface50] #menu .atlas-return{display:flex;gap:8px;align-items:center;padding:8px 18px;margin-bottom:15px}
+body[data-interface50] #menu .atlas-return img{width:24px;height:24px}
+body[data-interface50] #menu .continuous-map{background:#082a35;border-color:#bd9955}
+body[data-interface50] #menu .atlas-heading .eyebrow{color:#dfb96c;margin:0 0 5px}
+body[data-interface50] #menu .atlas-heading h3{color:#f2e2bf;font:32px Georgia;margin:0 0 14px}
+
+/* A real keyboard-accessible destination menu replaces the browser's native
+   select chrome, while the existing selection/change behavior stays shared. */
+body[data-interface50] #menu .atlas50 .atlas3d-header{position:relative;z-index:12}
+body[data-interface50] #menu .atlas-picker50{position:relative;width:clamp(230px,20vw,350px);flex:none}
+body[data-interface50] #menu .atlas-picker50 [hidden]{display:none!important}
+body[data-interface50] #menu .atlas50 .atlas-picker50 #atlas-destination-trigger50{display:flex;width:100%;min-height:40px;align-items:center;justify-content:flex-start;gap:8px;padding:8px 24px;font:clamp(12px,.87vw,15px) Georgia;background-image:var(--ui50-button);background-size:100% 100%;border:0;box-shadow:0 2px 5px #00131c55;text-align:left}
+body[data-interface50] #menu .atlas-picker-label50{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#f4e6c6}
+body[data-interface50] #menu .atlas-picker-chevron50{font:22px/15px Georgia;color:#e5bc6b;transform:translate(-3px,-6px);flex:none}
+body[data-interface50] #menu .atlas-picker50 [aria-expanded=true]{filter:brightness(1.18);outline:1px solid #f0c97566;outline-offset:1px}
+body[data-interface50] #menu #atlas-destination-list50{position:absolute;right:0;top:calc(100% + 7px);z-index:30;min-width:100%;width:max-content;max-width:350px;max-height:285px;overflow:auto;overscroll-behavior:contain;padding:10px;background:linear-gradient(110deg,#0a2c38f5,#041e2cf5);border:1px solid #c6a35d;box-shadow:0 9px 25px #0009,inset 0 0 0 2px #b78c3b22;scrollbar-width:thin;scrollbar-color:#b48c49 #082431}
+body[data-interface50] #menu #atlas-destination-list50>.eyebrow{padding:4px 8px 9px;margin:0;font:10px Georgia;letter-spacing:.1em;border-bottom:1px solid #ad91423d;color:#d5b570}
+body[data-interface50] #menu .atlas50 .atlas-picker50 [role=option]{display:flex;gap:10px;align-items:center;justify-content:flex-start;min-height:54px;width:100%;padding:9px 10px;background:none!important;border:1px solid transparent;border-bottom-color:#9f86442b;text-align:left;border-radius:1px;white-space:normal}
+body[data-interface50] #menu .atlas-picker50 [role=option]>img{width:26px;height:29px;object-fit:contain;flex:none}
+body[data-interface50] #menu .atlas-picker50 [role=option]>span{flex:1}
+body[data-interface50] #menu .atlas-picker50 [role=option] b{display:block;font:15px/1.2 Georgia;color:#f4e4bd}
+body[data-interface50] #menu .atlas-picker50 [role=option] small{display:block;font:10px Georgia;color:#a8b9b8;margin-top:4px}
+body[data-interface50] #menu .atlas-picker50 [role=option] i{font:17px Georgia;color:#eaca86;visibility:hidden;padding-left:8px}
+body[data-interface50] #menu .atlas50 .atlas-picker50 [role=option][aria-selected=true],body[data-interface50] #menu .atlas50 .atlas-picker50 [role=option]:focus-visible,body[data-interface50] #menu .atlas50 .atlas-picker50 [role=option]:hover{background:linear-gradient(90deg,#bd90352c,#49616b22)!important;border-color:#bc985776;filter:none;outline:0}
+body[data-interface50] #menu .atlas-picker50 [role=option][aria-selected=true] i{visibility:visible}
+
+@media(max-width:1400px){
+ body[data-interface50] #menu .atlas-picker50{width:250px}
+ body[data-interface50] #menu .atlas50 .atlas-picker50 #atlas-destination-trigger50{font-size:12px;padding:8px 20px;gap:5px}
+ body[data-interface50] #menu .atlas50 .atlas3d-buttons{gap:5px}
+ body[data-interface50] #menu .atlas50 .atlas3d-buttons button{padding:8px 10px;gap:4px}
+ body[data-interface50] #menu .atlas50 .atlas3d-buttons button img{width:19px;height:21px}
+ body[data-interface50] #menu .atlas50 #atlas-destination{width:190px}
+ body[data-interface50] #menu .atlas50-title{grid-template-columns:39px minmax(0,1fr);column-gap:9px}
+ body[data-interface50] #menu .atlas50-title .atlas50-emblem{width:40px;height:44px}
+ body[data-interface50] #menu .atlas50 .atlas3d-info{grid-template-columns:100px minmax(0,1fr) auto;gap:12px;padding:12px 18px}
+ body[data-interface50] #menu .atlas50-vignette{width:100px}
+ body[data-interface50] #menu .atlas50 .atlas-actions{gap:8px;padding-left:18px}
+ body[data-interface50] #menu .atlas50 .atlas-actions button{min-width:142px;padding:9px 12px}
+}
+@media(max-width:1100px){
+ body[data-interface50] #menu .atlas-picker50{width:225px}
+ body[data-interface50] #menu .menu-layout,body[data-interface50] #menu .menu-shell:is([data-page=inventory],[data-page=equipment],[data-page=settings],[data-page=map]) .menu-layout{grid-template-columns:180px minmax(0,1fr)}
+ body[data-interface50] #menu #menu-nav{padding:18px 7px}
+ body[data-interface50] #menu #menu-nav button{font-size:17px;padding:10px;gap:7px;height:60px}
+ body[data-interface50] #menu #menu-nav .menu-icon26{width:27px;height:29px}
+ body[data-interface50] #menu .atlas50{grid-template-rows:100px minmax(150px,1fr) 125px 23px 36px}
+ body[data-interface50] #menu .atlas50 .atlas3d-header{flex-wrap:wrap;gap:6px;padding:8px 12px}
+ body[data-interface50] #menu .atlas50-title{flex-basis:100%;grid-template-columns:35px 1fr;grid-template-rows:16px 25px}
+ body[data-interface50] #menu .atlas50-title .atlas50-emblem{height:37px;width:35px}
+ body[data-interface50] #menu .atlas50 .atlas3d-buttons{width:100%;justify-content:flex-end}
+ body[data-interface50] #menu .atlas50 .atlas3d-buttons button,body[data-interface50] #menu .atlas50 #atlas-destination{min-height:34px;font-size:11px;padding:6px 10px}
+ body[data-interface50] #menu .atlas50 .atlas3d-info{grid-template-columns:76px minmax(0,1fr);gap:10px}
+ body[data-interface50] #menu .atlas50-vignette{grid-row:1/3;width:76px;height:76px}
+ body[data-interface50] #menu .atlas50 .atlas-actions{grid-column:2;border:0;padding-left:0;justify-content:flex-start}
+ body[data-interface50] #menu .atlas50 .atlas-actions button{min-height:35px;font-size:12px;min-width:130px;padding:5px 10px}
+ body[data-interface50] #menu .atlas50 .atlas-actions button img{height:20px;width:20px}
+ body[data-interface50] #menu #atlas-description{font-size:12px!important;-webkit-line-clamp:1}
+ body[data-interface50] #menu #atlas-selection{font-size:25px;padding-bottom:3px;margin-bottom:3px!important}
+ body[data-interface50] #menu .atlas50-mouse-help{gap:9px}
+ body[data-interface50] #menu .atlas50 .atlas3d-controls{padding:4px 9px;gap:8px;font-size:10px}
+ body[data-interface50] #menu .equipment-layout27{grid-template-columns:1fr 1fr}.gear-catalog27{grid-column:1/-1}
+}
+@media(max-width:700px){
+ body[data-interface50].compact33 #menu #menu-nav{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));flex-direction:initial!important;flex-wrap:initial!important;overflow:visible!important;padding:7px 9px!important;gap:3px;flex-shrink:0}
+ body[data-interface50].compact33 #menu #menu-nav button{width:100%!important;min-width:0!important;min-height:36px!important;height:36px!important;padding:5px 6px!important;flex:initial!important}
+ body[data-interface50] #menu .atlas50 .atlas-picker50{grid-column:1/-1;width:100%}
+ body[data-interface50] #menu .atlas50 .atlas-picker50 #atlas-destination-trigger50{min-height:29px;padding:5px 11px;font-size:11px}
+ body[data-interface50] #menu #atlas-destination-list50{max-width:100%;width:100%;max-height:255px;padding:7px}
+ body[data-interface50] #menu .atlas50 .atlas-picker50 [role=option]{min-height:48px}
+ body[data-interface50] #menu .menu-header{height:84px;min-height:84px;padding:9px 12px;background-image:linear-gradient(90deg,#031b26e8,#031b26b3 45%,#031b2655 70%,#031b26cc),var(--ui50-header);background-size:100% 100%,100% 100%;background-position:center}
+ body[data-interface50] #menu .menu-header>div:first-child{padding-left:48px}
+ body[data-interface50] #menu .menu-compass26{width:44px;height:54px}
+ body[data-interface50] #menu .menu-header .eyebrow{display:block;font-size:8px;letter-spacing:.04em}
+ body[data-interface50] #menu #menu-title{font-size:28px}
+ body[data-interface50] #menu .menu-meta{gap:8px;max-width:110px;flex-wrap:wrap;font-size:11px}
+ body[data-interface50] #menu #menu-gold{gap:2px}body[data-interface50] #menu #menu-gold img{width:15px;height:15px}
+ body[data-interface50] #menu #menu-playtime{border:0;padding-left:0;font-size:10px}
+ body[data-interface50] #menu #close-menu{font-size:15px;min-height:22px;gap:4px}
+ body[data-interface50] #menu #close-menu kbd{font-size:11px;padding:2px 5px}
+ body[data-interface50] #menu .menu-layout,body[data-interface50] #menu .menu-shell:is([data-page=inventory],[data-page=equipment],[data-page=settings],[data-page=map]) .menu-layout{display:flex;flex-direction:column}
+ body[data-interface50] #menu #menu-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;padding:7px 9px;border-right:0;border-bottom:1px solid #b08c4777;overflow:visible;background:#041f2c}
+ body[data-interface50] #menu #menu-nav button{height:36px;min-height:36px;padding:5px 6px;font-size:12px;gap:5px;white-space:nowrap}
+ body[data-interface50] #menu #menu-nav .menu-icon26{width:19px;height:21px}
+ body[data-interface50] #menu #menu-nav button small{display:none}
+ body[data-interface50] #menu #menu-content{padding:18px 14px}
+ body[data-interface50] #menu .menu-shell[data-page=map] #menu-content{flex:1;min-height:0;display:block;padding:10px 12px 14px}
+ body[data-interface50] #menu .atlas50{display:grid;grid-template-rows:97px minmax(125px,1fr) 138px 22px 39px;gap:9px;height:100%;min-height:0}
+ body[data-interface50] #menu .atlas50 .atlas3d-header{padding:6px 8px;margin-bottom:-9px;gap:5px}
+ body[data-interface50] #menu .atlas50 .atlas3d-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;max-width:none;width:100%}
+ body[data-interface50] #menu .atlas50 #atlas-destination{grid-column:1/-1;width:100%;min-height:27px;font-size:11px;padding:4px 10px}
+ body[data-interface50] #menu .atlas50 .atlas3d-buttons button{min-height:27px;font-size:10px;padding:5px 4px;gap:3px}
+ body[data-interface50] #menu .atlas50 .atlas3d-buttons button img{width:15px;height:16px}
+ body[data-interface50] #menu .atlas50-title{display:none}
+ body[data-interface50] #menu #atlas3d-view{min-height:0;flex:none}
+ body[data-interface50] #menu .atlas50 .atlas3d-info{grid-template-columns:66px minmax(0,1fr);padding:10px 11px;gap:5px 9px}
+ body[data-interface50] #menu .atlas50-vignette{width:66px;height:66px;grid-row:1/3}
+ body[data-interface50] #menu .atlas50-vignette.light50{width:59px;height:59px}
+ body[data-interface50] #menu .atlas50 .atlas3d-info .eyebrow{font-size:8px;gap:3px;margin-bottom:3px;letter-spacing:.04em}
+ body[data-interface50] #menu .atlas50 .atlas3d-info .eyebrow img{width:12px;height:13px}
+ body[data-interface50] #menu #atlas-selection{font-size:23px!important}
+ body[data-interface50] #menu #atlas-description{font-size:10px!important;-webkit-line-clamp:2;line-height:1.25!important}
+ body[data-interface50] #menu .atlas50 .atlas-actions{grid-column:1/-1;gap:6px;justify-content:stretch;padding:0}
+ body[data-interface50] #menu .atlas50 .atlas-actions button{flex:1;min-width:0;min-height:34px;font-size:11px;padding:4px 6px;gap:4px}
+ body[data-interface50] #menu .atlas50 .atlas-actions button img{width:18px;height:20px}
+ body[data-interface50] #menu .atlas50 .atlas50-note{font-size:9px;padding:0 2px;display:block;line-height:22px}
+ body[data-interface50] #menu .atlas50 .atlas50-note span{margin-left:5px}
+ body[data-interface50] #menu .atlas50 .atlas3d-controls{font-size:8px;display:flex;justify-content:center;padding:4px 5px}
+ body[data-interface50] #menu .atlas50 .atlas3d-controls>span{display:none}
+ body[data-interface50] #menu .atlas50-mouse-help{gap:10px;justify-content:center}
+ body[data-interface50] #menu .atlas50-mouse-help span{gap:2px;display:flex}
+ body[data-interface50] #menu .atlas50-mouse-help img{width:13px;height:17px}
+ body[data-interface50] #menu .atlas50 .atlas-pin span{font-size:10px;min-width:80px;padding:5px 10px}
+ body[data-interface50] #menu .atlas50 .atlas-pin .atlas50-pin-gem{width:20px;height:20px}
+ body[data-interface50] #menu .atlas50 .atlas-pin span{top:20px}
+ body[data-interface50] #menu .atlas50 .atlas-zoom{right:10px;bottom:10px;gap:7px}
+ body[data-interface50] #menu .atlas50 .atlas-zoom button{height:32px;width:32px;font-size:26px}
+ body[data-interface50] #menu .atlas50 .atlas-compass{top:9px;right:10px}
+ body[data-interface50] #menu .settings-section26{grid-template-columns:1fr;padding:16px;margin-bottom:18px}
+ body[data-interface50] #menu .settings-section26>header{border:0}
+ body[data-interface50] #menu .equipment-layout27{display:block}
+ body[data-interface50] #menu .equipped-panel27,body[data-interface50] #menu .gear-catalog27{margin-top:20px;padding:16px}
+ body[data-interface50] #menu .inventory-list27{padding:11px}
+ body[data-interface50] #menu .inventory-layout27{grid-template-columns:1fr}
+ body[data-interface50] #menu .journal-detail26{padding:0 15px 24px}
+}
+@media(prefers-reduced-motion:reduce){body[data-interface50] #menu #atlas3d-view::after{animation:none}}

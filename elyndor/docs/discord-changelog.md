@@ -1,6 +1,6 @@
 # Automatic Discord changelogs
 
-The `Discord changelog` GitHub Action reads the published commit's `release.json` after a successful GitHub Pages build. It checks that the live HTML has exactly the release's byte count and SHA-256 before sending. The Discord message contains the version, change bullets, a Play link and the complete changelog as a Markdown attachment.
+The `Discord changelog` GitHub Action reads the published commit's `release.json` after a successful GitHub Pages build. It checks that the live HTML has exactly the release's byte count and SHA-256 before sending. The Discord message contains the version, change bullets, a Play link and a link to the release history. It sends no file attachments, including TXT or Markdown documents. Long changelogs show complete bullets that fit in the message and link to the complete history on GitHub.
 
 ## One-time setup
 
@@ -35,6 +35,6 @@ python elyndor/tools/discord_changelog.py --dry-run
 python -m unittest discover -s elyndor/tools -p test_discord_changelog.py
 ```
 
-The preview files are `output/elyndor/discord-changelog/payload.json` and `changelog.md`. Tests mock the network; they do not send Discord messages or create Git tags.
+The local preview files are `output/elyndor/discord-changelog/payload.json` and `changelog.md`; the Markdown file is for local review and is never uploaded to Discord. Tests mock the network; they do not send Discord messages or create Git tags.
 
 References: [Discord webhooks](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks), [GitHub Pages workflow events](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#page_build), [GitHub Actions secrets](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets).

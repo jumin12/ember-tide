@@ -1,0 +1,35 @@
+/* Reference compass: thin gold rings, four diamond points, inset north letter. */
+body[data-compass52] #hud #overworld-radar{padding:0!important;border:0!important;box-shadow:none!important;background:none!important;border-radius:0;overflow:visible;isolation:isolate;opacity:1;cursor:pointer;min-width:0}
+body[data-compass52]:not(.compact33) #hud #overworld-radar{width:clamp(216px,15.5vw,270px);height:clamp(216px,15.5vw,270px);right:24px;bottom:87px;top:auto}
+body[data-compass52] #hud #overworld-radar>svg{position:absolute;inset:7.6%;width:84.8%;height:84.8%;border-radius:50%;overflow:hidden;background:#0b2c37;z-index:0}
+body[data-compass52] #hud #overworld-radar::after{content:'';position:absolute;inset:0;width:100%;height:100%;background:var(--compass-frame52) center/114.3% 114.3% no-repeat;mask-image:radial-gradient(circle closest-side,transparent 0 85%,#000 87%);font-size:0;pointer-events:none;z-index:2;filter:drop-shadow(0 3px 3px #0009)}
+body[data-compass52] #hud #overworld-radar::before{content:'';position:absolute;top:10.7%;left:calc(50% - 10px);width:20px;height:22px;background:var(--minimap-north51) center/contain no-repeat;z-index:3;filter:drop-shadow(0 2px 2px #000);pointer-events:none}
+body[data-compass52] #hud .world-clock{position:absolute;right:16px;left:auto;bottom:11px;display:flex;justify-content:center;align-items:center;gap:12px;width:max-content;min-width:460px;height:52px;max-height:none;padding:9px 22px;background:linear-gradient(90deg,#03131bd0,#04131bf2 14%,#04131bf2 86%,#03131bd0);border:0;border-radius:0;font-family:Georgia,'Times New Roman',serif;color:#fbefd4;text-shadow:0 2px 3px #000;pointer-events:none;white-space:nowrap}
+body[data-compass52] #hud .world-clock::before,body[data-compass52] #hud .world-clock::after{content:'';position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#d2a852 8%,#ffe1a0 50%,#d2a852 92%,transparent)}
+body[data-compass52] #hud .world-clock::before{top:0}body[data-compass52] #hud .world-clock::after{bottom:0}
+body[data-compass52] #hud #clock-icon{display:block;flex-shrink:0;width:30px;height:30px;font-size:0!important;background:center/contain no-repeat;filter:drop-shadow(0 1px 2px #c68f3140)}
+body[data-compass52] #hud #clock-time{font:24px/1 Georgia;color:#fff5dd;letter-spacing:.02em}
+body[data-compass52] #hud #clock-phase{display:block!important;font:18px/1.2 Georgia;text-transform:none;letter-spacing:0;border-left:1px solid #cba54e;padding-left:17px;margin-left:3px;color:#fbefd4}
+body[data-compass52] #hud #weather-icon52{display:block;box-sizing:content-box;width:35px;height:29px;flex-shrink:0;border-left:1px solid #cba54e;padding-left:17px;margin-left:5px;background-position:right center;background-size:35px 29px;background-repeat:no-repeat}
+body[data-compass52] #hud #weather-label{font:18px/1.2 Georgia;letter-spacing:0;margin:0;color:#fbefd4;text-transform:none}
+/* The legend renders the very same source image, trimmed to its alpha bounds. */
+#minimap-legend51 dt .legend-glyph52{position:absolute;left:3px;top:12px;width:42px;height:42px;overflow:visible;filter:drop-shadow(0 2px 3px #0007)}
+#minimap-legend51 dl>div{min-height:61px;padding-top:10px;padding-bottom:10px}
+#minimap-legend51 .legend-radar51{border:0;border-radius:0;background:none;box-shadow:none;overflow:visible}
+#minimap-legend51 .legend-radar51>svg{position:absolute;inset:7.6%;width:84.8%;height:84.8%;border-radius:50%;overflow:hidden;background:#0b2c37}
+#minimap-legend51 .legend-radar51::after{content:'';position:absolute;inset:0;background:var(--compass-frame52) center/114.3% 114.3% no-repeat;mask-image:radial-gradient(circle closest-side,transparent 0 85%,#000 87%);pointer-events:none}
+body[data-compass52].compact33 #hud .world-clock{right:8px!important;left:8px!important;bottom:max(4px,env(safe-area-inset-bottom))!important;width:auto!important;min-width:0;max-height:none!important;height:36px!important;padding:6px 8px!important;gap:7px}
+body[data-compass52].compact33 #hud #clock-icon{width:21px;height:21px}
+body[data-compass52].compact33 #hud #clock-time{font-size:17px}
+body[data-compass52].compact33 #hud #clock-phase{font-size:12px;padding-left:8px;margin-left:0}
+body[data-compass52].compact33 #hud #weather-icon52{width:24px;height:22px;background-size:24px 22px;padding-left:8px;margin-left:0}
+body[data-compass52].compact33 #hud #weather-label{font-size:12px}
+body[data-compass52].compact33 #hud #overworld-radar::before{width:15px;height:17px;left:calc(50% - 7.5px)}
+body[data-compass52].touch33 #touch-stick33{bottom:52px}body[data-compass52].touch33 #touch-action33{bottom:52px}body[data-compass52].touch33 #touch-sprint33{bottom:52px}
+@media(max-width:700px){
+ #minimap-legend51 dt .legend-glyph52{width:35px;height:35px;left:2px;top:12px}
+ #minimap-legend51 dl>div{min-height:58px}
+}
+
+body[data-compass52] #menu .atlas-party{width:26px;height:26px;font-size:0;color:transparent;text-shadow:none}
+body[data-compass52] #menu .atlas-party .legend-glyph52{display:block;width:26px;height:26px;overflow:visible}

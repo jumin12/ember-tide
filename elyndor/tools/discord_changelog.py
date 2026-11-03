@@ -12,7 +12,6 @@ import re
 import sys
 import time
 from urllib import error, parse, request
-import uuid
 
 
 class NotificationError(Exception):
@@ -36,8 +35,18 @@ def release_payload(release, game_url):
     notes = '\n'.join('- ' + item.strip() for item in changes)
     full = f"# {release.get('game', 'Elyndor')} — {version}\n\n{notes}\n\nPlay: {game_url}\n"
     if len(full.encode('utf-8')) > 512 * 1024:
-        raise NotificationError('Changelog exceeds the attachment limit.')
-    description = notes if len(notes) <= 3800 else notes[:3700] + '\n\nFull changelog attached.'
+        raise NotificationError('Changelog exceeds the supported length.')
+    changelog_url = 'https://github.com/jumin12/ember-tide/blob/main/README.md'
+    description = notes
+    if len(description) > 3800:
+        # Keep complete bullets in the message; the repository holds the full
+        # history. Discord receives JSON only, never a downloadable document.
+        selected = []
+        for line in notes.splitlines():
+            if len('\n'.join(selected + [line])) > 3500:
+                break
+            selected.append(line)
+        description = '\n'.join(selected) + '\n\n[Read the complete changelog](' + changelog_url + ')'
     payload = {
         'allowed_mentions': {'parse': []},
         'embeds': [{
@@ -45,10 +54,10 @@ def release_payload(release, game_url):
             'url': game_url,
             'description': description,
             'color': 0xD6B46A,
-            'fields': [{'name': 'Play', 'value': '[Open Elyndor](' + game_url + ')'}],
-            'footer': {'text': 'Update published · Full changelog attached'},
+            'fields': [{'name': 'Play', 'value': '[Open Elyndor](' + game_url + ')'},
+                       {'name': 'Changelog', 'value': '[Read the release history](' + changelog_url + ')'}],
+            'footer': {'text': 'Update published'},
         }],
-        'attachments': [{'id': 0, 'filename': 'changelog.md'}],
     }
     slug = re.sub(r'[^a-z0-9.-]+', '-', version.lower()).strip('-.')[:70]
     if not slug:
@@ -102,14 +111,8 @@ def live_matches(release, game_url):
 
 
 def discord_send(url, payload, notes):
-    boundary = 'elyndor-' + uuid.uuid4().hex
-    body = (
-        f'--{boundary}\r\nContent-Disposition: form-data; name="payload_json"\r\nContent-Type: application/json\r\n\r\n'.encode()
-        + json.dumps(payload, ensure_ascii=False).encode('utf-8')
-        + f'\r\n--{boundary}\r\nContent-Disposition: form-data; name="files[0]"; filename="changelog.md"\r\nContent-Type: text/markdown; charset=utf-8\r\n\r\n'.encode()
-        + notes.encode('utf-8') + f'\r\n--{boundary}--\r\n'.encode()
-    )
-    req = request.Request(url, data=body, headers={'Content-Type': 'multipart/form-data; boundary=' + boundary, 'User-Agent': 'elyndor-changelog'})
+    body = json.dumps(payload, ensure_ascii=False).encode('utf-8')
+    req = request.Request(url, data=body, headers={'Content-Type': 'application/json; charset=utf-8', 'User-Agent': 'elyndor-changelog'})
     try:
         with request.urlopen(req, timeout=30) as response:
             result = json.load(response)

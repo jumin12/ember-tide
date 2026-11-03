@@ -1,0 +1,19 @@
+#encounter-transition53{position:fixed;inset:0;z-index:180;overflow:hidden;pointer-events:auto;--cover53:0;--rays53:0;--turn53:0turn;isolation:isolate}
+#encounter-transition53[hidden],#battle-stage53[hidden]{display:none!important}
+.encounter-cover53{position:absolute;inset:-5%;background:#031019;clip-path:circle(calc(var(--cover53)*150%) at 50% 50%);z-index:2}
+.encounter-rays53{position:absolute;inset:-60%;background:repeating-conic-gradient(from 12deg,transparent 0 17deg,#92c4c535 18deg 19deg,transparent 21deg 36deg,#e3bf7330 38deg 39deg);opacity:var(--rays53);transform:rotate(var(--turn53));mask-image:radial-gradient(ellipse,#0000 3%,#000 24%,#0000 65%);z-index:1}
+.encounter-seal53{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;flex-direction:column;gap:15px;opacity:var(--cover53);z-index:3;pointer-events:none}
+.encounter-seal53 img{width:84px;height:84px;object-fit:contain;filter:drop-shadow(0 0 17px #d7b87545)}
+.encounter-seal53 span{font:19px Georgia;color:#f3dfb4;letter-spacing:.045em;text-shadow:0 2px 8px #000;text-align:center;white-space:nowrap}
+#encounter-transition53[data-phase=exit] .encounter-seal53{display:none}
+#encounter-transition53.reduced53 .encounter-rays53{display:none}
+#encounter-transition53.reduced53 .encounter-cover53{clip-path:none;opacity:var(--cover53)}
+#battle-stage53{position:fixed;left:50%;top:auto;bottom:13px;transform:translateX(-50%);z-index:12;color:#f2e1b9;font:12px Georgia;letter-spacing:.035em;background:linear-gradient(90deg,transparent,#041522be 20%,#041522be 80%,transparent);padding:7px 30px;pointer-events:none;text-shadow:0 2px 3px #000}
+body[data-battle-stage53] #journey-guide:not(.in-battle){display:none!important}
+body[data-battle-stage53] #world-landmarks44,body[data-battle-stage53] .poi-travel-prompt,body[data-battle-stage53] #building-entry-prompt,body[data-battle-stage53] #interact{display:none!important}
+body[data-battle-stage53] #journey-guide.in-battle{left:24px!important;right:auto;top:160px!important;bottom:auto!important;width:310px!important;max-height:200px;transform:none;overflow:auto}
+body[data-battle-stage53] #battle-callout{background:#041a2480;padding:4px 12px;border-radius:3px}
+body[data-battle-stage53] #battle-callout:empty{display:none}
+body[data-battle-stage53].compact33 #battle-hud #battle-party{max-height:270px!important}
+@media(max-width:700px){#battle-stage53{left:9px;top:110px;bottom:auto;transform:none;font-size:10px;padding:5px 14px;max-width:58vw}.encounter-seal53 img{width:62px;height:62px}.encounter-seal53 span{font-size:16px}body[data-battle-stage53] #journey-guide.in-battle{left:8px!important;top:147px!important;bottom:auto!important;width:min(220px,56vw)!important;max-height:145px;padding:9px}body[data-battle-stage53] #journey-guide.in-battle h3{font-size:13px}body[data-battle-stage53] #journey-guide.in-battle p{font-size:11px}}
+@media(orientation:landscape) and (max-height:500px){#battle-stage53{left:24px;transform:none;top:116px;bottom:auto;font-size:9px}body[data-battle-stage53] #journey-guide.in-battle{display:none!important}}

@@ -40,10 +40,8 @@ setupPost=function(){postBefore33();const u=post.material.uniforms;u.gold33=atmo
  post.material.fragmentShader=`uniform sampler2D colorTex,depthTex,bloom22;uniform vec2 resolution,nearFar;uniform float focus,strength,flash,time,bloomAmount22,night22,gold33,exterior33,pixelRatio33;varying vec2 vUv;
  float viewDepth33(float d){float z=d*2.-1.;return 2.*nearFar.x*nearFar.y/(nearFar.y+nearFar.x-z*(nearFar.y-nearFar.x));}
  void main(){vec3 col=texture2D(colorTex,vUv).rgb;float d=viewDepth33(texture2D(depthTex,vUv).r);
- float nearBlur=1.-smoothstep(focus-13.,focus-7.5,d),farBlur=smoothstep(focus+18.,focus+75.,d)*.38;
- float lens=smoothstep(.40,.53,max(abs(vUv.x-.5),abs(vUv.y-.5)))*.12;
- float coc=max(max(nearBlur,farBlur),lens)*min(.85,strength);if(coc>.035){vec3 sum=col;float weight=1.;vec2 radius=vec2(4.6*coc*pixelRatio33)/resolution;
- for(int k=0;k<8;k++){float a=float(k)*2.399963;vec2 p=clamp(vUv+vec2(cos(a),sin(a))*radius*sqrt((float(k)+.5)/8.),vec2(0.),vec2(1.));float other=viewDepth33(texture2D(depthTex,p).r);float w=1.-smoothstep(1.0,6.,abs(other-d));sum+=texture2D(colorTex,p).rgb*w;weight+=w;}col=mix(col,sum/weight,coc);}
+ // Gameplay remains sharp at every depth; atmosphere comes from world light,
+ // cloud shadows and distant fog rather than a full-scene lens blur.
  float lum=dot(col,vec3(.2126,.7152,.0722));col=mix(vec3(lum),col,1.035);col*=mix(vec3(1.015,1.005,.98),vec3(.92,1.015,1.12),night22*.65*exterior33);float amber33=gold33*smoothstep(.06,.9,lum);col*=vec3(1.+amber33*.14,1.+amber33*.025,1.-amber33*.20);
  col+=texture2D(bloom22,vUv).rgb*bloomAmount22*.92;float v=smoothstep(.37,.78,length((vUv-.5)*vec2(1.,1.08)));col*=1.-v*.14;col+=flash*.17;gl_FragColor=vec4(max(vec3(0.),col),1.);
  #include <tonemapping_fragment>

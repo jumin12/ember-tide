@@ -20,7 +20,7 @@ const cameraPresentation={world:null,previous:V3(),current:V3(),previousTarget:V
 function resetSimulation(){simulationClock.reset();cameraPresentation.world=null;lastFrame=0;device33.last=0;runtimeFrames.paused=true;}
 function captureSimulationPose(){
   const p=cameraPresentation;p.world=world;p.previous.copy(camera.position);p.previousTarget.copy(cameraTarget);p.previousRotation.copy(camera.quaternion);
-  p.previousWind=windUniforms.time.value;p.previousWeather=weather.time.value;p.previousStrength=windUniforms.strength.value;
+  p.previousWind=windUniforms.time.value;p.previousWeather=weather.time.value;p.previousStrength=windUniforms.strength.value;p.previousWorldMinutes=state.worldMinutes;
   for(const a of actors){if(!a.mesh?.parent)continue;a.presentationPrevious??=a.mesh.position.clone();a.presentationPrevious.copy(a.mesh.position);}
 }
 function renderSimulation(alpha){
@@ -28,12 +28,13 @@ function renderSimulation(alpha){
   // uninterpolated camera held the entire landscape on zero-step callbacks.
   const p=cameraPresentation;p.current.copy(camera.position);p.currentTarget.copy(cameraTarget);p.currentRotation.copy(camera.quaternion);
   const interpolate=p.world===world&&p.previous.distanceToSquared(p.current)<64&&p.previousTarget.distanceToSquared(p.currentTarget)<64;
-  const windTime=windUniforms.time.value,weatherTime=weather.time.value,windStrength=windUniforms.strength.value;
+  const windTime=windUniforms.time.value,weatherTime=weather.time.value,windStrength=windUniforms.strength.value,worldMinutes=state.worldMinutes;
   if(p.world===world){windUniforms.time.value=mix(p.previousWind,windTime,alpha);weather.time.value=mix(p.previousWeather,weatherTime,alpha);windUniforms.strength.value=mix(p.previousStrength,windStrength,alpha);}
+  if(p.world===world&&Math.abs(worldMinutes-p.previousWorldMinutes)<1)state.worldMinutes=mix(p.previousWorldMinutes,worldMinutes,alpha);
   if(interpolate){camera.position.lerpVectors(p.previous,p.current,alpha);cameraTarget.lerpVectors(p.previousTarget,p.currentTarget,alpha);camera.quaternion.slerpQuaternions(p.previousRotation,p.currentRotation,alpha);camera.updateMatrixWorld();}
   // Pixel animation cells remain discrete; physical movement interpolates.
   for(const a of actors){if(!a.mesh?.parent||!a.presentationPrevious)continue;a.presentationCurrent??=a.mesh.position.clone();a.presentationCurrent.copy(a.mesh.position);if(a.presentationPrevious.distanceToSquared(a.presentationCurrent)<64)a.mesh.position.lerpVectors(a.presentationPrevious,a.presentationCurrent,alpha);}
-  try{render();}finally{windUniforms.time.value=windTime;weather.time.value=weatherTime;windUniforms.strength.value=windStrength;camera.position.copy(p.current);cameraTarget.copy(p.currentTarget);camera.quaternion.copy(p.currentRotation);camera.updateMatrixWorld();for(const a of actors)if(a.presentationCurrent&&a.mesh?.parent)a.mesh.position.copy(a.presentationCurrent);}
+  try{render();}finally{state.worldMinutes=worldMinutes;windUniforms.time.value=windTime;weather.time.value=weatherTime;windUniforms.strength.value=windStrength;camera.position.copy(p.current);cameraTarget.copy(p.currentTarget);camera.quaternion.copy(p.currentRotation);camera.updateMatrixWorld();for(const a of actors)if(a.presentationCurrent&&a.mesh?.parent)a.mesh.position.copy(a.presentationCurrent);}
 }
 function updateDevicePerformance(elapsed,cost,divisor,live){
   device33.cpu=mix(device33.cpu,cost,.06);const gpu=clarity23.gpuSamples?clarity23.gpuMs:0,missed=elapsed*1000>device33.interval*divisor*1.35?elapsed*1000/divisor:0;device33.cost=Math.max(device33.cpu,gpu,missed);
