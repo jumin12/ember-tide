@@ -402,7 +402,7 @@
   },
   "graphics": {
     "bakedHeightSamples": 148257,
-    "bakedTreeCount": 18068,
+    "bakedTreeCount": 17326,
     "visualParityWithConcept": false,
     "hydrology": {
       "islandSeparate": true,
@@ -501,7 +501,8 @@
       "battleBackgrounds": 40,
       "nativeBattleSizes": {
         "(688, 384)": 40
-      }
+      },
+      "bakedTreeCount": 17326
     },
     "suite": {
       "checks": [

@@ -17,7 +17,8 @@
     "battleBackgrounds": 40,
     "nativeBattleSizes": {
       "(688, 384)": 40
-    }
+    },
+    "bakedTreeCount": 17326
   },
   "verification": {
     "checks": [
