@@ -109,7 +109,7 @@ def pack_character(root,item,encode,audit,strict):
  if item.get('human',True) and not 42<=unit<=90:raise ValueError(f'{name}: suspect body scale {unit}')
  keys={};missing=[]
  for direction in DIRECTIONS:
-  key=direction.replace('-','');walk=animations.get('walk-v14',{}).get(direction) or animations.get('walk-v13',{}).get(direction) or animations.get('walk-v8',{}).get(direction) or animations.get('walk-v7',{}).get(direction,[]);idle=animations.get('idle-v13',{}).get(direction) or animations.get('idle-v8',{}).get(direction) or animations.get('idle-v7',{}).get(direction,[]);run=animations.get('run-v8',{}).get(direction) or animations.get('run-v7',{}).get(direction,[])
+  key=direction.replace('-','');walk=animations.get('walk-v66',{}).get(direction) or animations.get('walk-v14',{}).get(direction) or animations.get('walk-v13',{}).get(direction) or animations.get('walk-v8',{}).get(direction) or animations.get('walk-v7',{}).get(direction,[]);idle=animations.get('idle-v66',{}).get(direction) or animations.get('idle-v13',{}).get(direction) or animations.get('idle-v8',{}).get(direction) or animations.get('idle-v7',{}).get(direction,[]);run=animations.get('run-v66',{}).get(direction) or animations.get('run-v8',{}).get(direction) or animations.get('run-v7',{}).get(direction,[])
   if not item.get('combatOnly') and len(walk)<4:missing.append('walk:'+direction)
   if not item.get('combatOnly') and len(idle)<2:missing.append('idle:'+direction)
   if name in PARTY and len(run)<4:missing.append('run:'+direction)
@@ -117,10 +117,11 @@ def pack_character(root,item,encode,audit,strict):
   if run:keys['run_'+key]=run
  direction='west' if name in PARTY or name.endswith('Ascended') else 'east'
  for action in ['battleIdle','attack','cast','recoil']:
-  group=animations.get(action+'-v13',animations.get(action+'-v10',animations.get(action+'-v8',animations.get(action+'-v7',{}))))
-  if name=='soren' and action in ['attack','cast']:group=animations.get('cast-v13-staff',group)
-  if name=='mira' and action=='cast':group=animations.get('attack-v13',group)
-  if name=='lysa' and action in ['attack','cast']:group=animations.get('cast-v13-staff',group)
+  group=animations.get(action+'-v66',animations.get(action+'-v13',animations.get(action+'-v10',animations.get(action+'-v8',animations.get(action+'-v7',{})))))
+  if not animations.get(action+'-v66'):
+   if name=='soren' and action in ['attack','cast']:group=animations.get('cast-v13-staff',group)
+   if name=='mira' and action=='cast':group=animations.get('attack-v13',group)
+   if name=='lysa' and action in ['attack','cast']:group=animations.get('cast-v13-staff',group)
   if name in ['wolf','boar'] and action=='battleIdle':group=animations.get('idle-v13',group)
   if name=='commander3' and action=='attack':group=animations.get('attack-v13-thrust',animations.get('attack-v7',group))
   for view,clip in group.items():keys[action+'_'+view.replace('-','')]=clip
@@ -128,7 +129,7 @@ def pack_character(root,item,encode,audit,strict):
   if name in FIGHTERS and not clip:missing.append(action+':'+direction)
   keys[action]=clip or [rotations[direction]]
  if name=='bren':
-  keys['work_gate']=animations.get('gate-brace-v9',{}).get('north-west',[])
+  keys['work_gate']=animations.get('gate-v66',animations.get('gate-brace-v9',{})).get('north-west',[])
   if strict and len(keys['work_gate'])<6:raise ValueError('Missing reviewed Bren gate strength animation')
  keys['guard']=keys['battleIdle'];keys['enemyIdle']=keys['battleIdle'];keys['retreat']=keys.get('run_east') or keys.get('east') or keys['recoil']
  if strict and missing:raise ValueError(f'{name}: incomplete PixelLab clips: {missing}')
@@ -139,7 +140,7 @@ def pack_character(root,item,encode,audit,strict):
   q=load(path);b=q.getbbox()
   if not b:raise ValueError('Empty pose '+path)
   if strict and min(b[0],b[1],q.width-b[2],q.height-b[3])<1:raise ValueError(f'{name}: native source already touches its canvas edge: {path}')
-  cx=q.width/2;cy=q.height/2+root_bias
+  cx=q.width/2;cy=body_anchor(q)[1] if item.get('anatomyRevision')==66 else q.height/2+root_bias
   extents.append((max(cx-b[0],b[2]-cx),cy-b[1],b[3]-cy))
  gutter=max(8,math.ceil(max(t[2] for t in extents))+4)
  width=math.ceil((max(t[0] for t in extents)*2+16)/8)*8;height=math.ceil((max(t[1] for t in extents)+gutter+8)/8)*8
@@ -147,7 +148,7 @@ def pack_character(root,item,encode,audit,strict):
  if max(width*cols,height*rows)>4096:raise ValueError(f'{name}: atlas exceeds portable texture limits')
  atlas=Image.new('RGBA',(width*cols,height*rows));index={};records=[]
  for n,path in enumerate(paths):
-  q=load(path);p=Image.new('RGBA',(width,height));offset=(round(width/2-q.width/2),round(height-gutter-(q.height/2+root_bias)));p.alpha_composite(q,offset);b=p.getbbox()
+  q=load(path);p=Image.new('RGBA',(width,height));foot=body_anchor(q)[1] if item.get('anatomyRevision')==66 else q.height/2+root_bias;offset=(round(width/2-q.width/2),round(height-gutter-foot));p.alpha_composite(q,offset);b=p.getbbox()
   if not b or min(b[0],b[1],width-b[2],height-b[3])<3:raise ValueError(f'{name}: clipped native pose {path}')
   atlas.alpha_composite(p,((n%cols)*width,(n//cols)*height));index[path]=n
   source=folder/path;records.append({'file':str(source.relative_to(root)),'sourceSize':q.size,'offset':offset,'cell':n,'sha256':hashlib.sha256(source.read_bytes()).hexdigest()})
@@ -163,6 +164,12 @@ def pack_character(root,item,encode,audit,strict):
  if name=='mira':meta['sourceClipAliases']={'cast':'attack-v13'}
  if name=='lysa':meta['sourceClipAliases']={'attack':'cast-v13-staff','cast':'cast-v13-staff'}
  if name=='soren':meta['sourceClipAliases']={'attack':'cast-v13-staff','cast':'cast-v13-staff'}
+ if any(k.endswith('-v66') for k in animations):
+  meta['anatomyRevision']=66
+  for action in ['attack','cast']:
+   if animations.get(action+'-v66'):
+    meta['impactFrame'][action]=round((len(keys[action])-1)*(.60 if action=='attack' else .5))
+    meta.setdefault('sourceClipAliases',{})[action]=action+'-v66'
  return meta,load(rotations['south']),records,missing
 
 def build_assets(root,encode,audit,warnings,strict):

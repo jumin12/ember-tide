@@ -192,7 +192,16 @@
       "systems/combat-feedback.js",
       "systems/quest-rewards.js",
       "systems/combat-environments.js",
-      "systems/combat-validation.js"
+      "systems/combat-validation.js",
+      "systems/surface-pbr.js",
+      "systems/brookstead-interiors.js",
+      "systems/save-rune.js",
+      "systems/save-magic.js",
+      "systems/traversal-composition.js",
+      "systems/natural-canopies.js",
+      "systems/poi-dioramas.js",
+      "systems/exact-atlas.js",
+      "systems/runtime-budget.js"
     ]
   },
   "styles": [

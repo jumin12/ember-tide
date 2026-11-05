@@ -8,6 +8,7 @@ function locateBattleCenter(point,count=state.members.length){
 }
 const graphicsBeforeArenaViews=prepareGameplayGraphics;
 prepareGameplayGraphics=async function(){
+ if(typeof encounter53!=='undefined'){await graphicsBeforeArenaViews();return;}
  const sites=activeScene?.kind==='poi'?[player,...interactables.filter(o=>['wildlife','affected','commander','soren','guard','standoff'].includes(o.type))]:[],centers=[];
  for(const point of sites)for(let n=1;n<=5;n++){const c=locateBattleCenter(point,n);if([2,4,5].includes(n)&&!centers.some(p=>dist(p,c)<7))centers.push(c);}
  await graphicsBeforeArenaViews();if(!player||!centers.length)return;const saved={x:player.x,z:player.z};

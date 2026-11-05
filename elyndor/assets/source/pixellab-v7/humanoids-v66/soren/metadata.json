@@ -1,0 +1,312 @@
+{
+  "states": [
+    {
+      "character": {
+        "id": "49462c22-b43f-4de5-bc61-4daf29104356",
+        "name": "Anatomy polish 66",
+        "prompt": "Soren: faithful approved concept identity. Lean adult male scholar, light olive skin, SILVER nearly shoulder length hair covering BOTH ears, silver eyes, deep navy divided-tail coat above ankles, pale grey underlayer, dark trousers and separate brown boots. Gold crescent staff with blue orb in anatomical RIGHT hand and small field notebook. Both staff grip and clothing sides physically consistent in every view. No hood over hair, no dark hair, no changed body or equipment. Match the NEW Bren style anchor's compact proportions, pixel density, palette and body height; one full body with two distinct legs. Clean transparent margins, neutral stand. Do not copy floor tiles, labels or extra poses from the approved concept sheet.",
+        "size": {
+          "width": 88,
+          "height": 88
+        },
+        "template_id": "mannequin",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-11-05T03:30:39.076164+00:00"
+      },
+      "folder": "Anatomy_polish_66",
+      "frames": {
+        "rotations": {
+          "south": "Anatomy_polish_66/rotations/south.png",
+          "south-east": "Anatomy_polish_66/rotations/south-east.png",
+          "east": "Anatomy_polish_66/rotations/east.png",
+          "north-east": "Anatomy_polish_66/rotations/north-east.png",
+          "north": "Anatomy_polish_66/rotations/north.png",
+          "north-west": "Anatomy_polish_66/rotations/north-west.png",
+          "west": "Anatomy_polish_66/rotations/west.png",
+          "south-west": "Anatomy_polish_66/rotations/south-west.png"
+        },
+        "animations": {
+          "cast-v66": {
+            "east": [
+              "Anatomy_polish_66/animations/cast-v66/east/frame_000.png",
+              "Anatomy_polish_66/animations/cast-v66/east/frame_001.png",
+              "Anatomy_polish_66/animations/cast-v66/east/frame_002.png",
+              "Anatomy_polish_66/animations/cast-v66/east/frame_003.png",
+              "Anatomy_polish_66/animations/cast-v66/east/frame_004.png",
+              "Anatomy_polish_66/animations/cast-v66/east/frame_005.png",
+              "Anatomy_polish_66/animations/cast-v66/east/frame_006.png",
+              "Anatomy_polish_66/animations/cast-v66/east/frame_007.png",
+              "Anatomy_polish_66/animations/cast-v66/east/frame_008.png"
+            ],
+            "west": [
+              "Anatomy_polish_66/animations/cast-v66/west/frame_000.png",
+              "Anatomy_polish_66/animations/cast-v66/west/frame_001.png",
+              "Anatomy_polish_66/animations/cast-v66/west/frame_002.png",
+              "Anatomy_polish_66/animations/cast-v66/west/frame_003.png",
+              "Anatomy_polish_66/animations/cast-v66/west/frame_004.png",
+              "Anatomy_polish_66/animations/cast-v66/west/frame_005.png",
+              "Anatomy_polish_66/animations/cast-v66/west/frame_006.png",
+              "Anatomy_polish_66/animations/cast-v66/west/frame_007.png",
+              "Anatomy_polish_66/animations/cast-v66/west/frame_008.png"
+            ]
+          },
+          "battleIdle-v66": {
+            "east": [
+              "Anatomy_polish_66/animations/battleIdle-v66/east/frame_000.png",
+              "Anatomy_polish_66/animations/battleIdle-v66/east/frame_001.png",
+              "Anatomy_polish_66/animations/battleIdle-v66/east/frame_002.png",
+              "Anatomy_polish_66/animations/battleIdle-v66/east/frame_003.png",
+              "Anatomy_polish_66/animations/battleIdle-v66/east/frame_004.png",
+              "Anatomy_polish_66/animations/battleIdle-v66/east/frame_005.png",
+              "Anatomy_polish_66/animations/battleIdle-v66/east/frame_006.png",
+              "Anatomy_polish_66/animations/battleIdle-v66/east/frame_007.png",
+              "Anatomy_polish_66/animations/battleIdle-v66/east/frame_008.png"
+            ],
+            "west": [
+              "Anatomy_polish_66/animations/battleIdle-v66/west/frame_000.png",
+              "Anatomy_polish_66/animations/battleIdle-v66/west/frame_001.png",
+              "Anatomy_polish_66/animations/battleIdle-v66/west/frame_002.png",
+              "Anatomy_polish_66/animations/battleIdle-v66/west/frame_003.png",
+              "Anatomy_polish_66/animations/battleIdle-v66/west/frame_004.png",
+              "Anatomy_polish_66/animations/battleIdle-v66/west/frame_005.png",
+              "Anatomy_polish_66/animations/battleIdle-v66/west/frame_006.png",
+              "Anatomy_polish_66/animations/battleIdle-v66/west/frame_007.png",
+              "Anatomy_polish_66/animations/battleIdle-v66/west/frame_008.png"
+            ]
+          },
+          "recoil-v66": {
+            "east": [
+              "Anatomy_polish_66/animations/recoil-v66/east/frame_000.png",
+              "Anatomy_polish_66/animations/recoil-v66/east/frame_001.png",
+              "Anatomy_polish_66/animations/recoil-v66/east/frame_002.png",
+              "Anatomy_polish_66/animations/recoil-v66/east/frame_003.png",
+              "Anatomy_polish_66/animations/recoil-v66/east/frame_004.png",
+              "Anatomy_polish_66/animations/recoil-v66/east/frame_005.png",
+              "Anatomy_polish_66/animations/recoil-v66/east/frame_006.png",
+              "Anatomy_polish_66/animations/recoil-v66/east/frame_007.png",
+              "Anatomy_polish_66/animations/recoil-v66/east/frame_008.png"
+            ],
+            "west": [
+              "Anatomy_polish_66/animations/recoil-v66/west/frame_000.png",
+              "Anatomy_polish_66/animations/recoil-v66/west/frame_001.png",
+              "Anatomy_polish_66/animations/recoil-v66/west/frame_002.png",
+              "Anatomy_polish_66/animations/recoil-v66/west/frame_003.png",
+              "Anatomy_polish_66/animations/recoil-v66/west/frame_004.png",
+              "Anatomy_polish_66/animations/recoil-v66/west/frame_005.png",
+              "Anatomy_polish_66/animations/recoil-v66/west/frame_006.png",
+              "Anatomy_polish_66/animations/recoil-v66/west/frame_007.png",
+              "Anatomy_polish_66/animations/recoil-v66/west/frame_008.png"
+            ]
+          },
+          "attack-v66": {
+            "west": [
+              "Anatomy_polish_66/animations/attack-v66/west/frame_000.png",
+              "Anatomy_polish_66/animations/attack-v66/west/frame_001.png",
+              "Anatomy_polish_66/animations/attack-v66/west/frame_002.png",
+              "Anatomy_polish_66/animations/attack-v66/west/frame_003.png",
+              "Anatomy_polish_66/animations/attack-v66/west/frame_004.png",
+              "Anatomy_polish_66/animations/attack-v66/west/frame_005.png",
+              "Anatomy_polish_66/animations/attack-v66/west/frame_006.png",
+              "Anatomy_polish_66/animations/attack-v66/west/frame_007.png",
+              "Anatomy_polish_66/animations/attack-v66/west/frame_008.png"
+            ],
+            "east": [
+              "Anatomy_polish_66/animations/attack-v66/east/frame_000.png",
+              "Anatomy_polish_66/animations/attack-v66/east/frame_001.png",
+              "Anatomy_polish_66/animations/attack-v66/east/frame_002.png",
+              "Anatomy_polish_66/animations/attack-v66/east/frame_003.png",
+              "Anatomy_polish_66/animations/attack-v66/east/frame_004.png",
+              "Anatomy_polish_66/animations/attack-v66/east/frame_005.png",
+              "Anatomy_polish_66/animations/attack-v66/east/frame_006.png",
+              "Anatomy_polish_66/animations/attack-v66/east/frame_007.png",
+              "Anatomy_polish_66/animations/attack-v66/east/frame_008.png"
+            ]
+          },
+          "walk-v66": {
+            "west": [
+              "Anatomy_polish_66/animations/walk-v66/west/frame_000.png",
+              "Anatomy_polish_66/animations/walk-v66/west/frame_001.png",
+              "Anatomy_polish_66/animations/walk-v66/west/frame_002.png",
+              "Anatomy_polish_66/animations/walk-v66/west/frame_003.png",
+              "Anatomy_polish_66/animations/walk-v66/west/frame_004.png",
+              "Anatomy_polish_66/animations/walk-v66/west/frame_005.png"
+            ],
+            "south": [
+              "Anatomy_polish_66/animations/walk-v66/south/frame_000.png",
+              "Anatomy_polish_66/animations/walk-v66/south/frame_001.png",
+              "Anatomy_polish_66/animations/walk-v66/south/frame_002.png",
+              "Anatomy_polish_66/animations/walk-v66/south/frame_003.png",
+              "Anatomy_polish_66/animations/walk-v66/south/frame_004.png",
+              "Anatomy_polish_66/animations/walk-v66/south/frame_005.png"
+            ],
+            "south-west": [
+              "Anatomy_polish_66/animations/walk-v66/south-west/frame_000.png",
+              "Anatomy_polish_66/animations/walk-v66/south-west/frame_001.png",
+              "Anatomy_polish_66/animations/walk-v66/south-west/frame_002.png",
+              "Anatomy_polish_66/animations/walk-v66/south-west/frame_003.png",
+              "Anatomy_polish_66/animations/walk-v66/south-west/frame_004.png",
+              "Anatomy_polish_66/animations/walk-v66/south-west/frame_005.png"
+            ],
+            "north": [
+              "Anatomy_polish_66/animations/walk-v66/north/frame_000.png",
+              "Anatomy_polish_66/animations/walk-v66/north/frame_001.png",
+              "Anatomy_polish_66/animations/walk-v66/north/frame_002.png",
+              "Anatomy_polish_66/animations/walk-v66/north/frame_003.png",
+              "Anatomy_polish_66/animations/walk-v66/north/frame_004.png",
+              "Anatomy_polish_66/animations/walk-v66/north/frame_005.png"
+            ],
+            "north-west": [
+              "Anatomy_polish_66/animations/walk-v66/north-west/frame_000.png",
+              "Anatomy_polish_66/animations/walk-v66/north-west/frame_001.png",
+              "Anatomy_polish_66/animations/walk-v66/north-west/frame_002.png",
+              "Anatomy_polish_66/animations/walk-v66/north-west/frame_003.png",
+              "Anatomy_polish_66/animations/walk-v66/north-west/frame_004.png",
+              "Anatomy_polish_66/animations/walk-v66/north-west/frame_005.png"
+            ],
+            "south-east": [
+              "Anatomy_polish_66/animations/walk-v66/south-east/frame_000.png",
+              "Anatomy_polish_66/animations/walk-v66/south-east/frame_001.png",
+              "Anatomy_polish_66/animations/walk-v66/south-east/frame_002.png",
+              "Anatomy_polish_66/animations/walk-v66/south-east/frame_003.png",
+              "Anatomy_polish_66/animations/walk-v66/south-east/frame_004.png",
+              "Anatomy_polish_66/animations/walk-v66/south-east/frame_005.png"
+            ],
+            "east": [
+              "Anatomy_polish_66/animations/walk-v66/east/frame_000.png",
+              "Anatomy_polish_66/animations/walk-v66/east/frame_001.png",
+              "Anatomy_polish_66/animations/walk-v66/east/frame_002.png",
+              "Anatomy_polish_66/animations/walk-v66/east/frame_003.png",
+              "Anatomy_polish_66/animations/walk-v66/east/frame_004.png",
+              "Anatomy_polish_66/animations/walk-v66/east/frame_005.png"
+            ],
+            "north-east": [
+              "Anatomy_polish_66/animations/walk-v66/north-east/frame_000.png",
+              "Anatomy_polish_66/animations/walk-v66/north-east/frame_001.png",
+              "Anatomy_polish_66/animations/walk-v66/north-east/frame_002.png",
+              "Anatomy_polish_66/animations/walk-v66/north-east/frame_003.png",
+              "Anatomy_polish_66/animations/walk-v66/north-east/frame_004.png",
+              "Anatomy_polish_66/animations/walk-v66/north-east/frame_005.png"
+            ]
+          },
+          "idle-v66": {
+            "north-east": [
+              "Anatomy_polish_66/animations/idle-v66/north-east/frame_000.png",
+              "Anatomy_polish_66/animations/idle-v66/north-east/frame_001.png",
+              "Anatomy_polish_66/animations/idle-v66/north-east/frame_002.png",
+              "Anatomy_polish_66/animations/idle-v66/north-east/frame_003.png"
+            ],
+            "west": [
+              "Anatomy_polish_66/animations/idle-v66/west/frame_000.png",
+              "Anatomy_polish_66/animations/idle-v66/west/frame_001.png",
+              "Anatomy_polish_66/animations/idle-v66/west/frame_002.png",
+              "Anatomy_polish_66/animations/idle-v66/west/frame_003.png"
+            ],
+            "north-west": [
+              "Anatomy_polish_66/animations/idle-v66/north-west/frame_000.png",
+              "Anatomy_polish_66/animations/idle-v66/north-west/frame_001.png",
+              "Anatomy_polish_66/animations/idle-v66/north-west/frame_002.png",
+              "Anatomy_polish_66/animations/idle-v66/north-west/frame_003.png"
+            ],
+            "south-east": [
+              "Anatomy_polish_66/animations/idle-v66/south-east/frame_000.png",
+              "Anatomy_polish_66/animations/idle-v66/south-east/frame_001.png",
+              "Anatomy_polish_66/animations/idle-v66/south-east/frame_002.png",
+              "Anatomy_polish_66/animations/idle-v66/south-east/frame_003.png"
+            ],
+            "south-west": [
+              "Anatomy_polish_66/animations/idle-v66/south-west/frame_000.png",
+              "Anatomy_polish_66/animations/idle-v66/south-west/frame_001.png",
+              "Anatomy_polish_66/animations/idle-v66/south-west/frame_002.png",
+              "Anatomy_polish_66/animations/idle-v66/south-west/frame_003.png"
+            ],
+            "south": [
+              "Anatomy_polish_66/animations/idle-v66/south/frame_000.png",
+              "Anatomy_polish_66/animations/idle-v66/south/frame_001.png",
+              "Anatomy_polish_66/animations/idle-v66/south/frame_002.png",
+              "Anatomy_polish_66/animations/idle-v66/south/frame_003.png"
+            ],
+            "north": [
+              "Anatomy_polish_66/animations/idle-v66/north/frame_000.png",
+              "Anatomy_polish_66/animations/idle-v66/north/frame_001.png",
+              "Anatomy_polish_66/animations/idle-v66/north/frame_002.png",
+              "Anatomy_polish_66/animations/idle-v66/north/frame_003.png"
+            ],
+            "east": [
+              "Anatomy_polish_66/animations/idle-v66/east/frame_000.png",
+              "Anatomy_polish_66/animations/idle-v66/east/frame_001.png",
+              "Anatomy_polish_66/animations/idle-v66/east/frame_002.png",
+              "Anatomy_polish_66/animations/idle-v66/east/frame_003.png"
+            ]
+          },
+          "run-v66": {
+            "north-east": [
+              "Anatomy_polish_66/animations/run-v66/north-east/frame_000.png",
+              "Anatomy_polish_66/animations/run-v66/north-east/frame_001.png",
+              "Anatomy_polish_66/animations/run-v66/north-east/frame_002.png",
+              "Anatomy_polish_66/animations/run-v66/north-east/frame_003.png",
+              "Anatomy_polish_66/animations/run-v66/north-east/frame_004.png",
+              "Anatomy_polish_66/animations/run-v66/north-east/frame_005.png"
+            ],
+            "north": [
+              "Anatomy_polish_66/animations/run-v66/north/frame_000.png",
+              "Anatomy_polish_66/animations/run-v66/north/frame_001.png",
+              "Anatomy_polish_66/animations/run-v66/north/frame_002.png",
+              "Anatomy_polish_66/animations/run-v66/north/frame_003.png",
+              "Anatomy_polish_66/animations/run-v66/north/frame_004.png",
+              "Anatomy_polish_66/animations/run-v66/north/frame_005.png"
+            ],
+            "west": [
+              "Anatomy_polish_66/animations/run-v66/west/frame_000.png",
+              "Anatomy_polish_66/animations/run-v66/west/frame_001.png",
+              "Anatomy_polish_66/animations/run-v66/west/frame_002.png",
+              "Anatomy_polish_66/animations/run-v66/west/frame_003.png",
+              "Anatomy_polish_66/animations/run-v66/west/frame_004.png",
+              "Anatomy_polish_66/animations/run-v66/west/frame_005.png"
+            ],
+            "east": [
+              "Anatomy_polish_66/animations/run-v66/east/frame_000.png",
+              "Anatomy_polish_66/animations/run-v66/east/frame_001.png",
+              "Anatomy_polish_66/animations/run-v66/east/frame_002.png",
+              "Anatomy_polish_66/animations/run-v66/east/frame_003.png",
+              "Anatomy_polish_66/animations/run-v66/east/frame_004.png",
+              "Anatomy_polish_66/animations/run-v66/east/frame_005.png"
+            ],
+            "south-east": [
+              "Anatomy_polish_66/animations/run-v66/south-east/frame_000.png",
+              "Anatomy_polish_66/animations/run-v66/south-east/frame_001.png",
+              "Anatomy_polish_66/animations/run-v66/south-east/frame_002.png",
+              "Anatomy_polish_66/animations/run-v66/south-east/frame_003.png",
+              "Anatomy_polish_66/animations/run-v66/south-east/frame_004.png",
+              "Anatomy_polish_66/animations/run-v66/south-east/frame_005.png"
+            ],
+            "south-west": [
+              "Anatomy_polish_66/animations/run-v66/south-west/frame_000.png",
+              "Anatomy_polish_66/animations/run-v66/south-west/frame_001.png",
+              "Anatomy_polish_66/animations/run-v66/south-west/frame_002.png",
+              "Anatomy_polish_66/animations/run-v66/south-west/frame_003.png",
+              "Anatomy_polish_66/animations/run-v66/south-west/frame_004.png",
+              "Anatomy_polish_66/animations/run-v66/south-west/frame_005.png"
+            ],
+            "south": [
+              "Anatomy_polish_66/animations/run-v66/south/frame_000.png",
+              "Anatomy_polish_66/animations/run-v66/south/frame_001.png",
+              "Anatomy_polish_66/animations/run-v66/south/frame_002.png",
+              "Anatomy_polish_66/animations/run-v66/south/frame_003.png",
+              "Anatomy_polish_66/animations/run-v66/south/frame_004.png",
+              "Anatomy_polish_66/animations/run-v66/south/frame_005.png"
+            ],
+            "north-west": [
+              "Anatomy_polish_66/animations/run-v66/north-west/frame_000.png",
+              "Anatomy_polish_66/animations/run-v66/north-west/frame_001.png",
+              "Anatomy_polish_66/animations/run-v66/north-west/frame_002.png",
+              "Anatomy_polish_66/animations/run-v66/north-west/frame_003.png",
+              "Anatomy_polish_66/animations/run-v66/north-west/frame_004.png",
+              "Anatomy_polish_66/animations/run-v66/north-west/frame_005.png"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

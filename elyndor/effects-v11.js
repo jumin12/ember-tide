@@ -120,7 +120,7 @@ async function prepareGameplayGraphics(){
   // Exercise the real HDR, reflection, shadow and output passes while covered
   // by the loading photograph, so their target-specific variants are ready.
   setLoadStage36(.70,'Uploading the village and battle scene…');await yieldLoad36();renderBeforeLoadingGate();loading36.geometryUploaded=representatives.length;
-  if(!battle&&combatVfx.previewWorld!==world.userData.serial){
+  if(typeof encounter53==='undefined'&&!battle&&combatVfx.previewWorld!==world.userData.serial){
    const saved={mode:state.mode,scene:state.scene,battles:openWorldDebug.battles,characters:Object.fromEntries(Object.entries(state.characters).map(([id,c])=>[id,{charge:c.charge,ascended:c.ascended}]))},panels=['hud','battle-hud','battle-message','combo','letterbox'].map(id=>({id,classes:$('#'+id).className}));
    beginBattle('commander3');battle.intro=0;makeQueue();updateLighting();updateCamera(1,true);renderBeforeLoadingGate();endBattle('graphics-warmup');
    state.mode=saved.mode;state.scene=saved.scene;openWorldDebug.battles=saved.battles;for(const[id,values]of Object.entries(saved.characters))Object.assign(state.characters[id],values);for(const p of panels)$('#'+p.id).className=p.classes;updateLighting();updateCamera(1,true);combatVfx.previewWorld=world.userData.serial;

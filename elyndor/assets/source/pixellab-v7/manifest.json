@@ -5,262 +5,299 @@
   "characters": [
     {
       "id": "bren",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/bren",
-      "characterId": "e763040b-55a9-453c-b107-938a64dfe277",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/bren",
+      "characterId": "15de5cc2-a165-436b-86e5-817fdfbaf995",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "soren",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/soren",
-      "characterId": "1160c739-8e48-4c7e-bfd0-1bd5b86b133d",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/soren",
+      "characterId": "49462c22-b43f-4de5-bc61-4daf29104356",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "tavin",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/tavin",
-      "characterId": "c435221b-da13-442c-846c-e7576c4f4066",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/tavin",
+      "characterId": "d5357479-d86e-45aa-85b5-c75e8e0c6645",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "mira",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/mira",
-      "characterId": "872889f1-dc6f-4dc0-ab5a-7e88d10dd35e",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/mira",
+      "characterId": "9a16ce53-6479-40fd-a2d8-803949d6ee6b",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "lysa",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/lysa",
-      "characterId": "d3e55833-e66e-4efe-82ac-d6479fa9c7bc",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/lysa",
+      "characterId": "58659363-d4f2-4b0c-97e3-8876c054d831",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "representative",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/representative",
-      "characterId": "1715fd25-67b8-4929-8ae3-cf12de93a23e",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/representative",
+      "characterId": "b2d66e88-aca1-42e2-a404-0e968fc39663",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "merchant",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/merchant",
-      "characterId": "9e45c3f8-6c4d-4fd4-ba5b-47e4c2dcaf6d",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/merchant",
+      "characterId": "fb19fc6a-dc1f-49d8-a791-533c743a1e3c",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "worker",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/worker",
-      "characterId": "221d89c7-e1c4-45bf-aab5-b13e28e6ea28",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/worker",
+      "characterId": "4f09b2cd-00dd-446a-8e97-416aafb357d4",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "healer",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/healer",
-      "characterId": "5117189b-b22d-4715-aedd-0bb0dfc5d6ba",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/healer",
+      "characterId": "9bf84b17-0ea2-40ec-a68f-b4bee9ce493b",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "guard",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/guard",
-      "characterId": "4fc83c5f-1156-4ce7-beb6-f547c6f6de6c",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/guard",
+      "characterId": "2d152371-254f-41ec-9c1b-bd716955e3e4",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "courier",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/courier",
-      "characterId": "6f64146e-11cc-4b18-a4e1-cea399620493",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/courier",
+      "characterId": "e450591d-2de9-4d17-b0d1-55966458810b",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "farmer",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/farmer",
-      "characterId": "c0050c24-02de-4f95-8524-89c1e1727f49",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/farmer",
+      "characterId": "17d363e9-13f6-490e-9f6c-7ca292b72b2a",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "elder",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/elder",
-      "characterId": "c7187c46-ff8d-45fb-b016-d2fe7265831e",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/elder",
+      "characterId": "97974903-d564-439a-90e0-698e1497c789",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "innkeeper",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/innkeeper",
-      "characterId": "0ada976a-aa4a-4422-adf5-fb5c9617cce0",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/innkeeper",
+      "characterId": "cd74b2d3-22b5-4335-ba8a-37ebb6f1563a",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "tribeMale",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/tribeMale",
-      "characterId": "d867bf2d-9202-4343-9291-e28a5e7a653d",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/tribeMale",
+      "characterId": "2717def9-976f-4dce-a494-b236b3f028d8",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "tribeFemale",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/tribeFemale",
-      "characterId": "ba993cc9-b01d-409e-9e73-5029984ecc52",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/tribeFemale",
+      "characterId": "9946a0f1-8379-4d29-8275-ed054dd03266",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "commander",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/commander",
-      "characterId": "2fb089a2-163f-4485-a86e-6eb33cf22a35",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/commander",
+      "characterId": "62684aa2-d2af-49ae-af79-6ee2a1f32eba",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "commander2",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/commander2",
-      "characterId": "ce290039-6126-4e84-8309-14d8cc2d6b66",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/commander2",
+      "characterId": "d4e6dd36-1a28-42dc-bf8c-c184f2a7b3f9",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "commander3",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/commander3",
-      "characterId": "a0486556-0102-4cb1-b608-a95dbbbf49aa",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/commander3",
+      "characterId": "cc185750-2801-484e-b0ef-def59ddb5f74",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "guardEnemy",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/guardEnemy",
-      "characterId": "719654fe-e56a-4364-8b10-cf6f26d0384c",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/guardEnemy",
+      "characterId": "1e939140-c5f2-4f24-88a8-4968f24f36f9",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "brenAscended",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/brenAscended",
-      "characterId": "c6cf34d4-6dab-4895-a7bd-c86b1209e6a7",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/brenAscended",
+      "characterId": "2aeef7b9-bbed-44e2-993b-a2bff722a8ce",
       "human": true,
-      "combatOnly": true
+      "combatOnly": true,
+      "anatomyRevision": 66
     },
     {
       "id": "tavinAscended",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/tavinAscended",
-      "characterId": "f5081900-1f76-449f-90a6-69348447fa7f",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/tavinAscended",
+      "characterId": "c8ef7796-ff77-4b84-af3e-ab19f8030207",
       "human": true,
-      "combatOnly": true
+      "combatOnly": true,
+      "anatomyRevision": 66
     },
     {
       "id": "capital-steward",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/capital-steward",
-      "characterId": "0f4889aa-7e1a-4048-b523-f41094ad9b98",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/capital-steward",
+      "characterId": "971e2cba-30dd-411d-8fce-313ec46ed24c",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "capital-archivist",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/capital-archivist",
-      "characterId": "b8aeb4e6-0919-4d8b-a42b-d5e664d2a376",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/capital-archivist",
+      "characterId": "19ea1a61-c4d3-4711-b8db-0d612d656765",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "capital-stall",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/capital-stall",
-      "characterId": "a4e306ce-cbe7-4340-9e70-3a0cb43b61bc",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/capital-stall",
+      "characterId": "726fa195-912d-493d-877c-d2f56f3fa296",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "capital-gardener",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/capital-gardener",
-      "characterId": "8b335186-6914-4f6b-8205-3cfe9e286362",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/capital-gardener",
+      "characterId": "6163b9da-ca57-4d84-b76d-31ecfb262f89",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "capital-post",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/capital-post",
-      "characterId": "47f33991-3130-4f3f-8d2b-85ea91b61ed4",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/capital-post",
+      "characterId": "e64f13f5-3e37-4c10-a149-d2a0d7016367",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "capital-inn",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/capital-inn",
-      "characterId": "656d03c0-6a73-475d-b6ae-118d7dd01e3b",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/capital-inn",
+      "characterId": "6733e0ea-f599-4752-a97a-adabf3d6e69f",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "alder-market",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/alder-market",
-      "characterId": "b74125f5-cbab-4398-8ed4-47411a5e9780",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/alder-market",
+      "characterId": "c4ac3b26-7deb-4429-9809-d29c3d33c7a7",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "alder-watch",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/alder-watch",
-      "characterId": "57a89229-783b-4ad3-9d6c-59d3588fa00c",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/alder-watch",
+      "characterId": "9513d375-581a-4041-8e9e-09e83266d1b1",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "alder-medic",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/alder-medic",
-      "characterId": "673ceb57-d92b-4f1d-9e85-46b6c8a8f51b",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/alder-medic",
+      "characterId": "b97607a8-f322-4b1f-b6c8-a6deaae6e536",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "alder-orchard",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/alder-orchard",
-      "characterId": "0b64e435-15d8-4602-b507-78283518e77c",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/alder-orchard",
+      "characterId": "a851a7e8-3971-4edb-8452-100d447934cb",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "fern-potter",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/fern-potter",
-      "characterId": "fb5c136c-14df-4e10-9d69-95bffaa46b06",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/fern-potter",
+      "characterId": "f4d713ae-f156-4971-ade0-7312baac1744",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "fern-hunter",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/fern-hunter",
-      "characterId": "b84f213e-058e-410d-8478-8e17d8ff75bf",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/fern-hunter",
+      "characterId": "38e728c0-66b3-4d14-b8e8-157f91b36e5d",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "relief-medic",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/relief-medic",
-      "characterId": "98173dfb-e210-4963-86dc-80704ac59442",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/relief-medic",
+      "characterId": "d0bc26dc-7cf8-4555-b94a-82ed7937bd5a",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "relief-scribe",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/relief-scribe",
-      "characterId": "bcfad9a8-8364-4142-8833-2b0c31dc27c5",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/relief-scribe",
+      "characterId": "49110d3c-e784-43c6-aab2-66f9f57f0f51",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "relief-quarter",
-      "folder": "elyndor/assets/source/pixellab-v7/characters/relief-quarter",
-      "characterId": "6a7801c2-a045-4237-bd0f-ea510d27fc7f",
+      "folder": "elyndor/assets/source/pixellab-v7/humanoids-v66/relief-quarter",
+      "characterId": "7fbbd4df-219d-41f6-8f52-2787d111fc27",
       "human": true,
-      "combatOnly": false
+      "combatOnly": false,
+      "anatomyRevision": 66
     },
     {
       "id": "wolf",

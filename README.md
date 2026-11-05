@@ -2,6 +2,23 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.19 — A richer world and better interiors
+
+November 5, 2026
+
+- Refreshed character proportions across 38 humanoid variants, including party members, residents and the Soren opponent. Native movement and combat-facing sprites stay grounded as the camera moves.
+- Rebuilt all seven active interiors as furnished wall-top cutaways with clear routes, real window openings and consistent day/night layouts. Removed misplaced rear doors and overlapping wall fittings.
+- Repaired furniture and decoration placement throughout the inns, supplies shop, smithy, archives, council chamber and aid office. Added missing supports, corrected shelf and rope placement, cleared window obstructions and replaced the archive record box with a reading lectern.
+- The smithy now has one clearly visible blacksmith, four complete mounted swords and unobstructed armor displays. Rebuilt all seven hammers and the anvil with connected parts and proper worktop or stump contact.
+- Moved service NPCs into clear view while preserving merchant purchases, lodging, story conversations and exits. Archive records now keep their full reading dialogue instead of advancing after one speech bubble.
+- Unified exterior and interior material response with native PixelLab surface detail, normals and material-specific roughness. Cleaner plaster replaces the speckled wall finish; reflections belong to metal, glass and water.
+- Replaced the flat save marker with a brighter animated seal, two fluid energy ribbons, independently drifting motes and a moving local light. Inn seals fit a reserved floor bay; outdoor placement and save functionality are preserved.
+- Rebuilt all fifteen overworld destinations as distinct miniature courts with dry approach roads and clear entrances. Terrain-fitted gateway posts and solid stairs connect the road to raised foundations, and physical footing matches the steps.
+- Destination entry still requires E. Leaving a location returns the party to its matching gateway. Highmere has a clear dry approach and one river crossing.
+- Reworked woodland silhouettes with connected branches and alpha-cut foliage instead of opaque canopy cores. Irregular forest clusters, open ground and clear approach lanes retain the continent boundaries.
+- The M world map now renders the actual native overworld meshes, miniature buildings, water and forest positions instead of a separate low-resolution copy. Opening it indoors retains outdoor illumination; minimap clicks still open the local map.
+- Reduced startup work with six parallel image decoders and removed obsolete battle and destination warm-up builds. Destination shaders compile during covered transitions, and entrance stair queries use a compact spatial index.
+
 ## Alpha Version 1.18 — Living battles, clearer combat and a smoother journey
 
 November 4, 2026
