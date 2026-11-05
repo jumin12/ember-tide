@@ -1,0 +1,11 @@
+/* The camera owns the screen until its explicit completion handoff. */
+body[data-battle-intro58] #battle-hud,
+body[data-battle-intro58] #battle-teacher18,
+body[data-battle-intro58] #journey-guide,
+body[data-battle-intro58] #combat-target-arrow,
+body[data-battle-intro58] #combat-target-label,
+body[data-battle-intro58] #world-enemy-bars27,
+body[data-battle-intro58] #battle-stage53,
+body[data-battle-intro58] #combo,
+body[data-battle-intro58] #toast{visibility:hidden!important;pointer-events:none!important}
+body[data-battle-intro58] #world{cursor:default!important}

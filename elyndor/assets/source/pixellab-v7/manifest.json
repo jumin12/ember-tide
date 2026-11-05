@@ -547,7 +547,13 @@
     "battle55_ruins_night": "elyndor/assets/source/pixellab-v7/battle-stages-v55/ruins_night.png",
     "battle55_snow_night": "elyndor/assets/source/pixellab-v7/battle-stages-v55/snow_night.png",
     "battle55_waterfall_night": "elyndor/assets/source/pixellab-v7/battle-stages-v55/waterfall_night.png",
-    "battle55_woodland_night": "elyndor/assets/source/pixellab-v7/battle-stages-v55/woodland_night.png"
+    "battle55_woodland_night": "elyndor/assets/source/pixellab-v7/battle-stages-v55/woodland_night.png",
+    "stage59_clearing": "elyndor/assets/source/pixellab-v7/battle-depth-v59/clearing.png",
+    "stage59_stone": "elyndor/assets/source/pixellab-v7/battle-depth-v59/stone.png",
+    "stage59_canopy": "elyndor/assets/source/pixellab-v7/battle-depth-v59/canopy.png",
+    "stage59_pine": "elyndor/assets/source/pixellab-v7/battle-depth-v59/pine.png",
+    "env62_bark": "elyndor/assets/source/pixellab-v7/environment-v62/bark.png",
+    "env62_stone": "elyndor/assets/source/pixellab-v7/environment-v62/stone.png"
   },
   "materialKeys": [
     "cobble",

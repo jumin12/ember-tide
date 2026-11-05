@@ -175,7 +175,24 @@
       "systems/poi-lighting.js",
       "systems/poi-atmosphere.js",
       "systems/battle-variants.js",
-      "systems/sunlight.js"
+      "systems/sunlight.js",
+      "systems/battle-depth.js",
+      "systems/battle-intro.js",
+      "systems/environment-assets.js",
+      "systems/dev-console.js",
+      "systems/mobile-layout.js",
+      "systems/interaction-visibility.js",
+      "systems/transition-speed.js",
+      "systems/transition-graphics.js",
+      "systems/directional-travel.js",
+      "systems/quest-combat-fixes.js",
+      "systems/combat-help-layout.js",
+      "systems/combat-information.js",
+      "systems/combat-interface.js",
+      "systems/combat-feedback.js",
+      "systems/quest-rewards.js",
+      "systems/combat-environments.js",
+      "systems/combat-validation.js"
     ]
   },
   "styles": [
@@ -210,7 +227,15 @@
     "systems/concept-menus.css",
     "systems/minimap.css",
     "systems/compass-hud.css",
-    "systems/battle-stages.css"
+    "systems/battle-stages.css",
+    "systems/battle-intro.css",
+    "systems/dev-console.css",
+    "systems/mobile-layout.css",
+    "systems/interaction-visibility.css",
+    "systems/quest-combat-fixes.css",
+    "systems/combat-help-layout.css",
+    "systems/combat-information.css",
+    "systems/quest-rewards.css"
   ],
   "owners": {
     "runtime": [

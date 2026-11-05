@@ -2,6 +2,34 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.18 — Living battles, clearer combat and a smoother journey
+
+November 4, 2026
+
+- Added eight authored battle opening camera paths with a smooth handoff into combat, protected input/timers, reduced-motion options and safe camera fallbacks.
+- Rebuilt battle scenery around the approved backgrounds with separate ground, banks and distant depth surfaces, matching solid rocks and rooted edge trees. Camera moves reveal depth while the cast stays grounded.
+- Added restrained water and waterfall motion, wind-blown foliage and fine grass. Removed oversized mismatched scenery, bright ground blobs and distracting foreground clutter while preserving all twenty day/night stage pairs.
+- Introduced twelve distinct rock forms, connected tree growth and a shared light-responsive water treatment across the overworld and local scenes.
+- Brought the battle, day/night and scene testers into a password-gated developer console hidden in the changelog. Its toolbar stays at the top and adapts to portrait and landscape phones.
+- Improved phone layouts, safe areas, scrolling and orientation changes across menus, tester controls, dialogue and combat.
+- Allowed the party to pass NPCs and individual overworld trees while preserving building, water, local-tree and continent boundary collision.
+- Kept scenery opaque and added an animated player silhouette when the controlled character is behind buildings or trees.
+- Removed the loading screen outer frame and the custom F fullscreen shortcut. F11 remains available through the browser.
+- Removed dialogue-advance click sounds, unified E interaction prompts and gave world narration a centered, frameless presentation.
+- Added matching quest icons above relevant NPCs and on the minimap, with acceptance/completion updates independent of compass tracking.
+- Reduced repeated scene preparation by reusing vegetation, route and boundary data, stable light slots and compiled material families.
+- Preserved the approach side when entering or leaving POIs through named entrances; corrected arrival and return points across all fifteen destinations.
+- Unified standard enemy defeat dissolves and sprite-colored particles. Defeated enemies immediately stop acting and cannot be targeted; rewards remain once-only.
+- Integrated ten approved ability-type icons and eighteen buff, debuff and status icons, with turn badges, descriptions and an accessible in-game legend.
+- Enemy weaknesses now begin hidden and are learned only through successful matching hits. Discoveries are tracked separately for each enemy and type during the current battle.
+- First discoveries trigger a brief confirmation and the attacking character’s own queued voice reaction. Matching discovered weaknesses show WEAK during ability targeting without leaking unknown affinities.
+- Polished damage and healing numbers with clear outlines, distinct healing treatment, controlled impact motion and camera-following actor anchors. Rapid hits receive separated positions.
+- Aligned combat with the approved HUD: compact turn portraits above, commands and Skills in the upper right, smaller tightly spaced party cards below, and contextual help clear of the timing meter.
+- Formal story objectives and optional quests now grant EXP plus curated randomized loot alongside guaranteed rewards. Saved completion receipts prevent duplicate grants.
+- Added seven consumable magical combat gems: Fire, Ice, Water, Lightning, Wind, Earth and Poison. Rewards display EXP, items and quantities clearly.
+
+Validation and the exact standalone checksum are recorded in `elyndor/previews/release-v118/verification.json`. Layout checks use native Chrome with emulated phone viewports; physical-phone performance has not been measured. Battle background artwork retains its approved native PixelLab resolution.
+
 ## Alpha Version 1.17 — A clearer world, richer maps and distinct battles
 
 November 3, 2026

@@ -42,6 +42,10 @@ def main():
  sound_file=ROOT/'elyndor/audio/sound-manifest.json'
  if sound_file.exists():
   sounds=json.loads(sound_file.read_text(encoding='utf-8'));assets['sounds']={q['id']:'data:audio/ogg;base64,'+base64.b64encode((ROOT/q['file']).read_bytes()).decode() for q in sounds['sounds']};assets['soundProvider']='ElevenLabs'
+ # Preserve the exact approved Trello icon sheets. CSS addresses each icon as
+ # an atlas region; no regenerated artwork or duplicate icon interpretations.
+ sheets=SRC/'combat65'
+ if sheets.exists():assets['combatIcons65']={name:'data:image/png;base64,'+base64.b64encode((sheets/(name+'.png')).read_bytes()).decode() for name in ['ability','status']}
  graph=json.loads(read('build-manifest.json'))
  parts={key:'\n'.join(read(n) for n in names) for key,names in graph['sections'].items()}
  parts.update({'STYLE':'\n'.join(read(n) for n in graph['styles']),

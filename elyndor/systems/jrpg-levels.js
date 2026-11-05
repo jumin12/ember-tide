@@ -2,11 +2,11 @@
 // doorway, planted window box and its collision rotate together.
 const authoredGroundBefore46=groundAt,authoredGroundLevels46=new Map();
 groundAt=function(x,z,...args){
- const base=authoredGroundBefore46(x,z,...args),p=activeScene?.kind==='poi'&&JRPG_LAYOUTS46[activeScene.key];if(!p||['city','orchard','camp','harbor'].includes(p.theme))return base;
+ const p=activeScene?.kind==='poi'&&JRPG_LAYOUTS46[activeScene.key];if(!p||['city','orchard','camp','harbor'].includes(p.theme))return authoredGroundBefore46(x,z,...args);
  const main=p.courts[0];let level=authoredGroundLevels46.get(activeScene.key);if(level===undefined){level=authoredGroundBefore46(main[0],main[1]);authoredGroundLevels46.set(activeScene.key,level);}
  let distance=Infinity;for(const[cx,cz,r]of p.courts)distance=Math.min(distance,Math.hypot(x-cx,z-cz)-r);
  for(const route of [...p.routes,...p.loops??[]])for(let i=1;i<route.length;i++)distance=Math.min(distance,segmentDistance(x,z,route[i-1],route[i])-6.2);
- const target=level+clamp((z-main[1])*.018+(x-main[0])*.008,-2,2),centre=Math.hypot(x-main[0],z-main[1]);return mix(mix(target,level,1-smooth(main[2]-3,main[2]+3,centre)),base,smooth(0,13,distance));
+ const target=level+clamp((z-main[1])*.018+(x-main[0])*.008,-2,2),centre=Math.hypot(x-main[0],z-main[1]);const flattened=mix(target,level,1-smooth(main[2]-3,main[2]+3,centre)),blend=smooth(0,13,distance);return blend===0?flattened:mix(flattened,authoredGroundBefore46(x,z,...args),blend);
 };
 function placeHouse46(spec,kit){
  const[x,z,w,d,turn=0]=spec,first=colliders.length,plants=Object.fromEntries(Object.entries(world.userData.plantMatrices).map(([k,a])=>[k,a.length]));

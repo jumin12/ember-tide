@@ -1,0 +1,10 @@
+body.teacher-timing64 #battle-command{visibility:hidden}
+#battle-teacher18.teacher-safe64{position:fixed;box-sizing:border-box;margin:0;padding:13px 15px;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;touch-action:pan-y;max-width:calc(100vw - 24px);transition:none}
+#battle-teacher18.teacher-safe64 .teacher-top18{letter-spacing:.08em;gap:8px}
+#battle-teacher18.teacher-safe64 .teacher-top18 button{min-height:36px;flex-shrink:0}
+#battle-teacher18.teacher-safe64 h3{font-size:22px;margin:8px 0}
+#battle-teacher18.teacher-safe64 p{font-size:12px;line-height:1.55;margin-bottom:10px}
+#battle-teacher18.teacher-safe64 .teacher-goal18{line-height:1.5;padding-top:8px}
+#battle-teacher18.teacher-safe64 .teacher-actions18{margin-top:10px}
+#battle-teacher18.teacher-safe64 .teacher-actions18 button{min-height:44px}
+@media(max-width:650px),(max-height:450px){#battle-teacher18.teacher-safe64{padding:9px 12px}#battle-teacher18.teacher-safe64 h3{font-size:18px;margin:5px 0}#battle-teacher18.teacher-safe64 p{font-size:12px}#battle-teacher18.teacher-safe64 .teacher-top18 button{min-height:44px}#battle-teacher18.teacher-safe64 .teacher-top18{font-size:8px;letter-spacing:0}}

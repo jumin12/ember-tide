@@ -3,7 +3,7 @@
 const mobile33={root:null,pointer:null,held:new Set(),mode:'',quest:false,sprint:false};
 function releaseTouch33(){for(const k of mobile33.held)keys.delete(k);mobile33.held.clear();mobile33.pointer=null;const knob=$('#touch-knob33');if(knob)knob.style.transform='translate(-50%,-50%)';}
 function layoutMobile33(){
- const compact=innerWidth<700||innerHeight<480,touch=touchDevice33(),changed=document.body.classList.contains('compact33')!==compact;document.body.classList.toggle('compact33',compact);document.body.classList.toggle('touch33',touch);document.body.classList.toggle('portrait33',innerHeight>innerWidth);
+ const touch=touchDevice33(),compact=innerWidth<700||innerHeight<480||touch&&Math.min(innerWidth,innerHeight)<=820,changed=document.body.classList.contains('compact33')!==compact;document.body.classList.toggle('compact33',compact);document.body.classList.toggle('touch33',touch);document.body.classList.toggle('portrait33',innerHeight>innerWidth);
  document.documentElement.style.setProperty('--view-height33',innerHeight+'px');releaseTouch33();
  if(changed&&player){hudValue='';updateHUD();}
 }

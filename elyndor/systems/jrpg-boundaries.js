@@ -113,7 +113,7 @@ function buildBoundary46(){
  }
  // Chunking keeps shadows and camera cutaways local even on a long continent.
  const buckets=new Map();for(const t of trees){const k=Math.floor(t.x/96)+','+Math.floor(t.z/96);if(!buckets.has(k))buckets.set(k,[]);buckets.get(k).push(t);}
- for(const bucket of buckets.values())for(const trunk of[true,false]){const entries=bucket.flatMap(t=>(trunk?t.trunks:t.crowns).map(matrix=>({t,matrix}))),n=entries.length,g=(trunk?new THREE.CylinderGeometry(.5,.65,1,6):sprayGeometry30(16).clone()),mask=new THREE.InstancedBufferAttribute(new Float32Array(n),1);
+ for(const bucket of buckets.values())for(const trunk of[true,false]){const entries=bucket.flatMap(t=>(trunk?t.trunks:t.crowns).map(matrix=>({t,matrix}))),n=entries.length,g=(trunk?forestGeometry('trunk').clone():sprayGeometry30(16).clone()),mask=new THREE.InstancedBufferAttribute(new Float32Array(n),1);
   g.setAttribute('treeKind',new THREE.InstancedBufferAttribute(new Float32Array(n).fill(trunk?1:0),1));g.setAttribute('treeSpecies30',new THREE.InstancedBufferAttribute(Float32Array.from(entries,e=>e.t.species30),1));g.setAttribute('treeViewHidden',mask);
   const mesh=new THREE.InstancedMesh(g,forestMaterial30(trunk),n);mesh.customDepthMaterial=forestDepth30();mesh.userData={barrier46:true,boundaryForest50:true,treeViewMask:mask};mesh.castShadow=mesh.receiveShadow=true;mesh.layers.enable(1);entries.forEach((e,i)=>{mesh.setMatrixAt(i,e.matrix);const v=Math.sin(e.t.x*31+e.t.z*17)*.5+.5,c=new THREE.Color(trunk?'#c7b394':'#ffffff');if(!trunk)c.setRGB(.84+v*.16,.88+v*.12,.76+v*.20);mesh.setColorAt(i,c);e.t.bindings.push({mesh,index:i,matrix:e.matrix});});mesh.onBeforeRender=(r,s,c)=>{forest30.main.value=c===camera?1:0;};mesh.computeBoundingSphere();world.add(mesh);
  }

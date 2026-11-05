@@ -41,13 +41,13 @@ function seatTerrain45(){
  const inverse=new THREE.Matrix4(),point=V3(),seen=new Set(),surfaces=[...world.userData.terrainChunks??[]];
  world.userData.routeSupports32?.group.traverse(o=>{if(o.isMesh)surfaces.push(o);});
  for(const mesh of surfaces){const g=mesh.userData.fullGeometry??mesh.geometry;if(seen.has(g)||!g?.attributes.position)continue;seen.add(g);mesh.updateMatrixWorld(true);inverse.copy(mesh.matrixWorld).invert();const p=g.attributes.position,offset=mesh.userData.routeSupport32 ? .018 : 0;
-  for(let i=0;i<p.count;i++){point.fromBufferAttribute(p,i).applyMatrix4(mesh.matrixWorld);if(!authoredFloor45(point.x,point.z))point.y=seatedGround45(point.x,point.z,point.y-offset)+offset;point.applyMatrix4(inverse);p.setXYZ(i,point.x,point.y,point.z);}
+  for(let i=0;i<p.count;i++){point.fromBufferAttribute(p,i).applyMatrix4(mesh.matrixWorld);if(patches.some(p=>seatingWeight45(point.x,point.z,p)>0)&&!authoredFloor45(point.x,point.z))point.y=seatedGround45(point.x,point.z,point.y-offset)+offset;point.applyMatrix4(inverse);p.setXYZ(i,point.x,point.y,point.z);}
   p.needsUpdate=true;g.computeVertexNormals();g.computeBoundingBox();g.computeBoundingSphere();mesh.geometry=g;
  }
  // Keep grass and tree roots attached to the regraded ground. Their stored
  // matrices and occlusion bounds receive the same vertical correction.
  const foliage=new Set([...perf.plants,...scenery.forestMeshes]),matrix=new THREE.Matrix4();
- for(const mesh of perf.plants){let changed=false;for(let i=0;i<(mesh.userData.total??mesh.count);i++){mesh.getMatrixAt(i,matrix);const x=matrix.elements[12],z=matrix.elements[14],old=seatedGroundBefore45(x,z),delta=seatedGround45(x,z,old)-old;if(Math.abs(delta)<1e-5)continue;matrix.elements[13]+=delta;mesh.setMatrixAt(i,matrix);changed=true;}if(changed){mesh.instanceMatrix.needsUpdate=true;mesh.computeBoundingSphere();}}
+ for(const mesh of perf.plants){let changed=false;for(let i=0;i<(mesh.userData.total??mesh.count);i++){mesh.getMatrixAt(i,matrix);const x=matrix.elements[12],z=matrix.elements[14];if(!patches.some(p=>seatingWeight45(x,z,p)>0))continue;const old=seatedGroundBefore45(x,z),delta=seatedGround45(x,z,old)-old;if(Math.abs(delta)<1e-5)continue;matrix.elements[13]+=delta;mesh.setMatrixAt(i,matrix);changed=true;}if(changed){mesh.instanceMatrix.needsUpdate=true;mesh.computeBoundingSphere();}}
  for(const t of scenery.trees){const target=seatedGround45(t.x,t.z,t.y),delta=target-t.y;if(Math.abs(delta)<1e-5)continue;t.y=target;for(const b of [t.box,...t.cover30??[]].filter(Boolean)){b.min.y+=delta;b.max.y+=delta;}for(const b of t.bindings??[]){b.matrix.elements[13]+=delta;b.mesh.setMatrixAt(b.index,b.matrix);b.mesh.instanceMatrix.needsUpdate=true;foliage.add(b.mesh);}}
  for(const mesh of foliage)if(mesh.isInstancedMesh)mesh.computeBoundingSphere();
  heightCache41.cells.clear();heightCache41.frame=-1;roadNavGraph=null;treeCutCache30=null;q.surfaces=seen.size;

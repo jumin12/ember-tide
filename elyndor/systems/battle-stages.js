@@ -166,12 +166,12 @@ function advanceEncounterCover53(dt){
   if(q.phase==='enter'){
    activateStage53(q.selected);stageBeginBefore53('random');battle.stage53=q.selected;q.homeXs=[player,...followers,...battle.enemies.map(e=>e.actor)].map(a=>a.x);battle.intro=.38;battle.started=clock;state.mode='encounter';
    for(const a of[player,...followers,...battle.enemies.map(e=>e.actor)]){updateActor(a,0);a.presentationPrevious=a.mesh.position.clone();a.presentationCurrent=a.mesh.position.clone();}
-   updateCamera(1,true);renderer.compile(q.scene,camera);q.stats.entries++;
+   updateCamera(1,true);startBattleIntro58(true);renderer.compile(q.scene,camera);q.stats.entries++;
   }else{
    deactivateStage53();stageEndBefore53(q.returnOutcome);q.returnOutcome=null;state.encounterDistance=0;for(const a of actors)updateActor(a,0);updateLighting();updateCamera(1,true);updateRenderBudget(true);state.mode='encounter';q.stats.returns++;
   }
  }
- if(p>=1){const entered=q.phase==='enter';q.phase='idle';node.hidden=true;state.mode=entered?'battle':'explore';keys.clear();cameraPresentation.world=null;updateHUD();if(!entered&&q.retryRequested){q.retryRequested=false;q.retryBattle=null;beginBattle('random');}}
+ if(p>=1){const entered=q.phase==='enter';q.phase='idle';node.hidden=true;state.mode=entered?'battle':'explore';keys.clear();cameraPresentation.world=null;if(entered)startBattleIntro58();updateHUD();if(!entered&&q.retryRequested){q.retryRequested=false;q.retryBattle=null;beginBattle('random');}}
 }
 const stageTickBefore53=tick;
 tick=function(dt){if(encounter53.phase!=='idle'){advanceEncounterCover53(dt);return;}return stageTickBefore53(dt);};
