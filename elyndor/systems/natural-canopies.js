@@ -55,7 +55,7 @@ boundaryTree47=function(...args){return naturalTree66(canopyBoundaryBefore66(...
 
 // Native humanoid anatomy is authored in the source frames. Keep the sprite
 // plane square to the lens, rather than compensating pitch by stretching it.
-function faceNativeHumanoids66(){for(const a of actors){if(assets.sprites[a.id]?.anatomyRevision!==66)continue;const scale=compactWorld44()&&a.party?compactTraversal44.partyScale*1.14:a.mesh.scale.x;a.mesh.scale.setScalar(scale);a.mesh.quaternion.copy(camera.quaternion);}}
+function faceNativeHumanoids66(){for(const a of actors){if(assets.sprites[a.id]?.anatomyRevision!==66)continue;const scale=compactWorld44()&&a.party?compactTraversal44.partyScale*1.60:Math.abs(a.mesh.scale.x),mirror=Math.sign(a.mesh.scale.x)||1;a.mesh.scale.set(mirror*scale,scale,scale);a.mesh.quaternion.copy(camera.quaternion);}}
 const nativeCameraBefore66=updateCamera;
 updateCamera=function(...args){const r=nativeCameraBefore66(...args);faceNativeHumanoids66();return r;};
 const nativeIntroBefore66=applyBattleIntro58;

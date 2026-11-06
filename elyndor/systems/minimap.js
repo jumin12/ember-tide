@@ -19,14 +19,7 @@ function mapFacing51(){
  const i=Math.max(0,WALK_DIRECTIONS.indexOf(player.face)),a=i*Math.PI/4,b=screenBasis();
  return Math.atan2(b.right.x*Math.cos(a)+b.down.x*Math.sin(a),-(b.right.z*Math.cos(a)+b.down.z*Math.sin(a)))*180/Math.PI;
 }
-function mapSeen51(x,z){
- if(activeScene.kind!=='poi')return true;
- // Match the soft edge of the existing explored-cell mask, without revealing
- // people or service names in an unexplored part of the settlement.
- const seen=mapKnowledge50.cells.get(activeScene.key);if(!seen)return false;
- for(let iz=Math.floor((z-14)/8);iz<=Math.floor((z+6)/8);iz++)for(let ix=Math.floor((x-14)/8);ix<=Math.floor((x+6)/8);ix++)if(seen.has(ix+','+iz))return true;
- return false;
-}
+function mapSeen51(x,z){return true;} // Local terrain and pins are available on entry; service discovery is separate.
 function requestGiver51(){
  if(activeScene.kind!=='poi')return null;
  if(world.userData.questGiver51)return world.userData.questGiver51;

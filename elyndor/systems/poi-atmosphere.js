@@ -12,16 +12,19 @@ setupPost=function(...args){
  `;
  m.fragmentShader=m.fragmentShader.replace('void main(){vec3 col=',depthFunctions+'void main(){vec3 col=');
  const depthLook=`
+ vec3 centre55=poiView55(vUv),cross69=cross(dFdx(centre55),dFdy(centre55)),normal55=cross69/max(length(cross69),.000001);if(dot(normal55,-centre55)<0.)normal55=-normal55;
+ float airSurface69=1.-smoothstep(.45,.82,abs((mat3(poiCamera55)*normal55).y));
  if(poiGrade54>.5&&d<150.*landscapeScale56){
-  vec3 centre55=poiView55(vUv),normal55=normalize(cross(dFdx(centre55),dFdy(centre55)));if(dot(normal55,-centre55)<0.)normal55=-normal55;
   float occlusion55=0.;vec2 radius55=vec2(clamp(650.*landscapeScale56/max(d,1.),3.,28.))/resolution;
   for(int j=0;j<8;j++){float angle55=float(j)*2.399963;vec2 uv55=clamp(vUv+vec2(cos(angle55),sin(angle55))*radius55*(.55+.45*mod(float(j),2.)),vec2(.001),vec2(.999));vec3 delta55=poiView55(uv55)-centre55;float distance55=length(delta55),dist55=distance55/landscapeScale56;occlusion55+=max(0.,dot(normal55,delta55/max(distance55,.0001))-.12)*(1.-smoothstep(.25,1.4,dist55));}
   col*=1.-clamp(occlusion55*.38,0.,.34);
   vec3 world55=(poiCamera55*vec4(centre55,1.)).xyz;float low55=1.-smoothstep(.7,4.8,(world55.y-poiGround55)/landscapeScale56);float behind55=smoothstep(focus+5.*landscapeScale56,focus+60.*landscapeScale56,d);float noise55=poiNoise55(world55.xz*.075/landscapeScale56+vec2(time*.006,-time*.003));float veil55=poiMist55*behind55*mix(.35,1.,low55)*(.4+.6*noise55);
-  col=mix(col,poiMistColour55,veil55);
+  col=mix(col,poiMistColour55,veil55*airSurface69);
  }
  `;
  m.fragmentShader=m.fragmentShader.replace('vec4 haze35=',depthLook+'vec4 haze35=')
+  .replace('texture2D(air35,vUv)*airMix35','texture2D(air35,vUv)*airMix35*airSurface69')
+  .replace('*.25*airMix35;','*.25*airMix35*airSurface69;')
   .replace('nearBlur=1.-smoothstep(focus-13.,focus-7.5,d)','nearBlur=1.-smoothstep(focus-mix(13.,8.*landscapeScale56,poiGrade54),focus-mix(7.5,3.5*landscapeScale56,poiGrade54),d)')
   .replace('farBlur=smoothstep(focus+18.,focus+75.,d)*.38','farBlur=smoothstep(focus+mix(18.,13.*landscapeScale56,poiGrade54),focus+mix(75.,52.*landscapeScale56,poiGrade54),d)*mix(.38,.62*landscapeLens56,poiGrade54)')
   .replace('vec2(4.6*coc*pixelRatio33)','vec2(mix(4.6,8.4,poiGrade54)*coc*pixelRatio33)');

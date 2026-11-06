@@ -2,7 +2,7 @@
 // be spoken to. Idle conversations never advance a beat or grant quest rewards.
 const npcNames45={representative:'Local representative',tavin:'Tavin',mira:'Mira',lysa:'Lysa',soren:'Soren',merchant:'Merchant',worker:'Carpenter',healer:'Healer',guard:'Guard',guardEnemy:'Guard',courier:'Courier',farmer:'Farmer',elder:'Village elder',innkeeper:'Innkeeper','capital-stall':'Highmere outfitter','capital-steward':'Council steward','capital-archivist':'Archivist','capital-post':'Royal courier',commander1:'Commander',commander2:'Commander',commander3:'Commander'};
 function npcPrimary45(a){return interactables.filter(o=>o.actor===a&&!o.interior&&o.type!=='npcConversation'&&npcAvailableBefore45(o)).sort((a,b)=>interactionPriority(b)-interactionPriority(a))[0];}
-function syncNpcConversations45(){for(const o of interactables)if(o.actor?.npc&&!o.interior){o.x=o.actor.x;o.z=o.actor.z;}}
+function syncNpcConversations45(){for(const o of interactables)if(o.actor?.npc&&!o.interior&&!o.serviceAnchor68){o.x=o.actor.x;o.z=o.actor.z;}}
 function prepareNpcConversations45(){
  if(activeScene.kind==='overworld')return;
  for(const o of interactables.filter(o=>o.interior&&o.actor?.npc)){const a=o.actor;o.serviceNpc45=a;delete o.actor;if(a.interaction===o)a.interaction=null;}

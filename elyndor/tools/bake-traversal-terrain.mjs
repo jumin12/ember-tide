@@ -12,7 +12,7 @@ try{
  await page.addInitScript(()=>localStorage.setItem('elyndor-settings-v3',JSON.stringify({voices:false,volume:0})));
  await page.goto(pathToFileURL(path.resolve(input)).href);
  await page.waitForFunction(()=>window.__ely&&title19.ready&&!title19.busy);
- await page.evaluate(()=>{title19.stopped=true;state.mode='explore';state.encounterDistance=-1e6;window.__forceWorldBake36=true;window.__captureVegetation64=true;macroGrid15=null;macroBridgePlans15.clear();});
+ await page.evaluate(()=>{title19.stopped=true;state.mode='explore';state.encounterDistance=-1e6;window.__forceWorldBake36=true;window.__captureVegetation64=true;if(typeof continent68!=='undefined')continent68.saved=null;macroGrid15=null;macroBridgePlans15.clear();});
  await page.evaluate(()=>changeJourneyScene('overworld'));
  await page.waitForFunction(()=>!gameLoading);
  const data=await page.evaluate(()=>{

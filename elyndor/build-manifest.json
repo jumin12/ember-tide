@@ -201,7 +201,15 @@
       "systems/natural-canopies.js",
       "systems/poi-dioramas.js",
       "systems/exact-atlas.js",
-      "systems/runtime-budget.js"
+      "systems/runtime-budget.js",
+      "systems/local-review-fixes.js",
+      "systems/combat-review-layout.js",
+      "systems/sprite-contact-depth.js",
+      "systems/retained-continent.js",
+      "systems/phone-interface.js",
+      "systems/nearby-scene-cache.js",
+      "systems/mobile-battle-view.js",
+      "systems/local-menu-actions.js"
     ]
   },
   "styles": [
@@ -244,7 +252,11 @@
     "systems/quest-combat-fixes.css",
     "systems/combat-help-layout.css",
     "systems/combat-information.css",
-    "systems/quest-rewards.css"
+    "systems/quest-rewards.css",
+    "systems/local-review-fixes.css",
+    "systems/phone-interface.css",
+    "systems/mobile-battle-view.css",
+    "systems/local-menu-actions.css"
   ],
   "owners": {
     "runtime": [

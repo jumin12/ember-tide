@@ -685,24 +685,24 @@
   },
   "loadingScreens": {
     "river": {
-      "file": "elyndor/assets/source/pixellab-v7/presentation-v33/river-still.webp",
+      "file": "elyndor/assets/source/pixellab-v7/loading-review69/river.webp",
       "name": "Brookstead \u00b7 The riverlands",
-      "provenance": "Fresh 1920\u00d71080 actual in-game capture; no HUD, no concept art, no synthetic scene."
+      "provenance": "Native 1920x1080 in-engine photograph with walking, conversation and reading poses; current surfaces, lighting, counter-facing staff and separated characters. Captured directly from the renderer, with no browser scaling or HUD."
     },
     "inn": {
-      "file": "elyndor/assets/source/pixellab-v7/presentation-v33/inn-still.webp",
+      "file": "elyndor/assets/source/pixellab-v7/loading-review69/inn.webp",
       "name": "The Lantern Inn \u00b7 A warm hearth",
-      "provenance": "Fresh 1920\u00d71080 actual in-game capture; no HUD, no concept art, no synthetic scene."
+      "provenance": "Native 1920x1080 in-engine photograph with walking, conversation and reading poses; current surfaces, lighting, counter-facing staff and separated characters. Captured directly from the renderer, with no browser scaling or HUD."
     },
     "shop": {
-      "file": "elyndor/assets/source/pixellab-v7/presentation-v33/shop-still.webp",
+      "file": "elyndor/assets/source/pixellab-v7/loading-review69/shop.webp",
       "name": "Riverstone Supplies \u00b7 Provisions for the road",
-      "provenance": "Fresh 1920\u00d71080 actual in-game capture; no HUD, no concept art, no synthetic scene."
+      "provenance": "Native 1920x1080 in-engine photograph with walking, conversation and reading poses; current surfaces, lighting, counter-facing staff and separated characters. Captured directly from the renderer, with no browser scaling or HUD."
     },
     "archives": {
-      "file": "elyndor/assets/source/pixellab-v7/presentation-v33/archives-still.webp",
+      "file": "elyndor/assets/source/pixellab-v7/loading-review69/archives.webp",
       "name": "The Royal Archives \u00b7 Records of the old network",
-      "provenance": "Fresh 1920\u00d71080 actual in-game capture; no HUD, no concept art, no synthetic scene."
+      "provenance": "Native 1920x1080 in-engine photograph with walking, conversation and reading poses; current surfaces, lighting, counter-facing staff and separated characters. Captured directly from the renderer, with no browser scaling or HUD."
     }
   },
   "textureRevision": "pixellab-v15"

@@ -21,7 +21,7 @@ const enterBefore64=enterPoi;
 enterPoi=function(key,id=null){
  if(activeScene?.kind!=='overworld'||!POIS[key])return enterBefore64(key);
  if(key==='snow'&&!['snow','complete'].includes(currentBeat()[0]))return enterBefore64(key);
- const center=worldEntrancePoint45(key),vector=[player.x-center.x,player.z-center.z],gate=resolveEntrance64(key,vector,id??poiEntry.confirming?.entranceId64);
+ const center=worldEntrancePoint45(key),vector=[player.x-center.x,player.z-center.z],gate=resolveEntrance64(key,vector,id);
  travel64.pending={kind:'poi',poi:key,entrance:gate?.id,side:gate?.side,approach:cardinal64(...vector)};
  enterBefore64(key);return window.journeyGraphicsReady;
 };

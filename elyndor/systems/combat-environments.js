@@ -7,7 +7,7 @@ function buildStageScenery59(){
  clearStageDepth59();q.stage=c.selected;q.aspect=camera.aspect;q.stats.builds++;q.group=new THREE.Group();q.group.name='Reference-matched 3D '+BATTLE_STAGES53[c.selected].name;c.scene.add(q.group);combatEnvironment65.motion=[];
  const spec=BATTLE_SCENERY59[c.selected],night=c.phase55==='night',rng=seeded(65197+Object.keys(BATTLE_SCENERY59).indexOf(c.selected)*107);
  q.time.value=clock;q.water.value=spec.water?1:0;q.falls.value=spec.falls?1:0;q.foliage.value=spec.cave||spec.snow?0:1;c.resources.backdrop.visible=false;c.resources.floor.visible=true;c.scene.fog=null;c.scene.background=new THREE.Color(night?'#152534':'#8fa89d');
- makeStageLandscape59(camera,spec);
+ const reference69=camera.clone();if(typeof mobileBattle69==='function'&&mobileBattle69()){reference69.clearViewOffset();reference69.updateProjectionMatrix();reference69.updateMatrixWorld();}makeStageLandscape59(reference69,spec);
  // Keep the actual actor lane level while retaining the raised banks outside
  // it. This is geometry, so contact stays correct during camera movement.
  const cast=[player,...followers,...battle.enemies.map(e=>e.actor)],margin=1.5,
@@ -17,7 +17,7 @@ function buildStageScenery59(){
  // Partition the reconstructed geometry into independent ground, banks and
  // distant terrain meshes. No complete scene is left on a single surface.
  const source=q.landscape,g=source.geometry,uv=g.attributes.uv,index=g.index,groups=[[],[],[],[]],used=[new Set(),new Set(),new Set(),new Set()];
- for(let i=0;i<index.count;i+=3){const ids=[index.getX(i),index.getX(i+1),index.getX(i+2)],u=ids.reduce((s,j)=>s+((uv.getX(j)-.5)/q.crop.x+.5),0)/3,v=ids.reduce((s,j)=>s+((uv.getY(j)-.5)/q.crop.y+.5),0)/3,k=v<.4?0:u<.28?1:u>.72?2:3;groups[k].push(...ids);ids.forEach(j=>used[k].add(j));}
+ for(let i=0;i<index.count;i+=3){const ids=[index.getX(i),index.getX(i+1),index.getX(i+2)],u=ids.reduce((s,j)=>s+((uv.getX(j)-.5)/q.crop.x+.5),0)/3,v=ids.reduce((s,j)=>s+((uv.getY(j)-(q.photoOffset69?.y??.5))/q.crop.y+.5),0)/3,k=v<.4?0:u<.28?1:u>.72?2:3;groups[k].push(...ids);ids.forEach(j=>used[k].add(j));}
  source.removeFromParent();q.landscape=null;
  const names=['Actual 3D clearing and raised foreground banks','Left landscape depth volume','Right landscape depth volume','Distant skyline and terrain'];
  let ground;

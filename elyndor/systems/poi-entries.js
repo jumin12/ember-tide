@@ -26,7 +26,7 @@ entryPrompt.querySelector('button').addEventListener('click',confirmWorldEntranc
 document.addEventListener('keydown',e=>{
  if(['INPUT','SELECT','TEXTAREA'].includes(document.activeElement?.tagName)||!departureControlAvailable())return;
  const o=nearbyWorldEntrance(),key=e.key.toLowerCase();if(!o)return;
- if(key==='escape'){e.preventDefault();e.stopImmediatePropagation();poiEntry.dismissed=o;route=null;keys.clear();updateEntryPrompt();}
+ if(key==='escape'){return;} // Escape belongs to the game menu, including at a destination gate.
  else if((key==='e'||key==='enter')&&!e.repeat){e.preventDefault();e.stopImmediatePropagation();confirmWorldEntrance();}
 },{capture:true});
 function updateEntryPrompt(){

@@ -16,7 +16,7 @@ function markOccluder63(o,valid){
  o.onBeforeRender=function(r,s,c,...args){
   before?.call(this,r,s,c,...args);
   for(const m of Array.isArray(this.material)?this.material:[this.material]){
-   m.stencilWrite=c===camera&&m.depthWrite;m.stencilRef=this.userData.occluder63?1:0;
+   m.stencilWrite=c===camera&&m.depthWrite;m.stencilRef=this.userData.occluder63?1:this.userData.groundSurface69?2:0;
    m.stencilFunc=THREE.AlwaysStencilFunc;m.stencilFail=m.stencilZFail=THREE.KeepStencilOp;m.stencilZPass=THREE.ReplaceStencilOp;
   }
  };
@@ -31,7 +31,7 @@ buildWorld=function(...args){
   let inBuilding=false;for(let p=o;p&&p!==world;p=p.parent)if(buildings.has(p)){inBuilding=true;break;}
   const ground=terrain.has(o)||o.userData.terrain||o.geometry?.attributes.pathMix||o.geometry?.attributes.terrainRoad||o.userData.plantKey||o===water||o.userData.waterRole||o.userData.water62===true||o.userData.freshwater38;
   o.geometry.computeBoundingBox();const height=o.geometry.boundingBox.max.y-o.geometry.boundingBox.min.y;
-  markOccluder63(o,!actorMeshes.has(o)&&!ground&&(inBuilding||trees.has(o)||height>1));
+  o.userData.groundSurface69=!!ground;markOccluder63(o,!actorMeshes.has(o)&&!ground&&(inBuilding||trees.has(o)||height>1));
  });
  return result;
 };

@@ -21,7 +21,7 @@ changeJourneyScene=function(id,spawn=null){
    const changed=await fadedSceneBefore43(id,spawn);if(!changed)return false;
    // The complete legacy handoff includes graphics preparation, story arrival,
    // camera settling, cutaways and the first destination frame under the cover.
-   updateCamera(1,true);updateCutaways();updateRenderBudget(true);render();
+   updateCamera(1,true);updateCutaways();updateRenderBudget(true);poiFade.paintReady68=true;try{render();}finally{poiFade.paintReady68=false;}
    await new Promise(requestAnimationFrame);await new Promise(requestAnimationFrame);
    poiFade.ready=true;setPoiFadePhase('fade-in');await animatePoiFade(0);poiFade.completed++;return true;
   }finally{

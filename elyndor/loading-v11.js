@@ -11,6 +11,7 @@ const loadBeforePhotographicLoading=loadSlot;
 loadSlot=function(slot){if(gameLoading)return false;setJourneyLoading(true);let ok;try{ok=loadBeforePhotographicLoading(slot);}catch(e){setJourneyLoading(false);throw e;}if(ok)window.journeyGraphicsReady=warmJourneyGraphics().catch(e=>{$('#fatal-text').textContent=e.message;$('#fatal').classList.remove('hidden');});else setJourneyLoading(false);return ok;};
 const tickBeforeLoadingGate=tick;
 tick=function(dt){if(!gameLoading)tickBeforeLoadingGate(dt);};
-const renderBeforeLoadingGate=render;
+const loadingRenderBase68=render;
+function renderBeforeLoadingGate(...args){if(typeof poiFade!=='undefined'&&poiFade.active&&poiFade.phase==='loading'&&!poiFade.paintReady68)return;return loadingRenderBase68(...args);}
 render=function(){if(!gameLoading)renderBeforeLoadingGate();};
 document.addEventListener('keydown',e=>{if(gameLoading){e.preventDefault();e.stopImmediatePropagation();}},{capture:true});

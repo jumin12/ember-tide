@@ -1,0 +1,10 @@
+body.combat-ui65 #combo{left:50%!important;right:auto!important;bottom:auto!important;transform:translateX(-50%)!important;box-sizing:border-box;max-width:430px!important}
+body.timing-review68 #battle-command{visibility:hidden}
+body.combat-ui65 #quest-reward65{display:none}
+body.combat-ui65 #world-enemy-bars27:not([hidden]){position:fixed!important;inset:0!important;height:auto!important;display:block!important;pointer-events:none}
+body.combat-ui65 #world-enemy-bars27 .foe-bar27{position:absolute!important;transform:translate(-50%,0)!important;flex:none!important;pointer-events:auto}
+#journey-guide.help-safe68:not(.hidden),#battle-teacher18.help-safe68:not(.hidden){display:block!important}
+#journey-guide.help-safe68,#battle-teacher18.help-safe68{position:fixed!important;right:auto!important;bottom:auto!important;transform:none!important;margin:0!important;overflow:auto;overscroll-behavior:contain;touch-action:pan-y;box-sizing:border-box;transition:none!important;padding:10px 12px;z-index:88;scrollbar-width:thin}
+.help-safe68 h3{font-size:18px!important;margin:5px 0!important}.help-safe68 p{font-size:12px!important;line-height:1.4!important;margin:7px 0!important}.help-safe68 .guide-top,.help-safe68 .teacher-top18{font-size:9px;letter-spacing:.04em}.help-safe68 .guide-bottom{padding-top:7px}.help-safe68 button{min-height:34px}
+.abandon-confirm68{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.request-card footer{flex-wrap:wrap;gap:8px}.request-card [data-abandon68]{color:#dccbb1;background:#19242a}
+@media(max-height:500px){.help-safe68 h3{font-size:15px!important}.help-safe68 p{font-size:11px!important}.help-safe68 .guide-bottom,.help-safe68 .teacher-goal18{font-size:10px!important}.help-safe68 .mentor-controls17{margin-top:3px}}

@@ -98,7 +98,7 @@ prepareBattlefield=function(kind){if(!encounter53.active)return stagePrepareBefo
 const stageFormationBefore53=battleFormation;
 battleFormation=function(c,i,enemy=false,count=state.members.length){
  if(encounter53.active){
-  if(innerWidth<700&&innerHeight>innerWidth)return enemy?{x:c.x-3.5-(i%2)*1.8,z:c.z+(i-1)*1.15}:{x:c.x+2+i*.8,z:c.z+((count-1)/2-i)*.9};
+  if(innerWidth<700&&innerHeight>innerWidth)return enemy?{x:c.x-4.3-(i%2)*2.5,z:c.z+(i-1)*1.15}:{x:c.x+2+i*1.45,z:c.z+((count-1)/2-i)*.9};
   return enemy?{x:c.x-4.8-(i%2)*3.3-Math.floor(i/2)*.8,z:c.z+(i-1)*1.2}:{x:c.x+3.8-Math.max(0,count-2)*.6+i*1.8,z:c.z+((count-1)/2-i)*.95};
  }
  return stageFormationBefore53(c,i,enemy,count);
@@ -109,7 +109,8 @@ updateCamera=function(dt=1/60,instant=false){
  const q=encounter53,cast=[player,...followers,...battle.enemies.map(e=>e.actor)],portrait=innerWidth<700&&innerHeight>innerWidth,layout=portrait?'portrait':'wide';
  if(q.layout!==layout&&!battle.animation&&!battle.combo){q.layout=layout;for(const[a,i]of[player,...followers].map((a,i)=>[a,i]))Object.assign(a,battleFormation(q.center,i,false));for(const[e,i]of battle.enemies.map((e,i)=>[e,i]))Object.assign(e.actor,battleFormation(q.center,i,true));q.homeXs=cast.map(a=>a.x);for(const a of cast)updateActor(a,0);}
  const xs=q.homeXs??cast.map(a=>a.x),lo=Math.min(...xs),hi=Math.max(...xs),aspect=innerWidth/innerHeight,distance=Math.max(26,(hi-lo+(portrait?4:7))/(2*Math.tan(THREE.MathUtils.degToRad(19))*aspect));
- cameraTarget.set((lo+hi)*.5,q.floorY+distance*.177,q.center.z);camera.position.copy(cameraTarget).add(V3(0,distance*.205,distance));camera.fov=38;camera.near=.1;camera.far=350;camera.aspect=aspect;camera.lookAt(cameraTarget);camera.updateProjectionMatrix();camera.updateMatrixWorld();focusPoint.copy(cameraTarget);
+ if(typeof mobileBattle69==='function'&&mobileBattle69()){frameMobileBattle69(cast,q.floorY);const stretch=1/Math.cos(Math.atan(.205));for(const a of cast){a.mesh.quaternion.identity();a.mesh.scale.set(Math.sign(a.mesh.scale.x)||1,stretch,1);a.mesh.layers.enable(1);}return;}
+ camera.clearViewOffset();cameraTarget.set((lo+hi)*.5,q.floorY+distance*.177,q.center.z);camera.position.copy(cameraTarget).add(V3(0,distance*.205,distance));camera.fov=38;camera.near=.1;camera.far=350;camera.aspect=aspect;camera.lookAt(cameraTarget);camera.updateProjectionMatrix();camera.updateMatrixWorld();focusPoint.copy(cameraTarget);
  const stretch=1/Math.cos(Math.atan(.205));for(const a of cast){a.mesh.quaternion.identity();a.mesh.scale.set(Math.sign(a.mesh.scale.x)||1,stretch,1);delete a.mesh.userData.compactParty44;a.mesh.castShadow=!a.pixelReleased&&a.mesh.visible;a.mesh.layers.enable(1);}
  sideCameraStats.angle=Math.atan(.205)*180/Math.PI;
 };

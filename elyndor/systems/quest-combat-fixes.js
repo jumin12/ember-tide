@@ -3,7 +3,8 @@
 const questMarkersBefore64=mapMarkers51;
 function currentStoryMarker64(){
  if(!player||!activeScene||currentBeat()[0]==='complete')return null;
- const target=objectiveTarget();if(!target||target.actor&&!target.actor.mesh.visible)return null;
+ const target=objectiveTarget(),actionObjective=currentBeat()[0]==='tavinIntro'&&activeScene?.key==='fern';
+ if(!target||target.actor&&!target.actor.mesh.visible&&!actionObjective)return null;
  return{kind:'mainQuest',x:target.actor?.x??target.x,z:target.actor?.z??target.z,label:currentBeat()[2],id:'current-story',target};
 }
 mapMarkers51=function(...args){

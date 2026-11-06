@@ -44,7 +44,7 @@ function stageMaterial59(key,color,wind=false,cutout=false){
   s.uniforms.stageTint59={value:new THREE.Color(encounter53.phase55==='night'?'#9eadd0':spec.cave?'#b0cad0':'#ffffff').multiplyScalar(encounter53.phase55==='night'?.36:spec.cave?.72:1)};
   s.fragmentShader='uniform vec3 stageTint59;\n'+s.fragmentShader;
   if(foliage||key==='rock'){
-   s.uniforms.stageProjector59={value:stageDepth59.projector};s.uniforms.stageCrop59={value:stageDepth59.crop};s.uniforms.stagePhoto59={value:encounter53.resources.material.uniforms.map.value};
+   s.uniforms.stageProjector59={value:stageDepth59.projector};s.uniforms.stageCrop59={value:stageDepth59.crop};s.uniforms.stageOffset69={value:stageDepth59.photoOffset69??new THREE.Vector2(.5,.5)};s.uniforms.stagePhoto59={value:encounter53.resources.material.uniforms.map.value};
    s.vertexShader='uniform mat4 stageProjector59;varying vec4 sourceProjection59;\n'+s.vertexShader;
    s.vertexShader=s.vertexShader.replace('#include <worldpos_vertex>',`#include <worldpos_vertex>
     vec4 sourcePoint59=vec4(position,1.);
@@ -52,9 +52,9 @@ function stageMaterial59(key,color,wind=false,cutout=false){
      sourcePoint59=instanceMatrix*sourcePoint59;
     #endif
     sourceProjection59=stageProjector59*modelMatrix*sourcePoint59;`);
-   s.fragmentShader='uniform sampler2D stagePhoto59;uniform vec2 stageCrop59;varying vec4 sourceProjection59;\n'+s.fragmentShader;
+   s.fragmentShader='uniform sampler2D stagePhoto59;uniform vec2 stageCrop59,stageOffset69;varying vec4 sourceProjection59;\n'+s.fragmentShader;
    s.fragmentShader=s.fragmentShader.replace('#include <map_fragment>',`#include <map_fragment>
-    vec2 photoUV59=(sourceProjection59.xy/sourceProjection59.w*.5)*stageCrop59+.5;
+    vec2 photoUV59=(sourceProjection59.xy/sourceProjection59.w*.5)*stageCrop59+stageOffset69;
     photoUV59=1.-abs(mod(photoUV59,2.)-1.);vec3 scenePigment59=texture2D(stagePhoto59,photoUV59).rgb;`);
   }
   if(foliage)s.fragmentShader=s.fragmentShader.replace('vec3 scenePigment59=texture2D(stagePhoto59,photoUV59).rgb;',`vec3 scenePigment59=texture2D(stagePhoto59,photoUV59).rgb;
@@ -92,7 +92,7 @@ function stageMaterial59(key,color,wind=false,cutout=false){
 }
 function makeStageLandscape59(reference,spec){
  const q=stageDepth59,c=encounter53,cols=100,rows=60,positions=[],uvs=[],indices=[],aspect=reference.aspect,imageAspect=c.resources.material.uniforms.imageAspect.value;
- const cropX=Math.min(1,aspect/imageAspect)/1.08,cropY=Math.min(1,imageAspect/aspect)/1.08,eye=reference.position.clone();
+ const cropX=Math.min(1,aspect/imageAspect)/1.08,cropY=Math.min(1,imageAspect/aspect)/1.08,offsetY69=typeof mobileBattle69==='function'&&mobileBattle69()&&innerWidth>innerHeight?cropY*.5:.5,eye=reference.position.clone();q.photoOffset69=new THREE.Vector2(.5,offsetY69);
  // A ray-reconstructed ground flows continuously into middle-distance hills
  // and a distant curved landscape. UVs stay attached to those actual surfaces.
  const point=(u,v)=>{
@@ -110,7 +110,7 @@ function makeStageLandscape59(reference,spec){
   }
   return eye.clone().addScaledVector(ray,clamp(distance,8,240));
  };
- for(let y=0;y<=rows;y++)for(let x=0;x<=cols;x++){const u=mix(-.38,1.38,x/cols),v=mix(-.32,1.28,y/rows),p=point(u,v);positions.push(...p.toArray());uvs.push((u-.5)*cropX+.5,(v-.5)*cropY+.5);}
+ for(let y=0;y<=rows;y++)for(let x=0;x<=cols;x++){const u=mix(-.38,1.38,x/cols),v=mix(-.32,1.28,y/rows),p=point(u,v);positions.push(...p.toArray());uvs.push((u-.5)*cropX+.5,(v-.5)*cropY+offsetY69);}
  for(let y=0;y<rows;y++)for(let x=0;x<cols;x++){const a=y*(cols+1)+x,b=a+cols+1;indices.push(a,b,a+1,b,b+1,a+1);}
  const geometry=geometry59(new THREE.BufferGeometry());geometry.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));geometry.setAttribute('uv',new THREE.Float32BufferAttribute(uvs,2));geometry.setIndex(indices);geometry.computeVertexNormals();
  const m=material59(new THREE.MeshBasicMaterial({map:c.resources.material.uniforms.map.value,side:THREE.DoubleSide,toneMapped:false}));
@@ -147,7 +147,7 @@ function makeStageLandscape59(reference,spec){
   // and flow remain in the landscape when the camera dollies or turns.
   for(const falling of spec.falls?[false,true]:[false]){
    const coords=[],waterUV=[],ii=[],nx=24,ny=falling?30:12,rect=falling?[.48,.53,.72,.93]:[.11,.35,.89,.59];
-   for(let y=0;y<=ny;y++)for(let x=0;x<=nx;x++){const u=mix(rect[0],rect[2],x/nx),v=mix(rect[1],rect[3],y/ny),p=point((u-.5)/cropX+.5,(v-.5)/cropY+.5);p.lerp(eye,.00015);coords.push(...p.toArray());waterUV.push(u,v);}
+   for(let y=0;y<=ny;y++)for(let x=0;x<=nx;x++){const u=mix(rect[0],rect[2],x/nx),v=mix(rect[1],rect[3],y/ny),p=point((u-.5)/cropX+.5,(v-offsetY69)/cropY+.5);p.lerp(eye,.00015);coords.push(...p.toArray());waterUV.push(u,v);}
    for(let y=0;y<ny;y++)for(let x=0;x<nx;x++){const a=y*(nx+1)+x,b=a+nx+1;ii.push(a,b,a+1,b,b+1,a+1);}
    const g=geometry59(new THREE.BufferGeometry());g.setAttribute('position',new THREE.Float32BufferAttribute(coords,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(waterUV,2));g.setIndex(ii);
    const wm=material59(new THREE.ShaderMaterial({transparent:true,depthWrite:false,side:THREE.DoubleSide,toneMapped:false,uniforms:{map:{value:c.resources.material.uniforms.map.value},time:q.time,falling:{value:falling?1:0}},vertexShader:'uniform float time,falling;varying vec2 waterUV;void main(){waterUV=uv;vec3 p=position;p.y+=sin(time*.8+position.x*.7)*.012*(1.-falling);gl_Position=projectionMatrix*modelViewMatrix*vec4(p,1.);}',fragmentShader:`uniform sampler2D map;uniform float time,falling;varying vec2 waterUV;

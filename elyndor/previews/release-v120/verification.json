@@ -1,0 +1,3078 @@
+{
+  "artifact": {
+    "file": "index.html",
+    "bytes": 65171744,
+    "sha256": "15e6e8b739bdc9326c28a583f28308498b83c2f345b6cd828e3a7a6613e7291b",
+    "offline": true
+  },
+  "source": {
+    "elyndor/architecture-v24.js": "0316ed10df8455a89f93935af634b77924f8ba036c718431f62cf8f64a8ccf18",
+    "elyndor/architecture-v31.js": "2c2f9f7eb70751e63b008c4c4b735f86a66b5b8fbe89902c1d7455d6b7676dbe",
+    "elyndor/arena-v14.js": "7e6a4ac4d63ea77d0a044aeefedceb28f5fa6dba0a3e4d79ee7223478b8002a7",
+    "elyndor/atlas-data-v18.js": "9c8b58c50c62c979661dc7fe9e9b6a44b0afc63986ff6638c1e275f358ac97b2",
+    "elyndor/atlas-v14.js": "f1ff47d907f36331725f8c6ee6274eb83c049058c93581572325088628a58349",
+    "elyndor/atlas-v18.js": "1a93104154db5a6cec1e90df3229b5c6f545a2525689de116f9510fa783e412d",
+    "elyndor/atmosphere-v24.js": "dee98bfcb130f7e4c7af836a6d0d1f80f53cfdd3a257733f5b736a670b5b50ed",
+    "elyndor/atmosphere-v28.js": "63f4af008169d61dbd686c9f5a53f32c00abd5ef81019c47525f4bfc6f949d64",
+    "elyndor/atmosphere-v33.js": "718d3b29993bd79ac2242ff3832e163a4dba0970f4ed16bffe63c988a685c292",
+    "elyndor/atmosphere-v35.js": "7406de90df63749ca1939b633f830d332a0d01127dc07c97408bb5870f519664",
+    "elyndor/audio-v13.js": "d34f06854ea8ba23cd1b3d02d34dc7a8dc31b5234cc86aa7bea3434ff33ef92a",
+    "elyndor/audio-v15.js": "deafb01e2c18e38c6f579bcdd2610e1827c814f66f1360a3da6f3abb0ef1eb32",
+    "elyndor/battle-v12.js": "bf80d28f7329e7455db8fab0859d5ee0cf4a5ed8373c5018ac7469c2848bfc43",
+    "elyndor/battle-v13.js": "0034751aabea94f8473cbaaac710646e22de7a61b6e3200fee7defebaf093a97",
+    "elyndor/battle-v17.js": "fd1d3ee9ce7fa1dff4f9ac0c42eb77a1c22bec2979b9a9a3445606d58a5dc9de",
+    "elyndor/botany-v30.js": "de3259d72e4559f2ac569830f471820cf96f735c2d38dba28fc67b3302438e3e",
+    "elyndor/build-manifest.json": "c0fd0b7d7b497f7edc85674af3d2e26b2a076f552def867d61393e89c31a5f77",
+    "elyndor/casting-v15.js": "7eab462fadc68054c5842fc2af8ff114760cee30ef731e63d81faea7e7e513b1",
+    "elyndor/celestial-v31.js": "facea084d02e53de9734ac7ee92f232fd3cdfdb5e0daf5bf0846bfdabb84c49b",
+    "elyndor/cinematic-v22.js": "0f67d75d2f30756a0a25ac9d14ad76fa532b05d986cdae41a60d1991d94f30b3",
+    "elyndor/clarity-v23.js": "62109b4024c61343f4c0eb8c4a5b99dccea02806524218fe4be58d4c66bc1e5e",
+    "elyndor/clearance-v15.js": "9fa00dd95bbfd705f673c0d7aaa7a7daf86f24a71b3209ffb1955fbc1e8b1e9e",
+    "elyndor/clouds-v21.js": "0041aae84767ee824275072c869e094dc267b5586daa6fd7c1de4e5d5ed1c217",
+    "elyndor/combat-input-v15.js": "44059f9197d115ce1ae380a8d0cd3828d2779f03dd2da943b9beaf11b14ce20a",
+    "elyndor/combat-v11.js": "6247f1bcf1d187ca701557b87f8fe71387006597a506b047811785c1b6a02b46",
+    "elyndor/combat-v21.js": "9380a6164f8a151f6d362187204c81c759c19635919ea116b7844971f14c5958",
+    "elyndor/combat-v27.js": "3a9240b158248049ead98d4a4a974873ac6fc31e4259626a834fade5b8dc2af6",
+    "elyndor/combat.js": "53124060aa6e28d3a210354be85341eddafb2b284cf8492aff0e7154218f7755",
+    "elyndor/current-v19.js": "672db4395ccce65a91acd1bfc01ec72a0d9b4446973ad438776b017f812f3ef4",
+    "elyndor/data.js": "a91d714f83ead6ad74a109759e81dd85e986658a657ed57a5394da77a74e9874",
+    "elyndor/detail.js": "64d7f4aecc16d9c9c79665527cba061bfb52a57d3b5a78a1922300bbb66a605d",
+    "elyndor/distance-v26.js": "b73731a33aa1319bf156d953291c427cf19682a6faa404b86b93913e0e28a0d3",
+    "elyndor/districts-v24.js": "78687abe552c07cc5b9252d3a2514c35a08d6a554ffc7e0212bed0886e576754",
+    "elyndor/districts-v27.js": "d8a289f5140682313a06473a30bb454eec47238d5894b96626c23059acea60f8",
+    "elyndor/effects-v11.js": "39a358d9e99b9acf6b7c761c0e96751f829f49a52b009542432c3e7e13e86d93",
+    "elyndor/effects-v35.js": "ea5a750f1d09bcc27f06d241de3f0925351fc3b1611dd4f5fe63485474bab11f",
+    "elyndor/environment-v13.js": "f939a8a41e8978bc11b3b5cd39afe266930f7801106442e5016936799ba2d0f2",
+    "elyndor/experience-v13.css": "cf05efc2c19623cad25a1251dd423ab435c66ef527c1d9abbaf6f1747e72eb00",
+    "elyndor/experience-v13.js": "83f2df84d720a397188faf68fda9e0aaab5b334b9e3b71af58f643303fbf10f7",
+    "elyndor/experience-v15.css": "59a3a30f5dcda83a39c1e03407b23e5685ef21b332ebfb0c86637e9fc0f9a37d",
+    "elyndor/experience-v16.css": "10c0d6148c8429b41ca36a4f48999202ed6f061ae8fd07d75f192ec5e7a3aa65",
+    "elyndor/experience-v17.css": "94c311c70e0a0a98e2bf37984d571cb87429e1a7f2dd49734d03214aa7dbf7c5",
+    "elyndor/experience-v18.css": "1a0ebacb8a48a64ad19a33a1ad3783d7491e9226828e1fce89fa076e352dafa9",
+    "elyndor/forest-v30.js": "0512cd9c56f33e982b5508fac3f1b840e11ba389ca9a99e8350a74c6f8f8c494",
+    "elyndor/game.js": "cc34805f91ed9c792f01a39803755a45eb7269528c156607cc87688c2f665100",
+    "elyndor/geography-v15.js": "1c4f1ed9d31b1000f21dd1adc87ea459c7d690d9724e44e67938bcd9738867c0",
+    "elyndor/geography-v17.js": "47c134ff94665344aad7a92450a0629ae664a4d2527c56750360becb82a205c5",
+    "elyndor/ground-v19.js": "cb00dbf13c8d52f0f7d0f4d5b5cf2e459ce583b6742d984258bddb12b3593785",
+    "elyndor/hydraulics-v11.js": "5c726339e3d9bbdbabf5420278ea762ab7c8e3b15f097b1d2106b581009a5f83",
+    "elyndor/hydraulics-v18.js": "e2a4f6e3817303ddb34df0c4641f329588efb279b67400afeb7207934a7f8bc7",
+    "elyndor/hydrology-v38.js": "1edd3ae3dd0cc354b9887e2835ca6e77704cac00009c986e481b60a7221066c3",
+    "elyndor/index.source.html": "62385e6af877176917d7a7e1ef75133087792fbdbd04203737c7119da56d8bc2",
+    "elyndor/interface-v24.css": "8dda060bd2c817450041e14b626e2cbcfd70404774a88b097a4c4fa28da27418",
+    "elyndor/interface-v24.js": "1c3ee9c6ff0b5d779edb6d5bece9e798f6d4d052471eb73ef73c86cfb11bd751",
+    "elyndor/interface-v28.css": "81721b0ee6e1548f676449fa9fc79430b4240846f6165cd1a4dfddd8ace6518e",
+    "elyndor/interiors-v12.js": "f93364544d90c88541e048c4e1b651dcbc7eb59e6d603a63cc68be54efd369f9",
+    "elyndor/interiors-v29.js": "6b5195c1af5f981fe40a0df1732ffdd1c49a1300d34ea136437f82d72557f0ff",
+    "elyndor/journey-v12.css": "a862def4a0a6de81572347ec36681bc5d17650f8d4778d464499a4fd4faefc6b",
+    "elyndor/journey-v12.js": "118f2d9c12a0ff8be3445736096c0e44feacbd42ad2c89e4ac7fb4e2d8b64c14",
+    "elyndor/landscape-v26.js": "0b58b96984178bbe1d09651ba9a1932ef1b7f8e9a280d1eb5e67eed8c17d4aa4",
+    "elyndor/lesson-v18.js": "34f1e964574c3cf2a49400ea3805b507863ff1ec771b616c201ccdf7342b4dfa",
+    "elyndor/level-layout-v13.js": "cee4550cd54fe58fdcce4e15673042ee74d9a77c7310a47ea0c2c4c5d9d72a9a",
+    "elyndor/levels-v39.js": "00730b570b983590a51520479c0f84ff457e4fc3295b848ae3078553ae33eeb5",
+    "elyndor/lighting-v34.css": "7d4776dcef5b6e6de137e691ed26ac206e07b4c7085ab4492b776c5fbdad3edd",
+    "elyndor/lighting-v34.js": "01273030bb4c70d02566c0330fa0fb3dce43d64d39848d40127baacb70b7c917",
+    "elyndor/loading-v11.css": "1b815416f8081a961ef185486ef83ec24d68e46f15a182b96e1fbb6bc9317817",
+    "elyndor/loading-v11.js": "5bdb74a3bd681f8e1bc1dd2a3d71e07019268c9d9904f70b34a3a286a17ed3b9",
+    "elyndor/loading-v14.css": "3b1952ae6c2b098360bd4bf44f0d4ec8437707341a55b1cf4bcc436172866d5d",
+    "elyndor/loading-v14.js": "bfa1212cc9bcba324678d3c55a4bc4235e8739e4fcb1f6105c5238a66217a5e0",
+    "elyndor/loading-v29.js": "d0d8be7cb4d9f7eb0abc244b6ff12bcd7787a03d94448187fcb2f70ed32b5183",
+    "elyndor/look-v30.js": "894f1737c9389790c56ebd6404e225d7398e2cc844405d06cf7a91647789e1a2",
+    "elyndor/materials-v14.js": "48899f011a470daef2c77a83434b0d8427877801fbc3469aa2d63fb7a4747dc6",
+    "elyndor/materials-v28.js": "048060afc3111366d674b2737f1c7396652c126d2ff45fb1c54287ca7651ba40",
+    "elyndor/menus-v26.css": "46ec4bff6c5dd8413d3c0b85450f3457e7854408a752d4c584cdbd25ec48c861",
+    "elyndor/menus-v26.js": "bf200ba42fa5ac98c94c5156eeae836148093c0a387fe8de6d2aa06078b50a3c",
+    "elyndor/menus-v27.css": "06885ed8f44e2944ff79c029017e1e5a434e917cf3c4600b08c4679abd08a455",
+    "elyndor/menus-v27.js": "20b3c8dd96d13376abe6a255530c42bf5ffaf8ecba8a4951725020dac9caf933",
+    "elyndor/mobile-v33.css": "89e597329067a230cee3d88f13ad7170ee826c959410aa520e42a1191872ee23",
+    "elyndor/mobile-v33.js": "3a7738aa98a7bb34017e1ab5ee798d67435c334857fcfaf6a8e1f5827820ff98",
+    "elyndor/monsters-v35.js": "54732d9f466cff884d413d91b8af3f929a5f55b5fb2aaeb9dfa310193658cb81",
+    "elyndor/movement.js": "7c3ee0536c030846cdeb0d381b687d2eb1f8fe473a6956b9b8a9fa6ead5a80a1",
+    "elyndor/navigation-v23.js": "6dee2ae6b32988d372a52bab47583e1653346104195b0a16727e05ef3ec96be3",
+    "elyndor/navigation-v32.js": "aad593b3bd9a1a939264de7172ed7b42a855e7b090bf025456bdd4033940e6fd",
+    "elyndor/onboarding-v16.js": "7d1615b7302d25a0b96a45e73549cdf5b4dfdb2cd1e484d74178aede99010d72",
+    "elyndor/open-world.js": "2dd82c61f9e73f9e41d156ea21e1eb2892f72169a2bd74b3d6a62603f0cf1b7b",
+    "elyndor/overworld-v13.js": "b9667a43cc3cc9bb8b6b183a987136d61f376d763fedf83ef60ec53d80f78dc0",
+    "elyndor/overworld-v16.js": "6ea62785f9982e4e10b13ecb4c1811bec319d856d3cf759206cc937abdea457a",
+    "elyndor/party-v11.js": "18c1a93548d157649d9fda620209a748a36d97a819f4a18bd16a66cef4aa7964",
+    "elyndor/performance-v13.js": "612bcd0d56ee5d274934a24b4f2ed334d249335f17eb0cf20020ecec8a2b44ac",
+    "elyndor/performance-v21.js": "ee6b301e16b307624b572efbcf11498ec357208fb52ff4644bd4f524995f9485",
+    "elyndor/placement-v11.js": "0c6342dee1c7458ac625e8c18d6b1fe48ab810571d3b594ce7a4cbba3e0c811c",
+    "elyndor/polish.js": "19484061f6f12aca5a73218b2021a5ae936b4fc7872b9a16cfae5b1a57059a0a",
+    "elyndor/presentation-v14.css": "ea019ac10b4478b998575c5ee821a46a1cabbb8585d78ef30debd198fe063c36",
+    "elyndor/presentation-v14.js": "5b6dc47b50b147b65dc8dca3b9f204e3d8d696619954bdb116f258cd1644d69e",
+    "elyndor/presentation-v25.js": "c1e3d6a721637aba96838733542c750271c1e2dcc7ef6780adc01c5a676acbc7",
+    "elyndor/quests-v29.js": "317b243d5361de9033b04c291c4f23605eeb54602a62e4351bf0be8201ba91c6",
+    "elyndor/reflections-v30.js": "7ee9a7ec04872b3e80c0d430b2796e698fe9281261772cf613364a1992ec8890",
+    "elyndor/relief-data-v15.js": "0b68b706c0eb2ca71aa917e3f9a10de430c1ee44a3eefdeab2a60361f90266f0",
+    "elyndor/relief-data-v18.js": "cdcb29ea7ab48004da7a06dde73bcaa21f35c0f553cc5f3ca8c8f20fc4a0434b",
+    "elyndor/render-v4.js": "28038f9c513a69daff588468d6e8d8290faa4e9f9885ab1330e4341ca97cd8d4",
+    "elyndor/requests-v16.js": "4973090f34befc3fbab0d976b81eb978cebf3bb79d77f8963dbc2eb41a7f6680",
+    "elyndor/responsive-v25.css": "7df129b7c81e67786aae5f7f1a066c4811f2df45c66317daf978fe42f68c5e4c",
+    "elyndor/review-v5.js": "8279ec154458a47f15bd517ddc927121029fdd62f9083a145b0fa2b31b02d702",
+    "elyndor/river-v17.js": "13640162dae98dcf0ff6f8aa3c24490ecd53c68b69c0f37080259949a124a529",
+    "elyndor/runtime-v28.js": "329fb2b64b6c2908f03dd96f6c670d1b75e0d7f89133984db0e5a85a10dd17ee",
+    "elyndor/runtime-v33.js": "0499d8d425556ffbd13687efcb477b532ba64ca8399ba9e3b9ee7b7e9b1b5411",
+    "elyndor/runtime-v35.js": "e0898bc828627c4e334b133ced1387dec5ad7dff3bb83a82b7f49c39ebe7f1a8",
+    "elyndor/runtime-v36.js": "0059d3c03fd1534d23ed389682b5171ed598275e7cb4228eb0fe30ca3cdce683",
+    "elyndor/scene-polish.js": "95b62d8ab17bc9c588d140107fb8b6984f4b9e583aff923390c8ecfd73f175df",
+    "elyndor/scenery.js": "74201621ca86ec04911bb90bd8202666afc5930ab7a5d7569e738d2e4beb5ce3",
+    "elyndor/services-v22.js": "96c92c4b40cb0a21a029e1e321c546ec2aaf3baf769586fc3776450d873f0c75",
+    "elyndor/settlements-v15.js": "6736893ea2e5bca6e9240601bad40ad495cc58dea6d93a9e485b0c3c408c0a6c",
+    "elyndor/speech-v21.js": "bb709ccb3e05800670c0a928ca07a976942a9eca293e240e393a21130464db00",
+    "elyndor/spell-art-v35.js": "564950cbe9ee6f081efdac62d0e3cf346a9306ba92bde1224dedb3e28e3a10ce",
+    "elyndor/style.css": "5e15143b71b1280e40fd9e4b9ae7f5dfb553800c78c2769e04569d2abfc0780d",
+    "elyndor/surfaces-v17.js": "561b5fe7813b27f6136f51ec650fa051899d3f03f390bf4d118a666004696cde",
+    "elyndor/systems/battle-depth.js": "8bfc2347e92e3d4bfec80a0cc94a71ff629229a29939cf1b47a12982ac976f8e",
+    "elyndor/systems/battle-intro.css": "f9be83083b7f1bf20795e9f1c80744da2d47c9dea5fe09d0927907904608097d",
+    "elyndor/systems/battle-intro.js": "491e64df91fd5e53e834a46fc59202783070b1f33241cf13c81b96fb4eb2a1b7",
+    "elyndor/systems/battle-stages.css": "481f9cba9c5e1d91aa6e986bde46af8293b2676ab98c3190dde19688028b2f9d",
+    "elyndor/systems/battle-stages.js": "1cfcc05caa9d6bfbdd8fde6386c3c92b3bbadad22a8a4f07b17bb07393db58c4",
+    "elyndor/systems/battle-variants.js": "bca14d3e4636b1546d28af0b9529a343c393a095db6bdcf14b60930620106a62",
+    "elyndor/systems/brookstead-interiors.js": "61187a664966d458f246a980bc8d5d37a087f50654ae3a3bada3ba492ab03579",
+    "elyndor/systems/building-entry.css": "93c41d2146b37a2e51b0e298ad21fc7af4ff4eb24e18eb44dd787108b69c807e",
+    "elyndor/systems/building-entry.js": "2bc60b5fc0b2e5d5ecf04f97d06592767ad2abb830c80c64f0144f897110b8ed",
+    "elyndor/systems/cartography.js": "12973893b2a8ebb9ad6f2884cfa4e04dd2a0bacf89118a3c3398bbeeb0d3bc08",
+    "elyndor/systems/clear-overworld.js": "311d18397df1858412418a5a8db14309fad59f90ddd688d9922b5b273f6b796c",
+    "elyndor/systems/cloud-shadows.js": "e6e1b117c8a32ce5d3e386168d1a32c31f6ea2cfb61919220384b93d32c7466b",
+    "elyndor/systems/coastal-ocean.js": "9b1c79c64fd342700c592415af925004907d7bba78512ff05b127626072a4b53",
+    "elyndor/systems/combat-environments.js": "23a3c2e3a5162600e7607b29d20406ac0ab481a76ae7d574d1f88b44323204e5",
+    "elyndor/systems/combat-feedback.js": "79064778dfb9b0817e836ab48c11bf766e6e953dc86c964218d92b4c6b4f4471",
+    "elyndor/systems/combat-help-layout.css": "914463a012282f77b18dd69cba537fe46c8898d7faf44c4afd5f678e053bc46d",
+    "elyndor/systems/combat-help-layout.js": "7aabae24d58ef65f2b2830069037b853520f4a275c367d948684e54139ccb08b",
+    "elyndor/systems/combat-information.css": "b9ec889b59f5ece81b4389849039e84d89c99abb42846bf2bc12a3e9adeaae33",
+    "elyndor/systems/combat-information.js": "6cdcdb92e32208825f58727f2a83fef50893792672329956b70786156503ffad",
+    "elyndor/systems/combat-interface.js": "c3ad29d80807e2f28c1814b9c34a10a5e8a5d340e958b93dc97e2041622d4f94",
+    "elyndor/systems/combat-review-layout.js": "e30b7ee25118f2ffbc1c6ea3b0331f9ac71707db4456ddf1e191b8d967b9e331",
+    "elyndor/systems/combat-validation.js": "33b2074bbd3c3195d86e43a43d75a35105396839ad4950ef91f4adfb559633d9",
+    "elyndor/systems/combat-voices.js": "f46b3cbe0cb2eca41aabb01f3b69c3b3a1c8298e6175319d718f47a7a037358a",
+    "elyndor/systems/combat.css": "cb0164306acf681a002a5c72682c367fe23cb1f3a9891ba7a6c40a3557f2fbaa",
+    "elyndor/systems/combat.js": "46fadecc80ea49768bd1de99c62b2d41b268d2352c3b00bc89d70b15a596af3d",
+    "elyndor/systems/compact-overworld.css": "65f3ea9181b014b929b31043b6dd622a70937a428453d65d747f8658500f4d58",
+    "elyndor/systems/compact-overworld.js": "7bc36c6354724b43c783150f9354eaf43ce520cd574fc989dd2b3825c52fc8d9",
+    "elyndor/systems/compass-hud.css": "606f7c929663a4e1ea628f38fdb50443f645c4f347d993e530923698513694c7",
+    "elyndor/systems/compass-hud.js": "060dd5cd9df59a826a260f735c44a1a5e769624ee225f5977657cd1f8d2603ed",
+    "elyndor/systems/concept-menus.css": "9951e8dfd3c1d66d107c8409fc87aa382ad8e96830d18413cd629444964cf894",
+    "elyndor/systems/concept-menus.js": "8ac5bd5d4cf09cee1a6acf84a1363602d3863d388d62c3d175f21f4801dbf640",
+    "elyndor/systems/dev-console.css": "cf573ccf10353bcf5ca9b8942aaa8e4c31891f82320ecc6312f34d08f489106e",
+    "elyndor/systems/dev-console.js": "4c53211053d182730a2317ce15d1533a129fb61ffbbb63ad159eaf1875b1e329",
+    "elyndor/systems/directional-travel.js": "04eb596a5c4d0b444107520468b75b273bebba446c9ec7f03efe1c03dc0ec12a",
+    "elyndor/systems/ecology.js": "056a6f8e48d1e399f78ebd98519a917dec641aa30b275582f66ab68da5c6a99c",
+    "elyndor/systems/environment-assets.js": "e2a499c4f29db95fca7ceaa22d9e8cceb174342a68f3dbf2f9840ac35fb2f451",
+    "elyndor/systems/events.js": "dba865f59d6a5115d35ebac128276381df4b5eae679e9dce199439d2efecbcb2",
+    "elyndor/systems/exact-atlas.js": "c925bd702e53519dfcd6d2e0708cc8cd9ee714d79128e25089bfccb63002f8eb",
+    "elyndor/systems/interaction-visibility.css": "be2e23dd1328a62b1de1ac1d91f00c5a9c689d4bd29290c7273e3b48e1212021",
+    "elyndor/systems/interaction-visibility.js": "31b5c6e720eff26dca778c2e9cc7f589b46a60ebec7b5dc9ca615f9ac1fb966c",
+    "elyndor/systems/jrpg-boundaries.js": "05193f4c537bcbfe26001ae5e873a1487334d3bf9bc5f401f13d475f47af8c33",
+    "elyndor/systems/jrpg-geography.js": "5da49b5288e6e2c2a32054f17eb39f987947a0add00452f4e31133ba9d89a8bc",
+    "elyndor/systems/jrpg-layout-data.js": "961342d308eda461e7b00049bc0cedb4ede25d9c76b3c1c720a9535b9b7c285a",
+    "elyndor/systems/jrpg-levels.js": "47b17ef3bb7349ea2f6eac98d8c08a7e1410126cc8c012c6e9d05e72228931dd",
+    "elyndor/systems/level-plans.js": "c6f539c13beef5d69a0d6add59907ef467c1119275ae63d6b803414352f5e65d",
+    "elyndor/systems/lifecycle.js": "c95afae17e175ac6380bbf2a2ab595c3eb33f46fa8df218c7f49075e15b7eeff",
+    "elyndor/systems/local-menu-actions.css": "6b41f11dd51c5aaebab87931eef2adfe074c329960437d3ac696ade76b391628",
+    "elyndor/systems/local-menu-actions.js": "609cde8c2b388f151ca170dc28356d4518235d87cf152ebc8daf67a59482c19a",
+    "elyndor/systems/local-review-fixes.css": "4b3c8dfad13650149d8f4c187f9069b55bf564034179dc7ca9ec4f7b2ef10a71",
+    "elyndor/systems/local-review-fixes.js": "d39af26745c140097235e9177c28c722a5e1703501e9b94068c20d2c37445d01",
+    "elyndor/systems/map-discovery.js": "547aaee87f7c22ed8f15e1c49d9e57a57d4b0856c6c0d4263acb93b2ad0cf44f",
+    "elyndor/systems/minimap.css": "dce3d4ed60a3cfef5418bd29bb2d1826762fb3b0eabc7129334b540f5bb566f8",
+    "elyndor/systems/minimap.js": "7f63ab23d7c6e7c41c945bf2e7be2c310932a06303f891e6d6b22936f0a2532f",
+    "elyndor/systems/mobile-battle-view.css": "2575408560da453d5e2fa1321e8e711a5580d7928b8338a6ea01fede261e7efd",
+    "elyndor/systems/mobile-battle-view.js": "13e72dd3da8466aa53b64d517d2029ae2ef634158a6a5c6fd6a8d3486a0056aa",
+    "elyndor/systems/mobile-layout.css": "79125d38c0896773281a80091a92ebf10ad955324c88768ad85fdd475bc5e8db",
+    "elyndor/systems/mobile-layout.js": "08c8500fe71650219c6d08a7dbfeed47698bf31a5015626f207dc49de9e726c7",
+    "elyndor/systems/natural-canopies.js": "cd2c9a254606c083c2521e0dc24ddcfe9b3aeb6b3ab66207f897822bf6d29fac",
+    "elyndor/systems/nearby-scene-cache.js": "7126ed0b7af6e8c4140f702c34825a976eada029160afd9b91920472f7002f55",
+    "elyndor/systems/no-selection.css": "acfd9eb6e4ac48713eb9a1c30fe5b4ed40713a098f8f8d12c4f72953f954715f",
+    "elyndor/systems/no-selection.js": "71defebf18f08f5a200ed9a36a81bfecc6149b96958b779fc55b1119c39c5062",
+    "elyndor/systems/npc-conversations.js": "8bbfe887367e7c598ade745d8713b033e9d47fcda6887213ae6b46894d51052f",
+    "elyndor/systems/overworld-routes.js": "3d12f90a5e35a11bcfe7ab7b12212f15e5f9239cab6bd87a803c46ad4e193ab3",
+    "elyndor/systems/persistence.css": "680deb4d0f06db4a1a695adccb7b7b86f1c239448cbeba6546d4a2fb885e0b4a",
+    "elyndor/systems/persistence.js": "d8ab4af0703f77ffeb1c4b38920c0891d2c871c71cc98910bf1caf1524acb237",
+    "elyndor/systems/phone-interface.css": "ebeaf0405fccb6f8796c7ba3c567b96ae162732cca98465020f5c74453b5261c",
+    "elyndor/systems/phone-interface.js": "e3c1b13925271dafbf7fb18c2943931db2f538a391833f127d0e02574d8b56af",
+    "elyndor/systems/poi-atmosphere.js": "26e43843af64488ab65ac8e509a75c4332afcd2c17355146ffac566cbf85c31d",
+    "elyndor/systems/poi-dioramas.js": "3502f9411fc7363c333e0bddd13bcab3bf6906477e03422c0f03f99b8b58ace7",
+    "elyndor/systems/poi-entries.js": "26b8ce78cc8904d7883ebbdae1698f30b6a778f6d6663a94781bcefbd92bfa17",
+    "elyndor/systems/poi-exits.css": "144175e0fabeb6c7a321c80df449bab668aa2e78f5fb871472ad3508a46ef788",
+    "elyndor/systems/poi-exits.js": "b6838bcb85c17597b0af3568aaec62754183f336b68ddca91543ca41416caf88",
+    "elyndor/systems/poi-lighting.js": "b70d8e680afb2c480d9a325ba13415dabe4e3a4fedbc5c923ead70c2f156fab0",
+    "elyndor/systems/poi-transitions.css": "1283821b4f4081af8b725902a8bce5054af491c37573ad14c5b300552debfd56",
+    "elyndor/systems/poi-transitions.js": "be843ee54b9500ae392a59dc0af7a8dbab0d09c1927e20935157e5f46b4c54fa",
+    "elyndor/systems/quest-combat-fixes.css": "3bb7d29cf2ba974cfaed0ee89f78ba766d41f0388c8674db597af9f8d46da69e",
+    "elyndor/systems/quest-combat-fixes.js": "d203015e28ba81df0fb62ef178908269f03ea0fd6dfbe4892d3ff2e0d68b9578",
+    "elyndor/systems/quest-rewards.css": "dcccd355d2225d1ffd4e1bee3d487378d8f9c594c2a2a6cf2e90d8c371d7b9f0",
+    "elyndor/systems/quest-rewards.js": "7e7c93c4887feb1b396ba91f50bc17cf65773b993764fdca8a74f0dc463b525f",
+    "elyndor/systems/quest-tracking.js": "7d5990ce86150196eb5a711e7c75f77bd12de675429ab53a2f7acc562c90fc99",
+    "elyndor/systems/rendering.js": "9d0b1fb2ff0b90820f2943e5d0e58f8fa954bd8857d4d729669a4228b89b8496",
+    "elyndor/systems/requests.js": "9c2efdc3a4811cf1621878847f5d344a8486124533be7b53e62c80e124e12fff",
+    "elyndor/systems/retained-continent.js": "4503a8d12bb83e5f1cf6ff1603389cf2c9cbcdf3d2be9c5a272c48a0033b7b16",
+    "elyndor/systems/runtime-budget.js": "b0bb75ff6003c8ad6db45daa62bdcfc4f4f8236dc801d0f4b48957f6a1d990aa",
+    "elyndor/systems/runtime.js": "e86c7abb85a143a6e1f65cc1cd644683c8758c88cb952eff4276c94d6ffa025c",
+    "elyndor/systems/save-magic.js": "5fbebd8a7389891f018197f08ef75e8cbbbb6f44ff1d0b20760d5938e9bc4036",
+    "elyndor/systems/save-rune.js": "aff2c400e305c8709b0240e1e73124be70d9f37ae0379b0f6755ee14e023f453",
+    "elyndor/systems/sprite-contact-depth.js": "8e5a9671f834c3f692d1ef5aeafc96b4136db690d4fbe977b52f642aeef7edda",
+    "elyndor/systems/sunlight.js": "7ac70c7b66ce62c28786dc320e27394d3270f786660f40e18c0f40ffa5a5ed57",
+    "elyndor/systems/surface-pbr.js": "fe3dd0ff666405972aba1efb675f43d1f64b40934de40bb97a328748caab9bf3",
+    "elyndor/systems/terrain-seating.js": "5dd7f5e73fc6ec9cfc3da22f5418654ddd9df1ac0bf0905034608c49fcc994ba",
+    "elyndor/systems/transition-graphics.js": "90e93682e5d3655b99d45bbd745c0ec5cadc3c927d91ae4525b197eb781da981",
+    "elyndor/systems/transition-speed.js": "aee62f70267ec30347393f21f06a99127defbb2ce9499ce677d92e0ece7345e8",
+    "elyndor/systems/traversal-composition.js": "a01914957e5c0ea16fa457dbac04e8a4ac02320ec7dd08ac3fb4308d705810f7",
+    "elyndor/systems/traversal-terrain.js": "2f3e1fa316e0b0243966bade2abba45ec16a1e07351e39ce4e6072418b441342",
+    "elyndor/systems/world-kit.js": "606c7c4d0c66e9fcaf9a80e516a0a1a2e87ff8607b6c6bbc31fe0b24d36e0083",
+    "elyndor/systems/world-landmarks.js": "c68fd34c09fe6d93ef5aa54c0f9130afa5d3453dd6d77add05c34073ebb56631",
+    "elyndor/title-v19.css": "1088ad9430ba32eb846af17f9fb6a02b9b57b59ec4cfd33db236c0be11fe89e6",
+    "elyndor/title-v19.js": "1ec903b28177e2c108c827eddec8b4c38fddf40c05a51be8ad54e4fb250686b5",
+    "elyndor/title-v26.css": "90f19485a2c1973ce341f99aa302868d61d4bd0d9869d6d41fc42aa4528604f2",
+    "elyndor/title-v26.js": "02e443b257e70a6d4c990cc175d477b503f92f87d6792bcf069dd18c5704ea54",
+    "elyndor/tools/asset_bundle_v36.py": "24e0a132da7e0b00c80f66a16b825658e794e854c56c529dfe83e6f6bff74fd6",
+    "elyndor/tools/bake-traversal-terrain.mjs": "9689a626aaf149f7ce24ff30eec92f7e50221104a2ee1a1d855d1ba4e13a5344",
+    "elyndor/tools/bake-world-v36.mjs": "250b0387bfd6018d4315b153d890ec5be90b17f9e1ef3e8e7899091d35599643",
+    "elyndor/tools/build-v7.py": "4810e043a6c70fe1bd76a0a42f05250b0e95885c228d7205ad87831664ff7afc",
+    "elyndor/tools/build.py": "907fea80088c5da1ea1227e7265e7830a2153355fe89433ca64e6f75178f3479",
+    "elyndor/tools/pixellab-pack.py": "082d0e91a9498a5d6aefffd38f415701eac79a916b3daad19e2dedefb6337cff",
+    "elyndor/town-events.js": "7642f48c3032905780c38b300fa4faf1c40f0281de259fae617460339bb72c72",
+    "elyndor/town-v8.css": "6bf331de7d64501d7e28119a645af1f18be2fa78b21a97d035ed4a8cfd740c34",
+    "elyndor/town-v8.js": "530c2d8c4880a0189fbb1d6307b470ecddfda26be1c15f2154c0aa383a0356c7",
+    "elyndor/travel-v15.js": "5eb4ded741deb0330da64235a45306d60270760433601d46ffe89f8b8fa90a84",
+    "elyndor/tutorial-v17.js": "e6b0a46d4b8f701ab2b70dc1f98f774cba06c0a7d6cf590266896752e79043f7",
+    "elyndor/ui.js": "c400bb119e29ce00440b86c4c2f9e1b3914a66907309c80f77a97a6c445f5d7a",
+    "elyndor/visibility-v11.js": "46bca5ce105c76e597ebc494265160c51986031c1479caae7a7d517e708b313b",
+    "elyndor/visibility-v18.js": "93dedd95f1464d59879d89b9f2454db8ff4afccdcd8a40a93781f317f8f4b7d2",
+    "elyndor/visibility-v21.js": "64925292d86baae56eb4ee4d0fb89fd7cfa16762fd20bd2486290ea0f0ae63f0",
+    "elyndor/visual-v7.css": "f33d01b48b19673df4e86708b2f57724c138d27cd4fb60fee6c846e1be02d83f",
+    "elyndor/visual-v7.js": "66aea562ceaa61ebfd15bca1c9864331364e3997896a9cd2dfe2f577a17df6a0",
+    "elyndor/voices-v12.js": "d70bc85b66f01fc34f446c38810fb4893e5eddba467911481639de2c5b2073a2",
+    "elyndor/water-v20.js": "da1bb6abc2d6b2f5dd200da56ffea14e7adda326ba5af470c62ed2c7db3e1cd2",
+    "elyndor/water-v28.js": "9b15e31e778f9ac6efccf8c2ac6c5a24a17d7c1257efdbbb6c554c4873e9e7d3",
+    "elyndor/water-v32.js": "8168717f1ac1f1ae7e8dd634c649a4be2a4a99b41397ef296cc9ab5722298a62",
+    "elyndor/water.js": "ff025447b88030d813920f6771ad95339618c6c33dcbb229e592ca4c366554da",
+    "elyndor/weather-v12.js": "e174822cd5bee3ed4d60411d6d88a77add28fd8313179c8fa41ac70100a03e39",
+    "elyndor/weather-v15.js": "23c355fe50c54144b440039a5d12ebe5f30d29324b3b660b444840eeee642a73",
+    "elyndor/weather-v17.js": "da6e827a31a703a2b02f2391f1092caf913f3d9e7a1478f5877e192a4b50341f",
+    "elyndor/world-art-v38.js": "a8170df169ada8ee8c2c89f3ca282bcec304fc94d8b9323b7e325d473adf608f",
+    "elyndor/world-bake-v36.js": "dbfa9f0cc95fb4b56f1dae9abbd473cbe3663fb17c303bb274b5292bcc3d244e",
+    "elyndor/world-design.js": "ac54b8d62582cb6d33efcc2d5a125c931c33cd009d3ca01bb0161d47149fcc62",
+    "elyndor/world-v18.js": "60134f53936cfa5ab074ccae8eebae437b3d72c04e694f9e0da269fec8d71f7d",
+    "elyndor/world-v26.js": "523e2676c98c89960804dc265b25ebca8797f999572d7ea5144d79d8964cfc2f",
+    "elyndor/world-v27.js": "0f28e732e8e39736df5875aa83189c9e6c9357ced68b60f5efd403f4bb66f0a6",
+    "elyndor/world.js": "b7b615da54b87cba7b6b3fdbdeeb4ced4a7715ac5ad91242f57d8277ca856acf"
+  },
+  "finalStandalone": {
+    "pass": true,
+    "artifact": {
+      "file": "index.html",
+      "bytes": 65171744,
+      "sha256": "15e6e8b739bdc9326c28a583f28308498b83c2f345b6cd828e3a7a6613e7291b",
+      "offline": true
+    },
+    "checks": {
+      "timings": [
+        {
+          "to": "poi:brookstead",
+          "ms": 8539,
+          "load": 4067.600000023842
+        },
+        {
+          "to": "room:brookInn",
+          "ms": 2547,
+          "load": 73.79999995231628
+        },
+        {
+          "to": "poi:brookstead",
+          "ms": 1115,
+          "load": 39.199999928474426
+        },
+        {
+          "to": "room:brookShop",
+          "ms": 617,
+          "load": 89.79999995231628
+        },
+        {
+          "to": "poi:brookstead",
+          "ms": 687,
+          "load": 18.09999990463257
+        },
+        {
+          "to": "room:brookShop",
+          "ms": 585,
+          "load": 62.59999990463257
+        },
+        {
+          "to": "room:brookForge",
+          "ms": 1010,
+          "load": 46.699999928474426
+        },
+        {
+          "to": "room:highmereInn",
+          "ms": 602,
+          "load": 61.299999952316284
+        },
+        {
+          "to": "overworld",
+          "ms": 822,
+          "load": 25.200000047683716
+        },
+        {
+          "to": "overworld",
+          "ms": 653,
+          "load": 35.299999952316284
+        },
+        {
+          "to": "overworld",
+          "ms": 670,
+          "load": 47.39999997615814
+        },
+        {
+          "to": "overworld",
+          "ms": 567,
+          "load": 23.600000023841858
+        },
+        {
+          "to": "overworld",
+          "ms": 539,
+          "load": 24.399999976158142
+        },
+        {
+          "to": "overworld",
+          "ms": 537,
+          "load": 23.399999976158142
+        },
+        {
+          "to": "poi:fern",
+          "ms": 2424,
+          "load": 1873
+        },
+        {
+          "to": "overworld",
+          "ms": 567,
+          "load": 25.399999976158142
+        },
+        {
+          "to": "poi:brookstead",
+          "ms": 4226,
+          "load": 3055.2000000476837
+        }
+      ],
+      "changelog": {
+        "version": "Alpha Version 1.20",
+        "items": 23,
+        "visible": true
+      },
+      "localMap": {
+        "complete": true,
+        "layout": 51924,
+        "requestTargets": [
+          {
+            "free": true,
+            "route": true
+          },
+          {
+            "free": true,
+            "route": true
+          },
+          {
+            "free": true,
+            "route": true
+          }
+        ]
+      },
+      "requestReaccepted": true,
+      "inn": {
+        "menu": "inn",
+        "gold": 180,
+        "face": "south",
+        "expected": "south",
+        "after": {
+          "gold": 165,
+          "hp": 290,
+          "max": 290
+        }
+      },
+      "returns": [
+        {
+          "ms": 556,
+          "world": "37cd7e49-9abb-4521-9c88-2dfcee20bb0d",
+          "geometry": 1100,
+          "directRain": 0,
+          "hits": 2
+        },
+        {
+          "ms": 522,
+          "world": "37cd7e49-9abb-4521-9c88-2dfcee20bb0d",
+          "geometry": 1100,
+          "directRain": 0,
+          "hits": 3
+        },
+        {
+          "ms": 521,
+          "world": "37cd7e49-9abb-4521-9c88-2dfcee20bb0d",
+          "geometry": 1100,
+          "directRain": 0,
+          "hits": 4
+        }
+      ],
+      "chest": {
+        "angle": -1.65,
+        "open": true,
+        "looted": true,
+        "once": true,
+        "key": "entrance:-98:119"
+      },
+      "services": [
+        {
+          "room": "brookShop",
+          "menu": "shop",
+          "face": "southeast",
+          "expected": "southeast"
+        },
+        {
+          "room": "brookForge",
+          "menu": "shop",
+          "face": "south",
+          "expected": "south"
+        },
+        {
+          "room": "highmereInn",
+          "menu": "inn",
+          "face": "southeast",
+          "expected": "southeast"
+        }
+      ],
+      "entries": [
+        {
+          "key": "brookstead",
+          "side": "west",
+          "scene": "brookstead",
+          "arrival": {
+            "kind": "poi",
+            "poi": "brookstead",
+            "entrance": "brookstead:west:0",
+            "side": "west",
+            "approach": "west",
+            "x": -142.5,
+            "z": 122,
+            "fallback": false
+          },
+          "free": true
+        },
+        {
+          "key": "brookstead",
+          "side": "east",
+          "scene": "brookstead",
+          "arrival": {
+            "kind": "poi",
+            "poi": "brookstead",
+            "entrance": "brookstead:east:1",
+            "side": "east",
+            "approach": "east",
+            "x": -47.34213026258059,
+            "z": 94.97987469043645,
+            "fallback": false
+          },
+          "free": true
+        },
+        {
+          "key": "fern",
+          "side": "south",
+          "scene": "fern",
+          "arrival": {
+            "kind": "poi",
+            "poi": "fern",
+            "entrance": "fern:south:0",
+            "side": "south",
+            "approach": "south",
+            "x": 94,
+            "z": 119.5,
+            "fallback": false
+          },
+          "free": true
+        },
+        {
+          "key": "fern",
+          "side": "east",
+          "scene": "fern",
+          "arrival": {
+            "kind": "poi",
+            "poi": "fern",
+            "entrance": "fern:east:1",
+            "side": "east",
+            "approach": "east",
+            "x": 141.75,
+            "z": 76,
+            "fallback": false
+          },
+          "free": true
+        },
+        {
+          "key": "highmere",
+          "side": "west",
+          "scene": "highmere",
+          "arrival": {
+            "kind": "poi",
+            "poi": "highmere",
+            "entrance": "highmere:west:1",
+            "side": "west",
+            "approach": "west",
+            "x": -133.75,
+            "z": -82,
+            "fallback": false
+          },
+          "free": true
+        },
+        {
+          "key": "highmere",
+          "side": "east",
+          "scene": "highmere",
+          "arrival": {
+            "kind": "poi",
+            "poi": "highmere",
+            "entrance": "highmere:east:2",
+            "side": "east",
+            "approach": "east",
+            "x": -23.25,
+            "z": -80,
+            "fallback": false
+          },
+          "free": true
+        }
+      ],
+      "restraint": {
+        "marker": true,
+        "available": true,
+        "roadYaw": 0
+      },
+      "pause": "Resume game\nEsc\nMain menu",
+      "mobile": [
+        {
+          "field": {
+            "top": 92,
+            "height": 300,
+            "party": 62,
+            "dock": 176,
+            "landscape": false
+          },
+          "rects": [
+            {
+              "id": "bren",
+              "left": 140.89737039664703,
+              "right": 201.5589566030587,
+              "top": 291.32876912044907,
+              "bottom": 346.47566710241625,
+              "photoY": 0.19456488360423063,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -435.4964078649988,
+                2.8669309476169413,
+                18.714643608916273
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "soren",
+              "left": 167.2619641930356,
+              "right": 228.89769353236193,
+              "top": 282.4295377268629,
+              "bottom": 338.9289566616973,
+              "photoY": 0.216689363403687,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -434.0464078649988,
+                2.8669309476169413,
+                17.81464360891627
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 139
+              }
+            },
+            {
+              "id": "tavin",
+              "left": 194.8559235211957,
+              "right": 251.06748756530988,
+              "top": 276.04874774228745,
+              "bottom": 332.26031178640164,
+              "photoY": 0.2371908321413837,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -432.5964078649988,
+                2.8669309476169413,
+                16.914643608916272
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "mira",
+              "left": 217.89321984757783,
+              "right": 274.2725296262968,
+              "top": 273.9949741603471,
+              "bottom": 325.67600933984636,
+              "photoY": 0.25624156265857817,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -431.14640786499876,
+                2.8669309476169413,
+                16.014643608916273
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "lysa",
+              "left": 239.0584853101194,
+              "right": 296.1891917454948,
+              "top": 268.2133406679496,
+              "bottom": 320.5831523843816,
+              "photoY": 0.2739902799843704,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -429.6964078649988,
+                2.8669309476169413,
+                15.114643608916271
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "wolf",
+              "left": 17.342965441200704,
+              "right": 101.50779128733355,
+              "top": 275.0288027363451,
+              "bottom": 323.66801655028854,
+              "photoY": 0.26129651805602905,
+              "scale": [
+                1,
+                1.0207962578301313,
+                1
+              ],
+              "position": [
+                -441.7964078649988,
+                2.8669309476169413,
+                15.764643608916272
+              ],
+              "frame": {
+                "action": "enemyIdle",
+                "index": 2,
+                "cell": 10
+              }
+            }
+          ],
+          "controls": [
+            {
+              "id": "battle-party",
+              "x": 8,
+              "y": 498,
+              "width": 304,
+              "height": 62,
+              "top": 498,
+              "right": 312,
+              "bottom": 560,
+              "left": 8
+            },
+            {
+              "id": "battle-command",
+              "x": 8,
+              "y": 390,
+              "width": 304,
+              "height": 100,
+              "top": 390,
+              "right": 312,
+              "bottom": 490,
+              "left": 8
+            }
+          ],
+          "covered": [],
+          "builds": 2,
+          "overflow": false
+        },
+        {
+          "field": {
+            "top": 92,
+            "height": 576,
+            "party": 62,
+            "dock": 176,
+            "landscape": false
+          },
+          "rects": [
+            {
+              "id": "bren",
+              "left": 172.46527816413294,
+              "right": 244.02568632092917,
+              "top": 500.6090119106062,
+              "bottom": 565.6639301045137,
+              "photoY": 0.21200096648913613,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -435.4964078649988,
+                2.8669309476169413,
+                18.714643608916273
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "soren",
+              "left": 203.6943389018546,
+              "right": 277.4873107610287,
+              "top": 489.33958455731175,
+              "bottom": 556.9831425424,
+              "photoY": 0.22538302361703622,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -434.0464078649988,
+                2.8669309476169413,
+                17.81464360891627
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 139
+              }
+            },
+            {
+              "id": "tavin",
+              "left": 237.31528583612587,
+              "right": 305.55643854510214,
+              "top": 480.8577391223868,
+              "bottom": 549.0988918313631,
+              "photoY": 0.23814436787913618,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -432.5964078649988,
+                2.8669309476169413,
+                16.914643608916272
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "mira",
+              "left": 266.209116067658,
+              "right": 335.55611083521796,
+              "top": 477.52728700551484,
+              "bottom": 541.0953670377327,
+              "photoY": 0.25032720707832556,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -431.14640786499876,
+                2.8669309476169413,
+                16.014643608916273
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "lysa",
+              "left": 293.45159569946077,
+              "right": 364.5965106309405,
+              "top": 469.52736411596044,
+              "bottom": 534.7435330033125,
+              "photoY": 0.26197000705411055,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -429.6964078649988,
+                2.8669309476169413,
+                15.114643608916271
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "wolf",
+              "left": 20.265198110215877,
+              "right": 122.74706501988862,
+              "top": 479.0629267102598,
+              "bottom": 538.6116510208725,
+              "photoY": 0.25361392968408575,
+              "scale": [
+                1,
+                1.0207962578301313,
+                1
+              ],
+              "position": [
+                -441.7964078649988,
+                2.8669309476169413,
+                15.764643608916272
+              ],
+              "frame": {
+                "action": "enemyIdle",
+                "index": 2,
+                "cell": 10
+              }
+            }
+          ],
+          "controls": [
+            {
+              "id": "battle-party",
+              "x": 8,
+              "y": 774,
+              "width": 374,
+              "height": 62,
+              "top": 774,
+              "right": 382,
+              "bottom": 836,
+              "left": 8
+            },
+            {
+              "id": "battle-command",
+              "x": 8,
+              "y": 666,
+              "width": 374,
+              "height": 100,
+              "top": 666,
+              "right": 382,
+              "bottom": 766,
+              "left": 8
+            }
+          ],
+          "covered": [],
+          "builds": 3,
+          "overflow": false
+        },
+        {
+          "field": {
+            "top": 92,
+            "height": 664,
+            "party": 62,
+            "dock": 176,
+            "landscape": false
+          },
+          "rects": [
+            {
+              "id": "bren",
+              "left": 190.2141982419988,
+              "right": 268.9230504397193,
+              "top": 565.2177043447163,
+              "bottom": 636.7712081989666,
+              "photoY": 0.21327552105235198,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -435.4964078649988,
+                2.8669309476169413,
+                18.714643608916273
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "soren",
+              "left": 224.57327700473272,
+              "right": 305.8262128040986,
+              "top": 552.7595242630001,
+              "bottom": 627.2413825718379,
+              "photoY": 0.22602869104011908,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -434.0464078649988,
+                2.8669309476169413,
+                17.81464360891627
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 139
+              }
+            },
+            {
+              "id": "tavin",
+              "left": 261.64156969075924,
+              "right": 336.859647909107,
+              "top": 543.3502891756666,
+              "bottom": 618.5683673940143,
+              "photoY": 0.2382162520435755,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -432.5964078649988,
+                2.8669309476169413,
+                16.914643608916272
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "mira",
+              "left": 293.56755697144195,
+              "right": 370.0805691119358,
+              "top": 539.6087836957396,
+              "bottom": 609.7457131409967,
+              "photoY": 0.24987501529501066,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -431.14640786499876,
+                2.8669309476169413,
+                16.014643608916273
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "lysa",
+              "left": 323.7285136130211,
+              "right": 402.2999252459865,
+              "top": 530.7062306360102,
+              "bottom": 602.7300211726665,
+              "photoY": 0.26103866549931226,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -429.6964078649988,
+                2.8669309476169413,
+                15.114643608916271
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "wolf",
+              "left": 22.270541428555997,
+              "right": 135.254738772675,
+              "top": 541.3252816482998,
+              "bottom": 607.0041653582219,
+              "photoY": 0.2530243248996854,
+              "scale": [
+                1,
+                1.0207962578301313,
+                1
+              ],
+              "position": [
+                -441.7964078649988,
+                2.8669309476169413,
+                15.764643608916272
+              ],
+              "frame": {
+                "action": "enemyIdle",
+                "index": 2,
+                "cell": 10
+              }
+            }
+          ],
+          "controls": [
+            {
+              "id": "battle-party",
+              "x": 8,
+              "y": 862,
+              "width": 414,
+              "height": 62,
+              "top": 862,
+              "right": 422,
+              "bottom": 924,
+              "left": 8
+            },
+            {
+              "id": "battle-command",
+              "x": 8,
+              "y": 754,
+              "width": 414,
+              "height": 100,
+              "top": 754,
+              "right": 422,
+              "bottom": 854,
+              "left": 8
+            }
+          ],
+          "covered": [],
+          "builds": 4,
+          "overflow": false
+        },
+        {
+          "field": {
+            "top": 48,
+            "height": 154,
+            "party": 54,
+            "dock": 118,
+            "landscape": true
+          },
+          "rects": [
+            {
+              "id": "bren",
+              "left": 262.57148238255706,
+              "right": 309.15628461154915,
+              "top": 142.00183752273676,
+              "bottom": 184.3516588295987,
+              "photoY": 0.339021399027995,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -435.4964078649988,
+                2.8669309476169413,
+                18.81464360891627
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "soren",
+              "left": 288.0428943485131,
+              "right": 334.3546140723504,
+              "top": 135.58427698798297,
+              "bottom": 178.03668701568785,
+              "photoY": 0.35636823862555944,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -433.6964078649988,
+                2.8669309476169413,
+                17.86464360891627
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 139
+              }
+            },
+            {
+              "id": "tavin",
+              "left": 313.0142648058453,
+              "right": 354.4225687914952,
+              "top": 131.25413868080057,
+              "bottom": 172.66244266645046,
+              "photoY": 0.3717874992615792,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -431.89640786499876,
+                2.8669309476169413,
+                16.914643608916272
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "mira",
+              "left": 333.47291570791214,
+              "right": 374.2619064749584,
+              "top": 130.18366005192416,
+              "bottom": 167.57356913455865,
+              "photoY": 0.38558355829827595,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -430.0964078649988,
+                2.8669309476169413,
+                15.964643608916273
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "lysa",
+              "left": 351.6738092550701,
+              "right": 392.328916001189,
+              "top": 126.4675479632403,
+              "bottom": 163.73472735676077,
+              "photoY": 0.3979999132951432,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -428.2964078649988,
+                2.8669309476169413,
+                15.014643608916272
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "wolf",
+              "left": 168.08034217233174,
+              "right": 230.0701805509073,
+              "top": 130.74902209929886,
+              "bottom": 166.1341410931721,
+              "photoY": 0.38897601424944306,
+              "scale": [
+                1,
+                1.0207962578301313,
+                1
+              ],
+              "position": [
+                -442.2964078649988,
+                2.8669309476169413,
+                15.714643608916273
+              ],
+              "frame": {
+                "action": "enemyIdle",
+                "index": 2,
+                "cell": 10
+              }
+            }
+          ],
+          "controls": [
+            {
+              "id": "battle-party",
+              "x": 8,
+              "y": 258,
+              "width": 552,
+              "height": 54,
+              "top": 258,
+              "right": 560,
+              "bottom": 312,
+              "left": 8
+            },
+            {
+              "id": "battle-command",
+              "x": 8,
+              "y": 202,
+              "width": 552,
+              "height": 48,
+              "top": 202,
+              "right": 560,
+              "bottom": 250,
+              "left": 8
+            }
+          ],
+          "covered": [],
+          "builds": 5,
+          "overflow": false
+        },
+        {
+          "field": {
+            "top": 48,
+            "height": 209,
+            "party": 54,
+            "dock": 118,
+            "landscape": true
+          },
+          "rects": [
+            {
+              "id": "bren",
+              "left": 304.41844037632745,
+              "right": 367.6406719728166,
+              "top": 175.57392235228562,
+              "bottom": 233.04867984016974,
+              "photoY": 0.3139557655076164,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -435.4964078649988,
+                2.8669309476169413,
+                18.81464360891627
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "soren",
+              "left": 338.98678518726774,
+              "right": 401.8384048124756,
+              "top": 166.86437591226263,
+              "bottom": 224.4783609498621,
+              "photoY": 0.33400364438284835,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -433.6964078649988,
+                2.8669309476169413,
+                17.86464360891627
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 139
+              }
+            },
+            {
+              "id": "tavin",
+              "left": 372.87650223650434,
+              "right": 429.0734862170292,
+              "top": 160.9877596382294,
+              "bottom": 217.18474361875423,
+              "photoY": 0.3518238051007671,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -431.89640786499876,
+                2.8669309476169413,
+                16.914643608916272
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "mira",
+              "left": 400.6418141750236,
+              "right": 455.9983016445864,
+              "top": 159.53496721332567,
+              "bottom": 210.2784152540439,
+              "photoY": 0.36776801897140654,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -430.0964078649988,
+                2.8669309476169413,
+                15.964643608916273
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "lysa",
+              "left": 425.34302684616665,
+              "right": 480.51781457304213,
+              "top": 154.49167223582614,
+              "bottom": 205.06855855560394,
+              "photoY": 0.3821176980382508,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -428.2964078649988,
+                2.8669309476169413,
+                15.014643608916272
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "wolf",
+              "left": 176.18046437673596,
+              "right": 260.30953074765995,
+              "top": 160.30224427761988,
+              "bottom": 208.32490576930505,
+              "photoY": 0.3716887069800803,
+              "scale": [
+                1,
+                1.0207962578301313,
+                1
+              ],
+              "position": [
+                -442.2964078649988,
+                2.8669309476169413,
+                15.714643608916273
+              ],
+              "frame": {
+                "action": "enemyIdle",
+                "index": 2,
+                "cell": 10
+              }
+            }
+          ],
+          "controls": [
+            {
+              "id": "battle-party",
+              "x": 8,
+              "y": 313,
+              "width": 651,
+              "height": 54,
+              "top": 313,
+              "right": 659,
+              "bottom": 367,
+              "left": 8
+            },
+            {
+              "id": "battle-command",
+              "x": 8,
+              "y": 257,
+              "width": 651,
+              "height": 48,
+              "top": 257,
+              "right": 659,
+              "bottom": 305,
+              "left": 8
+            }
+          ],
+          "covered": [],
+          "builds": 6,
+          "overflow": false
+        },
+        {
+          "field": {
+            "top": 48,
+            "height": 224,
+            "party": 54,
+            "dock": 118,
+            "landscape": true
+          },
+          "rects": [
+            {
+              "id": "bren",
+              "left": 390.83124710190117,
+              "right": 458.5909594349805,
+              "top": 184.7299454876171,
+              "bottom": 246.32968557032544,
+              "photoY": 0.3424199132234401,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -435.4964078649988,
+                2.8669309476169413,
+                18.81464360891627
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "soren",
+              "left": 427.8805735978372,
+              "right": 495.24307501432787,
+              "top": 175.3953119825207,
+              "bottom": 237.1442720228187,
+              "photoY": 0.35940053345853995,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -433.6964078649988,
+                2.8669309476169413,
+                17.86464360891627
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 139
+              }
+            },
+            {
+              "id": "tavin",
+              "left": 464.2025669903205,
+              "right": 524.432827333084,
+              "top": 169.0969289902554,
+              "bottom": 229.32718933301888,
+              "photoY": 0.3744942689884998,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -431.89640786499876,
+                2.8669309476169413,
+                16.914643608916272
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "mira",
+              "left": 493.960604666054,
+              "right": 553.2900457817576,
+              "top": 167.53986916643518,
+              "bottom": 221.92519146844893,
+              "photoY": 0.38799907128551614,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -430.0964078649988,
+                2.8669309476169413,
+                15.964643608916273
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "lysa",
+              "left": 520.4346316437384,
+              "right": 579.5693323653658,
+              "top": 162.13461521925865,
+              "bottom": 216.3414216098339,
+              "photoY": 0.4001532972884814,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -428.2964078649988,
+                2.8669309476169413,
+                15.014643608916272
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "wolf",
+              "left": 253.38958861430066,
+              "right": 343.5566262558652,
+              "top": 168.36221396261652,
+              "bottom": 219.83147795370493,
+              "photoY": 0.3913199070981192,
+              "scale": [
+                1,
+                1.0207962578301313,
+                1
+              ],
+              "position": [
+                -442.2964078649988,
+                2.8669309476169413,
+                15.714643608916273
+              ],
+              "frame": {
+                "action": "enemyIdle",
+                "index": 2,
+                "cell": 10
+              }
+            }
+          ],
+          "controls": [
+            {
+              "id": "battle-party",
+              "x": 8,
+              "y": 328,
+              "width": 828,
+              "height": 54,
+              "top": 328,
+              "right": 836,
+              "bottom": 382,
+              "left": 8
+            },
+            {
+              "id": "battle-command",
+              "x": 8,
+              "y": 272,
+              "width": 828,
+              "height": 48,
+              "top": 272,
+              "right": 836,
+              "bottom": 320,
+              "left": 8
+            }
+          ],
+          "covered": [],
+          "builds": 7,
+          "overflow": false
+        },
+        {
+          "field": {
+            "top": 48,
+            "height": 264,
+            "party": 54,
+            "dock": 118,
+            "landscape": true
+          },
+          "rects": [
+            {
+              "id": "bren",
+              "left": 429.26539837009784,
+              "right": 509.1250593340842,
+              "top": 209.14600718183442,
+              "bottom": 281.74570085074066,
+              "photoY": 0.3318163482180892,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -435.4964078649988,
+                2.8669309476169413,
+                18.81464360891627
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "soren",
+              "left": 472.93067602602235,
+              "right": 552.3221955526008,
+              "top": 198.14447483654223,
+              "bottom": 270.9200348840363,
+              "photoY": 0.34993959449292056,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -433.6964078649988,
+                2.8669309476169413,
+                17.86464360891627
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 139
+              }
+            },
+            {
+              "id": "tavin",
+              "left": 515.7387396671635,
+              "right": 586.7244036425632,
+              "top": 190.7213805956581,
+              "bottom": 261.7070445710579,
+              "photoY": 0.3660489875792342,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -431.89640786499876,
+                2.8669309476169413,
+                16.914643608916272
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "mira",
+              "left": 550.8107126421351,
+              "right": 620.7346968142144,
+              "top": 188.88627437472712,
+              "bottom": 252.98326137352907,
+              "photoY": 0.38046252810561754,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -430.0964078649988,
+                2.8669309476169413,
+                15.964643608916273
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "lysa",
+              "left": 582.0122444372631,
+              "right": 651.7067131448954,
+              "top": 182.51579650841194,
+              "bottom": 246.40238975444703,
+              "photoY": 0.3934346120508425,
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "position": [
+                -428.2964078649988,
+                2.8669309476169413,
+                15.014643608916272
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "wolf",
+              "left": 267.2805865811401,
+              "right": 373.5488809444126,
+              "top": 189.85546645594084,
+              "bottom": 250.51567044543785,
+              "photoY": 0.38400682298041144,
+              "scale": [
+                1,
+                1.0207962578301313,
+                1
+              ],
+              "position": [
+                -442.2964078649988,
+                2.8669309476169413,
+                15.714643608916273
+              ],
+              "frame": {
+                "action": "enemyIdle",
+                "index": 2,
+                "cell": 10
+              }
+            }
+          ],
+          "controls": [
+            {
+              "id": "battle-party",
+              "x": 8,
+              "y": 368,
+              "width": 916,
+              "height": 54,
+              "top": 368,
+              "right": 924,
+              "bottom": 422,
+              "left": 8
+            },
+            {
+              "id": "battle-command",
+              "x": 8,
+              "y": 312,
+              "width": 916,
+              "height": 48,
+              "top": 312,
+              "right": 924,
+              "bottom": 360,
+              "left": 8
+            }
+          ],
+          "covered": [],
+          "builds": 8,
+          "overflow": false
+        }
+      ],
+      "contact": [
+        {
+          "size": [
+            320,
+            568
+          ],
+          "pixels": [
+            640,
+            1136
+          ],
+          "field": {
+            "top": 92,
+            "height": 300,
+            "party": 62,
+            "dock": 176,
+            "landscape": false
+          },
+          "stage": "waterfall",
+          "phase": "day",
+          "cast": [
+            {
+              "id": "bren",
+              "gap": 0.055000020436620556,
+              "ground": 2.786931037902832,
+              "photoY": 0.1945648848635202,
+              "screen": [
+                171.22816349985285,
+                340.9609773042195
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "soren",
+              "gap": 0.055000021232852525,
+              "ground": 2.7869310379028462,
+              "photoY": 0.21668936466222344,
+              "screen": [
+                198.07982886269878,
+                333.7926458494396
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 139
+              }
+            },
+            {
+              "id": "tavin",
+              "gap": 0.05500004246570489,
+              "ground": 2.786931037902832,
+              "photoY": 0.23719083456613266,
+              "screen": [
+                222.96170554325278,
+                327.15016960057307
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "mira",
+              "gap": 0.055000015924639545,
+              "ground": 2.786931037902832,
+              "photoY": 0.2562415635356874,
+              "screen": [
+                246.08287473693733,
+                320.97773341443735
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "lysa",
+              "gap": 0.05500002156461603,
+              "ground": 2.786931037902832,
+              "photoY": 0.27399028113153445,
+              "screen": [
+                267.6238385278071,
+                315.2271489133829
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "wolf",
+              "gap": 0.02182415083956446,
+              "ground": 2.786931037902832,
+              "photoY": 0.2596236381968948,
+              "screen": [
+                60.90049259242534,
+                319.8819412242061
+              ],
+              "scale": [
+                1,
+                1.0207962578301313,
+                1
+              ],
+              "frame": {
+                "action": "enemyIdle",
+                "index": 2,
+                "cell": 10
+              }
+            }
+          ]
+        },
+        {
+          "size": [
+            390,
+            844
+          ],
+          "pixels": [
+            780,
+            1688
+          ],
+          "field": {
+            "top": 92,
+            "height": 576,
+            "party": 62,
+            "dock": 176,
+            "landscape": false
+          },
+          "stage": "waterfall",
+          "phase": "day",
+          "cast": [
+            {
+              "id": "bren",
+              "gap": 0.055000020436620556,
+              "ground": 2.786931037902832,
+              "photoY": 0.2120009672628554,
+              "screen": [
+                208.24548224253107,
+                559.158438285123
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "soren",
+              "gap": 0.055000021232852525,
+              "ground": 2.786931037902832,
+              "photoY": 0.2253830244018145,
+              "screen": [
+                240.59082483144164,
+                550.8337281801192
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 139
+              }
+            },
+            {
+              "id": "tavin",
+              "gap": 0.05500004246570489,
+              "ground": 2.786931037902832,
+              "photoY": 0.23814436941229178,
+              "screen": [
+                271.435862190614,
+                542.8951506760015
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "mira",
+              "gap": 0.055000015924639545,
+              "ground": 2.786931037902832,
+              "photoY": 0.2503272076402272,
+              "screen": [
+                300.88261345143803,
+                535.3164506711674
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "lysa",
+              "gap": 0.05500002156461603,
+              "ground": 2.786931037902832,
+              "photoY": 0.2619700077981544,
+              "screen": [
+                329.0240531652006,
+                528.0736975489242
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "wolf",
+              "gap": 0.02182415083956446,
+              "ground": 2.786931037902832,
+              "photoY": 0.2525396784451207,
+              "screen": [
+                72.6674351608189,
+                533.9401168328593
+              ],
+              "scale": [
+                1,
+                1.0207962578301313,
+                1
+              ],
+              "frame": {
+                "action": "enemyIdle",
+                "index": 2,
+                "cell": 10
+              }
+            }
+          ]
+        },
+        {
+          "size": [
+            430,
+            932
+          ],
+          "pixels": [
+            860,
+            1864
+          ],
+          "field": {
+            "top": 92,
+            "height": 664,
+            "party": 62,
+            "dock": 176,
+            "landscape": false
+          },
+          "stage": "waterfall",
+          "phase": "day",
+          "cast": [
+            {
+              "id": "bren",
+              "gap": 0.055000020436620556,
+              "ground": 2.786931037902832,
+              "photoY": 0.21327552179057668,
+              "screen": [
+                229.56862434085903,
+                629.6158578135417
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "soren",
+              "gap": 0.055000021232852525,
+              "ground": 2.786931037902832,
+              "photoY": 0.22602869178971208,
+              "screen": [
+                265.19974490441564,
+                620.4703045437617
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 139
+              }
+            },
+            {
+              "id": "tavin",
+              "gap": 0.05500004246570489,
+              "ground": 2.786931037902832,
+              "photoY": 0.23821625350951658,
+              "screen": [
+                299.2506087999331,
+                611.7303602832554
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "mira",
+              "gap": 0.055000015924639545,
+              "ground": 2.786931037902832,
+              "photoY": 0.24987501583281269,
+              "screen": [
+                331.8240630416889,
+                603.3696286459733
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "lysa",
+              "gap": 0.05500002156461603,
+              "ground": 2.7869310379028462,
+              "photoY": 0.261038666212122,
+              "screen": [
+                363.0142194295038,
+                595.3639516859631
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "wolf",
+              "gap": 0.02182415083956446,
+              "ground": 2.7869310379028462,
+              "photoY": 0.25199596042666944,
+              "screen": [
+                79.98890930732804,
+                601.8486568588269
+              ],
+              "scale": [
+                1,
+                1.0207962578301313,
+                1
+              ],
+              "frame": {
+                "action": "enemyIdle",
+                "index": 2,
+                "cell": 10
+              }
+            }
+          ]
+        },
+        {
+          "size": [
+            568,
+            320
+          ],
+          "pixels": [
+            1136,
+            640
+          ],
+          "field": {
+            "top": 48,
+            "height": 154,
+            "party": 54,
+            "dock": 118,
+            "landscape": true
+          },
+          "stage": "waterfall",
+          "phase": "day",
+          "cast": [
+            {
+              "id": "bren",
+              "gap": 0.055000020436620556,
+              "ground": 2.786931037902832,
+              "photoY": 0.06391435334254103,
+              "screen": [
+                285.86388349705305,
+                180.11667669891253
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "soren",
+              "gap": 0.055000021232852525,
+              "ground": 2.786931037902832,
+              "photoY": 0.0812611929198267,
+              "screen": [
+                311.1987542104318,
+                174.17737701316923
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 139
+              }
+            },
+            {
+              "id": "tavin",
+              "gap": 0.05500004246570489,
+              "ground": 2.786931037902832,
+              "photoY": 0.09668045435126818,
+              "screen": [
+                333.71841679867026,
+                168.89805139502778
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "mira",
+              "gap": 0.055000015924639545,
+              "ground": 2.786931037902832,
+              "photoY": 0.11047651229817651,
+              "screen": [
+                353.86741109143526,
+                164.17448649068277
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "lysa",
+              "gap": 0.05500002156461603,
+              "ground": 2.786931037902832,
+              "photoY": 0.12289286746705676,
+              "screen": [
+                372.0013626281296,
+                159.92331128242347
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "wolf",
+              "gap": 0.02182415083956446,
+              "ground": 2.786931037902832,
+              "photoY": 0.11272650565428051,
+              "screen": [
+                200.74938012955243,
+                163.40412225382596
+              ],
+              "scale": [
+                1,
+                1.0207962578301313,
+                1
+              ],
+              "frame": {
+                "action": "enemyIdle",
+                "index": 2,
+                "cell": 10
+              }
+            }
+          ]
+        },
+        {
+          "size": [
+            667,
+            375
+          ],
+          "pixels": [
+            1334,
+            750
+          ],
+          "field": {
+            "top": 48,
+            "height": 209,
+            "party": 54,
+            "dock": 118,
+            "landscape": true
+          },
+          "stage": "waterfall",
+          "phase": "day",
+          "cast": [
+            {
+              "id": "bren",
+              "gap": 0.055000020436620556,
+              "ground": 2.7869310379028462,
+              "photoY": 0.07386632054751582,
+              "screen": [
+                336.029556174572,
+                227.30120409138135
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "soren",
+              "gap": 0.055000021232852525,
+              "ground": 2.786931037902832,
+              "photoY": 0.09391419939931137,
+              "screen": [
+                370.41259499987166,
+                219.24072594644397
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 139
+              }
+            },
+            {
+              "id": "tavin",
+              "gap": 0.05500004246570489,
+              "ground": 2.786931037902832,
+              "photoY": 0.11173436103650525,
+              "screen": [
+                400.9749942267668,
+                212.075926893252
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "mira",
+              "gap": 0.055000015924639545,
+              "ground": 2.786931037902832,
+              "photoY": 0.12767857364766766,
+              "screen": [
+                428.320057909805,
+                205.6653745230695
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "lysa",
+              "gap": 0.05500002156461603,
+              "ground": 2.786931037902818,
+              "photoY": 0.14202825291330864,
+              "screen": [
+                452.93042070960445,
+                199.89592245471758
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "wolf",
+              "gap": 0.02182415083956446,
+              "ground": 2.786931037902832,
+              "photoY": 0.13027890865506478,
+              "screen": [
+                220.51701589010688,
+                204.61988020162096
+              ],
+              "scale": [
+                1,
+                1.0207962578301313,
+                1
+              ],
+              "frame": {
+                "action": "enemyIdle",
+                "index": 2,
+                "cell": 10
+              }
+            }
+          ]
+        },
+        {
+          "size": [
+            844,
+            390
+          ],
+          "pixels": [
+            1688,
+            780
+          ],
+          "field": {
+            "top": 48,
+            "height": 224,
+            "party": 54,
+            "dock": 118,
+            "landscape": true
+          },
+          "stage": "waterfall",
+          "phase": "day",
+          "cast": [
+            {
+              "id": "bren",
+              "gap": 0.055000020436620556,
+              "ground": 2.786931037902832,
+              "photoY": 0.06256501973039777,
+              "screen": [
+                424.7111032684408,
+                240.16971156205463
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "soren",
+              "gap": 0.055000021232852525,
+              "ground": 2.786931037902832,
+              "photoY": 0.07954563994564681,
+              "screen": [
+                461.56182430608254,
+                231.53073020097347
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 139
+              }
+            },
+            {
+              "id": "tavin",
+              "gap": 0.05500004246570489,
+              "ground": 2.786931037902832,
+              "photoY": 0.0946393762542358,
+              "screen": [
+                494.3176971617022,
+                223.8517111200404
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "mira",
+              "gap": 0.055000015924639545,
+              "ground": 2.786931037902818,
+              "photoY": 0.10814417748447092,
+              "screen": [
+                523.6253252239057,
+                216.98107125917497
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "lysa",
+              "gap": 0.05500002156461603,
+              "ground": 2.786931037902832,
+              "photoY": 0.12029840365581772,
+              "screen": [
+                550.0019820045521,
+                210.79754368352505
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "wolf",
+              "gap": 0.02182415083956446,
+              "ground": 2.786931037902818,
+              "photoY": 0.11034666990371621,
+              "screen": [
+                300.908189279349,
+                215.8605414601105
+              ],
+              "scale": [
+                1,
+                1.0207962578301313,
+                1
+              ],
+              "frame": {
+                "action": "enemyIdle",
+                "index": 2,
+                "cell": 10
+              }
+            }
+          ]
+        },
+        {
+          "size": [
+            932,
+            430
+          ],
+          "pixels": [
+            1864,
+            860
+          ],
+          "field": {
+            "top": 48,
+            "height": 264,
+            "party": 54,
+            "dock": 118,
+            "landscape": true
+          },
+          "stage": "waterfall",
+          "phase": "day",
+          "cast": [
+            {
+              "id": "bren",
+              "gap": 0.055000020436620556,
+              "ground": 2.786931037902832,
+              "photoY": 0.06677502029165536,
+              "screen": [
+                469.195228852091,
+                274.4857314838501
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "soren",
+              "gap": 0.055000021232852525,
+              "ground": 2.786931037902832,
+              "photoY": 0.08489826654530022,
+              "screen": [
+                512.6264357893116,
+                264.30407487971866
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 139
+              }
+            },
+            {
+              "id": "tavin",
+              "gap": 0.05500004246570489,
+              "ground": 2.786931037902832,
+              "photoY": 0.10100766046263701,
+              "screen": [
+                551.2315716548633,
+                255.2538023914761
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "mira",
+              "gap": 0.055000015924639545,
+              "ground": 2.786931037902832,
+              "photoY": 0.11542119985045537,
+              "screen": [
+                585.7727047281747,
+                247.15626255545615
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "lysa",
+              "gap": 0.05500002156461603,
+              "ground": 2.786931037902832,
+              "photoY": 0.12839328397539218,
+              "screen": [
+                616.8594787910793,
+                239.86853362701166
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "frame": {
+                "action": "battleIdle",
+                "index": 2,
+                "cell": 130
+              }
+            },
+            {
+              "id": "wolf",
+              "gap": 0.02182415083956446,
+              "ground": 2.786931037902832,
+              "photoY": 0.11777189799809562,
+              "screen": [
+                323.2846516506613,
+                245.83563814941593
+              ],
+              "scale": [
+                1,
+                1.0207962578301313,
+                1
+              ],
+              "frame": {
+                "action": "enemyIdle",
+                "index": 2,
+                "cell": 10
+              }
+            }
+          ]
+        }
+      ],
+      "attack": {
+        "status": "choose",
+        "hp": [
+          107
+        ]
+      },
+      "target": {
+        "target": -1,
+        "remaining": 0,
+        "hidden": true
+      },
+      "night": {
+        "size": [
+          667,
+          375
+        ],
+        "pixels": [
+          1334,
+          750
+        ],
+        "field": {
+          "top": 48,
+          "height": 209,
+          "party": 54,
+          "dock": 118,
+          "landscape": true
+        },
+        "stage": "waterfall",
+        "phase": "night",
+        "cast": [
+          {
+            "id": "bren",
+            "gap": 0.055000020436620556,
+            "ground": 2.786931037902832,
+            "photoY": 0.07386632054751582,
+            "screen": [
+              366.68913768707665,
+              227.30120409138135
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "frame": {
+              "action": "battleIdle",
+              "index": 2,
+              "cell": 130
+            }
+          },
+          {
+            "id": "soren",
+            "gap": 0.055000021232852525,
+            "ground": 2.786931037902832,
+            "photoY": 0.09391419939931137,
+            "screen": [
+              399.26852078673403,
+              219.24072594644397
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "frame": {
+              "action": "battleIdle",
+              "index": 2,
+              "cell": 139
+            }
+          },
+          {
+            "id": "tavin",
+            "gap": 0.05500004246570489,
+            "ground": 2.7869310379028462,
+            "photoY": 0.11173436103650525,
+            "screen": [
+              428.22768631939294,
+              212.075926893252
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "frame": {
+              "action": "battleIdle",
+              "index": 2,
+              "cell": 130
+            }
+          },
+          {
+            "id": "mira",
+            "gap": 0.055000015924639545,
+            "ground": 2.786931037902832,
+            "photoY": 0.12767857364766766,
+            "screen": [
+              454.13829038614864,
+              205.6653745230695
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "frame": {
+              "action": "battleIdle",
+              "index": 2,
+              "cell": 130
+            }
+          },
+          {
+            "id": "lysa",
+            "gap": 0.05500002156461603,
+            "ground": 2.786931037902832,
+            "photoY": 0.14202825291330864,
+            "screen": [
+              477.45764973510325,
+              199.89592245471758
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "frame": {
+              "action": "battleIdle",
+              "index": 2,
+              "cell": 130
+            }
+          },
+          {
+            "id": "boar",
+            "gap": 0.08403987441972527,
+            "ground": 2.786931037902832,
+            "photoY": 0.13275581309215284,
+            "screen": [
+              245.91202654314185,
+              203.62401254749963
+            ],
+            "scale": [
+              1,
+              1.0207962578301313,
+              1
+            ],
+            "frame": {
+              "action": "enemyIdle",
+              "index": 2,
+              "cell": 10
+            }
+          },
+          {
+            "id": "boar",
+            "gap": 0.08403987441972527,
+            "ground": 2.786931037902832,
+            "photoY": 0.11296518875097139,
+            "screen": [
+              179.9510723381677,
+              211.5810585849397
+            ],
+            "scale": [
+              1,
+              1.0207962578301313,
+              1
+            ],
+            "frame": {
+              "action": "enemyIdle",
+              "index": 2,
+              "cell": 10
+            }
+          }
+        ]
+      }
+    },
+    "errors": []
+  },
+  "component068": {
+    "after": "pass",
+    "validation": "pass",
+    "mobile-after": "pass",
+    "mobile-continuation": "pass",
+    "last-checks": "pass",
+    "chest-checks": "pass",
+    "review-page": "pass",
+    "standardClient": "pass, unchanged",
+    "reviewImages": 79,
+    "publishedSHA256": "e9e8ed331a35e92bbb35bc4cc6b20276dd2961484e41623eb740d6e0f7cc026d",
+    "head": "3248d100523a1d9f6eeb058282ecb10be6db77b4"
+  },
+  "component069": {
+    "rootUnchanged": true,
+    "previewMatchesServed": true,
+    "previewBytes": 65551944,
+    "movement": [
+      {
+        "x": -119.79,
+        "z": 104.57,
+        "height": 1.29,
+        "face": "north",
+        "frame": {
+          "action": "idle_north",
+          "index": 1,
+          "cell": 71
+        }
+      },
+      {
+        "x": -118.59,
+        "z": 103.15,
+        "height": 1.28,
+        "face": "north",
+        "frame": {
+          "action": "idle_north",
+          "index": 3,
+          "cell": 73
+        }
+      }
+    ],
+    "testErrors": {
+      "qa": [],
+      "stages": [],
+      "finish": [],
+      "final-photos": []
+    },
+    "gallery": {
+      "checks": [
+        {
+          "size": [
+            1440,
+            900
+          ],
+          "overflow": false,
+          "images": 26,
+          "broken": []
+        },
+        {
+          "size": [
+            390,
+            844
+          ],
+          "overflow": false,
+          "images": 26,
+          "broken": []
+        },
+        {
+          "size": [
+            320,
+            568
+          ],
+          "overflow": false,
+          "images": 26,
+          "broken": []
+        }
+      ],
+      "errors": []
+    }
+  },
+  "phoneGroundContact": {
+    "maxGap": 0.08403987441972527,
+    "cases": 48
+  },
+  "nativeAssetAudit": {
+    "runtimeFamilies": 51,
+    "poses": 5048
+  },
+  "scope": "Final standalone checked in native Chrome on the test PC. Earlier local component evidence describes its own tested artifact. Phone screen sizes and touch are browser emulation; physical-phone performance has not been measured.",
+  "standardClient": {
+    "sha256": "1210f58b47aadd9cb4b141fb4b2dc9e17a929aa1a813cdd26b5306a0d08b6808",
+    "unchanged": true,
+    "movement": [
+      {
+        "x": -119.79,
+        "z": 104.57,
+        "height": 1.29,
+        "face": "north",
+        "frame": {
+          "action": "idle_north",
+          "index": 1,
+          "cell": 71
+        }
+      },
+      {
+        "x": -118.59,
+        "z": 103.15,
+        "height": 1.28,
+        "face": "north",
+        "frame": {
+          "action": "idle_north",
+          "index": 3,
+          "cell": 73
+        }
+      }
+    ],
+    "browserErrors": []
+  },
+  "chestInspection": {
+    "results": {
+      "timings": [
+        {
+          "to": "poi:brookstead",
+          "ms": 11248,
+          "load": 4638.5
+        }
+      ],
+      "chest": {
+        "angle": -1.65,
+        "open": true,
+        "cavityDepth": 0.415,
+        "scope": "Close inspection of the native chest component instantiated on a clear patch in the exact final standalone."
+      }
+    },
+    "errors": []
+  }
+}

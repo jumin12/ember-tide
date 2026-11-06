@@ -2,6 +2,36 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.20 — Clearer combat and a smoother journey
+
+November 5, 2026
+
+- Rebuilt mobile combat around a visible battlefield, compact party cards and a bottom command dock. Portrait and landscape layouts keep the fighters clear of controls and readouts.
+- Aligned the battle camera, painted backgrounds and 3D ground. Landscape scenes retain the lower clearing so characters stay planted in both day and night.
+- Made phone rotation resize the battle render immediately. Whole-device-pixel rendering, up to 2x on compatible phones, keeps the original sprites sharper; Performance mode retains its lighter render budget.
+- Moved optional combat guidance into Help on phones while preserving held tutorial lessons, Continue controls, MP costs and the full icon legend.
+- Kept tutorial prompts and enemy HP panels clear of the attack timing meter on desktop and phones. Three-hit attack chains and target selection retain their normal controls.
+- Defeating the selected enemy now moves selection to a living enemy automatically. Target arrows and rings disappear when no valid enemy remains.
+- Rebuilt treasure chests with a hollow lined interior, curved wooden lid, brass fittings and a smooth hinge animation with a brief glow and drifting motes.
+- Opened chests stay open after returning. Stable chest identities across town districts preserve old saves and prevent repeated loot grants.
+- Restored reliable inn and shop interaction anchors on the customer side of counters. Hosts and vendors face customers from their actual positions before service menus open.
+- Added confirmation and cancel controls for abandoning accepted optional requests in the Journal. Abandoned requests can be accepted again; story objectives and claimed rewards remain protected.
+- Moved blocked local request objectives onto connected, walkable paths. A Clear Way Home can be completed inside the playable boundary, with rewards granted once.
+- Restored the map marker and interaction for A Choice of Restraint in Fern Hollow when Tavin is the controlled character.
+- Made POI re-entry follow the current approach side instead of a remembered previous exit. Interaction anchors remain aligned with their visible diorama gateways.
+- Restored Escape menu access beside overworld destination prompts. Resume game / Esc and a prominent Main menu button now appear at the top of Settings.
+- Revealed the complete minimap layout immediately inside entered towns, interiors and other local locations. Overworld exploration and undiscovered service details retain their discovery rules.
+- Straightened Fern Hollow camera alignment and kept its north/south road centred on the leader.
+- Corrected sprite depth at walls and counters, removing false silhouettes while preserving the outline when scenery truly hides a character.
+- Rebalanced overworld party size for readability while preserving proportions, local-scene scale, movement speed and collision. Mirrored sprites keep their upright vertical scale.
+- Refined phone exploration, maps, menus, weather, touch controls and the developer console across portrait and landscape screens, including safe areas and scrolling.
+- Replaced four outdated loading images with native 1920x1080 game photographs showing walking, conversation, shopping and reading, with characters clear of furniture.
+- Reused the completed continent during travel and retained one town exterior while visiting its buildings. Cached GPU resources avoid repeated rebuilding and shader preparation on return.
+- Bounded nearby weather preparation and packed visible rain into one batch. Detached hidden rain cells prevent duplicate draws after building visits, and fine grass avoids a redundant animated shadow pass.
+- Kept atmospheric haze and sun shafts above horizontal ground so paving and terrain shadows stay clear while the surrounding air retains its atmosphere.
+
+Validation and the standalone checksum are recorded in `elyndor/previews/release-v120/verification.json`. Layout checks use native Chrome with emulated phone screens. Performance figures describe the test PC; physical-phone frame rates have not been established. Battle art retains its approved native PixelLab resolution.
+
 ## Alpha Version 1.19 — A richer world and better interiors
 
 November 5, 2026

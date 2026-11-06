@@ -70,7 +70,7 @@ function buildDiorama67(key,p){
  const threshold=geo16('diorama-threshold67-'+key,()=>{const v=new THREE.PlaneGeometry(6.2,1.4,8,2);v.rotateX(-Math.PI/2);const a=v.attributes.position;for(let i=0;i<a.count;i++)a.setY(i,ground(a.getX(i),gateZ+a.getZ(i))+.055);v.translate(0,0,gateZ);v.computeVertexNormals();return v;});piece16(g,threshold,'cobble','#c6c3ad',0,0,0);
  const count=town?buildTownCourt67(g,key,q):buildSiteCourt67(g,key,p);if(town){for(const side of[-1,1])miniatureTree67(g,side*(q.w/2-2),-q.d/2+2,key==='fern',.85);}
  const profile={site:q,treads,c,s};(world.userData.dioramaWalk67??=[]).push(profile);const grid=world.userData.dioramaHeightGrid67??=new Map(),cx=q.x+s*(q.d/2+1.6),cz=q.z+c*(q.d/2+1.6),hx=(Math.abs(c)*8+Math.abs(s)*5)/2,hz=(Math.abs(c)*5+Math.abs(s)*8)/2;for(let ix=Math.floor((cx-hx)/16);ix<=Math.floor((cx+hx)/16);ix++)for(let iz=Math.floor((cz-hz)/16);iz<=Math.floor((cz+hz)/16);iz++){const k=(ix+128)*256+iz+128;if(!grid.has(k))grid.set(k,[]);grid.get(k).push(profile);}mergeGroup(g);
- obstacle(q.x,q.z,ww,dd,'miniature diorama');createInteraction('location',q.gate[0],q.gate[1],'Enter '+p.name);Object.assign(interactables.at(-1),{poi:key,radius:5.5,visualHeight:.2,diorama67:true});
+ obstacle(q.x,q.z,ww,dd,'miniature diorama');createInteraction('location',q.gate[0],q.gate[1],'Enter '+p.name);Object.assign(interactables.at(-1),{x:q.gate[0],z:q.gate[1],poi:key,radius:5.5,visualHeight:.2,diorama67:true});
  world.userData.miniatures??=[];world.userData.miniatures.push({key,buildings:count,uniquePlan:true,boxedCourt:true,entrance:[...q.gate],archetype:dioramas67.archetypes[key]??p.kind});return g;
 }
 worldTownModel=buildDiorama67;worldSiteModel45=buildDiorama67;

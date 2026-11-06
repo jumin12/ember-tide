@@ -26,11 +26,7 @@ function localDiscoveryMask50(key){
  if(mapKnowledge50.masks.has(key))return mapKnowledge50.masks.get(key);const rows=new Map();for(const cell of knowledge50().cells[key]??[]){const[x,z]=cell.split(',').map(Number);if(!rows.has(z))rows.set(z,[]);rows.get(z).push(x);}
  let mask='';for(const[z,xs]of rows){xs.sort((a,b)=>a-b);let start=xs[0],end=start;const run=()=>{mask+=`<rect x="${start*8-6}" y="${z*8-6}" width="${(end-start)*8+20}" height="20" rx="8" fill="white"/>`;};for(const x of xs.slice(1))if(x===end+1)end=x;else{run();start=end=x;}run();}mapKnowledge50.masks.set(key,mask);return mask;
 }
-function maskSettlementMap50(svg){
- if(activeScene.kind!=='poi')return svg;
- const mask=localDiscoveryMask50(activeScene.key),id='local-discovery50-'+(++mapKnowledge50.serial),[x0,x1,z0,z1]=activeScene.bounds;
- const start=svg.indexOf('>')+1;return svg.slice(0,start)+`<defs><mask id="${id}" maskUnits="userSpaceOnUse" x="${x0-8}" y="${z0-8}" width="${x1-x0+16}" height="${z1-z0+16}">${mask}</mask></defs><rect x="${x0-8}" y="${z0-8}" width="${x1-x0+16}" height="${z1-z0+16}" fill="#0b2c37"/><g mask="url(#${id})">`+svg.slice(start).replace('</svg>','</g></svg>');
-}
+function maskSettlementMap50(svg){return svg;} // Entered local layouts are fully visible.
 localJourneyMap=function(){recordMapKnowledge50();return maskSettlementMap50(knowledgeLocalBefore50());};
 const knowledgeRadarBefore50=journeyMapSVG;
 journeyMapSVG=function(local=false,...args){const svg=knowledgeRadarBefore50(local,...args);return local&&activeScene.kind==='poi'?maskSettlementMap50(svg):svg;};
