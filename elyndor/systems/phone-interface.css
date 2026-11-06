@@ -67,6 +67,9 @@ body[data-interface50][data-minimap51].compact33 #menu #atlas-destination-trigge
 body[data-interface50].compact33 #menu #atlas3d-view{height:clamp(190px,42dvh,380px)!important;min-height:190px!important}
 body[data-minimap51].compact33 #dialogue{left:8px!important;right:8px!important;bottom:var(--phone-bottom69)!important;max-height:calc(100dvh - 24px)!important;overflow:auto}
 body[data-minimap51].compact33 #dialogue-text{font-size:15px;line-height:1.5}body[data-minimap51].compact33 #dialogue-next{min-height:44px}
+/* Centered narration owns its placement even in the phone dialogue layout. */
+body[data-minimap51].compact33 #dialogue.world-narration63{left:50%!important;right:auto!important;bottom:auto!important;max-height:calc(var(--phone-height62,100dvh) - 24px)!important}
+body[data-minimap51].compact33 #dialogue.world-narration63 #dialogue-text{font-size:clamp(19px,3.6vw,25px);line-height:1.6}
 /* The console remains a top drawer with a scrolling body and reachable actions. */
 body[data-minimap51].compact33 #dev-console60 .dev-panel60.dev-mobile62{top:var(--dev-visible-top62,0px);left:0;right:0;width:100%;height:auto;max-height:calc(var(--dev-visible-height62,100dvh) - 12px)!important;display:flex;flex-direction:column}
 body[data-minimap51].compact33 #dev-console60 .dev-mobile62 .dev-topline60{display:grid!important;grid-template-columns:minmax(0,1fr) auto;gap:6px;padding:8px!important}

@@ -2,6 +2,28 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.21 — Connected roads and steadier journeys
+
+November 6, 2026
+
+- Rebuilt all fifteen overworld destinations as natural miniature settlements and landmarks, with individual grounded buildings, open ruins, cave outcrops, shrine rings and irregular groves.
+- Replanned destination approaches around the regional roads. Twenty geographically appropriate entrances now match their local exits; removed unused gates instead of placing an exit in every direction.
+- Connected roads directly to the visible destination gateways and settlement centers. Dry curved approaches reuse existing river crossings, and the invisible woodland boundaries follow the revised paths.
+- Rebuilt all seven overworld bridges with open stone arches, masonry details, parapets and endpoint lamps. Raised decks and graded approaches cross continuous water; relocated the river-fork crossing away from the mid-span land spur.
+- Smoothed world-road surfaces and shoulders while keeping the terrain, real 3D world map, miniatures and bridge approaches aligned.
+- Fixed black flashes caused by adaptive resolution changes. Canvas resizing now completes its replacement frame before presentation and skips unchanged dimensions.
+- Preserved named arrival and return gates after the final scene is ready, including cached scenes. Entry and exit use connected, dry and walkable points on the appropriate side.
+- Separated overworld companions with a longer collision-aware trail, including five-member parties, while preserving local-scene spacing and movement speed.
+- Escape now opens the opening game menu during play, with Resume game and access to New Game, Continue, Load Game, Settings and Credits. Resuming preserves the current scene and party position.
+- Stopped enemy hover from changing the selected combat target. Click and Tab / Shift+Tab choose living targets while the ring and arrow stay on the selected enemy.
+- Stabilized the combat tutorial dock and its Begin Lesson / Continue controls so pointer movement no longer makes the prompt jitter.
+- Enlarged enemy status icons and turn counters and expanded their display space, including phone combat layouts, while keeping the battlefield and timing controls clear.
+- Matched centered world narration to the approved ivory serif treatment with a stronger diffuse dark glow and a title-case The World header. Kept the scene visible without a panel and corrected phone centering and wrapping.
+- Fixed shopkeepers turning backward inside forward-facing idle and walking animations by selecting verified native PixelLab poses. Counter staff hold the customer-facing direction while idle and face customers during service interactions.
+- Audited eight service-character sprite sets across all eight directions. Preserved their original pixel art, proportions and ground anchors; verified inn service, supplies and equipment purchases.
+
+Validation and the standalone checksum are recorded in `elyndor/previews/release-v121/verification.json`. Final release checks use native Chrome; phone layouts use browser emulation. Existing PixelLab art retains its native resolution.
+
 ## Alpha Version 1.20 — Clearer combat and a smoother journey
 
 November 5, 2026

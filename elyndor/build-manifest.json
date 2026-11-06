@@ -209,7 +209,15 @@
       "systems/phone-interface.js",
       "systems/nearby-scene-cache.js",
       "systems/mobile-battle-view.js",
-      "systems/local-menu-actions.js"
+      "systems/local-menu-actions.js",
+      "systems/directional-arrivals.js",
+      "systems/combat-stability.js",
+      "systems/main-menu-pause.js",
+      "systems/connected-roads.js",
+      "systems/location-miniatures.js",
+      "systems/road-surfaces.js",
+      "systems/scenic-bridges.js",
+      "systems/frame-safety.js"
     ]
   },
   "styles": [
@@ -256,7 +264,8 @@
     "systems/local-review-fixes.css",
     "systems/phone-interface.css",
     "systems/mobile-battle-view.css",
-    "systems/local-menu-actions.css"
+    "systems/local-menu-actions.css",
+    "systems/review-controls.css"
   ],
   "owners": {
     "runtime": [

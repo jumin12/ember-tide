@@ -150,7 +150,7 @@ function settleDepartureOnWorld(){
 buildWorld=function(...args){
  const result=departureBuildBefore(...args);poiDeparture.dismissed=null;
  world.userData.poiDepartures=activeScene.kind==='poi'?(world.userData.thresholds39??[]).filter(o=>o.type==='poiExit'):[];
- for(const[o,i]of world.userData.poiDepartures.map((o,i)=>[o,i])){o.label='Proceed';o.boundaryHalfWidth=Math.max(6,o.autoHalfWidth39+3);o.autoArmed39=false;const tail=compactDepartures.get(activeScene.key)?.[i].tail,d=o.autoDir39;o.exteriorTail=[[o.x,o.z],...tail.slice(1).filter(p=>(p[0]-o.x)*d[0]+(p[1]-o.z)*d[1]>=0)];o.closedApproach=activeScene.key==='brookstead'&&i===0;}
+ for(const[o,i]of world.userData.poiDepartures.map((o,i)=>[o,i])){o.label='Proceed';o.boundaryHalfWidth=Math.max(6,o.autoHalfWidth39+3);o.autoArmed39=false;const tail=compactDepartures.get(activeScene.key)?.[i].tail,d=o.autoDir39;o.exteriorTail=[[o.x,o.z],...tail.slice(1).filter(p=>(p[0]-o.x)*d[0]+(p[1]-o.z)*d[1]>=0)];o.closedApproach=activeScene.key==='brookstead'&&o.autoDir39[0]<-.8;}
  if(activeScene.kind==='overworld'&&poiDeparture.arriving)settleDepartureOnWorld();
  // Old journey records can contain positions on the former exterior road.
  // Bring those arrivals back to the inside of their departure, once on load.

@@ -31,6 +31,17 @@ def pack_character(root,item,encode,audit,strict):
   for direction in DIRECTIONS:
    files=sorted((clip_dir/direction).glob('frame_*.png'))
    if files:group[direction]=[p.relative_to(folder).as_posix() for p in files]
+ # Reviewed RE-060 source-frame audit: these south-facing clips contain
+ # isolated rear views. Keep the same native PixelLab pixels and foot anchors,
+ # selecting the verified front poses instead of changing direction at runtime.
+ if item.get('anatomyRevision')==66 and name=='innkeeper':
+  idle=animations.get('idle-v66',{}).get('south',[])
+  if len(idle)==4:animations['idle-v66']['south']=[rotations['south'],idle[2],rotations['south'],idle[2]]
+  walk=animations.get('walk-v66',{}).get('south',[])
+  if len(walk)==6:animations['walk-v66']['south']=[walk[i] for i in [0,1,2,3,0,5]]
+ if item.get('anatomyRevision')==66 and name=='alder-market':
+  walk=animations.get('walk-v66',{}).get('south',[])
+  if len(walk)==6:animations['walk-v66']['south']=[walk[i] for i in [0,1,2,3,4,0]]
  # Both caster requests deliberately author the same physical spell gesture.
  # PixelLab deduplicates identical actions even when their display names differ.
  # Share the reviewed complete-staff frames; the game supplies each spell's VFX.

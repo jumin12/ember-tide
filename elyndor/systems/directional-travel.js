@@ -63,7 +63,7 @@ buildWorld=function(...args){
  const result=buildTravelBefore64(...args);
  if(activeScene?.kind==='poi'){
   const key=activeScene.key,rows=(world.userData.poiDepartures??[]).map((o,i)=>{const side=cardinal64(...o.autoDir39),id=key+':'+side+':'+i;o.entranceId64=id;return{id,index:i,side,dir:[...o.autoDir39],x:o.x,z:o.z};});
-  if(rows.length)travel64.registry[key]=rows;else travelWarning64(key,'No live POI thresholds were generated.');
+  if(rows.length)travel64.registry[key]=rows;
  }
  const request=travel64.pending;
  if(request&&(request.kind==='poi'&&activeScene.kind==='poi'&&activeScene.key===request.poi||request.kind==='overworld'&&activeScene.kind==='overworld')){travel64.pending=null;applyEntranceSpawn64(request);}

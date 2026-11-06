@@ -1,0 +1,19 @@
+#resume-main70{display:none!important}body.main-pause70 #resume-main70{display:flex!important}body.main-pause70 #title{z-index:170}body.main-pause70 #title .title-next19{display:none}body.main-pause70 #title .title-buttons{overflow:auto;max-height:calc(100dvh - 200px)}
+.coached-guide70{display:none!important}
+#battle-teacher18.stable-lesson70,#journey-guide.stable-lesson70{box-sizing:border-box;overflow:auto;overflow-anchor:none;scrollbar-gutter:stable;transition:none!important;animation:none!important;margin:0}
+#battle-teacher18.stable-lesson70 .teacher-actions18{position:sticky;bottom:-1px;padding:8px 0 1px;margin-top:8px;background:#142a32;z-index:2;flex-shrink:0}
+#battle-teacher18.stable-lesson70 .teacher-actions18 button{min-height:44px}
+body.combat-ui65 .foe-bar27 .enemy-information65{display:flex;flex-direction:column;align-items:center;gap:4px;padding:3px 0 0;height:auto;max-height:none;overflow:visible}
+body.combat-ui65 .foe-bar27 .status-row65{justify-content:center;align-items:center;gap:7px;padding:3px 4px 6px;min-height:0;overflow-x:auto;max-width:100%;scrollbar-width:thin}
+body.combat-ui65 .foe-bar27 .status-slot65{flex-shrink:0;min-width:32px;min-height:34px;line-height:1}
+body.combat-ui65 .foe-bar27 .status-slot65>b{right:-3px;bottom:-2px;min-width:16px;min-height:16px;font:700 12px/16px system-ui;background:#071722;border-color:#dbbd7b;box-shadow:0 1px 3px #000}
+body.combat-ui65 .foe-bar27 .combat-icon65[data-status65]{zoom:1!important;image-rendering:auto}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #world-enemy-bars27:not([hidden]){height:auto!important;max-height:100px!important;align-items:flex-start;overflow-y:hidden!important}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #world-enemy-bars27 .foe-bar27{min-width:128px!important;max-width:160px!important;width:140px!important;height:auto!important;max-height:none!important}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #world-enemy-bars27 .enemy-information65{height:auto!important;max-height:none!important;justify-content:center;display:flex!important;flex-direction:column;gap:2px;padding-top:1px}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #world-enemy-bars27 .status-row65{display:flex!important;gap:5px;padding:2px 3px 4px;overflow-x:auto;justify-content:flex-start}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #world-enemy-bars27 .status-slot65{min-width:26px;min-height:28px}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #world-enemy-bars27 .status-slot65>b{font:700 10px/13px system-ui;min-width:14px;min-height:14px;right:-2px;bottom:-1px}
+@media(max-height:450px){body.main-pause70 #title .title-buttons{max-height:calc(100dvh - 105px)}}
+body.main-pause70 #resume-main70 small{margin-left:auto;font:12px Georgia;color:#dfc68d}
+@media(max-height:450px) and (orientation:landscape){body[data-minimap51].compact33.main-pause70 #title .title-copy{height:calc(100dvh - 24px);display:flex;flex-direction:column;overflow:hidden}body[data-minimap51].compact33.main-pause70 #title .brand26{flex-shrink:0}body[data-minimap51].compact33.main-pause70 #title .crystal26{height:32px!important;min-height:0!important}body[data-minimap51].compact33.main-pause70 #title .brand26 h1{font-size:42px!important}body[data-minimap51].compact33.main-pause70 #title .title-copy>.eyebrow{margin:0;font-size:8px}body[data-minimap51].compact33.main-pause70 #title .title-buttons{flex:1;min-height:44px;max-height:none;margin-top:8px;padding:5px;box-sizing:border-box;scroll-padding:5px}body[data-minimap51].compact33.main-pause70 #title .title-buttons button{flex-shrink:0}body[data-minimap51].compact33.main-pause70 #title :is(.title-footer,.title-control19){display:none}}
