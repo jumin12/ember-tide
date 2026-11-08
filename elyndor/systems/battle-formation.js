@@ -1,7 +1,7 @@
 // Native silhouettes determine rank spacing; transparent sword/staff margins
 // never decide how much personal space a standing fighter needs.
 const rank87={roster:[],silhouettes:new Map(),owner:null,key:'',bounds:null};
-function enemyPresentationSize87(id,fallback=2.45){return({commander:3.45,commander2:3.7,commander3:3.95})[id]??creatureHeight(id,fallback);}
+function enemyPresentationSize87(id,fallback=2.45){return({commander:5.75,commander2:6.1666666667,commander3:6.5833333333})[id]??creatureHeight(id,fallback);}
 function silhouette87(id){
  if(rank87.silhouettes.has(id))return rank87.silhouettes.get(id);
  const m=assets.sprites[id],im=spriteImages[id],cell=(m.frames.battleIdle??m.frames.enemyIdle??m.frames.south)[0],c=document.createElement('canvas');c.width=m.w;c.height=m.h;

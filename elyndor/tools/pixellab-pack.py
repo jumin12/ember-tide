@@ -174,7 +174,7 @@ def pack_character(root,item,encode,audit,strict):
   if not clip or selection.get('expectedFrames',len(clip))!=len(clip):
    raise ValueError(f'{name}: missing reviewed extra action {action}')
   keys[action]=clip
- keys.setdefault('guard',keys['battleIdle']);keys['enemyIdle']=keys['battleIdle'];keys['retreat']=keys.get('run_east') or keys.get('east') or keys['recoil']
+ keys.setdefault('guard',keys['battleIdle']);keys.setdefault('enemyIdle',keys['battleIdle']);keys['retreat']=keys.get('run_east') or keys.get('east') or keys['recoil']
  if (strict or item.get('partyRevision')==75) and missing:raise ValueError(f'{name}: incomplete PixelLab clips: {missing}')
  paths=list(dict.fromkeys(p for clip in keys.values() for p in clip))
  if not paths:raise ValueError('No source frames for '+name)

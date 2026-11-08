@@ -1,35 +1,48 @@
 {
-  "release": "elyndor-alpha-1.23-richer-battles-sharper-phones-2026-11-08",
-  "version": "Alpha Version 1.23",
+  "release": "elyndor-alpha-1.24-steadier-travel-clearer-combat-2026-11-08",
+  "version": "Alpha Version 1.24",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 70995089,
-    "sha256": "2e3046fce66aa1841e3eae04b802810142efb639a077556d824ce7a6a1109f1a",
+    "bytes": 71017643,
+    "sha256": "e4ca5a4cc3d53e31b2953d7b1760d7e8e9d17c242ec781e7c1b7d3572883934f",
     "offline": true
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "dd3a785b9c3096cd34c6d2e61178525dfd327fc1"
+    "previousRelease": "47a5f435aab7068e6957351d773340372339f9b4"
   },
   "changes": [
-    "Placed enemies on the left and the party on the right in staggered rows, with spacing fitted to the actual character silhouettes across desktop, ultrawide and phone layouts.",
-    "Refined battle distance and perspective, lowered the portrait-phone camera, and preserved the proportions of the distant scenery.",
-    "Restored the eight cinematic reveals and the earlier attack-camera pans and pushes, with gentler phone motion, stable handoffs and respect for reduced-motion settings.",
-    "Bound cinematic and action cameras to the landscape coverage so reveals keep the picture edges and backstage space out of view. Corrected transparent borders and cloud blending around the paintings.",
-    "Shaped every battle stage around raised, uneven banks and a clear fighting hollow, with layered stone ledges and foreground framing that retain real depth during camera moves.",
-    "Added rooted groves, ferns, flowers, fallen wood, rubble, small stones, farm details and regional landmarks between the fighters and the original day/night paintings.",
-    "Gave all twenty stages regional lighting and ground palettes, with warmer orchards and sunsets, cooler snow and caves, and lighting matched to the selected daytime or nighttime landscape.",
-    "Added restrained background waterfall flow, moving water highlights, foliage and cloud shading, crystal glow, drifting leaves and airborne effects where they suit the scene.",
-    "Matched orchard trees to the green apple trees in their painting, added attached fruit, and restored snow cover to the snowfield branches.",
-    "Seated arch legs and building foundations on the terrain, rebuilt fence rails and royal walls to follow their banks, and connected stone bridge decks to their approaches.",
-    "Rendered common phone screens at their native 2x or 3x density within a pixel budget, preserved crisp sprite filtering, and reduced excessive battle blur on phones.",
-    "Enlarged small phone HUD, combat and menu labels and reduced text glow, while preserving the approved character artwork and its native pixel resolution.",
-    "Kept fighters grounded through screen rotation and deferred formation changes during active attacks. Characters return to the correct new positions when their action ends.",
-    "Kept scenery and effects batched, cached stable camera checks, retained low-quality rendering options, and verified that animations reuse geometry and battle resources are released on exit."
+    "Fixed fast travel from the Escape-menu map leaving the title-style pause open. The chosen destination is retained through the transition, gameplay resumes at the real arrival, and invalid destinations are rejected.",
+    "Restored the full viewport projection after combat, correcting squeezed or skewed views in the overworld, POIs and interiors.",
+    "Moved the party farther right and kept enemies on the left in staggered formations, with adaptive silhouette fitting across desktop, ultrawide and phone layouts.",
+    "Enlarged the three Commanders by about two-thirds while preserving ordinary creature sizes and fitting the larger silhouettes clear of combat controls.",
+    "Gave all six human-opponent families reviewed, armed native ready and guard poses. Soren retains his authored combat animations, and exploration poses remain separate.",
+    "Synchronized party and enemy meshes, facing and combat frames before the first reveal frame so story battles no longer briefly show the old exploration row or neutral poses.",
+    "Made ordinary enemy attacks vary among eligible party members. Hunters retain a modest wounded-target preference; defeated and untargetable members are excluded, and temporarily untargetable parties no longer stall the enemy turn.",
+    "Scoped notice boards to their own optional requests, stopped nearby NPCs relisting those same board jobs, and labeled board and NPC request sources separately in the Journal while preserving progress, tracking and rewards.",
+    "Rerecorded recovery reactions for all five party members with their existing approved voices and stronger battle delivery.",
+    "Aligned injury and recovery checks with the 25% HP pose boundary. Recovery is announced once when healing moves a living character above the threshold; further healing above it does not repeat the line."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.24",
+      "date": "November 8, 2026",
+      "title": "Steadier travel and clearer combat",
+      "items": [
+        "Fixed fast travel from the Escape-menu map leaving the title-style pause open. The chosen destination is retained through the transition, gameplay resumes at the real arrival, and invalid destinations are rejected.",
+        "Restored the full viewport projection after combat, correcting squeezed or skewed views in the overworld, POIs and interiors.",
+        "Moved the party farther right and kept enemies on the left in staggered formations, with adaptive silhouette fitting across desktop, ultrawide and phone layouts.",
+        "Enlarged the three Commanders by about two-thirds while preserving ordinary creature sizes and fitting the larger silhouettes clear of combat controls.",
+        "Gave all six human-opponent families reviewed, armed native ready and guard poses. Soren retains his authored combat animations, and exploration poses remain separate.",
+        "Synchronized party and enemy meshes, facing and combat frames before the first reveal frame so story battles no longer briefly show the old exploration row or neutral poses.",
+        "Made ordinary enemy attacks vary among eligible party members. Hunters retain a modest wounded-target preference; defeated and untargetable members are excluded, and temporarily untargetable parties no longer stall the enemy turn.",
+        "Scoped notice boards to their own optional requests, stopped nearby NPCs relisting those same board jobs, and labeled board and NPC request sources separately in the Journal while preserving progress, tracking and rewards.",
+        "Rerecorded recovery reactions for all five party members with their existing approved voices and stronger battle delivery.",
+        "Aligned injury and recovery checks with the 25% HP pose boundary. Recovery is announced once when healing moves a living character above the threshold; further healing above it does not repeat the line."
+      ]
+    },
     {
       "version": "Alpha Version 1.23",
       "date": "November 8, 2026",
@@ -566,8 +579,8 @@
     "screenSpaceCombatHud": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v123/verification.json",
-    "sha256": "5dacbb44aa1cd64813d6a13713a53626662d6146ae12d953a98589dc7c339eae",
+    "file": "elyndor/previews/release-v124/verification.json",
+    "sha256": "5a64c2d8b5a971f6f71580e597bef85c34b7f4be71f103090741c37818d203f5",
     "finalStandalone": "PASS",
     "nativeAssetAudit": {
       "runtimeFamilies": 51,
@@ -578,29 +591,29 @@
   "performance": {
     "scope": "Final native Chrome functional and resource checks on the test PC; no universal frame-rate or physical-phone performance claim.",
     "rendering": {
-      "geometryBefore": 1017,
-      "geometryAfter": 1017,
+      "geometryBefore": 1204,
+      "geometryAfter": 1204,
       "calls": 120,
-      "triangles": 1027248,
+      "triangles": 1027131,
       "cpuMs": [
-        2.5999999046325684,
-        2.5999999046325684,
-        4.300000071525574,
-        3.8000000715255737,
-        3.700000047683716,
-        6.100000023841858,
-        4.700000047683716,
-        4.300000071525574,
-        6.600000023841858,
-        5.100000023841858,
-        3.700000047683716,
-        7.700000047683716,
-        3.799999952316284,
-        4.5,
-        7.400000095367432,
-        5,
-        5.5,
-        6
+        1.5,
+        1.399999976158142,
+        2.600000023841858,
+        1.3000000715255737,
+        1.3000000715255737,
+        2.3000000715255737,
+        1.3000000715255737,
+        1.3000000715255737,
+        2.3000000715255737,
+        1.7000000476837158,
+        1.600000023841858,
+        2.700000047683716,
+        1.600000023841858,
+        1.600000023841858,
+        2.399999976158142,
+        1.2999999523162842,
+        1.2000000476837158,
+        2
       ]
     },
     "combatResourceCleanup": {
@@ -617,8 +630,8 @@
     }
   },
   "previousPublishedRelease": {
-    "commit": "dd3a785b9c3096cd34c6d2e61178525dfd327fc1",
-    "version": "Alpha Version 1.22",
-    "sha256": "cbdfade1c71e8571bd23f84c411350273b68cda961119564002fdc9b95aca330"
+    "commit": "47a5f435aab7068e6957351d773340372339f9b4",
+    "version": "Alpha Version 1.23",
+    "sha256": "2e3046fce66aa1841e3eae04b802810142efb639a077556d824ce7a6a1109f1a"
   }
 }

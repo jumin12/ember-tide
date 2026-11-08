@@ -50,6 +50,12 @@ function layoutMobileCombat69(){
 }
 const cameraMobileBefore69=updateCamera;
 updateCamera=function(...args){
+ // clearViewOffset does not undo PerspectiveCamera.setViewOffset's change
+ // to aspect. Restore the real viewport before any traversal camera is fitted.
+ if(!battle&&!encounter53.active){
+  if(camera.view?.enabled)camera.clearViewOffset();
+  camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();
+ }
  if(!mobileBattle69()&&camera.view?.enabled)camera.clearViewOffset();const r=cameraMobileBefore69(...args);
  if(mobileBattle69()&&!encounter53.active&&!introLocked58()){const cast=[player,...followers,...battle.enemies.map(e=>e.actor)].filter(Boolean);frameMobileBattle69(cast,heightAt(battle.center.x,battle.center.z));for(const a of cast)a.mesh.quaternion.copy(camera.quaternion);}
  return r;

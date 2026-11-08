@@ -2737,9 +2737,10 @@
       "speaker": "bren",
       "role": "bren",
       "text": "Much better. Let's finish this.",
-      "key": "21fa4593e9d65048ef2e",
-      "performance": "[relieved]",
-      "healthReaction87": "recovered"
+      "key": "7748cc016e0f13aff89a",
+      "performance": "[out of breath] [determined]",
+      "healthReaction87": "recovered",
+      "direction95": "Short, forceful recovery call while actively fighting; renewed resolve, not a calm conversation or relaxed gratitude."
     },
     {
       "speaker": "soren",
@@ -2753,9 +2754,10 @@
       "speaker": "soren",
       "role": "soren",
       "text": "Steady again. Thank you.",
-      "key": "5097165ae197b8ebbe04",
-      "performance": "[relieved]",
-      "healthReaction87": "recovered"
+      "key": "f9f4769b6ff77a0c4e93",
+      "performance": "[firm] [urgent]",
+      "healthReaction87": "recovered",
+      "direction95": "Short, forceful recovery call while actively fighting; renewed resolve, not a calm conversation or relaxed gratitude."
     },
     {
       "speaker": "tavin",
@@ -2769,9 +2771,10 @@
       "speaker": "tavin",
       "role": "tavin",
       "text": "That's more like it.",
-      "key": "791e8d5396dca01363bb",
-      "performance": "[relieved]",
-      "healthReaction87": "recovered"
+      "key": "b8bbb7091586ca69d075",
+      "performance": "[out of breath] [confident]",
+      "healthReaction87": "recovered",
+      "direction95": "Short, forceful recovery call while actively fighting; renewed resolve, not a calm conversation or relaxed gratitude."
     },
     {
       "speaker": "mira",
@@ -2785,9 +2788,10 @@
       "speaker": "mira",
       "role": "mira",
       "text": "There. Back on my feet.",
-      "key": "474c6ea4bb358976d471",
-      "performance": "[relieved]",
-      "healthReaction87": "recovered"
+      "key": "da901c7cd3cdb7d3f5fe",
+      "performance": "[out of breath] [determined]",
+      "healthReaction87": "recovered",
+      "direction95": "Short, forceful recovery call while actively fighting; renewed resolve, not a calm conversation or relaxed gratitude."
     },
     {
       "speaker": "lysa",
@@ -2801,9 +2805,10 @@
       "speaker": "lysa",
       "role": "lysa",
       "text": "Much better. My turn.",
-      "key": "98f4c5475c8f594bac2c",
-      "performance": "[relieved]",
-      "healthReaction87": "recovered"
+      "key": "83c7880959887b7aa2f0",
+      "performance": "[fierce] [excited]",
+      "healthReaction87": "recovered",
+      "direction95": "Short, forceful recovery call while actively fighting; renewed resolve, not a calm conversation or relaxed gratitude."
     }
   ]
 }

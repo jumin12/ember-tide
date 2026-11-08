@@ -1,0 +1,734 @@
+{
+  "artifact": {
+    "file": "index.html",
+    "bytes": 71017643,
+    "sha256": "e4ca5a4cc3d53e31b2953d7b1760d7e8e9d17c242ec781e7c1b7d3572883934f",
+    "offline": true
+  },
+  "source": {
+    "elyndor/architecture-v24.js": "0316ed10df8455a89f93935af634b77924f8ba036c718431f62cf8f64a8ccf18",
+    "elyndor/architecture-v31.js": "2c2f9f7eb70751e63b008c4c4b735f86a66b5b8fbe89902c1d7455d6b7676dbe",
+    "elyndor/arena-v14.js": "7e6a4ac4d63ea77d0a044aeefedceb28f5fa6dba0a3e4d79ee7223478b8002a7",
+    "elyndor/atlas-data-v18.js": "9c8b58c50c62c979661dc7fe9e9b6a44b0afc63986ff6638c1e275f358ac97b2",
+    "elyndor/atlas-v14.js": "f1ff47d907f36331725f8c6ee6274eb83c049058c93581572325088628a58349",
+    "elyndor/atlas-v18.js": "1a93104154db5a6cec1e90df3229b5c6f545a2525689de116f9510fa783e412d",
+    "elyndor/atmosphere-v24.js": "dee98bfcb130f7e4c7af836a6d0d1f80f53cfdd3a257733f5b736a670b5b50ed",
+    "elyndor/atmosphere-v28.js": "63f4af008169d61dbd686c9f5a53f32c00abd5ef81019c47525f4bfc6f949d64",
+    "elyndor/atmosphere-v33.js": "718d3b29993bd79ac2242ff3832e163a4dba0970f4ed16bffe63c988a685c292",
+    "elyndor/atmosphere-v35.js": "7406de90df63749ca1939b633f830d332a0d01127dc07c97408bb5870f519664",
+    "elyndor/audio-v13.js": "d34f06854ea8ba23cd1b3d02d34dc7a8dc31b5234cc86aa7bea3434ff33ef92a",
+    "elyndor/audio-v15.js": "deafb01e2c18e38c6f579bcdd2610e1827c814f66f1360a3da6f3abb0ef1eb32",
+    "elyndor/battle-v12.js": "bf80d28f7329e7455db8fab0859d5ee0cf4a5ed8373c5018ac7469c2848bfc43",
+    "elyndor/battle-v13.js": "0e8fdf3fbb8e82da8375da5de341ce48857ca1127742a05f625455331ff34828",
+    "elyndor/battle-v17.js": "fd1d3ee9ce7fa1dff4f9ac0c42eb77a1c22bec2979b9a9a3445606d58a5dc9de",
+    "elyndor/botany-v30.js": "0ad29195d9002d83fe6e0a8333e467bb67e7a9a57b480ccec56386fb471b1c95",
+    "elyndor/build-manifest.json": "998695e85a408c35d28c0c63642f26de60298877fcda74e577c14fa3502a8d05",
+    "elyndor/casting-v15.js": "7eab462fadc68054c5842fc2af8ff114760cee30ef731e63d81faea7e7e513b1",
+    "elyndor/celestial-v31.js": "facea084d02e53de9734ac7ee92f232fd3cdfdb5e0daf5bf0846bfdabb84c49b",
+    "elyndor/cinematic-v22.js": "0f67d75d2f30756a0a25ac9d14ad76fa532b05d986cdae41a60d1991d94f30b3",
+    "elyndor/clarity-v23.js": "62109b4024c61343f4c0eb8c4a5b99dccea02806524218fe4be58d4c66bc1e5e",
+    "elyndor/clearance-v15.js": "9fa00dd95bbfd705f673c0d7aaa7a7daf86f24a71b3209ffb1955fbc1e8b1e9e",
+    "elyndor/clouds-v21.js": "0041aae84767ee824275072c869e094dc267b5586daa6fd7c1de4e5d5ed1c217",
+    "elyndor/combat-input-v15.js": "8b62107f227f52b3cc86ca40b5ff7ccbb2bb1ca15a9b52b66a7a108c4504296a",
+    "elyndor/combat-v11.js": "6247f1bcf1d187ca701557b87f8fe71387006597a506b047811785c1b6a02b46",
+    "elyndor/combat-v21.js": "9380a6164f8a151f6d362187204c81c759c19635919ea116b7844971f14c5958",
+    "elyndor/combat-v27.js": "3a9240b158248049ead98d4a4a974873ac6fc31e4259626a834fade5b8dc2af6",
+    "elyndor/combat.js": "53124060aa6e28d3a210354be85341eddafb2b284cf8492aff0e7154218f7755",
+    "elyndor/current-v19.js": "672db4395ccce65a91acd1bfc01ec72a0d9b4446973ad438776b017f812f3ef4",
+    "elyndor/data.js": "a91d714f83ead6ad74a109759e81dd85e986658a657ed57a5394da77a74e9874",
+    "elyndor/detail.js": "64d7f4aecc16d9c9c79665527cba061bfb52a57d3b5a78a1922300bbb66a605d",
+    "elyndor/distance-v26.js": "b73731a33aa1319bf156d953291c427cf19682a6faa404b86b93913e0e28a0d3",
+    "elyndor/districts-v24.js": "78687abe552c07cc5b9252d3a2514c35a08d6a554ffc7e0212bed0886e576754",
+    "elyndor/districts-v27.js": "d8a289f5140682313a06473a30bb454eec47238d5894b96626c23059acea60f8",
+    "elyndor/effects-v11.js": "39a358d9e99b9acf6b7c761c0e96751f829f49a52b009542432c3e7e13e86d93",
+    "elyndor/effects-v35.js": "ea5a750f1d09bcc27f06d241de3f0925351fc3b1611dd4f5fe63485474bab11f",
+    "elyndor/environment-v13.js": "f939a8a41e8978bc11b3b5cd39afe266930f7801106442e5016936799ba2d0f2",
+    "elyndor/experience-v13.css": "cf05efc2c19623cad25a1251dd423ab435c66ef527c1d9abbaf6f1747e72eb00",
+    "elyndor/experience-v13.js": "83f2df84d720a397188faf68fda9e0aaab5b334b9e3b71af58f643303fbf10f7",
+    "elyndor/experience-v15.css": "59a3a30f5dcda83a39c1e03407b23e5685ef21b332ebfb0c86637e9fc0f9a37d",
+    "elyndor/experience-v16.css": "10c0d6148c8429b41ca36a4f48999202ed6f061ae8fd07d75f192ec5e7a3aa65",
+    "elyndor/experience-v17.css": "94c311c70e0a0a98e2bf37984d571cb87429e1a7f2dd49734d03214aa7dbf7c5",
+    "elyndor/experience-v18.css": "1a0ebacb8a48a64ad19a33a1ad3783d7491e9226828e1fce89fa076e352dafa9",
+    "elyndor/forest-v30.js": "9132fc5ad6e071900fd7f77451a30bf14d77c7313b2d41a47074106b0bed6b7b",
+    "elyndor/game.js": "bcc7af0c3ecc13fedad50f72e41cd05c9a0207a5a68ee3f08e8cbec0f1a698e0",
+    "elyndor/geography-v15.js": "1c4f1ed9d31b1000f21dd1adc87ea459c7d690d9724e44e67938bcd9738867c0",
+    "elyndor/geography-v17.js": "47c134ff94665344aad7a92450a0629ae664a4d2527c56750360becb82a205c5",
+    "elyndor/ground-v19.js": "cb00dbf13c8d52f0f7d0f4d5b5cf2e459ce583b6742d984258bddb12b3593785",
+    "elyndor/hydraulics-v11.js": "5c726339e3d9bbdbabf5420278ea762ab7c8e3b15f097b1d2106b581009a5f83",
+    "elyndor/hydraulics-v18.js": "e2a4f6e3817303ddb34df0c4641f329588efb279b67400afeb7207934a7f8bc7",
+    "elyndor/hydrology-v38.js": "1edd3ae3dd0cc354b9887e2835ca6e77704cac00009c986e481b60a7221066c3",
+    "elyndor/index.source.html": "62385e6af877176917d7a7e1ef75133087792fbdbd04203737c7119da56d8bc2",
+    "elyndor/interface-v24.css": "8dda060bd2c817450041e14b626e2cbcfd70404774a88b097a4c4fa28da27418",
+    "elyndor/interface-v24.js": "1c3ee9c6ff0b5d779edb6d5bece9e798f6d4d052471eb73ef73c86cfb11bd751",
+    "elyndor/interface-v28.css": "81721b0ee6e1548f676449fa9fc79430b4240846f6165cd1a4dfddd8ace6518e",
+    "elyndor/interiors-v12.js": "f93364544d90c88541e048c4e1b651dcbc7eb59e6d603a63cc68be54efd369f9",
+    "elyndor/interiors-v29.js": "fadcc80ee4fb41696dfac044a341506903694f8e8f289489a7d2bcab31d40ad0",
+    "elyndor/journey-v12.css": "a862def4a0a6de81572347ec36681bc5d17650f8d4778d464499a4fd4faefc6b",
+    "elyndor/journey-v12.js": "118f2d9c12a0ff8be3445736096c0e44feacbd42ad2c89e4ac7fb4e2d8b64c14",
+    "elyndor/landscape-v26.js": "0b58b96984178bbe1d09651ba9a1932ef1b7f8e9a280d1eb5e67eed8c17d4aa4",
+    "elyndor/lesson-v18.js": "34f1e964574c3cf2a49400ea3805b507863ff1ec771b616c201ccdf7342b4dfa",
+    "elyndor/level-layout-v13.js": "cee4550cd54fe58fdcce4e15673042ee74d9a77c7310a47ea0c2c4c5d9d72a9a",
+    "elyndor/levels-v39.js": "cba3fcabfa3ccd485caf616af2b6dd267deadd518b6217e0f580583559641f7a",
+    "elyndor/lighting-v34.css": "7d4776dcef5b6e6de137e691ed26ac206e07b4c7085ab4492b776c5fbdad3edd",
+    "elyndor/lighting-v34.js": "01273030bb4c70d02566c0330fa0fb3dce43d64d39848d40127baacb70b7c917",
+    "elyndor/loading-v11.css": "1b815416f8081a961ef185486ef83ec24d68e46f15a182b96e1fbb6bc9317817",
+    "elyndor/loading-v11.js": "5bdb74a3bd681f8e1bc1dd2a3d71e07019268c9d9904f70b34a3a286a17ed3b9",
+    "elyndor/loading-v14.css": "3b1952ae6c2b098360bd4bf44f0d4ec8437707341a55b1cf4bcc436172866d5d",
+    "elyndor/loading-v14.js": "bfa1212cc9bcba324678d3c55a4bc4235e8739e4fcb1f6105c5238a66217a5e0",
+    "elyndor/loading-v29.js": "d0d8be7cb4d9f7eb0abc244b6ff12bcd7787a03d94448187fcb2f70ed32b5183",
+    "elyndor/look-v30.js": "894f1737c9389790c56ebd6404e225d7398e2cc844405d06cf7a91647789e1a2",
+    "elyndor/materials-v14.js": "97bdc42754f8fbb33a736bc656cbf00cfc5f5783abe160f8f64ac5d19a7f7934",
+    "elyndor/materials-v28.js": "e94408a1a22da85c629512ad0f82855b0b6cf5b052c4e2e42eb06cc5eda2be3e",
+    "elyndor/menus-v26.css": "46ec4bff6c5dd8413d3c0b85450f3457e7854408a752d4c584cdbd25ec48c861",
+    "elyndor/menus-v26.js": "bf200ba42fa5ac98c94c5156eeae836148093c0a387fe8de6d2aa06078b50a3c",
+    "elyndor/menus-v27.css": "06885ed8f44e2944ff79c029017e1e5a434e917cf3c4600b08c4679abd08a455",
+    "elyndor/menus-v27.js": "20b3c8dd96d13376abe6a255530c42bf5ffaf8ecba8a4951725020dac9caf933",
+    "elyndor/mobile-v33.css": "89e597329067a230cee3d88f13ad7170ee826c959410aa520e42a1191872ee23",
+    "elyndor/mobile-v33.js": "3a7738aa98a7bb34017e1ab5ee798d67435c334857fcfaf6a8e1f5827820ff98",
+    "elyndor/monsters-v35.js": "54732d9f466cff884d413d91b8af3f929a5f55b5fb2aaeb9dfa310193658cb81",
+    "elyndor/movement.js": "77b5ed919d21b6a6e6a67eb7e53babf448197e8afd3d716944050380ff763363",
+    "elyndor/navigation-v23.js": "6dee2ae6b32988d372a52bab47583e1653346104195b0a16727e05ef3ec96be3",
+    "elyndor/navigation-v32.js": "aad593b3bd9a1a939264de7172ed7b42a855e7b090bf025456bdd4033940e6fd",
+    "elyndor/onboarding-v16.js": "7d1615b7302d25a0b96a45e73549cdf5b4dfdb2cd1e484d74178aede99010d72",
+    "elyndor/open-world.js": "2dd82c61f9e73f9e41d156ea21e1eb2892f72169a2bd74b3d6a62603f0cf1b7b",
+    "elyndor/overworld-v13.js": "b9667a43cc3cc9bb8b6b183a987136d61f376d763fedf83ef60ec53d80f78dc0",
+    "elyndor/overworld-v16.js": "6ea62785f9982e4e10b13ecb4c1811bec319d856d3cf759206cc937abdea457a",
+    "elyndor/party-v11.js": "18c1a93548d157649d9fda620209a748a36d97a819f4a18bd16a66cef4aa7964",
+    "elyndor/performance-v13.js": "612bcd0d56ee5d274934a24b4f2ed334d249335f17eb0cf20020ecec8a2b44ac",
+    "elyndor/performance-v21.js": "ee6b301e16b307624b572efbcf11498ec357208fb52ff4644bd4f524995f9485",
+    "elyndor/placement-v11.js": "0c6342dee1c7458ac625e8c18d6b1fe48ab810571d3b594ce7a4cbba3e0c811c",
+    "elyndor/polish.js": "19484061f6f12aca5a73218b2021a5ae936b4fc7872b9a16cfae5b1a57059a0a",
+    "elyndor/presentation-v14.css": "ea019ac10b4478b998575c5ee821a46a1cabbb8585d78ef30debd198fe063c36",
+    "elyndor/presentation-v14.js": "5b6dc47b50b147b65dc8dca3b9f204e3d8d696619954bdb116f258cd1644d69e",
+    "elyndor/presentation-v25.js": "c1e3d6a721637aba96838733542c750271c1e2dcc7ef6780adc01c5a676acbc7",
+    "elyndor/quests-v29.js": "317b243d5361de9033b04c291c4f23605eeb54602a62e4351bf0be8201ba91c6",
+    "elyndor/reflections-v30.js": "7ee9a7ec04872b3e80c0d430b2796e698fe9281261772cf613364a1992ec8890",
+    "elyndor/relief-data-v15.js": "0b68b706c0eb2ca71aa917e3f9a10de430c1ee44a3eefdeab2a60361f90266f0",
+    "elyndor/relief-data-v18.js": "cdcb29ea7ab48004da7a06dde73bcaa21f35c0f553cc5f3ca8c8f20fc4a0434b",
+    "elyndor/render-v4.js": "28038f9c513a69daff588468d6e8d8290faa4e9f9885ab1330e4341ca97cd8d4",
+    "elyndor/requests-v16.js": "4973090f34befc3fbab0d976b81eb978cebf3bb79d77f8963dbc2eb41a7f6680",
+    "elyndor/responsive-v25.css": "7df129b7c81e67786aae5f7f1a066c4811f2df45c66317daf978fe42f68c5e4c",
+    "elyndor/review-v5.js": "8279ec154458a47f15bd517ddc927121029fdd62f9083a145b0fa2b31b02d702",
+    "elyndor/river-v17.js": "13640162dae98dcf0ff6f8aa3c24490ecd53c68b69c0f37080259949a124a529",
+    "elyndor/runtime-v28.js": "329fb2b64b6c2908f03dd96f6c670d1b75e0d7f89133984db0e5a85a10dd17ee",
+    "elyndor/runtime-v33.js": "d00151eca4bea790aa01997e89841f02689704899261e408467d09a58690ed2f",
+    "elyndor/runtime-v35.js": "e0898bc828627c4e334b133ced1387dec5ad7dff3bb83a82b7f49c39ebe7f1a8",
+    "elyndor/runtime-v36.js": "0059d3c03fd1534d23ed389682b5171ed598275e7cb4228eb0fe30ca3cdce683",
+    "elyndor/scene-polish.js": "9fddc596dc3d4a0eb62717bbba773c6c5809eea68c40d9cf2f058768048bb4ca",
+    "elyndor/scenery.js": "b9dce50bd9f1c685bdf1b4847ab35b0b70b38844804044909e3880c4fd73b0a0",
+    "elyndor/services-v22.js": "96c92c4b40cb0a21a029e1e321c546ec2aaf3baf769586fc3776450d873f0c75",
+    "elyndor/settlements-v15.js": "6736893ea2e5bca6e9240601bad40ad495cc58dea6d93a9e485b0c3c408c0a6c",
+    "elyndor/speech-v21.js": "bb709ccb3e05800670c0a928ca07a976942a9eca293e240e393a21130464db00",
+    "elyndor/spell-art-v35.js": "3ebc863ee4e5d27f9f770536e20b81ef4ea09b32cd0b9b6d9d413ff7f1194b9b",
+    "elyndor/style.css": "5e15143b71b1280e40fd9e4b9ae7f5dfb553800c78c2769e04569d2abfc0780d",
+    "elyndor/surfaces-v17.js": "561b5fe7813b27f6136f51ec650fa051899d3f03f390bf4d118a666004696cde",
+    "elyndor/systems/battle-camera-guard.js": "59aa9b7fa78e4e5d9ee2c3aed7185da6664b0f5a28bb4b0ac5f91b04dde7d19e",
+    "elyndor/systems/battle-depth.js": "8bfc2347e92e3d4bfec80a0cc94a71ff629229a29939cf1b47a12982ac976f8e",
+    "elyndor/systems/battle-detail.js": "8b793a6fd19cd48bb25d9161924d2ec7292c2aced4b483a2b9e57d7c4c7649e7",
+    "elyndor/systems/battle-environments-3d.js": "38c86367827dd408694057f9a854b76af92de84ace1e7fc8ca3161718d69ab1c",
+    "elyndor/systems/battle-formation.js": "668ef7f8a0950c1afca4edd5860ad31def5327e9d5094d99455746eabe10db0d",
+    "elyndor/systems/battle-intro.css": "f9be83083b7f1bf20795e9f1c80744da2d47c9dea5fe09d0927907904608097d",
+    "elyndor/systems/battle-intro.js": "247e006db8905afd5183fae42c3823d011272d0f28c099c1c6c9cc05036406f4",
+    "elyndor/systems/battle-presentation.js": "3e3e8869d3a47c3111b38db7a433bacd2ebfb62c014235d856db38a37258cb80",
+    "elyndor/systems/battle-relief.js": "5b577553e9798074fda9fe136de6d8508452f15f2be1d0952baef081ac276e18",
+    "elyndor/systems/battle-stagecraft.js": "7738fd8bb3aba2157ad9a4fae4ba9a7b64031612be1472d523abecf4d26e00d9",
+    "elyndor/systems/battle-stages.css": "481f9cba9c5e1d91aa6e986bde46af8293b2676ab98c3190dde19688028b2f9d",
+    "elyndor/systems/battle-stages.js": "1e5dbad830b4dbcebe82a813dceb65cbfb600ecbcc28f94ba879a8acde3a245c",
+    "elyndor/systems/battle-variants.js": "a6c367fcdbb6f37159a2a22aacd8e52c5959d3f64b194b23610efc509bde139d",
+    "elyndor/systems/bren-animations.js": "ca520159d2633fa550bb917a40f71226dc66af09812f43088b871fef6084dadd",
+    "elyndor/systems/brookstead-interiors.js": "11fd639e0125005492433fe0482de8a9d8fbb2a12b158fcba79ce8e56a2e3799",
+    "elyndor/systems/building-entry.css": "93c41d2146b37a2e51b0e298ad21fc7af4ff4eb24e18eb44dd787108b69c807e",
+    "elyndor/systems/building-entry.js": "2bc60b5fc0b2e5d5ecf04f97d06592767ad2abb830c80c64f0144f897110b8ed",
+    "elyndor/systems/cartography.js": "12973893b2a8ebb9ad6f2884cfa4e04dd2a0bacf89118a3c3398bbeeb0d3bc08",
+    "elyndor/systems/clear-overworld.js": "311d18397df1858412418a5a8db14309fad59f90ddd688d9922b5b273f6b796c",
+    "elyndor/systems/cloud-shadows.js": "e6e1b117c8a32ce5d3e386168d1a32c31f6ea2cfb61919220384b93d32c7466b",
+    "elyndor/systems/coastal-ocean.js": "9b1c79c64fd342700c592415af925004907d7bba78512ff05b127626072a4b53",
+    "elyndor/systems/combat-art-direction.js": "51cf73fbbca2e99cae20786d5bb753c227904f87e21cbfb376afd91c445a37b0",
+    "elyndor/systems/combat-environments.js": "5bee3c7cf59dc5c013a6fee8ec0105d52dc8c98dc888d8aa3ddc8835d04d7778",
+    "elyndor/systems/combat-feedback.js": "79064778dfb9b0817e836ab48c11bf766e6e953dc86c964218d92b4c6b4f4471",
+    "elyndor/systems/combat-help-layout.css": "914463a012282f77b18dd69cba537fe46c8898d7faf44c4afd5f678e053bc46d",
+    "elyndor/systems/combat-help-layout.js": "7aabae24d58ef65f2b2830069037b853520f4a275c367d948684e54139ccb08b",
+    "elyndor/systems/combat-information.css": "b9ec889b59f5ece81b4389849039e84d89c99abb42846bf2bc12a3e9adeaae33",
+    "elyndor/systems/combat-information.js": "24e42145fade2aea41dc31b4e13ec9b20276150bfc69bccaa62088757379246b",
+    "elyndor/systems/combat-interface.js": "c3ad29d80807e2f28c1814b9c34a10a5e8a5d340e958b93dc97e2041622d4f94",
+    "elyndor/systems/combat-reactions.js": "3415ee180b299e0720f6cdac65ea52ccec9edb87ef6daa70792880835fedca3b",
+    "elyndor/systems/combat-review-layout.js": "e30b7ee25118f2ffbc1c6ea3b0331f9ac71707db4456ddf1e191b8d967b9e331",
+    "elyndor/systems/combat-stability.js": "122c723d45c5b75c9f1aacc13abb6381e026d65ea038a449ffa5c85c02071a72",
+    "elyndor/systems/combat-validation.js": "33b2074bbd3c3195d86e43a43d75a35105396839ad4950ef91f4adfb559633d9",
+    "elyndor/systems/combat-voices.js": "f46b3cbe0cb2eca41aabb01f3b69c3b3a1c8298e6175319d718f47a7a037358a",
+    "elyndor/systems/combat.css": "cb0164306acf681a002a5c72682c367fe23cb1f3a9891ba7a6c40a3557f2fbaa",
+    "elyndor/systems/combat.js": "d83431c0fbd9bbd1c737a918bde9e016c1534a27d560b25974a3f2022e5baa4d",
+    "elyndor/systems/compact-overworld.css": "65f3ea9181b014b929b31043b6dd622a70937a428453d65d747f8658500f4d58",
+    "elyndor/systems/compact-overworld.js": "7bc36c6354724b43c783150f9354eaf43ce520cd574fc989dd2b3825c52fc8d9",
+    "elyndor/systems/compass-hud.css": "606f7c929663a4e1ea628f38fdb50443f645c4f347d993e530923698513694c7",
+    "elyndor/systems/compass-hud.js": "060dd5cd9df59a826a260f735c44a1a5e769624ee225f5977657cd1f8d2603ed",
+    "elyndor/systems/concept-menus.css": "9951e8dfd3c1d66d107c8409fc87aa382ad8e96830d18413cd629444964cf894",
+    "elyndor/systems/concept-menus.js": "8ac5bd5d4cf09cee1a6acf84a1363602d3863d388d62c3d175f21f4801dbf640",
+    "elyndor/systems/connected-roads.js": "7d8f817b91025a73d8954188eb22657dbfc5ddb5fe3d1eed793fa3f37df2c272",
+    "elyndor/systems/dev-console.css": "cf573ccf10353bcf5ca9b8942aaa8e4c31891f82320ecc6312f34d08f489106e",
+    "elyndor/systems/dev-console.js": "4c53211053d182730a2317ce15d1533a129fb61ffbbb63ad159eaf1875b1e329",
+    "elyndor/systems/dev-sprite-data.js": "abfaddab3dc878b20ef810f84ffbb7cf26a41ed945bcf8d0ccc6de2b795a0050",
+    "elyndor/systems/dev-sprites.css": "c7613d20962c3382a632230801d5be2d7163f1bf43b6721a1a65a2eea41c9f7f",
+    "elyndor/systems/dev-sprites.js": "0b5d83b243603977e3747a34a7dcaf21482bfecfd19ffe4e86290fc1010e2935",
+    "elyndor/systems/directional-arrivals.js": "7af13790cacbb368a3e814055dcb466ed980eac4387902af8d1a61f028ce487c",
+    "elyndor/systems/directional-travel.js": "b8ff796be2bb7d22fce7b5f23640478a1685d5c25ca62a119abbc79e76383850",
+    "elyndor/systems/ecology.js": "056a6f8e48d1e399f78ebd98519a917dec641aa30b275582f66ab68da5c6a99c",
+    "elyndor/systems/environment-assets.js": "49a1424291c065f6a7fdeda54fdf2e5d04a98340af27c6680797579ef1cb42c9",
+    "elyndor/systems/events.js": "dba865f59d6a5115d35ebac128276381df4b5eae679e9dce199439d2efecbcb2",
+    "elyndor/systems/exact-atlas.js": "c925bd702e53519dfcd6d2e0708cc8cd9ee714d79128e25089bfccb63002f8eb",
+    "elyndor/systems/frame-safety.js": "ccdcf9f81eb3936720bfdde500470bdef8dbd17a34b097c387c12254f5f2b846",
+    "elyndor/systems/hybrid-combat.js": "1ec2c7842f8df78c7384d0a142c873cd7fd606a526a50db8ec8e8ccebd062261",
+    "elyndor/systems/interaction-visibility.css": "2c7ac567e8d2588e21604a3f3ed8aba97b64d1e99192bc5924c507c0159fb058",
+    "elyndor/systems/interaction-visibility.js": "31b5c6e720eff26dca778c2e9cc7f589b46a60ebec7b5dc9ca615f9ac1fb966c",
+    "elyndor/systems/jrpg-boundaries.js": "05193f4c537bcbfe26001ae5e873a1487334d3bf9bc5f401f13d475f47af8c33",
+    "elyndor/systems/jrpg-geography.js": "5da49b5288e6e2c2a32054f17eb39f987947a0add00452f4e31133ba9d89a8bc",
+    "elyndor/systems/jrpg-layout-data.js": "961342d308eda461e7b00049bc0cedb4ede25d9c76b3c1c720a9535b9b7c285a",
+    "elyndor/systems/jrpg-levels.js": "cbc113a370f741033aff7409b9e65985760cb2a920e29b729c08058aab0d65b2",
+    "elyndor/systems/level-plans.js": "c6f539c13beef5d69a0d6add59907ef467c1119275ae63d6b803414352f5e65d",
+    "elyndor/systems/lifecycle.js": "c95afae17e175ac6380bbf2a2ab595c3eb33f46fa8df218c7f49075e15b7eeff",
+    "elyndor/systems/local-menu-actions.css": "6b41f11dd51c5aaebab87931eef2adfe074c329960437d3ac696ade76b391628",
+    "elyndor/systems/local-menu-actions.js": "c3b5d9c08641e927a80f1ea1ae70723743039af6d90f3e58239c4939a0ef40c1",
+    "elyndor/systems/local-review-fixes.css": "4b3c8dfad13650149d8f4c187f9069b55bf564034179dc7ca9ec4f7b2ef10a71",
+    "elyndor/systems/local-review-fixes.js": "d39af26745c140097235e9177c28c722a5e1703501e9b94068c20d2c37445d01",
+    "elyndor/systems/location-miniatures.js": "b3547299c4d0502032714e95574a394a593ac098f40eb3c7917a548164fda34a",
+    "elyndor/systems/main-menu-pause.js": "945e9c31811c05346a2b2c54f9649914c96c557674b2b5070d922d333fab2a21",
+    "elyndor/systems/map-discovery.js": "547aaee87f7c22ed8f15e1c49d9e57a57d4b0856c6c0d4263acb93b2ad0cf44f",
+    "elyndor/systems/minimap.css": "dce3d4ed60a3cfef5418bd29bb2d1826762fb3b0eabc7129334b540f5bb566f8",
+    "elyndor/systems/minimap.js": "7f63ab23d7c6e7c41c945bf2e7be2c310932a06303f891e6d6b22936f0a2532f",
+    "elyndor/systems/mobile-battle-view.css": "2575408560da453d5e2fa1321e8e711a5580d7928b8338a6ea01fede261e7efd",
+    "elyndor/systems/mobile-battle-view.js": "401ffa7bf62412dc83a2bec9415f8ee40886137ff507b2d4ee1483263ba00b6a",
+    "elyndor/systems/mobile-layout.css": "79125d38c0896773281a80091a92ebf10ad955324c88768ad85fdd475bc5e8db",
+    "elyndor/systems/mobile-layout.js": "08c8500fe71650219c6d08a7dbfeed47698bf31a5015626f207dc49de9e726c7",
+    "elyndor/systems/natural-canopies.js": "cd2c9a254606c083c2521e0dc24ddcfe9b3aeb6b3ab66207f897822bf6d29fac",
+    "elyndor/systems/nearby-scene-cache.js": "7126ed0b7af6e8c4140f702c34825a976eada029160afd9b91920472f7002f55",
+    "elyndor/systems/no-selection.css": "acfd9eb6e4ac48713eb9a1c30fe5b4ed40713a098f8f8d12c4f72953f954715f",
+    "elyndor/systems/no-selection.js": "71defebf18f08f5a200ed9a36a81bfecc6149b96958b779fc55b1119c39c5062",
+    "elyndor/systems/npc-conversations.js": "8bbfe887367e7c598ade745d8713b033e9d47fcda6887213ae6b46894d51052f",
+    "elyndor/systems/overworld-routes.js": "3d12f90a5e35a11bcfe7ab7b12212f15e5f9239cab6bd87a803c46ad4e193ab3",
+    "elyndor/systems/persistence.css": "680deb4d0f06db4a1a695adccb7b7b86f1c239448cbeba6546d4a2fb885e0b4a",
+    "elyndor/systems/persistence.js": "d8ab4af0703f77ffeb1c4b38920c0891d2c871c71cc98910bf1caf1524acb237",
+    "elyndor/systems/phone-clarity.css": "ffed30f9e956061a6e1691c828eddff725b52689331de44d4ac3ef5f9ce77036",
+    "elyndor/systems/phone-clarity.js": "ee0b848a68d8c72ba8b1d798c19a48a07f395aa27465552a4ef13e3a210d6778",
+    "elyndor/systems/phone-interface.css": "d7f958d9d404142edf7a927f6d379da1ef3bfd15c21f04503da3f1a73504557f",
+    "elyndor/systems/phone-interface.js": "e3c1b13925271dafbf7fb18c2943931db2f538a391833f127d0e02574d8b56af",
+    "elyndor/systems/poi-atmosphere.js": "26e43843af64488ab65ac8e509a75c4332afcd2c17355146ffac566cbf85c31d",
+    "elyndor/systems/poi-dioramas.js": "3502f9411fc7363c333e0bddd13bcab3bf6906477e03422c0f03f99b8b58ace7",
+    "elyndor/systems/poi-entries.js": "26b8ce78cc8904d7883ebbdae1698f30b6a778f6d6663a94781bcefbd92bfa17",
+    "elyndor/systems/poi-exits.css": "144175e0fabeb6c7a321c80df449bab668aa2e78f5fb871472ad3508a46ef788",
+    "elyndor/systems/poi-exits.js": "cf34e2a694f688100b896d20327f6362000cffa4eade93ad2992de56905323dc",
+    "elyndor/systems/poi-lighting.js": "b70d8e680afb2c480d9a325ba13415dabe4e3a4fedbc5c923ead70c2f156fab0",
+    "elyndor/systems/poi-transitions.css": "1283821b4f4081af8b725902a8bce5054af491c37573ad14c5b300552debfd56",
+    "elyndor/systems/poi-transitions.js": "be843ee54b9500ae392a59dc0af7a8dbab0d09c1927e20935157e5f46b4c54fa",
+    "elyndor/systems/quest-combat-fixes.css": "3bb7d29cf2ba974cfaed0ee89f78ba766d41f0388c8674db597af9f8d46da69e",
+    "elyndor/systems/quest-combat-fixes.js": "504ff4f8692aec78e33d9041e0600ccd089eb277529ab5b98caa99b739855ca3",
+    "elyndor/systems/quest-rewards.css": "dcccd355d2225d1ffd4e1bee3d487378d8f9c594c2a2a6cf2e90d8c371d7b9f0",
+    "elyndor/systems/quest-rewards.js": "d627c21576ae1ec864a37213bdeb2b93f439163726bf0110b84787ee2401477a",
+    "elyndor/systems/quest-tracking.js": "7d5990ce86150196eb5a711e7c75f77bd12de675429ab53a2f7acc562c90fc99",
+    "elyndor/systems/rendering.js": "9d0b1fb2ff0b90820f2943e5d0e58f8fa954bd8857d4d729669a4228b89b8496",
+    "elyndor/systems/request-sources.js": "680847f460ffe079ee04b365aa5711e4b47ca6c05aae8cf0b7d683c292e70c7e",
+    "elyndor/systems/requests.js": "9c2efdc3a4811cf1621878847f5d344a8486124533be7b53e62c80e124e12fff",
+    "elyndor/systems/retained-continent.js": "4503a8d12bb83e5f1cf6ff1603389cf2c9cbcdf3d2be9c5a272c48a0033b7b16",
+    "elyndor/systems/review-controls.css": "250d4d2f4134126c9aa824e92a122adcaeae2f7f3570432b8cb6d73140cf2c93",
+    "elyndor/systems/review-fixes.css": "6f47d7a12ca198d9cfed3139a8c0c057f868018c17343fcd7c53bbe03925f3b3",
+    "elyndor/systems/road-surfaces.js": "7e46239b18b4fe1dd9e6d467cd32609af9456d4e37ea87eb9a9a5a582b1cad0a",
+    "elyndor/systems/runtime-budget.js": "b0bb75ff6003c8ad6db45daa62bdcfc4f4f8236dc801d0f4b48957f6a1d990aa",
+    "elyndor/systems/runtime.js": "e86c7abb85a143a6e1f65cc1cd644683c8758c88cb952eff4276c94d6ffa025c",
+    "elyndor/systems/save-magic.js": "5fbebd8a7389891f018197f08ef75e8cbbbb6f44ff1d0b20760d5938e9bc4036",
+    "elyndor/systems/save-rune.js": "aff2c400e305c8709b0240e1e73124be70d9f37ae0379b0f6755ee14e023f453",
+    "elyndor/systems/scenic-bridges.js": "64e3f0bc9e1b7d07c276ebc2d056370752066faa769e5b98d8749f5c3ddcd63f",
+    "elyndor/systems/soren-animations.js": "5a08f4c8b24c0c44d20f4415bb706ce77d26cbb636703692115ec47a8ee29539",
+    "elyndor/systems/sprite-contact-depth.js": "8e5a9671f834c3f692d1ef5aeafc96b4136db690d4fbe977b52f642aeef7edda",
+    "elyndor/systems/sunlight.js": "7ac70c7b66ce62c28786dc320e27394d3270f786660f40e18c0f40ffa5a5ed57",
+    "elyndor/systems/surface-pbr.js": "30a5663b39bb1f7993bae32c3776d08cf0f152da1a1ca7311ff4317d70357eeb",
+    "elyndor/systems/terrain-seating.js": "5dd7f5e73fc6ec9cfc3da22f5418654ddd9df1ac0bf0905034608c49fcc994ba",
+    "elyndor/systems/transition-graphics.js": "90e93682e5d3655b99d45bbd745c0ec5cadc3c927d91ae4525b197eb781da981",
+    "elyndor/systems/transition-speed.js": "aee62f70267ec30347393f21f06a99127defbb2ce9499ce677d92e0ece7345e8",
+    "elyndor/systems/traversal-composition.js": "a01914957e5c0ea16fa457dbac04e8a4ac02320ec7dd08ac3fb4308d705810f7",
+    "elyndor/systems/traversal-terrain.js": "2f3e1fa316e0b0243966bade2abba45ec16a1e07351e39ce4e6072418b441342",
+    "elyndor/systems/water-continuity.js": "d5eb0240e76256b499786d8aad063712aeab1ee6b45cfd6605274a1439f5bc12",
+    "elyndor/systems/world-art.js": "d9182e8101e90b0c8e32340edb8f76c8b90d5e6a35c9f2520f9635f9511c62b8",
+    "elyndor/systems/world-kit.js": "606c7c4d0c66e9fcaf9a80e516a0a1a2e87ff8607b6c6bbc31fe0b24d36e0083",
+    "elyndor/systems/world-landmarks.js": "c68fd34c09fe6d93ef5aa54c0f9130afa5d3453dd6d77add05c34073ebb56631",
+    "elyndor/title-v19.css": "1088ad9430ba32eb846af17f9fb6a02b9b57b59ec4cfd33db236c0be11fe89e6",
+    "elyndor/title-v19.js": "6da0e1d650f84dfb416c8030fbdfb24be0ff63e7943bc7c6a13c53e2abb20e16",
+    "elyndor/title-v26.css": "90f19485a2c1973ce341f99aa302868d61d4bd0d9869d6d41fc42aa4528604f2",
+    "elyndor/title-v26.js": "02e443b257e70a6d4c990cc175d477b503f92f87d6792bcf069dd18c5704ea54",
+    "elyndor/tools/asset_bundle_v36.py": "24e0a132da7e0b00c80f66a16b825658e794e854c56c529dfe83e6f6bff74fd6",
+    "elyndor/tools/bake-traversal-terrain.mjs": "9689a626aaf149f7ce24ff30eec92f7e50221104a2ee1a1d855d1ba4e13a5344",
+    "elyndor/tools/bake-world-v36.mjs": "250b0387bfd6018d4315b153d890ec5be90b17f9e1ef3e8e7899091d35599643",
+    "elyndor/tools/build-v7.py": "4810e043a6c70fe1bd76a0a42f05250b0e95885c228d7205ad87831664ff7afc",
+    "elyndor/tools/build.py": "907fea80088c5da1ea1227e7265e7830a2153355fe89433ca64e6f75178f3479",
+    "elyndor/tools/pixellab-pack.py": "4734ba49ff2b4781a3e945cd6bcbf266718a010197fd49ea8a9de5bd287607a1",
+    "elyndor/town-events.js": "7642f48c3032905780c38b300fa4faf1c40f0281de259fae617460339bb72c72",
+    "elyndor/town-v8.css": "6bf331de7d64501d7e28119a645af1f18be2fa78b21a97d035ed4a8cfd740c34",
+    "elyndor/town-v8.js": "530c2d8c4880a0189fbb1d6307b470ecddfda26be1c15f2154c0aa383a0356c7",
+    "elyndor/travel-v15.js": "1c11801455ee45a5127593b952e303087f11f1b2278791eb25a736b7a65c4a06",
+    "elyndor/tutorial-v17.js": "e6b0a46d4b8f701ab2b70dc1f98f774cba06c0a7d6cf590266896752e79043f7",
+    "elyndor/ui.js": "c400bb119e29ce00440b86c4c2f9e1b3914a66907309c80f77a97a6c445f5d7a",
+    "elyndor/visibility-v11.js": "46bca5ce105c76e597ebc494265160c51986031c1479caae7a7d517e708b313b",
+    "elyndor/visibility-v18.js": "93dedd95f1464d59879d89b9f2454db8ff4afccdcd8a40a93781f317f8f4b7d2",
+    "elyndor/visibility-v21.js": "64925292d86baae56eb4ee4d0fb89fd7cfa16762fd20bd2486290ea0f0ae63f0",
+    "elyndor/visual-v7.css": "f33d01b48b19673df4e86708b2f57724c138d27cd4fb60fee6c846e1be02d83f",
+    "elyndor/visual-v7.js": "66aea562ceaa61ebfd15bca1c9864331364e3997896a9cd2dfe2f577a17df6a0",
+    "elyndor/voices-v12.js": "d70bc85b66f01fc34f446c38810fb4893e5eddba467911481639de2c5b2073a2",
+    "elyndor/water-v20.js": "da1bb6abc2d6b2f5dd200da56ffea14e7adda326ba5af470c62ed2c7db3e1cd2",
+    "elyndor/water-v28.js": "9b15e31e778f9ac6efccf8c2ac6c5a24a17d7c1257efdbbb6c554c4873e9e7d3",
+    "elyndor/water-v32.js": "8168717f1ac1f1ae7e8dd634c649a4be2a4a99b41397ef296cc9ab5722298a62",
+    "elyndor/water.js": "ff025447b88030d813920f6771ad95339618c6c33dcbb229e592ca4c366554da",
+    "elyndor/weather-v12.js": "e174822cd5bee3ed4d60411d6d88a77add28fd8313179c8fa41ac70100a03e39",
+    "elyndor/weather-v15.js": "23c355fe50c54144b440039a5d12ebe5f30d29324b3b660b444840eeee642a73",
+    "elyndor/weather-v17.js": "da6e827a31a703a2b02f2391f1092caf913f3d9e7a1478f5877e192a4b50341f",
+    "elyndor/world-art-v38.js": "61116e489f777e97de0689ffd428c37ee6ae32811c26b7430b93e5c4157b91ab",
+    "elyndor/world-bake-v36.js": "7357de680067fd90797193550f5f28eb84a461e162b8144530d02efbbaa89d6a",
+    "elyndor/world-design.js": "ac54b8d62582cb6d33efcc2d5a125c931c33cd009d3ca01bb0161d47149fcc62",
+    "elyndor/world-v18.js": "60134f53936cfa5ab074ccae8eebae437b3d72c04e694f9e0da269fec8d71f7d",
+    "elyndor/world-v26.js": "523e2676c98c89960804dc265b25ebca8797f999572d7ea5144d79d8964cfc2f",
+    "elyndor/world-v27.js": "0f28e732e8e39736df5875aa83189c9e6c9357ced68b60f5efd403f4bb66f0a6",
+    "elyndor/world.js": "b7b615da54b87cba7b6b3fdbdeeb4ced4a7715ac5ad91242f57d8277ca856acf"
+  },
+  "finalStandalone": {
+    "pass": true,
+    "artifact": {
+      "file": "index.html",
+      "bytes": 71017643,
+      "sha256": "e4ca5a4cc3d53e31b2953d7b1760d7e8e9d17c242ec781e7c1b7d3572883934f",
+      "offline": true
+    },
+    "checks": {
+      "changelog": {
+        "version": "Alpha Version 1.24",
+        "items": 10,
+        "visible": true
+      },
+      "npcs": 30,
+      "export": {
+        "filename": "worker-idle_south.zip",
+        "bytes": 24686
+      },
+      "party": [
+        {
+          "id": "bren",
+          "unit": 114,
+          "cell": [
+            248,
+            224
+          ],
+          "runDirections": [
+            {
+              "key": "south",
+              "frames": 12
+            },
+            {
+              "key": "southeast",
+              "frames": 12
+            },
+            {
+              "key": "east",
+              "frames": 12
+            },
+            {
+              "key": "northeast",
+              "frames": 12
+            },
+            {
+              "key": "north",
+              "frames": 12
+            },
+            {
+              "key": "northwest",
+              "frames": 12
+            },
+            {
+              "key": "west",
+              "frames": 12
+            },
+            {
+              "key": "southwest",
+              "frames": 12
+            }
+          ],
+          "ready": 12
+        },
+        {
+          "id": "soren",
+          "unit": 114,
+          "cell": [
+            136,
+            160
+          ],
+          "runDirections": [
+            {
+              "key": "south",
+              "frames": 8
+            },
+            {
+              "key": "southeast",
+              "frames": 8
+            },
+            {
+              "key": "east",
+              "frames": 8
+            },
+            {
+              "key": "northeast",
+              "frames": 8
+            },
+            {
+              "key": "north",
+              "frames": 8
+            },
+            {
+              "key": "northwest",
+              "frames": 8
+            },
+            {
+              "key": "west",
+              "frames": 8
+            },
+            {
+              "key": "southwest",
+              "frames": 8
+            }
+          ],
+          "ready": 12
+        }
+      ],
+      "interior": {
+        "room": "brookForge",
+        "menu": "shop",
+        "face": "south",
+        "expected": "south"
+      },
+      "requestBoard": {
+        "scope": "brookstead",
+        "keys": [
+          "brookstead"
+        ],
+        "giver": null
+      },
+      "fastTravel": {
+        "scene": "fern",
+        "paused": false,
+        "titleVisible": false,
+        "last": {
+          "key": "fern",
+          "scene": "fern",
+          "poi": "fern",
+          "minutes": 23
+        }
+      },
+      "storyFirstFrame": {
+        "kind": "commander1",
+        "isolated": false,
+        "actors": [
+          {
+            "id": "bren",
+            "gap": 0,
+            "armed": true
+          },
+          {
+            "id": "soren",
+            "gap": 0,
+            "armed": true
+          },
+          {
+            "id": "commander",
+            "gap": 0,
+            "armed": true
+          },
+          {
+            "id": "tribeMale",
+            "gap": 0,
+            "armed": true
+          },
+          {
+            "id": "tribeFemale",
+            "gap": 0,
+            "armed": true
+          }
+        ]
+      },
+      "returnProjection": {
+        "aspect": 1.6,
+        "expected": 1.6,
+        "offset": false
+      },
+      "water": {
+        "sameMaterial": true,
+        "maxGap": 0,
+        "seamZ": -290
+      },
+      "cachedReturn": {
+        "world": "90631544-b94e-406e-bf68-8ae59a687cd0",
+        "directRain": 0,
+        "ms": 574
+      },
+      "overworld": {
+        "models": 15,
+        "gates": 20,
+        "bridges": 7,
+        "failedRoads": 0
+      },
+      "battle": {
+        "hybrid": true,
+        "physical": true,
+        "stagecraft": {
+          "region": "waterfall",
+          "props": 0,
+          "leaves": 0,
+          "backgroundEffects": true
+        },
+        "coverage": {
+          "safe": true,
+          "low": 0.05446428571430939,
+          "high": 0.9455357142856904,
+          "count": 52
+        },
+        "painting": true,
+        "gaps": [
+          0.017999999225139618,
+          0.017999999225139618,
+          0.017999999225139618,
+          0.017999999225139618,
+          0.017999999225139618,
+          0.017999999225139618,
+          0.017999999225139618,
+          0.017999999225139618
+        ],
+        "nearPhoto": 0,
+        "rows": 4
+      },
+      "targeting": {
+        "bren": 152,
+        "soren": 160,
+        "tavin": 148,
+        "mira": 160,
+        "lysa": 130
+      },
+      "recovery": {
+        "boundary": 0,
+        "reactions": [
+          {
+            "id": "bren",
+            "kind": "recovered",
+            "at": 3.5833333333333255,
+            "recorded": true
+          },
+          {
+            "id": "soren",
+            "kind": "recovered",
+            "at": 3.5833333333333255,
+            "recorded": true
+          },
+          {
+            "id": "tavin",
+            "kind": "recovered",
+            "at": 3.5833333333333255,
+            "recorded": true
+          },
+          {
+            "id": "mira",
+            "kind": "recovered",
+            "at": 3.5833333333333255,
+            "recorded": true
+          },
+          {
+            "id": "lysa",
+            "kind": "recovered",
+            "at": 3.5833333333333255,
+            "recorded": true
+          }
+        ]
+      },
+      "humanCombat": [
+        {
+          "id": "commander",
+          "size": 5.75,
+          "ready": 1,
+          "armed": true
+        },
+        {
+          "id": "commander2",
+          "size": 6.1666666667,
+          "ready": 1,
+          "armed": true
+        },
+        {
+          "id": "commander3",
+          "size": 6.5833333333,
+          "ready": 1,
+          "armed": true
+        },
+        {
+          "id": "tribeMale",
+          "size": 2.45,
+          "ready": 1,
+          "armed": true
+        },
+        {
+          "id": "tribeFemale",
+          "size": 2.45,
+          "ready": 1,
+          "armed": true
+        },
+        {
+          "id": "guardEnemy",
+          "size": 2.45,
+          "ready": 1,
+          "armed": true
+        }
+      ],
+      "magic": {
+        "hp": 10000,
+        "powers": [
+          0,
+          0,
+          0.21457669068791402
+        ],
+        "after": {
+          "hp": 9917,
+          "powers": [
+            0,
+            0,
+            0.019386446104257254
+          ]
+        }
+      },
+      "rendering": {
+        "geometryBefore": 1204,
+        "geometryAfter": 1204,
+        "calls": 120,
+        "triangles": 1027131,
+        "cpuMs": [
+          1.5,
+          1.399999976158142,
+          2.600000023841858,
+          1.3000000715255737,
+          1.3000000715255737,
+          2.3000000715255737,
+          1.3000000715255737,
+          1.3000000715255737,
+          2.3000000715255737,
+          1.7000000476837158,
+          1.600000023841858,
+          2.700000047683716,
+          1.600000023841858,
+          1.600000023841858,
+          2.399999976158142,
+          1.2999999523162842,
+          1.2000000476837158,
+          2
+        ]
+      },
+      "mobile": [
+        {
+          "size": [
+            390,
+            844
+          ],
+          "dock": 669,
+          "feet": [
+            512.4799999999974,
+            503.8400000000046,
+            526.8800000000003,
+            610.3999999999984,
+            610.3999999999984,
+            524.0000000000016,
+            524.0000000000016,
+            610.3999999999984
+          ],
+          "overflow": false
+        },
+        {
+          "size": [
+            844,
+            390
+          ],
+          "dock": 275,
+          "feet": [
+            200.32000000000016,
+            196.95999999999998,
+            205.91999999999976,
+            249.59999999999923,
+            249.59999999999923,
+            204.79999999999896,
+            204.79999999999896,
+            249.59999999999923
+          ],
+          "overflow": false
+        },
+        {
+          "size": [
+            320,
+            568
+          ],
+          "dock": 393,
+          "feet": [
+            310.9999999999987,
+            306.5000000000024,
+            318.50000000000017,
+            361.99999999999915,
+            361.99999999999915,
+            317.0000000000008,
+            317.0000000000008,
+            361.99999999999915
+          ],
+          "overflow": false
+        }
+      ],
+      "cleanup": {
+        "battle": false,
+        "stage": false,
+        "active": false,
+        "fx": false,
+        "stats": {
+          "builds": 9,
+          "disposed": 9,
+          "geometryCreated": 229,
+          "geometryDisposed": 229
+        }
+      }
+    },
+    "errors": []
+  },
+  "standardClient": {
+    "sha256": "1210f58b47aadd9cb4b141fb4b2dc9e17a929aa1a813cdd26b5306a0d08b6808",
+    "unchanged": true,
+    "movement": [
+      {
+        "x": -119.79,
+        "z": 104.57,
+        "height": 1.29,
+        "face": "north",
+        "frame": {
+          "action": "idle_north",
+          "index": 5,
+          "cell": 97
+        }
+      },
+      {
+        "x": -118.59,
+        "z": 103.15,
+        "height": 1.28,
+        "face": "north",
+        "frame": {
+          "action": "idle_north",
+          "index": 0,
+          "cell": 92
+        }
+      }
+    ],
+    "browserErrors": []
+  },
+  "nativeAssetAudit": {
+    "runtimeFamilies": 51,
+    "poses": 6044,
+    "sourceBoundaryWarnings": []
+  },
+  "componentEvidence": {
+    "travelAndQuestSources": "Local 095: all fifteen destination choices, Escape-map and interior-origin travel, invalid target rejection, board acceptance/tasks/tracking/rewards and Journal source separation verified.",
+    "combatAndCameras": "Local 095: forty-two responsive formation cases, eighteen actual story-encounter cases, eight authored reveal cameras, forty day/night stage captures, actual damage targeting, recovery threshold/decode tests and complete scene cleanup verified.",
+    "nativeArtAndVoices": "Local 095: 6,150 bundled native art file hashes unchanged. Only five recovery voice recordings replaced; all five transcripts matched their intended lines. The other 264 voice records and original casting were preserved."
+  },
+  "scope": "The final standalone is checked in native Chrome on the test PC. Component reports refer to their recorded local builds. Phone layouts use browser emulation; no universal frame-rate, physical-phone performance or perfect generated-anatomy claim."
+}

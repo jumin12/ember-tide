@@ -234,7 +234,8 @@
       "systems/battle-detail.js",
       "systems/battle-relief.js",
       "systems/battle-camera-guard.js",
-      "systems/battle-stagecraft.js"
+      "systems/battle-stagecraft.js",
+      "systems/request-sources.js"
     ]
   },
   "styles": [

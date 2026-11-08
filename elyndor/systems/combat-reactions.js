@@ -21,10 +21,10 @@ function updateHealthReactions87(){
  if(!combatVoiceContext49())return;
  for(const id of state.members){
   const hp=state.characters[id].hp,max=stats(id).hp,was=healthReactions87.states.get(id)??false;
-  // A knockout is a separate state. Exactly 25% retains the previous state,
-  // so rounding at the boundary cannot repeatedly announce a transition.
+  // A knockout is a separate state. Recovery begins strictly above 25%,
+  // matching the injured pose; later healing above it does not repeat the line.
   if(hp<=0){healthReactions87.states.set(id,false);continue;}
-  const injured=hp<max*.25?true:hp>max*.25?false:was;
+  const injured=hp<=max*.25;
   if(injured!==was){healthReactions87.states.set(id,injured);healthReaction87(id,injured?'injured':'recovered');}
  }
 }

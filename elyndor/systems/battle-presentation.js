@@ -65,12 +65,12 @@ function frameBounds91(cast,floor){
 };
 function referenceAnchors91(count,enemy,phone){
  const back=phone?(innerHeight>innerWidth?.73:.68):.68,front=phone?.90:.91;
- if(enemy){if(count===1)return[[.20,back+.06]];if(count===2)return[[.13,back+.03],[.33,front]];return[[.12,back+.02],[.37,back+.02],[.25,front]];}
+ if(enemy){if(count===1)return[[.19,back+.06]];if(count===2)return[[.12,back+.03],[.31,front]];return[[.11,back+.02],[.33,back+.02],[.23,front]];}
  if(count===1)return[[.82,front-.02]];
- if(count===2)return[[.70,back+.02],[.88,front-.02]];
- if(count===3)return[[.65,back],[.85,back+.02],[.77,front]];
- if(count===4)return[[.59,back],[.78,back+.01],[.68,front],[.90,front]];
- return[[.59,back],[.73,back-.015],[.86,back+.025],[.68,front],[.90,front]];
+ if(count===2)return[[.76,back+.02],[.91,front-.02]];
+ if(count===3)return[[.69,back],[.91,back+.02],[.81,front]];
+ if(count===4)return[[.65,back],[.86,back+.01],[.75,front],[.92,front]];
+ return[[.65,back],[.79,back-.015],[.92,back+.025],[.73,front],[.90,front]];
 }
 function applyReferenceCamera91(frame){
  cameraTarget.copy(frame.target);camera.position.copy(frame.position);camera.fov=frame.fov;camera.near=.1;camera.far=950;camera.lookAt(cameraTarget);camera.setViewOffset(innerWidth,frame.field.height,0,-frame.field.top,innerWidth,innerHeight);camera.updateProjectionMatrix();camera.updateMatrixWorld();focusPoint.copy(cameraTarget);sideCameraStats.angle=frame.pitch;sideCameraStats.cinematic=0;

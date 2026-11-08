@@ -7926,7 +7926,25 @@
       "characterId": "2717def9-976f-4dce-a494-b236b3f028d8",
       "human": true,
       "combatOnly": false,
-      "anatomyRevision": 66
+      "anatomyRevision": 66,
+      "extraClips": {
+        "enemyIdle": {
+          "animation": "attack-v66",
+          "direction": "east",
+          "indices": [
+            8
+          ],
+          "expectedFrames": 1
+        },
+        "guard": {
+          "animation": "attack-v66",
+          "direction": "east",
+          "indices": [
+            8
+          ],
+          "expectedFrames": 1
+        }
+      }
     },
     {
       "id": "tribeFemale",
@@ -7934,7 +7952,25 @@
       "characterId": "9946a0f1-8379-4d29-8275-ed054dd03266",
       "human": true,
       "combatOnly": false,
-      "anatomyRevision": 66
+      "anatomyRevision": 66,
+      "extraClips": {
+        "enemyIdle": {
+          "animation": "attack-v66",
+          "direction": "east",
+          "indices": [
+            7
+          ],
+          "expectedFrames": 1
+        },
+        "guard": {
+          "animation": "attack-v66",
+          "direction": "east",
+          "indices": [
+            7
+          ],
+          "expectedFrames": 1
+        }
+      }
     },
     {
       "id": "commander",
@@ -7942,7 +7978,25 @@
       "characterId": "62684aa2-d2af-49ae-af79-6ee2a1f32eba",
       "human": true,
       "combatOnly": false,
-      "anatomyRevision": 66
+      "anatomyRevision": 66,
+      "extraClips": {
+        "enemyIdle": {
+          "animation": "attack-v66",
+          "direction": "east",
+          "indices": [
+            5
+          ],
+          "expectedFrames": 1
+        },
+        "guard": {
+          "animation": "attack-v66",
+          "direction": "east",
+          "indices": [
+            5
+          ],
+          "expectedFrames": 1
+        }
+      }
     },
     {
       "id": "commander2",
@@ -7950,7 +8004,25 @@
       "characterId": "d4e6dd36-1a28-42dc-bf8c-c184f2a7b3f9",
       "human": true,
       "combatOnly": false,
-      "anatomyRevision": 66
+      "anatomyRevision": 66,
+      "extraClips": {
+        "enemyIdle": {
+          "animation": "attack-v66",
+          "direction": "east",
+          "indices": [
+            7
+          ],
+          "expectedFrames": 1
+        },
+        "guard": {
+          "animation": "attack-v66",
+          "direction": "east",
+          "indices": [
+            7
+          ],
+          "expectedFrames": 1
+        }
+      }
     },
     {
       "id": "commander3",
@@ -7958,7 +8030,25 @@
       "characterId": "cc185750-2801-484e-b0ef-def59ddb5f74",
       "human": true,
       "combatOnly": false,
-      "anatomyRevision": 66
+      "anatomyRevision": 66,
+      "extraClips": {
+        "enemyIdle": {
+          "animation": "attack-v66",
+          "direction": "east",
+          "indices": [
+            7
+          ],
+          "expectedFrames": 1
+        },
+        "guard": {
+          "animation": "attack-v66",
+          "direction": "east",
+          "indices": [
+            7
+          ],
+          "expectedFrames": 1
+        }
+      }
     },
     {
       "id": "guardEnemy",
@@ -7966,7 +8056,25 @@
       "characterId": "1e939140-c5f2-4f24-88a8-4968f24f36f9",
       "human": true,
       "combatOnly": false,
-      "anatomyRevision": 66
+      "anatomyRevision": 66,
+      "extraClips": {
+        "enemyIdle": {
+          "animation": "attack-v66",
+          "direction": "east",
+          "indices": [
+            7
+          ],
+          "expectedFrames": 1
+        },
+        "guard": {
+          "animation": "attack-v66",
+          "direction": "east",
+          "indices": [
+            7
+          ],
+          "expectedFrames": 1
+        }
+      }
     },
     {
       "id": "brenAscended",

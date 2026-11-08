@@ -3208,11 +3208,13 @@
       "speaker": "bren",
       "role": "bren",
       "text": "Much better. Let's finish this.",
-      "key": "21fa4593e9d65048ef2e",
-      "performance": "[relieved]",
+      "key": "7748cc016e0f13aff89a",
+      "performance": "[out of breath] [determined]",
       "healthReaction87": "recovered",
-      "file": "elyndor/audio/opus/21fa4593e9d65048ef2e.ogg",
-      "bytes": 12122
+      "file": "elyndor/audio/opus/7748cc016e0f13aff89a.ogg",
+      "bytes": 17019,
+      "direction95": "Short, forceful recovery call while actively fighting; renewed resolve, not a calm conversation or relaxed gratitude.",
+      "sha256": "48fadbfe6291d71f5e7f438a9cf6c49d076d7ca56d211cd655c94f6366508e60"
     },
     {
       "speaker": "soren",
@@ -3228,11 +3230,13 @@
       "speaker": "soren",
       "role": "soren",
       "text": "Steady again. Thank you.",
-      "key": "5097165ae197b8ebbe04",
-      "performance": "[relieved]",
+      "key": "f9f4769b6ff77a0c4e93",
+      "performance": "[firm] [urgent]",
       "healthReaction87": "recovered",
-      "file": "elyndor/audio/opus/5097165ae197b8ebbe04.ogg",
-      "bytes": 11746
+      "file": "elyndor/audio/opus/f9f4769b6ff77a0c4e93.ogg",
+      "bytes": 11466,
+      "direction95": "Short, forceful recovery call while actively fighting; renewed resolve, not a calm conversation or relaxed gratitude.",
+      "sha256": "6d70ea50098f9628a9c71c17edd664a06d8f6249ee051301c17f3dc4eb4b6ca1"
     },
     {
       "speaker": "tavin",
@@ -3248,11 +3252,13 @@
       "speaker": "tavin",
       "role": "tavin",
       "text": "That's more like it.",
-      "key": "791e8d5396dca01363bb",
-      "performance": "[relieved]",
+      "key": "b8bbb7091586ca69d075",
+      "performance": "[out of breath] [confident]",
       "healthReaction87": "recovered",
-      "file": "elyndor/audio/opus/791e8d5396dca01363bb.ogg",
-      "bytes": 8696
+      "file": "elyndor/audio/opus/b8bbb7091586ca69d075.ogg",
+      "bytes": 11349,
+      "direction95": "Short, forceful recovery call while actively fighting; renewed resolve, not a calm conversation or relaxed gratitude.",
+      "sha256": "f1fec95da437e8e4cab0d0bff8bc5995f5a0a932f97f12f1bbb169d34d5f9cca"
     },
     {
       "speaker": "mira",
@@ -3268,11 +3274,13 @@
       "speaker": "mira",
       "role": "mira",
       "text": "There. Back on my feet.",
-      "key": "474c6ea4bb358976d471",
-      "performance": "[relieved]",
+      "key": "da901c7cd3cdb7d3f5fe",
+      "performance": "[out of breath] [determined]",
       "healthReaction87": "recovered",
-      "file": "elyndor/audio/opus/474c6ea4bb358976d471.ogg",
-      "bytes": 11912
+      "file": "elyndor/audio/opus/da901c7cd3cdb7d3f5fe.ogg",
+      "bytes": 16212,
+      "direction95": "Short, forceful recovery call while actively fighting; renewed resolve, not a calm conversation or relaxed gratitude.",
+      "sha256": "b38d5fbe4f732d39eb25c8c69ccd892246429bea76212cb8b0069e617573696d"
     },
     {
       "speaker": "lysa",
@@ -3288,11 +3296,13 @@
       "speaker": "lysa",
       "role": "lysa",
       "text": "Much better. My turn.",
-      "key": "98f4c5475c8f594bac2c",
-      "performance": "[relieved]",
+      "key": "83c7880959887b7aa2f0",
+      "performance": "[fierce] [excited]",
       "healthReaction87": "recovered",
-      "file": "elyndor/audio/opus/98f4c5475c8f594bac2c.ogg",
-      "bytes": 12518
+      "file": "elyndor/audio/opus/83c7880959887b7aa2f0.ogg",
+      "bytes": 11195,
+      "direction95": "Short, forceful recovery call while actively fighting; renewed resolve, not a calm conversation or relaxed gratitude.",
+      "sha256": "642bb5f11c603e2014315fa2b45272e842d9154e64ca7c816e5044734dc9f6b2"
     }
   ]
 }

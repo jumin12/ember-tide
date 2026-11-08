@@ -2,6 +2,23 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.24 — Steadier travel and clearer combat
+
+November 8, 2026
+
+- Fixed fast travel from the Escape-menu map leaving the title-style pause open. The chosen destination is retained through the transition, gameplay resumes at the real arrival, and invalid destinations are rejected.
+- Restored the full viewport projection after combat, correcting squeezed or skewed views in the overworld, POIs and interiors.
+- Moved the party farther right and kept enemies on the left in staggered formations, with adaptive silhouette fitting across desktop, ultrawide and phone layouts.
+- Enlarged the three Commanders by about two-thirds while preserving ordinary creature sizes and fitting the larger silhouettes clear of combat controls.
+- Gave all six human-opponent families reviewed, armed native ready and guard poses. Soren retains his authored combat animations, and exploration poses remain separate.
+- Synchronized party and enemy meshes, facing and combat frames before the first reveal frame so story battles no longer briefly show the old exploration row or neutral poses.
+- Made ordinary enemy attacks vary among eligible party members. Hunters retain a modest wounded-target preference; defeated and untargetable members are excluded, and temporarily untargetable parties no longer stall the enemy turn.
+- Scoped notice boards to their own optional requests, stopped nearby NPCs relisting those same board jobs, and labeled board and NPC request sources separately in the Journal while preserving progress, tracking and rewards.
+- Rerecorded recovery reactions for all five party members with their existing approved voices and stronger battle delivery.
+- Aligned injury and recovery checks with the 25% HP pose boundary. Recovery is announced once when healing moves a living character above the threshold; further healing above it does not repeat the line.
+
+Release verification and the standalone checksum are recorded in `elyndor/previews/release-v124/verification.json`. Browser checks use native Chrome; phone layouts use browser emulation. Existing PixelLab images retain their native resolution.
+
 ## Alpha Version 1.23 — Richer battles and sharper phone visuals
 
 November 8, 2026
