@@ -1,10 +1,10 @@
 // Foliage is built from small folded, alpha-cut botanical sprays in real 3D.
 // Every LOD carries the same per-tree view mask; shadows never use that mask.
-const forest30={array:null,keys:['leafOak30','leafBirch30','leafMaple30','leafWillow30','leafPine30','leafBlossom30'],main:{value:1},reflection:false,frames:0};
+const forest30={array:null,rects:[],keys:['leafOak30','leafBirch30','leafMaple30','leafWillow30','leafPine30','leafBlossom30'],main:{value:1},reflection:false,frames:0};
 const loadForestBefore30=loadAssets;
 loadAssets=async function(){
- await loadForestBefore30();const size=512,data=new Uint8Array(size*size*4*6),c=document.createElement('canvas');c.width=c.height=size;const ctx=c.getContext('2d',{willReadFrequently:true});
- forest30.keys.forEach((key,i)=>{const t=textures[key]??textures.oakCanopy;ctx.clearRect(0,0,size,size);ctx.drawImage(t.image,0,0,size,size);data.set(ctx.getImageData(0,0,size,size).data,i*size*size*4);});
+ await loadForestBefore30();const size=256,data=new Uint8Array(size*size*4*6),c=document.createElement('canvas');c.width=c.height=size;const ctx=c.getContext('2d',{willReadFrequently:true});
+ forest30.keys.forEach((key,i)=>{const t=textures[key]??textures.oakCanopy,fit=Math.min(1,size/Math.max(t.image.width,t.image.height)),w=Math.round(t.image.width*fit),h=Math.round(t.image.height*fit),x=Math.floor((size-w)/2),y=Math.floor((size-h)/2);ctx.clearRect(0,0,size,size);ctx.drawImage(t.image,x,y,w,h);forest30.rects[i]=new THREE.Vector4(x/size,y/size,w/size,h/size);data.set(ctx.getImageData(0,0,size,size).data,i*size*size*4);});
  const t=new THREE.DataArrayTexture(data,size,size,6);t.colorSpace=THREE.SRGBColorSpace;t.magFilter=THREE.LinearFilter;t.minFilter=THREE.LinearMipmapLinearFilter;t.generateMipmaps=true;t.wrapS=t.wrapT=THREE.ClampToEdgeWrapping;t.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());t.needsUpdate=true;forest30.array=t;
 };
 function sprayGeometry30(count){
@@ -51,20 +51,20 @@ const forestTransform30=`
 function forestMaterial30(trunk){
  const key='forest30-'+trunk;
  const m=new THREE.MeshStandardMaterial({color:'#ffffff',roughness:trunk?.93:.78,side:THREE.DoubleSide,alphaTest:trunk?0:.36,alphaToCoverage:!trunk});m.userData.treeViewCompiled=true;m.userData.forestNative30=true;
- m.onBeforeCompile=sh=>{Object.assign(sh.uniforms,{leaves30:{value:forest30.array},bark30:{value:textures.bark},windTime:windUniforms.time,windStrength:windUniforms.strength,mainView30:forest30.main});
+ m.onBeforeCompile=sh=>{Object.assign(sh.uniforms,{leaves30:{value:forest30.array},leafRect30:{value:forest30.rects},bark30:{value:textures.bark},windTime:windUniforms.time,windStrength:windUniforms.strength,mainView30:forest30.main});
   sh.vertexShader=forestVertex30+sh.vertexShader;sh.vertexShader=sh.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\n'+forestTransform30);
-  sh.fragmentShader='uniform highp sampler2DArray leaves30;uniform sampler2D bark30;varying vec2 leafUV30;varying float species30,trunk30;\n'+sh.fragmentShader;
-  sh.fragmentShader=sh.fragmentShader.replace('#include <map_fragment>',`vec4 botany30=trunk30>.5?texture2D(bark30,leafUV30*vec2(1.,3.)):texture(leaves30,vec3(leafUV30,floor(species30+.5)));
+  sh.fragmentShader='uniform highp sampler2DArray leaves30;uniform vec4 leafRect30[6];vec4 sampleLeaf30(vec2 uv,float species){vec4 r=leafRect30[int(clamp(floor(species+.5),0.,5.))];return texture(leaves30,vec3(r.xy+uv*r.zw,floor(species+.5)));}uniform sampler2D bark30;varying vec2 leafUV30;varying float species30,trunk30;\n'+sh.fragmentShader;
+  sh.fragmentShader=sh.fragmentShader.replace('#include <map_fragment>',`vec4 botany30=trunk30>.5?texture2D(bark30,leafUV30*vec2(1.,3.)):sampleLeaf30(leafUV30,species30);
    if(trunk30>.5&&abs(species30-1.)<.1){float lines30=smoothstep(.32,.45,sin(leafUV30.y*72.+sin(leafUV30.x*13.)*2.));botany30.rgb=mix(vec3(.76,.76,.63),botany30.rgb*.65,lines30*.45);}if(trunk30<.5)botany30.rgb*=1.35;diffuseColor*=botany30;`);
   sh.fragmentShader=sh.fragmentShader.replace('#include <opaque_fragment>',`if(trunk30<.5){outgoingLight+=diffuseColor.rgb*.10;}\n#include <opaque_fragment>`);
  };
  m.customProgramCacheKey=()=>key;addCloudLighting(m);return m;
 }
 function forestDepth30(){
- const m=new THREE.MeshDepthMaterial({depthPacking:THREE.RGBADepthPacking,side:THREE.DoubleSide,alphaTest:.36});m.onBeforeCompile=sh=>{Object.assign(sh.uniforms,{leaves30:{value:forest30.array},windTime:windUniforms.time,windStrength:windUniforms.strength,mainView30:{value:0}});
+ const m=new THREE.MeshDepthMaterial({depthPacking:THREE.RGBADepthPacking,side:THREE.DoubleSide,alphaTest:.36});m.onBeforeCompile=sh=>{Object.assign(sh.uniforms,{leaves30:{value:forest30.array},leafRect30:{value:forest30.rects},windTime:windUniforms.time,windStrength:windUniforms.strength,mainView30:{value:0}});
   sh.vertexShader=forestVertex30+sh.vertexShader;sh.vertexShader=sh.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\n'+forestTransform30);
-  sh.fragmentShader='uniform highp sampler2DArray leaves30;varying vec2 leafUV30;varying float species30,trunk30;\n'+sh.fragmentShader;
-  sh.fragmentShader=sh.fragmentShader.replace('#include <alphatest_fragment>',`if(trunk30<.5&&texture(leaves30,vec3(leafUV30,floor(species30+.5))).a<.36)discard;`);
+  sh.fragmentShader='uniform highp sampler2DArray leaves30;uniform vec4 leafRect30[6];vec4 sampleLeaf30(vec2 uv,float species){vec4 r=leafRect30[int(clamp(floor(species+.5),0.,5.))];return texture(leaves30,vec3(r.xy+uv*r.zw,floor(species+.5)));}varying vec2 leafUV30;varying float species30,trunk30;\n'+sh.fragmentShader;
+  sh.fragmentShader=sh.fragmentShader.replace('#include <alphatest_fragment>',`if(trunk30<.5&&sampleLeaf30(leafUV30,species30).a<.36)discard;`);
  };m.customProgramCacheKey=()=> 'forest-depth30';return m;
 }
 buildSolidForest=function(){

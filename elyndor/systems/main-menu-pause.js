@@ -20,15 +20,16 @@ startJourney=function(...args){leaveMainPause70();return pauseStartBefore70(...a
 const pauseLoadBefore70=loadSlot;
 loadSlot=function(...args){const r=pauseLoadBefore70(...args);if(r)leaveMainPause70();return r;};
 const pauseRenderMenuBefore70=renderMenu;
-renderMenu=function(...args){const r=pauseRenderMenuBefore70(...args),back=$('#return-title');if(back){const action=back.onclick;back.onclick=function(...event){leaveMainPause70();return action?.apply(this,event);};}return r;};
-document.addEventListener('keydown',e=>{
+renderMenu=function(...args){const r=pauseRenderMenuBefore70(...args);$('#return-title')?.remove();return r;};
+window.addEventListener('keydown',e=>{
  if($('#record-dialog19')||devConsole60.open||$('#combat-legend65'))return;
+ if(e.key==='Escape'&&e.repeat&&(mainPause70.open||departureControlAvailable())){e.preventDefault();e.stopImmediatePropagation();return;}
  if(mainPause70.open&&menu?.tab==='main70'){
   if(e.key==='Escape'){e.preventDefault();e.stopImmediatePropagation();if(title19.tab==='saves'){title19.tab='news';renderTitlePanel19();$('#title-load19')?.focus();}else resumeMainPause70();return;}
   if(['Tab','ArrowDown','ArrowUp','ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();e.stopImmediatePropagation();const nodes=[...$('#title').querySelectorAll('button:not(:disabled)')].filter(n=>n.offsetParent!==null),i=nodes.indexOf(document.activeElement),back=e.shiftKey||['ArrowUp','ArrowLeft'].includes(e.key);nodes[(i+(back?-1:1)+nodes.length)%nodes.length]?.focus();return;}
   if(e.key==='Enter'&&document.activeElement?.tagName==='BUTTON'){e.preventDefault();e.stopImmediatePropagation();document.activeElement.click();}return;
  }
- if(e.key==='Escape'&&!e.repeat&&!menu&&activeScene?.kind==='overworld'&&departureControlAvailable()){
+ if(e.key==='Escape'&&!e.repeat&&!menu&&['overworld','poi','interior'].includes(activeScene?.kind)&&departureControlAvailable()){
   e.preventDefault();e.stopImmediatePropagation();showMainPause70();
  }
 },{capture:true});

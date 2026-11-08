@@ -5,15 +5,17 @@ lightWorldMaterial=function(base){
  if(base.isMeshStandardMaterial&&!base.map&&!base.transparent){base.map=textures[base.metalness>.24?'metal':base.emissiveIntensity>.3?'cloth':'rock'];base.needsUpdate=true;}
  return base;
 };
-const materialDensity28=`float scale28(float t){if(t<.5||abs(t-15.)<.5||abs(t-16.)<.5)return 3.2;if(abs(t-2.)<.5||abs(t-17.)<.5)return 4.;if(abs(t-3.)<.5)return 2.1;if(abs(t-4.)<.5||abs(t-5.)<.5)return 1.8;return 1.;}`;
+function materialDensity28(){return `uniform float materialDensity86[${terrainTileNames.length}];float scale28(float t){return materialDensity86[int(clamp(floor(t+.5),0.,${(terrainTileNames.length-1).toFixed(1)}))];}`;}
+function materialScales86(){return Float32Array.from(terrainTileNames,key=>surfaceProps86[key]?(key.startsWith('floor')?5.5:surfaceProps86[key].density):['cobble','cobbleA','cobbleB'].includes(key)?3.2:['wall','wallA'].includes(key)?4:key==='slate'?2.1:['wood','darkWood'].includes(key)?1.8:1);}
+
 atlasLookup=function(){return `vec2 uv28=vSurfaceUV*scale28(vTile);vec4 tileColor=texture(surfaceArray,vec3(uv28,floor(vTile+.5)));float wear=.97+.045*sin(vSurfaceUV.x*.29+sin(vSurfaceUV.y*.23+vTile))*sin(vSurfaceUV.y*.31+vTile);tileColor.rgb*=wear;`;};
 const staticMaterialBefore28=staticAtlasMaterial;
 staticAtlasMaterial=function(){
  if(scenery.staticAtlas?.userData.material28)return scenery.staticAtlas;
  const old=staticMaterialBefore28(),m=new THREE.MeshStandardMaterial({vertexColors:true,roughness:.87,metalness:0});
  m.userData={...old.userData,material28:true};m.onBeforeCompile=sh=>{
-  old.onBeforeCompile(sh);sh.uniforms.detailArray28={value:materials28.normalArray};sh.uniforms.wet28=weather.wet;
-  sh.fragmentShader='uniform highp sampler2DArray detailArray28;uniform float wet28;\n'+materialDensity28+'\n'+sh.fragmentShader;
+  old.onBeforeCompile(sh);sh.uniforms.materialDensity86={value:materialScales86()};sh.uniforms.detailArray28={value:materials28.normalArray};sh.uniforms.wet28=weather.wet;
+  sh.fragmentShader='uniform highp sampler2DArray detailArray28;uniform float wet28;\n'+materialDensity28()+'\n'+sh.fragmentShader;
   sh.fragmentShader=sh.fragmentShader.replace('#include <normal_fragment_maps>',`#include <normal_fragment_maps>
    vec4 detail28=texture(detailArray28,vec3(uv28,floor(vTile+.5)));
    vec3 tangent28=detail28.rgb*2.-1.;tangent28.xy*=.68;
@@ -30,10 +32,10 @@ staticAtlasMaterial=function(){
 const materialLoadBefore28=loadAssets;
 loadAssets=async function(){
  await materialLoadBefore28();
- const size=512,pixels=new Uint8Array(size*size*4*terrainTileNames.length),canvas=document.createElement('canvas');canvas.width=canvas.height=size;const ctx=canvas.getContext('2d',{willReadFrequently:true});
+ const size=256,pixels=new Uint8Array(size*size*4*terrainTileNames.length),canvas=document.createElement('canvas');canvas.width=canvas.height=size;const ctx=canvas.getContext('2d',{willReadFrequently:true});
  const aliases={cobbleA:'cobbleMoss30',cobbleB:'cobbleMoss30',plasterA:'plaster',rockA:'rock',rockB:'rock',grassA:'grass',earthA:'earth',wallA:'wall'};
  terrainTileNames.forEach((key,i)=>{
-  const source=aliases[key]??key,tex=textures['normal28_'+source],rough=source==='slate'?.74:source==='wood'?.84:source==='metal'?.4:.91;
+  const source=aliases[key]??key,tex=textures['normal28_'+key]??textures['normal28_'+source],rough=surfaceProps86[key]?.roughness??(source==='slate'?.74:source==='wood'?.84:source==='metal'?.4:.91);
   let data=null;if(tex){tex.colorSpace=THREE.NoColorSpace;tex.needsUpdate=true;ctx.clearRect(0,0,size,size);ctx.drawImage(tex.image,0,0,size,size);data=ctx.getImageData(0,0,size,size).data;}
   for(let p=0;p<size*size;p++){const k=(i*size*size+p)*4,j=p*4;pixels[k]=data?data[j]:128;pixels[k+1]=data?data[j+1]:128;pixels[k+2]=data?data[j+2]:255;pixels[k+3]=Math.round(rough*255);}
  });

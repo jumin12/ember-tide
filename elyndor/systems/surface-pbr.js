@@ -4,18 +4,18 @@ const settlementMaterials66={enabled:{value:1},meshes:0};
 const surface67={outdoor:null,indoor:null,wet:{value:0},day:{value:1},mode:{value:-1},prepared:new WeakSet(),byMap:new Map()};
 const slot67=key=>terrainTileNames.indexOf(key);
 const testSlot67=keys=>keys.filter(k=>slot67(k)>=0).map(k=>'abs(vTile-'+slot67(k).toFixed(1)+')<.4').join('||')||'false';
-const surfaceKinds67={metal:testSlot67(['metal']),glass:testSlot67(['window']),cloth:testSlot67(['cloth','rug29']),wood:testSlot67(['wood','darkWood','panel29','door','crateFace','barrelStave','bark']),plaster:testSlot67(['plaster','plasterA'])};
+const surfaceKinds67={get metal(){return testSlot67(['metal','steel86','brass86','copper86'])},get glass(){return testSlot67(['window','ceramic86'])},get cloth(){return testSlot67(['cloth','rug29','canvas86','wool86','rugRoyal86'])},get wood(){return testSlot67(['wood','darkWood','panel29','door','crateFace','barrelStave','bark',...Object.keys(surfaceProps86).filter(k=>surfaceProps86[k].family==='wood')])},get plaster(){return testSlot67(['plaster','plasterA','plasterSage86'])}};
 const surfaceLookupBefore67=atlasLookup;
-atlasLookup=function(){return surfaceLookupBefore67()+`if(${surfaceKinds67.plaster}){float trowel67=sin(vSurfaceUV.x*2.7+sin(vSurfaceUV.y*3.1))*.014;tileColor.rgb=mix(vec3(.84,.82,.76),tileColor.rgb,.30)*(1.+trowel67);}`;};
+atlasLookup=function(){return surfaceLookupBefore67()+`if(${surfaceKinds67.plaster}){float trowel67=sin(vSurfaceUV.x*2.7+sin(vSurfaceUV.y*3.1))*.014;tileColor.rgb*=1.+trowel67;}`;};
 const surfaceAtlasBefore67=staticAtlasMaterial;
 staticAtlasMaterial=function(...args){const m=surfaceAtlasBefore67(...args);if(m.userData.pbr67)return m;m.userData.pbr67=true;m.envMap=surface67.outdoor;m.envMapIntensity=.8;
  const before=m.onBeforeCompile,key=m.customProgramCacheKey();
- m.onBeforeCompile=s=>{before(s);s.uniforms.surfaceDay67=surface67.day;s.fragmentShader='uniform float surfaceDay67;\n'+s.fragmentShader;
-  s.fragmentShader=s.fragmentShader.replace('tangent28.xy*=.68;',`tangent28.xy*=(${surfaceKinds67.plaster})?.20:(${surfaceKinds67.wood})?.34:.52;`);
+ m.onBeforeCompile=s=>{before(s);s.uniforms.surfaceDay67=surface67.day;s.uniforms.surfaceClass86={value:surfaceClasses86()};s.fragmentShader='uniform float surfaceDay67;uniform vec4 surfaceClass86['+terrainTileNames.length+'];\n'+s.fragmentShader;
+  s.fragmentShader=s.fragmentShader.replace('tangent28.xy*=.68;',`tangent28.xy*=surfaceClass86[int(floor(vTile+.5))].w;`);
   s.fragmentShader=s.fragmentShader.replace('#include <roughnessmap_fragment>',`#include <roughnessmap_fragment>
-   float metal67=(${surfaceKinds67.metal})?1.:0.,glass67=(${surfaceKinds67.glass})?1.:0.,cloth67=(${surfaceKinds67.cloth})?1.:0.;
+   vec4 class86=surfaceClass86[int(floor(vTile+.5))];float metal67=class86.x,glass67=step(.1,class86.y),cloth67=class86.z;
    float detailR67=texture(detailArray28,vec3(uv28,floor(vTile+.5))).a;
-   float rough67=mix(clamp(detailR67,.72,.97),clamp(detailR67,.25,.48),metal67);rough67=mix(rough67,.14,glass67);rough67=mix(rough67,.98,cloth67);roughnessFactor=rough67;
+   float rough67=mix(clamp(detailR67,.72,.97),clamp(detailR67,.25,.48),metal67);rough67=mix(rough67,class86.y>.75?.14:.32,glass67);rough67=mix(rough67,.98,cloth67);roughnessFactor=rough67;
   `);
   s.fragmentShader=s.fragmentShader.replace('roughnessFactor=mix(materialRough28,materialRough28*.5,wet28*.65);','roughnessFactor=rough67;');
   s.fragmentShader=s.fragmentShader.replace('#include <metalnessmap_fragment>','#include <metalnessmap_fragment>\nmetalnessFactor=metal67*.88;');
@@ -32,10 +32,10 @@ function surfaceEnvironment67(interior){
 }
 function tuneSurface67(m){
  if(!m?.isMeshStandardMaterial||surface67.prepared.has(m))return;surface67.prepared.add(m);if(m.userData.pbr67||m.userData.water62)return;
- const key=m.userData.surface67??m.userData.textureKey??surface67.byMap.get(m.map),metal=key==='metal'||m.metalness>.5,glass=['window','glass67','lightFacets'].includes(key),matte=!metal&&!glass;
+ const key=m.userData.surface67??m.userData.textureKey??surface67.byMap.get(m.map),metal=['metal','steel86','brass86','copper86'].includes(key)||m.metalness>.5,glass=['window','glass67','lightFacets','ceramic86'].includes(key),matte=!metal&&!glass;
  m.userData.surfaceResponse67=metal?'metal':glass?'glass':'matte';
- if(!matte){m.envMap=activeScene?.kind==='interior'?surface67.indoor:surface67.outdoor;m.envMapIntensity=glass?.55:.85;m.metalness=metal?.88:0;m.roughness=glass?.15:Math.min(m.roughness,.39);}else{m.envMap=null;m.metalness=0;m.roughness=Math.max(m.roughness,.77);}
- const alias={plasterA:'plaster',wallA:'wall',rockA:'rock',rockB:'rock',cobbleA:'cobbleMoss30',cobbleB:'cobbleMoss30'},normal=textures['normal28_'+(alias[key]??key)];if(normal&&!m.normalMap){m.normalMap=normal;m.normalScale.setScalar(key?.startsWith('plaster')?.20:metal?.18:.40);}
+ if(!matte){m.envMap=activeScene?.kind==='interior'?surface67.indoor:surface67.outdoor;m.envMapIntensity=glass?.55:.85;m.metalness=metal?.88:0;m.roughness=key==='ceramic86'?.32:glass?.15:Math.min(m.roughness,.39);}else{m.envMap=null;m.metalness=0;m.roughness=Math.max(m.roughness,.77);}
+ const alias={plasterA:'plaster',wallA:'wall',rockA:'rock',rockB:'rock',cobbleA:'cobbleMoss30',cobbleB:'cobbleMoss30'},normal=textures['normal28_'+key]??textures['normal28_'+(alias[key]??key)];if(normal&&!m.normalMap){m.normalMap=normal;m.normalScale.setScalar(key?.startsWith('plaster')?.20:metal?.18:.40);}
  m.needsUpdate=true;
 }
 function terrainSurface67(m){if(!m?.isMeshStandardMaterial||m.userData.terrainPBR67)return;m.userData.terrainPBR67=true;m.metalness=0;m.roughness=.9;m.envMap=null;const before=m.onBeforeCompile,key=m.customProgramCacheKey();m.onBeforeCompile=s=>{before(s);const macro=s.fragmentShader.includes('terrainWorld'),local=s.fragmentShader.includes('vGroundBlend');if(!macro&&!local)return;s.uniforms.groundDetail67={value:materials28.normalArray};s.fragmentShader='uniform highp sampler2DArray groundDetail67;\n'+s.fragmentShader;s.fragmentShader=s.fragmentShader.replace('#include <normal_fragment_maps>',`#include <normal_fragment_maps>

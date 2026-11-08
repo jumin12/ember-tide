@@ -69,9 +69,9 @@ function activateStage53(key){
  q.origin={scene:state.scene,x:player.x,z:player.z,poses:party.map(a=>({a,x:a.x,z:a.z,face:a.face,id:a.characterId??a.id})),hidden:[]};
  q.visibility=new Map(world.children.map(o=>[o,o.visible]));
  q.lighting={sunParent:sun.parent,targetParent:sun.target.parent,hemiParent:hemi.parent,sunPosition:sun.position.clone(),targetPosition:sun.target.position.clone(),sunColor:sun.color.clone(),hemiColor:hemi.color.clone(),groundColor:hemi.groundColor.clone(),sunIntensity:sun.intensity,hemiIntensity:hemi.intensity,exterior:weather.exterior.value,shadow:{left:sun.shadow.camera.left,right:sun.shadow.camera.right,top:sun.shadow.camera.top,bottom:sun.shadow.camera.bottom,near:sun.shadow.camera.near,far:sun.shadow.camera.far},lights:(world.userData.lanterns??[]).map(l=>({l,position:l.position.clone(),color:l.color.clone(),intensity:l.intensity,distance:l.distance,power:l.userData.power}))};
- const spec=BATTLE_STAGES53[key],variant=battleTexture55(key),texture=variant.texture;q.phase55=variant.phase;q.textureKey55=variant.key;if(!texture)throw Error('Battle background missing: '+key);
- texture.magFilter=THREE.LinearFilter;texture.minFilter=THREE.LinearMipmapLinearFilter;texture.wrapS=texture.wrapT=THREE.ClampToEdgeWrapping;texture.needsUpdate=true;
- q.resources.material.uniforms.map.value=texture;q.resources.material.uniforms.imageAspect.value=texture.image.width/texture.image.height;q.resources.material.uniforms.waterArea.value.fromArray(spec.water??[0,0,0,0]);q.resources.floor.position.set(c.x,floorY-.012,c.z);
+ const spec=BATTLE_STAGES53[key],variant=battleTexture55(key),texture=variant.texture;q.phase55=variant.phase;q.textureKey55=variant.key;if(!texture&&typeof buildArena88!=='function')throw Error('Battle background missing: '+key);
+ if(texture){texture.magFilter=THREE.LinearFilter;texture.minFilter=THREE.LinearMipmapLinearFilter;texture.wrapS=texture.wrapT=THREE.ClampToEdgeWrapping;texture.needsUpdate=true;}
+ q.resources.material.uniforms.map.value=texture;q.resources.material.uniforms.imageAspect.value=texture?texture.image.width/texture.image.height:688/384;q.resources.material.uniforms.waterArea.value.fromArray(spec.water??[0,0,0,0]);q.resources.floor.position.set(c.x,floorY-.012,c.z);
  q.scene.add(world,sun,sun.target,hemi);sun.color.set(variant.night?'#bfd5ff':spec.key);sun.intensity=variant.night?2.1:2.8;hemi.color.set(variant.night?'#819ac4':spec.fill);hemi.groundColor.set(variant.night?'#343b4e':'#686552');hemi.intensity=variant.night?.95:1.1;q.resources.fill.color.set(variant.night?'#91a5cc':'#dce7ed');q.resources.fill.intensity=variant.night?.26:.35;
  sun.position.set(c.x-12,floorY+22,c.z+14);sun.target.position.set(c.x,floorY,c.z);Object.assign(sun.shadow.camera,{left:-25,right:25,top:19,bottom:-19,near:.1,far:85});sun.shadow.camera.updateProjectionMatrix();sun.shadow.needsUpdate=true;renderer.shadowMap.needsUpdate=true;
  q.keep=new Set([...party.flatMap(a=>[a.mesh,a.shadow]),...Object.values(combatVfx.banks).map(b=>b.mesh),...Object.values(combatVfx.shapes).map(b=>b.mesh),...(world.userData.lanterns??[]).slice(4,6),...(combatPointer.ring?[combatPointer.ring]:[]),...pixelRelease.pools.map(p=>p.o),...(world.userData.contacts39?.mesh?[world.userData.contacts39.mesh]:[])]);
@@ -105,14 +105,12 @@ battleFormation=function(c,i,enemy=false,count=state.members.length){
 };
 const stageCameraBefore53=updateCamera;
 updateCamera=function(dt=1/60,instant=false){
- if(!encounter53.active||!battle)return stageCameraBefore53(dt,instant);
+ if(!encounter53.active||!battle){const r=stageCameraBefore53(dt,instant);if(battle){const cast=[player,...followers,...battle.enemies.map(e=>e.actor)];frameRanks87(cast,heightAt(battle.center.x,battle.center.z));for(const a of cast)a.mesh.quaternion.copy(camera.quaternion);}return r;}
  const q=encounter53,cast=[player,...followers,...battle.enemies.map(e=>e.actor)],portrait=innerWidth<700&&innerHeight>innerWidth,layout=portrait?'portrait':'wide';
  if(q.layout!==layout&&!battle.animation&&!battle.combo){q.layout=layout;for(const[a,i]of[player,...followers].map((a,i)=>[a,i]))Object.assign(a,battleFormation(q.center,i,false));for(const[e,i]of battle.enemies.map((e,i)=>[e,i]))Object.assign(e.actor,battleFormation(q.center,i,true));q.homeXs=cast.map(a=>a.x);for(const a of cast)updateActor(a,0);}
- const xs=q.homeXs??cast.map(a=>a.x),lo=Math.min(...xs),hi=Math.max(...xs),aspect=innerWidth/innerHeight,distance=Math.max(26,(hi-lo+(portrait?4:7))/(2*Math.tan(THREE.MathUtils.degToRad(19))*aspect));
- if(typeof mobileBattle69==='function'&&mobileBattle69()){frameMobileBattle69(cast,q.floorY);const stretch=1/Math.cos(Math.atan(.205));for(const a of cast){a.mesh.quaternion.identity();a.mesh.scale.set(Math.sign(a.mesh.scale.x)||1,stretch,1);a.mesh.layers.enable(1);}return;}
- camera.clearViewOffset();cameraTarget.set((lo+hi)*.5,q.floorY+distance*.177,q.center.z);camera.position.copy(cameraTarget).add(V3(0,distance*.205,distance));camera.fov=38;camera.near=.1;camera.far=350;camera.aspect=aspect;camera.lookAt(cameraTarget);camera.updateProjectionMatrix();camera.updateMatrixWorld();focusPoint.copy(cameraTarget);
- const stretch=1/Math.cos(Math.atan(.205));for(const a of cast){a.mesh.quaternion.identity();a.mesh.scale.set(Math.sign(a.mesh.scale.x)||1,stretch,1);delete a.mesh.userData.compactParty44;a.mesh.castShadow=!a.pixelReleased&&a.mesh.visible;a.mesh.layers.enable(1);}
- sideCameraStats.angle=Math.atan(.205)*180/Math.PI;
+ frameRanks87(cast,q.floorY);
+ const stretch=1/Math.cos(Math.atan(.16));for(const a of cast){a.mesh.quaternion.identity();a.mesh.scale.set(Math.sign(a.mesh.scale.x)||1,stretch,1);delete a.mesh.userData.compactParty44;a.mesh.castShadow=!a.pixelReleased&&a.mesh.visible;a.mesh.layers.enable(1);}
+ sideCameraStats.angle=Math.atan(.16)*180/Math.PI;
 };
 const stageLightingBefore53=updateLighting;
 updateLighting=function(...args){if(encounter53.active)return;return stageLightingBefore53(...args);};
@@ -129,6 +127,7 @@ const stageRenderBefore53=render;
 render=function(...args){
  const q=encounter53;if(!q.active)return stageRenderBefore53(...args);
  maskExploration53();updateContacts39();weather.exterior.value=0;q.resources.material.uniforms.time.value=clock;q.resources.material.uniforms.screenAspect.value=innerWidth/innerHeight;
+ if(typeof renderArena89==='function'&&renderArena89(q))return;
  shadow36.due=true;sun.shadow.needsUpdate=true;renderer.shadowMap.needsUpdate=true;renderer.setRenderTarget(null);renderer.setScissorTest(false);const size=renderer.getSize(new THREE.Vector2());renderer.setViewport(0,0,size.x,size.y);renderer.clear();renderer.render(q.scene,camera);updateCombatPointer();q.stats.rendered++;
 };
 function transitionNode53(){
@@ -142,10 +141,10 @@ function startEncounterCover53(phase,duration){
 const stageBeginBefore53=beginBattle;
 beginBattle=function(kind,...args){
  if(encounter53.phase!=='idle')return;
- if(kind!=='random')return stageBeginBefore53(kind,...args);
+ if(kind!=='random'&&!(devConsole60.active&&devConsole60.creatingBattle87))return stageBeginBefore53(kind,...args);
  if(battle||gameLoading||sceneSwitchPending||poiFade.active||dialogue||eventAction||transition||restoration)return;
  closeMenu();if([player,...followers].map(a=>a.characterId??a.id.replace('Ascended','')).join(',')!==state.members.join(','))setupParty([player.x,player.z]);
- encounter53.selected=chooseStage53();startEncounterCover53('enter',state.settings.motion===false?.46:.84);playSound('combat-select',.32);
+ encounter53.entryKind87=kind;encounter53.selected=chooseStage53();startEncounterCover53('enter',state.settings.motion===false?.46:.84);playSound('combat-select',.32);
 };
 const stageEndBefore53=endBattle;
 endBattle=function(outcome,...args){
@@ -165,7 +164,7 @@ function advanceEncounterCover53(dt){
  const q=encounter53,node=transitionNode53();q.time+=dt;const p=clamp(q.time/q.duration,0,1),cover=p<.48?smooth(0,.44,p):1-smooth(.56,1,p);node.style.setProperty('--cover53',cover);node.style.setProperty('--rays53',Math.sin(p*Math.PI));node.style.setProperty('--turn53',p+'turn');
  if(p>=.48&&!q.swapped){q.swapped=true;
   if(q.phase==='enter'){
-   activateStage53(q.selected);stageBeginBefore53('random');battle.stage53=q.selected;q.homeXs=[player,...followers,...battle.enemies.map(e=>e.actor)].map(a=>a.x);battle.intro=.38;battle.started=clock;state.mode='encounter';
+   activateStage53(q.selected);stageBeginBefore53(q.entryKind87??'random');battle.stage53=q.selected;q.homeXs=[player,...followers,...battle.enemies.map(e=>e.actor)].map(a=>a.x);battle.intro=.38;battle.started=clock;state.mode='encounter';
    for(const a of[player,...followers,...battle.enemies.map(e=>e.actor)]){updateActor(a,0);a.presentationPrevious=a.mesh.position.clone();a.presentationCurrent=a.mesh.position.clone();}
    updateCamera(1,true);startBattleIntro58(true);renderer.compile(q.scene,camera);q.stats.entries++;
   }else{

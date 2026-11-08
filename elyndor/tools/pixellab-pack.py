@@ -31,6 +31,18 @@ def pack_character(root,item,encode,audit,strict):
   for direction in DIRECTIONS:
    files=sorted((clip_dir/direction).glob('frame_*.png'))
    if files:group[direction]=[p.relative_to(folder).as_posix() for p in files]
+ # Party075 sources are reviewed independently of the older NPC sources.
+ # Select a regenerated clip by its explicit source name, never by directory
+ # order, and omit V3's supplied reference pose from the generated motion.
+ if item.get('partyRevision')==75:
+  uncurated=copy.deepcopy(animations)
+  for target,views in item.get('reviewedClips',{}).items():
+   animations[target]={}
+   for direction,selection in views.items():
+    frames=uncurated.get(selection['animation'],{}).get(selection.get('direction',direction),[])
+    if selection.get('omitReference'):frames=frames[1:]
+    if not frames:raise ValueError(f'{name}: missing reviewed {target}:{direction}')
+    animations[target][direction]=list(frames)
  # Reviewed RE-060 source-frame audit: these south-facing clips contain
  # isolated rear views. Keep the same native PixelLab pixels and foot anchors,
  # selecting the verified front poses instead of changing direction at runtime.
@@ -112,15 +124,21 @@ def pack_character(root,item,encode,audit,strict):
   p=(folder/path).resolve();p.relative_to((root/'elyndor/assets/source/pixellab-v7').resolve())
   if path not in native:native[path]=Image.open(p).convert('RGBA')
   return native[path]
+ def anchored_foot(path,im):
+  foot=item.get('footOverrides',{}).get(path) if item.get('partyRevision')==75 else None
+  if foot is None:return body_anchor(im)[1]
+  if not 0<foot<=im.height:raise ValueError(f'{name}: invalid reviewed foot anchor {path}')
+  return foot
  anchors=[];heights=[]
  for direction in DIRECTIONS:
   if direction not in rotations:raise ValueError(f'{name}: missing {direction} rotation')
   q=load(rotations[direction]);top,foot=body_anchor(q);anchors.append(foot-q.height/2);heights.append(foot-top)
  root_bias=float(np.median(anchors));unit=item.get('bodyUnit') or float(np.median(heights))
- if item.get('human',True) and not 42<=unit<=90:raise ValueError(f'{name}: suspect body scale {unit}')
+ unit_limit=128 if item.get('characterRevision',0)>=76 else 112 if item.get('partyRevision')==75 else 90
+ if item.get('human',True) and not 42<=unit<=unit_limit:raise ValueError(f'{name}: suspect body scale {unit}')
  keys={};missing=[]
  for direction in DIRECTIONS:
-  key=direction.replace('-','');walk=animations.get('walk-v66',{}).get(direction) or animations.get('walk-v14',{}).get(direction) or animations.get('walk-v13',{}).get(direction) or animations.get('walk-v8',{}).get(direction) or animations.get('walk-v7',{}).get(direction,[]);idle=animations.get('idle-v66',{}).get(direction) or animations.get('idle-v13',{}).get(direction) or animations.get('idle-v8',{}).get(direction) or animations.get('idle-v7',{}).get(direction,[]);run=animations.get('run-v66',{}).get(direction) or animations.get('run-v8',{}).get(direction) or animations.get('run-v7',{}).get(direction,[])
+  key=direction.replace('-','');walk=animations.get('walk-v86',{}).get(direction) or animations.get('walk-v75',{}).get(direction) or animations.get('walk-v66',{}).get(direction) or animations.get('walk-v14',{}).get(direction) or animations.get('walk-v13',{}).get(direction) or animations.get('walk-v8',{}).get(direction) or animations.get('walk-v7',{}).get(direction,[]);idle=animations.get('idle-v86',{}).get(direction) or animations.get('idle-v75',{}).get(direction) or animations.get('idle-v66',{}).get(direction) or animations.get('idle-v13',{}).get(direction) or animations.get('idle-v8',{}).get(direction) or animations.get('idle-v7',{}).get(direction,[]);run=animations.get('run-v75',{}).get(direction) or animations.get('run-v66',{}).get(direction) or animations.get('run-v8',{}).get(direction) or animations.get('run-v7',{}).get(direction,[])
   if not item.get('combatOnly') and len(walk)<4:missing.append('walk:'+direction)
   if not item.get('combatOnly') and len(idle)<2:missing.append('idle:'+direction)
   if name in PARTY and len(run)<4:missing.append('run:'+direction)
@@ -128,8 +146,8 @@ def pack_character(root,item,encode,audit,strict):
   if run:keys['run_'+key]=run
  direction='west' if name in PARTY or name.endswith('Ascended') else 'east'
  for action in ['battleIdle','attack','cast','recoil']:
-  group=animations.get(action+'-v66',animations.get(action+'-v13',animations.get(action+'-v10',animations.get(action+'-v8',animations.get(action+'-v7',{})))))
-  if not animations.get(action+'-v66'):
+  group=animations.get(action+'-v86',animations.get(action+'-v75',animations.get(action+'-v66',animations.get(action+'-v13',animations.get(action+'-v10',animations.get(action+'-v8',animations.get(action+'-v7',{})))))))
+  if not animations.get(action+'-v75') and not animations.get(action+'-v66'):
    if name=='soren' and action in ['attack','cast']:group=animations.get('cast-v13-staff',group)
    if name=='mira' and action=='cast':group=animations.get('attack-v13',group)
    if name=='lysa' and action in ['attack','cast']:group=animations.get('cast-v13-staff',group)
@@ -139,11 +157,25 @@ def pack_character(root,item,encode,audit,strict):
   clip=group.get(direction,[])
   if name in FIGHTERS and not clip:missing.append(action+':'+direction)
   keys[action]=clip or [rotations[direction]]
+  if item.get('partyRevision')==75 and name=='soren' and not group.get('east'):
+   missing.append(action+':east')
  if name=='bren':
-  keys['work_gate']=animations.get('gate-v66',animations.get('gate-brace-v9',{})).get('north-west',[])
-  if strict and len(keys['work_gate'])<6:raise ValueError('Missing reviewed Bren gate strength animation')
- keys['guard']=keys['battleIdle'];keys['enemyIdle']=keys['battleIdle'];keys['retreat']=keys.get('run_east') or keys.get('east') or keys['recoil']
- if strict and missing:raise ValueError(f'{name}: incomplete PixelLab clips: {missing}')
+  keys['work_gate']=animations.get('gate-v75',animations.get('gate-v66',animations.get('gate-brace-v9',{}))).get('north-west',[])
+  if (strict or item.get('partyRevision')==75) and len(keys['work_gate'])<6:raise ValueError('Missing reviewed Bren gate strength animation')
+ # Named character actions share their native cells with composite sequences.
+ # No extra atlas pixels are created for a two/three-strike combination.
+ for action,selection in item.get('extraClips',{}).items():
+  if selection.get('sequence'):
+   clip=[path for key in selection['sequence'] for path in keys[key]]
+  else:
+   clip=list(animations.get(selection['animation'],{}).get(selection.get('direction','west'),[]))
+   if selection.get('omitReference'):clip=clip[1:]
+   if selection.get('indices') is not None:clip=[clip[i] for i in selection['indices']]
+  if not clip or selection.get('expectedFrames',len(clip))!=len(clip):
+   raise ValueError(f'{name}: missing reviewed extra action {action}')
+  keys[action]=clip
+ keys.setdefault('guard',keys['battleIdle']);keys['enemyIdle']=keys['battleIdle'];keys['retreat']=keys.get('run_east') or keys.get('east') or keys['recoil']
+ if (strict or item.get('partyRevision')==75) and missing:raise ValueError(f'{name}: incomplete PixelLab clips: {missing}')
  paths=list(dict.fromkeys(p for clip in keys.values() for p in clip))
  if not paths:raise ValueError('No source frames for '+name)
  extents=[]
@@ -151,21 +183,29 @@ def pack_character(root,item,encode,audit,strict):
   q=load(path);b=q.getbbox()
   if not b:raise ValueError('Empty pose '+path)
   if strict and min(b[0],b[1],q.width-b[2],q.height-b[3])<1:raise ValueError(f'{name}: native source already touches its canvas edge: {path}')
-  cx=q.width/2;cy=body_anchor(q)[1] if item.get('anatomyRevision')==66 else q.height/2+root_bias
+  cx=round((b[0]+b[2])/2) if item.get('packedHorizontalPivot') else q.width/2;cy=anchored_foot(path,q) if item.get('anatomyRevision')==66 else q.height/2+root_bias
   extents.append((max(cx-b[0],b[2]-cx),cy-b[1],b[3]-cy))
- gutter=max(8,math.ceil(max(t[2] for t in extents))+4)
- width=math.ceil((max(t[0] for t in extents)*2+16)/8)*8;height=math.ceil((max(t[1] for t in extents)+gutter+8)/8)*8
+ padding=item.get('spritePadding',8)
+ gutter=max(padding,math.ceil(max(t[2] for t in extents))+4)
+ width=math.ceil((max(t[0] for t in extents)*2+padding*2)/8)*8;height=math.ceil((max(t[1] for t in extents)+gutter+padding)/8)*8
  cols=max(8,math.ceil(math.sqrt(len(paths)*height/width)/4)*4);rows=math.ceil(len(paths)/cols)
- if max(width*cols,height*rows)>4096:raise ValueError(f'{name}: atlas exceeds portable texture limits')
- atlas=Image.new('RGBA',(width*cols,height*rows));index={};records=[]
+ if item.get('characterRevision',0)>=82:
+  # Tall overhead poses need transparent sword clearance. Choose the native
+  # grid that fits, without resampling or changing other characters' atlases.
+  grids=[(c,math.ceil(len(paths)/c)) for c in range(1,4096//width+1) if math.ceil(len(paths)/c)*height<=4096]
+  if grids:cols,rows=min(grids,key=lambda q:(max(q[0]*width,q[1]*height),abs(q[0]*width-q[1]*height)))
+ if max(width*cols,height*rows)>4096:raise ValueError(f'{name}: {len(paths)} cells of {width}x{height} exceed portable texture limits')
+ atlas=Image.new('RGBA',(width*cols,height*rows));index={};records=[];native_offsets={}
  for n,path in enumerate(paths):
-  q=load(path);p=Image.new('RGBA',(width,height));foot=body_anchor(q)[1] if item.get('anatomyRevision')==66 else q.height/2+root_bias;offset=(round(width/2-q.width/2),round(height-gutter-foot));p.alpha_composite(q,offset);b=p.getbbox()
+  q=load(path);p=Image.new('RGBA',(width,height));foot=anchored_foot(path,q) if item.get('anatomyRevision')==66 else q.height/2+root_bias;bounds=q.getbbox();cx=round((bounds[0]+bounds[2])/2) if item.get('packedHorizontalPivot') else q.width/2;offset=(round(width/2-cx),round(height-gutter-foot));p.alpha_composite(q,offset);b=p.getbbox()
   if not b or min(b[0],b[1],width-b[2],height-b[3])<3:raise ValueError(f'{name}: clipped native pose {path}')
   atlas.alpha_composite(p,((n%cols)*width,(n//cols)*height));index[path]=n
+  if item.get('packedHorizontalPivot'):native_offsets[str(n)]=cx-q.width/2
   source=folder/path;records.append({'file':str(source.relative_to(root)),'sourceSize':q.size,'offset':offset,'cell':n,'sha256':hashlib.sha256(source.read_bytes()).hexdigest()})
   audit.append({'id':name,'pose':n,'width':(b[2]-b[0])*2,'height':(b[3]-b[1])*2,'unique':hashlib.sha256(p.tobytes()).hexdigest()[:12]})
  out=root/'elyndor/assets/packed';atlas.resize((atlas.width*2,atlas.height*2),Image.Resampling.NEAREST).save(out/(name+'.png'))
  meta={'url':encode(atlas),'w':width,'h':height,'unit':unit,'gutter':gutter,'cols':cols,'rows':rows,'frames':{k:[index[p] for p in clip] for k,clip in keys.items()},'frameRate':{k:3 for k in keys if k.startswith('idle_')},'pixelLab':True,'sourceCharacterId':expected}
+ if native_offsets:meta['nativeOffsets']=native_offsets
  meta['impactFrame']={'attack':round((len(keys['attack'])-1)*(.75 if name in ['bren','brenAscended','tavin','tavinAscended'] else .55)),'cast':round((len(keys['cast'])-1)*.5)}
  if name in ['wolfBattle35','boarBattle35']:meta['impactFrame']['attack']=8
  if name in ['bren','brenAscended'] and animations.get('attack-v10'):meta['impactFrame']['attack']=4
@@ -175,12 +215,44 @@ def pack_character(root,item,encode,audit,strict):
  if name=='mira':meta['sourceClipAliases']={'cast':'attack-v13'}
  if name=='lysa':meta['sourceClipAliases']={'attack':'cast-v13-staff','cast':'cast-v13-staff'}
  if name=='soren':meta['sourceClipAliases']={'attack':'cast-v13-staff','cast':'cast-v13-staff'}
- if any(k.endswith('-v66') for k in animations):
+ if any(k.endswith(('-v66','-v86')) for k in animations):
   meta['anatomyRevision']=66
   for action in ['attack','cast']:
    if animations.get(action+'-v66'):
     meta['impactFrame'][action]=round((len(keys[action])-1)*(.60 if action=='attack' else .5))
     meta.setdefault('sourceClipAliases',{})[action]=action+'-v66'
+ if item.get('partyRevision')==75:
+  # Revision66 is the runtime's uniform native-pixel/feet convention. Keep
+  # that convention while identifying this art independently as party075.
+  meta.update({'anatomyRevision':66,'partyRevision':75})
+  meta['sourceAnimationStateIds']=item.get('animationStateIds',[expected])
+  meta['sourceClipAliases']={action:item.get('reviewedClips',{}).get(action+'-v75',{}).get(direction,{}).get('animation',action+'-v75') for action in ['attack','cast']}
+  meta['frameRate'].update({'battleIdle':2.5 if name=='tavinAscended' else 5,'enemyIdle':5})
+  for action in ['attack','cast']:
+   meta['impactFrame'][action]=item.get('impactFrames',{}).get(action,round((len(keys[action])-1)*(.6 if action=='attack' else .5)))
+ if item.get('characterRevision'):
+  meta['characterRevision']=item['characterRevision']
+ if item.get('frameRates'):
+  meta['frameRate'].update(item['frameRates'])
+ if item.get('locomotionRate'):
+  meta['locomotionRate']=item['locomotionRate']
+ if item.get('actionTimings'):
+  meta['actionTimings']=item['actionTimings']
+ if item.get('impactFrames'):
+  meta['impactFrame'].update(item['impactFrames'])
+ if item.get('weaponTracks'):
+  meta['weaponFrames']={}
+  for path,track in item['weaponTracks'].items():
+   if path not in index:continue
+   q=load(path);foot=anchored_foot(path,q)
+   meta['weaponFrames'][str(index[path])]=[track['tip'][0]-q.width/2,foot-track['tip'][1],track['grip'][0]-q.width/2,foot-track['grip'][1]]
+ if item.get('staffTracks'):
+  meta['staffFrames']={str(index[path]):[point[0]-load(path).width/2,anchored_foot(path,load(path))-point[1]] for path,point in item['staffTracks'].items() if path in index}
+ if item.get('handTracks'):
+  meta['palmFrames']={str(index[path]):[point[0]-load(path).width/2,anchored_foot(path,load(path))-point[1]] for path,point in item['handTracks'].items() if path in index}
+ if item.get('hoverTracks'):
+  meta['hoverFrames']={str(index[path]):lift for path,lift in item['hoverTracks'].items() if path in index}
+ if item.get('loopClips'):meta['loopClips']=item['loopClips']
  return meta,load(rotations['south']),records,missing
 
 def build_assets(root,encode,audit,warnings,strict):
@@ -194,7 +266,7 @@ def build_assets(root,encode,audit,warnings,strict):
  # east-facing combat poses are authored, never mirrored or reversed.
  if 'soren' in assets['sprites']:
   s=copy.deepcopy(assets['sprites']['soren']);s['sourceAlias']='soren'
-  for action in ['attack','cast','recoil','battleIdle']:
+  for action in ['attack','cast','recoil','battleIdle']+(['battleRise','pulseOne','pulseTwo','pulseThree','arcanePulse','ward','guard','item','injured','victory','channel','knockedOut'] if s.get('characterRevision',0)>=84 else []):
    key=action+'_east'
    if strict and key not in s['frames']:raise ValueError('Missing Soren opponent direction: '+action)
    s['frames'][action]=s['frames'].get(key,s['frames']['east'])

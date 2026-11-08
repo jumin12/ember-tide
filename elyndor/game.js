@@ -1,7 +1,9 @@
 const spriteImages={},animationTextures=new Map();let lastFrame=0,manualUntil=0,frameIndex=0,ambience=null,musicTick=0,voiceTimer=0;
 async function loadAssets(){
- assets=ASSETS;const images=Object.entries(assets.images).filter(([key])=>key!=='regionMap'&&!key.startsWith('ui24_')&&!key.startsWith('ui26_')&&!key.startsWith('ui27_')),jobs=[...images.map(([key,url])=>({key,url,sprite:false})),...Object.entries(assets.sprites).map(([key,v])=>({key,url:v.url,sprite:true}))];let cursor=0,done=0;
- async function worker(){while(cursor<jobs.length){const{key,url,sprite}=jobs[cursor++],im=new Image();im.decoding='async';im.src=url;try{await im.decode()}catch{throw Error('Could not decode '+key)}if(sprite)spriteImages[key]=im;else{const t=new THREE.Texture(im);t.colorSpace=THREE.SRGBColorSpace;t.magFilter=THREE.NearestFilter;t.minFilter=THREE.LinearMipmapLinearFilter;t.wrapS=t.wrapT=THREE.RepeatWrapping;t.anisotropy=4;t.needsUpdate=true;textures[key]=t;}reportAssetLoaded36(++done,jobs.length);}}
+ assets=ASSETS;const images=Object.entries(assets.images).filter(([key])=>key!=='regionMap'&&!key.startsWith('battle53_')&&!key.startsWith('battle55_')&&!key.startsWith('ui24_')&&!key.startsWith('ui26_')&&!key.startsWith('ui27_')),jobs=[...images.map(([key,url])=>({key,url,sprite:false})),...Object.entries(assets.sprites).map(([key,v])=>({key,url:v.url,sprite:true}))];let cursor=0,done=0;
+ const decoded=new Map(),surfaceTextures=new Map();
+ function decode(url,key){if(decoded.has(url))return decoded.get(url);const job=(async()=>{const im=new Image();im.decoding='async';im.src=url;try{await im.decode()}catch{throw Error('Could not decode '+key)}return im})();decoded.set(url,job);return job;}
+ async function worker(){while(cursor<jobs.length){const{key,url,sprite}=jobs[cursor++],im=await decode(url,key);if(sprite)spriteImages[key]=im;else{let t=surfaceTextures.get(url);if(!t){t=new THREE.Texture(im);t.colorSpace=THREE.SRGBColorSpace;t.magFilter=THREE.NearestFilter;t.minFilter=THREE.LinearMipmapLinearFilter;t.wrapS=t.wrapT=THREE.RepeatWrapping;t.anisotropy=4;t.needsUpdate=true;surfaceTextures.set(url,t);}textures[key]=t;}reportAssetLoaded36(++done,jobs.length);}}
  await Promise.all(Array.from({length:Math.min(6,jobs.length)},worker));
 }
 function actorTexture(id){if(animationTextures.has(id))return animationTextures.get(id).clone();const t=new THREE.Texture(spriteImages[id]);t.colorSpace=THREE.SRGBColorSpace;t.magFilter=t.minFilter=THREE.NearestFilter;t.generateMipmaps=false;t.wrapS=t.wrapT=THREE.ClampToEdgeWrapping;t.needsUpdate=true;animationTextures.set(id,t);return t.clone();}
@@ -18,17 +20,20 @@ function updateActor(a,dt){
  if(a.action==='recoil'&&a.flinchUntil&&clock>=a.flinchUntil){a.action=a.subdued?'subdued':a.recoverAction??(a.enemy?'enemyIdle':'battleIdle');a.actionTime=0;a.flinchUntil=0;}
  const meta=assets.sprites[a.visualId??a.id];
  if(a.action!=='idle'&&a.action!=='walk'){
-  const clip=a.action==='subdued'?meta.frames.recoil:meta.frames[a.action],loop=a.action==='battleIdle'||a.action==='enemyIdle';
+  const action=typeof brenClip82==='function'?brenClip82(a):a.action,clip=a.action==='subdued'?meta.frames.recoil:meta.frames[action],loop=action==='battleIdle'||action==='enemyIdle'||action==='injured';
   if(clip){
    const cue=battle?.animation;
    if(a.action==='subdued'){setActorFrame(a,'recoil',clip.length-1);}
+   else if(action==='guard'&&a.action==='battleIdle'){setActorFrame(a,action,clip.length-1);}
    else if(a.action==='work_gate'){setActorFrame(a,'work_gate',Math.floor(a.actionTime*5)%clip.length);}
-   else if(cue?.actor===a&&['attack','cast'].includes(a.action)){
+   else if(cue?.actor===a&&cue.bren82){
+    setActorFrame(a,action,Math.min(clip.length-1,Math.floor(clamp(cue.time/cue.duration,0,1)*clip.length)));
+   }else if(cue?.actor===a&&['attack','cast'].includes(a.action)){
     const t=clamp(cue.time/cue.duration,0,1),peak=meta.impactFrame?.[a.action]??Math.round((clip.length-1)*.55),frame=t<=.52?peak*t/.52:peak+(clip.length-1-peak)*(t-.52)/.48;
     setActorFrame(a,a.action,Math.min(clip.length-1,Math.floor(frame+.0001)));
    }else if(a.action==='recoil'&&a.flinchUntil){
     setActorFrame(a,a.action,Math.min(clip.length-1,Math.floor(a.actionTime/.4*clip.length)));
-   }else{const frame=Math.floor(a.actionTime*(meta.frameRate?.[a.action]??(loop?5:9)));setActorFrame(a,a.action,loop?frame%clip.length:Math.min(clip.length-1,frame));}
+   }else{const frame=Math.floor(a.actionTime*(meta.frameRate?.[action]??(loop?5:9)));setActorFrame(a,action,loop?frame%clip.length:Math.min(clip.length-1,frame));}
   }
   else setActorFrame(a,a.face,0);
  }else{
@@ -37,7 +42,15 @@ function updateActor(a,dt){
  if(moving){
    const running=a.party&&!eventAction&&!dialogue&&state.mode==='explore'&&meta.frames['run_'+a.face];
    const action=running?'run_'+a.face:a.face,clip=meta.frames[action]??meta.frames.south;
-   if(running){a.runTime=(a.runTime??0)+dt;setActorFrame(a,action,Math.floor(a.runTime*(keys.has('shift')?12:10))%clip.length);}
+   if(running&&meta.locomotionRate?.continuous){
+    // Normal travel and Shift share one running cycle. Scale it by
+    // actual travel, so collision slides and follower catch-up stay coherent.
+    const rates=meta.locomotionRate,metres=typeof compactWorld44==='function'&&compactWorld44()?compactTraversal44.metres:1;
+    const sprinting=keys.has('shift'),pace=clamp(a.speed*metres/(sprinting?8.25:6.6),0,1.3),rate=sprinting?rates.sprint:rates.normal;
+    a.locomotionPhase=((a.locomotionPhase??0)+dt*rate/(rates.referenceFrames??12)*pace)%1;
+    setActorFrame(a,action,Math.floor(a.locomotionPhase*clip.length+1e-7)%clip.length);
+   }
+   else if(running){a.runTime=(a.runTime??0)+dt;const rate=keys.has('shift')?(meta.locomotionRate?.sprint??12):(meta.locomotionRate?.normal??10),density=clip.length/(meta.locomotionRate?.referenceFrames??clip.length);setActorFrame(a,action,Math.floor(a.runTime*rate*density+1e-7)%clip.length);}
    else setActorFrame(a,action,Math.floor(a.phase*clip.length)%clip.length);
   }else{
    const action='idle_'+a.face,clip=meta.frames[action];

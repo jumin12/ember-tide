@@ -1,0 +1,195 @@
+{
+  "group_id": "66dbe17d-4cfd-452e-aa0b-e46277f93a5c",
+  "states": [
+    {
+      "character": {
+        "id": "50db275a-feed-45e1-bc80-f3d6d5bfbfa6",
+        "name": "Bren ascended 076",
+        "prompt": "BREN exactly as the supplied approved native sprite. Preserve this same young adult face and head/torso/hip/leg/boot proportions in all eight standing views. Warm medium-tan skin, hazel eyes, chestnut layered spiky hair with loose tips, rust-burgundy sleeveless tunic, fitted brown leather vest, ONE diagonal harness from LEFT shoulder to RIGHT waist, charcoal full trousers, brown calf boots, leather bracers. Exactly ONE steel pauldron on anatomical LEFT shoulder and ONE leather sheathed sword on anatomical LEFT hip, correct physical sides in every view. Empty relaxed hands. Keep material colors, seams, waist buckle and boot straps consistent. Uniform native body scale and complete figure with safe transparent margins. SOUTH front, NORTH rear, EAST right profile, WEST left profile and four correct diagonals. Clear opposite views with coherent human anatomy. Neutral source lighting and detailed shaded pixel clusters, isolated figure on transparency.",
+        "size": {
+          "width": 128,
+          "height": 144
+        },
+        "template_id": "mannequin",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-11-06T19:45:27.782442+00:00"
+      },
+      "folder": "Bren_ascended_076",
+      "frames": {
+        "rotations": {
+          "south": "Bren_ascended_076/rotations/south.png",
+          "south-east": "Bren_ascended_076/rotations/south-east.png",
+          "east": "Bren_ascended_076/rotations/east.png",
+          "north-east": "Bren_ascended_076/rotations/north-east.png",
+          "north": "Bren_ascended_076/rotations/north.png",
+          "north-west": "Bren_ascended_076/rotations/north-west.png",
+          "west": "Bren_ascended_076/rotations/west.png",
+          "south-west": "Bren_ascended_076/rotations/south-west.png"
+        },
+        "animations": {
+          "battleIdle-v83": {
+            "west": [
+              "Complete083/animations/battleIdle-v83/west/frame_000.png",
+              "Complete083/animations/battleIdle-v83/west/frame_001.png",
+              "Complete083/animations/battleIdle-v83/west/frame_002.png",
+              "Complete083/animations/battleIdle-v83/west/frame_003.png",
+              "Complete083/animations/battleIdle-v83/west/frame_004.png",
+              "Complete083/animations/battleIdle-v83/west/frame_005.png",
+              "Complete083/animations/battleIdle-v83/west/frame_006.png",
+              "Complete083/animations/battleIdle-v83/west/frame_007.png",
+              "Complete083/animations/battleIdle-v83/west/frame_008.png",
+              "Complete083/animations/battleIdle-v83/west/frame_009.png",
+              "Complete083/animations/battleIdle-v83/west/frame_010.png",
+              "Complete083/animations/battleIdle-v83/west/frame_011.png"
+            ]
+          },
+          "slash-v83": {
+            "west": [
+              "Complete083/animations/slash-v83/west/frame_000.png",
+              "Complete083/animations/slash-v83/west/frame_001.png",
+              "Complete083/animations/slash-v83/west/frame_002.png",
+              "Complete083/animations/slash-v83/west/frame_003.png",
+              "Complete083/animations/slash-v83/west/frame_004.png",
+              "Complete083/animations/slash-v83/west/frame_005.png",
+              "Complete083/animations/slash-v83/west/frame_006.png",
+              "Complete083/animations/slash-v83/west/frame_007.png",
+              "Complete083/animations/slash-v83/west/frame_008.png",
+              "Complete083/animations/slash-v83/west/frame_009.png",
+              "Complete083/animations/slash-v83/west/frame_010.png",
+              "Complete083/animations/slash-v83/west/frame_011.png"
+            ]
+          },
+          "overhead-v83": {
+            "west": [
+              "Complete083/animations/overhead-v83/west/frame_000.png",
+              "Complete083/animations/overhead-v83/west/frame_001.png",
+              "Complete083/animations/overhead-v83/west/frame_002.png",
+              "Complete083/animations/overhead-v83/west/frame_003.png",
+              "Complete083/animations/overhead-v83/west/frame_004.png",
+              "Complete083/animations/overhead-v83/west/frame_005.png",
+              "Complete083/animations/overhead-v83/west/frame_006.png",
+              "Complete083/animations/overhead-v83/west/frame_007.png",
+              "Complete083/animations/overhead-v83/west/frame_008.png",
+              "Complete083/animations/overhead-v83/west/frame_009.png",
+              "Complete083/animations/overhead-v83/west/frame_010.png",
+              "Complete083/animations/overhead-v83/west/frame_011.png"
+            ]
+          },
+          "uppercut-v83": {
+            "west": [
+              "Complete083/animations/uppercut-v83/west/frame_000.png",
+              "Complete083/animations/uppercut-v83/west/frame_001.png",
+              "Complete083/animations/uppercut-v83/west/frame_002.png",
+              "Complete083/animations/uppercut-v83/west/frame_003.png",
+              "Complete083/animations/uppercut-v83/west/frame_004.png",
+              "Complete083/animations/uppercut-v83/west/frame_005.png",
+              "Complete083/animations/uppercut-v83/west/frame_006.png",
+              "Complete083/animations/uppercut-v83/west/frame_007.png",
+              "Complete083/animations/uppercut-v83/west/frame_008.png",
+              "Complete083/animations/uppercut-v83/west/frame_009.png",
+              "Complete083/animations/uppercut-v83/west/frame_010.png",
+              "Complete083/animations/uppercut-v83/west/frame_011.png"
+            ]
+          },
+          "drivingSlash-v83": {
+            "west": [
+              "Complete083/animations/drivingSlash-v83/west/frame_000.png",
+              "Complete083/animations/drivingSlash-v83/west/frame_001.png",
+              "Complete083/animations/drivingSlash-v83/west/frame_002.png",
+              "Complete083/animations/drivingSlash-v83/west/frame_003.png",
+              "Complete083/animations/drivingSlash-v83/west/frame_004.png",
+              "Complete083/animations/drivingSlash-v83/west/frame_005.png",
+              "Complete083/animations/drivingSlash-v83/west/frame_006.png",
+              "Complete083/animations/drivingSlash-v83/west/frame_007.png",
+              "Complete083/animations/drivingSlash-v83/west/frame_008.png",
+              "Complete083/animations/drivingSlash-v83/west/frame_009.png",
+              "Complete083/animations/drivingSlash-v83/west/frame_010.png",
+              "Complete083/animations/drivingSlash-v83/west/frame_011.png",
+              "Complete083/animations/drivingSlash-v83/west/frame_012.png",
+              "Complete083/animations/drivingSlash-v83/west/frame_013.png"
+            ]
+          },
+          "guard-v83": {
+            "west": [
+              "Complete083/animations/guard-v83/west/frame_000.png",
+              "Complete083/animations/guard-v83/west/frame_001.png",
+              "Complete083/animations/guard-v83/west/frame_002.png",
+              "Complete083/animations/guard-v83/west/frame_003.png",
+              "Complete083/animations/guard-v83/west/frame_004.png",
+              "Complete083/animations/guard-v83/west/frame_005.png",
+              "Complete083/animations/guard-v83/west/frame_006.png",
+              "Complete083/animations/guard-v83/west/frame_007.png"
+            ]
+          },
+          "recoil-v83": {
+            "west": [
+              "Complete083/animations/recoil-v83/west/frame_000.png",
+              "Complete083/animations/recoil-v83/west/frame_001.png",
+              "Complete083/animations/recoil-v83/west/frame_002.png",
+              "Complete083/animations/recoil-v83/west/frame_003.png",
+              "Complete083/animations/recoil-v83/west/frame_004.png",
+              "Complete083/animations/recoil-v83/west/frame_005.png",
+              "Complete083/animations/recoil-v83/west/frame_006.png",
+              "Complete083/animations/recoil-v83/west/frame_007.png"
+            ]
+          },
+          "cast-v83": {
+            "west": [
+              "Complete083/animations/cast-v83/west/frame_000.png",
+              "Complete083/animations/cast-v83/west/frame_001.png",
+              "Complete083/animations/cast-v83/west/frame_002.png",
+              "Complete083/animations/cast-v83/west/frame_003.png",
+              "Complete083/animations/cast-v83/west/frame_004.png",
+              "Complete083/animations/cast-v83/west/frame_005.png",
+              "Complete083/animations/cast-v83/west/frame_006.png",
+              "Complete083/animations/cast-v83/west/frame_007.png"
+            ]
+          },
+          "injured-v83": {
+            "west": [
+              "Complete083/animations/injured-v83/west/frame_000.png",
+              "Complete083/animations/injured-v83/west/frame_001.png",
+              "Complete083/animations/injured-v83/west/frame_002.png",
+              "Complete083/animations/injured-v83/west/frame_003.png",
+              "Complete083/animations/injured-v83/west/frame_004.png",
+              "Complete083/animations/injured-v83/west/frame_005.png",
+              "Complete083/animations/injured-v83/west/frame_006.png",
+              "Complete083/animations/injured-v83/west/frame_007.png"
+            ]
+          },
+          "victory-v83": {
+            "west": [
+              "Complete083/animations/victory-v83/west/frame_000.png",
+              "Complete083/animations/victory-v83/west/frame_001.png",
+              "Complete083/animations/victory-v83/west/frame_002.png",
+              "Complete083/animations/victory-v83/west/frame_003.png",
+              "Complete083/animations/victory-v83/west/frame_004.png",
+              "Complete083/animations/victory-v83/west/frame_005.png",
+              "Complete083/animations/victory-v83/west/frame_006.png",
+              "Complete083/animations/victory-v83/west/frame_007.png"
+            ]
+          },
+          "driving-v84": {
+            "west": [
+              "Complete084/animations/driving-v84/west/frame_000.png",
+              "Complete084/animations/driving-v84/west/frame_001.png",
+              "Complete084/animations/driving-v84/west/frame_002.png",
+              "Complete084/animations/driving-v84/west/frame_003.png",
+              "Complete084/animations/driving-v84/west/frame_004.png",
+              "Complete084/animations/driving-v84/west/frame_005.png",
+              "Complete084/animations/driving-v84/west/frame_006.png",
+              "Complete084/animations/driving-v84/west/frame_007.png",
+              "Complete084/animations/driving-v84/west/frame_008.png",
+              "Complete084/animations/driving-v84/west/frame_009.png",
+              "Complete084/animations/driving-v84/west/frame_010.png",
+              "Complete084/animations/driving-v84/west/frame_011.png",
+              "Complete084/animations/driving-v84/west/frame_012.png",
+              "Complete084/animations/driving-v84/west/frame_013.png"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

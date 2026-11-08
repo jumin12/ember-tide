@@ -25,4 +25,4 @@ castFX=function(kind,from,to,strong=false,impactOnly=false){const r=artCastBefor
  return r;
 };
 const chargeArtBefore35=startActionAnimation;
-startActionAnimation=function(opts){const r=chargeArtBefore35(opts),a=opts.actor;if(!a||!battle||a.action!=='cast')return r;const id=a.characterId??a.id,p=V3(a.x,heightAt(a.x,a.z)+1.2,a.z),key=id==='lysa'?'slash35':id==='mira'?'heal35':'arcane35';artBurst35(key,p,3.7,Math.max(.55,opts.duration*.65),id==='lysa'?-.4:0,0,.6,.3);spellArt35.charges++;return r;};
+startActionAnimation=function(opts){const r=chargeArtBefore35(opts),a=opts.actor;if(!a||!battle||a.action!=='cast'||opts.authoredMagic84)return r;const id=a.characterId??a.id;if(id==='bren'&&assets.sprites[a.visualId??a.id]?.frames.drivingSlash)return r;const p=V3(a.x,heightAt(a.x,a.z)+1.2,a.z),key=id==='lysa'?'slash35':id==='mira'?'heal35':'arcane35';artBurst35(key,p,3.7,Math.max(.55,opts.duration*.65),id==='lysa'?-.4:0,0,.6,.3);spellArt35.charges++;return r;};

@@ -9,7 +9,7 @@ material=function(key,color='#ffffff',opts={}){
    vPropScale=vec3(length(modelMatrix[0].xyz),length(modelMatrix[1].xyz),length(modelMatrix[2].xyz));
    vPropPos=position*vPropScale;vPropNormal=normal;`);
   sh.fragmentShader='varying vec3 vPropPos,vPropNormal,vPropScale;\n'+sh.fragmentShader;
-  const grain=key==='wood';const density=key==='plaster'?.48:key==='cloth'?.75:key==='metal'?.8:.52;
+  const grain=woodKeys86.has(key);const density=key==='plaster'?.48:key==='cloth'?.75:key==='metal'?.8:.52;
   sh.fragmentShader=sh.fragmentShader.replace('#include <map_fragment>',`
    vec3 pn=pow(abs(normalize(vPropNormal)),vec3(6.));pn/=max(.001,pn.x+pn.y+pn.z);
    vec2 px=vPropPos.zy,py=vPropPos.xz,pz=vPropPos.xy;

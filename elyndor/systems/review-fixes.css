@@ -1,0 +1,6 @@
+/* Opening menu stays borderless on initial load, resume and return paths. */
+#title .frame26{display:none!important}
+#quest-reward65{transition:transform .3s ease-in,opacity .3s ease-in}
+#quest-reward65.reward-leaving87{transform:translateX(calc(100% + 36px));opacity:0;pointer-events:none}
+@media(prefers-reduced-motion:reduce){#quest-reward65{transition:none}}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #world-enemy-bars27>.foe-bar27{flex:1 1 0!important;min-width:0!important;max-width:none!important;box-sizing:border-box}

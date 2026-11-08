@@ -217,7 +217,18 @@
       "systems/location-miniatures.js",
       "systems/road-surfaces.js",
       "systems/scenic-bridges.js",
-      "systems/frame-safety.js"
+      "systems/frame-safety.js",
+      "systems/bren-animations.js",
+      "systems/soren-animations.js",
+      "systems/world-art.js",
+      "systems/dev-sprite-data.js",
+      "systems/dev-sprites.js",
+      "systems/combat-reactions.js",
+      "systems/battle-formation.js",
+      "systems/water-continuity.js",
+      "systems/battle-environments-3d.js",
+    "systems/combat-art-direction.js",
+    "systems/hybrid-combat.js"
     ]
   },
   "styles": [
@@ -255,6 +266,7 @@
     "systems/battle-stages.css",
     "systems/battle-intro.css",
     "systems/dev-console.css",
+    "systems/dev-sprites.css",
     "systems/mobile-layout.css",
     "systems/interaction-visibility.css",
     "systems/quest-combat-fixes.css",
@@ -265,7 +277,8 @@
     "systems/phone-interface.css",
     "systems/mobile-battle-view.css",
     "systems/local-menu-actions.css",
-    "systems/review-controls.css"
+    "systems/review-controls.css",
+    "systems/review-fixes.css"
   ],
   "owners": {
     "runtime": [

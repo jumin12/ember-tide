@@ -12,7 +12,8 @@ function buildStageScenery59(){
  // it. This is geometry, so contact stays correct during camera movement.
  const cast=[player,...followers,...battle.enemies.map(e=>e.actor)],margin=1.5,
   bounds={minX:Math.min(...cast.map(a=>a.x))-margin,maxX:Math.max(...cast.map(a=>a.x))+margin,minZ:Math.min(...cast.map(a=>a.z))-margin,maxZ:Math.max(...cast.map(a=>a.z))+margin},positions=q.landscape.geometry.attributes.position;
- for(let i=0;i<positions.count;i++){const x=positions.getX(i),z=positions.getZ(i),outside=Math.hypot(Math.max(bounds.minX-x,0,x-bounds.maxX),Math.max(bounds.minZ-z,0,z-bounds.maxZ)),weight=1-smooth(0,2,outside);if(weight>0)positions.setY(i,mix(positions.getY(i),c.floorY-.025,weight));}
+ const laneUV87=q.landscape.geometry.attributes.uv;
+ for(let i=0;i<positions.count;i++){const v=(laneUV87.getY(i)-(q.photoOffset69?.y??.5))/q.crop.y+.5;if(v>=.4)continue;const x=positions.getX(i),z=positions.getZ(i),outside=Math.hypot(Math.max(bounds.minX-x,0,x-bounds.maxX),Math.max(bounds.minZ-z,0,z-bounds.maxZ)),weight=(1-smooth(0,2,outside))*(1-smooth(.34,.4,v));if(weight>0)positions.setY(i,mix(positions.getY(i),c.floorY-.025,weight));}
  positions.needsUpdate=true;q.landscape.geometry.computeVertexNormals();
  // Partition the reconstructed geometry into independent ground, banks and
  // distant terrain meshes. No complete scene is left on a single surface.

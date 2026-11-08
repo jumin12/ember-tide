@@ -1,0 +1,79 @@
+{
+  "group_id": "2cb2e21a-6113-464d-bc72-c9d12d5154f0",
+  "states": [
+    {
+      "character": {
+        "id": "5c92f6f0-9abb-45c0-afe6-65b2ae45ae37",
+        "name": "Idle",
+        "prompt": "TAVIN ASCENDED in the exact approved bronze and pale fur crystal armor, deep-brown human skin, narrow curled mohawk, matte tattooed arms, partial brow/cheek helmet, physical recurve bow in LEFT hand and quiver/feathered arrows on back. Lower face visible; no closed visor or glowing tattoos. Eight correct cardinal and diagonal standing directions of THIS exact sprite, same compact adult body/head proportions, pixel density, material-color shaded clusters and native body height. Face in front, back of hair/helm in rear, full correct opposite profiles (not mirrored). Hold all asymmetric gear on the same anatomical side throughout. Physical RIGHT is viewerLEFT in south/front and viewerRIGHT in north/back; LEFT is opposite. Keep staff/sword/bow fully connected to hand and inside safe transparent margins, keep clothing continuous and every two legs/boots distinguishable. No new contours or black ink sticker outline, no blur, no extra details, no floor/paintedshadow/aura/text/scenery. All8views same individual/costume/weapon, no crop.",
+        "size": {
+          "width": 96,
+          "height": 112
+        },
+        "template_id": "mannequin",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-11-06T17:04:14.210562+00:00"
+      },
+      "folder": "Idle",
+      "frames": {
+        "rotations": {
+          "south": "Idle/rotations/south.png",
+          "south-east": "Idle/rotations/south-east.png",
+          "east": "Idle/rotations/east.png",
+          "north-east": "Idle/rotations/north-east.png",
+          "north": "Idle/rotations/north.png",
+          "north-west": "Idle/rotations/north-west.png",
+          "west": "Idle/rotations/west.png",
+          "south-west": "Idle/rotations/south-west.png"
+        },
+        "animations": {
+          "battleIdle-v75-r3": {
+            "west": [
+              "Bow_ready075/animations/battleIdle-v75-r3/west/frame_000.png",
+              "Bow_ready075/animations/battleIdle-v75-r3/west/frame_001.png",
+              "Bow_ready075/animations/battleIdle-v75-r3/west/frame_002.png",
+              "Bow_ready075/animations/battleIdle-v75-r3/west/frame_003.png"
+            ]
+          },
+          "attack-v75-r3": {
+            "west": [
+              "Bow_ready075/animations/attack-v75-r3/west/frame_000.png",
+              "Bow_ready075/animations/attack-v75-r3/west/frame_001.png",
+              "Bow_ready075/animations/attack-v75-r3/west/frame_002.png",
+              "Bow_ready075/animations/attack-v75-r3/west/frame_003.png",
+              "Bow_ready075/animations/attack-v75-r3/west/frame_004.png",
+              "Bow_ready075/animations/attack-v75-r3/west/frame_005.png",
+              "Bow_ready075/animations/attack-v75-r3/west/frame_006.png",
+              "Bow_ready075/animations/attack-v75-r3/west/frame_007.png"
+            ]
+          },
+          "cast-v75-r3": {
+            "west": [
+              "Bow_ready075/animations/cast-v75-r3/west/frame_000.png",
+              "Bow_ready075/animations/cast-v75-r3/west/frame_001.png",
+              "Bow_ready075/animations/cast-v75-r3/west/frame_002.png",
+              "Bow_ready075/animations/cast-v75-r3/west/frame_003.png",
+              "Bow_ready075/animations/cast-v75-r3/west/frame_004.png",
+              "Bow_ready075/animations/cast-v75-r3/west/frame_005.png",
+              "Bow_ready075/animations/cast-v75-r3/west/frame_006.png",
+              "Bow_ready075/animations/cast-v75-r3/west/frame_007.png"
+            ]
+          },
+          "recoil-v75-r3": {
+            "west": [
+              "Bow_ready075/animations/recoil-v75-r3/west/frame_000.png",
+              "Bow_ready075/animations/recoil-v75-r3/west/frame_001.png",
+              "Bow_ready075/animations/recoil-v75-r3/west/frame_002.png",
+              "Bow_ready075/animations/recoil-v75-r3/west/frame_003.png",
+              "Bow_ready075/animations/recoil-v75-r3/west/frame_004.png",
+              "Bow_ready075/animations/recoil-v75-r3/west/frame_005.png",
+              "Bow_ready075/animations/recoil-v75-r3/west/frame_006.png",
+              "Bow_ready075/animations/recoil-v75-r3/west/frame_007.png"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

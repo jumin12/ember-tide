@@ -136,7 +136,7 @@ function waterField62(){
  });}
  for(const c of contacts)for(let iz=Math.floor((c.z-c.d-3)/16);iz<=Math.floor((c.z+c.d+3)/16);iz++)for(let ix=Math.floor((c.x-c.w-3)/16);ix<=Math.floor((c.x+c.w+3)/16);ix++){const key=ix+','+iz;if(!near.has(key))near.set(key,[]);near.get(key).push(c);}
  for(let z=0;z<h;z++)for(let x=0;x<w;x++){
-  const xx=b[0]+x/(w-1)*b[2],zz=b[1]+z/(h-1)*b[3],i=(z*w+x)*4;let bed=macro?coast.image.data[z*w+x]/255*192-32:groundAt(xx,zz),contact=50;
+  const xx=b[0]+x/(w-1)*b[2],zz=b[1]+z/(h-1)*b[3],i=(z*w+x)*4;let bed=macro?coast.image.data[z*w+x]/255*192-32:(typeof landscapeGround26==='function'?landscapeGround26(xx,zz):groundAt(xx,zz)),contact=50;
   if(macro&&xx>=LAND.minX&&xx<=LAND.maxX&&zz>=LAND.minZ&&zz<=LAND.maxZ)bed=macroGround(xx,zz);
   for(const c of near.get(Math.floor(xx/16)+','+Math.floor(zz/16))??[]){const dx=Math.abs(xx-c.x)-c.w,dz=Math.abs(zz-c.z)-c.d;contact=Math.min(contact,c.line?segmentDistance(xx,zz,...c.line):Math.hypot(Math.max(0,dx),Math.max(0,dz)));}
   data[i]=bed;data[i+1]=contact;data[i+2]=macro?traversalShoreDistance(xx,zz):50;data[i+3]=macro?(traversalWet(xx,zz)?traversalWaterHeight(xx,zz)+.035:-1.4):activeScene.key==='brookstead'?channelLevel18(zz):water?.position.y??-1.4;
@@ -167,7 +167,7 @@ function waterMaterial62(o,field,atlas=false){
   sh.vertexShader=sh.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\ndepth62=waterDepth18;across62=riverAcross;flow62=channelFlow39;');sh.vertexShader=sh.vertexShader.replace('#include <worldpos_vertex>','#include <worldpos_vertex>\nworldWater62=(modelMatrix*vec4(transformed,1.)).xyz;reflected62=reflectionMatrix62*vec4(worldWater62,1.);upperReflected62=upperMatrix62*vec4(worldWater62,1.);');
   sh.fragmentShader=waterFunctions62+sh.fragmentShader;
   sh.fragmentShader=sh.fragmentShader.replace('#include <map_fragment>',`
-   vec2 fieldUV62=(worldWater62.xz-fieldBounds62.xy)/fieldBounds62.zw;vec4 bed62=texture2D(field62,clamp(fieldUV62,0.,1.));float fieldInside62=step(0.,fieldUV62.x)*step(0.,fieldUV62.y)*step(fieldUV62.x,1.)*step(fieldUV62.y,1.);bed62.r=mix(-32.,bed62.r,fieldInside62);bed62.g=mix(50.,bed62.g,fieldInside62);
+   vec2 fieldUV62=(worldWater62.xz-fieldBounds62.xy)/fieldBounds62.zw;vec4 bed62=texture2D(field62,clamp(fieldUV62,0.,1.));vec2 beyondField62=max(max(-fieldUV62,fieldUV62-1.),0.)*fieldBounds62.zw;float outside62=length(beyondField62);bed62.r=mix(bed62.r,-32.,smoothstep(0.,120.,outside62));bed62.g=mix(bed62.g,50.,smoothstep(0.,12.,outside62));
    float waterDepth62=max(.0,worldWater62.y-bed62.r);if(hasDepth62>.5)waterDepth62=max(0.,depth62);
    if((hasDepth62>.5&&depth62<.006)||(hasDepth62<.5&&worldWater62.y<bed62.r-.03))discard;
    vec2 current62=normalize(flow62+vec2(.0001))*(.16+hydraulic62*.28);vec2 stream62=worldWater62.xz-current62*time62;
@@ -199,7 +199,7 @@ function waterMaterial62(o,field,atlas=false){
    float crest62=pow(max(0.,sin(stream62.x*6.7+sin(stream62.y*3.1)+time62*.3)*cos(stream62.y*4.3-time62*.21)),8.)/(1.+length(fwidth(stream62))*12.);float skyGlint62=crest62*smoothstep(.48,.72,fine62)*(.016+day62*.09);
    float glint62=lobe62*(.14+sparkleMask62*.65)*keyPower62*(1.-cloud62*.68);gl_FragColor.rgb+=key62*(glint62+skyGlint62)*(cascade62>.5?.15:1.);
    #include <tonemapping_fragment>`);
- };m.customProgramCacheKey=()=> 'elyndor-valenne-water62'+(atlas?'-atlas':'');return m;
+ };m.customProgramCacheKey=()=> 'elyndor-valenne-water88'+(atlas?'-atlas':'');return m;
 }
 function installWater62(){
  if(!['poi','overworld'].includes(activeScene?.kind)||world.userData.water62)return;

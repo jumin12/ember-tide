@@ -3193,6 +3193,106 @@
       "key": "47bab6bc805c9716018b",
       "file": "elyndor/audio/opus/47bab6bc805c9716018b.ogg",
       "bytes": 35278
+    },
+    {
+      "speaker": "bren",
+      "role": "bren",
+      "text": "That one hurt... I'm still standing!",
+      "key": "20580d489d53ef029951",
+      "performance": "[strained]",
+      "healthReaction87": "injured",
+      "file": "elyndor/audio/opus/20580d489d53ef029951.ogg",
+      "bytes": 16972
+    },
+    {
+      "speaker": "bren",
+      "role": "bren",
+      "text": "Much better. Let's finish this.",
+      "key": "21fa4593e9d65048ef2e",
+      "performance": "[relieved]",
+      "healthReaction87": "recovered",
+      "file": "elyndor/audio/opus/21fa4593e9d65048ef2e.ogg",
+      "bytes": 12122
+    },
+    {
+      "speaker": "soren",
+      "role": "soren",
+      "text": "My focus... I need a moment.",
+      "key": "a14490e9580c4457661f",
+      "performance": "[strained]",
+      "healthReaction87": "injured",
+      "file": "elyndor/audio/opus/a14490e9580c4457661f.ogg",
+      "bytes": 16287
+    },
+    {
+      "speaker": "soren",
+      "role": "soren",
+      "text": "Steady again. Thank you.",
+      "key": "5097165ae197b8ebbe04",
+      "performance": "[relieved]",
+      "healthReaction87": "recovered",
+      "file": "elyndor/audio/opus/5097165ae197b8ebbe04.ogg",
+      "bytes": 11746
+    },
+    {
+      "speaker": "tavin",
+      "role": "tavin",
+      "text": "Not my best... Still here.",
+      "key": "c567a750e2838f28c5ef",
+      "performance": "[strained]",
+      "healthReaction87": "injured",
+      "file": "elyndor/audio/opus/c567a750e2838f28c5ef.ogg",
+      "bytes": 15586
+    },
+    {
+      "speaker": "tavin",
+      "role": "tavin",
+      "text": "That's more like it.",
+      "key": "791e8d5396dca01363bb",
+      "performance": "[relieved]",
+      "healthReaction87": "recovered",
+      "file": "elyndor/audio/opus/791e8d5396dca01363bb.ogg",
+      "bytes": 8696
+    },
+    {
+      "speaker": "mira",
+      "role": "mira",
+      "text": "I'm fine... Just give me a breath.",
+      "key": "00cdb551fd502d93bc04",
+      "performance": "[strained]",
+      "healthReaction87": "injured",
+      "file": "elyndor/audio/opus/00cdb551fd502d93bc04.ogg",
+      "bytes": 16632
+    },
+    {
+      "speaker": "mira",
+      "role": "mira",
+      "text": "There. Back on my feet.",
+      "key": "474c6ea4bb358976d471",
+      "performance": "[relieved]",
+      "healthReaction87": "recovered",
+      "file": "elyndor/audio/opus/474c6ea4bb358976d471.ogg",
+      "bytes": 11912
+    },
+    {
+      "speaker": "lysa",
+      "role": "lysa",
+      "text": "Tch... I'm not done yet.",
+      "key": "cc222118275cca3f5a48",
+      "performance": "[strained]",
+      "healthReaction87": "injured",
+      "file": "elyndor/audio/opus/cc222118275cca3f5a48.ogg",
+      "bytes": 14209
+    },
+    {
+      "speaker": "lysa",
+      "role": "lysa",
+      "text": "Much better. My turn.",
+      "key": "98f4c5475c8f594bac2c",
+      "performance": "[relieved]",
+      "healthReaction87": "recovered",
+      "file": "elyndor/audio/opus/98f4c5475c8f594bac2c.ogg",
+      "bytes": 12518
     }
   ]
 }

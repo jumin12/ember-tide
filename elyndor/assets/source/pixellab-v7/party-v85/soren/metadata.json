@@ -1,0 +1,818 @@
+{
+  "group_id": "99bdfa9a-bc6d-4a04-82a8-5fd564aff81d",
+  "states": [
+    {
+      "character": {
+        "id": "b5fb873f-8a89-444a-897b-15fac0a49f38",
+        "name": "Idle",
+        "prompt": "Soren. Preserve this exact individual, mature compact proportions, richly textured native pixel shading, layered silver gray hair covering ears, muted navy split-tail scholar coat with delicate brass edging, ivory tunic, ONE brown diagonal harness and notebook, dark trousers and brown brass-buckled boots. Compact brass crescent and sapphire orb staff held firmly in anatomical RIGHT hand in every view; LEFT arm natural small relaxed hand. Staff top near forehead, bottom near boot sole. Eight correctly turned low top-down facings, no mirrored grip, preserve the source head/body and palette. Standing grounded. No floor shadow or glow.",
+        "size": {
+          "width": 144,
+          "height": 144
+        },
+        "template_id": "mannequin",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-11-07T14:00:46.547917+00:00"
+      },
+      "folder": "Idle",
+      "frames": {
+        "rotations": {
+          "south": "Idle/rotations/south.png",
+          "south-east": "Idle/rotations/south-east.png",
+          "east": "Idle/rotations/east.png",
+          "north-east": "Idle/rotations/north-east.png",
+          "north": "Idle/rotations/north.png",
+          "north-west": "Idle/rotations/north-west.png",
+          "west": "Idle/rotations/west.png",
+          "south-west": "Idle/rotations/south-west.png"
+        },
+        "animations": {
+          "idle-v85": {
+            "south": [
+              "Complete085/animations/idle-v85/south/frame_000.png",
+              "Complete085/animations/idle-v85/south/frame_001.png",
+              "Complete085/animations/idle-v85/south/frame_002.png",
+              "Complete085/animations/idle-v85/south/frame_003.png",
+              "Complete085/animations/idle-v85/south/frame_004.png",
+              "Complete085/animations/idle-v85/south/frame_005.png",
+              "Complete085/animations/idle-v85/south/frame_006.png",
+              "Complete085/animations/idle-v85/south/frame_007.png"
+            ],
+            "south-east": [
+              "Complete085/animations/idle-v85/south-east/frame_000.png",
+              "Complete085/animations/idle-v85/south-east/frame_001.png",
+              "Complete085/animations/idle-v85/south-east/frame_002.png",
+              "Complete085/animations/idle-v85/south-east/frame_003.png",
+              "Complete085/animations/idle-v85/south-east/frame_004.png",
+              "Complete085/animations/idle-v85/south-east/frame_005.png",
+              "Complete085/animations/idle-v85/south-east/frame_006.png",
+              "Complete085/animations/idle-v85/south-east/frame_007.png"
+            ],
+            "north-west": [
+              "Complete085/animations/idle-v85/north-west/frame_000.png",
+              "Complete085/animations/idle-v85/north-west/frame_001.png",
+              "Complete085/animations/idle-v85/north-west/frame_002.png",
+              "Complete085/animations/idle-v85/north-west/frame_003.png",
+              "Complete085/animations/idle-v85/north-west/frame_004.png",
+              "Complete085/animations/idle-v85/north-west/frame_005.png",
+              "Complete085/animations/idle-v85/north-west/frame_006.png",
+              "Complete085/animations/idle-v85/north-west/frame_007.png"
+            ],
+            "north": [
+              "Complete085/animations/idle-v85/north/frame_000.png",
+              "Complete085/animations/idle-v85/north/frame_001.png",
+              "Complete085/animations/idle-v85/north/frame_002.png",
+              "Complete085/animations/idle-v85/north/frame_003.png",
+              "Complete085/animations/idle-v85/north/frame_004.png",
+              "Complete085/animations/idle-v85/north/frame_005.png",
+              "Complete085/animations/idle-v85/north/frame_006.png",
+              "Complete085/animations/idle-v85/north/frame_007.png"
+            ],
+            "north-east": [
+              "Complete085/animations/idle-v85/north-east/frame_000.png",
+              "Complete085/animations/idle-v85/north-east/frame_001.png",
+              "Complete085/animations/idle-v85/north-east/frame_002.png",
+              "Complete085/animations/idle-v85/north-east/frame_003.png",
+              "Complete085/animations/idle-v85/north-east/frame_004.png",
+              "Complete085/animations/idle-v85/north-east/frame_005.png",
+              "Complete085/animations/idle-v85/north-east/frame_006.png",
+              "Complete085/animations/idle-v85/north-east/frame_007.png"
+            ],
+            "south-west": [
+              "Complete085/animations/idle-v85/south-west/frame_000.png",
+              "Complete085/animations/idle-v85/south-west/frame_001.png",
+              "Complete085/animations/idle-v85/south-west/frame_002.png",
+              "Complete085/animations/idle-v85/south-west/frame_003.png",
+              "Complete085/animations/idle-v85/south-west/frame_004.png",
+              "Complete085/animations/idle-v85/south-west/frame_005.png",
+              "Complete085/animations/idle-v85/south-west/frame_006.png",
+              "Complete085/animations/idle-v85/south-west/frame_007.png"
+            ],
+            "west": [
+              "Complete085/animations/idle-v85/west/frame_000.png",
+              "Complete085/animations/idle-v85/west/frame_001.png",
+              "Complete085/animations/idle-v85/west/frame_002.png",
+              "Complete085/animations/idle-v85/west/frame_003.png",
+              "Complete085/animations/idle-v85/west/frame_004.png",
+              "Complete085/animations/idle-v85/west/frame_005.png",
+              "Complete085/animations/idle-v85/west/frame_006.png",
+              "Complete085/animations/idle-v85/west/frame_007.png"
+            ],
+            "east": [
+              "Complete085/animations/idle-v85/east/frame_000.png",
+              "Complete085/animations/idle-v85/east/frame_001.png",
+              "Complete085/animations/idle-v85/east/frame_002.png",
+              "Complete085/animations/idle-v85/east/frame_003.png",
+              "Complete085/animations/idle-v85/east/frame_004.png",
+              "Complete085/animations/idle-v85/east/frame_005.png",
+              "Complete085/animations/idle-v85/east/frame_006.png",
+              "Complete085/animations/idle-v85/east/frame_007.png"
+            ]
+          },
+          "work-v85": {
+            "south-east": [
+              "Complete085/animations/work-v85/south-east/frame_000.png",
+              "Complete085/animations/work-v85/south-east/frame_001.png",
+              "Complete085/animations/work-v85/south-east/frame_002.png",
+              "Complete085/animations/work-v85/south-east/frame_003.png",
+              "Complete085/animations/work-v85/south-east/frame_004.png",
+              "Complete085/animations/work-v85/south-east/frame_005.png",
+              "Complete085/animations/work-v85/south-east/frame_006.png",
+              "Complete085/animations/work-v85/south-east/frame_007.png",
+              "Complete085/animations/work-v85/south-east/frame_008.png"
+            ],
+            "south": [
+              "Complete085/animations/work-v85/south/frame_000.png",
+              "Complete085/animations/work-v85/south/frame_001.png",
+              "Complete085/animations/work-v85/south/frame_002.png",
+              "Complete085/animations/work-v85/south/frame_003.png",
+              "Complete085/animations/work-v85/south/frame_004.png",
+              "Complete085/animations/work-v85/south/frame_005.png",
+              "Complete085/animations/work-v85/south/frame_006.png",
+              "Complete085/animations/work-v85/south/frame_007.png",
+              "Complete085/animations/work-v85/south/frame_008.png"
+            ],
+            "north": [
+              "Complete085/animations/work-v85/north/frame_000.png",
+              "Complete085/animations/work-v85/north/frame_001.png",
+              "Complete085/animations/work-v85/north/frame_002.png",
+              "Complete085/animations/work-v85/north/frame_003.png",
+              "Complete085/animations/work-v85/north/frame_004.png",
+              "Complete085/animations/work-v85/north/frame_005.png",
+              "Complete085/animations/work-v85/north/frame_006.png",
+              "Complete085/animations/work-v85/north/frame_007.png",
+              "Complete085/animations/work-v85/north/frame_008.png"
+            ],
+            "south-west": [
+              "Complete085/animations/work-v85/south-west/frame_000.png",
+              "Complete085/animations/work-v85/south-west/frame_001.png",
+              "Complete085/animations/work-v85/south-west/frame_002.png",
+              "Complete085/animations/work-v85/south-west/frame_003.png",
+              "Complete085/animations/work-v85/south-west/frame_004.png",
+              "Complete085/animations/work-v85/south-west/frame_005.png",
+              "Complete085/animations/work-v85/south-west/frame_006.png",
+              "Complete085/animations/work-v85/south-west/frame_007.png",
+              "Complete085/animations/work-v85/south-west/frame_008.png"
+            ],
+            "east": [
+              "Complete085/animations/work-v85/east/frame_000.png",
+              "Complete085/animations/work-v85/east/frame_001.png",
+              "Complete085/animations/work-v85/east/frame_002.png",
+              "Complete085/animations/work-v85/east/frame_003.png",
+              "Complete085/animations/work-v85/east/frame_004.png",
+              "Complete085/animations/work-v85/east/frame_005.png",
+              "Complete085/animations/work-v85/east/frame_006.png",
+              "Complete085/animations/work-v85/east/frame_007.png",
+              "Complete085/animations/work-v85/east/frame_008.png"
+            ],
+            "north-east": [
+              "Complete085/animations/work-v85/north-east/frame_000.png",
+              "Complete085/animations/work-v85/north-east/frame_001.png",
+              "Complete085/animations/work-v85/north-east/frame_002.png",
+              "Complete085/animations/work-v85/north-east/frame_003.png",
+              "Complete085/animations/work-v85/north-east/frame_004.png",
+              "Complete085/animations/work-v85/north-east/frame_005.png",
+              "Complete085/animations/work-v85/north-east/frame_006.png",
+              "Complete085/animations/work-v85/north-east/frame_007.png"
+            ],
+            "north-west": [
+              "Complete085/animations/work-v85/north-west/frame_000.png",
+              "Complete085/animations/work-v85/north-west/frame_001.png",
+              "Complete085/animations/work-v85/north-west/frame_002.png",
+              "Complete085/animations/work-v85/north-west/frame_003.png",
+              "Complete085/animations/work-v85/north-west/frame_004.png",
+              "Complete085/animations/work-v85/north-west/frame_005.png",
+              "Complete085/animations/work-v85/north-west/frame_006.png",
+              "Complete085/animations/work-v85/north-west/frame_007.png"
+            ],
+            "west": [
+              "Complete085/animations/work-v85/west/frame_000.png",
+              "Complete085/animations/work-v85/west/frame_001.png",
+              "Complete085/animations/work-v85/west/frame_002.png",
+              "Complete085/animations/work-v85/west/frame_003.png",
+              "Complete085/animations/work-v85/west/frame_004.png",
+              "Complete085/animations/work-v85/west/frame_005.png",
+              "Complete085/animations/work-v85/west/frame_006.png",
+              "Complete085/animations/work-v85/west/frame_007.png"
+            ]
+          },
+          "run-v85": {
+            "east": [
+              "Complete085/animations/run-v85/east/frame_000.png",
+              "Complete085/animations/run-v85/east/frame_001.png",
+              "Complete085/animations/run-v85/east/frame_002.png",
+              "Complete085/animations/run-v85/east/frame_003.png",
+              "Complete085/animations/run-v85/east/frame_004.png",
+              "Complete085/animations/run-v85/east/frame_005.png",
+              "Complete085/animations/run-v85/east/frame_006.png",
+              "Complete085/animations/run-v85/east/frame_007.png",
+              "Complete085/animations/run-v85/east/frame_008.png",
+              "Complete085/animations/run-v85/east/frame_009.png",
+              "Complete085/animations/run-v85/east/frame_010.png",
+              "Complete085/animations/run-v85/east/frame_011.png"
+            ],
+            "south": [
+              "Complete085/animations/run-v85/south/frame_000.png",
+              "Complete085/animations/run-v85/south/frame_001.png",
+              "Complete085/animations/run-v85/south/frame_002.png",
+              "Complete085/animations/run-v85/south/frame_003.png",
+              "Complete085/animations/run-v85/south/frame_004.png",
+              "Complete085/animations/run-v85/south/frame_005.png",
+              "Complete085/animations/run-v85/south/frame_006.png",
+              "Complete085/animations/run-v85/south/frame_007.png",
+              "Complete085/animations/run-v85/south/frame_008.png",
+              "Complete085/animations/run-v85/south/frame_009.png",
+              "Complete085/animations/run-v85/south/frame_010.png",
+              "Complete085/animations/run-v85/south/frame_011.png"
+            ],
+            "south-east": [
+              "Complete085/animations/run-v85/south-east/frame_000.png",
+              "Complete085/animations/run-v85/south-east/frame_001.png",
+              "Complete085/animations/run-v85/south-east/frame_002.png",
+              "Complete085/animations/run-v85/south-east/frame_003.png",
+              "Complete085/animations/run-v85/south-east/frame_004.png",
+              "Complete085/animations/run-v85/south-east/frame_005.png",
+              "Complete085/animations/run-v85/south-east/frame_006.png",
+              "Complete085/animations/run-v85/south-east/frame_007.png",
+              "Complete085/animations/run-v85/south-east/frame_008.png",
+              "Complete085/animations/run-v85/south-east/frame_009.png",
+              "Complete085/animations/run-v85/south-east/frame_010.png",
+              "Complete085/animations/run-v85/south-east/frame_011.png"
+            ],
+            "north": [
+              "Complete085/animations/run-v85/north/frame_000.png",
+              "Complete085/animations/run-v85/north/frame_001.png",
+              "Complete085/animations/run-v85/north/frame_002.png",
+              "Complete085/animations/run-v85/north/frame_003.png",
+              "Complete085/animations/run-v85/north/frame_004.png",
+              "Complete085/animations/run-v85/north/frame_005.png",
+              "Complete085/animations/run-v85/north/frame_006.png",
+              "Complete085/animations/run-v85/north/frame_007.png",
+              "Complete085/animations/run-v85/north/frame_008.png",
+              "Complete085/animations/run-v85/north/frame_009.png",
+              "Complete085/animations/run-v85/north/frame_010.png",
+              "Complete085/animations/run-v85/north/frame_011.png"
+            ],
+            "west": [
+              "Complete085/animations/run-v85/west/frame_000.png",
+              "Complete085/animations/run-v85/west/frame_001.png",
+              "Complete085/animations/run-v85/west/frame_002.png",
+              "Complete085/animations/run-v85/west/frame_003.png",
+              "Complete085/animations/run-v85/west/frame_004.png",
+              "Complete085/animations/run-v85/west/frame_005.png",
+              "Complete085/animations/run-v85/west/frame_006.png",
+              "Complete085/animations/run-v85/west/frame_007.png",
+              "Complete085/animations/run-v85/west/frame_008.png",
+              "Complete085/animations/run-v85/west/frame_009.png",
+              "Complete085/animations/run-v85/west/frame_010.png",
+              "Complete085/animations/run-v85/west/frame_011.png"
+            ],
+            "north-west": [
+              "Complete085/animations/run-v85/north-west/frame_000.png",
+              "Complete085/animations/run-v85/north-west/frame_001.png",
+              "Complete085/animations/run-v85/north-west/frame_002.png",
+              "Complete085/animations/run-v85/north-west/frame_003.png",
+              "Complete085/animations/run-v85/north-west/frame_004.png",
+              "Complete085/animations/run-v85/north-west/frame_005.png",
+              "Complete085/animations/run-v85/north-west/frame_006.png",
+              "Complete085/animations/run-v85/north-west/frame_007.png",
+              "Complete085/animations/run-v85/north-west/frame_008.png",
+              "Complete085/animations/run-v85/north-west/frame_009.png",
+              "Complete085/animations/run-v85/north-west/frame_010.png",
+              "Complete085/animations/run-v85/north-west/frame_011.png"
+            ],
+            "south-west": [
+              "Complete085/animations/run-v85/south-west/frame_000.png",
+              "Complete085/animations/run-v85/south-west/frame_001.png",
+              "Complete085/animations/run-v85/south-west/frame_002.png",
+              "Complete085/animations/run-v85/south-west/frame_003.png",
+              "Complete085/animations/run-v85/south-west/frame_004.png",
+              "Complete085/animations/run-v85/south-west/frame_005.png",
+              "Complete085/animations/run-v85/south-west/frame_006.png",
+              "Complete085/animations/run-v85/south-west/frame_007.png",
+              "Complete085/animations/run-v85/south-west/frame_008.png",
+              "Complete085/animations/run-v85/south-west/frame_009.png",
+              "Complete085/animations/run-v85/south-west/frame_010.png",
+              "Complete085/animations/run-v85/south-west/frame_011.png"
+            ],
+            "north-east": [
+              "Complete085/animations/run-v85/north-east/frame_000.png",
+              "Complete085/animations/run-v85/north-east/frame_001.png",
+              "Complete085/animations/run-v85/north-east/frame_002.png",
+              "Complete085/animations/run-v85/north-east/frame_003.png",
+              "Complete085/animations/run-v85/north-east/frame_004.png",
+              "Complete085/animations/run-v85/north-east/frame_005.png",
+              "Complete085/animations/run-v85/north-east/frame_006.png",
+              "Complete085/animations/run-v85/north-east/frame_007.png",
+              "Complete085/animations/run-v85/north-east/frame_008.png",
+              "Complete085/animations/run-v85/north-east/frame_009.png",
+              "Complete085/animations/run-v85/north-east/frame_010.png",
+              "Complete085/animations/run-v85/north-east/frame_011.png"
+            ]
+          },
+          "walk-v85": {
+            "south": [
+              "Complete085/animations/walk-v85/south/frame_000.png",
+              "Complete085/animations/walk-v85/south/frame_001.png",
+              "Complete085/animations/walk-v85/south/frame_002.png",
+              "Complete085/animations/walk-v85/south/frame_003.png",
+              "Complete085/animations/walk-v85/south/frame_004.png",
+              "Complete085/animations/walk-v85/south/frame_005.png",
+              "Complete085/animations/walk-v85/south/frame_006.png",
+              "Complete085/animations/walk-v85/south/frame_007.png"
+            ],
+            "south-east": [
+              "Complete085/animations/walk-v85/south-east/frame_000.png",
+              "Complete085/animations/walk-v85/south-east/frame_001.png",
+              "Complete085/animations/walk-v85/south-east/frame_002.png",
+              "Complete085/animations/walk-v85/south-east/frame_003.png",
+              "Complete085/animations/walk-v85/south-east/frame_004.png",
+              "Complete085/animations/walk-v85/south-east/frame_005.png",
+              "Complete085/animations/walk-v85/south-east/frame_006.png",
+              "Complete085/animations/walk-v85/south-east/frame_007.png"
+            ],
+            "east": [
+              "Complete085/animations/walk-v85/east/frame_000.png",
+              "Complete085/animations/walk-v85/east/frame_001.png",
+              "Complete085/animations/walk-v85/east/frame_002.png",
+              "Complete085/animations/walk-v85/east/frame_003.png",
+              "Complete085/animations/walk-v85/east/frame_004.png",
+              "Complete085/animations/walk-v85/east/frame_005.png",
+              "Complete085/animations/walk-v85/east/frame_006.png",
+              "Complete085/animations/walk-v85/east/frame_007.png"
+            ],
+            "north-west": [
+              "Complete085/animations/walk-v85/north-west/frame_000.png",
+              "Complete085/animations/walk-v85/north-west/frame_001.png",
+              "Complete085/animations/walk-v85/north-west/frame_002.png",
+              "Complete085/animations/walk-v85/north-west/frame_003.png",
+              "Complete085/animations/walk-v85/north-west/frame_004.png",
+              "Complete085/animations/walk-v85/north-west/frame_005.png",
+              "Complete085/animations/walk-v85/north-west/frame_006.png",
+              "Complete085/animations/walk-v85/north-west/frame_007.png"
+            ],
+            "north": [
+              "Complete085/animations/walk-v85/north/frame_000.png",
+              "Complete085/animations/walk-v85/north/frame_001.png",
+              "Complete085/animations/walk-v85/north/frame_002.png",
+              "Complete085/animations/walk-v85/north/frame_003.png",
+              "Complete085/animations/walk-v85/north/frame_004.png",
+              "Complete085/animations/walk-v85/north/frame_005.png",
+              "Complete085/animations/walk-v85/north/frame_006.png",
+              "Complete085/animations/walk-v85/north/frame_007.png"
+            ],
+            "west": [
+              "Complete085/animations/walk-v85/west/frame_000.png",
+              "Complete085/animations/walk-v85/west/frame_001.png",
+              "Complete085/animations/walk-v85/west/frame_002.png",
+              "Complete085/animations/walk-v85/west/frame_003.png",
+              "Complete085/animations/walk-v85/west/frame_004.png",
+              "Complete085/animations/walk-v85/west/frame_005.png",
+              "Complete085/animations/walk-v85/west/frame_006.png",
+              "Complete085/animations/walk-v85/west/frame_007.png"
+            ],
+            "south-west": [
+              "Complete085/animations/walk-v85/south-west/frame_000.png",
+              "Complete085/animations/walk-v85/south-west/frame_001.png",
+              "Complete085/animations/walk-v85/south-west/frame_002.png",
+              "Complete085/animations/walk-v85/south-west/frame_003.png",
+              "Complete085/animations/walk-v85/south-west/frame_004.png",
+              "Complete085/animations/walk-v85/south-west/frame_005.png",
+              "Complete085/animations/walk-v85/south-west/frame_006.png",
+              "Complete085/animations/walk-v85/south-west/frame_007.png"
+            ],
+            "north-east": [
+              "Complete085/animations/walk-v85/north-east/frame_000.png",
+              "Complete085/animations/walk-v85/north-east/frame_001.png",
+              "Complete085/animations/walk-v85/north-east/frame_002.png",
+              "Complete085/animations/walk-v85/north-east/frame_003.png",
+              "Complete085/animations/walk-v85/north-east/frame_004.png",
+              "Complete085/animations/walk-v85/north-east/frame_005.png",
+              "Complete085/animations/walk-v85/north-east/frame_006.png",
+              "Complete085/animations/walk-v85/north-east/frame_007.png"
+            ]
+          },
+          "guard-v85": {
+            "west": [
+              "Complete085/animations/guard-v85/west/frame_000.png",
+              "Complete085/animations/guard-v85/west/frame_001.png",
+              "Complete085/animations/guard-v85/west/frame_002.png",
+              "Complete085/animations/guard-v85/west/frame_003.png",
+              "Complete085/animations/guard-v85/west/frame_004.png",
+              "Complete085/animations/guard-v85/west/frame_005.png",
+              "Complete085/animations/guard-v85/west/frame_006.png",
+              "Complete085/animations/guard-v85/west/frame_007.png",
+              "Complete085/animations/guard-v85/west/frame_008.png",
+              "Complete085/animations/guard-v85/west/frame_009.png"
+            ],
+            "east": [
+              "Complete085/animations/guard-v85/east/frame_000.png",
+              "Complete085/animations/guard-v85/east/frame_001.png",
+              "Complete085/animations/guard-v85/east/frame_002.png",
+              "Complete085/animations/guard-v85/east/frame_003.png",
+              "Complete085/animations/guard-v85/east/frame_004.png",
+              "Complete085/animations/guard-v85/east/frame_005.png",
+              "Complete085/animations/guard-v85/east/frame_006.png",
+              "Complete085/animations/guard-v85/east/frame_007.png",
+              "Complete085/animations/guard-v85/east/frame_008.png",
+              "Complete085/animations/guard-v85/east/frame_009.png"
+            ]
+          },
+          "item-v85": {
+            "west": [
+              "Complete085/animations/item-v85/west/frame_000.png",
+              "Complete085/animations/item-v85/west/frame_001.png",
+              "Complete085/animations/item-v85/west/frame_002.png",
+              "Complete085/animations/item-v85/west/frame_003.png",
+              "Complete085/animations/item-v85/west/frame_004.png",
+              "Complete085/animations/item-v85/west/frame_005.png",
+              "Complete085/animations/item-v85/west/frame_006.png",
+              "Complete085/animations/item-v85/west/frame_007.png",
+              "Complete085/animations/item-v85/west/frame_008.png",
+              "Complete085/animations/item-v85/west/frame_009.png"
+            ],
+            "east": [
+              "Complete085/animations/item-v85/east/frame_000.png",
+              "Complete085/animations/item-v85/east/frame_001.png",
+              "Complete085/animations/item-v85/east/frame_002.png",
+              "Complete085/animations/item-v85/east/frame_003.png",
+              "Complete085/animations/item-v85/east/frame_004.png",
+              "Complete085/animations/item-v85/east/frame_005.png",
+              "Complete085/animations/item-v85/east/frame_006.png",
+              "Complete085/animations/item-v85/east/frame_007.png",
+              "Complete085/animations/item-v85/east/frame_008.png",
+              "Complete085/animations/item-v85/east/frame_009.png"
+            ]
+          },
+          "recoil-v85": {
+            "west": [
+              "Complete085/animations/recoil-v85/west/frame_000.png",
+              "Complete085/animations/recoil-v85/west/frame_001.png",
+              "Complete085/animations/recoil-v85/west/frame_002.png",
+              "Complete085/animations/recoil-v85/west/frame_003.png",
+              "Complete085/animations/recoil-v85/west/frame_004.png",
+              "Complete085/animations/recoil-v85/west/frame_005.png",
+              "Complete085/animations/recoil-v85/west/frame_006.png",
+              "Complete085/animations/recoil-v85/west/frame_007.png"
+            ],
+            "east": [
+              "Complete085/animations/recoil-v85/east/frame_000.png",
+              "Complete085/animations/recoil-v85/east/frame_001.png",
+              "Complete085/animations/recoil-v85/east/frame_002.png",
+              "Complete085/animations/recoil-v85/east/frame_003.png",
+              "Complete085/animations/recoil-v85/east/frame_004.png",
+              "Complete085/animations/recoil-v85/east/frame_005.png",
+              "Complete085/animations/recoil-v85/east/frame_006.png",
+              "Complete085/animations/recoil-v85/east/frame_007.png"
+            ]
+          },
+          "victory-v85": {
+            "west": [
+              "Complete085/animations/victory-v85/west/frame_000.png",
+              "Complete085/animations/victory-v85/west/frame_001.png",
+              "Complete085/animations/victory-v85/west/frame_002.png",
+              "Complete085/animations/victory-v85/west/frame_003.png",
+              "Complete085/animations/victory-v85/west/frame_004.png",
+              "Complete085/animations/victory-v85/west/frame_005.png",
+              "Complete085/animations/victory-v85/west/frame_006.png",
+              "Complete085/animations/victory-v85/west/frame_007.png",
+              "Complete085/animations/victory-v85/west/frame_008.png",
+              "Complete085/animations/victory-v85/west/frame_009.png",
+              "Complete085/animations/victory-v85/west/frame_010.png",
+              "Complete085/animations/victory-v85/west/frame_011.png"
+            ],
+            "east": [
+              "Complete085/animations/victory-v85/east/frame_000.png",
+              "Complete085/animations/victory-v85/east/frame_001.png",
+              "Complete085/animations/victory-v85/east/frame_002.png",
+              "Complete085/animations/victory-v85/east/frame_003.png",
+              "Complete085/animations/victory-v85/east/frame_004.png",
+              "Complete085/animations/victory-v85/east/frame_005.png",
+              "Complete085/animations/victory-v85/east/frame_006.png",
+              "Complete085/animations/victory-v85/east/frame_007.png",
+              "Complete085/animations/victory-v85/east/frame_008.png",
+              "Complete085/animations/victory-v85/east/frame_009.png",
+              "Complete085/animations/victory-v85/east/frame_010.png",
+              "Complete085/animations/victory-v85/east/frame_011.png"
+            ]
+          },
+          "pulseOne-v85": {
+            "west": [
+              "Complete085/animations/pulseOne-v85/west/frame_000.png",
+              "Complete085/animations/pulseOne-v85/west/frame_001.png",
+              "Complete085/animations/pulseOne-v85/west/frame_002.png",
+              "Complete085/animations/pulseOne-v85/west/frame_003.png",
+              "Complete085/animations/pulseOne-v85/west/frame_004.png",
+              "Complete085/animations/pulseOne-v85/west/frame_005.png",
+              "Complete085/animations/pulseOne-v85/west/frame_006.png",
+              "Complete085/animations/pulseOne-v85/west/frame_007.png",
+              "Complete085/animations/pulseOne-v85/west/frame_008.png",
+              "Complete085/animations/pulseOne-v85/west/frame_009.png",
+              "Complete085/animations/pulseOne-v85/west/frame_010.png",
+              "Complete085/animations/pulseOne-v85/west/frame_011.png"
+            ],
+            "east": [
+              "Complete085/animations/pulseOne-v85/east/frame_000.png",
+              "Complete085/animations/pulseOne-v85/east/frame_001.png",
+              "Complete085/animations/pulseOne-v85/east/frame_002.png",
+              "Complete085/animations/pulseOne-v85/east/frame_003.png",
+              "Complete085/animations/pulseOne-v85/east/frame_004.png",
+              "Complete085/animations/pulseOne-v85/east/frame_005.png",
+              "Complete085/animations/pulseOne-v85/east/frame_006.png",
+              "Complete085/animations/pulseOne-v85/east/frame_007.png",
+              "Complete085/animations/pulseOne-v85/east/frame_008.png",
+              "Complete085/animations/pulseOne-v85/east/frame_009.png",
+              "Complete085/animations/pulseOne-v85/east/frame_010.png",
+              "Complete085/animations/pulseOne-v85/east/frame_011.png"
+            ]
+          },
+          "battleIdle-v85": {
+            "west": [
+              "Complete085/animations/battleIdle-v85/west/frame_000.png",
+              "Complete085/animations/battleIdle-v85/west/frame_001.png",
+              "Complete085/animations/battleIdle-v85/west/frame_002.png",
+              "Complete085/animations/battleIdle-v85/west/frame_003.png",
+              "Complete085/animations/battleIdle-v85/west/frame_004.png",
+              "Complete085/animations/battleIdle-v85/west/frame_005.png",
+              "Complete085/animations/battleIdle-v85/west/frame_006.png",
+              "Complete085/animations/battleIdle-v85/west/frame_007.png",
+              "Complete085/animations/battleIdle-v85/west/frame_008.png",
+              "Complete085/animations/battleIdle-v85/west/frame_009.png",
+              "Complete085/animations/battleIdle-v85/west/frame_010.png",
+              "Complete085/animations/battleIdle-v85/west/frame_011.png"
+            ],
+            "east": [
+              "Complete085/animations/battleIdle-v85/east/frame_000.png",
+              "Complete085/animations/battleIdle-v85/east/frame_001.png",
+              "Complete085/animations/battleIdle-v85/east/frame_002.png",
+              "Complete085/animations/battleIdle-v85/east/frame_003.png",
+              "Complete085/animations/battleIdle-v85/east/frame_004.png",
+              "Complete085/animations/battleIdle-v85/east/frame_005.png",
+              "Complete085/animations/battleIdle-v85/east/frame_006.png",
+              "Complete085/animations/battleIdle-v85/east/frame_007.png",
+              "Complete085/animations/battleIdle-v85/east/frame_008.png",
+              "Complete085/animations/battleIdle-v85/east/frame_009.png",
+              "Complete085/animations/battleIdle-v85/east/frame_010.png",
+              "Complete085/animations/battleIdle-v85/east/frame_011.png"
+            ]
+          },
+          "battleRise-v85": {
+            "west": [
+              "Complete085/animations/battleRise-v85/west/frame_000.png",
+              "Complete085/animations/battleRise-v85/west/frame_001.png",
+              "Complete085/animations/battleRise-v85/west/frame_002.png",
+              "Complete085/animations/battleRise-v85/west/frame_003.png",
+              "Complete085/animations/battleRise-v85/west/frame_004.png",
+              "Complete085/animations/battleRise-v85/west/frame_005.png",
+              "Complete085/animations/battleRise-v85/west/frame_006.png",
+              "Complete085/animations/battleRise-v85/west/frame_007.png",
+              "Complete085/animations/battleRise-v85/west/frame_008.png",
+              "Complete085/animations/battleRise-v85/west/frame_009.png",
+              "Complete085/animations/battleRise-v85/west/frame_010.png",
+              "Complete085/animations/battleRise-v85/west/frame_011.png",
+              "Complete085/animations/battleRise-v85/west/frame_012.png",
+              "Complete085/animations/battleRise-v85/west/frame_013.png",
+              "Complete085/animations/battleRise-v85/west/frame_014.png",
+              "Complete085/animations/battleRise-v85/west/frame_015.png",
+              "Complete085/animations/battleRise-v85/west/frame_016.png",
+              "Complete085/animations/battleRise-v85/west/frame_017.png"
+            ],
+            "east": [
+              "Complete085/animations/battleRise-v85/east/frame_000.png",
+              "Complete085/animations/battleRise-v85/east/frame_001.png",
+              "Complete085/animations/battleRise-v85/east/frame_002.png",
+              "Complete085/animations/battleRise-v85/east/frame_003.png",
+              "Complete085/animations/battleRise-v85/east/frame_004.png",
+              "Complete085/animations/battleRise-v85/east/frame_005.png",
+              "Complete085/animations/battleRise-v85/east/frame_006.png",
+              "Complete085/animations/battleRise-v85/east/frame_007.png",
+              "Complete085/animations/battleRise-v85/east/frame_008.png",
+              "Complete085/animations/battleRise-v85/east/frame_009.png",
+              "Complete085/animations/battleRise-v85/east/frame_010.png",
+              "Complete085/animations/battleRise-v85/east/frame_011.png",
+              "Complete085/animations/battleRise-v85/east/frame_012.png",
+              "Complete085/animations/battleRise-v85/east/frame_013.png",
+              "Complete085/animations/battleRise-v85/east/frame_014.png",
+              "Complete085/animations/battleRise-v85/east/frame_015.png",
+              "Complete085/animations/battleRise-v85/east/frame_016.png",
+              "Complete085/animations/battleRise-v85/east/frame_017.png"
+            ]
+          },
+          "pulseTwo-v85": {
+            "west": [
+              "Complete085/animations/pulseTwo-v85/west/frame_000.png",
+              "Complete085/animations/pulseTwo-v85/west/frame_001.png",
+              "Complete085/animations/pulseTwo-v85/west/frame_002.png",
+              "Complete085/animations/pulseTwo-v85/west/frame_003.png",
+              "Complete085/animations/pulseTwo-v85/west/frame_004.png",
+              "Complete085/animations/pulseTwo-v85/west/frame_005.png",
+              "Complete085/animations/pulseTwo-v85/west/frame_006.png",
+              "Complete085/animations/pulseTwo-v85/west/frame_007.png",
+              "Complete085/animations/pulseTwo-v85/west/frame_008.png",
+              "Complete085/animations/pulseTwo-v85/west/frame_009.png",
+              "Complete085/animations/pulseTwo-v85/west/frame_010.png",
+              "Complete085/animations/pulseTwo-v85/west/frame_011.png"
+            ],
+            "east": [
+              "Complete085/animations/pulseTwo-v85/east/frame_000.png",
+              "Complete085/animations/pulseTwo-v85/east/frame_001.png",
+              "Complete085/animations/pulseTwo-v85/east/frame_002.png",
+              "Complete085/animations/pulseTwo-v85/east/frame_003.png",
+              "Complete085/animations/pulseTwo-v85/east/frame_004.png",
+              "Complete085/animations/pulseTwo-v85/east/frame_005.png",
+              "Complete085/animations/pulseTwo-v85/east/frame_006.png",
+              "Complete085/animations/pulseTwo-v85/east/frame_007.png",
+              "Complete085/animations/pulseTwo-v85/east/frame_008.png",
+              "Complete085/animations/pulseTwo-v85/east/frame_009.png",
+              "Complete085/animations/pulseTwo-v85/east/frame_010.png",
+              "Complete085/animations/pulseTwo-v85/east/frame_011.png"
+            ]
+          },
+          "pulseThree-v85": {
+            "west": [
+              "Complete085/animations/pulseThree-v85/west/frame_000.png",
+              "Complete085/animations/pulseThree-v85/west/frame_001.png",
+              "Complete085/animations/pulseThree-v85/west/frame_002.png",
+              "Complete085/animations/pulseThree-v85/west/frame_003.png",
+              "Complete085/animations/pulseThree-v85/west/frame_004.png",
+              "Complete085/animations/pulseThree-v85/west/frame_005.png",
+              "Complete085/animations/pulseThree-v85/west/frame_006.png",
+              "Complete085/animations/pulseThree-v85/west/frame_007.png",
+              "Complete085/animations/pulseThree-v85/west/frame_008.png",
+              "Complete085/animations/pulseThree-v85/west/frame_009.png",
+              "Complete085/animations/pulseThree-v85/west/frame_010.png",
+              "Complete085/animations/pulseThree-v85/west/frame_011.png"
+            ],
+            "east": [
+              "Complete085/animations/pulseThree-v85/east/frame_000.png",
+              "Complete085/animations/pulseThree-v85/east/frame_001.png",
+              "Complete085/animations/pulseThree-v85/east/frame_002.png",
+              "Complete085/animations/pulseThree-v85/east/frame_003.png",
+              "Complete085/animations/pulseThree-v85/east/frame_004.png",
+              "Complete085/animations/pulseThree-v85/east/frame_005.png",
+              "Complete085/animations/pulseThree-v85/east/frame_006.png",
+              "Complete085/animations/pulseThree-v85/east/frame_007.png",
+              "Complete085/animations/pulseThree-v85/east/frame_008.png",
+              "Complete085/animations/pulseThree-v85/east/frame_009.png",
+              "Complete085/animations/pulseThree-v85/east/frame_010.png",
+              "Complete085/animations/pulseThree-v85/east/frame_011.png"
+            ]
+          },
+          "arcanePulse-v85": {
+            "west": [
+              "Complete085/animations/arcanePulse-v85/west/frame_000.png",
+              "Complete085/animations/arcanePulse-v85/west/frame_001.png",
+              "Complete085/animations/arcanePulse-v85/west/frame_002.png",
+              "Complete085/animations/arcanePulse-v85/west/frame_003.png",
+              "Complete085/animations/arcanePulse-v85/west/frame_004.png",
+              "Complete085/animations/arcanePulse-v85/west/frame_005.png",
+              "Complete085/animations/arcanePulse-v85/west/frame_006.png",
+              "Complete085/animations/arcanePulse-v85/west/frame_007.png",
+              "Complete085/animations/arcanePulse-v85/west/frame_008.png",
+              "Complete085/animations/arcanePulse-v85/west/frame_009.png",
+              "Complete085/animations/arcanePulse-v85/west/frame_010.png",
+              "Complete085/animations/arcanePulse-v85/west/frame_011.png",
+              "Complete085/animations/arcanePulse-v85/west/frame_012.png",
+              "Complete085/animations/arcanePulse-v85/west/frame_013.png"
+            ],
+            "east": [
+              "Complete085/animations/arcanePulse-v85/east/frame_000.png",
+              "Complete085/animations/arcanePulse-v85/east/frame_001.png",
+              "Complete085/animations/arcanePulse-v85/east/frame_002.png",
+              "Complete085/animations/arcanePulse-v85/east/frame_003.png",
+              "Complete085/animations/arcanePulse-v85/east/frame_004.png",
+              "Complete085/animations/arcanePulse-v85/east/frame_005.png",
+              "Complete085/animations/arcanePulse-v85/east/frame_006.png",
+              "Complete085/animations/arcanePulse-v85/east/frame_007.png",
+              "Complete085/animations/arcanePulse-v85/east/frame_008.png",
+              "Complete085/animations/arcanePulse-v85/east/frame_009.png",
+              "Complete085/animations/arcanePulse-v85/east/frame_010.png",
+              "Complete085/animations/arcanePulse-v85/east/frame_011.png",
+              "Complete085/animations/arcanePulse-v85/east/frame_012.png",
+              "Complete085/animations/arcanePulse-v85/east/frame_013.png"
+            ]
+          },
+          "ward-v85": {
+            "west": [
+              "Complete085/animations/ward-v85/west/frame_000.png",
+              "Complete085/animations/ward-v85/west/frame_001.png",
+              "Complete085/animations/ward-v85/west/frame_002.png",
+              "Complete085/animations/ward-v85/west/frame_003.png",
+              "Complete085/animations/ward-v85/west/frame_004.png",
+              "Complete085/animations/ward-v85/west/frame_005.png",
+              "Complete085/animations/ward-v85/west/frame_006.png",
+              "Complete085/animations/ward-v85/west/frame_007.png",
+              "Complete085/animations/ward-v85/west/frame_008.png",
+              "Complete085/animations/ward-v85/west/frame_009.png",
+              "Complete085/animations/ward-v85/west/frame_010.png",
+              "Complete085/animations/ward-v85/west/frame_011.png"
+            ],
+            "east": [
+              "Complete085/animations/ward-v85/east/frame_000.png",
+              "Complete085/animations/ward-v85/east/frame_001.png",
+              "Complete085/animations/ward-v85/east/frame_002.png",
+              "Complete085/animations/ward-v85/east/frame_003.png",
+              "Complete085/animations/ward-v85/east/frame_004.png",
+              "Complete085/animations/ward-v85/east/frame_005.png",
+              "Complete085/animations/ward-v85/east/frame_006.png",
+              "Complete085/animations/ward-v85/east/frame_007.png",
+              "Complete085/animations/ward-v85/east/frame_008.png",
+              "Complete085/animations/ward-v85/east/frame_009.png",
+              "Complete085/animations/ward-v85/east/frame_010.png",
+              "Complete085/animations/ward-v85/east/frame_011.png"
+            ]
+          },
+          "channel-v85": {
+            "east": [
+              "Complete085/animations/channel-v85/east/frame_000.png",
+              "Complete085/animations/channel-v85/east/frame_001.png",
+              "Complete085/animations/channel-v85/east/frame_002.png",
+              "Complete085/animations/channel-v85/east/frame_003.png",
+              "Complete085/animations/channel-v85/east/frame_004.png",
+              "Complete085/animations/channel-v85/east/frame_005.png",
+              "Complete085/animations/channel-v85/east/frame_006.png",
+              "Complete085/animations/channel-v85/east/frame_007.png",
+              "Complete085/animations/channel-v85/east/frame_008.png",
+              "Complete085/animations/channel-v85/east/frame_009.png",
+              "Complete085/animations/channel-v85/east/frame_010.png",
+              "Complete085/animations/channel-v85/east/frame_011.png"
+            ],
+            "west": [
+              "Complete085/animations/channel-v85/west/frame_000.png",
+              "Complete085/animations/channel-v85/west/frame_001.png",
+              "Complete085/animations/channel-v85/west/frame_002.png",
+              "Complete085/animations/channel-v85/west/frame_003.png",
+              "Complete085/animations/channel-v85/west/frame_004.png",
+              "Complete085/animations/channel-v85/west/frame_005.png",
+              "Complete085/animations/channel-v85/west/frame_006.png",
+              "Complete085/animations/channel-v85/west/frame_007.png",
+              "Complete085/animations/channel-v85/west/frame_008.png",
+              "Complete085/animations/channel-v85/west/frame_009.png",
+              "Complete085/animations/channel-v85/west/frame_010.png",
+              "Complete085/animations/channel-v85/west/frame_011.png"
+            ]
+          },
+          "injured-v85": {
+            "west": [
+              "Complete085/animations/injured-v85/west/frame_000.png",
+              "Complete085/animations/injured-v85/west/frame_001.png",
+              "Complete085/animations/injured-v85/west/frame_002.png",
+              "Complete085/animations/injured-v85/west/frame_003.png",
+              "Complete085/animations/injured-v85/west/frame_004.png",
+              "Complete085/animations/injured-v85/west/frame_005.png",
+              "Complete085/animations/injured-v85/west/frame_006.png",
+              "Complete085/animations/injured-v85/west/frame_007.png",
+              "Complete085/animations/injured-v85/west/frame_008.png",
+              "Complete085/animations/injured-v85/west/frame_009.png"
+            ],
+            "east": [
+              "Complete085/animations/injured-v85/east/frame_000.png",
+              "Complete085/animations/injured-v85/east/frame_001.png",
+              "Complete085/animations/injured-v85/east/frame_002.png",
+              "Complete085/animations/injured-v85/east/frame_003.png",
+              "Complete085/animations/injured-v85/east/frame_004.png",
+              "Complete085/animations/injured-v85/east/frame_005.png",
+              "Complete085/animations/injured-v85/east/frame_006.png",
+              "Complete085/animations/injured-v85/east/frame_007.png",
+              "Complete085/animations/injured-v85/east/frame_008.png",
+              "Complete085/animations/injured-v85/east/frame_009.png"
+            ]
+          },
+          "knockedOut-v85": {
+            "west": [
+              "Complete085/animations/knockedOut-v85/west/frame_000.png",
+              "Complete085/animations/knockedOut-v85/west/frame_001.png",
+              "Complete085/animations/knockedOut-v85/west/frame_002.png",
+              "Complete085/animations/knockedOut-v85/west/frame_003.png",
+              "Complete085/animations/knockedOut-v85/west/frame_004.png",
+              "Complete085/animations/knockedOut-v85/west/frame_005.png",
+              "Complete085/animations/knockedOut-v85/west/frame_006.png",
+              "Complete085/animations/knockedOut-v85/west/frame_007.png",
+              "Complete085/animations/knockedOut-v85/west/frame_008.png",
+              "Complete085/animations/knockedOut-v85/west/frame_009.png",
+              "Complete085/animations/knockedOut-v85/west/frame_010.png",
+              "Complete085/animations/knockedOut-v85/west/frame_011.png"
+            ],
+            "east": [
+              "Complete085/animations/knockedOut-v85/east/frame_000.png",
+              "Complete085/animations/knockedOut-v85/east/frame_001.png",
+              "Complete085/animations/knockedOut-v85/east/frame_002.png",
+              "Complete085/animations/knockedOut-v85/east/frame_003.png",
+              "Complete085/animations/knockedOut-v85/east/frame_004.png",
+              "Complete085/animations/knockedOut-v85/east/frame_005.png",
+              "Complete085/animations/knockedOut-v85/east/frame_006.png",
+              "Complete085/animations/knockedOut-v85/east/frame_007.png",
+              "Complete085/animations/knockedOut-v85/east/frame_008.png",
+              "Complete085/animations/knockedOut-v85/east/frame_009.png",
+              "Complete085/animations/knockedOut-v85/east/frame_010.png",
+              "Complete085/animations/knockedOut-v85/east/frame_011.png"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "export_version": "3.1",
+  "export_date": "2026-11-07T14:05:40.076712"
+}

@@ -31,15 +31,15 @@ buildLocalNature=function(){natureBefore30();if(activeScene.kind!=='poi')return;
 const plantsBefore30=buildPlants;
 buildPlants=function(){plantsBefore30();const mats=new Map();
  for(const im of world.userData.plantMeshes??[]){const kind=im.userData.plantKey;if(!['flowers','fern','grassBlades','shrub'].includes(kind))continue;const base=im.material;
-  if(!mats.has(base)){const m=physicalMaterial28(base);m.uniformsForDistance=base.uniformsForDistance;m.side=THREE.DoubleSide;m.roughness=.87;m.color.set('#ffffff');m.map=kind==='shrub'?(textures.leafOak30??textures.oakCanopy):kind==='flowers'?(textures.petal30??textures.cloth):textures.grass;m.alphaTest=kind==='shrub'?.35:0;m.alphaToCoverage=kind==='shrub';
+  if(!mats.has(base)){const m=physicalMaterial28(base);m.uniformsForDistance=base.uniformsForDistance;m.side=THREE.DoubleSide;m.roughness=.96;m.color.set('#ffffff');m.map=kind==='shrub'?(textures.leafOak30??textures.oakCanopy):kind==='flowers'?(textures.petal30??textures.cloth):(textures.plantLeaf86??textures.grass);m.alphaTest=kind==='shrub'?.35:0;m.alphaToCoverage=kind==='shrub';
    const old=m.onBeforeCompile,key=m.customProgramCacheKey();m.onBeforeCompile=sh=>{old(sh);sh.vertexShader='attribute float plantStyle30,botanyPart30;attribute vec3 botanyCenter30;varying float flowerStyle30,flowerPart30;\n'+sh.vertexShader;
     sh.vertexShader=sh.vertexShader.replace('#include <begin_vertex>',`#include <begin_vertex>
      flowerStyle30=plantStyle30;flowerPart30=botanyPart30;
      if(botanyPart30>.5){vec3 petalOffset30=transformed-botanyCenter30;if(plantStyle30>.5&&plantStyle30<1.5){petalOffset30.xz*=.76;petalOffset30.y+=length(petalOffset30.xz)*.7;}else if(plantStyle30>1.5&&plantStyle30<2.5){petalOffset30*=.76;petalOffset30.y+=length(petalOffset30.xz)*.45;}else if(plantStyle30>2.5&&plantStyle30<3.5){petalOffset30.y=-petalOffset30.y-length(petalOffset30.xz)*.7;petalOffset30.xz*=.7;}else if(plantStyle30>3.5){petalOffset30*=.55;petalOffset30.y+=.08;}transformed=botanyCenter30+petalOffset30;}
      transformed.y=-.44+(transformed.y+.44)*( .82+fract(plantStyle30*.173)*.5);`);
     sh.fragmentShader='varying float flowerStyle30,flowerPart30;\n'+sh.fragmentShader;
-    if(kind==='grassBlades')sh.fragmentShader=sh.fragmentShader.replace('vec3 foliageArt=texture2D(map,vMapUv*.23).rgb;diffuseColor.rgb*=mix(vec3(1.),foliageArt*1.8,.27);','vec3 foliageArt=texture2D(map,vMapUv).rgb;diffuseColor.rgb*=mix(vec3(1.),foliageArt*1.8,.18);');
-    if(kind==='fern')sh.fragmentShader=sh.fragmentShader.replace('#include <map_fragment>','diffuseColor.rgb*=mix(vec3(1.),texture2D(map,vMapUv).rgb*1.8,.2);');
+    if(kind==='grassBlades')sh.fragmentShader=sh.fragmentShader.replace('vec3 foliageArt=texture2D(map,vMapUv*.23).rgb;diffuseColor.rgb*=mix(vec3(1.),foliageArt*1.8,.27);','vec3 foliageArt=texture2D(map,vMapUv).rgb;diffuseColor.rgb*=mix(vec3(1.),foliageArt*1.25,.18);');
+    if(kind==='fern')sh.fragmentShader=sh.fragmentShader.replace('#include <map_fragment>','diffuseColor.rgb*=mix(vec3(1.),texture2D(map,vMapUv).rgb*1.25,.2);');
     if(kind==='flowers')sh.fragmentShader=sh.fragmentShader.replace('#include <map_fragment>',`#include <map_fragment>
      if(flowerPart30>.5&&flowerPart30<1.5){vec3 petalTint30=flowerStyle30<.5?vec3(1.,.98,.87):flowerStyle30<1.5?vec3(1.,.70,.15):flowerStyle30<2.5?vec3(.96,.45,.58):flowerStyle30<3.5?vec3(.45,.64,1.):vec3(.72,.45,.88);diffuseColor.rgb*=petalTint30;}`);
    };m.customProgramCacheKey=()=>key+'-botanical-forms30-'+kind;m.needsUpdate=true;mats.set(base,m);

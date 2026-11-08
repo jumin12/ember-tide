@@ -2,6 +2,35 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.22 — Renewed characters and layered battles
+
+November 7, 2026
+
+- Rebuilt Bren with consistent proportions, clean native pixel edges, eight-direction full-run movement at both travel speeds, and breathing exploration idles.
+- Replaced Bren’s normal and Ascended combat animations with breathing ready poses, complete sword swings, Driving Slash, guard, recoil, Rally, injury and victory. Larger source frames preserve the full blade and hand placement.
+- Rebuilt Soren’s eight-direction movement and combat poses. His battle entrance lifts him into the approved slight hover, with a breathing ready loop, staff attacks, Arcane Pulse, Ward, guard, recoil, injury and victory.
+- Added layered sword ribbons, impacts, runes and magic flashes whose colored light reaches nearby terrain, props and actors. Reusable effect pools clear correctly when encounters end.
+- Replaced seventeen world NPC families with reviewed PixelLab designs, eight-direction movement and breathing idles. The other thirteen keep their current playable animation sets while their new designs remain available as staged developer previews.
+- Upgraded exterior, overworld and interior material families with distinct wood, bark, stone, plaster, cloth, metal, pottery, leather and paper finishes. Native normal detail and surface-specific roughness keep matte surfaces matte.
+- Reworked connected tree boughs, species-specific foliage and bark, fractured rock shapes, ground cover and interior material variation using the new native PixelLab art.
+- Added an NPC, party and creature browser to the existing developer console, with animation selection, direction and frame controls, playback, contrasting preview backgrounds and current/staged NPC comparisons.
+- Added PNG/JPG downloads for displayed sprites and ZIP exports for every frame of a selected animation or a character’s complete animation set.
+- Added combat enemy, enemy-count and encounter pickers to the developer console. The existing protected toolbar remains usable on portrait and landscape phones.
+- Rebuilt all twenty battle environments around detailed physical foreground terrain, rooted 3D middle-distance scenery and the original paired day/night PixelLab paintings set farther behind the battlefield.
+- Removed smeared picture colors from the terrain beneath fighters and reduced oversized foreground planting. Native trees, rocks, architecture, crystals and rotating windmill sails bridge the physical field and distant scenery.
+- Added calibrated background depth, parallax, moving foliage and water, airborne effects, soft distant focus and restrained bloom. Cinematic reveals hand off to a stable gameplay view with sharp characters.
+- Staged party members and enemies in staggered groups instead of a straight line. Native sprite silhouettes determine spacing, and action animations return actors to stable formation positions.
+- Kept battle actors grounded when the viewport changes orientation, reserved space for combat controls, and moved large enemies clear of the phone landscape command dock.
+- Restored the earlier river finish and joined background water to the POI water with matching material, flow, edge positions, depths and changing levels. Corrected stale and self-reflected background water at the join.
+- Refined fountain and well water with the shared native ripple, shallow-depth and reflection treatment.
+- Made ordinary human opponents and commanders use the same pixel defeat effect as other enemies, while retaining Soren’s explicit story withdrawal. Enlarged commander presentation without changing ordinary enemy sizes.
+- Added injury and recovery voice reactions for all five party members, with threshold tracking, serialized playback and safeguards against repeated or defeated-character reactions.
+- Made reward notices remain visible for four seconds, added a brief slide transition, and preserved manual dismissal and queued rewards without duplicate grants.
+- Made Escape reliably open the main menu around destination prompts, removed the duplicate main-menu action in Settings, and cleared residual battle interface after leaving an encounter.
+- Reused scene geometry, native material batches, effect pools and the battle post-processing target. Background paintings decode on demand during the encounter transition, and owned combat resources are released on exit.
+
+Release verification and the standalone checksum are recorded in `elyndor/previews/release-v122/verification.json`. Browser checks use native Chrome; phone layouts use browser emulation. Existing PixelLab images retain their native resolution.
+
 ## Alpha Version 1.21 — Connected roads and steadier journeys
 
 November 6, 2026

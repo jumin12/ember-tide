@@ -84,6 +84,6 @@ const BATTLE_STAGE_PAIRS55={
 };
 function battleTexture55(key){
  const hour=(state.worldMinutes/60%24+24)%24,phase=hour<6||hour>=19?'night':'day',asset=BATTLE_STAGE_PAIRS55[key]?.[phase],texture=textures[asset];
- if(!texture)throw Error('Missing paired battle background: '+key+' '+phase);
+ if(!texture&&typeof buildArena88!=='function')throw Error('Missing paired battle background: '+key+' '+phase);
  return{key:asset,texture,phase,night:phase==='night'};
 }

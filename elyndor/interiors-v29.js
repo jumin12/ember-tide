@@ -25,7 +25,7 @@ function roomBottle29(x,y,z,k=0,s=1){
  roomBox29(x,y+.6*s,z,.1*s,.08*s,.1*s,'wood','#ae8c57');
 }
 function roomMug29(x,y,z){
- const m=material('metal','#afa28b',{roughness:.45,metalness:.48});
+ const m=finishMaterial86('ceramic86','#b7cab7',{roughness:.34});
  mesh(new THREE.CylinderGeometry(.13,.11,.27,10),m,x,y+.14,z);
  const handle=mesh(new THREE.TorusGeometry(.095,.025,5,10),m,x+.15,y+.14,z);handle.rotation.y=Math.PI/2;
  mesh(new THREE.CircleGeometry(.105,10),material('darkWood','#674124'),x,y+.278,z).rotation.x=-Math.PI/2;
@@ -34,8 +34,8 @@ function roomBooks29(x,y,z,n,seed=1){
  const rng=seeded(seed),colors=['#4e6770','#8a4e37','#bc985f','#778266','#574d65','#c9b48b'];
  let xx=x;
  for(let i=0;i<n;i++){const w=.14+rng()*.12,h=.4+rng()*.25;
-  roomBox29(xx,y+h/2,z,w,h,.37,'cloth',colors[i%colors.length]);
-  for(const yy of[.08,h-.09])roomBox29(xx,y+yy,z+.195,w*.9,.026,.025,'metal','#d9bc77');
+  roomBox29(xx,y+h/2,z,w,h,.37,'bookLeather86',colors[i%colors.length]);roomBox29(xx+w*.40,y+h/2,z,.035,h*.86,.32,'paper86','#e4dcc7');
+  for(const yy of[.08,h-.09])roomBox29(xx,y+yy,z+.195,w*.9,.026,.025,'brass86','#d9bc77');
   xx+=w+.022;
  }
 }

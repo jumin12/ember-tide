@@ -40,7 +40,9 @@ render=function(...args){const result=questRenderBefore64(...args);updateQuestHe
 // HP is authoritative. Visual completion never decides defeat, targeting,
 // initiative, victory or rewards. Explicit story withdrawals retain their cues.
 const combatDefeats64={events:[],started:0,active:new Set()},enemyDefeated64=new EventTarget();
-const STORY_DEFEATS64=new Set(['tavinIntro','commander1','betrayal','guard','commander2','commander3']);
+// Soren's escape is an explicit story withdrawal. Ordinary human combatants,
+// including the precursor followers and commanders, share the defeat effect.
+const STORY_DEFEATS64=new Set(['betrayal']);
 function usesSharedDefeat64(a){return !!a?.enemy&&!a.scriptedDefeat64&&!STORY_DEFEATS64.has(battle?.kind);}
 function confirmEnemyDefeat64(e){
  if(!e||e.hp>0||e.defeatEvent64)return;

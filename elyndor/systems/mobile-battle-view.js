@@ -13,6 +13,7 @@ function fitMobileRender69(){
  device33.resizeAt=0;if(device33.key!==key){device33.key=key;renderer.setPixelRatio(1);renderer.setSize(w,h,false);post.target.setSize(w,h);post.material.uniforms.resolution.value.set(w,h);if(post.material.uniforms.pixelRatio33)post.material.uniforms.pixelRatio33.value=ratio;device33.resizes++;}phoneCombat69.renderKey=key;
 }
 function frameMobileBattle69(cast,floor){
+ if(typeof frameRanks87==='function')return frameRanks87(cast,floor);
  const field=mobileField69(),key=[battle.started,battle.kind,innerWidth,innerHeight,...cast.map(a=>(a.visualId??a.id)+':'+a.size)].join('|');
  if(phoneCombat69.key!==key){
   phoneCombat69.key=key;const box=new THREE.Box3();for(const a of cast){a.mesh.updateWorldMatrix(true,false);box.expandByObject(a.mesh);}phoneCombat69.bounds=box;
