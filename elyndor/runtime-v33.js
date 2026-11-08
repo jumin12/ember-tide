@@ -31,7 +31,7 @@ resize=function(){
  // Keep native desktop pixels while reducing optional effects and geometry.
  // Applying two independent resolution reductions made the entire game soft.
  const floor=touchDevice33()?.85:Math.min(1,Math.sqrt(2400000/(w*h))),ceiling=Math.min(devicePixelRatio||1,t===3?1.75:1.25,Math.sqrt(pixels/(w*h)));
- const ratio=softwareBudget()?ceiling*device33.scale:Math.max(floor,ceiling*device33.scale);
+ const phone92=typeof usesPhoneRaster92==='function'&&usesPhoneRaster92(w,h),ratio=phone92?phoneRasterRatio92(w,h):softwareBudget()?ceiling*device33.scale:Math.max(floor,ceiling*device33.scale);
  const rw=Math.max(160,Math.round(w*ratio)),rh=Math.max(160,Math.round(h*ratio)),key=rw+'|'+rh;
  if(device33.key!==key){device33.key=key;renderer.setPixelRatio(1);renderer.setSize(rw,rh,false);post.target.setSize(rw,rh);post.material.uniforms.resolution.value.set(rw,rh);device33.resizes++;}if(post.material.uniforms.pixelRatio33)post.material.uniforms.pixelRatio33.value=rw/w;
  camera.aspect=w/h;camera.updateProjectionMatrix();applyCapabilityBudget();

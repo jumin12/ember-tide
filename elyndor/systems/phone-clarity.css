@@ -1,0 +1,21 @@
+/* DOM text stays at native browser resolution. Small HUD copy gets real font
+   sizes; scaled-down icons and broad text glows do not stand in for detail. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body.compact33 :is(#hud,#battle-hud,#menu,#world-enemy-bars27,#dev-console60){text-rendering:optimizeLegibility}
+body.compact33 :is(.meter-label,.card-title,#commands,.foe-bar27,.party-card65 label,.dev-field60 label){text-shadow:none!important}
+body[data-minimap51].compact33 #hud #party-hud .card-title{font-size:12px!important;line-height:14px;font-weight:700}
+body[data-minimap51].compact33 #hud #area-subtitle{font-size:11px!important;line-height:13px}
+body[data-minimap51].compact33 #hud #chapter-label{font-size:9px!important}
+body[data-minimap51].compact33 #mobile-nav33 button{font-size:12px!important}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-party .party-card65 header>b{font:700 12px/14px Georgia,serif!important}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-party .party-card65 label{font:500 10px/12px system-ui,sans-serif!important;color:#f1f3e7!important;letter-spacing:0}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-party .party-card65 header>small{font:600 9px/12px system-ui!important}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #commands button{font:600 13px/1.1 system-ui,sans-serif!important}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 .foe-bar27>span{font:700 12px/14px Georgia,serif!important}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 .foe-bar27>small{font:500 10px/12px system-ui,sans-serif!important;color:#f2dfd5}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 .status-row65 .combat-icon65{zoom:1!important;--icon-size65:12px!important}
+body.compact33 :is(#menu-content,#menu-party) :is(p.desc,.item-row p,.journal-entry p){font-size:13px!important;line-height:1.5}
+body[data-interface50].compact33 #menu #menu-nav button{font-size:14px!important}
+body.compact33 .title-news19 li{font-size:13px!important;line-height:1.5}
+body.compact33 #dev-console60 :is(label,select,button,input){font-size:12px}
+@media(max-width:350px){body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-party .party-card65 header>b{font-size:11px!important}body[data-minimap51].compact33.combat-ui65.mobile-combat69 #commands button{font-size:12px!important}}

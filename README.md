@@ -2,6 +2,27 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.23 — Richer battles and sharper phone visuals
+
+November 8, 2026
+
+- Placed enemies on the left and the party on the right in staggered rows, with spacing fitted to the actual character silhouettes across desktop, ultrawide and phone layouts.
+- Refined battle distance and perspective, lowered the portrait-phone camera, and preserved the proportions of the distant scenery.
+- Restored the eight cinematic reveals and the earlier attack-camera pans and pushes, with gentler phone motion, stable handoffs and respect for reduced-motion settings.
+- Bound cinematic and action cameras to the landscape coverage so reveals keep the picture edges and backstage space out of view. Corrected transparent borders and cloud blending around the paintings.
+- Shaped every battle stage around raised, uneven banks and a clear fighting hollow, with layered stone ledges and foreground framing that retain real depth during camera moves.
+- Added rooted groves, ferns, flowers, fallen wood, rubble, small stones, farm details and regional landmarks between the fighters and the original day/night paintings.
+- Gave all twenty stages regional lighting and ground palettes, with warmer orchards and sunsets, cooler snow and caves, and lighting matched to the selected daytime or nighttime landscape.
+- Added restrained background waterfall flow, moving water highlights, foliage and cloud shading, crystal glow, drifting leaves and airborne effects where they suit the scene.
+- Matched orchard trees to the green apple trees in their painting, added attached fruit, and restored snow cover to the snowfield branches.
+- Seated arch legs and building foundations on the terrain, rebuilt fence rails and royal walls to follow their banks, and connected stone bridge decks to their approaches.
+- Rendered common phone screens at their native 2x or 3x density within a pixel budget, preserved crisp sprite filtering, and reduced excessive battle blur on phones.
+- Enlarged small phone HUD, combat and menu labels and reduced text glow, while preserving the approved character artwork and its native pixel resolution.
+- Kept fighters grounded through screen rotation and deferred formation changes during active attacks. Characters return to the correct new positions when their action ends.
+- Kept scenery and effects batched, cached stable camera checks, retained low-quality rendering options, and verified that animations reuse geometry and battle resources are released on exit.
+
+Release verification and the standalone checksum are recorded in `elyndor/previews/release-v123/verification.json`. Browser checks use native Chrome; phone layouts use browser emulation. Existing PixelLab images retain their native resolution.
+
 ## Alpha Version 1.22 — Renewed characters and layered battles
 
 November 7, 2026

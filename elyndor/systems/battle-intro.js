@@ -57,7 +57,7 @@ function validIntroPose58(p,c,clearance=3){
  if(!p.position.toArray().concat(p.target.toArray(),p.fov).every(Number.isFinite)||p.fov<24||p.fov>105)return false;
  if(p.position.y<heightAt(p.position.x,p.position.z)+1.4)return false;
  if(encounter53.active&&!stageCameraClear59(p.position,c.cast))return false;
- const q=battleIntro58,probe=q.probe;probe.aspect=camera.aspect;probe.near=camera.near;probe.far=camera.far;probe.fov=p.fov;probe.position.copy(p.position);probe.lookAt(p.target);probe.updateProjectionMatrix();probe.updateMatrixWorld();
+ const q=battleIntro58,probe=q.probe;probe.copy(camera,false);probe.fov=p.fov;probe.position.copy(p.position);probe.lookAt(p.target);probe.updateProjectionMatrix();probe.updateMatrixWorld();
  for(const a of c.cast){const target=V3(a.x,a.mesh.position.y+a.size*.5,a.z);if(p.position.distanceTo(target)<clearance)return false;const screen=target.clone().project(probe);if(!screen.toArray().every(Number.isFinite)||screen.z< -1||screen.z>1||Math.abs(screen.x)>1.03||Math.abs(screen.y)>.94)return false;
   if(!encounter53.active){q.ray.set(p.position,target.clone().sub(p.position).normalize());const length=p.position.distanceTo(target);for(const box of c.occluders){const hit=q.ray.intersectBox(box,V3());if(hit&&hit.distanceTo(p.position)<length-.8)return false;}for(const t of[.2,.4,.6]){const at=p.position.clone().lerp(target,t);if(groundAt(at.x,at.z)>at.y-.3)return false;}}
  }

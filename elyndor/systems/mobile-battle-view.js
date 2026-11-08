@@ -9,7 +9,7 @@ function mobileField69(){
 function fitMobileRender69(){
  // Isolated arenas have a small draw budget. Render to whole device pixels,
  // rather than stretching a deferred frame from the previous orientation.
- const ratio=encounter53.active&&state.settings.quality!=='low'?Math.min(2,Math.max(1,Math.floor(devicePixelRatio||1))):1,w=Math.round(innerWidth*ratio),h=Math.round(innerHeight*ratio),key=w+'|'+h;
+ const ratio=typeof phoneRasterRatio92==='function'?phoneRasterRatio92(innerWidth,innerHeight):encounter53.active&&state.settings.quality!=='low'?Math.min(2,Math.max(1,Math.floor(devicePixelRatio||1))):1,w=Math.round(innerWidth*ratio),h=Math.round(innerHeight*ratio),key=w+'|'+h;
  device33.resizeAt=0;if(device33.key!==key){device33.key=key;renderer.setPixelRatio(1);renderer.setSize(w,h,false);post.target.setSize(w,h);post.material.uniforms.resolution.value.set(w,h);if(post.material.uniforms.pixelRatio33)post.material.uniforms.pixelRatio33.value=ratio;device33.resizes++;}phoneCombat69.renderKey=key;
 }
 function frameMobileBattle69(cast,floor){

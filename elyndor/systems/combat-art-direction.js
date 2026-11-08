@@ -232,6 +232,7 @@ function renderArena89(c){
 const arenaCameraBefore89=updateCamera;
 updateCamera=function(dt=1/60,instant=false,...args){
  const result=arenaCameraBefore89(dt,instant,...args);if(!encounter53.active||!battle||introLocked58())return result;
+ if(typeof presentBattleAction91==='function'){presentBattleAction91(dt,instant);return result;}
  if(cinemaArena89.owner!==battle){cinemaArena89.owner=battle;cinemaArena89.drift.set(0,0,0);}
  const cue=battle.animation,allowed=state.settings.motion!==false&&!mobileBattle69(),phase=allowed&&cue?Math.sin(Math.PI*clamp(cue.time/cue.duration,0,1)):0,target=cue?.actor?V3(cue.actor.x-cameraTarget.x,0,cue.actor.z-cameraTarget.z).clampLength(0,1).multiplyScalar(phase*.27):V3();cinemaArena89.drift.lerp(target,instant?1:1-Math.exp(-dt*8));camera.position.add(cinemaArena89.drift);cameraTarget.add(cinemaArena89.drift);
  if(phase>0)camera.position.sub(cameraTarget).multiplyScalar(1-phase*.025).add(cameraTarget);
