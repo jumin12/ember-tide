@@ -29,6 +29,7 @@ function normalizeJourneySave(input){
   if(!Array.isArray(q.members)||!q.members.length||q.members.some(id=>!CAST[id]))throw Error('The saved party is invalid.');
   if(!saveObject(q.characters)||!saveObject(q.flags))throw Error('The saved character state is missing.');
   const s={...base,...q,version:5,questId:questKey,beat,mode:'explore',members:[...new Set(q.members)],flags:{...q.flags},settings:{...base.settings,...(saveObject(q.settings)?q.settings:{})},characters:{}};
+  normalizeParty96(s);
   for(const[id,def]of Object.entries(base.characters)){
     const c=saveObject(q.characters[id])?q.characters[id]:{},gear={weapon:null,armor:null,accessory:null,offhand:null};
     for(const slot of Object.keys(gear)){const key=c.gear?.[slot];if(typeof key==='string'&&ITEMS[key]?.slot===slot)gear[slot]=key;}

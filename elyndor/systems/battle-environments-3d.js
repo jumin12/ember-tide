@@ -94,7 +94,7 @@ function arenaHeight88(b,x,z){
 function arenaFloor88(b,x,z){return b.floor?b.floor(x,z):arenaHeight88(b,x,z);}
 function arenaGround88(b){
  const xs=[-210,-190,-170,-150,-135,-120,-105,-92,-82,-74,-66,...Array.from({length:111},(_,i)=>i-55),66,74,82,92,105,120,135,150,170,190,210],zs=[-230,-210,-190,-175,-160,-145,-130,-118,-106,-96,-86,...Array.from({length:116},(_,i)=>-75+i),48,60,78,105],p=[],uv=[],weights=[],colors=[],index=[];
- for(const z of zs)for(const x of xs){const y=arenaHeight88(b,x,z),s=b.spec,soil=(1-smooth(.65,1.15,Math.hypot(x/24,(z-1)/14)))*(s.meadow||s.ground.startsWith('grass')?.55:1),slope=Math.max(Math.abs(arenaHeight88(b,x+1,z)-arenaHeight88(b,x-1,z)),Math.abs(arenaHeight88(b,x,z+1)-arenaHeight88(b,x,z-1)));
+ for(const z of zs)for(const x of xs){const y=arenaHeight88(b,x,z),s=b.spec,soil=(1-smooth(.65,1.15,Math.hypot(x/24,(z-1)/14)))*(s.meadow||s.ground.startsWith('grass')?.85:1),slope=Math.max(Math.abs(arenaHeight88(b,x+1,z)-arenaHeight88(b,x-1,z)),Math.abs(arenaHeight88(b,x,z+1)-arenaHeight88(b,x,z-1)));
   p.push(x,y-.018,z);uv.push(x*.12,z*.12);weights.push(soil,smooth(1.6,4,slope),0);const tint=new THREE.Color(s.snow?'#e1e9ec':s.cave?'#83929e':s.autumn?'#cab77a':s.coast?'#dfd0a8':s.twilight?'#b4b0a5':'#d2d1b5');colors.push(tint.r,tint.g,tint.b);
  }
  for(let z=0;z<zs.length-1;z++)for(let x=0;x<xs.length-1;x++){const a=z*xs.length+x,c=a+xs.length;index.push(a,c,a+1,a+1,c,c+1);}

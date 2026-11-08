@@ -50,7 +50,22 @@ function sprigGeometry89(){
  const p=[],uv=[];for(let q=0;q<3;q++){const angle=q*Math.PI/3,dx=Math.cos(angle),dz=Math.sin(angle);for(let j=0;j<2;j++){const t0=j/2,t1=(j+1)/2,a=V3(-dx*.5,t0-.5,-dz*.5),c=V3(dx*.5,t0-.5,dz*.5),d=V3(-dx*.5,t1-.5,-dz*.5),e=V3(dx*.5,t1-.5,dz*.5);a.z+=Math.sin(t0*Math.PI)*.11;c.z+=Math.sin(t0*Math.PI)*.11;d.z+=Math.sin(t1*Math.PI)*.11;e.z+=Math.sin(t1*Math.PI)*.11;p.push(...a,...c,...d,...c,...e,...d);uv.push(0,t0,1,t0,0,t1,1,t0,1,t1,0,t1);}}
  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(p,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));g.computeVertexNormals();return g;
 }
+// The battle lens must see faces and weapons through the stage dressing.
+// Resolve this once while planting, so trees never pop during camera moves.
+function treeClearsFighters96(b,x,z,size,kind){
+ if(!b.hybridKey90||!b.reference90)return true;
+ const ref=b.reference90,base=b.group.position,root=arenaFloor88(b,x,z),height=(kind==='pine'?10:9)*size,radius=(kind==='pine'?3:4)*size,corners=[],depth=[];
+ for(const X of[x-radius,x+radius])for(const Y of[root,root+height])for(const Z of[z-radius,z+radius]){const w=V3(X+base.x,Y+base.y,Z+base.z);depth.push(-w.clone().applyMatrix4(ref.matrixWorldInverse).z);corners.push(w.project(ref));}
+ const tree={left:Math.min(...corners.map(v=>v.x)),right:Math.max(...corners.map(v=>v.x)),bottom:Math.min(...corners.map(v=>v.y)),top:Math.max(...corners.map(v=>v.y))},near=Math.min(...depth);
+ for(const a of[player,...followers,...battle.enemies.map(e=>e.actor)]){const h=battle.rankHomes87?.get(a)??a,shape=silhouette87(a.visualId??a.id),body=[];let front=Infinity;
+  for(const X of[h.x+shape.left*a.size,h.x+shape.right*a.size])for(const Y of[encounter53.floorY,encounter53.floorY+shape.height*a.size]){const w=V3(X,Y,h.z);front=Math.min(front,-w.clone().applyMatrix4(ref.matrixWorldInverse).z);body.push(w.project(ref));}
+  if(near>front+.3)continue;const left=Math.min(...body.map(v=>v.x))-.018,right=Math.max(...body.map(v=>v.x))+.018,bottom=Math.min(...body.map(v=>v.y))-.02,top=Math.max(...body.map(v=>v.y))+.02;
+  if(tree.left<right&&tree.right>left&&tree.bottom<top&&tree.top>bottom){b.sightlineSkips96=(b.sightlineSkips96??0)+1;return false;}
+ }
+ return true;
+}
 arenaTree88=function(b,x,z,size=1,kind=b.spec.trees){
+ if(!treeClearsFighters96(b,x,z,size,kind))return;
  const species={oak:0,birch:1,autumn:2,willow:3,pine:4,orchard:5}[kind]??0,s=size*(species===4?1.25:1.3),t=naturalTree66({x,z,y:arenaFloor88(b,x,z),scale:s,h:(species===4?7.6:species===1?7.4:6.3)*s,pine:species===4,species30:species});
  b.nativeTrees89??={trunks:[],leaves:[]};for(const matrix of t.trunks)b.nativeTrees89.trunks.push({matrix,species});for(const matrix of t.crowns)b.nativeTrees89.leaves.push({matrix,species});b.counts.trees++;
 };

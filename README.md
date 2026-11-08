@@ -2,6 +2,21 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.25 — Four-person parties and clearer battle staging
+
+November 8, 2026
+
+- Limited the active traveling and combat party to four companions.
+- Added reserve companion controls to Party. Swap companions while exploring without losing their levels, equipment, HP or MP; story play keeps Bren in the active party.
+- Migrated existing five-person saves to four active companions plus a reserve, preserving all five characters and their progress.
+- Reframed combat around the reference composition: larger fighters, two staggered party ranks on the right, enemies on the left and a full-viewport desktop camera. The hooked-beak bird now uses its larger battle scale without enlarging overworld wildlife.
+- Refined distant landscape framing, clearing soil and planted scenery. Foreground trees are placed clear of the fighters, keeping faces and weapons visible.
+- Moved phone NPC and monster cards beneath their targets in portrait and landscape. Crowded large enemies use a compact row below the group, with individual connectors and working target taps.
+- Kept status effects, counters and discovered weaknesses visible on phone enemy cards, using consistently sized native icons in a horizontally scrollable row.
+- Updated the dev battle tester to use four as its full-party limit and retain a chosen four-person lineup when starting another battle.
+
+Release verification and the standalone checksum are recorded in `elyndor/previews/release-v125/verification.json`. Browser checks use native Chrome; phone layouts use browser emulation. Existing PixelLab images retain their native resolution.
+
 ## Alpha Version 1.24 — Steadier travel and clearer combat
 
 November 8, 2026

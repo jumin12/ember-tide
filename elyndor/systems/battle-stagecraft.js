@@ -18,7 +18,7 @@ const STAGECRAFT94={
  grassWindmill:{key:'#ffe0a6',sky:'#cfcead',soil:'#dfc998',sun:3.2,fill:.83,x:25,kind:'farm',leaves:12},
  grassAutumn:{key:'#ffd193',sky:'#c6c6bb',soil:'#dfbb8c',sun:3.25,fill:.84,x:24,kind:'autumn',leaves:34,fall:[.45,.35,.59,.60]},
  grassStones:{key:'#ffedc1',sky:'#b9d5ce',soil:'#cdd6b2',sun:3.3,fill:.88,x:-22,kind:'stones',leaves:7},
- grassHills:{key:'#ffe9bd',sky:'#b6d1d5',soil:'#cbd4ab',sun:3.4,fill:.86,x:-25,kind:'ridge'},
+ grassHills:{key:'#ffedc5',sky:'#b6d1d5',soil:'#ded0a5',sun:3.4,fill:.94,x:-25,kind:'ridge'},
  grassBirch:{key:'#fff0cd',sky:'#bbd5c6',soil:'#d0d8b4',sun:3.3,fill:.90,x:-22,kind:'birch',leaves:18},
  grassTwilight:{key:'#ffca95',sky:'#b5b9d0',soil:'#cfb1a5',sun:2.6,fill:.88,x:-25,kind:'dusk',leaves:8,mist:.025}
 };
@@ -31,7 +31,7 @@ arenaLight89=function(b){
 const regionalTreeBefore94=arenaTree88;
 arenaTree88=function(b,x,z,size=1,kind=b.spec.trees){
  const orchard=b.hybridKey90&&kind==='orchard',first=b.nativeTrees89?.leaves.length??0;regionalTreeBefore94(b,x,z,size,orchard?'oak':kind);if(!orchard)return;
- const crowns=b.nativeTrees89.leaves.slice(first),n=Math.min(b.mobile?5:9,crowns.length),g=arenaGeometry88(b,'orchard-fruit94',()=>new THREE.IcosahedronGeometry(.13,1)),m=arenaMaterial88(b,null,'#b64a2c');m.roughness=.67;
+ const crowns=b.nativeTrees89?.leaves.slice(first)??[];if(!crowns.length)return;const n=Math.min(b.mobile?5:9,crowns.length),g=arenaGeometry88(b,'orchard-fruit94',()=>new THREE.IcosahedronGeometry(.13,1)),m=arenaMaterial88(b,null,'#b64a2c');m.roughness=.67;
  for(let i=0;i<n;i++){const crown=crowns[Math.floor(i/n*crowns.length)].matrix,p=V3(),q=new THREE.Quaternion(),s=V3();crown.decompose(p,q,s);p.y-=s.y*.25;arenaInstance88(b,'orchard-fruit94',g,m,p,V3(size,size,size));}
 };
 const regionalTreeFlushBefore94=flushPoiTrees89;
@@ -87,6 +87,11 @@ dressHybrid90=function(b){
  const front=b.group.children.find(o=>o.isDirectionalLight&&o!==sun);if(front){front.color.set(b.night?'#b7cee1':'#ffefd8');front.intensity=b.night?.78:b.spec.dense?.86:.78;}hemi.intensity=b.night?.78:p.fill;
  const ground=b.group.children.find(o=>o.name==='Actual level ground and carved water banks'),colors=ground.geometry.attributes.color,tint=new THREE.Color(b.night?'#c1cdd1':p.soil);for(let i=0;i<colors.count;i++)colors.setXYZ(i,tint.r,tint.g,tint.b);colors.needsUpdate=true;ground.material.normalScale.setScalar(b.spec.snow?.20:.34);
  placeRegionalProps94(b,p);windLeaves94(b,p);
+ // Rooted edge trees follow the lens, framing the clearing at the same
+ // depth as the reference without obscuring the action or its weapon arcs.
+ if(b.spec.trees&&!b.spec.cave)for(const [u,v,size]of[[.025,.53,.78],[.975,.52,.83],[.10,.45,.58],[.91,.43,.53]]){
+  const a=bankPoint93(b,u,v);if(a&&detailFree92(b,a.x,a.z,2.3)){arenaTree88(b,a.x,a.z,size,b.spec.trees);b.depth93.bankTrees++;}
+ }
  if(p.mist)arenaMist89(b,4,5,Math.min(-34,fightingHollow93(b).back-15),31,5,p.mist*(b.night?.65:1));
  if(b.particles89){const m=b.particles89.material;m.uniforms.pixel94={value:Math.min(2,devicePixelRatio||1)};m.vertexShader='uniform float pixel94;'+m.vertexShader;m.vertexShader=m.vertexShader.replace('gl_PointSize=clamp(', 'gl_PointSize=pixel94*clamp(');m.uniforms.moteTint94={value:new THREE.Color(b.spec.cave?'#83d3e3':b.spec.autumn?'#eac189':b.night?'#9dd9d7':'#f4dfad')};m.fragmentShader='uniform vec3 moteTint94;'+m.fragmentShader;m.fragmentShader=m.fragmentShader.replace('gl_FragColor=vec4(c,a);','gl_FragColor=vec4(c*moteTint94,a*.72);');m.needsUpdate=true;}
 };

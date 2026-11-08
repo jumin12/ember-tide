@@ -1,0 +1,24 @@
+@media(min-width:901px) and (min-height:551px){
+ body.combat-ui65 #battle-hud>#battle-party{width:min(calc(var(--party-count65) * clamp(140px,10.65vw,180px)),calc(100vw - 36px))!important;bottom:18px!important;gap:12px!important}
+ body.combat-ui65 #battle-hud #battle-party .party-card65{grid-template-columns:32px minmax(0,1fr)!important;padding:9px 8px!important;gap:6px!important;min-height:112px!important}
+ body.combat-ui65 #battle-party .party-card65>img{width:32px;height:49px}
+ body.combat-ui65 #battle-party .party-card65 header>b{font-size:clamp(13px,1vw,17px)}
+ body.combat-ui65 #battle-party .party-card65 label{font-size:10px!important;line-height:1.4!important}
+ body.combat-ui65 #battle-party .party-card65>.status-row65{min-height:21px}
+}
+
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #world-enemy-bars27:not([hidden]){position:fixed!important;inset:0!important;display:block!important;height:auto!important;max-height:none!important;overflow:visible!important;pointer-events:none}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #world-enemy-bars27 .foe-bar27{position:absolute!important;min-width:0!important;max-width:none!important;min-height:44px!important;height:44px!important;max-height:66px!important;padding:3px!important;transform:translateX(-50%)!important;overflow:visible!important;pointer-events:auto}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #world-enemy-bars27 .enemy-information65{height:20px!important;max-height:20px!important;overflow-x:auto!important;overflow-y:hidden!important;display:flex!important;flex-direction:row!important;justify-content:flex-start!important;align-items:center!important;padding:0!important;gap:3px!important;scrollbar-width:none;touch-action:pan-x}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #world-enemy-bars27 .foe-bar27::before{content:"";position:absolute;left:var(--card-anchor69,50%);bottom:100%;height:var(--card-tether69,5px);width:1px;background:#d1b67670;pointer-events:none}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #world-enemy-bars27 .foe-bar27>span{font:700 11px/13px Georgia,serif!important;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #world-enemy-bars27 .foe-bar27>small{font:500 9px/11px system-ui,sans-serif!important;white-space:nowrap}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #world-enemy-bars27 .foe-bar27[data-tight69]>small{font-size:8px!important}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #world-enemy-bars27 .foe-bar27[data-tight69]>span{font-size:10px!important}
+
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #world-enemy-bars27 :is(.status-row65,.known-types65){display:flex!important;flex:0 0 auto!important;min-height:20px!important;max-height:20px!important;max-width:none!important;gap:3px!important;padding:0 1px!important;overflow:visible!important}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #world-enemy-bars27 .status-slot65{min-width:18px!important;min-height:18px!important}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #world-enemy-bars27 .combat-icon65{--icon-size65:18px!important;zoom:1!important}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #world-enemy-bars27 .status-slot65>b{font:700 8px/9px system-ui!important;min-width:8px!important;min-height:9px!important;right:-1px!important;bottom:-1px!important}
+
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #world-enemy-bars27 .enemy-information65[data-empty69]{display:none!important}

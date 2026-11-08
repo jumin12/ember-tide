@@ -1,0 +1,4 @@
+.party-roster96{margin:0 0 20px;padding:12px 16px;border:1px solid #b3995d65;background:#061d26cf}
+.party-roster96>header{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px}.party-roster96>header>span,.party-reserve96 small{font:12px/1.4 system-ui;color:#bbc9c2}
+.party-reserve96{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:12px}.party-reserve96 img{width:36px;height:40px;object-fit:contain;image-rendering:pixelated}.party-reserve96 b{min-width:90px}.party-reserve96 small{display:block}.party-reserve96 label{display:flex;align-items:center;gap:6px}.party-reserve96 select{max-width:130px}.party-reserve96 button{min-height:36px}
+@media(max-width:600px){.party-roster96{padding:10px}.party-reserve96{gap:8px}.party-reserve96 button{flex:1}.party-reserve96>label{flex:1}}

@@ -1,7 +1,7 @@
 // Native silhouettes determine rank spacing; transparent sword/staff margins
 // never decide how much personal space a standing fighter needs.
 const rank87={roster:[],silhouettes:new Map(),owner:null,key:'',bounds:null};
-function enemyPresentationSize87(id,fallback=2.45){return({commander:5.75,commander2:6.1666666667,commander3:6.5833333333})[id]??creatureHeight(id,fallback);}
+function enemyPresentationSize87(id,fallback=2.45){return({bird:2.5,commander:5.75,commander2:6.1666666667,commander3:6.5833333333})[id]??creatureHeight(id,fallback);}
 function silhouette87(id){
  if(rank87.silhouettes.has(id))return rank87.silhouettes.get(id);
  const m=assets.sprites[id],im=spriteImages[id],cell=(m.frames.battleIdle??m.frames.enemyIdle??m.frames.south)[0],c=document.createElement('canvas');c.width=m.w;c.height=m.h;
@@ -26,7 +26,7 @@ battleFormation=function(c,i,enemy=false,count=state.members.length){
 };
 function frameRanks87(cast,floor){
  battle.rankHomes87??=new Map(cast.map(a=>[a,{x:a.x,z:a.z}]));
- const mobile=mobileBattle69(),field=mobile?mobileField69():{top:90,height:Math.max(220,innerHeight-230)},right=mobile?0:Math.min(310,innerWidth*.23),width=innerWidth-right;
+ const mobile=mobileBattle69(),rawField=mobile?mobileField69():null,field=mobile?{...rawField,height:Math.max(48,rawField.height-76)}:{top:90,height:Math.max(220,innerHeight-230)},right=mobile?0:Math.min(310,innerWidth*.23),width=innerWidth-right;
  const key=[battle.started,battle.kind,innerWidth,innerHeight,...cast.map(a=>(a.visualId??a.id)+':'+a.size)].join('|');
  if(rank87.owner!==battle||rank87.key!==key){
   rank87.owner=battle;rank87.key=key;const box=new THREE.Box3();

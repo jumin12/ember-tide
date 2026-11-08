@@ -76,7 +76,7 @@ function activeStatuses65(entity,id=null){
  if(entity?.exposed>0)put('defenseDown',entity.exposed);if(entity?.braced)put('defenseUp',1);if(entity?.charged)put('attackUp',1);if(entity?.staggered)put('stun',1);
  return [...values.values()];
 }
-function statusRow65(entity,id=null){return '<div class="status-row65" aria-label="Active effects">'+activeStatuses65(entity,id).map(({key,turns})=>{const d=STATUS_TYPES65[key],text=d.name+(turns!==null?' · '+turns+' turn'+(turns===1?'':'s'):'')+' · '+d.description;return '<span class="status-slot65" tabindex="0" title="'+esc(text)+'" aria-label="'+esc(text)+'">'+icon65(key,id?22:typeof mobileBattle69==='function'&&mobileBattle69()?26:32,true)+(turns!==null?'<b>'+turns+'</b>':'')+'</span>';}).join('')+'</div>';}
+function statusRow65(entity,id=null){return '<div class="status-row65" aria-label="Active effects">'+activeStatuses65(entity,id).map(({key,turns})=>{const d=STATUS_TYPES65[key],text=d.name+(turns!==null?' · '+turns+' turn'+(turns===1?'':'s'):'')+' · '+d.description;return '<span class="status-slot65" tabindex="0" title="'+esc(text)+'" aria-label="'+esc(text)+'">'+icon65(key,id?22:typeof mobileBattle69==='function'&&mobileBattle69()?18:32,true)+(turns!==null?'<b>'+turns+'</b>':'')+'</span>';}).join('')+'</div>';}
 function previewAbility65(button){
  const id=currentFighter();if(!battle||!id)return null;
  if(button?.dataset.skill!==undefined){const index=+button.dataset.skill,sk=CAST[id].skill[index];if(!sk)return null;return{type:skillType65(id,index),area:sk[3]==='ice'||state.characters[id].ascended&&id==='tavin',offensive:!['heal','ward','wardheal'].includes(sk[3]),id,index};}

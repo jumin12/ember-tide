@@ -25,7 +25,7 @@ battleFormation=function(c,i,enemy=false,count=state.members.length){
 };
 function battleField91(){
  if(mobileBattle69())return mobileField69();
- const top=Math.round(innerHeight*.29),bottom=Math.max(top+180,innerHeight-116);return{top,height:bottom-top,landscape:false};
+ return{top:0,height:innerHeight,landscape:false};
 }
 function syncBattleFormation91(cast){
  const c=encounter53,layout=battleLayout91(c.center),signature=layout.key;
@@ -64,31 +64,37 @@ function frameBounds91(cast,floor){
  battlePresentation91.metrics={field:{...field},distance,pitch:sideCameraStats.angle,anchor,layout:battle.formationKey91,worldSpan:span.toArray()};
 };
 function referenceAnchors91(count,enemy,phone){
- const back=phone?(innerHeight>innerWidth?.73:.68):.68,front=phone?.90:.91;
- if(enemy){if(count===1)return[[.19,back+.06]];if(count===2)return[[.12,back+.03],[.31,front]];return[[.11,back+.02],[.33,back+.02],[.23,front]];}
- if(count===1)return[[.82,front-.02]];
- if(count===2)return[[.76,back+.02],[.91,front-.02]];
- if(count===3)return[[.69,back],[.91,back+.02],[.81,front]];
- if(count===4)return[[.65,back],[.86,back+.01],[.75,front],[.92,front]];
- return[[.65,back],[.79,back-.015],[.92,back+.025],[.73,front],[.90,front]];
+ if(phone){
+  const portrait=innerHeight>innerWidth,back=portrait?.66:.64,front=portrait?.88:.89;
+  if(enemy){const field=mobileField69(),near=Math.min(front,1-76/field.height),far=Math.min(back,near-.20);if(count===1)return[[.23,Math.min(back+.08,near)]];if(count===2)return[[.14,far],[.32,near]];return[[.12,far],[.34,far+.025],[.22,near]];}
+  if(count===1)return[[.74,front-.03]];if(count===2)return[[.66,back],[.86,front]];
+  if(count===3)return[[.62,back],[.85,back],[.74,front]];
+  return[[.62,back],[.85,back-.025],[.71,front],[.90,front+.015]];
+ }
+ // Measured foot anchors in the supplied 1672 x 941 composition. Two
+ // staggered ranks leave the weapon arc clear and the command panel above.
+ if(enemy){if(count===1)return[[.258,.722]];if(count===2)return[[.19,.685],[.32,.790]];return[[.13,.665],[.34,.695],[.23,.790]];}
+ if(count===1)return[[.735,.75]];if(count===2)return[[.655,.68],[.79,.785]];
+ if(count===3)return[[.615,.676],[.746,.654],[.72,.79]];
+ return[[.615,.676],[.746,.654],[.683,.777],[.816,.795]];
 }
 function applyReferenceCamera91(frame){
  cameraTarget.copy(frame.target);camera.position.copy(frame.position);camera.fov=frame.fov;camera.near=.1;camera.far=950;camera.lookAt(cameraTarget);camera.setViewOffset(innerWidth,frame.field.height,0,-frame.field.top,innerWidth,innerHeight);camera.updateProjectionMatrix();camera.updateMatrixWorld();focusPoint.copy(cameraTarget);sideCameraStats.angle=frame.pitch;sideCameraStats.cinematic=0;
 }
 frameRanks87=function(cast,floor){
  if(!encounter53.active)return frameBefore91(cast,floor);
- const field=battleField91(),phone=mobileBattle69(),portrait=phone&&innerHeight>innerWidth,pitch=Math.atan(portrait?.12:.22),tan=Math.tan(THREE.MathUtils.degToRad(17.5)),c=encounter53.center,key=['reference',battle.started,innerWidth,innerHeight,floor,...cast.map(a=>(a.visualId??a.id)+':'+a.size)].join('|'),old=battlePresentation91.frame;
+ const field=battleField91(),phone=mobileBattle69(),portrait=phone&&innerHeight>innerWidth,pitch=Math.atan(portrait?.16:.27),tan=Math.tan(THREE.MathUtils.degToRad(17.5)),c=encounter53.center,key=['reference',battle.started,innerWidth,innerHeight,floor,...cast.map(a=>(a.visualId??a.id)+':'+a.size)].join('|'),old=battlePresentation91.frame;
  if(battlePresentation91.owner===battle&&old?.key===key){applyReferenceCamera91(old);return;}
  const canPlace=!battle.animation&&!battle.combo&&(!introLocked58()||battleIntro58.phase==='waiting');
  if(!canPlace)return frameBounds91(cast,floor);
- const party=[player,...followers],enemy=battle.enemies.map(e=>e.actor),anchors=new Map([...party.map((a,i)=>[a,referenceAnchors91(party.length,false,phone)[i]]),...enemy.map((a,i)=>[a,referenceAnchors91(enemy.length,true,phone)[i]])]),ray=new THREE.Ray(),desired=new Map();let distance=phone?17:19;
+ const party=[player,...followers],enemy=battle.enemies.map(e=>e.actor),anchors=new Map([...party.map((a,i)=>[a,referenceAnchors91(party.length,false,phone)[i]]),...enemy.map((a,i)=>[a,referenceAnchors91(enemy.length,true,phone)[i]])]),ray=new THREE.Ray(),desired=new Map();let distance=phone?15.8:21.5;
  // Invert the reference composition onto the ground plane. The groups retain
- // their screen-side positions with two, four or five heroes and any enemy
+ // their screen-side positions with up to four heroes and any enemy
  // size; the camera only backs off when a real silhouette needs clearance.
  for(let n=0;n<18;n++){
   const target=V3(c.x,floor+distance*tan*.50/Math.cos(pitch),c.z),frame={position:target.clone().add(V3(0,distance*Math.sin(pitch),distance*Math.cos(pitch))),target,fov:35,field,pitch:pitch*180/Math.PI};applyReferenceCamera91(frame);desired.clear();let clear=true;
   for(const a of cast){const anchor=anchors.get(a),x=anchor[0]*innerWidth,y=field.top+anchor[1]*field.height,point=V3(x/innerWidth*2-1,1-y/innerHeight*2,.5).unproject(camera);ray.set(camera.position,point.sub(camera.position).normalize());const at=ray.at((floor-ray.origin.y)/ray.direction.y,V3());desired.set(a,{x:at.x,z:at.z});
-   const b=silhouette87(a.visualId??a.id);for(const X of[at.x+b.left*a.size-.10,at.x+b.right*a.size+.10])for(const Y of[floor,floor+b.height*a.size+.12]){const p=V3(X,Y,at.z).project(camera),sx=(p.x*.5+.5)*innerWidth,sy=(.5-p.y*.5)*innerHeight;if(sx<10||sx>innerWidth-10||sy<field.top+10||sy>field.top+field.height-10)clear=false;}
+   const b=silhouette87(a.visualId??a.id);for(const X of[at.x+b.left*a.size-.10,at.x+b.right*a.size+.10])for(const Y of[floor,floor+b.height*a.size+.12]){const p=V3(X,Y,at.z).project(camera),sx=(p.x*.5+.5)*innerWidth,sy=(.5-p.y*.5)*innerHeight;if(sx<10||sx>innerWidth-10||sy<(phone?field.top+10:Math.min(90,innerHeight*.12))||sy>field.top+field.height-10)clear=false;}
   }
   if(clear||n===17){battlePresentation91.frame={...frame,key};break;}distance*=1.065;
  }
@@ -107,7 +113,7 @@ function presentBattleAction91(dt,instant){
 const groundBefore91=arenaGround88;
 arenaGround88=function(b){groundBefore91(b);if(!b.hybridKey90)return;const o=b.group.children.find(o=>o.name==='Actual level ground and carved water banks'),m=o.material,before=m.onBeforeCompile,key=m.customProgramCacheKey.bind(m),colors=o.geometry.attributes.color,tint=new THREE.Color(b.spec.cave?'#c6d2d3':b.spec.snow?'#f5f7ff':b.spec.autumn?'#d5cba3':'#c8d7b7');
  for(let i=0;i<colors.count;i++)colors.setXYZ(i,tint.r,tint.g,tint.b);m.normalScale.setScalar(.24);m.roughness=.94;
- m.onBeforeCompile=function(s,...a){before.call(this,s,...a);s.fragmentShader=s.fragmentShader.replace('clamp(groundBlend88.x*(.7+patch89*.55)+smoothstep(.68,.91,patch89)*.12,0.,1.)','clamp(groundBlend88.x*(.38+patch89*.42)+smoothstep(.68,.91,patch89)*.08,0.,1.)');};m.customProgramCacheKey=()=>key()+'-clear-ground91';
+ m.onBeforeCompile=function(s,...a){before.call(this,s,...a);s.fragmentShader=s.fragmentShader.replace('clamp(groundBlend88.x*(.7+patch89*.55)+smoothstep(.68,.91,patch89)*.12,0.,1.)','clamp(groundBlend88.x*(.68+patch89*.26)+smoothstep(.68,.91,patch89)*.08,0.,1.)');};m.customProgramCacheKey=()=>key()+'-clear-ground91';
 };
 const heightBefore91=arenaHeight88;
 arenaHeight88=function(b,x,z){const h=heightBefore91(b,x,z);return b.hybridKey90&&(b.spec.river||b.spec.sea)?mix(h,-2.7,arenaWet89(b,x,z)*smooth(17,23,-z)):h;};
@@ -147,7 +153,7 @@ const landscapeBefore91=makeHybridLandscape90;
 makeHybridLandscape90=function(b){
  const live=camera.clone(),base=battlePresentation91.frame;
  try{if(base){camera.position.copy(base.position);camera.fov=base.fov;camera.lookAt(base.target);camera.setViewOffset(innerWidth,base.field.height,0,-base.field.top,innerWidth,innerHeight);camera.updateProjectionMatrix();camera.updateMatrixWorld();}landscapeBefore91(b);}finally{camera.copy(live);}
- const c=encounter53,ref=b.reference90,eye=ref.position.clone(),g=b.landscape90.geometry,p=g.attributes.position,uv=g.attributes.uv,aspect=b.plate90.image.width/b.plate90.image.height,portrait=innerHeight>innerWidth&&innerWidth<760,cropX=portrait?.82:1,fullSpan=innerWidth/(innerHeight*aspect*cropX),span=clamp(fullSpan*.70,.20,.64),rear=V3(c.center.x,c.floorY,c.center.z-95).project(ref),bottom=Math.min(1.025-span,rear.y*.5+.5-.016);
+ const c=encounter53,ref=b.reference90,eye=ref.position.clone(),g=b.landscape90.geometry,p=g.attributes.position,uv=g.attributes.uv,aspect=b.plate90.image.width/b.plate90.image.height,portrait=innerHeight>innerWidth&&innerWidth<760,cropX=portrait?.82:1,fullSpan=innerWidth/(innerHeight*aspect*cropX),span=clamp(fullSpan*(portrait?.70:.40),.20,portrait?.64:.43),rear=V3(c.center.x,c.floorY,c.center.z-95).project(ref),bottom=Math.min(1.025-span,rear.y*.5+.5-(portrait?.016:encounter53.selected==='grassHills'?.12:.196));
  b.crop90.set(cropX,1);b.window90.set(bottom-span*.30/.70,span/.70);b.projector90.multiplyMatrices(ref.projectionMatrix,ref.matrixWorldInverse);
  const nx=128,ny=82;
  for(let j=0;j<=ny;j++)for(let i=0;i<=nx;i++){

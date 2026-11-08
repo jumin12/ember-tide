@@ -286,7 +286,9 @@
     "systems/local-menu-actions.css",
     "systems/review-controls.css",
     "systems/review-fixes.css",
-    "systems/phone-clarity.css"
+    "systems/phone-clarity.css",
+    "systems/party-roster.css",
+    "systems/battle-reference.css"
   ],
   "owners": {
     "runtime": [

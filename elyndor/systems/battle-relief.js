@@ -15,7 +15,7 @@ arenaHeight88=function(b,x,z){
  if(outside<.001)return 0;
  const dry=1-smooth(.05,.45,arenaWet89(b,x,z)),rear=1-smooth(q.back-9,q.back-1,z),side=smooth(0,8,Math.max(q.left-x,x-q.right)),front=smooth(q.front,q.front+9,z),edge=smooth(0,5.5,outside),far=1-smooth(63,90,-z);
  const wave=.55+.22*Math.sin(x*.18+z*.073)+.16*Math.sin(z*.24-x*.11),notch=b.spec.river||b.spec.falls?1-.62*Math.exp(-(((x-3)/8)**2)):1;
- const rise=(rear*(b.spec.cave?3.8:b.spec.highland?4.8:3.2)*wave*notch+side*(1.2+wave*.9)+front*.38)*edge*far*dry;
+ const rise=(rear*(b.spec.cave?3.8:b.spec.highland?(b.spec.ground.startsWith('grass')?3.0:4.8):3.2)*wave*notch+side*(1.2+wave*.9)+front*.38)*edge*far*dry;
  return original+rise;
 };
 function bankPoint93(b,u,v){

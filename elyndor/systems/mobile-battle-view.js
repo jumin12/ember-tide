@@ -3,8 +3,10 @@
 const phoneCombat69={manualHelp:false,bounds:null,key:'',help:null,button:null,renderKey:'',wasActive:false};
 function mobileBattle69(){return !!battle&&document.body.classList.contains('compact33');}
 function mobileField69(){
- const landscape=innerWidth>innerHeight,party=landscape?54:62,dock=landscape?118:176,top=landscape?48:92;
- return{top,height:Math.max(120,innerHeight-top-dock),party,dock,landscape};
+ const landscape=innerWidth>innerHeight,party=landscape?54:62,dock=landscape?118:176,top=48;
+ // Enemy cards follow their actors below their feet; only the initiative
+ // and help controls reserve the top edge of the scene.
+ return{top,height:Math.max(80,innerHeight-top-dock),party,dock,landscape};
 }
 function fitMobileRender69(){
  // Isolated arenas have a small draw budget. Render to whole device pixels,
@@ -60,15 +62,27 @@ updateCamera=function(...args){
  if(mobileBattle69()&&!encounter53.active&&!introLocked58()){const cast=[player,...followers,...battle.enemies.map(e=>e.actor)].filter(Boolean);frameMobileBattle69(cast,heightAt(battle.center.x,battle.center.z));for(const a of cast)a.mesh.quaternion.copy(camera.quaternion);}
  return r;
 };
+function fighterRect69(a){
+ const body=silhouette87(a.visualId??a.id),y=heightAt(a.x,a.z),p=[];
+ for(const x of[a.x+body.left*a.size,a.x+body.right*a.size])for(const h of[y,y+body.height*a.size]){const v=V3(x,h,a.z).project(camera);p.push({x:(v.x*.5+.5)*innerWidth,y:(.5-v.y*.5)*innerHeight});}
+ return{left:Math.min(...p.map(v=>v.x)),right:Math.max(...p.map(v=>v.x)),top:Math.min(...p.map(v=>v.y)),bottom:Math.max(...p.map(v=>v.y))};
+}
 const barsMobileBefore69=updateEnemyBars27;
 updateEnemyBars27=function(...args){
- const r=barsMobileBefore69(...args);if(!mobileBattle69())return r;const field=mobileField69(),nodes=[...$('#world-enemy-bars27').children].filter(n=>!n.hidden),used=[];
- for(const[n,i]of nodes.map((n,i)=>[n,i])){
-  const e=battle.enemies[+n.dataset.enemy],width=field.landscape?98:Math.min(112,(innerWidth-16)/Math.min(3,nodes.length)-4),height=n.getBoundingClientRect().height;
-  const columns=field.landscape?Math.max(1,Math.floor((innerWidth-16)/(width+4))):3;let x=8+(i%columns)*(width+4),y=44+Math.floor(i/columns)*48;
-  n.style.setProperty('width',width+'px','important');n.style.setProperty('left',x+'px','important');n.style.setProperty('top',y+'px','important');n.style.setProperty('transform','none','important');used.push({x,y});
+ const r=barsMobileBefore69(...args);if(!mobileBattle69())return r;
+ const nodes=[...$('#world-enemy-bars27').children].filter(n=>!n.hidden),field=mobileField69(),party=[player,...followers],bodies=battle.enemies.filter(e=>e.hp>0&&e.actor.mesh.visible).map(e=>fighterRect69(e.actor)),dock=innerHeight-field.dock;
+ const width=nodes.length>2?Math.min(112,innerWidth*.205):Math.min(132,innerWidth*.31),rows=nodes.map(n=>{const e=battle.enemies[+n.dataset.enemy],a=e.actor,p=V3(a.x,heightAt(a.x,a.z)+.015,a.z).project(camera);return{n,enemy:+n.dataset.enemy,footX:(p.x*.5+.5)*innerWidth,footY:(.5-p.y*.5)*innerHeight,width,height:n.querySelector('.enemy-information65')?.textContent.trim()||n.querySelector('.enemy-information65 .combat-icon65')?66:44};});
+ for(const q of rows){q.x=clamp(q.footX,q.width/2+5,innerWidth-q.width/2-5);q.y=q.footY+7;}
+ const rectangle=q=>({left:q.x-q.width/2,right:q.x+q.width/2,top:q.y,bottom:q.y+q.height}),hit=(a,b)=>a.left<b.right+3&&a.right>b.left-3&&a.top<b.bottom+3&&a.bottom>b.top-3;
+ const needsRow=rows.some((q,i)=>q.y+q.height>dock-3||bodies.some(b=>hit(rectangle(q),b))||rows.slice(0,i).some(p=>hit(rectangle(q),rectangle(p))));
+ if(needsRow&&rows.length){
+  // A compact row immediately below the enemy group is the fallback for
+  // enormous overlapping monsters. Keep each card linked to its own feet.
+  const right=clamp(Math.min(...party.map(a=>fighterRect69(a).left))-8,innerWidth*.48,innerWidth-6),left=6,gap=4,w=Math.min(width,(right-left-gap*(rows.length-1))/rows.length),total=w*rows.length+gap*(rows.length-1),mean=rows.reduce((n,q)=>n+q.footX,0)/rows.length,start=clamp(mean-total/2,left,right-total),top=Math.max(...rows.map(q=>q.footY))+7;
+  for(const[q,i]of rows.slice().sort((a,b)=>a.footX-b.footX).map((q,i)=>[q,i])){q.width=w;q.x=start+i*(w+gap)+w/2;q.y=top;}
  }
- return r;
+ for(const q of rows){const n=q.n,info=n.querySelector('.enemy-information65');if(info)info.toggleAttribute('data-empty69',!info.querySelector('.combat-icon65'));const tether=Math.max(0,q.y-q.footY-2);n.style.setProperty('width',q.width+'px','important');n.style.setProperty('height',q.height+'px','important');n.style.setProperty('left',Math.round(q.x)+'px','important');n.style.setProperty('top',Math.round(q.y)+'px','important');n.style.setProperty('transform','translateX(-50%)','important');n.style.setProperty('--card-tether69',tether+'px');n.style.setProperty('--card-anchor69',clamp(q.footX-(q.x-q.width/2),2,q.width-2)+'px');n.toggleAttribute('data-tight69',q.width<72);n.title=battle.enemies[q.enemy].name;}
+ phoneCombat69.cardPlacements=rows.map(q=>({enemy:q.enemy,foot:[q.footX,q.footY],left:q.x-q.width/2,right:q.x+q.width/2,top:q.y,bottom:q.y+q.height,grouped:needsRow}));return r;
 };
 const mobileBattleUpdateBefore69=updateBattle;
 updateBattle=function(...args){if(mobileBattle69()&&phoneCombat69.manualHelp)return;return mobileBattleUpdateBefore69(...args);};
