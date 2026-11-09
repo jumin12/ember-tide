@@ -1,0 +1,4689 @@
+{
+  "generator": "built-in image_gen",
+  "aliases": {
+    "cobble": "cobbleOld",
+    "cobbleA": "cobbleOld",
+    "cobbleB": "cobbleRoyal",
+    "cobbleMoss30": "cobbleOld",
+    "wood": "oakBoards102",
+    "darkWood": "walnut102",
+    "slate": "roofSlate102",
+    "plaster": "plaster102",
+    "plasterA": "plaster102",
+    "wall": "masonry102",
+    "wallA": "masonry102",
+    "rock": "rockGranite",
+    "rockA": "rockLimestone",
+    "rockB": "rockSlate",
+    "env62_stone": "rockGranite",
+    "earth": "earthTrail",
+    "earthA": "earthForest",
+    "grass": "grassLush",
+    "grassA": "grassDry",
+    "bark": "barkBirch",
+    "env62_bark": "barkOak",
+    "barkPine86": "barkPine",
+    "cloth": "canvas102",
+    "metal": "iron102",
+    "oakCanopy": "leafOak",
+    "pineCanopy": "leafPine",
+    "lightFacets": "quartz103",
+    "door": "oakBoards102",
+    "window": "glass103",
+    "crateFace": "woodWeathered101",
+    "barrelStave": "oakBoards102",
+    "innSign": "innSign103",
+    "shopSign": "shopSign103",
+    "forgeSign": "forgeSign103",
+    "leaves": "leafOak",
+    "fern": "fernFine102",
+    "flowers": "daisies102",
+    "ivy": "leafWillow",
+    "grassBlades": "botanicalLeaf102",
+    "shrub": "leafOak",
+    "plantLeaf86": "botanicalLeaf102",
+    "fxFire": "fire103",
+    "fxSmoke": "smoke103",
+    "fxEnergy": "energy103",
+    "fxIce": "ice103",
+    "cloudMask": "cloud103",
+    "waterAlbedo": "waveHeight103",
+    "riverSurface18": "waveHeight103",
+    "fall28": "fallingWater103",
+    "interiorFloor": "pineBoards103",
+    "desert": "sandCoast",
+    "barren": "stoneGranite",
+    "lava": "basalt102",
+    "snow": "snow",
+    "riverStone18": "rockMoss",
+    "riverNormal39": "@waveNormal",
+    "rug29": "rugCommon103",
+    "rugRoyal86": "rugRoyal103",
+    "panel29": "walnut102",
+    "hearth29": "redBrick103",
+    "landscape29": "@landscape",
+    "leafOak30": "leafOak",
+    "leafBirch30": "leafBirch",
+    "leafMaple30": "leafAutumn",
+    "leafWillow30": "leafWillow",
+    "leafPine30": "leafPine",
+    "leafBlossom30": "leafOrchard",
+    "petal30": "petal102",
+    "fx35FlameSlash": "flameSlash103",
+    "fx35Impact": "impact103",
+    "fx35Arcane": "arcane103",
+    "fx35Frost": "ice103",
+    "fx35Healing": "healing103",
+    "fx35Smoke": "smoke103",
+    "stage59_clearing": "grassLush",
+    "stage59_stone": "rockGranite",
+    "stage59_canopy": "leafOak",
+    "stage59_pine": "leafPine",
+    "brick86": "redBrick103",
+    "roofClay86": "roofClay102",
+    "plasterSage86": "sagePlaster103",
+    "floorOak86": "oakBoards102",
+    "floorPine86": "pineBoards103",
+    "floorWalnut86": "walnut102",
+    "furnitureOak86": "oakBoards102",
+    "furnitureWalnut86": "walnut102",
+    "timberOak86": "oakBoards102",
+    "timberOld86": "woodWeathered101",
+    "woodSiding86": "oakBoards102",
+    "canvas86": "canvas102",
+    "wool86": "wool103",
+    "steel86": "steel103",
+    "brass86": "brass103",
+    "copper86": "copper103",
+    "terracotta86": "terracotta103",
+    "ceramic86": "ceramic103",
+    "leather86": "leather103",
+    "paper86": "parchment103",
+    "bookLeather86": "bookLeather103"
+  },
+  "images": {
+    "grassLush": {
+      "file": "elyndor/assets/source/battle-materials-v100/grassLush.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 719400,
+      "sha256": "145aae3c6870210e61f86b28a1be19edb112ec7be17d3a3de4cb9aa453732ad7",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/grassLush.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/grassLush-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/grassLush-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "e6248389893d4af3bb5499a3acde45392debf387809d065b2b30528bd63d981b"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/grassLush-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/grassLush-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "7346d2e30783b64aaa04ff25cfef60b8ac53d66db122a61ba866ab732e5df093"
+        }
+      }
+    },
+    "grassMeadow": {
+      "file": "elyndor/assets/source/battle-materials-v100/grassMeadow.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 684934,
+      "sha256": "9c71ad9aa3e8155164a8f8ec9f6f81c90b6e70fb6f22fa916d3e6a72ce968b4b",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/grassMeadow.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/grassMeadow-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/grassMeadow-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "9b38152a71f0e5ce31a345ac0caf91a753a98feec9f815f2e3c217476751b0b9"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/grassMeadow-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/grassMeadow-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "756deff2265f12683649c55afeaefd0f1e6a23012e4eb852701976438e99bd2d"
+        }
+      }
+    },
+    "earthTrail": {
+      "file": "elyndor/assets/source/battle-materials-v100/earthTrail.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 569302,
+      "sha256": "9a02cca731567939eada4d42f6739fa9f3d2a9bf0e11b05a71e585bf46ee1485",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/earthTrail.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/earthTrail-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/earthTrail-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "9dfadf11e7eeba5f00bc6fa70a0de56e934769c7f9512881f56b767e33122cdb"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/earthTrail-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/earthTrail-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "cfcd4dccf7d6676a08bf752f802409eb3a80e7ce0e46f34659153e2ac9fd4c3e"
+        }
+      }
+    },
+    "gravelRiver": {
+      "file": "elyndor/assets/source/battle-materials-v100/gravelRiver.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 608366,
+      "sha256": "b045fe4e68b8b1180e1231200b4360c6fa056cb5bb609e405e78d8abee2071d8",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/gravelRiver.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/gravelRiver-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/gravelRiver-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "2cd8c6a59d3208b1bd1a4da3e586ed4b926489a5cb1c5beb9292b6fba264c2a4"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/gravelRiver-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/gravelRiver-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "3aec9021dd274eb156cd178ae4896246180fe3ad245b1a0cedc74be547864747"
+        }
+      }
+    },
+    "grassDry": {
+      "file": "elyndor/assets/source/battle-materials-v100/grassDry.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 630908,
+      "sha256": "5d742da335935760e279827bcf4438e7effd4381497e1ccaa6521ebe6300b10a",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/grassDry.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/grassDry-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/grassDry-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "6c04192e524cf93882797cd0462e9cd28502d3e86bff68edb9b9a8f87728bbd5"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/grassDry-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/grassDry-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "341037e9b7a49622da70df78d3a880a1bffd31bca193901f15b70bb87ed7121f"
+        }
+      }
+    },
+    "earthLoam": {
+      "file": "elyndor/assets/source/battle-materials-v100/earthLoam.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 515040,
+      "sha256": "ee9895b4ec56e9240f502a9b1ccd54ec675b34aa28a27b26c3a071df3e63f7b7",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/earthLoam.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/earthLoam-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/earthLoam-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "18384e255ad5181fa14d12ce61c8c3af0b5d3b19438ed6dcdaf193c6a5f1e4ec"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/earthLoam-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/earthLoam-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "3723793f673faafa9e1aed7039a3d2461a2c77cd41d3114e2d6e55f052087eb6"
+        }
+      }
+    },
+    "earthForest": {
+      "file": "elyndor/assets/source/battle-materials-v100/earthForest.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 556486,
+      "sha256": "1adbdc12de0e4e7174d1e921dcdcdb3e458a92c0a8a2fc29fdab47d93cb7ee88",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/earthForest.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/earthForest-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/earthForest-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "30cc64ac68e31903781669d18055afc88041cefa683be3ba9830cf8c2667bd5b"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/earthForest-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/earthForest-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "78adc6f2ac0736d517df504485052f390cd505de65dfc94cacc90fd22a93a14e"
+        }
+      }
+    },
+    "gravelDry": {
+      "file": "elyndor/assets/source/battle-materials-v100/gravelDry.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 651324,
+      "sha256": "048fc9f7785e57aae978a80648e16f0ab321b4c85cd4e3e16104156222fca60d",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/gravelDry.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/gravelDry-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/gravelDry-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "f355b07dd3be16d239448215dad2d13f5ebca8b29fe99b296da73f7436c1c930"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/gravelDry-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/gravelDry-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "ffa78c0bdab9614c6f5edfec7efc8d4d3e479b13e1cb6f00219a54cfd866e9b6"
+        }
+      }
+    },
+    "sandCoast": {
+      "file": "elyndor/assets/source/battle-materials-v100/sandCoast.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 472564,
+      "sha256": "9b221ade87bc888a608839792fc689484b805f6de6ca47075e127c567ea08f0f",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/sandCoast.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/sandCoast-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/sandCoast-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "88eb60d0ee6b8ee1f6d767c1fe7ee19c6aa1b59b61687c9cbd1b33361bf3d903"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/sandCoast-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/sandCoast-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "e2a4f1fb17d267a3efd8cba9df4ce005e4520d15383b35c16ad88782941fb44e"
+        }
+      }
+    },
+    "sandChalk": {
+      "file": "elyndor/assets/source/battle-materials-v100/sandChalk.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 487608,
+      "sha256": "5f92430103081dc5768e5ec05a9939b2952d7b40d4719b5e55a6cb38671dc72b",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/sandChalk.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/sandChalk-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/sandChalk-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "8784545010c07f1e834effc447bd626c058edda7f57cd97b5a158331a910b313"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/sandChalk-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/sandChalk-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "38e9eb55d6f53bbc79927a1dab859f0bd157123eaa6541fa5ab857fd671413bb"
+        }
+      }
+    },
+    "stoneGranite": {
+      "file": "elyndor/assets/source/battle-materials-v100/stoneGranite.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 595354,
+      "sha256": "fe4e4eeed0cc425981701432ae7e0acd99cbb86b1aa2339c7057a4eba742e616",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/stoneGranite.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/stoneGranite-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/stoneGranite-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "85153d4c0266546034db34b21d06481cdc8a3e23e330ebe4d6b5de5781dfcd75"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/stoneGranite-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/stoneGranite-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "406251bf9c888a88ee53c6e21123b651d47efda1e6e9735397364db44529089e"
+        }
+      }
+    },
+    "stoneLimestone": {
+      "file": "elyndor/assets/source/battle-materials-v100/stoneLimestone.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 447262,
+      "sha256": "83fcdd94faa6f9c17c7a0fb53de70e1384bbb1a1800071884ad3f7b19210215e",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/stoneLimestone.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/stoneLimestone-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/stoneLimestone-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "ff9400d5757f4f7a7bc4acc231a0ee2c3b0c488171f8ac913e64c3e59c17a120"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/stoneLimestone-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/stoneLimestone-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "8a432e4d6b97c226239be2db2cbd9f142ca727b2270432ab6cb9494375b3e76c"
+        }
+      }
+    },
+    "stoneSlate": {
+      "file": "elyndor/assets/source/battle-materials-v100/stoneSlate.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 344180,
+      "sha256": "6d65ed4cec5c175cbfc313129edaa6773ef6167d01c03e71b0352781e807d78a",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/stoneSlate.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/stoneSlate-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/stoneSlate-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "63e2a2083f50943cd44807c70d6f1fe7710e6aa42142c5c7c3ebf6db27b4385e"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/stoneSlate-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/stoneSlate-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "f176cbafe9c9cc784d22093f1579fe4426e305cecef72a95cf556c2dd8bd0e76"
+        }
+      }
+    },
+    "moss": {
+      "file": "elyndor/assets/source/battle-materials-v100/moss.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 677294,
+      "sha256": "5341985914c74f0b5a8a7080d93f58013b3e4e1e85faccce1a10164233d85bd7",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/moss.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/moss-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/moss-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "8417fcdeea7b983babac2314c51393987a938d1b401fdf709e006024d23f7c46"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/moss-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/moss-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "007f8df9673868ecc42b1f874482e4fab6d2d965ce365453b624fbb8b4297889"
+        }
+      }
+    },
+    "leafLitter": {
+      "file": "elyndor/assets/source/battle-materials-v100/leafLitter.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 630692,
+      "sha256": "2e52a7bd23a9c4b4d8855e5b7af7efec09f9b916f58eb01f126227446b609a25",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/leafLitter.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/leafLitter-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/leafLitter-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "ce8611cdc1f4e91a83a0201a5302d7822f868d49159f16e36e8f408fefac35db"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/leafLitter-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/leafLitter-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "4c3a4e2529b58cbc48c1d5f92f0e523749e3d29038ea55467cf02f5f3891fa32"
+        }
+      }
+    },
+    "snow": {
+      "file": "elyndor/assets/source/battle-materials-v100/snow.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 120802,
+      "sha256": "aa9a0ee88b4c342c61ab3ccc0de1ef0e9e378d39e9bf6b4b100474da422e0f42",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/snow.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/snow-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/snow-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "2c8ea1020940b56042b2bafefbd94236d70dbcf7b8134bb986646154a94144e8"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/snow-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/snow-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "ed71dba1b04076b897ccccb606ae12ceff28af0b93f1dd4b3c09681cf255e656"
+        }
+      }
+    },
+    "cobbleOld": {
+      "file": "elyndor/assets/source/battle-materials-v100/cobbleOld.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 608974,
+      "sha256": "f4bfeb814f154b6944603b6005b5d15b258c586584b50ea9d49885ef6ef39409",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/cobbleOld.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/cobbleOld-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/cobbleOld-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "10a7bfd51a3669195dad42000346a30185993267855e1954fec66edcc12b0b14"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/cobbleOld-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/cobbleOld-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "c0270a998169cf3745ab50303b59d9ffe8d7680a4562fbdacb09824624f9e5fe"
+        }
+      }
+    },
+    "cobbleRoyal": {
+      "file": "elyndor/assets/source/battle-materials-v100/cobbleRoyal.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 503556,
+      "sha256": "ee85521467311be39afd44348a7163722ee8ff5264176203a38149d2fa5be14f",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/cobbleRoyal.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/cobbleRoyal-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/cobbleRoyal-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "3c1c141cf19cdb7965600aa15f9581524490da4cdefaaec075fc60fb54977571"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/cobbleRoyal-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/cobbleRoyal-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "ae0f7c2a5d7d5478c6308a5b366a8b98a4300aa0cab058b51c161b1f67302b26"
+        }
+      }
+    },
+    "rockGranite": {
+      "file": "elyndor/assets/source/battle-materials-v100/rockGranite.webp",
+      "category": "rock",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 568664,
+      "sha256": "74c68fcbbe8f079d2749803cfc25ff722ce8a55ee663c85d2506ff0267fa6793",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/rockGranite.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/rockGranite-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/rockGranite-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "dfe1d0c79b0fdedbffbd37aa5a8842108afffb483bb8f3241a6043ca4599b8ab"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/rockGranite-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/rockGranite-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "a40e9723d7eba342d63dfaeca3ca5b7c611429894917a1d9f3bf31c665539f70"
+        }
+      }
+    },
+    "rockLimestone": {
+      "file": "elyndor/assets/source/battle-materials-v100/rockLimestone.webp",
+      "category": "rock",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 510064,
+      "sha256": "0c2c6bf7fc2a449d4adfde099bdf338e8a3d96529b5e7ca2b812a0705bf4bf74",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/rockLimestone.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/rockLimestone-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/rockLimestone-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "cd66a212a510e707d6537c843ab32fa5ca69f285a2011848ffbe2e083e53368c"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/rockLimestone-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/rockLimestone-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "16aef505a9f0285452d15503a233fa8bb7aabf923b3ce3ab731e6833032e8b54"
+        }
+      }
+    },
+    "rockSlate": {
+      "file": "elyndor/assets/source/battle-materials-v100/rockSlate.webp",
+      "category": "rock",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 436744,
+      "sha256": "303729d2857df4a53dd7268b70e9390397f2c55cf6e3cb79fa968c260f3b2b85",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/rockSlate.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/rockSlate-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/rockSlate-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "1540dfe19a6af2dd812f0cd9b165846d767c33e7f310213fb215fde0e5cf5f23"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/rockSlate-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/rockSlate-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "d23955fc716f34b5608eb25d910953e6812756a3476507f2ba112e40abea3ae2"
+        }
+      }
+    },
+    "rockMoss": {
+      "file": "elyndor/assets/source/battle-materials-v100/rockMoss.webp",
+      "category": "rock",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 598588,
+      "sha256": "c193e1053eee241e6fca150b5e2ed98c0913335b943338ae070c334035b525b9",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/rockMoss.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/rockMoss-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/rockMoss-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "5bf4c2135746c46ff270a73050871bc52a43fc8eb299bb5e6aabc88f2c25e656"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/rockMoss-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/rockMoss-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "f88058957579ed028e0da5db4599e7030c1c8713bef8d06ab05a3b7f4f5785a5"
+        }
+      }
+    },
+    "barkOak": {
+      "file": "elyndor/assets/source/battle-materials-v100/barkOak.webp",
+      "category": "bark",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 589318,
+      "sha256": "3920c8c133fddf9a1d0cc4ff02432f9c4232a1fb17ce83c3dd4b3764b9bf4df3",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/barkOak.webp",
+      "finish": {
+        "roughness": 0.88,
+        "metalness": 0,
+        "relief": 0.1,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/barkOak-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/barkOak-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "130fd88fdd76fc88666a52bbc8fa6e1c7323aa0dd9756ac6edfc5ffb59115f3c"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/barkOak-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/barkOak-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "ab6ecfc6aa42e32845707d9ef6f55e85b86cd39dda572743af1b6d1055ad3f1e"
+        }
+      }
+    },
+    "barkBirch": {
+      "file": "elyndor/assets/source/battle-materials-v100/barkBirch.webp",
+      "category": "bark",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 358948,
+      "sha256": "8fcd2d8d65cc6ec0447512fa48ff8292223c7ee642147ddbdae78520b6551ec8",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/barkBirch.webp",
+      "finish": {
+        "roughness": 0.88,
+        "metalness": 0,
+        "relief": 0.1,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/barkBirch-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/barkBirch-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "0a4bbde9b2d72e2e19621f4e38a607a7feeaccbd0c23f2ea1276c0d9b5920cb6"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/barkBirch-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/barkBirch-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "8390a9af1bc0c6082fbb8004e9c767da7cfa0abe8d768c6148d06a853ed8c425"
+        }
+      }
+    },
+    "barkPine": {
+      "file": "elyndor/assets/source/battle-materials-v100/barkPine.webp",
+      "category": "bark",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 571942,
+      "sha256": "c1fb3a77601a5843bbc341e2acb475596d164c637c8d96a2336f976d83141770",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/barkPine.webp",
+      "finish": {
+        "roughness": 0.88,
+        "metalness": 0,
+        "relief": 0.1,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/barkPine-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/barkPine-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "4efaa4d8ad7a48b4a34c87a6eb9084bfb89a28cd236c350b44234c1a4de8e044"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/barkPine-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/barkPine-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "c74e9c552c7aae846a529b9488b346883d063746063fc822eabb340d43af3d59"
+        }
+      }
+    },
+    "leafOak": {
+      "file": "elyndor/assets/source/battle-materials-v100/leafOak.webp",
+      "category": "foliage",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": true,
+      "bytes": 1627450,
+      "sha256": "62cf8b689e232ec964343fbab9ec9397f0fef7344fedc3a200b266906d392277",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/leafOak.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "leafBirch": {
+      "file": "elyndor/assets/source/battle-materials-v100/leafBirch.webp",
+      "category": "foliage",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": true,
+      "bytes": 1401208,
+      "sha256": "48f0fa8dd17603d1ba821415ea040cbbee3d423746f1f6b7ba3b3cdbad1969b7",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/leafBirch.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "leafAutumn": {
+      "file": "elyndor/assets/source/battle-materials-v100/leafAutumn.webp",
+      "category": "foliage",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": true,
+      "bytes": 1459580,
+      "sha256": "41a978f48db8ff76ec9a148710929d4334ad3e19561b345fc7fe626b3eec9a48",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/leafAutumn.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "leafWillow": {
+      "file": "elyndor/assets/source/battle-materials-v100/leafWillow.webp",
+      "category": "foliage",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": true,
+      "bytes": 1567190,
+      "sha256": "8bf660b82ea6f0ef2c16fa1dbe066ae10c71d170a9e80789e49f46baf18a581e",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/leafWillow.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "leafPine": {
+      "file": "elyndor/assets/source/battle-materials-v100/leafPine.webp",
+      "category": "foliage",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": true,
+      "bytes": 2208986,
+      "sha256": "d086f9c97d3d2e25cb9956073988b8121ac32a47bb97c629995caf137e20cb5b",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/leafPine.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "leafOrchard": {
+      "file": "elyndor/assets/source/battle-materials-v100/leafOrchard.webp",
+      "category": "foliage",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": true,
+      "bytes": 1335346,
+      "sha256": "e4323f4edb02451e426c052046d2b7aad4524071c0ed6c377c551c3200d8623f",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/leafOrchard.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "fern": {
+      "file": "elyndor/assets/source/battle-materials-v100/fern.webp",
+      "category": "foliage",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": true,
+      "bytes": 2030270,
+      "sha256": "10c99c96066b5c89466898de302ec304c0574894edc74b62dba538b8e04deba2",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/fern.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "flowers": {
+      "file": "elyndor/assets/source/battle-materials-v100/flowers.webp",
+      "category": "foliage",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": true,
+      "bytes": 1300310,
+      "sha256": "1cd10d83b847b6260064adfd8324f6773b74629fae37553765583f543567583c",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-materials-v100/flowers.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "ruinSlabs101": {
+      "file": "elyndor/assets/source/battle-props-v101/ruinSlabs101.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 461686,
+      "sha256": "d488e0b70ed4b9fb38c0086c17aacbc293d5b32fa00d33599147723741ee7203",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-props-v101/ruinSlabs101.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/ruinSlabs101-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/ruinSlabs101-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "853a7d9ff5413a92caff9ba6278b2cbf5b2df65a103c22fb8f0130556b6abad3"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/ruinSlabs101-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/ruinSlabs101-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "fef19c6db634025f38cfa7fd0d4c74baaec8cf6bae713f0b16c0640e8348be14"
+        }
+      }
+    },
+    "leafCypress101": {
+      "file": "elyndor/assets/source/battle-props-v101/leafCypress101.webp",
+      "category": "foliage",
+      "native": [
+        1261,
+        1247
+      ],
+      "transparent": true,
+      "bytes": 1236346,
+      "sha256": "e6ee36a3c17ca5ad3f61db7e3670aa3cd8ca14bc818f0ceadf50b891af5459e6",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-props-v101/leafCypress101.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "woodWeathered101": {
+      "file": "elyndor/assets/source/battle-props-v101/woodWeathered101.webp",
+      "category": "wood",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 357998,
+      "sha256": "064dcf5a51abda5f4d744b448eba3edbcebb122d752af697c8a61c420572b049",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-props-v101/woodWeathered101.webp",
+      "finish": {
+        "roughness": 0.88,
+        "metalness": 0,
+        "relief": 0.1,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/woodWeathered101-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/woodWeathered101-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "a6de751172c4cc9aa1ed707bdf908362dfc87cf7588d6fb2fb49f222887a3328"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/woodWeathered101-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/woodWeathered101-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "90c5707dec2b14d076c829ce8b6a5eae32b61fe4ea2c7a8c170a374118aba99c"
+        }
+      }
+    },
+    "heather101": {
+      "file": "elyndor/assets/source/battle-props-v101/heather101.webp",
+      "category": "foliage",
+      "native": [
+        1312,
+        1199
+      ],
+      "transparent": true,
+      "bytes": 1206536,
+      "sha256": "11a401e0a21929266f0f40bc1c30ddec59e9bd8a66e0dc35b4c48fde99855226",
+      "reviewed": true,
+      "url": "elyndor/assets/source/battle-props-v101/heather101.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "plaster102": {
+      "file": "elyndor/assets/source/world-hd-v102/plaster102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 481478,
+      "sha256": "c240c0e94a3bed8911f683b110ee0923f6dd9186f42df24452aa9ef8f2949709",
+      "transparent": false,
+      "reviewed": true,
+      "category": "architecture",
+      "url": "elyndor/assets/source/world-hd-v102/plaster102.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/plaster102-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/plaster102-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "a2f2975a3d72ab01b4f04a5100f5c442713d12a2ac2cf93386477d03d3e97897"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/plaster102-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/plaster102-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "40d3552e984dc0b4c68736baee0a27325aa4d92e0f5ca63bd9ec337015b56681"
+        }
+      }
+    },
+    "masonry102": {
+      "file": "elyndor/assets/source/world-hd-v102/masonry102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 603894,
+      "sha256": "613ea54e9c61bc669c88a6b4fb2056ec7d22bae37d38a347cc10aee04646f780",
+      "transparent": false,
+      "reviewed": true,
+      "category": "architecture",
+      "url": "elyndor/assets/source/world-hd-v102/masonry102.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/masonry102-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/masonry102-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "c17ba543733bc5554504b8543998f135f93a887917c667db3b2e5dc826680422"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/masonry102-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/masonry102-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "e21eb3bdaf77a200f12d2febce5f3faaf61d4231e18cab507afbbb9804e8e5e3"
+        }
+      }
+    },
+    "roofSlate102": {
+      "file": "elyndor/assets/source/world-hd-v102/roofSlate102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 450826,
+      "sha256": "2f7904e0568f6001dbfcc2139e627f3ccf90e141d1cdb2f1ed79127402b1cc42",
+      "transparent": false,
+      "reviewed": true,
+      "category": "architecture",
+      "url": "elyndor/assets/source/world-hd-v102/roofSlate102.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/roofSlate102-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/roofSlate102-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "c83fcc06c07d75f9605e153dffd2a9418adb20d7b7d0fb8ad328d62bf9ffcf29"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/roofSlate102-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/roofSlate102-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "e72993aa81475288fe9ef3df549db74ea11a5e77a28081c33ca21cb338d61029"
+        }
+      }
+    },
+    "roofClay102": {
+      "file": "elyndor/assets/source/world-hd-v102/roofClay102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 491320,
+      "sha256": "6fb917e543964806247269dcc2d2cb8c50d34edacdb3e489b641623bed04ee6e",
+      "transparent": false,
+      "reviewed": true,
+      "category": "architecture",
+      "url": "elyndor/assets/source/world-hd-v102/roofClay102.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/roofClay102-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/roofClay102-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "c6362b54fc8761bb110959c07aa461579d750d4439a876219882f38ac260a5ef"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/roofClay102-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/roofClay102-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "3ddd44b911a5b304f329a7ba3f96af63fb00e3d3dfa907c7576027fe5b91dfe5"
+        }
+      }
+    },
+    "oakBoards102": {
+      "file": "elyndor/assets/source/world-hd-v102/oakBoards102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 398802,
+      "sha256": "ba6f73775661e7f1eadfa83cc3e8f50244fa2bbfdb64c36049f9e366e32509ef",
+      "transparent": false,
+      "reviewed": true,
+      "category": "architecture",
+      "url": "elyndor/assets/source/world-hd-v102/oakBoards102.webp",
+      "finish": {
+        "roughness": 0.88,
+        "metalness": 0,
+        "relief": 0.1,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/oakBoards102-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/oakBoards102-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "2e2aee63df11095380ce62e9fcac3c7ccc8c2d93742bfce29e4e3e49b890a13e"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/oakBoards102-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/oakBoards102-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "58326c184d071b9534938fc0719ebe4ccc9aa8d13fc9339d75da4242cb1ceea5"
+        }
+      }
+    },
+    "walnut102": {
+      "file": "elyndor/assets/source/world-hd-v102/walnut102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 237316,
+      "sha256": "b53e96d0ffad345be396261b3749ed1dc5a1405ddf0128122fc0110255a6f9dc",
+      "transparent": false,
+      "reviewed": true,
+      "category": "architecture",
+      "url": "elyndor/assets/source/world-hd-v102/walnut102.webp",
+      "finish": {
+        "roughness": 0.88,
+        "metalness": 0,
+        "relief": 0.1,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/walnut102-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/walnut102-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "b716df18e49c90cf9a3c87d2660049cfb9596b5dd1b67aab2851910c987d7a26"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/walnut102-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/walnut102-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "57d0bcd72b715b9aedc7ecbec903bda3caae5809c78103cf486a1f46c380cdfe"
+        }
+      }
+    },
+    "canvas102": {
+      "file": "elyndor/assets/source/world-hd-v102/canvas102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 569762,
+      "sha256": "f19071977365dd80bcd9ba3bd5e9fd73966c74a4aada5aa92ea4aaab4d5e5507",
+      "transparent": false,
+      "reviewed": true,
+      "category": "architecture",
+      "url": "elyndor/assets/source/world-hd-v102/canvas102.webp",
+      "finish": {
+        "roughness": 0.97,
+        "metalness": 0,
+        "relief": 0.1,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/canvas102-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/canvas102-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "c8470958fcb36e342890946b17b79b42be1da9ffa51e02aa162355ff5cc9ca17"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/canvas102-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/canvas102-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "a1e3b07cb81a62fcd00a4399bf5ae7bcac20dfdd18668cd54380f60b11b5368a"
+        }
+      }
+    },
+    "iron102": {
+      "file": "elyndor/assets/source/world-hd-v102/iron102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 278178,
+      "sha256": "50caf2145ec3468729bc7e0a6be1a79bb53061bc7bd0c17139e2e7d0439c7bea",
+      "transparent": false,
+      "reviewed": true,
+      "category": "architecture",
+      "url": "elyndor/assets/source/world-hd-v102/iron102.webp",
+      "finish": {
+        "roughness": 0.35,
+        "metalness": 0.92,
+        "relief": 0.035,
+        "reflective": true
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/iron102-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/iron102-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "255ff97f890268594f6a33da690a28d2a7503e5cc81c36d6ccbeff03d722558c"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/iron102-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/iron102-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "7b4874cc076467cea7cf959c5e9861667294cf0e7d186be204b0242144afc4f9"
+        }
+      }
+    },
+    "botanicalLeaf102": {
+      "file": "elyndor/assets/source/world-hd-v102/botanicalLeaf102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 389888,
+      "sha256": "b81d5d315a3a65971a02b6b7b3234ed0da2b4935df66a7c04d5d5a8195efd6a2",
+      "transparent": false,
+      "reviewed": true,
+      "category": "botany",
+      "url": "elyndor/assets/source/world-hd-v102/botanicalLeaf102.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/botanicalLeaf102-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/botanicalLeaf102-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "d3cb5d97726863a5338680ed7c4b53ee0f0b99e6cf68b5f813c3b5f5fd53b585"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/botanicalLeaf102-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/botanicalLeaf102-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "5ee6d99cd1afe95d5d087e4dc5337b88f755fa06176d33c5c8f5a49224eaab9f"
+        }
+      }
+    },
+    "petal102": {
+      "file": "elyndor/assets/source/world-hd-v102/petal102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 96844,
+      "sha256": "e0d620ba310b30a79ca9e61a36d5f574f7a272368dc9511ef52be2f8ca264a63",
+      "transparent": false,
+      "reviewed": true,
+      "category": "botany",
+      "url": "elyndor/assets/source/world-hd-v102/petal102.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/petal102-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/petal102-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "2e2ba28ae60986b1aa8f9600647698735d0757626df53deaa55511db0ea1c6dc"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/petal102-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/petal102-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "04aa3a171879b67ff7c0edbd1d9262935c34568e7eadfb5a4275678b8f4ca3e7"
+        }
+      }
+    },
+    "basalt102": {
+      "file": "elyndor/assets/source/world-hd-v102/basalt102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 496570,
+      "sha256": "1e354700d2493411d682eb91bba9e04f4df4c333673a64b1266386d6eb97de96",
+      "transparent": false,
+      "reviewed": true,
+      "category": "mineral",
+      "url": "elyndor/assets/source/world-hd-v102/basalt102.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/basalt102-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/basalt102-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "2858573106b8ecba20575671d674e8da79c79519a07d300267ad5b5919a1a0f3"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/basalt102-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/basalt102-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "bf8dc7f919b41748350c9e487c7fab008cfd8744994be98433756d1a968665c5"
+        }
+      }
+    },
+    "grassFine102": {
+      "file": "elyndor/assets/source/world-hd-v102/grassFine102.webp",
+      "native": [
+        1312,
+        1199
+      ],
+      "bytes": 563502,
+      "sha256": "82caf63c2441490994e00bd2c1d8c0de7277fcb76d95cc21450ea2a0ceea118c",
+      "transparent": true,
+      "reviewed": true,
+      "category": "botanical cutout",
+      "url": "elyndor/assets/source/world-hd-v102/grassFine102.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "grassSoft102": {
+      "file": "elyndor/assets/source/world-hd-v102/grassSoft102.webp",
+      "native": [
+        1536,
+        1024
+      ],
+      "bytes": 353512,
+      "sha256": "bca33ef69446d5ed39256bdd28a1dd933a438be14e05f90160e3f8c63a85243a",
+      "transparent": true,
+      "reviewed": true,
+      "category": "botanical cutout",
+      "url": "elyndor/assets/source/world-hd-v102/grassSoft102.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "daisies102": {
+      "file": "elyndor/assets/source/world-hd-v102/daisies102.webp",
+      "native": [
+        1199,
+        1312
+      ],
+      "bytes": 293856,
+      "sha256": "fd8e48af1fc1c14158ebb223ea53da221c4751874b74544f1262d6ebbab39e85",
+      "transparent": true,
+      "reviewed": true,
+      "category": "botanical cutout",
+      "url": "elyndor/assets/source/world-hd-v102/daisies102.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "bluebells102": {
+      "file": "elyndor/assets/source/world-hd-v102/bluebells102.webp",
+      "native": [
+        1312,
+        1199
+      ],
+      "bytes": 244430,
+      "sha256": "c517d6f7cdd1b5e8dbf1c549b1b8693dbcdc6c2a8ec87364300cb0c358389d6f",
+      "transparent": true,
+      "reviewed": true,
+      "category": "botanical cutout",
+      "url": "elyndor/assets/source/world-hd-v102/bluebells102.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "grassLushFine102": {
+      "file": "elyndor/assets/source/world-hd-v102/grassLushFine102.webp",
+      "native": [
+        1536,
+        1024
+      ],
+      "bytes": 535010,
+      "sha256": "fbb8e814864fb3aab4b2003775b3295b7559343f26daba914be77b9384e9e324",
+      "transparent": true,
+      "reviewed": true,
+      "category": "lush botanical cutout",
+      "url": "elyndor/assets/source/world-hd-v102/grassLushFine102.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "grassLushSoft102": {
+      "file": "elyndor/assets/source/world-hd-v102/grassLushSoft102.webp",
+      "native": [
+        1536,
+        1024
+      ],
+      "bytes": 480154,
+      "sha256": "e1dc72a66c757b261a15409c4527fad674e4ffb02bf6f46b06bfa775067e1bcd",
+      "transparent": true,
+      "reviewed": true,
+      "category": "lush botanical cutout",
+      "url": "elyndor/assets/source/world-hd-v102/grassLushSoft102.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "fernFine102": {
+      "file": "elyndor/assets/source/world-hd-v102/fernFine102.webp",
+      "native": [
+        1536,
+        1024
+      ],
+      "bytes": 594550,
+      "sha256": "360227b9195830acab1963791323f64f8a3c218c5207f53a986e5e0b3bc7e05b",
+      "transparent": true,
+      "reviewed": true,
+      "category": "compound fern cutout",
+      "url": "elyndor/assets/source/world-hd-v102/fernFine102.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "pineBoards103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/pineBoards103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 369094,
+      "sha256": "96a3b96bbee4e545be3057350a3bfdb382d0bd8a3d345e5e7472b7c927e92d2d",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/pineBoards103.webp",
+      "finish": {
+        "roughness": 0.88,
+        "metalness": 0,
+        "relief": 0.1,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/pineBoards103-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/pineBoards103-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "423bbe8ccca2b68ecc5c78936633d7a12171dc2d36e00945ff8849895fab880c"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/pineBoards103-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/pineBoards103-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "161561e352f1ecc7ab71bb3c95a8632be85012bc597be4d071f3a35de8559075"
+        }
+      }
+    },
+    "redBrick103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/redBrick103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 765640,
+      "sha256": "5ee778a23eb6b01305e6c3bce51b6efa2820a15b5b5c9a969f74a070ab727333",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/redBrick103.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/redBrick103-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/redBrick103-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "bb13d6167f3127dcc62b975fe57395460ddf7664fe3e9b994c64b4d3af2581fb"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/redBrick103-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/redBrick103-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "83a159a79dbfe62e336a7ffc16d85f83a4de6857f291d5c6353c05e443fab59a"
+        }
+      }
+    },
+    "sagePlaster103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/sagePlaster103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 493700,
+      "sha256": "080e3c77c300137be5fca9c30ff57f5798e569c412c68729e2db6cc54b62e938",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/sagePlaster103.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/sagePlaster103-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/sagePlaster103-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "f8bd6f98962e15fe0a4672a6a74d9f465db4efb88bd26bb3512cdea5492bf45d"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/sagePlaster103-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/sagePlaster103-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "6bf3a46543c55a951dcfee0948a7e11d5e270991339a1ca6117a0bc2ebadc6ea"
+        }
+      }
+    },
+    "wool103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/wool103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 630686,
+      "sha256": "d338a9406b7c7262243ff6d4256ca2f968be2e40be08880bc3dba0e62d94be62",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/wool103.webp",
+      "finish": {
+        "roughness": 0.97,
+        "metalness": 0,
+        "relief": 0.1,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/wool103-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/wool103-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "f80e0abfc24fea5de1a88e21cda23dcb072ddcb5184ba5a440fe4866a35ae99e"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/wool103-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/wool103-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "e7f090c010af93fbfd2d5bf898d7655173c942ef879ef7f7cb1c470e29b73133"
+        }
+      }
+    },
+    "rugCommon103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/rugCommon103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 794518,
+      "sha256": "9ab7ab385f9a14c42cf24d246f6b73a82fdee861277da19b03b3ecef20e5d286",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/rugCommon103.webp",
+      "finish": {
+        "roughness": 0.97,
+        "metalness": 0,
+        "relief": 0.1,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/rugCommon103-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/rugCommon103-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "43d99cec3c1474c990241893638bf0469cc9241d6ca4bf2d63099af0e54301dd"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/rugCommon103-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/rugCommon103-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "85ed7ce722da85387fccb7797a4414f044d3636bdbcab08c22dfdd0537a6f30f"
+        }
+      }
+    },
+    "rugRoyal103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/rugRoyal103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 916638,
+      "sha256": "5836fc8bbe2523760238de5b5674e411f23dcbda20c11523a47a8eea8762f2f2",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/rugRoyal103.webp",
+      "finish": {
+        "roughness": 0.97,
+        "metalness": 0,
+        "relief": 0.1,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/rugRoyal103-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/rugRoyal103-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "623554414e3cbfc93b1636fb9d75748b26473708e00a30a21ff62dd6e0950f26"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/rugRoyal103-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/rugRoyal103-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "8f96459bd133c9dc2e6eccaf7aafe1549b22b9d8f957fee25c8f7d27589df176"
+        }
+      }
+    },
+    "steel103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/steel103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 214096,
+      "sha256": "02a30aace308b657d9e65ff251a5a29b2c86f0bea8b40f83118697bcb3588f1e",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/steel103.webp",
+      "finish": {
+        "roughness": 0.35,
+        "metalness": 0.92,
+        "relief": 0.035,
+        "reflective": true
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/steel103-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/steel103-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "cbbdbffae4d0f89dc3a55d0dce4573585b2e4a1e3e7907a4e09149f7882dcaf2"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/steel103-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/steel103-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "2ed201bc6f82f249ec810ec864c00406b2c8574db89db5d02a82847983516880"
+        }
+      }
+    },
+    "brass103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/brass103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 409048,
+      "sha256": "d11dcc841ed045ebcb2b1da98ff26c4ec815eadff47d644f06995c897625c66f",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/brass103.webp",
+      "finish": {
+        "roughness": 0.35,
+        "metalness": 0.92,
+        "relief": 0.035,
+        "reflective": true
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/brass103-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/brass103-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "d9354d91dc438af3d0a74f818286e9f378f50b66470854ded4fc71889c9981c8"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/brass103-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/brass103-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "3aa21e5de98b24f93b276bd2637073f5cbf651b28a6dc7ace55e4df14ada4605"
+        }
+      }
+    },
+    "copper103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/copper103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 578574,
+      "sha256": "e774f0d0a18afddc5a28030db2b94196e8784ea4f4cf448caef138d0807ddf93",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/copper103.webp",
+      "finish": {
+        "roughness": 0.35,
+        "metalness": 0.92,
+        "relief": 0.035,
+        "reflective": true
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/copper103-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/copper103-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "9009a9fdc0bf9f7e7fe5b7e1190f3705c0370fc61db13e0efe188f1693cbcf0a"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/copper103-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/copper103-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "48b5893ab40a98e198349618c59157ec45a543fdf074acc6d0311c80c4e6b265"
+        }
+      }
+    },
+    "terracotta103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/terracotta103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 534668,
+      "sha256": "3e1f846e94e4823fc067544f5c2fca288df4650ce834f5e8c93868275f6a75ae",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/terracotta103.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/terracotta103-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/terracotta103-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "c5e1849d8fb55a078aee3b51e29e1746c76f83b32ab091b2389569ce9a97b035"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/terracotta103-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/terracotta103-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "1593e9b29adbb282a92592c7f111d809b70bc69d2b4c3cab9e86e6402e987fea"
+        }
+      }
+    },
+    "ceramic103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/ceramic103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 223670,
+      "sha256": "591e8d10283a96f789ca287aad210d9e38ddbb89f9846400eef7944ac4f02949",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/ceramic103.webp",
+      "finish": {
+        "roughness": 0.3,
+        "metalness": 0,
+        "relief": 0.035,
+        "reflective": true
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/ceramic103-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/ceramic103-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "941a2624804031eb8475c1e25ea1cb60d0c23939fd91f6f30836f72196c98ad6"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/ceramic103-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/ceramic103-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "97950748a1a5c41667d45ff5c90bff1718d408ea5c146fa3e929feea358ac9e0"
+        }
+      }
+    },
+    "leather103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/leather103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 721058,
+      "sha256": "391e7a8cb23ef11cbf34a5c9b74bd112769f61d5959d19784cbe310dde6f4987",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/leather103.webp",
+      "finish": {
+        "roughness": 0.88,
+        "metalness": 0,
+        "relief": 0.1,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/leather103-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/leather103-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "704cbf4c53399781747e83589cdb19b542ac0d656320a1505713cb614deaeed7"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/leather103-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/leather103-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "024e3fd8b7b7e7f8b32a099c99a70630034f0827f5d6731194d38a6bb3335a9a"
+        }
+      }
+    },
+    "parchment103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/parchment103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 427648,
+      "sha256": "bb5fed0990de187e24adb63a13b67047ba67d3f6125e163d8b27208d35497da4",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/parchment103.webp",
+      "finish": {
+        "roughness": 0.97,
+        "metalness": 0,
+        "relief": 0.1,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/parchment103-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/parchment103-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "add2926a19301932a9ef97f1576ca97244c2376af8264a72e3bb1e8b58c8258d"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/parchment103-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/parchment103-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "96316fa29ed30c757b85a30700d43e3cd1ed331d8d4c0109ece3998e2ca961b8"
+        }
+      }
+    },
+    "bookLeather103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/bookLeather103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 577640,
+      "sha256": "d540af240500419a5d9d5931301bbd673dbdc4a7e45d4bfb5a636fb1cbbfcb41",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/bookLeather103.webp",
+      "finish": {
+        "roughness": 0.88,
+        "metalness": 0,
+        "relief": 0.1,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/bookLeather103-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/bookLeather103-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "da5f6647d6aaf5dc9791c28d497e27d6d333e238adcda6d4e8c0e864c4a3efcb"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/bookLeather103-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/bookLeather103-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "4d112ba196375c54724226b5150ed8d8f5d713833ab59f09e6e8ad260b57d692"
+        }
+      }
+    },
+    "glass103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/glass103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 29522,
+      "sha256": "1731de0dfea9f35eae5abf6752cb4112d868224ae4e3dbcb24fb8461bc841ddb",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/glass103.webp",
+      "finish": {
+        "roughness": 0.12,
+        "metalness": 0,
+        "relief": 0.01,
+        "reflective": true
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/glass103-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/glass103-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "78756923f8a44a20ec00434d45c40b1979f0071d57bde68fabe1862fca90ebbe"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/glass103-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/glass103-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "8bf4dfbbb0f81dcb82a823d655573640ac5edee903b9bc2c989807158aae286d"
+        }
+      }
+    },
+    "quartz103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/quartz103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 272374,
+      "sha256": "e8385da2a95037e70df5ea3d4eddf4bd9fd2c9cb725bee848e8d25a7d729230b",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/quartz103.webp",
+      "finish": {
+        "roughness": 0.21,
+        "metalness": 0,
+        "relief": 0.05,
+        "reflective": true
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/quartz103-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/quartz103-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "89d5785c89b38a6919fbaf985663ac4288d941c8433023dfb08cfdeae3881087"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/quartz103-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/quartz103-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "709a9df1841d6a03e90da8041c74ad09a740d40f1e368a22ecc63873598a195b"
+        }
+      }
+    },
+    "pineNeedles103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/pineNeedles103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 407344,
+      "sha256": "9d5322cdf20610e33fe696c4b6598e4b3b628a12a6abf3a29a72c060e63a058f",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/pineNeedles103.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/pineNeedles103-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/pineNeedles103-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "3b982beb7b83c957e501eb5db4b94b370fd6f1e702cd9c28bb3a4bd101b94bc0"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/pineNeedles103-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/pineNeedles103-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "80e080063699362d9b752cf2ea3e9418ea80486bb01d64d17e22c63f5ae2736c"
+        }
+      }
+    },
+    "waveHeight103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/waveHeight103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 97208,
+      "sha256": "174d6c7afbcb38e6674005e87fa3e6bd759fc13393b51dfbcfc7b03a513e39de",
+      "transparent": false,
+      "category": "data",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/waveHeight103.webp",
+      "finish": {
+        "roughness": 0.24,
+        "metalness": 0,
+        "relief": 1.7,
+        "reflective": true
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/waveHeight103-normalRough.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/waveHeight103-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "47704be5c82cbb01857e2a0c03939fb455a04ad7d7cf117218a865d695f583ff"
+        },
+        "horm": {
+          "native": "elyndor/assets/source/environment-pbr-v103/pbr/waveHeight103-horm.png",
+          "gpu": "elyndor/assets/source/environment-pbr-v103/pbr/waveHeight103-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ],
+          "sha256": "793ec00e80251fb0e87f98b8586b874dd8d296fc289db8e749ccd1df8567bfe3"
+        }
+      }
+    },
+    "foam103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/foam103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 138140,
+      "sha256": "eb87b152424c546e248aea7ee64118a2bc736d3cfc819ad88e6a73279686d426",
+      "transparent": false,
+      "category": "data",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/foam103.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      }
+    },
+    "caustics103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/caustics103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 76234,
+      "sha256": "deb5b931da19fc91e1d93a0a4ecc59417c1d2ba67048adce04c7b2991a22ba23",
+      "transparent": false,
+      "category": "data",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/caustics103.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      }
+    },
+    "smoke103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/smoke103.webp",
+      "native": [
+        1536,
+        1024
+      ],
+      "bytes": 301062,
+      "sha256": "a98f31fff0c5afdc43027a97d1a563eebf6b71386a8cb9fe485223fd2c09a70f",
+      "transparent": true,
+      "category": "effect",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/smoke103.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "cloud103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/cloud103.webp",
+      "native": [
+        1774,
+        887
+      ],
+      "bytes": 316014,
+      "sha256": "ef096f123290776d17e42ce8dd858ad961d10e0145d252a87fca9115c0acbafc",
+      "transparent": true,
+      "category": "effect",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/cloud103.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "fire103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/fire103.webp",
+      "native": [
+        1024,
+        1536
+      ],
+      "bytes": 216782,
+      "sha256": "96a34a6f2d70d5b27c3beff5a838529bdb6bbceb1a38d64d7d2ac16fd47cb1ad",
+      "transparent": true,
+      "category": "effect",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/fire103.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "energy103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/energy103.webp",
+      "native": [
+        1536,
+        1024
+      ],
+      "bytes": 35094,
+      "sha256": "442d8fecedd1ed173da9b68eec7f93d5fcab4c41c59a16c06d09709a37b76f15",
+      "transparent": true,
+      "category": "effect",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/energy103.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "ice103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/ice103.webp",
+      "native": [
+        1536,
+        1024
+      ],
+      "bytes": 260206,
+      "sha256": "c548cccd3ef6703cad2ae23d765a634f0b9c496781dc73238bde002dd3dc8eda",
+      "transparent": true,
+      "category": "effect",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/ice103.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "flameSlash103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/flameSlash103.webp",
+      "native": [
+        1536,
+        1024
+      ],
+      "bytes": 242358,
+      "sha256": "d131e8aff6f3fb43f4381d2392df260fb105c13c47d1fa07440b3be8b40e5d3b",
+      "transparent": true,
+      "category": "effect",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/flameSlash103.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "impact103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/impact103.webp",
+      "native": [
+        1536,
+        1024
+      ],
+      "bytes": 412508,
+      "sha256": "e6e644bb2c957c170c65c10122754677bb51b42d308f657b205ef47536c6dde0",
+      "transparent": true,
+      "category": "effect",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/impact103.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "arcane103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/arcane103.webp",
+      "native": [
+        1536,
+        1024
+      ],
+      "bytes": 272674,
+      "sha256": "243e3ffe796e51d18152023800ac6ddbbad6df52cee3c14f302f61a3a4d5837a",
+      "transparent": true,
+      "category": "effect",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/arcane103.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "healing103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/healing103.webp",
+      "native": [
+        1199,
+        1312
+      ],
+      "bytes": 169648,
+      "sha256": "f1d0ef6985437f0eed5b7d9ef128b16d4e4a899ea1fd60a91ab61fcb09d12e0f",
+      "transparent": true,
+      "category": "effect",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/healing103.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "fallingWater103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/fallingWater103.webp",
+      "native": [
+        1024,
+        1536
+      ],
+      "bytes": 389242,
+      "sha256": "099365c41849974c8c68d413417848c1a2bce43d2255194ee5b363d945e718a7",
+      "transparent": true,
+      "category": "effect",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/fallingWater103.webp",
+      "finish": {
+        "roughness": 0.91,
+        "metalness": 0,
+        "relief": 0.06,
+        "reflective": false
+      }
+    },
+    "innSign103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/innSign103.webp",
+      "native": [
+        1672,
+        941
+      ],
+      "bytes": 603500,
+      "sha256": "4d2a5b9676f8fd1af419cbe805bf57af26a5f36b9e3583ce11317a6fa5e5535d",
+      "transparent": false,
+      "category": "sign",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/innSign103.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      }
+    },
+    "shopSign103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/shopSign103.webp",
+      "native": [
+        1672,
+        941
+      ],
+      "bytes": 600684,
+      "sha256": "4172983ffa0b336858e34ed7dbf28a4142460308c5f9717cf2b58872ae2c44b8",
+      "transparent": false,
+      "category": "sign",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/shopSign103.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      }
+    },
+    "forgeSign103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/forgeSign103.webp",
+      "native": [
+        1672,
+        941
+      ],
+      "bytes": 603048,
+      "sha256": "0520edbb90bb6ee685b16057ac20e2fc6c967447e4c10ae8fc4cb3933a0a5e06",
+      "transparent": false,
+      "category": "sign",
+      "reviewed": true,
+      "url": "elyndor/assets/source/environment-pbr-v103/forgeSign103.webp",
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.22,
+        "reflective": false
+      }
+    }
+  },
+  "audit": [
+    {
+      "key": "cobble",
+      "classification": "regenerated environment",
+      "replacement": "cobbleOld"
+    },
+    {
+      "key": "wood",
+      "classification": "regenerated environment",
+      "replacement": "oakBoards102"
+    },
+    {
+      "key": "darkWood",
+      "classification": "regenerated environment",
+      "replacement": "walnut102"
+    },
+    {
+      "key": "slate",
+      "classification": "regenerated environment",
+      "replacement": "roofSlate102"
+    },
+    {
+      "key": "plaster",
+      "classification": "regenerated environment",
+      "replacement": "plaster102"
+    },
+    {
+      "key": "wall",
+      "classification": "regenerated environment",
+      "replacement": "masonry102"
+    },
+    {
+      "key": "rock",
+      "classification": "regenerated environment",
+      "replacement": "rockGranite"
+    },
+    {
+      "key": "earth",
+      "classification": "regenerated environment",
+      "replacement": "earthTrail"
+    },
+    {
+      "key": "grass",
+      "classification": "regenerated environment",
+      "replacement": "grassLush"
+    },
+    {
+      "key": "bark",
+      "classification": "regenerated environment",
+      "replacement": "barkBirch"
+    },
+    {
+      "key": "cloth",
+      "classification": "regenerated environment",
+      "replacement": "canvas102"
+    },
+    {
+      "key": "metal",
+      "classification": "regenerated environment",
+      "replacement": "iron102"
+    },
+    {
+      "key": "oakCanopy",
+      "classification": "regenerated environment",
+      "replacement": "leafOak"
+    },
+    {
+      "key": "pineCanopy",
+      "classification": "regenerated environment",
+      "replacement": "leafPine"
+    },
+    {
+      "key": "lightFacets",
+      "classification": "regenerated environment",
+      "replacement": "quartz103"
+    },
+    {
+      "key": "door",
+      "classification": "regenerated environment",
+      "replacement": "oakBoards102"
+    },
+    {
+      "key": "window",
+      "classification": "regenerated environment",
+      "replacement": "glass103"
+    },
+    {
+      "key": "crateFace",
+      "classification": "regenerated environment",
+      "replacement": "woodWeathered101"
+    },
+    {
+      "key": "barrelStave",
+      "classification": "regenerated environment",
+      "replacement": "oakBoards102"
+    },
+    {
+      "key": "innSign",
+      "classification": "regenerated environment",
+      "replacement": "innSign103"
+    },
+    {
+      "key": "shopSign",
+      "classification": "regenerated environment",
+      "replacement": "shopSign103"
+    },
+    {
+      "key": "forgeSign",
+      "classification": "regenerated environment",
+      "replacement": "forgeSign103"
+    },
+    {
+      "key": "leaves",
+      "classification": "regenerated environment",
+      "replacement": "leafOak"
+    },
+    {
+      "key": "fern",
+      "classification": "regenerated environment",
+      "replacement": "fernFine102"
+    },
+    {
+      "key": "flowers",
+      "classification": "regenerated environment",
+      "replacement": "daisies102"
+    },
+    {
+      "key": "ivy",
+      "classification": "regenerated environment",
+      "replacement": "leafWillow"
+    },
+    {
+      "key": "grassBlades",
+      "classification": "regenerated environment",
+      "replacement": "botanicalLeaf102"
+    },
+    {
+      "key": "shrub",
+      "classification": "regenerated environment",
+      "replacement": "leafOak"
+    },
+    {
+      "key": "uiFrame",
+      "classification": "preserved UI",
+      "replacement": "uiFrame"
+    },
+    {
+      "key": "icon_herb",
+      "classification": "preserved UI",
+      "replacement": "icon_herb"
+    },
+    {
+      "key": "icon_ether",
+      "classification": "preserved UI",
+      "replacement": "icon_ether"
+    },
+    {
+      "key": "icon_revive",
+      "classification": "preserved UI",
+      "replacement": "icon_revive"
+    },
+    {
+      "key": "icon_blade",
+      "classification": "preserved UI",
+      "replacement": "icon_blade"
+    },
+    {
+      "key": "icon_coat",
+      "classification": "preserved UI",
+      "replacement": "icon_coat"
+    },
+    {
+      "key": "icon_report",
+      "classification": "preserved UI",
+      "replacement": "icon_report"
+    },
+    {
+      "key": "icon_notes",
+      "classification": "preserved UI",
+      "replacement": "icon_notes"
+    },
+    {
+      "key": "icon_component",
+      "classification": "preserved UI",
+      "replacement": "icon_component"
+    },
+    {
+      "key": "icon_order",
+      "classification": "preserved UI",
+      "replacement": "icon_order"
+    },
+    {
+      "key": "regionMap",
+      "classification": "preserved UI",
+      "replacement": "regionMap"
+    },
+    {
+      "key": "fxFire",
+      "classification": "regenerated environment",
+      "replacement": "fire103"
+    },
+    {
+      "key": "fxSmoke",
+      "classification": "regenerated environment",
+      "replacement": "smoke103"
+    },
+    {
+      "key": "fxEnergy",
+      "classification": "regenerated environment",
+      "replacement": "energy103"
+    },
+    {
+      "key": "fxIce",
+      "classification": "regenerated environment",
+      "replacement": "ice103"
+    },
+    {
+      "key": "cloudMask",
+      "classification": "regenerated environment",
+      "replacement": "cloud103"
+    },
+    {
+      "key": "waterAlbedo",
+      "classification": "regenerated environment",
+      "replacement": "waveHeight103"
+    },
+    {
+      "key": "interiorFloor",
+      "classification": "regenerated environment",
+      "replacement": "pineBoards103"
+    },
+    {
+      "key": "runeSeal",
+      "classification": "preserved UI",
+      "replacement": "runeSeal"
+    },
+    {
+      "key": "exitMarker",
+      "classification": "preserved UI",
+      "replacement": "exitMarker"
+    },
+    {
+      "key": "saveSeal",
+      "classification": "preserved UI",
+      "replacement": "saveSeal"
+    },
+    {
+      "key": "cobbleA",
+      "classification": "regenerated environment",
+      "replacement": "cobbleOld"
+    },
+    {
+      "key": "cobbleB",
+      "classification": "regenerated environment",
+      "replacement": "cobbleRoyal"
+    },
+    {
+      "key": "wallA",
+      "classification": "regenerated environment",
+      "replacement": "masonry102"
+    },
+    {
+      "key": "plasterA",
+      "classification": "regenerated environment",
+      "replacement": "plaster102"
+    },
+    {
+      "key": "earthA",
+      "classification": "regenerated environment",
+      "replacement": "earthForest"
+    },
+    {
+      "key": "grassA",
+      "classification": "regenerated environment",
+      "replacement": "grassDry"
+    },
+    {
+      "key": "desert",
+      "classification": "regenerated environment",
+      "replacement": "sandCoast"
+    },
+    {
+      "key": "barren",
+      "classification": "regenerated environment",
+      "replacement": "stoneGranite"
+    },
+    {
+      "key": "lava",
+      "classification": "regenerated environment",
+      "replacement": "basalt102"
+    },
+    {
+      "key": "snow",
+      "classification": "regenerated environment",
+      "replacement": "snow"
+    },
+    {
+      "key": "encounterMark16",
+      "classification": "preserved UI",
+      "replacement": "encounterMark16"
+    },
+    {
+      "key": "riverStone18",
+      "classification": "regenerated environment",
+      "replacement": "rockMoss"
+    },
+    {
+      "key": "riverSurface18",
+      "classification": "regenerated environment",
+      "replacement": "waveHeight103"
+    },
+    {
+      "key": "ui24_panel",
+      "classification": "preserved UI",
+      "replacement": "ui24_panel"
+    },
+    {
+      "key": "ui24_compass",
+      "classification": "preserved UI",
+      "replacement": "ui24_compass"
+    },
+    {
+      "key": "ui24_map",
+      "classification": "preserved UI",
+      "replacement": "ui24_map"
+    },
+    {
+      "key": "ui24_inventory",
+      "classification": "preserved UI",
+      "replacement": "ui24_inventory"
+    },
+    {
+      "key": "ui24_party",
+      "classification": "preserved UI",
+      "replacement": "ui24_party"
+    },
+    {
+      "key": "ui24_journal",
+      "classification": "preserved UI",
+      "replacement": "ui24_journal"
+    },
+    {
+      "key": "ui26_crystal",
+      "classification": "preserved UI",
+      "replacement": "ui26_crystal"
+    },
+    {
+      "key": "ui26_button",
+      "classification": "preserved UI",
+      "replacement": "ui26_button"
+    },
+    {
+      "key": "ui26_backdrop",
+      "classification": "preserved UI",
+      "replacement": "ui26_backdrop"
+    },
+    {
+      "key": "ui26_compass",
+      "classification": "preserved UI",
+      "replacement": "ui26_compass"
+    },
+    {
+      "key": "ui26_logo",
+      "classification": "preserved UI",
+      "replacement": "ui26_logo"
+    },
+    {
+      "key": "ui26_frame",
+      "classification": "preserved UI",
+      "replacement": "ui26_frame"
+    },
+    {
+      "key": "ui26_nav_map",
+      "classification": "preserved UI",
+      "replacement": "ui26_nav_map"
+    },
+    {
+      "key": "ui26_nav_journal",
+      "classification": "preserved UI",
+      "replacement": "ui26_nav_journal"
+    },
+    {
+      "key": "ui26_nav_inventory",
+      "classification": "preserved UI",
+      "replacement": "ui26_nav_inventory"
+    },
+    {
+      "key": "ui26_nav_party",
+      "classification": "preserved UI",
+      "replacement": "ui26_nav_party"
+    },
+    {
+      "key": "ui26_nav_equipment",
+      "classification": "preserved UI",
+      "replacement": "ui26_nav_equipment"
+    },
+    {
+      "key": "icon_charm",
+      "classification": "preserved UI",
+      "replacement": "icon_charm"
+    },
+    {
+      "key": "icon_shield",
+      "classification": "preserved UI",
+      "replacement": "icon_shield"
+    },
+    {
+      "key": "icon_slash",
+      "classification": "preserved UI",
+      "replacement": "icon_slash"
+    },
+    {
+      "key": "icon_rally",
+      "classification": "preserved UI",
+      "replacement": "icon_rally"
+    },
+    {
+      "key": "ui27_portrait_bren",
+      "classification": "preserved UI",
+      "replacement": "ui27_portrait_bren"
+    },
+    {
+      "key": "ui27_portrait_soren",
+      "classification": "preserved UI",
+      "replacement": "ui27_portrait_soren"
+    },
+    {
+      "key": "icon_bronze",
+      "classification": "preserved UI",
+      "replacement": "icon_bronze"
+    },
+    {
+      "key": "icon_forestBlade",
+      "classification": "preserved UI",
+      "replacement": "icon_forestBlade"
+    },
+    {
+      "key": "normal28_cobble",
+      "classification": "replaced technical PBR",
+      "replacement": "cobbleOld"
+    },
+    {
+      "key": "normal28_plaster",
+      "classification": "replaced technical PBR",
+      "replacement": "plaster102"
+    },
+    {
+      "key": "normal28_slate",
+      "classification": "replaced technical PBR",
+      "replacement": "roofSlate102"
+    },
+    {
+      "key": "normal28_wood",
+      "classification": "replaced technical PBR",
+      "replacement": "oakBoards102"
+    },
+    {
+      "key": "normal28_rock",
+      "classification": "replaced technical PBR",
+      "replacement": "rockGranite"
+    },
+    {
+      "key": "normal28_oakCanopy",
+      "classification": "replaced technical PBR",
+      "replacement": "leafOak"
+    },
+    {
+      "key": "normal28_grass",
+      "classification": "replaced technical PBR",
+      "replacement": "grassLush"
+    },
+    {
+      "key": "normal28_earth",
+      "classification": "replaced technical PBR",
+      "replacement": "earthTrail"
+    },
+    {
+      "key": "normal28_wall",
+      "classification": "replaced technical PBR",
+      "replacement": "masonry102"
+    },
+    {
+      "key": "fall28",
+      "classification": "regenerated environment",
+      "replacement": "fallingWater103"
+    },
+    {
+      "key": "rug29",
+      "classification": "regenerated environment",
+      "replacement": "rugCommon103"
+    },
+    {
+      "key": "panel29",
+      "classification": "regenerated environment",
+      "replacement": "walnut102"
+    },
+    {
+      "key": "hearth29",
+      "classification": "regenerated environment",
+      "replacement": "redBrick103"
+    },
+    {
+      "key": "landscape29",
+      "classification": "regenerated environment",
+      "replacement": "@landscape"
+    },
+    {
+      "key": "leafOak30",
+      "classification": "regenerated environment",
+      "replacement": "leafOak"
+    },
+    {
+      "key": "leafBirch30",
+      "classification": "regenerated environment",
+      "replacement": "leafBirch"
+    },
+    {
+      "key": "leafMaple30",
+      "classification": "regenerated environment",
+      "replacement": "leafAutumn"
+    },
+    {
+      "key": "leafWillow30",
+      "classification": "regenerated environment",
+      "replacement": "leafWillow"
+    },
+    {
+      "key": "leafPine30",
+      "classification": "regenerated environment",
+      "replacement": "leafPine"
+    },
+    {
+      "key": "leafBlossom30",
+      "classification": "regenerated environment",
+      "replacement": "leafOrchard"
+    },
+    {
+      "key": "petal30",
+      "classification": "regenerated environment",
+      "replacement": "petal102"
+    },
+    {
+      "key": "normal28_cobbleMoss30",
+      "classification": "replaced technical PBR",
+      "replacement": "cobbleOld"
+    },
+    {
+      "key": "fx35FlameSlash",
+      "classification": "regenerated environment",
+      "replacement": "flameSlash103"
+    },
+    {
+      "key": "fx35Impact",
+      "classification": "regenerated environment",
+      "replacement": "impact103"
+    },
+    {
+      "key": "fx35Arcane",
+      "classification": "regenerated environment",
+      "replacement": "arcane103"
+    },
+    {
+      "key": "fx35Frost",
+      "classification": "regenerated environment",
+      "replacement": "ice103"
+    },
+    {
+      "key": "fx35Healing",
+      "classification": "regenerated environment",
+      "replacement": "healing103"
+    },
+    {
+      "key": "fx35Smoke",
+      "classification": "regenerated environment",
+      "replacement": "smoke103"
+    },
+    {
+      "key": "riverNormal39",
+      "classification": "regenerated environment",
+      "replacement": "@waveNormal"
+    },
+    {
+      "key": "ui50_header",
+      "classification": "preserved UI",
+      "replacement": "ui50_header"
+    },
+    {
+      "key": "ui50_frame",
+      "classification": "preserved UI",
+      "replacement": "ui50_frame"
+    },
+    {
+      "key": "ui50_button",
+      "classification": "preserved UI",
+      "replacement": "ui50_button"
+    },
+    {
+      "key": "ui50_compass",
+      "classification": "preserved UI",
+      "replacement": "ui50_compass"
+    },
+    {
+      "key": "ui50_foliage",
+      "classification": "preserved UI",
+      "replacement": "ui50_foliage"
+    },
+    {
+      "key": "ui50_village",
+      "classification": "preserved UI",
+      "replacement": "ui50_village"
+    },
+    {
+      "key": "ui50_light",
+      "classification": "preserved UI",
+      "replacement": "ui50_light"
+    },
+    {
+      "key": "ui50_pin",
+      "classification": "preserved UI",
+      "replacement": "ui50_pin"
+    },
+    {
+      "key": "ui50_diamond",
+      "classification": "preserved UI",
+      "replacement": "ui50_diamond"
+    },
+    {
+      "key": "ui50_mouse",
+      "classification": "preserved UI",
+      "replacement": "ui50_mouse"
+    },
+    {
+      "key": "ui50_coin",
+      "classification": "preserved UI",
+      "replacement": "ui50_coin"
+    },
+    {
+      "key": "ui51_player",
+      "classification": "preserved UI",
+      "replacement": "ui51_player"
+    },
+    {
+      "key": "ui51_mainQuest",
+      "classification": "preserved UI",
+      "replacement": "ui51_mainQuest"
+    },
+    {
+      "key": "ui51_sideQuest",
+      "classification": "preserved UI",
+      "replacement": "ui51_sideQuest"
+    },
+    {
+      "key": "ui51_questNpc",
+      "classification": "preserved UI",
+      "replacement": "ui51_questNpc"
+    },
+    {
+      "key": "ui51_inn",
+      "classification": "preserved UI",
+      "replacement": "ui51_inn"
+    },
+    {
+      "key": "ui51_vendor",
+      "classification": "preserved UI",
+      "replacement": "ui51_vendor"
+    },
+    {
+      "key": "ui51_smith",
+      "classification": "preserved UI",
+      "replacement": "ui51_smith"
+    },
+    {
+      "key": "ui51_north",
+      "classification": "preserved UI",
+      "replacement": "ui51_north"
+    },
+    {
+      "key": "ui52_sun",
+      "classification": "preserved UI",
+      "replacement": "ui52_sun"
+    },
+    {
+      "key": "ui52_moon",
+      "classification": "preserved UI",
+      "replacement": "ui52_moon"
+    },
+    {
+      "key": "ui52_cloud",
+      "classification": "preserved UI",
+      "replacement": "ui52_cloud"
+    },
+    {
+      "key": "ui52_rain",
+      "classification": "preserved UI",
+      "replacement": "ui52_rain"
+    },
+    {
+      "key": "ui52_snow",
+      "classification": "preserved UI",
+      "replacement": "ui52_snow"
+    },
+    {
+      "key": "ui52_compassFrame",
+      "classification": "preserved UI",
+      "replacement": "ui52_compassFrame"
+    },
+    {
+      "key": "battle53_waterfall",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle53_woodland",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle53_orchard",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle53_ruins",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle53_cavern",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle53_mountain",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle53_snow",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle53_coast",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle53_royalRoad",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle53_moonlit",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle53_grassAutumn",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle53_grassBirch",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle53_grassDowns",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle53_grassFlowers",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle53_grassHills",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle53_grassMeadow",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle53_grassRiver",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle53_grassStones",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle53_grassTwilight",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle53_grassWindmill",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_cavern_night",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_coast_night",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_grassAutumn_night",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_grassBirch_night",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_grassDowns_night",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_grassFlowers_night",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_grassHills_night",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_grassMeadow_night",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_grassRiver_night",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_grassStones_night",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_grassTwilight_day",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_grassTwilight_night",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_grassWindmill_night",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_moonlit_day",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_mountain_night",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_orchard_night",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_royalRoad_night",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_ruins_night",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_snow_night",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_waterfall_night",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "battle55_woodland_night",
+      "classification": "replaced native HD battle plate",
+      "replacement": "battle-hd-v99"
+    },
+    {
+      "key": "stage59_clearing",
+      "classification": "regenerated environment",
+      "replacement": "grassLush"
+    },
+    {
+      "key": "stage59_stone",
+      "classification": "regenerated environment",
+      "replacement": "rockGranite"
+    },
+    {
+      "key": "stage59_canopy",
+      "classification": "regenerated environment",
+      "replacement": "leafOak"
+    },
+    {
+      "key": "stage59_pine",
+      "classification": "regenerated environment",
+      "replacement": "leafPine"
+    },
+    {
+      "key": "env62_bark",
+      "classification": "regenerated environment",
+      "replacement": "barkOak"
+    },
+    {
+      "key": "env62_stone",
+      "classification": "regenerated environment",
+      "replacement": "rockGranite"
+    },
+    {
+      "key": "brick86",
+      "classification": "regenerated environment",
+      "replacement": "redBrick103"
+    },
+    {
+      "key": "roofClay86",
+      "classification": "regenerated environment",
+      "replacement": "roofClay102"
+    },
+    {
+      "key": "plasterSage86",
+      "classification": "regenerated environment",
+      "replacement": "sagePlaster103"
+    },
+    {
+      "key": "rockA",
+      "classification": "regenerated environment",
+      "replacement": "rockLimestone"
+    },
+    {
+      "key": "rockB",
+      "classification": "regenerated environment",
+      "replacement": "rockSlate"
+    },
+    {
+      "key": "floorOak86",
+      "classification": "regenerated environment",
+      "replacement": "oakBoards102"
+    },
+    {
+      "key": "floorPine86",
+      "classification": "regenerated environment",
+      "replacement": "pineBoards103"
+    },
+    {
+      "key": "floorWalnut86",
+      "classification": "regenerated environment",
+      "replacement": "walnut102"
+    },
+    {
+      "key": "furnitureOak86",
+      "classification": "regenerated environment",
+      "replacement": "oakBoards102"
+    },
+    {
+      "key": "furnitureWalnut86",
+      "classification": "regenerated environment",
+      "replacement": "walnut102"
+    },
+    {
+      "key": "timberOak86",
+      "classification": "regenerated environment",
+      "replacement": "oakBoards102"
+    },
+    {
+      "key": "timberOld86",
+      "classification": "regenerated environment",
+      "replacement": "woodWeathered101"
+    },
+    {
+      "key": "woodSiding86",
+      "classification": "regenerated environment",
+      "replacement": "oakBoards102"
+    },
+    {
+      "key": "canvas86",
+      "classification": "regenerated environment",
+      "replacement": "canvas102"
+    },
+    {
+      "key": "wool86",
+      "classification": "regenerated environment",
+      "replacement": "wool103"
+    },
+    {
+      "key": "rugRoyal86",
+      "classification": "regenerated environment",
+      "replacement": "rugRoyal103"
+    },
+    {
+      "key": "steel86",
+      "classification": "regenerated environment",
+      "replacement": "steel103"
+    },
+    {
+      "key": "brass86",
+      "classification": "regenerated environment",
+      "replacement": "brass103"
+    },
+    {
+      "key": "copper86",
+      "classification": "regenerated environment",
+      "replacement": "copper103"
+    },
+    {
+      "key": "terracotta86",
+      "classification": "regenerated environment",
+      "replacement": "terracotta103"
+    },
+    {
+      "key": "ceramic86",
+      "classification": "regenerated environment",
+      "replacement": "ceramic103"
+    },
+    {
+      "key": "leather86",
+      "classification": "regenerated environment",
+      "replacement": "leather103"
+    },
+    {
+      "key": "paper86",
+      "classification": "regenerated environment",
+      "replacement": "parchment103"
+    },
+    {
+      "key": "bookLeather86",
+      "classification": "regenerated environment",
+      "replacement": "bookLeather103"
+    },
+    {
+      "key": "normal28_earthA",
+      "classification": "replaced technical PBR",
+      "replacement": "earthForest"
+    },
+    {
+      "key": "normal28_desert",
+      "classification": "replaced technical PBR",
+      "replacement": "sandCoast"
+    },
+    {
+      "key": "normal28_barren",
+      "classification": "replaced technical PBR",
+      "replacement": "stoneGranite"
+    },
+    {
+      "key": "normal28_cobbleA",
+      "classification": "replaced technical PBR",
+      "replacement": "cobbleOld"
+    },
+    {
+      "key": "normal28_plasterA",
+      "classification": "replaced technical PBR",
+      "replacement": "plaster102"
+    },
+    {
+      "key": "normal28_plasterSage86",
+      "classification": "replaced technical PBR",
+      "replacement": "sagePlaster103"
+    },
+    {
+      "key": "normal28_panel29",
+      "classification": "replaced technical PBR",
+      "replacement": "walnut102"
+    },
+    {
+      "key": "normal28_floorOak86",
+      "classification": "replaced technical PBR",
+      "replacement": "oakBoards102"
+    },
+    {
+      "key": "normal28_floorWalnut86",
+      "classification": "replaced technical PBR",
+      "replacement": "walnut102"
+    },
+    {
+      "key": "normal28_furnitureWalnut86",
+      "classification": "replaced technical PBR",
+      "replacement": "walnut102"
+    },
+    {
+      "key": "normal28_bark",
+      "classification": "replaced technical PBR",
+      "replacement": "barkBirch"
+    },
+    {
+      "key": "normal28_env62_bark",
+      "classification": "replaced technical PBR",
+      "replacement": "barkOak"
+    },
+    {
+      "key": "barkPine86",
+      "classification": "regenerated environment",
+      "replacement": "barkPine"
+    },
+    {
+      "key": "normal28_canvas86",
+      "classification": "replaced technical PBR",
+      "replacement": "canvas102"
+    },
+    {
+      "key": "normal28_brass86",
+      "classification": "replaced technical PBR",
+      "replacement": "brass103"
+    },
+    {
+      "key": "normal28_copper86",
+      "classification": "replaced technical PBR",
+      "replacement": "copper103"
+    },
+    {
+      "key": "normal28_bookLeather86",
+      "classification": "replaced technical PBR",
+      "replacement": "bookLeather103"
+    },
+    {
+      "key": "normal28_door",
+      "classification": "replaced technical PBR",
+      "replacement": "oakBoards102"
+    },
+    {
+      "key": "normal28_crateFace",
+      "classification": "replaced technical PBR",
+      "replacement": "woodWeathered101"
+    },
+    {
+      "key": "plantLeaf86",
+      "classification": "regenerated environment",
+      "replacement": "botanicalLeaf102"
+    },
+    {
+      "key": "normal28_grassA",
+      "classification": "replaced technical PBR",
+      "replacement": "grassDry"
+    },
+    {
+      "key": "normal28_snow",
+      "classification": "replaced technical PBR",
+      "replacement": "snow"
+    },
+    {
+      "key": "normal28_cobbleB",
+      "classification": "replaced technical PBR",
+      "replacement": "cobbleRoyal"
+    },
+    {
+      "key": "normal28_wallA",
+      "classification": "replaced technical PBR",
+      "replacement": "masonry102"
+    },
+    {
+      "key": "normal28_hearth29",
+      "classification": "replaced technical PBR",
+      "replacement": "redBrick103"
+    },
+    {
+      "key": "normal28_brick86",
+      "classification": "replaced technical PBR",
+      "replacement": "redBrick103"
+    },
+    {
+      "key": "normal28_roofClay86",
+      "classification": "replaced technical PBR",
+      "replacement": "roofClay102"
+    },
+    {
+      "key": "normal28_rockA",
+      "classification": "replaced technical PBR",
+      "replacement": "rockLimestone"
+    },
+    {
+      "key": "normal28_rockB",
+      "classification": "replaced technical PBR",
+      "replacement": "rockSlate"
+    },
+    {
+      "key": "normal28_env62_stone",
+      "classification": "replaced technical PBR",
+      "replacement": "rockGranite"
+    },
+    {
+      "key": "normal28_riverStone18",
+      "classification": "replaced technical PBR",
+      "replacement": "rockMoss"
+    },
+    {
+      "key": "normal28_darkWood",
+      "classification": "replaced technical PBR",
+      "replacement": "walnut102"
+    },
+    {
+      "key": "normal28_interiorFloor",
+      "classification": "replaced technical PBR",
+      "replacement": "pineBoards103"
+    },
+    {
+      "key": "normal28_floorPine86",
+      "classification": "replaced technical PBR",
+      "replacement": "pineBoards103"
+    },
+    {
+      "key": "normal28_furnitureOak86",
+      "classification": "replaced technical PBR",
+      "replacement": "oakBoards102"
+    },
+    {
+      "key": "normal28_timberOak86",
+      "classification": "replaced technical PBR",
+      "replacement": "oakBoards102"
+    },
+    {
+      "key": "normal28_timberOld86",
+      "classification": "replaced technical PBR",
+      "replacement": "woodWeathered101"
+    },
+    {
+      "key": "normal28_woodSiding86",
+      "classification": "replaced technical PBR",
+      "replacement": "oakBoards102"
+    },
+    {
+      "key": "normal28_barkPine86",
+      "classification": "replaced technical PBR",
+      "replacement": "barkPine"
+    },
+    {
+      "key": "normal28_cloth",
+      "classification": "replaced technical PBR",
+      "replacement": "canvas102"
+    },
+    {
+      "key": "normal28_wool86",
+      "classification": "replaced technical PBR",
+      "replacement": "wool103"
+    },
+    {
+      "key": "normal28_rug29",
+      "classification": "replaced technical PBR",
+      "replacement": "rugCommon103"
+    },
+    {
+      "key": "normal28_rugRoyal86",
+      "classification": "replaced technical PBR",
+      "replacement": "rugRoyal103"
+    },
+    {
+      "key": "normal28_metal",
+      "classification": "replaced technical PBR",
+      "replacement": "iron102"
+    },
+    {
+      "key": "normal28_steel86",
+      "classification": "replaced technical PBR",
+      "replacement": "steel103"
+    },
+    {
+      "key": "normal28_terracotta86",
+      "classification": "replaced technical PBR",
+      "replacement": "terracotta103"
+    },
+    {
+      "key": "normal28_ceramic86",
+      "classification": "replaced technical PBR",
+      "replacement": "ceramic103"
+    },
+    {
+      "key": "normal28_leather86",
+      "classification": "replaced technical PBR",
+      "replacement": "leather103"
+    },
+    {
+      "key": "normal28_paper86",
+      "classification": "replaced technical PBR",
+      "replacement": "parchment103"
+    },
+    {
+      "key": "normal28_barrelStave",
+      "classification": "replaced technical PBR",
+      "replacement": "oakBoards102"
+    },
+    {
+      "key": "normal28_window",
+      "classification": "replaced technical PBR",
+      "replacement": "glass103"
+    },
+    {
+      "key": "normal28_waterAlbedo",
+      "classification": "replaced technical PBR",
+      "replacement": "waveHeight103"
+    },
+    {
+      "key": "normal28_riverSurface18",
+      "classification": "replaced technical PBR",
+      "replacement": "waveHeight103"
+    },
+    {
+      "key": "normal28_lightFacets",
+      "classification": "replaced technical PBR",
+      "replacement": "quartz103"
+    },
+    {
+      "key": "normal28_plantLeaf86",
+      "classification": "replaced technical PBR",
+      "replacement": "botanicalLeaf102"
+    },
+    {
+      "key": "normal28_petal30",
+      "classification": "replaced technical PBR",
+      "replacement": "petal102"
+    }
+  ],
+  "technicalBake": "normal XYZ + roughness A; HORM height/occlusion/roughness/metalness; native masters preserved"
+}

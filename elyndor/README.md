@@ -1,6 +1,6 @@
 # The Last Light of Elyndor
 
-Open the root `index.html` directly in a browser. It embeds all runtime code, Three.js, textures, portraits and sprites, and works offline. Reload an already open game tab to see the latest build.
+Play at https://jumin12.github.io/ember-tide/. For local play, serve the repository over HTTP (for example, `python -m http.server 8766`) and open http://127.0.0.1:8766/. The main HTML embeds runtime code, characters, audio and battle paintings; native HD environment materials are loaded from the adjacent `elyndor/assets/source` files. Reload an already open game tab to see the latest build.
 
 ## Latest material and publishing update
 
@@ -14,7 +14,7 @@ The current standalone contains 1,565 complete packed poses across 25 families, 
 
 ## Build and source
 
-Run `python elyndor/tools/build.py --final` from the project root to publish `index.html`; omit `--final` for `elyndor.preview.html`. Building needs Python, Pillow, NumPy and SciPy; playing needs only the HTML. Final builds verify source assets; `--code-only` is preview-only.
+Run `python elyndor/tools/build.py --final` from the project root to build `index.html`; omit `--final` for `elyndor.preview.html`. Building needs Python, Pillow, NumPy and SciPy. Deploy the HTML together with its referenced native material files. Final builds verify source assets; `--code-only` is preview-only.
 
 `assets/source/individual-v5/selection.json` explicitly selects the twelve complete new families. The source poses and individual generation prompts are preserved, along with rejected candidates and pose guides under `design/animation-v5`. Whole figures are alpha-cleaned, registered, uniformly resized with nearest-neighbor sampling and packed; body parts are never sliced or warped. `assets/source/materials-v5` contains fifteen separately generated pixel-art surface textures. Original PNGs and approved masters are preserved.
 

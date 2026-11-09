@@ -1,0 +1,407 @@
+{
+  "revision": 99,
+  "generator": "built-in image_gen",
+  "nativeResolution": true,
+  "images": {
+    "battle99_waterfall_day": {
+      "stage": "waterfall",
+      "phase": "day",
+      "file": "elyndor/assets/source/battle-hd-v99/waterfall-day.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 616170,
+      "sha256": "9abc561e6fd093a5b7a530207a5afb77a4ff754b954a1566cc0ea81c5897ae57",
+      "reviewed": true
+    },
+    "battle99_waterfall_night": {
+      "stage": "waterfall",
+      "phase": "night",
+      "file": "elyndor/assets/source/battle-hd-v99/waterfall-night.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 505096,
+      "sha256": "26494e64cc9de76786d6dc98d1b86127a72217c6bda13132cbcf77077dd8a75f",
+      "reviewed": true
+    },
+    "battle99_woodland_day": {
+      "stage": "woodland",
+      "phase": "day",
+      "file": "elyndor/assets/source/battle-hd-v99/woodland-day.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 626462,
+      "sha256": "ee87554d47a8d19488e65fbd94042c69b4ea5624995d221f5b8bcd3c18fb287e",
+      "reviewed": true
+    },
+    "battle99_woodland_night": {
+      "stage": "woodland",
+      "phase": "night",
+      "file": "elyndor/assets/source/battle-hd-v99/woodland-night.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 463572,
+      "sha256": "c4cdd84ddbc724f7c7d5530f5a1241799d62bdca623e735e0defd2c38353d53b",
+      "reviewed": true
+    },
+    "battle99_orchard_day": {
+      "stage": "orchard",
+      "phase": "day",
+      "file": "elyndor/assets/source/battle-hd-v99/orchard-day.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 613264,
+      "sha256": "d53402cc16a32989cc437fc4dc5599a6d767f2bff5372e5b2dbb574712c596cc",
+      "reviewed": true
+    },
+    "battle99_orchard_night": {
+      "stage": "orchard",
+      "phase": "night",
+      "file": "elyndor/assets/source/battle-hd-v99/orchard-night.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 493236,
+      "sha256": "adcfe7da59170d48ec4a1caada21c7b089884258b2cf465817d702d4877294eb",
+      "reviewed": true
+    },
+    "battle99_ruins_day": {
+      "stage": "ruins",
+      "phase": "day",
+      "file": "elyndor/assets/source/battle-hd-v99/ruins-day.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 596716,
+      "sha256": "0dc3d7b977b70205c4a8759973c02451b8cbd5e720dc3ae30db2341894f8f820",
+      "reviewed": true
+    },
+    "battle99_ruins_night": {
+      "stage": "ruins",
+      "phase": "night",
+      "file": "elyndor/assets/source/battle-hd-v99/ruins-night.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 494028,
+      "sha256": "abea3f98c6ff2895c351abe9df37abeb6ec17975e2b77ea067f876221def573f",
+      "reviewed": true
+    },
+    "battle99_cavern_day": {
+      "stage": "cavern",
+      "phase": "day",
+      "file": "elyndor/assets/source/battle-hd-v99/cavern-day.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 526908,
+      "sha256": "593a9adb56be8d5662c22e6313d16b36a26d65d740b35dacf0c1e9be65779d49",
+      "reviewed": true
+    },
+    "battle99_cavern_night": {
+      "stage": "cavern",
+      "phase": "night",
+      "file": "elyndor/assets/source/battle-hd-v99/cavern-night.webp",
+      "width": 1671,
+      "height": 941,
+      "bytes": 432006,
+      "sha256": "d7ead5f741cc61d5e0394c78ffb8e4cabcc8b503b6b3a75d79ac685e53281277",
+      "reviewed": true
+    },
+    "battle99_mountain_day": {
+      "stage": "mountain",
+      "phase": "day",
+      "file": "elyndor/assets/source/battle-hd-v99/mountain-day.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 557984,
+      "sha256": "ea77f72eb8611ba37989896ce6d40a5262dda8c16b6fbd6179276971c5252bf7",
+      "reviewed": true
+    },
+    "battle99_mountain_night": {
+      "stage": "mountain",
+      "phase": "night",
+      "file": "elyndor/assets/source/battle-hd-v99/mountain-night.webp",
+      "width": 1671,
+      "height": 941,
+      "bytes": 421624,
+      "sha256": "5a4152068ea9f87daa1a692e7353c6082cf91a8ea487a8a01ba79e6d68008291",
+      "reviewed": true
+    },
+    "battle99_snow_day": {
+      "stage": "snow",
+      "phase": "day",
+      "file": "elyndor/assets/source/battle-hd-v99/snow-day.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 476232,
+      "sha256": "690ec342f857de125fac94294c9b50adaee5790bbb9a6d51a66dd4d640cce0c8",
+      "reviewed": true
+    },
+    "battle99_snow_night": {
+      "stage": "snow",
+      "phase": "night",
+      "file": "elyndor/assets/source/battle-hd-v99/snow-night.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 395642,
+      "sha256": "cf947d839790d2c45cbea5c6b344382508fb3db47c90f8330f20ec38905859dd",
+      "reviewed": true
+    },
+    "battle99_coast_day": {
+      "stage": "coast",
+      "phase": "day",
+      "file": "elyndor/assets/source/battle-hd-v99/coast-day.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 565942,
+      "sha256": "f14c4690d7aaeeacc655894806c3e8dfb155b5d9d236a4c9c9ccf704abe4d363",
+      "reviewed": true
+    },
+    "battle99_coast_night": {
+      "stage": "coast",
+      "phase": "night",
+      "file": "elyndor/assets/source/battle-hd-v99/coast-night.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 415186,
+      "sha256": "102d58ac02dabcf068403f573b7967ac3045599627bdbd4b7a4deef106aab88d",
+      "reviewed": true
+    },
+    "battle99_royalRoad_day": {
+      "stage": "royalRoad",
+      "phase": "day",
+      "file": "elyndor/assets/source/battle-hd-v99/royalRoad-day.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 583104,
+      "sha256": "9c069dd2585b575c39228e90c7b6b8cf505112853012dc90493415ed409f4d71",
+      "reviewed": true
+    },
+    "battle99_royalRoad_night": {
+      "stage": "royalRoad",
+      "phase": "night",
+      "file": "elyndor/assets/source/battle-hd-v99/royalRoad-night.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 471168,
+      "sha256": "65b773480c95bec91497b43bb60fa977d350ed69a9e60c65f8f74163f292f9ee",
+      "reviewed": true
+    },
+    "battle99_moonlit_day": {
+      "stage": "moonlit",
+      "phase": "day",
+      "file": "elyndor/assets/source/battle-hd-v99/moonlit-day.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 574402,
+      "sha256": "248f767effaa191f37616e1563a3eec71935a07bfa2c1f6a4b346c8921fa28e9",
+      "reviewed": true
+    },
+    "battle99_moonlit_night": {
+      "stage": "moonlit",
+      "phase": "night",
+      "file": "elyndor/assets/source/battle-hd-v99/moonlit-night.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 487648,
+      "sha256": "be6694ba7f3ea301f4063562fbfafe443aa732a5c10c90abb3cc7d23ca635a0b",
+      "reviewed": true
+    },
+    "battle99_grassMeadow_day": {
+      "stage": "grassMeadow",
+      "phase": "day",
+      "file": "elyndor/assets/source/battle-hd-v99/grassMeadow-day.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 596784,
+      "sha256": "360a5f854f79a7bfae3b266b9c111b961a18a54943bd7e20aed2d8c8e3faba1d",
+      "reviewed": true
+    },
+    "battle99_grassMeadow_night": {
+      "stage": "grassMeadow",
+      "phase": "night",
+      "file": "elyndor/assets/source/battle-hd-v99/grassMeadow-night.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 461520,
+      "sha256": "e25b38b9a0b474326eeabc54de45e88f00840ad7f0d5fc22da23c740618ddf6b",
+      "reviewed": true
+    },
+    "battle99_grassFlowers_day": {
+      "stage": "grassFlowers",
+      "phase": "day",
+      "file": "elyndor/assets/source/battle-hd-v99/grassFlowers-day.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 605638,
+      "sha256": "bbede32a87425d21d4c06433380efc2563aea35660c523f97d712f1ea9ad5722",
+      "reviewed": true
+    },
+    "battle99_grassFlowers_night": {
+      "stage": "grassFlowers",
+      "phase": "night",
+      "file": "elyndor/assets/source/battle-hd-v99/grassFlowers-night.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 478782,
+      "sha256": "a197dd2bc1b49f511114bd3d52eabbbf69f2e4634b9ba994022038a6526bed59",
+      "reviewed": true
+    },
+    "battle99_grassDowns_day": {
+      "stage": "grassDowns",
+      "phase": "day",
+      "file": "elyndor/assets/source/battle-hd-v99/grassDowns-day.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 516188,
+      "sha256": "42f96f5769cb62c59da725e3cc855263f9aba828bb004b5de065e9791382938d",
+      "reviewed": true
+    },
+    "battle99_grassDowns_night": {
+      "stage": "grassDowns",
+      "phase": "night",
+      "file": "elyndor/assets/source/battle-hd-v99/grassDowns-night.webp",
+      "width": 1671,
+      "height": 941,
+      "bytes": 392632,
+      "sha256": "1a2aafb431fb4337ed1d1f5eec3bb6021e4b8e03c97bc27747068af13ebbaab6",
+      "reviewed": true
+    },
+    "battle99_grassWindmill_day": {
+      "stage": "grassWindmill",
+      "phase": "day",
+      "file": "elyndor/assets/source/battle-hd-v99/grassWindmill-day.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 600082,
+      "sha256": "639893306d3cf2a011a598208ace9655dba8683b2f94f57eed8f8d034ff8b5e4",
+      "reviewed": true
+    },
+    "battle99_grassWindmill_night": {
+      "stage": "grassWindmill",
+      "phase": "night",
+      "file": "elyndor/assets/source/battle-hd-v99/grassWindmill-night.webp",
+      "width": 1671,
+      "height": 941,
+      "bytes": 445176,
+      "sha256": "8605fa9db88cdf8926af26203cf94cd4a2a1714239dccc6e3e403bdd41dcf33f",
+      "reviewed": true
+    },
+    "battle99_grassAutumn_day": {
+      "stage": "grassAutumn",
+      "phase": "day",
+      "file": "elyndor/assets/source/battle-hd-v99/grassAutumn-day.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 565794,
+      "sha256": "8b70097f7d3676c042fe944c1d5b5440a063e514643811873292b4c1430fc085",
+      "reviewed": true
+    },
+    "battle99_grassAutumn_night": {
+      "stage": "grassAutumn",
+      "phase": "night",
+      "file": "elyndor/assets/source/battle-hd-v99/grassAutumn-night.webp",
+      "width": 1671,
+      "height": 941,
+      "bytes": 447032,
+      "sha256": "b4ef605d64a9f73ee142c253f19b6e9c876a81f80a29c513ddd3c26f0b56985b",
+      "reviewed": true
+    },
+    "battle99_grassStones_day": {
+      "stage": "grassStones",
+      "phase": "day",
+      "file": "elyndor/assets/source/battle-hd-v99/grassStones-day.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 507118,
+      "sha256": "a7bf40578f91dbc882ca6ef7572f4b49420e1ac0a7893e48ee01a28395fe6034",
+      "reviewed": true
+    },
+    "battle99_grassStones_night": {
+      "stage": "grassStones",
+      "phase": "night",
+      "file": "elyndor/assets/source/battle-hd-v99/grassStones-night.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 369816,
+      "sha256": "d691a3727571d13a3789ae78775f0eb3e13bb43563170ee625efb3f8dc3f1325",
+      "reviewed": true
+    },
+    "battle99_grassHills_day": {
+      "stage": "grassHills",
+      "phase": "day",
+      "file": "elyndor/assets/source/battle-hd-v99/grassHills-day.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 528732,
+      "sha256": "bba6dc0b34f9b9fb5e7c1ced1a3fa38209effa72b72ead25c246f6189adc1c70",
+      "reviewed": true
+    },
+    "battle99_grassHills_night": {
+      "stage": "grassHills",
+      "phase": "night",
+      "file": "elyndor/assets/source/battle-hd-v99/grassHills-night.webp",
+      "width": 1671,
+      "height": 941,
+      "bytes": 365538,
+      "sha256": "bf3f4fefb6fd3f7acd2829be11e90647d7988b65954bfa0f3862bfacf886024b",
+      "reviewed": true
+    },
+    "battle99_grassBirch_day": {
+      "stage": "grassBirch",
+      "phase": "day",
+      "file": "elyndor/assets/source/battle-hd-v99/grassBirch-day.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 526420,
+      "sha256": "61f86667b845743eb0fd7bec14222cf016d959d5b7b7b77c0527abec159ebea5",
+      "reviewed": true
+    },
+    "battle99_grassBirch_night": {
+      "stage": "grassBirch",
+      "phase": "night",
+      "file": "elyndor/assets/source/battle-hd-v99/grassBirch-night.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 396394,
+      "sha256": "e3a8287d7234777ad7a20f607a71e4ee71cf71920a79972f8dd462cbe6075bf1",
+      "reviewed": true
+    },
+    "battle99_grassTwilight_day": {
+      "stage": "grassTwilight",
+      "phase": "day",
+      "file": "elyndor/assets/source/battle-hd-v99/grassTwilight-day.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 469188,
+      "sha256": "ad2f23f692915d03fedbc6a3fdb07cb9f8d79c701df17152e3dedcef81eddd21",
+      "reviewed": true
+    },
+    "battle99_grassTwilight_night": {
+      "stage": "grassTwilight",
+      "phase": "night",
+      "file": "elyndor/assets/source/battle-hd-v99/grassTwilight-night.webp",
+      "width": 1671,
+      "height": 941,
+      "bytes": 382640,
+      "sha256": "c18036330c0b58c56dcb96e4d82121740aa512e97b336515ccebba8b14a2b8fa",
+      "reviewed": true
+    },
+    "battle99_grassRiver_day": {
+      "stage": "grassRiver",
+      "phase": "day",
+      "file": "elyndor/assets/source/battle-hd-v99/grassRiver-day.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 547536,
+      "sha256": "675c92c2224d7037175c53218e8de4d1ad557bf95405de3d7777541eee42baf4",
+      "reviewed": true
+    },
+    "battle99_grassRiver_night": {
+      "stage": "grassRiver",
+      "phase": "night",
+      "file": "elyndor/assets/source/battle-hd-v99/grassRiver-night.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 380488,
+      "sha256": "1bd180881959e5a670ab76f2dd1a3b0c6c48c5c7334b5130e326851a295aef33",
+      "reviewed": true
+    }
+  }
+}

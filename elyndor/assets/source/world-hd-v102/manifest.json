@@ -1,0 +1,222 @@
+{
+  "generator": "built-in image_gen",
+  "nativeResolution": true,
+  "images": {
+    "plaster102": {
+      "file": "elyndor/assets/source/world-hd-v102/plaster102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 481478,
+      "sha256": "c240c0e94a3bed8911f683b110ee0923f6dd9186f42df24452aa9ef8f2949709",
+      "transparent": false,
+      "reviewed": true,
+      "category": "architecture"
+    },
+    "masonry102": {
+      "file": "elyndor/assets/source/world-hd-v102/masonry102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 603894,
+      "sha256": "613ea54e9c61bc669c88a6b4fb2056ec7d22bae37d38a347cc10aee04646f780",
+      "transparent": false,
+      "reviewed": true,
+      "category": "architecture"
+    },
+    "roofSlate102": {
+      "file": "elyndor/assets/source/world-hd-v102/roofSlate102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 450826,
+      "sha256": "2f7904e0568f6001dbfcc2139e627f3ccf90e141d1cdb2f1ed79127402b1cc42",
+      "transparent": false,
+      "reviewed": true,
+      "category": "architecture"
+    },
+    "roofClay102": {
+      "file": "elyndor/assets/source/world-hd-v102/roofClay102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 491320,
+      "sha256": "6fb917e543964806247269dcc2d2cb8c50d34edacdb3e489b641623bed04ee6e",
+      "transparent": false,
+      "reviewed": true,
+      "category": "architecture"
+    },
+    "oakBoards102": {
+      "file": "elyndor/assets/source/world-hd-v102/oakBoards102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 398802,
+      "sha256": "ba6f73775661e7f1eadfa83cc3e8f50244fa2bbfdb64c36049f9e366e32509ef",
+      "transparent": false,
+      "reviewed": true,
+      "category": "architecture"
+    },
+    "walnut102": {
+      "file": "elyndor/assets/source/world-hd-v102/walnut102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 237316,
+      "sha256": "b53e96d0ffad345be396261b3749ed1dc5a1405ddf0128122fc0110255a6f9dc",
+      "transparent": false,
+      "reviewed": true,
+      "category": "architecture"
+    },
+    "canvas102": {
+      "file": "elyndor/assets/source/world-hd-v102/canvas102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 569762,
+      "sha256": "f19071977365dd80bcd9ba3bd5e9fd73966c74a4aada5aa92ea4aaab4d5e5507",
+      "transparent": false,
+      "reviewed": true,
+      "category": "architecture"
+    },
+    "iron102": {
+      "file": "elyndor/assets/source/world-hd-v102/iron102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 278178,
+      "sha256": "50caf2145ec3468729bc7e0a6be1a79bb53061bc7bd0c17139e2e7d0439c7bea",
+      "transparent": false,
+      "reviewed": true,
+      "category": "architecture"
+    },
+    "botanicalLeaf102": {
+      "file": "elyndor/assets/source/world-hd-v102/botanicalLeaf102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 389888,
+      "sha256": "b81d5d315a3a65971a02b6b7b3234ed0da2b4935df66a7c04d5d5a8195efd6a2",
+      "transparent": false,
+      "reviewed": true,
+      "category": "botany"
+    },
+    "petal102": {
+      "file": "elyndor/assets/source/world-hd-v102/petal102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 96844,
+      "sha256": "e0d620ba310b30a79ca9e61a36d5f574f7a272368dc9511ef52be2f8ca264a63",
+      "transparent": false,
+      "reviewed": true,
+      "category": "botany"
+    },
+    "basalt102": {
+      "file": "elyndor/assets/source/world-hd-v102/basalt102.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 496570,
+      "sha256": "1e354700d2493411d682eb91bba9e04f4df4c333673a64b1266386d6eb97de96",
+      "transparent": false,
+      "reviewed": true,
+      "category": "mineral"
+    },
+    "grassFine102": {
+      "file": "elyndor/assets/source/world-hd-v102/grassFine102.webp",
+      "native": [
+        1312,
+        1199
+      ],
+      "bytes": 563502,
+      "sha256": "82caf63c2441490994e00bd2c1d8c0de7277fcb76d95cc21450ea2a0ceea118c",
+      "transparent": true,
+      "reviewed": true,
+      "category": "botanical cutout"
+    },
+    "grassSoft102": {
+      "file": "elyndor/assets/source/world-hd-v102/grassSoft102.webp",
+      "native": [
+        1536,
+        1024
+      ],
+      "bytes": 353512,
+      "sha256": "bca33ef69446d5ed39256bdd28a1dd933a438be14e05f90160e3f8c63a85243a",
+      "transparent": true,
+      "reviewed": true,
+      "category": "botanical cutout"
+    },
+    "daisies102": {
+      "file": "elyndor/assets/source/world-hd-v102/daisies102.webp",
+      "native": [
+        1199,
+        1312
+      ],
+      "bytes": 293856,
+      "sha256": "fd8e48af1fc1c14158ebb223ea53da221c4751874b74544f1262d6ebbab39e85",
+      "transparent": true,
+      "reviewed": true,
+      "category": "botanical cutout"
+    },
+    "bluebells102": {
+      "file": "elyndor/assets/source/world-hd-v102/bluebells102.webp",
+      "native": [
+        1312,
+        1199
+      ],
+      "bytes": 244430,
+      "sha256": "c517d6f7cdd1b5e8dbf1c549b1b8693dbcdc6c2a8ec87364300cb0c358389d6f",
+      "transparent": true,
+      "reviewed": true,
+      "category": "botanical cutout"
+    },
+    "grassLushFine102": {
+      "file": "elyndor/assets/source/world-hd-v102/grassLushFine102.webp",
+      "native": [
+        1536,
+        1024
+      ],
+      "bytes": 535010,
+      "sha256": "fbb8e814864fb3aab4b2003775b3295b7559343f26daba914be77b9384e9e324",
+      "transparent": true,
+      "reviewed": true,
+      "category": "lush botanical cutout"
+    },
+    "grassLushSoft102": {
+      "file": "elyndor/assets/source/world-hd-v102/grassLushSoft102.webp",
+      "native": [
+        1536,
+        1024
+      ],
+      "bytes": 480154,
+      "sha256": "e1dc72a66c757b261a15409c4527fad674e4ffb02bf6f46b06bfa775067e1bcd",
+      "transparent": true,
+      "reviewed": true,
+      "category": "lush botanical cutout"
+    },
+    "fernFine102": {
+      "file": "elyndor/assets/source/world-hd-v102/fernFine102.webp",
+      "native": [
+        1536,
+        1024
+      ],
+      "bytes": 594550,
+      "sha256": "360227b9195830acab1963791323f64f8a3c218c5207f53a986e5e0b3bc7e05b",
+      "transparent": true,
+      "reviewed": true,
+      "category": "compound fern cutout"
+    }
+  }
+}

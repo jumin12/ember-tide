@@ -1,0 +1,54 @@
+{
+  "generator": "built-in image_gen",
+  "images": {
+    "ruinSlabs101": {
+      "file": "elyndor/assets/source/battle-props-v101/ruinSlabs101.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 461686,
+      "sha256": "d488e0b70ed4b9fb38c0086c17aacbc293d5b32fa00d33599147723741ee7203",
+      "reviewed": true
+    },
+    "leafCypress101": {
+      "file": "elyndor/assets/source/battle-props-v101/leafCypress101.webp",
+      "category": "foliage",
+      "native": [
+        1261,
+        1247
+      ],
+      "transparent": true,
+      "bytes": 1236346,
+      "sha256": "e6ee36a3c17ca5ad3f61db7e3670aa3cd8ca14bc818f0ceadf50b891af5459e6",
+      "reviewed": true
+    },
+    "woodWeathered101": {
+      "file": "elyndor/assets/source/battle-props-v101/woodWeathered101.webp",
+      "category": "wood",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 357998,
+      "sha256": "064dcf5a51abda5f4d744b448eba3edbcebb122d752af697c8a61c420572b049",
+      "reviewed": true
+    },
+    "heather101": {
+      "file": "elyndor/assets/source/battle-props-v101/heather101.webp",
+      "category": "foliage",
+      "native": [
+        1312,
+        1199
+      ],
+      "transparent": true,
+      "bytes": 1206536,
+      "sha256": "11a401e0a21929266f0f40bc1c30ddec59e9bd8a66e0dc35b4c48fde99855226",
+      "reviewed": true
+    }
+  },
+  "review": "All four native assets inspected against a dark background. Native non-square cutouts retained without resampling."
+}

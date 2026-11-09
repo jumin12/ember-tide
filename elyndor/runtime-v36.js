@@ -25,7 +25,9 @@ prepareGameplayGraphics=async function(...args){
  await prepareSounds36();await prepareWeatherCache36();const result=await graphicsBefore36(...args);
  // Upload every loaded material image, including native VFX and all array
  // layers. No first-use texture upload is left to the first ability cast.
- const all=new Set([...Object.values(textures),scenery.surfaceArray,materials28.normalArray,forest30.array].filter(t=>t?.isTexture));let done=0;
+ const all=new Set([scenery.surfaceArray,materials28.normalArray,forest30.array].filter(t=>t?.isTexture));
+ for(const root of [world,encounter53.scene].filter(Boolean))root.traverse(o=>{for(const m of o.material?(Array.isArray(o.material)?o.material:[o.material]):[])for(const key of ['map','normalMap','roughnessMap','metalnessMap','aoMap','bumpMap','emissiveMap','envMap'])if(m[key]?.isTexture)all.add(m[key]);});
+ if(typeof environment102!=='undefined')for(const t of [environment102.ground,environment102.surfaces,environment102.groundcover,envPbr103.surfaceData,envPbr103.groundData])if(t)all.add(t);let done=0;
  for(const t of all){renderer.initTexture(t);loading36.textureUploads++;setLoadStage36(.90+.065*++done/all.size,'Uploading textures · '+done+' / '+all.size);if(done%8===0)await yieldLoad36();}
  setLoadStage36(.97,'Finishing lighting and reflections…');settleArrival28();updateRenderBudget(true);renderBeforeLoadingGate();
  const gl=renderer.getContext();if(gl.fenceSync){const fence=gl.fenceSync(gl.SYNC_GPU_COMMANDS_COMPLETE,0);gl.flush();try{while(gl.clientWaitSync(fence,0,0)===gl.TIMEOUT_EXPIRED)await yieldLoad36();}finally{gl.deleteSync(fence);}}

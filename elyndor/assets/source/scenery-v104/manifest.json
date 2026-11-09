@@ -1,0 +1,204 @@
+{
+  "generator": "built-in image_gen",
+  "images": {
+    "meadowMosaic104": {
+      "file": "elyndor/assets/source/scenery-v104/meadowMosaic104.webp",
+      "url": "elyndor/assets/source/scenery-v104/meadowMosaic104.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 1031682,
+      "sha256": "37b39272dd15c96dd6d554241aa63f4fd489e7038cfa520bbc416110e0947b94",
+      "transparent": false,
+      "category": "ground",
+      "reviewed": true,
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.18,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/scenery-v104/meadowMosaic104-normalRough.png",
+          "gpu": "elyndor/assets/source/scenery-v104/meadowMosaic104-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        },
+        "horm": {
+          "native": "elyndor/assets/source/scenery-v104/meadowMosaic104-horm.png",
+          "gpu": "elyndor/assets/source/scenery-v104/meadowMosaic104-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        }
+      }
+    },
+    "trailMosaic104": {
+      "file": "elyndor/assets/source/scenery-v104/trailMosaic104.webp",
+      "url": "elyndor/assets/source/scenery-v104/trailMosaic104.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 851106,
+      "sha256": "d96d3e441377a242c7c7c52abc23d70e2f6084607e47829e9491283be0681255",
+      "transparent": false,
+      "category": "ground",
+      "reviewed": true,
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.18,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/scenery-v104/trailMosaic104-normalRough.png",
+          "gpu": "elyndor/assets/source/scenery-v104/trailMosaic104-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        },
+        "horm": {
+          "native": "elyndor/assets/source/scenery-v104/trailMosaic104-horm.png",
+          "gpu": "elyndor/assets/source/scenery-v104/trailMosaic104-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        }
+      }
+    },
+    "forestMosaic104": {
+      "file": "elyndor/assets/source/scenery-v104/forestMosaic104.webp",
+      "url": "elyndor/assets/source/scenery-v104/forestMosaic104.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 903294,
+      "sha256": "964b1775e092497455ddf2197a0aafd1d54deaeb7f45480f7204491cdb8b6a55",
+      "transparent": false,
+      "category": "ground",
+      "reviewed": true,
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.18,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/scenery-v104/forestMosaic104-normalRough.png",
+          "gpu": "elyndor/assets/source/scenery-v104/forestMosaic104-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        },
+        "horm": {
+          "native": "elyndor/assets/source/scenery-v104/forestMosaic104-horm.png",
+          "gpu": "elyndor/assets/source/scenery-v104/forestMosaic104-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        }
+      }
+    },
+    "windowInterior104": {
+      "file": "elyndor/assets/source/scenery-v104/windowInterior104.webp",
+      "url": "elyndor/assets/source/scenery-v104/windowInterior104.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 195848,
+      "sha256": "4629836b1540757701f6991f3c500b1b02bbcc21ef492a24d5c202798dc18753",
+      "transparent": false,
+      "category": "interior",
+      "reviewed": true,
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.18,
+        "reflective": false
+      }
+    },
+    "cobbleMosaic104": {
+      "file": "elyndor/assets/source/scenery-v104/cobbleMosaic104.webp",
+      "url": "elyndor/assets/source/scenery-v104/cobbleMosaic104.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 859352,
+      "sha256": "ddb6dfdde360f2e8d1a3410b3ad19cc2bc1a163df428de8ae783beb36a8c1426",
+      "transparent": false,
+      "category": "ground",
+      "reviewed": true,
+      "finish": {
+        "roughness": 0.94,
+        "metalness": 0,
+        "relief": 0.18,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/scenery-v104/cobbleMosaic104-normalRough.png",
+          "gpu": "elyndor/assets/source/scenery-v104/cobbleMosaic104-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        },
+        "horm": {
+          "native": "elyndor/assets/source/scenery-v104/cobbleMosaic104-horm.png",
+          "gpu": "elyndor/assets/source/scenery-v104/cobbleMosaic104-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        }
+      }
+    }
+  }
+}

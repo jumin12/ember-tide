@@ -1,29 +1,53 @@
 {
-  "release": "elyndor-alpha-1.25-four-person-parties-battle-staging-2026-11-08",
-  "version": "Alpha Version 1.25",
+  "release": "elyndor-alpha-1.26-hd-worlds-living-scenery-2026-11-09",
+  "version": "Alpha Version 1.26",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 71031227,
-    "sha256": "25b24219767323fa8035abe81522a90862b1c553e0842af693cc4a158ceb384c",
-    "offline": true
+    "bytes": 89643505,
+    "sha256": "85d1b667c18ecc93be3180f5b55ddfe82e7cb7ae64b20dfdfa4de9ce7eb1f4f0",
+    "offline": false,
+    "delivery": "HTML with same-origin native HD environment assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "b761868848688545b9ba6184f27dc881ada3d972"
+    "previousRelease": "3f139825535c6f02383369edde282b8a82742435"
   },
   "changes": [
-    "Limited the active traveling and combat party to four companions.",
-    "Added reserve companion controls to Party. Swap companions while exploring without losing their levels, equipment, HP or MP; story play keeps Bren in the active party.",
-    "Migrated existing five-person saves to four active companions plus a reserve, preserving all five characters and their progress.",
-    "Reframed combat around the reference composition: larger fighters, two staggered party ranks on the right, enemies on the left and a full-viewport desktop camera. The hooked-beak bird now uses its larger battle scale without enlarging overworld wildlife.",
-    "Refined distant landscape framing, clearing soil and planted scenery. Foreground trees are placed clear of the fighters, keeping faces and weapons visible.",
-    "Moved phone NPC and monster cards beneath their targets in portrait and landscape. Crowded large enemies use a compact row below the group, with individual connectors and working target taps.",
-    "Kept status effects, counters and discovered weaknesses visible on phone enemy cards, using consistently sized native icons in a horizontally scrollable row.",
-    "Updated the dev battle tester to use four as its full-party limit and retain a chosen four-person lineup when starting another battle."
+    "Replaced all twenty battle landscapes with newly generated native HD day/night pairs. Refined panorama size, perspective, distant focus and sampling while keeping characters and interface text sharp.",
+    "Matched physical battle scenery to each landscape: ruined arcades, orchard walls and sheds, cypress avenues, cave crystals, alpine ledges, snowy cornices, coastal chalk, windmills, standing stones and seasonal planting.",
+    "Added regional battle mist, light shafts, waterfall spray, sea haze, smoke, cold drift, crystal light and moving foliage. Cinematic and action cameras retain bounded landscape coverage across desktop and phone views.",
+    "Replaced environment surface art throughout the overworld, POIs, interiors and battles with native HD materials and matched normal, roughness and surface data. Wood, soil and stone remain matte; glass, polished metals and water retain their appropriate reflections.",
+    "Introduced varied meadow, forest-floor, trail and paving textures, with irregular patches and continuous world-space blending to reduce repeated ground patterns.",
+    "Rebuilt grass, ferns, flowers, leaves and connected woody shoots as modeled 3D vegetation. Added fuller species-specific crowns, needle clusters, orchard blossoms, autumn colors, snow cover and wind motion shared with their shadows.",
+    "Reworked rocks into varied weathered forms with rounded edges, strata, cracks, mineral detail and habitat-aware moss. Added location-specific gardens, undergrowth, scree and coastal planting.",
+    "Made battle planting follow the actual paving, slope, rock, water and building-footing exclusions. Removed the retained old grass pass from stone floors and kept the fighting field readable.",
+    "Replaced plaster window panels with reflective glazing and recessed room imagery. Corrected authored house and hall orientations toward their streets, completed residential walls and gables, and fitted masonry bases and entrance treads to the terrain.",
+    "Rebuilt town wells with hollow stone bowls, recessed rippling water and connected posts, winding beams, ropes and buckets.",
+    "Refined landscape lighting, sky fill, air depth and material response. Updated river normals, shallow-water detail, foam and caustics while preserving the exact shared water join between POIs and their background.",
+    "Cleared large foreground tree crowns from the party view without removing their shadows or reflections. Refreshed loading views, retained bounded phone texture budgets, and preserved the approved party, NPC, monster and interface artwork."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.26",
+      "date": "November 9, 2026",
+      "title": "HD worlds and living scenery",
+      "items": [
+        "Replaced all twenty battle landscapes with newly generated native HD day/night pairs. Refined panorama size, perspective, distant focus and sampling while keeping characters and interface text sharp.",
+        "Matched physical battle scenery to each landscape: ruined arcades, orchard walls and sheds, cypress avenues, cave crystals, alpine ledges, snowy cornices, coastal chalk, windmills, standing stones and seasonal planting.",
+        "Added regional battle mist, light shafts, waterfall spray, sea haze, smoke, cold drift, crystal light and moving foliage. Cinematic and action cameras retain bounded landscape coverage across desktop and phone views.",
+        "Replaced environment surface art throughout the overworld, POIs, interiors and battles with native HD materials and matched normal, roughness and surface data. Wood, soil and stone remain matte; glass, polished metals and water retain their appropriate reflections.",
+        "Introduced varied meadow, forest-floor, trail and paving textures, with irregular patches and continuous world-space blending to reduce repeated ground patterns.",
+        "Rebuilt grass, ferns, flowers, leaves and connected woody shoots as modeled 3D vegetation. Added fuller species-specific crowns, needle clusters, orchard blossoms, autumn colors, snow cover and wind motion shared with their shadows.",
+        "Reworked rocks into varied weathered forms with rounded edges, strata, cracks, mineral detail and habitat-aware moss. Added location-specific gardens, undergrowth, scree and coastal planting.",
+        "Made battle planting follow the actual paving, slope, rock, water and building-footing exclusions. Removed the retained old grass pass from stone floors and kept the fighting field readable.",
+        "Replaced plaster window panels with reflective glazing and recessed room imagery. Corrected authored house and hall orientations toward their streets, completed residential walls and gables, and fitted masonry bases and entrance treads to the terrain.",
+        "Rebuilt town wells with hollow stone bowls, recessed rippling water and connected posts, winding beams, ropes and buckets.",
+        "Refined landscape lighting, sky fill, air depth and material response. Updated river normals, shallow-water detail, foam and caustics while preserving the exact shared water join between POIs and their background.",
+        "Cleared large foreground tree crowns from the party view without removing their shadows or reflections. Refreshed loading views, retained bounded phone texture budgets, and preserved the approved party, NPC, monster and interface artwork."
+      ]
+    },
     {
       "version": "Alpha Version 1.25",
       "date": "November 8, 2026",
@@ -484,21 +508,21 @@
     }
   ],
   "art": {
-    "generator": "PixelLab",
+    "generator": "PixelLab character/UI art and built-in image_gen HD environment art",
     "nativeSelectedFamilies": 50,
     "runtimeFamilies": 51,
     "packedSpritePoses": 6044,
     "sourceCropWarnings": 0,
-    "referencePolicy": "Native PixelLab party, NPC and environment artwork; approved Bren and Soren replacements, seventeen completed NPC replacements, thirteen staged NPC design previews, original paired landscape paintings. No artificial image upscaling.",
-    "newBundledImages": 0,
-    "newImageKeys": [],
+    "referencePolicy": "Approved native party, NPC, monster and UI artwork preserved. Forty native HD day/night battle landscapes and ninety-three environment assets; no artificial image upscaling.",
+    "newBundledImages": 133,
     "battleBackgrounds": 40,
     "nativeBattleResolution": [
-      688,
-      384
+      1672,
+      941
     ],
     "combatIconSource": "Approved Trello reference sheets, reused without redrawing",
-    "newNativeHumanoidVariants": 38
+    "newNativeHumanoidVariants": 38,
+    "nativeEnvironmentResolution": "Native dimensions recorded per asset; commonly 1254 square"
   },
   "audio": {
     "provider": "ElevenLabs",
@@ -592,44 +616,20 @@
     "screenSpaceCombatHud": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v125/verification.json",
-    "sha256": "685fafec7f991910c1505817c662da822e6335026d4fa85431176e63c8c732f1",
-    "finalStandalone": "PASS",
-    "nativeAssetAudit": {
-      "runtimeFamilies": 51,
-      "poses": 6044,
-      "sourceBoundaryWarnings": []
-    }
+    "file": "elyndor/previews/release-v126/verification.json",
+    "sha256": "8e0fa5de108d2b8f5ac8b1961cd98ae6c6b5654eb8184b18c4d8b120770ec520",
+    "finalRelease": "PASS",
+    "sceneryViews": 16,
+    "pairedBattleViews": 40
   },
   "performance": {
-    "scope": "Final native Chrome functional and resource checks on the test PC; no universal frame-rate or physical-phone performance claim.",
-    "rendering": {
-      "geometryBefore": 1220,
-      "geometryAfter": 1220,
-      "calls": 117,
-      "triangles": 1062320,
-      "cpuMs": [
-        2.5,
-        2.5,
-        4.600000023841858,
-        2.399999976158142,
-        2.399999976158142,
-        4.299999952316284,
-        2.200000047683716,
-        3,
-        5.5,
-        2.8000000715255737,
-        2.299999952316284,
-        3.700000047683716,
-        3.399999976158142,
-        2.6999999284744263,
-        6.800000071525574,
-        3.5,
-        2.100000023841858,
-        5.100000023841858
-      ]
+    "scope": "Final native Chrome functional/resource checks and emulated phone layouts; no universal frame-rate claim.",
+    "textureBudgets": {
+      "desktopAlbedo": 1024,
+      "touchAlbedo": 768,
+      "dataMaps": 512
     },
-    "combatResourceCleanup": {
+    "battleCleanup": {
       "battle": false,
       "stage": false,
       "active": false,
@@ -637,14 +637,14 @@
       "stats": {
         "builds": 9,
         "disposed": 9,
-        "geometryCreated": 229,
-        "geometryDisposed": 229
+        "geometryCreated": 281,
+        "geometryDisposed": 281
       }
     }
   },
   "previousPublishedRelease": {
-    "commit": "b761868848688545b9ba6184f27dc881ada3d972",
-    "version": "Alpha Version 1.24",
-    "sha256": "e4ca5a4cc3d53e31b2953d7b1760d7e8e9d17c242ec781e7c1b7d3572883934f"
+    "commit": "3f139825535c6f02383369edde282b8a82742435",
+    "version": "Alpha Version 1.25",
+    "sha256": "25b24219767323fa8035abe81522a90862b1c553e0842af693cc4a158ceb384c"
   }
 }

@@ -1,0 +1,402 @@
+{
+  "generator": "built-in image_gen",
+  "images": {
+    "grassLush": {
+      "file": "elyndor/assets/source/battle-materials-v100/grassLush.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 719400,
+      "sha256": "145aae3c6870210e61f86b28a1be19edb112ec7be17d3a3de4cb9aa453732ad7",
+      "reviewed": true
+    },
+    "grassMeadow": {
+      "file": "elyndor/assets/source/battle-materials-v100/grassMeadow.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 684934,
+      "sha256": "9c71ad9aa3e8155164a8f8ec9f6f81c90b6e70fb6f22fa916d3e6a72ce968b4b",
+      "reviewed": true
+    },
+    "earthTrail": {
+      "file": "elyndor/assets/source/battle-materials-v100/earthTrail.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 569302,
+      "sha256": "9a02cca731567939eada4d42f6739fa9f3d2a9bf0e11b05a71e585bf46ee1485",
+      "reviewed": true
+    },
+    "gravelRiver": {
+      "file": "elyndor/assets/source/battle-materials-v100/gravelRiver.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 608366,
+      "sha256": "b045fe4e68b8b1180e1231200b4360c6fa056cb5bb609e405e78d8abee2071d8",
+      "reviewed": true
+    },
+    "grassDry": {
+      "file": "elyndor/assets/source/battle-materials-v100/grassDry.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 630908,
+      "sha256": "5d742da335935760e279827bcf4438e7effd4381497e1ccaa6521ebe6300b10a",
+      "reviewed": true
+    },
+    "earthLoam": {
+      "file": "elyndor/assets/source/battle-materials-v100/earthLoam.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 515040,
+      "sha256": "ee9895b4ec56e9240f502a9b1ccd54ec675b34aa28a27b26c3a071df3e63f7b7",
+      "reviewed": true
+    },
+    "earthForest": {
+      "file": "elyndor/assets/source/battle-materials-v100/earthForest.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 556486,
+      "sha256": "1adbdc12de0e4e7174d1e921dcdcdb3e458a92c0a8a2fc29fdab47d93cb7ee88",
+      "reviewed": true
+    },
+    "gravelDry": {
+      "file": "elyndor/assets/source/battle-materials-v100/gravelDry.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 651324,
+      "sha256": "048fc9f7785e57aae978a80648e16f0ab321b4c85cd4e3e16104156222fca60d",
+      "reviewed": true
+    },
+    "sandCoast": {
+      "file": "elyndor/assets/source/battle-materials-v100/sandCoast.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 472564,
+      "sha256": "9b221ade87bc888a608839792fc689484b805f6de6ca47075e127c567ea08f0f",
+      "reviewed": true
+    },
+    "sandChalk": {
+      "file": "elyndor/assets/source/battle-materials-v100/sandChalk.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 487608,
+      "sha256": "5f92430103081dc5768e5ec05a9939b2952d7b40d4719b5e55a6cb38671dc72b",
+      "reviewed": true
+    },
+    "stoneGranite": {
+      "file": "elyndor/assets/source/battle-materials-v100/stoneGranite.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 595354,
+      "sha256": "fe4e4eeed0cc425981701432ae7e0acd99cbb86b1aa2339c7057a4eba742e616",
+      "reviewed": true
+    },
+    "stoneLimestone": {
+      "file": "elyndor/assets/source/battle-materials-v100/stoneLimestone.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 447262,
+      "sha256": "83fcdd94faa6f9c17c7a0fb53de70e1384bbb1a1800071884ad3f7b19210215e",
+      "reviewed": true
+    },
+    "stoneSlate": {
+      "file": "elyndor/assets/source/battle-materials-v100/stoneSlate.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 344180,
+      "sha256": "6d65ed4cec5c175cbfc313129edaa6773ef6167d01c03e71b0352781e807d78a",
+      "reviewed": true
+    },
+    "moss": {
+      "file": "elyndor/assets/source/battle-materials-v100/moss.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 677294,
+      "sha256": "5341985914c74f0b5a8a7080d93f58013b3e4e1e85faccce1a10164233d85bd7",
+      "reviewed": true
+    },
+    "leafLitter": {
+      "file": "elyndor/assets/source/battle-materials-v100/leafLitter.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 630692,
+      "sha256": "2e52a7bd23a9c4b4d8855e5b7af7efec09f9b916f58eb01f126227446b609a25",
+      "reviewed": true
+    },
+    "snow": {
+      "file": "elyndor/assets/source/battle-materials-v100/snow.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 120802,
+      "sha256": "aa9a0ee88b4c342c61ab3ccc0de1ef0e9e378d39e9bf6b4b100474da422e0f42",
+      "reviewed": true
+    },
+    "cobbleOld": {
+      "file": "elyndor/assets/source/battle-materials-v100/cobbleOld.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 608974,
+      "sha256": "f4bfeb814f154b6944603b6005b5d15b258c586584b50ea9d49885ef6ef39409",
+      "reviewed": true
+    },
+    "cobbleRoyal": {
+      "file": "elyndor/assets/source/battle-materials-v100/cobbleRoyal.webp",
+      "category": "ground",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 503556,
+      "sha256": "ee85521467311be39afd44348a7163722ee8ff5264176203a38149d2fa5be14f",
+      "reviewed": true
+    },
+    "rockGranite": {
+      "file": "elyndor/assets/source/battle-materials-v100/rockGranite.webp",
+      "category": "rock",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 568664,
+      "sha256": "74c68fcbbe8f079d2749803cfc25ff722ce8a55ee663c85d2506ff0267fa6793",
+      "reviewed": true
+    },
+    "rockLimestone": {
+      "file": "elyndor/assets/source/battle-materials-v100/rockLimestone.webp",
+      "category": "rock",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 510064,
+      "sha256": "0c2c6bf7fc2a449d4adfde099bdf338e8a3d96529b5e7ca2b812a0705bf4bf74",
+      "reviewed": true
+    },
+    "rockSlate": {
+      "file": "elyndor/assets/source/battle-materials-v100/rockSlate.webp",
+      "category": "rock",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 436744,
+      "sha256": "303729d2857df4a53dd7268b70e9390397f2c55cf6e3cb79fa968c260f3b2b85",
+      "reviewed": true
+    },
+    "rockMoss": {
+      "file": "elyndor/assets/source/battle-materials-v100/rockMoss.webp",
+      "category": "rock",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 598588,
+      "sha256": "c193e1053eee241e6fca150b5e2ed98c0913335b943338ae070c334035b525b9",
+      "reviewed": true
+    },
+    "barkOak": {
+      "file": "elyndor/assets/source/battle-materials-v100/barkOak.webp",
+      "category": "bark",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 589318,
+      "sha256": "3920c8c133fddf9a1d0cc4ff02432f9c4232a1fb17ce83c3dd4b3764b9bf4df3",
+      "reviewed": true
+    },
+    "barkBirch": {
+      "file": "elyndor/assets/source/battle-materials-v100/barkBirch.webp",
+      "category": "bark",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 358948,
+      "sha256": "8fcd2d8d65cc6ec0447512fa48ff8292223c7ee642147ddbdae78520b6551ec8",
+      "reviewed": true
+    },
+    "barkPine": {
+      "file": "elyndor/assets/source/battle-materials-v100/barkPine.webp",
+      "category": "bark",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": false,
+      "bytes": 571942,
+      "sha256": "c1fb3a77601a5843bbc341e2acb475596d164c637c8d96a2336f976d83141770",
+      "reviewed": true
+    },
+    "leafOak": {
+      "file": "elyndor/assets/source/battle-materials-v100/leafOak.webp",
+      "category": "foliage",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": true,
+      "bytes": 1627450,
+      "sha256": "62cf8b689e232ec964343fbab9ec9397f0fef7344fedc3a200b266906d392277",
+      "reviewed": true
+    },
+    "leafBirch": {
+      "file": "elyndor/assets/source/battle-materials-v100/leafBirch.webp",
+      "category": "foliage",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": true,
+      "bytes": 1401208,
+      "sha256": "48f0fa8dd17603d1ba821415ea040cbbee3d423746f1f6b7ba3b3cdbad1969b7",
+      "reviewed": true
+    },
+    "leafAutumn": {
+      "file": "elyndor/assets/source/battle-materials-v100/leafAutumn.webp",
+      "category": "foliage",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": true,
+      "bytes": 1459580,
+      "sha256": "41a978f48db8ff76ec9a148710929d4334ad3e19561b345fc7fe626b3eec9a48",
+      "reviewed": true
+    },
+    "leafWillow": {
+      "file": "elyndor/assets/source/battle-materials-v100/leafWillow.webp",
+      "category": "foliage",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": true,
+      "bytes": 1567190,
+      "sha256": "8bf660b82ea6f0ef2c16fa1dbe066ae10c71d170a9e80789e49f46baf18a581e",
+      "reviewed": true
+    },
+    "leafPine": {
+      "file": "elyndor/assets/source/battle-materials-v100/leafPine.webp",
+      "category": "foliage",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": true,
+      "bytes": 2208986,
+      "sha256": "d086f9c97d3d2e25cb9956073988b8121ac32a47bb97c629995caf137e20cb5b",
+      "reviewed": true
+    },
+    "leafOrchard": {
+      "file": "elyndor/assets/source/battle-materials-v100/leafOrchard.webp",
+      "category": "foliage",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": true,
+      "bytes": 1335346,
+      "sha256": "e4323f4edb02451e426c052046d2b7aad4524071c0ed6c377c551c3200d8623f",
+      "reviewed": true
+    },
+    "fern": {
+      "file": "elyndor/assets/source/battle-materials-v100/fern.webp",
+      "category": "foliage",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": true,
+      "bytes": 2030270,
+      "sha256": "10c99c96066b5c89466898de302ec304c0574894edc74b62dba538b8e04deba2",
+      "reviewed": true
+    },
+    "flowers": {
+      "file": "elyndor/assets/source/battle-materials-v100/flowers.webp",
+      "category": "foliage",
+      "native": [
+        1254,
+        1254
+      ],
+      "transparent": true,
+      "bytes": 1300310,
+      "sha256": "1cd10d83b847b6260064adfd8324f6773b74629fae37553765583f543567583c",
+      "reviewed": true
+    }
+  },
+  "review": "Inspected all native artwork, 3x3 repeated surfaces, native crops, and foliage against a dark background. Runtime blends additionally remove repeating grid structure."
+}

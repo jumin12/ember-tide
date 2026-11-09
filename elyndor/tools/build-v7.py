@@ -1,7 +1,12 @@
-"""Build the actual standalone game exclusively from curated new PixelLab art."""
+"""Build the standalone from native character art and reviewed HD battle art."""
 from pathlib import Path
 from PIL import Image
 from asset_bundle_v36 import package_assets36
+from battle_assets_v99 import add_battle_art99
+from battle_materials_v100 import add_battle_materials100
+from battle_props_v101 import add_battle_props101
+from world_materials_v102 import pack_world_materials102
+from environment_materials_v103 import pack_environment103
 import json,hashlib,base64,io,sys,importlib.util,time
 ROOT=Path(__file__).resolve().parents[2];SRC=ROOT/'elyndor/assets/source/pixellab-v7'
 OUT=ROOT/'elyndor/assets/packed';OUT.mkdir(parents=True,exist_ok=True)
@@ -36,6 +41,11 @@ def main():
   spec=importlib.util.spec_from_file_location('native_pixellab_pack',ROOT/'elyndor/tools/pixellab-pack.py');module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
   audit=[];warnings=[];assets=module.build_assets(ROOT,encode,audit,warnings,FINAL)
   cache.write_text(json.dumps(assets,separators=(',',':')),encoding='utf-8');meta_file.write_text(json.dumps({'signature':signature,'audit':audit,'warnings':warnings}),encoding='utf-8')
+ add_battle_art99(ROOT,assets)
+ add_battle_materials100(ROOT,assets,inline='--inline-materials100' in sys.argv)
+ add_battle_props101(ROOT,assets,inline='--inline-materials100' in sys.argv)
+ pack_world_materials102(ROOT,assets,inline='--inline-materials100' in sys.argv)
+ pack_environment103(ROOT,assets)
  voice_file=ROOT/'elyndor/audio/manifest.json'
  if voice_file.exists():
   voice=json.loads(voice_file.read_text(encoding='utf-8'));assets['voices']={q['speaker'].strip().lower()+'|'+' '.join(q['text'].split()):'data:audio/ogg;base64,'+base64.b64encode((ROOT/q['file']).read_bytes()).decode() for q in voice['lines']};assets['voiceProvider']='ElevenLabs';assets['voiceModel']=voice['model']
@@ -52,6 +62,8 @@ def main():
    'THREE':(ROOT/'three.vendor.js').read_text(encoding='utf-8'),'ASSETS':'window.__assetBundle36','BOOT_ASSETS':package_assets36(assets)})
  if len([n for names in graph['sections'].values() for n in names])!=len({n for names in graph['sections'].values() for n in names}):raise ValueError('Duplicate modules in the build graph')
  shots=manifest.get('loadingScreens',{})
+ fresh_shots=ROOT/'elyndor/assets/source/environment-pbr-v103/loading/manifest.json'
+ if fresh_shots.exists():shots=json.loads(fresh_shots.read_text())
  if FINAL and not shots:raise ValueError('An actual in-game river loading screenshot is required')
  for q in shots.values():
   with Image.open(ROOT/q['file']) as im:

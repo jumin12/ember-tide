@@ -2,6 +2,25 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.26 — HD worlds and living scenery
+
+November 9, 2026
+
+- Replaced all twenty battle landscapes with newly generated native HD day/night pairs. Refined panorama size, perspective, distant focus and sampling while keeping characters and interface text sharp.
+- Matched physical battle scenery to each landscape: ruined arcades, orchard walls and sheds, cypress avenues, cave crystals, alpine ledges, snowy cornices, coastal chalk, windmills, standing stones and seasonal planting.
+- Added regional battle mist, light shafts, waterfall spray, sea haze, smoke, cold drift, crystal light and moving foliage. Cinematic and action cameras retain bounded landscape coverage across desktop and phone views.
+- Replaced environment surface art throughout the overworld, POIs, interiors and battles with native HD materials and matched normal, roughness and surface data. Wood, soil and stone remain matte; glass, polished metals and water retain their appropriate reflections.
+- Introduced varied meadow, forest-floor, trail and paving textures, with irregular patches and continuous world-space blending to reduce repeated ground patterns.
+- Rebuilt grass, ferns, flowers, leaves and connected woody shoots as modeled 3D vegetation. Added fuller species-specific crowns, needle clusters, orchard blossoms, autumn colors, snow cover and wind motion shared with their shadows.
+- Reworked rocks into varied weathered forms with rounded edges, strata, cracks, mineral detail and habitat-aware moss. Added location-specific gardens, undergrowth, scree and coastal planting.
+- Made battle planting follow the actual paving, slope, rock, water and building-footing exclusions. Removed the retained old grass pass from stone floors and kept the fighting field readable.
+- Replaced plaster window panels with reflective glazing and recessed room imagery. Corrected authored house and hall orientations toward their streets, completed residential walls and gables, and fitted masonry bases and entrance treads to the terrain.
+- Rebuilt town wells with hollow stone bowls, recessed rippling water and connected posts, winding beams, ropes and buckets.
+- Refined landscape lighting, sky fill, air depth and material response. Updated river normals, shallow-water detail, foam and caustics while preserving the exact shared water join between POIs and their background.
+- Cleared large foreground tree crowns from the party view without removing their shadows or reflections. Refreshed loading views, retained bounded phone texture budgets, and preserved the approved party, NPC, monster and interface artwork.
+
+Release evidence and checksums: `elyndor/previews/release-v126/verification.json`. Native Chrome checks include browser-emulated phone layouts. HD material files are served alongside the main game HTML.
+
 ## Alpha Version 1.25 — Four-person parties and clearer battle staging
 
 November 8, 2026

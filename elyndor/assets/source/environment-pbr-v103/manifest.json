@@ -1,0 +1,402 @@
+{
+  "generator": "built-in image_gen",
+  "nativeResolution": true,
+  "images": {
+    "pineBoards103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/pineBoards103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 369094,
+      "sha256": "96a3b96bbee4e545be3057350a3bfdb382d0bd8a3d345e5e7472b7c927e92d2d",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true
+    },
+    "redBrick103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/redBrick103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 765640,
+      "sha256": "5ee778a23eb6b01305e6c3bce51b6efa2820a15b5b5c9a969f74a070ab727333",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true
+    },
+    "sagePlaster103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/sagePlaster103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 493700,
+      "sha256": "080e3c77c300137be5fca9c30ff57f5798e569c412c68729e2db6cc54b62e938",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true
+    },
+    "wool103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/wool103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 630686,
+      "sha256": "d338a9406b7c7262243ff6d4256ca2f968be2e40be08880bc3dba0e62d94be62",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true
+    },
+    "rugCommon103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/rugCommon103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 794518,
+      "sha256": "9ab7ab385f9a14c42cf24d246f6b73a82fdee861277da19b03b3ecef20e5d286",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true
+    },
+    "rugRoyal103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/rugRoyal103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 916638,
+      "sha256": "5836fc8bbe2523760238de5b5674e411f23dcbda20c11523a47a8eea8762f2f2",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true
+    },
+    "steel103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/steel103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 214096,
+      "sha256": "02a30aace308b657d9e65ff251a5a29b2c86f0bea8b40f83118697bcb3588f1e",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true
+    },
+    "brass103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/brass103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 409048,
+      "sha256": "d11dcc841ed045ebcb2b1da98ff26c4ec815eadff47d644f06995c897625c66f",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true
+    },
+    "copper103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/copper103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 578574,
+      "sha256": "e774f0d0a18afddc5a28030db2b94196e8784ea4f4cf448caef138d0807ddf93",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true
+    },
+    "terracotta103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/terracotta103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 534668,
+      "sha256": "3e1f846e94e4823fc067544f5c2fca288df4650ce834f5e8c93868275f6a75ae",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true
+    },
+    "ceramic103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/ceramic103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 223670,
+      "sha256": "591e8d10283a96f789ca287aad210d9e38ddbb89f9846400eef7944ac4f02949",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true
+    },
+    "leather103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/leather103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 721058,
+      "sha256": "391e7a8cb23ef11cbf34a5c9b74bd112769f61d5959d19784cbe310dde6f4987",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true
+    },
+    "parchment103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/parchment103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 427648,
+      "sha256": "bb5fed0990de187e24adb63a13b67047ba67d3f6125e163d8b27208d35497da4",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true
+    },
+    "bookLeather103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/bookLeather103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 577640,
+      "sha256": "d540af240500419a5d9d5931301bbd673dbdc4a7e45d4bfb5a636fb1cbbfcb41",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true
+    },
+    "glass103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/glass103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 29522,
+      "sha256": "1731de0dfea9f35eae5abf6752cb4112d868224ae4e3dbcb24fb8461bc841ddb",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true
+    },
+    "quartz103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/quartz103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 272374,
+      "sha256": "e8385da2a95037e70df5ea3d4eddf4bd9fd2c9cb725bee848e8d25a7d729230b",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true
+    },
+    "pineNeedles103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/pineNeedles103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 407344,
+      "sha256": "9d5322cdf20610e33fe696c4b6598e4b3b628a12a6abf3a29a72c060e63a058f",
+      "transparent": false,
+      "category": "surface",
+      "reviewed": true
+    },
+    "waveHeight103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/waveHeight103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 97208,
+      "sha256": "174d6c7afbcb38e6674005e87fa3e6bd759fc13393b51dfbcfc7b03a513e39de",
+      "transparent": false,
+      "category": "data",
+      "reviewed": true
+    },
+    "foam103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/foam103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 138140,
+      "sha256": "eb87b152424c546e248aea7ee64118a2bc736d3cfc819ad88e6a73279686d426",
+      "transparent": false,
+      "category": "data",
+      "reviewed": true
+    },
+    "caustics103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/caustics103.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 76234,
+      "sha256": "deb5b931da19fc91e1d93a0a4ecc59417c1d2ba67048adce04c7b2991a22ba23",
+      "transparent": false,
+      "category": "data",
+      "reviewed": true
+    },
+    "smoke103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/smoke103.webp",
+      "native": [
+        1536,
+        1024
+      ],
+      "bytes": 301062,
+      "sha256": "a98f31fff0c5afdc43027a97d1a563eebf6b71386a8cb9fe485223fd2c09a70f",
+      "transparent": true,
+      "category": "effect",
+      "reviewed": true
+    },
+    "cloud103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/cloud103.webp",
+      "native": [
+        1774,
+        887
+      ],
+      "bytes": 316014,
+      "sha256": "ef096f123290776d17e42ce8dd858ad961d10e0145d252a87fca9115c0acbafc",
+      "transparent": true,
+      "category": "effect",
+      "reviewed": true
+    },
+    "fire103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/fire103.webp",
+      "native": [
+        1024,
+        1536
+      ],
+      "bytes": 216782,
+      "sha256": "96a34a6f2d70d5b27c3beff5a838529bdb6bbceb1a38d64d7d2ac16fd47cb1ad",
+      "transparent": true,
+      "category": "effect",
+      "reviewed": true
+    },
+    "energy103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/energy103.webp",
+      "native": [
+        1536,
+        1024
+      ],
+      "bytes": 35094,
+      "sha256": "442d8fecedd1ed173da9b68eec7f93d5fcab4c41c59a16c06d09709a37b76f15",
+      "transparent": true,
+      "category": "effect",
+      "reviewed": true
+    },
+    "ice103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/ice103.webp",
+      "native": [
+        1536,
+        1024
+      ],
+      "bytes": 260206,
+      "sha256": "c548cccd3ef6703cad2ae23d765a634f0b9c496781dc73238bde002dd3dc8eda",
+      "transparent": true,
+      "category": "effect",
+      "reviewed": true
+    },
+    "flameSlash103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/flameSlash103.webp",
+      "native": [
+        1536,
+        1024
+      ],
+      "bytes": 242358,
+      "sha256": "d131e8aff6f3fb43f4381d2392df260fb105c13c47d1fa07440b3be8b40e5d3b",
+      "transparent": true,
+      "category": "effect",
+      "reviewed": true
+    },
+    "impact103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/impact103.webp",
+      "native": [
+        1536,
+        1024
+      ],
+      "bytes": 412508,
+      "sha256": "e6e644bb2c957c170c65c10122754677bb51b42d308f657b205ef47536c6dde0",
+      "transparent": true,
+      "category": "effect",
+      "reviewed": true
+    },
+    "arcane103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/arcane103.webp",
+      "native": [
+        1536,
+        1024
+      ],
+      "bytes": 272674,
+      "sha256": "243e3ffe796e51d18152023800ac6ddbbad6df52cee3c14f302f61a3a4d5837a",
+      "transparent": true,
+      "category": "effect",
+      "reviewed": true
+    },
+    "healing103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/healing103.webp",
+      "native": [
+        1199,
+        1312
+      ],
+      "bytes": 169648,
+      "sha256": "f1d0ef6985437f0eed5b7d9ef128b16d4e4a899ea1fd60a91ab61fcb09d12e0f",
+      "transparent": true,
+      "category": "effect",
+      "reviewed": true
+    },
+    "fallingWater103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/fallingWater103.webp",
+      "native": [
+        1024,
+        1536
+      ],
+      "bytes": 389242,
+      "sha256": "099365c41849974c8c68d413417848c1a2bce43d2255194ee5b363d945e718a7",
+      "transparent": true,
+      "category": "effect",
+      "reviewed": true
+    },
+    "innSign103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/innSign103.webp",
+      "native": [
+        1672,
+        941
+      ],
+      "bytes": 603500,
+      "sha256": "4d2a5b9676f8fd1af419cbe805bf57af26a5f36b9e3583ce11317a6fa5e5535d",
+      "transparent": false,
+      "category": "sign",
+      "reviewed": true
+    },
+    "shopSign103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/shopSign103.webp",
+      "native": [
+        1672,
+        941
+      ],
+      "bytes": 600684,
+      "sha256": "4172983ffa0b336858e34ed7dbf28a4142460308c5f9717cf2b58872ae2c44b8",
+      "transparent": false,
+      "category": "sign",
+      "reviewed": true
+    },
+    "forgeSign103": {
+      "file": "elyndor/assets/source/environment-pbr-v103/forgeSign103.webp",
+      "native": [
+        1672,
+        941
+      ],
+      "bytes": 603048,
+      "sha256": "0520edbb90bb6ee685b16057ac20e2fc6c967447e4c10ae8fc4cb3933a0a5e06",
+      "transparent": false,
+      "category": "sign",
+      "reviewed": true
+    }
+  }
+}

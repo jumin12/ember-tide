@@ -1,4 +1,4 @@
-"""Build the single-file RPG exclusively from the new PixelLab asset manifest."""
+"""Build the single-file RPG from the curated native art manifests."""
 from pathlib import Path
 import runpy
 if __name__ == "__main__":

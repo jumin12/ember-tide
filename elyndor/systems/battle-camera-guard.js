@@ -32,7 +32,7 @@ function guardBattleCamera94(){
 }
 const cameraLandscapeBefore94=makeHybridLandscape90;
 makeHybridLandscape90=function(b){
- cameraLandscapeBefore94(b);const ref=b.reference90,p=b.landscape90.geometry.attributes.position,origin=b.group.position,eye=ref.position,scale=1.12,bottom=b.window90.x+.30*b.window90.y;
+ cameraLandscapeBefore94(b);const ref=b.reference90,p=b.landscape90.geometry.attributes.position,origin=b.group.position,eye=ref.position,scale=1.08,bottom=b.window90.x+.30*b.window90.y;
  // Modest overscan preserves image proportions and supplies a safe
  // margin for safe dolly moves. The ground projection uses the same mapping.
  for(let i=0;i<p.count;i++){const world=V3(p.getX(i),p.getY(i),p.getZ(i)).add(origin),screen=world.clone().project(ref),x=screen.x*.5+.5,y=screen.y*.5+.5,at=V3((.5+(x-.5)*scale)*2-1,(bottom+(y-bottom)*scale)*2-1,.5).unproject(ref),direction=at.sub(eye).normalize(),hit=eye.clone().addScaledVector(direction,(world.z-eye.z)/direction.z).sub(origin);p.setXYZ(i,hit.x,hit.y,hit.z);}
