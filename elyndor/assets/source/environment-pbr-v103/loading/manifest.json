@@ -1,22 +1,22 @@
 {
   "river": {
     "file": "elyndor/assets/source/environment-pbr-v103/loading/river.webp",
-    "name": "Brookstead \u00b7 The riverlands",
+    "name": "Brookstead · The riverlands",
     "provenance": "Native 1920x1080 in-engine capture of the regenerated HD PBR environment; approved unchanged character art in conversation, walking and service poses."
   },
   "inn": {
     "file": "elyndor/assets/source/environment-pbr-v103/loading/inn.webp",
-    "name": "The Lantern Inn \u00b7 A warm hearth",
+    "name": "The Lantern Inn · A warm hearth",
     "provenance": "Native 1920x1080 in-engine capture of the regenerated HD PBR environment; approved unchanged character art in conversation, walking and service poses."
   },
   "shop": {
     "file": "elyndor/assets/source/environment-pbr-v103/loading/shop.webp",
-    "name": "Riverstone Supplies \u00b7 Provisions for the road",
+    "name": "Riverstone Supplies · Provisions for the road",
     "provenance": "Native 1920x1080 in-engine capture of the regenerated HD PBR environment; approved unchanged character art in conversation, walking and service poses."
   },
   "archives": {
     "file": "elyndor/assets/source/environment-pbr-v103/loading/archives.webp",
-    "name": "The Royal Archives \u00b7 Records of the old network",
+    "name": "The Royal Archives · Records of the old network",
     "provenance": "Native 1920x1080 in-engine capture of the regenerated HD PBR environment; approved unchanged character art in conversation, walking and service poses."
   }
 }

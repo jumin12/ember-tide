@@ -64,6 +64,8 @@ def main():
  shots=manifest.get('loadingScreens',{})
  fresh_shots=ROOT/'elyndor/assets/source/environment-pbr-v103/loading/manifest.json'
  if fresh_shots.exists():shots=json.loads(fresh_shots.read_text())
+ fresh_shots=ROOT/'elyndor/assets/source/loading-v106/manifest.json'
+ if fresh_shots.exists():shots=json.loads(fresh_shots.read_text())
  if FINAL and not shots:raise ValueError('An actual in-game river loading screenshot is required')
  for q in shots.values():
   with Image.open(ROOT/q['file']) as im:

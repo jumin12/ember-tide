@@ -2,6 +2,21 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.27 — Smoother travel and restored waterworks
+
+November 10, 2026
+
+- Matched battle lighting, ground colors and material contrast to each native landscape while preserving the distinct daylight and night atmosphere. Forest encounters now follow the surrounding overworld habitat.
+- Added greener, varied meadow and forest surfaces, clearer small-stone textures and fractured rock shapes, with rocks kept clear of party and enemy standing areas.
+- Removed the invisible overworld forest boundary and tree blocking. Refined movement and rendering budgets, and corrected the party running hop in all eight directions while preserving approved character artwork.
+- Replaced four loading views with native in-engine scenes showing characters walking, talking and visiting interiors.
+- Rebuilt the dam release as water travelling downstream along the riverbed. Connected cascading sheets, current, foam and spray use the same water art; the mill waterfall matches the upstream waterfall.
+- Seated the working waterwheel in the river with radial paddles, bed clearance and current-driven rotation. Reshaped the lower banks into a smooth curve, reseated vegetation and stones, and fitted the riverbank fence to the rendered ground.
+- Updated visible water reflections and sharp shadows every rendered outdoor frame, with shared reflection passes per water level and bounded desktop and phone resolutions.
+- Unified overworld and POI terrain materials and outdoor lighting, corrected river/ocean levels and mouths, rounded road bends, connected every village house entrance to a street, and corrected the placement and artwork orientation of service signs.
+
+Release evidence and checksums: `elyndor/previews/release-v127/verification.json`. Desktop and browser-emulated phone checks passed; performance depends on the device.
+
 ## Alpha Version 1.26 — HD worlds and living scenery
 
 November 9, 2026

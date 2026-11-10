@@ -1,0 +1,429 @@
+{
+  "generator": "built-in image_gen",
+  "images": {
+    "meadow": {
+      "file": "elyndor/assets/source/palette-v105/meadow.webp",
+      "url": "elyndor/assets/source/palette-v105/meadow.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 980386,
+      "sha256": "4dd29e7a4070ed74015e7fbf16b7e7a3ed4818536cd00c41c862a74504b28667",
+      "transparent": false,
+      "category": "ground",
+      "reviewed": true,
+      "finish": {
+        "roughness": 0.95,
+        "metalness": 0,
+        "relief": 0.05,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/palette-v105/meadow-normalRough.png",
+          "gpu": "elyndor/assets/source/palette-v105/meadow-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        },
+        "horm": {
+          "native": "elyndor/assets/source/palette-v105/meadow-horm.png",
+          "gpu": "elyndor/assets/source/palette-v105/meadow-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        }
+      }
+    },
+    "forest": {
+      "file": "elyndor/assets/source/palette-v105/forest.webp",
+      "url": "elyndor/assets/source/palette-v105/forest.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 896362,
+      "sha256": "f5c2011b0a9463a0280a96c0223134ed0f98f019f300ee27911dd82fbca30e33",
+      "transparent": false,
+      "category": "ground",
+      "reviewed": true,
+      "finish": {
+        "roughness": 0.95,
+        "metalness": 0,
+        "relief": 0.05,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/palette-v105/forest-normalRough.png",
+          "gpu": "elyndor/assets/source/palette-v105/forest-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        },
+        "horm": {
+          "native": "elyndor/assets/source/palette-v105/forest-horm.png",
+          "gpu": "elyndor/assets/source/palette-v105/forest-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        }
+      }
+    },
+    "mossrock": {
+      "file": "elyndor/assets/source/palette-v105/mossrock.webp",
+      "url": "elyndor/assets/source/palette-v105/mossrock.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 926968,
+      "sha256": "7baf8659012a64325e4b5a97979a3aa7aec70a6986da5f67fe60a7be999a47ab",
+      "transparent": false,
+      "category": "rock",
+      "reviewed": true,
+      "finish": {
+        "roughness": 0.93,
+        "metalness": 0,
+        "relief": 0.12,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/palette-v105/mossrock-normalRough.png",
+          "gpu": "elyndor/assets/source/palette-v105/mossrock-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        },
+        "horm": {
+          "native": "elyndor/assets/source/palette-v105/mossrock-horm.png",
+          "gpu": "elyndor/assets/source/palette-v105/mossrock-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        }
+      }
+    },
+    "limestone": {
+      "file": "elyndor/assets/source/palette-v105/limestone.webp",
+      "url": "elyndor/assets/source/palette-v105/limestone.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 702942,
+      "sha256": "bf41d1872051d308af50bc2ef065aa94ea70ff8ed1a54088efce28b3b1019351",
+      "transparent": false,
+      "category": "rock",
+      "reviewed": true,
+      "finish": {
+        "roughness": 0.93,
+        "metalness": 0,
+        "relief": 0.12,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/palette-v105/limestone-normalRough.png",
+          "gpu": "elyndor/assets/source/palette-v105/limestone-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        },
+        "horm": {
+          "native": "elyndor/assets/source/palette-v105/limestone-horm.png",
+          "gpu": "elyndor/assets/source/palette-v105/limestone-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        }
+      }
+    },
+    "earth": {
+      "file": "elyndor/assets/source/palette-v105/earth.webp",
+      "url": "elyndor/assets/source/palette-v105/earth.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 783428,
+      "sha256": "927233ce03f05d90584a2f07f7139d5272fa8d1a108aa5c03b580b87288d788a",
+      "transparent": false,
+      "category": "ground",
+      "reviewed": true,
+      "finish": {
+        "roughness": 0.95,
+        "metalness": 0,
+        "relief": 0.05,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/palette-v105/earth-normalRough.png",
+          "gpu": "elyndor/assets/source/palette-v105/earth-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        },
+        "horm": {
+          "native": "elyndor/assets/source/palette-v105/earth-horm.png",
+          "gpu": "elyndor/assets/source/palette-v105/earth-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        }
+      }
+    },
+    "blade": {
+      "file": "elyndor/assets/source/palette-v105/blade.webp",
+      "url": "elyndor/assets/source/palette-v105/blade.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 620452,
+      "sha256": "22c5d4d8386748fd69de102280b582cd38e6fa6090f3e973794d3a063d6a4576",
+      "transparent": false,
+      "category": "foliage",
+      "reviewed": true,
+      "finish": {
+        "roughness": 0.88,
+        "metalness": 0,
+        "relief": 0.05,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/palette-v105/blade-normalRough.png",
+          "gpu": "elyndor/assets/source/palette-v105/blade-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        },
+        "horm": {
+          "native": "elyndor/assets/source/palette-v105/blade-horm.png",
+          "gpu": "elyndor/assets/source/palette-v105/blade-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        }
+      }
+    },
+    "leaf": {
+      "file": "elyndor/assets/source/palette-v105/leaf.webp",
+      "url": "elyndor/assets/source/palette-v105/leaf.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 785506,
+      "sha256": "4641ee255f34ed2ff978d9d4e0081ec3d9a338be54217696e65683a05a4b9129",
+      "transparent": false,
+      "category": "foliage",
+      "reviewed": true,
+      "finish": {
+        "roughness": 0.88,
+        "metalness": 0,
+        "relief": 0.05,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/palette-v105/leaf-normalRough.png",
+          "gpu": "elyndor/assets/source/palette-v105/leaf-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        },
+        "horm": {
+          "native": "elyndor/assets/source/palette-v105/leaf-horm.png",
+          "gpu": "elyndor/assets/source/palette-v105/leaf-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        }
+      }
+    },
+    "granite": {
+      "file": "elyndor/assets/source/palette-v105/granite.webp",
+      "url": "elyndor/assets/source/palette-v105/granite.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 866860,
+      "sha256": "75f020807cab3c3e6f53301161a90ef369d245d6d7a784094ba43d57921c6e0d",
+      "transparent": false,
+      "category": "rock",
+      "reviewed": true,
+      "finish": {
+        "roughness": 0.93,
+        "metalness": 0,
+        "relief": 0.12,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/palette-v105/granite-normalRough.png",
+          "gpu": "elyndor/assets/source/palette-v105/granite-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        },
+        "horm": {
+          "native": "elyndor/assets/source/palette-v105/granite-horm.png",
+          "gpu": "elyndor/assets/source/palette-v105/granite-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        }
+      }
+    },
+    "slate": {
+      "file": "elyndor/assets/source/palette-v105/slate.webp",
+      "url": "elyndor/assets/source/palette-v105/slate.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "bytes": 787198,
+      "sha256": "0cc997fba7504a88ecbd4986548950570c52192756d1c4bac179bae5caefabce",
+      "transparent": false,
+      "category": "rock",
+      "reviewed": true,
+      "finish": {
+        "roughness": 0.93,
+        "metalness": 0,
+        "relief": 0.12,
+        "reflective": false
+      },
+      "pbr": {
+        "normalRough": {
+          "native": "elyndor/assets/source/palette-v105/slate-normalRough.png",
+          "gpu": "elyndor/assets/source/palette-v105/slate-normalRough-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        },
+        "horm": {
+          "native": "elyndor/assets/source/palette-v105/slate-horm.png",
+          "gpu": "elyndor/assets/source/palette-v105/slate-horm-gpu.webp",
+          "sourceSize": [
+            1254,
+            1254
+          ],
+          "gpuSize": [
+            512,
+            512
+          ]
+        }
+      }
+    }
+  },
+  "replacements": {
+    "grassLush": "meadow",
+    "grassDry": "forest",
+    "moss": "forest",
+    "meadowMosaic104": "meadow",
+    "forestMosaic104": "forest",
+    "earthTrail": "earth",
+    "earthForest": "earth",
+    "trailMosaic104": "earth",
+    "rockMoss": "mossrock",
+    "rockLimestone": "limestone",
+    "stoneLimestone": "limestone",
+    "rockGranite": "granite",
+    "stoneGranite": "granite",
+    "rockSlate": "slate",
+    "stoneSlate": "slate",
+    "botanicalLeaf102": "leaf",
+    "grassLeaf105": "blade"
+  }
+}

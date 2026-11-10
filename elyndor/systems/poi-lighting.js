@@ -32,11 +32,11 @@ updateLighting=function(...args){
  const result=poiLightingBefore54(...args),active=!!world&&!!player&&usesLandscapeLight54();poiLight54.enabled.value=active?1:0;if(!active)return result;
  const h=(state.worldMinutes/60%24+24)%24,q=samplePoiLight54(h),[power,ambient,fill,exposure,warm]=q.n,rain=weather.rain.value,day=celestial31.day.value,night=celestial31.night.value,macro=activeScene.kind==='overworld';
  poiLight54.warm.value=warm;poiLight54.day.value=day;poiLight54.night.value=night;
- sun.color.copy(q.c[0]);sun.intensity=power*(macro?mix(1.22,1.,day):1)*lighting34.horizon.value*(1-rain*.52)+weather.lightning*4;
- hemi.color.copy(q.c[1]);hemi.groundColor.copy(q.c[2]);hemi.intensity=ambient*(macro?mix(1.35,1.08,day):1)*(1-rain*.13);
- if(skyBounce17){skyBounce17.color.copy(q.c[3]);skyBounce17.intensity=fill*(macro?mix(1.55,1.10,day):1)*(1-rain*.20);}
+ sun.color.copy(q.c[0]);sun.intensity=power*lighting34.horizon.value*(1-rain*.52)+weather.lightning*4;
+ hemi.color.copy(q.c[1]);hemi.groundColor.copy(q.c[2]);hemi.intensity=ambient*(1-rain*.13);
+ if(skyBounce17){skyBounce17.color.copy(q.c[3]);skyBounce17.intensity=fill*(1-rain*.20);}
  for(const light of scene.children)if(light.isAmbientLight)light.intensity=mix(.065,.055,day);
- renderer.toneMappingExposure=exposure+(macro?mix(.025,-.015,day):0);lighting34.warm.value=warm;lighting34.colour.value.copy(q.c[0]);lighting34.foliage.value=day*(.28+warm*.13)*(1-rain*.65);
+ renderer.toneMappingExposure=exposure;lighting34.warm.value=warm;lighting34.colour.value.copy(q.c[0]);lighting34.foliage.value=day*(.28+warm*.13)*(1-rain*.65);
  scene.fog.color.copy(q.c[4]).lerp(q.c[1],rain*.56);scene.background.copy(scene.fog.color);celestial31.horizon.value.copy(scene.fog.color);scene.fog.near=macro?mix(310,195,rain):mix(125,74,rain);scene.fog.far=macro?mix(900,560,rain):mix(470,245,rain);
  atmosphere33.gold.value=warm;atmosphere33.glow.value=mix(2.15,.38,day);lampField33.power.value=mix(.14,.009,day)+warm*.012;
  for(const light of world.userData.lanterns??[])if((light.userData.effectUntil??0)<=clock)light.intensity*=mix(.9,.4,day);

@@ -251,7 +251,19 @@
       "systems/scenic-atmosphere.js",
       "systems/ground-variation.js",
       "systems/facade-detail.js",
-      "systems/request-sources.js"
+      "systems/request-sources.js",
+      "systems/environment-coherence.js",
+      "systems/overworld-habitats.js",
+      "systems/stone-surfaces.js",
+      "systems/motion-performance.js",
+      "systems/party-locomotion.js",
+      "systems/dam-release.js",
+      "systems/landscape-parity.js",
+      "systems/organic-roads.js",
+      "systems/overworld-water.js",
+      "systems/village-frontages.js",
+      "systems/live-waterworks.js",
+      "systems/mill-falls.js"
     ]
   },
   "styles": [

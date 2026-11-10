@@ -4,7 +4,12 @@ from PIL import Image
 import json,hashlib,base64,io
 def pack_environment103(root,assets):
  folder=root/'elyndor/assets/source/environment-pbr-v103';registry=json.loads((folder/'registry.json').read_text())
- images=registry['images'];images.update(json.loads((root/'elyndor/assets/source/scenery-v104/manifest.json').read_text())['images']);aliases=registry['aliases'];before={k:hashlib.sha256(str(v).encode()).hexdigest() for k,v in assets['images'].items() if k.startswith(('ui','icon_')) or k in ['regionMap','runeSeal','exitMarker','saveSeal','encounterMark16']}
+ images=registry['images'];images.update(json.loads((root/'elyndor/assets/source/scenery-v104/manifest.json').read_text())['images'])
+ palette_file=root/'elyndor/assets/source/palette-v105/manifest.json'
+ if palette_file.exists():
+  palette=json.loads(palette_file.read_text(encoding='utf-8'))
+  for key,target in palette['replacements'].items():images[key]=palette['images'][target]
+ aliases=registry['aliases'];before={k:hashlib.sha256(str(v).encode()).hexdigest() for k,v in assets['images'].items() if k.startswith(('ui','icon_')) or k in ['regionMap','runeSeal','exitMarker','saveSeal','encounterMark16']}
  for key,row in images.items():
   assert row['reviewed'],key
   assert hashlib.sha256((root/row['file']).read_bytes()).hexdigest()==row['sha256'],key

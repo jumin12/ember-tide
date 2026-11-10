@@ -1,34 +1,45 @@
 {
-  "release": "elyndor-alpha-1.26-hd-worlds-living-scenery-2026-11-09",
-  "version": "Alpha Version 1.26",
+  "release": "elyndor-alpha-1.27-smoother-travel-restored-waterworks-2026-11-10",
+  "version": "Alpha Version 1.27",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 89643505,
-    "sha256": "85d1b667c18ecc93be3180f5b55ddfe82e7cb7ae64b20dfdfa4de9ce7eb1f4f0",
+    "bytes": 89957996,
+    "sha256": "12f48c9a9c50867f5072a9f97deed753d7443a19380ef6bb32a804ebbb344008",
     "offline": false,
     "delivery": "HTML with same-origin native HD environment assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "3f139825535c6f02383369edde282b8a82742435"
+    "previousRelease": "cd7e752cc0889447ca44a375c8056571162d24f9"
   },
   "changes": [
-    "Replaced all twenty battle landscapes with newly generated native HD day/night pairs. Refined panorama size, perspective, distant focus and sampling while keeping characters and interface text sharp.",
-    "Matched physical battle scenery to each landscape: ruined arcades, orchard walls and sheds, cypress avenues, cave crystals, alpine ledges, snowy cornices, coastal chalk, windmills, standing stones and seasonal planting.",
-    "Added regional battle mist, light shafts, waterfall spray, sea haze, smoke, cold drift, crystal light and moving foliage. Cinematic and action cameras retain bounded landscape coverage across desktop and phone views.",
-    "Replaced environment surface art throughout the overworld, POIs, interiors and battles with native HD materials and matched normal, roughness and surface data. Wood, soil and stone remain matte; glass, polished metals and water retain their appropriate reflections.",
-    "Introduced varied meadow, forest-floor, trail and paving textures, with irregular patches and continuous world-space blending to reduce repeated ground patterns.",
-    "Rebuilt grass, ferns, flowers, leaves and connected woody shoots as modeled 3D vegetation. Added fuller species-specific crowns, needle clusters, orchard blossoms, autumn colors, snow cover and wind motion shared with their shadows.",
-    "Reworked rocks into varied weathered forms with rounded edges, strata, cracks, mineral detail and habitat-aware moss. Added location-specific gardens, undergrowth, scree and coastal planting.",
-    "Made battle planting follow the actual paving, slope, rock, water and building-footing exclusions. Removed the retained old grass pass from stone floors and kept the fighting field readable.",
-    "Replaced plaster window panels with reflective glazing and recessed room imagery. Corrected authored house and hall orientations toward their streets, completed residential walls and gables, and fitted masonry bases and entrance treads to the terrain.",
-    "Rebuilt town wells with hollow stone bowls, recessed rippling water and connected posts, winding beams, ropes and buckets.",
-    "Refined landscape lighting, sky fill, air depth and material response. Updated river normals, shallow-water detail, foam and caustics while preserving the exact shared water join between POIs and their background.",
-    "Cleared large foreground tree crowns from the party view without removing their shadows or reflections. Refreshed loading views, retained bounded phone texture budgets, and preserved the approved party, NPC, monster and interface artwork."
+    "Matched battle lighting, ground colors and material contrast to each native landscape while preserving the distinct daylight and night atmosphere. Forest encounters now follow the surrounding overworld habitat.",
+    "Added greener, varied meadow and forest surfaces, clearer small-stone textures and fractured rock shapes, with rocks kept clear of party and enemy standing areas.",
+    "Removed the invisible overworld forest boundary and tree blocking. Refined movement and rendering budgets, and corrected the party running hop in all eight directions while preserving approved character artwork.",
+    "Replaced four loading views with native in-engine scenes showing characters walking, talking and visiting interiors.",
+    "Rebuilt the dam release as water travelling downstream along the riverbed. Connected cascading sheets, current, foam and spray use the same water art; the mill waterfall matches the upstream waterfall.",
+    "Seated the working waterwheel in the river with radial paddles, bed clearance and current-driven rotation. Reshaped the lower banks into a smooth curve, reseated vegetation and stones, and fitted the riverbank fence to the rendered ground.",
+    "Updated visible water reflections and sharp shadows every rendered outdoor frame, with shared reflection passes per water level and bounded desktop and phone resolutions.",
+    "Unified overworld and POI terrain materials and outdoor lighting, corrected river/ocean levels and mouths, rounded road bends, connected every village house entrance to a street, and corrected the placement and artwork orientation of service signs."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.27",
+      "date": "November 10, 2026",
+      "title": "Smoother travel and restored waterworks",
+      "items": [
+        "Matched battle lighting, ground colors and material contrast to each native landscape while preserving the distinct daylight and night atmosphere. Forest encounters now follow the surrounding overworld habitat.",
+        "Added greener, varied meadow and forest surfaces, clearer small-stone textures and fractured rock shapes, with rocks kept clear of party and enemy standing areas.",
+        "Removed the invisible overworld forest boundary and tree blocking. Refined movement and rendering budgets, and corrected the party running hop in all eight directions while preserving approved character artwork.",
+        "Replaced four loading views with native in-engine scenes showing characters walking, talking and visiting interiors.",
+        "Rebuilt the dam release as water travelling downstream along the riverbed. Connected cascading sheets, current, foam and spray use the same water art; the mill waterfall matches the upstream waterfall.",
+        "Seated the working waterwheel in the river with radial paddles, bed clearance and current-driven rotation. Reshaped the lower banks into a smooth curve, reseated vegetation and stones, and fitted the riverbank fence to the rendered ground.",
+        "Updated visible water reflections and sharp shadows every rendered outdoor frame, with shared reflection passes per water level and bounded desktop and phone resolutions.",
+        "Unified overworld and POI terrain materials and outdoor lighting, corrected river/ocean levels and mouths, rounded road bends, connected every village house entrance to a street, and corrected the placement and artwork orientation of service signs."
+      ]
+    },
     {
       "version": "Alpha Version 1.26",
       "date": "November 9, 2026",
@@ -514,7 +525,7 @@
     "packedSpritePoses": 6044,
     "sourceCropWarnings": 0,
     "referencePolicy": "Approved native party, NPC, monster and UI artwork preserved. Forty native HD day/night battle landscapes and ninety-three environment assets; no artificial image upscaling.",
-    "newBundledImages": 133,
+    "newBundledImages": 13,
     "battleBackgrounds": 40,
     "nativeBattleResolution": [
       1672,
@@ -616,35 +627,26 @@
     "screenSpaceCombatHud": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v126/verification.json",
-    "sha256": "8e0fa5de108d2b8f5ac8b1961cd98ae6c6b5654eb8184b18c4d8b120770ec520",
+    "file": "elyndor/previews/release-v127/verification.json",
+    "sha256": "63f3b313c11db49380fff5543f7b81d90e09c886e2415d0d5914c83a7d706f6d",
     "finalRelease": "PASS",
-    "sceneryViews": 16,
-    "pairedBattleViews": 40
+    "villageHouses": 45,
+    "terrainChunks": 144,
+    "movementCases": 320,
+    "waterFrameChecks": 24
   },
   "performance": {
-    "scope": "Final native Chrome functional/resource checks and emulated phone layouts; no universal frame-rate claim.",
-    "textureBudgets": {
-      "desktopAlbedo": 1024,
-      "touchAlbedo": 768,
-      "dataMaps": 512
+    "scope": "Native Chrome on this PC and browser-emulated phone portrait/landscape. No physical-phone or universal-frame-rate claim.",
+    "mirrors": "Current presented frame, one pass per visible water level",
+    "reflectionPixelCaps": {
+      "desktop": 1600000,
+      "phone": 1050000
     },
-    "battleCleanup": {
-      "battle": false,
-      "stage": false,
-      "active": false,
-      "fx": false,
-      "stats": {
-        "builds": 9,
-        "disposed": 9,
-        "geometryCreated": 281,
-        "geometryDisposed": 281
-      }
-    }
+    "sharpShadows": "Bounded quality-specific sizes; current frame outdoors"
   },
   "previousPublishedRelease": {
-    "commit": "3f139825535c6f02383369edde282b8a82742435",
-    "version": "Alpha Version 1.25",
-    "sha256": "25b24219767323fa8035abe81522a90862b1c553e0842af693cc4a158ceb384c"
+    "commit": "cd7e752cc0889447ca44a375c8056571162d24f9",
+    "version": "Alpha Version 1.26",
+    "sha256": "85d1b667c18ecc93be3180f5b55ddfe82e7cb7ae64b20dfdfa4de9ce7eb1f4f0"
   }
 }
