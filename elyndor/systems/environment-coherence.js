@@ -39,13 +39,13 @@ arenaLight89=function(b){
 
 // These are independently generated native green materials. Retain their
 // actual pigment, including fine variations, before dynamic scene lighting.
-const greenPigment105=`vec3 livingTurf105(vec3 c){float l=dot(c,vec3(.2126,.7152,.0722));return c*vec3(1.16,.82,2.2)+vec3(l*.12);}\n`;
+const greenPigment105=`vec3 livingTurf105(vec3 c){return c*vec3(1.03,.98,1.22);}\n`;
 const matchingGroundBefore105=groundMaterial102;
 groundMaterial102=function(m){
  matchingGroundBefore105(m);if(!m?.userData.ground102||m.userData.colourMatch105)return;m.userData.colourMatch105=true;
  const before=m.onBeforeCompile,key=m.customProgramCacheKey();
  m.onBeforeCompile=function(shader,...args){before.call(this,shader,...args);shader.fragmentShader=greenPigment105+shader.fragmentShader;
-  shader.fragmentShader=shader.fragmentShader.replace('vec3 turf=mix(lush,dry,patches*.42);','vec3 turf=mix(livingTurf105(lush),livingTurf105(dry),patches*.42);');
+  shader.fragmentShader=shader.fragmentShader.replace('vec3 turf=mix(lush,dry,patches*.24);','vec3 turf=mix(livingTurf105(lush),livingTurf105(dry),patches*.24);');
   shader.fragmentShader=shader.fragmentShader.replace('(.24+forestFloor102*.32)','(.10+forestFloor102*.18)');
  };m.customProgramCacheKey=()=>key+'-living-turf105';m.needsUpdate=true;
 };

@@ -1,7 +1,6 @@
-// Align both the body and its ground contact. Anchoring just the lowest boot
-// made bent-leg poses lift the torso by up to 26 native pixels. Keep the upper
-// body at native scale, and fit the lower stride between the waist and floor.
-// These are cached display transforms; the approved atlas stays untouched.
+// Stabilize registration drift without pinning the torso through the stride.
+// Preserve the authored arm/leg poses and a small, rhythmic weight transfer.
+// The actor root, collision and camera never inherit sprite flight offsets.
 const partyRun107={tables:new WeakMap(),canvas:document.createElement('canvas'),frames:0};
 partyRun107.context=partyRun107.canvas.getContext('2d',{willReadFrequently:true});
 function scanRunFrame107(id,cell){
@@ -19,6 +18,18 @@ async function preparePartyRun107(){
   const m=assets.sprites[id];if(!m)continue;const frames=new Map(),heads=[];
   for(const cell of new Set(Object.entries(m.frames).filter(([key])=>key.startsWith('run_')).flatMap(([,cells])=>cells))){const row=scanRunFrame107(id,cell);if(row){frames.set(cell,row);heads.push(row.head);partyRun107.frames++;}if(partyRun107.frames%16===0)await yieldLoad36();}
   if(!heads.length)continue;heads.sort((a,b)=>a-b);const mid=Math.floor(heads.length/2),head=Math.round(heads.length%2?heads[mid]:(heads[mid-1]+heads[mid])/2),pivot=Math.round(m.unit*.5),sole=m.h-(m.gutter??8);
+  for(const [clip,cells]of Object.entries(m.frames).filter(([key])=>key.startsWith('run_'))){
+   const length=cells.length,mean=cells.reduce((sum,cell)=>sum+frames.get(cell).head,0)/length;
+   for(let i=0;i<length;i++){
+    const row=frames.get(cells[i]),previous=frames.get(cells[(i+length-1)%length]),next=frames.get(cells[(i+1)%length]);
+    // Reject irregular source registration; retain the gentle two-foot rhythm
+    // and the artist's shoulder/hip counter-rotation at their native scale.
+    const authored=(previous.head+row.head*2+next.head)/4-mean;
+    row.body=Math.round(clamp(authored*.22,-m.unit*.018,m.unit*.018)+Math.cos(i/length*TAU*2)*m.unit*.011);
+    row.sway=Math.sin(i/length*TAU)*m.unit*.004;
+    row.targetHead=head+row.body;
+   }
+  }
   const canvas=document.createElement('canvas');canvas.width=m.w;canvas.height=m.h;
   partyRun107.tables.set(m,{frames,head,pivot,sole,canvas,context:canvas.getContext('2d',{willReadFrequently:true}),cell:-1});
  }
@@ -26,9 +37,10 @@ async function preparePartyRun107(){
 const frameBefore107=setActorFrame;
 function paintPartyRunFrame107(c,m,im,cell){
  const table=partyRun107.tables.get(m),row=table?.frames.get(cell);if(!row)return false;
- if(table.cell!==cell){const sx=cell%m.cols*m.w,sy=Math.floor(cell/m.cols)*m.h,split=row.head+table.pivot,dest=table.head+table.pivot,p=table.context;p.clearRect(0,0,m.w,m.h);p.imageSmoothingEnabled=false;
-  p.drawImage(im,sx,sy,m.w,split,0,table.head-row.head,m.w,split);
-  p.drawImage(im,sx,sy+split,m.w,row.sole-split,0,dest,m.w,table.sole-dest);table.cell=cell;
+ if(table.cell!==cell){const sx=cell%m.cols*m.w,sy=Math.floor(cell/m.cols)*m.h,split=row.head+table.pivot,dest=row.targetHead+table.pivot,p=table.context;p.clearRect(0,0,m.w,m.h);p.imageSmoothingEnabled=false;
+  const sway=Math.round(row.sway);
+  p.drawImage(im,sx,sy,m.w,split,sway,row.targetHead-row.head,m.w,split);
+  p.drawImage(im,sx,sy+split,m.w,row.sole-split,sway,dest,m.w,table.sole-dest);table.cell=cell;
  }
  // Draw the same canonical raster to the world, preview and PNG/JPG export;
  // GPU and CPU canvases otherwise disagree on a half-pixel sampling tie.
@@ -40,9 +52,9 @@ setActorFrame=function(a,...args){
  if(q.alignmentKey107===key)return result;const was=q.aligned107;q.alignmentKey107=key;q.aligned107=running;if(!running&&!was)return result;
  const c=q.context,sx=a.frame.cell%m.cols*m.w,sy=Math.floor(a.frame.cell/m.cols)*m.h;c.clearRect(0,0,m.w,m.h);c.imageSmoothingEnabled=false;
  if(running){
-  const split=row.head+table.pivot,dest=table.head+table.pivot;
+  const split=row.head+table.pivot,dest=row.targetHead+table.pivot;
   paintPartyRunFrame107(c,m,spriteImages[id],a.frame.cell);
-  a.mesh.userData.groundedRun107={cell:a.frame.cell,head:table.head,sole:table.sole,split,dest};
+  a.mesh.userData.groundedRun107={cell:a.frame.cell,head:row.targetHead,sole:table.sole,split,dest,weightTransfer:row.body};
  }else{c.drawImage(spriteImages[id],sx,sy,m.w,m.h,0,0,m.w,m.h);delete a.mesh.userData.groundedRun107;}
  texture.needsUpdate=true;return result;
 };

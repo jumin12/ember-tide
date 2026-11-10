@@ -121,14 +121,5 @@ finishWorld102=function(...a){const r=botanicalBoundsBefore104(...a);if(!['poi',
   for(const bind of t.bindings??[]){const mask=bind.mesh.userData.treeViewMask;if(mask){mask.setX(bind.index,t.hidden?1:0);mask.needsUpdate=true;}}
  }treeCutCache30=null;world.userData.botanicalBounds104=true;return r;};
 
-// The exploration silhouette remains available, but a large foreground crown
-// must not cover the whole party. Only the colour view clears; shadows and
-// reflections retain the full tree geometry.
-const partyTrees104={world:null,time:-1,camera:V3(),focus:V3(),hidden:new Set()};
-const partyTreeCutsBefore104=updateCutaways;
-updateCutaways=function(...a){const r=partyTreeCutsBefore104(...a);if(!player||!world||battle||state.mode==='title')return r;const q=partyTrees104;
- if(q.world===world&&clock-q.time<.10&&q.camera.distanceToSquared(camera.position)<.01&&q.focus.distanceToSquared(V3(player.x,0,player.z))<.01)return r;
- q.world=world;q.time=clock;q.camera.copy(camera.position);q.focus.set(player.x,0,player.z);const rays=[],hit=V3();
- for(const actor of[player,...followers].filter(a=>a.mesh.visible))for(const h of[.25,.62,.94]){const p=V3(actor.x,heightAt(actor.x,actor.z)+actor.size*h,actor.z),d=p.sub(camera.position);rays.push({ray:new THREE.Ray(camera.position.clone(),d.clone().normalize()),distance:d.length()});}
- const next=new Set();for(const t of scenery.trees){if(!t.box||Math.hypot(t.x-player.x,t.z-player.z)>75)continue;const occluded=rays.some(v=>v.ray.intersectBox(t.box,hit)&&hit.distanceTo(v.ray.origin)<v.distance-.4);if(occluded)t.until=clock+.20;const hidden=occluded||clock<t.until;if(hidden)next.add(t);hideTree(t,hidden);}
- for(const t of q.hidden)if(!next.has(t)&&t.bindings?.[0]?.mesh.parent)hideTree(t,false);q.hidden=next;return r;};
+// Exploration visibility is owned by the player silhouette. Keep every crown
+// intact in colour, shadow and reflection views; do not clear whole trees.

@@ -55,18 +55,19 @@ function miniatureRocks71(root,q,x,z,size=1,kind=0){const at=miniWorld71(q,x,z),
 function miniatureWoodland71(root,q,random){
  for(let i=0;i<14;i++){const a=i*2.399963,x=Math.cos(a)*(q.w*.46+random()),z=Math.sin(a)*(q.d*.44+random());if(q.gates71.some(g=>Math.hypot(g.local.x-x,g.local.z-z)<5))continue;const at=miniWorld71(q,x,z);if(traversalWet(at.x,at.z))continue;const t=new THREE.Group();t.position.set(x,macroGround(at.x,at.z),z);root.add(t);miniatureTree67(t,0,0,q.key==='fern'||q.key==='snow'||i%4===0,.64+random()*.40);}
 }
+const MINIATURE_HOMES71={brookstead:[[-7.4,-5.2,7,5.2,5.2,-.12],[7.8,-5.0,5,4.5,4.0,.18],[-8.0,5.4,5,4.2,3.6,-.23],[7.8,5.4,4.6,4.2,3.5,.16]],fern:[[-6.5,-5.4,6.6,4.8,4.2,-.16],[7.4,-4.9,4.7,4.1,3.5,.22],[-7.0,5.5,4.6,4,3.4,-.29]],alder:[[-7.0,-5.1,6.3,4.8,5.0,-.13],[7.5,-5.1,5.7,4.5,4.3,.11],[-8,5.3,4.7,3.9,3.8,-.23],[7.4,5.2,4.9,4,3.7,.2]],harbor:[[-7.3,-5.2,6.9,5.0,4.8,-.12],[7.5,-4.8,5.5,4.3,4.2,.16],[-7.5,5.4,5.3,4.3,3.8,-.14],[7.4,5.5,4.8,4.1,3.8,.18]],relief:[[-7,-4.8,6.0,4.5,3,-.1],[7,-4.5,5.8,4.6,3,.22],[-7,5.4,4.6,3.9,2.5,-.2],[7,5.3,4.6,3.9,2.5,.15]]};
 function miniatureHomes71(root,q,key){
  if(key==='highmere'){
   const g=miniFooting71(root,q,0,-6,18,10);g.scale.setScalar(.82);keepDiorama67(g);for(const child of [...g.children])if(child.userData.landmarkHouse45)child.removeFromParent();
-  for(const[x,z,a]of[[-10,5,-.22],[9,6,.25]]){const g=miniFooting71(root,q,x,z,4.6,4.1,a);house16(g,{x:0,z:0,y:0,w:4.6,d:4.1,h:4.2,a:0},key,x<0?1:2);}
+  for(const[x,z,a]of[[-10,5,Math.PI-.04],[9,6,Math.PI+.04]]){const g=miniFooting71(root,q,x,z,4.6,4.1,a);house16(g,{x:0,z:0,y:0,w:4.6,d:4.1,h:4.2,a:0},key,x<0?1:2);}
   // Short rounded defensive remnants sit behind the keep, not around a square.
   for(let i=0;i<9;i++){const a=Math.PI+(.15+i*.095)*Math.PI,x=Math.cos(a)*14,z=Math.sin(a)*11-1,at=miniWorld71(q,x,z),m=block16(root,x,macroGround(at.x,at.z)+.8,z,2.0,1.6,.55,'wall','#adb6a5');m.rotation.y=-a;}
   return 3;
  }
- const plans={brookstead:[[-7.4,-5.2,7,5.2,5.2,-.12],[7.8,-5.0,5,4.5,4.0,.18],[-8.0,5.4,5,4.2,3.6,-.23],[7.8,5.4,4.6,4.2,3.5,.16]],fern:[[-6.5,-5.4,6.6,4.8,4.2,-.16],[7.4,-4.9,4.7,4.1,3.5,.22],[-7.0,5.5,4.6,4,3.4,-.29]],alder:[[-7.0,-5.1,6.3,4.8,5.0,-.13],[7.5,-5.1,5.7,4.5,4.3,.11],[-8,5.3,4.7,3.9,3.8,-.23],[7.4,5.2,4.9,4,3.7,.2]],harbor:[[-7.3,-5.2,6.9,5.0,4.8,-.12],[7.5,-4.8,5.5,4.3,4.2,.16],[-7.5,5.4,5.3,4.3,3.8,-.14],[7.4,5.5,4.8,4.1,3.8,.18]],relief:[[-7,-4.8,6.0,4.5,3,-.1],[7,-4.5,5.8,4.6,3,.22],[-7,5.4,4.6,3.9,2.5,-.2],[7,5.3,4.6,3.9,2.5,.15]]};
- let count=0;for(const[x,z,w,d,h,a]of plans[key]??[]){
+ let count=0;for(const[x,z,w,d,h,variation]of MINIATURE_HOMES71[key]??[]){
   // Keep a full walking-width lane at every actual local exit.
   const lane=q.gates71.find(g=>segmentDistance(x,z,[q.hub71.x,q.hub71.z],[g.local.x,g.local.z])<Math.min(w,d)*.48+2.0);if(lane)continue;
+  const a=(z>q.hub71.z?Math.PI:0)+variation*.18;
   const g=miniFooting71(root,q,x,z,w,d,a);if(key==='relief'){roof16(g,0,1.4,0,w,2,d,'#c8bfa4');for(const side of[-1,1]){block16(g,side*w*.47,.7,0,.14,1.4,d,'cloth','#b9b39b');block16(g,side*w*.47,1.4,d*.5,.12,2.8,.12,'wood','#907d58');}}else house16(g,{x:0,z:0,y:0,w,d,h,a:0},key,count);count++;
  }
  return count;

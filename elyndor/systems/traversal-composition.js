@@ -33,8 +33,10 @@ function habitat66(x,z){
 const habitatTreeBefore66=buildSolidTree;
 buildSolidTree=function(x,z,speciesScale,type,random,...rest){
  if(activeScene?.kind!=='overworld')return habitatTreeBefore66(x,z,speciesScale,type,random,...rest);
- const q=habitat66(x,z),sample=noise(x*.341+17,z*.379-19);if(sample>q.density)return null;
- const scale=speciesScale*mix(.74,1.16,noise(x*.58,z*.49));return habitatTreeBefore66(x,z,scale,type,random,...rest);
+ // Terrain noise is signed. Treating it as a probability retained every
+ // negative sample, filling even the planned clearings with dense woodland.
+ const q=habitat66(x,z),hash=Math.sin(x*127.1+z*311.7+113)*43758.5453,sample=hash-Math.floor(hash);if(sample>q.density)return null;
+ const variation=clamp(.5+noise(x*.58,z*.49)/1.5,0,1),scale=speciesScale*mix(.74,1.16,variation);return habitatTreeBefore66(x,z,scale,type,random,...rest);
 };
 const woodlandBefore66=boundaryWoodland47;
 boundaryWoodland47=function(f,ground,theme,trees,random){
@@ -43,7 +45,8 @@ boundaryWoodland47=function(f,ground,theme,trees,random){
   // Retain a deep, irregular woodland edge at every traversable boundary.
   // Beyond that edge the field opens into meadows and separate forest masses.
   const edge=1-smooth(7,22,depth),density=Math.max(q.density,edge*.91);
-  if(q.destination<3||q.road<6||noise(tree.x*.293+11,tree.z*.317)>density)continue;
+  const hash=Math.sin(tree.x*127.1+tree.z*311.7+47)*43758.5453;
+  if(q.destination<3||q.road<6||hash-Math.floor(hash)>density)continue;
   trees[retained++]=tree;
  }trees.length=retained;return result;
 };

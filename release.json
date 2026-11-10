@@ -1,30 +1,45 @@
 {
-  "release": "elyndor-alpha-1.27-smoother-travel-restored-waterworks-2026-11-10",
-  "version": "Alpha Version 1.27",
+  "release": "elyndor-alpha-1.28-clearer-journeys-living-landscapes-2026-11-10",
+  "version": "Alpha Version 1.28",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 89957996,
-    "sha256": "12f48c9a9c50867f5072a9f97deed753d7443a19380ef6bb32a804ebbb344008",
+    "bytes": 89976179,
+    "sha256": "6bef44f3d9be201dd987fee42b5c697c02a65eb065e7fbe6198ce298846697a2",
     "offline": false,
     "delivery": "HTML with same-origin native HD environment assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "cd7e752cc0889447ca44a375c8056571162d24f9"
+    "previousRelease": "6d49c14d2f320cc5be0e0b78a815c209a0bab3a2"
   },
   "changes": [
-    "Matched battle lighting, ground colors and material contrast to each native landscape while preserving the distinct daylight and night atmosphere. Forest encounters now follow the surrounding overworld habitat.",
-    "Added greener, varied meadow and forest surfaces, clearer small-stone textures and fractured rock shapes, with rocks kept clear of party and enemy standing areas.",
-    "Removed the invisible overworld forest boundary and tree blocking. Refined movement and rendering budgets, and corrected the party running hop in all eight directions while preserving approved character artwork.",
-    "Replaced four loading views with native in-engine scenes showing characters walking, talking and visiting interiors.",
-    "Rebuilt the dam release as water travelling downstream along the riverbed. Connected cascading sheets, current, foam and spray use the same water art; the mill waterfall matches the upstream waterfall.",
-    "Seated the working waterwheel in the river with radial paddles, bed clearance and current-driven rotation. Reshaped the lower banks into a smooth curve, reseated vegetation and stones, and fitted the riverbank fence to the rendered ground.",
-    "Updated visible water reflections and sharp shadows every rendered outdoor frame, with shared reflection passes per water level and bounded desktop and phone resolutions.",
-    "Unified overworld and POI terrain materials and outdoor lighting, corrected river/ocean levels and mouths, rounded road bends, connected every village house entrance to a street, and corrected the placement and artwork orientation of service signs."
+    "Restored animated player silhouettes behind buildings, roofs, trees and foreground props across POIs and the overworld. Scenery stays solid; the effect follows only the controlled character and clears immediately when the view opens.",
+    "Kept silhouettes aligned with current poses during running, camera movement, phone rotation and cached scene returns. Overlapping obstructions use one player draw, while NPCs, combat, reflections and the atlas retain their normal rendering.",
+    "Refined all five companions’ eight-direction full-run cycles with subtle weight transfer and shoulder rhythm while keeping their boot contacts grounded. Approved sprite artwork, movement controls, speed and combat poses are preserved.",
+    "Restored richer natural grass colors and balanced battle sky fill and indirect light against each background. Night scenes keep their own cooler, subdued mood without carrying their tint into other locations.",
+    "Opened the distant view behind combat fields so the native HD landscapes are more visible. Retained clear fighting areas and side banks, and fitted rear ledges, trees and authored props onto supported ground across desktop and phone views.",
+    "Corrected overworld forest sampling so meadows and destination approaches have open space while woodland regions stay dense. Tree placement respects road shoulders and rivers, with fewer redundant instances and no invisible tree barrier.",
+    "Turned miniature settlement houses toward their streets and added connected front-door approaches, fitted facade details, regional planting, wells, a harbor lantern tower and a relief-station store. Entrances remain connected to their local exits.",
+    "Made the overworld party slightly easier to read through a small visual scale increase while preserving logical size, interaction range and travel speed. Checked movement, scenery coverage and battle reveals on desktop and emulated portrait and landscape phones."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.28",
+      "date": "November 10, 2026",
+      "title": "Clearer journeys and living landscapes",
+      "items": [
+        "Restored animated player silhouettes behind buildings, roofs, trees and foreground props across POIs and the overworld. Scenery stays solid; the effect follows only the controlled character and clears immediately when the view opens.",
+        "Kept silhouettes aligned with current poses during running, camera movement, phone rotation and cached scene returns. Overlapping obstructions use one player draw, while NPCs, combat, reflections and the atlas retain their normal rendering.",
+        "Refined all five companions’ eight-direction full-run cycles with subtle weight transfer and shoulder rhythm while keeping their boot contacts grounded. Approved sprite artwork, movement controls, speed and combat poses are preserved.",
+        "Restored richer natural grass colors and balanced battle sky fill and indirect light against each background. Night scenes keep their own cooler, subdued mood without carrying their tint into other locations.",
+        "Opened the distant view behind combat fields so the native HD landscapes are more visible. Retained clear fighting areas and side banks, and fitted rear ledges, trees and authored props onto supported ground across desktop and phone views.",
+        "Corrected overworld forest sampling so meadows and destination approaches have open space while woodland regions stay dense. Tree placement respects road shoulders and rivers, with fewer redundant instances and no invisible tree barrier.",
+        "Turned miniature settlement houses toward their streets and added connected front-door approaches, fitted facade details, regional planting, wells, a harbor lantern tower and a relief-station store. Entrances remain connected to their local exits.",
+        "Made the overworld party slightly easier to read through a small visual scale increase while preserving logical size, interaction range and travel speed. Checked movement, scenery coverage and battle reveals on desktop and emulated portrait and landscape phones."
+      ]
+    },
     {
       "version": "Alpha Version 1.27",
       "date": "November 10, 2026",
@@ -525,7 +540,7 @@
     "packedSpritePoses": 6044,
     "sourceCropWarnings": 0,
     "referencePolicy": "Approved native party, NPC, monster and UI artwork preserved. Forty native HD day/night battle landscapes and ninety-three environment assets; no artificial image upscaling.",
-    "newBundledImages": 13,
+    "newBundledImages": 0,
     "battleBackgrounds": 40,
     "nativeBattleResolution": [
       1672,
@@ -627,26 +642,30 @@
     "screenSpaceCombatHud": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v127/verification.json",
-    "sha256": "63f3b313c11db49380fff5543f7b81d90e09c886e2415d0d5914c83a7d706f6d",
+    "file": "elyndor/previews/release-v128/verification.json",
+    "sha256": "333bbed8fe5c773d862bd511cbb9edb34330b6a7039358153ba39cd4d5207ab2",
     "finalRelease": "PASS",
-    "villageHouses": 45,
-    "terrainChunks": 144,
+    "battleStageViews": 120,
+    "groundSupportChecks": 1182,
+    "worldLocations": 15,
+    "runClips": 40,
+    "runFrames": 336,
     "movementCases": 320,
-    "waterFrameChecks": 24
+    "silhouettePoseChecks": 80
   },
   "performance": {
-    "scope": "Native Chrome on this PC and browser-emulated phone portrait/landscape. No physical-phone or universal-frame-rate claim.",
-    "mirrors": "Current presented frame, one pass per visible water level",
+    "scope": "Native Chrome on this PC and browser-emulated touch phones in portrait and landscape; no physical-phone or universal-frame-rate claim.",
+    "overworldTrees": 8333,
+    "playerSilhouette": "One draw using the existing scene depth/stencil; no per-tree ray scan",
+    "forestSampling": "Open meadows and destination approaches; dense woodland retained",
     "reflectionPixelCaps": {
       "desktop": 1600000,
       "phone": 1050000
-    },
-    "sharpShadows": "Bounded quality-specific sizes; current frame outdoors"
+    }
   },
   "previousPublishedRelease": {
-    "commit": "cd7e752cc0889447ca44a375c8056571162d24f9",
-    "version": "Alpha Version 1.26",
-    "sha256": "85d1b667c18ecc93be3180f5b55ddfe82e7cb7ae64b20dfdfa4de9ce7eb1f4f0"
+    "commit": "6d49c14d2f320cc5be0e0b78a815c209a0bab3a2",
+    "version": "Alpha Version 1.27",
+    "sha256": "12f48c9a9c50867f5072a9f97deed753d7443a19380ef6bb32a804ebbb344008"
   }
 }

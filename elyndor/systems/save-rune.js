@@ -28,10 +28,5 @@ const saveBuildBefore66=buildWorld;
 buildWorld=function(...args){const r=saveBuildBefore66(...args);seatSaveRunes66();return r;};
 const runeFxBefore66=updateWorldFX;
 updateWorldFX=function(...args){const r=runeFxBefore66(...args);saveRune66.time.value=clock;saveRune66.day.value=poiLight54.day.value;return r;};
-// Save landmarks take part in the same view-only foliage reveal as actors.
-// Shadows, tree collision and the seal's safe placement are unaffected.
-const saveCutawayBefore66=updateCutaways;
-updateCutaways=function(...args){const r=saveCutawayBefore66(...args);if(!player||battle)return r;const seals=(world.userData.saveRune66??[]).filter(s=>Math.hypot(player.x-s.x,player.z-s.z)<16);if(!seals.length)return r;
- const ray=new THREE.Ray(),hit=V3();for(const s of seals){const target=V3(s.x,heightAt(s.x,s.z)+1.8,s.z),length=camera.position.distanceTo(target);ray.set(camera.position,target.sub(camera.position).normalize());
-  for(const t of scenery.trees){if(Math.hypot(t.x-s.x,t.z-s.z)>20||!ray.intersectBox(t.box,hit)||camera.position.distanceTo(hit)>length-.35)continue;t.until=Math.max(t.until,clock+.18);hideTree(t,true);}
- }return r;};
+// Nearby save landmarks keep their placement and light without hiding trees.
+// Exploration visibility is handled by the controlled player's silhouette.

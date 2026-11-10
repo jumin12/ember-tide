@@ -2,6 +2,21 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.28 — Clearer journeys and living landscapes
+
+November 10, 2026
+
+- Restored animated player silhouettes behind buildings, roofs, trees and foreground props across POIs and the overworld. Scenery stays solid; the effect follows only the controlled character and clears immediately when the view opens.
+- Kept silhouettes aligned with current poses during running, camera movement, phone rotation and cached scene returns. Overlapping obstructions use one player draw, while NPCs, combat, reflections and the atlas retain their normal rendering.
+- Refined all five companions’ eight-direction full-run cycles with subtle weight transfer and shoulder rhythm while keeping their boot contacts grounded. Approved sprite artwork, movement controls, speed and combat poses are preserved.
+- Restored richer natural grass colors and balanced battle sky fill and indirect light against each background. Night scenes keep their own cooler, subdued mood without carrying their tint into other locations.
+- Opened the distant view behind combat fields so the native HD landscapes are more visible. Retained clear fighting areas and side banks, and fitted rear ledges, trees and authored props onto supported ground across desktop and phone views.
+- Corrected overworld forest sampling so meadows and destination approaches have open space while woodland regions stay dense. Tree placement respects road shoulders and rivers, with fewer redundant instances and no invisible tree barrier.
+- Turned miniature settlement houses toward their streets and added connected front-door approaches, fitted facade details, regional planting, wells, a harbor lantern tower and a relief-station store. Entrances remain connected to their local exits.
+- Made the overworld party slightly easier to read through a small visual scale increase while preserving logical size, interaction range and travel speed. Checked movement, scenery coverage and battle reveals on desktop and emulated portrait and landscape phones.
+
+Release evidence and checksums: `elyndor/previews/release-v128/verification.json`. Desktop and browser-emulated phone checks passed.
+
 ## Alpha Version 1.27 — Smoother travel and restored waterworks
 
 November 10, 2026

@@ -1,0 +1,3202 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 71117,
+    "sha256": "ee35e094d80e5f0de12e3338d2ee4ac1bc67615ed48be66912c3f7fcdc35fea0"
+  },
+  {
+    "file": "elyndor/architecture-v24.js",
+    "bytes": 6778,
+    "sha256": "0316ed10df8455a89f93935af634b77924f8ba036c718431f62cf8f64a8ccf18"
+  },
+  {
+    "file": "elyndor/architecture-v31.js",
+    "bytes": 16373,
+    "sha256": "2c2f9f7eb70751e63b008c4c4b735f86a66b5b8fbe89902c1d7455d6b7676dbe"
+  },
+  {
+    "file": "elyndor/arena-v14.js",
+    "bytes": 2534,
+    "sha256": "7e6a4ac4d63ea77d0a044aeefedceb28f5fa6dba0a3e4d79ee7223478b8002a7"
+  },
+  {
+    "file": "elyndor/assets/source/battle-hd-v99/manifest.json",
+    "bytes": 13538,
+    "sha256": "0b27958957e099a9831b83b26e1fadf9192c846270827d796e6b926775e4f177"
+  },
+  {
+    "file": "elyndor/assets/source/battle-hd-v99/waterfall-day.webp",
+    "bytes": 616170,
+    "sha256": "9abc561e6fd093a5b7a530207a5afb77a4ff754b954a1566cc0ea81c5897ae57"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/barkBirch.webp",
+    "bytes": 358948,
+    "sha256": "8fcd2d8d65cc6ec0447512fa48ff8292223c7ee642147ddbdae78520b6551ec8"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/barkOak.webp",
+    "bytes": 589318,
+    "sha256": "3920c8c133fddf9a1d0cc4ff02432f9c4232a1fb17ce83c3dd4b3764b9bf4df3"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/barkPine.webp",
+    "bytes": 571942,
+    "sha256": "c1fb3a77601a5843bbc341e2acb475596d164c637c8d96a2336f976d83141770"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/cobbleOld.webp",
+    "bytes": 608974,
+    "sha256": "f4bfeb814f154b6944603b6005b5d15b258c586584b50ea9d49885ef6ef39409"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/cobbleRoyal.webp",
+    "bytes": 503556,
+    "sha256": "ee85521467311be39afd44348a7163722ee8ff5264176203a38149d2fa5be14f"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/earthForest.webp",
+    "bytes": 556486,
+    "sha256": "1adbdc12de0e4e7174d1e921dcdcdb3e458a92c0a8a2fc29fdab47d93cb7ee88"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/earthLoam.webp",
+    "bytes": 515040,
+    "sha256": "ee9895b4ec56e9240f502a9b1ccd54ec675b34aa28a27b26c3a071df3e63f7b7"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/earthTrail.webp",
+    "bytes": 569302,
+    "sha256": "9a02cca731567939eada4d42f6739fa9f3d2a9bf0e11b05a71e585bf46ee1485"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/fern.webp",
+    "bytes": 2030270,
+    "sha256": "10c99c96066b5c89466898de302ec304c0574894edc74b62dba538b8e04deba2"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/flowers.webp",
+    "bytes": 1300310,
+    "sha256": "1cd10d83b847b6260064adfd8324f6773b74629fae37553765583f543567583c"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/grassDry.webp",
+    "bytes": 630908,
+    "sha256": "5d742da335935760e279827bcf4438e7effd4381497e1ccaa6521ebe6300b10a"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/grassLush.webp",
+    "bytes": 719400,
+    "sha256": "145aae3c6870210e61f86b28a1be19edb112ec7be17d3a3de4cb9aa453732ad7"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/grassMeadow.webp",
+    "bytes": 684934,
+    "sha256": "9c71ad9aa3e8155164a8f8ec9f6f81c90b6e70fb6f22fa916d3e6a72ce968b4b"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/gravelDry.webp",
+    "bytes": 651324,
+    "sha256": "048fc9f7785e57aae978a80648e16f0ab321b4c85cd4e3e16104156222fca60d"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/gravelRiver.webp",
+    "bytes": 608366,
+    "sha256": "b045fe4e68b8b1180e1231200b4360c6fa056cb5bb609e405e78d8abee2071d8"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/leafAutumn.webp",
+    "bytes": 1459580,
+    "sha256": "41a978f48db8ff76ec9a148710929d4334ad3e19561b345fc7fe626b3eec9a48"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/leafBirch.webp",
+    "bytes": 1401208,
+    "sha256": "48f0fa8dd17603d1ba821415ea040cbbee3d423746f1f6b7ba3b3cdbad1969b7"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/leafLitter.webp",
+    "bytes": 630692,
+    "sha256": "2e52a7bd23a9c4b4d8855e5b7af7efec09f9b916f58eb01f126227446b609a25"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/leafOak.webp",
+    "bytes": 1627450,
+    "sha256": "62cf8b689e232ec964343fbab9ec9397f0fef7344fedc3a200b266906d392277"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/leafOrchard.webp",
+    "bytes": 1335346,
+    "sha256": "e4323f4edb02451e426c052046d2b7aad4524071c0ed6c377c551c3200d8623f"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/leafPine.webp",
+    "bytes": 2208986,
+    "sha256": "d086f9c97d3d2e25cb9956073988b8121ac32a47bb97c629995caf137e20cb5b"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/leafWillow.webp",
+    "bytes": 1567190,
+    "sha256": "8bf660b82ea6f0ef2c16fa1dbe066ae10c71d170a9e80789e49f46baf18a581e"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/manifest.json",
+    "bytes": 11528,
+    "sha256": "3678e62d1ed781d5c457bfb93a76bb9957d69a0e2acf77cc1c6cad983997a35a"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/moss.webp",
+    "bytes": 677294,
+    "sha256": "5341985914c74f0b5a8a7080d93f58013b3e4e1e85faccce1a10164233d85bd7"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/rockGranite.webp",
+    "bytes": 568664,
+    "sha256": "74c68fcbbe8f079d2749803cfc25ff722ce8a55ee663c85d2506ff0267fa6793"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/rockLimestone.webp",
+    "bytes": 510064,
+    "sha256": "0c2c6bf7fc2a449d4adfde099bdf338e8a3d96529b5e7ca2b812a0705bf4bf74"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/rockMoss.webp",
+    "bytes": 598588,
+    "sha256": "c193e1053eee241e6fca150b5e2ed98c0913335b943338ae070c334035b525b9"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/rockSlate.webp",
+    "bytes": 436744,
+    "sha256": "303729d2857df4a53dd7268b70e9390397f2c55cf6e3cb79fa968c260f3b2b85"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/sandChalk.webp",
+    "bytes": 487608,
+    "sha256": "5f92430103081dc5768e5ec05a9939b2952d7b40d4719b5e55a6cb38671dc72b"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/sandCoast.webp",
+    "bytes": 472564,
+    "sha256": "9b221ade87bc888a608839792fc689484b805f6de6ca47075e127c567ea08f0f"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/snow.webp",
+    "bytes": 120802,
+    "sha256": "aa9a0ee88b4c342c61ab3ccc0de1ef0e9e378d39e9bf6b4b100474da422e0f42"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/stoneGranite.webp",
+    "bytes": 595354,
+    "sha256": "fe4e4eeed0cc425981701432ae7e0acd99cbb86b1aa2339c7057a4eba742e616"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/stoneLimestone.webp",
+    "bytes": 447262,
+    "sha256": "83fcdd94faa6f9c17c7a0fb53de70e1384bbb1a1800071884ad3f7b19210215e"
+  },
+  {
+    "file": "elyndor/assets/source/battle-materials-v100/stoneSlate.webp",
+    "bytes": 344180,
+    "sha256": "6d65ed4cec5c175cbfc313129edaa6773ef6167d01c03e71b0352781e807d78a"
+  },
+  {
+    "file": "elyndor/assets/source/battle-props-v101/heather101.webp",
+    "bytes": 1206536,
+    "sha256": "11a401e0a21929266f0f40bc1c30ddec59e9bd8a66e0dc35b4c48fde99855226"
+  },
+  {
+    "file": "elyndor/assets/source/battle-props-v101/leafCypress101.webp",
+    "bytes": 1236346,
+    "sha256": "e6ee36a3c17ca5ad3f61db7e3670aa3cd8ca14bc818f0ceadf50b891af5459e6"
+  },
+  {
+    "file": "elyndor/assets/source/battle-props-v101/manifest.json",
+    "bytes": 1572,
+    "sha256": "82bbc06206cd078e85cd964dbedede52dd0e993220a40db079f01cb53bda8f04"
+  },
+  {
+    "file": "elyndor/assets/source/battle-props-v101/ruinSlabs101.webp",
+    "bytes": 461686,
+    "sha256": "d488e0b70ed4b9fb38c0086c17aacbc293d5b32fa00d33599147723741ee7203"
+  },
+  {
+    "file": "elyndor/assets/source/battle-props-v101/woodWeathered101.webp",
+    "bytes": 357998,
+    "sha256": "064dcf5a51abda5f4d744b448eba3edbcebb122d752af697c8a61c420572b049"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/arcane103.webp",
+    "bytes": 272674,
+    "sha256": "243e3ffe796e51d18152023800ac6ddbbad6df52cee3c14f302f61a3a4d5837a"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/bookLeather103.webp",
+    "bytes": 577640,
+    "sha256": "d540af240500419a5d9d5931301bbd673dbdc4a7e45d4bfb5a636fb1cbbfcb41"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/brass103.webp",
+    "bytes": 409048,
+    "sha256": "d11dcc841ed045ebcb2b1da98ff26c4ec815eadff47d644f06995c897625c66f"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/caustics103.webp",
+    "bytes": 76234,
+    "sha256": "deb5b931da19fc91e1d93a0a4ecc59417c1d2ba67048adce04c7b2991a22ba23"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/ceramic103.webp",
+    "bytes": 223670,
+    "sha256": "591e8d10283a96f789ca287aad210d9e38ddbb89f9846400eef7944ac4f02949"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/cloud103.webp",
+    "bytes": 316014,
+    "sha256": "ef096f123290776d17e42ce8dd858ad961d10e0145d252a87fca9115c0acbafc"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/copper103.webp",
+    "bytes": 578574,
+    "sha256": "e774f0d0a18afddc5a28030db2b94196e8784ea4f4cf448caef138d0807ddf93"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/energy103.webp",
+    "bytes": 35094,
+    "sha256": "442d8fecedd1ed173da9b68eec7f93d5fcab4c41c59a16c06d09709a37b76f15"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/fallingWater103.webp",
+    "bytes": 389242,
+    "sha256": "099365c41849974c8c68d413417848c1a2bce43d2255194ee5b363d945e718a7"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/fire103.webp",
+    "bytes": 216782,
+    "sha256": "96a34a6f2d70d5b27c3beff5a838529bdb6bbceb1a38d64d7d2ac16fd47cb1ad"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/flameSlash103.webp",
+    "bytes": 242358,
+    "sha256": "d131e8aff6f3fb43f4381d2392df260fb105c13c47d1fa07440b3be8b40e5d3b"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/foam103.webp",
+    "bytes": 138140,
+    "sha256": "eb87b152424c546e248aea7ee64118a2bc736d3cfc819ad88e6a73279686d426"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/forgeSign103.webp",
+    "bytes": 603048,
+    "sha256": "0520edbb90bb6ee685b16057ac20e2fc6c967447e4c10ae8fc4cb3933a0a5e06"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/glass103.webp",
+    "bytes": 29522,
+    "sha256": "1731de0dfea9f35eae5abf6752cb4112d868224ae4e3dbcb24fb8461bc841ddb"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/healing103.webp",
+    "bytes": 169648,
+    "sha256": "f1d0ef6985437f0eed5b7d9ef128b16d4e4a899ea1fd60a91ab61fcb09d12e0f"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/ice103.webp",
+    "bytes": 260206,
+    "sha256": "c548cccd3ef6703cad2ae23d765a634f0b9c496781dc73238bde002dd3dc8eda"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/impact103.webp",
+    "bytes": 412508,
+    "sha256": "e6e644bb2c957c170c65c10122754677bb51b42d308f657b205ef47536c6dde0"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/innSign103.webp",
+    "bytes": 603500,
+    "sha256": "4d2a5b9676f8fd1af419cbe805bf57af26a5f36b9e3583ce11317a6fa5e5535d"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/leather103.webp",
+    "bytes": 721058,
+    "sha256": "391e7a8cb23ef11cbf34a5c9b74bd112769f61d5959d19784cbe310dde6f4987"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/loading/manifest.json",
+    "bytes": 1285,
+    "sha256": "563e9ddd12b1821cd498f24f8c26b1928ede12ca58f2ee8489ba8e4d2a462eb1"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/manifest.json",
+    "bytes": 11414,
+    "sha256": "df4b9fa94915e8baaa045df1ab4214610791f042da699d65fcc305f6b6ff8bea"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/parchment103.webp",
+    "bytes": 427648,
+    "sha256": "bb5fed0990de187e24adb63a13b67047ba67d3f6125e163d8b27208d35497da4"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/barkBirch-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/barkBirch-horm.png",
+    "bytes": 1884653,
+    "sha256": "8390a9af1bc0c6082fbb8004e9c767da7cfa0abe8d768c6148d06a853ed8c425"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/barkBirch-normalRough-gpu.webp",
+    "bytes": 382298,
+    "sha256": "c7b337cc7769de384cae7ffe6d3533303abb9e2ceee1742170a3e517d96e879e"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/barkBirch-normalRough.png",
+    "bytes": 2515526,
+    "sha256": "0a4bbde9b2d72e2e19621f4e38a607a7feeaccbd0c23f2ea1276c0d9b5920cb6"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/barkOak-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/barkOak-horm.png",
+    "bytes": 2380143,
+    "sha256": "ab6ecfc6aa42e32845707d9ef6f55e85b86cd39dda572743af1b6d1055ad3f1e"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/barkOak-normalRough-gpu.webp",
+    "bytes": 541358,
+    "sha256": "26d61b0829a87956ee592d97a974a1104cf30cf3bf63890b997aa0f5c0651392"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/barkOak-normalRough.png",
+    "bytes": 3263006,
+    "sha256": "130fd88fdd76fc88666a52bbc8fa6e1c7323aa0dd9756ac6edfc5ffb59115f3c"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/barkPine-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/barkPine-horm.png",
+    "bytes": 2354915,
+    "sha256": "c74e9c552c7aae846a529b9488b346883d063746063fc822eabb340d43af3d59"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/barkPine-normalRough-gpu.webp",
+    "bytes": 503900,
+    "sha256": "a0bab57ccbce1937533785172096bf6f2bfdfd3cf91e9512067a6d77c1bc3b3e"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/barkPine-normalRough.png",
+    "bytes": 3258336,
+    "sha256": "4efaa4d8ad7a48b4a34c87a6eb9084bfb89a28cd236c350b44234c1a4de8e044"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/basalt102-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/basalt102-horm.png",
+    "bytes": 1858897,
+    "sha256": "bf8dc7f919b41748350c9e487c7fab008cfd8744994be98433756d1a968665c5"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/basalt102-normalRough-gpu.webp",
+    "bytes": 468038,
+    "sha256": "6664128a0a2ac3c453e5a73a124eac6e2410972384b8f077f8e473a9f9633fbc"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/basalt102-normalRough.png",
+    "bytes": 3248400,
+    "sha256": "2858573106b8ecba20575671d674e8da79c79519a07d300267ad5b5919a1a0f3"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/bookLeather103-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/bookLeather103-horm.png",
+    "bytes": 1768996,
+    "sha256": "4d112ba196375c54724226b5150ed8d8f5d713833ab59f09e6e8ad260b57d692"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/bookLeather103-normalRough-gpu.webp",
+    "bytes": 242460,
+    "sha256": "6649a4d42a60f2d0ff80a418d2a49b82e2d56cd4bb9ea493352d0cdabd21d67c"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/bookLeather103-normalRough.png",
+    "bytes": 2339902,
+    "sha256": "da5f6647d6aaf5dc9791c28d497e27d6d333e238adcda6d4e8c0e864c4a3efcb"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/brass103-horm-gpu.webp",
+    "bytes": 177706,
+    "sha256": "9ccf13ff4aea0b5eccd8ae51eba4342cae09da06f73009dc6deeecd0ac9f3cff"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/brass103-horm.png",
+    "bytes": 1523146,
+    "sha256": "3aa21e5de98b24f93b276bd2637073f5cbf651b28a6dc7ace55e4df14ada4605"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/brass103-normalRough-gpu.webp",
+    "bytes": 113182,
+    "sha256": "ed57b33e0ea80e5b29f2fbce369a6aba406018bb2c1420577597f7f3ee580e2b"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/brass103-normalRough.png",
+    "bytes": 1257666,
+    "sha256": "d9354d91dc438af3d0a74f818286e9f378f50b66470854ded4fc71889c9981c8"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/canvas102-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/canvas102-horm.png",
+    "bytes": 2102845,
+    "sha256": "a1e3b07cb81a62fcd00a4399bf5ae7bcac20dfdd18668cd54380f60b11b5368a"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/canvas102-normalRough-gpu.webp",
+    "bytes": 448972,
+    "sha256": "83b6b05a8a1808646a1d4df895ce68c805d8dbdfc62076a642575dacc14199d5"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/canvas102-normalRough.png",
+    "bytes": 2678150,
+    "sha256": "c8470958fcb36e342890946b17b79b42be1da9ffa51e02aa162355ff5cc9ca17"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/ceramic103-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/ceramic103-horm.png",
+    "bytes": 1179996,
+    "sha256": "97950748a1a5c41667d45ff5c90bff1718d408ea5c146fa3e929feea358ac9e0"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/ceramic103-normalRough-gpu.webp",
+    "bytes": 58436,
+    "sha256": "0a16021a82a2fa370278d5bf7992fa4eb07c2bf06377af27fa64a7b86083968c"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/ceramic103-normalRough.png",
+    "bytes": 1083981,
+    "sha256": "941a2624804031eb8475c1e25ea1cb60d0c23939fd91f6f30836f72196c98ad6"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/cobbleOld-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/cobbleOld-horm.png",
+    "bytes": 2401626,
+    "sha256": "c0270a998169cf3745ab50303b59d9ffe8d7680a4562fbdacb09824624f9e5fe"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/cobbleOld-normalRough-gpu.webp",
+    "bytes": 662026,
+    "sha256": "3a37575a48d1fe1bedc1be4d481558968a0ab0eaee553115ac18f0faff2a2779"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/cobbleOld-normalRough.png",
+    "bytes": 4121183,
+    "sha256": "10a7bfd51a3669195dad42000346a30185993267855e1954fec66edcc12b0b14"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/cobbleRoyal-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/cobbleRoyal-horm.png",
+    "bytes": 2180208,
+    "sha256": "ae0f7c2a5d7d5478c6308a5b366a8b98a4300aa0cab058b51c161b1f67302b26"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/cobbleRoyal-normalRough-gpu.webp",
+    "bytes": 585154,
+    "sha256": "5f97b68b7e38d4fcff1fe75daf889220abe54b9c53497d5a2ac4c062509e0b78"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/cobbleRoyal-normalRough.png",
+    "bytes": 3768449,
+    "sha256": "3c1c141cf19cdb7965600aa15f9581524490da4cdefaaec075fc60fb54977571"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/copper103-horm-gpu.webp",
+    "bytes": 229988,
+    "sha256": "f18fa5c7b89c1495c2065ac29c3c88716d1ee02c7fe77b24786600561ab94219"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/copper103-horm.png",
+    "bytes": 1718116,
+    "sha256": "48b5893ab40a98e198349618c59157ec45a543fdf074acc6d0311c80c4e6b265"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/copper103-normalRough-gpu.webp",
+    "bytes": 131100,
+    "sha256": "12f6a904318778bebfccf76f25845bf5aa1dcf64d4258f1031eb7b1f6e486c18"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/copper103-normalRough.png",
+    "bytes": 1529120,
+    "sha256": "9009a9fdc0bf9f7e7fe5b7e1190f3705c0370fc61db13e0efe188f1693cbcf0a"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/earthLoam-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/earthLoam-horm.png",
+    "bytes": 2174882,
+    "sha256": "3723793f673faafa9e1aed7039a3d2461a2c77cd41d3114e2d6e55f052087eb6"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/earthLoam-normalRough-gpu.webp",
+    "bytes": 577234,
+    "sha256": "7efa60ba2ca7d6e9d349acfa30621edaa69582cb1148c2991eb72fa2b3a958f8"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/earthLoam-normalRough.png",
+    "bytes": 3759921,
+    "sha256": "18384e255ad5181fa14d12ce61c8c3af0b5d3b19438ed6dcdaf193c6a5f1e4ec"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/glass103-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/glass103-horm.png",
+    "bytes": 193020,
+    "sha256": "8bf4dfbbb0f81dcb82a823d655573640ac5edee903b9bc2c989807158aae286d"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/glass103-normalRough-gpu.webp",
+    "bytes": 1470,
+    "sha256": "aef2b98e6f700a0a1a0478ffb15430bf6809bd04e0fc32428d7cc993a32f5b1e"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/glass103-normalRough.png",
+    "bytes": 230444,
+    "sha256": "78756923f8a44a20ec00434d45c40b1979f0071d57bde68fabe1862fca90ebbe"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/grassMeadow-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/grassMeadow-horm.png",
+    "bytes": 2499253,
+    "sha256": "756deff2265f12683649c55afeaefd0f1e6a23012e4eb852701976438e99bd2d"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/grassMeadow-normalRough-gpu.webp",
+    "bytes": 667972,
+    "sha256": "d2e2e396eb93ef932075b8e28ef239946584a6f41862e0081626650427b8408d"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/grassMeadow-normalRough.png",
+    "bytes": 4323870,
+    "sha256": "9b38152a71f0e5ce31a345ac0caf91a753a98feec9f815f2e3c217476751b0b9"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/gravelDry-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/gravelDry-horm.png",
+    "bytes": 2445055,
+    "sha256": "ffa78c0bdab9614c6f5edfec7efc8d4d3e479b13e1cb6f00219a54cfd866e9b6"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/gravelDry-normalRough-gpu.webp",
+    "bytes": 664926,
+    "sha256": "223e412baba2a5d3a2e195cc240350f11ab7ce69a980e3742dfcc42b19785716"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/gravelDry-normalRough.png",
+    "bytes": 4285594,
+    "sha256": "f355b07dd3be16d239448215dad2d13f5ebca8b29fe99b296da73f7436c1c930"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/gravelRiver-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/gravelRiver-horm.png",
+    "bytes": 2355117,
+    "sha256": "3aec9021dd274eb156cd178ae4896246180fe3ad245b1a0cedc74be547864747"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/gravelRiver-normalRough-gpu.webp",
+    "bytes": 663726,
+    "sha256": "8c8f447a708aea67d007e54b504db1ea6668f0e718ac6cefbe67de059fc19ca7"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/gravelRiver-normalRough.png",
+    "bytes": 4099729,
+    "sha256": "2cd8c6a59d3208b1bd1a4da3e586ed4b926489a5cb1c5beb9292b6fba264c2a4"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/iron102-horm-gpu.webp",
+    "bytes": 165916,
+    "sha256": "82a526ec9dcc1eea8172aab92c9681c36732da0efe579c3e00e4b10f5da3f4c5"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/iron102-horm.png",
+    "bytes": 1549180,
+    "sha256": "7b4874cc076467cea7cf959c5e9861667294cf0e7d186be204b0242144afc4f9"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/iron102-normalRough-gpu.webp",
+    "bytes": 101114,
+    "sha256": "f42755b00f3c777afd6f32cbbbb97aa5c834192c7d8cf9bfadb903338711572e"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/iron102-normalRough.png",
+    "bytes": 1367769,
+    "sha256": "255ff97f890268594f6a33da690a28d2a7503e5cc81c36d6ccbeff03d722558c"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/leafLitter-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/leafLitter-horm.png",
+    "bytes": 2387297,
+    "sha256": "4c3a4e2529b58cbc48c1d5f92f0e523749e3d29038ea55467cf02f5f3891fa32"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/leafLitter-normalRough-gpu.webp",
+    "bytes": 645728,
+    "sha256": "86fb28f6b6b5efeb2cc47c0240f669109bfc96fdc19fbf960b974f3cecb7f59f"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/leafLitter-normalRough.png",
+    "bytes": 4083024,
+    "sha256": "ce8611cdc1f4e91a83a0201a5302d7822f868d49159f16e36e8f408fefac35db"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/leather103-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/leather103-horm.png",
+    "bytes": 1853122,
+    "sha256": "024e3fd8b7b7e7f8b32a099c99a70630034f0827f5d6731194d38a6bb3335a9a"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/leather103-normalRough-gpu.webp",
+    "bytes": 273708,
+    "sha256": "9ef8fe986480054321d5198ecaae7a70d82b5861d0e8bf8db4e55c883d1f7532"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/leather103-normalRough.png",
+    "bytes": 2491256,
+    "sha256": "704cbf4c53399781747e83589cdb19b542ac0d656320a1505713cb614deaeed7"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/masonry102-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/masonry102-horm.png",
+    "bytes": 2083622,
+    "sha256": "e21eb3bdaf77a200f12d2febce5f3faaf61d4231e18cab507afbbb9804e8e5e3"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/masonry102-normalRough-gpu.webp",
+    "bytes": 541366,
+    "sha256": "5df4054daf93979a70ec539469d10cf824a790b4596e7b81311e508caf2b35e5"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/masonry102-normalRough.png",
+    "bytes": 3631463,
+    "sha256": "c17ba543733bc5554504b8543998f135f93a887917c667db3b2e5dc826680422"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/oakBoards102-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/oakBoards102-horm.png",
+    "bytes": 1676035,
+    "sha256": "58326c184d071b9534938fc0719ebe4ccc9aa8d13fc9339d75da4242cb1ceea5"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/oakBoards102-normalRough-gpu.webp",
+    "bytes": 317014,
+    "sha256": "f234d5bda446d083f4fd4f9efff1b26cc41ac8c6d81e87e77caa10932f168639"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/oakBoards102-normalRough.png",
+    "bytes": 2182580,
+    "sha256": "2e2aee63df11095380ce62e9fcac3c7ccc8c2d93742bfce29e4e3e49b890a13e"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/parchment103-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/parchment103-horm.png",
+    "bytes": 1618344,
+    "sha256": "96316fa29ed30c757b85a30700d43e3cd1ed331d8d4c0109ece3998e2ca961b8"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/parchment103-normalRough-gpu.webp",
+    "bytes": 258656,
+    "sha256": "c9e769f7723cd3378e38910ed622359e8d3f6e2f885284bbfe75f53c2c72c2c6"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/parchment103-normalRough.png",
+    "bytes": 2093313,
+    "sha256": "add2926a19301932a9ef97f1576ca97244c2376af8264a72e3bb1e8b58c8258d"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/petal102-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/petal102-horm.png",
+    "bytes": 824307,
+    "sha256": "04aa3a171879b67ff7c0edbd1d9262935c34568e7eadfb5a4275678b8f4ca3e7"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/petal102-normalRough-gpu.webp",
+    "bytes": 113566,
+    "sha256": "a851af0f65697acf70c80e721b8049ea7fcc063ae52484b0f194abb50bb10acc"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/petal102-normalRough.png",
+    "bytes": 998283,
+    "sha256": "2e2ba28ae60986b1aa8f9600647698735d0757626df53deaa55511db0ea1c6dc"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/pineBoards103-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/pineBoards103-horm.png",
+    "bytes": 1461728,
+    "sha256": "161561e352f1ecc7ab71bb3c95a8632be85012bc597be4d071f3a35de8559075"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/pineBoards103-normalRough-gpu.webp",
+    "bytes": 254746,
+    "sha256": "4cd12549b0cf5760a5ff439b202dfad0f86bfeb351c55e03b4f7586ba3ae1b0e"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/pineBoards103-normalRough.png",
+    "bytes": 1883131,
+    "sha256": "423bbe8ccca2b68ecc5c78936633d7a12171dc2d36e00945ff8849895fab880c"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/pineNeedles103-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/pineNeedles103-horm.png",
+    "bytes": 1526434,
+    "sha256": "80e080063699362d9b752cf2ea3e9418ea80486bb01d64d17e22c63f5ae2736c"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/pineNeedles103-normalRough-gpu.webp",
+    "bytes": 379746,
+    "sha256": "55712d119a900742599083ca3a84252553ce0d4f83d04f0e65c40175086bc420"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/pineNeedles103-normalRough.png",
+    "bytes": 2645147,
+    "sha256": "3b982beb7b83c957e501eb5db4b94b370fd6f1e702cd9c28bb3a4bd101b94bc0"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/plaster102-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/plaster102-horm.png",
+    "bytes": 1668468,
+    "sha256": "40d3552e984dc0b4c68736baee0a27325aa4d92e0f5ca63bd9ec337015b56681"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/plaster102-normalRough-gpu.webp",
+    "bytes": 376952,
+    "sha256": "1a68137c8469d82949f8e003ee9eeaefb16605e9b414e37c83de1570cadac328"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/plaster102-normalRough.png",
+    "bytes": 3035518,
+    "sha256": "a2f2975a3d72ab01b4f04a5100f5c442713d12a2ac2cf93386477d03d3e97897"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/quartz103-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/quartz103-horm.png",
+    "bytes": 1443039,
+    "sha256": "709a9df1841d6a03e90da8041c74ad09a740d40f1e368a22ecc63873598a195b"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/quartz103-normalRough-gpu.webp",
+    "bytes": 108818,
+    "sha256": "4e17455f2c6dc863d359542fd0e1af98f59bfe72afd340182445845f178569fe"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/quartz103-normalRough.png",
+    "bytes": 1440459,
+    "sha256": "89d5785c89b38a6919fbaf985663ac4288d941c8433023dfb08cfdeae3881087"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/redBrick103-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/redBrick103-horm.png",
+    "bytes": 2082947,
+    "sha256": "83a159a79dbfe62e336a7ffc16d85f83a4de6857f291d5c6353c05e443fab59a"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/redBrick103-normalRough-gpu.webp",
+    "bytes": 541768,
+    "sha256": "9fe8f29dc17819728d09ed9a6157094de13dacb70126c6e488df7798ecc40a1c"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/redBrick103-normalRough.png",
+    "bytes": 3595488,
+    "sha256": "bb13d6167f3127dcc62b975fe57395460ddf7664fe3e9b994c64b4d3af2581fb"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/roofClay102-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/roofClay102-horm.png",
+    "bytes": 1740034,
+    "sha256": "3ddd44b911a5b304f329a7ba3f96af63fb00e3d3dfa907c7576027fe5b91dfe5"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/roofClay102-normalRough-gpu.webp",
+    "bytes": 446756,
+    "sha256": "996e6ac727301375bc73a99345fe94cde3bcee06456bc2961b13770ee76b3a7d"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/roofClay102-normalRough.png",
+    "bytes": 3004163,
+    "sha256": "c6362b54fc8761bb110959c07aa461579d750d4439a876219882f38ac260a5ef"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/roofSlate102-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/roofSlate102-horm.png",
+    "bytes": 1778912,
+    "sha256": "e72993aa81475288fe9ef3df549db74ea11a5e77a28081c33ca21cb338d61029"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/roofSlate102-normalRough-gpu.webp",
+    "bytes": 443530,
+    "sha256": "5fbabd248a6d773d5b922cc4ee87bdcb5661b84d14a87213686cc7edba4abc39"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/roofSlate102-normalRough.png",
+    "bytes": 3075413,
+    "sha256": "c83fcc06c07d75f9605e153dffd2a9418adb20d7b7d0fb8ad328d62bf9ffcf29"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/rugCommon103-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/rugCommon103-horm.png",
+    "bytes": 2274984,
+    "sha256": "85ed7ce722da85387fccb7797a4414f044d3636bdbcab08c22dfdd0537a6f30f"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/rugCommon103-normalRough-gpu.webp",
+    "bytes": 464160,
+    "sha256": "2e83a576bc81a6e617abfddae4c5fdf945ea95da8a0dbe54658e36c947697a59"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/rugCommon103-normalRough.png",
+    "bytes": 3016844,
+    "sha256": "43d99cec3c1474c990241893638bf0469cc9241d6ca4bf2d63099af0e54301dd"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/rugRoyal103-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/rugRoyal103-horm.png",
+    "bytes": 2527490,
+    "sha256": "8f96459bd133c9dc2e6eccaf7aafe1549b22b9d8f957fee25c8f7d27589df176"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/rugRoyal103-normalRough-gpu.webp",
+    "bytes": 555270,
+    "sha256": "c3eb4493ba50eb377a9fbca4ef40fa06d067f2b76e13f1ad24da87c94cc6a114"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/rugRoyal103-normalRough.png",
+    "bytes": 3367757,
+    "sha256": "623554414e3cbfc93b1636fb9d75748b26473708e00a30a21ff62dd6e0950f26"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/ruinSlabs101-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/ruinSlabs101-horm.png",
+    "bytes": 2061912,
+    "sha256": "fef19c6db634025f38cfa7fd0d4c74baaec8cf6bae713f0b16c0640e8348be14"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/ruinSlabs101-normalRough-gpu.webp",
+    "bytes": 545628,
+    "sha256": "7df3422efbf826819d185b65f29d334f90c82bec53df42b30d8c6eabde11a2f7"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/ruinSlabs101-normalRough.png",
+    "bytes": 3582437,
+    "sha256": "853a7d9ff5413a92caff9ba6278b2cbf5b2df65a103c22fb8f0130556b6abad3"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/sagePlaster103-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/sagePlaster103-horm.png",
+    "bytes": 1564329,
+    "sha256": "6bf3a46543c55a951dcfee0948a7e11d5e270991339a1ca6117a0bc2ebadc6ea"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/sagePlaster103-normalRough-gpu.webp",
+    "bytes": 328890,
+    "sha256": "b78ffe63a5d6f74b5964166cf7a6ca1369ebb6becbd8706f94fc6ee6e9383fc9"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/sagePlaster103-normalRough.png",
+    "bytes": 2840130,
+    "sha256": "f8bd6f98962e15fe0a4672a6a74d9f465db4efb88bd26bb3512cdea5492bf45d"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/sandChalk-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/sandChalk-horm.png",
+    "bytes": 2069647,
+    "sha256": "38e9eb55d6f53bbc79927a1dab859f0bd157123eaa6541fa5ab857fd671413bb"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/sandChalk-normalRough-gpu.webp",
+    "bytes": 534696,
+    "sha256": "18c3f9359c635bf23fc240f4669ef04c77b3c20f6faf94c5e84d7d7381cdd0ce"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/sandChalk-normalRough.png",
+    "bytes": 3648280,
+    "sha256": "8784545010c07f1e834effc447bd626c058edda7f57cd97b5a158331a910b313"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/sandCoast-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/sandCoast-horm.png",
+    "bytes": 1940162,
+    "sha256": "e2a4f1fb17d267a3efd8cba9df4ce005e4520d15383b35c16ad88782941fb44e"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/sandCoast-normalRough-gpu.webp",
+    "bytes": 483934,
+    "sha256": "efe9fa68b4fdb1db79955827e5ec09d1f1caf38139c0693a58b7ce68601368ad"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/sandCoast-normalRough.png",
+    "bytes": 3425060,
+    "sha256": "88eb60d0ee6b8ee1f6d767c1fe7ee19c6aa1b59b61687c9cbd1b33361bf3d903"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/snow-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/snow-horm.png",
+    "bytes": 1220710,
+    "sha256": "ed71dba1b04076b897ccccb606ae12ceff28af0b93f1dd4b3c09681cf255e656"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/snow-normalRough-gpu.webp",
+    "bytes": 350938,
+    "sha256": "0003c84acb0a598c92a2b2cb303064a7957ae2018959802d9bdf134488c88963"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/snow-normalRough.png",
+    "bytes": 2183350,
+    "sha256": "2c8ea1020940b56042b2bafefbd94236d70dbcf7b8134bb986646154a94144e8"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/steel103-horm-gpu.webp",
+    "bytes": 150302,
+    "sha256": "851075e503af27de4e5824dd0a0a313e1f607051faae2ab397232cb8061c804e"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/steel103-horm.png",
+    "bytes": 1157874,
+    "sha256": "2ed201bc6f82f249ec810ec864c00406b2c8574db89db5d02a82847983516880"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/steel103-normalRough-gpu.webp",
+    "bytes": 77706,
+    "sha256": "2531dccac8be892e9d4b658f5dc4767436be42a9c32a08d1726e9296748e2965"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/steel103-normalRough.png",
+    "bytes": 1020405,
+    "sha256": "cbbdbffae4d0f89dc3a55d0dce4573585b2e4a1e3e7907a4e09149f7882dcaf2"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/terracotta103-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/terracotta103-horm.png",
+    "bytes": 1627000,
+    "sha256": "1593e9b29adbb282a92592c7f111d809b70bc69d2b4c3cab9e86e6402e987fea"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/terracotta103-normalRough-gpu.webp",
+    "bytes": 365838,
+    "sha256": "502ed4c4b1f384d3adea1e9b1d6e2874300865cac321d4c84f9f85fb8207dbfb"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/terracotta103-normalRough.png",
+    "bytes": 2893832,
+    "sha256": "c5e1849d8fb55a078aee3b51e29e1746c76f83b32ab091b2389569ce9a97b035"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/walnut102-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/walnut102-horm.png",
+    "bytes": 1376400,
+    "sha256": "57d0bcd72b715b9aedc7ecbec903bda3caae5809c78103cf486a1f46c380cdfe"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/walnut102-normalRough-gpu.webp",
+    "bytes": 233842,
+    "sha256": "b3b1fa0be2fe31f653d1ff97559c3b62e7976acbb67347277683c702a2181859"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/walnut102-normalRough.png",
+    "bytes": 1820622,
+    "sha256": "b716df18e49c90cf9a3c87d2660049cfb9596b5dd1b67aab2851910c987d7a26"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/waveHeight103-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/waveHeight103-horm.png",
+    "bytes": 715320,
+    "sha256": "793ec00e80251fb0e87f98b8586b874dd8d296fc289db8e749ccd1df8567bfe3"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/waveHeight103-normalRough-gpu.webp",
+    "bytes": 526972,
+    "sha256": "9cdc066fd6c75833da831e1b016de93205269cfc26ee0d80942a22e23bc29a2f"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/waveHeight103-normalRough.png",
+    "bytes": 2684390,
+    "sha256": "47704be5c82cbb01857e2a0c03939fb455a04ad7d7cf117218a865d695f583ff"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/woodWeathered101-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/woodWeathered101-horm.png",
+    "bytes": 1778906,
+    "sha256": "90c5707dec2b14d076c829ce8b6a5eae32b61fe4ea2c7a8c170a374118aba99c"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/woodWeathered101-normalRough-gpu.webp",
+    "bytes": 450190,
+    "sha256": "eb6d78f9c2604768af73085e70b708220eaea36f1e8238864d1a608e140dcf4d"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/woodWeathered101-normalRough.png",
+    "bytes": 2458026,
+    "sha256": "a6de751172c4cc9aa1ed707bdf908362dfc87cf7588d6fb2fb49f222887a3328"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/wool103-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/wool103-horm.png",
+    "bytes": 2017666,
+    "sha256": "e7f090c010af93fbfd2d5bf898d7655173c942ef879ef7f7cb1c470e29b73133"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/wool103-normalRough-gpu.webp",
+    "bytes": 403172,
+    "sha256": "130f7dc765945fde1600e354503b436f33631f9d6be6bf749fa9e1ba551c9155"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pbr/wool103-normalRough.png",
+    "bytes": 2582289,
+    "sha256": "f80e0abfc24fea5de1a88e21cda23dcb072ddcb5184ba5a440fe4866a35ae99e"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pineBoards103.webp",
+    "bytes": 369094,
+    "sha256": "96a3b96bbee4e545be3057350a3bfdb382d0bd8a3d345e5e7472b7c927e92d2d"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/pineNeedles103.webp",
+    "bytes": 407344,
+    "sha256": "9d5322cdf20610e33fe696c4b6598e4b3b628a12a6abf3a29a72c060e63a058f"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/quartz103.webp",
+    "bytes": 272374,
+    "sha256": "e8385da2a95037e70df5ea3d4eddf4bd9fd2c9cb725bee848e8d25a7d729230b"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/redBrick103.webp",
+    "bytes": 765640,
+    "sha256": "5ee778a23eb6b01305e6c3bce51b6efa2820a15b5b5c9a969f74a070ab727333"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/registry.json",
+    "bytes": 137482,
+    "sha256": "9a317f1ee5f860a9832d641c984f4eddda6b41db436493f98b6056d83b0be1c9"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/rugCommon103.webp",
+    "bytes": 794518,
+    "sha256": "9ab7ab385f9a14c42cf24d246f6b73a82fdee861277da19b03b3ecef20e5d286"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/rugRoyal103.webp",
+    "bytes": 916638,
+    "sha256": "5836fc8bbe2523760238de5b5674e411f23dcbda20c11523a47a8eea8762f2f2"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/sagePlaster103.webp",
+    "bytes": 493700,
+    "sha256": "080e3c77c300137be5fca9c30ff57f5798e569c412c68729e2db6cc54b62e938"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/shopSign103.webp",
+    "bytes": 600684,
+    "sha256": "4172983ffa0b336858e34ed7dbf28a4142460308c5f9717cf2b58872ae2c44b8"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/smoke103.webp",
+    "bytes": 301062,
+    "sha256": "a98f31fff0c5afdc43027a97d1a563eebf6b71386a8cb9fe485223fd2c09a70f"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/steel103.webp",
+    "bytes": 214096,
+    "sha256": "02a30aace308b657d9e65ff251a5a29b2c86f0bea8b40f83118697bcb3588f1e"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/terracotta103.webp",
+    "bytes": 534668,
+    "sha256": "3e1f846e94e4823fc067544f5c2fca288df4650ce834f5e8c93868275f6a75ae"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/waveHeight103.webp",
+    "bytes": 97208,
+    "sha256": "174d6c7afbcb38e6674005e87fa3e6bd759fc13393b51dfbcfc7b03a513e39de"
+  },
+  {
+    "file": "elyndor/assets/source/environment-pbr-v103/wool103.webp",
+    "bytes": 630686,
+    "sha256": "d338a9406b7c7262243ff6d4256ca2f968be2e40be08880bc3dba0e62d94be62"
+  },
+  {
+    "file": "elyndor/assets/source/loading-v106/manifest.json",
+    "bytes": 5034,
+    "sha256": "9c01e2ec7291a3567d32837ca7af4767ca2eaae0cef1487c4620dab246ff0e3a"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/blade-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/blade-horm.png",
+    "bytes": 1549775,
+    "sha256": "8af02462adc422d4e582c8094972106cd48c88f6d01a9eeed6fb3e031744de12"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/blade-normalRough-gpu.webp",
+    "bytes": 523292,
+    "sha256": "cc9f84057890eec647256f213aedf74d2cdb27071b8e1706e054fe9093c88045"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/blade-normalRough.png",
+    "bytes": 3553327,
+    "sha256": "223e1936e85db8986f8b916f06768de3815036af9071a893fd9af33913e7a494"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/blade.webp",
+    "bytes": 620452,
+    "sha256": "22c5d4d8386748fd69de102280b582cd38e6fa6090f3e973794d3a063d6a4576"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/earth-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/earth-horm.png",
+    "bytes": 1842448,
+    "sha256": "1b6ecdf60c1b18b1eee8719e297e8b14de5b05858ec509e0c32ded01f7d7f923"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/earth-normalRough-gpu.webp",
+    "bytes": 616598,
+    "sha256": "9d2602270f17731fe15924c19bb74876f8e7ae9794a6e9418d00d506b4b2d30b"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/earth-normalRough.png",
+    "bytes": 4165338,
+    "sha256": "9d54cc656f97c66036ffc216d9e5a366e7c0c2ab4e9bea1a1459f289bc9b1c5b"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/earth.webp",
+    "bytes": 783428,
+    "sha256": "927233ce03f05d90584a2f07f7139d5272fa8d1a108aa5c03b580b87288d788a"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/forest-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/forest-horm.png",
+    "bytes": 2024439,
+    "sha256": "b32fefa17dc14304249c92b9cdef9baa0349553b7b823bfe8a95882beef4b19c"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/forest-normalRough-gpu.webp",
+    "bytes": 732234,
+    "sha256": "4e381f784dd89483e588831c39fb84350cb73ecd92e137722cd69925a1513971"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/forest-normalRough.png",
+    "bytes": 4423257,
+    "sha256": "3a6e04f86189c12930b554e945acb13b1d922312cb05a7c4a048de6bc2e133f9"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/forest.webp",
+    "bytes": 896362,
+    "sha256": "f5c2011b0a9463a0280a96c0223134ed0f98f019f300ee27911dd82fbca30e33"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/granite-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/granite-horm.png",
+    "bytes": 2007928,
+    "sha256": "d252e935cc429d478e2842ef065189894bf063be82d0747340b43b556a8cd721"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/granite-normalRough-gpu.webp",
+    "bytes": 792302,
+    "sha256": "f54cfe74b58619a6be325b9b2d6653fad1dadbdff59cb97bdedf8f5ae34e9fe4"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/granite-normalRough.png",
+    "bytes": 5100819,
+    "sha256": "c6d9e6463b05e7400152964d43a8fbd6a1c772e48d63f1898700407bfb5d9165"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/granite.webp",
+    "bytes": 866860,
+    "sha256": "75f020807cab3c3e6f53301161a90ef369d245d6d7a784094ba43d57921c6e0d"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/leaf-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/leaf-horm.png",
+    "bytes": 1840007,
+    "sha256": "dc8dfa4e20e0e087e77257afbdcb4195cf7190539451015e674b72388325248f"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/leaf-normalRough-gpu.webp",
+    "bytes": 585904,
+    "sha256": "eadfd1e005497e6084b21f0afe89c7090bb5233ff0b9f961cb1950aeb5321939"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/leaf-normalRough.png",
+    "bytes": 4215689,
+    "sha256": "c084d7c94cd6d39e32f7f2d248b677dd76fa87347a17a262f91946d63087f47d"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/leaf.webp",
+    "bytes": 785506,
+    "sha256": "4641ee255f34ed2ff978d9d4e0081ec3d9a338be54217696e65683a05a4b9129"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/limestone-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/limestone-horm.png",
+    "bytes": 1769065,
+    "sha256": "01bcdc0adfd9d7247d30b3428ca1c76d08b8f884ecfe8c4cb3cacfe7be568e67"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/limestone-normalRough-gpu.webp",
+    "bytes": 707200,
+    "sha256": "0508d5391fe329a488a9ea852932d5807219525a783870d5734cd8da1e92e170"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/limestone-normalRough.png",
+    "bytes": 4728576,
+    "sha256": "9f14b67ba7f3036dc34ffdce3050f294ace2e9b30377c907d224f49ef8dc293e"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/limestone.webp",
+    "bytes": 702942,
+    "sha256": "bf41d1872051d308af50bc2ef065aa94ea70ff8ed1a54088efce28b3b1019351"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/manifest.json",
+    "bytes": 11436,
+    "sha256": "8d1f6a9c27a163d5e13e7f5b16753bab5b56f6bbbd00dea2d711643da456821b"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/meadow-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/meadow-horm.png",
+    "bytes": 2207566,
+    "sha256": "13be4e70c1fcbff303cf8a5d997cc1b64c89da0ac29b786a0b1c2608cef38479"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/meadow-normalRough-gpu.webp",
+    "bytes": 768060,
+    "sha256": "3286075d671e3f6da8b9be7a8e439e81b1bb2b773fe5c3446307a158307d6fb4"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/meadow-normalRough.png",
+    "bytes": 4759933,
+    "sha256": "5b4f142e23e57aef416b3e5d3914f594216f4986c3955b33a09965df27b5cfed"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/meadow.webp",
+    "bytes": 980386,
+    "sha256": "4dd29e7a4070ed74015e7fbf16b7e7a3ed4818536cd00c41c862a74504b28667"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/mossrock-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/mossrock-horm.png",
+    "bytes": 2103753,
+    "sha256": "7a4074349d9d69e1e2a5d98499828f35e5736bbeeab2123a9487e8b0cd46cd0e"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/mossrock-normalRough-gpu.webp",
+    "bytes": 812640,
+    "sha256": "99b4d510ab423dac13dc62d682781c33d96f80dd8dc16686063f4e8558bc1423"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/mossrock-normalRough.png",
+    "bytes": 5203221,
+    "sha256": "47ab457a85f968d5f5e872f717332be1d5e8713328fb170d59d4493da9c14c81"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/mossrock.webp",
+    "bytes": 926968,
+    "sha256": "7baf8659012a64325e4b5a97979a3aa7aec70a6986da5f67fe60a7be999a47ab"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/slate-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/slate-horm.png",
+    "bytes": 1896297,
+    "sha256": "ee6a3e71e3dabf09a4504d8107a5990dbe55bccb53c306570343256c4659c3e5"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/slate-normalRough-gpu.webp",
+    "bytes": 743954,
+    "sha256": "f7f62f1a628270262c2ffbed2176513fc27d6a8f053e1edb8a98c64d4a5ddc52"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/slate-normalRough.png",
+    "bytes": 4944747,
+    "sha256": "740008cc2ddae2db9ce269c4b45e0cd6718acd7f8bc216fab8d3d43f71774911"
+  },
+  {
+    "file": "elyndor/assets/source/palette-v105/slate.webp",
+    "bytes": 787198,
+    "sha256": "0cc997fba7504a88ecbd4986548950570c52192756d1c4bac179bae5caefabce"
+  },
+  {
+    "file": "elyndor/assets/source/scenery-v104/cobbleMosaic104-horm-gpu.webp",
+    "bytes": 52,
+    "sha256": "e11263e01a109975ae10bdc4a3a8d28c162d07eecb327b442f278f66562ee9af"
+  },
+  {
+    "file": "elyndor/assets/source/scenery-v104/cobbleMosaic104-horm.png",
+    "bytes": 2141525,
+    "sha256": "f48751a89384e4caff114da956115e80e563871677098a66e980232c61512885"
+  },
+  {
+    "file": "elyndor/assets/source/scenery-v104/cobbleMosaic104-normalRough-gpu.webp",
+    "bytes": 423784,
+    "sha256": "bc207d87cf0a4c367ad02d1db985e4d83fc86ce70acef9ba03dc2e861e50e9aa"
+  },
+  {
+    "file": "elyndor/assets/source/scenery-v104/cobbleMosaic104-normalRough.png",
+    "bytes": 3029457,
+    "sha256": "a462bc717ee2ed8bcee1be3b6a40aaa4b48970bb31fc0e955343805d3d029d86"
+  },
+  {
+    "file": "elyndor/assets/source/scenery-v104/cobbleMosaic104.webp",
+    "bytes": 859352,
+    "sha256": "ddb6dfdde360f2e8d1a3410b3ad19cc2bc1a163df428de8ae783beb36a8c1426"
+  },
+  {
+    "file": "elyndor/assets/source/scenery-v104/manifest.json",
+    "bytes": 5683,
+    "sha256": "729d01d9e2d1521addfa50e091e275db145d891b1b1e4bb5a78768ae67e94346"
+  },
+  {
+    "file": "elyndor/assets/source/scenery-v104/windowInterior104.webp",
+    "bytes": 195848,
+    "sha256": "4629836b1540757701f6991f3c500b1b02bbcc21ef492a24d5c202798dc18753"
+  },
+  {
+    "file": "elyndor/assets/source/world-hd-v102/basalt102.webp",
+    "bytes": 496570,
+    "sha256": "1e354700d2493411d682eb91bba9e04f4df4c333673a64b1266386d6eb97de96"
+  },
+  {
+    "file": "elyndor/assets/source/world-hd-v102/bluebells102.webp",
+    "bytes": 244430,
+    "sha256": "c517d6f7cdd1b5e8dbf1c549b1b8693dbcdc6c2a8ec87364300cb0c358389d6f"
+  },
+  {
+    "file": "elyndor/assets/source/world-hd-v102/botanicalLeaf102.webp",
+    "bytes": 389888,
+    "sha256": "b81d5d315a3a65971a02b6b7b3234ed0da2b4935df66a7c04d5d5a8195efd6a2"
+  },
+  {
+    "file": "elyndor/assets/source/world-hd-v102/canvas102.webp",
+    "bytes": 569762,
+    "sha256": "f19071977365dd80bcd9ba3bd5e9fd73966c74a4aada5aa92ea4aaab4d5e5507"
+  },
+  {
+    "file": "elyndor/assets/source/world-hd-v102/daisies102.webp",
+    "bytes": 293856,
+    "sha256": "fd8e48af1fc1c14158ebb223ea53da221c4751874b74544f1262d6ebbab39e85"
+  },
+  {
+    "file": "elyndor/assets/source/world-hd-v102/fernFine102.webp",
+    "bytes": 594550,
+    "sha256": "360227b9195830acab1963791323f64f8a3c218c5207f53a986e5e0b3bc7e05b"
+  },
+  {
+    "file": "elyndor/assets/source/world-hd-v102/grassFine102.webp",
+    "bytes": 563502,
+    "sha256": "82caf63c2441490994e00bd2c1d8c0de7277fcb76d95cc21450ea2a0ceea118c"
+  },
+  {
+    "file": "elyndor/assets/source/world-hd-v102/grassLushFine102.webp",
+    "bytes": 535010,
+    "sha256": "fbb8e814864fb3aab4b2003775b3295b7559343f26daba914be77b9384e9e324"
+  },
+  {
+    "file": "elyndor/assets/source/world-hd-v102/grassLushSoft102.webp",
+    "bytes": 480154,
+    "sha256": "e1dc72a66c757b261a15409c4527fad674e4ffb02bf6f46b06bfa775067e1bcd"
+  },
+  {
+    "file": "elyndor/assets/source/world-hd-v102/grassSoft102.webp",
+    "bytes": 353512,
+    "sha256": "bca33ef69446d5ed39256bdd28a1dd933a438be14e05f90160e3f8c63a85243a"
+  },
+  {
+    "file": "elyndor/assets/source/world-hd-v102/iron102.webp",
+    "bytes": 278178,
+    "sha256": "50caf2145ec3468729bc7e0a6be1a79bb53061bc7bd0c17139e2e7d0439c7bea"
+  },
+  {
+    "file": "elyndor/assets/source/world-hd-v102/manifest.json",
+    "bytes": 6303,
+    "sha256": "b869057dbcdb02132366a70f056a890d1ccd82824791f4ddd547b553d28fc56f"
+  },
+  {
+    "file": "elyndor/assets/source/world-hd-v102/masonry102.webp",
+    "bytes": 603894,
+    "sha256": "613ea54e9c61bc669c88a6b4fb2056ec7d22bae37d38a347cc10aee04646f780"
+  },
+  {
+    "file": "elyndor/assets/source/world-hd-v102/oakBoards102.webp",
+    "bytes": 398802,
+    "sha256": "ba6f73775661e7f1eadfa83cc3e8f50244fa2bbfdb64c36049f9e366e32509ef"
+  },
+  {
+    "file": "elyndor/assets/source/world-hd-v102/petal102.webp",
+    "bytes": 96844,
+    "sha256": "e0d620ba310b30a79ca9e61a36d5f574f7a272368dc9511ef52be2f8ca264a63"
+  },
+  {
+    "file": "elyndor/assets/source/world-hd-v102/plaster102.webp",
+    "bytes": 481478,
+    "sha256": "c240c0e94a3bed8911f683b110ee0923f6dd9186f42df24452aa9ef8f2949709"
+  },
+  {
+    "file": "elyndor/assets/source/world-hd-v102/roofClay102.webp",
+    "bytes": 491320,
+    "sha256": "6fb917e543964806247269dcc2d2cb8c50d34edacdb3e489b641623bed04ee6e"
+  },
+  {
+    "file": "elyndor/assets/source/world-hd-v102/roofSlate102.webp",
+    "bytes": 450826,
+    "sha256": "2f7904e0568f6001dbfcc2139e627f3ccf90e141d1cdb2f1ed79127402b1cc42"
+  },
+  {
+    "file": "elyndor/assets/source/world-hd-v102/walnut102.webp",
+    "bytes": 237316,
+    "sha256": "b53e96d0ffad345be396261b3749ed1dc5a1405ddf0128122fc0110255a6f9dc"
+  },
+  {
+    "file": "elyndor/atlas-data-v18.js",
+    "bytes": 18408,
+    "sha256": "9c8b58c50c62c979661dc7fe9e9b6a44b0afc63986ff6638c1e275f358ac97b2"
+  },
+  {
+    "file": "elyndor/atlas-v14.js",
+    "bytes": 22124,
+    "sha256": "f1ff47d907f36331725f8c6ee6274eb83c049058c93581572325088628a58349"
+  },
+  {
+    "file": "elyndor/atlas-v18.js",
+    "bytes": 5537,
+    "sha256": "1a93104154db5a6cec1e90df3229b5c6f545a2525689de116f9510fa783e412d"
+  },
+  {
+    "file": "elyndor/atmosphere-v24.js",
+    "bytes": 5057,
+    "sha256": "dee98bfcb130f7e4c7af836a6d0d1f80f53cfdd3a257733f5b736a670b5b50ed"
+  },
+  {
+    "file": "elyndor/atmosphere-v28.js",
+    "bytes": 3084,
+    "sha256": "63f4af008169d61dbd686c9f5a53f32c00abd5ef81019c47525f4bfc6f949d64"
+  },
+  {
+    "file": "elyndor/atmosphere-v33.js",
+    "bytes": 9378,
+    "sha256": "718d3b29993bd79ac2242ff3832e163a4dba0970f4ed16bffe63c988a685c292"
+  },
+  {
+    "file": "elyndor/atmosphere-v35.js",
+    "bytes": 5466,
+    "sha256": "7406de90df63749ca1939b633f830d332a0d01127dc07c97408bb5870f519664"
+  },
+  {
+    "file": "elyndor/audio-v13.js",
+    "bytes": 9768,
+    "sha256": "d34f06854ea8ba23cd1b3d02d34dc7a8dc31b5234cc86aa7bea3434ff33ef92a"
+  },
+  {
+    "file": "elyndor/audio-v15.js",
+    "bytes": 5338,
+    "sha256": "deafb01e2c18e38c6f579bcdd2610e1827c814f66f1360a3da6f3abb0ef1eb32"
+  },
+  {
+    "file": "elyndor/battle-v12.js",
+    "bytes": 9503,
+    "sha256": "bf80d28f7329e7455db8fab0859d5ee0cf4a5ed8373c5018ac7469c2848bfc43"
+  },
+  {
+    "file": "elyndor/battle-v13.js",
+    "bytes": 8553,
+    "sha256": "0e8fdf3fbb8e82da8375da5de341ce48857ca1127742a05f625455331ff34828"
+  },
+  {
+    "file": "elyndor/battle-v17.js",
+    "bytes": 2409,
+    "sha256": "fd1d3ee9ce7fa1dff4f9ac0c42eb77a1c22bec2979b9a9a3445606d58a5dc9de"
+  },
+  {
+    "file": "elyndor/botany-v30.js",
+    "bytes": 10089,
+    "sha256": "0ad29195d9002d83fe6e0a8333e467bb67e7a9a57b480ccec56386fb471b1c95"
+  },
+  {
+    "file": "elyndor/build-manifest.json",
+    "bytes": 10653,
+    "sha256": "803bed10601ec7c37281cf497150bec0292aa9738cbf0cb4f822684693422ad2"
+  },
+  {
+    "file": "elyndor/casting-v15.js",
+    "bytes": 2268,
+    "sha256": "7eab462fadc68054c5842fc2af8ff114760cee30ef731e63d81faea7e7e513b1"
+  },
+  {
+    "file": "elyndor/celestial-v31.js",
+    "bytes": 17294,
+    "sha256": "facea084d02e53de9734ac7ee92f232fd3cdfdb5e0daf5bf0846bfdabb84c49b"
+  },
+  {
+    "file": "elyndor/cinematic-v22.js",
+    "bytes": 8934,
+    "sha256": "0f67d75d2f30756a0a25ac9d14ad76fa532b05d986cdae41a60d1991d94f30b3"
+  },
+  {
+    "file": "elyndor/clarity-v23.js",
+    "bytes": 12111,
+    "sha256": "62109b4024c61343f4c0eb8c4a5b99dccea02806524218fe4be58d4c66bc1e5e"
+  },
+  {
+    "file": "elyndor/clearance-v15.js",
+    "bytes": 1676,
+    "sha256": "9fa00dd95bbfd705f673c0d7aaa7a7daf86f24a71b3209ffb1955fbc1e8b1e9e"
+  },
+  {
+    "file": "elyndor/clouds-v21.js",
+    "bytes": 2803,
+    "sha256": "0041aae84767ee824275072c869e094dc267b5586daa6fd7c1de4e5d5ed1c217"
+  },
+  {
+    "file": "elyndor/combat-input-v15.js",
+    "bytes": 5804,
+    "sha256": "8b62107f227f52b3cc86ca40b5ff7ccbb2bb1ca15a9b52b66a7a108c4504296a"
+  },
+  {
+    "file": "elyndor/combat-v11.js",
+    "bytes": 6972,
+    "sha256": "6247f1bcf1d187ca701557b87f8fe71387006597a506b047811785c1b6a02b46"
+  },
+  {
+    "file": "elyndor/combat-v21.js",
+    "bytes": 4817,
+    "sha256": "9380a6164f8a151f6d362187204c81c759c19635919ea116b7844971f14c5958"
+  },
+  {
+    "file": "elyndor/combat-v27.js",
+    "bytes": 6547,
+    "sha256": "3a9240b158248049ead98d4a4a974873ac6fc31e4259626a834fade5b8dc2af6"
+  },
+  {
+    "file": "elyndor/combat.js",
+    "bytes": 15967,
+    "sha256": "53124060aa6e28d3a210354be85341eddafb2b284cf8492aff0e7154218f7755"
+  },
+  {
+    "file": "elyndor/current-v19.js",
+    "bytes": 7216,
+    "sha256": "672db4395ccce65a91acd1bfc01ec72a0d9b4446973ad438776b017f812f3ef4"
+  },
+  {
+    "file": "elyndor/data.js",
+    "bytes": 18596,
+    "sha256": "a91d714f83ead6ad74a109759e81dd85e986658a657ed57a5394da77a74e9874"
+  },
+  {
+    "file": "elyndor/detail.js",
+    "bytes": 7377,
+    "sha256": "64d7f4aecc16d9c9c79665527cba061bfb52a57d3b5a78a1922300bbb66a605d"
+  },
+  {
+    "file": "elyndor/distance-v26.js",
+    "bytes": 10025,
+    "sha256": "b73731a33aa1319bf156d953291c427cf19682a6faa404b86b93913e0e28a0d3"
+  },
+  {
+    "file": "elyndor/districts-v24.js",
+    "bytes": 12866,
+    "sha256": "78687abe552c07cc5b9252d3a2514c35a08d6a554ffc7e0212bed0886e576754"
+  },
+  {
+    "file": "elyndor/districts-v27.js",
+    "bytes": 3642,
+    "sha256": "d8a289f5140682313a06473a30bb454eec47238d5894b96626c23059acea60f8"
+  },
+  {
+    "file": "elyndor/effects-v11.js",
+    "bytes": 21138,
+    "sha256": "39a358d9e99b9acf6b7c761c0e96751f829f49a52b009542432c3e7e13e86d93"
+  },
+  {
+    "file": "elyndor/effects-v35.js",
+    "bytes": 8915,
+    "sha256": "ea5a750f1d09bcc27f06d241de3f0925351fc3b1611dd4f5fe63485474bab11f"
+  },
+  {
+    "file": "elyndor/environment-v13.js",
+    "bytes": 6523,
+    "sha256": "f939a8a41e8978bc11b3b5cd39afe266930f7801106442e5016936799ba2d0f2"
+  },
+  {
+    "file": "elyndor/experience-v13.css",
+    "bytes": 956,
+    "sha256": "cf05efc2c19623cad25a1251dd423ab435c66ef527c1d9abbaf6f1747e72eb00"
+  },
+  {
+    "file": "elyndor/experience-v13.js",
+    "bytes": 6648,
+    "sha256": "83f2df84d720a397188faf68fda9e0aaab5b334b9e3b71af58f643303fbf10f7"
+  },
+  {
+    "file": "elyndor/experience-v15.css",
+    "bytes": 1282,
+    "sha256": "59a3a30f5dcda83a39c1e03407b23e5685ef21b332ebfb0c86637e9fc0f9a37d"
+  },
+  {
+    "file": "elyndor/experience-v16.css",
+    "bytes": 3329,
+    "sha256": "10c0d6148c8429b41ca36a4f48999202ed6f061ae8fd07d75f192ec5e7a3aa65"
+  },
+  {
+    "file": "elyndor/experience-v17.css",
+    "bytes": 2996,
+    "sha256": "94c311c70e0a0a98e2bf37984d571cb87429e1a7f2dd49734d03214aa7dbf7c5"
+  },
+  {
+    "file": "elyndor/experience-v18.css",
+    "bytes": 2084,
+    "sha256": "1a0ebacb8a48a64ad19a33a1ad3783d7491e9226828e1fce89fa076e352dafa9"
+  },
+  {
+    "file": "elyndor/forest-v30.js",
+    "bytes": 16959,
+    "sha256": "9132fc5ad6e071900fd7f77451a30bf14d77c7313b2d41a47074106b0bed6b7b"
+  },
+  {
+    "file": "elyndor/game.js",
+    "bytes": 45286,
+    "sha256": "cd3ff5e9e952da0e7e7b9cbf7515a7f1e26b0d12844a1394828657bb7c6001f1"
+  },
+  {
+    "file": "elyndor/geography-v15.js",
+    "bytes": 23991,
+    "sha256": "1c4f1ed9d31b1000f21dd1adc87ea459c7d690d9724e44e67938bcd9738867c0"
+  },
+  {
+    "file": "elyndor/geography-v17.js",
+    "bytes": 14213,
+    "sha256": "47c134ff94665344aad7a92450a0629ae664a4d2527c56750360becb82a205c5"
+  },
+  {
+    "file": "elyndor/ground-v19.js",
+    "bytes": 8379,
+    "sha256": "cb00dbf13c8d52f0f7d0f4d5b5cf2e459ce583b6742d984258bddb12b3593785"
+  },
+  {
+    "file": "elyndor/hydraulics-v11.js",
+    "bytes": 1800,
+    "sha256": "5c726339e3d9bbdbabf5420278ea762ab7c8e3b15f097b1d2106b581009a5f83"
+  },
+  {
+    "file": "elyndor/hydraulics-v18.js",
+    "bytes": 12215,
+    "sha256": "e2a4f6e3817303ddb34df0c4641f329588efb279b67400afeb7207934a7f8bc7"
+  },
+  {
+    "file": "elyndor/hydrology-v38.js",
+    "bytes": 1086045,
+    "sha256": "1edd3ae3dd0cc354b9887e2835ca6e77704cac00009c986e481b60a7221066c3"
+  },
+  {
+    "file": "elyndor/index.source.html",
+    "bytes": 5740,
+    "sha256": "62385e6af877176917d7a7e1ef75133087792fbdbd04203737c7119da56d8bc2"
+  },
+  {
+    "file": "elyndor/interface-v24.css",
+    "bytes": 8695,
+    "sha256": "8dda060bd2c817450041e14b626e2cbcfd70404774a88b097a4c4fa28da27418"
+  },
+  {
+    "file": "elyndor/interface-v24.js",
+    "bytes": 2153,
+    "sha256": "1c3ee9c6ff0b5d779edb6d5bece9e798f6d4d052471eb73ef73c86cfb11bd751"
+  },
+  {
+    "file": "elyndor/interface-v28.css",
+    "bytes": 905,
+    "sha256": "81721b0ee6e1548f676449fa9fc79430b4240846f6165cd1a4dfddd8ace6518e"
+  },
+  {
+    "file": "elyndor/interiors-v12.js",
+    "bytes": 10741,
+    "sha256": "f93364544d90c88541e048c4e1b651dcbc7eb59e6d603a63cc68be54efd369f9"
+  },
+  {
+    "file": "elyndor/interiors-v29.js",
+    "bytes": 18196,
+    "sha256": "fadcc80ee4fb41696dfac044a341506903694f8e8f289489a7d2bcab31d40ad0"
+  },
+  {
+    "file": "elyndor/journey-v12.css",
+    "bytes": 6470,
+    "sha256": "a862def4a0a6de81572347ec36681bc5d17650f8d4778d464499a4fd4faefc6b"
+  },
+  {
+    "file": "elyndor/journey-v12.js",
+    "bytes": 25067,
+    "sha256": "118f2d9c12a0ff8be3445736096c0e44feacbd42ad2c89e4ac7fb4e2d8b64c14"
+  },
+  {
+    "file": "elyndor/landscape-v26.js",
+    "bytes": 11073,
+    "sha256": "0b58b96984178bbe1d09651ba9a1932ef1b7f8e9a280d1eb5e67eed8c17d4aa4"
+  },
+  {
+    "file": "elyndor/lesson-v18.js",
+    "bytes": 12222,
+    "sha256": "34f1e964574c3cf2a49400ea3805b507863ff1ec771b616c201ccdf7342b4dfa"
+  },
+  {
+    "file": "elyndor/level-layout-v13.js",
+    "bytes": 2133,
+    "sha256": "cee4550cd54fe58fdcce4e15673042ee74d9a77c7310a47ea0c2c4c5d9d72a9a"
+  },
+  {
+    "file": "elyndor/levels-v39.js",
+    "bytes": 20271,
+    "sha256": "cba3fcabfa3ccd485caf616af2b6dd267deadd518b6217e0f580583559641f7a"
+  },
+  {
+    "file": "elyndor/lighting-v34.css",
+    "bytes": 461,
+    "sha256": "7d4776dcef5b6e6de137e691ed26ac206e07b4c7085ab4492b776c5fbdad3edd"
+  },
+  {
+    "file": "elyndor/lighting-v34.js",
+    "bytes": 6393,
+    "sha256": "01273030bb4c70d02566c0330fa0fb3dce43d64d39848d40127baacb70b7c917"
+  },
+  {
+    "file": "elyndor/loading-v11.css",
+    "bytes": 2851,
+    "sha256": "1b815416f8081a961ef185486ef83ec24d68e46f15a182b96e1fbb6bc9317817"
+  },
+  {
+    "file": "elyndor/loading-v11.js",
+    "bytes": 1783,
+    "sha256": "5bdb74a3bd681f8e1bc1dd2a3d71e07019268c9d9904f70b34a3a286a17ed3b9"
+  },
+  {
+    "file": "elyndor/loading-v14.css",
+    "bytes": 2007,
+    "sha256": "3b1952ae6c2b098360bd4bf44f0d4ec8437707341a55b1cf4bcc436172866d5d"
+  },
+  {
+    "file": "elyndor/loading-v14.js",
+    "bytes": 2557,
+    "sha256": "bfa1212cc9bcba324678d3c55a4bc4235e8739e4fcb1f6105c5238a66217a5e0"
+  },
+  {
+    "file": "elyndor/loading-v29.js",
+    "bytes": 1081,
+    "sha256": "d0d8be7cb4d9f7eb0abc244b6ff12bcd7787a03d94448187fcb2f70ed32b5183"
+  },
+  {
+    "file": "elyndor/look-v30.js",
+    "bytes": 4549,
+    "sha256": "894f1737c9389790c56ebd6404e225d7398e2cc844405d06cf7a91647789e1a2"
+  },
+  {
+    "file": "elyndor/materials-v14.js",
+    "bytes": 6574,
+    "sha256": "97bdc42754f8fbb33a736bc656cbf00cfc5f5783abe160f8f64ac5d19a7f7934"
+  },
+  {
+    "file": "elyndor/materials-v28.js",
+    "bytes": 11829,
+    "sha256": "e94408a1a22da85c629512ad0f82855b0b6cf5b052c4e2e42eb06cc5eda2be3e"
+  },
+  {
+    "file": "elyndor/menus-v26.css",
+    "bytes": 39179,
+    "sha256": "46ec4bff6c5dd8413d3c0b85450f3457e7854408a752d4c584cdbd25ec48c861"
+  },
+  {
+    "file": "elyndor/menus-v26.js",
+    "bytes": 16641,
+    "sha256": "f829254aadd892029abb0303c32cab1481624b53b201bb3a9dcc90a7326f3860"
+  },
+  {
+    "file": "elyndor/menus-v27.css",
+    "bytes": 18306,
+    "sha256": "06885ed8f44e2944ff79c029017e1e5a434e917cf3c4600b08c4679abd08a455"
+  },
+  {
+    "file": "elyndor/menus-v27.js",
+    "bytes": 10547,
+    "sha256": "20b3c8dd96d13376abe6a255530c42bf5ffaf8ecba8a4951725020dac9caf933"
+  },
+  {
+    "file": "elyndor/mobile-v33.css",
+    "bytes": 17676,
+    "sha256": "89e597329067a230cee3d88f13ad7170ee826c959410aa520e42a1191872ee23"
+  },
+  {
+    "file": "elyndor/mobile-v33.js",
+    "bytes": 5894,
+    "sha256": "3a7738aa98a7bb34017e1ab5ee798d67435c334857fcfaf6a8e1f5827820ff98"
+  },
+  {
+    "file": "elyndor/monsters-v35.js",
+    "bytes": 819,
+    "sha256": "54732d9f466cff884d413d91b8af3f929a5f55b5fb2aaeb9dfa310193658cb81"
+  },
+  {
+    "file": "elyndor/movement.js",
+    "bytes": 5573,
+    "sha256": "77b5ed919d21b6a6e6a67eb7e53babf448197e8afd3d716944050380ff763363"
+  },
+  {
+    "file": "elyndor/navigation-v23.js",
+    "bytes": 5882,
+    "sha256": "6dee2ae6b32988d372a52bab47583e1653346104195b0a16727e05ef3ec96be3"
+  },
+  {
+    "file": "elyndor/navigation-v32.js",
+    "bytes": 8184,
+    "sha256": "aad593b3bd9a1a939264de7172ed7b42a855e7b090bf025456bdd4033940e6fd"
+  },
+  {
+    "file": "elyndor/onboarding-v16.js",
+    "bytes": 13261,
+    "sha256": "7d1615b7302d25a0b96a45e73549cdf5b4dfdb2cd1e484d74178aede99010d72"
+  },
+  {
+    "file": "elyndor/open-world.js",
+    "bytes": 84264,
+    "sha256": "a80673f0c5d69616c6df9281f4931f338516a16b1789c025464ba0cc2b838794"
+  },
+  {
+    "file": "elyndor/overworld-v13.js",
+    "bytes": 4833,
+    "sha256": "b9667a43cc3cc9bb8b6b183a987136d61f376d763fedf83ef60ec53d80f78dc0"
+  },
+  {
+    "file": "elyndor/overworld-v16.js",
+    "bytes": 20634,
+    "sha256": "6ea62785f9982e4e10b13ecb4c1811bec319d856d3cf759206cc937abdea457a"
+  },
+  {
+    "file": "elyndor/party-v11.js",
+    "bytes": 4045,
+    "sha256": "c3c71319b3bf8c73681fd220bb731428ed9d7d890b63759ca616aa69db020d70"
+  },
+  {
+    "file": "elyndor/performance-v13.js",
+    "bytes": 4047,
+    "sha256": "612bcd0d56ee5d274934a24b4f2ed334d249335f17eb0cf20020ecec8a2b44ac"
+  },
+  {
+    "file": "elyndor/performance-v21.js",
+    "bytes": 9535,
+    "sha256": "ee6b301e16b307624b572efbcf11498ec357208fb52ff4644bd4f524995f9485"
+  },
+  {
+    "file": "elyndor/placement-v11.js",
+    "bytes": 3710,
+    "sha256": "0c6342dee1c7458ac625e8c18d6b1fe48ab810571d3b594ce7a4cbba3e0c811c"
+  },
+  {
+    "file": "elyndor/polish.js",
+    "bytes": 24953,
+    "sha256": "19484061f6f12aca5a73218b2021a5ae936b4fc7872b9a16cfae5b1a57059a0a"
+  },
+  {
+    "file": "elyndor/presentation-v14.css",
+    "bytes": 4562,
+    "sha256": "ea019ac10b4478b998575c5ee821a46a1cabbb8585d78ef30debd198fe063c36"
+  },
+  {
+    "file": "elyndor/presentation-v14.js",
+    "bytes": 12082,
+    "sha256": "5b6dc47b50b147b65dc8dca3b9f204e3d8d696619954bdb116f258cd1644d69e"
+  },
+  {
+    "file": "elyndor/presentation-v25.js",
+    "bytes": 10725,
+    "sha256": "c1e3d6a721637aba96838733542c750271c1e2dcc7ef6780adc01c5a676acbc7"
+  },
+  {
+    "file": "elyndor/previews/release-v128/battle-day.webp",
+    "bytes": 507912,
+    "sha256": "ee509197f29c777bfd613024d904d18c43898d308be51f54f1d40992f6a51dbb"
+  },
+  {
+    "file": "elyndor/previews/release-v128/battle-night.webp",
+    "bytes": 341410,
+    "sha256": "0dac83efac987f4833ff98f8afb81ff2665224e9d6d3a68562229839f5cb89c6"
+  },
+  {
+    "file": "elyndor/previews/release-v128/changelog.webp",
+    "bytes": 283358,
+    "sha256": "eb173af9652adf1480c85835c3be7f348eb912b9acae06de9571820aac743fc6"
+  },
+  {
+    "file": "elyndor/previews/release-v128/gameplay.webp",
+    "bytes": 521100,
+    "sha256": "e4dc73c85b097aea1af9c280271e62a28cbe654baa8d16bd430d79ab92c22b0d"
+  },
+  {
+    "file": "elyndor/previews/release-v128/overworld.webp",
+    "bytes": 369364,
+    "sha256": "2513fcb9e8f9098fae7214dfe65d9d78a7a02d989fbfb092a8485f1610d54ecb"
+  },
+  {
+    "file": "elyndor/previews/release-v128/verification.json",
+    "bytes": 35979,
+    "sha256": "333bbed8fe5c773d862bd511cbb9edb34330b6a7039358153ba39cd4d5207ab2"
+  },
+  {
+    "file": "elyndor/previews/release-v128/visibility-after.webp",
+    "bytes": 388252,
+    "sha256": "b6b19168cb5acdb4cbf8d35fc2ef6e7f1d20448425e198c4ddc5cc30084eb45a"
+  },
+  {
+    "file": "elyndor/previews/release-v128/visibility-before.webp",
+    "bytes": 533620,
+    "sha256": "0b15fff2dbd39f8eb543a83ea23fea6e45c522b2a6a7e86a043562cefade7615"
+  },
+  {
+    "file": "elyndor/quests-v29.js",
+    "bytes": 2611,
+    "sha256": "317b243d5361de9033b04c291c4f23605eeb54602a62e4351bf0be8201ba91c6"
+  },
+  {
+    "file": "elyndor/reflections-v30.js",
+    "bytes": 2868,
+    "sha256": "7ee9a7ec04872b3e80c0d430b2796e698fe9281261772cf613364a1992ec8890"
+  },
+  {
+    "file": "elyndor/relief-data-v15.js",
+    "bytes": 393413,
+    "sha256": "0b68b706c0eb2ca71aa917e3f9a10de430c1ee44a3eefdeab2a60361f90266f0"
+  },
+  {
+    "file": "elyndor/relief-data-v18.js",
+    "bytes": 1327355,
+    "sha256": "cdcb29ea7ab48004da7a06dde73bcaa21f35c0f553cc5f3ca8c8f20fc4a0434b"
+  },
+  {
+    "file": "elyndor/render-v4.js",
+    "bytes": 9208,
+    "sha256": "28038f9c513a69daff588468d6e8d8290faa4e9f9885ab1330e4341ca97cd8d4"
+  },
+  {
+    "file": "elyndor/requests-v16.js",
+    "bytes": 18940,
+    "sha256": "4973090f34befc3fbab0d976b81eb978cebf3bb79d77f8963dbc2eb41a7f6680"
+  },
+  {
+    "file": "elyndor/responsive-v25.css",
+    "bytes": 7153,
+    "sha256": "7df129b7c81e67786aae5f7f1a066c4811f2df45c66317daf978fe42f68c5e4c"
+  },
+  {
+    "file": "elyndor/review-v5.js",
+    "bytes": 11191,
+    "sha256": "8279ec154458a47f15bd517ddc927121029fdd62f9083a145b0fa2b31b02d702"
+  },
+  {
+    "file": "elyndor/river-v17.js",
+    "bytes": 5896,
+    "sha256": "13640162dae98dcf0ff6f8aa3c24490ecd53c68b69c0f37080259949a124a529"
+  },
+  {
+    "file": "elyndor/runtime-v28.js",
+    "bytes": 3723,
+    "sha256": "329fb2b64b6c2908f03dd96f6c670d1b75e0d7f89133984db0e5a85a10dd17ee"
+  },
+  {
+    "file": "elyndor/runtime-v33.js",
+    "bytes": 11390,
+    "sha256": "d00151eca4bea790aa01997e89841f02689704899261e408467d09a58690ed2f"
+  },
+  {
+    "file": "elyndor/runtime-v35.js",
+    "bytes": 4459,
+    "sha256": "e0898bc828627c4e334b133ced1387dec5ad7dff3bb83a82b7f49c39ebe7f1a8"
+  },
+  {
+    "file": "elyndor/runtime-v36.js",
+    "bytes": 26877,
+    "sha256": "49443e15ea6a9a984e7112f02aa21a5f522e6628840b2be5a309e6cb2611a7d7"
+  },
+  {
+    "file": "elyndor/scene-polish.js",
+    "bytes": 13729,
+    "sha256": "9fddc596dc3d4a0eb62717bbba773c6c5809eea68c40d9cf2f058768048bb4ca"
+  },
+  {
+    "file": "elyndor/scenery.js",
+    "bytes": 35998,
+    "sha256": "b9dce50bd9f1c685bdf1b4847ab35b0b70b38844804044909e3880c4fd73b0a0"
+  },
+  {
+    "file": "elyndor/services-v22.js",
+    "bytes": 5365,
+    "sha256": "96c92c4b40cb0a21a029e1e321c546ec2aaf3baf769586fc3776450d873f0c75"
+  },
+  {
+    "file": "elyndor/settlements-v15.js",
+    "bytes": 11824,
+    "sha256": "6736893ea2e5bca6e9240601bad40ad495cc58dea6d93a9e485b0c3c408c0a6c"
+  },
+  {
+    "file": "elyndor/speech-v21.js",
+    "bytes": 3437,
+    "sha256": "bb709ccb3e05800670c0a928ca07a976942a9eca293e240e393a21130464db00"
+  },
+  {
+    "file": "elyndor/spell-art-v35.js",
+    "bytes": 3894,
+    "sha256": "3ebc863ee4e5d27f9f770536e20b81ef4ea09b32cd0b9b6d9d413ff7f1194b9b"
+  },
+  {
+    "file": "elyndor/style.css",
+    "bytes": 22536,
+    "sha256": "5e15143b71b1280e40fd9e4b9ae7f5dfb553800c78c2769e04569d2abfc0780d"
+  },
+  {
+    "file": "elyndor/surfaces-v17.js",
+    "bytes": 10192,
+    "sha256": "561b5fe7813b27f6136f51ec650fa051899d3f03f390bf4d118a666004696cde"
+  },
+  {
+    "file": "elyndor/systems/battle-atmosphere.js",
+    "bytes": 12471,
+    "sha256": "9438c5527ee5287433976abe2189437f22c1e93c4eb48f6aef941ed49e8236ec"
+  },
+  {
+    "file": "elyndor/systems/battle-botany.js",
+    "bytes": 3252,
+    "sha256": "0c50f6ec827e7b90f9374952bf66c7c119566853ed45c4c35b5bbf6485da225f"
+  },
+  {
+    "file": "elyndor/systems/battle-camera-guard.js",
+    "bytes": 6562,
+    "sha256": "be70e074d81c94939f4f1da7e1aa248350307d3c7cf90cd757316a55cf2de0e0"
+  },
+  {
+    "file": "elyndor/systems/battle-depth.js",
+    "bytes": 21638,
+    "sha256": "8bfc2347e92e3d4bfec80a0cc94a71ff629229a29939cf1b47a12982ac976f8e"
+  },
+  {
+    "file": "elyndor/systems/battle-detail.js",
+    "bytes": 9609,
+    "sha256": "8b793a6fd19cd48bb25d9161924d2ec7292c2aced4b483a2b9e57d7c4c7649e7"
+  },
+  {
+    "file": "elyndor/systems/battle-environments-3d.js",
+    "bytes": 32051,
+    "sha256": "f19792f6de219bf1c8159817a075de572521d80b875d4e3259ef2735ce3d4596"
+  },
+  {
+    "file": "elyndor/systems/battle-formation.js",
+    "bytes": 4268,
+    "sha256": "73de1b04ca8a9c6af045dad734a1969885480c650534fac2516021c71d762c44"
+  },
+  {
+    "file": "elyndor/systems/battle-hd-art.js",
+    "bytes": 8634,
+    "sha256": "377e31c70d56667124a2302988610e05a5d7bbb115e5a12e7bc22b925fd3550e"
+  },
+  {
+    "file": "elyndor/systems/battle-intro.css",
+    "bytes": 569,
+    "sha256": "f9be83083b7f1bf20795e9f1c80744da2d47c9dea5fe09d0927907904608097d"
+  },
+  {
+    "file": "elyndor/systems/battle-intro.js",
+    "bytes": 17619,
+    "sha256": "247e006db8905afd5183fae42c3823d011272d0f28c099c1c6c9cc05036406f4"
+  },
+  {
+    "file": "elyndor/systems/battle-materials.js",
+    "bytes": 15363,
+    "sha256": "b0edc3b6e5e982fc0a3fec57b7beca522e348f1fdaa154a830163d1fd932edbb"
+  },
+  {
+    "file": "elyndor/systems/battle-presentation.js",
+    "bytes": 19523,
+    "sha256": "d955443d05fe2d640a16a5a2bbe4bee7c3d401cf19a4e0ff57b3322d8bd020d4"
+  },
+  {
+    "file": "elyndor/systems/battle-reference-scenes.js",
+    "bytes": 31513,
+    "sha256": "6690c6a76c09075cd5414041a67e160e77f3c27c7a0861cd9ad8557862ac5b8d"
+  },
+  {
+    "file": "elyndor/systems/battle-reference.css",
+    "bytes": 3602,
+    "sha256": "da65c340b5e71cafc95644be735d2a0d10f32af206dd63884641be4e51f65abb"
+  },
+  {
+    "file": "elyndor/systems/battle-relief.js",
+    "bytes": 4940,
+    "sha256": "d8fc0f764721903ec4db1e512b99eef54fe27e40e894c367c4d9d0c9222afec6"
+  },
+  {
+    "file": "elyndor/systems/battle-stagecraft.js",
+    "bytes": 14631,
+    "sha256": "f4dd761a95b673e584d93fa0d45a74396210832c25b41c08f362dc4ba6573e3b"
+  },
+  {
+    "file": "elyndor/systems/battle-stages.css",
+    "bytes": 3135,
+    "sha256": "481f9cba9c5e1d91aa6e986bde46af8293b2676ab98c3190dde19688028b2f9d"
+  },
+  {
+    "file": "elyndor/systems/battle-stages.js",
+    "bytes": 21770,
+    "sha256": "1e5dbad830b4dbcebe82a813dceb65cbfb600ecbcc28f94ba879a8acde3a245c"
+  },
+  {
+    "file": "elyndor/systems/battle-variants.js",
+    "bytes": 2398,
+    "sha256": "a6c367fcdbb6f37159a2a22aacd8e52c5959d3f64b194b23610efc509bde139d"
+  },
+  {
+    "file": "elyndor/systems/botanical-scenery.js",
+    "bytes": 18302,
+    "sha256": "a4b40afa28ab28b15861211a13ab6189a7ff0df447c856b4579801e790c14087"
+  },
+  {
+    "file": "elyndor/systems/bren-animations.js",
+    "bytes": 16212,
+    "sha256": "ca520159d2633fa550bb917a40f71226dc66af09812f43088b871fef6084dadd"
+  },
+  {
+    "file": "elyndor/systems/brookstead-interiors.js",
+    "bytes": 39472,
+    "sha256": "11fd639e0125005492433fe0482de8a9d8fbb2a12b158fcba79ce8e56a2e3799"
+  },
+  {
+    "file": "elyndor/systems/building-entry.css",
+    "bytes": 810,
+    "sha256": "93c41d2146b37a2e51b0e298ad21fc7af4ff4eb24e18eb44dd787108b69c807e"
+  },
+  {
+    "file": "elyndor/systems/building-entry.js",
+    "bytes": 5708,
+    "sha256": "2bc60b5fc0b2e5d5ecf04f97d06592767ad2abb830c80c64f0144f897110b8ed"
+  },
+  {
+    "file": "elyndor/systems/cartography.js",
+    "bytes": 2594,
+    "sha256": "12973893b2a8ebb9ad6f2884cfa4e04dd2a0bacf89118a3c3398bbeeb0d3bc08"
+  },
+  {
+    "file": "elyndor/systems/clear-overworld.js",
+    "bytes": 1183,
+    "sha256": "311d18397df1858412418a5a8db14309fad59f90ddd688d9922b5b273f6b796c"
+  },
+  {
+    "file": "elyndor/systems/cloud-shadows.js",
+    "bytes": 3742,
+    "sha256": "e6e1b117c8a32ce5d3e386168d1a32c31f6ea2cfb61919220384b93d32c7466b"
+  },
+  {
+    "file": "elyndor/systems/coastal-ocean.js",
+    "bytes": 3003,
+    "sha256": "9b1c79c64fd342700c592415af925004907d7bba78512ff05b127626072a4b53"
+  },
+  {
+    "file": "elyndor/systems/combat-art-direction.js",
+    "bytes": 47838,
+    "sha256": "8bd023b99ca20ce3cacbab929f62869bb9d68a1eca404c52159518c0f1a62baf"
+  },
+  {
+    "file": "elyndor/systems/combat-environments.js",
+    "bytes": 8162,
+    "sha256": "5bee3c7cf59dc5c013a6fee8ec0105d52dc8c98dc888d8aa3ddc8835d04d7778"
+  },
+  {
+    "file": "elyndor/systems/combat-feedback.js",
+    "bytes": 3391,
+    "sha256": "79064778dfb9b0817e836ab48c11bf766e6e953dc86c964218d92b4c6b4f4471"
+  },
+  {
+    "file": "elyndor/systems/combat-help-layout.css",
+    "bytes": 1184,
+    "sha256": "914463a012282f77b18dd69cba537fe46c8898d7faf44c4afd5f678e053bc46d"
+  },
+  {
+    "file": "elyndor/systems/combat-help-layout.js",
+    "bytes": 4424,
+    "sha256": "7aabae24d58ef65f2b2830069037b853520f4a275c367d948684e54139ccb08b"
+  },
+  {
+    "file": "elyndor/systems/combat-information.css",
+    "bytes": 18075,
+    "sha256": "b9ec889b59f5ece81b4389849039e84d89c99abb42846bf2bc12a3e9adeaae33"
+  },
+  {
+    "file": "elyndor/systems/combat-information.js",
+    "bytes": 15171,
+    "sha256": "937029a0c8d2f82defd8d900d29e4b33d55ba46a96f21850924aa152e612243d"
+  },
+  {
+    "file": "elyndor/systems/combat-interface.js",
+    "bytes": 7188,
+    "sha256": "c3ad29d80807e2f28c1814b9c34a10a5e8a5d340e958b93dc97e2041622d4f94"
+  },
+  {
+    "file": "elyndor/systems/combat-reactions.js",
+    "bytes": 2691,
+    "sha256": "3415ee180b299e0720f6cdac65ea52ccec9edb87ef6daa70792880835fedca3b"
+  },
+  {
+    "file": "elyndor/systems/combat-review-layout.js",
+    "bytes": 5516,
+    "sha256": "e30b7ee25118f2ffbc1c6ea3b0331f9ac71707db4456ddf1e191b8d967b9e331"
+  },
+  {
+    "file": "elyndor/systems/combat-stability.js",
+    "bytes": 2812,
+    "sha256": "122c723d45c5b75c9f1aacc13abb6381e026d65ea038a449ffa5c85c02071a72"
+  },
+  {
+    "file": "elyndor/systems/combat-validation.js",
+    "bytes": 1228,
+    "sha256": "33b2074bbd3c3195d86e43a43d75a35105396839ad4950ef91f4adfb559633d9"
+  },
+  {
+    "file": "elyndor/systems/combat-voices.js",
+    "bytes": 4816,
+    "sha256": "f46b3cbe0cb2eca41aabb01f3b69c3b3a1c8298e6175319d718f47a7a037358a"
+  },
+  {
+    "file": "elyndor/systems/combat.css",
+    "bytes": 430,
+    "sha256": "cb0164306acf681a002a5c72682c367fe23cb1f3a9891ba7a6c40a3557f2fbaa"
+  },
+  {
+    "file": "elyndor/systems/combat.js",
+    "bytes": 16393,
+    "sha256": "3d0d96c1a4e8c760dfd5c348094e6bf7de6ce3ef1c278b86a63e1cfa9d66ba6b"
+  },
+  {
+    "file": "elyndor/systems/compact-overworld.css",
+    "bytes": 446,
+    "sha256": "65f3ea9181b014b929b31043b6dd622a70937a428453d65d747f8658500f4d58"
+  },
+  {
+    "file": "elyndor/systems/compact-overworld.js",
+    "bytes": 7849,
+    "sha256": "7bc36c6354724b43c783150f9354eaf43ce520cd574fc989dd2b3825c52fc8d9"
+  },
+  {
+    "file": "elyndor/systems/compass-hud.css",
+    "bytes": 5090,
+    "sha256": "606f7c929663a4e1ea628f38fdb50443f645c4f347d993e530923698513694c7"
+  },
+  {
+    "file": "elyndor/systems/compass-hud.js",
+    "bytes": 2842,
+    "sha256": "060dd5cd9df59a826a260f735c44a1a5e769624ee225f5977657cd1f8d2603ed"
+  },
+  {
+    "file": "elyndor/systems/concept-menus.css",
+    "bytes": 30623,
+    "sha256": "9951e8dfd3c1d66d107c8409fc87aa382ad8e96830d18413cd629444964cf894"
+  },
+  {
+    "file": "elyndor/systems/concept-menus.js",
+    "bytes": 7457,
+    "sha256": "8ac5bd5d4cf09cee1a6acf84a1363602d3863d388d62c3d175f21f4801dbf640"
+  },
+  {
+    "file": "elyndor/systems/connected-roads.js",
+    "bytes": 8742,
+    "sha256": "7d8f817b91025a73d8954188eb22657dbfc5ddb5fe3d1eed793fa3f37df2c272"
+  },
+  {
+    "file": "elyndor/systems/dam-release.js",
+    "bytes": 12273,
+    "sha256": "7126bfff2f5697cb5b4fc6967611bae1e082232d4d6754de3e3078cb900aa830"
+  },
+  {
+    "file": "elyndor/systems/dev-console.css",
+    "bytes": 13452,
+    "sha256": "cf573ccf10353bcf5ca9b8942aaa8e4c31891f82320ecc6312f34d08f489106e"
+  },
+  {
+    "file": "elyndor/systems/dev-console.js",
+    "bytes": 23290,
+    "sha256": "1b1d23a250adced9b1003b20c6d316f5011bd49d68a35afe9fedb18bef51ae70"
+  },
+  {
+    "file": "elyndor/systems/dev-sprite-data.js",
+    "bytes": 837763,
+    "sha256": "abfaddab3dc878b20ef810f84ffbb7cf26a41ed945bcf8d0ccc6de2b795a0050"
+  },
+  {
+    "file": "elyndor/systems/dev-sprites.css",
+    "bytes": 1936,
+    "sha256": "c7613d20962c3382a632230801d5be2d7163f1bf43b6721a1a65a2eea41c9f7f"
+  },
+  {
+    "file": "elyndor/systems/dev-sprites.js",
+    "bytes": 13789,
+    "sha256": "7aee2f3cfa95bfc3c949d17297bb1b53d016b7619f1c7fc12b660392e5dac638"
+  },
+  {
+    "file": "elyndor/systems/directional-arrivals.js",
+    "bytes": 5098,
+    "sha256": "7af13790cacbb368a3e814055dcb466ed980eac4387902af8d1a61f028ce487c"
+  },
+  {
+    "file": "elyndor/systems/directional-travel.js",
+    "bytes": 5877,
+    "sha256": "b8ff796be2bb7d22fce7b5f23640478a1685d5c25ca62a119abbc79e76383850"
+  },
+  {
+    "file": "elyndor/systems/ecology.js",
+    "bytes": 3227,
+    "sha256": "056a6f8e48d1e399f78ebd98519a917dec641aa30b275582f66ab68da5c6a99c"
+  },
+  {
+    "file": "elyndor/systems/environment-assets.js",
+    "bytes": 35546,
+    "sha256": "49a1424291c065f6a7fdeda54fdf2e5d04a98340af27c6680797579ef1cb42c9"
+  },
+  {
+    "file": "elyndor/systems/environment-coherence.js",
+    "bytes": 9654,
+    "sha256": "251264723a0fd9a51c197d357a79dba0fb9b5258dc635001926895d4cbd67562"
+  },
+  {
+    "file": "elyndor/systems/environment-dressing.js",
+    "bytes": 2129,
+    "sha256": "ac5ec278a05a145215b0924d77270dc014173b8b2af1ed617698a94543027563"
+  },
+  {
+    "file": "elyndor/systems/environment-materials.js",
+    "bytes": 15902,
+    "sha256": "929804ff2f187bf8a87c02dd757c9025ad094d00466ed6c41046b951c413040b"
+  },
+  {
+    "file": "elyndor/systems/environment-vegetation.js",
+    "bytes": 16388,
+    "sha256": "9a8e7ffa548559a364451eaab7c43ef0ae901566369c2b57e0aba0db61793564"
+  },
+  {
+    "file": "elyndor/systems/events.js",
+    "bytes": 7918,
+    "sha256": "dba865f59d6a5115d35ebac128276381df4b5eae679e9dce199439d2efecbcb2"
+  },
+  {
+    "file": "elyndor/systems/exact-atlas.js",
+    "bytes": 11441,
+    "sha256": "c925bd702e53519dfcd6d2e0708cc8cd9ee714d79128e25089bfccb63002f8eb"
+  },
+  {
+    "file": "elyndor/systems/facade-detail.js",
+    "bytes": 8397,
+    "sha256": "f1036fb78e5be7691551f7eaaf6522647b039c27b4cdfcdafd310b7b56648650"
+  },
+  {
+    "file": "elyndor/systems/frame-safety.js",
+    "bytes": 1393,
+    "sha256": "ccdcf9f81eb3936720bfdde500470bdef8dbd17a34b097c387c12254f5f2b846"
+  },
+  {
+    "file": "elyndor/systems/ground-variation.js",
+    "bytes": 7711,
+    "sha256": "37510d5189e6bfc3d2b3f8069a2c7b41a8983db1fc659bbb6853d7140d2f433c"
+  },
+  {
+    "file": "elyndor/systems/hybrid-combat.js",
+    "bytes": 13958,
+    "sha256": "1ec2c7842f8df78c7384d0a142c873cd7fd606a526a50db8ec8e8ccebd062261"
+  },
+  {
+    "file": "elyndor/systems/interaction-visibility.css",
+    "bytes": 2755,
+    "sha256": "2c7ac567e8d2588e21604a3f3ed8aba97b64d1e99192bc5924c507c0159fb058"
+  },
+  {
+    "file": "elyndor/systems/interaction-visibility.js",
+    "bytes": 8601,
+    "sha256": "6e67c0d340dfb692604131f83bdf95146ccc870da728ccd32a4293bc190465c8"
+  },
+  {
+    "file": "elyndor/systems/jrpg-boundaries.js",
+    "bytes": 19398,
+    "sha256": "05193f4c537bcbfe26001ae5e873a1487334d3bf9bc5f401f13d475f47af8c33"
+  },
+  {
+    "file": "elyndor/systems/jrpg-geography.js",
+    "bytes": 2063,
+    "sha256": "5da49b5288e6e2c2a32054f17eb39f987947a0add00452f4e31133ba9d89a8bc"
+  },
+  {
+    "file": "elyndor/systems/jrpg-layout-data.js",
+    "bytes": 5599,
+    "sha256": "961342d308eda461e7b00049bc0cedb4ede25d9c76b3c1c720a9535b9b7c285a"
+  },
+  {
+    "file": "elyndor/systems/jrpg-levels.js",
+    "bytes": 9983,
+    "sha256": "cbc113a370f741033aff7409b9e65985760cb2a920e29b729c08058aab0d65b2"
+  },
+  {
+    "file": "elyndor/systems/landscape-parity.js",
+    "bytes": 8433,
+    "sha256": "206a1c34a043c91aefeeae59795dccde7a8a197ab2ea351aeddabd25aa050495"
+  },
+  {
+    "file": "elyndor/systems/level-plans.js",
+    "bytes": 12618,
+    "sha256": "c6f539c13beef5d69a0d6add59907ef467c1119275ae63d6b803414352f5e65d"
+  },
+  {
+    "file": "elyndor/systems/lifecycle.js",
+    "bytes": 1665,
+    "sha256": "c95afae17e175ac6380bbf2a2ab595c3eb33f46fa8df218c7f49075e15b7eeff"
+  },
+  {
+    "file": "elyndor/systems/live-waterworks.js",
+    "bytes": 18665,
+    "sha256": "32857519d4521dd11e0ac422035a8a061aac822c7ed11a8d78e77130afa7a412"
+  },
+  {
+    "file": "elyndor/systems/local-menu-actions.css",
+    "bytes": 696,
+    "sha256": "6b41f11dd51c5aaebab87931eef2adfe074c329960437d3ac696ade76b391628"
+  },
+  {
+    "file": "elyndor/systems/local-menu-actions.js",
+    "bytes": 1988,
+    "sha256": "c3b5d9c08641e927a80f1ea1ae70723743039af6d90f3e58239c4939a0ef40c1"
+  },
+  {
+    "file": "elyndor/systems/local-review-fixes.css",
+    "bytes": 1767,
+    "sha256": "4b3c8dfad13650149d8f4c187f9069b55bf564034179dc7ca9ec4f7b2ef10a71"
+  },
+  {
+    "file": "elyndor/systems/local-review-fixes.js",
+    "bytes": 11838,
+    "sha256": "d39af26745c140097235e9177c28c722a5e1703501e9b94068c20d2c37445d01"
+  },
+  {
+    "file": "elyndor/systems/location-ecology.js",
+    "bytes": 15933,
+    "sha256": "563136691c5d15571e3f95cd7671b5d6938a5b374fc83159983daddff4ec4604"
+  },
+  {
+    "file": "elyndor/systems/location-miniatures.js",
+    "bytes": 12717,
+    "sha256": "e67bff391bad16f558e19b8d446ef5509323f4474e006081f5da6dce3770ec15"
+  },
+  {
+    "file": "elyndor/systems/main-menu-pause.js",
+    "bytes": 3647,
+    "sha256": "945e9c31811c05346a2b2c54f9649914c96c557674b2b5070d922d333fab2a21"
+  },
+  {
+    "file": "elyndor/systems/map-discovery.js",
+    "bytes": 8719,
+    "sha256": "547aaee87f7c22ed8f15e1c49d9e57a57d4b0856c6c0d4263acb93b2ad0cf44f"
+  },
+  {
+    "file": "elyndor/systems/mill-falls.js",
+    "bytes": 5383,
+    "sha256": "612f17245869eeaa4b73c7e7ea324c2d4deef1a66f9fb9797dac754af9ac6172"
+  },
+  {
+    "file": "elyndor/systems/minimap.css",
+    "bytes": 5187,
+    "sha256": "dce3d4ed60a3cfef5418bd29bb2d1826762fb3b0eabc7129334b540f5bb566f8"
+  },
+  {
+    "file": "elyndor/systems/minimap.js",
+    "bytes": 16327,
+    "sha256": "7f63ab23d7c6e7c41c945bf2e7be2c310932a06303f891e6d6b22936f0a2532f"
+  },
+  {
+    "file": "elyndor/systems/mobile-battle-view.css",
+    "bytes": 10053,
+    "sha256": "79afe87f67e5fb2d78221e0b4be46fa0e33416af8380bdec33ffd42906e0a417"
+  },
+  {
+    "file": "elyndor/systems/mobile-battle-view.js",
+    "bytes": 10777,
+    "sha256": "fb6e181d9cffee9a0ad4b5f33346617dffb49b38210e24b64502cea11e413ac2"
+  },
+  {
+    "file": "elyndor/systems/mobile-layout.css",
+    "bytes": 12186,
+    "sha256": "79125d38c0896773281a80091a92ebf10ad955324c88768ad85fdd475bc5e8db"
+  },
+  {
+    "file": "elyndor/systems/mobile-layout.js",
+    "bytes": 967,
+    "sha256": "08c8500fe71650219c6d08a7dbfeed47698bf31a5015626f207dc49de9e726c7"
+  },
+  {
+    "file": "elyndor/systems/motion-performance.js",
+    "bytes": 9021,
+    "sha256": "8e70a110908315da065a95de4cdc3f1da80fc341b946611c2eac4bb4073594f8"
+  },
+  {
+    "file": "elyndor/systems/natural-canopies.js",
+    "bytes": 5336,
+    "sha256": "cd2c9a254606c083c2521e0dc24ddcfe9b3aeb6b3ab66207f897822bf6d29fac"
+  },
+  {
+    "file": "elyndor/systems/nearby-scene-cache.js",
+    "bytes": 4270,
+    "sha256": "7126ed0b7af6e8c4140f702c34825a976eada029160afd9b91920472f7002f55"
+  },
+  {
+    "file": "elyndor/systems/no-selection.css",
+    "bytes": 324,
+    "sha256": "acfd9eb6e4ac48713eb9a1c30fe5b4ed40713a098f8f8d12c4f72953f954715f"
+  },
+  {
+    "file": "elyndor/systems/no-selection.js",
+    "bytes": 1016,
+    "sha256": "71defebf18f08f5a200ed9a36a81bfecc6149b96958b779fc55b1119c39c5062"
+  },
+  {
+    "file": "elyndor/systems/npc-conversations.js",
+    "bytes": 4612,
+    "sha256": "8bbfe887367e7c598ade745d8713b033e9d47fcda6887213ae6b46894d51052f"
+  },
+  {
+    "file": "elyndor/systems/organic-roads.js",
+    "bytes": 2139,
+    "sha256": "9e5a581cf0741e0b23d7c75375eb4673ed8c86ce8f2c61b962205e892a3c3d8f"
+  },
+  {
+    "file": "elyndor/systems/overworld-habitats.js",
+    "bytes": 3256,
+    "sha256": "5736fc1688eb94626a9298186ea6d2c3554c98caecde18311fb5d6a80951ba4c"
+  },
+  {
+    "file": "elyndor/systems/overworld-routes.js",
+    "bytes": 1216,
+    "sha256": "3d12f90a5e35a11bcfe7ab7b12212f15e5f9239cab6bd87a803c46ad4e193ab3"
+  },
+  {
+    "file": "elyndor/systems/overworld-water.js",
+    "bytes": 3896,
+    "sha256": "2a37b2d6f10e5a8d188177577f136d27bb162a2c85a057322d0965d4994b9abf"
+  },
+  {
+    "file": "elyndor/systems/party-locomotion.js",
+    "bytes": 4933,
+    "sha256": "1349f2b66347baa09be68b38bd8fcb4aff5e190eb3c302d00156f8dddcd783e5"
+  },
+  {
+    "file": "elyndor/systems/party-roster.css",
+    "bytes": 806,
+    "sha256": "11322360863b6793158dc5e8c044f3600ec3e425f32e248c63301e81a87bf700"
+  },
+  {
+    "file": "elyndor/systems/persistence.css",
+    "bytes": 556,
+    "sha256": "680deb4d0f06db4a1a695adccb7b7b86f1c239448cbeba6546d4a2fb885e0b4a"
+  },
+  {
+    "file": "elyndor/systems/persistence.js",
+    "bytes": 15421,
+    "sha256": "1211a1682db2f16a28055c5f474094333a2241fc69b29f847e53a0aa2f989815"
+  },
+  {
+    "file": "elyndor/systems/phone-clarity.css",
+    "bytes": 2423,
+    "sha256": "ffed30f9e956061a6e1691c828eddff725b52689331de44d4ac3ef5f9ce77036"
+  },
+  {
+    "file": "elyndor/systems/phone-clarity.js",
+    "bytes": 1582,
+    "sha256": "ee0b848a68d8c72ba8b1d798c19a48a07f395aa27465552a4ef13e3a210d6778"
+  },
+  {
+    "file": "elyndor/systems/phone-interface.css",
+    "bytes": 21831,
+    "sha256": "d7f958d9d404142edf7a927f6d379da1ef3bfd15c21f04503da3f1a73504557f"
+  },
+  {
+    "file": "elyndor/systems/phone-interface.js",
+    "bytes": 2972,
+    "sha256": "e3c1b13925271dafbf7fb18c2943931db2f538a391833f127d0e02574d8b56af"
+  },
+  {
+    "file": "elyndor/systems/player-visibility.js",
+    "bytes": 2581,
+    "sha256": "dcec3ce0c45b7d647fdbc35de22e38c3202b872a955240d0c4fcee1064e1eeec"
+  },
+  {
+    "file": "elyndor/systems/poi-atmosphere.js",
+    "bytes": 7188,
+    "sha256": "26e43843af64488ab65ac8e509a75c4332afcd2c17355146ffac566cbf85c31d"
+  },
+  {
+    "file": "elyndor/systems/poi-dioramas.js",
+    "bytes": 15284,
+    "sha256": "3502f9411fc7363c333e0bddd13bcab3bf6906477e03422c0f03f99b8b58ace7"
+  },
+  {
+    "file": "elyndor/systems/poi-entries.js",
+    "bytes": 3166,
+    "sha256": "26b8ce78cc8904d7883ebbdae1698f30b6a778f6d6663a94781bcefbd92bfa17"
+  },
+  {
+    "file": "elyndor/systems/poi-exits.css",
+    "bytes": 711,
+    "sha256": "144175e0fabeb6c7a321c80df449bab668aa2e78f5fb871472ad3508a46ef788"
+  },
+  {
+    "file": "elyndor/systems/poi-exits.js",
+    "bytes": 12853,
+    "sha256": "cf34e2a694f688100b896d20327f6362000cffa4eade93ad2992de56905323dc"
+  },
+  {
+    "file": "elyndor/systems/poi-lighting.js",
+    "bytes": 5334,
+    "sha256": "acc24c870db49959abb6fa9518ccb5bea29c7cd3689e90bc68b7c3f704dc7362"
+  },
+  {
+    "file": "elyndor/systems/poi-transitions.css",
+    "bytes": 260,
+    "sha256": "1283821b4f4081af8b725902a8bce5054af491c37573ad14c5b300552debfd56"
+  },
+  {
+    "file": "elyndor/systems/poi-transitions.js",
+    "bytes": 3792,
+    "sha256": "be843ee54b9500ae392a59dc0af7a8dbab0d09c1927e20935157e5f46b4c54fa"
+  },
+  {
+    "file": "elyndor/systems/presentation-review.js",
+    "bytes": 14040,
+    "sha256": "3489c9764ea3091e532b0a088ebfea73eb0974e1ab45c2f09c8d3f6d39a810c6"
+  },
+  {
+    "file": "elyndor/systems/quest-combat-fixes.css",
+    "bytes": 349,
+    "sha256": "3bb7d29cf2ba974cfaed0ee89f78ba766d41f0388c8674db597af9f8d46da69e"
+  },
+  {
+    "file": "elyndor/systems/quest-combat-fixes.js",
+    "bytes": 5780,
+    "sha256": "504ff4f8692aec78e33d9041e0600ccd089eb277529ab5b98caa99b739855ca3"
+  },
+  {
+    "file": "elyndor/systems/quest-rewards.css",
+    "bytes": 1439,
+    "sha256": "dcccd355d2225d1ffd4e1bee3d487378d8f9c594c2a2a6cf2e90d8c371d7b9f0"
+  },
+  {
+    "file": "elyndor/systems/quest-rewards.js",
+    "bytes": 6861,
+    "sha256": "d627c21576ae1ec864a37213bdeb2b93f439163726bf0110b84787ee2401477a"
+  },
+  {
+    "file": "elyndor/systems/quest-tracking.js",
+    "bytes": 6142,
+    "sha256": "7d5990ce86150196eb5a711e7c75f77bd12de675429ab53a2f7acc562c90fc99"
+  },
+  {
+    "file": "elyndor/systems/rendering.js",
+    "bytes": 11415,
+    "sha256": "9d0b1fb2ff0b90820f2943e5d0e58f8fa954bd8857d4d729669a4228b89b8496"
+  },
+  {
+    "file": "elyndor/systems/request-sources.js",
+    "bytes": 4881,
+    "sha256": "680847f460ffe079ee04b365aa5711e4b47ca6c05aae8cf0b7d683c292e70c7e"
+  },
+  {
+    "file": "elyndor/systems/requests.js",
+    "bytes": 5478,
+    "sha256": "9c2efdc3a4811cf1621878847f5d344a8486124533be7b53e62c80e124e12fff"
+  },
+  {
+    "file": "elyndor/systems/retained-continent.js",
+    "bytes": 4154,
+    "sha256": "4503a8d12bb83e5f1cf6ff1603389cf2c9cbcdf3d2be9c5a272c48a0033b7b16"
+  },
+  {
+    "file": "elyndor/systems/review-controls.css",
+    "bytes": 3749,
+    "sha256": "250d4d2f4134126c9aa824e92a122adcaeae2f7f3570432b8cb6d73140cf2c93"
+  },
+  {
+    "file": "elyndor/systems/review-fixes.css",
+    "bytes": 545,
+    "sha256": "6f47d7a12ca198d9cfed3139a8c0c057f868018c17343fcd7c53bbe03925f3b3"
+  },
+  {
+    "file": "elyndor/systems/road-surfaces.js",
+    "bytes": 3481,
+    "sha256": "7e46239b18b4fe1dd9e6d467cd32609af9456d4e37ea87eb9a9a5a582b1cad0a"
+  },
+  {
+    "file": "elyndor/systems/runtime-budget.js",
+    "bytes": 798,
+    "sha256": "b0bb75ff6003c8ad6db45daa62bdcfc4f4f8236dc801d0f4b48957f6a1d990aa"
+  },
+  {
+    "file": "elyndor/systems/runtime.js",
+    "bytes": 7630,
+    "sha256": "e86c7abb85a143a6e1f65cc1cd644683c8758c88cb952eff4276c94d6ffa025c"
+  },
+  {
+    "file": "elyndor/systems/save-magic.js",
+    "bytes": 5282,
+    "sha256": "5fbebd8a7389891f018197f08ef75e8cbbbb6f44ff1d0b20760d5938e9bc4036"
+  },
+  {
+    "file": "elyndor/systems/save-rune.js",
+    "bytes": 5967,
+    "sha256": "f50e1bf8ee7e4ff6f0d957bc63007e7b11d7d36945fe7cc49a8230fb4d283b65"
+  },
+  {
+    "file": "elyndor/systems/scenic-atmosphere.js",
+    "bytes": 2615,
+    "sha256": "491bf95c50d6bb101f4d793b0b7b1d0c3aecfeb18052e1591139a8e3fe8463b9"
+  },
+  {
+    "file": "elyndor/systems/scenic-bridges.js",
+    "bytes": 3573,
+    "sha256": "64e3f0bc9e1b7d07c276ebc2d056370752066faa769e5b98d8749f5c3ddcd63f"
+  },
+  {
+    "file": "elyndor/systems/scenic-geology.js",
+    "bytes": 4836,
+    "sha256": "aafdaf2c41066c7701b27d49e2ac98489409d518c08de1d598715a31d0fff569"
+  },
+  {
+    "file": "elyndor/systems/soren-animations.js",
+    "bytes": 16484,
+    "sha256": "5a08f4c8b24c0c44d20f4415bb706ce77d26cbb636703692115ec47a8ee29539"
+  },
+  {
+    "file": "elyndor/systems/sprite-contact-depth.js",
+    "bytes": 2268,
+    "sha256": "8e5a9671f834c3f692d1ef5aeafc96b4136db690d4fbe977b52f642aeef7edda"
+  },
+  {
+    "file": "elyndor/systems/stone-surfaces.js",
+    "bytes": 9649,
+    "sha256": "40bcdadd5661c381e0d3304b191140340bd234efb539e0ba03f339df51ee20db"
+  },
+  {
+    "file": "elyndor/systems/sunlight.js",
+    "bytes": 9827,
+    "sha256": "7ac70c7b66ce62c28786dc320e27394d3270f786660f40e18c0f40ffa5a5ed57"
+  },
+  {
+    "file": "elyndor/systems/surface-pbr.js",
+    "bytes": 8710,
+    "sha256": "30a5663b39bb1f7993bae32c3776d08cf0f152da1a1ca7311ff4317d70357eeb"
+  },
+  {
+    "file": "elyndor/systems/terrain-seating.js",
+    "bytes": 6789,
+    "sha256": "5dd7f5e73fc6ec9cfc3da22f5418654ddd9df1ac0bf0905034608c49fcc994ba"
+  },
+  {
+    "file": "elyndor/systems/transition-graphics.js",
+    "bytes": 4553,
+    "sha256": "90e93682e5d3655b99d45bbd745c0ec5cadc3c927d91ae4525b197eb781da981"
+  },
+  {
+    "file": "elyndor/systems/transition-speed.js",
+    "bytes": 9867,
+    "sha256": "aee62f70267ec30347393f21f06a99127defbb2ce9499ce677d92e0ece7345e8"
+  },
+  {
+    "file": "elyndor/systems/traversal-composition.js",
+    "bytes": 18731,
+    "sha256": "bca0e0baba0dee681ece354ece27dfe5921dc7d9a6eb5efcb1d232aa08ab3088"
+  },
+  {
+    "file": "elyndor/systems/traversal-terrain.js",
+    "bytes": 21851,
+    "sha256": "2f3e1fa316e0b0243966bade2abba45ec16a1e07351e39ce4e6072418b441342"
+  },
+  {
+    "file": "elyndor/systems/village-frontages.js",
+    "bytes": 14723,
+    "sha256": "226e588428ad7c84ef647b9439c3bd4311e68fac85390ca2c31c81b0116c06c9"
+  },
+  {
+    "file": "elyndor/systems/water-continuity.js",
+    "bytes": 3822,
+    "sha256": "d5eb0240e76256b499786d8aad063712aeab1ee6b45cfd6605274a1439f5bc12"
+  },
+  {
+    "file": "elyndor/systems/world-art.js",
+    "bytes": 15058,
+    "sha256": "d9182e8101e90b0c8e32340edb8f76c8b90d5e6a35c9f2520f9635f9511c62b8"
+  },
+  {
+    "file": "elyndor/systems/world-groundcover.js",
+    "bytes": 11376,
+    "sha256": "a20d880da355d7d4e56a5c8fd33b390893fe162e614d77167d37cf39113ca31c"
+  },
+  {
+    "file": "elyndor/systems/world-kit.js",
+    "bytes": 5893,
+    "sha256": "606c7c4d0c66e9fcaf9a80e516a0a1a2e87ff8607b6c6bbc31fe0b24d36e0083"
+  },
+  {
+    "file": "elyndor/systems/world-landmarks.js",
+    "bytes": 2852,
+    "sha256": "c68fd34c09fe6d93ef5aa54c0f9130afa5d3453dd6d77add05c34073ebb56631"
+  },
+  {
+    "file": "elyndor/systems/world-materials.js",
+    "bytes": 25349,
+    "sha256": "098c3bef81509d61011d661d6893c814c1617a8605b90585c36ab74b0330dfab"
+  },
+  {
+    "file": "elyndor/title-v19.css",
+    "bytes": 9053,
+    "sha256": "1088ad9430ba32eb846af17f9fb6a02b9b57b59ec4cfd33db236c0be11fe89e6"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 69166,
+    "sha256": "49d2e24a9fdb41fa5a2ba730a0f03b32dc4713a48cfe9ffb2669b79dd24b922c"
+  },
+  {
+    "file": "elyndor/title-v26.css",
+    "bytes": 8269,
+    "sha256": "90f19485a2c1973ce341f99aa302868d61d4bd0d9869d6d41fc42aa4528604f2"
+  },
+  {
+    "file": "elyndor/title-v26.js",
+    "bytes": 6083,
+    "sha256": "02e443b257e70a6d4c990cc175d477b503f92f87d6792bcf069dd18c5704ea54"
+  },
+  {
+    "file": "elyndor/tools/build-v7.py",
+    "bytes": 7354,
+    "sha256": "c7d0e38f551cd85cd9754051c1a402d3bae660b7f2e9c898245e730e2172dc16"
+  },
+  {
+    "file": "elyndor/tools/build.py",
+    "bytes": 219,
+    "sha256": "2117feecc0f071a4ac99d035c24465ed695d78e7b52a679c6ab3ab0b36e3f54c"
+  },
+  {
+    "file": "elyndor/town-events.js",
+    "bytes": 3875,
+    "sha256": "7642f48c3032905780c38b300fa4faf1c40f0281de259fae617460339bb72c72"
+  },
+  {
+    "file": "elyndor/town-v8.css",
+    "bytes": 5712,
+    "sha256": "6bf331de7d64501d7e28119a645af1f18be2fa78b21a97d035ed4a8cfd740c34"
+  },
+  {
+    "file": "elyndor/town-v8.js",
+    "bytes": 43421,
+    "sha256": "530c2d8c4880a0189fbb1d6307b470ecddfda26be1c15f2154c0aa383a0356c7"
+  },
+  {
+    "file": "elyndor/travel-v15.js",
+    "bytes": 3647,
+    "sha256": "1c11801455ee45a5127593b952e303087f11f1b2278791eb25a736b7a65c4a06"
+  },
+  {
+    "file": "elyndor/tutorial-v17.js",
+    "bytes": 14811,
+    "sha256": "e6b0a46d4b8f701ab2b70dc1f98f774cba06c0a7d6cf590266896752e79043f7"
+  },
+  {
+    "file": "elyndor/ui.js",
+    "bytes": 29048,
+    "sha256": "c400bb119e29ce00440b86c4c2f9e1b3914a66907309c80f77a97a6c445f5d7a"
+  },
+  {
+    "file": "elyndor/visibility-v11.js",
+    "bytes": 2565,
+    "sha256": "46bca5ce105c76e597ebc494265160c51986031c1479caae7a7d517e708b313b"
+  },
+  {
+    "file": "elyndor/visibility-v18.js",
+    "bytes": 4743,
+    "sha256": "93dedd95f1464d59879d89b9f2454db8ff4afccdcd8a40a93781f317f8f4b7d2"
+  },
+  {
+    "file": "elyndor/visibility-v21.js",
+    "bytes": 6442,
+    "sha256": "64925292d86baae56eb4ee4d0fb89fd7cfa16762fd20bd2486290ea0f0ae63f0"
+  },
+  {
+    "file": "elyndor/visual-v7.css",
+    "bytes": 12554,
+    "sha256": "f33d01b48b19673df4e86708b2f57724c138d27cd4fb60fee6c846e1be02d83f"
+  },
+  {
+    "file": "elyndor/visual-v7.js",
+    "bytes": 6111,
+    "sha256": "66aea562ceaa61ebfd15bca1c9864331364e3997896a9cd2dfe2f577a17df6a0"
+  },
+  {
+    "file": "elyndor/voices-v12.js",
+    "bytes": 4188,
+    "sha256": "d70bc85b66f01fc34f446c38810fb4893e5eddba467911481639de2c5b2073a2"
+  },
+  {
+    "file": "elyndor/water-v20.js",
+    "bytes": 6188,
+    "sha256": "da1bb6abc2d6b2f5dd200da56ffea14e7adda326ba5af470c62ed2c7db3e1cd2"
+  },
+  {
+    "file": "elyndor/water-v28.js",
+    "bytes": 6098,
+    "sha256": "9b15e31e778f9ac6efccf8c2ac6c5a24a17d7c1257efdbbb6c554c4873e9e7d3"
+  },
+  {
+    "file": "elyndor/water-v32.js",
+    "bytes": 3512,
+    "sha256": "8168717f1ac1f1ae7e8dd634c649a4be2a4a99b41397ef296cc9ab5722298a62"
+  },
+  {
+    "file": "elyndor/water.js",
+    "bytes": 8050,
+    "sha256": "ff025447b88030d813920f6771ad95339618c6c33dcbb229e592ca4c366554da"
+  },
+  {
+    "file": "elyndor/weather-v12.js",
+    "bytes": 13916,
+    "sha256": "e174822cd5bee3ed4d60411d6d88a77add28fd8313179c8fa41ac70100a03e39"
+  },
+  {
+    "file": "elyndor/weather-v15.js",
+    "bytes": 7535,
+    "sha256": "23c355fe50c54144b440039a5d12ebe5f30d29324b3b660b444840eeee642a73"
+  },
+  {
+    "file": "elyndor/weather-v17.js",
+    "bytes": 8284,
+    "sha256": "da6e827a31a703a2b02f2391f1092caf913f3d9e7a1478f5877e192a4b50341f"
+  },
+  {
+    "file": "elyndor/world-art-v38.js",
+    "bytes": 28130,
+    "sha256": "61116e489f777e97de0689ffd428c37ee6ae32811c26b7430b93e5c4157b91ab"
+  },
+  {
+    "file": "elyndor/world-bake-v36.js",
+    "bytes": 6122890,
+    "sha256": "d164fdf23bf3b646fb317e57180c865eaaef3e9ff58cd50088876bf99f8be9ac"
+  },
+  {
+    "file": "elyndor/world-design.js",
+    "bytes": 2788,
+    "sha256": "ac54b8d62582cb6d33efcc2d5a125c931c33cd009d3ca01bb0161d47149fcc62"
+  },
+  {
+    "file": "elyndor/world-v18.js",
+    "bytes": 11391,
+    "sha256": "60134f53936cfa5ab074ccae8eebae437b3d72c04e694f9e0da269fec8d71f7d"
+  },
+  {
+    "file": "elyndor/world-v26.js",
+    "bytes": 18030,
+    "sha256": "523e2676c98c89960804dc265b25ebca8797f999572d7ea5144d79d8964cfc2f"
+  },
+  {
+    "file": "elyndor/world-v27.js",
+    "bytes": 5236,
+    "sha256": "0f28e732e8e39736df5875aa83189c9e6c9357ced68b60f5efd403f4bb66f0a6"
+  },
+  {
+    "file": "elyndor/world.js",
+    "bytes": 29057,
+    "sha256": "b7b615da54b87cba7b6b3fdbdeeb4ced4a7715ac5ad91242f57d8277ca856acf"
+  },
+  {
+    "file": "index.html",
+    "bytes": 89976179,
+    "sha256": "6bef44f3d9be201dd987fee42b5c697c02a65eb065e7fbe6198ce298846697a2"
+  },
+  {
+    "file": "release.json",
+    "bytes": 66811,
+    "sha256": "6ea359a0f78d7ba2ae1fbf6e589f1a82a4a42a62633a0b22461ed83b882cbc0d"
+  }
+]

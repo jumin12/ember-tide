@@ -11,12 +11,15 @@ setupPost=function(...args){
  return result;
 };
 function markOccluder63(o,valid){
- if(o.userData.stencil63)return;o.userData.stencil63=true;o.userData.occluder63=valid;
+ o.userData.occluder63=valid;if(o.userData.stencil63)return;o.userData.stencil63=true;
  const before=o.onBeforeRender;
  o.onBeforeRender=function(r,s,c,...args){
   before?.call(this,r,s,c,...args);
   for(const m of Array.isArray(this.material)?this.material:[this.material]){
-   m.stencilWrite=c===camera&&m.depthWrite;m.stencilRef=this.userData.occluder63?1:this.userData.groundSurface69?2:0;
+   // Non-depth effects retain their own stencil filters (notably sun shafts).
+   // Opaque and alpha-tested surfaces label only the pixels they actually draw.
+   if(!m?.depthWrite)continue;
+   m.stencilWrite=c===camera;m.stencilRef=this.userData.occluder63?1:this.userData.groundSurface69?2:0;
    m.stencilFunc=THREE.AlwaysStencilFunc;m.stencilFail=m.stencilZFail=THREE.KeepStencilOp;m.stencilZPass=THREE.ReplaceStencilOp;
   }
  };
@@ -49,6 +52,7 @@ function syncSilhouette63(){
   q.mesh?.removeFromParent();q.material?.dispose();q.actor=player;q.mesh=q.material=null;
   if(player){
    const m=new THREE.MeshBasicMaterial({map:player.mesh.material.map,color:'#f5dfad',alphaTest:.42,transparent:true,opacity:.64,depthTest:true,depthWrite:false,depthFunc:THREE.GreaterDepth,stencilWrite:true,stencilRef:1,stencilFunc:THREE.EqualStencilFunc,stencilFail:THREE.KeepStencilOp,stencilZFail:THREE.KeepStencilOp,stencilZPass:THREE.KeepStencilOp,side:THREE.DoubleSide,fog:false,toneMapped:false});
+   m.forceSinglePass=true;
    m.onBeforeCompile=sh=>{
     sh.uniforms.mainView63=q.main;
     sh.fragmentShader='uniform float mainView63;\n'+sh.fragmentShader;

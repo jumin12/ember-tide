@@ -40,11 +40,14 @@ buildStageScenery59=function(...args){const r=battleSceneryBefore106(...args),b=
 const battleLightBefore106=arenaLight89;
 arenaLight89=function(...args){const r=battleLightBefore106(...args);sun.shadow.radius=.65;return r;};
 
-// Tree cutaways use one spatial candidate set and one visibility decision.
-// Retain the older building cutaway path while replacing repeated crown scans.
+// Exploration owns a depth-tested player silhouette. Do not replace that
+// lifecycle with legacy building/canopy cutaways when applying tree budgets.
+// The older cutaways remain available for title and combat presentation.
 const treeCuts106={world:null,grid:new Map(),key:'',candidates:[],hidden:new Set(),at:-1,camera:V3(),focus:V3()};
-const cutsBefore106=cutsBefore30;
+const cutsBefore106=cutsBefore30,explorationCutsBefore106=updateCutaways;
 updateCutaways=function(...args){
+ if(!battle&&state.mode!=='title')return explorationCutsBefore106(...args);
+ visibility63.mode=false;syncSilhouette63();
  const trees=scenery.trees;scenery.trees=[];let result;try{result=cutsBefore106(...args);}finally{scenery.trees=trees;}
  if(!world||!player||battle)return result;const q=treeCuts106,phone=touchDevice33();
  if(q.world!==world){q.world=world;q.grid=new Map();q.key='';q.hidden=new Set();for(const t of trees){const key=Math.floor(t.x/32)+','+Math.floor(t.z/32);if(!q.grid.has(key))q.grid.set(key,[]);q.grid.get(key).push(t);}q.at=-1;}
