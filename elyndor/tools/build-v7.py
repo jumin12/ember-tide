@@ -7,6 +7,7 @@ from battle_materials_v100 import add_battle_materials100
 from battle_props_v101 import add_battle_props101
 from world_materials_v102 import pack_world_materials102
 from environment_materials_v103 import pack_environment103
+from runtime_assets_v116 import externalize_runtime116
 import json,hashlib,base64,io,sys,importlib.util,time
 ROOT=Path(__file__).resolve().parents[2];SRC=ROOT/'elyndor/assets/source/pixellab-v7'
 OUT=ROOT/'elyndor/assets/packed';OUT.mkdir(parents=True,exist_ok=True)
@@ -56,6 +57,7 @@ def main():
  # an atlas region; no regenerated artwork or duplicate icon interpretations.
  sheets=SRC/'combat65'
  if sheets.exists():assets['combatIcons65']={name:'data:image/png;base64,'+base64.b64encode((sheets/(name+'.png')).read_bytes()).decode() for name in ['ability','status']}
+ externalize_runtime116(ROOT,assets)
  graph=json.loads(read('build-manifest.json'))
  parts={key:'\n'.join(read(n) for n in names) for key,names in graph['sections'].items()}
  parts.update({'STYLE':'\n'.join(read(n) for n in graph['styles']),
@@ -63,9 +65,11 @@ def main():
  if len([n for names in graph['sections'].values() for n in names])!=len({n for names in graph['sections'].values() for n in names}):raise ValueError('Duplicate modules in the build graph')
  shots=manifest.get('loadingScreens',{})
  fresh_shots=ROOT/'elyndor/assets/source/environment-pbr-v103/loading/manifest.json'
- if fresh_shots.exists():shots=json.loads(fresh_shots.read_text())
+ if fresh_shots.exists():shots=json.loads(fresh_shots.read_text(encoding="utf-8"))
  fresh_shots=ROOT/'elyndor/assets/source/loading-v106/manifest.json'
- if fresh_shots.exists():shots=json.loads(fresh_shots.read_text())
+ if fresh_shots.exists():shots=json.loads(fresh_shots.read_text(encoding="utf-8"))
+ fresh_shots=ROOT/'elyndor/assets/source/loading-v116/manifest.json'
+ if fresh_shots.exists():shots=json.loads(fresh_shots.read_text(encoding="utf-8"))
  if FINAL and not shots:raise ValueError('An actual in-game river loading screenshot is required')
  for q in shots.values():
   with Image.open(ROOT/q['file']) as im:

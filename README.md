@@ -2,6 +2,22 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.30 — Clearer maps and lighter mobile loading
+
+November 11, 2026
+
+- Improved mobile startup with smaller HTML, shared native binary assets, bounded scenery texture and decode budgets, and NPC and monster artwork loaded when needed. Added artwork retries and safer scene handoffs while preserving native character pixels.
+- Replaced four loading pictures with reviewed 1920×1080 in-engine views of the river, inn, shop and traveling party, without the unwanted square around the save seal.
+- Restored the ornate gold button artwork with its black outer margins cropped away. Confined floral decoration to the left sidebar, contained selected navigation highlights, preserved the castle banner’s natural proportions and moved it clear of the money display.
+- Made settlement models, their ground, icons and nameplates clickable on the world map. Hovering and selecting keep them stationary; choosing a destination highlights it without moving the camera, while dragging still pans.
+- Added a Housing inventory category after Key Items for collected Home Decor and Trophy items, with item details and a clear empty state. Supplies and equipment retain their existing actions.
+- Corrected Equipment category icons with consistent square gold frames and aligned artwork while preserving character selection, comparisons and equip/unequip controls.
+- Extended landmark descriptions across their available space beside Track destination and Fast travel. Added restrained depth and edge focus, HDR bloom and atmospheric perspective to the 3D atlas while keeping interface text sharp.
+- Fixed atlas construction happening before final environment artwork loaded, so it now retains the completed continent’s PBR terrain, foliage, rocks and water. Refined outdoor map lighting, added irregular woodland pockets and low verge planting, and varied green road shoulders.
+- Added small soft circular contact shadows beneath the traveling leader and visible companions, aligned to their rendered feet and terrain slopes in all eight movement directions at both speeds.
+
+Release evidence and checksums: `elyndor/previews/release-v130/verification.json`. Desktop, portrait and landscape browser-emulated phone checks passed. The broader REQ-017 art benchmark remains under review.
+
 ## Alpha Version 1.29 — Natural running and clearer battle lighting
 
 November 10, 2026

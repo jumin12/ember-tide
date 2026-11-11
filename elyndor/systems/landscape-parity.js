@@ -59,8 +59,8 @@ ecology104=function(){
  Object.assign(profile109,{name:'Travel · '+p.name,flora:p.flora,stone:p.stone,mist:mist/Math.max(.0001,total),sky:'#'+skyMix109.getHexString()});return profile109;
 };
 function climateMaterial109(m,tree=false){
- if(m.userData.climate109)return m;const before=m.onBeforeCompile,key=m.customProgramCacheKey();m.userData.climate109=true;
- m.onBeforeCompile=function(s,...args){before.call(this,s,...args);s.uniforms.climate109={value:climateTexture38};
+ if(m.userData.climate109)return m;const before=m.onBeforeCompile,key=m.customProgramCacheKey(),climate={value:climateTexture38};m.userData.climate109=true;m.userData.climateTexture109=climate.value;
+ m.onBeforeCompile=function(s,...args){before.call(this,s,...args);s.uniforms.climate109=climate;
   s.vertexShader='varying vec2 climateRoot109;\n'+s.vertexShader;s.vertexShader=s.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nclimateRoot109=(modelMatrix*instanceMatrix*vec4(0.,0.,0.,1.)).xz;');
   s.fragmentShader='uniform sampler2D climate109;varying vec2 climateRoot109;\n'+s.fragmentShader;
   const frost='smoothstep(.25,.8,texture2D(climate109,(climateRoot109+vec2(1024.,576.))/vec2(2048.,1152.)).r)';
@@ -85,10 +85,14 @@ buildWorld=function(...args){const r=parityWorldBefore109(...args);if(activeScen
 // Its wider fog distances are camera-dependent; pigment and exposure are not.
 const atlasParityBefore109=outdoorAtlasLight67;
 outdoorAtlasLight67=function(){
- const exposure=renderer.toneMappingExposure,restore=atlasParityBefore109();
- const key=exactAtlas67.sun;if(key){key.color.copy(sun.color);key.intensity=sun.intensity;}
- if(exactAtlas67.hemi){exactAtlas67.hemi.color.copy(hemi.color);exactAtlas67.hemi.groundColor.copy(hemi.groundColor);exactAtlas67.hemi.intensity=hemi.intensity;}
- for(const l of exactAtlas67.scene.children)if(l.isDirectionalLight&&l!==key&&skyBounce17){l.color.copy(skyBounce17.color);l.intensity=skyBounce17.intensity;}
- renderer.toneMappingExposure=exposure;waterLight62.key.value.copy(sun.color);waterLight62.sky.value.copy(hemi.color);waterLight62.power.value=sun.intensity;
- exactAtlas67.scene.background.copy(scene.fog.color);exactAtlas67.scene.fog.color.copy(scene.fog.color);return restore;
+ const restore=atlasParityBefore109(),day=celestial31.day.value,warm=poiLight54.warm.value;
+ // The atlas needs an outdoor rig even when opened from a shop or snowy POI.
+ // Apply travel daylight's neutral balance to its own time-sampled lights.
+ const neutral=day*(1-warm)*.68,key=exactAtlas67.sun;
+ if(key)key.color.lerp(daylight115.sun,neutral);
+ if(exactAtlas67.hemi)exactAtlas67.hemi.groundColor.lerp(daylight115.ground,neutral*.52);
+ for(const l of exactAtlas67.scene.children)if(l.isDirectionalLight&&l!==key)l.color.lerp(daylight115.bounce,neutral*.66);
+ if(key)waterLight62.key.value.copy(key.color);
+ if(exactAtlas67.hemi)waterLight62.sky.value.copy(exactAtlas67.hemi.color);
+ return restore;
 };

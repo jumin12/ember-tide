@@ -38,9 +38,9 @@ async function commonMaterials100(){
  if(materials100.common)return materials100.common;
  materials100.common=(async()=>{
   const leaves=await Promise.all(LEAVES100.map(loadSurface100));
-  const size=Math.max(...leaves.map(t=>Math.max(t.image.width,t.image.height))),data=new Uint8Array(size*size*4*leaves.length),c=document.createElement('canvas');c.width=c.height=size;
+  const size=Math.min(mobileStartup116()?512:Infinity,Math.max(...leaves.map(t=>Math.max(t.image.width,t.image.height)))),data=new Uint8Array(size*size*4*leaves.length),c=document.createElement('canvas');c.width=c.height=size;
   const ctx=c.getContext('2d',{willReadFrequently:true});
-  leaves.forEach((t,i)=>{ctx.clearRect(0,0,size,size);ctx.drawImage(t.image,0,0);data.set(ctx.getImageData(0,0,size,size).data,i*size*size*4);materials100.rects[i]=new THREE.Vector4(0,0,t.image.width/size,t.image.height/size);});
+  leaves.forEach((t,i)=>{const fit=Math.min(1,size/Math.max(t.image.width,t.image.height)),w=Math.round(t.image.width*fit),h=Math.round(t.image.height*fit);ctx.clearRect(0,0,size,size);ctx.drawImage(t.image,0,0,w,h);data.set(ctx.getImageData(0,0,size,size).data,i*size*size*4);materials100.rects[i]=new THREE.Vector4(0,0,w/size,h/size);});
   const t=new THREE.DataArrayTexture(data,size,size,leaves.length);t.colorSpace=THREE.SRGBColorSpace;t.magFilter=THREE.LinearFilter;t.minFilter=THREE.LinearMipmapLinearFilter;t.generateMipmaps=true;t.wrapS=t.wrapT=THREE.ClampToEdgeWrapping;t.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());t.needsUpdate=true;materials100.leaves=t;
   // The native array owns its pixels. Free the temporary source decodes.
   for(const key of LEAVES100){const t=materials100.cache.get(key);if(!t.userData.shared103){t.dispose();t.image.src='';}materials100.cache.delete(key);materials100.pending.delete(key);}

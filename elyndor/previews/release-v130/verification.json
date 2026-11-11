@@ -1,0 +1,86 @@
+{
+  "version": "Alpha Version 1.30",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 18081184,
+    "sha256": "2ae931c4909737c542348747cfe83e9806299413ff5d0c7f56c5d496a9c5925f",
+    "offline": false,
+    "delivery": "HTML with same-origin native binary assets and HD environment materials"
+  },
+  "finalRelease": "PASS",
+  "runtimeMatchesTestedLocalExceptChangelogAndLoadingCaptionEncoding": true,
+  "checks": {
+    "release": {
+      "release": {
+        "version": "Alpha Version 1.30",
+        "items": 9,
+        "loading": [
+          "Brookstead · Crossing the river",
+          "The Lantern Inn · A warm welcome",
+          "Riverstone Supplies · Preparing for the road",
+          "The Royal Archives · A shared discovery"
+        ],
+        "binarySprites": true
+      },
+      "housing": true,
+      "map": {
+        "pbr": true,
+        "depth": true,
+        "bloom": 2,
+        "header": "calc(100% - 144px) 50%, calc(100% - 144px) 50%"
+      }
+    },
+    "nativeAssetDependencies": 965,
+    "newNativeBinaryFiles": 653,
+    "nativeBinaryContentUnchanged": 731,
+    "characterFamiliesPreserved": 51,
+    "newNativeLoadingPhotos": 4,
+    "photoResolution": [
+      1920,
+      1080
+    ],
+    "settlementSelections": 28,
+    "contactShadowSamples": 68,
+    "housingFilteringAndEmptyState": true,
+    "equipmentCompareEquipUnequip": true,
+    "depthTargetsReused": true,
+    "atlasUsesCompletedNativePbrContinent": true,
+    "landmarkTextWidthAt1920": [
+      650,
+      956.890625
+    ],
+    "phoneOrientations": [
+      "portrait",
+      "landscape"
+    ],
+    "phoneWidths": [
+      320,
+      390,
+      844
+    ],
+    "standardClient": "PASS: final release notes, menu features and two keyboard movement bursts",
+    "browserErrors": 0
+  },
+  "source": {
+    "elyndor/build-manifest.json": "d618e3bf616c84567d47831fcef19d0fccb89515c2d113f0a6767ec2029028c2",
+    "elyndor/game.js": "519eb042d08d5da63ef6042a8d43ea0b9f446540417014a3d0e8f356a2f56e39",
+    "elyndor/menus-v27.js": "02f091d1253db08bd3f67092e3d73a3adf986f6ad47b32bcd231fe7caa23468a",
+    "elyndor/open-world.js": "7a696243f70c48feee16ed10cd3a2c67f5bef5044c10109f22997ca4431f2b19",
+    "elyndor/systems/atlas-presentation.js": "c47d28d7e7d8cafdbc1c41021d9a535424eac0a746b4a5bc38ea780eda036aeb",
+    "elyndor/systems/battle-materials.js": "d2f32a11e8ad8d47247830c5c4f1e0841de01cdef10e1dea1c5cec45f0b88247",
+    "elyndor/systems/concept-menus.js": "a5efce9aa5411fb87b5dca66835ec8ea6e1249dd975d75b24e013a4f32d9be66",
+    "elyndor/systems/environment-materials.js": "59756d04327e42f8b6dec1429ec30dc07c3cc70406ae3fc1e2f664809fdf25a9",
+    "elyndor/systems/exact-atlas.js": "028b3b6c0415a5cc80295347e43a19543eb7278cf5b3861540c855d400f63cdf",
+    "elyndor/systems/exploration-review.js": "55d1038e74b1255e769dcb6536e72257f82d60a60b13798a03d6e2aab4c66c35",
+    "elyndor/systems/interface-review.css": "67d5ce60a989fea3e9ed26a8430e5a5ebf5c248766337f6cd5cf088802ce3b93",
+    "elyndor/systems/landscape-parity.js": "b58eeb7a68e19056b50e21bf0e0494f11bd9784ecf722825aec70101db2f737b",
+    "elyndor/systems/location-miniatures.js": "dca3d2d069d078d0882b1ec712eef2aa8b2670daa3a663329303f4856afa0d37",
+    "elyndor/systems/menu-polish.css": "b6f0db10ca5735d6e0b4719916557961af4d1f74eb5393be17d1e18d7b586a70",
+    "elyndor/systems/mobile-startup.js": "d9124f6f6093bfc750eaf54e172cd30c8516e58ffeb77773320d95961ad26988",
+    "elyndor/systems/travel-composition-review.js": "0830b859fd601b9641c00ac23670df48ec46ac65744124c6195a23d81ae0f09b",
+    "elyndor/title-v19.js": "5c16330b253299788b2625b4c0c73517729bac36ef3e22739d795d58afa37a99",
+    "elyndor/tools/build-v7.py": "4de7abdcd41f6921242e9dd3bedaab118992968dfd808f314417dc133cefb2be",
+    "elyndor/tools/runtime_assets_v116.py": "2d6c32817bb99e40f5232d6be53bb1a9534cb99608aad8a0395a4dd4b9be578b"
+  },
+  "scope": "Native Chrome and browser-emulated touch phones; physical-device and universal frame-rate performance not claimed. REQ-017 broader art benchmark remains under review."
+}

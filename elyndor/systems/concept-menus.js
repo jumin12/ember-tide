@@ -35,7 +35,8 @@ renderAtlasMenu=function(el){
   $('#atlas-travel').innerHTML=menuImage50('light')+'<span>Fast travel</span><b aria-hidden="true">»</b>';
  };
  for(const pin of $$('.atlas-pin')){pin.innerHTML=menuImage50('diamond','atlas50-pin-gem')+'<span>'+esc(POIS[pin.dataset.location].name)+'</span>';pin.addEventListener('click',update);}
- $('#atlas-destination').addEventListener('change',()=>{const p=POIS[atlas3d.selected];if(!p)return;atlas3d.target.set(p.node[0],Math.max(0,macroGround(...p.node))+2,p.node[1]);atlas3d.distance=180;atlas3d.extent50='place';drawAtlas3d();});
+ // Selection highlights the location; only explicit map controls move the view.
+ $('#atlas-destination').addEventListener('change',()=>drawAtlas3d());
  $('#atlas-track').addEventListener('click',update);
  $('.atlas3d-controls').innerHTML='<div class="atlas50-mouse-help">'+['Drag · Pan','Right-drag · Rotate','Scroll · Zoom'].map(t=>'<span>'+menuImage50('mouse')+t+'</span>').join('')+'</div><span>Arrows · Pan &nbsp;&nbsp; Q / E · Rotate &nbsp;&nbsp; + / − · Zoom</span>';
  const compass=$('#atlas-heading-north');compass.innerHTML='<span>N</span>'+menuImage50('diamond');

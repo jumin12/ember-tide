@@ -1,0 +1,41 @@
+/* Keep the original castle painting's aspect ratio at every header size. */
+body[data-interface50] #menu .menu-header {
+ --banner-height119:clamp(90px,10.6vh,110px);
+ --banner-offset120:clamp(110px,10vw,180px);
+ background-image:linear-gradient(90deg,#031b26 0%,#031b2600 30%,#031b2600 78%,#031b2699 100%),var(--ui50-header);
+ background-size:calc((var(--banner-height119) - 1px)*6) 100%,auto 100%;
+ background-position:right var(--banner-offset120) center,right var(--banner-offset120) center;
+}
+body[data-interface50].compact33 #menu .menu-header {--banner-height119:58px;--banner-offset120:clamp(-45px,calc(100vw - 370px),80px)}
+/* Paint the selection tint inside the ornate frame, not across its corners. */
+body[data-interface50] #menu #menu-nav button {position:relative;isolation:isolate}
+body[data-interface50] #menu #menu-nav button.active {
+ background-image:var(--ui50-button);
+ background-color:transparent;
+ box-shadow:none;
+ overflow:hidden;
+}
+body[data-interface50] #menu #menu-nav button.active::before {
+ content:'';position:absolute;inset:7px 8px;z-index:-1;pointer-events:none;
+ background:linear-gradient(90deg,#be98413d,#a8893510);border-radius:1px;
+}
+/* Let the landmark's copy use its entire column beside the action buttons. */
+body[data-interface50] #menu .atlas50 :is(#atlas-selection,#atlas-description) {max-width:none}
+body[data-interface50] #menu .atlas50 .atlas-actions {padding-left:18px}
+/* Square frames use the existing nine-slice ornament instead of compressing
+   the long rectangular button painting into a tiny square. */
+body[data-interface50] #menu .gear-category27 button {
+ display:grid;place-items:center;width:50px;height:50px;min-height:50px;
+ padding:3px!important;background:#061f2b!important;box-shadow:none;
+ position:relative;border:1px solid #ae8c4e!important;border-image:none!important;
+}
+body[data-interface50] #menu .gear-category27 button::after {
+ content:'';position:absolute;inset:-1px;pointer-events:none;
+ border:7px solid transparent;border-image:var(--ui50-frame) 64 stretch;
+}
+body[data-interface50] #menu .gear-category27 button.active {background:#25434b!important}
+body[data-interface50] #menu .gear-category27 .item-icon {
+ width:30px!important;height:30px!important;border:0!important;background:none!important;
+}
+body[data-interface50] #menu .gear-category27 .item-icon img {width:100%;height:100%;object-fit:contain}
+body[data-interface50] #menu .inventory-categories26 {flex-wrap:wrap}

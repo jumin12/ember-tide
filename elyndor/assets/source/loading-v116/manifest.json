@@ -1,0 +1,332 @@
+{
+  "river": {
+    "file": "elyndor/assets/source/loading-v116/river.webp",
+    "name": "Brookstead · Crossing the river",
+    "native": [
+      1920,
+      1080
+    ],
+    "sha256": "2424c5f4c8cbd3595c605fa340570ed068bbc7b0db4d7be84a8ff8562c0205dd",
+    "capture": {
+      "key": "river",
+      "scene": "brookstead",
+      "camera": [
+        -131,
+        41,
+        170
+      ],
+      "target": [
+        -153,
+        5,
+        96
+      ],
+      "native": [
+        1920,
+        1080
+      ],
+      "actors": [
+        {
+          "id": "representative",
+          "x": -126,
+          "z": 66,
+          "frame": {
+            "action": "idle_south",
+            "index": 0,
+            "cell": 6
+          }
+        },
+        {
+          "id": "merchant",
+          "x": -116,
+          "z": 54.3,
+          "frame": {
+            "action": "idle_south",
+            "index": 2,
+            "cell": 8
+          }
+        },
+        {
+          "id": "healer",
+          "x": -111,
+          "z": 101.5,
+          "frame": {
+            "action": "idle_south",
+            "index": 3,
+            "cell": 9
+          }
+        },
+        {
+          "id": "worker",
+          "x": -145,
+          "z": 72,
+          "frame": {
+            "action": "idle_south",
+            "index": 3,
+            "cell": 9
+          }
+        },
+        {
+          "id": "guard",
+          "x": -146,
+          "z": 120,
+          "frame": {
+            "action": "idle_south",
+            "index": 3,
+            "cell": 9
+          }
+        },
+        {
+          "id": "courier",
+          "x": -129,
+          "z": 65,
+          "frame": {
+            "action": "idle_south",
+            "index": 3,
+            "cell": 9
+          }
+        },
+        {
+          "id": "farmer",
+          "x": -95,
+          "z": 106,
+          "frame": {
+            "action": "idle_south",
+            "index": 2,
+            "cell": 8
+          }
+        },
+        {
+          "id": "elder",
+          "x": -128.8,
+          "z": 60,
+          "frame": {
+            "action": "idle_south",
+            "index": 2,
+            "cell": 8
+          }
+        },
+        {
+          "id": "innkeeper",
+          "x": -114,
+          "z": 101.5,
+          "frame": {
+            "action": "idle_south",
+            "index": 3,
+            "cell": 9
+          }
+        },
+        {
+          "id": "sheepEwe",
+          "x": -94,
+          "z": 124,
+          "frame": {
+            "action": "idle_south",
+            "index": 1,
+            "cell": 9
+          }
+        },
+        {
+          "id": "sheepLamb",
+          "x": -87,
+          "z": 127,
+          "frame": {
+            "action": "idle_south",
+            "index": 4,
+            "cell": 12
+          }
+        }
+      ],
+      "seals": [
+        {
+          "position": [
+            -138.11917020150983,
+            118.54300424181181
+          ],
+          "groundShadows": [
+            false,
+            false
+          ]
+        }
+      ],
+      "source": "Native in-engine village river prospect; residents in their normal routines; title interface hidden only for the photograph."
+    },
+    "provenance": "Reviewed native 1920×1080 in-engine photograph. Approved unchanged character artwork posed walking, visiting a counter or conversing. Camera framed inside the real scene; no compositing, scaling, generated characters or scene changes."
+  },
+  "inn": {
+    "file": "elyndor/assets/source/loading-v116/inn.webp",
+    "name": "The Lantern Inn · A warm welcome",
+    "native": [
+      1920,
+      1080
+    ],
+    "sha256": "3e906f7440ba5e16fcc6b95e452d4ede8a03f17118675370b2c85575583e2c1d",
+    "capture": {
+      "key": "inn",
+      "scene": "brookInn",
+      "camera": [
+        1,
+        9,
+        14
+      ],
+      "target": [
+        -3,
+        1,
+        -2.2
+      ],
+      "native": [
+        1920,
+        1080
+      ],
+      "actors": [
+        {
+          "id": "bren",
+          "x": -1.3,
+          "z": -1.2,
+          "frame": {
+            "action": "idle_northwest",
+            "index": 0,
+            "cell": 72
+          }
+        },
+        {
+          "id": "soren",
+          "x": 0.65,
+          "z": -0.25,
+          "frame": {
+            "action": "idle_northwest",
+            "index": 2,
+            "cell": 94
+          }
+        }
+      ],
+      "shadow": [
+        3072,
+        0.65
+      ],
+      "seals": [
+        {
+          "position": [
+            -6,
+            5.55
+          ],
+          "groundShadows": [
+            false,
+            false
+          ]
+        }
+      ],
+      "source": "Native in-engine photograph; approved character artwork; interface hidden only for capture."
+    },
+    "provenance": "Reviewed native 1920×1080 in-engine photograph. Approved unchanged character artwork posed walking, visiting a counter or conversing. Camera framed inside the real scene; no compositing, scaling, generated characters or scene changes."
+  },
+  "shop": {
+    "file": "elyndor/assets/source/loading-v116/shop.webp",
+    "name": "Riverstone Supplies · Preparing for the road",
+    "native": [
+      1920,
+      1080
+    ],
+    "sha256": "e018e451e7a8c34a42fcd08a2b711bc896b4ff75f0a3239381d69b3c9a66a6be",
+    "capture": {
+      "key": "shop",
+      "scene": "brookShop",
+      "camera": [
+        3,
+        9,
+        14
+      ],
+      "target": [
+        -1,
+        1,
+        -2.2
+      ],
+      "native": [
+        1920,
+        1080
+      ],
+      "actors": [
+        {
+          "id": "bren",
+          "x": -1.5,
+          "z": -0.5,
+          "frame": {
+            "action": "idle_northwest",
+            "index": 0,
+            "cell": 72
+          }
+        },
+        {
+          "id": "soren",
+          "x": 1.1,
+          "z": 1.2,
+          "frame": {
+            "action": "idle_northwest",
+            "index": 1,
+            "cell": 93
+          }
+        }
+      ],
+      "shadow": [
+        3072,
+        0.65
+      ],
+      "source": "Native in-engine photograph; approved character artwork; interface hidden only for capture."
+    },
+    "provenance": "Reviewed native 1920×1080 in-engine photograph. Approved unchanged character artwork posed walking, visiting a counter or conversing. Camera framed inside the real scene; no compositing, scaling, generated characters or scene changes."
+  },
+  "archives": {
+    "file": "elyndor/assets/source/loading-v116/archives.webp",
+    "name": "The Royal Archives · A shared discovery",
+    "native": [
+      1920,
+      1080
+    ],
+    "sha256": "6f701d884a7afe0128581db1c914d8987091ee56fbaa958ffb9485a5dba5f1f5",
+    "capture": {
+      "key": "archives",
+      "scene": "archives",
+      "camera": [
+        3,
+        9,
+        14
+      ],
+      "target": [
+        0,
+        1,
+        -2.2
+      ],
+      "native": [
+        1920,
+        1080
+      ],
+      "actors": [
+        {
+          "id": "bren",
+          "x": -1.4,
+          "z": 1.7,
+          "frame": {
+            "action": "idle_north",
+            "index": 1,
+            "cell": 93
+          }
+        },
+        {
+          "id": "soren",
+          "x": 1.5,
+          "z": 0.3,
+          "frame": {
+            "action": "idle_west",
+            "index": 0,
+            "cell": 64
+          }
+        }
+      ],
+      "shadow": [
+        3072,
+        0.65
+      ],
+      "source": "Native in-engine photograph; approved character artwork; interface hidden only for capture."
+    },
+    "provenance": "Reviewed native 1920×1080 in-engine photograph. Approved unchanged character artwork posed walking, visiting a counter or conversing. Camera framed inside the real scene; no compositing, scaling, generated characters or scene changes."
+  }
+}

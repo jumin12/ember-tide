@@ -266,7 +266,11 @@
       "systems/mill-falls.js",
       "systems/presentation-review.js",
       "systems/player-visibility.js",
-      "systems/presentation-polish.js"
+      "systems/presentation-polish.js",
+      "systems/mobile-startup.js",
+      "systems/exploration-review.js",
+      "systems/travel-composition-review.js",
+      "systems/atlas-presentation.js"
     ]
   },
   "styles": [
@@ -319,7 +323,9 @@
     "systems/review-fixes.css",
     "systems/phone-clarity.css",
     "systems/party-roster.css",
-    "systems/battle-reference.css"
+    "systems/battle-reference.css",
+    "systems/menu-polish.css",
+    "systems/interface-review.css"
   ],
   "owners": {
     "runtime": [
