@@ -23,7 +23,7 @@ function buildSaveRune66(o){
 }
 function seatSaveRunes66(){for(const s of world.userData.saveRune66??[]){const base=heightAt(s.x,s.z);s.root.position.y=base+.07;for(const m of s.ground.children){const p=m.geometry.attributes.position;const offsets=m.geometry.userData.runeOffsets66??=Array.from(p.array).filter((_,i)=>i%3===1);for(let i=0;i<p.count;i++)p.setY(i,heightAt(s.x+p.getX(i),s.z+p.getZ(i))-base+offsets[i]);p.needsUpdate=true;m.geometry.computeVertexNormals();m.geometry.computeBoundingSphere();}s.root.updateMatrixWorld(true);}}
 const saveCircleBefore66=createSaveCircle;
-createSaveCircle=function(...args){let decal;const before=groundDecal;groundDecal=function(...a){decal=before(...a);return decal;};let result;try{result=saveCircleBefore66(...args);}finally{groundDecal=before;}if(decal)decal.visible=false;const o=world.userData.saveCircles.at(-1);buildSaveRune66(o);return result;};
+createSaveCircle=function(...args){let decal;const before=groundDecal;groundDecal=function(...a){decal=before(...a);return decal;};let result;try{result=saveCircleBefore66(...args);}finally{groundDecal=before;}if(decal){decal.visible=false;decal.removeFromParent();}const o=world.userData.saveCircles.at(-1);buildSaveRune66(o);return result;};
 const saveBuildBefore66=buildWorld;
 buildWorld=function(...args){const r=saveBuildBefore66(...args);seatSaveRunes66();return r;};
 const runeFxBefore66=updateWorldFX;

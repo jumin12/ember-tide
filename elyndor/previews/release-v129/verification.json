@@ -1,0 +1,217 @@
+{
+  "version": "Alpha Version 1.29",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 89986893,
+    "sha256": "6000975b5736591ffa80d9a193c5c10d70ca388e521d07fbd8562e73f602293b",
+    "offline": false,
+    "delivery": "HTML with same-origin native HD environment assets"
+  },
+  "finalRelease": "PASS",
+  "runtimeMatchesTestedLocalBuildExceptChangelog": true,
+  "checks": {
+    "runClips": 40,
+    "runFrames": 336,
+    "movementCases": 160,
+    "desktopDayNightStageViews": 40,
+    "phoneDayNightStageViews": 8,
+    "phoneViewports": [
+      {
+        "width": 390,
+        "height": 844,
+        "body": 390,
+        "canvas": [
+          780,
+          1688
+        ]
+      },
+      {
+        "width": 844,
+        "height": 390,
+        "body": 844,
+        "canvas": [
+          1688,
+          780
+        ]
+      },
+      {
+        "width": 360,
+        "height": 640,
+        "body": 360,
+        "canvas": [
+          720,
+          1280
+        ]
+      },
+      {
+        "width": 740,
+        "height": 360,
+        "body": 740,
+        "canvas": [
+          1480,
+          720
+        ]
+      }
+    ],
+    "touchRunning": {
+      "clip": "run_northeast",
+      "lean": 0.075,
+      "grounded": true
+    },
+    "saveInteraction": {
+      "available": true,
+      "opened": true,
+      "closed": true
+    },
+    "innSaveSeal": {
+      "available": true,
+      "casts": [
+        false,
+        false
+      ]
+    },
+    "battleCamerasAndPositionsUnchanged": true,
+    "poiGatewaysAndFootprintsUnchanged": true,
+    "standardClient": "PASS: two keyboard movement bursts and release/scene checks",
+    "browserErrors": 0,
+    "release": {
+      "version": "Alpha Version 1.29",
+      "items": 6,
+      "backgrounds": 40,
+      "materials": 94
+    },
+    "sceneChecks": {
+      "silhouette": {
+        "missing": [],
+        "silhouettes": 1,
+        "owner": true,
+        "registered": {
+          "occluders": 783,
+          "mode": "nearest-surface-depth-stencil",
+          "playerOnly": true,
+          "sceneryOpacityUnchanged": true
+        },
+        "sceneryHidden": 0,
+        "ui": {
+          "label": null,
+          "type": null,
+          "narration": false,
+          "silhouetteReady": true,
+          "occlusion": "tagged-scenery-depth",
+          "npcBlocking": false,
+          "overworldTreeBlocking": false
+        },
+        "depth": {
+          "pixels": 332,
+          "hash": 3987720674,
+          "rect": [
+            167,
+            76,
+            182,
+            108
+          ],
+          "onlyPlayer": true,
+          "extraCalls": 1,
+          "geometry": true,
+          "map": true,
+          "visible": true,
+          "physical": true,
+          "hiddenTrees": 0,
+          "hiddenBuildings": 0
+        }
+      },
+      "world": {
+        "trees": 8333,
+        "doorPaths": 21,
+        "visibility": {
+          "occluders": 2733,
+          "mode": "nearest-surface-depth-stencil",
+          "playerOnly": true,
+          "sceneryOpacityUnchanged": true
+        },
+        "hiddenTrees": 0,
+        "fern": [
+          {
+            "gathering": true,
+            "roadFacing": true,
+            "dimensions": [
+              6.6,
+              4.8,
+              4.2
+            ]
+          },
+          {
+            "gathering": false,
+            "roadFacing": true,
+            "dimensions": [
+              4.7,
+              4.1,
+              3.5
+            ]
+          },
+          {
+            "gathering": false,
+            "roadFacing": true,
+            "dimensions": [
+              4.6,
+              4,
+              3.4
+            ]
+          }
+        ]
+      },
+      "battles": [
+        {
+          "phase": "day",
+          "covered": true,
+          "panorama": true,
+          "moonRestored": true,
+          "party": 4,
+          "silhouette": false,
+          "physical": true
+        },
+        {
+          "phase": "night",
+          "covered": true,
+          "panorama": true,
+          "moonRestored": true,
+          "party": 4,
+          "silhouette": false,
+          "physical": true
+        }
+      ],
+      "afterBattle": {
+        "missing": [],
+        "silhouettes": 1,
+        "owner": true,
+        "registered": {
+          "occluders": 783,
+          "mode": "nearest-surface-depth-stencil",
+          "playerOnly": true,
+          "sceneryOpacityUnchanged": true
+        },
+        "sceneryHidden": 0,
+        "ui": {
+          "label": null,
+          "type": null,
+          "narration": false,
+          "silhouetteReady": true,
+          "occlusion": "tagged-scenery-depth",
+          "npcBlocking": false,
+          "overworldTreeBlocking": false
+        }
+      }
+    },
+    "observedNativeRequests": 127
+  },
+  "source": {
+    "elyndor/build-manifest.json": "ca2313e1edac7cd8aeaeb8ce99e15eccb703befdbe032f9628f1c4a110f4f792",
+    "elyndor/systems/ground-variation.js": "7edc88f960046825a7c46eb06cb70b1fbff2adb95b0806af6a6172186e4c7b67",
+    "elyndor/systems/party-locomotion.js": "c17509a12383862ecc1faec83fc47ab057305506fcf65cba3fe3f9220981139b",
+    "elyndor/systems/presentation-polish.js": "33d5750017fac3031a163b0761bf8a8ba7a9e703f83e311f1d4990c9cfeff85b",
+    "elyndor/systems/save-magic.js": "3a24ec5667658d9336bfdcc07da45873f5263f993de14b1a1eceedc989b35035",
+    "elyndor/systems/save-rune.js": "1e197ab6a869e7a122aa7370cf53052bce01313d55b7396783a70f12722d27d6",
+    "elyndor/title-v19.js": "140a565fa3ffe5f0e12f456ac8e08aff99d71a7a1847e662495630e45a78d6e9"
+  },
+  "scope": "Native Chrome on this PC and browser-emulated touch phones; no physical-device or universal-frame-rate claim."
+}

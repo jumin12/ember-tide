@@ -25,9 +25,14 @@ async function preparePartyRun107(){
     // Reject irregular source registration; retain the gentle two-foot rhythm
     // and the artist's shoulder/hip counter-rotation at their native scale.
     const authored=(previous.head+row.head*2+next.head)/4-mean;
-    row.body=Math.round(clamp(authored*.22,-m.unit*.018,m.unit*.018)+Math.cos(i/length*TAU*2)*m.unit*.011);
-    row.sway=Math.sin(i/length*TAU)*m.unit*.004;
+    row.body=Math.round(clamp(authored*.28,-m.unit*.018,m.unit*.018)+Math.cos(i/length*TAU*2)*m.unit*.014);
+    row.sway=Math.sin(i/length*TAU)*m.unit*.006;
     row.targetHead=head+row.body;
+    const direction=clip.slice(4),side=direction.includes('east')?1:direction.includes('west')?-1:0;
+    // Lean from the planted sole, never by translating the actor or camera.
+    // The native arm/leg poses stay intact and counter-rotate through the gait.
+    row.lean=side*(direction==='east'||direction==='west'?.115:.075);
+    row.depthLean=side?1:direction==='south'?.975:.985;
    }
   }
   const canvas=document.createElement('canvas');canvas.width=m.w;canvas.height=m.h;
@@ -38,9 +43,10 @@ const frameBefore107=setActorFrame;
 function paintPartyRunFrame107(c,m,im,cell){
  const table=partyRun107.tables.get(m),row=table?.frames.get(cell);if(!row)return false;
  if(table.cell!==cell){const sx=cell%m.cols*m.w,sy=Math.floor(cell/m.cols)*m.h,split=row.head+table.pivot,dest=row.targetHead+table.pivot,p=table.context;p.clearRect(0,0,m.w,m.h);p.imageSmoothingEnabled=false;
-  const sway=Math.round(row.sway);
+  const sway=Math.round(row.sway),lean=row.lean??0,depth=row.depthLean??1;
+  p.save();p.translate(0,table.sole);p.transform(1,0,-lean,depth,0,0);p.translate(0,-table.sole);
   p.drawImage(im,sx,sy,m.w,split,sway,row.targetHead-row.head,m.w,split);
-  p.drawImage(im,sx,sy+split,m.w,row.sole-split,sway,dest,m.w,table.sole-dest);table.cell=cell;
+  p.drawImage(im,sx,sy+split,m.w,row.sole-split,sway,dest,m.w,table.sole-dest);p.restore();table.cell=cell;
  }
  // Draw the same canonical raster to the world, preview and PNG/JPG export;
  // GPU and CPU canvases otherwise disagree on a half-pixel sampling tie.
@@ -54,7 +60,7 @@ setActorFrame=function(a,...args){
  if(running){
   const split=row.head+table.pivot,dest=row.targetHead+table.pivot;
   paintPartyRunFrame107(c,m,spriteImages[id],a.frame.cell);
-  a.mesh.userData.groundedRun107={cell:a.frame.cell,head:row.targetHead,sole:table.sole,split,dest,weightTransfer:row.body};
+  a.mesh.userData.groundedRun107={cell:a.frame.cell,head:row.targetHead,sole:table.sole,split,dest,weightTransfer:row.body,lean:row.lean,depthLean:row.depthLean};
  }else{c.drawImage(spriteImages[id],sx,sy,m.w,m.h,0,0,m.w,m.h);delete a.mesh.userData.groundedRun107;}
  texture.needsUpdate=true;return result;
 };

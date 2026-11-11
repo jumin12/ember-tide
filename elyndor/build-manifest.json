@@ -265,7 +265,8 @@
       "systems/live-waterworks.js",
       "systems/mill-falls.js",
       "systems/presentation-review.js",
-      "systems/player-visibility.js"
+      "systems/player-visibility.js",
+      "systems/presentation-polish.js"
     ]
   },
   "styles": [

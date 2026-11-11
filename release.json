@@ -1,30 +1,41 @@
 {
-  "release": "elyndor-alpha-1.28-clearer-journeys-living-landscapes-2026-11-10",
-  "version": "Alpha Version 1.28",
+  "release": "elyndor-alpha-1.29-natural-running-clearer-battle-lighting-2026-11-10",
+  "version": "Alpha Version 1.29",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 89976179,
-    "sha256": "6bef44f3d9be201dd987fee42b5c697c02a65eb065e7fbe6198ce298846697a2",
+    "bytes": 89986893,
+    "sha256": "6000975b5736591ffa80d9a193c5c10d70ca388e521d07fbd8562e73f602293b",
     "offline": false,
     "delivery": "HTML with same-origin native HD environment assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "6d49c14d2f320cc5be0e0b78a815c209a0bab3a2"
+    "previousRelease": "4e778c28b20232548dbb2e9519c7007a817f6724"
   },
   "changes": [
-    "Restored animated player silhouettes behind buildings, roofs, trees and foreground props across POIs and the overworld. Scenery stays solid; the effect follows only the controlled character and clears immediately when the view opens.",
-    "Kept silhouettes aligned with current poses during running, camera movement, phone rotation and cached scene returns. Overlapping obstructions use one player draw, while NPCs, combat, reflections and the atlas retain their normal rendering.",
-    "Refined all five companions’ eight-direction full-run cycles with subtle weight transfer and shoulder rhythm while keeping their boot contacts grounded. Approved sprite artwork, movement controls, speed and combat poses are preserved.",
-    "Restored richer natural grass colors and balanced battle sky fill and indirect light against each background. Night scenes keep their own cooler, subdued mood without carrying their tint into other locations.",
-    "Opened the distant view behind combat fields so the native HD landscapes are more visible. Retained clear fighting areas and side banks, and fitted rear ledges, trees and authored props onto supported ground across desktop and phone views.",
-    "Corrected overworld forest sampling so meadows and destination approaches have open space while woodland regions stay dense. Tree placement respects road shoulders and rivers, with fewer redundant instances and no invisible tree barrier.",
-    "Turned miniature settlement houses toward their streets and added connected front-door approaches, fitted facade details, regional planting, wells, a harbor lantern tower and a relief-station store. Entrances remain connected to their local exits.",
-    "Made the overworld party slightly easier to read through a small visual scale increase while preserving logical size, interaction range and travel speed. Checked movement, scenery coverage and battle reveals on desktop and emulated portrait and landscape phones."
+    "Added a natural forward lean and restrained weight transfer to all five companions’ full-run cycles in eight directions. Foot contact stays grounded while approved arm and leg poses, travel speed and controls are preserved.",
+    "Reduced the overworld’s yellow daylight cast and corrected dry-grass mixing so meadows retain more natural greens. Dawn, sunset and moonlight keep their distinct atmosphere.",
+    "Restored richer battlefield grass colors and warmer exposed soil while preserving material detail, native HD backgrounds, scenery placement, combat layout and camera framing.",
+    "Applied the same soft, scene-aware fill light to party members and monsters, improving faces, clothing and silhouettes in daylight, caves and night scenes without washing out their colors.",
+    "Removed the save seal’s unwanted square shadow and obsolete ground decal. The circular glow, swirling ribbons, drifting motes and save interaction remain intact.",
+    "Rebuilt Fern Hollow’s overworld miniature with an open woodland gathering pavilion, timber lodges, curved weathered roofs, moss, porch details and framed windows. Its location, gateways and traversal behavior are unchanged."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.29",
+      "date": "November 10, 2026",
+      "title": "Natural running and clearer battle lighting",
+      "items": [
+        "Added a natural forward lean and restrained weight transfer to all five companions’ full-run cycles in eight directions. Foot contact stays grounded while approved arm and leg poses, travel speed and controls are preserved.",
+        "Reduced the overworld’s yellow daylight cast and corrected dry-grass mixing so meadows retain more natural greens. Dawn, sunset and moonlight keep their distinct atmosphere.",
+        "Restored richer battlefield grass colors and warmer exposed soil while preserving material detail, native HD backgrounds, scenery placement, combat layout and camera framing.",
+        "Applied the same soft, scene-aware fill light to party members and monsters, improving faces, clothing and silhouettes in daylight, caves and night scenes without washing out their colors.",
+        "Removed the save seal’s unwanted square shadow and obsolete ground decal. The circular glow, swirling ribbons, drifting motes and save interaction remain intact.",
+        "Rebuilt Fern Hollow’s overworld miniature with an open woodland gathering pavilion, timber lodges, curved weathered roofs, moss, porch details and framed windows. Its location, gateways and traversal behavior are unchanged."
+      ]
+    },
     {
       "version": "Alpha Version 1.28",
       "date": "November 10, 2026",
@@ -642,16 +653,16 @@
     "screenSpaceCombatHud": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v128/verification.json",
-    "sha256": "333bbed8fe5c773d862bd511cbb9edb34330b6a7039358153ba39cd4d5207ab2",
+    "file": "elyndor/previews/release-v129/verification.json",
+    "sha256": "4cf91d2098788df3c005da899c22c1d904d7993aff94ef36a34818c8a6ba2b79",
     "finalRelease": "PASS",
-    "battleStageViews": 120,
-    "groundSupportChecks": 1182,
-    "worldLocations": 15,
+    "battleStageViews": 48,
     "runClips": 40,
     "runFrames": 336,
     "movementCases": 320,
-    "silhouettePoseChecks": 80
+    "phoneViewports": 4,
+    "battleCamerasAndPositionsUnchanged": true,
+    "poiGatewaysAndFootprintsUnchanged": true
   },
   "performance": {
     "scope": "Native Chrome on this PC and browser-emulated touch phones in portrait and landscape; no physical-phone or universal-frame-rate claim.",
@@ -664,8 +675,8 @@
     }
   },
   "previousPublishedRelease": {
-    "commit": "6d49c14d2f320cc5be0e0b78a815c209a0bab3a2",
-    "version": "Alpha Version 1.27",
-    "sha256": "12f48c9a9c50867f5072a9f97deed753d7443a19380ef6bb32a804ebbb344008"
+    "commit": "4e778c28b20232548dbb2e9519c7007a817f6724",
+    "version": "Alpha Version 1.28",
+    "sha256": "6bef44f3d9be201dd987fee42b5c697c02a65eb065e7fbe6198ce298846697a2"
   }
 }

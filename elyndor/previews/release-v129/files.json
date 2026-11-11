@@ -1,0 +1,112 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 72566,
+    "sha256": "0a88067c3e8011c6823e4ac7a79ba9ef953dc3553921be486b8bac3d662ffec8"
+  },
+  {
+    "file": "elyndor/build-manifest.json",
+    "bytes": 10693,
+    "sha256": "ca2313e1edac7cd8aeaeb8ce99e15eccb703befdbe032f9628f1c4a110f4f792"
+  },
+  {
+    "file": "elyndor/previews/release-v129/battle-after.webp",
+    "bytes": 514910,
+    "sha256": "0c26043cb6b0c4edcb1d9fcaaadb27c29e78b22c6b2d99909f734773b0cddf60"
+  },
+  {
+    "file": "elyndor/previews/release-v129/battle-before.webp",
+    "bytes": 510420,
+    "sha256": "c7f238d9f508c9e95773fb9cdbab486c53b5251532d6ed6a103ea9dd3b829cc1"
+  },
+  {
+    "file": "elyndor/previews/release-v129/battle-night.webp",
+    "bytes": 347242,
+    "sha256": "37379d002aea8f9b2b4ac8d24e19d0bff6ff4e7320c62b2bcbedf4c9960f0214"
+  },
+  {
+    "file": "elyndor/previews/release-v129/changelog.webp",
+    "bytes": 303828,
+    "sha256": "c9433f6da2f22ce1cd3153b0c2744dff8ffaa0bccbeaceb3d45d0154a804d6b2"
+  },
+  {
+    "file": "elyndor/previews/release-v129/fern-after.webp",
+    "bytes": 362726,
+    "sha256": "aac71b2824db87bf7ff572439b32df1c7d0aaaca04b0e93697f98acd2b2d389c"
+  },
+  {
+    "file": "elyndor/previews/release-v129/fern-before.webp",
+    "bytes": 358070,
+    "sha256": "cafebf104d4df89d924bcb13ad5df1616e822c083f3d10f23822b163945151cf"
+  },
+  {
+    "file": "elyndor/previews/release-v129/running.webp",
+    "bytes": 436696,
+    "sha256": "35b3268660dc52a1fdf66ac4c9069fa6077ff7414642b523755647009f99d4ca"
+  },
+  {
+    "file": "elyndor/previews/release-v129/seal-after.webp",
+    "bytes": 490658,
+    "sha256": "2db58c1d9b231c881de334f8c0b77eb5c8eb0cb78a6c97010534f50183951830"
+  },
+  {
+    "file": "elyndor/previews/release-v129/seal-before.webp",
+    "bytes": 483040,
+    "sha256": "f71a4f57a012c80c8f50ed2e72856fe0ba4cbd514ea216f70b377b1f695bb8f5"
+  },
+  {
+    "file": "elyndor/previews/release-v129/verification.json",
+    "bytes": 5604,
+    "sha256": "4cf91d2098788df3c005da899c22c1d904d7993aff94ef36a34818c8a6ba2b79"
+  },
+  {
+    "file": "elyndor/previews/release-v129/world-after.webp",
+    "bytes": 375506,
+    "sha256": "57b2c1ab975c39f82193bc45fc7e87e3c3942e58f16da7262580fdef5a9455ad"
+  },
+  {
+    "file": "elyndor/previews/release-v129/world-before.webp",
+    "bytes": 358254,
+    "sha256": "792d67c241b868509d35803fc159e2786a47c5225f89bce692d762baa34c3c43"
+  },
+  {
+    "file": "elyndor/systems/ground-variation.js",
+    "bytes": 7711,
+    "sha256": "7edc88f960046825a7c46eb06cb70b1fbff2adb95b0806af6a6172186e4c7b67"
+  },
+  {
+    "file": "elyndor/systems/party-locomotion.js",
+    "bytes": 5506,
+    "sha256": "c17509a12383862ecc1faec83fc47ab057305506fcf65cba3fe3f9220981139b"
+  },
+  {
+    "file": "elyndor/systems/presentation-polish.js",
+    "bytes": 8591,
+    "sha256": "33d5750017fac3031a163b0761bf8a8ba7a9e703f83e311f1d4990c9cfeff85b"
+  },
+  {
+    "file": "elyndor/systems/save-magic.js",
+    "bytes": 5512,
+    "sha256": "3a24ec5667658d9336bfdcc07da45873f5263f993de14b1a1eceedc989b35035"
+  },
+  {
+    "file": "elyndor/systems/save-rune.js",
+    "bytes": 5994,
+    "sha256": "1e197ab6a869e7a122aa7370cf53052bce01313d55b7396783a70f12722d27d6"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 70458,
+    "sha256": "140a565fa3ffe5f0e12f456ac8e08aff99d71a7a1847e662495630e45a78d6e9"
+  },
+  {
+    "file": "index.html",
+    "bytes": 89986893,
+    "sha256": "6000975b5736591ffa80d9a193c5c10d70ca388e521d07fbd8562e73f602293b"
+  },
+  {
+    "file": "release.json",
+    "bytes": 67471,
+    "sha256": "dc388e015e512f7239bd298a29c32769e5955fd9b15f4662bc196fd5990c50c7"
+  }
+]

@@ -2,6 +2,19 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.29 — Natural running and clearer battle lighting
+
+November 10, 2026
+
+- Added a natural forward lean and restrained weight transfer to all five companions’ full-run cycles in eight directions. Foot contact stays grounded while approved arm and leg poses, travel speed and controls are preserved.
+- Reduced the overworld’s yellow daylight cast and corrected dry-grass mixing so meadows retain more natural greens. Dawn, sunset and moonlight keep their distinct atmosphere.
+- Restored richer battlefield grass colors and warmer exposed soil while preserving material detail, native HD backgrounds, scenery placement, combat layout and camera framing.
+- Applied the same soft, scene-aware fill light to party members and monsters, improving faces, clothing and silhouettes in daylight, caves and night scenes without washing out their colors.
+- Removed the save seal’s unwanted square shadow and obsolete ground decal. The circular glow, swirling ribbons, drifting motes and save interaction remain intact.
+- Rebuilt Fern Hollow’s overworld miniature with an open woodland gathering pavilion, timber lodges, curved weathered roofs, moss, porch details and framed windows. Its location, gateways and traversal behavior are unchanged.
+
+Release evidence and checksums: `elyndor/previews/release-v129/verification.json`. All twenty combat stages were checked in day and night; desktop and browser-emulated phone checks passed.
+
 ## Alpha Version 1.28 — Clearer journeys and living landscapes
 
 November 10, 2026

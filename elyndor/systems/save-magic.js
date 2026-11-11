@@ -13,6 +13,9 @@ buildSaveRune66=function(o){
  float inner=band(d,.47,.005)*(0.5+.5*sin(a*12.-time*.32));float halo=exp(-pow(d/.66,4.))*.07+exp(-abs(d-.65)*45.)*.08;
  gl_FragColor=vec4(vec3(.13,.79,1.18)*pulse,clamp(rings*.72+rune*.75+inner*.34+halo,0.,.92));}`));seal.rotation.x=-Math.PI/2;seal.position.y=.01;ground.add(seal);
  const star=new THREE.Shape();for(let i=0;i<32;i++){const a=i*Math.PI/16,r=i%4===0?1.12:i%2===0?.56:.19;if(i)star.lineTo(Math.sin(a)*r,Math.cos(a)*r);else star.moveTo(Math.sin(a)*r,Math.cos(a)*r);}star.closePath();const centre=new THREE.Mesh(new THREE.ShapeGeometry(star),new THREE.MeshBasicMaterial({color:'#ffe5a0',side:THREE.DoubleSide,transparent:true,opacity:.93,depthWrite:false}));centre.rotation.x=-Math.PI/2;centre.position.y=.025;ground.add(centre);mergeGroup(ground);
+ // mergeGroup enables shadows for opaque architecture. Light drawn onto the
+ // paving must never submit its square carrier plane to the depth pass.
+ ground.traverse(o=>{if(o.isMesh){o.castShadow=false;o.receiveShadow=false;}});
  const paths=[];for(let k=0;k<2;k++)paths.push(new THREE.CatmullRomCurve3(Array.from({length:65},(_,i)=>{const t=i/64,a=t*TAU*(k?1.15:1.55)+k*Math.PI,r=(1.25-k*.15)*(1-t*.55);return V3(Math.cos(a)*r,.12+t*(k?3.25:4.7),Math.sin(a)*r);})));
  for(const[k,path]of paths.entries()){
   const geo=new THREE.TubeGeometry(path,112,k?.025:.032,5,false),core=new THREE.Mesh(geo,runeMaterial67(`void main(){float head=fract(vUv.x-time*.13),flow=.20+.8*pow(.5+.5*cos(head*6.2831853),6.);float ends=sin(vUv.x*3.14159265);gl_FragColor=vec4(.17,.84,1.28,ends*flow*.86);}`,true));core.name='Orbiting energy ribbon';root.add(core);
