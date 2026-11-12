@@ -9,10 +9,14 @@ updateContacts39=function(...args){
   if(index>=q.mesh.count)break;
   if(!a.mesh.visible||!a.mesh.parent||a.mesh.material.opacity<.03)continue;
   if(a===player||followers.includes(a)){
-   const p=a.mesh.position,size=clamp(a.size*.64,.95,2.8);
+   const p=a.mesh.position,macro=activeScene.kind==='overworld',size=clamp(a.size*(macro?.40:.64),.95,macro?2.4:2.8);
    q.dummy.position.set(p.x,heightAt(p.x,p.z)+.065,p.z);
    q.dummy.scale.set(size,1,size);q.dummy.rotation.set(0,0,0);q.dummy.updateMatrix();
-   q.mesh.setMatrixAt(index,q.dummy.matrix);alpha.setX(index,.43);
+   q.mesh.setMatrixAt(index,q.dummy.matrix);alpha.setX(index,macro?((state.worldMinutes+1440)%1440>=360&&(state.worldMinutes+1440)%1440<1170?.58:0):.43);
+   // Circular contact remains fixed in world scale at every heading and speed.
+   // Night uses the real moon/lamp shadow rather than a daylight contact disc.
+   const casts=macro?alpha.getX(index)===0:true;
+   if(a.mesh.castShadow!==casts){a.mesh.castShadow=casts;shadow36.last=-100;renderer.shadowMap.needsUpdate=sun.shadow.needsUpdate=true;}
   }
   index++;
  }

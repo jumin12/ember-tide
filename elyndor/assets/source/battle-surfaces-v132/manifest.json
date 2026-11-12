@@ -1,0 +1,245 @@
+{
+  "generator": "built-in image_gen",
+  "images": [
+    {
+      "stage": "waterfall",
+      "prompt": "Use case: stylized-concept. Asset type: seamless PBR base-color ground texture for the Silverfall waterfall combat clearing in a detailed HD fantasy RPG. Image 1 is a PALETTE AND MATERIAL REFERENCE ONLY, not an edit target. Generate a new square orthographic top-down unlit texture of the reference foreground: fresh medium meadow-green low turf interspersed with pale warm taupe loam and tiny embedded grey mineral grains, organic irregular patches and rich fine physical detail. About 65% green turf, 35% soil. Match the natural greens and understated warm dirt in the attached image. Perfect edge-to-edge tiling. Uniform texel scale, no directional light, no baked shadows, no gradients, no vignette, no perspective, no horizon, no water, no trees, no large rocks, no text, no grid. This is a material to light in real 3D, not a landscape painting. High resolution, sharp natural material microdetail, no cartoon tufts.",
+      "reference": "elyndor/assets/source/battle-hd-v99/waterfall-day.webp",
+      "review": "Accepted: orthographic material detail, scene-specific palette, no horizon or scenery.",
+      "file": "elyndor/assets/source/battle-surfaces-v132/waterfall.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "sha256": "943bcef11a60293235ebfa8eefc22cdf2607591953797e338fab39564cc487e9"
+    },
+    {
+      "stage": "woodland",
+      "prompt": "Use case: stylized-concept. Asset: native HD square seamless PBR ground base-color. Image 1 is only a palette/material reference for the woodland arena. Generate a NEW straight-down orthographic material, woodland floor, muted moss green islands, warm umber fine loam, scattered small dry oak leaves and embedded grey grit. 40% moss, 50% soil, 10% leaf litter. Match the reference forest floor in hue, restrained saturation, fine detailed fantasy-realism. Uniform unlit diffuse color, no directional lighting, no cast shadows, no gradient, no vignette. Tileable all four edges. No horizon, perspective, trees, trunks, props, water, large stones, characters, text, or grid. Natural small detail, not cartoon or pixel art.",
+      "reference": "elyndor/assets/source/battle-hd-v99/woodland-day.webp",
+      "review": "Accepted: orthographic material detail, scene-specific palette, no horizon or scenery.",
+      "file": "elyndor/assets/source/battle-surfaces-v132/woodland.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "sha256": "48b1f8ffef2c0e3bab02f1217e7c65356011a6373be72bb068aed9d5fb880716"
+    },
+    {
+      "stage": "orchard",
+      "prompt": "Use case: stylized-concept. Asset: HD square seamless PBR base-color ground texture. Image 1 is palette/material reference ONLY, not edit target. New orthographic straight-down unlit texture for this orchard clearing: warm sandy beige fine compacted garden soil, muted fresh green clover and short turf in irregular connected islands, a handful of tiny embedded pale stones and occasional fallen small leaf. 55% earth, 45% low green groundcover. Match the reference earthy foreground, natural detailed fantasy realism. Rich fine surface detail with uniformly diffuse light. Seamlessly repeat all four sides. No baked shadows, directional light, gradient, vignette, horizon, perspective, trees, buildings, fruit, props, large rocks, text, grid, or pixel art.",
+      "reference": "elyndor/assets/source/battle-hd-v99/orchard-day.webp",
+      "review": "Accepted: orthographic material detail, scene-specific palette, no horizon or scenery.",
+      "file": "elyndor/assets/source/battle-surfaces-v132/orchard.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "sha256": "f2331c1544cd4d15d153b97ef3fc571c6f4f067a59bf6c17edd1fafc59898421"
+    },
+    {
+      "stage": "ruins",
+      "prompt": "Use case: stylized-concept. Asset: HD square seamless PBR ground base-color, ancient ruined cloister paving. Image 1 is only color and surface reference. NEW perfectly top-down unlit material, pale cool-warm grey worn limestone flagstones of irregular rectangular sizes, uneven hairline joints with subdued green moss and minute fern sprouts limited to cracks, subtle chips, mineral speckles, aged rounded stone edges. 85% exposed stone, 15% joints/moss. Match the reference foreground pavement. Seamlessly tiling all edges, no strong repetitive grid or large divisions, diffuse neutral illumination, no shadows, no perspective, no horizon, no arches, columns, ruins objects, characters, text, vignette or pixel art. Fine realistic tactile detail for a 3D RPG floor.",
+      "reference": "elyndor/assets/source/battle-hd-v99/ruins-day.webp",
+      "review": "Accepted: orthographic material detail, scene-specific palette, no horizon or scenery.",
+      "file": "elyndor/assets/source/battle-surfaces-v132/ruins.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "sha256": "92f0c122fe75717873c7ace146627ebfaa08b170e41370f92ff4ea17b021fcfe"
+    },
+    {
+      "stage": "cavern",
+      "prompt": "Use case: stylized-concept. Asset: HD square seamless PBR cave ground albedo. Image 1 is only palette and material reference. New orthographic top-down unlit material, worn pale grey-brown limestone rock floor interspersed with fine cool grey gravel, subtle natural cracks and tiny mineral flecks, sparse muted green moss in fissures. Damp mineral floor without baked reflections. Match the reference cave foreground rather than the glowing blue lake. Detailed tactile natural stone. Tileable all four edges, uniform diffuse color. No directional lighting, shadows, gradient, vignette, perspective, horizon, water, crystals, stalagmites, plants, large rocks, characters or text.",
+      "reference": "elyndor/assets/source/battle-hd-v99/cavern-day.webp",
+      "review": "Accepted: orthographic material detail, scene-specific palette, no horizon or scenery.",
+      "file": "elyndor/assets/source/battle-surfaces-v132/cavern.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "sha256": "75855b3e428fe8c4e23b56b8640cccb6ecf3831807b77a6e7519d22dd24fbcea"
+    },
+    {
+      "stage": "mountain",
+      "prompt": "Use case: stylized-concept. Asset: HD square seamless PBR mountain trail ground base-color. Image 1 is only color/material reference. New orthographic top-down unlit alpine ground: grey-brown compacted stony earth, fractured flat slate chips and granite grit, sparse muted olive alpine turf islands, restrained straw dry grass strands. 65% mineral trail, 25% low olive turf, 10% fine dry fibers. Match reference foreground tones, no yellow blanket. Detailed small-scale natural surface, rough matte. Tileable all sides. No large rocks, trees, scenery, horizon, perspective, baked shadows, directional light, gradient, vignette, text, characters or pixel art.",
+      "reference": "elyndor/assets/source/battle-hd-v99/mountain-day.webp",
+      "review": "Accepted: orthographic material detail, scene-specific palette, no horizon or scenery.",
+      "file": "elyndor/assets/source/battle-surfaces-v132/mountain.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "sha256": "35ea8f077aa49bab89c5c0cd441b793f835cf0bbee629cc7ef1fe35d29858097"
+    },
+    {
+      "stage": "snow",
+      "prompt": "Use case: stylized-concept. Asset: HD square seamless PBR snowfield base-color. Image 1 is palette/material reference ONLY. NEW orthographic top-down unlit material of finely packed alpine snow, ivory white with restrained cool blue-grey shallow compressed patches and tiny crystalline grain. A few minute dark mineral flecks, less than one percent. Natural irregular subtle surface undulations without directional shadows. Match the clean snow in the reference foreground; no footprints or repeating tracks. Tileable all four sides. No gradient, vignette, perspective, horizon, mountains, rocks, trees, water, characters, text, grid, shadows or pixel art. Fine realistic microtexture for dynamic 3D lighting.",
+      "reference": "elyndor/assets/source/battle-hd-v99/snow-day.webp",
+      "review": "Accepted: orthographic material detail, scene-specific palette, no horizon or scenery.",
+      "file": "elyndor/assets/source/battle-surfaces-v132/snow.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "sha256": "252158866a9e2c08258b15266186067f3ed037a526a2bf9c68ecca28b31376a1"
+    },
+    {
+      "stage": "coast",
+      "prompt": "Use case: stylized-concept. Asset: HD square seamless PBR coastal headland ground albedo. Image 1 is only color/material reference. New top-down orthographic unlit ground: pale sandy limestone loam and small shell-grey grit between irregular low fresh green maritime turf, subtle salt-worn exposed flat limestone fragments. 50% green turf, 45% pale earth, 5% stone grains. Match reference playable grassy headland foreground, not a yellow beach. High-resolution fine natural matte detail. Seamless repeat all four edges. No directional shadows, no gradient or vignette, no horizon, perspective, sea, waves, cliffs, trees, flowers, props, large rocks, characters, text or pixel art.",
+      "reference": "elyndor/assets/source/battle-hd-v99/coast-day.webp",
+      "review": "Accepted: orthographic material detail, scene-specific palette, no horizon or scenery.",
+      "file": "elyndor/assets/source/battle-surfaces-v132/coast.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "sha256": "01565b4d7a9c7e2b62438acf9cf3f66a0633ce357093103e8b30735c6e3c56a6"
+    },
+    {
+      "stage": "royalRoad",
+      "prompt": "Use case: stylized-concept. Asset: HD square seamless PBR formal stone road base-color. Image 1 is palette/material reference ONLY. New orthographic top-down material of tightly laid small warm grey and creamy limestone cobbles, varied worn rectangular blocks in offset courses, faint moss just in narrow joints, natural mineral grain and tiny chips. Match the reference foreground stone avenue. 95% stone, 5% green joints. Uniform unlit matte albedo, sharply detailed, no directional light or shadows. Tileable all four edges. No raised props, grass clumps, rails, buildings, river, perspective, horizon, vignette, gradient, text, characters, grid overlay or pixel art.",
+      "reference": "elyndor/assets/source/battle-hd-v99/royalRoad-day.webp",
+      "review": "Accepted: orthographic material detail, scene-specific palette, no horizon or scenery.",
+      "file": "elyndor/assets/source/battle-surfaces-v132/royalRoad.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "sha256": "c1cde7f76b6f1c2a6fe98038980066c42c66fffae942bfd7b1fa30c5d121e869"
+    },
+    {
+      "stage": "moonlit",
+      "prompt": "Use case: stylized-concept. Asset: HD square seamless PBR elder-forest glade ground albedo. Image 1 is palette/material reference ONLY. New straight-down orthographic unlit material: deep fern-green moss and fine meadow turf, aged muted brown forest loam, tiny decomposed leaves, thin natural root fibers flush in ground, subtle pale mineral grit. 60% moss/turf, 35% cool brown soil, 5% small leaf litter. Match reference elder woodland foreground. Preserve natural diffuse pigment, let engine add night lighting; do not bake blue moonlight into it. Seamless all edges. No directional shadow or light, gradient, vignette, horizon, perspective, trunks, props, large roots, water, mushrooms, text, characters or pixel art.",
+      "reference": "elyndor/assets/source/battle-hd-v99/moonlit-day.webp",
+      "review": "Accepted: orthographic material detail, scene-specific palette, no horizon or scenery.",
+      "file": "elyndor/assets/source/battle-surfaces-v132/moonlit.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "sha256": "814dd687cb724ef41fe9e4fc87dd8290145dcf1b46ef21e8251fda4046609b03"
+    },
+    {
+      "stage": "grassMeadow",
+      "prompt": "Use case: stylized-concept. Asset: HD square seamless PBR lush meadow ground albedo. Image 1 is palette/material reference ONLY. NEW straight-down orthographic material of soft dense short meadow grass, mixed small rounded clover leaves and fine grass blades, lively medium green and subtle cooler green patches, occasional pale loam openings and tiny embedded grains. 82% green turf, 18% earth. Match the fresh lush reference waterfall meadow foreground, avoid neon/chartreuse cast. Sharp realistic fine texture, flat diffuse illumination for real 3D lighting. Seamless four sides. No directional shadow, large flowers, grass clumps, trees, scenery, water, horizon, perspective, text, vignette, gradient or pixel art.",
+      "reference": "elyndor/assets/source/battle-hd-v99/grassMeadow-day.webp",
+      "review": "Accepted: orthographic material detail, scene-specific palette, no horizon or scenery.",
+      "file": "elyndor/assets/source/battle-surfaces-v132/grassMeadow.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "sha256": "256ee35a026227fee6efe02123a364047777eef620a47d61730efccee4ddc0dc"
+    },
+    {
+      "stage": "grassRiver",
+      "prompt": "Use case: stylized-concept. Asset: HD square seamless PBR river meadow ground albedo. Image 1 is only palette and material reference. NEW straight-down orthographic surface of cool fresh green short riverbank grass, tiny clover, irregular damp silty grey-brown earth openings, minute rounded grey gravel concentrated in earth. 65% turf, 30% silt, 5% fine grit. Match reference lush riverside field foreground, restrained medium greens, no yellow or blue cast. Natural high resolution detail, evenly diffuse unlit base color, matte. Tileable all sides. No river water, reeds, raised grass clumps, rocks larger than pebbles, trees, props, horizon, perspective, shadows, vignette, gradient, text or pixel art.",
+      "reference": "elyndor/assets/source/battle-hd-v99/grassRiver-day.webp",
+      "review": "Accepted: orthographic material detail, scene-specific palette, no horizon or scenery.",
+      "file": "elyndor/assets/source/battle-surfaces-v132/grassRiver.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "sha256": "64c6b78f332b27878584c9ae9b82dd328106eae1328d2c3bc2d0853a73525cf9"
+    },
+    {
+      "stage": "grassFlowers",
+      "prompt": "Use case: stylized-concept. Asset: HD square seamless PBR flower meadow ground base-color. Image 1 is only palette and material reference. NEW top-down orthographic unlit fine turf: vivid but natural cool medium green grass with tiny clover, irregular small pale loam openings, sparse miniature blue cornflower and white daisy petals embedded among the low greenery. 85% short green turf, 12% earth, 3% tiny flowers. Match the reference green field, blue flowers are delicate accents not patterned blobs. Detailed realistic fine material. Seamlessly repeat all edges, even diffuse illumination. No shadows, gradient, vignette, perspective, horizon, tall plants, scenery, trees, water, rocks, text, characters or pixel art.",
+      "reference": "elyndor/assets/source/battle-hd-v99/grassFlowers-day.webp",
+      "review": "Accepted: orthographic material detail, scene-specific palette, no horizon or scenery.",
+      "file": "elyndor/assets/source/battle-surfaces-v132/grassFlowers.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "sha256": "3597220a0d14b9a92c64843d237f09d5ac83b63db1544b9b7bf4a85ca6ccd4b3"
+    },
+    {
+      "stage": "grassDowns",
+      "prompt": "Use case: stylized-concept. Asset: HD square seamless PBR chalk downs grassland ground albedo. Image 1 palette/material reference ONLY. NEW orthographic top-down material: short muted coastal meadow-green turf woven with low clover, pale chalky beige dirt openings and tiny chalk grains, very sparse dry grass fibers. 65% green turf, 30% chalk soil, 5% fine white mineral flecks. Match reference rolling green downs foreground without a yellow cast. Natural high-resolution fine matte surface detail and diffuse uniform unlit color. Seamlessly tile all four edges. No directional lighting, shadow, gradient, vignette, horizon, perspective, coastline, trees, large rocks, characters, text or pixel art.",
+      "reference": "elyndor/assets/source/battle-hd-v99/grassDowns-day.webp",
+      "review": "Accepted: orthographic material detail, scene-specific palette, no horizon or scenery.",
+      "file": "elyndor/assets/source/battle-surfaces-v132/grassDowns.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "sha256": "141785be7888f863fc93151cad73cb073e8fefcfc780b30d750f857704ebaff7"
+    },
+    {
+      "stage": "grassWindmill",
+      "prompt": "Use case: stylized-concept. Asset: HD square seamless PBR farm meadow ground albedo. Image 1 is palette/material reference ONLY. NEW straight-down orthographic unlit material: fresh medium green grazing turf, tiny clover, warm pale beige compacted farm soil openings, a few fine oat-straw fibers and tiny grey-brown mineral grains. 65% turf, 32% earth, 3% straw/grit. Match the reference windmill foreground green field and earth; avoid a gold or brown blanket. High-resolution natural tactile fine detail. Tileable four sides, neutral diffuse illumination. No directional lighting or shadows, gradients, vignette, horizon, perspective, wheel tracks, crops, large grass clumps, rocks, buildings, props, text, characters or pixel art.",
+      "reference": "elyndor/assets/source/battle-hd-v99/grassWindmill-day.webp",
+      "review": "Accepted: orthographic material detail, scene-specific palette, no horizon or scenery.",
+      "file": "elyndor/assets/source/battle-surfaces-v132/grassWindmill.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "sha256": "07b0090450b92e4e140457903af4ef0c32ad068203bba21b3b9aaeb35b01756d"
+    },
+    {
+      "stage": "grassAutumn",
+      "prompt": "Use case: stylized-concept. Asset: HD square seamless PBR autumn meadow ground albedo. Image 1 is palette/material reference ONLY. NEW orthographic top-down unlit material, mossy olive-green short turf with warm ochre low grass interwoven, fine tan-brown earth openings, scattered miniature amber/russet fallen leaves, tiny muted grey grains. 45% green turf, 30% tawny grass, 20% earth, 5% small leaves. Match reference autumn field pigment, warm natural color without orange lighting baked in. Fine tactile realistic detail. Seamlessly repeat four edges. No directional light/shadow, gradients, vignette, scenery, horizon, perspective, tree roots, trees, grass clumps, props, large stones, characters, text or pixel art.",
+      "reference": "elyndor/assets/source/battle-hd-v99/grassAutumn-day.webp",
+      "review": "Accepted: orthographic material detail, scene-specific palette, no horizon or scenery.",
+      "file": "elyndor/assets/source/battle-surfaces-v132/grassAutumn.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "sha256": "2db20e30862bce41702d952cc0d55077a11da78043710c1b4ccd6b651d7d5ccb"
+    },
+    {
+      "stage": "grassStones",
+      "prompt": "Use case: stylized-concept. Asset: HD square seamless PBR ancient standing-stone meadow ground albedo. Image 1 palette/material reference ONLY. NEW orthographic straight-down unlit material: muted jade and meadow green low turf, patches of soft moss and tiny heather leaves, pale grey-brown earth openings with small granite grit. 72% green cover, 25% earth, 3% grit. Match reference open standing-stone field foreground. Fine realistic natural detail, clean diffuse flat color for dynamic lighting. Tileable all four edges. No standing stones, large rocks, trees, pink flower blobs, raised plants, scenery, shadows, directional light, gradient, vignette, horizon, perspective, characters or text.",
+      "reference": "elyndor/assets/source/battle-hd-v99/grassStones-day.webp",
+      "review": "Accepted: orthographic material detail, scene-specific palette, no horizon or scenery.",
+      "file": "elyndor/assets/source/battle-surfaces-v132/grassStones.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "sha256": "6f65d26b0cb48d898e4b494bcbc63167a27b7226638e5d54936c31a930e07ce5"
+    },
+    {
+      "stage": "grassHills",
+      "prompt": "Use case: stylized-concept. Asset: HD square seamless PBR mountain foothill meadow ground albedo. Image 1 is palette/material reference ONLY. NEW orthographic straight-down unlit material: rich muted alpine meadow-green short fine grass with pale green small leaves, irregular stony brown-taupe loam openings, scattered tiny flat cool grey slate fragments and fine granite grit. 62% green turf, 32% earth, 6% mineral. Match reference green foothill foreground. Detailed natural surface without yellow lighting, physically plausible fine detail. Tileable all four edges, uniformly diffuse color. No baked shadows, gradients, vignette, perspective, mountains, horizon, trees, large rocks, props, characters or text.",
+      "reference": "elyndor/assets/source/battle-hd-v99/grassHills-day.webp",
+      "review": "Accepted: orthographic material detail, scene-specific palette, no horizon or scenery.",
+      "file": "elyndor/assets/source/battle-surfaces-v132/grassHills.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "sha256": "7a9b289f308aca93267c575d673eb205b2d7d717d8ef6970a51e0ed497259652"
+    },
+    {
+      "stage": "grassBirch",
+      "prompt": "Use case: stylized-concept. Asset: HD square seamless PBR birch glade ground albedo. Image 1 palette/material reference ONLY. NEW orthographic straight-down unlit material: light fresh green fine turf and tiny wood-sorrel leaves, irregular sandy warm-grey forest loam openings, occasional tiny yellow-green birch leaves and small pale mineral grit. 70% green groundcover, 27% earth, 3% tiny litter. Match reference airy birch glade foreground, cooler greens than orchard, no baked shadows. Fine high resolution natural material. Seamlessly tiling four sides, neutral diffuse color. No birch trunks, roots, branches, scenery, large rocks, blue flower clumps, horizon, perspective, gradients, vignette, characters, text or pixel art.",
+      "reference": "elyndor/assets/source/battle-hd-v99/grassBirch-day.webp",
+      "review": "Accepted: orthographic material detail, scene-specific palette, no horizon or scenery.",
+      "file": "elyndor/assets/source/battle-surfaces-v132/grassBirch.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "sha256": "996a55ad954d068e4097d36a36b80a797897df73e2c4332437b52c3cca7035e3"
+    },
+    {
+      "stage": "grassTwilight",
+      "prompt": "Use case: stylized-concept. Asset: HD square seamless PBR evening meadow ground albedo. Image 1 is only palette and material reference. NEW orthographic top-down unlit material of subdued medium sage-green and cool olive short meadow turf, fine low clover, natural irregular taupe-brown earth openings, sparse tiny dried grass fibers and grey grit. 65% green cover, 32% soil, 3% fine litter. Match the reference meadow's natural pigments, DO NOT bake purple sky light, darkness, or orange sunset into this albedo; the game lights it dynamically. Highly detailed realistic matte ground. Tileable four edges. No shadows, gradients, vignette, horizon, perspective, trees, rocks, flowers, props, text, characters or pixel art.",
+      "reference": "elyndor/assets/source/battle-hd-v99/grassTwilight-day.webp",
+      "review": "Accepted: orthographic material detail, scene-specific palette, no horizon or scenery.",
+      "file": "elyndor/assets/source/battle-surfaces-v132/grassTwilight.webp",
+      "native": [
+        1254,
+        1254
+      ],
+      "sha256": "2b936b5777f3398be58a907e1e0f1de0159681449c4ecb5de819f22668b6346c"
+    }
+  ]
+}

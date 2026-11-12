@@ -70,9 +70,9 @@ applyCapabilityBudget=function(...args){if(!sun)return capabilityBefore106(...ar
 };
 const fitBefore106=fitVisibleShadows;
 fitVisibleShadows=function(...args){const result=fitBefore106(...args);if(!world||!player||!shadow36.due)return result;
- sun.shadow.radius=.65;sun.shadow.bias=-.000035;sun.shadow.normalBias=activeScene.kind==='overworld'?.028:.012;
+ sun.shadow.radius=.65;sun.shadow.bias=activeScene.kind==='overworld'?-.00016:-.000035;sun.shadow.normalBias=activeScene.kind==='overworld'?.10:.012;
  if(encounter53.active||activeScene.kind==='interior')return result;
  const c=sun.shadow.camera,macro=activeScene.kind==='overworld',aspect=Math.max(1,camera.aspect),width=macro?Math.max(184,136*aspect):Math.max(76,49*aspect),height=macro?192:88;
  sun.shadow.updateMatrices(sun);const right=V3().setFromMatrixColumn(c.matrixWorld,0),up=V3().setFromMatrixColumn(c.matrixWorld,1),sx=width/sun.shadow.mapSize.x,sy=height/sun.shadow.mapSize.y,ox=right.dot(c.position),oy=up.dot(c.position),x=Math.round(ox/sx)*sx-ox,y=Math.round(oy/sy)*sy-oy;
- c.left=x-width/2;c.right=x+width/2;c.bottom=y-height/2;c.top=y+height/2;c.near=.1;c.far=macro?1200:512;c.updateProjectionMatrix();sun.shadow.updateMatrices(sun);sunlight56.width=width;sunlight56.height=height;viewCoverage.shadowWidth=width;viewCoverage.shadowHeight=height;return result;
+ c.left=x-width/2;c.right=x+width/2;c.bottom=y-height/2;c.top=y+height/2;c.near=.1;c.far=macro?Math.max(320,sun.position.distanceTo(sun.target.position)+240):512;c.updateProjectionMatrix();sun.shadow.updateMatrices(sun);sunlight56.width=width;sunlight56.height=height;viewCoverage.shadowWidth=width;viewCoverage.shadowHeight=height;return result;
 };

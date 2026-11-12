@@ -23,17 +23,22 @@ function stairRails26(){
  if(activeScene.key!=='brookstead')return;
  const rails=new THREE.Group();rails.userData.stairRails26=true;world.add(rails);const profiles=[];
  for(const s of world.userData.steps19){
-  const u0=-s.len/2-.25,u1=s.len/2+s.landing-.08,span=u1-u0,n=Math.ceil(span/1.7),row=[];
+  const u0=-s.len/2-.12;
+  let u1=s.len/2+(s.landing??0)-.12;
+  // A landing may join the public square. Its railing ends before that
+  // junction, rather than continuing across the circular paving.
+  for(let u=u0;u<=u1;u+=.08){const p=stairPoint19(s,u,0,0);if(Math.hypot(p.x-BROOK.plaza.x,p.z-BROOK.plaza.z)<BROOK.plaza.r+.45){u1=Math.max(u0,u-.12);break;}}
+  const span=u1-u0,n=Math.max(1,Math.ceil(span/1.6)),row=[];
   for(let i=0;i<=n;i++){
    const u=mix(u0,u1,i/n),p=stairPoint19(s,u,0,0);p.y=heightAt(p.x,p.z);row.push({u,y:p.y});
   }
   for(const side of[-1,1])for(let i=0;i<row.length;i++){
-   const a=row[i],p=stairPoint19(s,a.u,side*(s.w/2+.23),a.y);
-   box(p.x,p.y+.53,p.z,.17,1.12,.17,'wood','#9d794e',rails);
-   box(p.x,p.y+.08,p.z,.32,.17,.32,'wall','#c1c6b4',rails);
-   if(i){const b=row[i-1],q=stairPoint19(s,b.u,side*(s.w/2+.23),b.y);for(const h of[.46,1.02])beam(p.clone().add(V3(0,h,0)),q.clone().add(V3(0,h,0)),h>.5?.075:.045,'wood','#c59b69',rails);}
+   const a=row[i],p=stairPoint19(s,a.u,side*(s.w/2-.18),a.y);
+   const clear=point=>!world.userData.steps19.some(other=>{if(other===s)return false;const q=stairLocal19(other,point.x,point.z);return Math.abs(q.cross)<other.w/2+.30&&q.along>-other.len/2-1.0&&q.along<other.len/2+(other.landing??0)+.7;});
+   if(clear(p)){box(p.x,p.y+.51,p.z,.17,1.12,.17,'wood','#9d794e',rails);box(p.x,p.y+.035,p.z,.32,.17,.32,'wall','#c1c6b4',rails);}
+   if(i){const b=row[i-1],q=stairPoint19(s,b.u,side*(s.w/2-.18),b.y),open=Array.from({length:9},(_,j)=>clear(p.clone().lerp(q,j/8))).every(Boolean);if(open)for(const h of[.46,1.02])beam(p.clone().add(V3(0,h,0)),q.clone().add(V3(0,h,0)),h>.5?.075:.045,'wood','#c59b69',rails);}
   }
-  profiles.push({x:s.x,z:s.z,start:u0,end:u1,rows:row,width:s.w+.46});
+  profiles.push({x:s.x,z:s.z,start:u0,end:u1,rows:row,width:s.w-.36,clearJunctions132:true,seatedOnTreads132:true});
  }
  mergeGroup(rails);rails.updateMatrixWorld(true);rails.traverse(o=>{o.updateMatrix();o.matrixAutoUpdate=false;o.matrixWorldAutoUpdate=false;});world.userData.railProfiles26=profiles;
 }

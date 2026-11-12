@@ -1,0 +1,232 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 79065,
+    "sha256": "55edb470f29df636e79b9288da6a51dc67d7b9045752548a6ed610db81778725"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/cavern.webp",
+    "bytes": 841674,
+    "sha256": "75855b3e428fe8c4e23b56b8640cccb6ecf3831807b77a6e7519d22dd24fbcea"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/coast.webp",
+    "bytes": 942938,
+    "sha256": "01565b4d7a9c7e2b62438acf9cf3f66a0633ce357093103e8b30735c6e3c56a6"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/grassAutumn.webp",
+    "bytes": 962634,
+    "sha256": "2db20e30862bce41702d952cc0d55077a11da78043710c1b4ccd6b651d7d5ccb"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/grassBirch.webp",
+    "bytes": 971856,
+    "sha256": "996a55ad954d068e4097d36a36b80a797897df73e2c4332437b52c3cca7035e3"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/grassDowns.webp",
+    "bytes": 890414,
+    "sha256": "141785be7888f863fc93151cad73cb073e8fefcfc780b30d750f857704ebaff7"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/grassFlowers.webp",
+    "bytes": 1014484,
+    "sha256": "3597220a0d14b9a92c64843d237f09d5ac83b63db1544b9b7bf4a85ca6ccd4b3"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/grassHills.webp",
+    "bytes": 953672,
+    "sha256": "7a9b289f308aca93267c575d673eb205b2d7d717d8ef6970a51e0ed497259652"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/grassMeadow.webp",
+    "bytes": 985284,
+    "sha256": "256ee35a026227fee6efe02123a364047777eef620a47d61730efccee4ddc0dc"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/grassRiver.webp",
+    "bytes": 915302,
+    "sha256": "64c6b78f332b27878584c9ae9b82dd328106eae1328d2c3bc2d0853a73525cf9"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/grassStones.webp",
+    "bytes": 923882,
+    "sha256": "6f65d26b0cb48d898e4b494bcbc63167a27b7226638e5d54936c31a930e07ce5"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/grassTwilight.webp",
+    "bytes": 920670,
+    "sha256": "2b936b5777f3398be58a907e1e0f1de0159681449c4ecb5de819f22668b6346c"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/grassWindmill.webp",
+    "bytes": 934520,
+    "sha256": "07b0090450b92e4e140457903af4ef0c32ad068203bba21b3b9aaeb35b01756d"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/manifest.json",
+    "bytes": 23619,
+    "sha256": "8d7eb2fbae9ffdd9b90bb9a2098b949895cfdf1d281b881d8269a345ae4a6762"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/moonlit.webp",
+    "bytes": 898100,
+    "sha256": "814dd687cb724ef41fe9e4fc87dd8290145dcf1b46ef21e8251fda4046609b03"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/mountain.webp",
+    "bytes": 935304,
+    "sha256": "35ea8f077aa49bab89c5c0cd441b793f835cf0bbee629cc7ef1fe35d29858097"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/orchard.webp",
+    "bytes": 958438,
+    "sha256": "f2331c1544cd4d15d153b97ef3fc571c6f4f067a59bf6c17edd1fafc59898421"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/royalRoad.webp",
+    "bytes": 845312,
+    "sha256": "c1cde7f76b6f1c2a6fe98038980066c42c66fffae942bfd7b1fa30c5d121e869"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/ruins.webp",
+    "bytes": 844238,
+    "sha256": "92f0c122fe75717873c7ace146627ebfaa08b170e41370f92ff4ea17b021fcfe"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/snow.webp",
+    "bytes": 485808,
+    "sha256": "252158866a9e2c08258b15266186067f3ed037a526a2bf9c68ecca28b31376a1"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/waterfall.webp",
+    "bytes": 1029700,
+    "sha256": "943bcef11a60293235ebfa8eefc22cdf2607591953797e338fab39564cc487e9"
+  },
+  {
+    "file": "elyndor/assets/source/battle-surfaces-v132/woodland.webp",
+    "bytes": 967072,
+    "sha256": "48b1f8ffef2c0e3bab02f1217e7c65356011a6373be72bb068aed9d5fb880716"
+  },
+  {
+    "file": "elyndor/build-manifest.json",
+    "bytes": 11377,
+    "sha256": "52213df6a3496644a950cb10b2e17d248ef15422e016ab67305f10accd6c07b2"
+  },
+  {
+    "file": "elyndor/previews/release-v132/battle-day.webp",
+    "bytes": 411728,
+    "sha256": "11425723cb8423cf4f7764173fbbff6ebbbf81d339389b1337aa6fb2723c3ecd"
+  },
+  {
+    "file": "elyndor/previews/release-v132/battle-golden.webp",
+    "bytes": 309128,
+    "sha256": "58197e2f00f788616d90562374ab14645a60797b3a26bb9c7ecae18ec24cb75c"
+  },
+  {
+    "file": "elyndor/previews/release-v132/battle-night.webp",
+    "bytes": 290666,
+    "sha256": "7c875162dc96161ec433cd69f1f6a0368e224c5ee3cbe897c5a36ecf14470baf"
+  },
+  {
+    "file": "elyndor/previews/release-v132/brookstead.webp",
+    "bytes": 697994,
+    "sha256": "31df7db2d1ee5f5d50929a53f9f41aa31d179b1b862c2b407c2871eed7c9d699"
+  },
+  {
+    "file": "elyndor/previews/release-v132/changelog.webp",
+    "bytes": 324078,
+    "sha256": "3813c89df01f7867fbf7dc5d03fa615383509c82fe745eabde1fa599422b00f1"
+  },
+  {
+    "file": "elyndor/previews/release-v132/fountain.webp",
+    "bytes": 715816,
+    "sha256": "bf9bcde8607ee981695e420b32ded86f3f3fd27858587906f81a4c22834af115"
+  },
+  {
+    "file": "elyndor/previews/release-v132/phone-landscape.webp",
+    "bytes": 287878,
+    "sha256": "e5975d7e4a99f35ee16e7ef7e179a4f236317b9649affae7852776b96e82fe8c"
+  },
+  {
+    "file": "elyndor/previews/release-v132/phone-portrait.webp",
+    "bytes": 276462,
+    "sha256": "1737f3e1fa3395652a0161c26cbc278e88629a982f5dab3be02e5bfa27421e1d"
+  },
+  {
+    "file": "elyndor/previews/release-v132/stairs.webp",
+    "bytes": 713970,
+    "sha256": "2a956099bea8741e638305ce305d5ca7d8aa7cc338da98124d975b13960015c3"
+  },
+  {
+    "file": "elyndor/previews/release-v132/verification.json",
+    "bytes": 3189,
+    "sha256": "20b1701eba8d3dfe8e5644f2594185bcf0cca50bb31db0742908356917496d93"
+  },
+  {
+    "file": "elyndor/systems/atlas-presentation.js",
+    "bytes": 11256,
+    "sha256": "142ca08bcacea20de80cd899a47ed39ceee0d36a1f6aec3a3899a3bfd0f6cca9"
+  },
+  {
+    "file": "elyndor/systems/battle-surface-library.js",
+    "bytes": 6333,
+    "sha256": "1b6cfec0d43e2a97e974e7ce61139b26cea0a977d8d441a3d8e43d826accc3f8"
+  },
+  {
+    "file": "elyndor/systems/battle-surface-palettes.js",
+    "bytes": 5781,
+    "sha256": "bd8121549326bd5899c5c13415717ee45093cad72ac312f7e6f7fbef07b52fe2"
+  },
+  {
+    "file": "elyndor/systems/brookstead-gardens.js",
+    "bytes": 8546,
+    "sha256": "628af1a14a7c64705d61e1352291821dce4ffc87a7cfee6f24b9fc455310e265"
+  },
+  {
+    "file": "elyndor/systems/brookstead-square.js",
+    "bytes": 16498,
+    "sha256": "a955feeb333ed4a5e6c2a4bb894867da7f460df8f62cbd4b17a229fadedf39cf"
+  },
+  {
+    "file": "elyndor/systems/combat-art-direction.js",
+    "bytes": 47902,
+    "sha256": "f8166e1f14ebe53f2077b5aab048633200abd157557026053ac3164e91e22fe0"
+  },
+  {
+    "file": "elyndor/systems/combat-cinematic-lens.js",
+    "bytes": 4580,
+    "sha256": "1c3673017eebccf08e4eb9177bf5807ac276753b4b7bd168a630049cef871bdf"
+  },
+  {
+    "file": "elyndor/systems/exploration-review.js",
+    "bytes": 1505,
+    "sha256": "ce635e11b58c1b179bc4e122e1f95b3857c2d3cbee1032f8fa934f625fa359ed"
+  },
+  {
+    "file": "elyndor/systems/motion-performance.js",
+    "bytes": 9117,
+    "sha256": "315913cf5cc6cf287a8d2c38a90f22e17f93266d0c4f0e2e9021d355c90905e4"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 76440,
+    "sha256": "642f8a71592db55036ba00aa3cec7ad010af00247b6221f05f4589b7927c901a"
+  },
+  {
+    "file": "elyndor/world-v26.js",
+    "bytes": 18746,
+    "sha256": "d22321d34b1417b87d78588822666624f8438fc3cc8290cad755bbfa3087c311"
+  },
+  {
+    "file": "index.html",
+    "bytes": 18222894,
+    "sha256": "d3a04194c3e7d21179bb719fef04e94421e4ab7c85649d95e56be3e858c8185c"
+  },
+  {
+    "file": "release.json",
+    "bytes": 75581,
+    "sha256": "068aced23c4ee4e6586221e38aec8cfebeeaae0429fc8fa9db0dbf7affa9e45f"
+  }
+]

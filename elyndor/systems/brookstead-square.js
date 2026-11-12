@@ -52,6 +52,16 @@ function rebuildBasin123(g,x,z){
  g.userData.square122.basin123={continuous:true,innerRadius:2.20,outerRadius:3.03,groundHigh:high,groundLow:low,base:level,minimumClearance:level-high};
  world.userData.fountain123={basin,pool,base:level,x,z};
 }
+const plazaApproachMaterials132=new WeakMap();
+function plazaApproachMaterial132(){
+ if(plazaApproachMaterials132.has(world))return plazaApproachMaterials132.get(world);
+ const source=pavingMaterial122(),m=source.clone(),before=source.onBeforeCompile,key=source.customProgramCacheKey();
+ m.userData={...source.userData,plazaBoundary132:true};
+ m.onBeforeCompile=function(s,...args){before.call(this,s,...args);s.uniforms.publicCircle132={value:new THREE.Vector3(BROOK.plaza.x,BROOK.plaza.z,BROOK.plaza.r-.025)};
+  s.vertexShader='varying vec2 routeWorld132;\n'+s.vertexShader;s.vertexShader=s.vertexShader.replace('#include <worldpos_vertex>','#include <worldpos_vertex>\nrouteWorld132=(modelMatrix*vec4(transformed,1.)).xz;');
+  s.fragmentShader='uniform vec3 publicCircle132;varying vec2 routeWorld132;\n'+s.fragmentShader;s.fragmentShader=s.fragmentShader.replace('#include <clipping_planes_fragment>','#include <clipping_planes_fragment>\nif(distance(routeWorld132,publicCircle132.xy)<publicCircle132.z)discard;');
+ };m.customProgramCacheKey=()=>key+'-unbroken-public-plaza132';plazaApproachMaterials132.set(world,m);return m;
+}
 function townWalk122(route,width=2.6){
  const p=[],uv=[],indices=[];let distance=0;
  for(let k=1;k<route.length;k++){
@@ -65,7 +75,7 @@ function townWalk122(route,width=2.6){
   distance+=length;
  }
  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(p,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));g.setIndex(indices);g.computeVertexNormals();
- const m=pavingMaterial122();
+ const m=plazaApproachMaterial132();
  const o=new THREE.Mesh(g,m);o.name='Continuous Brookstead cottage walk';o.receiveShadow=true;o.userData.frontagePath110=true;world.add(o);
  return{route,width,length:distance};
 }

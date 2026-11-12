@@ -1,32 +1,47 @@
 {
-  "release": "elyndor-alpha-1.31-living-battlefields-renewed-brookstead-2026-11-12",
-  "version": "Alpha Version 1.31",
+  "release": "elyndor-alpha-1.32-cohesive-battle-surfaces-polished-brookstead-2026-11-12",
+  "version": "Alpha Version 1.32",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 18192783,
-    "sha256": "714f93f7654e39dbe71edfe8f8f73eeb4b90140bfc8b4c899cbd873671fa30f8",
+    "bytes": 18222894,
+    "sha256": "d3a04194c3e7d21179bb719fef04e94421e4ab7c85649d95e56be3e858c8185c",
     "offline": false,
     "delivery": "HTML with same-origin native binary assets and HD environment materials"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "0af91a591712902a01d90f2fb588c5cfe15ad346"
+    "previousRelease": "27ae9f542e89992d2527287a8b747d873a4937b2"
   },
   "changes": [
-    "Rebuilt Brookstead’s eight buildings with distinct cottage, inn, smithy, mill and workshop details, including fitted foundations, slate roofs, dormers, timber bays, recessed glass and planted windows.",
-    "Completed the circular town square and fountain surround, fitted paving and entrance stairs to the terrain, connected the rear cottages with clear paths, and cleared fences from walking routes.",
-    "Moved the planted vegetable bed out of the town square into the rear cottage garden, keeping its plants and stones together.",
-    "Reworked the fountain with the same detailed water surface as the rivers, circulating streams, impact ripples, moving droplets and live reflections. Water still responds to the pump repair.",
-    "Restaged all twenty battles with a shorter, level physical foreground, a closer native HD backdrop, and an irregular opaque scenic edge while preserving combat formation and controls.",
-    "Gave every battle location its own foreground and middle-distance scenery: connected woodland roots, orchard terraces and crates, ruined columns, cave crystals, alpine rock, snowy cornices, coastal driftwood, field rails, birches and standing stones.",
-    "Added a matching native HD golden-hour background for every battle environment alongside its day and night versions, with dawn/dusk selection, warm scene lighting and dev-console support.",
-    "Improved the connection between physical battle scenery and its background with matched material colors, richer clustered 3D vegetation, wind-driven grass, eroded stone, larger framing trees and natural planted banks. Stone courts, caves and snowy stages retain their appropriate surfaces.",
-    "Strengthened distant battle focus and smooth dark edge shading while keeping fighters and interface text sharp. Checked cinematic camera coverage and scenery clearance on every stage.",
-    "Retained bounded on-demand background loading and batched scenery, with checks across all sixty lighting variants, desktop gameplay, and portrait, landscape and narrow phone layouts."
+    "Polished Brookstead with steeper continuous slate roofs, richer timber frontages, fuller modeled foliage, planted window boxes, stone-bordered flower beds and additional outer woodland.",
+    "Kept the complete circular fountain plaza clear of approach-path overlays, preserving its stone rings and continuous walking access.",
+    "Seated stair railings on their treads, opened connections between stairways and stopped rail ends before the plaza. Moved the planter off the smithy steps and reseated another on level ground.",
+    "Created twenty individual native HD battle-ground surfaces, each with its own turf, soil, stone, snow or paving suited to the location’s background. Surface relief comes from the matching material.",
+    "Matched each battle’s ground, foliage and stone hues more closely to its background while retaining distinct daylight, golden-hour and night lighting.",
+    "Replaced sparse battle-background blur with a continuous separable Gaussian lens, keeping fighters and interface text sharp and preserving cinematic edge shading.",
+    "Added continuous depth-aware Gaussian focus and vignette to world traversal and the 3D atlas, replacing grid-prone blur sampling. Tightened sun-shadow depth projection for more stable outdoor shadows.",
+    "Made world-traversal party contact shadows fixed and circular during daylight, switching them off at night while retaining real moonlight and local-light shadows.",
+    "Kept texture loading on demand and background caches bounded. Verified sixty battle lighting combinations, 480 cinematic camera positions and fifty portrait, landscape and narrow-phone views."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.32",
+      "date": "November 12, 2026",
+      "title": "Cohesive battle surfaces and a polished Brookstead",
+      "items": [
+        "Polished Brookstead with steeper continuous slate roofs, richer timber frontages, fuller modeled foliage, planted window boxes, stone-bordered flower beds and additional outer woodland.",
+        "Kept the complete circular fountain plaza clear of approach-path overlays, preserving its stone rings and continuous walking access.",
+        "Seated stair railings on their treads, opened connections between stairways and stopped rail ends before the plaza. Moved the planter off the smithy steps and reseated another on level ground.",
+        "Created twenty individual native HD battle-ground surfaces, each with its own turf, soil, stone, snow or paving suited to the location’s background. Surface relief comes from the matching material.",
+        "Matched each battle’s ground, foliage and stone hues more closely to its background while retaining distinct daylight, golden-hour and night lighting.",
+        "Replaced sparse battle-background blur with a continuous separable Gaussian lens, keeping fighters and interface text sharp and preserving cinematic edge shading.",
+        "Added continuous depth-aware Gaussian focus and vignette to world traversal and the 3D atlas, replacing grid-prone blur sampling. Tightened sun-shadow depth projection for more stable outdoor shadows.",
+        "Made world-traversal party contact shadows fixed and circular during daylight, switching them off at night while retaining real moonlight and local-light shadows.",
+        "Kept texture loading on demand and background caches bounded. Verified sixty battle lighting combinations, 480 cinematic camera positions and fifty portrait, landscape and narrow-phone views."
+      ]
+    },
     {
       "version": "Alpha Version 1.31",
       "date": "November 12, 2026",
@@ -598,7 +613,13 @@
     "newNativeHumanoidVariants": 38,
     "nativeEnvironmentResolution": "Native dimensions recorded per asset; commonly 1254 square",
     "approvedCharacterPixelsPreserved": true,
-    "goldenHourBattleBackgrounds": 20
+    "goldenHourBattleBackgrounds": 20,
+    "battleGroundSurfaces": 20,
+    "nativeBattleGroundResolution": [
+      1254,
+      1254
+    ],
+    "battleGroundArtProvider": "OpenAI built-in image generator"
   },
   "audio": {
     "provider": "ElevenLabs",
@@ -695,15 +716,19 @@
     "goldenHourBattleEnvironments": 20,
     "individualBattleDressing": true,
     "opaqueShortActionStage": true,
-    "flowingRiverMaterialFountain": true
+    "flowingRiverMaterialFountain": true,
+    "backgroundMatchedBattleSurfaces": 20,
+    "separableGaussianBattleBlur": true,
+    "separableGaussianWorldFocus": true,
+    "daytimeCircularPartyContacts": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v131/verification.json",
-    "sha256": "848369e0a186827f8a8437adf6f83048a617a8e5b109a096a13bf2a612ba3673",
+    "file": "elyndor/previews/release-v132/verification.json",
+    "sha256": "20b1701eba8d3dfe8e5644f2594185bcf0cca50bb31db0742908356917496d93",
     "finalRelease": "PASS",
     "battleLightingVariants": 60,
     "cameraPoses": 480,
-    "touchPhoneCases": 44,
+    "touchPhoneCases": 50,
     "runtimeMatchesTestedLocalExceptChangelog": true
   },
   "performance": {
@@ -722,11 +747,12 @@
       "groundArray": 384
     },
     "atlas": "Retained completed continent; reusable full-resolution depth target with quarter-resolution bloom",
-    "battleScenery": "Batched geometry and wind-driven instances; four on-demand background plates; phone budgets retained"
+    "battleScenery": "Batched geometry and wind-driven instances; native stage albedo decoded on demand; four background plates retained",
+    "focus": "Reusable half-resolution separable Gaussian targets; depth-aware focus preserves the action plane and native interface"
   },
   "previousPublishedRelease": {
-    "commit": "0af91a591712902a01d90f2fb588c5cfe15ad346",
-    "version": "Alpha Version 1.30",
-    "sha256": "2ae931c4909737c542348747cfe83e9806299413ff5d0c7f56c5d496a9c5925f"
+    "commit": "27ae9f542e89992d2527287a8b747d873a4937b2",
+    "version": "Alpha Version 1.31",
+    "sha256": "714f93f7654e39dbe71edfe8f8f73eeb4b90140bfc8b4c899cbd873671fa30f8"
   }
 }

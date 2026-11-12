@@ -2,6 +2,22 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.32 — Cohesive battle surfaces and a polished Brookstead
+
+November 12, 2026
+
+- Polished Brookstead with steeper continuous slate roofs, richer timber frontages, fuller modeled foliage, planted window boxes, stone-bordered flower beds and additional outer woodland.
+- Kept the complete circular fountain plaza clear of approach-path overlays, preserving its stone rings and continuous walking access.
+- Seated stair railings on their treads, opened connections between stairways and stopped rail ends before the plaza. Moved the planter off the smithy steps and reseated another on level ground.
+- Created twenty individual native HD battle-ground surfaces, each with its own turf, soil, stone, snow or paving suited to the location’s background. Surface relief comes from the matching material.
+- Matched each battle’s ground, foliage and stone hues more closely to its background while retaining distinct daylight, golden-hour and night lighting.
+- Replaced sparse battle-background blur with a continuous separable Gaussian lens, keeping fighters and interface text sharp and preserving cinematic edge shading.
+- Added continuous depth-aware Gaussian focus and vignette to world traversal and the 3D atlas, replacing grid-prone blur sampling. Tightened sun-shadow depth projection for more stable outdoor shadows.
+- Made world-traversal party contact shadows fixed and circular during daylight, switching them off at night while retaining real moonlight and local-light shadows.
+- Kept texture loading on demand and background caches bounded. Verified sixty battle lighting combinations, 480 cinematic camera positions and fifty portrait, landscape and narrow-phone views.
+
+Release evidence and checksums: `elyndor/previews/release-v132/verification.json`. Checks cover 60 battle lighting variants, 480 cinematic poses, 44 browser-emulated touch-phone battle cases and 6 phone world views.
+
 ## Alpha Version 1.31 — Living battlefields and a renewed Brookstead
 
 November 12, 2026

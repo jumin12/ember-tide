@@ -278,7 +278,10 @@
       "systems/combat-cinematic-lens.js",
       "systems/fountain-water.js",
       "systems/battle-stage-identities.js",
-      "systems/battle-scene-integration.js"
+      "systems/battle-scene-integration.js",
+      "systems/battle-surface-palettes.js",
+      "systems/battle-surface-library.js",
+      "systems/brookstead-gardens.js"
     ]
   },
   "styles": [
