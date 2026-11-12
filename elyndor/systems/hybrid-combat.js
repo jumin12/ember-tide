@@ -14,9 +14,9 @@ function preparePainting90(stage,phase){
  const task=(async()=>{const image=new Image();image.src=assets.images[key];await image.decode();const t=new THREE.Texture(image);t.colorSpace=THREE.SRGBColorSpace;t.magFilter=THREE.LinearFilter;t.minFilter=THREE.LinearMipmapLinearFilter;t.wrapS=t.wrapT=THREE.ClampToEdgeWrapping;t.userData.pinnedMap17=true;t.needsUpdate=true;textures[key]=t;hybrid90.loaded++;return t;})();hybrid90.pending.set(key,task);return task;
 }
 const hybridBeginBefore90=beginBattle;
-beginBattle=function(...a){const result=hybridBeginBefore90(...a);if(encounter53.phase==='enter'){const h=(state.worldMinutes/60%24+24)%24;preparePainting90(encounter53.selected,h<6||h>=19?'night':'day').catch(e=>console.error('Battle scenery: '+e.message));}return result;};
+beginBattle=function(...a){const result=hybridBeginBefore90(...a);if(encounter53.phase==='enter')preparePainting90(encounter53.selected,battlePhase55()).catch(e=>console.error('Battle scenery: '+e.message));return result;};
 const hybridCoverBefore90=advanceEncounterCover53;
-advanceEncounterCover53=function(dt){const c=encounter53,h=(state.worldMinutes/60%24+24)%24;if(c.phase==='enter'&&!c.swapped&&!textures[paintingKey90(c.selected,h<6||h>=19?'night':'day')]&&c.time+dt>c.duration*.44){if(c.time<c.duration*.44)hybridCoverBefore90(c.duration*.44-c.time);return;}return hybridCoverBefore90(dt);};
+advanceEncounterCover53=function(dt){const c=encounter53;if(c.phase==='enter'&&!c.swapped&&!textures[paintingKey90(c.selected,battlePhase55())]&&c.time+dt>c.duration*.44){if(c.time<c.duration*.44)hybridCoverBefore90(c.duration*.44-c.time);return;}return hybridCoverBefore90(dt);};
 function paintingPalette90(texture){
  if(hybrid90.palettes.has(texture))return hybrid90.palettes.get(texture);const c=document.createElement('canvas');c.width=64;c.height=36;const ctx=c.getContext('2d',{willReadFrequently:true});ctx.drawImage(texture.image,0,0,64,36);const rgba=ctx.getImageData(0,0,64,36).data;
  const colour=(rect)=>{const v=new THREE.Color(0,0,0),s=new THREE.Color();let n=0;for(let y=Math.floor(rect[1]*36);y<Math.ceil(rect[3]*36);y++)for(let x=Math.floor(rect[0]*64);x<Math.ceil(rect[2]*64);x++){const i=((35-y)*64+x)*4;s.setRGB(rgba[i]/255,rgba[i+1]/255,rgba[i+2]/255,THREE.SRGBColorSpace);v.add(s);n++;}return v.multiplyScalar(1/n);};

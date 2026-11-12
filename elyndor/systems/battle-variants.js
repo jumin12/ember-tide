@@ -82,8 +82,12 @@ const BATTLE_STAGE_PAIRS55={
   "night": "battle55_grassRiver_night"
  }
 };
+function battlePhase55(minutes=state.worldMinutes){
+ const hour=(minutes/60%24+24)%24;
+ return hour>=5.5&&hour<8||hour>=16.5&&hour<19.25?'golden':hour<5.5||hour>=19.25?'night':'day';
+}
 function battleTexture55(key){
- const hour=(state.worldMinutes/60%24+24)%24,phase=hour<6||hour>=19?'night':'day',asset=BATTLE_STAGE_PAIRS55[key]?.[phase],texture=textures[asset];
+ const phase=battlePhase55(),asset=BATTLE_STAGE_PAIRS55[key]?.[phase],texture=textures[asset];
  if(!texture&&typeof buildArena88!=='function')throw Error('Missing paired battle background: '+key+' '+phase);
  return{key:asset,texture,phase,night:phase==='night'};
 }

@@ -270,7 +270,15 @@
       "systems/mobile-startup.js",
       "systems/exploration-review.js",
       "systems/travel-composition-review.js",
-      "systems/atlas-presentation.js"
+      "systems/atlas-presentation.js",
+      "systems/brookstead-architecture.js",
+      "systems/battle-golden-hour.js",
+      "systems/combat-stage-composition.js",
+      "systems/brookstead-square.js",
+      "systems/combat-cinematic-lens.js",
+      "systems/fountain-water.js",
+      "systems/battle-stage-identities.js",
+      "systems/battle-scene-integration.js"
     ]
   },
   "styles": [

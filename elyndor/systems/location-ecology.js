@@ -50,8 +50,11 @@ function addScenicEcology104(){
  if(activeScene.key==='brookstead')for(const g of world.userData.buildings??[]){const box=new THREE.Box3().setFromObject(g);if(box.isEmpty())continue;for(const side of[-1,1])patch(box.getCenter(V3()).x+side*(box.max.x-box.min.x)*.63,box.max.z+1.5,.65);}
  // Authored diagonal pockets break up the large courts, leaving the central
  // interaction and all approach/loop corridors open. Low edging is walkable.
- summary.courtGardens=0;const courtPlan=layout??(activeScene.key==='brookstead'?{courts:[[-118,70,15]],routes:[],loops:[]}:null);
- if(courtPlan&&!macro)for(const [cx,cz,r]of courtPlan.courts.slice(0,2))for(const angle of[.78,2.36,3.93,5.5]){
+ // Brookstead's old diagonal court pocket landed on the fountain's east arc.
+ // Keep the entire bed and its instanced edging beside the rear cottage.
+ const brookGarden=activeScene.key==='brookstead';
+ summary.courtGardens=0;summary.gardens=[];const courtPlan=brookGarden?{courts:[[-141,40,0]],routes:streetLines110(),loops:[]}:layout;
+ if(courtPlan&&!macro)for(const [cx,cz,r]of courtPlan.courts.slice(0,2))for(const angle of brookGarden?[0]:[.78,2.36,3.93,5.5]){
   const x=cx+Math.cos(angle)*r*.68,z=cz+Math.sin(angle)*r*.68,radius=profile.flora==='formal'?1.5:1.8;
   let lane=Infinity;for(const line of[...courtPlan.routes,...courtPlan.loops??[]])for(let j=1;j<line.length;j++)lane=Math.min(lane,segmentDistance(x,z,line[j-1],line[j]));
   if(lane<radius+3.6||wet(x,z)||!anchorClear(x,z,radius+2.5)||!staticFree(x,z,radius))continue;const h=ground(x,z);if(Math.max(...[[-1,-1],[-1,1],[1,-1],[1,1]].map(([a,b])=>Math.abs(ground(x+a*radius,z+b*radius)-h)))>.14)continue;
@@ -59,7 +62,7 @@ function addScenicEcology104(){
   for(let j=0;j<19;j++){const a=j/19*TAU,s=.18+rng()*.05,xx=x+Math.cos(a)*radius,zz=z+Math.sin(a)*radius,g=rockGeometry62([1,3,6,7][j%4]),sy=s*.5;submit('gardenEdging'+j%4,g,rockMaterial62(profile.stone),xx,ground(xx,zz)-g.boundingBox.min.y*sy+.02,zz,s*1.4,sy,s,rng()*TAU);summary.stones++;}
   for(let j=0;j<(phone?16:32);j++){const a=rng()*TAU,rr=Math.sqrt(rng())*radius*.78,xx=x+Math.cos(a)*rr,zz=z+Math.sin(a)*rr,kind=snowBed?'leaf':j%5===0?'leaf':j%3===0?'fern':'flowers',s=(kind==='leaf'?.40:kind==='fern'?.80:.60)*(.78+rng()*.4),g=kind==='leaf'?bough104(snowBed?4:0,phone?1:0):plantSculpt103(kind,phone);submit(kind,g,material(kind),xx,ground(xx,zz)+.08+(kind==='leaf'?0:.465*s)-.02,zz,s,s,s,rng()*TAU);summary.plantings++;}
   if(!snowBed)for(let j=0;j<(phone?30:65);j++){const a=rng()*TAU,rr=Math.sqrt(rng())*radius*.86,xx=x+Math.cos(a)*rr,zz=z+Math.sin(a)*rr,s=.52+rng()*.24;submit('gardenGrass',curvedGrass102(phone),material('grassBlades'),xx,ground(xx,zz)+.08+.465*s*.85,zz,s,s*.85,s,rng()*TAU);summary.plantings++;}
-  summary.courtGardens++;
+  summary.courtGardens++;summary.gardens.push({x,z,radius,role:brookGarden?'rear cottage garden':'court pocket'});
  }
  for(const {kind,g,m,rows,center}of bins.values()){
   const geo=shareGeometry36(g),far=shareGeometry36(kind==='leaf'?bough104(0,2):kind==='fern'||kind==='flowers'?plantSculpt103(kind,true):kind==='coastalGrass'||kind==='gardenGrass'?curvedGrass102(true):g);if(kind==='leaf'){const mask=new THREE.InstancedBufferAttribute(new Float32Array(rows.length),1);geo.setAttribute('treeViewHidden',mask);far.setAttribute('treeViewHidden',mask);}const o=new THREE.InstancedMesh(geo,m,rows.length);rows.forEach((matrix,i)=>o.setMatrixAt(i,matrix));o.name='Ecological planting · '+kind;o.castShadow=kind.startsWith('stone');o.receiveShadow=true;o.userData={ecology104:true,center,total:rows.length,detailedGeometry:geo,distantGeometry:far};o.computeBoundingSphere();o.computeBoundingBox();o.updateMatrix();o.matrixAutoUpdate=false;world.add(o);summary.meshes.push(o);summary.batches++;

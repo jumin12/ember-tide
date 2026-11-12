@@ -3,6 +3,7 @@ from pathlib import Path
 from PIL import Image
 from asset_bundle_v36 import package_assets36
 from battle_assets_v99 import add_battle_art99
+from battle_golden_v121 import add_battle_golden121
 from battle_materials_v100 import add_battle_materials100
 from battle_props_v101 import add_battle_props101
 from world_materials_v102 import pack_world_materials102
@@ -43,6 +44,7 @@ def main():
   audit=[];warnings=[];assets=module.build_assets(ROOT,encode,audit,warnings,FINAL)
   cache.write_text(json.dumps(assets,separators=(',',':')),encoding='utf-8');meta_file.write_text(json.dumps({'signature':signature,'audit':audit,'warnings':warnings}),encoding='utf-8')
  add_battle_art99(ROOT,assets)
+ add_battle_golden121(ROOT,assets)
  add_battle_materials100(ROOT,assets,inline='--inline-materials100' in sys.argv)
  add_battle_props101(ROOT,assets,inline='--inline-materials100' in sys.argv)
  pack_world_materials102(ROOT,assets,inline='--inline-materials100' in sys.argv)

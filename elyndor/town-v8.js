@@ -29,7 +29,7 @@ makeBridge=function(x,z,length=20,width=6,stone=true){
  }
 };
 const brookBaseLand=baseLand;
-function brookLand(x,z){let h=1.3+2.5*(1-smooth(76,83,z))+2.4*(1-smooth(-135,-129,x))*(1-smooth(72,79,z));const bank=1-smooth(7,13,Math.abs(x-brookChannel(z)));if(z>25&&z<190)h=mix(h,Math.max(h,brookWaterLevel(z)+1.1),bank);const plaza=1-smooth(BROOK.plaza.r,BROOK.plaza.r+2.5,Math.hypot(x-BROOK.plaza.x,z-BROOK.plaza.z));return mix(h,3.8,plaza);}
+function brookLand(x,z){let h=1.3+2.5*(1-smooth(76,83,z))+2.4*(1-smooth(-135,-129,x))*(1-smooth(72,79,z));const bank=1-smooth(7,13,Math.abs(x-brookChannel(z)));if(z>25&&z<190)h=mix(h,Math.max(h,brookWaterLevel(z)+1.1),bank);const plaza=1-smooth(BROOK.plaza.r+2.4,BROOK.plaza.r+5.4,Math.hypot(x-BROOK.plaza.x,z-BROOK.plaza.z));return mix(h,3.8,plaza);}
 baseLand=function(x,z){let old=brookBaseLand(x,z);const riverBank=1-smooth(7,13,Math.abs(x-brookChannel(z)));old=mix(old,Math.max(old,brookWaterLevel(z)+1.1),riverBank);if(!inBrook(x,z,9))return old;const edge=Math.min(x-BROOK.minX,BROOK.maxX-x,z-BROOK.minZ,BROOK.maxZ-z);return mix(old,brookLand(x,z),smooth(-8,3,edge));};
 channelDistance=function(x,z){return Math.min(Math.abs(x-riverX(z))-riverWidth(z),Math.abs(x-brookChannel(z))-brookWidth(z));};
 const groundBeforeBrook=groundAt;
@@ -46,7 +46,8 @@ const mergeBeforeBrookDensity=mergeGroup;
 mergeGroup=function(group){mergeBeforeBrookDensity(group);for(const child of group.children){const g=child.geometry;if(!g?.attributes.tile||g.userData.brookDensity)continue;const uv=g.attributes.uv,tile=g.attributes.tile;for(let i=0;i<uv.count;i++){const scale=tile.getX(i)===3?.65:.5;uv.setXY(i,uv.getX(i)*scale,uv.getY(i)*scale);}uv.needsUpdate=true;g.userData.brookDensity=true;}};
 const brookHeight=heightAt;
 heightAt=function(x,z){
- if(Math.abs(x+132)<3.5&&Math.abs(z-68.5)<2.5){const t=clamp((-128.5-x)/7,0,.9999);return 3.8+2.4*Math.ceil(t*10)/10+.035;}
+ const cross=BROOK.crossStairs??{start:-128.5,length:7,z:68.5,depth:5,lo:3.8,hi:6.2};
+ if(x<cross.start&&x>cross.start-cross.length&&Math.abs(z-cross.z)<cross.depth/2){const t=clamp((cross.start-x)/cross.length,0,.9999);return cross.lo+(cross.hi-cross.lo)*Math.ceil(t*10)/10+.035;}
  for(const [cx,cz,w,len,lo,hi]of[[-124,79.5,5.2,7,1.3,3.8],[-101,79.5,5,7,1.3,3.8],[-140,75.5,4.8,7,3.8,6.2]]){
   if(Math.abs(x-cx)<w/2&&Math.abs(z-cz)<len/2){const t=clamp((cz+len/2-z)/len,0,.9999);return lo+(hi-lo)*Math.ceil(t*10)/10+.035;}
  }
@@ -218,7 +219,8 @@ buildSettlements=function(){
  for(const spec of BROOK.houses)brookHouse(...spec);
  brookWall(-135,-94,76,1.3,3.8,[[-128,-120],[-105,-97]]);brookWall(-157,-132,72,3.8,6.2,[[-144,-136]]);
  brookStairs(-124,79.5,5.2,7,1.3,3.8);brookStairs(-101,79.5,5,7,1.3,3.8);brookStairs(-140,75.5,4.8,7,3.8,6.2);
- for(let i=0;i<10;i++){const xx=-128.5-(i+.5)*.7,top=3.8+2.4*(i+1)/10;box(xx,(top+3.8)/2-.03,68.5,.735,top-3.8+.06,5,'cobble','#d9dccb');box(xx+.29,top+.015,68.5,.13,.06,5.1,'wall','#edf0e5');}
+ const cross=BROOK.crossStairs??{start:-128.5,length:7,z:68.5,depth:5,lo:3.8,hi:6.2};
+ for(let i=0;i<10;i++){const depth=cross.length/10,xx=cross.start-(i+.5)*depth,top=cross.lo+(cross.hi-cross.lo)*(i+1)/10;box(xx,(top+cross.lo)/2-.03,cross.z,depth+.035,top-cross.lo+.06,cross.depth,'cobble','#d9dccb');box(xx+depth*.414,top+.015,cross.z,.13,.06,cross.depth+.1,'wall','#edf0e5');}
  brookFountain();
  bench(-130,60,Math.PI/2);bench(-110,73,-Math.PI/2);
  for(const f of[[-121,105,-103,105],[-100,103,-100,95],[-103,88,-100,88],[-116,72,-112,72],[-108,57,-100,57],[-100,57,-100,63],[-157,82,-151,82],[-161,100,-155,100],[-93,119,-81,119],[-81,119,-81,112],[-120,36,-108,36],[-96,130,-82,130],[-82,130,-82,122],[-96,130,-96,124]])brookFence(...f);

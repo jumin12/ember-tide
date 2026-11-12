@@ -2,6 +2,23 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.31 — Living battlefields and a renewed Brookstead
+
+November 12, 2026
+
+- Rebuilt Brookstead’s eight buildings with distinct cottage, inn, smithy, mill and workshop details, including fitted foundations, slate roofs, dormers, timber bays, recessed glass and planted windows.
+- Completed the circular town square and fountain surround, fitted paving and entrance stairs to the terrain, connected the rear cottages with clear paths, and cleared fences from walking routes.
+- Moved the planted vegetable bed out of the town square into the rear cottage garden, keeping its plants and stones together.
+- Reworked the fountain with the same detailed water surface as the rivers, circulating streams, impact ripples, moving droplets and live reflections. Water still responds to the pump repair.
+- Restaged all twenty battles with a shorter, level physical foreground, a closer native HD backdrop, and an irregular opaque scenic edge while preserving combat formation and controls.
+- Gave every battle location its own foreground and middle-distance scenery: connected woodland roots, orchard terraces and crates, ruined columns, cave crystals, alpine rock, snowy cornices, coastal driftwood, field rails, birches and standing stones.
+- Added a matching native HD golden-hour background for every battle environment alongside its day and night versions, with dawn/dusk selection, warm scene lighting and dev-console support.
+- Improved the connection between physical battle scenery and its background with matched material colors, richer clustered 3D vegetation, wind-driven grass, eroded stone, larger framing trees and natural planted banks. Stone courts, caves and snowy stages retain their appropriate surfaces.
+- Strengthened distant battle focus and smooth dark edge shading while keeping fighters and interface text sharp. Checked cinematic camera coverage and scenery clearance on every stage.
+- Retained bounded on-demand background loading and batched scenery, with checks across all sixty lighting variants, desktop gameplay, and portrait, landscape and narrow phone layouts.
+
+Release evidence and checksums: `elyndor/previews/release-v131/verification.json`. Checks cover 60 battle lighting variants, 480 cinematic poses and 44 browser-emulated touch-phone cases.
+
 ## Alpha Version 1.30 — Clearer maps and lighter mobile loading
 
 November 11, 2026

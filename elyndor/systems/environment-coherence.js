@@ -22,7 +22,7 @@ makeHybridLandscape90=function(b){naturalLandscapeBefore105(b);b.colourStudy105=
 const matchedLightBefore105=arenaLight89;
 arenaLight89=function(b){
  matchedLightBefore105(b);if(!b.hybridKey90)return;
- const study=paintingStudy105(textures[paintingKey90(encounter53.selected,b.night?'night':'day')]),s=b.spec;
+ const study=paintingStudy105(textures[paintingKey90(encounter53.selected,encounter53.phase55)]),s=b.spec;
  // Bounce opens the shaded field without bleaching the sun-facing pigments.
  // Forest, cave, snow and moonlit sets keep their own ratios and temperature.
  const dark=s.cave,forest=s.dense||s.elder,warm=s.autumn||s.twilight;

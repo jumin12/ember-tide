@@ -1,0 +1,205 @@
+{
+  "generator": "Native HD image generation with original daytime scene as exact composition reference",
+  "images": {
+    "battle99_waterfall_golden": {
+      "file": "elyndor/assets/source/battle-golden-v121/waterfall-golden.webp",
+      "stage": "waterfall",
+      "phase": "golden",
+      "width": 1672,
+      "height": 941,
+      "bytes": 834426,
+      "sha256": "92183e507f691dd353de0dd10a2bee10a76baeb657524f803eff751825d043be",
+      "reviewed": true
+    },
+    "battle99_woodland_golden": {
+      "file": "elyndor/assets/source/battle-golden-v121/woodland-golden.webp",
+      "stage": "woodland",
+      "phase": "golden",
+      "width": 1672,
+      "height": 941,
+      "bytes": 848304,
+      "sha256": "9295ab839315a588f82cd4cb9a955c4d0e7e84544afe80e195900c5c48f2fbe5",
+      "reviewed": true
+    },
+    "battle99_orchard_golden": {
+      "file": "elyndor/assets/source/battle-golden-v121/orchard-golden.webp",
+      "stage": "orchard",
+      "phase": "golden",
+      "width": 1672,
+      "height": 941,
+      "bytes": 792312,
+      "sha256": "22d74c0fbb0b13525b8765db43b9b08306c37162e73a67f27b4d252493b48dfa",
+      "reviewed": true
+    },
+    "battle99_ruins_golden": {
+      "file": "elyndor/assets/source/battle-golden-v121/ruins-golden.webp",
+      "stage": "ruins",
+      "phase": "golden",
+      "width": 1672,
+      "height": 941,
+      "bytes": 851222,
+      "sha256": "2349648da15322880aba369f4ff0c3a28c1126c6c6c89c2944ef9bfc77baa5ed",
+      "reviewed": true
+    },
+    "battle99_cavern_golden": {
+      "file": "elyndor/assets/source/battle-golden-v121/cavern-golden.webp",
+      "stage": "cavern",
+      "phase": "golden",
+      "width": 1672,
+      "height": 941,
+      "bytes": 745292,
+      "sha256": "1016836f49d74d9d9e790f2fb234244f43852493cf3ae041194ef5d23e271448",
+      "reviewed": true
+    },
+    "battle99_mountain_golden": {
+      "file": "elyndor/assets/source/battle-golden-v121/mountain-golden.webp",
+      "stage": "mountain",
+      "phase": "golden",
+      "width": 1672,
+      "height": 941,
+      "bytes": 846194,
+      "sha256": "db3ded912aaf989166ab39dcb8139e05cf38af43516e85594569e5b817f268db",
+      "reviewed": true
+    },
+    "battle99_snow_golden": {
+      "file": "elyndor/assets/source/battle-golden-v121/snow-golden.webp",
+      "stage": "snow",
+      "phase": "golden",
+      "width": 1672,
+      "height": 941,
+      "bytes": 715448,
+      "sha256": "9ec555514863e5be36e0cda01afd3c8134cbb42dbc15f0875f167260a349d66a",
+      "reviewed": true
+    },
+    "battle99_coast_golden": {
+      "file": "elyndor/assets/source/battle-golden-v121/coast-golden.webp",
+      "stage": "coast",
+      "phase": "golden",
+      "width": 1672,
+      "height": 941,
+      "bytes": 877230,
+      "sha256": "2ba30601a7d7cda4cce4a626c51a6b0851e67578c5e202ddb0ff94b6fb2530b6",
+      "reviewed": true
+    },
+    "battle99_royalRoad_golden": {
+      "file": "elyndor/assets/source/battle-golden-v121/royalRoad-golden.webp",
+      "stage": "royalRoad",
+      "phase": "golden",
+      "width": 1672,
+      "height": 941,
+      "bytes": 917640,
+      "sha256": "9cbfc82c0e17a1137fae30842df7a323c99bafe6533276d97c39b6eaa06265d6",
+      "reviewed": true
+    },
+    "battle99_moonlit_golden": {
+      "file": "elyndor/assets/source/battle-golden-v121/moonlit-golden.webp",
+      "stage": "moonlit",
+      "phase": "golden",
+      "width": 1672,
+      "height": 941,
+      "bytes": 788460,
+      "sha256": "cf84f19a901087c2f03865bc6267c10d9f3aa4c8075a19feab8fa7ee006f8247",
+      "reviewed": true
+    },
+    "battle99_grassMeadow_golden": {
+      "file": "elyndor/assets/source/battle-golden-v121/grassMeadow-golden.webp",
+      "stage": "grassMeadow",
+      "phase": "golden",
+      "width": 1672,
+      "height": 941,
+      "bytes": 811210,
+      "sha256": "eca3428620b1e70389f40a3715317b1a3c1923bf86d1a25311e7b4680bc7b1bc",
+      "reviewed": true
+    },
+    "battle99_grassRiver_golden": {
+      "file": "elyndor/assets/source/battle-golden-v121/grassRiver-golden.webp",
+      "stage": "grassRiver",
+      "phase": "golden",
+      "width": 1672,
+      "height": 941,
+      "bytes": 763504,
+      "sha256": "50bedc8a94166682af6fefdea25c9b46eb9275e629ad7d9ac55128c9433c7013",
+      "reviewed": true
+    },
+    "battle99_grassFlowers_golden": {
+      "file": "elyndor/assets/source/battle-golden-v121/grassFlowers-golden.webp",
+      "stage": "grassFlowers",
+      "phase": "golden",
+      "width": 1672,
+      "height": 941,
+      "bytes": 920788,
+      "sha256": "c4725e70ed31cb749cb0d4a621a704f00096dc96aa378b4c8716b6021ab12b33",
+      "reviewed": true
+    },
+    "battle99_grassDowns_golden": {
+      "file": "elyndor/assets/source/battle-golden-v121/grassDowns-golden.webp",
+      "stage": "grassDowns",
+      "phase": "golden",
+      "width": 1672,
+      "height": 941,
+      "bytes": 804948,
+      "sha256": "1533913a06910d3ab4cabdb4247d324af9d12acf14e8fe2ea5858ddaca1756ef",
+      "reviewed": true
+    },
+    "battle99_grassWindmill_golden": {
+      "file": "elyndor/assets/source/battle-golden-v121/grassWindmill-golden.webp",
+      "stage": "grassWindmill",
+      "phase": "golden",
+      "width": 1672,
+      "height": 941,
+      "bytes": 851322,
+      "sha256": "402239f6b47416d73970f42605f0bf6dd7a611e384017faf474ba65059aee66e",
+      "reviewed": true
+    },
+    "battle99_grassAutumn_golden": {
+      "file": "elyndor/assets/source/battle-golden-v121/grassAutumn-golden.webp",
+      "stage": "grassAutumn",
+      "phase": "golden",
+      "width": 1672,
+      "height": 941,
+      "bytes": 854096,
+      "sha256": "71a09c7c9add5292d4e107434b023ee8afd75361432fba93ed556239d4ac1a18",
+      "reviewed": true
+    },
+    "battle99_grassStones_golden": {
+      "file": "elyndor/assets/source/battle-golden-v121/grassStones-golden.webp",
+      "stage": "grassStones",
+      "phase": "golden",
+      "width": 1672,
+      "height": 941,
+      "bytes": 788936,
+      "sha256": "beb674589cee4f299fcd84a08d7e4a5b617b5ed89c2ec83f58e3c30c235ffb90",
+      "reviewed": true
+    },
+    "battle99_grassHills_golden": {
+      "file": "elyndor/assets/source/battle-golden-v121/grassHills-golden.webp",
+      "stage": "grassHills",
+      "phase": "golden",
+      "width": 1672,
+      "height": 941,
+      "bytes": 719458,
+      "sha256": "e0acc0fa98db65670c719209c9f836107aa116324549243c0b8e22518793c1f3",
+      "reviewed": true
+    },
+    "battle99_grassBirch_golden": {
+      "file": "elyndor/assets/source/battle-golden-v121/grassBirch-golden.webp",
+      "stage": "grassBirch",
+      "phase": "golden",
+      "width": 1672,
+      "height": 941,
+      "bytes": 838960,
+      "sha256": "81cdf640468bfe4c5ac5a83f2d5533388cf3546fc058208245f8d0fdeb8d0dbb",
+      "reviewed": true
+    },
+    "battle99_grassTwilight_golden": {
+      "file": "elyndor/assets/source/battle-golden-v121/grassTwilight-golden.webp",
+      "stage": "grassTwilight",
+      "phase": "golden",
+      "width": 1672,
+      "height": 941,
+      "bytes": 746142,
+      "sha256": "18cb4b8b56bcecc5bdb32286386ffc741efa93476536f8d782f0e4514e4adcec",
+      "reviewed": true
+    }
+  }
+}
