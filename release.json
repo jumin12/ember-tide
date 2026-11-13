@@ -1,31 +1,47 @@
 {
-  "release": "elyndor-alpha-1.32-cohesive-battle-surfaces-polished-brookstead-2026-11-12",
-  "version": "Alpha Version 1.32",
+  "release": "elyndor-alpha-1.33-faster-journeys-refined-battlefields-2026-11-12",
+  "version": "Alpha Version 1.33",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 18222894,
-    "sha256": "d3a04194c3e7d21179bb719fef04e94421e4ab7c85649d95e56be3e858c8185c",
+    "bytes": 7056183,
+    "sha256": "19780f19eaad50e63b478de23adf43f1dc7c675b85b7a19016231a6b8c605094",
     "offline": false,
-    "delivery": "HTML with same-origin native binary assets and HD environment materials"
+    "delivery": "HTML with same-origin native artwork and losslessly compressed world data"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "27ae9f542e89992d2527287a8b747d873a4937b2"
+    "previousRelease": "a32b8cf0a36498cb8cfc1b2156be05b9783e4ddb"
   },
   "changes": [
-    "Polished Brookstead with steeper continuous slate roofs, richer timber frontages, fuller modeled foliage, planted window boxes, stone-bordered flower beds and additional outer woodland.",
-    "Kept the complete circular fountain plaza clear of approach-path overlays, preserving its stone rings and continuous walking access.",
-    "Seated stair railings on their treads, opened connections between stairways and stopped rail ends before the plaza. Moved the planter off the smithy steps and reseated another on level ground.",
-    "Created twenty individual native HD battle-ground surfaces, each with its own turf, soil, stone, snow or paving suited to the location’s background. Surface relief comes from the matching material.",
-    "Matched each battle’s ground, foliage and stone hues more closely to its background while retaining distinct daylight, golden-hour and night lighting.",
-    "Replaced sparse battle-background blur with a continuous separable Gaussian lens, keeping fighters and interface text sharp and preserving cinematic edge shading.",
-    "Added continuous depth-aware Gaussian focus and vignette to world traversal and the 3D atlas, replacing grid-prone blur sampling. Tightened sun-shadow depth projection for more stable outdoor shadows.",
-    "Made world-traversal party contact shadows fixed and circular during daylight, switching them off at night while retaining real moonlight and local-light shadows.",
-    "Kept texture loading on demand and background caches bounded. Verified sixty battle lighting combinations, 480 cinematic camera positions and fifty portrait, landscape and narrow-phone views."
+    "Reduced the initial game page by about 61% compared with the previous release. Native loading illustrations and bulk world data load alongside artwork without resampling approved character sprites.",
+    "Made startup and the dev console faster by decoding only needed character and monster artwork, sharing sprite previews, and removing duplicate scene builds and obsolete loading warmups.",
+    "Added a memory-limited cache for recent outdoor locations, with a smaller phone budget. Revisits restore navigation, water, weather, lighting and reflections, while story, graphics-quality and journey changes invalidate old scenery.",
+    "Shortened manual battle-environment handoffs and compiled only visible arena materials. A complete scenery-readiness gate keeps transitions covered until backgrounds, textures and cropped stone details are ready; cinematic reveals retain their full camera paths.",
+    "Accelerated exact road, front-door path and shoreline queries, and removed unnecessary building-clone serialization. World-map geometry prepares when first requested and is reused for later views and travel.",
+    "Completed Brookstead roof gables and timber joints, kept braces clear of windows, and improved the backs and sides of its houses. Refined foreground planting and scenery across all twenty battle environments to fit each habitat.",
+    "Smoothed overworld road approaches and sharp turns, protected bridge crossings and destination connections, and replaced repetitive riverbank stones with more varied weathered rock.",
+    "Strengthened circular grounding shadows beneath companions, townspeople and combatants, seated them on rendered paths and raised floors, and retained the overworld night-time shadow behavior.",
+    "Fixed targeting rings accumulating during cached scene visits and houses remaining hidden after returning from combat. Checked all twenty battle stages on desktop and phone layouts, cached visits, inn returns, original-journey restoration and native sprite downloads."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.33",
+      "date": "November 12, 2026",
+      "title": "Faster journeys and refined battlefields",
+      "items": [
+        "Reduced the initial game page by about 61% compared with the previous release. Native loading illustrations and bulk world data load alongside artwork without resampling approved character sprites.",
+        "Made startup and the dev console faster by decoding only needed character and monster artwork, sharing sprite previews, and removing duplicate scene builds and obsolete loading warmups.",
+        "Added a memory-limited cache for recent outdoor locations, with a smaller phone budget. Revisits restore navigation, water, weather, lighting and reflections, while story, graphics-quality and journey changes invalidate old scenery.",
+        "Shortened manual battle-environment handoffs and compiled only visible arena materials. A complete scenery-readiness gate keeps transitions covered until backgrounds, textures and cropped stone details are ready; cinematic reveals retain their full camera paths.",
+        "Accelerated exact road, front-door path and shoreline queries, and removed unnecessary building-clone serialization. World-map geometry prepares when first requested and is reused for later views and travel.",
+        "Completed Brookstead roof gables and timber joints, kept braces clear of windows, and improved the backs and sides of its houses. Refined foreground planting and scenery across all twenty battle environments to fit each habitat.",
+        "Smoothed overworld road approaches and sharp turns, protected bridge crossings and destination connections, and replaced repetitive riverbank stones with more varied weathered rock.",
+        "Strengthened circular grounding shadows beneath companions, townspeople and combatants, seated them on rendered paths and raised floors, and retained the overworld night-time shadow behavior.",
+        "Fixed targeting rings accumulating during cached scene visits and houses remaining hidden after returning from combat. Checked all twenty battle stages on desktop and phone layouts, cached visits, inn returns, original-journey restoration and native sprite downloads."
+      ]
+    },
     {
       "version": "Alpha Version 1.32",
       "date": "November 12, 2026",
@@ -720,15 +736,18 @@
     "backgroundMatchedBattleSurfaces": 20,
     "separableGaussianBattleBlur": true,
     "separableGaussianWorldFocus": true,
-    "daytimeCircularPartyContacts": true
+    "daytimeCircularPartyContacts": true,
+    "groundedCircularFighterContacts": true,
+    "variedWeatheredRiverRocks": true,
+    "naturalRoadApproaches": true,
+    "cachedSceneCutawayRestoration": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v132/verification.json",
-    "sha256": "20b1701eba8d3dfe8e5644f2594185bcf0cca50bb31db0742908356917496d93",
+    "file": "elyndor/previews/release-v133/verification.json",
+    "sha256": "5ada6aa4b3220a81e2f2a84b2dcca468283a69208e809f42080389731b832cc6",
     "finalRelease": "PASS",
-    "battleLightingVariants": 60,
-    "cameraPoses": 480,
-    "touchPhoneCases": 50,
+    "battleEnvironments": 20,
+    "desktopAndPhone": true,
     "runtimeMatchesTestedLocalExceptChangelog": true
   },
   "performance": {
@@ -748,11 +767,17 @@
     },
     "atlas": "Retained completed continent; reusable full-resolution depth target with quarter-resolution bloom",
     "battleScenery": "Batched geometry and wind-driven instances; native stage albedo decoded on demand; four background plates retained",
-    "focus": "Reusable half-resolution separable Gaussian targets; depth-aware focus preserves the action plane and native interface"
+    "focus": "Reusable half-resolution separable Gaussian targets; depth-aware focus preserves the action plane and native interface",
+    "initialWorldData": "Losslessly compressed same-origin world bake, with plain JSON fallback and concurrent native artwork loading",
+    "poiCache": "One inactive outdoor location; 128 MB desktop / 64 MB touch-phone buffer cap; story, graphics-quality and journey invalidation",
+    "battlePreparation": "Visible arena materials linked against the real HDR target; complete scenery-ready gate; shorter manual tester handoffs",
+    "exactQueries": "Bounding hierarchies for roads and shoreline contacts; spatial front-door path lookup",
+    "devConsole": "Shared native decoded sprite previews; repeated identical scenes reposition without rebuilding",
+    "startupHtmlReductionPercent": 61.3
   },
   "previousPublishedRelease": {
-    "commit": "27ae9f542e89992d2527287a8b747d873a4937b2",
-    "version": "Alpha Version 1.31",
-    "sha256": "714f93f7654e39dbe71edfe8f8f73eeb4b90140bfc8b4c899cbd873671fa30f8"
+    "commit": "a32b8cf0a36498cb8cfc1b2156be05b9783e4ddb",
+    "version": "Alpha Version 1.32",
+    "sha256": "d3a04194c3e7d21179bb719fef04e94421e4ab7c85649d95e56be3e858c8185c"
   }
 }

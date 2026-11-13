@@ -281,7 +281,14 @@
       "systems/battle-scene-integration.js",
       "systems/battle-surface-palettes.js",
       "systems/battle-surface-library.js",
-      "systems/brookstead-gardens.js"
+      "systems/brookstead-gardens.js",
+      "systems/habitat-art-pass.js",
+      "systems/travel-scenery-refinement.js",
+      "systems/battle-foreground-refinement.js",
+      "systems/battle-contact-shadows.js",
+        "systems/loading-performance.js",
+      "systems/water-query-speed.js",
+      "systems/location-cache.js"
     ]
   },
   "styles": [

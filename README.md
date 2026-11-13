@@ -2,6 +2,22 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.33 — Faster journeys and refined battlefields
+
+November 12, 2026
+
+- Reduced the initial game page by about 61% compared with the previous release. Native loading illustrations and bulk world data load alongside artwork without resampling approved character sprites.
+- Made startup and the dev console faster by decoding only needed character and monster artwork, sharing sprite previews, and removing duplicate scene builds and obsolete loading warmups.
+- Added a memory-limited cache for recent outdoor locations, with a smaller phone budget. Revisits restore navigation, water, weather, lighting and reflections, while story, graphics-quality and journey changes invalidate old scenery.
+- Shortened manual battle-environment handoffs and compiled only visible arena materials. A complete scenery-readiness gate keeps transitions covered until backgrounds, textures and cropped stone details are ready; cinematic reveals retain their full camera paths.
+- Accelerated exact road, front-door path and shoreline queries, and removed unnecessary building-clone serialization. World-map geometry prepares when first requested and is reused for later views and travel.
+- Completed Brookstead roof gables and timber joints, kept braces clear of windows, and improved the backs and sides of its houses. Refined foreground planting and scenery across all twenty battle environments to fit each habitat.
+- Smoothed overworld road approaches and sharp turns, protected bridge crossings and destination connections, and replaced repetitive riverbank stones with more varied weathered rock.
+- Strengthened circular grounding shadows beneath companions, townspeople and combatants, seated them on rendered paths and raised floors, and retained the overworld night-time shadow behavior.
+- Fixed targeting rings accumulating during cached scene visits and houses remaining hidden after returning from combat. Checked all twenty battle stages on desktop and phone layouts, cached visits, inn returns, original-journey restoration and native sprite downloads.
+
+Release evidence: `elyndor/previews/release-v133/verification.json`. Timing results are local native-Chrome benchmarks; phone checks use browser emulation.
+
 ## Alpha Version 1.32 — Cohesive battle surfaces and a polished Brookstead
 
 November 12, 2026

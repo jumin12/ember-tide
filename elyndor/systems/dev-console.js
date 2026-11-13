@@ -57,7 +57,12 @@ async function startDevSession60(){
  title19.stopped=true;if(title19.task)await title19.task;await devWait60(()=>!gameLoading&&!sceneSwitchPending&&!poiFade.active);
  if(battle||dialogue||eventAction||restoration||transition||campaignEvents.active)throw Error('Finish the current battle, conversation or event before starting a test session.');
  q.original={state,copy:JSON.parse(JSON.stringify(state)),scene:state.scene,point:player?[player.x,player.z]:null,title:{scene:title19.scene,focus:title19.focus?[...title19.focus]:null,age:title19.age,index:title19.index,bag:[...title19.bag],tab:title19.tab},titleVisible:!$('#title').classList.contains('hidden'),pending:saveManager.pending};
- q.active=true;saveManager.pending=false;await startJourney();await devWait60(()=>!gameLoading&&!sceneSwitchPending&&!poiFade.active);clearDevTransient60();
+ q.active=true;saveManager.pending=false;clearDevTransient60();
+ // A test needs a temporary record, not a second construction of the opening
+ // town and its scripted dialogue. The requested tester owns scene loading.
+ const settings={...state.settings};state=initialState();state.version=4;state.worldFormat=1;state.settings=settings;
+ state.scene=q.original.scene;state.poi=activeScene.key;state.lastScene=state.scene;state.restoredLights=[];state.explored=[];
+ $('#title').classList.add('hidden');$('#hud').classList.remove('hidden');initAudio();
  state.mode='explore';state.flags.prologue_complete=state.flags.combat_tutorial_complete=true;state.beat=BEATS.findIndex(b=>b[0]==='travelFern');state.encounterDistance=-1e9;state.trackedQuest=null;state.trackedPoi=null;tutorialState16().hidden=mentorState17().hidden=true;updateGuide16();
  state.members=['bren','soren','mira','lysa'];state.reserveMembers=['tavin'];for(const id of Object.keys(CAST)){state.characters[id].level=3;state.flags[id+'_awakened']=true;}setupParty([player.x,player.z]);restoreParty();updateHUD();resetSimulation();
 }
@@ -72,14 +77,15 @@ async function devGoScene60(force=false){
  const q=devConsole60;if(q.location==='current')return;
  const matches=q.location==='overworld'?activeScene?.kind==='overworld'&&q.loadedRegion===q.region:q.location.startsWith('poi:')?activeScene?.kind==='poi'&&activeScene.key===q.location.slice(4):activeScene?.kind==='interior'&&activeScene.key===q.location.slice(5);
  if(!force&&q.loadedLocation===q.location&&matches)return;
+ const reuse=q.loadedLocation===q.location&&matches;
  if(q.location==='overworld'){
-  const p=POIS[q.region];if(!p)throw Error('Choose a valid overworld region.');if(activeScene?.kind!=='overworld'||force){await changeJourneyScene('overworld',[p.node[0],p.node[1]+16]);await devWait60(()=>!gameLoading&&!sceneSwitchPending&&!poiFade.active);}
+  const p=POIS[q.region];if(!p)throw Error('Choose a valid overworld region.');if(activeScene?.kind!=='overworld'||force&&!reuse){await changeJourneyScene('overworld',[p.node[0],p.node[1]+16]);await devWait60(()=>!gameLoading&&!sceneSwitchPending&&!poiFade.active);}
   const point=safePoint({x:p.node[0],z:p.node[1]+16},actorRadius(player)+.1);setupParty([point.x,point.z]);q.loadedRegion=q.region;
  }else if(q.location.startsWith('poi:')){
-  const key=q.location.slice(4),p=POIS[key];if(!p)throw Error('Choose a valid point of interest.');await changeJourneyScene(p.id,p.spawn);await devWait60(()=>!gameLoading&&!sceneSwitchPending&&!poiFade.active);
+  const key=q.location.slice(4),p=POIS[key];if(!p)throw Error('Choose a valid point of interest.');if(reuse)setupParty(p.spawn);else await changeJourneyScene(p.id,p.spawn);await devWait60(()=>!gameLoading&&!sceneSwitchPending&&!poiFade.active);
   if(q.spawn==='court'){const a=JRPG_LAYOUTS46[key]?.courts?.[0],point=key==='brookstead'?safePoint({x:-121,z:106}):a?safePoint({x:a[0],z:a[1]+9}):null;if(point)setupParty([point.x,point.z]);}
  }else if(q.location.startsWith('room:')){
-  const key=q.location.slice(5),room=INTERIORS[key];if(!room||!SCENES[key])throw Error('Choose a valid interior.');const poi=POIS[room.poi];state.interiorReturn={id:poi.id,poi:room.poi,spawn:[...poi.spawn]};await changeJourneyScene(key,[0,5]);await devWait60(()=>!gameLoading&&!sceneSwitchPending&&!poiFade.active);
+  const key=q.location.slice(5),room=INTERIORS[key];if(!room||!SCENES[key])throw Error('Choose a valid interior.');const poi=POIS[room.poi];state.interiorReturn={id:poi.id,poi:room.poi,spawn:[...poi.spawn]};if(reuse)setupParty([0,5]);else await changeJourneyScene(key,[0,5]);await devWait60(()=>!gameLoading&&!sceneSwitchPending&&!poiFade.active);
  }else throw Error('Choose a valid test location.');
  clearDevTransient60();state.mode='explore';state.encounterDistance=-1e9;
  q.loadedLocation=q.location;

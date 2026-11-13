@@ -9,6 +9,7 @@ from battle_props_v101 import add_battle_props101
 from world_materials_v102 import pack_world_materials102
 from environment_materials_v103 import pack_environment103
 from runtime_assets_v116 import externalize_runtime116
+from runtime_assets_v136 import package_runtime136, runtime_file136
 import json,hashlib,base64,io,sys,importlib.util,time
 ROOT=Path(__file__).resolve().parents[2];SRC=ROOT/'elyndor/assets/source/pixellab-v7'
 OUT=ROOT/'elyndor/assets/packed';OUT.mkdir(parents=True,exist_ok=True)
@@ -64,6 +65,7 @@ def main():
  parts={key:'\n'.join(read(n) for n in names) for key,names in graph['sections'].items()}
  parts.update({'STYLE':'\n'.join(read(n) for n in graph['styles']),
    'THREE':(ROOT/'three.vendor.js').read_text(encoding='utf-8'),'ASSETS':'window.__assetBundle36','BOOT_ASSETS':package_assets36(assets)})
+ package_runtime136(ROOT,parts,bake)
  if len([n for names in graph['sections'].values() for n in names])!=len({n for names in graph['sections'].values() for n in names}):raise ValueError('Duplicate modules in the build graph')
  shots=manifest.get('loadingScreens',{})
  fresh_shots=ROOT/'elyndor/assets/source/environment-pbr-v103/loading/manifest.json'
@@ -77,7 +79,7 @@ def main():
   with Image.open(ROOT/q['file']) as im:
    if im.width<640 or im.height<360:raise ValueError('Loading illustrations must retain their full native resolution')
    im.verify()
- parts['LOADING_SCENES']=''.join('<figure class="'+('lore-active' if i==0 else '')+'" data-lore="'+key+'" style="--scene:'+str(i)+'"><img src="data:image/webp;base64,'+base64.b64encode((ROOT/q['file']).read_bytes()).decode()+'" alt="'+q['name']+'"><figcaption>'+q['name']+'</figcaption></figure>' for i,(key,q) in enumerate(shots.items()))
+ parts['LOADING_SCENES']=''.join('<figure class="'+('lore-active' if i==0 else '')+'" data-lore="'+key+'" style="--scene:'+str(i)+'"><img src="'+runtime_file136(ROOT,(ROOT/q['file']).read_bytes(),'webp')+'" alt="'+q['name']+'"><figcaption>'+q['name']+'</figcaption></figure>' for i,(key,q) in enumerate(shots.items()))
  parts['BRAND_CRYSTAL']=assets['images']['ui26_logo']
  src=read('index.source.html')
  for key,value in parts.items():src=src.replace('/*__'+key+'__*/',value)

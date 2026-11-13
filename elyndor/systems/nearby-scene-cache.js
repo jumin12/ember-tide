@@ -18,10 +18,11 @@ function restoreNearby69(q){
 }
 function discardNearby69(){
  if(!nearbyScene69.saved)return;const current=captureNearby69(),old=nearbyScene69.saved;nearbyScene69.saved=null;
- restoreNearby69(old);releaseNearbyResources69(old);disposeContinuousWorld();restoreNearby69(current);nearbyScene69.released++;
+ holdNearbyResources69(current);try{restoreNearby69(old);releaseNearbyResources69(old);disposeContinuousWorld();}finally{restoreNearby69(current);releaseNearbyResources69(current);}nearbyScene69.released++;
 }
 const nearbyBuildBefore69=buildWorld;
 buildWorld=function(id='approach',spawn=null,...args){
+ if(typeof restorePoi137==='function'&&restorePoi137(id,spawn))return;
  const next=scenePlan(id),saved=nearbyScene69.saved,returning=saved&&activeScene?.kind==='interior'&&next.kind==='poi'&&next.key===saved.activeScene.key&&state.mode!=='title';
  if(returning){
   disposeContinuousWorld();restoreNearby69(saved);releaseNearbyResources69(saved);nearbyScene69.saved=null;state.scene=id;state.poi=activeScene.key;state.lastScene=id;
@@ -31,7 +32,7 @@ buildWorld=function(id='approach',spawn=null,...args){
  const holding=activeScene?.kind==='poi'&&next.kind==='interior'&&INTERIORS[next.key]?.poi===activeScene.key&&state.mode!=='title';
  if(saved)discardNearby69();
  if(!holding)return nearbyBuildBefore69(id,spawn,...args);
- nearbyScene69.saved=captureNearby69();holdNearbyResources69(nearbyScene69.saved);const dispose=disposeContinuousWorld;disposeContinuousWorld=()=>scene.remove(world);
+ nearbyScene69.saved=captureNearby69();holdNearbyResources69(nearbyScene69.saved);detachLocationGlobals137();const dispose=disposeContinuousWorld;disposeContinuousWorld=()=>scene.remove(world);
  try{return nearbyBuildBefore69(id,spawn,...args);}finally{disposeContinuousWorld=dispose;}
 };
 

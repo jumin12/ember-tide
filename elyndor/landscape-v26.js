@@ -40,6 +40,13 @@ function sameForest26(entries,kind,parent){
  const g=forestGeometry(kind).clone();g.setAttribute('treeKind',new THREE.InstancedBufferAttribute(new Float32Array(entries.length).fill(kind==='trunk'?1:kind==='pine'?2:0),1));
  const m=copyLandscapeMaterial26(source.material),o=new THREE.InstancedMesh(g,m,entries.length);entries.forEach((p,i)=>{o.setMatrixAt(i,p);o.setColorAt(i,new THREE.Color(kind==='trunk'?'#a59b86':kind==='pine'?'#aec6b5':'#e0edcd'));});o.receiveShadow=true;o.castShadow=false;o.computeBoundingSphere();o.userData.distantScenery26=true;o.userData.foregroundForest26=true;parent.add(o);
 }
+// These display clones immediately replace every userData record. Excluding
+// that metadata avoids serializing referenced roof meshes, materials and HD
+// canvas textures to JSON/base64 merely to discard them on the next line.
+function cloneDistantHouse136(source){
+ const records=[];source.traverse(o=>{records.push([o,o.userData]);o.userData={};});
+ try{return source.clone(true);}finally{for(const [o,data]of records)o.userData=data;}
+}
 dressDistantLandscape26=function(){
  if(activeScene.kind==='interior')return;const q=world.userData.landscape26;if(!q)return;const group=q.group,b=activeScene.bounds,rng=seeded(261030+[...activeScene.key].reduce((a,c)=>a+c.charCodeAt(0),0)),macro=activeScene.kind==='overworld';
  const trees={oak:[],pine:[],trunk:[]},sites=[],sources=(world.userData.buildings??[]).filter(g=>g.userData.brookHouse&&g.userData.kind==='home'),plots=[];
@@ -48,7 +55,7 @@ dressDistantLandscape26=function(){
   const side=i%4,t=rng(),d=20+rng()*190,x=side===0?mix(b[0],b[1],t):side===1?b[1]+d:side===2?mix(b[1],b[0],t):b[0]-d,z=side===0?b[2]-d:side===1?mix(b[2],b[3],t):side===2?b[3]+d:mix(b[3],b[2],t);
   if(roadDistance(x,z)<10||plots.some(p=>Math.hypot(p.x-x,p.z-z)<28)||activeScene.key==='brookstead'&&Math.abs(x-brookChannel(z))<20)continue;
   const ys=[[-5,-4],[-5,4],[5,-4],[5,4],[0,0]].map(([dx,dz])=>landscapeGround26(x+dx,z+dz));if(Math.min(...ys)<0||Math.max(...ys)-Math.min(...ys)>.85)continue;
-  const original=sources[plots.length%sources.length],g=original.clone(true),y=Math.min(...ys)-.08;g.position.set(x,y,z);g.userData={distantScenery26:true,foregroundHouse26:true};
+  const original=sources[plots.length%sources.length],g=cloneDistantHouse136(original),y=Math.min(...ys)-.08;g.position.set(x,y,z);g.userData={distantScenery26:true,foregroundHouse26:true};
   g.traverse(o=>{o.matrixAutoUpdate=true;o.matrixWorldAutoUpdate=true;o.userData={distantScenery26:true};if(o.isMesh){o.onBeforeRender=()=>{};o.onAfterRender=()=>{};o.geometry.drawRange.count=Infinity;o.castShadow=false;o.receiveShadow=true;}});group.add(g);plots.push({x,y,z,source:original.position.toArray()});
  }
  const count=macro?0:state.settings.quality==='low'?380:900;

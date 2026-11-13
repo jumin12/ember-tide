@@ -17,13 +17,13 @@ const retainedBuildBefore68=buildWorld;
 buildWorld=function(id='approach',spawn=null,...args){
  const isWorld=scenePlan(id).kind==='overworld';
  if(isWorld&&continent68.saved&&!continent68.warming){
-  if(world!==continent68.saved.world)disposeContinuousWorld();restoreScene68(continent68.saved);
+  if(world!==continent68.saved.world)disposeContinuousWorld();restoreNearby69(continent68.saved);
   state.scene='overworld';state.poi='overworld';state.lastScene='overworld';const p=spawn??state.overworldPosition??PLACES.overworld;
   setupParty(p);initCombatVfx();openWorldReady=true;sceneStats.loads++;continent68.hits++;
   updateLighting();updateCamera(1,true);updateHUD();return;
  }
  const retain=activeScene?.kind==='overworld'&&!isWorld&&!continent68.warming;
- if(retain)continent68.saved=captureScene68();
+ if(retain){continent68.saved=captureNearby69();detachLocationGlobals137();}
  const dispose=disposeContinuousWorld;if(retain)disposeContinuousWorld=()=>scene.remove(world);
  try{return retainedBuildBefore68(id,spawn,...args);}finally{disposeContinuousWorld=dispose;}
 };
@@ -31,13 +31,13 @@ buildWorld=function(id='approach',spawn=null,...args){
 // the title village. Travel no longer pays this construction cost under black.
 warmDestinationPrograms64=async function(){
  if(destinationWarm64.ready)return;destinationWarm64.ready=true;continent68.warming=true;
- const original=captureScene68(),saved={scene:state.scene,poi:state.poi,lastScene:state.lastScene,mode:state.mode},dispose=disposeContinuousWorld;
+ const original=captureNearby69(),saved={scene:state.scene,poi:state.poi,lastScene:state.lastScene,mode:state.mode},dispose=disposeContinuousWorld;
  try{
-  setLoadStage36(.98,'Preparing the connected continent…');await yieldLoad36();disposeContinuousWorld=()=>scene.remove(world);state.mode='explore';
+  setLoadStage36(.98,'Preparing the connected continent…');await yieldLoad36();disposeContinuousWorld=()=>scene.remove(world);detachLocationGlobals137();state.mode='explore';
   buildWorld('overworld',[POIS.brookstead.node[0],POIS.brookstead.node[1]+16]);updateCamera(1,true);updateLighting();updateRenderBudget(true);renderBeforeLoadingGate();
-  continent68.saved=captureScene68();pinPrograms36();destinationWarm64.scenes=['retained connected continent'];destinationWarm64.programs=sceneProgramKeepers.size;
+  continent68.saved=captureNearby69();pinPrograms36();destinationWarm64.scenes=['retained connected continent'];destinationWarm64.programs=sceneProgramKeepers.size;
   await yieldLoad36();
- }finally{scene.remove(world);disposeContinuousWorld=dispose;Object.assign(state,saved);restoreScene68(original);continent68.warming=false;updateLighting();updateCamera(1,true);updateHUD();loading36.readyWorld=world;}
+ }finally{scene.remove(world);disposeContinuousWorld=dispose;Object.assign(state,saved);restoreNearby69(original);continent68.warming=false;updateLighting();updateCamera(1,true);updateHUD();loading36.readyWorld=world;}
 };
 // The handoff's final covered frame owns destination painting. Legacy arrival
 // wrappers still settle cameras/actors, but do not render the same scene three

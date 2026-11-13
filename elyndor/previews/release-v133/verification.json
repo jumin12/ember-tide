@@ -1,0 +1,87 @@
+{
+  "version": "Alpha Version 1.33",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7056183,
+    "sha256": "19780f19eaad50e63b478de23adf43f1dc7c675b85b7a19016231a6b8c605094",
+    "offline": false,
+    "delivery": "HTML with same-origin native artwork and losslessly compressed world data"
+  },
+  "finalRelease": "PASS",
+  "runtimeMatchesTestedLocalExceptChangelog": true,
+  "checks": {
+    "desktop20Stages": true,
+    "phone20Stages": true,
+    "phoneCacheLifecycle": true,
+    "finalCachedRevisits": true,
+    "finalStandardBursts": true,
+    "exactWaterMath": true,
+    "exactNativeShoreline": true,
+    "releaseChangelogAndMovement": true
+  },
+  "battleEnvironments": 20,
+  "spritePreviews": 43,
+  "nativeSpriteFrameAndAnimationDownloads": true,
+  "cutawayMeshesVerified": 40,
+  "worldDataGzipMatchesPlain": true,
+  "runtimeDependencies": 1024,
+  "source": {
+    "elyndor/build-manifest.json": "5604f7d9569d9848f33a481da9ce9ba0c92f0c5d6b3e86c074feada264ffe117",
+    "elyndor/game.js": "f99cf514f00533d385ef380ab6534c590edc1ec8e9d8d7ca9aa00b1d48f905e5",
+    "elyndor/landscape-v26.js": "bd94ea147795f9168e2669becf6cd7ee9e85e059586233021e39f303ad2b91dc",
+    "elyndor/open-world.js": "dda16f21ce9781b38fdcc9e6543677eb40cfacbaa6b00f635449c9e80d7a8f65",
+    "elyndor/runtime-v33.js": "ad2c425075d25cc3b5b848973ae2e2f4a0887f34c88f4be700725877c1fb17f6",
+    "elyndor/systems/battle-contact-shadows.js": "f298bbb0ca03338b84936451d5f6567d106fa214360d007ee541470adb370d2d",
+    "elyndor/systems/battle-foreground-refinement.js": "acba6127483985be928771f852ca5f88a498aec1e52ee67fb62fedd4c3ca249f",
+    "elyndor/systems/battle-stages.js": "4111b63bada6c4c34f54d483d6c0f0924a5eaed72270a05c0ea553edaaf5ecb3",
+    "elyndor/systems/brookstead-architecture.js": "1f55a8d63ae0e5d671f65c3bbd16251e301902e98df0ac6a86f5308ba250149d",
+    "elyndor/systems/dev-console.js": "a026f50ccaab9578f6566931f511f908653135ca05867f51ad15524e33c1676d",
+    "elyndor/systems/dev-sprites.js": "654cec883b65403777b673f2be10c9eda02ca3b56342f844456441092ff36e04",
+    "elyndor/systems/exploration-review.js": "90787b0a73e76de7ac0b0933b87e6b5d5bd45d229f7655cce9528342793569af",
+    "elyndor/systems/habitat-art-pass.js": "21cd2cbec883edc615b6a2a47948aa2712720a1c41d613ba4bbb0805f3db1fa4",
+    "elyndor/systems/loading-performance.js": "3e049ba77293e83eb264c0647a3df09485bbb5a8f72d8dfa6cbe74df1e0e18cd",
+    "elyndor/systems/location-cache.js": "33f59c1206f0dc36e5c0881868812022ff241101a6020b25e4f8539fc895cdcd",
+    "elyndor/systems/mobile-startup.js": "3b0de064f8d96b63f941f76a391186a6a2feb32d531f181b1103d86db3095842",
+    "elyndor/systems/nearby-scene-cache.js": "e745d35289bb0a6d04bb27ad4f5af88da0d1f35b3182202a4570f2f15e4ed79c",
+    "elyndor/systems/retained-continent.js": "90d321c42caa3eb4669475348eb2528ffafc06aadb4b905156b8c6e273164a48",
+    "elyndor/systems/travel-scenery-refinement.js": "e2f68dafe884550b972446632962f26684433b166325d63280d76459a362bcf2",
+    "elyndor/systems/village-frontages.js": "60aacfe75d217c6996482803428a32debd135c198dd275d57d42ae4863a93e2f",
+    "elyndor/systems/water-query-speed.js": "38605a984c7161b44bb17d65f3b3a13702573c72f3c1f0defa91610b1294fd1e",
+    "elyndor/title-v19.js": "a1ed232372c920f0afda2ad957c00fac21c6b5b802f0034bca3b7351f19a636f",
+    "elyndor/tools/battle_golden_v121.py": "d2a256af1e729a24529bb4984b7e38f01057dcab5ca808847607709b6164cd74",
+    "elyndor/tools/build-v7.py": "cd9ed05593c8017079a16cb2e62cf881277763de6d89077df0541936694faa36",
+    "elyndor/tools/runtime_assets_v136.py": "188960aae0f87e93e61d689276224ff8faf9bbb49e575fa3c865c621f4dafd33"
+  },
+  "benchmark": {
+    "startup": {
+      "beforeMs": 45889.3157,
+      "afterMs": 28134.274100000002,
+      "reductionPercent": 38.691014082827124
+    },
+    "firstBattle": {
+      "beforeMs": 4570.569499999998,
+      "afterMs": 3711.286799999998,
+      "reductionPercent": 18.800342058030196
+    },
+    "battleSwitchAverage": {
+      "beforeMs": 2087.463775,
+      "afterMs": 1573.6723000000002,
+      "reductionPercent": 24.613192389410443
+    },
+    "brookRevisit": {
+      "beforeMs": 9371.657699999996,
+      "afterMs": 858.0555999999997,
+      "reductionPercent": 90.84414276035712
+    },
+    "fernRevisit": {
+      "beforeMs": 2627.8438000000024,
+      "afterMs": 694.779300000002,
+      "reductionPercent": 73.56086004807435
+    }
+  },
+  "pageBytes": {
+    "previousPublished": 18222894,
+    "current": 7056183
+  },
+  "scope": "Native Chrome on this PC and browser-emulated touch-phone layouts. Timing depends on device and workload; no physical-phone or universal-frame-rate claim."
+}

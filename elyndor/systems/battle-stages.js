@@ -166,7 +166,7 @@ function advanceEncounterCover53(dt){
   if(q.phase==='enter'){
    activateStage53(q.selected);stageBeginBefore53(q.entryKind87??'random');battle.stage53=q.selected;q.homeXs=[player,...followers,...battle.enemies.map(e=>e.actor)].map(a=>a.x);battle.intro=.38;battle.started=clock;state.mode='encounter';
    for(const a of[player,...followers,...battle.enemies.map(e=>e.actor)]){updateActor(a,0);a.presentationPrevious=a.mesh.position.clone();a.presentationCurrent=a.mesh.position.clone();}
-   updateCamera(1,true);startBattleIntro58(true);renderer.compile(q.scene,camera);q.stats.entries++;
+   updateCamera(1,true);startBattleIntro58(true);prepareBattlePrograms137(q);q.stats.entries++;
   }else{
    deactivateStage53();stageEndBefore53(q.returnOutcome);q.returnOutcome=null;state.encounterDistance=0;for(const a of actors)updateActor(a,0);updateLighting();updateCamera(1,true);updateRenderBudget(true);state.mode='encounter';q.stats.returns++;
   }

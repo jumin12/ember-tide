@@ -15,7 +15,7 @@ function fitEnvironmentImage116(image,url,dataKind=false){
 async function loadImage116(url,label){
  for(let attempt=0;attempt<2;attempt++){
   const image=new Image();image.decoding='async';
-  try{await new Promise((resolve,reject)=>{const timer=setTimeout(()=>{image.onload=image.onerror=null;image.src='';reject(Error('Artwork request timed out: '+label));},30000);image.onload=()=>{clearTimeout(timer);image.onload=image.onerror=null;resolve();};image.onerror=()=>{clearTimeout(timer);image.onload=image.onerror=null;reject(Error('Could not load artwork: '+label));};image.src=url;});return image;}
+  try{await new Promise((resolve,reject)=>{const timer=setTimeout(()=>{image.onload=image.onerror=null;image.src='';reject(Error('Artwork request timed out: '+label));},30000);image.onload=()=>{clearTimeout(timer);image.onload=image.onerror=null;resolve();};image.onerror=()=>{clearTimeout(timer);image.onload=image.onerror=null;reject(Error('Could not load artwork: '+label));};image.src=url;});if(image.decode)await image.decode();return image;}
   catch(e){image.src='';if(attempt===1)throw e;await new Promise(r=>setTimeout(r,250));}
  }
 }
@@ -49,13 +49,12 @@ const graphicsBefore116=prepareGameplayGraphics;
 prepareGameplayGraphics=async function(...args){
  // A cached POI can restore its actors without calling createActor again.
  await Promise.all([...new Set(actors.filter(a=>a.mesh?.parent).map(a=>a.visualId??a.id))].map(ensureSprite116));await settleSprites116();trimSprites116();
- if(!mobileStartup116())return graphicsBefore116(...args);
  // Render only the destination being entered. Legacy warmup also builds an
  // unused continent and compiles every offscreen/battle geometry variation.
  if(!loading36.active)beginLoad36();setLoadStage36(.72,'Preparing this location…');await yieldLoad36();
  prepareSurface67();finishWorld102();completeArrival70();updateWorldWeather15(true);ensureCombatPointer15();initPixelRelease();
  await prepareSounds36();updateCamera(1,true);updateLighting();updateRenderBudget(true);
- settleArrival28();settleRequestTargets68();renderBeforeLoadingGate();pinPrograms36();
+ settleArrival28();settleRequestTargets68();await compileVisible136();renderBeforeLoadingGate();pinPrograms36();
  const gl=renderer.getContext(),fence=gl.fenceSync?.(gl.SYNC_GPU_COMMANDS_COMPLETE,0),deadline=performance.now()+2000;
  if(fence){gl.flush();try{while(gl.clientWaitSync(fence,0,0)===gl.TIMEOUT_EXPIRED&&performance.now()<deadline&&!gl.isContextLost())await yieldLoad36();}finally{gl.deleteSync(fence);}}
  if(gl.isContextLost())throw Error('Graphics memory was exhausted. Reload to retry.');
@@ -67,7 +66,7 @@ const rosterBefore116=encounterRoster;
 encounterRoster=function(kind,...args){const q=startup116.roster;if(q?.kind===kind){startup116.roster=null;return rank87.roster=q.rows;}return rosterBefore116(kind,...args);};
 const beginBattleBefore116=beginBattle;
 beginBattle=function(kind,...args){
- if(!mobileStartup116()||battle||gameLoading||startup116.battleTask||encounter53.phase!=='idle'||sceneSwitchPending||poiFade.active||dialogue||eventAction||transition||restoration)return beginBattleBefore116(kind,...args);
+ if(battle||gameLoading||startup116.battleTask||encounter53.phase!=='idle'||sceneSwitchPending||poiFade.active||dialogue||eventAction||transition||restoration)return beginBattleBefore116(kind,...args);
  const rows=rosterBefore116(kind),ids=[...new Set([...rows.map(q=>q[0]),...rows.map(q=>assets.sprites[q[0]+'Battle35']?q[0]+'Battle35':q[0]),...state.members.map(id=>id+'Ascended').filter(id=>assets.sprites[id])])];
  startup116.roster={kind,rows};
  const missing=ids.filter(id=>!spriteReady116(id));if(!missing.length)return beginBattleBefore116(kind,...args);
@@ -88,7 +87,7 @@ const continentWarmBefore116=warmDestinationPrograms64;
 warmDestinationPrograms64=async function(){if(mobileStartup116())return;return continentWarmBefore116();};
 const titleBefore116=switchTitleScene19;
 switchTitleScene19=async function(...args){
- if(mobileStartup116()&&!startup116.titleReused&&state.mode==='title'&&activeScene?.key==='brookstead'){
+ if(!startup116.titleReused&&state.mode==='title'&&activeScene?.key==='brookstead'){
   // Boot has already built and prepared this exact river prospect. Rebuilding
   // it for the first title view doubles town construction and peak memory.
   startup116.titleReused=true;title19.scene='brookstead';title19.focus=[-161,102];title19.age=0;
@@ -97,7 +96,7 @@ switchTitleScene19=async function(...args){
  return titleBefore116(...args);
 };
 const buildBefore116=buildWorld;
-buildWorld=function(...args){if(mobileStartup116()&&loading36.mapPreparation)return;startup116.building=(startup116.building??0)+1;try{return buildBefore116(...args);}finally{startup116.building--;}};
+buildWorld=function(...args){if(loading36.mapPreparation)return;startup116.building=(startup116.building??0)+1;try{return buildBefore116(...args);}finally{startup116.building--;}};
 // Cached-scene disposal can request a paint between removing its player and
 // seating the next party. That intermediate graph is never a visible frame.
 const coveredPaintBefore116=renderBeforeLoadingGate;
@@ -117,7 +116,7 @@ trailPoint=function(distance){
 };
 const menuBefore116=openMenu;
 openMenu=function(tab,...args){
- if(!mobileStartup116()||tab!=='map'||exactAtlas67.scene)return menuBefore116(tab,...args);
+ if(tab!=='map'||exactAtlas67.scene)return menuBefore116(tab,...args);
  if(startup116.mapTask)return startup116.mapTask;
  setJourneyLoading(true);setLoadStage36(.25,'Preparing the world map…');
  startup116.mapTask=(async()=>{try{await yieldLoad36();await continentWarmBefore116();await settleSprites116();setJourneyLoading(false);return menuBefore116(tab,...args);}catch(e){setJourneyLoading(false);$('#fatal-text').textContent=e.message;$('#fatal').classList.remove('hidden');}finally{startup116.mapTask=null;}})();return startup116.mapTask;

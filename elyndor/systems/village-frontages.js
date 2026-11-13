@@ -9,7 +9,19 @@ function streetLines110(){
  if(activeScene.key==='brookstead')for(const r of ROADS)lines.push(r.p);
  return lines.length?lines:[currentScene().path];
 }
-function nearestStreet110(x,z,lines){let best={x,z,d:Infinity};for(const line of lines)for(let i=1;i<line.length;i++){const a=line[i-1],b=line[i],dx=b[0]-a[0],dz=b[1]-a[1],l=dx*dx+dz*dz;if(l<1e-6)continue;const t=clamp(((x-a[0])*dx+(z-a[1])*dz)/l,0,1),px=a[0]+dx*t,pz=a[1]+dz*t,d=Math.hypot(x-px,z-pz);if(d<best.d)best={x:px,z:pz,d};}return best;}
+function scanNearestStreet136(x,z,lines){let best={x,z,d:Infinity};for(const line of lines)for(let i=1;i<line.length;i++){const a=line[i-1],b=line[i],dx=b[0]-a[0],dz=b[1]-a[1],l=dx*dx+dz*dz;if(l<1e-6)continue;const t=clamp(((x-a[0])*dx+(z-a[1])*dz)/l,0,1),px=a[0]+dx*t,pz=a[1]+dz*t,d=Math.hypot(x-px,z-pz);if(d<best.d)best={x:px,z:pz,d};}return best;}
+const streetQueries136=new WeakMap();
+function nearestStreet110(x,z,lines){
+ if(!world)return scanNearestStreet136(x,z,lines);
+ let cache=streetQueries136.get(world);
+ // Public lane arrays are replaced when the road layout changes. Compare
+ // their identities so no answers survive a different layout or destination.
+ if(!cache||cache.lines.length!==lines.length||cache.lines.some((line,i)=>line!==lines[i])){cache={lines:[...lines],points:new Map()};streetQueries136.set(world,cache);}
+ const key=x+','+z;let point=cache.points.get(key);
+ if(!point){point=scanNearestStreet136(x,z,lines);if(cache.points.size>=1024)cache.points.clear();cache.points.set(key,point);}
+ return{...point};
+}
+
 function frontagePoint110(g,angle,pad=1.9){const f=g.userData.footprint,dx=g.userData.architecture31?.door?.[0]??0,dz=f.d/2+pad;return{x:g.position.x+dx*Math.cos(angle)+dz*Math.sin(angle),z:g.position.z-dx*Math.sin(angle)+dz*Math.cos(angle)};}
 // The smith retains his established south-facing shop. Join the street in
 // front of the porch rather than choosing a closer lane behind its doorway.
@@ -68,10 +80,20 @@ function fitVillage110(){
   turnHouse110(g,choice.angle);const door=frontagePoint110(g,choice.angle,.42),route=[door,...choice.route];paths.push(frontagePath110(g,route));
   summary.push({kind:g.userData.kind,at:[g.position.x,g.position.z],front:g.userData.front.toArray(),connected:true,path:route.map(p=>[p.x,p.z]),road:[choice.road.x,choice.road.z]});
  }
- const nearPath=(x,z,pad=0)=>paths.some(q=>q.route.slice(1).some((b,i)=>segmentDistance(x,z,[q.route[i].x,q.route[i].z],[b.x,b.z])<q.width/2+pad));
+ // Plants only need an exact height test when they touch a front-door path.
+ // Index the short path segments once instead of scanning all of them for
+ // every blade/flower, then discard the index with this construction pass.
+ const pathCells137=new Map(),pathCell137=8,pathProof137={queries:0,tests:0,verified:0};
+ for(const q of paths)for(let i=1;i<q.route.length;i++){
+  const a=q.route[i-1],b=q.route[i],r=q.width/2+.2,edge={a:[a.x,a.z],b:[b.x,b.z],r};
+  for(let z=Math.floor((Math.min(a.z,b.z)-r)/pathCell137);z<=Math.floor((Math.max(a.z,b.z)+r)/pathCell137);z++)for(let x=Math.floor((Math.min(a.x,b.x)-r)/pathCell137);x<=Math.floor((Math.max(a.x,b.x)+r)/pathCell137);x++){const key=x+','+z;if(!pathCells137.has(key))pathCells137.set(key,[]);pathCells137.get(key).push(edge);}
+ }
+ const nearPath=(x,z)=>{pathProof137.queries++;const result=(pathCells137.get(Math.floor(x/pathCell137)+','+Math.floor(z/pathCell137))??[]).some(e=>{pathProof137.tests++;return segmentDistance(x,z,e.a,e.b)<e.r;});
+  if(window.__verifyWater137){const before=paths.some(q=>q.route.slice(1).some((b,i)=>segmentDistance(x,z,[q.route[i].x,q.route[i].z],[b.x,b.z])<q.width/2+.2));pathProof137.verified++;if(before!==result)throw Error('Front-door path query changed');}return result;};
+ world.userData.pathQueries137=pathProof137;
  // Keep windowsill planting; clear only low ground cover from the new walks.
  const matrix=new THREE.Matrix4(),zero=new THREE.Matrix4().makeScale(0,0,0);let cleared=0;
- for(const o of [...world.userData.plantMeshes??[],...world.userData.ecology104?.meshes??[]]){if(!o.isInstancedMesh)continue;for(let i=0;i<o.count;i++){o.getMatrixAt(i,matrix);const e=matrix.elements,x=e[12],z=e[14];if(e[13]>groundAt(x,z)+1.2||!nearPath(x,z,.2))continue;zero.setPosition(x,e[13],z);o.setMatrixAt(i,zero);if(o.userData.plantOriginal?.[i])o.userData.plantOriginal[i].copy(zero);cleared++;}o.instanceMatrix.needsUpdate=true;}
+ for(const o of [...world.userData.plantMeshes??[],...world.userData.ecology104?.meshes??[]]){if(!o.isInstancedMesh)continue;for(let i=0;i<o.count;i++){o.getMatrixAt(i,matrix);const e=matrix.elements,x=e[12],z=e[14];if(!nearPath(x,z)||e[13]>groundAt(x,z)+1.2)continue;zero.setPosition(x,e[13],z);o.setMatrixAt(i,zero);if(o.userData.plantOriginal?.[i])o.userData.plantOriginal[i].copy(zero);cleared++;}o.instanceMatrix.needsUpdate=true;}
  roadNavGraph=null;
  // Authored signs are fitted after wall batching has finished. This keeps
  // their native UVs, facing, depth and art independent of wall-atlas passes.

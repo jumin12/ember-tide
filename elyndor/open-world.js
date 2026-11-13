@@ -40,7 +40,30 @@ const ROAD_GRID=new Map();for(const s of ROAD_SEGMENTS)for(let x=Math.floor((s.m
 const TOWNS=[{id:'square',x:-98,z:83,r:42,h:1.3},{id:'fern',x:100,z:67,r:29,h:3.2},{id:'highmere',x:-70,z:-94,r:42,h:5.2},{id:'alder',x:127,z:-83,r:28,h:2.4},{id:'relief',x:24,z:-153,r:24,h:3.1}];
 let openWorldReady=false,worldBuildSerial=0,worldRevision=1,colliderGrid=new Map(),waypoint=null,restoration=null,worldLastArea=null;
 const openWorldDebug={builds:0,crossings:0,battles:0,restorations:0};
-function roadInfo(x,z){let squared=65*65,kind='trail';for(const q of ROAD_GRID.get(Math.floor(x/32)+','+Math.floor(z/32))??[]){const ax=q.a[0],az=q.a[1],bx=q.b[0],bz=q.b[1],boundX=Math.max(Math.min(ax,bx)-x,0,x-Math.max(ax,bx)),boundZ=Math.max(Math.min(az,bz)-z,0,z-Math.max(az,bz));if(boundX*boundX+boundZ*boundZ>=squared)continue;const dx=bx-ax,dz=bz-az,length=dx*dx+dz*dz,t=length?Math.max(0,Math.min(1,((x-ax)*dx+(z-az)*dz)/length)):0,ex=x-ax-dx*t,ez=z-az-dz*t,d=ex*ex+ez*ez;if(d<squared){squared=d;kind=q.kind;}}let d=Math.sqrt(squared);for(const t of TOWNS){const p=Math.max(0,Math.hypot(x-t.x,z-t.z)-(t.id==='highmere'?8:t.id==='square'?7:t.id==='fern'?6:4));if(p<d){d=p;kind='lane';}}return{d,kind};}
+// Exact nearest-road queries use a bounding hierarchy. The previous 32m grid
+// repeated hundreds of distant segments for each ground/vegetation sample.
+let roadTree136=null;
+function makeRoadTree136(rows){
+ const node={minX:Infinity,minZ:Infinity,maxX:-Infinity,maxZ:-Infinity};
+ for(const q of rows){node.minX=Math.min(node.minX,q.minX);node.minZ=Math.min(node.minZ,q.minZ);node.maxX=Math.max(node.maxX,q.maxX);node.maxZ=Math.max(node.maxZ,q.maxZ);}
+ if(rows.length<=8)node.rows=rows;
+ else{const axis=node.maxX-node.minX>=node.maxZ-node.minZ?'X':'Z';rows.sort((a,b)=>(a['min'+axis]+a['max'+axis])-(b['min'+axis]+b['max'+axis]));const n=rows.length>>1;node.left=makeRoadTree136(rows.slice(0,n));node.right=makeRoadTree136(rows.slice(n));}return node;
+}
+function roadInfo(x,z){
+ if(!roadTree136||roadTree136.first136!==ROAD_SEGMENTS[0]||roadTree136.last136!==ROAD_SEGMENTS.at(-1)||roadTree136.count136!==ROAD_SEGMENTS.length){
+  roadTree136=makeRoadTree136(ROAD_SEGMENTS.map((q,index)=>({...q,index,minX:Math.min(q.a[0],q.b[0]),maxX:Math.max(q.a[0],q.b[0]),minZ:Math.min(q.a[1],q.b[1]),maxZ:Math.max(q.a[1],q.b[1]),dx:q.b[0]-q.a[0],dz:q.b[1]-q.a[1]})));
+  roadTree136.first136=ROAD_SEGMENTS[0];roadTree136.last136=ROAD_SEGMENTS.at(-1);roadTree136.count136=ROAD_SEGMENTS.length;
+ }
+ let squared=65*65,kind='trail',best=Infinity;
+ const bound=n=>{const dx=Math.max(n.minX-x,0,x-n.maxX),dz=Math.max(n.minZ-z,0,z-n.maxZ);return dx*dx+dz*dz;};
+ const visit=n=>{
+  if(bound(n)>squared)return;
+  if(n.rows){for(const q of n.rows){if(bound(q)>squared)continue;const length=q.dx*q.dx+q.dz*q.dz,t=length?Math.max(0,Math.min(1,((x-q.a[0])*q.dx+(z-q.a[1])*q.dz)/length)):0,ex=x-q.a[0]-q.dx*t,ez=z-q.a[1]-q.dz*t,d=ex*ex+ez*ez;if(d<squared||d===squared&&best!==Infinity&&q.index<best){squared=d;kind=q.kind;best=q.index;}}}
+  else{const a=bound(n.left),b=bound(n.right);if(a<=b){if(a<=squared)visit(n.left);if(b<=squared)visit(n.right);}else{if(b<=squared)visit(n.right);if(a<=squared)visit(n.left);}}
+ };visit(roadTree136);
+ let d=Math.sqrt(squared);for(const t of TOWNS){const p=Math.max(0,Math.hypot(x-t.x,z-t.z)-(t.id==='highmere'?8:t.id==='square'?7:t.id==='fern'?6:4));if(p<d){d=p;kind='lane';}}return{d,kind};
+}
+const nearestRoad136=roadInfo;
 roadDistance=(x,z)=>roadInfo(x,z).d;
 function riverX(z){return -43+Math.sin(z*.017)*17+Math.sin(z*.039)*4;}
 function riverWidth(z){return 5.5+Math.sin(z*.013)*1.5;}
