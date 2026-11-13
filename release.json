@@ -1,31 +1,51 @@
 {
-  "release": "elyndor-alpha-1.33-faster-journeys-refined-battlefields-2026-11-12",
-  "version": "Alpha Version 1.33",
+  "release": "elyndor-alpha-1.34-home-and-cinematic-combat-2026-11-13",
+  "version": "Alpha Version 1.34",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 7056183,
-    "sha256": "19780f19eaad50e63b478de23adf43f1dc7c675b85b7a19016231a6b8c605094",
+    "bytes": 7406592,
+    "sha256": "b38a7643720d1061481e1ebcaa75414faeea8bd7abec7d33e9d427c62084ceef",
     "offline": false,
-    "delivery": "HTML with same-origin native artwork and losslessly compressed world data"
+    "delivery": "HTML with same-origin content-addressed native art, device-sized scenery and compressed world data"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "a32b8cf0a36498cb8cfc1b2156be05b9783e4ddb"
+    "previousRelease": "d9b9af5d237afa354d04c762c0eb77ffaded59d3"
   },
   "changes": [
-    "Reduced the initial game page by about 61% compared with the previous release. Native loading illustrations and bulk world data load alongside artwork without resampling approved character sprites.",
-    "Made startup and the dev console faster by decoding only needed character and monster artwork, sharing sprite previews, and removing duplicate scene builds and obsolete loading warmups.",
-    "Added a memory-limited cache for recent outdoor locations, with a smaller phone budget. Revisits restore navigation, water, weather, lighting and reflections, while story, graphics-quality and journey changes invalidate old scenery.",
-    "Shortened manual battle-environment handoffs and compiled only visible arena materials. A complete scenery-readiness gate keeps transitions covered until backgrounds, textures and cropped stone details are ready; cinematic reveals retain their full camera paths.",
-    "Accelerated exact road, front-door path and shoreline queries, and removed unnecessary building-clone serialization. World-map geometry prepares when first requested and is reused for later views and travel.",
-    "Completed Brookstead roof gables and timber joints, kept braces clear of windows, and improved the backs and sides of its houses. Refined foreground planting and scenery across all twenty battle environments to fit each habitat.",
-    "Smoothed overworld road approaches and sharp turns, protected bridge crossings and destination connections, and replaced repetitive riverbank stones with more varied weathered rock.",
-    "Strengthened circular grounding shadows beneath companions, townspeople and combatants, seated them on rendered paths and raised floors, and retained the overworld night-time shadow behavior.",
-    "Fixed targeting rings accumulating during cached scene visits and houses remaining hidden after returning from combat. Checked all twenty battle stages on desktop and phone layouts, cached visits, inn returns, original-journey restoration and native sprite downloads."
+    "Added one player-owned home with six regional styles, three room layouts, and a separate tree-surrounded yard. Azarith and an animated portal in each settlement provide travel to the private home.",
+    "Homes start empty. Place, rotate, move and remove collected furniture, wall decorations, tabletop items and trophies; placement checks protect entrances, walkways and usable surfaces. Housing ownership and arrangements persist with the journey.",
+    "Customize interior walls, colors and fireplace stone, plus exterior walls, roofing and timber trim. Decorate the enclosed garden with benches, planters, lanterns and ornaments while preserving house and portal access.",
+    "Refined town portal placement and grounded their bases on clear native terrain without extra paving circles. Placed Brookstead’s portal between its left lower stairways, kept paths clear, and corrected mismatched house timber joints.",
+    "Rebuilt timed attacks as a cinematic three-hit chain: a normal-speed opening, slower linked strikes after the first successful hit, and an immediate return to normal speed and color at the finishing impact. Touch, E and Space controls remain available.",
+    "Integrated 52 reviewed native PixelLab frames for Bren’s straight slash, airborne overhead, rising uppercut and grounded finishing lunge. Corrected duplicate blades and artifacts while preserving his approved movement, idle and other combat art.",
+    "Added animated blue sword crescents, moving gold impact sparks, suspended fragments, a ground-level sweep and finishing dust. Blue blade light and warm impact light illuminate nearby grass, ground, rocks and props in both arena and town battles.",
+    "Synchronized attack poses, projectiles, enemy reactions and damage contacts. Pause freezes the sequence; missed or expired inputs, held keys and defeated targets recover safely without changing the established damage rules.",
+    "Reduced hosted startup downloads with content-addressed desktop and phone scenery variants, GPU-compressed normal and roughness arrays with a texture fallback, and deferred continent vegetation, unused loading pictures and nonessential audio. Native character and UI pixels remain unchanged.",
+    "Accelerated exact ground-height queries and bounded reflection and shadow updates while refreshing on relevant camera, scene and water changes. Kept on-demand scenery loading and cache limits for desktop and phones.",
+    "Checked housing persistence and placement, all six portal approaches, desktop and phone layouts, combat timing and damage, both rendering paths, and actual local blue and gold environmental lighting. Existing journeys and the original combat camera remain supported."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.34",
+      "date": "November 13, 2026",
+      "title": "A home in Valenne and cinematic combat",
+      "items": [
+        "Added one player-owned home with six regional styles, three room layouts, and a separate tree-surrounded yard. Azarith and an animated portal in each settlement provide travel to the private home.",
+        "Homes start empty. Place, rotate, move and remove collected furniture, wall decorations, tabletop items and trophies; placement checks protect entrances, walkways and usable surfaces. Housing ownership and arrangements persist with the journey.",
+        "Customize interior walls, colors and fireplace stone, plus exterior walls, roofing and timber trim. Decorate the enclosed garden with benches, planters, lanterns and ornaments while preserving house and portal access.",
+        "Refined town portal placement and grounded their bases on clear native terrain without extra paving circles. Placed Brookstead’s portal between its left lower stairways, kept paths clear, and corrected mismatched house timber joints.",
+        "Rebuilt timed attacks as a cinematic three-hit chain: a normal-speed opening, slower linked strikes after the first successful hit, and an immediate return to normal speed and color at the finishing impact. Touch, E and Space controls remain available.",
+        "Integrated 52 reviewed native PixelLab frames for Bren’s straight slash, airborne overhead, rising uppercut and grounded finishing lunge. Corrected duplicate blades and artifacts while preserving his approved movement, idle and other combat art.",
+        "Added animated blue sword crescents, moving gold impact sparks, suspended fragments, a ground-level sweep and finishing dust. Blue blade light and warm impact light illuminate nearby grass, ground, rocks and props in both arena and town battles.",
+        "Synchronized attack poses, projectiles, enemy reactions and damage contacts. Pause freezes the sequence; missed or expired inputs, held keys and defeated targets recover safely without changing the established damage rules.",
+        "Reduced hosted startup downloads with content-addressed desktop and phone scenery variants, GPU-compressed normal and roughness arrays with a texture fallback, and deferred continent vegetation, unused loading pictures and nonessential audio. Native character and UI pixels remain unchanged.",
+        "Accelerated exact ground-height queries and bounded reflection and shadow updates while refreshing on relevant camera, scene and water changes. Kept on-demand scenery loading and cache limits for desktop and phones.",
+        "Checked housing persistence and placement, all six portal approaches, desktop and phone layouts, combat timing and damage, both rendering paths, and actual local blue and gold environmental lighting. Existing journeys and the original combat camera remain supported."
+      ]
+    },
     {
       "version": "Alpha Version 1.33",
       "date": "November 12, 2026",
@@ -616,9 +636,9 @@
     "generator": "PixelLab character/UI art and built-in image_gen HD environment art",
     "nativeSelectedFamilies": 50,
     "runtimeFamilies": 51,
-    "packedSpritePoses": 6044,
+    "packedSpritePoses": 6060,
     "sourceCropWarnings": 0,
-    "referencePolicy": "Approved native party, NPC, monster and UI artwork preserved. Forty native HD day/night battle landscapes and ninety-three environment assets; no artificial image upscaling.",
+    "referencePolicy": "Reviewed native PixelLab Bren combo frames integrated; approved locomotion, other cast and UI retained. Existing native HD environment masters preserved; device-sized derivatives improve web delivery.",
     "newBundledImages": 20,
     "battleBackgrounds": 60,
     "nativeBattleResolution": [
@@ -635,7 +655,8 @@
       1254,
       1254
     ],
-    "battleGroundArtProvider": "OpenAI built-in image generator"
+    "battleGroundArtProvider": "OpenAI built-in image generator",
+    "reviewedBrenComboFrames": 52
   },
   "audio": {
     "provider": "ElevenLabs",
@@ -740,18 +761,20 @@
     "groundedCircularFighterContacts": true,
     "variedWeatheredRiverRocks": true,
     "naturalRoadApproaches": true,
-    "cachedSceneCutawayRestoration": true
+    "cachedSceneCutawayRestoration": true,
+    "localBlueAndGoldComboLighting": true,
+    "animatedBladeCrescentsAndContactParticles": true,
+    "cinematicBulletTimeChains": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v133/verification.json",
-    "sha256": "5ada6aa4b3220a81e2f2a84b2dcca468283a69208e809f42080389731b832cc6",
+    "file": "elyndor/previews/release-v134/verification.json",
+    "sha256": "4354b54c0250f088fa649f9036c035b57f6bc20a125b0461ddf0519231b7b2d8",
     "finalRelease": "PASS",
-    "battleEnvironments": 20,
-    "desktopAndPhone": true,
-    "runtimeMatchesTestedLocalExceptChangelog": true
+    "runtimeMatchesTestedLocalExceptChangelog": true,
+    "desktopAndPhone": true
   },
   "performance": {
-    "scope": "Native Chrome on this PC and browser-emulated touch phones in portrait and landscape; no physical-phone or universal-frame-rate claim.",
+    "scope": "Native Chrome on the test PC and browser-emulated phone layouts. Local benchmarks depend on hardware and workload; no physical-phone or universal-frame-rate guarantee.",
     "playerSilhouette": "One draw using the existing scene depth/stencil; no per-tree ray scan",
     "forestSampling": "Open meadows and destination approaches; dense woodland retained",
     "reflectionPixelCaps": {
@@ -773,11 +796,27 @@
     "battlePreparation": "Visible arena materials linked against the real HDR target; complete scenery-ready gate; shorter manual tester handoffs",
     "exactQueries": "Bounding hierarchies for roads and shoreline contacts; spatial front-door path lookup",
     "devConsole": "Shared native decoded sprite previews; repeated identical scenes reposition without rebuilding",
-    "startupHtmlReductionPercent": 61.3
+    "startupHtmlReductionPercent": 61.3,
+    "deviceSizedContentAddressedScenery": true,
+    "gpuCompressedNormalRoughnessArrays": true,
+    "textureFallback": true,
+    "lazyContinentVegetation": true,
+    "exactRenderedFloorIndex": true,
+    "renderCacheHeaders": "Documented under hosting/; dashboard settings not yet applied"
   },
   "previousPublishedRelease": {
-    "commit": "a32b8cf0a36498cb8cfc1b2156be05b9783e4ddb",
-    "version": "Alpha Version 1.32",
-    "sha256": "d3a04194c3e7d21179bb719fef04e94421e4ab7c85649d95e56be3e858c8185c"
+    "commit": "d9b9af5d237afa354d04c762c0eb77ffaded59d3",
+    "version": "Alpha Version 1.33",
+    "sha256": "19780f19eaad50e63b478de23adf43f1dc7c675b85b7a19016231a6b8c605094"
+  },
+  "housing": {
+    "maximumOwnedHomes": 1,
+    "regionalStyles": 6,
+    "roomLayouts": 3,
+    "privateYardPOI": true,
+    "emptyStartingInterior": true,
+    "finishCustomization": true,
+    "yardDecoration": true,
+    "savePersistence": true
   }
 }

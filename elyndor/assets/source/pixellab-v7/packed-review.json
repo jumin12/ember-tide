@@ -1,3514 +1,3722 @@
 {
   "bren": [
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_000.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        69
+        52,
+        80
       ],
       "cell": 0,
       "sha256": "5cc9130dfd35cc1d4f1b21a47ba2a67cf5bdd87b17bf616a118abad2e1af02d8"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_001.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        71
+        52,
+        82
       ],
       "cell": 1,
       "sha256": "202461f68f7cd42f287c5224e3e97e057469112c19046abb815fc5b1e4416f90"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_002.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        74
+        52,
+        85
       ],
       "cell": 2,
       "sha256": "db0a0893a2d78cd3882fea6b68865ab5c6b00f724639d5f791616b76d184f00c"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_003.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        78
+        52,
+        89
       ],
       "cell": 3,
       "sha256": "4b686126d5462c298128275dfb40daca328130ce8c195687dbdd05de89259c78"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_004.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        71
+        52,
+        82
       ],
       "cell": 4,
       "sha256": "851521b51a018380f658c6288b9b3ae2bdabed8f4fb841c67b8c60780eaaf158"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_005.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        66
+        52,
+        77
       ],
       "cell": 5,
       "sha256": "4e2abe98f3d659a9cc7a38c9cfc0b651dddb5cbb50800dd47bb02851456aa17c"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_006.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        69
+        52,
+        80
       ],
       "cell": 6,
       "sha256": "40e7fee2c9377df14a8ecfd57184284db049c03f4e0fe4002ee5f9c546574ff5"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_007.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 7,
       "sha256": "09499398f777c5905d156d449dadc6142f403e44032c8d6f9bd6893dba576962"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_008.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_008.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        73
+        52,
+        84
       ],
       "cell": 8,
       "sha256": "282b41ffd5ef62e49a00b70240d6dca178d46e861ebdd01e75c111856b5ee1ab"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_009.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_009.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        78
+        52,
+        89
       ],
       "cell": 9,
       "sha256": "a3f7fd111dcb6f93c38189413c21ce17e458ac24d9038af4cde50fbf0b598371"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_010.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_010.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        68
+        52,
+        79
       ],
       "cell": 10,
       "sha256": "7169771bee9ff746c7a3201609f31822b3616cf4b8d2a013796d4c950a83d700"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_011.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south\\frame_011.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        68
+        52,
+        79
       ],
       "cell": 11,
       "sha256": "5582d9541d8c1895d65aaeb531b13a1e50df481940a39de6ccae52d0a0cbc2cb"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south\\frame_000.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        79
+        52,
+        90
       ],
       "cell": 12,
       "sha256": "9d7172504c27eac62e53ef3859be53a2173378c50e1dba109fb1b6038be344d4"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south\\frame_001.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        79
+        52,
+        90
       ],
       "cell": 13,
       "sha256": "dc26bee2072a8cf340ee451f49c65ed9e239aa2f277e08c27de625c3ec10a8a9"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south\\frame_002.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        79
+        52,
+        90
       ],
       "cell": 14,
       "sha256": "618d1b45bcf72613398693d978bd8ec5767a32567cc789c492eb3118cf2ace2c"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south\\frame_003.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        79
+        52,
+        90
       ],
       "cell": 15,
       "sha256": "789bfbb7ddd139e5429931975eaf09c7536deec1e9e72defdd766d6627610ab5"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south\\frame_004.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        79
+        52,
+        90
       ],
       "cell": 16,
       "sha256": "c0b72051546b82edbbcac192a45b9314124a6f8d01edb57177194df37c20d403"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south\\frame_005.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        79
+        52,
+        90
       ],
       "cell": 17,
       "sha256": "432df6aa87bdc4b3e0c870464507a9b21c91a14f5cdeebeb8cf5b8c1831defb9"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south\\frame_006.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        79
+        52,
+        90
       ],
       "cell": 18,
       "sha256": "8567ffcd2ae60451bbc943c594b97158defaaf87188986240c0ee22aaceb8b62"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south\\frame_007.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        79
+        52,
+        90
       ],
       "cell": 19,
       "sha256": "b5221c11ffa972cf96d017aa6e5593357f57b24b530ab5be2c2c9e7b229b3c2e"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_000.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        73
+        52,
+        84
       ],
       "cell": 20,
       "sha256": "608b24cd77d4e9356b8a2a7a956b3eb683c32ac339af0018a6c665be3cb6b2b9"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_001.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 21,
       "sha256": "3c32f24fe6c7e87ae793c062c2099dcec6eeafe573083828f499b0a4d051d75f"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_002.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 22,
       "sha256": "3b17c98f042cda64abef9a45dc061245e05d9614f27f66e3408a6d192b8fb735"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_003.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        78
+        52,
+        89
       ],
       "cell": 23,
       "sha256": "69e73c2d2e0e7d1f375bc8b7664b190017e9c12159b310badaa844de22095ce1"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_004.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        73
+        52,
+        84
       ],
       "cell": 24,
       "sha256": "bf385a3764e5ca6c85d7a8a0fdfa56fb84e48d3067022070444bcdc750d3204b"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_005.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        68
+        52,
+        79
       ],
       "cell": 25,
       "sha256": "5e69be98edf760ddb7e494a45b39edccbcd72d8474403df62b19c60e25d495b7"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_006.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        69
+        52,
+        80
       ],
       "cell": 26,
       "sha256": "a139fcb4f87b9ed50fd8754d6b5b43659273dddd112536f74fa6c418c42513bf"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_007.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        69
+        52,
+        80
       ],
       "cell": 27,
       "sha256": "6cadd20707070dac4bbbffbe7cf11b3bdfb867aeb7fb0c2cd611952d50d11062"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_008.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_008.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 28,
       "sha256": "955500a57a9bf6e69cd9767581e113ee7033c12a7bb20beb4b01582cbea23e2b"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_009.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_009.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        74
+        52,
+        85
       ],
       "cell": 29,
       "sha256": "47860424f557deebd009f789f4d62fac7e883bf61de7dc5b30fa47fd933acb3e"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_010.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_010.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        74
+        52,
+        85
       ],
       "cell": 30,
       "sha256": "dc467d5e93b9d47117e8c5b8f680f1bde87bb11c71ffc0733af29e8ca4e0ef42"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_011.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-west\\frame_011.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        71
+        52,
+        82
       ],
       "cell": 31,
       "sha256": "e47aaa96c4f47329ebbb306364c8f1a711f203ae4b36635d457f4e5e9fead147"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south-west\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south-west\\frame_000.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 32,
       "sha256": "9e0375f9d557e5b99e865968fb3e1cdb54b2296f01486f81de6392acd9967fc0"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south-west\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south-west\\frame_001.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 33,
       "sha256": "eb2f42f345ac1cb88aebccd4ffeddefeed3fd2c1da7fbeb1d77e3aa4fb2c85cc"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south-west\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south-west\\frame_002.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 34,
       "sha256": "2e137f32dd8091a8080ef1271a462d1c3f5255aba1bc40158d326b4308ffe8c8"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south-west\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south-west\\frame_003.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 35,
       "sha256": "e2c73590fc4a362d54da04dcb3b008479b9dc4ca86ca4d40ba66dc160ab2f39f"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south-west\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south-west\\frame_004.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 36,
       "sha256": "28be0dcb11b804ff63e856e347ffc930480b62d8de34e4448f835b4c6b1fea78"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south-west\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south-west\\frame_005.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 37,
       "sha256": "097108fdf2386eaa142c049e7410c07a0e3f4c19ecbe35dc5d43273d7e7f7e76"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south-west\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south-west\\frame_006.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 38,
       "sha256": "ee498da11f223248d11eb95d42b8138014b9f2ec269828d8678c93e37972ac7c"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south-west\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south-west\\frame_007.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 39,
       "sha256": "b445cf43149561282bbd27d6bee1b172c58de4a4ed302c79a84aa73f4542edef"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_000.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        76
+        52,
+        87
       ],
       "cell": 40,
       "sha256": "4c677bbd693ceee3b1303dc47a4edccbbe71fc1dd7d782ae8295a259c5d67be5"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_001.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 41,
       "sha256": "940234bd3d06208803841354c1a21b48d306a085338abed918ad66d3b019b136"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_002.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 42,
       "sha256": "0abc8ff197f08af4514d34a90cf8616253a41f1226a586910ae5ddddb633e001"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_003.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        74
+        52,
+        85
       ],
       "cell": 43,
       "sha256": "01badcadea56dddc7e6d0d8bd0a3dc3f349d2d039339deea0cb28dcef0493b49"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_004.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        68
+        52,
+        79
       ],
       "cell": 44,
       "sha256": "977a956d4baa460bdab192c1e3333556b756fff56b62279ef6c0863ea436b61c"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_005.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 45,
       "sha256": "8440f8d9e6014f2f89cbbe0c3030228120fbb067ef5c3d852df9e87452537255"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_006.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        73
+        52,
+        84
       ],
       "cell": 46,
       "sha256": "c80d53e0170de632a69168abd40c0c08de4e3f2e82c284ffb6cef25723fa3127"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_007.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 47,
       "sha256": "841fd27a6251ae76ebc4b9718b5fdeb2d6fe1b6ca8a7b2ab6d7108dbe1069b5f"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_008.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_008.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 48,
       "sha256": "c0a487ae69d294aab2bb160daadfa4eb233346afb5970138d35725b37790e9ed"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_009.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_009.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        71
+        52,
+        82
       ],
       "cell": 49,
       "sha256": "d32f1b3e1a197d76aac0f20e7ad741b2bf06c8c8e21beb173cbddc8bc08f574d"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_010.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_010.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        69
+        52,
+        80
       ],
       "cell": 50,
       "sha256": "b638f91c852acf10eb99484ac7d918ff57242710eb90fe66298c53fbcb50986a"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_011.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\west\\frame_011.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        74
+        52,
+        85
       ],
       "cell": 51,
       "sha256": "433a15f67b2175c37bbe5638d18f9edc8a8749af1c6686623ed853e13048889a"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\west\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\west\\frame_000.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 52,
       "sha256": "231d4648cc2b2d059511866c0b3b6e5ecf7476a793a45b5c598f856415580a56"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\west\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\west\\frame_001.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 53,
       "sha256": "eb15fd23a3ec813b02e94d9af3a9030c9f90ec9a6f7fc43130909a8f03f7d37f"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\west\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\west\\frame_002.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 54,
       "sha256": "83c494b98bb3c7c786786652abb00956857598c54ca42fdcc4b12934f4770691"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\west\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\west\\frame_003.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 55,
       "sha256": "bc6697c26fd7d4a15a59407923e331d3e8cfd1339a8f9522a36b17fc79671967"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\west\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\west\\frame_004.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 56,
       "sha256": "a633bb6f2ba42a16d10283bcfbecdd562d9706c7e1fe5b7d7556d387f04ffb1f"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\west\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\west\\frame_005.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 57,
       "sha256": "af386d8aa908d8b155ad77df1e87f5984426e825e245722591c75dd4c5983df7"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\west\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\west\\frame_006.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 58,
       "sha256": "a71615e05bff1b872260dbeaf95b62cab3a3f3b06859600f37c3d80d35ade440"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\west\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\west\\frame_007.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 59,
       "sha256": "60520ebb33db0418fda01699b7028502f3228844a4970d0d6a8a19ac85be324b"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_000.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        80
+        52,
+        91
       ],
       "cell": 60,
       "sha256": "17323b940d135fe65c24a9a81e89447fee97bc5cf4d4b90b3cfa42e401123c87"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_001.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        80
+        52,
+        91
       ],
       "cell": 61,
       "sha256": "7665e9da786cf03372b565244ddb0f6cc0e025780a851291267f08bfbb453c63"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_002.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        77
+        52,
+        88
       ],
       "cell": 62,
       "sha256": "3dec02c09e7e03ee42419bef36d63a05e29bc2ec9a7aec724e37458c3192a0fa"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_003.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        73
+        52,
+        84
       ],
       "cell": 63,
       "sha256": "e4f09f86c45fa61d6e539d19a2a6a3b47f0f29b7d35379e5c629feaceed29975"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_004.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        66
+        52,
+        77
       ],
       "cell": 64,
       "sha256": "850430083585398ab2cd4f8e7f52f97f2d78accaeda391f05786ab12599fc029"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_005.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        77
+        52,
+        88
       ],
       "cell": 65,
       "sha256": "3753f28c331b5dec12a58b77f4c78f65590bc92ef42e7233d02c6b8eee7d2924"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_006.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        81
+        52,
+        92
       ],
       "cell": 66,
       "sha256": "51948b28c64be149b0409247ab63bcf9380bd5dcfff6a3fbcd11b8fe635932c2"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_007.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        78
+        52,
+        89
       ],
       "cell": 67,
       "sha256": "20e13af0e529060cc34e0ec78dd68be84b9b6e642087a3befdbcd863090f9ddf"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_008.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_008.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        74
+        52,
+        85
       ],
       "cell": 68,
       "sha256": "1661ed3d6b755b6111439a6561017ae947cbf1204fb9507e7d11c009a7de6755"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_009.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_009.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 69,
       "sha256": "8f8fa3a8717ef67093a50794d0980fc03990817cc2a6cfd098de4292c28e38fb"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_010.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_010.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        64
+        52,
+        75
       ],
       "cell": 70,
       "sha256": "59ed30a5489ec7b654ad3517fc5ea64f9e5b59b020817bc3c2fc9fd845119355"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_011.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-west\\frame_011.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 71,
       "sha256": "ec559a0d7c9dfc129180ee19617a71a48d04e71651b8fde883b9ba26449c0e39"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north-west\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north-west\\frame_000.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        77
+        52,
+        88
       ],
       "cell": 72,
       "sha256": "55e4c6bbe19e581f7c16ef841b11673234a4ee399d12266b8e2d663cd3dcde28"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north-west\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north-west\\frame_001.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        77
+        52,
+        88
       ],
       "cell": 73,
       "sha256": "836bcd0d202de105049164a456ee82deaad488dfd862404bbf76c607e2c23104"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north-west\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north-west\\frame_002.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        77
+        52,
+        88
       ],
       "cell": 74,
       "sha256": "c2e9aac5aaf1a135ca0bf1ce31ca3755d7d1e2cbe3c8def20e07dab9b5ded129"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north-west\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north-west\\frame_003.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        77
+        52,
+        88
       ],
       "cell": 75,
       "sha256": "eddb0b9b605db7cd3eff88abd7c9d9f3c30589a3c8c8382fa34078bcd1c67c70"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north-west\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north-west\\frame_004.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        77
+        52,
+        88
       ],
       "cell": 76,
       "sha256": "daf2c67b3e6f533de44ca4d7650fac61c68259f9a02b071a11950bce6b030cd4"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north-west\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north-west\\frame_005.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        77
+        52,
+        88
       ],
       "cell": 77,
       "sha256": "a31cf3316f9ef8ad55eaa073ba70cb3d8f1bbfe0dc70686af30372309b675fe0"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north-west\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north-west\\frame_006.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        77
+        52,
+        88
       ],
       "cell": 78,
       "sha256": "36aa6006646efdafe8b96d3718fcb73cf752aa8e02316c33297e41b6a631e2d7"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north-west\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north-west\\frame_007.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        77
+        52,
+        88
       ],
       "cell": 79,
       "sha256": "44e0ffb6bda619376102e36aec3aebd63539e9bd39c4a391c4c4968f96c42075"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_000.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        84
+        52,
+        95
       ],
       "cell": 80,
       "sha256": "3cfb342d10eccf2df9575030c8a55fd2d9a13bdd7b791dde72c1bc6bee9e8c81"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_001.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        83
+        52,
+        94
       ],
       "cell": 81,
       "sha256": "16ffba18b506a7d7a5ac72e9090c2c8d56edf0c7cc90495be9387d42d16a20ec"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_002.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        80
+        52,
+        91
       ],
       "cell": 82,
       "sha256": "d983a4beff546e254c285f05a011df99316157a988f283e2e11e9b6aaac76333"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_003.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 83,
       "sha256": "0b8d53abe61b2f115b3de4b821498f85276c88e2d72d5dd8f4ff08342d3c4a1a"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_004.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        65
+        52,
+        76
       ],
       "cell": 84,
       "sha256": "3bde4c8ec66c75af28274f229a652b73519fb89645abc584a512fcb99db9b8ee"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_005.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        76
+        52,
+        87
       ],
       "cell": 85,
       "sha256": "4dfc6c2d7d615eb17e77771ebf2d65b298c53de4e82040648a2fbf62a61e98c0"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_006.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        85
+        52,
+        96
       ],
       "cell": 86,
       "sha256": "ed641e0c11637af4125092f33ff8f8986c744b68fd08861ad6db84e48aa7e604"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_007.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        82
+        52,
+        93
       ],
       "cell": 87,
       "sha256": "750f7c9d2936c0048f787651fcde308e41edb0cef58b5287d8daf5ad0834f835"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_008.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_008.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        78
+        52,
+        89
       ],
       "cell": 88,
       "sha256": "0ff1104572d9c01f00945bfeec92ecd81f5e0e391cb29419d93c6c876b56d233"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_009.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_009.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        71
+        52,
+        82
       ],
       "cell": 89,
       "sha256": "d775e9675ca176a4ccfc402101bba35c416d7dd5444ba7bddf15fc8335fb5db6"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_010.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_010.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        68
+        52,
+        79
       ],
       "cell": 90,
       "sha256": "c11f4eb84a9b3db0d381f5ea0c92ebeeda541c46b156146e729ed86335f6a3dd"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_011.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north\\frame_011.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        78
+        52,
+        89
       ],
       "cell": 91,
       "sha256": "1d38fbc7b582fb5b6c5eea00c7db2599fccaaeaa607390dbef242a722b76e49e"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north\\frame_000.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        81
+        52,
+        92
       ],
       "cell": 92,
       "sha256": "9d35d2aeb7ee4c8fe4055eb389cc98bce405c4d6d66e60f0fb563832dc64347f"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north\\frame_001.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        81
+        52,
+        92
       ],
       "cell": 93,
       "sha256": "92eb7263b5608863b3abde406be734abfa7607ea611ef913213966fec2bf24e7"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north\\frame_002.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        81
+        52,
+        92
       ],
       "cell": 94,
       "sha256": "8e8d1c42c9d2f7e1609dc345720f7b6f6f5e3df0d05d247619c16a558ac402bb"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north\\frame_003.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        81
+        52,
+        92
       ],
       "cell": 95,
       "sha256": "42c89049808cdf4de3d4362cc1ea3fc60928432da38ba3a119af5bf9c3aee1b0"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north\\frame_004.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        81
+        52,
+        92
       ],
       "cell": 96,
       "sha256": "778e88a592a3b62ecd479744b8dde2730562e477757274e5fd1c0dbf6c1a882e"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north\\frame_005.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        81
+        52,
+        92
       ],
       "cell": 97,
       "sha256": "fbe15d379eb1c92ce23d0bf1973029f4d2cedfa30d62ab4864234a5540460c1b"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north\\frame_006.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        81
+        52,
+        92
       ],
       "cell": 98,
       "sha256": "d8fb8d5daad29ddc674c5df7c1b478cf2590cb05fe3cba92e8241368b78304ea"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north\\frame_007.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        81
+        52,
+        92
       ],
       "cell": 99,
       "sha256": "bf6b0a15395f1bb3fdc45fee62f86fadac1eef9208d35fdf032de066dde2e058"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_000.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        78
+        52,
+        89
       ],
       "cell": 100,
       "sha256": "75da8b3216d8933a91054e340df3a13eece3d8d72cef4898b6b874160bcf4e15"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_001.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        77
+        52,
+        88
       ],
       "cell": 101,
       "sha256": "549eb4d479d5eec51e9830836e2c54bc2825d4662ca03a02590abe2e65b9f7aa"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_002.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        74
+        52,
+        85
       ],
       "cell": 102,
       "sha256": "494d60651c9e7900d11c6a956158395165a1a925f7276a4cb4d3cbe06e710507"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_003.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 103,
       "sha256": "854633b2725c453ae58f3dcfc9f3eb641d2b61a8cf48725c1ea6504a0f68120c"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_004.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        62
+        52,
+        73
       ],
       "cell": 104,
       "sha256": "6e4d5bbcbb4daa6d52210df7c3672ca27de81e02e6745d6c81dbe8580cee994e"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_005.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        78
+        52,
+        89
       ],
       "cell": 105,
       "sha256": "4bb9403d7ad4cce7b1db619184047d36d6ce6c7187613a622c55b7843aa8f143"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_006.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        82
+        52,
+        93
       ],
       "cell": 106,
       "sha256": "b42245e74302386eb4c02c280ead3765673ee8e283febfdd0f58926a1beb80be"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_007.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        79
+        52,
+        90
       ],
       "cell": 107,
       "sha256": "6bd7d3711b4a376c4afae8936051b1e12c7292e7fc44a83853ea30f417a8e400"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_008.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_008.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 108,
       "sha256": "30fc70b1c4b2c5c594e5c6b664e73c542cf4dcc5a12e4d4bfe3133780414d8af"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_009.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_009.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 109,
       "sha256": "1f60f273e74cd2ef39f80c2149eb838cf656b524612701f8b30be1525f307f78"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_010.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_010.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        69
+        52,
+        80
       ],
       "cell": 110,
       "sha256": "62a0044e46657d3f4895493ef24cff55fab66e2f8fae9e6090831df2d5c4adc2"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_011.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\north-east\\frame_011.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        78
+        52,
+        89
       ],
       "cell": 111,
       "sha256": "bb91b98dae62b074b27a3dc51f70be911b8b8f508661979841251823e1d970b4"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north-east\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north-east\\frame_000.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        76
+        52,
+        87
       ],
       "cell": 112,
       "sha256": "2b9346208fc6351c4293e3a243e3ff7b8e3fa4410d1be79fae6ac2cf9eb5c1b8"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north-east\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north-east\\frame_001.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        76
+        52,
+        87
       ],
       "cell": 113,
       "sha256": "2ffafe52ed7cfa529b97d55e79d7f5da4b8e47ca9568fc946028ca0b7fee1211"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north-east\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north-east\\frame_002.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        76
+        52,
+        87
       ],
       "cell": 114,
       "sha256": "1b85e4dc5e25b5a6348ac86600f271e2184ef02aca60e9908b9d8289c6345520"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north-east\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north-east\\frame_003.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        76
+        52,
+        87
       ],
       "cell": 115,
       "sha256": "0caf484a25748ea7be851beef87f05e151af7fccc5cc2762b747eb588ba6b70b"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north-east\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north-east\\frame_004.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        76
+        52,
+        87
       ],
       "cell": 116,
       "sha256": "3e3f3ac471ad82fa3121287763431d005d8b3cd6e366fe1683d6cd5c127dcfde"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north-east\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north-east\\frame_005.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        76
+        52,
+        87
       ],
       "cell": 117,
       "sha256": "5a81c80be9fbf867cf7a3424e20869f1604bee79f5880d6025dfa0801e5c5901"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north-east\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north-east\\frame_006.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        76
+        52,
+        87
       ],
       "cell": 118,
       "sha256": "3ad08b26354340bc485786358a8f75a6c673f75eb76e8ad9b1d54c2e8edefcfe"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\north-east\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\north-east\\frame_007.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        76
+        52,
+        87
       ],
       "cell": 119,
       "sha256": "3927a340187f5e65cd855dde5fe9918237bf7e67437025228f91cde967491287"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_000.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 120,
       "sha256": "4a97a255c05860550bdd1ce0a061821ba10e0fe29936fc457f2a278856f51087"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_001.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 121,
       "sha256": "a0e700de422730459b644e05c006bba34bb6b71267fed4ef42b7d5939bcc9c02"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_002.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        71
+        52,
+        82
       ],
       "cell": 122,
       "sha256": "2303053c9dd52711229d88558b32d9616a75784144c876eb5309dcfa062300b4"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_003.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        70
+        52,
+        81
       ],
       "cell": 123,
       "sha256": "66bbe4427fa4d2c9e46d380e8064af8c517c7aa627dd226a8c2d798f04352ff6"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_004.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        66
+        52,
+        77
       ],
       "cell": 124,
       "sha256": "dfdf5129c736745f01a8eaa7ed83a7e9b45b7a1927c5ddc89dc44a911bb1aac7"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_005.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 125,
       "sha256": "f822d9f04719ff58de8a169392052b9b3e5521a2d30404e9f8f0170b713f295f"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_006.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 126,
       "sha256": "21a111c9ab1701500e6a17e168c3215469e2cb7437245cd141cccf05ee63ca30"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_007.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 127,
       "sha256": "5aeed4092da4392f268ef44aa0871ef14566179a41703b2c441bf25f10d2c32a"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_008.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_008.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 128,
       "sha256": "aaf204b33d4858f0a22caad9bc82b729e000892618a9ef19b0c8c51b1a810d73"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_009.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_009.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        74
+        52,
+        85
       ],
       "cell": 129,
       "sha256": "bed698be8e59a71cbbb61145c72e3ea253587e5c661db6e0f5336b24aedbff1b"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_010.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_010.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        74
+        52,
+        85
       ],
       "cell": 130,
       "sha256": "434d64be78a627d03d8c7448bb5ae5b3f4d2674cd7433bf703c0f52348249a87"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_011.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\east\\frame_011.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 131,
       "sha256": "dc06d33805fe3bf0c804b10cacfdf73cb195dd6d8068870c1edb6bc89653f1e3"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\east\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\east\\frame_000.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 132,
       "sha256": "37a9c7b96b82d2809082a229a5eb586c5fe184393c77e361fa495cf58fafe1d7"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\east\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\east\\frame_001.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 133,
       "sha256": "16933b36e97d5bb03842fce190ee01f2676b89d080e776483ee96f73a872d520"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\east\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\east\\frame_002.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 134,
       "sha256": "da95b60b9ef9bf4f69d902dfc9fd46cff16b4e1a11c70afff2f55e8acc491062"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\east\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\east\\frame_003.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 135,
       "sha256": "d6694108fdb2fea59492d694c9eb8fed7f05868042c9a9980ba33566557d4cd4"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\east\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\east\\frame_004.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 136,
       "sha256": "75991177d057e430526d4b3884435b8bada19dc3569853cfe3f3f9da170d8aad"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\east\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\east\\frame_005.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 137,
       "sha256": "9c7dc3d186f88c9e36e2bb974590f64d8a84d5ba390c8bd7f66ab1d0386c0a33"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\east\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\east\\frame_006.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 138,
       "sha256": "c842a4fd5d12172e761b3e19393aa159cb6b8b21d9e135e8557c94d86124abf9"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\east\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\east\\frame_007.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 139,
       "sha256": "bd7941fcc7bc510b7bec20b15037b924a237d1b15216cb7a74cb748286887230"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_000.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        69
+        52,
+        80
       ],
       "cell": 140,
       "sha256": "658a187b7650b55deb89cc85f1f36d7c1acd6ce3fd5edf260e25896993101896"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_001.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        70
+        52,
+        81
       ],
       "cell": 141,
       "sha256": "b2af945e04b68465ec3ef3a42955df187297afffcd44abd57f1a12c9e2bfbba3"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_002.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        72
+        52,
+        83
       ],
       "cell": 142,
       "sha256": "a07e8ea86399b3dc64c121940ba37d2f74f82fceab3cdc5903aa65a9aa1736e9"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_003.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 143,
       "sha256": "16a5416447e744f21886b9fac2cbc46f1b72c50dbba5daaab6627b4292ea2c43"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_004.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        73
+        52,
+        84
       ],
       "cell": 144,
       "sha256": "35db8e17b801047bcd258048745e022b43b069e6d10a8722aab0bbba246ffaae"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_005.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        70
+        52,
+        81
       ],
       "cell": 145,
       "sha256": "38ab002f23349de5f849e8946d60aa3fc47b5f1736b1df6ac4d76f0fd390c617"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_006.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        71
+        52,
+        82
       ],
       "cell": 146,
       "sha256": "4738851e1b639b06776c4fd7b30632ae0071fd1384a63d64e6f045397d0b926b"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_007.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        73
+        52,
+        84
       ],
       "cell": 147,
       "sha256": "d1cf4501ec69aed39bbf27f8404a2e82d2d6a753ad8b98358b5f75455a3db8bb"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_008.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_008.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        74
+        52,
+        85
       ],
       "cell": 148,
       "sha256": "66d8dd6781b251adabe8fa106e3000e0eafd7829186f44910a220bcbdaaa22b2"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_009.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_009.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        78
+        52,
+        89
       ],
       "cell": 149,
       "sha256": "16690702ecd783acec054d999c91a5493a1148e24c1f39412c95fc4121ba8b16"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_010.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_010.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        71
+        52,
+        82
       ],
       "cell": 150,
       "sha256": "db249d72186a3b4adc7a9124213aaf6f1545d1814f1c9b42d9e6e103949e63a8"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_011.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Idle\\animations\\run-natural-arms-v81\\south-east\\frame_011.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        68
+        52,
+        79
       ],
       "cell": 151,
       "sha256": "2b54889a0195c563198468d7bd6792930b02151dc7ee358af5cbaf2656ec68bf"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south-east\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south-east\\frame_000.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 152,
       "sha256": "27ac5153ebe0fa0aa3c9d26069a1cdc93b47879686df65e5ddca8e19f6a00ea2"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south-east\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south-east\\frame_001.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 153,
       "sha256": "f508a538cccdfa19e40a6516cf22e6d81f16c9c594945f47775dc813d943c483"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south-east\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south-east\\frame_002.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 154,
       "sha256": "d99bb90ce480bf649129198396c48f191b1225557b952914d8c4a1610eb76aa6"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south-east\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south-east\\frame_003.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 155,
       "sha256": "32f034fa66759eeeca6653eda09c4dc592b3492b42ec9f37c11a584a4c8119d1"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south-east\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south-east\\frame_004.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 156,
       "sha256": "5e1c7de331c5390cfa262789c6a3d5edd57f286e67b406e0d1d2faac3c1ec0b2"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south-east\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south-east\\frame_005.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 157,
       "sha256": "c912b0e248a361579de667e07ece3c712390ab8e3fe7dc6ad1355fc27b52577a"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south-east\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south-east\\frame_006.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 158,
       "sha256": "1507ac3b43a2698fe7d3c60effbdf2298bc00924799d0a2a10315a28b357ce51"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\idle-v82\\south-east\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\idle-v82\\south-east\\frame_007.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        75
+        52,
+        86
       ],
       "cell": 159,
       "sha256": "079ad3bad71ad5c89d18e5d9b21d361e9242c9da5abb919d69123d0dd66cab8a"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_000.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 160,
       "sha256": "de34cd3606d3cf187f056d78150e676391efa5f89e9ab302a25875cad2c1df82"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_001.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 161,
       "sha256": "dcdc7502d5ca0a1491765770300485b646f44c25f1960a3eeb981af3e6b476b3"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_002.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 162,
       "sha256": "668535942afb3c58af2389f1e70ee4e4dd9f52c1786989ff64c842b6183f3a8b"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_003.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 163,
       "sha256": "d5a35b9f95ec005dd1d7d5655926c6801c6c0a12d36147cc2289dbb79647c4be"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_004.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 164,
       "sha256": "df1eacf024e24139298ebab6a5b32eb16355a486cac2001291cb2d04c8243b42"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_005.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 165,
       "sha256": "408e0fedee68027996b4f390da6dc62680e5361130e3fc399f20c730e5253900"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_006.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 166,
       "sha256": "ca27914e4d490bffb1f8fffde276496e3486242f091deb84c1c19fa24fc3e442"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_007.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 167,
       "sha256": "3d019e9fd072b4bf5f1a72c725a2bc89be699ebe31ac49b04b5e56696f0932bf"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_008.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_008.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 168,
       "sha256": "10b2291be0c086bf369ef8aa4f8756b6eb2f0e107fde8a43ad1afbfc4ecf0144"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_009.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_009.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 169,
       "sha256": "e3cef389f5f47d5592f7d4d75cafbbccd329c368b2819b646b0932dbc2ef41e1"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_010.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_010.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 170,
       "sha256": "41ea2e485f626cdf7570e3ed15395fd3617908421c290f4eb34f2fc057d9ccf5"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_011.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\battleIdle-v83\\west\\frame_011.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 171,
       "sha256": "a9e61740b3c607750ceeb8d5c58f05f30b003b4f749e72f763d5543a139c608c"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\slash-v83\\west\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\slash-v142\\west\\frame_000.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 172,
-      "sha256": "9ac5997e894d4b278c6e4c28075138c2b157fbf486a5fd952742f3d8044a1e1e"
+      "sha256": "de34cd3606d3cf187f056d78150e676391efa5f89e9ab302a25875cad2c1df82"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\slash-v83\\west\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\slash-v142\\west\\frame_001.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 173,
-      "sha256": "0245178e89ac940fab214d2eaaab917d0ea977d34684c6069901b9609448bca7"
+      "sha256": "74651d8be4fc09264c3c4f7822525cc09cb965cfe86d3199d6cbb173321056f1"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\slash-v83\\west\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\slash-v142\\west\\frame_002.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 174,
-      "sha256": "5064af264c1402b23a242bf9f866f0c13198f43601071b54d6edd5b9d4fb6e03"
+      "sha256": "70d073f98cb243db615fd5f1cdce88e0a89dec59c54d98802cd499ea0de158a2"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\slash-v83\\west\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\slash-v142\\west\\frame_003.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 175,
-      "sha256": "7e29094de98cf733a83c23abb2296f714aadb9e08ccfa427b967290350e9398b"
+      "sha256": "490bf035cafe66badd8d0df3997d190f96babf644d70e8a1812fcc19324b24ca"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\slash-v83\\west\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\slash-v142\\west\\frame_004.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 176,
-      "sha256": "e40a39d1ec81bbad6d66489b9fc73736fc0352f7e6e35e8928bdf5f9effbaca4"
+      "sha256": "f5affc28f0257063c809339d09939f2cc6c1750375b0070d8b262fc3da567fbe"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\slash-v83\\west\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\slash-v142\\west\\frame_005.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 177,
-      "sha256": "b49837802540f3e309e1b2aba89d955026b76f0454e94e41a2d6a186be5e74b7"
+      "sha256": "09bb7da855c82975130727039e1593e9b0e9cd1dd3ca1d56fefe2c0859f7ebd4"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\slash-v83\\west\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\slash-v142\\west\\frame_006.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 178,
-      "sha256": "c6df2e0affcf333fd29c68a99d09d64ad0456e160da871be6e7b4935a5290b3a"
+      "sha256": "bfce12d74cbcb0a36e5fc22d117d12b880264357a0e22c67bd288347f002fe13"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\slash-v83\\west\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\slash-v142\\west\\frame_007.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 179,
-      "sha256": "3005a4da7dffe4565d666cc75a90948199a90048ac00d22c96f0af3950cc813e"
+      "sha256": "591445608f480a60010fba61797d44379fba8e086ed219953c76c7cf401d7af2"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\slash-v83\\west\\frame_008.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\slash-v142\\west\\frame_008.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 180,
-      "sha256": "ab0295a23a5e4147c0ed69d2bd78f88b00ce175ad70eadb05d2c2ca4af5394ee"
+      "sha256": "d3ed8095c37751e219f1a33ce5f0bd4040948b21acc260e9aea431f2e9376aa1"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\slash-v83\\west\\frame_009.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\slash-v142\\west\\frame_009.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 181,
-      "sha256": "70eadbefeb64efc2f5a89e381322b7df1ba7ee79b88f359c7d2189640f883490"
+      "sha256": "c9e77e7bb125c25ac7e462f2b1fc9c2f032534404a722dc81e05a970d6a24815"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\slash-v83\\west\\frame_010.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\slash-v142\\west\\frame_010.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 182,
-      "sha256": "c3d3bd8c75f86c0a18533d8dee6038a552b761a6c21ca5de6ce77bb06cd5aba1"
+      "sha256": "54af81216a238719fa763cb96c8df28ddc52debbf08110e15c34bf5c40b3dc04"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\slash-v83\\west\\frame_011.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\slash-v142\\west\\frame_011.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 183,
-      "sha256": "9f765c1abe30d648d948e3393f8f431ae317a1d4300e001d9256d9add1a50fed"
+      "sha256": "70d6b8300faf6c8882a5f8472b07e1e5cc0787b889054d0a9877bb7668c460d2"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\cast-v83\\west\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\cast-v83\\west\\frame_000.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 184,
       "sha256": "b178ed5aaadd8309fdd7f49ff78cd1675e6dd2aebe74ae7e06342bcd8b07902d"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\cast-v83\\west\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\cast-v83\\west\\frame_001.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 185,
       "sha256": "eeacaf8c214bdc1a998a34871cc032858ffee1e7d69b3c4ada95c5525f36c9f6"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\cast-v83\\west\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\cast-v83\\west\\frame_002.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 186,
       "sha256": "47942e0802ec919f75ca84f15a3fa4a6b933847caecf045f0a84c44eb799bf53"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\cast-v83\\west\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\cast-v83\\west\\frame_003.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 187,
       "sha256": "a26f82c12700a139931f8aa78a2b7715463e97765ae90f64fdf87f599decd590"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\cast-v83\\west\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\cast-v83\\west\\frame_004.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 188,
       "sha256": "af6951b7f4101faf08097e5e46e5f54fd6a97142842518640e470531511d5d51"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\cast-v83\\west\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\cast-v83\\west\\frame_005.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 189,
       "sha256": "19dc86d829700282df36545fe31bcdcfe8033401b259e546f2edae2116838eba"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\cast-v83\\west\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\cast-v83\\west\\frame_006.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 190,
       "sha256": "e39f330ebcaee3e0f1f8098466df40ea4680568198c1cb4a6e0f6327bc0cbd4e"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\cast-v83\\west\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\cast-v83\\west\\frame_007.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 191,
       "sha256": "5cc92437d7c9bed8f758eb4bbb667d6b55162d504fa6b336180ac18248b06232"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\recoil-v83\\west\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\recoil-v83\\west\\frame_000.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 192,
       "sha256": "5d25de07f0b8f8d9cb85ea38cb5b5f4f3611839a3d593f9af80268a3b19a0d6f"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\recoil-v83\\west\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\recoil-v83\\west\\frame_001.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 193,
       "sha256": "5454d885bd207175c31c2be1375e5dabaec41173db7eeb9df2068ae2e4a0294b"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\recoil-v83\\west\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\recoil-v83\\west\\frame_002.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 194,
       "sha256": "f4c3a90423c797a816f1918c384ffda9b0043445f31e4e15326936880dc685a3"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\recoil-v83\\west\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\recoil-v83\\west\\frame_003.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 195,
       "sha256": "de1887581a1c65c55c195eb2a44df7c60847bba1b5f543518188494c23208e07"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\recoil-v83\\west\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\recoil-v83\\west\\frame_004.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 196,
       "sha256": "f93c2c55c72a0e01154674cbf64fc2faad9632572f579aee939170bfc21b739b"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\recoil-v83\\west\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\recoil-v83\\west\\frame_005.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 197,
       "sha256": "03b78467609f54e6fbb0202ac45f36f10b084ab8474c453f2ba7c51022c1b3e6"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\recoil-v83\\west\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\recoil-v83\\west\\frame_006.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 198,
       "sha256": "3d1391fe104e8da1186101e3565327e799e46cfc7a1f0eb004da6a2733474c14"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\recoil-v83\\west\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\recoil-v83\\west\\frame_007.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 199,
       "sha256": "b97b553a87b0e4dc6d5c186a58c96e51e7e49d41c1db2bcceab5024727b82cb6"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\gate-v82\\north-west\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\gate-v82\\north-west\\frame_000.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        77
+        52,
+        88
       ],
       "cell": 200,
       "sha256": "e05deaf3b98210bad8ff11f6d609964ea380923c312e11030b4f172dfaa45f4b"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\gate-v82\\north-west\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\gate-v82\\north-west\\frame_001.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        77
+        52,
+        88
       ],
       "cell": 201,
       "sha256": "b1ce99da02934f630b7bd16b9b0477c4f921a0d9f7ab41ebcbf111367531bfbe"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\gate-v82\\north-west\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\gate-v82\\north-west\\frame_002.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        77
+        52,
+        88
       ],
       "cell": 202,
       "sha256": "0ef69a2fd982fe557cb8ec512b84303ba9d46a7e77ce93f898cf02eac0a91c99"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\gate-v82\\north-west\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\gate-v82\\north-west\\frame_003.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        77
+        52,
+        88
       ],
       "cell": 203,
       "sha256": "5c86f1c9e95ffdaaeddb9246fbdac1e506a090f40a59a0c1fa3e9837d49a4da2"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\gate-v82\\north-west\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\gate-v82\\north-west\\frame_004.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        77
+        52,
+        88
       ],
       "cell": 204,
       "sha256": "f4ff274c3b53c09fcb2eb496840edd2f5887ab2e112a44cd5081a9b0988dc9ee"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\gate-v82\\north-west\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\gate-v82\\north-west\\frame_005.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        77
+        52,
+        88
       ],
       "cell": 205,
       "sha256": "3bfa6f8f4590cbd0e3a4838eafcc26e5e17968cbc3d6e88519b924eb3202ba74"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\gate-v82\\north-west\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\gate-v82\\north-west\\frame_006.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        77
+        52,
+        88
       ],
       "cell": 206,
       "sha256": "83127067c367fec17f6d574a7684af865ffcfe4f9eb5d5b7356aa5dddc8e94f8"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete082\\animations\\gate-v82\\north-west\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete082\\animations\\gate-v82\\north-west\\frame_007.png",
       "sourceSize": [
         128,
         160
       ],
       "offset": [
-        60,
-        77
+        52,
+        88
       ],
       "cell": 207,
       "sha256": "466d94b6c34cc5b8f8157f01aa7512f42b9a418f7249812b45432b54deb94c53"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\overhead-v83\\west\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\overhead-v142\\west\\frame_000.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 208,
-      "sha256": "0761caed945f47c77519ab0fa968f86fded626845df3231af1c49f8ac027aa93"
+      "sha256": "de34cd3606d3cf187f056d78150e676391efa5f89e9ab302a25875cad2c1df82"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\overhead-v83\\west\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\overhead-v142\\west\\frame_001.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 209,
-      "sha256": "0e8633ae28688b35f0950dd5ec6152b29d6d32f5f9d4a07cce12b7fa9317a3ed"
+      "sha256": "7786b0baf13b64787ebcd20a6ebe7d46275ad6ae3cbbd8788c01f57b6706421f"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\overhead-v83\\west\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\overhead-v142\\west\\frame_002.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 210,
-      "sha256": "701a8a9d59e9c37401a8db6a97ad1dee7c33e188d947045c968a2835d8bd7ba9"
+      "sha256": "f94d78d83c0b3e0026a7b6e320ee7d0587274a9cdd71a3b48032edb7fcd0351a"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\overhead-v83\\west\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\overhead-v142\\west\\frame_003.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 211,
-      "sha256": "0c48e3732dc7fc53dbcc3ec7ed886e790de38731a96284d984ef5ac73fc1015f"
+      "sha256": "678c7351413a901b346455c69c422a1a520f66e22708dc21df32116d7aa6349e"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\overhead-v83\\west\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\overhead-v142\\west\\frame_004.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 212,
-      "sha256": "1db6af00b1ffc75076161787521ae3166f9873e555720929e36e5978f4d7e3f9"
+      "sha256": "812874c0b7c9fc98c3ef79ffbd9e1ae6b794cd40212c9cd771a71dbb80acb01a"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\overhead-v83\\west\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\overhead-v142\\west\\frame_005.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 213,
-      "sha256": "f702e8f7009e25409ffdec7d3eafc198acaad82a512bdaf1ff25e2f43ffd2094"
+      "sha256": "7053f752d55460b0c81ea24508fb0393e98066ab24e754635345d38dab311f3f"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\overhead-v83\\west\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\overhead-v142\\west\\frame_006.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 214,
-      "sha256": "1661e7cbca8d702addbcb75a2dc5982a90192a302e6ce14a9225fcfb0e91e25c"
+      "sha256": "48a625e3925a9cfa97f5c8d919935fac773ab34e7af97e64238dabdd80eda63a"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\overhead-v83\\west\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\overhead-v142\\west\\frame_007.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 215,
-      "sha256": "17335f5d03e708ac6f4347bfa263aed51e3062438b6c0b93d875373409c4b004"
+      "sha256": "5ac7f582bc3904566734e206e706c5b8b66bb878f83e6e560b5fc59646a704de"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\overhead-v83\\west\\frame_008.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\overhead-v142\\west\\frame_008.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 216,
-      "sha256": "f5838072fe3be2dad1462f32f2c975c469c71f20851f4ce51f315a63019f585e"
+      "sha256": "614266a88a1489736b0911e226259a009c3d6c9d365c45a7de5501f567957d1f"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\overhead-v83\\west\\frame_009.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\overhead-v142\\west\\frame_009.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 217,
-      "sha256": "a0c1561a921a99aaa246686999a64faa7b96d9a71d318fe9978abf32c9d482e1"
+      "sha256": "39a569185fc009b5f13ad73ffa20e6252d3481c711baa2802b3da1038cd3d96f"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\overhead-v83\\west\\frame_010.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\overhead-v142\\west\\frame_010.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 218,
-      "sha256": "df5cb2a8b1d0c8a1bd7b34e935de8a109aac4cbd0eac9c5d144dbf1d7869b840"
+      "sha256": "f6e103964d7ce37d1155d0d6493824109cc6f75eb9b8c7ea6f9c4aa3cef3ee93"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\overhead-v83\\west\\frame_011.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\overhead-v142\\west\\frame_011.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 219,
-      "sha256": "e294431ebe384f561f1dcb32e71015027c52d6aa20cbe5448327f61a34288190"
+      "sha256": "6ab111ad9559897b268aecbca32b86e3c19a3a608fb35a0366ba0bdd7c4f71df"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\uppercut-v83\\west\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\overhead-v142\\west\\frame_012.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 220,
-      "sha256": "e3360ccc7f0509a6f4db0e2401c3325474c3d37c95f8a28f9f9c18bf1be3b2c6"
+      "sha256": "9323215f9d8e4bf16eb18f6a8fe1290c3f42b7f0361d457e357d25126a9e7064"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\uppercut-v83\\west\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\overhead-v142\\west\\frame_013.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 221,
-      "sha256": "86796915a5be72923b598bb77f11adab53e4b1f39f17ba291745bee829efe37d"
+      "sha256": "a2dd81b9ef69a7d27a5bd823a72be4ed774020fe96600f7dd90d62e551ab4503"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\uppercut-v83\\west\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\uppercut-v142\\west\\frame_000.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 222,
-      "sha256": "2d4b8c4eae05eea4c29c9e2f2969e15ad39e80f45a9abbab96acb13c8b1370fd"
+      "sha256": "de34cd3606d3cf187f056d78150e676391efa5f89e9ab302a25875cad2c1df82"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\uppercut-v83\\west\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\uppercut-v142\\west\\frame_001.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 223,
-      "sha256": "24e12da9d343217c336cd37068420407e6b3d802e9b5e403976e5386607959a2"
+      "sha256": "d964ddfaeb903d2de2ea196b48e40f5701d29aaceb63f95cadf1823979ab4d12"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\uppercut-v83\\west\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\uppercut-v142\\west\\frame_002.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 224,
-      "sha256": "267cdcfebf9fa26b493a8ad27d1eb1cce27d8aa0516d367db5912b0631850598"
+      "sha256": "c465be1c43132cc635bcfe7ad90c8a5211bb9a5099a2dbefe3f0ba907834911b"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\uppercut-v83\\west\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\uppercut-v142\\west\\frame_003.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 225,
-      "sha256": "e8b4c3dc3185c891cc1e34e01c4e79cb5e9b7779dcdae8473b21053c5e0114aa"
+      "sha256": "bb05c5e688975e6eb5c1b1800a1fec3d64ef3da8530aed7d1fdc7906d63e5fc9"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\uppercut-v83\\west\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\uppercut-v142\\west\\frame_004.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 226,
-      "sha256": "22628fc5580df15c14b7fc5a88e82d59872c209174d675d96678055831361af3"
+      "sha256": "88ba2aaeaeb475c76e3ff01be800d0f15a5b262da6f3a6858873c5f75ee97d2b"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\uppercut-v83\\west\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\uppercut-v142\\west\\frame_005.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 227,
-      "sha256": "0f2a433fa48c1f7162c7387349bec6f13d029247fb94727c9d3a8c21a3f9f375"
+      "sha256": "17b8242dd809b58c8031de0275753306e49a162281cbdd7ba573020168873964"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\uppercut-v83\\west\\frame_008.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\uppercut-v142\\west\\frame_006.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 228,
-      "sha256": "30ab439d801b0b4bedf4fe95ae8b2250def8dc08000794050d06b57784af9784"
+      "sha256": "8458097585799f7a8f796833b6cd7f514a5f62a0d91ead338e009040c93d2922"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\uppercut-v83\\west\\frame_009.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\uppercut-v142\\west\\frame_007.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 229,
-      "sha256": "8f3037e35e0727da4d86f7ba99bb15157bb46402660d3c5d92d8fbbe1b598314"
+      "sha256": "f53ee07f5657b1135158a3bd3d78412d8de5f100df2a2e4e8fe735352e30fce9"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\uppercut-v83\\west\\frame_010.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\uppercut-v142\\west\\frame_008.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 230,
-      "sha256": "5d9a82052d620ae6fd1db437c30a4c98689745e9dea85d1b9bda88e61036b0dd"
+      "sha256": "ff537dcd3a703dfd6ebbb39de97c49fd960dc9afaef2e292ac68a81ae177c087"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\uppercut-v83\\west\\frame_011.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\uppercut-v142\\west\\frame_009.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 231,
-      "sha256": "3103e0a334aa6bf126838dd95849c724d21a38bfec2f1c727c1123d3743abd9d"
+      "sha256": "a0b917c56ed444d017a1e8993948bfdff0beb6709f8a8f9245b1cb79018ecb6c"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete084\\animations\\driving-v84\\west\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\uppercut-v142\\west\\frame_010.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 232,
+      "sha256": "d287f64f69a2136a8db94b2f5ac276f0fefb2afdc27ee528b737f2ec513019dd"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete084\\animations\\driving-v84\\west\\frame_000.png",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "offset": [
+        -12,
+        -11
+      ],
+      "cell": 233,
       "sha256": "5a939e329b69d7a91b01c446091646c56b4703df3be0c1d0a8344a9fb545f0c7"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete084\\animations\\driving-v84\\west\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete084\\animations\\driving-v84\\west\\frame_001.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 233,
+      "cell": 234,
       "sha256": "dc0414491f52ed53a01626b468063098f9ecb5718c0fa2121ade0740195182f9"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete084\\animations\\driving-v84\\west\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete084\\animations\\driving-v84\\west\\frame_002.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 234,
+      "cell": 235,
       "sha256": "e9236d5fe846d05d23646dccc570c2268c070d65bc58148279549de931effe72"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete084\\animations\\driving-v84\\west\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete084\\animations\\driving-v84\\west\\frame_003.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 235,
+      "cell": 236,
       "sha256": "b02acfa079a3be65f6f1ec46ff65470f681474f845a4a7858d0eb824805b4594"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete084\\animations\\driving-v84\\west\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete084\\animations\\driving-v84\\west\\frame_004.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 236,
+      "cell": 237,
       "sha256": "096f47a3ad68a6632f9b89f285014e0ced62f588f057720a957bae12f51c63b7"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete084\\animations\\driving-v84\\west\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete084\\animations\\driving-v84\\west\\frame_005.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 237,
+      "cell": 238,
       "sha256": "27edd164a62113bcd101646580e2e7b7b3e0c16c41da9e0dd0e8def02ba65c2a"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete084\\animations\\driving-v84\\west\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete084\\animations\\driving-v84\\west\\frame_006.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 238,
+      "cell": 239,
       "sha256": "0ada5681da59068968ef8a8778fb9ef46d2c3d20a4240093541eac354a97718d"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete084\\animations\\driving-v84\\west\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete084\\animations\\driving-v84\\west\\frame_007.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 239,
+      "cell": 240,
       "sha256": "856da26046bd55ffe08f8b6f11e49109577254448cccb490387e902da6cc8bda"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete084\\animations\\driving-v84\\west\\frame_008.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete084\\animations\\driving-v84\\west\\frame_008.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 240,
+      "cell": 241,
       "sha256": "ff2b56a905ac3a64c8e1adf72992defd6b6e50d04da565c6d6f12bd287fd630d"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete084\\animations\\driving-v84\\west\\frame_009.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete084\\animations\\driving-v84\\west\\frame_009.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 241,
+      "cell": 242,
       "sha256": "fd2d7369d4a9dd8865b4a0f5099f4c84dcca9f6b1a487800dc8b79875e4897f1"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete084\\animations\\driving-v84\\west\\frame_010.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete084\\animations\\driving-v84\\west\\frame_010.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 242,
+      "cell": 243,
       "sha256": "55895a1c82aea16653e8789f81beef20dc23420da03bc258f99e31739f272b92"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete084\\animations\\driving-v84\\west\\frame_011.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete084\\animations\\driving-v84\\west\\frame_011.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 243,
+      "cell": 244,
       "sha256": "170e216875e3d9b7dcf40d2d709eecca6845bc8fc029961fda62e4cca2fe45db"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete084\\animations\\driving-v84\\west\\frame_012.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete084\\animations\\driving-v84\\west\\frame_012.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 244,
+      "cell": 245,
       "sha256": "60af9723a3f960735af80c2084b8890d6666fec8b275dc2225d5e66d93322733"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete084\\animations\\driving-v84\\west\\frame_013.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete084\\animations\\driving-v84\\west\\frame_013.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 245,
+      "cell": 246,
       "sha256": "b0395c0900ab4bd70308c9959f73420bce1a5b1c3ec923fe7038517205a8af13"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\guard-v83\\west\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\guard-v83\\west\\frame_000.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 246,
+      "cell": 247,
       "sha256": "6b86f47e21a25ea8ead2b542ed4473ccf0e1e4c3ab988879f0b3e26279544ed5"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\guard-v83\\west\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\guard-v83\\west\\frame_001.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 247,
+      "cell": 248,
       "sha256": "409c9edf9d34acf40bf548028f3d1a0a8f7b6afedf25fbfc805594b0d51a35eb"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\guard-v83\\west\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\guard-v83\\west\\frame_002.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 248,
+      "cell": 249,
       "sha256": "243a3bff62f3d68ffef779f3434e0a3b1915291d44a7dba78af322af0b3d3aa6"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\guard-v83\\west\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\guard-v83\\west\\frame_003.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 249,
+      "cell": 250,
       "sha256": "793691a76608114225321fd6b349c0a1859f3d643a87aee602a0794729019ed8"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\guard-v83\\west\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\guard-v83\\west\\frame_004.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 250,
+      "cell": 251,
       "sha256": "c4ebc1d19b82ea7c0e39d2cbd994eee76b94a313cb373621e02aff5125d620a1"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\guard-v83\\west\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\guard-v83\\west\\frame_005.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 251,
+      "cell": 252,
       "sha256": "e9085b42653e9502757879d8135d0b6abf958480d6eef8547fd070d071d32ef7"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\guard-v83\\west\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\guard-v83\\west\\frame_006.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 252,
+      "cell": 253,
       "sha256": "c2e8f053b4297468a77fdf661d4311012603e4803884bb4a6369384ac8c3f6cf"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\guard-v83\\west\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\guard-v83\\west\\frame_007.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 253,
+      "cell": 254,
       "sha256": "3d55d1b5aa7aef6a5f5244b7cbc23e75d3d6ca9627ac9332246866e13dcbc1af"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\injured-v83\\west\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\injured-v83\\west\\frame_000.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 254,
+      "cell": 255,
       "sha256": "4be258e58618b5d003d4abf8fd3fa34773fd961aaff3fe590db58c294026c94c"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\injured-v83\\west\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\injured-v83\\west\\frame_001.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 255,
+      "cell": 256,
       "sha256": "49b211ed301c0a42365b4d77b81f5dea669992686637de88b336863014c7417e"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\injured-v83\\west\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\injured-v83\\west\\frame_002.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 256,
+      "cell": 257,
       "sha256": "18b9740e2c712a1e430c1a8178ef280cb70484f52374bd8f0d76c0e724b7ee59"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\injured-v83\\west\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\injured-v83\\west\\frame_003.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 257,
+      "cell": 258,
       "sha256": "a2b68dd1629838746b89c44e6bc5654c9a9e887c5501f8ae4b5d3ed4ede230f4"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\injured-v83\\west\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\injured-v83\\west\\frame_004.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 258,
+      "cell": 259,
       "sha256": "91e50a6025d1d247e2e31afe988ac2c9d2bd0d3597d953d1376e77cc3fc2f4b0"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\injured-v83\\west\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\injured-v83\\west\\frame_005.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 259,
+      "cell": 260,
       "sha256": "867f633f0a337801ee968116ebdb4f6044acc3bcc2742a5647a1b2b9fd25024a"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\injured-v83\\west\\frame_006.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\injured-v83\\west\\frame_006.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 260,
+      "cell": 261,
       "sha256": "fafdbf5a6de0735be1373efc2d4240bccdfd9a39bef77173f69f7b5ec5e9dd42"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\injured-v83\\west\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\injured-v83\\west\\frame_007.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 261,
+      "cell": 262,
       "sha256": "b791896239bae62c69fb45533e16338d9e7748ab7c8693bebba5c340db3015ce"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\victory-v83\\west\\frame_000.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\victory-v83\\west\\frame_000.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 262,
+      "cell": 263,
       "sha256": "d786c95f6acf2647940baceb23578eaf2215bd15434f18e531aaf07c5e54f975"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\victory-v83\\west\\frame_001.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\victory-v83\\west\\frame_001.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 263,
+      "cell": 264,
       "sha256": "4df72a84697a00533fc024539c9d0abcc52736cb322489293e7f5b9d318e60b7"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\victory-v83\\west\\frame_002.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\victory-v83\\west\\frame_002.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 264,
+      "cell": 265,
       "sha256": "3b7076b109aff0016be1b32c66467891d5b10fd9028a9788b43120ff24bbad2e"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\victory-v83\\west\\frame_003.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\victory-v83\\west\\frame_003.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 265,
+      "cell": 266,
       "sha256": "e6fab57ec06ecb87d9be1886b53d2a61f40ef9dcb865d7dfe3258e479f3d2751"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\victory-v83\\west\\frame_004.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\victory-v83\\west\\frame_004.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
-      "cell": 266,
+      "cell": 267,
       "sha256": "1deaf3e560c79e1356702b6ca1c6637c83215f3575f43e35bbd9642d809bcf58"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\victory-v83\\west\\frame_005.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\victory-v83\\west\\frame_005.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
-      ],
-      "cell": 267,
-      "sha256": "615e8d0ef070d5908d18692d98edb575336a2dd9d45c8d0a2fcdaf8ba754cd59"
-    },
-    {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\victory-v83\\west\\frame_006.png",
-      "sourceSize": [
-        256,
-        256
-      ],
-      "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 268,
       "sha256": "615e8d0ef070d5908d18692d98edb575336a2dd9d45c8d0a2fcdaf8ba754cd59"
     },
     {
-      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v84\\bren\\Complete083\\animations\\victory-v83\\west\\frame_007.png",
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\victory-v83\\west\\frame_006.png",
       "sourceSize": [
         256,
         256
       ],
       "offset": [
-        -4,
-        -22
+        -12,
+        -11
       ],
       "cell": 269,
       "sha256": "615e8d0ef070d5908d18692d98edb575336a2dd9d45c8d0a2fcdaf8ba754cd59"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete083\\animations\\victory-v83\\west\\frame_007.png",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "offset": [
+        -12,
+        -11
+      ],
+      "cell": 270,
+      "sha256": "615e8d0ef070d5908d18692d98edb575336a2dd9d45c8d0a2fcdaf8ba754cd59"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\finish-v142\\west\\frame_000.png",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "offset": [
+        -12,
+        -11
+      ],
+      "cell": 271,
+      "sha256": "de34cd3606d3cf187f056d78150e676391efa5f89e9ab302a25875cad2c1df82"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\finish-v142\\west\\frame_001.png",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "offset": [
+        -12,
+        -11
+      ],
+      "cell": 272,
+      "sha256": "8b64416c56240f17e7f0fa1abc3db1a4f9d81fd0ce603358428aafd6a2eb657e"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\finish-v142\\west\\frame_002.png",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "offset": [
+        -12,
+        -11
+      ],
+      "cell": 273,
+      "sha256": "f3815732d44ba5ebb1c2aff1ba5432ce02182d2cf790238f3a16ccabac9b1598"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\finish-v142\\west\\frame_003.png",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "offset": [
+        -12,
+        -11
+      ],
+      "cell": 274,
+      "sha256": "b324e9b63736dd2732746927ef2af26e496c9798c82927ffee1ccd5dc6a598ca"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\finish-v142\\west\\frame_004.png",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "offset": [
+        -12,
+        -11
+      ],
+      "cell": 275,
+      "sha256": "6d598e5a1ca5f7b6cdd5bec56444f2ab3778862c68e7e0ca9f300fd2794b2401"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\finish-v142\\west\\frame_005.png",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "offset": [
+        -12,
+        -11
+      ],
+      "cell": 276,
+      "sha256": "b5746b5014fd335b91bbda2426b0446f49fd345094223891b42bacc424dfe85f"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\finish-v142\\west\\frame_006.png",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "offset": [
+        -12,
+        -11
+      ],
+      "cell": 277,
+      "sha256": "50656184c2f7e1b57fd30ef03db22200a7d709c3712a62a334353055e6a4e115"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\finish-v142\\west\\frame_007.png",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "offset": [
+        -12,
+        -11
+      ],
+      "cell": 278,
+      "sha256": "a23d9be89cabb525cc821fe1009af730e1feaf97de0c32bba06491bdff8bbd1f"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\finish-v142\\west\\frame_008.png",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "offset": [
+        -12,
+        -11
+      ],
+      "cell": 279,
+      "sha256": "a88a599703b2fd4712c127f40efebc3d349e001e07bd26e612f8e8985a1180f8"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\finish-v142\\west\\frame_009.png",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "offset": [
+        -12,
+        -11
+      ],
+      "cell": 280,
+      "sha256": "9cb09cc1ff0ca130249e49437b50c40e31aa6c199ba5f133359b838e11a8f776"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\finish-v142\\west\\frame_010.png",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "offset": [
+        -12,
+        -11
+      ],
+      "cell": 281,
+      "sha256": "727e3793b15f4d363cdcb523a5bd253dc4c944bac2e25f22408041b4ded88df5"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\finish-v142\\west\\frame_011.png",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "offset": [
+        -12,
+        -11
+      ],
+      "cell": 282,
+      "sha256": "f569fe96263c025a0b7896e6cb66f2185c84bcea24ce017f1d11631a2c5e373d"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\finish-v142\\west\\frame_012.png",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "offset": [
+        -12,
+        -11
+      ],
+      "cell": 283,
+      "sha256": "fba2c4b11c4c2bd9c713f5e420e6f93e34841758e0a4e0f472f1ea0d4ffa40b1"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\finish-v142\\west\\frame_013.png",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "offset": [
+        -12,
+        -11
+      ],
+      "cell": 284,
+      "sha256": "68f84362ba2dcca05acf2539baa9f10e0ee36763cfa1eb07020ac1d8b7be1d19"
+    },
+    {
+      "file": "elyndor\\assets\\source\\pixellab-v7\\party-v142\\bren\\Complete142\\animations\\finish-v142\\west\\frame_014.png",
+      "sourceSize": [
+        256,
+        256
+      ],
+      "offset": [
+        -12,
+        -11
+      ],
+      "cell": 285,
+      "sha256": "8d82e4ac17a6ad9043341964d4c55a3c5480cd08c3a2c5051144bf6d55bc2c5f"
     }
   ],
   "soren": [

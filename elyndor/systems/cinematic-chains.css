@@ -1,0 +1,31 @@
+#combo.cinematic-chain141{min-height:104px;padding:12px 112px 12px 18px;background:linear-gradient(110deg,rgba(3,22,31,.94),rgba(7,33,42,.87));border:1px solid #a78d50;box-shadow:0 8px 30px #0005;border-radius:5px;text-align:left;position:absolute}
+#combo.cinematic-chain141 .timing-track{display:none!important}
+body:not(.mobile-combat69) #battle-hud:has(#combo.cinematic-chain141:not(.hidden)) #battle-callout{top:calc(clamp(92px,16vh,160px) + 116px)!important}
+#combo.cinematic-chain141 #combo-name{font-size:15px;line-height:1.35;margin:0 0 8px;color:#eddaa5}
+#combo.cinematic-chain141 #combo-progress{display:block;font-size:12px;line-height:1.4;max-width:255px;color:#e4e6da}
+#combo.cinematic-chain141 #timing-hit{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:96px;height:96px;min-height:0;padding:0;border:0!important;background:none!important;box-shadow:none!important;opacity:1;touch-action:manipulation;color:#f8e8b8;overflow:visible}
+.chain-ring141{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.chain-ring141 circle{fill:none;stroke-width:2;vector-effect:non-scaling-stroke}
+.chain-ring141 .chain-rail141{stroke:#617c7d;stroke-width:1;fill:#061d26}
+.chain-ring141 .chain-gold141{stroke:#c8a65d;stroke-width:3;opacity:.7}
+.chain-ring141 .chain-incoming141{stroke:#a7d2d9;stroke-width:2;transform-origin:55px 55px;opacity:.85}
+.chain-key141{position:absolute;inset:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;pointer-events:none}
+.chain-key141 kbd{font-size:15px;padding:0;border:0;background:none;color:inherit}.chain-key141 b{font:11px Georgia,serif}
+.chain-ready141 .chain-gold141{stroke:#ffe3a0!important;opacity:1!important;filter:drop-shadow(0 0 4px #e7bf66)}
+.chain-ready141 .chain-incoming141{stroke:#ffe3a0!important}.chain-ready141 .chain-key141{color:#ffe7a5}
+.chain-missed141 .chain-incoming141{stroke:#c78b7b!important}
+.chain-beats141{display:flex;gap:8px;margin-top:9px;height:8px}.chain-beats141 i{width:7px;height:7px;transform:rotate(45deg);border:1px solid #778c89;background:#183640}
+.chain-beats141 i[data-state=current]{border-color:#e6cb80;background:#78633c}.chain-beats141 i[data-state=hit]{border-color:#f6d982;background:#d4ae52}.chain-beats141 i[data-state=miss]{border-color:#cd9583;background:#8b514c}
+body.mobile-combat69 #combo.cinematic-chain141{min-height:90px;padding:10px 100px 9px 12px;max-width:450px}
+body.mobile-combat69 #combo.cinematic-chain141 #timing-hit{width:82px;height:82px;right:9px}
+body.mobile-combat69 #combo.cinematic-chain141 #combo-name{font-size:13px;margin-bottom:4px}
+body.mobile-combat69 #combo.cinematic-chain141 #combo-progress{font-size:11px;max-width:none}
+body.mobile-combat69 .chain-key141{inset:17px}
+body.mobile-combat69 .chain-key141 kbd{display:none}
+@media(max-height:440px) and (orientation:landscape){body.mobile-combat69 #combo.cinematic-chain141{min-height:64px;padding:5px 86px 5px 12px}body.mobile-combat69 #combo.cinematic-chain141 #timing-hit{width:64px;height:64px;right:9px}body.mobile-combat69 #combo.cinematic-chain141 #combo-name{font-size:11px;margin-bottom:2px}body.mobile-combat69 #combo.cinematic-chain141 #combo-progress{font-size:10px}.chain-beats141{margin-top:4px;height:6px}.chain-beats141 i{width:6px;height:6px}}
+/* Replace the previous timing-grid rules as one scoped, bounded touch dock. */
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-hud #combo.cinematic-chain141{display:block!important;height:90px!important;min-height:90px!important;max-height:90px!important;max-width:none!important;padding:10px 104px 9px 12px!important}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #combo.cinematic-chain141 #timing-hit{position:absolute!important;top:4px!important;right:9px!important;bottom:auto!important;transform:none!important;width:82px!important;height:82px!important;min-height:44px!important;padding:0!important}
+body.mobile-combat69 #combo.cinematic-chain141>.chain-beats141{display:flex!important;justify-content:flex-start}
+body.mobile-combat69 #combo.cinematic-chain141 #combo-progress{white-space:normal!important;font:11px/1.3 system-ui!important;overflow:visible}
+@media(orientation:landscape) and (max-height:550px){body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-hud #combo.cinematic-chain141{height:64px!important;min-height:64px!important;max-height:64px!important;padding:5px 86px 5px 12px!important}body[data-minimap51].compact33.combat-ui65.mobile-combat69 #combo.cinematic-chain141 #timing-hit{width:64px!important;height:64px!important;top:0!important}body.mobile-combat69 #combo.cinematic-chain141 #combo-progress{font:10px/1.2 system-ui!important}}

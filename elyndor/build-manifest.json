@@ -286,9 +286,18 @@
       "systems/travel-scenery-refinement.js",
       "systems/battle-foreground-refinement.js",
       "systems/battle-contact-shadows.js",
-        "systems/loading-performance.js",
+      "systems/loading-performance.js",
       "systems/water-query-speed.js",
-      "systems/location-cache.js"
+      "systems/location-cache.js",
+      "systems/hosted-performance.js",
+      "systems/housing-state.js",
+      "systems/housing-garden.js",
+      "systems/housing-world.js",
+      "systems/housing-decor.js",
+      "systems/housing-ui.js",
+      "systems/housing-customize.js",
+      "systems/housing-frontages.js",
+      "systems/cinematic-chains.js"
     ]
   },
   "styles": [
@@ -343,7 +352,9 @@
     "systems/party-roster.css",
     "systems/battle-reference.css",
     "systems/menu-polish.css",
-    "systems/interface-review.css"
+    "systems/interface-review.css",
+    "systems/housing.css",
+    "systems/cinematic-chains.css"
   ],
   "owners": {
     "runtime": [

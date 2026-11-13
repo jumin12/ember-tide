@@ -88,9 +88,12 @@ applyLiveChainHit=function(c,hit){
 
 const brenVertex82=`varying vec2 v;void main(){v=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`;
 const brenTrailFragment82=`varying vec2 v;uniform float opacity;uniform vec3 tint;
-void main(){float edge=fwidth(v.x)*1.2;float radial=smoothstep(.02,.25,v.x)*(1.-smoothstep(.96-edge,1.,v.x));
-float tail=pow(clamp(v.y,0.,1.),.7);float core=exp(-pow((v.x-.88)/.07,2.));
-gl_FragColor=vec4(mix(tint,vec3(1.5),core*.88),radial*tail*opacity);}`;
+void main(){float aa=max(.004,fwidth(v.x));
+float core=exp(-pow((v.x-.91)/(.012+aa),2.));
+float filament=exp(-pow((v.x-.76)/(.008+aa),2.))*.50;
+float halo=exp(-pow((v.x-.87)/.13,2.))*.19;
+float tail=smoothstep(0.,.18,v.y)*pow(clamp(v.y,0.,1.),.40);
+gl_FragColor=vec4(mix(tint,vec3(1.55,1.8,2.),core*.82),(core+filament+halo)*tail*opacity);}`;
 const brenBurstFragment82=`varying vec2 v;uniform float age,opacity;uniform vec3 tint;uniform float floorRing;
 void main(){vec2 p=v*2.-1.;float r=length(p),a=atan(p.y,p.x);float life=1.-age;
 float ring=exp(-pow((r-(.15+age*.72))/.025,2.));float spokes=pow(max(0.,cos(a*6.+age*2.)),20.)*exp(-r*4.);
@@ -117,7 +120,7 @@ function initBrenFX82(){
   mesh.visible=floor.visible=false;floor.rotation.x=-Math.PI/2;root.add(mesh,floor);bursts.push({mesh,floor,age:10,duration:.55,size:1});
  }
  const lights=[0,1].map(()=>{const l=new THREE.PointLight('#86caff',0,11,2);l.castShadow=false;l.userData.bren82=true;root.add(l);return l;});
- const sparks=new THREE.InstancedMesh(new THREE.OctahedronGeometry(.025,0),new THREE.MeshBasicMaterial({color:'#b9e7ff',transparent:true,depthWrite:false,blending:THREE.AdditiveBlending,toneMapped:false}),48);sparks.frustumCulled=false;sparks.visible=false;root.add(sparks);
+ const sparks=new THREE.InstancedMesh(new THREE.OctahedronGeometry(.04,0),new THREE.MeshBasicMaterial({color:'#89cfff',transparent:true,depthWrite:false,blending:THREE.AdditiveBlending,toneMapped:false}),48);sparks.frustumCulled=false;sparks.visible=false;root.add(sparks);
  bren82.world=root;bren82.pool={trails,bursts,lights,sparks,particles:[],matrix:new THREE.Matrix4(),vector:V3(),right:V3(),up:V3(),tip:V3(),grip:V3(),cursor:0};return bren82.pool;
 }
 function brenContact82(position,strong=false,gold=false){
@@ -143,6 +146,7 @@ function updateBrenFX82(dt){
  if(live){
   if(live.brenCue82?.step!==live.step)live.brenCue82={actor:live.actor,time:live.t,duration:live.duration,step:live.step,bren82:{clip:['comboSlash','comboOverhead','comboUppercut'][live.step],serial:++bren82.serial,target:live.target.actor,live:true,contacts:[],windows:[[.58,.97]]}};
   cue=live.brenCue82;cue.time=live.t;
+  if(live.cinema141)cue.bren82.clip=live.cinema141.pose.clip;
  }
  const move=cue?.bren82,a=cue?.actor;
  if(move&&isBren82(a)){
@@ -159,7 +163,10 @@ function updateBrenFX82(dt){
    const tr=p.trails[window%3];if(!tr.active||tr.window!==window){tr.samples.length=0;tr.window=window;}
    tr.active=true;tr.age=0;tr.mesh.visible=true;
    tr.anchor.copy(a.mesh.position);const o=tr.anchor;
-   tr.samples.push([p.grip.x-o.x,p.grip.y-o.y,p.grip.z-o.z,p.tip.x-o.x,p.tip.y-o.y,p.tip.z-o.z]);if(tr.samples.length>32)tr.samples.shift();
+   const sample=[p.grip.x-o.x,p.grip.y-o.y,p.grip.z-o.z,p.tip.x-o.x,p.tip.y-o.y,p.tip.z-o.z],last=tr.samples[tr.samples.length-1];
+   // A held bullet-time pose must not push its whole arc out of the ribbon
+   // history with repeated zero-length segments. Only moving steel adds one.
+   if(!last||sample.some((v,i)=>Math.abs(v-last[i])>.0001)){tr.samples.push(sample);if(tr.samples.length>32)tr.samples.shift();}
    const l=p.lights[0];l.position.lerpVectors(p.grip,p.tip,.6);l.color.set('#63bfff');l.intensity=move.clip==='drivingSlash'?24:15;l.userData.life=.1;
   }
   for(const tr of p.trails)if(tr.window!==window)tr.active=false;

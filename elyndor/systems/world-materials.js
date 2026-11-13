@@ -18,7 +18,7 @@ function worldArray102(keys){
 }
 const worldLoadBefore102=loadAssets;
 loadAssets=async function(...args){
- const result=await worldLoadBefore102(...args);await commonMaterials100();
+ const result=await worldLoadBefore102(...args);await prepareGpuArrays138();await commonMaterials100();
  const keys=[...GROUND102,...SURFACES102,...GROUNDCOVER102,'botanicalLeaf102','petal102','rockGranite','rockLimestone','rockSlate','rockMoss','woodWeathered101'];
  // Four simultaneous decodes bound peak upload/decode pressure on phones.
  for(let i=0;i<keys.length;i+=4)await Promise.all(keys.slice(i,i+4).map(loadWorldSurface102));

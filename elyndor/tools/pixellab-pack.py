@@ -240,6 +240,8 @@ def pack_character(root,item,encode,audit,strict):
   meta['actionTimings']=item['actionTimings']
  if item.get('impactFrames'):
   meta['impactFrame'].update(item['impactFrames'])
+ if item.get('anticipationFrames'):
+  meta['anticipationFrame']=item['anticipationFrames']
  if item.get('weaponTracks'):
   meta['weaponFrames']={}
   for path,track in item['weaponTracks'].items():

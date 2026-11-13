@@ -119,5 +119,5 @@ openMenu=function(tab,...args){
  if(tab!=='map'||exactAtlas67.scene)return menuBefore116(tab,...args);
  if(startup116.mapTask)return startup116.mapTask;
  setJourneyLoading(true);setLoadStage36(.25,'Preparing the world map…');
- startup116.mapTask=(async()=>{try{await yieldLoad36();await continentWarmBefore116();await settleSprites116();setJourneyLoading(false);return menuBefore116(tab,...args);}catch(e){setJourneyLoading(false);$('#fatal-text').textContent=e.message;$('#fatal').classList.remove('hidden');}finally{startup116.mapTask=null;}})();return startup116.mapTask;
+ startup116.mapTask=(async()=>{try{await yieldLoad36();await ensureWorldData136(true);await continentWarmBefore116();await settleSprites116();setJourneyLoading(false);return menuBefore116(tab,...args);}catch(e){setJourneyLoading(false);$('#fatal-text').textContent=e.message;$('#fatal').classList.remove('hidden');}finally{startup116.mapTask=null;}})();return startup116.mapTask;
 };

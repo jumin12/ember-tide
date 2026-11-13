@@ -2,6 +2,24 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.34 — A home in Valenne and cinematic combat
+
+November 13, 2026
+
+- Added one player-owned home with six regional styles, three room layouts, and a separate tree-surrounded yard. Azarith and an animated portal in each settlement provide travel to the private home.
+- Homes start empty. Place, rotate, move and remove collected furniture, wall decorations, tabletop items and trophies; placement checks protect entrances, walkways and usable surfaces. Housing ownership and arrangements persist with the journey.
+- Customize interior walls, colors and fireplace stone, plus exterior walls, roofing and timber trim. Decorate the enclosed garden with benches, planters, lanterns and ornaments while preserving house and portal access.
+- Refined town portal placement and grounded their bases on clear native terrain without extra paving circles. Placed Brookstead’s portal between its left lower stairways, kept paths clear, and corrected mismatched house timber joints.
+- Rebuilt timed attacks as a cinematic three-hit chain: a normal-speed opening, slower linked strikes after the first successful hit, and an immediate return to normal speed and color at the finishing impact. Touch, E and Space controls remain available.
+- Integrated 52 reviewed native PixelLab frames for Bren’s straight slash, airborne overhead, rising uppercut and grounded finishing lunge. Corrected duplicate blades and artifacts while preserving his approved movement, idle and other combat art.
+- Added animated blue sword crescents, moving gold impact sparks, suspended fragments, a ground-level sweep and finishing dust. Blue blade light and warm impact light illuminate nearby grass, ground, rocks and props in both arena and town battles.
+- Synchronized attack poses, projectiles, enemy reactions and damage contacts. Pause freezes the sequence; missed or expired inputs, held keys and defeated targets recover safely without changing the established damage rules.
+- Reduced hosted startup downloads with content-addressed desktop and phone scenery variants, GPU-compressed normal and roughness arrays with a texture fallback, and deferred continent vegetation, unused loading pictures and nonessential audio. Native character and UI pixels remain unchanged.
+- Accelerated exact ground-height queries and bounded reflection and shadow updates while refreshing on relevant camera, scene and water changes. Kept on-demand scenery loading and cache limits for desktop and phones.
+- Checked housing persistence and placement, all six portal approaches, desktop and phone layouts, combat timing and damage, both rendering paths, and actual local blue and gold environmental lighting. Existing journeys and the original combat camera remain supported.
+
+Release evidence: `elyndor/previews/release-v134/verification.json`. Phone checks use browser emulation. Render cache-header rules are documented under `hosting/`; committing them does not apply dashboard settings.
+
 ## Alpha Version 1.33 — Faster journeys and refined battlefields
 
 November 12, 2026

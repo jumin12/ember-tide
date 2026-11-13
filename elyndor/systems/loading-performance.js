@@ -19,23 +19,25 @@ async function compileVisible136(){
  }finally{renderer.clippingPlanes=clip;renderer.setRenderTarget(target);}
 }
 
-let worldData136=null;
-async function ensureWorldData136(){
- if(BAKED_WORLD36.vegetation64)return;
- if(worldData136)return worldData136;
- worldData136=(async()=>{
+let worldData136=null,vegetationData138=null;
+async function ensureWorldData136(full=false){
+ if(full?BAKED_WORLD36.vegetation64:BAKED_WORLD36.grid)return;
+ if(full&&!BAKED_WORLD36.grid)await ensureWorldData136();
+ if(full?vegetationData138:worldData136)return full?vegetationData138:worldData136;
+ const task=(async()=>{
   async function read(url,compressed){
    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),30000);
    try{const response=await fetch(url,{signal:controller.signal});if(!response.ok)throw Error('Could not load the world data. Reload to retry.');
     return compressed?await new Response(response.body.pipeThrough(new DecompressionStream('gzip'))).json():await response.json();
    }finally{clearTimeout(timer);}
   }
-  let data;
-  if(typeof DecompressionStream==='function'){try{data=await read(WORLD_DATA136.gzip,true);}catch{data=await read(WORLD_DATA136.plain,false);}}
-  else data=await read(WORLD_DATA136.plain,false);
-  if(!data.vegetation64?.trees?.data||!data.vegetation64?.plants||!data.grid?.data)throw Error('Incomplete world data. Reload to retry.');
+  const files=full?(WORLD_DATA136.vegetation??WORLD_DATA136):(WORLD_DATA136.initial??WORLD_DATA136);let data;
+  if(typeof DecompressionStream==='function'){try{data=await read(files.gzip,true);}catch{data=await read(files.plain,false);}}
+  else data=await read(files.plain,false);
+  if(full?!data.vegetation64?.trees?.data||!data.vegetation64?.plants:!data.grid?.data)throw Error('Incomplete world data. Reload to retry.');
   Object.assign(BAKED_WORLD36,data);
- })();return worldData136;
+ })();if(full)vegetationData138=task;else worldData136=task;
+ try{return await task;}catch(error){if(full)vegetationData138=null;else worldData136=null;throw error;}
 }
 const assetLoadBefore136=loadAssets;
 loadAssets=async function(...args){const [result]=await Promise.all([assetLoadBefore136(...args),ensureWorldData136()]);return result;};

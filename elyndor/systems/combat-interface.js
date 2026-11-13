@@ -18,7 +18,7 @@ card=function(id,...args){
 function updateAbilityHelp65(button){
  const box=$('#ability-help65');if(!box||!battle)return;const p=previewAbility65(button),id=currentFighter();
  let text='Choose a command. Experiment with ability types to discover enemy weaknesses.';
- if(p?.index!==undefined)text=CAST[id].skill[p.index][1];else if(button?.dataset.action==='attack')text='A timed attack chain. Strike when the marker crosses the gold window.';else if(button?.dataset.battleItem)text=ITEMS[button.dataset.battleItem]?.desc??text;
+ if(p?.index!==undefined)text=CAST[id].skill[p.index][1];else if(button?.dataset.action==='attack')text='Strike when the rings meet in gold. The first hit starts bullet time; the final impact restores speed.';else if(button?.dataset.battleItem)text=ITEMS[button.dataset.battleItem]?.desc??text;
  box.innerHTML=(p?.type?icon65(p.type,20)+'<b>'+p.type+'</b> ':'')+'<span>'+esc(text)+'</span>';
 }
 function decorateCommands65(){

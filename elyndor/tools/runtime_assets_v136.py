@@ -15,7 +15,12 @@ def package_runtime136(root,parts,bake):
     compact={}
     original=(root/'elyndor/world-bake-v36.js').read_text(encoding='utf8')
     replacement='const BAKED_WORLD36='+json.dumps(compact,separators=(',',':'))+';\n'
-    replacement+='const WORLD_DATA136='+json.dumps({'plain':url,'gzip':compressed})+';\n'
+    core={key:value for key,value in rows.items() if key!='vegetation64'}
+    vegetation={'vegetation64':rows['vegetation64']}
+    def bundle(value):
+        data=json.dumps(value,separators=(',',':')).encode()
+        return {'plain':runtime_file136(root,data,'json'),'gzip':runtime_file136(root,gzip.compress(data,compresslevel=9,mtime=0),'json.gz')}
+    replacement+='const WORLD_DATA136='+json.dumps({'plain':url,'gzip':compressed,'initial':bundle(core),'vegetation':bundle(vegetation)})+';\n'
     assert original in parts['POLISH']
     parts['POLISH']=parts['POLISH'].replace(original,replacement)
     # Staged NPC sheets are optional dev-preview art, never initial game art.

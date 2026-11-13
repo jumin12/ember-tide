@@ -1,14 +1,14 @@
 // RE-095: individually authored silhouettes around Brookstead's existing lots.
 // Joined roofs, readable timber bays and fitted frontages retain the town's geography.
 const BROOK_HOMES121={
- inn:{name:'The Lantern Inn',eaves:6.4,rise:3.25,roof:'cross',tone:'#e7ddc5',timber:'#90704d'},
- forge:{name:'Brookstead Smithy',eaves:4.15,rise:2.55,roof:'smith',tone:'#d6cfb9',timber:'#795c40'},
- shop:{name:'Riverstone Supplies',eaves:4.45,rise:2.60,roof:'gable',tone:'#e8ddc1',timber:'#96734e'},
- mill:{name:'The Mill Workshop',eaves:3.65,rise:2.10,roof:'mill',tone:'#ddd4bb',timber:'#876648'},
- tower:{name:'Riverside Weavers Cottage',eaves:6.85,rise:2.25,roof:'hip',tone:'#e6dbc5',timber:'#8c6b48'},
- garden:{name:'The Kitchen Garden House',eaves:4.20,rise:2.35,roof:'garden',tone:'#e9dfc7',timber:'#977c55'},
- dormer:{name:'The Gabled Cottage',eaves:4.75,rise:2.60,roof:'dormer',tone:'#e2d6bd',timber:'#856548'},
- lodge:{name:'The Orchard House',eaves:5.25,rise:2.15,roof:'lodge',tone:'#e7d7bd',timber:'#92714c'}
+ inn:{name:'The Lantern Inn',eaves:6.4,rise:3.25,roof:'cross',tone:'#e7ddc5',timber:'#ad9168'},
+ forge:{name:'Brookstead Smithy',eaves:4.15,rise:2.55,roof:'smith',tone:'#d6cfb9',timber:'#aa8d65'},
+ shop:{name:'Riverstone Supplies',eaves:4.45,rise:2.60,roof:'gable',tone:'#e8ddc1',timber:'#b3976d'},
+ mill:{name:'The Mill Workshop',eaves:3.65,rise:2.10,roof:'mill',tone:'#ddd4bb',timber:'#aa9069'},
+ tower:{name:'Riverside Weavers Cottage',eaves:6.85,rise:2.25,roof:'hip',tone:'#e6dbc5',timber:'#af946d'},
+ garden:{name:'The Kitchen Garden House',eaves:4.20,rise:2.35,roof:'garden',tone:'#e9dfc7',timber:'#b59b73'},
+ dormer:{name:'The Gabled Cottage',eaves:4.75,rise:2.60,roof:'dormer',tone:'#e2d6bd',timber:'#ae926a'},
+ lodge:{name:'The Orchard House',eaves:5.25,rise:2.15,roof:'lodge',tone:'#e7d7bd',timber:'#b2966c'}
 };
 function brookProfile121(x,z,kind){if(kind!=='home')return BROOK_HOMES121[kind];return BROOK_HOMES121[x<-140?'tower':z<35?'garden':z<70?'dormer':'lodge'];}
 function roof121(parent,x,z,w,d,y,rise,rotate=0,opening=null){
@@ -29,7 +29,7 @@ function roof121(parent,x,z,w,d,y,rise,rotate=0,opening=null){
   face.name='Complete solid plaster gable';face.userData.closedGable133=true;
   const zf=side*(d/2+.18),base=.08,top=rise-.08,t=.115;
   const tie=(a,b,r=t)=>{
-   const draw=(p,q)=>beam(V3(p[0],p[1],zf),V3(q[0],q[1],zf),r,'darkWood','#8a704d',g);
+   const draw=(p,q)=>beam(V3(p[0],p[1],zf),V3(q[0],q[1],zf),r,'wood','#b0956a',g);
    if(side<0||!opening)return draw(a,b);
    // Window jambs receive the brace ends. Never carry the king post or a
    // diagonal through the glazing of the projecting front gable.
@@ -48,11 +48,11 @@ function roof121(parent,x,z,w,d,y,rise,rotate=0,opening=null){
   g.userData.gables133.push({side,width:w,rise,solid:true,joined:true});
  }
  // Real eaves, ridge caps and joined bargeboards articulate the silhouette.
- for(const side of[-1,1]){box(side*w/2,-.08,0,.16,.22,d+.08,'darkWood','#71583f',g);for(const zz of[-d/2-.18,d/2+.18])beam(V3(side*w/2,-.04,zz),V3(0,rise+.03,zz),.105,'wood','#a48b61',g);}
+ for(const side of[-1,1]){box(side*w/2,-.08,0,.16,.22,d+.08,'wood','#a58a61',g);for(const zz of[-d/2-.18,d/2+.18])beam(V3(side*w/2,-.04,zz),V3(0,rise+.03,zz),.105,'wood','#b3976c',g);}
  for(let zz=-d/2+.17;zz<d/2;zz+=.46)box(0,rise+.06,zz,.28,.12,.49,'slate','#9faeb8',g);
  // Exposed rafter tails and joined fascia give small slate courses a scale.
  for(const side of[-1,1])for(let zz=-d/2+.35;zz<d/2;zz+=.78){
-  box(side*(w/2-.20),-.15,zz,.43,.16,.13,'darkWood','#786447',g);
+  box(side*(w/2-.20),-.15,zz,.43,.16,.13,'wood','#ae946d',g);
  }
  return g;
 }
@@ -128,7 +128,7 @@ function buildBrookHome121(x,z,w,d,kind){
  for(const side of[-1,1]){
   panel(side*(w/2+.02),.60,0,.24,.65,d+.15,'wall','#c3bfaa');
   const sh=kind==='forge'&&side<0?h-.65:h;
-  for(const zz of[-d/2,d/2])panel(side*w/2,sh/2+.2,zz,.26,sh+.36,.26,'darkWood',p.timber);
+  for(const zz of[-d/2,d/2])panel(side*w/2,sh/2+.2,zz,.26,sh+.36,.26,'wood',p.timber);
   for(const yy of[1.02,sh+.10,...(h>5.6?[3.45]:[])])panel(side*(w/2+.04),yy,0,.18,.19,d+.1,'wood','#a98b60');
  }
  for(const yy of[1.02,h+.10,...(h>5.6?[3.45]:[])]){
@@ -145,7 +145,7 @@ function buildBrookHome121(x,z,w,d,kind){
  // Side knee braces land on a real corner/mid-bay post and the eaves rail.
  for(const side of[-1,1])for(const hand of[-1,1]){
   const px=side*(w/2+.13),zz=hand*(d/2-.12),to=zz-hand*Math.min(.65,Math.max(.18,d*.25-.95));
-  beam(V3(px,h-.76,zz),V3(px,h+.10,to),.09,'darkWood',p.timber,g);
+  beam(V3(px,h-.76,zz),V3(px,h+.10,to),.09,'wood',p.timber,g);
  }
  if(p.roof==='hip')hipRoof121(roof,w+.86,d+.90,h+.20,p.rise);
  else if(p.roof==='cross'||p.roof==='garden'||p.roof==='lodge'){
@@ -166,7 +166,7 @@ function buildBrookHome121(x,z,w,d,kind){
   const sill=h+.12,top=dy+dh,df=d*.33;
   // Walls extend into the main slope: the dormer cannot float above it.
   box(0,(sill+top)/2,dz,dw*.90,top-sill,df,'plaster',p.tone,roof);roof121(roof,0,dz,dw+.22,d*.39,top,dw*.34);
-  for(const side of[-1,1])box(side*dw*.43,(sill+top)/2,dz+df/2+.05,.13,top-sill,.15,'darkWood',p.timber,roof);
+  for(const side of[-1,1])box(side*dw*.43,(sill+top)/2,dz+df/2+.05,.13,top-sill,.15,'wood',p.timber,roof);
   box(0,dy-.03,dz+df/2+.05,dw*.94,.16,.18,'wood','#a78c60',roof);
   window31(roof,0,dy+dh*.51,dz+d*.165+.08,0,.55);
  }
@@ -176,31 +176,31 @@ function buildBrookHome121(x,z,w,d,kind){
  }
  // Joined facade braces, pegs and the central upper-floor post reproduce the
  // concept's dense timber construction without crossing any glazing.
- if(h>5.6)panel(0,(3.45+h)/2,front+.02,.17,h-3.45,.19,'darkWood',p.timber);
+ if(h>5.6)panel(0,(3.45+h)/2,front+.02,.17,h-3.45,.19,'wood',p.timber);
  for(const side of[-1,1]){
-  beam(V3(side*(w/2-.18),h-.76,front+.055),V3(side*(w/2-.18)-side*.86,h+.10,front+.055),.09,'darkWood',p.timber,g);
+  beam(V3(side*(w/2-.18),h-.76,front+.055),V3(side*(w/2-.18)-side*.86,h+.10,front+.055),.09,'wood',p.timber,g);
   for(const yy of[1.04,h+.10])for(const xx of[side*w*.46,side*w*.32]){const peg=mesh(new THREE.CylinderGeometry(.032,.032,.045,5),material('metal','#6f6651',{roughness:.72,metalness:.3}),xx,yy,front+.15,g);peg.rotation.x=Math.PI/2;}
  }
  // Half-timbered bays define complete walls; every brace clears glazing.
- const faceZ=front+.055,post=(xx,y0,y1)=>panel(xx,(y0+y1)/2,faceZ,.20,y1-y0,.24,'darkWood',p.timber);
+ const faceZ=front+.055,post=(xx,y0,y1)=>panel(xx,(y0+y1)/2,faceZ,.20,y1-y0,.24,'wood',p.timber);
  const framing=[left+.18,doorX-1.23,doorX+1.23,right-.18];
  for(const xx of framing)post(xx,1.06,h+.1);
  if(kind!=='forge'&&kind!=='mill'){
   const bx=(doorX+1.23+w*.28-1.03)/2;
-  if(w*.28-1.03-(doorX+1.23)>.6){post(bx,1.02,h>5.6?3.45:h+.10);beam(V3(bx,1.02,faceZ),V3(bx+.56,h>5.6?3.45:h+.10,faceZ),.09,'darkWood',p.timber,g);post(bx+.56,1.02,h>5.6?3.45:h+.10);}
+  if(w*.28-1.03-(doorX+1.23)>.6){post(bx,1.02,h>5.6?3.45:h+.10);beam(V3(bx,1.02,faceZ),V3(bx+.56,h>5.6?3.45:h+.10,faceZ),.09,'wood',p.timber,g);post(bx+.56,1.02,h>5.6?3.45:h+.10);}
  }
  if(h>5.6){
-  for(const side of[-1,1])beam(V3(0,3.45,faceZ),V3(side*(w*.29-1.12),h+.10,faceZ),.115,'darkWood',p.timber,g);
-  for(const side of[-1,1])for(const zz of[-d*.46,0,d*.46])panel(side*(w/2+.10),(3.45+h)/2,zz,.23,h-3.45,.20,'darkWood',p.timber);
- }else for(const side of[-1,1])panel(side*(w/2+.10),h/2+.5,0,.23,h-.95,.20,'darkWood',p.timber);
+  for(const side of[-1,1])beam(V3(0,3.45,faceZ),V3(side*(w*.29-1.12),h+.10,faceZ),.115,'wood',p.timber,g);
+  for(const side of[-1,1])for(const zz of[-d*.46,0,d*.46])panel(side*(w/2+.10),(3.45+h)/2,zz,.23,h-3.45,.20,'wood',p.timber);
+ }else for(const side of[-1,1])panel(side*(w/2+.10),h/2+.5,0,.23,h-.95,.20,'wood',p.timber);
  // The rear elevation is real construction too. Joined, symmetric bays close
  // the previously bare back wall without changing any front/side openings.
  const rear=-d/2-.12;
  for(const yy of[1.02,h+.10,...(h>5.6?[3.45]:[])])panel(0,yy,rear,w,.19,.22,'wood','#a98b60');
- for(const xx of[-w*.46,0,w*.46])panel(xx,(1.02+h+.10)/2,rear,.22,h-.92,.24,'darkWood',p.timber);
+ for(const xx of[-w*.46,0,w*.46])panel(xx,(1.02+h+.10)/2,rear,.22,h-.92,.24,'wood',p.timber);
  const rearBase=h>5.6?3.45:1.02;
- for(const side of[-1,1])beam(V3(0,rearBase,rear-.035),V3(side*w*.46,h+.10,rear-.035),.10,'darkWood',p.timber,g);
- if(h>5.6)for(const side of[-1,1])panel(side*(w/2+.10),(1.02+3.45)/2,0,.23,3.45-1.02,.20,'darkWood',p.timber);
+ for(const side of[-1,1])beam(V3(0,rearBase,rear-.035),V3(side*w*.46,h+.10,rear-.035),.10,'wood',p.timber,g);
+ if(h>5.6)for(const side of[-1,1])panel(side*(w/2+.10),(1.02+3.45)/2,0,.23,3.45-1.02,.20,'wood',p.timber);
  // Small battered masonry courses and tied eaves are shared construction,
  // while the roof and frontage remain unique to each household.
  for(const side of[-1,1])for(let xx=left+.25;xx<right;xx+=.95){
@@ -232,7 +232,7 @@ function buildBrookHome121(x,z,w,d,kind){
    }`});
   for(const angle of[0,Math.PI/2]){const flame=new THREE.Mesh(new THREE.PlaneGeometry(1.10,.72),fire);flame.position.set(xx,1.52,zz);flame.rotation.y=angle;flame.name='Animated recessed forge flame';flame.userData.dynamicFX=true;g.add(flame);}
   box(xx,2.30,front-.28,2.15,.12,.14,'darkWood','#8d704a',g);
-  for(const px of[-w*.47,dl-.08]){box(px,1.65,front+.02,.24,3.3,.26,'darkWood',p.timber,g);beam(V3(px,2.5,front+.08),V3(px+(px<xx?.65:-.65),3.12,front+.08),.10,'wood','#a08a5d',g);}
+  for(const px of[-w*.47,dl-.08]){box(px,1.65,front+.02,.24,3.3,.26,'wood',p.timber,g);beam(V3(px,2.5,front+.08),V3(px+(px<xx?.65:-.65),3.12,front+.08),.10,'wood','#a08a5d',g);}
   // A fitted stone forge hood joins the same flue, above the fire and tools.
   const hood=new THREE.CylinderGeometry(.58,1.14,1.15,4,1);hood.rotateY(Math.PI/4);mesh(hood,material('wall','#a2a694'),xx,2.82,zz-.22,g);
   const shield=new THREE.Shape();shield.moveTo(-.30,.4);shield.lineTo(.30,.4);shield.lineTo(.28,-.18);shield.quadraticCurveTo(0,-.52,-.28,-.18);shield.closePath();const sg=new THREE.ExtrudeGeometry(shield,{depth:.07,bevelEnabled:true,bevelThickness:.02,bevelSize:.03,bevelSegments:1});mesh(sg,material('metal','#849390',{metalness:.72,roughness:.38}),xx+.95,1.50,front+.38,g);
@@ -248,7 +248,7 @@ function buildBrookHome121(x,z,w,d,kind){
   for(let i=0;i<9;i++){const rope=mesh(new THREE.TorusGeometry(.315,.026,4,16),material('cloth','#a89971'),wx-.36+i*.09,1.6,front+.25,g);rope.rotation.y=Math.PI/2;}
   const wheel=mesh(new THREE.TorusGeometry(.55,.055,5,16),material('darkWood','#745d3f'),wx-.62,1.6,front+.25,g);wheel.rotation.y=Math.PI/2;
   for(let i=0;i<4;i++){const a=i*Math.PI/2;beam(V3(wx-.62,1.6,front+.25),V3(wx-.62,1.6+Math.cos(a)*.53,front+.25+Math.sin(a)*.53),.045,'wood','#a88a5e',g);}
-  for(const px of[-w*.46,doorX+1.22]){box(px,1.65,front+.06,.23,3.3,.23,'darkWood',p.timber,g);beam(V3(px,2.6,front+.09),V3(px+.50,3.18,front+.09),.09,'wood','#a58b5c',g);}
+  for(const px of[-w*.46,doorX+1.22]){box(px,1.65,front+.06,.23,3.3,.23,'wood',p.timber,g);beam(V3(px,2.6,front+.09),V3(px+.50,3.18,front+.09),.09,'wood','#a58b5c',g);}
   crate121(g,w*.40,.18,front+.70,.65);barrel121(g,w*.40,.18,front+1.35,.60);
  }
  const chimneyX=kind==='forge'?-w*.37:-w*.30,chimneyZ=kind==='forge'?front-.60:-d*.22,base=h+(p.roof==='hip'?p.rise*.60:p.rise*.47),tip=chimney121(roof,chimneyX,chimneyZ,base,kind==='forge'?3.25:2.25,kind==='forge'?1.15:.88);g.userData.authored121.chimney=tip;

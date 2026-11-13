@@ -31,7 +31,7 @@ function ensureMobileCombat69(){
  if(phoneCombat69.button)return;
  const b=phoneCombat69.button=document.createElement('button');b.id='phone-battle-help69';b.textContent='Help';b.type='button';b.setAttribute('aria-controls','phone-combat-help69');b.onclick=()=>{phoneCombat69.manualHelp=!phoneCombat69.manualHelp;layoutMobileCombat69();};document.body.append(b);
  const n=phoneCombat69.help=document.createElement('section');n.id='phone-combat-help69';n.hidden=true;n.setAttribute('role','dialog');n.setAttribute('aria-modal','true');n.setAttribute('aria-label','Combat help');
- n.innerHTML='<header><b>Combat help</b><button type="button" data-phone-help-close69 aria-label="Close combat help">Close</button></header><div class="phone-help-body69"></div><div class="phone-help-fallback69"><p>Choose a command, then tap an enemy or ally. For an attack chain, tap Strike when the marker reaches the gold window.</p></div><footer><button type="button" data-combat-legend65>Icon legend</button></footer>';document.body.append(n);
+ n.innerHTML='<header><b>Combat help</b><button type="button" data-phone-help-close69 aria-label="Close combat help">Close</button></header><div class="phone-help-body69"></div><div class="phone-help-fallback69"><p>Choose a command, then tap an enemy or ally. For an attack chain, tap Strike when the rings meet in gold. The first hit starts bullet time; the final impact restores speed.</p></div><footer><button type="button" data-combat-legend65>Icon legend</button></footer>';document.body.append(n);
  n.querySelector('[data-phone-help-close69]').onclick=()=>{phoneCombat69.manualHelp=false;layoutMobileCombat69();};
 }
 function layoutMobileCombat69(){

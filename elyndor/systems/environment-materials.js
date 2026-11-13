@@ -31,11 +31,18 @@ loadAssets=async function(...args){const r=await environmentLoadBefore103(...arg
  const unique=[...new Set(terrainTileNames.map(canonical103).filter(k=>source103(k)&&!source103(k).transparent))];SURFACES102.splice(0,SURFACES102.length,...unique);
  for(let i=0;i<unique.length;i+=4)await Promise.all(unique.slice(i,i+4).map(loadWorldSurface102));
  environment102.surfaces.dispose();environment102.surfaces=worldArray102(SURFACES102);
+ if(await packedPbr138(unique)){
+  envPbr103.surfaceData=gpuDelivery138.arrays.surfaceData;envPbr103.groundData=gpuDelivery138.arrays.groundData;
+  await Promise.all(['barkOak','barkBirch','barkPine','botanicalLeaf102'].map(k=>texture103(k,'normalRough')));
+ }else{
+ await Promise.all(unique.filter(k=>source103(k).pbr).map(k=>texture103(k,'normalRough')));
  const size=mobileStartup116()?256:512,pixels=new Uint8Array(size*size*4*unique.length),c=document.createElement('canvas');c.width=c.height=size;const ctx=c.getContext('2d',{willReadFrequently:true});
  for(let i=0;i<unique.length;i++){const row=source103(unique[i]);ctx.fillStyle='rgba(128,128,255,0.94)';ctx.fillRect(0,0,size,size);if(row.pbr){const t=await texture103(unique[i],'normalRough');ctx.drawImage(t.image,0,0,size,size)}pixels.set(ctx.getImageData(0,0,size,size).data,i*size*size*4);if(i%4===0)await yieldLoad36()}
  envPbr103.surfaceData=new THREE.DataArrayTexture(pixels,size,size,unique.length);Object.assign(envPbr103.surfaceData,{colorSpace:THREE.NoColorSpace,wrapS:THREE.RepeatWrapping,wrapT:THREE.RepeatWrapping,magFilter:THREE.LinearFilter,minFilter:THREE.LinearMipmapLinearFilter,generateMipmaps:true,needsUpdate:true});pinMapResource17(envPbr103.surfaceData);
+ await Promise.all(GROUND102.map(k=>texture103(k,'normalRough')));envPbr103.groundData=dataArray103(GROUND102);pinMapResource17(envPbr103.groundData);
+ }
  for(const k of ['waveHeight103','foam103','caustics103','botanicalLeaf102','pineNeedles103','petal102'])await texture103(k);
- await texture103('waveHeight103','normalRough');await Promise.all(GROUND102.map(k=>texture103(k,'normalRough')));envPbr103.groundData=dataArray103(GROUND102);pinMapResource17(envPbr103.groundData);envPbr103.ready=true;return r;
+ await texture103('waveHeight103','normalRough');envPbr103.ready=true;return r;
 };
 surfaceLayer102=key=>SURFACES102.indexOf(canonical103(key));
 const atlasPbrBefore103=staticAtlasMaterial;

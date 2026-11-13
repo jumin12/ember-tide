@@ -1,0 +1,17 @@
+[
+  {
+    "path": "/elyndor/assets/runtime-v116/*",
+    "name": "Cache-Control",
+    "value": "public, max-age=31536000, immutable"
+  },
+  {
+    "path": "/elyndor/assets/runtime-v136/*",
+    "name": "Cache-Control",
+    "value": "public, max-age=31536000, immutable"
+  },
+  {
+    "path": "/elyndor/assets/runtime-v138/*",
+    "name": "Cache-Control",
+    "value": "public, max-age=31536000, immutable"
+  }
+]

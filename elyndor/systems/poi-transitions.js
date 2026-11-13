@@ -18,6 +18,7 @@ changeJourneyScene=function(id,spawn=null){
  const task=(async()=>{
   try{
    await animatePoiFade(1);setPoiFadePhase('loading');
+   if(id==='overworld')await ensureWorldData136(true);
    const changed=await fadedSceneBefore43(id,spawn);if(!changed)return false;
    // The complete legacy handoff includes graphics preparation, story arrival,
    // camera settling, cutaways and the first destination frame under the cover.

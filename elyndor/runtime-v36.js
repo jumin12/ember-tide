@@ -162,7 +162,9 @@ function embeddedBlob36(source,type){const raw=atob(source.slice(source.indexOf(
 async function prepareSounds36(){
  if(!audio36.voices){const entries=Object.entries(assets.voices??{});for(let i=0;i<entries.length;i++){const[key,source]=entries[i];if(source.startsWith('data:'))assets.voices[key]=embeddedBlob36(source,'audio/ogg');if(i%24===0){setLoadStage36(.345+.004*(i+1)/entries.length,'Preparing voices · '+(i+1)+' / '+entries.length);await yieldLoad36();}}audio36.voices=true;}
  if(audio36.ready)return;try{if(!ambience)ambience=new(window.AudioContext||window.webkitAudioContext)({latencyHint:'interactive'});}catch{audio36.unavailable=true;return;}
- const ids=Object.keys(assets.sounds??{}).filter(id=>!id.startsWith('theme-')&&!id.startsWith('ambient-')||id==='theme-rest');let next=0,done=0;audio36.shortEffects=ids.length;
+ // Prime navigation and first footsteps. Other effects already decode on demand
+ // and warm after audio unlock, without blocking the opening village.
+ const ids=Object.keys(assets.sounds??{}).filter(id=>/^ui-|^step-(stone|earth|wood)(-|$)/.test(id)||['travel','item','chest'].includes(id));let next=0,done=0;audio36.shortEffects=ids.length;
  async function decode(){while(next<ids.length){const id=ids[next++];await decodeSound(id);done++;setLoadStage36(.35+.025*done/ids.length,'Preparing sounds · '+done+' / '+ids.length);if(done%6===0)await yieldLoad36();}}
  await Promise.all([decode(),decode()]);audio36.decoded=soundscape.buffers.size;audio36.ready=true;
 }

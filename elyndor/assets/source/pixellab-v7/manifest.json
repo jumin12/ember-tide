@@ -5,7 +5,7 @@
   "characters": [
     {
       "id": "bren",
-      "folder": "elyndor/assets/source/pixellab-v7/party-v84/bren",
+      "folder": "elyndor/assets/source/pixellab-v7/party-v142/bren",
       "characterId": "8b90374c-7cf4-4f5e-b059-d978422a08ca",
       "human": true,
       "combatOnly": false,
@@ -128,7 +128,7 @@
         },
         "attack-v75": {
           "west": {
-            "animation": "slash-v83",
+            "animation": "slash-v142",
             "expectedFrames": 12
           }
         },
@@ -150,14 +150,15 @@
         "8b90374c-7cf4-4f5e-b059-d978422a08ca"
       ],
       "impactFrames": {
-        "attack": 5,
-        "comboSlash": 5,
-        "comboOverhead": 6,
-        "comboUppercut": 4,
-        "attackPair": 18,
-        "attackChain": 28,
+        "attack": 8,
+        "comboSlash": 8,
+        "comboOverhead": 10,
+        "comboUppercut": 7,
+        "attackPair": 22,
+        "attackChain": 33,
         "drivingSlash": 8,
-        "cast": 4
+        "cast": 4,
+        "comboFinalImpact": 5
       },
       "footOverrides": {
         "Idle/animations/run-natural-arms-v81/south/frame_000.png": 143,
@@ -443,9 +444,61 @@
         "Complete084/animations/driving-v84/west/frame_010.png": 234,
         "Complete084/animations/driving-v84/west/frame_011.png": 234,
         "Complete084/animations/driving-v84/west/frame_012.png": 234,
-        "Complete084/animations/driving-v84/west/frame_013.png": 234
+        "Complete084/animations/driving-v84/west/frame_013.png": 234,
+        "Complete142/animations/slash-v142/west/frame_000.png": 234,
+        "Complete142/animations/slash-v142/west/frame_001.png": 234,
+        "Complete142/animations/slash-v142/west/frame_002.png": 234,
+        "Complete142/animations/slash-v142/west/frame_003.png": 234,
+        "Complete142/animations/slash-v142/west/frame_004.png": 234,
+        "Complete142/animations/slash-v142/west/frame_005.png": 234,
+        "Complete142/animations/slash-v142/west/frame_006.png": 234,
+        "Complete142/animations/slash-v142/west/frame_007.png": 234,
+        "Complete142/animations/slash-v142/west/frame_008.png": 234,
+        "Complete142/animations/slash-v142/west/frame_009.png": 234,
+        "Complete142/animations/slash-v142/west/frame_010.png": 234,
+        "Complete142/animations/slash-v142/west/frame_011.png": 234,
+        "Complete142/animations/overhead-v142/west/frame_000.png": 234,
+        "Complete142/animations/overhead-v142/west/frame_001.png": 234,
+        "Complete142/animations/overhead-v142/west/frame_002.png": 234,
+        "Complete142/animations/overhead-v142/west/frame_003.png": 234,
+        "Complete142/animations/overhead-v142/west/frame_004.png": 234,
+        "Complete142/animations/overhead-v142/west/frame_005.png": 234,
+        "Complete142/animations/overhead-v142/west/frame_006.png": 234,
+        "Complete142/animations/overhead-v142/west/frame_007.png": 234,
+        "Complete142/animations/overhead-v142/west/frame_008.png": 234,
+        "Complete142/animations/overhead-v142/west/frame_009.png": 234,
+        "Complete142/animations/overhead-v142/west/frame_010.png": 234,
+        "Complete142/animations/overhead-v142/west/frame_011.png": 234,
+        "Complete142/animations/overhead-v142/west/frame_012.png": 234,
+        "Complete142/animations/overhead-v142/west/frame_013.png": 234,
+        "Complete142/animations/uppercut-v142/west/frame_000.png": 234,
+        "Complete142/animations/uppercut-v142/west/frame_001.png": 234,
+        "Complete142/animations/uppercut-v142/west/frame_002.png": 234,
+        "Complete142/animations/uppercut-v142/west/frame_003.png": 234,
+        "Complete142/animations/uppercut-v142/west/frame_004.png": 234,
+        "Complete142/animations/uppercut-v142/west/frame_005.png": 234,
+        "Complete142/animations/uppercut-v142/west/frame_006.png": 234,
+        "Complete142/animations/uppercut-v142/west/frame_007.png": 234,
+        "Complete142/animations/uppercut-v142/west/frame_008.png": 234,
+        "Complete142/animations/uppercut-v142/west/frame_009.png": 234,
+        "Complete142/animations/uppercut-v142/west/frame_010.png": 234,
+        "Complete142/animations/finish-v142/west/frame_000.png": 234,
+        "Complete142/animations/finish-v142/west/frame_001.png": 234,
+        "Complete142/animations/finish-v142/west/frame_002.png": 234,
+        "Complete142/animations/finish-v142/west/frame_003.png": 234,
+        "Complete142/animations/finish-v142/west/frame_004.png": 234,
+        "Complete142/animations/finish-v142/west/frame_005.png": 234,
+        "Complete142/animations/finish-v142/west/frame_006.png": 234,
+        "Complete142/animations/finish-v142/west/frame_007.png": 234,
+        "Complete142/animations/finish-v142/west/frame_008.png": 234,
+        "Complete142/animations/finish-v142/west/frame_009.png": 234,
+        "Complete142/animations/finish-v142/west/frame_010.png": 234,
+        "Complete142/animations/finish-v142/west/frame_011.png": 234,
+        "Complete142/animations/finish-v142/west/frame_012.png": 234,
+        "Complete142/animations/finish-v142/west/frame_013.png": 234,
+        "Complete142/animations/finish-v142/west/frame_014.png": 234
       },
-      "characterRevision": 84,
+      "characterRevision": 142,
       "frameRates": {
         "idle_south": 4,
         "idle_southeast": 4,
@@ -458,7 +511,11 @@
         "battleIdle": 5,
         "enemyIdle": 5,
         "injured": 4,
-        "victory": 10
+        "victory": 10,
+        "comboSlash": 16,
+        "comboOverhead": 16,
+        "comboUppercut": 16,
+        "comboFinalImpact": 16
       },
       "locomotionRate": {
         "normal": 24,
@@ -1626,20 +1683,540 @@
             69.87,
             117.11
           ]
+        },
+        "Complete142/animations/slash-v142/west/frame_000.png": {
+          "grip": [
+            117.1,
+            172.5
+          ],
+          "tip": [
+            69.7,
+            117.2
+          ]
+        },
+        "Complete142/animations/slash-v142/west/frame_001.png": {
+          "grip": [
+            153.3,
+            160.5
+          ],
+          "tip": [
+            193.0,
+            74.0
+          ]
+        },
+        "Complete142/animations/slash-v142/west/frame_002.png": {
+          "grip": [
+            179.1,
+            179.0
+          ],
+          "tip": [
+            224.6,
+            85.3
+          ]
+        },
+        "Complete142/animations/slash-v142/west/frame_003.png": {
+          "grip": [
+            177.8,
+            176.8
+          ],
+          "tip": [
+            209.4,
+            113.2
+          ]
+        },
+        "Complete142/animations/slash-v142/west/frame_004.png": {
+          "grip": [
+            176.7,
+            176.2
+          ],
+          "tip": [
+            208.1,
+            113.1
+          ]
+        },
+        "Complete142/animations/slash-v142/west/frame_005.png": {
+          "grip": [
+            169.2,
+            181.2
+          ],
+          "tip": [
+            232.1,
+            155.2
+          ]
+        },
+        "Complete142/animations/slash-v142/west/frame_006.png": {
+          "grip": [
+            89.6,
+            160.4
+          ],
+          "tip": [
+            60.7,
+            65.1
+          ]
+        },
+        "Complete142/animations/slash-v142/west/frame_007.png": {
+          "grip": [
+            95.1,
+            183.3
+          ],
+          "tip": [
+            27.1,
+            193.6
+          ]
+        },
+        "Complete142/animations/slash-v142/west/frame_008.png": {
+          "grip": [
+            95.1,
+            183.5
+          ],
+          "tip": [
+            24.1,
+            193.6
+          ]
+        },
+        "Complete142/animations/slash-v142/west/frame_009.png": {
+          "grip": [
+            94.7,
+            183.6
+          ],
+          "tip": [
+            24.1,
+            193.5
+          ]
+        },
+        "Complete142/animations/slash-v142/west/frame_010.png": {
+          "grip": [
+            94.7,
+            183.6
+          ],
+          "tip": [
+            24.1,
+            193.5
+          ]
+        },
+        "Complete142/animations/slash-v142/west/frame_011.png": {
+          "grip": [
+            94.7,
+            183.6
+          ],
+          "tip": [
+            24.1,
+            193.5
+          ]
+        },
+        "Complete142/animations/overhead-v142/west/frame_000.png": {
+          "grip": [
+            117.1,
+            172.5
+          ],
+          "tip": [
+            69.7,
+            117.2
+          ]
+        },
+        "Complete142/animations/overhead-v142/west/frame_001.png": {
+          "grip": [
+            117.8,
+            174.0
+          ],
+          "tip": [
+            69.0,
+            119.0
+          ]
+        },
+        "Complete142/animations/overhead-v142/west/frame_002.png": {
+          "grip": [
+            116.8,
+            177.8
+          ],
+          "tip": [
+            68.9,
+            122.1
+          ]
+        },
+        "Complete142/animations/overhead-v142/west/frame_003.png": {
+          "grip": [
+            134.2,
+            83.4
+          ],
+          "tip": [
+            201.8,
+            56.6
+          ]
+        },
+        "Complete142/animations/overhead-v142/west/frame_004.png": {
+          "grip": [
+            153.6,
+            78.8
+          ],
+          "tip": [
+            224.9,
+            95.6
+          ]
+        },
+        "Complete142/animations/overhead-v142/west/frame_005.png": {
+          "grip": [
+            153.9,
+            76.4
+          ],
+          "tip": [
+            225.0,
+            93.0
+          ]
+        },
+        "Complete142/animations/overhead-v142/west/frame_006.png": {
+          "grip": [
+            153.8,
+            73.9
+          ],
+          "tip": [
+            225.0,
+            91.0
+          ]
+        },
+        "Complete142/animations/overhead-v142/west/frame_007.png": {
+          "grip": [
+            154.0,
+            72.2
+          ],
+          "tip": [
+            224.9,
+            89.3
+          ]
+        },
+        "Complete142/animations/overhead-v142/west/frame_008.png": {
+          "grip": [
+            153.7,
+            70.6
+          ],
+          "tip": [
+            224.9,
+            87.5
+          ]
+        },
+        "Complete142/animations/overhead-v142/west/frame_009.png": {
+          "grip": [
+            89.2,
+            107.4
+          ],
+          "tip": [
+            71.4,
+            33.9
+          ]
+        },
+        "Complete142/animations/overhead-v142/west/frame_010.png": {
+          "grip": [
+            101.0,
+            188.1
+          ],
+          "tip": [
+            29.1,
+            206.5
+          ]
+        },
+        "Complete142/animations/overhead-v142/west/frame_011.png": {
+          "grip": [
+            100.4,
+            188.5
+          ],
+          "tip": [
+            20.2,
+            207.9
+          ]
+        },
+        "Complete142/animations/overhead-v142/west/frame_012.png": {
+          "grip": [
+            96.3,
+            189.4
+          ],
+          "tip": [
+            29.1,
+            206.4
+          ]
+        },
+        "Complete142/animations/overhead-v142/west/frame_013.png": {
+          "grip": [
+            97.2,
+            187.8
+          ],
+          "tip": [
+            29.1,
+            205.5
+          ]
+        },
+        "Complete142/animations/uppercut-v142/west/frame_000.png": {
+          "grip": [
+            117.1,
+            172.5
+          ],
+          "tip": [
+            69.7,
+            117.2
+          ]
+        },
+        "Complete142/animations/uppercut-v142/west/frame_001.png": {
+          "grip": [
+            162.5,
+            169.2
+          ],
+          "tip": [
+            168.7,
+            99.1
+          ]
+        },
+        "Complete142/animations/uppercut-v142/west/frame_002.png": {
+          "grip": [
+            168.4,
+            169.2
+          ],
+          "tip": [
+            174.1,
+            99.1
+          ]
+        },
+        "Complete142/animations/uppercut-v142/west/frame_003.png": {
+          "grip": [
+            167.7,
+            177.3
+          ],
+          "tip": [
+            210.0,
+            121.0
+          ]
+        },
+        "Complete142/animations/uppercut-v142/west/frame_004.png": {
+          "grip": [
+            99.1,
+            185.1
+          ],
+          "tip": [
+            145.2,
+            234.8
+          ]
+        },
+        "Complete142/animations/uppercut-v142/west/frame_005.png": {
+          "grip": [
+            90.9,
+            112.0
+          ],
+          "tip": [
+            91.0,
+            19.0
+          ]
+        },
+        "Complete142/animations/uppercut-v142/west/frame_006.png": {
+          "grip": [
+            113.7,
+            99.5
+          ],
+          "tip": [
+            149.1,
+            20.0
+          ]
+        },
+        "Complete142/animations/uppercut-v142/west/frame_007.png": {
+          "grip": [
+            113.2,
+            101.2
+          ],
+          "tip": [
+            140.7,
+            32.9
+          ]
+        },
+        "Complete142/animations/uppercut-v142/west/frame_008.png": {
+          "grip": [
+            113.0,
+            101.1
+          ],
+          "tip": [
+            140.8,
+            32.9
+          ]
+        },
+        "Complete142/animations/uppercut-v142/west/frame_009.png": {
+          "grip": [
+            112.6,
+            100.9
+          ],
+          "tip": [
+            141.0,
+            33.0
+          ]
+        },
+        "Complete142/animations/uppercut-v142/west/frame_010.png": {
+          "grip": [
+            112.6,
+            100.9
+          ],
+          "tip": [
+            141.0,
+            33.0
+          ]
+        },
+        "Complete142/animations/finish-v142/west/frame_000.png": {
+          "grip": [
+            117.1,
+            172.5
+          ],
+          "tip": [
+            69.7,
+            117.2
+          ]
+        },
+        "Complete142/animations/finish-v142/west/frame_001.png": {
+          "grip": [
+            151.9,
+            169.6
+          ],
+          "tip": [
+            141.2,
+            99.0
+          ]
+        },
+        "Complete142/animations/finish-v142/west/frame_002.png": {
+          "grip": [
+            189.3,
+            172.9
+          ],
+          "tip": [
+            208.7,
+            102.9
+          ]
+        },
+        "Complete142/animations/finish-v142/west/frame_003.png": {
+          "grip": [
+            197.1,
+            178.8
+          ],
+          "tip": [
+            231.6,
+            114.3
+          ]
+        },
+        "Complete142/animations/finish-v142/west/frame_004.png": {
+          "grip": [
+            197.3,
+            180.5
+          ],
+          "tip": [
+            235.4,
+            118.3
+          ]
+        },
+        "Complete142/animations/finish-v142/west/frame_005.png": {
+          "grip": [
+            93.9,
+            173.0
+          ],
+          "tip": [
+            19.0,
+            169.7
+          ]
+        },
+        "Complete142/animations/finish-v142/west/frame_006.png": {
+          "grip": [
+            94.1,
+            173.1
+          ],
+          "tip": [
+            21.0,
+            169.1
+          ]
+        },
+        "Complete142/animations/finish-v142/west/frame_007.png": {
+          "grip": [
+            95.9,
+            172.3
+          ],
+          "tip": [
+            22.0,
+            168.8
+          ]
+        },
+        "Complete142/animations/finish-v142/west/frame_008.png": {
+          "grip": [
+            96.9,
+            172.1
+          ],
+          "tip": [
+            23.0,
+            168.6
+          ]
+        },
+        "Complete142/animations/finish-v142/west/frame_009.png": {
+          "grip": [
+            97.9,
+            172.1
+          ],
+          "tip": [
+            26.0,
+            168.1
+          ]
+        },
+        "Complete142/animations/finish-v142/west/frame_010.png": {
+          "grip": [
+            98.9,
+            171.8
+          ],
+          "tip": [
+            25.0,
+            167.7
+          ]
+        },
+        "Complete142/animations/finish-v142/west/frame_011.png": {
+          "grip": [
+            100.9,
+            171.1
+          ],
+          "tip": [
+            27.0,
+            167.5
+          ]
+        },
+        "Complete142/animations/finish-v142/west/frame_012.png": {
+          "grip": [
+            100.6,
+            170.7
+          ],
+          "tip": [
+            28.2,
+            156.9
+          ]
+        },
+        "Complete142/animations/finish-v142/west/frame_013.png": {
+          "grip": [
+            106.1,
+            170.9
+          ],
+          "tip": [
+            46.7,
+            132.5
+          ]
+        },
+        "Complete142/animations/finish-v142/west/frame_014.png": {
+          "grip": [
+            117.1,
+            172.5
+          ],
+          "tip": [
+            69.7,
+            117.3
+          ]
         }
       },
       "extraClips": {
         "comboSlash": {
-          "animation": "slash-v83",
+          "animation": "slash-v142",
           "expectedFrames": 12
         },
         "comboOverhead": {
-          "animation": "overhead-v83",
-          "expectedFrames": 12
+          "animation": "overhead-v142",
+          "expectedFrames": 14
         },
         "comboUppercut": {
-          "animation": "uppercut-v83",
-          "expectedFrames": 12
+          "animation": "uppercut-v142",
+          "expectedFrames": 11
         },
         "drivingSlash": {
           "animation": "driving-v84",
@@ -1662,7 +2239,7 @@
             "comboSlash",
             "comboOverhead"
           ],
-          "expectedFrames": 24
+          "expectedFrames": 26
         },
         "attackChain": {
           "sequence": [
@@ -1670,7 +2247,11 @@
             "comboOverhead",
             "comboUppercut"
           ],
-          "expectedFrames": 36
+          "expectedFrames": 37
+        },
+        "comboFinalImpact": {
+          "animation": "finish-v142",
+          "expectedFrames": 15
         }
       },
       "actionTimings": {
@@ -1778,7 +2359,13 @@
         }
       },
       "bodyUnit": 114,
-      "spritePadding": 12
+      "spritePadding": 4,
+      "anticipationFrames": {
+        "comboSlash": 5,
+        "comboOverhead": 8,
+        "comboUppercut": 4,
+        "comboFinalImpact": 2
+      }
     },
     {
       "id": "soren",
