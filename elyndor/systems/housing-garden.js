@@ -1,6 +1,12 @@
 // Yard materials use the same native PBR sources as settlements, with opaque
 // grass-to-paving transitions and a physically closed garden boundary.
 const HOME_GARDEN_PATHS139=[[[10,15],[4,12],[0,7],[0,2]],[[0,10],[-7,9],[-12,13]]];
+const HOME_GARDEN_ROCKS151=[[-18.5,10.8,1.45],[-18.5,13.3,1.15],[-18,-6.8,1.55],[18.8,-11.5,1.4]];
+function homeGardenClear151(x,z){
+ // Reserve the seat, its leg room, the arbor floor and the planters before
+ // instancing vegetation. Tall blades must not grow through furniture.
+ return Math.abs(x+12)<2.1&&Math.abs(z-12)<1.8||Math.abs(x+13)<2.7&&Math.abs(z-3)<2.1||Math.hypot(x-15,z-11)<1||Math.hypot(x-16,z-18)<1;
+}
 let homePathSegments139=null;
 function homePathDistance139(x,z){
  if(!homePathSegments139)homePathSegments139=HOME_GARDEN_PATHS139.flatMap(points=>{const c=new THREE.CatmullRomCurve3(points.map(([x,z])=>V3(x,0,z))),rows=[];let a=c.getPoint(0);for(let i=1;i<=32;i++){const b=c.getPoint(i/32);rows.push([[a.x,a.z],[b.x,b.z]]);a=b;}return rows;});
@@ -26,5 +32,5 @@ function homeGardenBoundary139(q){
 function dressHomePortalCourt139(q){
  const court=mesh(new THREE.CircleGeometry(3.65,64),homeGardenMaterial139('court'),11,.033,15);court.rotation.x=-Math.PI/2;court.castShadow=false;court.userData.frontagePath110=true;
  for(const [x,z]of[[15,11],[16,18]]){const pot=homeDecorModel139('homePlant139',world,q);pot.position.set(x,0,z);}
- const bench=new THREE.Group();bench.position.set(-12,.02,12);bench.rotation.y=.30;world.add(bench);for(const x of[-1.1,1.1])for(const z of[-.35,.35])homeBox139(x,.35,z,.14,.7,.14,'wood',q.wood,bench);for(const z of[-.34,0,.34])homeBox139(0,.76,z,2.8,.14,.27,'wood',q.wood,bench);for(const y of[1.05,1.38])homeBox139(0,y,-.48,2.8,.22,.13,'wood',q.wood,bench);for(const x of[-1.2,1.2])homeBox139(x,1,-.48,.14,1.3,.14,'wood',q.wood,bench);obstacle(-12,12,3.2,1.6,'garden bench');
+ const bench=new THREE.Group();bench.name='Garden seat with clear approach';bench.position.set(-12,.02,12);bench.rotation.y=.30;world.add(bench);world.userData.homeBench151=bench;for(const x of[-1.1,1.1])for(const z of[-.35,.35])homeBox139(x,.35,z,.14,.7,.14,'wood',q.wood,bench);for(const z of[-.34,0,.34])homeBox139(0,.76,z,2.8,.14,.27,'wood',q.wood,bench);for(const y of[1.05,1.38])homeBox139(0,y,-.48,2.8,.22,.13,'wood',q.wood,bench);for(const x of[-1.2,1.2])homeBox139(x,1,-.48,.14,1.3,.14,'wood',q.wood,bench);obstacle(-12,12,3.2,1.6,'garden bench');
 }

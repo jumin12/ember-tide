@@ -29,7 +29,7 @@ renderDevConsole60=function(...args){const r=devWorkbenchRenderBefore144(...args
  body.classList.toggle('dev-cheat-body144',q.tab==='cheats144');
  nav.insertAdjacentHTML('beforeend','<button role="tab" data-dev-action="tab" data-dev-tab="cheats144" aria-selected="'+(q.tab==='cheats144')+'">Items & gold</button>');
  if(q.tab==='cheats144'){body.classList.remove('dev-sprite-body87');body.innerHTML=renderDevCheats144();for(const b of nav.querySelectorAll('[data-dev-tab]'))b.setAttribute('aria-selected',b.dataset.devTab===q.tab);}
- if(q.tab==='battle')body.insertAdjacentHTML('beforeend','<section class="dev-combo-lab144"><small>CINEMATIC COMBO LAB</small><h3>Try the timed attacks</h3><p>Practice closes this panel and starts your chosen character’s turn. Match the rings with E, Space, or the on-screen Strike button.</p>'+devSelect60('comboActor144','Character',devOptions60(Object.entries(CAST).map(([id,v])=>[id,v.name]),devWorkbench144.actor))+'<label class="dev-check60"><input type="checkbox" data-dev-field="comboGuided144"'+(devWorkbench144.guided?' checked':'')+'>Wait on gold until I strike</label><div class="dev-actions60"><button class="dev-primary60" data-dev-action="combo-practice144">Practice timed combo</button><button data-dev-action="combo-replay144">Watch full combo</button>'+(devWorkbench144.practice?'<button data-dev-action="combo-stop144">Stop practice</button>':'')+'</div><p>Practice repeats after each chain. Your normal journey is restored when the test session ends.</p></section>');
+ if(q.tab==='battle')body.insertAdjacentHTML('beforeend','<section class="dev-combo-lab144"><small>CINEMATIC COMBO LAB</small><h3>Try the timed attacks</h3><p>Practice closes this panel and starts your chosen character’s turn. Left-click anywhere on the battlefield when WAIT turns to CLICK and the rings overlap in gold. Space / E and tapping Strike also work.</p>'+devSelect60('comboActor144','Character',devOptions60(Object.entries(CAST).map(([id,v])=>[id,v.name]),devWorkbench144.actor))+'<label class="dev-check60"><input type="checkbox" data-dev-field="comboGuided144"'+(devWorkbench144.guided?' checked':'')+'>Wait on gold until I strike</label><div class="dev-actions60"><button class="dev-primary60" data-dev-action="combo-practice144">Practice timed combo</button><button data-dev-action="combo-replay144">Watch full combo</button>'+(devWorkbench144.practice?'<button data-dev-action="combo-stop144">Stop practice</button>':'')+'</div><p>Practice repeats after each chain. Your normal journey is restored when the test session ends.</p></section>');
  if(q.tab==='sprites'&&devSprites87.category==='party')body.insertAdjacentHTML('beforeend','<p class="dev-hint60">The sprite viewer shows source frames. Use the Battle combo lab for the full animation, timing, particles and scene lighting.</p>');
  if(q.running)for(const n of body.querySelectorAll('button,select,input'))n.disabled=true;return r;
 };
@@ -56,7 +56,7 @@ runDevAction60=async function(action){const q=devConsole60,w=devWorkbench144;if(
   if(!state.members.includes(id)){state.members[state.members.length-1]=id;await ensureSprite116(id);setupParty([player.x,player.z]);}
   await devWorkbenchActionBefore144('battle');if(q.error||!battle)return;
   w.practice={actor:id,auto:action==='combo-replay144',guided:action==='combo-practice144'&&w.guided,finishedAt:null,chains:0,enemyState:battle.enemies.map(e=>structuredClone(Object.fromEntries(Object.entries(e).filter(([k])=>k!=='actor'))))};
-  hideDevConsole60();clearBattleIntro58();battle.intro=0;resetDevCombo144();toast(action==='combo-replay144'?'Combo replay · Full effects and scene lighting':'Combo practice · E / Space / Strike on gold');return;}catch(error){q.error=error.message;q.open=true;renderDevConsole60();return;}
+  hideDevConsole60();clearBattleIntro58();battle.intro=0;resetDevCombo144();toast(action==='combo-replay144'?'Combo replay · Full effects and scene lighting':'Combo practice · Left click or tap on gold');return;}catch(error){q.error=error.message;q.open=true;renderDevConsole60();return;}
  }
  if(['battle','scene','lighting','leave','end','lock'].includes(action)||action.startsWith('home-'))w.practice=null;
  const r=await devWorkbenchActionBefore144(action);if(action==='battle'&&!q.error&&battle){hideDevConsole60();toast('Battle ready · Choose Attack for the timed combo');}return r;
@@ -64,7 +64,7 @@ runDevAction60=async function(action){const q=devConsole60,w=devWorkbench144;if(
 const devWorkbenchChainBefore144=advanceCinematicChain141;
 advanceCinematicChain141=function(dt){const q=devWorkbench144.practice,c=battle?.combo,x=c?.cinema141;
  if(q&&c?.id===q.actor&&x?.phase==='focus'&&!c.input&&c.t/c.duration>=.75&&!chainPaused141()){
-  if(q.auto)comboHit();else if(q.guided){updateChainCue141(c);$('#combo-progress').textContent=(c.step+1)+' / '+c.chain+' · Gold opening · Press E, Space or Strike';return;}
+  if(q.auto)comboHit();else if(q.guided){updateChainCue141(c);$('#combo-progress').textContent=(c.step+1)+' / '+c.chain+' · Gold opening · Click or tap now';return;}
  }
  return devWorkbenchChainBefore144(dt);
 };

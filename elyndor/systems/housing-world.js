@@ -6,7 +6,7 @@ Object.defineProperty(POIS,'homePlot139',{value:HOME_PLOT139,enumerable:false});
 Object.defineProperty(districtCore24,'homePlot139',{value:[...HOME_PLOT139.bounds],enumerable:false});
 Object.defineProperty(districts24,'homePlot139',{value:{core:[...HOME_PLOT139.bounds],bounds:[...HOME_PLOT139.bounds],roads:[],plots:[]},enumerable:false});
 SCENES.homePlot139={name:'Your home',sub:'Private grounds · Enter the house through its front door',view:'town',kit:'brook',seed:139,path:[],interact:[]};
-SCENES.homeInterior139={name:'Your home',sub:'Interior · D to decorate',view:'interior',kit:'home',seed:139,path:[],interact:[]};
+SCENES.homeInterior139={name:'Your home',sub:'Interior · B to decorate',view:'interior',kit:'home',seed:139,path:[],interact:[]};
 Object.defineProperty(INTERIORS,'homeInterior139',{value:{name:'Your home',type:'home',poi:'homePlot139'},enumerable:false});
 const homePlanBefore139=scenePlan;
 scenePlan=function(id){if(id==='homePlot139')return {kind:'poi',key:id,bounds:[...HOME_PLOT139.bounds]};if(id==='homeInterior139'){const l=homeLayout139();return {kind:'interior',key:id,bounds:[-l.w/2+.6,l.w/2-.6,-l.d/2+.6,l.d/2-.35]};}return homePlanBefore139(id);};
@@ -99,11 +99,11 @@ function buildPrivatePlot139(spawn){
  for(let i=0;i<180;i++){const a=rng()*TAU,r=i<65?24+rng()*8:30+rng()*29,x=Math.cos(a)*r,z=Math.sin(a)*r-5;if(Math.hypot(x-9,z-17)<12||z>20&&Math.abs(x)<14)continue;tree(x,z,.85+rng()*.65,q.trees,rng);}
  for(const [x,z,s]of[[-15,-10,1.05],[-15,3,.95],[-15,18,.82],[17,-8,1.0],[20,4,.9],[-10,-18,1.1],[10,-18,.95]])tree(x,z,s,q.trees,rng);
  for(let i=0;i<(mobileStartup116()?2100:4200);i++){const x=(rng()-.5)*84,z=(rng()-.5)*78;
-  if(Math.abs(x)<shell.w/2+1&&Math.abs(z+4)<6||homePathDistance139(x,z)<2.15||Math.hypot(x-11,z-15)<4.3||Math.hypot(x-7.5,z-16)<2.5)continue;
+  if(Math.abs(x)<shell.w/2+1&&Math.abs(z+4)<6||homePathDistance139(x,z)<2.15||Math.hypot(x-11,z-15)<4.3||Math.hypot(x-7.5,z-16)<2.5||homeGardenClear151(x,z))continue;
   plant(x,z,.55+rng()*.65,i%13===0?'flower':i%7===0?'fern':'grassBlades',homePlotHeight139(x,z));
  }
  homeGardenBoundary139(q);dressHomePortalCourt139(q);
- for(const [i,[x,z]]of[[-12,13],[-14,11],[-17,-5],[16,-12]].entries()){const r=mesh(rockGeometry62(i*3+1),rockMaterial62(i%3),x,0,z);r.scale.setScalar(.9+rng()*.5);r.rotation.y=rng()*TAU;}
+ world.userData.homeRocks151=HOME_GARDEN_ROCKS151.map(([x,z,s],i)=>homeGardenStone144(x,z,s,i*3+1));
  homeGardenDetails144(q);buildSolidForest();buildPlants();rebuildHomeDecor139();homeSky139();finishJourneyWorld(spawn??[7.5,19]);makeWorldDust22();updateAtmosphere();world.userData.housing139={region:q.id,layout:h.home.layout,private:true,exteriorDecor:true};
 }
 function homeSky139(){
@@ -133,7 +133,7 @@ function homeHearth139(l){
  const lamp=new THREE.PointLight('#ffba68',2.0,9,2);lamp.position.set(0,1.3,.5);g.add(lamp);world.userData.homeFire139={mesh:fire,light:lamp};
 }
 function buildPrivateInterior139(spawn){
- const h=housing139(),q=homeStyle139(),l=homeLayout139();state.poi='homePlot139';SCENES.homeInterior139.name=q.name;SCENES.homeInterior139.sub=HOME_LAYOUTS139[h.home.layout].name+' · D to decorate';
+ const h=housing139(),q=homeStyle139(),l=homeLayout139();state.poi='homePlot139';SCENES.homeInterior139.name=q.name;SCENES.homeInterior139.sub=HOME_LAYOUTS139[h.home.layout].name+' · B to decorate';
  const floor=homePlane139(l.w,l.d,q.floor,q.floor==='wood'?'#b9c5ae':'#c9cebd',.008);floor.userData.terrain=true;world.userData.terrain=floor;world.userData.walkSurfaces=[floor];world.userData.terrainChunks=[];world.userData.interior='home';
  const shell=new THREE.Group();world.add(shell);world.userData.homeRoomShell139=shell;homeWall139(shell,l,q);homeHearth139(l);
  for(const v of homeFixed139(l).filter(v=>v.solid!==false))obstacle(v.x,v.z,v.w,v.d,v.name);

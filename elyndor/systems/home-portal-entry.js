@@ -17,7 +17,7 @@ function homeEntryTick147(q,dt){
   a.x=p.x;a.z=p.z;a.speed=moving?metres/Math.max(dt,.001):0;a.action=moving?'walk':'idle';if(moving)a.face=facingForMotion(dx,dz);a.phase+=metres/1.55;row.distance+=metres;
   updateActor(a,dt);
   if(moving){const meta=assets.sprites[a.visualId??a.id],key=meta.frames['run_'+a.face]?'run_'+a.face:a.face,clip=meta.frames[key];if(clip)setActorFrame(a,key,Math.floor(row.distance/1.55*clip.length)%clip.length);}
-  const local=V3(a.x,0,a.z).applyMatrix4(g.matrixWorld.clone().invert()),rad=Math.hypot(local.x,local.z),ground=heightAt(a.x,a.z),top=V3(0,.30,0).applyMatrix4(g.matrixWorld).y,step=1-smooth(1.43,2.05,rad);
+  const local=V3(a.x,0,a.z).applyMatrix4(q.inverse151??=g.matrixWorld.clone().invert()),rad=Math.hypot(local.x,local.z),ground=heightAt(a.x,a.z),top=V3(0,.30,0).applyMatrix4(g.matrixWorld).y,step=1-smooth(1.43,2.05,rad);
   a.mesh.position.y=mix(ground,Math.max(ground,top),step)+.015;a.shadow.position.y=ground+.018;
   a.mesh.visible=raw<1;if(a.shadow)a.shadow.visible=raw<1&&local.z>.12;
   if(raw<1)done=false;row.done=raw>=1;

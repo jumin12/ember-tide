@@ -1,0 +1,277 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 92134,
+    "sha256": "b8b5700d1b14b5336f154f707151b4401f1e8d3d5794ffea39e9cfc2a3f20937"
+  },
+  {
+    "file": "elyndor/assets/runtime-v148/homeward-depth-mobile.webp",
+    "bytes": 27224,
+    "sha256": "ee13f1e7685cedeeb1a72a0970dcc4f86f7afa514665f53646e117a327f20190"
+  },
+  {
+    "file": "elyndor/assets/runtime-v148/homeward-depth.webp",
+    "bytes": 59324,
+    "sha256": "525031d3d719baa2f22b5748d6791b5e4102066ebb82cb7a92475f9ba025f297"
+  },
+  {
+    "file": "elyndor/assets/runtime-v148/homeward-lower-mobile.webp",
+    "bytes": 98750,
+    "sha256": "a7622e9230961d4ede74a72d33c4b25354b6b9eca1ce3f98c0d96c3e9599707f"
+  },
+  {
+    "file": "elyndor/assets/runtime-v148/homeward-lower.webp",
+    "bytes": 240200,
+    "sha256": "c00d098d54522ca0275a85b0cb6dd5114cc41d9447bb393f5cbf5a1ab46bc86d"
+  },
+  {
+    "file": "elyndor/assets/runtime-v148/homeward-middle-mobile.webp",
+    "bytes": 185528,
+    "sha256": "0d4a5fdec00bd46fa733fa859fb9ce71bc76f068b9cafff1aaeb8e06967bdcb8"
+  },
+  {
+    "file": "elyndor/assets/runtime-v148/homeward-middle.webp",
+    "bytes": 461066,
+    "sha256": "b12326b019acfdc2689d72256b6144ba67aa0cb8250568d1bbb5ab4161751f49"
+  },
+  {
+    "file": "elyndor/assets/runtime-v148/homeward-upper-mobile.webp",
+    "bytes": 129342,
+    "sha256": "60d91ea1c77f45bac22f26da8b049982aff6e4b632d5c31ebd96d8a0c225e2cd"
+  },
+  {
+    "file": "elyndor/assets/runtime-v148/homeward-upper.webp",
+    "bytes": 318658,
+    "sha256": "690c9755bdeb6788e3cd87f76450f2890de993738da84640f17f28af0873b078"
+  },
+  {
+    "file": "elyndor/assets/runtime-v149/home-alder-mobile.webp",
+    "bytes": 124238,
+    "sha256": "24e083ed31d457fa33d0ad93c35a605742ead8df0a00720b87f28256e7995db1"
+  },
+  {
+    "file": "elyndor/assets/runtime-v149/home-alder.webp",
+    "bytes": 379886,
+    "sha256": "9ab23dec324110411a9eccd8380f74163d0e1fff9ae6127fe7327ed91353e4ea"
+  },
+  {
+    "file": "elyndor/assets/runtime-v149/home-brookstead-mobile.webp",
+    "bytes": 126162,
+    "sha256": "366928a84f8d5f57f2c778d64484bab82e11a57fb8716a66609adcef2bf2b677"
+  },
+  {
+    "file": "elyndor/assets/runtime-v149/home-brookstead.webp",
+    "bytes": 386554,
+    "sha256": "1ba02396a07f6558db385a7bb6bd4137bdb4956ee3c490479e83227085a4943d"
+  },
+  {
+    "file": "elyndor/assets/runtime-v149/home-fern-mobile.webp",
+    "bytes": 123956,
+    "sha256": "e1ebca1057052458ac1a075426605f2dd2c476454aafb0e08e6cc99e0f1f9dea"
+  },
+  {
+    "file": "elyndor/assets/runtime-v149/home-fern.webp",
+    "bytes": 381786,
+    "sha256": "951e2027c82f3fbfdaf30d27b7b0927b41d93b0e98a03dbf0fdcd4d5dbe4f0a1"
+  },
+  {
+    "file": "elyndor/assets/runtime-v149/home-harbor-mobile.webp",
+    "bytes": 124334,
+    "sha256": "e1c67889a1f4cb4ae5deb517a37d3f778dfdd38d1cdf94ccb8702e67d20b8a43"
+  },
+  {
+    "file": "elyndor/assets/runtime-v149/home-harbor.webp",
+    "bytes": 380454,
+    "sha256": "e7175cc73bd8b24c14ad531b09a706298873cc17affff4a2bc3b28664091f091"
+  },
+  {
+    "file": "elyndor/assets/runtime-v149/home-highmere-mobile.webp",
+    "bytes": 123202,
+    "sha256": "0d566e8e2fa9250f8e86b1c7b7ccecd991ca4acd4353af4edde269a0976901bf"
+  },
+  {
+    "file": "elyndor/assets/runtime-v149/home-highmere.webp",
+    "bytes": 379730,
+    "sha256": "ad3d7cf2a5944f6a35dfa08e0c61658255748d935ad0c60f4894cd111797a38b"
+  },
+  {
+    "file": "elyndor/assets/runtime-v149/home-relief-mobile.webp",
+    "bytes": 121256,
+    "sha256": "eaeb04cb1ef398d31171bddb557d20ae038674b64af50d66a10f04ccf06b6e6a"
+  },
+  {
+    "file": "elyndor/assets/runtime-v149/home-relief.webp",
+    "bytes": 382634,
+    "sha256": "fc6eba1c18b706b79f6560245cec9fa2818981b4bb7f14d111b56f2c4b18deee"
+  },
+  {
+    "file": "elyndor/assets/runtime-v149/portal-hum.mp3",
+    "bytes": 114135,
+    "sha256": "4d4290538a9b4ea794a75628f8b785d1fcd822b9662bd46f373034e09302f007"
+  },
+  {
+    "file": "elyndor/assets/runtime-v149/portal-opening.mp3",
+    "bytes": 89893,
+    "sha256": "aa626bbed484c090f51a2ef3ae32d599485193559f9a4ceb7eab91973bbcb01e"
+  },
+  {
+    "file": "elyndor/build-manifest.json",
+    "bytes": 13479,
+    "sha256": "53e750fb2e369fbbf22247af2482a88ac6da3db704699c9449a8302bb4de7cb2"
+  },
+  {
+    "file": "elyndor/previews/release-v137/furniture-placement.webp",
+    "bytes": 170668,
+    "sha256": "4dd01069cb17d4fb871e095a4dbe7a302b07800dbff3a13248b2a33d6dc447b8"
+  },
+  {
+    "file": "elyndor/previews/release-v137/garden-bench.webp",
+    "bytes": 656506,
+    "sha256": "6459ebef29b0bd1b0f568214c3089275f7e2c8efec8383bda91ea79d537143fc"
+  },
+  {
+    "file": "elyndor/previews/release-v137/party-travel.webp",
+    "bytes": 448564,
+    "sha256": "40365f2617b0efec8f659b5a876f4a744d73374224ea7e2dea7516f714549e34"
+  },
+  {
+    "file": "elyndor/previews/release-v137/phone-building.webp",
+    "bytes": 123448,
+    "sha256": "99984f9f26402283734057b3c47cae2e737e0bed453f432fb3e982821860d2c1"
+  },
+  {
+    "file": "elyndor/previews/release-v137/portal-contact.webp",
+    "bytes": 584470,
+    "sha256": "b34b9a5bf097bd6e1b61198f6551a512aab616633f16b39d4754591ee677ef6e"
+  },
+  {
+    "file": "elyndor/previews/release-v137/portal-summoning.webp",
+    "bytes": 656372,
+    "sha256": "4e5d000b68388e5b951bf974d026761e12cae5f032f10ee12f8f1af8bebdff75"
+  },
+  {
+    "file": "elyndor/previews/release-v137/timed-combo.webp",
+    "bytes": 345346,
+    "sha256": "061f02589e353deee38531031a93c4b4ce62f88e9d8e7baa0dd2d52bd6716bf3"
+  },
+  {
+    "file": "elyndor/previews/release-v137/verification.json",
+    "bytes": 4124,
+    "sha256": "214648433721096ad15c233516bbf1a5089b4463dcd562a8ae824c80c6bef916"
+  },
+  {
+    "file": "elyndor/systems/character-sampling.js",
+    "bytes": 2206,
+    "sha256": "f5a9c90bc8b36e157ee0a77f0c6c71457ac3d753b423272dafa8d5be24a97f69"
+  },
+  {
+    "file": "elyndor/systems/cinematic-chains.css",
+    "bytes": 8597,
+    "sha256": "91bbe2c8bb90ba358e12d89c9dadb31c57365c4d3723a5dbd4f37a73f7ba68ce"
+  },
+  {
+    "file": "elyndor/systems/cinematic-chains.js",
+    "bytes": 34758,
+    "sha256": "856640ac6ecbad7964044c60b87728442ff45ae15a406c42a3815dc2d5183b9a"
+  },
+  {
+    "file": "elyndor/systems/developer-workbench.js",
+    "bytes": 11055,
+    "sha256": "7f97133ea74da06f94ef726930544a9757c598248d56eaa3aae48607636a7b6d"
+  },
+  {
+    "file": "elyndor/systems/home-building-preview.js",
+    "bytes": 17425,
+    "sha256": "9da1862841b85a042235a0ee208dfcb073b637f09c140d6fb7ab375c7328ef5e"
+  },
+  {
+    "file": "elyndor/systems/home-performance.js",
+    "bytes": 11405,
+    "sha256": "bc0f0dc7eb25dcf707ff9761c67f61e0fc289ad621315f68df3df680c557e315"
+  },
+  {
+    "file": "elyndor/systems/home-portal-audio.js",
+    "bytes": 4670,
+    "sha256": "2412a32f4c1ad73fcdce75bce575f198052fe7ef517012686b36848cda351236"
+  },
+  {
+    "file": "elyndor/systems/home-portal-entry.js",
+    "bytes": 2097,
+    "sha256": "6938b5e072f3be93c24f91bfc48a2c931e4916a79f436feaff498fb17a1ec28f"
+  },
+  {
+    "file": "elyndor/systems/home-portal-summoning.js",
+    "bytes": 6910,
+    "sha256": "44a33afecc2033867d470f42aa4be04e85344fb37664e0dca6bf51036e2a2de7"
+  },
+  {
+    "file": "elyndor/systems/home-return-portal.js",
+    "bytes": 17405,
+    "sha256": "c3e7d933170aa5e4421774a27d8a77a1cf01b1217539303080ad3f0321aec618"
+  },
+  {
+    "file": "elyndor/systems/home-threshold-effects.js",
+    "bytes": 5443,
+    "sha256": "6d325c66f4d6f30722b393e301653c192084155dec13282ea9e49c43afb1b3ca"
+  },
+  {
+    "file": "elyndor/systems/housing-customize.js",
+    "bytes": 7650,
+    "sha256": "d6f7478a10222c1e720f5ce3826701b025a5efdaaa81c2cf958e46e09f11f2a2"
+  },
+  {
+    "file": "elyndor/systems/housing-decor.js",
+    "bytes": 19715,
+    "sha256": "19e8306f94731736b44c7db53970a4a3db034dc82ec773477ffbbc71dd6d4351"
+  },
+  {
+    "file": "elyndor/systems/housing-garden.js",
+    "bytes": 4729,
+    "sha256": "80705b865fc7febf292d728ca8caad678803c775f6133e76e2eb409cab749a15"
+  },
+  {
+    "file": "elyndor/systems/housing-presentation.js",
+    "bytes": 12931,
+    "sha256": "7db89ad1965f2e8fcadc39721eeee6a9deb5b888ff4298b79bdf61546a8c0d81"
+  },
+  {
+    "file": "elyndor/systems/housing-state.js",
+    "bytes": 17400,
+    "sha256": "9bde470eec9fc3aac859472c4e6db5465ab8aceb3c570a98cc49b988f4c31142"
+  },
+  {
+    "file": "elyndor/systems/housing-ui.js",
+    "bytes": 21816,
+    "sha256": "5ff3f3f913feff3a695864a346ad33d43d48b4785f5c4d1b90abaf05a36380eb"
+  },
+  {
+    "file": "elyndor/systems/housing-world.js",
+    "bytes": 23312,
+    "sha256": "ed6299b869f6f37389db91b7b4b254247cb3c3b12a388b62566045ea9765606b"
+  },
+  {
+    "file": "elyndor/systems/timed-combo-focus.js",
+    "bytes": 337,
+    "sha256": "12ee4371cd04aec2f3fa9f676da3a54078466383c4dbe241f766890959baa51e"
+  },
+  {
+    "file": "elyndor/systems/travel-lighting.js",
+    "bytes": 2633,
+    "sha256": "1bd0857c8b8a63e3d24f05d0d34b0576cad4dec9e649df04d3886a2011e73d57"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 88905,
+    "sha256": "e98a926b68c7b5742fd73df782323751029d4856d2ed5f610812a4106fe75016"
+  },
+  {
+    "file": "index.html",
+    "bytes": 7631057,
+    "sha256": "6b62f3456937c90eaf2e67a6868e5a6cb0d986e3ba06cd8a7104c693ceb42cf3"
+  },
+  {
+    "file": "release.json",
+    "bytes": 92830,
+    "sha256": "633c0477c2d3183a42ca36367cfe6b9e89471261d94b9b902e3a14b22e1916e2"
+  }
+]

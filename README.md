@@ -2,6 +2,23 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.37 — Living Homeward gates and smoother home building
+
+November 14, 2026
+
+- Rebuilt the Homeward gate with a full-depth weathered-stone arch, fitted threshold, three independently moving and rotating blue energy layers, suspended sparks and light on nearby scenery. The same gate now appears during the first-house purchase spell and at the private home.
+- Added contact-driven portal crossings: each companion sends ripples through the moving currents, releases blue particles and a wave across the stone base, and pulses the surrounding light. The party retains its grounded walking animation and natural occlusion through the opening.
+- Added original ElevenLabs portal-opening and ambient-loop sounds with distance, stereo positioning and volume controls. Refreshed the house-browser pictures for all six regional home styles.
+- Reduced recurring home-travel stalls by retaining the private room and yard within a memory limit, reusing their prepared scenery, and clearing old crossing effects before a cached yard returns. Ownership, layout, finish and quality changes invalidate the relevant cached scenes.
+- Prepared the hidden portal, keeper pose, shadows and river-reflection shaders before the summoning animation begins. First visits still prepare new graphics; the sequence no longer waits for those shaders when the gate first becomes visible.
+- Made decorating more responsive with live GPU furniture previews, asynchronous material preparation and incremental placement updates that preserve unchanged objects. Garden lamps use a bounded pool of lights instead of changing the scene shader configuration with each placement.
+- Moved garden rocks away from the fixed bench and its approach, cleared vegetation from furniture and arbor footprints, and made placement checks follow actual rock bounds and regional scenery in all six home yards.
+- Kept D available for movement inside and outside the home; B opens decorating. Checked actual touch placement, moving and removal, inventory refunds, repeated doorway trips and phone portrait and landscape layouts.
+- Removed uneven sprite sampling at fractional zoom while preserving the approved character, NPC and monster artwork. Stabilized party lighting under tree canopies during travel without changing movement speeds or animation pixels.
+- Improved timed-combo feedback with a target-side CLICK or TAP cue, clearer windup, left-button press input, stronger contact flashes and a more distinct final impact. Keyboard alternatives, the original timing windows, three-hit damage and bullet-time behavior remain intact; the dev practice instructions now match the controls.
+
+Release evidence and checksums: `elyndor/previews/release-v137/verification.json`. Phone checks use browser emulation; local timings are not a universal device-performance guarantee.
+
 ## Alpha Version 1.36 — The Homeward spell and hands-on home building
 
 November 14, 2026

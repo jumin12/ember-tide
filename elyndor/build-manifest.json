@@ -309,7 +309,15 @@
       "systems/home-keeper-directions.js",
       "systems/home-portal-entry.js",
       "systems/home-portal-spectacle.js",
-      "systems/home-building-preview.js"
+      "systems/home-building-preview.js",
+      "systems/home-return-portal.js",
+      "systems/character-sampling.js",
+      "systems/home-portal-audio.js",
+      "systems/home-portal-summoning.js",
+      "systems/travel-lighting.js",
+      "systems/timed-combo-focus.js",
+      "systems/home-performance.js",
+      "systems/home-threshold-effects.js"
     ]
   },
   "styles": [

@@ -87,12 +87,13 @@ function disposeHomeObject139(root){
  if(!root)return;root.removeFromParent();const shared=new Set(Object.values(sharedGeo)),geos=new Set(),mats=new Set();root.traverse(o=>{if(o.geometry&&!shared.has(o.geometry))geos.add(o.geometry);for(const m of o.material?(Array.isArray(o.material)?o.material:[o.material]):[])if(m.userData.homeDraft139||m.userData.homeOwned139)mats.add(m);});for(const g of geos)g.dispose();for(const m of mats)m.dispose();
 }
 function rebuildHomeDecor139(){
- for(const root of world.userData.homeDecorRoots139?.values()??[])disposeHomeObject139(root);world.userData.homeDecorRoots139=new Map();
+ const roots=world.userData.homeDecorRoots139??=new Map(),placements=(housing139().home?.placements??[]).filter(p=>(p.area??'room')===homeArea139()),ids=new Set(placements.map(p=>p.uid)),style=JSON.stringify([homeStyle139().id,homeAppearance139()]);
+ for(const [id,root]of roots)if(!ids.has(id)||root.userData.homeStyle151!==style){disposeHomeObject139(root);roots.delete(id);}
  colliders=colliders.filter(c=>!c.homeDecor139);
- for(const p of (housing139().home?.placements??[]).filter(p=>(p.area??'room')===homeArea139())){const q=HOME_DECOR139[p.item],g=homeDecorModel139(p.item,world);seatHomeDecor139(g,p);world.userData.homeDecorRoots139.set(p.uid,g);
+ for(const p of placements){const q=HOME_DECOR139[p.item];let g=roots.get(p.uid);if(!g){g=homeDecorModel139(p.item,world);g.userData.homeStyle151=style;roots.set(p.uid,g);}g.visible=true;seatHomeDecor139(g,p);
   if(q.solid){const f=homeFootprint139(p);obstacle(p.x,p.z,f.w,f.d,q.name);colliders.at(-1).homeDecor139=p.uid;}
  }
- rebuildColliderGrid();world.updateMatrixWorld(true);
+ rebuildColliderGrid();
 }
 function ensureHomeDecor139(){
  if(homeDecor139.root)return homeDecor139.root;const r=document.createElement('section');r.id='home-decor139';r.hidden=true;r.setAttribute('aria-label','Home decoration');document.body.append(r);homeDecor139.root=r;return r;
@@ -159,7 +160,7 @@ document.addEventListener('click',e=>{
  if(action==='done')stopHomeDecor139();else if(action==='confirm')commitHomeDraft139();else if(action==='cancel')cancelHomeDraft139();else if(action==='rotate')rotateHomeDraft139();else if(action==='remove')removeHomeDecor139(homeDecor139.original?.uid);else{const d={north:[0,-.25],south:[0,.25],west:[-.25,0],east:[.25,0]}[action];if(d)moveHomeDraft139(...d);}
 },true);
 document.addEventListener('keydown',e=>{
- if(!homeDecor139.active){if(e.key.toLowerCase()==='d'&&state.scene==='homeInterior139'&&!menu&&!dialogue&&!gameLoading){e.preventDefault();e.stopImmediatePropagation();startHomeDecor139();}return;}
+ if(!homeDecor139.active){if(e.code==='KeyB'&&!e.repeat&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&!e.target.matches?.('input,textarea,select,[contenteditable="true"]')&&state.scene==='homeInterior139'&&!menu&&!dialogue&&!gameLoading){e.preventDefault();e.stopImmediatePropagation();startHomeDecor139();}return;}
  if(e.key==='Tab')return;if(e.target.matches?.('select,input,textarea')&&e.key!=='Escape'){e.stopImmediatePropagation();return;}
  e.preventDefault();e.stopImmediatePropagation();keys.clear();const k=e.key.toLowerCase();
  if(k==='escape')homeDecor139.draft?cancelHomeDraft139():stopHomeDecor139();else if(k==='r')rotateHomeDraft139();else if(k==='enter')commitHomeDraft139();else if(k==='delete'&&homeDecor139.original)removeHomeDecor139(homeDecor139.original.uid);else{const d={arrowup:[0,-.25],arrowdown:[0,.25],arrowleft:[-.25,0],arrowright:[.25,0]}[k];if(d)moveHomeDraft139(...d);}

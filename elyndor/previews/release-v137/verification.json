@@ -1,0 +1,92 @@
+{
+  "version": "Alpha Version 1.37",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7631057,
+    "sha256": "6b62f3456937c90eaf2e67a6868e5a6cb0d986e3ba06cd8a7104c693ceb42cf3",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "runtimeMatchesTestedBuildExceptChangelog": true,
+  "approvedCharacterFramesPreserved": 52,
+  "checks": {
+    "portal148": {
+      "complete": true,
+      "regression.json": {
+        "checks": 31,
+        "errors": 0
+      }
+    },
+    "portal149": {
+      "complete": true,
+      "check.json": {
+        "checks": 25,
+        "errors": 0
+      }
+    },
+    "trello150": {
+      "complete": true,
+      "after-check.json": {
+        "checks": 18,
+        "errors": 0
+      }
+    },
+    "housing151": {
+      "complete": true,
+      "check.json": {
+        "checks": 26,
+        "errors": 0
+      },
+      "phone-check.json": {
+        "checks": 26,
+        "errors": 0
+      }
+    }
+  },
+  "source": {
+    "elyndor/build-manifest.json": "53e750fb2e369fbbf22247af2482a88ac6da3db704699c9449a8302bb4de7cb2",
+    "elyndor/systems/character-sampling.js": "f5a9c90bc8b36e157ee0a77f0c6c71457ac3d753b423272dafa8d5be24a97f69",
+    "elyndor/systems/cinematic-chains.css": "91bbe2c8bb90ba358e12d89c9dadb31c57365c4d3723a5dbd4f37a73f7ba68ce",
+    "elyndor/systems/cinematic-chains.js": "856640ac6ecbad7964044c60b87728442ff45ae15a406c42a3815dc2d5183b9a",
+    "elyndor/systems/developer-workbench.js": "7f97133ea74da06f94ef726930544a9757c598248d56eaa3aae48607636a7b6d",
+    "elyndor/systems/home-building-preview.js": "9da1862841b85a042235a0ee208dfcb073b637f09c140d6fb7ab375c7328ef5e",
+    "elyndor/systems/home-performance.js": "bc0f0dc7eb25dcf707ff9761c67f61e0fc289ad621315f68df3df680c557e315",
+    "elyndor/systems/home-portal-audio.js": "2412a32f4c1ad73fcdce75bce575f198052fe7ef517012686b36848cda351236",
+    "elyndor/systems/home-portal-entry.js": "6938b5e072f3be93c24f91bfc48a2c931e4916a79f436feaff498fb17a1ec28f",
+    "elyndor/systems/home-portal-summoning.js": "44a33afecc2033867d470f42aa4be04e85344fb37664e0dca6bf51036e2a2de7",
+    "elyndor/systems/home-return-portal.js": "c3e7d933170aa5e4421774a27d8a77a1cf01b1217539303080ad3f0321aec618",
+    "elyndor/systems/home-threshold-effects.js": "6d325c66f4d6f30722b393e301653c192084155dec13282ea9e49c43afb1b3ca",
+    "elyndor/systems/housing-customize.js": "d6f7478a10222c1e720f5ce3826701b025a5efdaaa81c2cf958e46e09f11f2a2",
+    "elyndor/systems/housing-decor.js": "19e8306f94731736b44c7db53970a4a3db034dc82ec773477ffbbc71dd6d4351",
+    "elyndor/systems/housing-garden.js": "80705b865fc7febf292d728ca8caad678803c775f6133e76e2eb409cab749a15",
+    "elyndor/systems/housing-presentation.js": "7db89ad1965f2e8fcadc39721eeee6a9deb5b888ff4298b79bdf61546a8c0d81",
+    "elyndor/systems/housing-state.js": "9bde470eec9fc3aac859472c4e6db5465ab8aceb3c570a98cc49b988f4c31142",
+    "elyndor/systems/housing-ui.js": "5ff3f3f913feff3a695864a346ad33d43d48b4785f5c4d1b90abaf05a36380eb",
+    "elyndor/systems/housing-world.js": "ed6299b869f6f37389db91b7b4b254247cb3c3b12a388b62566045ea9765606b",
+    "elyndor/systems/timed-combo-focus.js": "12ee4371cd04aec2f3fa9f676da3a54078466383c4dbe241f766890959baa51e",
+    "elyndor/systems/travel-lighting.js": "1bd0857c8b8a63e3d24f05d0d34b0576cad4dec9e649df04d3886a2011e73d57",
+    "elyndor/title-v19.js": "e98a926b68c7b5742fd73df782323751029d4856d2ed5f610812a4106fe75016"
+  },
+  "scope": "Native Chrome on the test PC and touch-enabled browser phone emulation. First visits prepare graphics; no physical-phone or universal frame-rate claim.",
+  "phoneViewports": [
+    "320x568",
+    "390x844",
+    "844x390",
+    "568x320"
+  ],
+  "localTimings": {
+    "scope": "Matching local-PC native-loop scenarios; see scope above.",
+    "repeatedHouseExitPreparationMs": {
+      "before": 2348.65,
+      "after": 49.75
+    },
+    "keeperSpellLongestFrameMs": {
+      "before": 3683.8,
+      "after": 48.4
+    },
+    "populatedEditorLongestFrameMs": {
+      "before": 153.5,
+      "after": 15.2
+    }
+  }
+}

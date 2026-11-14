@@ -22,18 +22,40 @@ function initChain141(c){
 }
 const cinematicActionBefore141=battleAction;
 battleAction=function(...args){const r=cinematicActionBefore141(...args);if(battle?.status==='combo'&&battle.combo?.actor&&!battle.combo.cinema141)initChain141(battle.combo);return r;};
+function chainBody150(a){
+ const b=silhouette87(a.visualId??a.id),points=[];a.mesh.updateWorldMatrix(true,false);
+ for(const x of[b.left*a.size,b.right*a.size])for(const y of[0,b.height*a.size]){const p=V3(x,y,0).applyMatrix4(a.mesh.matrixWorld).project(camera);points.push({x:(p.x*.5+.5)*innerWidth,y:(.5-p.y*.5)*innerHeight});}
+ return{left:Math.min(...points.map(p=>p.x)),right:Math.max(...points.map(p=>p.x)),top:Math.min(...points.map(p=>p.y)),bottom:Math.max(...points.map(p=>p.y))};
+}
+function placeChainCue150(c){
+ if(!c?.cinema141||!camera||$('#combo').classList.contains('hidden'))return;
+ const n=$('#combo'),phone=mobileBattle69(),short=phone&&innerHeight<480,w=phone?(short?212:176):216,h=phone?(short?74:154):178;
+ const target=chainBody150(c.target.actor),top=phone?56:76,bottom=phone?innerHeight-mobileField69().party-8:innerHeight-14;
+ const obstacles=[...battle.enemies.filter(e=>e.hp>0).map(e=>chainBody150(e.actor)),...[player,...followers].filter(a=>a.mesh.visible).map(chainBody150),...visibleHudRects64('#turn-order,#battle-party,#battle-command,#world-enemy-bars27>.foe-bar27:not([hidden])')];
+ const castTop=Math.min(target.top,...[player,...followers,...battle.enemies.map(e=>e.actor)].filter(a=>a.mesh.visible).map(a=>chainBody150(a).top));
+ const options=[[target.right+14,target.top-h*.3],[(target.left+target.right-w)/2,castTop-h-18],[target.left-w-14,target.top-h*.3],[innerWidth/2-w/2,top+12]];
+ let best=null;for(const [px,py]of options){const x=clamp(px,10,innerWidth-w-10),y=clamp(py,top,Math.max(top,bottom-h)),r={left:x,right:x+w,top:y,bottom:y+h};let overlap=0;
+  for(const q of obstacles)overlap+=Math.max(0,Math.min(r.right,q.right+6)-Math.max(r.left,q.left-6))*Math.max(0,Math.min(r.bottom,q.bottom+6)-Math.max(r.top,q.top-6));
+  const score=overlap*100+Math.hypot(x+w/2-(target.left+target.right)/2,y+h/2-target.top);if(!best||score<best.score)best={x,y,score};
+ }
+ n.chainPlacement150={left:Math.round(best.x)+'px',top:Math.round(best.y)+'px',width:w+'px',height:h+'px',bottom:'auto',transform:'none'};restoreChainCue150();
+ n.dataset.anchor150='target';
+}
+function restoreChainCue150(){const n=$('#combo');for(const[k,v]of Object.entries(n.chainPlacement150??{}))if(n.style.getPropertyValue(k)!==v)n.style.setProperty(k,v,'important');}
 function ensureChainCue141(){
  const n=$('#combo');if(n.classList.contains('cinematic-chain141'))return;n.classList.add('cinematic-chain141');
  const hit=$('#timing-hit');hit.innerHTML='<svg class="chain-ring141" viewBox="0 0 110 110" aria-hidden="true"><circle class="chain-rail141" cx="55" cy="55" r="33"/><circle class="chain-gold141" cx="55" cy="55" r="33"/><circle class="chain-incoming141" cx="55" cy="55" r="33"/></svg><span class="chain-key141"><kbd>E</kbd><b>Strike</b></span>';
- hit.setAttribute('aria-label','Strike at the gold focus');hit.type='button';
+ hit.setAttribute('aria-label','Left click or tap when the rings overlap in gold');hit.setAttribute('aria-keyshortcuts','Space E Enter');hit.type='button';
+ hit.querySelector('kbd').outerHTML='<span class="chain-mouse150" aria-hidden="true"><svg viewBox="0 0 20 26"><path d="M10 2C5 2 3 5 3 9v8c0 5 3 7 7 7s7-2 7-7V9c0-4-2-7-7-7Z"/><path class="mouse-left150" d="M10 2C5 2 3 5 3 9v2h7Z"/><path d="M10 3v8H3m7 0h7"/></svg></span>';
+ n.insertAdjacentHTML('beforeend','<span class="chain-shortcut150">Left click anywhere · Space / E also work</span>');
  n.insertAdjacentHTML('beforeend','<div class="chain-beats141" aria-label="Three strike chain"><i></i><i></i><i></i></div>');
 }
 function updateChainCue141(c){
- const x=c.cinema141,n=$('#combo'),hit=$('#timing-hit'),p=c.t/c.duration,ready=x.phase==='focus'&&p>=.65&&p<=.85,focus=x.phase==='focus',text=x.phase==='windup'?'Read the opening':focus?(combatLesson18()?.windowPaused?'The opening waits · press E, Space or Strike':'Wait for the rings to meet in gold'):x.phase==='release'?(c.input==='hit'?'Release!':'Off timing'):x.phase==='apex'?'Rising slash':x.phase==='finalRelease'?'Final impact':x.phase==='flight'?'Follow through':x.phase==='hitstop'?(c.input==='hit'?'Clean hit':'Glancing hit'):x.phase==='return'?'Recovering':'Keep the rhythm';
+ const x=c.cinema141,n=$('#combo'),hit=$('#timing-hit'),p=c.t/c.duration,ready=x.phase==='focus'&&p>=.65&&p<=.85,focus=x.phase==='focus',text=x.phase==='windup'?'Watch the shrinking ring':focus?(ready?'Click now · Gold opening':'Wait for the gold overlap'):x.phase==='release'?(c.input==='hit'?'Strike released':p<.65?'Too early':'Too late'):x.phase==='apex'?'Rising slash':x.phase==='finalRelease'?'Finishing blow':x.phase==='flight'?'Follow through':x.phase==='hitstop'?(c.input==='hit'?'Clean hit':'Glancing hit'):x.phase==='return'?'Recovering':'Next strike';
  n.dataset.beat141=x.phase;n.classList.toggle('chain-ready141',ready);n.classList.toggle('chain-missed141',c.input==='miss');
  hit.disabled=!focus||!!c.input;hit.setAttribute('aria-description',ready?'Strike now':text);
- const ring=hit.querySelector('.chain-incoming141');ring.style.transform='scale('+(focus?mix(1.65,.80,clamp(p,0,1)):x.phase==='windup'?1.65:1)+')';
- const label=hit.querySelector('.chain-key141 b');label.textContent=focus?'Strike':x.phase==='release'?'Go':x.phase==='hitstop'?'Hit':'Ready';
+ const ring=hit.querySelector('.chain-incoming141');ring.style.transform='scale('+(['windup','focus'].includes(x.phase)?mix(1.90,.70,clamp(p,0,1)):1)+')';
+ const label=hit.querySelector('.chain-key141 b');label.textContent=ready?(touchDevice33()?'TAP':'CLICK'):focus||x.phase==='windup'?'WAIT':x.phase==='hitstop'?'HIT':c.input==='miss'?'MISSED':'NEXT';
  const progress=$('#combo-progress'),message=(c.step+1)+' / '+c.chain+' · '+text;if(progress.textContent!==message)progress.textContent=message;
  n.querySelectorAll('.chain-beats141 i').forEach((node,i)=>{node.dataset.state=i<c.step?'hit':i===c.step?(c.input==='miss'?'miss':c.input==='hit'?'hit':'current'):'waiting';});
 }
@@ -47,6 +69,12 @@ comboHit=function(){
 };
 // A held key cannot score subsequent beats through browser key-repeat.
 document.addEventListener('keydown',e=>{if(battle?.combo?.cinema141&&['e',' '].includes(e.key.toLowerCase())&&e.repeat){e.preventDefault();e.stopImmediatePropagation();}},true);
+// Act on the press, not the mouse release. A held mouse or a synthetic click
+// from that same press cannot submit a second beat later in the sequence.
+let chainPointer150=-Infinity;
+document.addEventListener('pointerdown',e=>{if(e.button!==0||!e.isPrimary||!battle?.combo?.cinema141||chainPaused141()||introLocked58()||!e.target.closest?.('#world,#combo'))return;chainPointer150=performance.now();e.preventDefault();e.stopImmediatePropagation();initAudio();comboHit();},true);
+document.addEventListener('click',e=>{if(!e.target.closest?.('#world,#combo'))return;const pointer=performance.now()-chainPointer150<1500;if(pointer){chainPointer150=-Infinity;e.preventDefault();e.stopImmediatePropagation();return;}if(battle?.combo?.cinema141){e.preventDefault();e.stopImmediatePropagation();if(e.detail===0)comboHit();}},true);
+document.addEventListener('keydown',e=>{if(e.key!=='Enter'||!battle?.combo?.cinema141||e.target.closest?.('input,textarea,select,[contenteditable=true]'))return;e.preventDefault();e.stopImmediatePropagation();if(!e.repeat)comboHit();},true);
 function chainContact141(c){
  const x=c.cinema141;if(c.applied||c.target.hp<=0)return;
  x.frame=x.pose.peak;c.t=c.duration*.76;setActorFrame(c.actor,x.pose.clip,x.pose.peak);
@@ -70,7 +98,7 @@ function advanceCinematicChain141(dt){
  x.bullet=clamp(x.bullet+(x.slow?1:-1)*dt/.12,0,1);const rate=chainRate141(x);x.fxRate=x.phase==='hitstop'&&x.slow?.08:rate;
  x.total+=dt;x.time+=dt;x.motionTime+=dt*rate;voiceTimer-=dt;if(voiceTimer<=0)$('#battle-callout').textContent='';
  if(x.phase==='windup'){
-  const duration=c.step===0?.24:.12,p=clamp(x.motionTime/duration,0,1);x.frame=pose.pre*.45*p;c.t=c.duration*.35*p;
+  const duration=c.step===0?.36:.18,p=clamp(x.motionTime/duration,0,1);x.frame=pose.pre*.45*p;c.t=c.duration*.35*p;
   if(p===1)chainPhase141(c,'focus');
  }else if(x.phase==='focus'){
   // Scoring still uses the original .9-second clock and .65-.85 gold window.
@@ -100,7 +128,7 @@ function advanceCinematicChain141(dt){
   if(x.flightElapsed>=.16){chainContact141(c);if(!c.applied)chainPhase141(c,'recover');}
  }else if(x.phase==='hitstop'){
   x.frame=pose.peak;c.t=c.duration*.81;
-  if(x.time>=(c.input==='hit'&&c.step===2?.045:.065))chainPhase141(c,'recover');
+  if(x.time>=(c.input==='hit'&&c.step===2?.085:.065))chainPhase141(c,'recover');
  }else if(x.phase==='recover'){
   const p=clamp(x.motionTime/(x.slow?.12:x.finalMotion?.36:.22),0,1);x.frame=mix(pose.peak,pose.n-1,p);c.t=c.duration*mix(.86,1,p);
   if(p===1){if(c.input==='hit'&&c.step+1<c.chain&&c.target.hp>0)chainPhase141(c,'link');else{chainPhase141(c,'return');x.returnFrom={x:a.x,z:a.z};}}
@@ -153,8 +181,9 @@ function chainEffects141(){
     for(int i=0;i<16;i++){float k=float(i),a=k*2.399963+.18;vec2 d=vec2(cos(a),sin(a));float along=dot(p,d),across=abs(dot(p,vec2(-d.y,d.x)));
      float len=(.42+.48*fract(k*.61803))*spread;float w=.0045+fwidth(across)*.9;
      rays+=exp(-pow(across/w,2.))*smoothstep(.008,.035,along)*(1.-smoothstep(len*.64,len,along));}
-    float core=exp(-r*45.),halo=exp(-r*13.)*.075,life=pow(max(0.,1.-age),1.35);
-    float a=(rays*1.5+core+halo)*life*power;if(a<.002)discard;
+    float core=exp(-r*38.),halo=exp(-r*13.)*.075,life=pow(max(0.,1.-age),1.35);
+    float shock=exp(-pow((r-mix(.05,.9,age))/(.007+fwidth(r)),2.))*.22*(1.-age);
+    float a=(rays*1.65+core+halo+shock)*life*power;if(a<.002)discard;
     gl_FragColor=vec4(mix(tint,vec3(2.,1.8,1.15),exp(-r*18.)),a);
    }`});const mesh=new THREE.Mesh(geometry,material);mesh.visible=false;mesh.frustumCulled=false;group.add(mesh);return{mesh,age:10,duration:.38};
  });
@@ -215,8 +244,8 @@ function chainImpactPosition141(c,position){
  // against the actual set. It cannot disappear behind the enemy's own quad.
  out.addScaledVector(camera.position.clone().sub(out).normalize(),.32);return out;
 }
-function chainImpact141(c,position,strong){const q=chainEffects141(),b=q.bursts[q.cursor++%3];b.age=0;b.duration=strong?.46:.34;b.mesh.position.copy(chainImpactPosition141(c,position));b.mesh.scale.setScalar(strong?3.5:2.5);b.mesh.quaternion.copy(camera.quaternion);b.mesh.material.uniforms.tint.value.set(['bren','tavin'].includes(c.id)?'#ffb136':c.id==='lysa'?'#ff9345':'#6dbfff');b.mesh.material.uniforms.power.value=strong?1.2:1;b.mesh.visible=true;
- if(c.id==='bren'){chainParticles143(q,b.mesh.position,strong?24:16,true);chainParticles143(q,b.mesh.position,8,false);}
+function chainImpact141(c,position,strong){const q=chainEffects141(),b=q.bursts[q.cursor++%3];b.age=0;b.duration=strong?.46:.34;b.mesh.position.copy(chainImpactPosition141(c,position));b.mesh.scale.setScalar(clamp(c.target.actor.size*.72,2.1,3.8)*(strong?1.28:1));b.mesh.quaternion.copy(camera.quaternion);b.mesh.material.uniforms.tint.value.set(['bren','tavin'].includes(c.id)?'#ffb136':c.id==='lysa'?'#ff9345':'#6dbfff');b.mesh.material.uniforms.power.value=strong?1.35:1;b.mesh.visible=true;
+ if(c.id==='bren'){chainParticles143(q,b.mesh.position,strong?36:18,true);chainParticles143(q,b.mesh.position,strong?12:8,false);}
  if(c.id==='bren'&&strong&&c.cinema141.finalMotion){q.dustAge=0;q.dustOrigin.set(c.actor.x,c.actor.mesh.position.y+.09,c.actor.z);q.dustDirection.set(c.actor.x-c.target.actor.x,0,c.actor.z-c.target.actor.z).normalize();}
 }
 function updateChainEffects141(dt){
@@ -304,11 +333,11 @@ render=function(...args){if(post?.material.uniforms.bulletWorld141)post.material
 const cinematicEndBefore141=endBattle;
 endBattle=function(...args){const c=battle?.combo;if(c?.cinema141){Object.assign(c.actor,c.start);Object.assign(c.target.actor,c.cinema141.victim);c.cinema141.bullet=0;c.cinema141.slow=false;}disposeChainEffects141();return cinematicEndBefore141(...args);};
 const cinematicMobileBefore141=layoutMobileCombat69;
-layoutMobileCombat69=function(...args){const r=cinematicMobileBefore141(...args);if(mobileBattle69()&&innerWidth>innerHeight&&battle.combo?.cinema141)$('#combo').style.setProperty('bottom',(mobileField69().party+6)+'px','important');return r;};
+layoutMobileCombat69=function(...args){const r=cinematicMobileBefore141(...args);if(battle?.combo?.cinema141)restoreChainCue150();return r;};
 const cinematicTimingLayoutBefore141=timingLayout68;
-timingLayout68=function(...args){const r=cinematicTimingLayoutBefore141(...args);if(battle?.combo?.cinema141&&!mobileBattle69()){const n=$('#combo');n.style.setProperty('width',Math.min(340,innerWidth-24)+'px','important');n.style.setProperty('top',clamp(innerHeight*.16,92,160)+'px','important');}return r;};
+timingLayout68=function(...args){if(battle?.combo?.cinema141){restoreChainCue150();return;}return cinematicTimingLayoutBefore141(...args);};
 // The existing lesson keeps its explicit Continue / first-window wait.
-LESSONS18.timing.text='Press E, Space or Strike when the rings meet in gold. Land the first hit to enter bullet time, then link two slower strikes. Time resumes on the final impact. The first practice opening waits for you.';
+LESSONS18.timing.text='Left-click anywhere on the battlefield, or tap Strike, when the shrinking ring overlaps the gold band. WAIT turns to CLICK at the opening. Space / E also work. The first hit starts bullet time; the finishing impact restores normal speed. The first practice opening waits for you.';
 LESSONS18.timing.goal='Release three strikes on their gold openings';
 const cinematicInstallBefore141=installEngine;
 installEngine=function(...args){const r=cinematicInstallBefore141(...args),before=window.render_game_to_text;window.render_game_to_text=()=>{const data=JSON.parse(before()),c=battle?.combo;if(c?.cinema141)data.battle.choreography={phase:c.cinema141.phase,clip:c.cinema141.pose.clip,frame:+c.cinema141.frame.toFixed(2),contactFrame:c.cinema141.pose.peak,canStrike:c.cinema141.phase==='focus'&&!c.input,window:c.t/c.duration,hits:c.success,timeScale:+chainRate141(c.cinema141).toFixed(2),bulletTime:+c.cinema141.bullet.toFixed(2)};return JSON.stringify(data);};return r;};

@@ -10,19 +10,20 @@ function findHomeDraft147(item){
  return first;
 }
 function homePreviewStudio147(){
- if(homeCraft147.scene)return;const q=homeCraft147;q.scene=new THREE.Scene();q.scene.add(new THREE.HemisphereLight('#eff9ff','#5c604b',2.25));const key=new THREE.DirectionalLight('#fff0d1',4.1);key.position.set(-3,6,5);q.scene.add(key);const fill=new THREE.DirectionalLight('#a4dbe9',1.4);fill.position.set(4,3,-3);q.scene.add(fill);q.scene.environment=scene.environment;q.camera=new THREE.PerspectiveCamera(34,4/3,.02,200);q.target=new THREE.WebGLRenderTarget(256,192,{depthBuffer:true});q.target.texture.colorSpace=THREE.SRGBColorSpace;
+ if(homeCraft147.scene)return;const q=homeCraft147;q.scene=new THREE.Scene();q.scene.add(new THREE.HemisphereLight('#eff9ff','#5c604b',2.25));const key=new THREE.DirectionalLight('#fff0d1',4.1);key.position.set(-3,6,5);q.scene.add(key);const fill=new THREE.DirectionalLight('#a4dbe9',1.4);fill.position.set(4,3,-3);q.scene.add(fill);q.scene.environment=scene.environment;q.camera=new THREE.PerspectiveCamera(34,4/3,.02,200);
+ // Keep the live model on the GPU. Reading the game's render target back to
+ // JavaScript every orbit frame serialized both renderers and caused hitches.
+ q.renderer=new THREE.WebGLRenderer({alpha:true,antialias:!mobileStartup116(),powerPreference:'low-power'});q.renderer.setPixelRatio(1);q.renderer.setSize(mobileStartup116()?192:384,mobileStartup116()?144:288,false);q.renderer.setClearColor('#0b2832',0);q.renderer.toneMapping=renderer.toneMapping;q.renderer.toneMappingExposure=1;q.renderer.domElement.id='home-model147';q.renderer.domElement.setAttribute('aria-label','Drag to rotate the 3D furniture preview');
 }
 function homePreviewKey147(item){return item+':'+homeStyle139().id;}
 function homeReadyText147(){return navigator.maxTouchPoints>0?'Clear to place · Tap Place to confirm':'Clear to place · Click or Enter';}
-function homeRenderFurniture147(item,angle=.42){
+async function homeRenderFurniture147(item,angle=.42,thumbnail=true){
  homePreviewStudio147();const q=homeCraft147,key147=homePreviewKey147(item);q.models??=new Map();let row=q.models.get(key147);
  if(!row){const model=homeDecorModel139(item,q.scene),bounds=new THREE.Box3().setFromObject(model),size=bounds.getSize(V3()),center=bounds.getCenter(V3());model.position.sub(center);row={model,radius:Math.max(.50,size.length()*.5)};q.models.set(key147,row);while(q.models.size>12){const key=q.models.keys().next().value;disposeHomeObject139(q.models.get(key).model);q.models.delete(key);}if(HOME_DECOR139[item].kind==='painting')setTimeout(()=>{q.cache.delete(key147);if(homeDecor139.active&&!q.queue.includes(item))q.queue.push(item);},1800);}
  const{model,radius}=row,camera=q.camera;model.visible=true;camera.position.set(Math.sin(angle)*radius*2.8,radius*1.6,Math.cos(angle)*radius*2.8);camera.lookAt(0,0,0);camera.near=.02;camera.far=Math.max(40,radius*12);camera.updateProjectionMatrix();q.scene.environment=scene.environment;q.scene.updateMatrixWorld(true);
- const saved={target:renderer.getRenderTarget(),viewport:renderer.getViewport(new THREE.Vector4()),scissor:renderer.getScissor(new THREE.Vector4()),test:renderer.getScissorTest(),alpha:renderer.getClearAlpha(),color:renderer.getClearColor(new THREE.Color()),shadow:renderer.shadowMap.enabled,exposure:renderer.toneMappingExposure};
- const canvas=document.createElement('canvas');canvas.width=256;canvas.height=192;
- try{renderer.shadowMap.enabled=false;renderer.toneMappingExposure=1;renderer.setRenderTarget(q.target);renderer.setViewport(0,0,256,192);renderer.setScissorTest(false);renderer.setClearColor('#0b2832',0);renderer.clear();renderer.render(q.scene,camera);const pixels=new Uint8Array(256*192*4),data=new Uint8ClampedArray(pixels.length);renderer.readRenderTargetPixels(q.target,0,0,256,192,pixels);for(let y=0;y<192;y++)data.set(pixels.subarray((191-y)*1024,(192-y)*1024),y*1024);canvas.getContext('2d').putImageData(new ImageData(data,256,192),0,0);q.renders++;}
- finally{renderer.setRenderTarget(saved.target);renderer.setViewport(saved.viewport);renderer.setScissor(saved.scissor);renderer.setScissorTest(saved.test);renderer.setClearColor(saved.color,saved.alpha);renderer.shadowMap.enabled=saved.shadow;renderer.toneMappingExposure=saved.exposure;model.visible=false;}
- return canvas;
+ try{if(!row.ready151){await q.renderer.compileAsync(q.scene,camera);row.ready151=true;}q.renderer.render(q.scene,camera);q.renders++;
+  if(!thumbnail)return q.renderer.domElement;const canvas=document.createElement('canvas');canvas.width=192;canvas.height=144;canvas.getContext('2d').drawImage(q.renderer.domElement,0,0,192,144);return canvas;
+ }finally{model.visible=false;}
 }
 function homePaintThumbs147(){
  const q=homeCraft147,root=homeDecor139.root;if(!homeDecor139.active||!root)return;
@@ -71,9 +72,11 @@ function homeCraftShadows147(){renderer.shadowMap.needsUpdate=sun.shadow.needsUp
 const homeCraftUpdateBefore147=updateHomeDecor139;
 updateHomeDecor139=function(dt=0){const r=homeCraftUpdateBefore147(dt),q=homeDecor139,c=homeCraft147;for(const row of c.placing){row.age+=dt;row.root.scale.setScalar(mix(.94,1,smooth(0,.18,row.age)));}c.placing=c.placing.filter(p=>p.age<.18&&p.root.parent);
  if(!q.active)return r;if(q.ghost&&q.target147){q.ghost.position.lerp(q.target147,1-Math.exp(-Math.max(dt,.001)*32));q.outline.position.set(q.ghost.position.x,q.target147.y+.035,q.ghost.position.z);}
- const now=performance.now();if(now-c.last<(mobileStartup116()?220:130))return r;c.last=now;
- if(c.queue.length){const item=c.queue.shift(),key=homePreviewKey147(item);if(!c.cache.has(key)){c.cache.set(key,homeRenderFurniture147(item));while(c.cache.size>48)c.cache.delete(c.cache.keys().next().value);}homePaintThumbs147();}
- const canvas=$('#home-model147');if(canvas&&canvas.offsetHeight>0&&c.live){if(c.spin)c.angle+=.045;const image=homeRenderFurniture147(c.live,c.angle);canvas.getContext('2d').clearRect(0,0,canvas.width,canvas.height);canvas.getContext('2d').drawImage(image,0,0,canvas.width,canvas.height);}return r;};
+ const now=performance.now();if(c.busy151||now-c.last<(mobileStartup116()?80:42))return r;const elapsed=now-c.last;c.last=now;
+ const canvas=$('#home-model147'),show=canvas&&canvas.offsetHeight>0&&c.live,thumb=now-(c.thumbAt151??0)>160?c.queue.shift():null;if(!show&&!thumb)return r;
+ c.busy151=true;(async()=>{if(thumb){c.thumbAt151=now;const key=homePreviewKey147(thumb);if(!c.cache.has(key)){c.cache.set(key,await homeRenderFurniture147(thumb));while(c.cache.size>48)c.cache.delete(c.cache.keys().next().value);}homePaintThumbs147();}
+  if(show&&homeDecor139.active){if(c.spin)c.angle+=Math.min(.1,elapsed/1000)*.35;const live=await homeRenderFurniture147(c.live,c.angle,false),slot=$('#home-model147');if(slot&&slot!==live)slot.replaceWith(live);}
+ })().catch(e=>console.error('Furniture preview could not render',e)).finally(()=>c.busy151=false);return r;};
 document.addEventListener('wheel',e=>{if(!homeDecor139.active||!homeDecor139.draft||e.target!==$('#world'))return;e.preventDefault();e.stopImmediatePropagation();const q=homeDecor139;if(HOME_DECOR139[q.draft.item].surface==='wall')return;q.draft.turn=(q.draft.turn+(e.deltaY>0?1:3))%4;refreshHomeDraft139();},{capture:true,passive:false});
 document.addEventListener('contextmenu',e=>{if(homeDecor139.active&&e.target===$('#world'))e.preventDefault();},true);
 document.addEventListener('click',e=>{const b=e.target.closest('[data-home-spin147]');if(!b)return;e.preventDefault();homeCraft147.spin=!homeCraft147.spin;b.setAttribute('aria-pressed',String(homeCraft147.spin));},true);
