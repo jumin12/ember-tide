@@ -181,7 +181,7 @@ function chainEffects141(){
    float curl=.06*sin(p.x*10.+p.y*8.-age*6.);float a=(1.-smoothstep(edge-.28+curl,edge+.12+curl,r))*.38*pow(max(0.,1.-age),1.35);
    if(a<.003)discard;gl_FragColor=vec4(.77,.69,.55,a);}`});
  const dust=new THREE.InstancedMesh(geometry,dustMaterial,12);dust.frustumCulled=false;dust.visible=false;group.add(dust);
- const sparkGeometry=geometry.clone(),sparkInfo=new Float32Array(96*2);sparkGeometry.setAttribute('sparkInfo143',new THREE.InstancedBufferAttribute(sparkInfo,2).setUsage(THREE.DynamicDrawUsage));
+ const sparkGeometry=geometry.clone(),sparkInfo=new Float32Array(192*2);sparkGeometry.setAttribute('sparkInfo143',new THREE.InstancedBufferAttribute(sparkInfo,2).setUsage(THREE.DynamicDrawUsage));
  const sparkMaterial=new THREE.ShaderMaterial({transparent:true,depthWrite:false,depthTest:true,side:THREE.DoubleSide,blending:THREE.NormalBlending,toneMapped:false,
   vertexShader:'attribute vec2 sparkInfo143;varying vec2 sparkUv143;varying vec3 sparkColor143;varying vec2 info143;void main(){sparkUv143=uv;sparkColor143=instanceColor;info143=sparkInfo143;gl_Position=projectionMatrix*modelViewMatrix*instanceMatrix*vec4(position,1.);}',fragmentShader:`
   varying vec2 sparkUv143,info143;varying vec3 sparkColor143;
@@ -189,8 +189,8 @@ function chainEffects141(){
    float shape=mix(exp(-p.x*p.x*25.)*(1.-smoothstep(.55,1.,abs(p.y))),1.-smoothstep(.40,1.,diamond),info143.y);
    float a=(shape+exp(-r*r*7.)*.14)*info143.x;if(a<.003)discard;
    gl_FragColor=vec4(mix(sparkColor143,vec3(1.6,1.7,1.8),shape*.20),min(.98,a));}`});
- const sparks=new THREE.InstancedMesh(sparkGeometry,sparkMaterial,96);sparks.frustumCulled=false;sparks.visible=false;
- for(let i=0;i<96;i++)sparks.setColorAt(i,new THREE.Color('#58bfff'));group.add(sparks);
+ const sparks=new THREE.InstancedMesh(sparkGeometry,sparkMaterial,192);sparks.frustumCulled=false;sparks.visible=false;
+ for(let i=0;i<192;i++)sparks.setColorAt(i,new THREE.Color('#58bfff'));group.add(sparks);
  const groundMaterial=new THREE.ShaderMaterial({transparent:true,depthWrite:false,depthTest:true,side:THREE.DoubleSide,blending:THREE.AdditiveBlending,toneMapped:false,uniforms:{age:{value:1},opacity:{value:0}},vertexShader:'varying vec2 groundUv143;void main(){groundUv143=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:`
   varying vec2 groundUv143;uniform float age,opacity;
   void main(){vec2 p=(groundUv143-.5)*2.;float r=length(p),a=atan(p.y,p.x),arc=mod(a+age*2.+6.283185,6.283185);
@@ -202,7 +202,7 @@ function chainEffects141(){
 }
 function disposeChainEffects141(){const q=cinematic141.effects;if(!q)return;q.group.removeFromParent();q.dust.dispose();q.sparks.dispose();q.geometry.dispose();q.dust.material.dispose();q.sparkGeometry.dispose();q.sparks.material.dispose();q.ground.material.dispose();for(const b of [...q.bursts,...q.sweeps])b.mesh.material.dispose();cinematic141.effects=null;}
 function chainParticles143(q,position,count,gold=false){
- for(let i=0;i<count&&q.particles.length<96;i++){
+ for(let i=0;i<count&&q.particles.length<192;i++){
   const seed=(i+q.cursor*13+q.particles.length)*2.399963,rad=.6+(i%5)*.20,right=V3(1,0,0).applyQuaternion(camera.quaternion),up=V3(0,1,0).applyQuaternion(camera.quaternion);
   const velocity=right.multiplyScalar(Math.cos(seed)*rad*(gold?4.8:.9)).addScaledVector(up,Math.sin(seed)*rad*(gold?3.7:.7));
   q.particles.push({position:position.clone(),velocity,age:0,life:gold?.22+(i%4)*.045:.65+(i%5)*.11,size:gold?.035+(i%3)*.009:.045+(i%3)*.012,gold,seed,color:new THREE.Color(gold?(i%3?'#ffb331':'#ffe2a2'):'#38aaff')});

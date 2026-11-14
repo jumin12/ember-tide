@@ -297,7 +297,13 @@
       "systems/housing-ui.js",
       "systems/housing-customize.js",
       "systems/housing-frontages.js",
-      "systems/cinematic-chains.js"
+      "systems/cinematic-chains.js",
+      "systems/developer-workbench.js",
+      "systems/housing-presentation.js",
+      "systems/homeward-portal.js",
+      "systems/combat-spectacle.js",
+      "systems/ability-presentation.js",
+      "systems/ability-cels.js"
     ]
   },
   "styles": [
@@ -354,7 +360,9 @@
     "systems/menu-polish.css",
     "systems/interface-review.css",
     "systems/housing.css",
-    "systems/cinematic-chains.css"
+    "systems/cinematic-chains.css",
+    "systems/developer-workbench.css",
+    "systems/housing-presentation.css"
   ],
   "owners": {
     "runtime": [

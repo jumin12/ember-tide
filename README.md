@@ -2,6 +2,24 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.35 — Illustrated magic and better ways to test
+
+November 13, 2026
+
+- Replaced primary battle spell effects with seven newly generated 2D animation sheets: 84 frames covering fire, frost, arcane energy, healing, protection, blade trails and impact sparks. Small spatial particles, crystal fragments and arrows support the illustrated effects.
+- Matched spell scale to the recipient and synchronized hand releases, projectiles, impacts, healing and protection with the existing action animations. Corrected tall-enemy effect clipping and grounded fire at the target’s feet.
+- Added colored spell lighting on nearby terrain and scenery, with restrained spill that preserves character colors. Old warped picture cards and primary 3D flame, ribbon and shield shapes no longer appear during combat.
+- Added an Ability effects section in the Battle dev lab for every party skill and its Ascended version. Repaired timed-combo practice with guided timing windows and replay, while normal battle previews resume immediately.
+- Added item and gold cheats to the dev console, using the current inventory and normal stack limits. Temporary test sessions restore the original journey when closed.
+- Made the dev console accessible during play by pressing the backtick key three times and entering password 123. Unlocking it from the main menu also unlocks it for the session; typing in fields does not trigger the shortcut.
+- Reduced the housing representative to two-thirds of his previous size and matched his overhead marker to other quest markers. Reworked the portal’s fitted surface, layered animation and lighting, and added a staggered party walk-through with safe cancellation.
+- Made the three home layout options change actual room configurations, walls, doorways and hearth placement. Placement checks and local maps follow the chosen layout.
+- Enriched regional home yards with clear access, planting beds and garden structures. Added twelve actual in-game desktop and phone house-preview images, loaded on demand with a bounded preview cache.
+- Kept generated spell artwork out of initial startup downloads. The seven shared animation sheets are cached at battle entry, and the covered handoff waits for the artwork before revealing the encounter.
+- Verified all 20 normal and Ascended skill variants against the previous combat results and contact timings, plus real dev-console controls, repeated effect reuse and four browser-emulated phone layouts. Approved character art, battle cameras, formations and combat mechanics are preserved.
+
+Release evidence: `elyndor/previews/release-v135/verification.json`. Phone checks use browser emulation.
+
 ## Alpha Version 1.34 — A home in Valenne and cinematic combat
 
 November 13, 2026

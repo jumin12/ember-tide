@@ -58,7 +58,7 @@ function validateHomePlacement139(p,placements=housing139().home?.placements??[]
  const f=homeFootprint139(p),hw=layout.w/2,hd=layout.d/2;
  if(area==='yard'){
   const rect={...p,...f};if(p.surface!=='floor'||Math.abs(p.x)+f.w/2>20||p.z-f.d/2< -19||p.z+f.d/2>22)return {ok:false,reason:'Keep decorations inside your garden fence.'};
-  const fixed=[{x:0,z:-4,w:15,d:12,name:'the house'}, {x:7.5,z:16,w:4.6,d:4.6,name:'Azarith’s approach'}, {x:-12,z:12,w:4.3,d:2.8,name:'the garden bench'}, {x:15,z:11,w:2.2,d:2.2,name:'the planters'}, {x:16,z:18,w:2.2,d:2.2,name:'the planters'}, ...[[-15,-10],[-15,3],[-15,18],[17,-8],[20,4],[-10,-18],[10,-18]].map(([x,z])=>({x,z,w:3.5,d:3.5,name:'a tree'})), ...[[-12,13],[-14,11],[-17,-5],[16,-12]].map(([x,z])=>({x,z,w:3.2,d:3.2,name:'the garden rocks'}))];
+  const fixed=[{x:-13,z:-5,w:5.1,d:2.4,name:'a raised garden bed'},{x:13,z:-10,w:5.5,d:2.6,name:'a raised garden bed'},{x:-13,z:3,w:5.6,d:4.4,name:'the garden arbor'},...(housing139().home?.region==='highmere'?[-16,16].map(x=>({x,z:-1,w:1.3,d:1.3,name:'a stone garden urn'})):[]),{x:0,z:-4,w:15,d:12,name:'the house'}, {x:7.5,z:16,w:4.6,d:4.6,name:'Azarith’s approach'}, {x:-12,z:12,w:4.3,d:2.8,name:'the garden bench'}, {x:15,z:11,w:2.2,d:2.2,name:'the planters'}, {x:16,z:18,w:2.2,d:2.2,name:'the planters'}, ...[[-15,-10],[-15,3],[-15,18],[17,-8],[20,4],[-10,-18],[10,-18]].map(([x,z])=>({x,z,w:3.5,d:3.5,name:'a tree'})), ...[[-12,13],[-14,11],[-17,-5],[16,-12]].map(([x,z])=>({x,z,w:3.2,d:3.2,name:'the garden rocks'}))];
   const hit=fixed.find(v=>homeRectsOverlap139(rect,v,.4));if(hit)return {ok:false,reason:'Leave space around '+hit.name+'.'};
   if(Math.hypot(p.x-11,p.z-15)<4.5+Math.hypot(f.w,f.d)/2)return {ok:false,reason:'Keep the portal court clear.'};
   for(const dx of[-f.w/2,0,f.w/2])for(const dz of[-f.d/2,0,f.d/2])if(homePathDistance139(p.x+dx,p.z+dz)<2.15)return {ok:false,reason:'Keep the garden paths and front-door route clear.'};
@@ -71,7 +71,7 @@ function validateHomePlacement139(p,placements=housing139().home?.placements??[]
   const along=p.surface==='back'?p.x:p.z,limit=p.surface==='back'?hw:hd;
   if(Math.abs(along)+q.w/2>limit-1)return {ok:false,reason:'Keep the frame inside the wall.'};
   // The windows and hearth are real openings and are kept clear.
-  if(p.surface==='back'&&([-.27*layout.w,.27*layout.w].some(x=>Math.abs(p.x-x)<(q.w+2.4)/2)||p.x< -hw+3.6))return {ok:false,reason:'Keep the windows and hearth clear.'};
+  if(p.surface==='back'&&([-.27*layout.w,.27*layout.w].some(x=>Math.abs(p.x-x)<(q.w+2.4)/2)||Math.abs(p.x-(layout.hearth144?.[0]??(-hw+1.7)))<(q.w+3.2)/2))return {ok:false,reason:'Keep the windows and hearth clear.'};
   if(placements.some(v=>v.uid!==p.uid&&HOME_DECOR139[v.item]?.surface==='wall'&&v.surface===p.surface&&Math.abs((p.surface==='back'?v.x:v.z)-along)<(q.w+HOME_DECOR139[v.item].w)/2+.15))return {ok:false,reason:'There is already a decoration on that part of the wall.'};
   return {ok:true,y:2.85};
  }

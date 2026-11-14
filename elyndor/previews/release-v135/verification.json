@@ -1,0 +1,90 @@
+{
+  "version": "Alpha Version 1.35",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7495424,
+    "sha256": "336cd33dc9a9e6bc5af593efe54be91655730bcb4b072891023ad1c14a0e0d5d",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "runtimeMatchesTestedBuildExceptChangelog": true,
+  "approvedCharacterFramesPreserved": 52,
+  "abilityArt": {
+    "provider": "OpenAI image generator; PixelLab allowance insufficient for complete set",
+    "sheets": 7,
+    "frames": 84,
+    "nativeSheetDimensions": [
+      1536,
+      1024
+    ],
+    "newAnimationTransferBytes": 3609830
+  },
+  "checks": {
+    "abilities": {
+      "verification.json": {
+        "checks": 26,
+        "errors": 0
+      },
+      "presentation-check.json": {
+        "checks": 23,
+        "errors": 0
+      },
+      "pass1.json": {
+        "checks": 0,
+        "errors": 0
+      },
+      "review-check.json": {
+        "checks": 0,
+        "errors": 0
+      }
+    },
+    "housingAndDevTools": {
+      "verification.json": {
+        "checks": 29,
+        "errors": 0
+      },
+      "extended.json": {
+        "checks": 20,
+        "errors": 0
+      },
+      "mobile-final.json": {
+        "checks": 10,
+        "errors": 0
+      },
+      "details.json": {
+        "checks": 6,
+        "errors": 0
+      },
+      "review-check.json": {
+        "checks": 5,
+        "errors": 0
+      }
+    },
+    "normalAndAscendedSkillVariants": 20,
+    "abilityMovies": 10,
+    "phoneViewports": [
+      "320x568",
+      "390x844",
+      "844x390",
+      "568x320"
+    ]
+  },
+  "scope": "Native Chrome on the test PC and browser-emulated phone layouts; no physical-phone benchmark claim.",
+  "source": {
+    "elyndor/build-manifest.json": "362e99484c93e8403a05a185be35a6857b232e4c2361092c0c337bff710120e2",
+    "elyndor/systems/ability-cels.js": "c0c531829c4b333afd6e81054075cd8411a5d2a22d6cb080ded9d022b3b048d1",
+    "elyndor/systems/ability-presentation.js": "1709e460086edfdf08d27295e1a8d150f2c279f4bb27bd02e6311696ae0af7c6",
+    "elyndor/systems/cinematic-chains.js": "07514d0f1650503459d8e7fdf414d1112354d747683966e2e14a29c7c138ce3f",
+    "elyndor/systems/combat-spectacle.js": "71be32b43554f305c9eccca202dd08277996f52fe0e384e885a82950ba35873d",
+    "elyndor/systems/developer-workbench.css": "d62839ef9330a82e49dfe666f95afff9679b6050e1e03650860338ac7db19193",
+    "elyndor/systems/developer-workbench.js": "937310312a1448ae983c6199cfa5c4047a3e933d4f4954762427f422ce7ecdfe",
+    "elyndor/systems/homeward-portal.js": "dcf10d4bf4aa6c364a9988979702c09ac39e235b148fc48ffc6c765c2066233f",
+    "elyndor/systems/housing-customize.js": "73e322a0675b81aed8aa1f1a5fece98e0c36a9e32f27f5b07de58519191237a4",
+    "elyndor/systems/housing-presentation.css": "af4f88696f19e6b93a3d4b03dc34899869198754aca173cc94a9825ef80a60fd",
+    "elyndor/systems/housing-presentation.js": "27892645c6c43c431eaebc1bb8c556ad9dbdd2e0fd8a1030a85fbabd12e39d9e",
+    "elyndor/systems/housing-state.js": "01e29deb6211c9c006ec69f59237242563d11f4e8982d1263bc3662a432db937",
+    "elyndor/systems/housing-ui.js": "1d6d7e912c41c63cc166f5a00028c7dd89a555e32a3f9c1fad503f0306c08de1",
+    "elyndor/systems/housing-world.js": "179caf08ccfd241ee74fca0a51198991f9dda47dc7d3446f4e5c55f446b3fc4a",
+    "elyndor/title-v19.js": "6d957581c39ba7cd50a96b5d57c7573663e4dab9ad3aa5fa06876208c98de873"
+  }
+}

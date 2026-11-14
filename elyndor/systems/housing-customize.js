@@ -26,7 +26,7 @@ function previewHomeAppearance139(key,value){
  if(!HOME_FINISHES139[key]?.includes(value))return;cancelHomeDraft139();homeAppearanceDraft139??={...homeAppearance139()};homeAppearanceDraft139[key]=value;rebuildHomeArchitecture139();renderHomeDecor139();
 }
 function applyHomeAppearance139(){
- if(!homeAppearanceDraft139)return;housing139().home.appearance={...homeAppearanceDraft139};homeAppearanceDraft139=null;housingMenu139.previewCache.delete(housing139().home.region);homeChange139();renderHomeDecor139();toast('Home finishes saved.');
+ if(!homeAppearanceDraft139)return;housing139().home.appearance={...homeAppearanceDraft139};homeAppearanceDraft139=null;housingMenu139.previewCache.clear();homeChange139();renderHomeDecor139();toast('Home finishes saved.');
 }
 function cancelHomeAppearance139(){if(!homeAppearanceDraft139)return;homeAppearanceDraft139=null;if(isHomeScene139())rebuildHomeArchitecture139();}
 function homeFinishForm139(outside=false){

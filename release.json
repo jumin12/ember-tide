@@ -1,33 +1,51 @@
 {
-  "release": "elyndor-alpha-1.34-home-and-cinematic-combat-2026-11-13",
-  "version": "Alpha Version 1.34",
+  "release": "elyndor-alpha-1.35-illustrated-magic-2026-11-13",
+  "version": "Alpha Version 1.35",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 7406592,
-    "sha256": "b38a7643720d1061481e1ebcaa75414faeea8bd7abec7d33e9d427c62084ceef",
+    "bytes": 7495424,
+    "sha256": "336cd33dc9a9e6bc5af593efe54be91655730bcb4b072891023ad1c14a0e0d5d",
     "offline": false,
-    "delivery": "HTML with same-origin content-addressed native art, device-sized scenery and compressed world data"
+    "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "d9b9af5d237afa354d04c762c0eb77ffaded59d3"
+    "previousRelease": "74c83ed26a0a6e7f741d43d2d7c3491eaa1893a0"
   },
   "changes": [
-    "Added one player-owned home with six regional styles, three room layouts, and a separate tree-surrounded yard. Azarith and an animated portal in each settlement provide travel to the private home.",
-    "Homes start empty. Place, rotate, move and remove collected furniture, wall decorations, tabletop items and trophies; placement checks protect entrances, walkways and usable surfaces. Housing ownership and arrangements persist with the journey.",
-    "Customize interior walls, colors and fireplace stone, plus exterior walls, roofing and timber trim. Decorate the enclosed garden with benches, planters, lanterns and ornaments while preserving house and portal access.",
-    "Refined town portal placement and grounded their bases on clear native terrain without extra paving circles. Placed Brookstead’s portal between its left lower stairways, kept paths clear, and corrected mismatched house timber joints.",
-    "Rebuilt timed attacks as a cinematic three-hit chain: a normal-speed opening, slower linked strikes after the first successful hit, and an immediate return to normal speed and color at the finishing impact. Touch, E and Space controls remain available.",
-    "Integrated 52 reviewed native PixelLab frames for Bren’s straight slash, airborne overhead, rising uppercut and grounded finishing lunge. Corrected duplicate blades and artifacts while preserving his approved movement, idle and other combat art.",
-    "Added animated blue sword crescents, moving gold impact sparks, suspended fragments, a ground-level sweep and finishing dust. Blue blade light and warm impact light illuminate nearby grass, ground, rocks and props in both arena and town battles.",
-    "Synchronized attack poses, projectiles, enemy reactions and damage contacts. Pause freezes the sequence; missed or expired inputs, held keys and defeated targets recover safely without changing the established damage rules.",
-    "Reduced hosted startup downloads with content-addressed desktop and phone scenery variants, GPU-compressed normal and roughness arrays with a texture fallback, and deferred continent vegetation, unused loading pictures and nonessential audio. Native character and UI pixels remain unchanged.",
-    "Accelerated exact ground-height queries and bounded reflection and shadow updates while refreshing on relevant camera, scene and water changes. Kept on-demand scenery loading and cache limits for desktop and phones.",
-    "Checked housing persistence and placement, all six portal approaches, desktop and phone layouts, combat timing and damage, both rendering paths, and actual local blue and gold environmental lighting. Existing journeys and the original combat camera remain supported."
+    "Replaced primary battle spell effects with seven newly generated 2D animation sheets: 84 frames covering fire, frost, arcane energy, healing, protection, blade trails and impact sparks. Small spatial particles, crystal fragments and arrows support the illustrated effects.",
+    "Matched spell scale to the recipient and synchronized hand releases, projectiles, impacts, healing and protection with the existing action animations. Corrected tall-enemy effect clipping and grounded fire at the target’s feet.",
+    "Added colored spell lighting on nearby terrain and scenery, with restrained spill that preserves character colors. Old warped picture cards and primary 3D flame, ribbon and shield shapes no longer appear during combat.",
+    "Added an Ability effects section in the Battle dev lab for every party skill and its Ascended version. Repaired timed-combo practice with guided timing windows and replay, while normal battle previews resume immediately.",
+    "Added item and gold cheats to the dev console, using the current inventory and normal stack limits. Temporary test sessions restore the original journey when closed.",
+    "Made the dev console accessible during play by pressing the backtick key three times and entering password 123. Unlocking it from the main menu also unlocks it for the session; typing in fields does not trigger the shortcut.",
+    "Reduced the housing representative to two-thirds of his previous size and matched his overhead marker to other quest markers. Reworked the portal’s fitted surface, layered animation and lighting, and added a staggered party walk-through with safe cancellation.",
+    "Made the three home layout options change actual room configurations, walls, doorways and hearth placement. Placement checks and local maps follow the chosen layout.",
+    "Enriched regional home yards with clear access, planting beds and garden structures. Added twelve actual in-game desktop and phone house-preview images, loaded on demand with a bounded preview cache.",
+    "Kept generated spell artwork out of initial startup downloads. The seven shared animation sheets are cached at battle entry, and the covered handoff waits for the artwork before revealing the encounter.",
+    "Verified all 20 normal and Ascended skill variants against the previous combat results and contact timings, plus real dev-console controls, repeated effect reuse and four browser-emulated phone layouts. Approved character art, battle cameras, formations and combat mechanics are preserved."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.35",
+      "date": "November 13, 2026",
+      "title": "Illustrated magic and better ways to test",
+      "items": [
+        "Replaced primary battle spell effects with seven newly generated 2D animation sheets: 84 frames covering fire, frost, arcane energy, healing, protection, blade trails and impact sparks. Small spatial particles, crystal fragments and arrows support the illustrated effects.",
+        "Matched spell scale to the recipient and synchronized hand releases, projectiles, impacts, healing and protection with the existing action animations. Corrected tall-enemy effect clipping and grounded fire at the target’s feet.",
+        "Added colored spell lighting on nearby terrain and scenery, with restrained spill that preserves character colors. Old warped picture cards and primary 3D flame, ribbon and shield shapes no longer appear during combat.",
+        "Added an Ability effects section in the Battle dev lab for every party skill and its Ascended version. Repaired timed-combo practice with guided timing windows and replay, while normal battle previews resume immediately.",
+        "Added item and gold cheats to the dev console, using the current inventory and normal stack limits. Temporary test sessions restore the original journey when closed.",
+        "Made the dev console accessible during play by pressing the backtick key three times and entering password 123. Unlocking it from the main menu also unlocks it for the session; typing in fields does not trigger the shortcut.",
+        "Reduced the housing representative to two-thirds of his previous size and matched his overhead marker to other quest markers. Reworked the portal’s fitted surface, layered animation and lighting, and added a staggered party walk-through with safe cancellation.",
+        "Made the three home layout options change actual room configurations, walls, doorways and hearth placement. Placement checks and local maps follow the chosen layout.",
+        "Enriched regional home yards with clear access, planting beds and garden structures. Added twelve actual in-game desktop and phone house-preview images, loaded on demand with a bounded preview cache.",
+        "Kept generated spell artwork out of initial startup downloads. The seven shared animation sheets are cached at battle entry, and the covered handoff waits for the artwork before revealing the encounter.",
+        "Verified all 20 normal and Ascended skill variants against the previous combat results and contact timings, plus real dev-console controls, repeated effect reuse and four browser-emulated phone layouts. Approved character art, battle cameras, formations and combat mechanics are preserved."
+      ]
+    },
     {
       "version": "Alpha Version 1.34",
       "date": "November 13, 2026",
@@ -656,7 +674,13 @@
       1254
     ],
     "battleGroundArtProvider": "OpenAI built-in image generator",
-    "reviewedBrenComboFrames": 52
+    "reviewedBrenComboFrames": 52,
+    "generatedAbilitySheets": 7,
+    "generatedAbilityFrames": 84,
+    "nativeAbilitySheetResolution": [
+      1536,
+      1024
+    ]
   },
   "audio": {
     "provider": "ElevenLabs",
@@ -764,11 +788,14 @@
     "cachedSceneCutawayRestoration": true,
     "localBlueAndGoldComboLighting": true,
     "animatedBladeCrescentsAndContactParticles": true,
-    "cinematicBulletTimeChains": true
+    "cinematicBulletTimeChains": true,
+    "generated2DAbilityFlipbooks": true,
+    "silhouetteScaledSpellContacts": true,
+    "coloredAbilitySceneLighting": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v134/verification.json",
-    "sha256": "4354b54c0250f088fa649f9036c035b57f6bc20a125b0461ddf0519231b7b2d8",
+    "file": "elyndor/previews/release-v135/verification.json",
+    "sha256": "d22a6ebaa2b3f4588606d35ee8381b89f60d801ef801f35823e3989b5c82529d",
     "finalRelease": "PASS",
     "runtimeMatchesTestedLocalExceptChangelog": true,
     "desktopAndPhone": true
@@ -802,12 +829,13 @@
     "textureFallback": true,
     "lazyContinentVegetation": true,
     "exactRenderedFloorIndex": true,
-    "renderCacheHeaders": "Documented under hosting/; dashboard settings not yet applied"
+    "renderCacheHeaders": "Documented under hosting/; dashboard settings not yet applied",
+    "abilityArt": "Seven cached animation sheets loaded at battle entry; fixed instanced effect pools, shared scene lights"
   },
   "previousPublishedRelease": {
-    "commit": "d9b9af5d237afa354d04c762c0eb77ffaded59d3",
-    "version": "Alpha Version 1.33",
-    "sha256": "19780f19eaad50e63b478de23adf43f1dc7c675b85b7a19016231a6b8c605094"
+    "commit": "74c83ed26a0a6e7f741d43d2d7c3491eaa1893a0",
+    "version": "Alpha Version 1.34",
+    "sha256": "b38a7643720d1061481e1ebcaa75414faeea8bd7abec7d33e9d427c62084ceef"
   },
   "housing": {
     "maximumOwnedHomes": 1,
@@ -817,6 +845,16 @@
     "emptyStartingInterior": true,
     "finishCustomization": true,
     "yardDecoration": true,
-    "savePersistence": true
+    "savePersistence": true,
+    "realLayoutConfigurations": 3,
+    "animatedPartyPortalTraversal": true,
+    "regionalPreviewImages": 12
+  },
+  "developerTools": {
+    "tripleBacktickShortcut": true,
+    "sessionUnlock": true,
+    "itemAndGoldCheats": true,
+    "guidedComboPractice": true,
+    "allAbilityPreviews": true
   }
 }

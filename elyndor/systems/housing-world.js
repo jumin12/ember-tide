@@ -82,7 +82,7 @@ function homePortal139(x,z,label,kind='homeReturn139'){
  interactables.push({id:kind,type:kind,x,z:z+1.7,radius:3,label,visualHeight:1.7});obstacle(x,z,2.4,.6,'home portal');return g;
 }
 function createHomeKeeper139(x,z){
- const a=createActor('azarith',x,z,2.35);if(!a)return;
+ const a=createActor('azarith',x,z,2.35*.67);if(!a)return;
  a.npc=true;a.homeKeeper139=true;a.task='Helping travelers find a home';a.face='south';a.speed=0;
  const o={id:'housing139',type:'housing139',x,z,actorId:'azarith',actor:a,radius:3,label:'Talk to Azarith · Housing',visualHeight:2.8};interactables.push(o);a.interaction=o;
  world.userData.homeKeeper139={a,o};return a;
@@ -104,7 +104,7 @@ function buildPrivatePlot139(spawn){
  }
  homeGardenBoundary139(q);dressHomePortalCourt139(q);
  for(const [i,[x,z]]of[[-12,13],[-14,11],[-17,-5],[16,-12]].entries()){const r=mesh(rockGeometry62(i*3+1),rockMaterial62(i%3),x,0,z);r.scale.setScalar(.9+rng()*.5);r.rotation.y=rng()*TAU;}
- buildSolidForest();buildPlants();rebuildHomeDecor139();homeSky139();finishJourneyWorld(spawn??[7.5,19]);makeWorldDust22();updateAtmosphere();world.userData.housing139={region:q.id,layout:h.home.layout,private:true,exteriorDecor:true};
+ homeGardenDetails144(q);buildSolidForest();buildPlants();rebuildHomeDecor139();homeSky139();finishJourneyWorld(spawn??[7.5,19]);makeWorldDust22();updateAtmosphere();world.userData.housing139={region:q.id,layout:h.home.layout,private:true,exteriorDecor:true};
 }
 function homeSky139(){
  const m=new THREE.ShaderMaterial({side:THREE.BackSide,depthWrite:false,uniforms:{map:weather.cloudMap,time:weather.time,cover:weather.cloud,day:celestial31.day,night:celestial31.night,twilight:celestial31.twilight,solar:celestial31.sun,moon:celestial31.moon,solarColour:celestial31.colour,horizon:{value:scene.fog.color},zenith31:celestial31.zenith,cloudHeight:weather.height},vertexShader:'varying vec3 skyRay31;void main(){skyRay31=position;vec4 p=projectionMatrix*modelViewMatrix*vec4(position,1.);gl_Position=vec4(p.xy,p.w*.999999,p.w);}',fragmentShader:skyFragment31});
@@ -120,10 +120,10 @@ function homeWall139(parent,l,q){
  for(const x of[-hw,hw,0])homeBox139(x,2.6,-hd+.23,.22,5.2,.24,'wood',q.wood,parent);
  // No roof, overhead beams or ceiling scaffolding in the cutaway interior.
  for(const s of[-1,1]){homeBox139(s*(hw/2+1),.55,hd,hw-2,1.1,.35,wallKey,q.wall,parent);homeBox139(s*1.85,1.6,hd,.22,3.2,.4,'wood',q.wood,parent);}
- if(l===HOME_LAYOUTS139.suite){homeBox139(-5,1.45,-2.8,.30,2.9,7.8,'wood',q.wood,parent);homeBox139(-5,2.96,-2.8,.40,.17,8,'wood',q.wood,parent);}
+ homePartitions144(parent,l,q);
 }
 function homeHearth139(l){
- const x=-l.w/2+1.7,z=-l.d/2+1.35,g=new THREE.Group(),finish=(homeAppearanceDraft139??homeAppearance139()).hearth,stoneKey=finish==='slate'?'rockB':finish==='limestone'?'rockA':'rock',stoneColor=finish==='slate'?'#8e9b9d':finish==='limestone'?'#d5d1bd':'#b7b9a3';g.position.set(x,0,z);world.add(g);world.userData.homeHearthRoot139=g;
+ const [x,z]=l.hearth144,g=new THREE.Group(),finish=(homeAppearanceDraft139??homeAppearance139()).hearth,stoneKey=finish==='slate'?'rockB':finish==='limestone'?'rockA':'rock',stoneColor=finish==='slate'?'#8e9b9d':finish==='limestone'?'#d5d1bd':'#b7b9a3';g.position.set(x,0,z);world.add(g);world.userData.homeHearthRoot139=g;
  box(0,.16,0,3.1,.32,2.5,'wall','#c8c1a9',g);for(const s of[-1,1])box(s*1.15,1.4,-.25,.50,2.6,1.55,stoneKey,stoneColor,g);
  box(0,2.75,-.25,2.9,.32,1.7,'wall','#d1c7ac',g);box(0,1.4,-.95,2.2,2.6,.15,'darkWood','#44433b',g);box(0,3.65,-.85,2.3,1.5,1.2,stoneKey,stoneColor,g);
  for(let i=0;i<4;i++){const o=mesh(new THREE.CylinderGeometry(.14,.17,1.4,9),homeSurface139('barkPine86','#6e5c41'),(i%2-.5)*.5,.42,-.02+(i-1.5)*.25,g);o.rotation.z=Math.PI/2;o.rotation.y=i*.3;}
@@ -136,7 +136,7 @@ function buildPrivateInterior139(spawn){
  const h=housing139(),q=homeStyle139(),l=homeLayout139();state.poi='homePlot139';SCENES.homeInterior139.name=q.name;SCENES.homeInterior139.sub=HOME_LAYOUTS139[h.home.layout].name+' · D to decorate';
  const floor=homePlane139(l.w,l.d,q.floor,q.floor==='wood'?'#b9c5ae':'#c9cebd',.008);floor.userData.terrain=true;world.userData.terrain=floor;world.userData.walkSurfaces=[floor];world.userData.terrainChunks=[];world.userData.interior='home';
  const shell=new THREE.Group();world.add(shell);world.userData.homeRoomShell139=shell;homeWall139(shell,l,q);homeHearth139(l);
- for(const v of homeFixed139(l).filter(v=>v.name!=='the entrance aisle'))obstacle(v.x,v.z,v.w,v.d,v.name);
+ for(const v of homeFixed139(l).filter(v=>v.solid!==false))obstacle(v.x,v.z,v.w,v.d,v.name);
  interactables.push({id:'homeExit139',type:'homeExit139',x:0,z:l.d/2-1.0,radius:2.25,label:'Step outside',visualHeight:.5});
  interactables.push({id:'homeDecor139',type:'homeDecor139',x:-l.w/2+3.8,z:-l.d/2+3.4,radius:3.4,label:'Decorate your home',visualHeight:1});
  rebuildHomeDecor139();finishJourneyWorld(spawn??[0,l.d/2-3.6]);world.userData.housing139={region:q.id,layout:h.home.layout,private:true,interiorDecor:true};
