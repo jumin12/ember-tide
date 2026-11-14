@@ -1,33 +1,47 @@
 {
-  "release": "elyndor-alpha-1.35-illustrated-magic-2026-11-13",
-  "version": "Alpha Version 1.35",
+  "release": "elyndor-alpha-1.36-homeward-building-2026-11-14",
+  "version": "Alpha Version 1.36",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 7495424,
-    "sha256": "336cd33dc9a9e6bc5af593efe54be91655730bcb4b072891023ad1c14a0e0d5d",
+    "bytes": 7568481,
+    "sha256": "fac25d6b271f5c03aaa2e346dbc1d736338581179cb8346d345e55188e27a848",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "74c83ed26a0a6e7f741d43d2d7c3491eaa1893a0"
+    "previousRelease": "991c5e0dd3eb0d086147b1435f971d3ec3656726"
   },
   "changes": [
-    "Replaced primary battle spell effects with seven newly generated 2D animation sheets: 84 frames covering fire, frost, arcane energy, healing, protection, blade trails and impact sparks. Small spatial particles, crystal fragments and arrows support the illustrated effects.",
-    "Matched spell scale to the recipient and synchronized hand releases, projectiles, impacts, healing and protection with the existing action animations. Corrected tall-enemy effect clipping and grounded fire at the target’s feet.",
-    "Added colored spell lighting on nearby terrain and scenery, with restrained spill that preserves character colors. Old warped picture cards and primary 3D flame, ribbon and shield shapes no longer appear during combat.",
-    "Added an Ability effects section in the Battle dev lab for every party skill and its Ascended version. Repaired timed-combo practice with guided timing windows and replay, while normal battle previews resume immediately.",
-    "Added item and gold cheats to the dev console, using the current inventory and normal stack limits. Temporary test sessions restore the original journey when closed.",
-    "Made the dev console accessible during play by pressing the backtick key three times and entering password 123. Unlocking it from the main menu also unlocks it for the session; typing in fields does not trigger the shortcut.",
-    "Reduced the housing representative to two-thirds of his previous size and matched his overhead marker to other quest markers. Reworked the portal’s fitted surface, layered animation and lighting, and added a staggered party walk-through with safe cancellation.",
-    "Made the three home layout options change actual room configurations, walls, doorways and hearth placement. Placement checks and local maps follow the chosen layout.",
-    "Enriched regional home yards with clear access, planting beds and garden structures. Added twelve actual in-game desktop and phone house-preview images, loaded on demand with a bounded preview cache.",
-    "Kept generated spell artwork out of initial startup downloads. The seven shared animation sheets are cached at battle entry, and the covered handoff waits for the artwork before revealing the encounter.",
-    "Verified all 20 normal and Ascended skill variants against the previous combat results and contact timings, plus real dev-console controls, repeated effect reuse and four browser-emulated phone layouts. Approved character art, battle cameras, formations and combat mechanics are preserved."
+    "Restyled housing services and the house browser with the game’s navy-and-gold interface, clearer ownership and purchase actions, real room-layout previews, and responsive phone portrait and landscape layouts.",
+    "Town portals now remain absent until a home is purchased, including their collision, interaction target and map marker. Existing homeowners can use their portals immediately in all six towns.",
+    "Added five native PixelLab casting poses for Azarith and a purchase-triggered summoning sequence: luminous spell threads, rising stonework, a swirling opaque blue opening, animated rune circles, orbiting shards and colored light on surrounding scenery. The effect settles smoothly into its idle glow and supports skipping.",
+    "Completed Azarith’s eight directional views with new PixelLab rear three-quarter poses. He turns toward nearby companions with stable direction changes while preserving the existing approved pose pixels.",
+    "Smoothed party travel through the Homeward portal with staggered curved paths, distance-driven walking frames, grounded steps onto its stone base and natural occlusion at the threshold. Cancellation and normal home travel remain supported.",
+    "Replaced furniture collection symbols with previews of the actual 3D objects. The selected desktop preview rotates and can be dragged to inspect it; phone layouts retain clear model thumbnails without covering the room.",
+    "Added a responsive placement ghost with clear mint and blocked red states. Move the pointer to preview, click to place, rotate with the wheel or R, and cancel with Escape. Touch users tap a position and confirm with Place.",
+    "Improved tabletop and wall snapping, repeated placement and moving furniture. Cancelling restores the original object and attached tabletop decorations, while placement rules keep doorways and portal approaches clear.",
+    "Reduced the garden’s initial placement search and cached furniture previews. A dedicated editor redraw keeps ghosts and newly placed objects visible immediately while the world simulation stays paused. Checked desktop controls, eight directions, portal purchase and entry, and four browser-emulated phone sizes."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.36",
+      "date": "November 14, 2026",
+      "title": "The Homeward spell and hands-on home building",
+      "items": [
+        "Restyled housing services and the house browser with the game’s navy-and-gold interface, clearer ownership and purchase actions, real room-layout previews, and responsive phone portrait and landscape layouts.",
+        "Town portals now remain absent until a home is purchased, including their collision, interaction target and map marker. Existing homeowners can use their portals immediately in all six towns.",
+        "Added five native PixelLab casting poses for Azarith and a purchase-triggered summoning sequence: luminous spell threads, rising stonework, a swirling opaque blue opening, animated rune circles, orbiting shards and colored light on surrounding scenery. The effect settles smoothly into its idle glow and supports skipping.",
+        "Completed Azarith’s eight directional views with new PixelLab rear three-quarter poses. He turns toward nearby companions with stable direction changes while preserving the existing approved pose pixels.",
+        "Smoothed party travel through the Homeward portal with staggered curved paths, distance-driven walking frames, grounded steps onto its stone base and natural occlusion at the threshold. Cancellation and normal home travel remain supported.",
+        "Replaced furniture collection symbols with previews of the actual 3D objects. The selected desktop preview rotates and can be dragged to inspect it; phone layouts retain clear model thumbnails without covering the room.",
+        "Added a responsive placement ghost with clear mint and blocked red states. Move the pointer to preview, click to place, rotate with the wheel or R, and cancel with Escape. Touch users tap a position and confirm with Place.",
+        "Improved tabletop and wall snapping, repeated placement and moving furniture. Cancelling restores the original object and attached tabletop decorations, while placement rules keep doorways and portal approaches clear.",
+        "Reduced the garden’s initial placement search and cached furniture previews. A dedicated editor redraw keeps ghosts and newly placed objects visible immediately while the world simulation stays paused. Checked desktop controls, eight directions, portal purchase and entry, and four browser-emulated phone sizes."
+      ]
+    },
     {
       "version": "Alpha Version 1.35",
       "date": "November 13, 2026",
@@ -794,8 +808,8 @@
     "coloredAbilitySceneLighting": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v135/verification.json",
-    "sha256": "d22a6ebaa2b3f4588606d35ee8381b89f60d801ef801f35823e3989b5c82529d",
+    "file": "elyndor/previews/release-v136/verification.json",
+    "sha256": "c797b078e447f156752f64540c7f0e0a69f5b8cf839c4ba909e04754a69edc33",
     "finalRelease": "PASS",
     "runtimeMatchesTestedLocalExceptChangelog": true,
     "desktopAndPhone": true
@@ -830,12 +844,13 @@
     "lazyContinentVegetation": true,
     "exactRenderedFloorIndex": true,
     "renderCacheHeaders": "Documented under hosting/; dashboard settings not yet applied",
-    "abilityArt": "Seven cached animation sheets loaded at battle entry; fixed instanced effect pools, shared scene lights"
+    "abilityArt": "Seven cached animation sheets loaded at battle entry; fixed instanced effect pools, shared scene lights",
+    "housingEditor": "Bounded 3D preview caches, early-exit placement search, throttled presentation-only redraws while simulation is paused"
   },
   "previousPublishedRelease": {
-    "commit": "74c83ed26a0a6e7f741d43d2d7c3491eaa1893a0",
-    "version": "Alpha Version 1.34",
-    "sha256": "b38a7643720d1061481e1ebcaa75414faeea8bd7abec7d33e9d427c62084ceef"
+    "commit": "991c5e0dd3eb0d086147b1435f971d3ec3656726",
+    "version": "Alpha Version 1.35",
+    "sha256": "336cd33dc9a9e6bc5af593efe54be91655730bcb4b072891023ad1c14a0e0d5d"
   },
   "housing": {
     "maximumOwnedHomes": 1,
@@ -848,7 +863,15 @@
     "savePersistence": true,
     "realLayoutConfigurations": 3,
     "animatedPartyPortalTraversal": true,
-    "regionalPreviewImages": 12
+    "regionalPreviewImages": 12,
+    "ownershipGatedTownPortals": true,
+    "keeperDirections": 8,
+    "keeperCastingPoses": 5,
+    "cinematicPortalSummoning": true,
+    "smoothGroundedPortalEntry": true,
+    "real3DFurniturePreviews": true,
+    "responsivePlacementGhost": true,
+    "tableAndWallSnapping": true
   },
   "developerTools": {
     "tripleBacktickShortcut": true,

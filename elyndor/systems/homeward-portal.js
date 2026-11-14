@@ -73,8 +73,7 @@ tick=function(dt){const r=homePortalTickBefore144(dt),q=homeTransit144;
   if(dist(player,q.target)<.70){route=null;state.mode='action';q.stage='crossing';q.elapsed=0;for(const row of q.party)row.from={x:row.a.x,z:row.a.z};}
   else if(q.elapsed>18||!route){portalTransitCancel144('The approach is blocked. Move closer to the portal.');}
  }else{
-  const g=q.portal.group;for(const[i,row]of q.party.entries()){const a=row.a,t=clamp((q.elapsed-i*.42)/1.45,0,1),p=V3((i%2?.13:-.13)*g.scale.x,0,mix(3.5,-.65,t)).applyMatrix4(g.matrixWorld),approach=smooth(0,.35,t),x=mix(row.from.x,p.x,approach),z=mix(row.from.z,p.z,approach),dx=x-a.x,dz=z-a.z;a.face=facingForMotion(dx,dz);a.phase+=Math.hypot(dx,dz)*6;a.x=x;a.z=z;a.speed=t>0&&t<1?2.6:0;a.action='walk';updateActor(a,0);a.mesh.position.y+=.30*g.scale.y*smooth(.15,.5,t);a.mesh.visible=t<.84;if(a.shadow)a.shadow.visible=t<.78;}
-  updateCamera(0,true);if(q.elapsed>1.5+(q.party.length-1)*.42){homeTransit144=null;state.mode=q.mode;route=null;q.portal.energy=1;q.resolve(true);}
+  homeEntryTick147(q,dt);
  }return r;
 };
 // Travel owns movement until the last companion has passed the opening.

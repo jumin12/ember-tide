@@ -303,7 +303,13 @@
       "systems/homeward-portal.js",
       "systems/combat-spectacle.js",
       "systems/ability-presentation.js",
-      "systems/ability-cels.js"
+      "systems/ability-cels.js",
+      "systems/housing-concept-ui.js",
+      "systems/housing-portal-reveal.js",
+      "systems/home-keeper-directions.js",
+      "systems/home-portal-entry.js",
+      "systems/home-portal-spectacle.js",
+      "systems/home-building-preview.js"
     ]
   },
   "styles": [
@@ -362,7 +368,10 @@
     "systems/housing.css",
     "systems/cinematic-chains.css",
     "systems/developer-workbench.css",
-    "systems/housing-presentation.css"
+    "systems/housing-presentation.css",
+    "systems/housing-concept-ui.css",
+    "systems/housing-portal-reveal.css",
+    "systems/home-building-preview.css"
   ],
   "owners": {
     "runtime": [

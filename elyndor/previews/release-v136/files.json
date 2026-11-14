@@ -1,0 +1,127 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 89290,
+    "sha256": "1c990807a0bc98345966ac18cbc5a0caddcd40da86742a92e35d7056e9fb47f7"
+  },
+  {
+    "file": "elyndor/assets/runtime-v146/keeper-cast.png",
+    "bytes": 119839,
+    "sha256": "ee0ce558cc32498c1da74953fe69cb3d4ddd94c264e0da5ef1d29ac563715275"
+  },
+  {
+    "file": "elyndor/assets/runtime-v147/azarith-directions.png",
+    "bytes": 891409,
+    "sha256": "3d12d39e25acfcdf2c2cd041d711df44b809de8d16008803aabc651fb0deff48"
+  },
+  {
+    "file": "elyndor/build-manifest.json",
+    "bytes": 13157,
+    "sha256": "5a4783e47680788479054b622e358a0188d0eaeb65fcd8056e5dc7a8578f8d0d"
+  },
+  {
+    "file": "elyndor/previews/release-v136/furniture-preview.webp",
+    "bytes": 171802,
+    "sha256": "21f10c46f6013220f92f6b3e1437c32cb18c5fe6187e027b1eaff5db96004c40"
+  },
+  {
+    "file": "elyndor/previews/release-v136/housing-browser.webp",
+    "bytes": 295374,
+    "sha256": "66a2865a1536544cc69d429c4b815f188b8d656101eb549e397fd73570c76f76"
+  },
+  {
+    "file": "elyndor/previews/release-v136/housing-menu.webp",
+    "bytes": 426574,
+    "sha256": "855212ca4c41e2f5cb781cfeea7ab5348430b391657475fea5b74c76ecdd92d9"
+  },
+  {
+    "file": "elyndor/previews/release-v136/phone-building.webp",
+    "bytes": 117984,
+    "sha256": "76092f94e99959716a3702ea8c37f11a01113a03c9dfc85f88b677ba9cc21624"
+  },
+  {
+    "file": "elyndor/previews/release-v136/portal-entry.webp",
+    "bytes": 468942,
+    "sha256": "b16b1488e370af36f33bff0d9f959516a2670a432ebdb834d8db693b440acb4d"
+  },
+  {
+    "file": "elyndor/previews/release-v136/portal-summoning.webp",
+    "bytes": 483804,
+    "sha256": "8cc3daaf1994c1872df4ac92355e1f74c59e6fa3735f3037aa5e9ac72478ea85"
+  },
+  {
+    "file": "elyndor/previews/release-v136/verification.json",
+    "bytes": 3145,
+    "sha256": "c797b078e447f156752f64540c7f0e0a69f5b8cf839c4ba909e04754a69edc33"
+  },
+  {
+    "file": "elyndor/systems/home-building-preview.css",
+    "bytes": 3528,
+    "sha256": "7b9b503f9e68207d5e2b4957a911e17bc694686ecf77d547f606b21b500fecb0"
+  },
+  {
+    "file": "elyndor/systems/home-building-preview.js",
+    "bytes": 17589,
+    "sha256": "c97c1f65982d64bdc885a4f1188c38fd7e13a4e3964adde2f753877e93964302"
+  },
+  {
+    "file": "elyndor/systems/home-keeper-directions.js",
+    "bytes": 1017,
+    "sha256": "7901c280ac28de207aac56070697ac6ecbf6f32f72d6e186cd80712bcde76577"
+  },
+  {
+    "file": "elyndor/systems/home-portal-entry.js",
+    "bytes": 2082,
+    "sha256": "a7be201118c83a0e7504b3c0fcdd477badd97a60c9bf25087de77cdba005580f"
+  },
+  {
+    "file": "elyndor/systems/home-portal-spectacle.js",
+    "bytes": 4750,
+    "sha256": "f567ba5372a2a92df66e34379a615e6e142eff368b67ba101232fa60ce444b85"
+  },
+  {
+    "file": "elyndor/systems/homeward-portal.js",
+    "bytes": 10967,
+    "sha256": "6672dedd6f4196af4877aba0685e83db578f12df7814cc33c270e0ae11c10687"
+  },
+  {
+    "file": "elyndor/systems/housing-concept-ui.css",
+    "bytes": 15210,
+    "sha256": "08279cade3566a48785fd2e6a2da0a290b78fe9efbeea5ebbed376348d7bc58a"
+  },
+  {
+    "file": "elyndor/systems/housing-concept-ui.js",
+    "bytes": 8537,
+    "sha256": "e62211f20666b82f7dc02b99a06d434219b3f9eb1bcf6fcd88e07b9dd36f5d30"
+  },
+  {
+    "file": "elyndor/systems/housing-decor.js",
+    "bytes": 19416,
+    "sha256": "7ca7d16ebee40f63dab7564ac690a5b6036481e5c56cfb32c3d67841ff5f7cf1"
+  },
+  {
+    "file": "elyndor/systems/housing-portal-reveal.css",
+    "bytes": 1897,
+    "sha256": "6f53550be55fe5e3e4533c69bf5994280e8efd4e614beaaef25dfe2b71d1fe0b"
+  },
+  {
+    "file": "elyndor/systems/housing-portal-reveal.js",
+    "bytes": 18189,
+    "sha256": "d7d0523eeca31a8bc31ba0aa08d426b0278d82d18c1baaf3f9fd32280b87c849"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 86212,
+    "sha256": "2c6e5c997ee3ccbddaeff5c1373a503098fda4fd1444ed88e9fa33727b30e341"
+  },
+  {
+    "file": "index.html",
+    "bytes": 7568481,
+    "sha256": "fac25d6b271f5c03aaa2e346dbc1d736338581179cb8346d345e55188e27a848"
+  },
+  {
+    "file": "release.json",
+    "bytes": 89090,
+    "sha256": "f20b782f4229d60960bf26587afd71423e20b90cea5a5bf1673cd5523b4c2cbe"
+  }
+]

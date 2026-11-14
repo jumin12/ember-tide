@@ -2,6 +2,22 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.36 — The Homeward spell and hands-on home building
+
+November 14, 2026
+
+- Restyled housing services and the house browser with the game’s navy-and-gold interface, clearer ownership and purchase actions, real room-layout previews, and responsive phone portrait and landscape layouts.
+- Town portals now remain absent until a home is purchased, including their collision, interaction target and map marker. Existing homeowners can use their portals immediately in all six towns.
+- Added five native PixelLab casting poses for Azarith and a purchase-triggered summoning sequence: luminous spell threads, rising stonework, a swirling opaque blue opening, animated rune circles, orbiting shards and colored light on surrounding scenery. The effect settles smoothly into its idle glow and supports skipping.
+- Completed Azarith’s eight directional views with new PixelLab rear three-quarter poses. He turns toward nearby companions with stable direction changes while preserving the existing approved pose pixels.
+- Smoothed party travel through the Homeward portal with staggered curved paths, distance-driven walking frames, grounded steps onto its stone base and natural occlusion at the threshold. Cancellation and normal home travel remain supported.
+- Replaced furniture collection symbols with previews of the actual 3D objects. The selected desktop preview rotates and can be dragged to inspect it; phone layouts retain clear model thumbnails without covering the room.
+- Added a responsive placement ghost with clear mint and blocked red states. Move the pointer to preview, click to place, rotate with the wheel or R, and cancel with Escape. Touch users tap a position and confirm with Place.
+- Improved tabletop and wall snapping, repeated placement and moving furniture. Cancelling restores the original object and attached tabletop decorations, while placement rules keep doorways and portal approaches clear.
+- Reduced the garden’s initial placement search and cached furniture previews. A dedicated editor redraw keeps ghosts and newly placed objects visible immediately while the world simulation stays paused. Checked desktop controls, eight directions, portal purchase and entry, and four browser-emulated phone sizes.
+
+Release evidence: `elyndor/previews/release-v136/verification.json`. Phone checks use browser emulation.
+
 ## Alpha Version 1.35 — Illustrated magic and better ways to test
 
 November 13, 2026

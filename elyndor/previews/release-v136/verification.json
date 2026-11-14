@@ -1,0 +1,87 @@
+{
+  "version": "Alpha Version 1.36",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7568481,
+    "sha256": "fac25d6b271f5c03aaa2e346dbc1d736338581179cb8346d345e55188e27a848",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "runtimeMatchesTestedBuildExceptChangelog": true,
+  "approvedCharacterFramesPreserved": 52,
+  "housingKeeperArt": {
+    "provider": "PixelLab",
+    "castingPoses": 5,
+    "directions": 8,
+    "originalVisiblePosePixelsPreserved": 8,
+    "newRearDirections": 2
+  },
+  "checks": {
+    "housing146": {
+      "check.json": {
+        "checks": 0,
+        "errors": 0
+      },
+      "regression.json": {
+        "checks": 0,
+        "errors": 0
+      },
+      "mobile-cast.json": {
+        "checks": 0,
+        "errors": 0
+      },
+      "review-check.json": {
+        "checks": 0,
+        "errors": 0
+      }
+    },
+    "housing147": {
+      "check.json": {
+        "checks": 0,
+        "errors": 0
+      },
+      "pc-craft.json": {
+        "checks": 16,
+        "errors": 0
+      },
+      "phone-craft.json": {
+        "checks": 17,
+        "errors": 0
+      },
+      "cinematic.json": {
+        "checks": 0,
+        "errors": 0
+      },
+      "review-check.json": {
+        "checks": 0,
+        "errors": 0
+      },
+      "delivery.json": {
+        "checks": 12,
+        "errors": 0
+      }
+    },
+    "phoneViewports": [
+      "320x568",
+      "390x844",
+      "844x390",
+      "568x320"
+    ]
+  },
+  "scope": "Native Chrome on the test PC and browser-emulated phone layouts; no physical-phone benchmark claim.",
+  "source": {
+    "elyndor/build-manifest.json": "5a4783e47680788479054b622e358a0188d0eaeb65fcd8056e5dc7a8578f8d0d",
+    "elyndor/systems/home-building-preview.css": "7b9b503f9e68207d5e2b4957a911e17bc694686ecf77d547f606b21b500fecb0",
+    "elyndor/systems/home-building-preview.js": "c97c1f65982d64bdc885a4f1188c38fd7e13a4e3964adde2f753877e93964302",
+    "elyndor/systems/home-keeper-directions.js": "7901c280ac28de207aac56070697ac6ecbf6f32f72d6e186cd80712bcde76577",
+    "elyndor/systems/home-portal-entry.js": "a7be201118c83a0e7504b3c0fcdd477badd97a60c9bf25087de77cdba005580f",
+    "elyndor/systems/home-portal-spectacle.js": "f567ba5372a2a92df66e34379a615e6e142eff368b67ba101232fa60ce444b85",
+    "elyndor/systems/homeward-portal.js": "6672dedd6f4196af4877aba0685e83db578f12df7814cc33c270e0ae11c10687",
+    "elyndor/systems/housing-concept-ui.css": "08279cade3566a48785fd2e6a2da0a290b78fe9efbeea5ebbed376348d7bc58a",
+    "elyndor/systems/housing-concept-ui.js": "e62211f20666b82f7dc02b99a06d434219b3f9eb1bcf6fcd88e07b9dd36f5d30",
+    "elyndor/systems/housing-decor.js": "7ca7d16ebee40f63dab7564ac690a5b6036481e5c56cfb32c3d67841ff5f7cf1",
+    "elyndor/systems/housing-portal-reveal.css": "6f53550be55fe5e3e4533c69bf5994280e8efd4e614beaaef25dfe2b71d1fe0b",
+    "elyndor/systems/housing-portal-reveal.js": "d7d0523eeca31a8bc31ba0aa08d426b0278d82d18c1baaf3f9fd32280b87c849",
+    "elyndor/title-v19.js": "2c6e5c997ee3ccbddaeff5c1373a503098fda4fd1444ed88e9fa33727b30e341"
+  }
+}
