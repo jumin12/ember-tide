@@ -2,6 +2,20 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.38 — Flowing portals and stable shadows
+
+November 15, 2026
+
+- Reworked Homeward portal energy into continuously flowing, smoke-like blue-white wisps over a rich blue interior. The approved artwork now bends and moves through the opening instead of rotating as flat pictures.
+- Matched both physical faces of the portal with the same synchronized energy, luminous rim, moving motes and stone details. Walking through the gate still produces contact ripples, sparks and light on nearby scenery.
+- Filled the portal background with independent upper, middle and lower smoke currents, giving the bright foreground energy a fuller sense of depth while keeping the opening opaque.
+- Refreshed the native house-browser pictures for all six regional home styles to show the blue gate and current yard scenery, including smaller phone versions.
+- Removed CRT-like shadow bands from the housing keeper and other exploration NPCs. NPCs receive coherent canopy shade while retaining their original sprite artwork, native texture sampling and cast shadows.
+- Fixed flashing NPC and scenery shadows by keeping shadow sharpness and bias consistent between lighting refreshes and cached frames. Sharp live shadows and the existing redraw budget are retained.
+- Stopped overworld animation updates from repeatedly re-enabling projected sprite shadows during daylight. Daytime circular contacts and nighttime moon shadows now keep a consistent policy while characters move.
+
+Release evidence and checksums: `elyndor/previews/release-v138/verification.json`. Phone checks use touch-enabled browser emulation; they are not physical-device performance measurements.
+
 ## Alpha Version 1.37 — Living Homeward gates and smoother home building
 
 November 14, 2026

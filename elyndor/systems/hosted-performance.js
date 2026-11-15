@@ -103,14 +103,24 @@ updateReflection=function(...args){
  return result;
 };
 
+// Lighting refreshes and cached depth frames must use the same receiver bias
+// and penumbra. The old daylight recipe reset these every twenty simulation
+// ticks, while fitting restored a different recipe only on depth-draw frames.
+function setOutdoorShadowSettings155(){
+ if(!sun||!world||battle||encounter53.active||!['poi','overworld'].includes(activeScene?.kind))return;
+ const macro=activeScene.kind==='overworld';sun.shadow.radius=.35;sun.shadow.bias=macro?-.00016:-.000035;sun.shadow.normalBias=macro?.10:.012;
+}
+const outdoorLightBefore155=updateLighting;
+updateLighting=function(...args){const result=outdoorLightBefore155(...args);setOutdoorShadowSettings155();return result;};
 const shadowFitBefore138=fitVisibleShadows,shadowBudget138={world:null,at:-Infinity,camera:V3(),resize:-1,frames:0,reuses:0};
 fitVisibleShadows=function(...args){
  if(!world||encounter53.active||!['poi','overworld'].includes(activeScene?.kind))return shadowFitBefore138(...args);
+ setOutdoorShadowSettings155();
  const q=shadowBudget138,period=touchDevice33()?1/24:1/40,forced=gameLoading||loading36.active||q.world!==world||q.resize!==device33.resizes||!sun.shadow.map||shadow36.last< -10||q.camera.distanceToSquared(camera.position)>1;
  if(!forced&&clock-q.at<period){shadow36.due=false;shadow36.skips++;q.reuses++;return;}
  // The old live-water wrapper forced a new shadow render on every call.
  // Keep its sharp penumbra but enter the fitted-shadow owner directly.
- shadow36.last=-100;const result=shadowFitBefore111(...args);sun.shadow.radius=.35;
+ shadow36.last=-100;const result=shadowFitBefore111(...args);setOutdoorShadowSettings155();
  renderer.shadowMap.needsUpdate=sun.shadow.needsUpdate=true;
  Object.assign(q,{world,at:clock,resize:device33.resizes});q.camera.copy(camera.position);q.frames++;return result;
 };

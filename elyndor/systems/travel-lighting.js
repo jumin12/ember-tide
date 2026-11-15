@@ -1,7 +1,8 @@
 // A painted traveller needs one coherent patch of canopy lighting. Sampling
 // a sharp, moving leaf shadow separately over every animated limb produces
-// strobing as the north-facing run changes pose. Keep real scenery shadows,
-// average them over the body, and leave combat and circular foot shadows alone.
+// strobing as a sprite changes pose, or diagonal acne on an NPC's painted
+// face and clothes. Keep scenery/cast shadows and average reception over the
+// body for both travelling party members and NPCs, outside combat.
 const travelLighting150={materials:new WeakSet()};
 function prepareTravelLighting150(a){
  const o=a?.mesh,m=o?.material;if(!m?.map||travelLighting150.materials.has(m))return;travelLighting150.materials.add(m);
@@ -19,7 +20,7 @@ function prepareTravelLighting150(a){
   });
   s.fragmentShader='uniform float travelLighting150;uniform vec2 travelRadius150;\n'+s.fragmentShader.replace('#include <lights_fragment_begin>',lights);
  };m.customProgramCacheKey=()=>key()+'-stable-travel-canopy150';m.needsUpdate=true;
- const prior=o.onBeforeRender;o.onBeforeRender=function(...args){prior?.apply(this,args);enabled.value=a.party&&!battle&&state.mode!=='title'?1:0;height.value=a.size*.60;
+ const prior=o.onBeforeRender;o.onBeforeRender=function(...args){prior?.apply(this,args);enabled.value=(a.party||a.npc)&&!battle&&state.mode!=='title'?1:0;height.value=a.size*.60;
   const c=sun.shadow.camera;radius.value.set(.65/Math.max(1,c.right-c.left),.65/Math.max(1,c.top-c.bottom));
  };o.userData.travelLighting150=true;
 }

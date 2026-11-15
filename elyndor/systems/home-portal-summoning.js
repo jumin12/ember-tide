@@ -1,8 +1,6 @@
 // The keeper summons the same layered Homeward gate used by the private plot.
 // Ownership, the existing cast choreography and all travel targets stay native.
-const portalRotationShader149=`
- vec2 rotateCurrent149(vec2 uv,float angle){vec2 q=(uv-vec2(.55,.39))*vec2(1.,1.9);float c=cos(angle),s=sin(angle);q=mat2(c,-s,s,c)*q;return vec2(.55,.39)+q/vec2(1.,1.9);}
- vec4 currentSample149(sampler2D image,vec2 uv){if(any(lessThan(uv,vec2(0.)))||any(greaterThan(uv,vec2(1.))))return vec4(0.);return texture2D(image,uv);}
+const portalOpeningShader149=`
  float apertureRadius149(vec2 p){return length((p-vec2(0.,2.10))*vec2(1./1.10,1./2.05));}
 `;
 function configureSummonedPortal149(p){
@@ -15,16 +13,16 @@ function configureSummonedPortal149(p){
   o.customDepthMaterial=new THREE.MeshDepthMaterial({depthPacking:THREE.RGBADepthPacking});homeStoneShader146(o.customDepthMaterial,p.stoneReveal146,true);o.userData.portalStone149=true;
  }
  const m=p.material;m.uniforms.opening149=p.open146;m.uniforms.spin149=fx.depthSpin149;
- m.fragmentShader='uniform float opening149,spin149;\n'+portalRotationShader149+m.fragmentShader;
- m.fragmentShader=m.fragmentShader.replace('vec2 depth=(uv-',`if(apertureRadius149(p)>opening149*1.58)discard;uv=rotateCurrent149(uv,spin149);vec2 depth=(uv-`);
+ m.fragmentShader='uniform float opening149;\n'+portalOpeningShader149+m.fragmentShader;
+ m.fragmentShader=m.fragmentShader.replace('vec2 depth=(uv-',`if(apertureRadius149(p)>opening149*1.58)discard;vec2 depth=(uv-`);
  m.fragmentShader=m.fragmentShader.replace('color*=1.+energy*.12;',`color+=vec3(.07,.35,.8)*exp(-pow((apertureRadius149(p)-opening149*1.58)/.055,2.))*(1.-step(.999,opening149));color*=1.+energy*.12;`);m.needsUpdate=true;
  for(const layer of fx.currents.children){const m=layer.material;m.uniforms.opening149=p.open146;m.uniforms.spin149={value:0};
-  m.fragmentShader='uniform float opening149,spin149;\n'+portalRotationShader149+m.fragmentShader;
-  m.fragmentShader=m.fragmentShader.replace('vec2 uv=imageUv148,q=',`if(apertureRadius149(gate148)>opening149*1.58)discard;vec2 uv=rotateCurrent149(imageUv148,spin149),q=`);
-  m.fragmentShader=m.fragmentShader.replace('texture2D(current148,clamp(uv+velocity*(a-.5),vec2(.001),vec2(.999)))','currentSample149(current148,uv+velocity*(a-.5))').replace('texture2D(current148,clamp(uv+velocity*(b-.5),vec2(.001),vec2(.999)))','currentSample149(current148,uv+velocity*(b-.5))');m.needsUpdate=true;
+  m.fragmentShader='uniform float opening149;\n'+portalOpeningShader149+m.fragmentShader;
+  m.fragmentShader=m.fragmentShader.replace('vec2 uv=imageUv148;',`if(apertureRadius149(gate148)>opening149*1.58)discard;vec2 uv=imageUv148;`);m.needsUpdate=true;
  }
- const rim=p.group.children.find(o=>o.name==='Luminous inner edge');if(rim){rim.material=new THREE.ShaderMaterial({uniforms:{opening149:p.open146},vertexShader:'varying vec2 point149;void main(){point149=position.xy;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:'varying vec2 point149;uniform float opening149;'+portalRotationShader149+'void main(){if(apertureRadius149(point149)>opening149*1.58)discard;gl_FragColor=vec4(.03,.52,1.,1.);}',toneMapped:false});}
+ const rim=p.group.children.find(o=>o.name==='Luminous inner edge');if(rim){rim.material=new THREE.ShaderMaterial({uniforms:{opening149:p.open146},vertexShader:'varying vec2 point149;void main(){point149=position.xy;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:'varying vec2 point149;uniform float opening149;'+portalOpeningShader149+'void main(){if(apertureRadius149(point149)>opening149*1.58)discard;gl_FragColor=vec4(.03,.52,1.,1.);}',toneMapped:false});}
  const floor=p.group.children.find(o=>o.name==='Portal light on threshold');if(floor){floor.material.uniforms.opening149=p.open146;floor.material.fragmentShader='uniform float opening149;\n'+floor.material.fragmentShader;floor.material.fragmentShader=floor.material.fragmentShader.replace('if(alpha<.003)discard;','alpha*=opening149*opening149;if(alpha<.003)discard;');floor.material.needsUpdate=true;}
+ buildReturnReverse154(p);
 }
 const summonBuildBefore149=homePortal139;
 homePortal139=function(...args){const g=summonBuildBefore149(...args),p=g.userData.portal144;if(!p.return148)finishReturnPortal148(p);configureSummonedPortal149(p);return g;};
@@ -36,8 +34,10 @@ const summonWarmBefore149=warmHomeCast146;
 warmHomeCast146=function(){return Promise.all([summonWarmBefore149(),warmReturnArt148(),warmPortalAudio149()]).then(([cast])=>{for(const p of world?.userData.homePortals139??[])if(p.return148)bindReturnLayers148(p);return cast;});};
 const summonTickBefore149=tick;
 tick=function(dt){const r=summonTickBefore149(dt);for(const p of world?.userData.homePortals139??[]){if(!p.summon149)continue;const fx=p.return148,t=clock-fx.born149,reveal=homeReveal146?.portal===p,open=p.open146.value,s=p.group.scale.x;
-  fx.depthSpin149.value=t*.045;for(let i=0;i<fx.currents.children.length;i++){const o=fx.currents.children[i];if(!o.userData.frozen148)o.material.uniforms.spin149.value=t*[.28,.215,.34][i];}
-  p.group.updateWorldMatrix(true,false);p.light.position.copy(V3(0,1.65,.73).applyMatrix4(p.group.matrixWorld));p.light.distance=7.2*s;p.light.intensity=p.group.visible?(fx.lightBase+p.energy*2.2)*s*s*(reveal?open:1)*(1.+.045*Math.sin(clock*.67)+.025*Math.sin(clock*1.13)):0;
+  // Keep the artwork oriented like its source. Motion is local advection and
+  // deformation in the current shaders, never a rotating rectangular plate.
+  fx.depthSpin149.value=0;for(const o of fx.currents.children)o.material.uniforms.spin149.value=0;
+  p.group.updateWorldMatrix(true,false);p.light.position.copy(V3(0,1.65,0).applyMatrix4(p.group.matrixWorld));p.light.distance=7.2*s;p.light.intensity=p.group.visible?(fx.lightBase+p.energy*2.2)*s*s*(reveal?open:1)*(1.+.045*Math.sin(clock*.67)+.025*Math.sin(clock*1.13)):0;
  }updatePortalAudio149(dt);return r;};
 const portalStateBootBefore149=boot;
 boot=async function(...args){const r=await portalStateBootBefore149(...args),before=window.render_game_to_text;window.render_game_to_text=()=>{const d=JSON.parse(before());d.homeSummon149={revealing:!!homeReveal146,portals:(world?.userData.homePortals139??[]).map(p=>({newPortal:!!p.summon149,visible:p.group.visible,opening:p.open146?.value,spin:p.return148?.currents.children.map(o=>+o.material.uniforms.spin149.value.toFixed(3))})),audio:{counts:{...portalAudio149.counts},loopVolume:portalAudio149.loop?.volume??0,errors:[...portalAudio149.errors]},characterSampling:actors.filter(a=>a.mesh?.userData.characterSampling149).length};return JSON.stringify(d);};return r;};

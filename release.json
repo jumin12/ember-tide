@@ -1,32 +1,43 @@
 {
-  "release": "elyndor-alpha-1.37-living-homeward-smoother-building-2026-11-14",
-  "version": "Alpha Version 1.37",
+  "release": "elyndor-alpha-1.38-flowing-portals-stable-shadows-2026-11-15",
+  "version": "Alpha Version 1.38",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 7631057,
-    "sha256": "6b62f3456937c90eaf2e67a6868e5a6cb0d986e3ba06cd8a7104c693ceb42cf3",
+    "bytes": 7637270,
+    "sha256": "2c75c44e0239012d5e3727c176655f61d440869803970f15734c18b82f861e36",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "790419b53ec2d23acd7bea3ca05f87f4949a4823"
+    "previousRelease": "42b8e633d75823e3d4d179cdfc90c76ad6731dde"
   },
   "changes": [
-    "Rebuilt the Homeward gate with a full-depth weathered-stone arch, fitted threshold, three independently moving and rotating blue energy layers, suspended sparks and light on nearby scenery. The same gate now appears during the first-house purchase spell and at the private home.",
-    "Added contact-driven portal crossings: each companion sends ripples through the moving currents, releases blue particles and a wave across the stone base, and pulses the surrounding light. The party retains its grounded walking animation and natural occlusion through the opening.",
-    "Added original ElevenLabs portal-opening and ambient-loop sounds with distance, stereo positioning and volume controls. Refreshed the house-browser pictures for all six regional home styles.",
-    "Reduced recurring home-travel stalls by retaining the private room and yard within a memory limit, reusing their prepared scenery, and clearing old crossing effects before a cached yard returns. Ownership, layout, finish and quality changes invalidate the relevant cached scenes.",
-    "Prepared the hidden portal, keeper pose, shadows and river-reflection shaders before the summoning animation begins. First visits still prepare new graphics; the sequence no longer waits for those shaders when the gate first becomes visible.",
-    "Made decorating more responsive with live GPU furniture previews, asynchronous material preparation and incremental placement updates that preserve unchanged objects. Garden lamps use a bounded pool of lights instead of changing the scene shader configuration with each placement.",
-    "Moved garden rocks away from the fixed bench and its approach, cleared vegetation from furniture and arbor footprints, and made placement checks follow actual rock bounds and regional scenery in all six home yards.",
-    "Kept D available for movement inside and outside the home; B opens decorating. Checked actual touch placement, moving and removal, inventory refunds, repeated doorway trips and phone portrait and landscape layouts.",
-    "Removed uneven sprite sampling at fractional zoom while preserving the approved character, NPC and monster artwork. Stabilized party lighting under tree canopies during travel without changing movement speeds or animation pixels.",
-    "Improved timed-combo feedback with a target-side CLICK or TAP cue, clearer windup, left-button press input, stronger contact flashes and a more distinct final impact. Keyboard alternatives, the original timing windows, three-hit damage and bullet-time behavior remain intact; the dev practice instructions now match the controls."
+    "Reworked Homeward portal energy into continuously flowing, smoke-like blue-white wisps over a rich blue interior. The approved artwork now bends and moves through the opening instead of rotating as flat pictures.",
+    "Matched both physical faces of the portal with the same synchronized energy, luminous rim, moving motes and stone details. Walking through the gate still produces contact ripples, sparks and light on nearby scenery.",
+    "Filled the portal background with independent upper, middle and lower smoke currents, giving the bright foreground energy a fuller sense of depth while keeping the opening opaque.",
+    "Refreshed the native house-browser pictures for all six regional home styles to show the blue gate and current yard scenery, including smaller phone versions.",
+    "Removed CRT-like shadow bands from the housing keeper and other exploration NPCs. NPCs receive coherent canopy shade while retaining their original sprite artwork, native texture sampling and cast shadows.",
+    "Fixed flashing NPC and scenery shadows by keeping shadow sharpness and bias consistent between lighting refreshes and cached frames. Sharp live shadows and the existing redraw budget are retained.",
+    "Stopped overworld animation updates from repeatedly re-enabling projected sprite shadows during daylight. Daytime circular contacts and nighttime moon shadows now keep a consistent policy while characters move."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.38",
+      "date": "November 15, 2026",
+      "title": "Flowing portals and stable shadows",
+      "items": [
+        "Reworked Homeward portal energy into continuously flowing, smoke-like blue-white wisps over a rich blue interior. The approved artwork now bends and moves through the opening instead of rotating as flat pictures.",
+        "Matched both physical faces of the portal with the same synchronized energy, luminous rim, moving motes and stone details. Walking through the gate still produces contact ripples, sparks and light on nearby scenery.",
+        "Filled the portal background with independent upper, middle and lower smoke currents, giving the bright foreground energy a fuller sense of depth while keeping the opening opaque.",
+        "Refreshed the native house-browser pictures for all six regional home styles to show the blue gate and current yard scenery, including smaller phone versions.",
+        "Removed CRT-like shadow bands from the housing keeper and other exploration NPCs. NPCs receive coherent canopy shade while retaining their original sprite artwork, native texture sampling and cast shadows.",
+        "Fixed flashing NPC and scenery shadows by keeping shadow sharpness and bias consistent between lighting refreshes and cached frames. Sharp live shadows and the existing redraw budget are retained.",
+        "Stopped overworld animation updates from repeatedly re-enabling projected sprite shadows during daylight. Daytime circular contacts and nighttime moon shadows now keep a consistent policy while characters move."
+      ]
+    },
     {
       "version": "Alpha Version 1.37",
       "date": "November 14, 2026",
@@ -826,8 +837,8 @@
     "coloredAbilitySceneLighting": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v137/verification.json",
-    "sha256": "214648433721096ad15c233516bbf1a5089b4463dcd562a8ae824c80c6bef916",
+    "file": "elyndor/previews/release-v138/verification.json",
+    "sha256": "3860300fee39fee54dfa38a178c8ac7387518860d861616d5aa05e335f8df7d2",
     "finalRelease": "PASS",
     "runtimeMatchesTestedLocalExceptChangelog": true,
     "desktopAndPhone": true
@@ -864,12 +875,14 @@
     "renderCacheHeaders": "Documented under hosting/; dashboard settings not yet applied",
     "abilityArt": "Seven cached animation sheets loaded at battle entry; fixed instanced effect pools, shared scene lights",
     "housingEditor": "GPU furniture previews without per-frame pixel readback, asynchronous material preparation, incremental updates and bounded decor lights",
-    "homeTravel": "Memory-limited retained room and yard, prepared gate/reflection/shadow shaders before casting"
+    "homeTravel": "Memory-limited retained room and yard, prepared gate/reflection/shadow shaders before casting",
+    "explorationShadows": "Stable sharp bias/penumbra across lighting and cached frames; unchanged bounded redraw cadence",
+    "spriteLighting": "Coherent party and NPC canopy reception outside combat; original art and sampling retained"
   },
   "previousPublishedRelease": {
-    "commit": "790419b53ec2d23acd7bea3ca05f87f4949a4823",
-    "version": "Alpha Version 1.36",
-    "sha256": "fac25d6b271f5c03aaa2e346dbc1d736338581179cb8346d345e55188e27a848"
+    "commit": "42b8e633d75823e3d4d179cdfc90c76ad6731dde",
+    "version": "Alpha Version 1.37",
+    "sha256": "6b62f3456937c90eaf2e67a6868e5a6cb0d986e3ba06cd8a7104c693ceb42cf3"
   },
   "housing": {
     "maximumOwnedHomes": 1,
@@ -900,7 +913,12 @@
     "incrementalDecorationUpdates": true,
     "boundedPrivateSceneCache": true,
     "decoratingShortcut": "B",
-    "movementKeyD": true
+    "movementKeyD": true,
+    "fluidImageCurrents": true,
+    "blueOpaqueInterior": true,
+    "matchingPhysicalPortalFaces": true,
+    "fullBackgroundSmoke": true,
+    "regionalPreviewRevision": 152
   },
   "developerTools": {
     "tripleBacktickShortcut": true,

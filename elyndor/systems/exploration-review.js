@@ -36,3 +36,17 @@ updateContacts39=function(...args){
  }
  q.mesh.renderOrder=3;q.mesh.instanceMatrix.needsUpdate=true;alpha.needsUpdate=slope.needsUpdate=true;return result;
 };
+
+// The legacy animation update re-enabled projected sprite shadows after the
+// overworld's circular-contact pass disabled them. Apply that same day/night
+// policy at the end of each actor update, invalidating depth only on a real
+// change instead of toggling it twice every simulation tick.
+const contactActorBefore155=updateActor;
+updateActor=function(a,...args){
+ const previous=a?.mesh?.castShadow,result=contactActorBefore155(a,...args);
+ if(!a?.mesh||battle||encounter53.active||state.mode==='title'||activeScene?.kind!=='overworld'||!(a.party||a.npc))return result;
+ const minute=(state.worldMinutes%1440+1440)%1440,night=minute<360||minute>=1170;
+ a.mesh.castShadow=night&&!a.pixelReleased&&a.mesh.visible;
+ if(a.mesh.castShadow!==previous){shadow36.last=-100;renderer.shadowMap.needsUpdate=sun.shadow.needsUpdate=true;}
+ return result;
+};

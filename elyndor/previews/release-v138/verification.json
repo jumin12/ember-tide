@@ -1,0 +1,131 @@
+{
+  "version": "Alpha Version 1.38",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7637270,
+    "sha256": "2c75c44e0239012d5e3727c176655f61d440869803970f15734c18b82f861e36",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "runtimeMatchesTestedBuildExceptChangelog": true,
+  "approvedCharacterFramesPreserved": 52,
+  "originalPortalImagesPreserved": 8,
+  "checks": {
+    "portal152": {
+      "complete": true,
+      "check.json": {
+        "checks": 16,
+        "errors": 0
+      },
+      "phone-check.json": {
+        "checks": 18,
+        "errors": 0
+      }
+    },
+    "portal153": {
+      "complete": true,
+      "check.json": {
+        "checks": 17,
+        "errors": 0
+      },
+      "phone-check.json": {
+        "checks": 19,
+        "errors": 0
+      }
+    },
+    "portal154": {
+      "complete": true,
+      "check.json": {
+        "checks": 19,
+        "errors": 0
+      },
+      "phone-check.json": {
+        "checks": 21,
+        "errors": 0
+      }
+    },
+    "render155": {
+      "complete": true,
+      "check.json": {
+        "checks": 26,
+        "errors": 0
+      },
+      "phone-check.json": {
+        "checks": 26,
+        "errors": 0
+      }
+    }
+  },
+  "source": {
+    "elyndor/build-manifest.json": "53e750fb2e369fbbf22247af2482a88ac6da3db704699c9449a8302bb4de7cb2",
+    "elyndor/systems/exploration-review.js": "2fe48dcf3414528065ae818627df5555f41a79e5333c9a84a02f4b6842e150e8",
+    "elyndor/systems/home-portal-summoning.js": "98eaee9a04b4b6b78bcabacefbd9d0c29c94f5e9c78485491b48ce28a41d2b7b",
+    "elyndor/systems/home-return-portal.js": "e8f0342e36655bdee9fbe247510df2148e06b6f52f2bdbcf71bf89437102fa22",
+    "elyndor/systems/home-threshold-effects.js": "eb55c9adc4f9adfbb6bf58fdd01602a3c001be43d71ec6ee52e16176e93e701b",
+    "elyndor/systems/hosted-performance.js": "463f624296e3189a2cd7f202ddd6c18d26942dc1f84397e96aa65b91e56df2ef",
+    "elyndor/systems/housing-ui.js": "8175d1fd250a42620e8c77e52a4cbb681a48638cb5d6055b20f0629c2cde632b",
+    "elyndor/systems/travel-lighting.js": "27ec1455ab044e2b57bf4ae6812cf7e97e9bb50e071097fdf1ddf4e28c6f9b45",
+    "elyndor/title-v19.js": "954383b63e13918222ab34480679e8709a689fff2e6e5d4f96eff2c712820f15"
+  },
+  "scope": "Native Chrome on the test PC and touch-enabled phone browser emulation. No physical-device or sustained frame-rate claim.",
+  "faceComparison": {
+    "samplesPerFace": 21,
+    "frontBack": [
+      {
+        "seconds": 20,
+        "meanChannelDifference": 0.10009718172983442,
+        "worstPatchDifference": 0.32653061224490426,
+        "bands": {
+          "0.65": 0.08390022675737029,
+          "1.15": 0.06122448979591549,
+          "1.65": 0.09297052154194792,
+          "2.15": 0.13605442176870933,
+          "2.65": 0.07029478458050024,
+          "3.15": 0.16099773242630594,
+          "3.65": 0.09523809523809175
+        },
+        "frontAndBackReady": true
+      },
+      {
+        "seconds": 26,
+        "meanChannelDifference": 0.06478781988986068,
+        "worstPatchDifference": 0.18367346938775095,
+        "bands": {
+          "0.65": 0.09070294784580286,
+          "1.15": 0.045351473922902646,
+          "1.65": 0.06349206349206485,
+          "2.15": 0.036281179138322676,
+          "2.65": 0.05668934240362746,
+          "3.15": 0.0725623582766425,
+          "3.65": 0.08843537414966178
+        },
+        "frontAndBackReady": true
+      }
+    ],
+    "complete": true
+  },
+  "shadowConsistency": {
+    "before": [
+      "[2.55,-0.00008,0.024]",
+      "[0.35,-0.000035,0.012]"
+    ],
+    "after": [
+      "[0.35,-0.000035,0.012]"
+    ],
+    "beforeReusedFrames": 46,
+    "afterReusedFrames": 46
+  },
+  "phoneViewports": [
+    "390x844",
+    "844x390"
+  ],
+  "galleryViewports": [
+    "320x568",
+    "844x390"
+  ],
+  "newRuntimeAssets": {
+    "type": "Native house preview stills",
+    "count": 12,
+    "bytes": 3030720
+  }
+}
