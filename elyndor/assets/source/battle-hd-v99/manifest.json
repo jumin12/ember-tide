@@ -166,21 +166,21 @@
     "battle99_royalRoad_day": {
       "stage": "royalRoad",
       "phase": "day",
-      "file": "elyndor/assets/source/battle-hd-v99/royalRoad-day.webp",
+      "file": "elyndor/assets/source/battle-hd-v99/royalRoad-open-day.webp",
       "width": 1672,
       "height": 941,
-      "bytes": 583104,
-      "sha256": "9c069dd2585b575c39228e90c7b6b8cf505112853012dc90493415ed409f4d71",
+      "bytes": 739100,
+      "sha256": "1c65a0df1eb18706b276bacce2f66ea6b59036f75aa5e05464a8224f262d7cd7",
       "reviewed": true
     },
     "battle99_royalRoad_night": {
       "stage": "royalRoad",
       "phase": "night",
-      "file": "elyndor/assets/source/battle-hd-v99/royalRoad-night.webp",
+      "file": "elyndor/assets/source/battle-hd-v99/royalRoad-open-night.webp",
       "width": 1672,
       "height": 941,
-      "bytes": 471168,
-      "sha256": "65b773480c95bec91497b43bb60fa977d350ed69a9e60c65f8f74163f292f9ee",
+      "bytes": 596454,
+      "sha256": "09de61847026554647f3305b271e4c947089ea5bcdc8201fcc12965e165a408d",
       "reviewed": true
     },
     "battle99_moonlit_day": {

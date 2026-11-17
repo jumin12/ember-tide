@@ -1,0 +1,44 @@
+{
+  "version": "Alpha Version 1.39",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7653339,
+    "sha256": "67ef8c485c1d434ef1655f5b3a6515e0e0eee5ae1676be54a9a5c1d49171e9a7",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "originalBattleFraming": {
+    "stagesCompared": 20,
+    "cameraFovAndFighterPositionsMatched": true
+  },
+  "introCameraPosesChecked": 888,
+  "checks": {
+    "desktopStages": 20,
+    "portraitPhoneStages": 10,
+    "goldenAndNightCases": 7,
+    "timedComboDamage": [
+      20,
+      25,
+      31
+    ],
+    "runtimeErrors": 0
+  },
+  "royalRoadNativePlates": [
+    {
+      "file": "elyndor/assets/runtime-v116/1c65a0df1eb18706b276bacce2f66ea6b59036f75aa5e05464a8224f262d7cd7.webp",
+      "bytes": 739100,
+      "sha256": "1c65a0df1eb18706b276bacce2f66ea6b59036f75aa5e05464a8224f262d7cd7"
+    },
+    {
+      "file": "elyndor/assets/runtime-v116/09de61847026554647f3305b271e4c947089ea5bcdc8201fcc12965e165a408d.webp",
+      "bytes": 596454,
+      "sha256": "09de61847026554647f3305b271e4c947089ea5bcdc8201fcc12965e165a408d"
+    },
+    {
+      "file": "elyndor/assets/runtime-v138/ab61b7ec803629923dcd29da7bacf6f3166b190e0d0b8df0bb5c82ec37654174.webp",
+      "bytes": 669626,
+      "sha256": "ab61b7ec803629923dcd29da7bacf6f3166b190e0d0b8df0bb5c82ec37654174"
+    }
+  ],
+  "scope": "Desktop Chrome and touch-enabled portrait phone emulation"
+}

@@ -82,13 +82,13 @@
       "reviewed": true
     },
     "battle99_royalRoad_golden": {
-      "file": "elyndor/assets/source/battle-golden-v121/royalRoad-golden.webp",
+      "file": "elyndor/assets/source/battle-golden-v121/royalRoad-open-golden.webp",
       "stage": "royalRoad",
       "phase": "golden",
       "width": 1672,
       "height": 941,
-      "bytes": 917640,
-      "sha256": "9cbfc82c0e17a1137fae30842df7a323c99bafe6533276d97c39b6eaa06265d6",
+      "bytes": 669626,
+      "sha256": "ab61b7ec803629923dcd29da7bacf6f3166b190e0d0b8df0bb5c82ec37654174",
       "reviewed": true
     },
     "battle99_moonlit_golden": {

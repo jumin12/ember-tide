@@ -1,29 +1,35 @@
 {
-  "release": "elyndor-alpha-1.38-flowing-portals-stable-shadows-2026-11-15",
-  "version": "Alpha Version 1.38",
+  "release": "elyndor-alpha-1.39-refined-battle-scenery-2026-11-17",
+  "version": "Alpha Version 1.39",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 7637270,
-    "sha256": "2c75c44e0239012d5e3727c176655f61d440869803970f15734c18b82f861e36",
+    "bytes": 7653339,
+    "sha256": "67ef8c485c1d434ef1655f5b3a6515e0e0eee5ae1676be54a9a5c1d49171e9a7",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "42b8e633d75823e3d4d179cdfc90c76ad6731dde"
+    "previousRelease": "72acf056dcae9b6a15d4ac8aa60e7a5ddcdb1379"
   },
   "changes": [
-    "Reworked Homeward portal energy into continuously flowing, smoke-like blue-white wisps over a rich blue interior. The approved artwork now bends and moves through the opening instead of rotating as flat pictures.",
-    "Matched both physical faces of the portal with the same synchronized energy, luminous rim, moving motes and stone details. Walking through the gate still produces contact ripples, sparks and light on nearby scenery.",
-    "Filled the portal background with independent upper, middle and lower smoke currents, giving the bright foreground energy a fuller sense of depth while keeping the opening opaque.",
-    "Refreshed the native house-browser pictures for all six regional home styles to show the blue gate and current yard scenery, including smaller phone versions.",
-    "Removed CRT-like shadow bands from the housing keeper and other exploration NPCs. NPCs receive coherent canopy shade while retaining their original sprite artwork, native texture sampling and cast shadows.",
-    "Fixed flashing NPC and scenery shadows by keeping shadow sharpness and bias consistent between lighting refreshes and cached frames. Sharp live shadows and the existing redraw budget are retained.",
-    "Stopped overworld animation updates from repeatedly re-enabling projected sprite shadows during daylight. Daytime circular contacts and nighttime moon shadows now keep a consistent policy while characters move."
+    "Matched the 3D terrain of all 20 battle stages to their own day, golden-hour, and night backgrounds while retaining the original framing and fighter positions.",
+    "Removed foreground fences, pillars, and mismatched props. Varied grass height and clustering to suit each terrain, kept paving and water clear, and set rocks into the ground away from both sides of the fight.",
+    "Repainted the Royal Road backdrop in daylight, golden hour, and at night. A continuous paved approach replaces the nearby steps and railings, with the bridge and city still visible in the distance."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.39",
+      "date": "November 17, 2026",
+      "title": "Refined battle scenery",
+      "items": [
+        "Matched the 3D terrain of all 20 battle stages to their own day, golden-hour, and night backgrounds while retaining the original framing and fighter positions.",
+        "Removed foreground fences, pillars, and mismatched props. Varied grass height and clustering to suit each terrain, kept paving and water clear, and set rocks into the ground away from both sides of the fight.",
+        "Repainted the Royal Road backdrop in daylight, golden hour, and at night. A continuous paved approach replaces the nearby steps and railings, with the bridge and city still visible in the distance."
+      ]
+    },
     {
       "version": "Alpha Version 1.38",
       "date": "November 15, 2026",
@@ -837,10 +843,9 @@
     "coloredAbilitySceneLighting": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v138/verification.json",
-    "sha256": "3860300fee39fee54dfa38a178c8ac7387518860d861616d5aa05e335f8df7d2",
+    "file": "elyndor/previews/release-v139/verification.json",
+    "sha256": "b218807532e6331dd9146e03c6a6332da6b938388f1cd9f847fdd1be852d761f",
     "finalRelease": "PASS",
-    "runtimeMatchesTestedLocalExceptChangelog": true,
     "desktopAndPhone": true
   },
   "performance": {
@@ -880,9 +885,9 @@
     "spriteLighting": "Coherent party and NPC canopy reception outside combat; original art and sampling retained"
   },
   "previousPublishedRelease": {
-    "commit": "42b8e633d75823e3d4d179cdfc90c76ad6731dde",
-    "version": "Alpha Version 1.37",
-    "sha256": "6b62f3456937c90eaf2e67a6868e5a6cb0d986e3ba06cd8a7104c693ceb42cf3"
+    "commit": "72acf056dcae9b6a15d4ac8aa60e7a5ddcdb1379",
+    "version": "Alpha Version 1.38",
+    "sha256": "2c75c44e0239012d5e3727c176655f61d440869803970f15734c18b82f861e36"
   },
   "housing": {
     "maximumOwnedHomes": 1,

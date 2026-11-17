@@ -2,6 +2,16 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.39 — Refined battle scenery
+
+November 17, 2026
+
+- Matched the 3D terrain of all 20 battle stages to their own day, golden-hour, and night backgrounds while retaining the original framing and fighter positions.
+- Removed foreground fences, pillars, and mismatched props. Varied grass height and clustering to suit each terrain, kept paving and water clear, and set rocks into the ground away from both sides of the fight.
+- Repainted the Royal Road backdrop in daylight, golden hour, and at night. A continuous paved approach replaces the nearby steps and railings, with the bridge and city still visible in the distance.
+
+[Release verification](elyndor/previews/release-v139/verification.json)
+
 ## Alpha Version 1.38 — Flowing portals and stable shadows
 
 November 15, 2026

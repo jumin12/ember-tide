@@ -1,53 +1,17 @@
 // A final shared quality gate, applied to each of the twenty authored sets.
-// Habitat identities and the approved camera/panorama/lens remain unchanged.
-STAGE_SETS125.grassTwilight.extra=[...(STAGE_SETS125.grassTwilight.extra??[]),'woodWeathered101'];
+// Keep the natural details subordinate to the painted landmarks.
 localStone125=function(b,x,z,sx,sy,sz,variant=0,key=STAGE_SETS125[encounter53.selected].stone){
  const seed=(variant*13+Math.floor(Math.abs(x*17+z*31)))%24,g=arenaGeometry88(b,'scenic-rock134-'+seed,()=>{const g=riverRock134(seed).clone();g.userData.weathered104=true;return g;}),m=detailedStone105(key,b);
- sy=Math.max(sy,Math.sqrt(sx*sz)*.43);const rotation=new THREE.Quaternion().setFromAxisAngle(axis24,b.rng()*TAU),at=V3(x,arenaFloor88(b,x,z)-sy*.11,z),size=V3(sx,sy,sz),box=g.boundingBox.clone().applyMatrix4(new THREE.Matrix4().compose(at,rotation,size));
+ sy=Math.max(sy,Math.sqrt(sx*sz)*.31);const rotation=new THREE.Quaternion().setFromAxisAngle(axis24,b.rng()*TAU),size=V3(sx,sy,sz);
+ const footprint=g.boundingBox.clone().applyMatrix4(new THREE.Matrix4().compose(V3(x,0,z),rotation,size));
+ const seat=Math.min(arenaFloor88(b,x,z),arenaFloor88(b,footprint.min.x,z),arenaFloor88(b,footprint.max.x,z),arenaFloor88(b,x,footprint.min.z),arenaFloor88(b,x,footprint.max.z));
+ const at=V3(x,seat-sy*.22,z),box=footprint.translate(V3(0,at.y,0));
  if(!supportedRear113(b,x,z,Math.max(sx,sz))||stanceIntersects105(box,fighterStances105(b))||stoneOccludes105(box,b,fighterSightlines105(b)))return;
  arenaInstance88(b,'stage134-'+key+'-'+seed,g,m,at,size,rotation);b.counts.rocks++;
 };
 const dressBefore134=dressPiece125;
-const stoneCrops134=new Map(),cropRects134={royalRoad:[1364,402,43,119],ruins:[1069,399,29,110]},prepareCropsBefore134=preparePainting90;
-preparePainting90=async function(stage,phase){
- const result=await prepareCropsBefore134(stage,phase);
- if(cropRects134[stage]&&!stoneCrops134.has(stage)){
-  // Albedo comes from the daylight reference. Cropping the night painting
-  // would bake darkness into the texture and then shade it a second time.
-  const image=textures[paintingKey90(stage,'day')]?.image??await loadImage116('elyndor/assets/source/battle-hd-v99/'+stage+'-day.webp','stone-crop134-'+stage),rect=cropRects134[stage],c=document.createElement('canvas');c.width=rect[2];c.height=rect[3];
-  const ctx=c.getContext('2d',{willReadFrequently:true});ctx.drawImage(image,rect[0]/1672*image.width,rect[1]/941*image.height,rect[2]/1672*image.width,rect[3]/941*image.height,0,0,c.width,c.height);
-  const pixels=ctx.getImageData(0,0,c.width,c.height),mean=[0,0,0],n=pixels.data.length/4;
-  for(let i=0;i<pixels.data.length;i+=4)for(let k=0;k<3;k++)mean[k]+=pixels.data[i+k]/n;
-  for(let i=0;i<pixels.data.length;i+=4)for(let k=0;k<3;k++)pixels.data[i+k]=clamp([186,182,169][k]+(pixels.data[i+k]-mean[k])*.70,45,238);
-  ctx.putImageData(pixels,0,0);stoneCrops134.set(stage,c);
- }return result;
-};
-function paintedStone134(b,id,rect){
- const key='panorama-stone134-'+id;if(b.materials.has(key))return b.materials.get(key);
- const c=stoneCrops134.get(encounter53.selected);if(!c)throw Error('Daylight stone crop was not prepared for '+encounter53.selected);
- const map=new THREE.CanvasTexture(c);map.colorSpace=THREE.SRGBColorSpace;map.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());b.ownedTextures.push(map);
- const m=material59(new THREE.MeshStandardMaterial({map,bumpMap:map,bumpScale:.018,roughness:.87,metalness:0,color:'#ffffff'}));lightPaintedSurface82(m);bindArenaWeather89(m,b);m.userData.crop134={id,rect:cropRects134[encounter53.selected],source:encounter53.selected,sourcePhase:'day',albedoBalanced:true,opaque:true};b.materials.set(key,m);return m;
-}
 dressPiece125=function(b,kind,p,s){
  const {x,z}=p;
- if(kind==='avenuePier'){
-  const y=arenaFloor88(b,x,z),stone=detailedStone105('rockLimestone',b),face=paintedStone134(b,'carved avenue pier',[1364,402,43,119]);
-  for(const [at,w,h]of[[.08,.85,.16],[s*.49,.60,s-.22],[s-.03,.85,.16]])referenceBox101(b,'panorama-matched pier plinth shaft and cornice',[x,y+at,z],[w,h,.65],stone);
-  // The ornament is a cropped opaque surface on an actual solid pier. It has
-  // a lit bevelled frame and four real side faces, not a camera-facing cutout.
-  for(const side of[-1,1])referencePiece101(b,'original carved stone panel in solid pier',new THREE.BoxGeometry(.43,s*.69,.018),face,V3(x,y+s*.48,z+side*.332));
-  const points=[[.12,0],[.18,.04],[.17,.11],[.12,.15],[.22,.29],[.25,.34],[.21,.39]].map(v=>new THREE.Vector2(...v));
-  referencePiece101(b,'carved stone urn finial',new THREE.LatheGeometry(points,20),stone,V3(x,y+s+.06,z));return;
- }
- if(kind==='column'||kind==='brokenColumn'){
-  const y=arenaFloor88(b,x,z),h=s,stone=detailedStone105('rockLimestone',b),shaft=paintedStone134(b,'fluted ruin column',[1069,399,29,110]);
-  referenceBox101(b,'ruin column stepped square plinth',[x,y+.13,z],[1.1,.26,1.1],stone);
-  referencePiece101(b,'carved ruin column base',new THREE.CylinderGeometry(.43,.55,.19,24),stone,V3(x,y+.34,z));
-  const g=new THREE.CylinderGeometry(.36,.40,Math.max(.3,h-.66),32,8),p=g.attributes.position;
-  for(let i=0;i<p.count;i++){const a=Math.atan2(p.getZ(i),p.getX(i)),r=1-.045*(.5+.5*Math.cos(a*16));p.setX(i,p.getX(i)*r);p.setZ(i,p.getZ(i)*r);}g.computeVertexNormals();
-  referencePiece101(b,'fluted solid shaft with original painted stone texture',g,shaft,V3(x,y+.43+(h-.66)/2,z));
-  if(kind==='column'){referencePiece101(b,'ruin capital moulding',new THREE.CylinderGeometry(.57,.39,.22,24),stone,V3(x,y+h-.12,z));referenceBox101(b,'ruin capital square abacus',[x,y+h+.02,z],[1.18,.15,1.18],stone);}return;
- }
  if(kind==='stalagmites'){
   const m=detailedStone105('rockSlate',b);
   for(let i=0;i<4;i++){
@@ -57,23 +21,6 @@ dressPiece125=function(b,kind,p,s){
    for(let j=0;j<pos.count;j++){const t=pos.getY(j)/h;pos.setX(j,pos.getX(j)+Math.sin(t*3+i)*r*t*.18);pos.setZ(j,pos.getZ(j)+Math.cos(t*4+i)*r*t*.15);}g.computeVertexNormals();
    referencePiece101(b,'eroded cave flowstone with rounded crown',g,m,V3(xx,arenaFloor88(b,xx,zz)-.035,zz));
   }return;
- }
- if(kind==='masonry'||kind==='pavedSteps'){
-  // Actual weathered architectural blocks, rather than a pile of identical
-  // flattened natural stones. Keep the centre of the avenue unobstructed.
-  if(kind==='pavedSteps'&&Math.abs(x)<9)return;
-  const m=detailedStone105('rockLimestone',b),n=kind==='masonry'?5:2;
-  for(let i=0;i<n;i++){
-   const xx=x+(i%3-1)*s*.54,zz=z+Math.floor(i/3)*s*.52,h=s*(.17+(i%2)*.07),w=s*(.42+(i%3)*.09),d=s*.35,shape=new THREE.Shape();
-   shape.moveTo(-w/2+.025,-d/2);shape.lineTo(w/2-.025,-d/2);shape.lineTo(w/2,-d/2+.025);shape.lineTo(w/2,d/2-.025);shape.lineTo(w/2-.025,d/2);shape.lineTo(-w/2,d/2);shape.closePath();
-   const g=new THREE.ExtrudeGeometry(shape,{depth:h,bevelEnabled:true,bevelSize:Math.min(.025,h*.15),bevelThickness:.015,bevelSegments:2,steps:1});g.rotateX(-Math.PI/2);
-   referencePiece101(b,'chipped masonry with bevelled edges',g,m,V3(xx,arenaFloor88(b,xx,zz)+.02,zz),V3(1,1,1),new THREE.Quaternion().setFromAxisAngle(axis24,(b.rng()-.5)*.55));
-  }return;
- }
- if(kind==='oldStump'){
-  const y=arenaFloor88(b,x,z),bark=referenceMat101(b,'barkOak','#8b8a77'),end=referenceMat101(b,'woodWeathered101','#b3a081');
-  referencePiece101(b,'tapered weathered stump',new THREE.CylinderGeometry(.29*s,.45*s,.49*s,16,4,true),bark,V3(x,y+.22*s,z));
-  referencePiece101(b,'recessed exposed stump end grain',new THREE.CylinderGeometry(.277*s,.28*s,.025*s,24),end,V3(x,y+.455*s,z));rootNetwork101(b,x,z,s*.56);return;
  }
  return dressBefore134(b,kind,p,s);
 };
@@ -104,3 +51,233 @@ const polishScenesBefore134=buildStageScenery59;
 buildStageScenery59=function(...args){const r=polishScenesBefore134(...args),b=arena88.current;if(b?.foreground133)cleanForeground134(b);return r;};
 const reflectBefore134=reflectArena89;
 reflectArena89=function(b,...args){if(b.reflect89?.suppressed134)return;return reflectBefore134(b,...args);};
+
+// One authored set replaces the three accumulated dressing/planting recipes.
+// Coordinates are within the native battle field, so the same composition
+// also fits a portrait lens. Each habitat has its own unequal natural groups.
+// Architecture and manufactured dressing stay out of the physical battle set.
+const STAGING161={
+ waterfall:[['wetBank',.07,.59,.74],['ferns',.17,.79,1.12],['mossStones',.92,.81,.53],['ferns',.85,1.02,.72]],
+ woodland:[['ferns',.065,.63,1.30],['lowMoss',.10,.88,.61],['ferns',.91,.94,1.20],['ferns',.83,.68,.80]],
+ orchard:[['flowers',.12,.92,1.10],['softTufts',.86,.71,1.15],['flowers',.90,1.02,.80]],
+ ruins:[],
+ cavern:[['stalagmites',.047,.61,.76],['slate',.93,.72,.76],['slate',.11,.98,.49]],
+ mountain:[['granite',.055,.63,.88],['talus',.91,.79,.86],['alpineTufts',.13,.97,.95],['talus',.17,.74,.55]],
+ snow:[],
+ coast:[['chalk',.95,.60,.77],['shorePebbles',.10,.81,.70],['saltTufts',.90,.94,1.20],['saltTufts',.19,.70,.85]],
+ royalRoad:[],
+ moonlit:[['lowMoss',.06,.61,.58],['ferns',.12,.89,.95],['ferns',.92,.79,1.04]],
+ grassMeadow:[['lowMoss',.035,.72,.70],['daisies',.14,.95,1.40],['softTufts',.96,.88,1.40],['daisies',.83,1.04,1.10]],
+ grassRiver:[['ferns',.075,.64,1.05],['washedSlab',.93,.71,.62],['riverGravel',.13,.95,.66],['softTufts',.90,.97,1.00]],
+ grassFlowers:[['flowerStone',.03,.72,.75],['flowers',.13,.95,1.65],['flowers',.97,.82,1.45],['ferns',.88,1.03,.85]],
+ grassDowns:[['chalkSeam',.025,.72,1.10],['heather',.14,.98,1.35],['heather',.97,.85,1.45],['chalkSeam',.90,1.05,.60]],
+ grassWindmill:[['softTufts',.10,.72,1.32],['softTufts',.87,.88,1.04]],
+ grassAutumn:[['leafLitter',.14,.74,1.60],['rustStone',.94,.78,.52],['leafLitter',.88,1.03,1.45]],
+ grassStones:[['heather',.14,.95,1.30],['heather',.86,1.04,1.10]],
+ grassHills:[['slateRidge',.025,.66,.80],['hillScree',.11,.94,1.10],['slateRidge',.98,.78,1.10],['alpineTufts',.88,1.04,1.15]],
+ grassBirch:[['bluebells',.12,.74,1.36],['rootMoss',.94,.69,.54],['bluebells',.86,.97,1.30]],
+ grassTwilight:[['eveningSlab',.058,.69,.68],['violetTufts',.89,.94,1.08],['softTufts',.18,.89,.79]]
+};
+// Coverage, size of the flowing patch masses, blade height, worn lane width.
+const SWARD161={waterfall:[1,4.3,.60,1.1],woodland:[.75,5.7,.48,1.4],orchard:[.70,4.7,.46,2.1],ruins:[0,1,0,0],cavern:[0,1,0,0],mountain:[.38,3.1,.32,1.9],snow:[0,1,0,0],coast:[.40,4.1,.42,2.2],royalRoad:[0,1,0,0],moonlit:[.72,5.6,.50,1.4],grassMeadow:[1.10,6.5,.52,1.1],grassRiver:[.95,5.2,.57,1.3],grassFlowers:[1.05,5.4,.48,1.1],grassDowns:[.70,6.7,.37,1.9],grassWindmill:[.67,5.1,.43,2.2],grassAutumn:[.70,5.3,.43,1.6],grassStones:[.80,4.8,.44,1.5],grassHills:[.58,4.6,.34,1.9],grassBirch:[.95,5.8,.49,1.2],grassTwilight:[.82,5.5,.52,1.4]};
+const stagedDressBefore161=dressPiece125,stagedMarginsBefore161=growMargins126,stagedGroupsBefore161=scenicGroups126,stagedForegroundBefore161=polishForeground133;
+dressPiece125=function(b,...args){if(!STAGING161[encounter53.selected])return stagedDressBefore161(b,...args);};
+growMargins126=function(b,...args){return STAGING161[encounter53.selected]?{grass:0,plants:0,banks:0,deferred161:true}:stagedMarginsBefore161(b,...args);};
+scenicGroups126=function(b,...args){return STAGING161[encounter53.selected]?0:stagedGroupsBefore161(b,...args);};
+polishForeground133=function(b,...args){if(!STAGING161[encounter53.selected])return stagedForegroundBefore161(b,...args);b.foreground133={stage:encounter53.selected,grass:0,plants:0,pods:[],clearStances:true,deferred161:true};};
+
+// Read the same repeating, warped albedo used by the physical floor. The
+// mask follows its turf pockets instead of an unrelated mathematical trail.
+const turfStudies161=new WeakMap(),linear161=Float32Array.from({length:256},(_,i)=>{const c=i/255;return c<=.04045?c/12.92:Math.pow((c+.055)/1.055,2.4)});
+function turfSampler161(b){
+ const ground=b.group.children.find(o=>o.name==='Actual level ground and carved water banks'),image=ground.material.map.image;let study=turfStudies161.get(image);
+ if(!study){const c=document.createElement('canvas');c.width=c.height=192;const ctx=c.getContext('2d',{willReadFrequently:true});ctx.drawImage(image,0,0,192,192);study={pixels:ctx.getImageData(0,0,192,192).data,size:192};turfStudies161.set(image,study);}
+ const {pixels,size}=study,fract=v=>v-Math.floor(v),channel=(x,y,k)=>linear161[pixels[((y+size)%size*size+(x+size)%size)*4+k]],sample=(u,v,k)=>{const x=fract(u)*size-.5,y=(1-fract(v))*size-.5,ix=Math.floor(x),iy=Math.floor(y),fx=x-ix,fy=y-iy;return mix(mix(channel(ix,iy,k),channel(ix+1,iy,k),fx),mix(channel(ix,iy+1,k),channel(ix+1,iy+1,k),fx),fy);};
+ return(x,z)=>{const u=(x+b.group.position.x)*SURFACES132[encounter53.selected],v=(z+b.group.position.z)*SURFACES132[encounter53.selected],wx=groundNoise104(u*.26,v*.26)-.5,wy=groundNoise104(u*.26+19.7,v*.26+19.7)-.5,w=.25+.5*groundNoise104(u*.17+4.9,v*.17+4.9),rgb=[];
+  for(let k=0;k<3;k++)rgb[k]=mix(sample(u+wx*.24,v+wy*.24,k),sample(.8*u-.6*v+13.17-wx*.24,.6*u+.8*v+7.83-wy*.24,k),w);
+  const[r,g,bl]=rgb,turf=smooth(1.01,1.20,g/Math.max(.001,r))*smooth(1.08,1.38,g/Math.max(.001,bl)),warm=smooth(1.15,1.65,r/Math.max(.001,bl))*smooth(1.05,1.40,g/Math.max(.001,bl));
+  // Woodland leaf mould and dry alpine soil support short growth too. Neutral
+  // mineral colours still fail this test, and the worn lane remains sparse.
+  const olive=(1-smooth(1.03,1.26,r/Math.max(.001,g)))*smooth(1.18,1.65,g/Math.max(.001,bl));
+  return b.spec.autumn?warm:Math.max(turf,encounter53.selected==='coast'?olive*.86:0,['woodland','mountain','orchard'].includes(encounter53.selected)?warm*(b.spec.dense?.67:.58):0);
+ };
+}
+function stagedFootprint161(kind,size){
+ const scatter=/wetBank|mossStones|talus|hillScree|riverGravel|shorePebbles/.test(kind);
+ return{rx:Math.max(.45,size*(scatter?1.65:1.25)),rz:Math.max(.40,size*(scatter?1.25:.95)),height:Math.max(.5,size*1.1)};
+}
+function stageObjects161(b,stats){
+ const occupied=[],stances=fighterStances105(b),lines=fighterSightlines105(b);b.queries126={stances,lines};b.authoring101=true;b.nativeTrees89={trunks:[],leaves:[]};
+ for(const[kind,u,v,size]of STAGING161[encounter53.selected]){
+  const base=bankPoint93(b,u,v);if(!base)continue;const shape=stagedFootprint161(kind,size);let accepted;
+  for(const[dx,dz]of[[0,0],[u<.5?-.9:.9,.8],[u<.5?-1.8:1.8,1.6],[0,2.5]]){
+   const x=base.x+dx,z=Math.max(base.z+dz,apronEdge113(b,base.x+dx)+shape.rz+.85),y=arenaFloor88(b,x,z),box=new THREE.Box3(V3(x-shape.rx,y-.08,z-shape.rz),V3(x+shape.rx,y+shape.height,z+shape.rz));
+   if(!supportedRear113(b,x,z,Math.max(shape.rx,shape.rz))||arenaWet89(b,x,z)>.05||stanceIntersects105(box,stances)||stoneOccludes105(box,b,lines)||occupied.some(q=>Math.abs(x-q.x)<shape.rx+q.rx+.35&&Math.abs(z-q.z)<shape.rz+q.rz+.35))continue;
+   // Low scenery rests on one bank rather than straddling a hollow.
+   const heights=[[-shape.rx,0],[shape.rx,0],[0,-shape.rz],[0,shape.rz]].map(([xx,zz])=>arenaFloor88(b,x+xx,z+zz));if(Math.max(...heights)-Math.min(...heights)>.45)continue;
+   accepted={kind,x,z,size,...shape};break;
+  }
+  if(!accepted){stats.skippedProps++;continue;}stagedDressBefore161(b,kind,V3(accepted.x,arenaFloor88(b,accepted.x,accepted.z),accepted.z),size);occupied.push(accepted);
+ }
+ b.authoring101=false;flushReference101(b);flushPoiTrees89(b);flushBefore89(b);b.batches.clear();stats.placements=occupied;b.identity125.placements=occupied;b.foreground133.pods=occupied;
+ return occupied;
+}
+
+function battleGrassGeometry(mobile){
+ const blades=mobile?5:10,segments=mobile?2:3,positions=[],uvs=[],indices=[],random=seeded(162217);
+ for(let blade=0;blade<blades;blade++){
+  const angle=blade*2.399963+random()*.55;
+  const direction=V3(Math.cos(angle),0,Math.sin(angle));
+  const across=V3(-direction.z,0,direction.x);
+  const root=direction.clone().multiplyScalar(.08+Math.sqrt(random())*.23);
+  const height=(blade%3===0?.25:.44)+random()*.27,lean=.14+random()*.24,width=.021+random()*.022;
+  const start=positions.length/3;
+  for(let segment=0;segment<=segments;segment++){
+   const t=segment/segments,mid=root.clone().addScaledVector(direction,lean*t*t);
+   mid.y=height*(t-.14*t*t);
+   for(const side of[-1,0,1]){
+    const vertex=mid.clone().addScaledVector(across,side*width*Math.pow(1-t,.8));
+    if(side===0)vertex.addScaledVector(direction,Math.sin(t*Math.PI)*.012);
+    positions.push(vertex.x,vertex.y,vertex.z);uvs.push((side+1)*.5,t);
+   }
+  }
+  for(let j=0;j<segments;j++)for(let k=0;k<2;k++){
+   const i=start+j*3+k;indices.push(i,i+1,i+3,i+1,i+4,i+3);
+  }
+ }
+ const geometry=new THREE.BufferGeometry();
+ geometry.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));
+ geometry.setAttribute('uv',new THREE.Float32BufferAttribute(uvs,2));
+ geometry.setIndex(indices);geometry.computeVertexNormals();
+ return geometry;
+}
+function bindBattleGrass(b){
+ const material=arenaCoverMaterial102(b,'grassBlades');
+ const compile=material.onBeforeCompile,key=material.customProgramCacheKey.bind(material);
+ material.onBeforeCompile=function(shader,...args){
+  compile.call(this,shader,...args);
+  shader.vertexShader=shader.vertexShader.replace('position.y+.465','position.y');
+ };
+ material.customProgramCacheKey=()=>key()+'-seated-battle-grass';
+ return material;
+}
+// Sample painted dry ground in each scene's day, golden-hour, or night image.
+// These rows affect terrain pigment only. The backdrop uses its authored framing.
+const GROUND_SWATCH_ROWS={
+ waterfall:.366,woodland:.365,orchard:.365,ruins:.369,cavern:.354,
+ mountain:.358,snow:.400,coast:.361,royalRoad:.384,moonlit:.364,
+ grassMeadow:.405,grassRiver:.389,grassFlowers:.407,grassDowns:.387,grassWindmill:.386,
+ grassAutumn:.382,grassStones:.391,grassHills:.378,grassBirch:.390,grassTwilight:.382
+};
+function gradeBattleGroundEdge(b,stage){
+ const swatchRow=GROUND_SWATCH_ROWS[stage];
+ if(swatchRow===undefined)return;
+ const floor=b.group.children.find(o=>o.name==='Actual level ground and carved water banks');
+ const material=floor?.material;
+ if(!material?.userData.surface132)return;
+ // Average contact colours across the plate. Transfer only the broad light
+ // and hue at the join. Stonework and water never project onto the floor.
+ const canvas=document.createElement('canvas');canvas.width=72;canvas.height=8;
+ const ctx=canvas.getContext('2d',{willReadFrequently:true}),image=b.plate90.image;
+ // The lower band is painted ground on each plate, even if the camera
+ // sees a lake, cliff or masonry on the far side of the join.
+ const row=(1-swatchRow)*image.height;
+ ctx.drawImage(image,0,row-image.height*.022,image.width,image.height*.044,0,0,72,8);
+ const pixels=ctx.getImageData(0,0,72,8).data;
+ // Convert the plate's linear display colour to the working lighting space.
+ const sceneLight=value=>{
+  const color=clamp(value/64,.0001,.97),a=2.51-2.43*color,b=.03-.59*color;
+  return (-b+Math.sqrt(b*b+.56*a*color))/(2*a);
+ };
+ const swatches=Array.from({length:9},(_,strip)=>{
+  const color=V3();
+  for(let y=0;y<8;y++)for(let x=strip*8;x<(strip+1)*8;x++){
+   const i=(y*72+x)*4;color.x+=linear161[pixels[i]];color.y+=linear161[pixels[i+1]];color.z+=linear161[pixels[i+2]];
+  }
+  return V3(sceneLight(color.x),sceneLight(color.y),sceneLight(color.z));
+ });
+ const positions=floor.geometry.attributes.position,contacts=new Float32Array(positions.count*4);
+ const worldPoint=V3();
+ for(let i=0;i<positions.count;i++){
+  const x=positions.getX(i),z=positions.getZ(i);
+  const depth=z-apronEdge113(b,x);
+  if(depth>=4.6||depth<-.12)continue;
+  worldPoint.fromBufferAttribute(positions,i).add(b.group.position).project(b.reference90);
+  const u=clamp(worldPoint.x*.5*b.crop90.x,-.5,.5);
+  const fit=b.plateFit97.value;
+  const source=.5+u/(fit+(1-fit)*4*u*u);
+  const strip=clamp(source*9-.5,0,7.999),low=Math.floor(strip),fraction=strip-low;
+  const offset=i*4,a=swatches[low],c=swatches[low+1];
+  const weight=(1-smooth(.05,4.6,depth))*.78;
+  contacts[offset]=mix(a.x,c.x,fraction)*weight;
+  contacts[offset+1]=mix(a.y,c.y,fraction)*weight;
+  contacts[offset+2]=mix(a.z,c.z,fraction)*weight;
+  contacts[offset+3]=weight;
+ }
+ floor.geometry.setAttribute('groundContact',new THREE.BufferAttribute(contacts,4));
+ const compile=material.onBeforeCompile,key=material.customProgramCacheKey.bind(material);
+ material.onBeforeCompile=function(shader,...args){
+  compile.call(this,shader,...args);
+  shader.vertexShader='attribute vec4 groundContact; varying vec4 contactColor;\n'+shader.vertexShader;
+  shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\ncontactColor=groundContact;');
+  shader.fragmentShader='varying vec4 contactColor;\n'+shader.fragmentShader;
+  shader.fragmentShader=shader.fragmentShader.replace('#include <opaque_fragment>',`
+   float textureDetail=clamp(.94+(relief132-.14)*.68,.84,1.13);
+   outgoingLight=outgoingLight*(1.-contactColor.a)+contactColor.rgb*textureDetail;
+   #include <opaque_fragment>`);
+ };
+ material.customProgramCacheKey=()=>key()+'-painted-contact-pigment';
+ material.needsUpdate=true;
+ material.userData.groundContact={swatchRow,swatches:swatches.map(c=>c.toArray())};
+}
+
+function cleanBattleSet161(b){
+ if(b.cleanup161||!STAGING161[encounter53.selected])return;const started=performance.now(),stage=encounter53.selected,stats={stage,placements:[],skippedProps:0,grass:0,removedGrass:0,removedPlants:0,mask:'physical floor albedo and terrain',addedDownloads:0},oldGrass=b.group.children.filter(o=>o.isInstancedMesh&&o.material?.userData.realVegetation103==='grassBlades'),budget=oldGrass.reduce((n,o)=>n+o.count,0);
+ for(const o of oldGrass){stats.removedGrass+=o.count;o.removeFromParent();o.dispose();}
+ stageObjects161(b,stats);
+ const solids=[],matrix=new THREE.Matrix4(),stones=b.group.children.filter(o=>o.isInstancedMesh&&o.material?.userData.weathered104);
+ for(const o of stones){o.geometry.computeBoundingBox();for(let i=0;i<o.count;i++){o.getMatrixAt(i,matrix);solids.push(o.geometry.boundingBox.clone().applyMatrix4(matrix).expandByScalar(.12));}}
+ const turf=turfSampler161(b),habitat=HABITATS126[stage],spec=SWARD161[stage],rng=seeded(161037+Object.keys(STAGING161).indexOf(stage)*947),stances=fighterStances105(b),q=fightingHollow93(b),blocked=(x,z,r=.18)=>stances.some(s=>x>s.minX-r&&x<s.maxX+r&&z>s.minZ-r&&z<s.maxZ+r)||solids.some(s=>x>s.min.x-r&&x<s.max.x+r&&z>s.min.z-r&&z<s.max.z+r)||stats.placements.some(s=>!['ferns','flowers','daisies','bluebells','softTufts','saltTufts','alpineTufts','violetTufts','heather','leafLitter','seedheads','reeds','wheat'].includes(s.kind)&&Math.abs(x-s.x)<s.rx+r&&Math.abs(z-s.z)<s.rz+r);
+ if(habitat.cover&&budget){
+  const g=arenaGeometry88(b,'staged-sward161',()=>battleGrassGeometry(b.mobile)),m=bindBattleGrass(b),count=Math.min(budget,b.mobile?9500:19000),attempts=Math.min(72000,Math.max(24000,count*12)),seed=Object.keys(STAGING161).indexOf(stage),normal=V3(),up=V3(0,1,0),tilt=new THREE.Quaternion(),yaw=new THREE.Quaternion();
+  // Tuft accents authored beside a prop join the same retained batch and
+  // budget. Seat their roots consistently instead of layering a second field.
+  const accents=b.group.children.filter(o=>o.isInstancedMesh&&o.material?.userData.realVegetation103==='grassBlades'),position=V3(),scale=V3(),rotation=new THREE.Quaternion();
+  for(const o of accents){for(let i=0;i<o.count&&stats.grass<count;i++){o.getMatrixAt(i,matrix);matrix.decompose(position,rotation,scale);if(blocked(position.x,position.z)||arenaWet89(b,position.x,position.z)>.04||turf(position.x,position.z)<.40||!supportedRear113(b,position.x,position.z,.20))continue;position.y=arenaFloor88(b,position.x,position.z)-.025;arenaGrassInstanceBefore102(b,'staged-sward161',g,m,position,scale,rotation);stats.grass++;}o.removeFromParent();o.dispose();}
+  stats.accentGrass=stats.grass;
+  for(let i=0;i<attempts&&stats.grass<count;i++){
+   const x=-27+rng()*54,edge=apronEdge113(b,x),z=edge+.7+rng()*(q.front+15-edge-.7);if(blocked(x,z)||arenaWet89(b,x,z)>.04||!supportedRear113(b,x,z,.20))continue;
+   const soil=turf(x,z);if(soil<.40)continue;
+   const patch=groundNoise104(x/spec[1]+seed*7.13,z/spec[1]-seed*2.7)*.72+groundNoise104(x*.67+seed,z*.67)*.28,lane=1-smooth(spec[3]*.5,spec[3]*1.6,Math.abs(x+Math.sin(z*.13+seed)*1.7)),chance=smooth(.26,.69,patch)*spec[0]*soil*(1-lane*.72);
+   if(rng()>chance)continue;const y=arenaFloor88(b,x,z),dx=(arenaFloor88(b,x+.3,z)-arenaFloor88(b,x-.3,z))/.6,dz=(arenaFloor88(b,x,z+.3)-arenaFloor88(b,x,z-.3))/.6;if(Math.hypot(dx,dz)>.48)continue;
+   const s=.36+rng()*.39,h=spec[2]*(.50+rng()*.64)*mix(.59,1,smooth(.34,.70,patch)),front=1-smooth(q.front,q.front+12,z);normal.set(-dx,1,-dz).normalize();tilt.setFromUnitVectors(up,normal);yaw.setFromAxisAngle(up,rng()*TAU);tilt.multiply(yaw);
+   arenaGrassInstanceBefore102(b,'staged-sward161',g,m,V3(x,y-.025,z),V3(s,h*mix(.78,1,front),s),tilt);stats.grass++;
+  }
+ }
+ flushBefore89(b);b.batches.clear();
+ gradeBattleGroundEdge(b,stage);
+ const grass=b.group.children.find(o=>o.name==='Physical staged-sward161');
+ if(grass){
+  // Pigment changes through the patches, without bright clumps or blade
+  // shadows drawing a hard outline around the grass.
+  grass.castShadow=false;
+  const tint=new THREE.Color();
+  for(let i=0;i<grass.count;i++){
+   grass.getMatrixAt(i,matrix);const x=matrix.elements[12],z=matrix.elements[14];
+   const tone=groundNoise104(x*.57+13,z*.48-9);
+   tint.setRGB(.87+tone*.20,.90+tone*.13,.83+tone*.23);
+   grass.setColorAt(i,tint);
+  }
+  grass.instanceColor.needsUpdate=true;
+ }
+ // Authored ferns/flowers keep their clustered arrangements but cannot emerge
+ // from a mineral, a solid prop, paving, a fighter's stance or open water.
+ for(const o of b.group.children){if(!o.isInstancedMesh||!o.material?.userData.realVegetation103||o.material.userData.realVegetation103==='grassBlades')continue;let write=0;const colour=new THREE.Color();
+  for(let i=0;i<o.count;i++){o.getMatrixAt(i,matrix);const e=matrix.elements;if(!habitat.cover||blocked(e[12],e[14],.12)||arenaWet89(b,e[12],e[14])>.04||turf(e[12],e[14])<.32){stats.removedPlants++;continue;}o.setMatrixAt(write,matrix);if(o.instanceColor){o.getColorAt(i,colour);o.setColorAt(write,colour);}write++;}
+  o.count=write;o.instanceMatrix.needsUpdate=true;if(o.instanceColor)o.instanceColor.needsUpdate=true;o.computeBoundingBox();o.computeBoundingSphere();
+ }
+ const palette=SURFACE_PALETTES132[stage],seen=new Set();b.group.traverse(o=>{for(const m of Array.isArray(o.material)?o.material:[o.material]){if(!m||seen.has(m))continue;seen.add(m);materialFinish103(m);bindStageAir97(m,b);if(m.userData.backgroundChroma132)continue;const foliage=m.userData.realVegetation103&&m.userData.realVegetation103!=='flowers'||m.userData.botany104&&!m.userData.trunk104&&!b.spec.autumn;if(foliage&&palette.grass)matchProp132(m,palette.grass,.45);else if(m.userData.weathered104&&palette.stone)matchProp132(m,palette.stone,.50);}});
+ b.secondaryForests106=b.group.children.filter(o=>o.userData.botany104);b.stoneClearance105=null;clearFighterStones105(b);b.group.updateMatrixWorld(true);stats.grassBudget=budget;stats.milliseconds=performance.now()-started;b.cleanup161=stats;Object.assign(b.integration126,{grass:stats.grass,groups:stats.placements.length,consolidated161:true});if(stageDepth59.summary)stageDepth59.summary.cleanup161=stats;
+}
+const stagedSetBefore161=buildStageScenery59;
+buildStageScenery59=function(...args){const result=stagedSetBefore161(...args),b=arena88.current;if(b?.foreground134)cleanBattleSet161(b);return result;};
