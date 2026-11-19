@@ -4,7 +4,7 @@
 const locations137={entries:new Map(),metadata:new WeakMap(),owner:null,pending:null,hits:0,misses:0,evictions:0,bytes:0};
 const heldResources137=new WeakMap();
 holdNearbyResources69=function(q){
- const resources=new Set(),add=o=>{if(o===visibility63.mesh)return;if(o.geometry)resources.add(o.geometry);for(const m of o.material?(Array.isArray(o.material)?o.material:[o.material]):[]){resources.add(m);for(const t of Object.values(m))if(t?.isTexture)resources.add(t);for(const u of Object.values(m.uniforms??{}))if(u.value?.isTexture)resources.add(u.value);}if(o.customDepthMaterial)resources.add(o.customDepthMaterial);};
+ const resources=new Set(),add=o=>{if(o.geometry)resources.add(o.geometry);for(const m of o.material?(Array.isArray(o.material)?o.material:[o.material]):[]){resources.add(m);for(const t of Object.values(m))if(t?.isTexture)resources.add(t);for(const u of Object.values(m.uniforms??{}))if(u.value?.isTexture)resources.add(u.value);}if(o.customDepthMaterial)resources.add(o.customDepthMaterial);};
  q.world.traverse(add);for(const m of q.world.userData.weatherCache36?.pool.values()??[])add(m);q.held69=[];
  for(const resource of resources){if(!resource.dispose)continue;let entry=heldResources137.get(resource);if(!entry){entry={base:resource.dispose,owners:new Set()};entry.wrapper=function(...args){if(!entry.owners.size)return entry.base.apply(this,args);};heldResources137.set(resource,entry);resource.dispose=entry.wrapper;}entry.owners.add(q);q.held69.push(resource);}
 };

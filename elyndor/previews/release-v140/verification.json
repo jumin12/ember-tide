@@ -1,0 +1,34 @@
+{
+  "version": "Alpha Version 1.40",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7653257,
+    "sha256": "31a7c84b0f544b6025804b9a192ae998adc70f518a5f097d8c44062b642cc07c",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "base": "b4b3834bd30fff269c20b134c87f79eff92773f9",
+  "platforms": {
+    "after": "Desktop Chrome 1440×900",
+    "after-phone": "Chrome portrait mobile emulation 390×844 DPR 2"
+  },
+  "playerCutout": {
+    "after": {
+      "tree": "Local cutout visible",
+      "inn": "Local cutout visible",
+      "clear": "No cutout visible"
+    },
+    "after-phone": {
+      "tree": "Local cutout visible",
+      "inn": "Local cutout visible",
+      "clear": "No cutout visible"
+    }
+  },
+  "timedComboDamage": [
+    20,
+    25,
+    31
+  ],
+  "runtimeErrors": 0,
+  "assetBundleUnchanged": true
+}

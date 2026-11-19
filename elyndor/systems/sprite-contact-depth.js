@@ -21,5 +21,3 @@ function prepareActorDepth68(a){
 }
 const actorContactBefore68=createActor;
 createActor=function(...args){const a=actorContactBefore68(...args);prepareActorDepth68(a);return a;};
-const silhouetteBefore68=syncSilhouette63;
-syncSilhouette63=function(...args){const r=silhouetteBefore68(...args);if(visibility63.mesh&&!visibility63.mesh.userData.physicalDepth68){const o=visibility63.mesh;o.userData.physicalDepth68=true;physicalSpriteDepth68(o.material);const before=o.onBeforeRender;o.onBeforeRender=function(r,s,c,...args){before?.call(this,r,s,c,...args);actorDepth68.enabled.value=c===camera&&!battle?1:0;actorDepth68.up.value=Math.abs(c.matrixWorld.elements[5]);};}return r;};

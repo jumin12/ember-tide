@@ -1,25 +1,33 @@
 {
-  "release": "elyndor-alpha-1.39-refined-battle-scenery-2026-11-17",
-  "version": "Alpha Version 1.39",
+  "release": "elyndor-alpha-1.40-dithered-player-cutout-2026-11-19",
+  "version": "Alpha Version 1.40",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 7653339,
-    "sha256": "67ef8c485c1d434ef1655f5b3a6515e0e0eee5ae1676be54a9a5c1d49171e9a7",
+    "bytes": 7653257,
+    "sha256": "31a7c84b0f544b6025804b9a192ae998adc70f518a5f097d8c44062b642cc07c",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "72acf056dcae9b6a15d4ac8aa60e7a5ddcdb1379"
+    "previousRelease": "b4b3834bd30fff269c20b134c87f79eff92773f9"
   },
   "changes": [
-    "Matched the 3D terrain of all 20 battle stages to their own day, golden-hour, and night backgrounds while retaining the original framing and fighter positions.",
-    "Removed foreground fences, pillars, and mismatched props. Varied grass height and clustering to suit each terrain, kept paving and water clear, and set rocks into the ground away from both sides of the fight.",
-    "Repainted the Royal Road backdrop in daylight, golden hour, and at night. A continuous paved approach replaces the nearby steps and railings, with the bridge and city still visible in the distance."
+    "Trees, walls, and other scenery that block the player now open a small circular cutout with a dithered edge. The opening follows the player and reveals their actual sprite.",
+    "Removed the blocked-player silhouette. Foliage stays opaque outside the opening, and scenery retains its shadows and reflections."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.40",
+      "date": "November 19, 2026",
+      "title": "Dithered player cutout",
+      "items": [
+        "Trees, walls, and other scenery that block the player now open a small circular cutout with a dithered edge. The opening follows the player and reveals their actual sprite.",
+        "Removed the blocked-player silhouette. Foliage stays opaque outside the opening, and scenery retains its shadows and reflections."
+      ]
+    },
     {
       "version": "Alpha Version 1.39",
       "date": "November 17, 2026",
@@ -843,8 +851,8 @@
     "coloredAbilitySceneLighting": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v139/verification.json",
-    "sha256": "b218807532e6331dd9146e03c6a6332da6b938388f1cd9f847fdd1be852d761f",
+    "file": "elyndor/previews/release-v140/verification.json",
+    "sha256": "05e45fde784d533bd9bd67ae501e43e6de9920cdfa88e1419c6c14cbb917fd79",
     "finalRelease": "PASS",
     "desktopAndPhone": true
   },
@@ -885,9 +893,9 @@
     "spriteLighting": "Coherent party and NPC canopy reception outside combat; original art and sampling retained"
   },
   "previousPublishedRelease": {
-    "commit": "72acf056dcae9b6a15d4ac8aa60e7a5ddcdb1379",
-    "version": "Alpha Version 1.38",
-    "sha256": "2c75c44e0239012d5e3727c176655f61d440869803970f15734c18b82f861e36"
+    "commit": "b4b3834bd30fff269c20b134c87f79eff92773f9",
+    "version": "Alpha Version 1.39",
+    "sha256": "67ef8c485c1d434ef1655f5b3a6515e0e0eee5ae1676be54a9a5c1d49171e9a7"
   },
   "housing": {
     "maximumOwnedHomes": 1,

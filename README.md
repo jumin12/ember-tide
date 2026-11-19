@@ -2,6 +2,15 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.40 — Dithered player cutout
+
+November 19, 2026
+
+- Trees, walls, and other scenery that block the player now open a small circular cutout with a dithered edge. The opening follows the player and reveals their actual sprite.
+- Removed the blocked-player silhouette. Foliage stays opaque outside the opening, and scenery retains its shadows and reflections.
+
+[Release verification](elyndor/previews/release-v140/verification.json)
+
 ## Alpha Version 1.39 — Refined battle scenery
 
 November 17, 2026

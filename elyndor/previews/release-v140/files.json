@@ -1,0 +1,52 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 95589,
+    "sha256": "b0dc2570cd74fa95a91121efbb10f636204ecc64af7a99c4e545b473f43af453"
+  },
+  {
+    "file": "elyndor/previews/release-v140/verification.json",
+    "bytes": 858,
+    "sha256": "05e45fde784d533bd9bd67ae501e43e6de9920cdfa88e1419c6c14cbb917fd79"
+  },
+  {
+    "file": "elyndor/systems/interaction-visibility.js",
+    "bytes": 5466,
+    "sha256": "93c86317e56ac26bfd79bc015c81e4fccd0af24cb60380fcd8d7d05a55b30ade"
+  },
+  {
+    "file": "elyndor/systems/location-cache.js",
+    "bytes": 6986,
+    "sha256": "5f890624dbb1bd76bfa06178923c50ac26ad776aa4d4de2b9dc0b231766fa044"
+  },
+  {
+    "file": "elyndor/systems/motion-performance.js",
+    "bytes": 8954,
+    "sha256": "b867a8ae74f70ce315959558c30d33667579f3ea40cc9bb33d07bfda04d19bd5"
+  },
+  {
+    "file": "elyndor/systems/player-visibility.js",
+    "bytes": 5920,
+    "sha256": "9df2f91afd037cf99a4c474dd6abe37ce41801ba57e9f0ff0f037e8e0fa82b45"
+  },
+  {
+    "file": "elyndor/systems/sprite-contact-depth.js",
+    "bytes": 1767,
+    "sha256": "75798c93369adcf01a8c0a60369f6f3ed792e3ea5c6981563e9c5a97e5bf170c"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 91502,
+    "sha256": "e0d9ebdbccb158f3b1a12598c92ea9f9384b34dfd0ec1fb74acb52fc7c82782b"
+  },
+  {
+    "file": "index.html",
+    "bytes": 7653257,
+    "sha256": "31a7c84b0f544b6025804b9a192ae998adc70f518a5f097d8c44062b642cc07c"
+  },
+  {
+    "file": "release.json",
+    "bytes": 94677,
+    "sha256": "aeefe645bb025fda12521cff7a8edbe189e3374c2f5061676e438772c0e758e0"
+  }
+]
