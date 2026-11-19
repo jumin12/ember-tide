@@ -1,24 +1,41 @@
 {
-  "release": "elyndor-alpha-1.41-clearer-stone-and-building-textures-2026-11-19",
-  "version": "Alpha Version 1.41",
+  "release": "elyndor-alpha-1.42-housing-combat-and-hearths-2026-11-19",
+  "version": "Alpha Version 1.42",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 7653233,
-    "sha256": "7b652191589af62580f8e859d46c646ce1cfc3ed00cf60337671866f13105044",
+    "bytes": 7676250,
+    "sha256": "057d09b40e5ac4c97a1b8fe4fcc4659a2ce4f9214a249a5b8f6b230005b94fce",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "d17e2e54781d6c6a0ab5a143fc1181fe335bdd31"
+    "previousRelease": "e3371cdee18e8caee5b11fc7b04902c00982a117"
   },
   "changes": [
-    "Removed the shader speckling that obscured the stone and plaster around Brookstead’s fountain, plaza, buildings, and bridge.",
-    "Shared architecture now uses the textures’ matching surface relief, keeping stone joints and timber grain readable under the existing lighting."
+    "Centered the indoor exploration camera on the party when they enter a home. The camera eases between normal exploration and the elevated Build Mode view.",
+    "Furniture including rotated beds can sit flush against walls. Saves restore the precise placement shown in Build Mode, and entrances stay clear.",
+    "Polished the combat interface with larger turn portraits, clearer commands and enemy information, and a two-by-two desktop roster for four allies.",
+    "Gave hearths, forge fires, torches, and candles distinct animated flames, with warm light and embers where appropriate.",
+    "Rebuilt fireplace masonry with beveled stonework, recessed fireboxes, and fitted hearths in homes, inns, and the forge.",
+    "Fixed Leave in all six housing NPC menus. Keyboard and pointer confirmation return control to the party beside the NPC."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.42",
+      "date": "November 19, 2026",
+      "title": "Housing controls, combat interface, and hearths",
+      "items": [
+        "Centered the indoor exploration camera on the party when they enter a home. The camera eases between normal exploration and the elevated Build Mode view.",
+        "Furniture including rotated beds can sit flush against walls. Saves restore the precise placement shown in Build Mode, and entrances stay clear.",
+        "Polished the combat interface with larger turn portraits, clearer commands and enemy information, and a two-by-two desktop roster for four allies.",
+        "Gave hearths, forge fires, torches, and candles distinct animated flames, with warm light and embers where appropriate.",
+        "Rebuilt fireplace masonry with beveled stonework, recessed fireboxes, and fitted hearths in homes, inns, and the forge.",
+        "Fixed Leave in all six housing NPC menus. Keyboard and pointer confirmation return control to the party beside the NPC."
+      ]
+    },
     {
       "version": "Alpha Version 1.41",
       "date": "November 19, 2026",
@@ -860,8 +877,8 @@
     "coloredAbilitySceneLighting": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v141/verification.json",
-    "sha256": "da2b71304a61732f1acb4bc3b0dd0d542a407bb4a29d0784fd06a15170fe9a66",
+    "file": "elyndor/previews/release-v142/verification.json",
+    "sha256": "6b7a7b276097a7f97bc9dab64103ee3854b473e06e627c71c387c8c3139362d4",
     "finalRelease": "PASS",
     "desktopAndPhone": true
   },
@@ -902,9 +919,9 @@
     "spriteLighting": "Coherent party and NPC canopy reception outside combat; original art and sampling retained"
   },
   "previousPublishedRelease": {
-    "commit": "d17e2e54781d6c6a0ab5a143fc1181fe335bdd31",
-    "version": "Alpha Version 1.40",
-    "sha256": "31a7c84b0f544b6025804b9a192ae998adc70f518a5f097d8c44062b642cc07c"
+    "commit": "e3371cdee18e8caee5b11fc7b04902c00982a117",
+    "version": "Alpha Version 1.41",
+    "sha256": "7b652191589af62580f8e859d46c646ce1cfc3ed00cf60337671866f13105044"
   },
   "housing": {
     "maximumOwnedHomes": 1,

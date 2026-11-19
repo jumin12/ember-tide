@@ -1,0 +1,100 @@
+{
+  "version": "Alpha Version 1.42",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7676250,
+    "sha256": "057d09b40e5ac4c97a1b8fe4fcc4659a2ce4f9214a249a5b8f6b230005b94fce",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "base": "e3371cdee18e8caee5b11fc7b04902c00982a117",
+  "cards": [
+    "RE-132",
+    "RE-133",
+    "RE-134",
+    "RE-135",
+    "RE-136",
+    "RE-139"
+  ],
+  "checkedOn": [
+    "Desktop Chrome 1440×900",
+    "Chrome portrait phone emulation 390×844 DPR 2"
+  ],
+  "indoorLayouts": [
+    "doorway",
+    "suite",
+    "hall"
+  ],
+  "furnitureSaveRoundTrip": true,
+  "settlementLeave": [
+    {
+      "region": "harbor",
+      "keyboard": true,
+      "click": true,
+      "balancePreserved": true
+    },
+    {
+      "region": "brookstead",
+      "keyboard": true,
+      "click": true,
+      "balancePreserved": true
+    },
+    {
+      "region": "fern",
+      "keyboard": true,
+      "click": true,
+      "balancePreserved": true
+    },
+    {
+      "region": "alder",
+      "keyboard": true,
+      "click": true,
+      "balancePreserved": true
+    },
+    {
+      "region": "relief",
+      "keyboard": true,
+      "click": true,
+      "balancePreserved": true
+    },
+    {
+      "region": "highmere",
+      "keyboard": true,
+      "click": true,
+      "balancePreserved": true
+    }
+  ],
+  "housingPurchaseAndTravel": {
+    "purchased": true,
+    "returned": true,
+    "greetingClosed": true
+  },
+  "environmentalFireChecks": {
+    "brookstead": {
+      "kinds": {
+        "torch": 5
+      },
+      "flickeringLights": 6
+    },
+    "brookInn": {
+      "kinds": {
+        "candle": 3,
+        "inn": 1
+      },
+      "flickeringLights": 6
+    },
+    "brookForge": {
+      "kinds": {
+        "forge": 1
+      },
+      "flickeringLights": 6
+    }
+  },
+  "timedComboDamage": [
+    20,
+    25,
+    31
+  ],
+  "runtimeErrors": 0,
+  "assetBundleUnchanged": true
+}

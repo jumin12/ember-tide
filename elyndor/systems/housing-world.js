@@ -123,14 +123,13 @@ function homeWall139(parent,l,q){
  homePartitions144(parent,l,q);
 }
 function homeHearth139(l){
- const [x,z]=l.hearth144,g=new THREE.Group(),finish=(homeAppearanceDraft139??homeAppearance139()).hearth,stoneKey=finish==='slate'?'rockB':finish==='limestone'?'rockA':'rock',stoneColor=finish==='slate'?'#8e9b9d':finish==='limestone'?'#d5d1bd':'#b7b9a3';g.position.set(x,0,z);world.add(g);world.userData.homeHearthRoot139=g;
- box(0,.16,0,3.1,.32,2.5,'wall','#c8c1a9',g);for(const s of[-1,1])box(s*1.15,1.4,-.25,.50,2.6,1.55,stoneKey,stoneColor,g);
- box(0,2.75,-.25,2.9,.32,1.7,'wall','#d1c7ac',g);box(0,1.4,-.95,2.2,2.6,.15,'darkWood','#44433b',g);box(0,3.65,-.85,2.3,1.5,1.2,stoneKey,stoneColor,g);
- for(let i=0;i<4;i++){const o=mesh(new THREE.CylinderGeometry(.14,.17,1.4,9),homeSurface139('barkPine86','#6e5c41'),(i%2-.5)*.5,.42,-.02+(i-1.5)*.25,g);o.rotation.z=Math.PI/2;o.rotation.y=i*.3;}
- const fireMaterial=new THREE.ShaderMaterial({side:THREE.DoubleSide,transparent:true,depthWrite:false,uniforms:{time:{value:0}},vertexShader:'varying vec2 uv139;void main(){uv139=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:`varying vec2 uv139;uniform float time;void main(){vec2 p=uv139;float drift=.06*sin(p.y*15.-time*5.)+.035*sin(p.y*29.+time*3.7);float width=(1.-p.y)*(.41+.05*sin(time*6.+p.y*17.));float edge=abs(p.x-.5+drift);float shape=(1.-smoothstep(width*.60,width,edge))*(1.-smoothstep(.72,1.,p.y));float core=clamp((1.-p.y)*1.3-edge*2.,0.,1.);vec3 c=mix(vec3(.96,.15,.015),vec3(1.,.77,.22),core);gl_FragColor=vec4(c,shape*.92);}`});fireMaterial.userData.homeOwned139=true;
- const fire=mesh(new THREE.PlaneGeometry(1.2,1.35),fireMaterial,0,1.0,.30,g);fire.userData.dynamicFX=true;fire.castShadow=false;fire.receiveShadow=false;
- const cross=mesh(new THREE.PlaneGeometry(1.0,1.15),fireMaterial,0,.9,.13,g);cross.rotation.y=Math.PI/2;cross.userData.dynamicFX=true;cross.castShadow=false;cross.receiveShadow=false;
- const lamp=new THREE.PointLight('#ffba68',2.0,9,2);lamp.position.set(0,1.3,.5);g.add(lamp);world.userData.homeFire139={mesh:fire,light:lamp};
+ const [x,z]=l.hearth144,g=new THREE.Group(),finish=(homeAppearanceDraft139??homeAppearance139()).hearth,stoneKey=finish==='slate'?'rockB':finish==='limestone'?'rockA':'rock';g.position.set(x,0,z);world.add(g);world.userData.homeHearthRoot139=g;
+ const tint=finish==='slate'?'#858e97':finish==='limestone'?'#cabfa8':'#aaa6a0';
+ masonryHearth163(g,{key:stoneKey,tint,home:true,region:homeStyle139().id});
+ const fire=environmentFire163(g,'hearth',0,.33,.065);
+ const power=7.4,lamp=new THREE.PointLight('#ff9142',power,6.8,2);
+ lamp.position.set(0,.75,.65);g.add(lamp);
+ world.userData.homeFire139={mesh:fire,light:lamp,power};
 }
 function buildPrivateInterior139(spawn){
  const h=housing139(),q=homeStyle139(),l=homeLayout139();state.poi='homePlot139';SCENES.homeInterior139.name=q.name;SCENES.homeInterior139.sub=HOME_LAYOUTS139[h.home.layout].name+' · B to decorate';
@@ -192,19 +191,31 @@ const homeAvailableBefore139=interactionAvailable;
 interactionAvailable=function(o,...a){if(['housing139','townHomePortal139','homeReturn139','homeDoor139','homeExit139','homeDecor139'].includes(o?.type))return !battle&&state.mode==='explore';return homeAvailableBefore139(o,...a);};
 const homeCameraBefore139=updateCamera;
 updateCamera=function(dt,instant=false,...a){
- const r=homeCameraBefore139(dt,instant,...a);if(!isHomeScene139()||battle||!player)return r;
- const inside=state.scene==='homeInterior139',decor=homeDecor139.active,l=homeLayout139(),portrait=camera.aspect<.8;
- const target=inside?V3(0,1.7,0):decor?V3(0,1.5,1):V3(clamp(player.x*.30,-4,4),1.5,clamp((player.z-4)*.5,-8,10));camera.clearViewOffset();camera.zoom=1;camera.fov=portrait?42:36;camera.aspect=innerWidth/innerHeight;
+ if(!isHomeScene139()||battle||!player)return homeCameraBefore139(dt,instant,...a);
+ const inside=state.scene==='homeInterior139',decor=homeDecor139.active,l=homeLayout139(),aspect=innerWidth/innerHeight;
+ const walk=inside&&!decor,portrait=aspect<.8;
+ const target=walk?V3(player.x,player.mesh.position.y+player.size*.48,player.z):inside?V3(0,1.7,0):decor?V3(0,1.5,1):V3(clamp(player.x*.30,-4,4),1.5,clamp((player.z-4)*.5,-8,10));
+ const fov=walk?(portrait?40:34):portrait?42:36;
  let left=0,bottom=0;if(decor){const panel=homeDecor139.root?.querySelector('.home-collection139')?.getBoundingClientRect(),bar=homeDecor139.root?.querySelector('.home-place-toolbar139')?.getBoundingClientRect();if(portrait)bottom=innerHeight-(panel?.top??innerHeight*.52);else{left=(panel?.right??290)+12;bottom=(bar?.height??88)+24;}}
- const availW=Math.max(160,innerWidth-left),availH=Math.max(150,innerHeight-bottom),tan=Math.tan(camera.fov*Math.PI/360),distance=inside?Math.max((l.w+4)/(2*tan*camera.aspect*availW/innerWidth),(l.d*.65+7)/(2*tan*availH/innerHeight)):Math.max(48,34/(2*tan*camera.aspect));
- const offset=V3(inside?.14:.20,.76,1).normalize().multiplyScalar(distance),position=target.clone().add(offset);camera.updateProjectionMatrix();
- if(decor&&(left||bottom))camera.setViewOffset(innerWidth,innerHeight,-left/2,bottom/2,innerWidth,innerHeight);
- camera.position.copy(position);camera.lookAt(target);camera.updateMatrixWorld(true);focusPoint.copy(target);cameraTarget.copy(target);botanicalFocus103.value.set(player.x,0,player.z);
- if(post?.material?.uniforms.focus)post.material.uniforms.focus.value=camera.position.distanceTo(target);return r;
+ const availW=Math.max(160,innerWidth-left),availH=Math.max(150,innerHeight-bottom),tan=Math.tan(fov*Math.PI/360);
+ const distance=inside?Math.max((l.w+4)/(2*tan*aspect*availW/innerWidth),(l.d*.65+7)/(2*tan*availH/innerHeight)):Math.max(48,34/(2*tan*aspect));
+ const offset=walk?V3(0,8.8,24).multiplyScalar(state.settings.zoom??1):V3(inside?.14:.20,.76,1).normalize().multiplyScalar(distance);
+ const position=target.clone().add(offset),old=world.userData.homeCamera139;
+ const v=old??{position:position.clone(),target:target.clone(),fov,left,bottom};
+ const t=instant||!inside?1:1-Math.exp(-(dt??1/60)*8.5);
+ v.position.lerp(position,t);v.target.lerp(target,t);v.fov=mix(v.fov,fov,t);v.left=mix(v.left,left,t);v.bottom=mix(v.bottom,bottom,t);
+ v.moving=v.position.distanceToSquared(position)>.0004||Math.abs(v.left-left)+Math.abs(v.bottom-bottom)>.5;
+ world.userData.homeCamera139=v;
+ camera.clearViewOffset();camera.zoom=1;camera.fov=v.fov;camera.aspect=aspect;
+ if(v.left>.25||v.bottom>.25)camera.setViewOffset(innerWidth,innerHeight,-v.left/2,v.bottom/2,innerWidth,innerHeight);
+ camera.position.copy(v.position);camera.lookAt(v.target);camera.updateProjectionMatrix();camera.updateMatrixWorld(true);
+ focusPoint.copy(v.target);cameraTarget.copy(v.target);botanicalFocus103.value.set(player.x,0,player.z);
+ for(const actor of actors)actor.mesh.quaternion.copy(camera.quaternion);
+ if(post?.material?.uniforms.focus)post.material.uniforms.focus.value=camera.position.distanceTo(v.target);
 };
 const homeTickBefore139=tick;
 tick=function(dt){const r=homeTickBefore139(dt);if(!world)return r;
  for(const p of world.userData.homePortals139??[])p.material.uniforms.time.value=clock;
- const f=world.userData.homeFire139;if(f){f.mesh.material.uniforms.time.value=clock;f.mesh.scale.set(1+.07*Math.sin(clock*7),1+.12*Math.sin(clock*9),1);f.mesh.updateMatrix();f.light.intensity=1.9+.10*Math.sin(clock*8.7);}
+ const f=world.userData.homeFire139;if(f)f.light.intensity=f.power*firelight163(clock);
  updateHomeKeeper139();updateHomeDecor139(dt);return r;
 };

@@ -100,17 +100,18 @@ function ensureHomeDecor139(){
 }
 function startHomeDecor139(){
  if(state.scene!=='homeInterior139'||!housing139().home||battle||gameLoading)return;
- closeHousing139();closeMenu();ensureHomeDecor139();homeDecor139.active=true;homeDecor139.category='All';menu={tab:'homeDecor139',previous:state.mode};keys.clear();route=null;document.body.classList.add('home-decorating139');homeDecor139.root.hidden=false;renderHomeDecor139();updateCamera(1,true);
+ closeHousing139();closeMenu();ensureHomeDecor139();homeDecor139.active=true;homeDecor139.category='All';menu={tab:'homeDecor139',previous:state.mode};keys.clear();route=null;document.body.classList.add('home-decorating139');homeDecor139.root.hidden=false;renderHomeDecor139();updateCamera(0);
 }
 function cancelHomeDraft139(){
  const q=homeDecor139;if(q.original)world.userData.homeDecorRoots139.get(q.original.uid)?.traverse(o=>o.visible=true);disposeHomeObject139(q.ghost);disposeHomeObject139(q.outline);q.draft=q.original=q.ghost=q.outline=q.valid=null;if(q.active)renderHomeDecor139();
 }
 function stopHomeDecor139(){
- cancelHomeDraft139();homeDecor139.active=false;if(homeDecor139.root)homeDecor139.root.hidden=true;document.body.classList.remove('home-decorating139');if(menu?.tab==='homeDecor139')menu=null;keys.clear();camera.clearViewOffset();updateCamera(1,true);autoSave();
+ cancelHomeDraft139();homeDecor139.active=false;if(homeDecor139.root)homeDecor139.root.hidden=true;document.body.classList.remove('home-decorating139');if(menu?.tab==='homeDecor139')menu=null;keys.clear();updateCamera(0);autoSave();
 }
-function homeSnap139(p,item){
+function homeSnap139(p,item,turn=0){
  const q=HOME_DECOR139[item],l=homeLayout139(),snap=n=>Math.round(n*4)/4;
- const row={item,area:homeArea139(),x:snap(p.x),z:snap(p.z),turn:0,surface:'floor'};
+ const row={item,area:homeArea139(),x:snap(p.x),z:snap(p.z),turn,surface:'floor'};
+ if(q.surface==='floor'&&row.area==='room')snapHomeFloor139(row,l,p);
  if(q.surface==='wall'){const candidates=[['back',Math.abs(p.z+l.d/2)],['left',Math.abs(p.x+l.w/2)],['right',Math.abs(p.x-l.w/2)]];candidates.sort((a,b)=>a[1]-b[1]);row.surface=candidates[0][0];if(row.surface==='back')row.z=-l.d/2+.25;else{row.x=(row.surface==='left'?-1:1)*(l.w/2-.25);row.z=Math.min(-1,row.z);}}
  if(q.surface==='table'){const table=housing139().home.placements.filter(p=>(p.area??'room')==='room'&&HOME_DECOR139[p.item].kind==='table').sort((a,b)=>Math.hypot(a.x-row.x,a.z-row.z)-Math.hypot(b.x-row.x,b.z-row.z))[0];row.surface=table?.uid??'';}
  return row;
@@ -128,8 +129,8 @@ function refreshHomeDraft139(){
  const q=homeDecor139;if(!q.draft)return;q.valid=seatHomeDecor139(q.ghost,q.draft);const box=new THREE.Box3().setFromObject(q.ghost),center=box.getCenter(V3());q.outline.position.set(center.x,q.ghost.position.y+.035,center.z);q.outline.rotation.y=q.ghost.rotation.y;q.outline.material.color.set(q.valid.ok?'#badd9d':'#f28c72');
  const status=$('#home-placement-status139');if(status){status.textContent=q.valid.ok?'Ready to place.':q.valid.reason;status.dataset.valid=String(q.valid.ok);}const confirm=$('#home-confirm139');if(confirm)confirm.disabled=!q.valid.ok;
 }
-function moveHomeDraft139(dx,dz){const q=homeDecor139;if(!q.draft)return;const old=q.draft,p=homeSnap139({x:old.x+dx,z:old.z+dz},old.item);q.draft={...old,...p,turn:old.turn};refreshHomeDraft139();}
-function rotateHomeDraft139(){const q=homeDecor139;if(!q.draft||HOME_DECOR139[q.draft.item].surface==='wall')return;q.draft.turn=(q.draft.turn+1)%4;refreshHomeDraft139();}
+function moveHomeDraft139(dx,dz){const q=homeDecor139;if(!q.draft)return;const old=q.draft,p=homeSnap139({x:old.x+dx,z:old.z+dz},old.item,old.turn);q.draft={...old,...p};refreshHomeDraft139();}
+function rotateHomeDraft139(direction=1){const q=homeDecor139;if(!q.draft||HOME_DECOR139[q.draft.item].surface==='wall')return;q.draft.turn=(q.draft.turn+direction+4)%4;if(q.draft.area==='room'&&q.draft.surface==='floor')snapHomeFloor139(q.draft);refreshHomeDraft139();}
 function commitHomeDraft139(){
  const q=homeDecor139,h=housing139();if(!q.draft||!validateHomePlacement139(q.draft).ok)return false;
  if(!q.original&&h.home.placements.length>=120){toast('This home holds 120 decorations. Remove one before placing another.');return false;}

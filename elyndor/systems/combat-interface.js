@@ -23,14 +23,37 @@ function updateAbilityHelp65(button){
 }
 function decorateCommands65(){
  if(!battle)return;const id=currentFighter(),commands=$('#commands');
+ const heading=$('#battle-command .command-head');
+ let portrait=heading.querySelector('.command-portrait65');
+ if(!portrait){portrait=document.createElement('img');portrait.className='command-portrait65';portrait.alt='';heading.append(portrait);}
+ const face=id&&face26(id);
+ portrait.hidden=!face;
+ if(face&&portrait.getAttribute('src')!==face)portrait.setAttribute('src',face);
  for(const button of commands.querySelectorAll('button')){
   const p=previewAbility65(button);if(p?.type&&!button.querySelector('[data-type65]'))button.insertAdjacentHTML('afterbegin',icon65(p.type,25));
   if(p?.type){button.setAttribute('aria-description',p.type+' ability');button.title=(button.dataset.skill!==undefined?CAST[id].skill[+button.dataset.skill][1]+' · ':'')+p.type;}
+  const text=[...button.childNodes].find(node=>node.nodeType===Node.TEXT_NODE),mark=text?.textContent.match(/^[⚔✧♧♜◇↗]/)?.[0];
+  if(mark){
+   text.textContent=text.textContent.slice(mark.length).trimStart();
+   if(!p?.type){
+    const icon=document.createElement('span');icon.className='command-mark65';icon.setAttribute('aria-hidden','true');
+    icon.textContent=mark;
+    if(button.dataset.action==='defend')icon.innerHTML=icon65('defenseUp',21,true);
+    button.prepend(icon);
+   }
+  }
+  if(text?.textContent.trim()&&!button.querySelector('.command-label65')){
+   const label=document.createElement('span');label.className='command-label65';
+   text.replaceWith(label);label.append(text);
+  }
  }
  let help=$('#ability-help65');if(!help){help=document.createElement('div');help.id='ability-help65';$('#battle-command').append(help);}
  let footer=$('#combat-footer65');if(!footer){footer=document.createElement('footer');footer.id='combat-footer65';footer.innerHTML='<button data-combat-legend65>Icon legend</button><small>Choose · Enter &nbsp; Back · Esc</small>';$('#battle-command').append(footer);}
  updateAbilityHelp65(document.activeElement?.closest('#commands button')??commands.querySelector('[data-skill], [data-action="attack"]'));
- $('#battle-party').style.setProperty('--party-count65',state.members.length);
+ const roster=$('#battle-party');
+ roster.style.setProperty('--party-count65',state.members.length);
+ roster.style.setProperty('--party-cols163',Math.min(state.members.length,2));
+ for(const card of roster.querySelectorAll('.party-card65'))card.classList.toggle('battle-active163',card.dataset.character===id);
 }
 const combatUiBefore65=renderBattle;
 renderBattle=function(submenu=null,...args){

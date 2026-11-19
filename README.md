@@ -2,6 +2,19 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.42 — Housing controls, combat interface, and hearths
+
+November 19, 2026
+
+- Centered the indoor exploration camera on the party when they enter a home. The camera eases between normal exploration and the elevated Build Mode view.
+- Furniture including rotated beds can sit flush against walls. Saves restore the precise placement shown in Build Mode, and entrances stay clear.
+- Polished the combat interface with larger turn portraits, clearer commands and enemy information, and a two-by-two desktop roster for four allies.
+- Gave hearths, forge fires, torches, and candles distinct animated flames, with warm light and embers where appropriate.
+- Rebuilt fireplace masonry with beveled stonework, recessed fireboxes, and fitted hearths in homes, inns, and the forge.
+- Fixed Leave in all six housing NPC menus. Keyboard and pointer confirmation return control to the party beside the NPC.
+
+[Release verification](elyndor/previews/release-v142/verification.json)
+
 ## Alpha Version 1.41 — Clearer stone and building textures
 
 November 19, 2026

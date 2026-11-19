@@ -1,0 +1,92 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 97030,
+    "sha256": "fd9172335f2f4a72d141111c3d9b1aee3edf8408676806297fcccdf76dbd4b27"
+  },
+  {
+    "file": "elyndor/build-manifest.json",
+    "bytes": 13557,
+    "sha256": "7bbe75d4ebae6045c136fae7321d1a1df3036646f5854bbc4d34b0e4b5d92f46"
+  },
+  {
+    "file": "elyndor/interiors-v12.js",
+    "bytes": 10702,
+    "sha256": "89148b5587c5bacc6e70d77d327c1e81072c30635cadb6f6ac8b537fd24799fd"
+  },
+  {
+    "file": "elyndor/interiors-v29.js",
+    "bytes": 16583,
+    "sha256": "7359496c20e06a2cc3545f0016943fc7bebd091b72752192939bc90ac596c1ea"
+  },
+  {
+    "file": "elyndor/polish.js",
+    "bytes": 24062,
+    "sha256": "d9ca0556897acc8e06f9af9df4bfd6b8d0e9947d0b89187e7fe1979db39959a9"
+  },
+  {
+    "file": "elyndor/previews/release-v142/verification.json",
+    "bytes": 1920,
+    "sha256": "6b7a7b276097a7f97bc9dab64103ee3854b473e06e627c71c387c8c3139362d4"
+  },
+  {
+    "file": "elyndor/systems/brookstead-architecture.js",
+    "bytes": 24129,
+    "sha256": "b0ec84f96199858edb6057599d30ea04c1d2e6b13efeb0c5c889be14d93df670"
+  },
+  {
+    "file": "elyndor/systems/combat-hud-polish.css",
+    "bytes": 11490,
+    "sha256": "dad65cc129218b036f8fe534ed0993e0ad83867649b00d10318499a1c4b0f019"
+  },
+  {
+    "file": "elyndor/systems/combat-interface.js",
+    "bytes": 8543,
+    "sha256": "c044c663e361da7095865f7e72aeff5481ad9a55db6c42f7ec957285ffd5d673"
+  },
+  {
+    "file": "elyndor/systems/environmental-fire.js",
+    "bytes": 10784,
+    "sha256": "9d115ed2c20456ebf0670a1575a8fff5e87f00daec8a023710d5d748952e399a"
+  },
+  {
+    "file": "elyndor/systems/housing-concept-ui.css",
+    "bytes": 15146,
+    "sha256": "47f8444c05a8d7408ae6a9c6bbfd9b09f0049030b10c8a5ba790ecafb219f4c7"
+  },
+  {
+    "file": "elyndor/systems/housing-decor.js",
+    "bytes": 19850,
+    "sha256": "02ce6f95898d01084334d4aa129b6617383e18cb17a85a03e8c61ec27cba0a1d"
+  },
+  {
+    "file": "elyndor/systems/housing-state.js",
+    "bytes": 19473,
+    "sha256": "718b8d7a477c77bcbd968c2b366860f3ce90bcbb35193628df8ba64e66534648"
+  },
+  {
+    "file": "elyndor/systems/housing-ui.js",
+    "bytes": 22497,
+    "sha256": "ec212b2032018927889c1d38cc28df4443c0697d08497f5805de4cde79835c82"
+  },
+  {
+    "file": "elyndor/systems/housing-world.js",
+    "bytes": 22520,
+    "sha256": "c7cdb0c48b88dd03e8b13567b0a81635121ce02bd9ef304b60ae57b9263629b3"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 92841,
+    "sha256": "5ff4c511cc1a3752cb16896b3b1021e98b62e76126dc13dd37338ca5eae5d73c"
+  },
+  {
+    "file": "index.html",
+    "bytes": 7676250,
+    "sha256": "057d09b40e5ac4c97a1b8fe4fcc4659a2ce4f9214a249a5b8f6b230005b94fce"
+  },
+  {
+    "file": "release.json",
+    "bytes": 96747,
+    "sha256": "ab43c8f27a57f2bccc73a50e55bb8ce8b7fe2906dd723b9b67f1bb0a1fb48a9c"
+  }
+]

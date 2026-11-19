@@ -103,22 +103,10 @@ function roomBanner29(x,z,color='#3f536b'){
  const seal=mesh(new THREE.PlaneGeometry(.8,.8),new THREE.MeshStandardMaterial({map:textures.runeSeal,transparent:true,alphaTest:.08,depthWrite:false,color:'#ddba74',roughness:.8}),x,3.75,z+.06);seal.castShadow=false;
 }
 function roomFire29(x,z){
- // An open stone surround, rather than a black rectangle pasted onto a block.
- for(const side of[-1,1])roomBox29(x+side*1.65,1.65,z,.85,3.3,1.25,'hearth29','#d9b88e');
- roomBox29(x,3.1,z,4.1,.65,1.25,'hearth29','#d7b88d');
- roomBox29(x,3.6,z,4.7,.25,1.65,'wood','#d1ae77');
- roomBox29(x,.17,z+.55,4.5,.34,2.1,'hearth29','#d0b999');
- const lining=roomBox29(x,1.45,z-.46,2.8,2.6,.1,'rock','#24170f');lining.material=roomMaterial29('rock','#24170f');
- for(const dz of[-.28,.25]){const log=mesh(new THREE.CylinderGeometry(.2,.24,2.3,9),roomMaterial29('bark','#64412b'),x,.5,z+dz);log.rotation.z=Math.PI/2;}
- for(let i=0;i<7;i++)mesh(new THREE.IcosahedronGeometry(.13,0),roomMaterial29('rock','#a14214',{emissive:'#ff570b',emissiveIntensity:.6,roughness:1}),x-1+i*.32,.4,z+.24);
- for(let i=-2;i<=2;i++)roomBox29(x+i*.42,.62,z+.55,.05,.75,.05,'metal','#7c6652');
- const m=new THREE.ShaderMaterial({transparent:true,depthWrite:false,side:THREE.DoubleSide,blending:THREE.AdditiveBlending,uniforms:{time:{value:0}},vertexShader:'varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:`varying vec2 vUv;uniform float time;
- float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
- float noise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(hash(i),hash(i+vec2(1,0)),f.x),mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),f.x),f.y);}
- void main(){vec2 p=vUv;float n=noise(vec2(p.x*6.,p.y*4.-time*2.5))*.6+noise(vec2(p.x*12.,p.y*7.-time*4.))*.3;
- float width=(1.-p.y)*.45;float shape=1.-smoothstep(width*.35,width+.08,abs(p.x-.5+sin(p.y*9.-time*2.)*.04));float a=shape*smoothstep(1.,.1,p.y)*smoothstep(.02,.16,p.y)*smoothstep(.10,.55,n-p.y*.25);
- vec3 c=mix(vec3(1.,.09,.002),vec3(1.,.45,.055),1.-p.y);gl_FragColor=vec4(c*.95,a*.88);}`});
- const flame=mesh(new THREE.PlaneGeometry(2.7,2.5),m,x,1.7,z+.45);flame.castShadow=flame.receiveShadow=false;flame.userData.dynamicFX=true;
+ const forge=activeScene?.key==='brookForge',g=new THREE.Group();
+ g.name=forge?'Smithy firebox':'Inn stone hearth';g.position.set(x,0,z);g.userData.interiorFixture29=true;world.add(g);
+ masonryHearth163(g,{key:'hearth29',tint:forge?'#918f82':'#c4af92',forge,scale:1.43});
+ const flame=environmentFire163(world,forge?'forge':'inn',x,.46,z+.09,forge?1.55:1);
  world.userData.roomFlame29=flame;world.userData.roomHearth29=V3(x,1.8,z+1.3);rooms29.flames++;
  obstacle(x,z,4.8,2.5,'hearth');roomPainting29(x,5,-8.89,3.7,1.8);
 }

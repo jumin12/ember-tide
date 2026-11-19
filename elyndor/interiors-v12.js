@@ -24,7 +24,12 @@ function handleInteriorInteraction(o){
 }
 function interiorShelf(x,z,width=3.2){for(const side of[-1,1])box(x+side*width/2,2.3,z,.16,4.6,.2,'darkWood','#a1794b');for(const y of[.3,1.4,2.5,3.6]){box(x,y,z,width,.13,.9,'wood','#bc9363');for(let i=0;i<5;i++){const px=x-width*.36+i*width*.18,k=i%3;if(k===0){mesh(new THREE.CylinderGeometry(.14,.21,.32,8),material('metal','#8aa8a1',{roughness:.35}),px,y+.22,z);mesh(new THREE.SphereGeometry(.18,8,6),material('lightFacets','#6ba79d',{emissive:'#55887d',emissiveIntensity:.18}),px,y+.35,z);}else box(px,y+.3,z,.22,.5,.48,k===1?'cloth':'wood',k===1?'#667a87':'#c4a171');}}}
 function roomCrate(x,z,s=1){const y=.5*s;box(x,y,z,s,s,s,'crateFace','#b8a27a');obstacle(x,z,s+.15,s+.15,'interior crate');}
-function roomCandle(x,y,z){mesh(new THREE.CylinderGeometry(.09,.13,.12,7),material('metal','#b59b5c'),x,y,z);box(x,y+.18,z,.08,.32,.08,'plaster','#efe1bd');const flame=mesh(new THREE.ConeGeometry(.075,.25,7),new THREE.MeshBasicMaterial({color:'#ffcb79'}),x,y+.45,z);world.userData.candles??=[];world.userData.candles.push({mesh:flame,x,z});lantern(x,y+.5,z);}
+function roomCandle(x,y,z){
+ mesh(new THREE.CylinderGeometry(.09,.13,.12,7),material('metal','#b59b5c'),x,y,z);
+ box(x,y+.18,z,.08,.32,.08,'plaster','#efe1bd');
+ const flame=environmentFire163(world,'candle',x,y+.34,z);
+ world.userData.candles??=[];world.userData.candles.push({mesh:flame,x,z});lantern(x,y+.5,z);
+}
 function buildJourneyInterior(id,spawn){
  resetJourneyWorld(id);const spec=INTERIORS[id];state.interiorReturn??={id:POIS[spec.poi].id,poi:spec.poi,spawn:POIS[spec.poi].spawn};state.poi=spec.poi;world.userData.interior=spec.type;
  const floor=box(0,-.16,0,25,.3,19,spec.type==='inn'?'wood':'interiorFloor','#ded5bc');floor.castShadow=false;floor.userData.terrain=true;world.userData.terrain=floor;world.userData.walkSurfaces=[floor];world.userData.terrainChunks=[];

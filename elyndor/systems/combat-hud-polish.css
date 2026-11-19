@@ -1,0 +1,193 @@
+body.combat-ui65 {
+  --battle-gold: #d5ac62;
+  --battle-gold-hi: #ffdfa0;
+  --battle-panel: radial-gradient(ellipse at left top,#193c4c,transparent 66%),linear-gradient(155deg,#102938,#081822 62%,#0c2430);
+  --battle-corners:
+    linear-gradient(135deg,#e5be78 12%,#3a2718 15%,#5f4741 24%,#d6ab61 27%,transparent 31%) left top/18px 18px no-repeat,
+    linear-gradient(225deg,#e5be78 12%,#3a2718 15%,#5f4741 24%,#d6ab61 27%,transparent 31%) right top/18px 18px no-repeat,
+    linear-gradient(315deg,#e5be78 12%,#3a2718 15%,#5f4741 24%,#d6ab61 27%,transparent 31%) right bottom/18px 18px no-repeat,
+    linear-gradient(45deg,#e5be78 12%,#3a2718 15%,#5f4741 24%,#d6ab61 27%,transparent 31%) left bottom/18px 18px no-repeat;
+  --battle-engraving: inset 0 0 0 2px #061520,inset 0 0 0 3px #9b754990,0 0 0 1px #28201a,0 5px 16px #02070b9c;
+}
+body.combat-ui65 #battle-hud>#battle-command,
+body.combat-ui65 #battle-hud #battle-party .party-card65,
+body.combat-ui65 #world-enemy-bars27 .foe-bar27 {
+  background: var(--battle-corners), var(--battle-panel)!important;
+  border: 1px solid var(--battle-gold)!important;
+  border-image: none!important;
+  border-radius: 5px;
+  box-shadow: var(--battle-engraving)!important;
+  color: #f8edd3;
+}
+body.combat-ui65 #battle-hud>#battle-command {
+  border-radius: 6px;
+  box-shadow: var(--battle-engraving),0 0 12px #e2b66842!important;
+}
+body.combat-ui65 #battle-hud .command-head {
+  position: relative;
+  padding: 12px 63px 10px 14px!important;
+  background:linear-gradient(105deg,#29516688,#111f2c31);
+  border-bottom:3px double #d1a861ba;
+}
+body.combat-ui65 #battle-hud .command-portrait65 {
+  position:absolute;right:12px;top:50%;translate:0 -50%;width:47px;height:47px;
+  object-fit:contain;padding:4px;background:radial-gradient(#364c51,#a47e42 86%,#ffe3aa);
+  clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);
+  pointer-events:none;
+}
+body.combat-ui65 #battle-hud #acting-role {font-size:11px;letter-spacing:.035em;color:#e0bd7d}
+body.combat-ui65 #battle-hud .command-head h3 {font-size:25px!important;color:#fff1ce;letter-spacing:.015em}
+body.combat-ui65 #battle-hud #commands button {
+  position:relative;
+  color:#fff1d2!important;
+  border-radius:4px;
+  letter-spacing:.012em;
+}
+body.combat-ui65 #battle-hud .command-mark65 {
+  flex:none;display:inline-flex;align-items:center;justify-content:center;width:25px;height:24px;
+  color:#ffd492;text-shadow:0 0 4px #e1a34d5e;font:700 19px/1 Georgia;
+}
+body.combat-ui65 #battle-hud .command-label65 {min-width:0;margin-inline-end:auto;text-align:left}
+body.combat-ui65 #battle-hud #commands button:not(:disabled):is(:hover,:focus),
+body.combat-ui65 #battle-hud #commands:not(:focus-within):not(:has(button:hover)) button[data-action="attack"]:not(:disabled) {
+  background:linear-gradient(90deg,#725527,#253f4b 28%,#122834 89%,#30271a)!important;
+  border:1px solid #ffdb86!important;
+  box-shadow:inset 0 0 0 1px #f7d88f7a,inset 0 0 10px #e9be6252,0 0 8px #e1b86265;
+  outline:none;
+}
+body.combat-ui65 #battle-hud #commands button:disabled {opacity:.46}
+body.combat-ui65 #battle-hud #battle-party :is(.party-card65.battle-active163,.party-card65[data-current69]){
+  border-color:var(--battle-gold-hi)!important;
+  box-shadow:var(--battle-engraving),0 0 9px #f4c3627a!important;
+}
+body.combat-ui65 .party-card65 .stat-bar65 {border-color:#8eb2ba4a;background:#020e16}
+body.combat-ui65 .party-card65 .stat-bar65 em {background:linear-gradient(#d6efb1,#67a96d)}
+body.combat-ui65 .party-card65 .mp65 em {background:linear-gradient(#bce6ff,#4f9dbd)}
+body.combat-ui65 .party-card65 .ascension65 em {background:linear-gradient(#ffe4a3,#b28a42)}
+body.combat-ui65 #world-enemy-bars27 .foe-bar27.selected {
+  border-color:#ffcf7d!important;
+  box-shadow:var(--battle-engraving),0 0 9px #eeab5b9c!important;
+}
+body.combat-ui65 #world-enemy-bars27 .foe-bar27>div:first-of-type {background:#260f14;border-color:#704b36}
+body.combat-ui65 #world-enemy-bars27 .foe-bar27>div:first-of-type>i {background:linear-gradient(#ffab7e,#c6272e)}
+body.combat-ui65 #world-enemy-bars27 .foe-bar27>span:first-child {color:#fff0d0}
+body.combat-ui65 #world-enemy-bars27 .foe-bar27 .enemy-intent {color:#f0c782}
+body.combat-ui65 #battle-hud #battle-stage53 {
+  background:linear-gradient(90deg,#09171dee,#1b2d35,#09171dee);
+  border-color:var(--battle-gold);
+  border-radius:5px;
+  box-shadow:inset 0 0 0 2px #0d1b25, inset 0 0 0 3px #8f744a4d;
+}
+
+@media (min-width:1001px) and (min-height:620px) {
+  body.combat-ui65 #battle-stage53 {
+    left:50%;bottom:9px;transform:translateX(-50%);min-width:174px;text-align:center;
+    color:#ffe5ae;background:var(--battle-corners),var(--battle-panel);
+    border:1px solid var(--battle-gold);box-shadow:var(--battle-engraving);
+  }
+  body.combat-ui65 #battle-hud>.battle-top {gap:clamp(15px,2.2vw,42px)}
+  body.combat-ui65 #battle-hud #turn-order {
+    position:relative;
+    justify-content:flex-start;
+    flex:0 1 auto;
+    padding:15px 20px 11px!important;
+    margin-inline:auto;
+    gap:clamp(5px,.65vw,10px)!important;
+    isolation:isolate;
+    scrollbar-width:thin;
+  }
+  body.combat-ui65 #battle-hud #turn-order::before {
+    content:"";position:absolute;inset:calc(50% + 2px) 0 auto;height:3px;z-index:-1;
+    background:linear-gradient(90deg,transparent,#e7b858 12%,#ffe3a1 50%,#e7b858 88%,transparent);
+    box-shadow:0 0 9px #e0b347a0;
+  }
+  body.combat-ui65 #battle-hud #turn-order .turn-token27 {
+    --token-size:clamp(41px,3.7vw,60px);
+    width:var(--token-size)!important;min-width:var(--token-size)!important;
+    max-width:var(--token-size)!important;height:var(--token-size)!important;
+    --battle-diamond:polygon(50% 0,100% 50%,50% 100%,0 50%);
+    clip-path:none;background:none!important;
+    border:0!important;isolation:isolate;box-shadow:none;
+  }
+  body.combat-ui65 #battle-hud #turn-order .turn-token27::before,
+  body.combat-ui65 #battle-hud #turn-order .turn-token27::after {
+    content:"";position:absolute;inset:0;clip-path:var(--battle-diamond);
+    background:linear-gradient(140deg,#f8deb0,#75603d 62%,#e0b67b);z-index:-2;
+  }
+  body.combat-ui65 #battle-hud #turn-order .turn-token27::after {inset:2px;z-index:-1;background:linear-gradient(115deg,#294f62,#0a1d2b)}
+  body.combat-ui65 #battle-hud #turn-order .turn-token27.foe::after {background:linear-gradient(115deg,#6a353d,#26191f)}
+  body.combat-ui65 #battle-hud #turn-order .turn-token27.current {scale:1.14;filter:drop-shadow(0 0 6px #ffc65d)}
+  body.combat-ui65 #battle-hud #turn-order .turn-token27.current::before {background:#ffdd87}
+  body.combat-ui65 #battle-hud #turn-order .turn-token27.current::after {inset:3px;background:linear-gradient(145deg,#9b652a,#263e49 73%)}
+  body.combat-ui65 #battle-hud #turn-order .turn-token27.current>i {
+    display:block!important;position:absolute;top:-8px;left:50%;translate:-50% 0;
+    font-size:0;width:13px;height:7px;clip-path:polygon(0 0,100% 0,50% 100%);background:#ffdea2;
+  }
+  body.combat-ui65 #battle-hud #turn-order .turn-token27 img {
+    width:90%!important;height:90%!important;object-fit:contain;clip-path:var(--battle-diamond);
+  }
+  body.combat-ui65 #battle-hud #turn-order .turn-token27.acted {opacity:.62}
+  body.combat-ui65 #battle-hud #turn-order .turn-token27.fallen {opacity:.4;filter:grayscale(.7)}
+  body.combat-ui65 #battle-hud>#battle-command {width:clamp(249px,18.7vw,316px)!important}
+  body.combat-ui65 #battle-hud #commands {
+    padding:5px 8px!important;gap:2px!important;
+  }
+  body.combat-ui65 #battle-hud #commands button {font-size:17px!important}
+  body.combat-ui65 #battle-hud #commands button:not(:disabled):is(:hover,:focus)::before {
+    content:"";position:absolute;left:1px;top:50%;translate:0 -50%;width:7px;height:10px;
+    background:#ffe4a2;clip-path:polygon(0 0,100% 50%,0 100%);pointer-events:none;
+  }
+  body.combat-ui65 #battle-hud>#battle-party {
+    right:16px!important;bottom:max(9px,env(safe-area-inset-bottom))!important;
+    width:min(calc(var(--party-cols163,2)*227px),35vw)!important;
+    grid-template-columns:repeat(var(--party-cols163,2),minmax(0,1fr))!important;
+    max-height:none!important;gap:6px!important;align-items:stretch!important;
+  }
+  body.combat-ui65 #battle-hud #battle-party .party-card65 {
+    position:relative;grid-template-columns:52px minmax(0,1fr)!important;
+    padding:7px 10px!important;gap:9px!important;min-height:0!important;height:86px!important;
+    background:var(--battle-corners),var(--battle-panel)!important;font-variant-numeric:tabular-nums;
+  }
+  body.combat-ui65 #battle-hud #battle-party .party-card65>img {
+    align-self:start;width:50px;height:50px;margin-top:0;object-fit:contain;padding:3px;
+    background:radial-gradient(#334853,#9a743e 80%,#f8d896);
+    clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);
+  }
+  body.combat-ui65 #battle-hud #battle-party .party-card65 header>b {font-size:clamp(14px,1.14vw,18px)}
+  body.combat-ui65 #battle-hud #battle-party .party-card65 header>small {font-size:9px;color:#e2c17c}
+  body.combat-ui65 #battle-hud #battle-party .party-card65 label {font-size:10px!important;margin-top:1px!important}
+  body.combat-ui65 #battle-hud #battle-party .party-card65>.status-row65 {
+    position:absolute;left:7px;bottom:3px;width:45px;max-height:21px;min-height:0;padding:0;
+  }
+  body.combat-ui65 #world-enemy-bars27 .foe-bar27 {font-size:13px;padding:7px 8px;min-width:122px}
+}
+
+@media (max-width:700px) and (orientation:portrait) {
+  body.combat-ui65.mobile-combat69 #battle-hud .command-mark65 {width:16px;height:18px;font-size:14px}
+  body.combat-ui65.mobile-combat69 #battle-hud .command-label65 {margin:0;text-align:center}
+  body.combat-ui65.mobile-combat69 #turn-order .turn-token27.current {filter:drop-shadow(0 0 4px #ffc255)}
+  body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-party .party-card65>img {
+    display:block!important;position:absolute;left:4px;top:4px;width:14px!important;height:14px!important;
+    object-fit:contain;background:#896538;
+  }
+  body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-party .party-card65 header {
+    padding-left:16px;gap:2px;margin-bottom:1px;
+  }
+  body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-party .party-card65 header>b {font:700 clamp(8px,2.65vw,11px)/13px Georgia!important}
+  body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-party .party-card65 header>small {
+    display:block!important;font:600 clamp(6px,2vw,8px)/12px system-ui!important;white-space:nowrap;
+  }
+  body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-party .party-card65 label {font:500 9px/10px system-ui!important}
+  body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-party .party-card65 .ascension-label65 {
+    font-size:0!important;height:8px;line-height:8px!important;
+  }
+  body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-party .party-card65 .ascension-label65::before {
+    content:"ASC";font:600 7px/8px system-ui;color:#e8cc91;
+  }
+  body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-party .party-card65 .ascension-label65 span {font:600 8px/8px system-ui!important}
+  body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-party .status-row65 {top:auto;bottom:4px;right:32px;max-width:16px}
+  body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-hud #battle-callout {
+    top:calc(max(4px,env(safe-area-inset-top)) + 48px)!important;
+    bottom:auto!important;max-width:calc(100vw - 32px)!important;
+  }
+}

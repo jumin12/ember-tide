@@ -224,13 +224,8 @@ function buildBrookHome121(x,z,w,d,kind){
   box(xx,.48,zz,2.12,.96,1.6,'wall','#8f988e',g);box(xx,1.03,zz,1.42,.15,1.13,'darkWood','#454a43',g);
   const coals=box(xx,1.16,zz,1.12,.075,.76,'rock','#4e3023',g,{emissive:'#f06b22',emissiveIntensity:.9});coals.name='Recessed glowing smithy coals';
   box(xx,3.20,zz-.80,1.05,4.70,.95,'wall','#9ea28d',g);
-  const glow=new THREE.PointLight('#ff9e41',2.4,5,2);glow.position.set(xx,1.55,zz+.28);g.add(glow);
-  const fire=new THREE.ShaderMaterial({transparent:true,depthWrite:false,side:THREE.DoubleSide,uniforms:{fireTime121:windUniforms.time},vertexShader:'varying vec2 fireUV121;void main(){fireUV121=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:`varying vec2 fireUV121;uniform float fireTime121;
-   void main(){vec2 p=fireUV121;float sway=sin(p.y*8.-fireTime121*4.1)*.055+sin(p.y*17.-fireTime121*6.2)*.026;float width=(1.-p.y)*.43;float edge=abs(p.x-.5+sway);float alpha=(1.-smoothstep(width*.55,width,edge))*smoothstep(0.,.13,p.y)*(1.-smoothstep(.72,1.,p.y));if(alpha<.025)discard;vec3 heat=mix(vec3(1.,.19,.018),vec3(1.,.70,.18),1.-smoothstep(.0,.68,p.y));gl_FragColor=vec4(heat,alpha*.87);
-   #include <tonemapping_fragment>
-   #include <colorspace_fragment>
-   }`});
-  for(const angle of[0,Math.PI/2]){const flame=new THREE.Mesh(new THREE.PlaneGeometry(1.10,.72),fire);flame.position.set(xx,1.52,zz);flame.rotation.y=angle;flame.name='Animated recessed forge flame';flame.userData.dynamicFX=true;g.add(flame);}
+  const glow=new THREE.PointLight('#ff9e41',2.4,5,2);glow.position.set(xx,1.55,zz+.28);g.add(glow);bindFirelight163(glow,g.position.x+xx);
+  environmentFire163(g,'forge',xx,1.24,zz,.83);
   box(xx,2.30,front-.28,2.15,.12,.14,'darkWood','#8d704a',g);
   for(const px of[-w*.47,dl-.08]){box(px,1.65,front+.02,.24,3.3,.26,'wood',p.timber,g);beam(V3(px,2.5,front+.08),V3(px+(px<xx?.65:-.65),3.12,front+.08),.10,'wood','#a08a5d',g);}
   // A fitted stone forge hood joins the same flue, above the fire and tools.

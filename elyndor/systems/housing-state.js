@@ -20,7 +20,7 @@ const HOME_STYLES139={
  harbor:{name:'Harbor House',theme:'Coastal captain’s cottage',price:620,kit:'harbor',wood:'#af9d80',wall:'#e5ded0',roof:'#87a4b7',accent:'#518b93',floor:'wood',trees:'oak'}
 };
 const HOME_DECOR139={
- homeBed139:{name:'Hearthkeeper’s bed',kind:'bed',category:'Home Decor',surface:'floor',w:3.2,d:4.6,solid:true,desc:'A carved timber bed with a woven coverlet.'},
+ homeBed139:{name:'Hearthkeeper’s bed',kind:'bed',category:'Home Decor',surface:'floor',w:3.15,d:4.52,solid:true,desc:'A carved timber bed with a woven coverlet.'},
  homeTable139:{name:'Oak gathering table',kind:'table',category:'Home Decor',surface:'floor',w:3.6,d:2.5,solid:true,top:1.45,desc:'A sturdy table. Small decorations can be placed on its top.'},
  homeChair139:{name:'Carved oak chair',kind:'chair',category:'Home Decor',surface:'floor',w:1.25,d:1.3,solid:true,desc:'A hand-carved chair with a padded seat.'},
  homeRug139:{name:'Riverweave rug',kind:'rug',category:'Home Decor',surface:'floor',w:4.4,d:3.0,desc:'A soft woven rug; furniture can sit on it.'},
@@ -48,8 +48,42 @@ function homeLayout139(id=housing139().home?.layout??'hearth'){return HOME_LAYOU
 function homeAvailable139(item,except=null,s=state){return Math.max(0,(s.items[item]??0)-(housing139(s).home?.placements??[]).filter(p=>p.item===item&&p.uid!==except).length);}
 function homeArea139(){return state.scene==='homePlot139'?'yard':'room';}
 function homeDecorAllowed139(item,area=homeArea139()){return (HOME_DECOR139[item]?.areas??['room']).includes(area);}
-function homeFootprint139(p){const q=HOME_DECOR139[p.item],swap=(p.turn??0)%2;return {w:swap?q.d:q.w,d:swap?q.w:q.d};}
+function homeFootprint139(p){
+ const q=HOME_DECOR139[p.item],depth=q.d+(q.kind==='rug'?.21:0);
+ return (p.turn??0)%2?{w:depth,d:q.w}:{w:q.w,d:depth};
+}
 function homeRectsOverlap139(a,b,pad=.12){return Math.abs(a.x-b.x)<(a.w+b.w)/2+pad&&Math.abs(a.z-b.z)<(a.d+b.d)/2+pad;}
+function homeFloorLimits139(p,layout){
+ const f=homeFootprint139(p),halfWidth=layout.w/2,halfDepth=layout.d/2;
+ // The walls are centered on the floor rim. Trim against the rear wall
+ // projects farther into the room than the plaster or the side walls.
+ const side=halfWidth-f.w/2-.185;
+ return {minX:-side,maxX:side,minZ:-halfDepth+f.d/2+.355,maxZ:halfDepth-f.d/2-.205};
+}
+const homePartitionPad139=wall=>wall.w>wall.d?.05:.035;
+function snapHomeFloor139(p,layout=homeLayout139(),aim=p){
+ const limits=homeFloorLimits139(p,layout),f=homeFootprint139(p),snapped=new Set();
+ const origin={x:aim.x,z:aim.z};
+ for(const axis of ['x','z']){
+  const suffix=axis.toUpperCase(),min=limits['min'+suffix],max=limits['max'+suffix],reach=(axis==='x'?f.w:f.d)/2+.48;
+  if(origin[axis]>=min-reach&&origin[axis]<=min+.16){p[axis]=min;snapped.add(axis);}
+  else if(origin[axis]<=max+reach&&origin[axis]>=max-.16){p[axis]=max;snapped.add(axis);}
+ }
+ const walls=homeWalls144(layout).map(row=>{
+  const along=row.w>row.d?'x':'z',normal=along==='x'?'z':'x';
+  const edge=(normal==='x'?(row.w+f.w)/2:(row.d+f.d)/2)+homePartitionPad139(row)+.005;
+  const length=along==='x'?(row.w+f.w)/2:(row.d+f.d)/2;
+  const delta=origin[normal]-row[normal],gap=Math.abs(delta)-edge;
+  return {normal,anchor:row[normal]+Math.sign(delta)*edge,alongGap:Math.abs(p[along]-row[along])-length,gap,delta};
+ }).filter(row=>row.alongGap<-.15&&Math.abs(row.delta)>.18&&row.gap>=-.48&&row.gap<=.16)
+   .sort((a,b)=>Math.abs(a.gap)-Math.abs(b.gap));
+ for(const {normal,anchor}of walls){
+  const suffix=normal.toUpperCase();
+  if(snapped.has(normal)||anchor<limits['min'+suffix]||anchor>limits['max'+suffix])continue;
+  p[normal]=anchor;snapped.add(normal);
+ }
+ return p;
+}
 function homeFixed139(layout=homeLayout139()){return [{x:-layout.w/2+1.7,z:-layout.d/2+1.5,w:3.1,d:2.7,name:'the hearth'},{x:0,z:layout.d/2-1.6,w:3.6,d:3.2,name:'the entrance aisle'},...(layout===HOME_LAYOUTS139.suite?[{x:-5,z:-2.8,w:.30,d:7.8,name:'the alcove divider'}]:[])];}
 function validateHomePlacement139(p,placements=housing139().home?.placements??[],layout=homeLayout139()){
  const q=HOME_DECOR139[p.item];if(!q)return {ok:false,reason:'Unknown decoration.'};
@@ -85,8 +119,9 @@ function validateHomePlacement139(p,placements=housing139().home?.placements??[]
   if(placements.some(v=>v.uid!==p.uid&&v.surface===p.surface&&homeRectsOverlap139({...v,...homeFootprint139(v)},{...p,...f},.06)))return {ok:false,reason:'This spot on the table is occupied.'};
   return {ok:true,y:HOME_DECOR139[table.item].top};
  }
- if(Math.abs(p.x)+f.w/2>hw-.65||Math.abs(p.z)+f.d/2>hd-.65)return {ok:false,reason:'Keep the decoration inside the room.'};
- const rect={...p,...f},fixed=homeFixed139(layout).find(v=>homeRectsOverlap139(rect,v));
+ const limit=homeFloorLimits139(p,layout),slack=.001;
+ if(p.x<limit.minX-slack||p.x>limit.maxX+slack||p.z<limit.minZ-slack||p.z>limit.maxZ+slack)return {ok:false,reason:'Keep the decoration inside the room.'};
+ const rect={...p,...f},fixed=homeFixed139(layout).find(v=>homeRectsOverlap139(rect,v,v.name==='a room wall'?homePartitionPad139(v):.12));
  if(fixed)return {ok:false,reason:'Leave space around '+fixed.name+'.'};
  if(q.solid){const hit=placements.find(v=>v.uid!==p.uid&&HOME_DECOR139[v.item]?.solid&&homeRectsOverlap139(rect,{...v,...homeFootprint139(v)}));if(hit)return {ok:false,reason:'This overlaps '+HOME_DECOR139[hit.item].name+'.'};}
  return {ok:true,y:q.kind==='rug'?.045:.025};
@@ -101,7 +136,9 @@ function normalizeHousing139(s){
   for(const p of (Array.isArray(home.placements)?home.placements:[]).slice(0,120)){
    if(!saveObject(p)||!HOME_DECOR139[p.item]||typeof p.uid!=='string'||p.uid.length>50||seen.has(p.uid)||!Number.isFinite(p.x)||!Number.isFinite(p.z))continue;
    if((used.get(p.item)??0)>=(s.items[p.item]??0))continue;
-   const row={uid:p.uid,item:p.item,area:p.area==='yard'?'yard':'room',x:Math.round(p.x*4)/4,z:Math.round(p.z*4)/4,turn:Number.isFinite(p.turn)?((Math.floor(p.turn)%4)+4)%4:0,surface:typeof p.surface==='string'?p.surface:'floor'};
+   const area=p.area==='yard'?'yard':'room',surface=typeof p.surface==='string'?p.surface:'floor';
+   const coordinate=area==='room'&&surface==='floor'&&HOME_DECOR139[p.item].surface==='floor'?n=>n:n=>Math.round(n*4)/4;
+   const row={uid:p.uid,item:p.item,area,x:coordinate(p.x),z:coordinate(p.z),turn:Number.isFinite(p.turn)?((Math.floor(p.turn)%4)+4)%4:0,surface};
    if(!validateHomePlacement139(row,h.home.placements,HOME_LAYOUTS139[home.layout]).ok)continue;
    h.home.placements.push(row);seen.add(row.uid);used.set(row.item,(used.get(row.item)??0)+1);
   }

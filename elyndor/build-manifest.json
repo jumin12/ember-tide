@@ -317,7 +317,8 @@
       "systems/travel-lighting.js",
       "systems/timed-combo-focus.js",
       "systems/home-performance.js",
-      "systems/home-threshold-effects.js"
+      "systems/home-threshold-effects.js",
+      "systems/environmental-fire.js"
     ]
   },
   "styles": [
@@ -379,7 +380,8 @@
     "systems/housing-presentation.css",
     "systems/housing-concept-ui.css",
     "systems/housing-portal-reveal.css",
-    "systems/home-building-preview.css"
+    "systems/home-building-preview.css",
+    "systems/combat-hud-polish.css"
   ],
   "owners": {
     "runtime": [
