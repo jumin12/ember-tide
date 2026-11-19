@@ -1,0 +1,32 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 96031,
+    "sha256": "0cdc9d17b2e9377d3a4b73117609ed2ace73475205a716429bb6d62b7e575bff"
+  },
+  {
+    "file": "elyndor/previews/release-v141/verification.json",
+    "bytes": 858,
+    "sha256": "da2b71304a61732f1acb4bc3b0dd0d542a407bb4a29d0784fd06a15170fe9a66"
+  },
+  {
+    "file": "elyndor/systems/world-materials.js",
+    "bytes": 24960,
+    "sha256": "85146652526d51c24b9af85f7231e76c9d371b4e415ca1fdcdc07ff0e6725e1c"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 91895,
+    "sha256": "5d1e51a667c989ff2695ce389ccdc526fc0ba3f4c1d4cedb7023f536cb8c48c1"
+  },
+  {
+    "file": "index.html",
+    "bytes": 7653233,
+    "sha256": "7b652191589af62580f8e859d46c646ce1cfc3ed00cf60337671866f13105044"
+  },
+  {
+    "file": "release.json",
+    "bytes": 95129,
+    "sha256": "306ad73edeec98571a609ae7a0cfbe90969d56095778c1149e2dd04c1a828573"
+  }
+]

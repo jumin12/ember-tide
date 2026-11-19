@@ -1,0 +1,37 @@
+{
+  "version": "Alpha Version 1.41",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7653233,
+    "sha256": "7b652191589af62580f8e859d46c646ce1cfc3ed00cf60337671866f13105044",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "base": "d17e2e54781d6c6a0ab5a143fc1181fe335bdd31",
+  "checkedOn": [
+    "Desktop Chrome 1558×856",
+    "Chrome portrait mobile emulation 390×844 DPR 2"
+  ],
+  "views": [
+    "Brookstead plaza and fountain",
+    "Brookstead shop façade",
+    "Brookstead entrance bridge"
+  ],
+  "finePixelLuminanceResidualAtMatchedFraming": {
+    "shop gable": {
+      "before": 16.32,
+      "after": 3.09
+    },
+    "fountain stone": {
+      "before": 20.38,
+      "after": 10.19
+    }
+  },
+  "timedComboDamage": [
+    20,
+    25,
+    31
+  ],
+  "runtimeErrors": 0,
+  "assetBundleUnchanged": true
+}

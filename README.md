@@ -2,6 +2,15 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.41 — Clearer stone and building textures
+
+November 19, 2026
+
+- Removed the shader speckling that obscured the stone and plaster around Brookstead’s fountain, plaza, buildings, and bridge.
+- Shared architecture now uses the textures’ matching surface relief, keeping stone joints and timber grain readable under the existing lighting.
+
+[Release verification](elyndor/previews/release-v141/verification.json)
+
 ## Alpha Version 1.40 — Dithered player cutout
 
 November 19, 2026
