@@ -2,6 +2,19 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.43 — Brookstead fountain and combat HUD polish
+
+November 19, 2026
+
+- Fixed the housing menu so pressing Enter confirms the highlighted choice, including Leave, in all six settlements.
+- Polished the combat HUD with an ornate turn rail, larger enemy portraits, command icons, and a clearer selection chevron.
+- Removed the stray dither patch from open cobblestones while retaining the player reveal behind foreground scenery.
+- Refined Brookstead’s fountain with curved streams, visible spray and ripples at contact, and lighting-responsive reflections.
+- Gave fireplaces natural mineral textures, chipped edges, and less uniform stone courses.
+- Refined environmental flame movement, smoke, embers, and glowing fissures in the hearth fuel.
+
+[Release verification](elyndor/previews/release-v143/verification.json)
+
 ## Alpha Version 1.42 — Housing controls, combat interface, and hearths
 
 November 19, 2026

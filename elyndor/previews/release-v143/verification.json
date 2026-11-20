@@ -1,0 +1,84 @@
+{
+  "version": "Alpha Version 1.43",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7690821,
+    "sha256": "cc4a9a0e21d2ed7d8f6e101d78812b6a63c0fe3cf83881c59001a3ca95098d8a",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "base": "15c57d822f8e8221a87d6241bf54b3e8467e9ab2",
+  "cards": [
+    "RE-133",
+    "RE-134",
+    "RE-136",
+    "RE-139",
+    "RE-140",
+    "RE-141"
+  ],
+  "checkedOn": [
+    "Desktop Chrome 1440×900",
+    "Chrome portrait phone emulation 390×844 DPR 2"
+  ],
+  "gameplayChecks": {
+    "before": "057d09b40e5ac4c97a1b8fe4fcc4659a2ce4f9214a249a5b8f6b230005b94fce",
+    "after": "cc4a9a0e21d2ed7d8f6e101d78812b6a63c0fe3cf83881c59001a3ca95098d8a",
+    "scenePixelDifferences": {
+      "before": {
+        "open": 627,
+        "tree": 23076
+      },
+      "after": {
+        "open": 0,
+        "tree": 23086
+      },
+      "after-phone": {
+        "open": 0,
+        "tree": 50707
+      }
+    },
+    "fountainEffectMeshesBefore": 9,
+    "fountainEffectMeshesAfter": 3,
+    "fixedSettlementMenus": [
+      "harbor",
+      "brookstead",
+      "fern",
+      "alder",
+      "relief",
+      "highmere"
+    ],
+    "timedComboDamage": [
+      20,
+      25,
+      31
+    ],
+    "fixtures": {
+      "brookstead": {
+        "kinds": {
+          "torch": 5
+        },
+        "flickeringLights": 6
+      },
+      "brookInn": {
+        "kinds": {
+          "candle": 3,
+          "inn": 1
+        },
+        "flickeringLights": 6
+      },
+      "brookForge": {
+        "kinds": {
+          "forge": 1
+        },
+        "flickeringLights": 6
+      },
+      "services": {
+        "purchased": true,
+        "returned": true,
+        "greetingClosed": true
+      }
+    }
+  },
+  "runtimeErrors": 0,
+  "assetBundleUnchanged": true
+}

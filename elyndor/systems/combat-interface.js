@@ -1,6 +1,13 @@
 // Screen-space placement follows the approved Skills Menu animation. Actor
 // feedback is projected separately; moving the camera never moves HUD panels.
 const combatHud65={submenu:null,signature:'',lastTransition:null};
+const BATTLE_COMMAND_ART={
+ skills:'<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-opacity=".57"/><path d="M6.7 7.1a6.5 6.5 0 0 1 10.7 2.4c-3.5-2.4-7.9-.9-7.6 2.4M17.2 16.9a6.5 6.5 0 0 1-10.7-2.4c3.5 2.4 7.9.9 7.6-2.4M8.1 16.4c-1.1-3.5.9-6.9 3.5-7.4m4.3-1.4c1.1 3.5-.9 6.9-3.5 7.4" stroke="currentColor" stroke-width="1.45" stroke-linecap="round"/>',
+ items:'<path d="M9.6 6 7.7 2.6l2.7.8L12 2l1.7 1.4 2.6-.8L14.4 6Z M9.5 8h5c3 2.5 5.5 6.3 5.5 9.7 0 2.6-2.9 3.9-8 3.9s-8-1.3-8-3.9c0-3.4 2.5-7.2 5.5-9.7Z" fill="currentColor"/><path d="M9 6.9h6m-7.2 9.3c.8-2 1.8-3.1 3.3-4.3" stroke="#815022" stroke-width="1.4" stroke-linecap="round"/>',
+ defend:'<path d="M12 2.4c2.8 1.6 5.7 2.2 8.2 2.7v5.5c0 4.7-3.2 8.2-8.2 11-5-2.8-8.2-6.3-8.2-11V5.1c2.5-.5 5.4-1.1 8.2-2.7Z" stroke="currentColor" stroke-width="1.75"/><path d="M12 4.2v7.6H5.6V6.4L12 4.2Zm0 7.6h6.4c-.5 3.2-3 5.7-6.4 7.9v-7.9Z" fill="currentColor"/>',
+ ascend:'<path d="m12 2.8 9.2 9.2-9.2 9.2L2.8 12 12 2.8Zm0 6.1 3.1 3.1-3.1 3.1L8.9 12 12 8.9Z" stroke="currentColor" stroke-width="1.75"/>',
+ flee:'<circle cx="17.5" cy="4.1" r="2.1" fill="currentColor"/><path d="m5.5 9.4 4.1-1.8 3.1 1.8 3.3 3.1 4.2-1.1M12.7 9.4l-3.5 6 4.7 2.2-1.7 3.6m-3-5.8-3.4 3.3-3.5-1.5" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>'
+};
 const partyEffectsBefore65=updatePartyCards36;
 updatePartyCards36=function(id,...args){
  const node=$('#'+id);if(battle&&id==='battle-party'){
@@ -30,15 +37,16 @@ function decorateCommands65(){
  portrait.hidden=!face;
  if(face&&portrait.getAttribute('src')!==face)portrait.setAttribute('src',face);
  for(const button of commands.querySelectorAll('button')){
-  const p=previewAbility65(button);if(p?.type&&!button.querySelector('[data-type65]'))button.insertAdjacentHTML('afterbegin',icon65(p.type,25));
+  const p=previewAbility65(button),art=BATTLE_COMMAND_ART[button.dataset.action??button.dataset.battleSub];
+  if(p?.type&&!art&&!button.querySelector('[data-type65]'))button.insertAdjacentHTML('afterbegin',icon65(p.type,25));
   if(p?.type){button.setAttribute('aria-description',p.type+' ability');button.title=(button.dataset.skill!==undefined?CAST[id].skill[+button.dataset.skill][1]+' · ':'')+p.type;}
   const text=[...button.childNodes].find(node=>node.nodeType===Node.TEXT_NODE),mark=text?.textContent.match(/^[⚔✧♧♜◇↗]/)?.[0];
   if(mark){
    text.textContent=text.textContent.slice(mark.length).trimStart();
-   if(!p?.type){
+   if(art||!p?.type){
     const icon=document.createElement('span');icon.className='command-mark65';icon.setAttribute('aria-hidden','true');
     icon.textContent=mark;
-    if(button.dataset.action==='defend')icon.innerHTML=icon65('defenseUp',21,true);
+    if(art)icon.innerHTML='<svg viewBox="0 0 24 24" fill="none" focusable="false">'+art+'</svg>';
     button.prepend(icon);
    }
   }

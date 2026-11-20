@@ -90,6 +90,11 @@ document.addEventListener('click',e=>{
  e.preventDefault();e.stopImmediatePropagation();
  if(b.dataset.homeLayout){housingMenu139.layout=b.dataset.homeLayout;housingMenu139.message='';renderHousing139();}else housingAction139(b.dataset.homeAction).catch(error=>{console.error(error);housingMenu139.message=error.message;renderHousing139();});
 },true);
+document.addEventListener('pointermove',e=>{
+ if(!housingMenu139.open||housingMenu139.page!=='greeting'||e.pointerType!=='mouse')return;
+ const choice=e.target.closest?.('#housing139 .home-service-panel146 nav button:not(:disabled)');
+ if(choice&&choice!==document.activeElement)choice.focus({preventScroll:true});
+},true);
 document.addEventListener('keydown',e=>{
  const q=housingMenu139;if(!q.open)return;e.stopImmediatePropagation();keys.clear();
  const scope=q.confirm?q.root.querySelector('.home-purchase-confirm139'):q.root;

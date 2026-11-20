@@ -1,10 +1,30 @@
 // Stable full-round timeline: completed actors remain visible until the next round.
 const spriteAvatars27=new Map();
-function spriteAvatar27(id){if(spriteAvatars27.has(id))return spriteAvatars27.get(id);const meta=assets.sprites[id],im=spriteImages[id];if(!meta||!im)return null;const n=(meta.frames.enemyIdle??meta.frames.south)[0],canvas=document.createElement('canvas');canvas.width=canvas.height=64;const c=canvas.getContext('2d');c.imageSmoothingEnabled=false;const scale=Math.min(64/meta.w,64/meta.h),w=meta.w*scale,h=meta.h*scale;c.drawImage(im,n%meta.cols*meta.w,Math.floor(n/meta.cols)*meta.h,meta.w,meta.h,(64-w)/2,(64-h)/2,w,h);const url=canvas.toDataURL();spriteAvatars27.set(id,url);return url;}
+function spriteAvatar27(id){
+ if(spriteAvatars27.has(id))return spriteAvatars27.get(id);
+ const meta=assets.sprites[id],image=spriteImages[id];if(!meta||!image)return null;
+ const cell=(meta.frames.enemyIdle??meta.frames.south)[0],sx=cell%meta.cols*meta.w,sy=Math.floor(cell/meta.cols)*meta.h;
+ const sample=document.createElement('canvas');sample.width=meta.w;sample.height=meta.h;
+ const pixels=sample.getContext('2d',{willReadFrequently:true});pixels.drawImage(image,sx,sy,meta.w,meta.h,0,0,meta.w,meta.h);
+ const rgba=pixels.getImageData(0,0,meta.w,meta.h).data;
+ let left=meta.w,right=0,top=meta.h,bottom=0;
+ for(let y=0;y<meta.h;y++)for(let x=0;x<meta.w;x++)if(rgba[(y*meta.w+x)*4+3]>110){
+  left=Math.min(left,x);right=Math.max(right,x);top=Math.min(top,y);bottom=Math.max(bottom,y);
+ }
+ if(left>=right||top>=bottom)return null;
+ const wide=right-left>1.22*(bottom-top),size=Math.max(8,Math.round((bottom-top)*(wide?.88:.54)));
+ // Wide beasts face right in the native encounter frames. Tall enemies use
+ // the upper part of their silhouette so the portraits read at HUD scale.
+ const x=wide?right-size*.91:(left+right-size)/2,y=top-size*.08;
+ const canvas=document.createElement('canvas');canvas.width=canvas.height=64;
+ const ctx=canvas.getContext('2d');ctx.imageSmoothingEnabled=false;
+ ctx.drawImage(sample,x,y,size,size,3,3,58,58);
+ const url=canvas.toDataURL();spriteAvatars27.set(id,url);return url;
+}
 function timeline27(){
  if(!battle)return;const order=$('#turn-order');if(!order)return;
  const signature=JSON.stringify([battle.queue,battle.turn,battle.round,battle.enemies.map(e=>e.hp>0)]);if(order.dataset.signature27===signature&&order.children.length===battle.queue.length&&[...order.children].every(n=>n.classList.contains('turn-token27')))return;order.dataset.signature27=signature;
- order.innerHTML=battle.queue.map((q,i)=>{const enemy=q.startsWith('enemy:'),e=enemy?battle.enemies[+q.split(':')[1]]:null,id=enemy?null:q,a=e?.actor??actorFor(id),name=e?.name??CAST[id]?.name??'Traveler',img=enemy?spriteAvatar27(a?.id):face26(id),out=enemy?e?.hp<=0:state.characters[id]?.hp<=0;return `<span class="turn-token27 ${enemy?'foe':'ally'} ${i===battle.turn?'current':''} ${i<battle.turn?'acted':''} ${out?'fallen':''}" title="${esc(name)}${i<battle.turn?' · Acted':''}" aria-label="${esc(name)}${i===battle.turn?' · Current turn':''}"><i>${i<battle.turn?'✓':i+1}</i>${img?`<img src="${img}" alt="">`:`<b>${enemy?'◆':'✦'}</b>`}<em>${esc(name)}</em></span>`;}).join('');
+ order.innerHTML=battle.queue.map((q,i)=>{const enemy=q.startsWith('enemy:'),e=enemy?battle.enemies[+q.split(':')[1]]:null,id=enemy?null:q,a=e?.actor??actorFor(id),name=e?.name??CAST[id]?.name??'Traveler',img=enemy?spriteAvatar27(a?.id):face26(id),out=enemy?e?.hp<=0:state.characters[id]?.hp<=0;return `<span class="turn-token27 ${enemy?'foe':'ally'} ${i===battle.turn?'current':''} ${i<battle.turn?'acted':''} ${out?'fallen':''}" title="${esc(name)}${i<battle.turn?' · Acted':''}" aria-label="${esc(name)}${i===battle.turn?' · Current turn':''}"><i>${i<battle.turn?'✓':i+1}</i>${img?`<img src="${img}" alt="">`:`<b>${enemy?'◆':'✦'}</b>`}<em>${esc(name)}</em><span class="turn-bead65" aria-hidden="true"></span></span>`;}).join('');
 }
 const battleUIBefore27=renderBattle;
 renderBattle=function(...args){const r=battleUIBefore27(...args);if(battle){timeline27();const old=$('#battle-targets');old.classList.add('world-targets27');old.replaceChildren();updateEnemyBars27();updateLesson18();}return r;};

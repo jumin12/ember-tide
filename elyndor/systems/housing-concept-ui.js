@@ -27,5 +27,3 @@ function positionHomeService146(){const q=housingMenu139,panel=q.root?.querySele
 }
 document.addEventListener('toggle',e=>{if(e.target.matches?.('.home-layout-disclosure146')&&e.target.isConnected)housingMenu139.layoutOpen146=e.target.open;},true);
 window.addEventListener('resize',positionHomeService146);
-const homeConceptCameraBefore146=updateCamera;
-updateCamera=function(...args){const r=homeConceptCameraBefore146(...args);if(housingMenu139.open&&housingMenu139.page==='greeting')positionHomeService146();return r;};

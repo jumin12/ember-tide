@@ -4,7 +4,7 @@ const fountainBefore122=brookFountain;
 const townPaving122=new WeakMap();
 function pavingMaterial122(){
  if(townPaving122.has(world))return townPaving122.get(world);
- const m=new THREE.MeshStandardMaterial({map:environment102.maps.get('cobbleOld'),color:'#b7bead',roughness:.93,metalness:0,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-1});m.userData.textureKey='cobbleOld';addCloudLighting(m);lightPaintedSurface82(m);materialFinish103(m);townPaving122.set(world,m);return m;
+ const m=new THREE.MeshStandardMaterial({map:environment102.maps.get('cobbleOld'),color:'#b7bead',roughness:.93,metalness:0,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-1});m.userData.textureKey='cobbleOld';m.userData.walkablePaving=true;addCloudLighting(m);lightPaintedSurface82(m);materialFinish103(m);townPaving122.set(world,m);return m;
 }
 brookFountain=function(){
  const start=world.children.length;fountainBefore122();

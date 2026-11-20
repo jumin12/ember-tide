@@ -27,31 +27,109 @@ function installFountain124(){
   s.fragmentShader=s.fragmentShader.replace('float edge62=max(1.-smoothstep(.01,.34,waterDepth62),1.-smoothstep(.05,.68,bed62.g));','float edge62=1.-smoothstep(.015,.16,2.195-length(basinDelta124));');
   s.fragmentShader=s.fragmentShader.replace('diffuseColor.rgb=mix(diffuseColor.rgb,mix(vec3(.15,.25,.29),vec3(.65,.8,.75),day62),foam62);',`vec2 impactNormal124=vec2(0.);float impactFoam124=0.;
    for(int j124=0;j124<8;j124++){float a124=float(j124)*.785398163;vec2 delta124=basinDelta124-vec2(cos(a124),sin(a124))*1.8;float d124=length(delta124);
-    float ring124=cos(d124*26.-fountainTime124*9.)*exp(-d124*3.1)*smoothstep(.02,.09,d124);
-    impactNormal124+=delta124/max(.02,d124)*ring124*.12*fountainFlow124;
-    impactFoam124+=exp(-d124*d124*100.)*(.08+.04*sin(fountainTime124*12.+a124))*fountainFlow124;}
+    float detail124=noise62(delta124*37.+vec2(fountainTime124*2.2,-fountainTime124*1.4));
+    float ring124=cos(d124*48.-fountainTime124*13.+a124)*exp(-d124*6.2)*smoothstep(.012,.054,d124);
+    impactNormal124+=delta124/max(.02,d124)*ring124*.34*fountainFlow124;
+    impactFoam124+=(exp(-d124*d124*145.)*(.07+detail124*.31)+max(0.,ring124)*detail124*.12)*fountainFlow124;}
    foam62+=impactFoam124;diffuseColor.rgb=mix(diffuseColor.rgb,mix(vec3(.15,.25,.29),vec3(.65,.8,.75),day62),clamp(foam62,0.,.65));`);
   s.fragmentShader=s.fragmentShader.replace('normal=normalize(normal+mat3(viewMatrix)*fineN62*.65);','normal=normalize(normal+mat3(viewMatrix)*(fineN62*.65+vec3(impactNormal124.x,0.,impactNormal124.y)));');
+  s.fragmentShader=s.fragmentShader.replace('#include <tonemapping_fragment>','gl_FragColor.rgb+=key62*impactFoam124*(.06+day62*.20);\n#include <tonemapping_fragment>');
  };m.customProgramCacheKey=()=>key+'-fountain-circulation124';m.needsUpdate=true;
  // Replace the old stationary, cloth-textured tubes with moving water.
  const prior=new Set();f.basin.traverse(o=>{if(o.userData.dynamicWater)prior.add(o);});prior.delete(pool);for(const o of prior){o.removeFromParent();o.geometry?.dispose();}
- world.userData.supplyJets=(world.userData.supplyJets??[]).filter(o=>!prior.has(o));f.curves=[];f.jets=[];
- const jetMaterial=new THREE.MeshPhysicalMaterial({map:textures.riverSurface18,normalMap:envPbr103.maps.get('waveHeight103:normalRough'),normalScale:new THREE.Vector2(.10,.10),color:'#9fc7cd',roughness:.16,metalness:0,transparent:true,opacity:.78,envMap:surface67.outdoor,envMapIntensity:.55,clearcoat:.6});
- jetMaterial.onBeforeCompile=s=>{s.uniforms.fountainTime124=f.time;s.fragmentShader='uniform float fountainTime124;\n'+s.fragmentShader;s.fragmentShader=s.fragmentShader.replace('#include <map_fragment>',`vec2 jetUv124=vec2(vMapUv.x*2.-fountainTime124*1.3,vMapUv.y);vec3 jetArt124=texture2D(map,jetUv124).rgb;
- diffuseColor.rgb*=mix(vec3(.66,.82,.88),jetArt124*1.5,.25);diffuseColor.rgb+=vec3(.07,.11,.12)*pow(.5+.5*sin(vMapUv.x*52.-fountainTime124*18.),8.);`);};jetMaterial.customProgramCacheKey=()=> 'fountain-moving-stream124';
- for(let i=0;i<8;i++){const a=i/8*TAU,curve=new THREE.QuadraticBezierCurve3(V3(Math.cos(a)*.48,2.71,Math.sin(a)*.48),V3(Math.cos(a)*1.1,2.1,Math.sin(a)*1.1),V3(Math.cos(a)*1.8,.65,Math.sin(a)*1.8));f.curves.push(curve);
-  const jet=new THREE.Mesh(new THREE.TubeGeometry(curve,36,.033,8,false),jetMaterial);jet.name='Flowing fountain stream';jet.castShadow=false;jet.userData.dynamicWater=true;f.basin.add(jet);f.jets.push(jet);world.userData.supplyJets.push(jet);}
- f.drops=new THREE.InstancedMesh(new THREE.SphereGeometry(.033,6,4),jetMaterial,32);f.drops.name='Falling fountain droplets';f.drops.userData.dynamicWater=true;f.drops.castShadow=false;f.drops.frustumCulled=false;f.basin.add(f.drops);
- f.installed=true;f.stats={family:'Valenne',sharedRiverTextures:true,liveReflection:true,streams:8,droplets:32,impactRipples:8,time:0};world.userData.fountainWater124=f.stats;
+ world.userData.supplyJets=(world.userData.supplyJets??[]).filter(o=>!prior.has(o));
+ installFountainStreams124(f);
+ f.installed=true;f.stats={family:'Valenne',sharedRiverTextures:true,liveReflection:true,streams:8,droplets:48,impactRipples:8,time:0};world.userData.fountainWater124=f.stats;
  updateFountain124(0);
+}
+
+function installFountainStreams124(f){
+ const curve=new THREE.CubicBezierCurve3(V3(.54,2.685,0),V3(1.20,2.89,0),V3(1.64,1.68,0),V3(1.8,.635,0));
+ const segments=44,ring=9,geo=new THREE.TubeGeometry(curve,segments,.030,ring-1,false),centers=[];
+ for(let i=0;i<=segments;i++){const p=curve.getPointAt(i/segments);for(let j=0;j<ring;j++)centers.push(p.x,p.y,p.z);}
+ geo.setAttribute('jetCenter',new THREE.Float32BufferAttribute(centers,3));
+ const material=new THREE.ShaderMaterial({transparent:true,depthWrite:false,uniforms:{
+  time:f.time,flow:f.flow,day:waterLight62.day,skyTint:waterLight62.sky,keyTint:waterLight62.key,
+  sunDirection:waterLight62.sun,sunPower:waterLight62.power,cloud:waterLight62.cloud,waterArt:{value:textures.riverSurface18}
+ },vertexShader:`
+ attribute vec3 jetCenter;uniform float time;varying vec3 worldPoint,worldNormal;varying vec2 streamUV;varying float phase;
+ void main(){
+  phase=instanceMatrix[0].z*5.+instanceMatrix[0].x*2.3;
+  float run=uv.x;float advect=run*30.-time*6.2+phase;
+  float pulse=1.+.14*sin(advect)+.072*sin(advect*2.6+uv.y*6.283);
+  vec3 p=jetCenter+(position-jetCenter)*pulse;
+  p.z+=.011*sin(run*20.-time*4.5+phase)*sin(run*3.14159);
+  p.y+=.014*sin(run*24.-time*6.+phase)*sin(run*3.14159);
+  vec4 w=modelMatrix*instanceMatrix*vec4(p,1.);worldPoint=w.xyz;
+  worldNormal=normalize(mat3(modelMatrix)*mat3(instanceMatrix)*normal);streamUV=uv;
+  gl_Position=projectionMatrix*viewMatrix*w;
+ }`,fragmentShader:`
+ uniform float time,flow,day,sunPower,cloud;uniform vec3 skyTint,keyTint,sunDirection;uniform sampler2D waterArt;
+ varying vec3 worldPoint,worldNormal;varying vec2 streamUV;varying float phase;
+ void main(){
+  vec3 v=normalize(cameraPosition-worldPoint),n=normalize(worldNormal);
+  float rim=pow(1.-max(0.,dot(n,v)),2.4);
+  float speed=streamUV.x*2.7-time*1.8+phase;
+  float striae=texture2D(waterArt,vec2(speed,streamUV.y*.21+phase)).g;
+  float bands=sin(speed*37.+striae*6.)*.5+.5;
+  vec3 h=normalize(v+normalize(sunDirection));
+  float glint=pow(max(0.,dot(n,h)),39.)*min(1.2,sunPower)*(1.-cloud*.62);
+  vec3 body=mix(vec3(.09,.15,.16),skyTint*.66,.23+rim*.49);
+  float crest=pow(clamp(bands*(.59+striae*.93),0.,1.),2.7);
+  float sheen=rim*(.14+crest*.47)+glint*.91;
+  vec3 warm=keyTint*sheen*(.41+.59*day);
+  float edge=smoothstep(.0,.024,streamUV.x)*(1.-smoothstep(.968,1.,streamUV.x));
+  gl_FragColor=vec4(body+warm,flow*edge*(.17+rim*.44+crest*.19+glint*.27));
+  #include <tonemapping_fragment>
+  #include <colorspace_fragment>
+ }`});
+ f.streams=new THREE.InstancedMesh(geo,material,8);f.streams.name='Curved recirculating fountain jets';
+ const transform=new THREE.Matrix4();for(let i=0;i<8;i++)f.streams.setMatrixAt(i,transform.makeRotationY(-i*TAU/8));
+ f.streams.instanceMatrix.needsUpdate=true;f.streams.computeBoundingSphere();
+ f.streams.userData.dynamicWater=true;f.streams.userData.dynamicFX=true;f.basin.add(f.streams);
+
+ const crownMaterial=new THREE.MeshPhysicalMaterial({color:'#80a2a4',roughness:.21,clearcoat:1,clearcoatRoughness:.13,envMap:surface67.outdoor,envMapIntensity:.65,transparent:true,opacity:.29,depthWrite:false});
+ const crownNormal=envPbr103.maps.get('waveHeight103:normalRough');
+ crownMaterial.normalMap=crownNormal;
+ crownMaterial.normalScale.set(.28,.28);
+ crownMaterial.onBeforeCompile=s=>{
+  s.uniforms.crownTime=f.time;s.fragmentShader='uniform float crownTime;\n'+s.fragmentShader;
+  s.fragmentShader=s.fragmentShader.replace('#include <normal_fragment_maps>',`
+   vec2 crownUV=vNormalMapUv*2.+vec2(crownTime*.29,-crownTime*.22);
+   vec3 crownWave=texture2D(normalMap,crownUV).xyz*2.-1.;
+   crownWave.xy*=normalScale;
+   normal=normalize(tbn*crownWave);
+   diffuseColor.a*=1.-smoothstep(.43,.50,length(vNormalMapUv-vec2(.5)));`);
+ };
+ crownMaterial.customProgramCacheKey=()=> 'fountain-wet-crown';
+ f.crown=new THREE.Mesh(new THREE.CircleGeometry(.596,48),crownMaterial);f.crown.name='Shallow water over the fountain crown';
+ f.crown.position.y=2.701;f.crown.rotation.x=-Math.PI/2;
+ f.crown.userData.dynamicWater=true;f.crown.userData.dynamicFX=true;f.basin.add(f.crown);
+
+ const splashMaterial=new THREE.MeshPhysicalMaterial({color:'#b8d4d1',roughness:.22,metalness:.0,clearcoat:.8,envMap:surface67.outdoor,envMapIntensity:.56,transparent:true,opacity:.63,depthWrite:false});
+ f.drops=new THREE.InstancedMesh(new THREE.SphereGeometry(.023,6,4),splashMaterial,48);
+ f.drops.name='Fountain contact spray';f.drops.userData.dynamicWater=true;f.drops.userData.dynamicFX=true;
+ f.drops.frustumCulled=false;f.drops.instanceMatrix.setUsage(THREE.DynamicDrawUsage);f.basin.add(f.drops);
+ f.spray={transform,position:V3(),scale:V3(),rotation:new THREE.Quaternion()};
 }
 const fountainBuildBefore124=buildWorld;
 buildWorld=function(...args){const r=fountainBuildBefore124(...args);installFountain124();return r;};
 function updateFountain124(dt){
  const f=world?.userData.fountain123;if(!f?.installed||activeScene.key!=='brookstead')return;
  const on=state.flags.pump_repaired===true;f.flow.value=mix(f.flow.value,on?1:0,1-Math.exp(-Math.max(0,dt)*3));f.time.value+=Math.max(0,dt)*(.10+f.flow.value*.90);
- const matrix=new THREE.Matrix4(),scale=V3(1,1.55,1),rot=new THREE.Quaternion();f.jets.forEach(j=>j.visible=on);f.drops.visible=on;
- for(let i=0;i<32;i++){const t=(f.time.value*.68+(i%4)/4+(i>>2)*.13)%1,p=f.curves[i>>2].getPoint(t);matrix.compose(p,rot,scale);f.drops.setMatrixAt(i,matrix);}f.drops.instanceMatrix.needsUpdate=true;f.stats.time=f.time.value;f.stats.flow=f.flow.value;
+ f.streams.visible=f.drops.visible=f.crown.visible=on;
+ if(on&&dt>0){
+  const {transform,position,scale,rotation}=f.spray;
+  for(let i=0;i<48;i++){
+   const a=Math.floor(i/6)*TAU/8,j=i%6;
+   const t=(f.time.value*(1.05+.17*j)+i*.382)%1,spread=a+j*2.39996;
+   const size=Math.sin(t*Math.PI)**.55*(.46+.10*j)*f.flow.value;
+   position.set(Math.cos(a)*1.80+Math.cos(spread)*t*(.14+j*.036),.643+4*t*(1-t)*(.070+j*.031),Math.sin(a)*1.80+Math.sin(spread)*t*(.14+j*.036));
+   scale.set(size,size*1.65,size);transform.compose(position,rotation,scale);f.drops.setMatrixAt(i,transform);
+  }
+  f.drops.instanceMatrix.needsUpdate=true;
+ }
+ f.stats.time=f.time.value;f.stats.flow=f.flow.value;
 }
 const fountainFxBefore124=updateWorldFX;
 updateWorldFX=function(dt){fountainFxBefore124(dt);updateFountain124(dt);};

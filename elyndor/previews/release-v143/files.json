@@ -1,0 +1,77 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 97880,
+    "sha256": "23018fdd1ef8a4d73328bbb61b6048c244a83e2e7a65a8f53d58f1aab0e830b5"
+  },
+  {
+    "file": "elyndor/combat-v27.js",
+    "bytes": 7444,
+    "sha256": "ecbe02e703ef736adbc032c380c7d4f5c753f863308c179002c219fbd3005439"
+  },
+  {
+    "file": "elyndor/previews/release-v143/verification.json",
+    "bytes": 1786,
+    "sha256": "713c914c77ce5468d4de3d57f41d17744157d9cd8db0718574a46f0f2dcbc208"
+  },
+  {
+    "file": "elyndor/systems/brookstead-square.js",
+    "bytes": 16529,
+    "sha256": "d598933b0d8120e393bebb572193035bfcd912037068211068001f4447f73160"
+  },
+  {
+    "file": "elyndor/systems/combat-hud-polish.css",
+    "bytes": 15047,
+    "sha256": "6b8126410d44ef2ed2c1075ee2847e59042364af1f7209c80acc1e07df7f7170"
+  },
+  {
+    "file": "elyndor/systems/combat-interface.js",
+    "bytes": 9966,
+    "sha256": "b60210ea8ce9c9a68f48c85ccb5f49e4e62461ab07e2e5616a534100bc1115d6"
+  },
+  {
+    "file": "elyndor/systems/environmental-fire.js",
+    "bytes": 14035,
+    "sha256": "a9b758fc8b69c2307eb0e4e450f7e0dbffdb9b01033562548883859497f15c2a"
+  },
+  {
+    "file": "elyndor/systems/fountain-water.js",
+    "bytes": 11020,
+    "sha256": "9374af1a3bc3d32a12989d7c71a39796b10ff55aa6185edd098c3584710a38a0"
+  },
+  {
+    "file": "elyndor/systems/housing-concept-ui.css",
+    "bytes": 14967,
+    "sha256": "bea79eab2506357591005029cc3bbeb44d7793d3f280f17ac1158e098354783c"
+  },
+  {
+    "file": "elyndor/systems/housing-concept-ui.js",
+    "bytes": 8319,
+    "sha256": "b00d63f68dd42ec86c71f65590322ec36b21c642731c0b259d8846f631ecb730"
+  },
+  {
+    "file": "elyndor/systems/housing-ui.js",
+    "bytes": 22826,
+    "sha256": "06b4e206d2dd4ce74e0768112df0618b6ea832ba6ce0b92a0b21a2c92c758c9f"
+  },
+  {
+    "file": "elyndor/systems/player-visibility.js",
+    "bytes": 6915,
+    "sha256": "18cd59f5f8df8c2c804702d18792519e737fddf29da40466b6af93f4272bd354"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 93638,
+    "sha256": "62b55695a6703747a8f5392d5351abedef2eb641a52dbac52bf3a18421da9d68"
+  },
+  {
+    "file": "index.html",
+    "bytes": 7690821,
+    "sha256": "cc4a9a0e21d2ed7d8f6e101d78812b6a63c0fe3cf83881c59001a3ca95098d8a"
+  },
+  {
+    "file": "release.json",
+    "bytes": 97518,
+    "sha256": "23456f607d656cf69e736dd7ed4b983fc971c4061332721af13b24667fd0ec54"
+  }
+]
