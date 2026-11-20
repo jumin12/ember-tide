@@ -1,0 +1,105 @@
+{
+  "version": "Alpha Version 1.45",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7697857,
+    "sha256": "33b990da953e6cc61a116b9d1cb56f0c3f663411e77341138976e7c110473f97",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "base": "709687432a4b36799124a4f4bb61b8a7f16d3762",
+  "gameplayChecks": {
+    "dev": {
+      "viewports": [
+        [
+          1440,
+          900
+        ]
+      ],
+      "activeStreams": true,
+      "reflections": true,
+      "runtimeErrors": 0
+    },
+    "current": {
+      "viewports": [
+        [
+          1440,
+          900
+        ],
+        [
+          960,
+          540
+        ],
+        [
+          640,
+          360
+        ],
+        [
+          1920,
+          900
+        ]
+      ],
+      "activeStreams": true,
+      "reflections": true,
+      "runtimeErrors": 0
+    },
+    "legacy": {
+      "viewports": [
+        [
+          390,
+          844
+        ],
+        [
+          844,
+          390
+        ],
+        [
+          844,
+          390
+        ]
+      ],
+      "activeStreams": true,
+      "reflections": true,
+      "runtimeErrors": 0,
+      "warning": true,
+      "exportedAndReimported": true,
+      "originalRecordPreserved": true
+    },
+    "early": {
+      "viewports": [
+        [
+          1440,
+          900
+        ]
+      ],
+      "activeStreams": false,
+      "reflections": true,
+      "runtimeErrors": 0
+    }
+  },
+  "saveCompatibility": {
+    "pass": true,
+    "cases": [
+      "stable quest identity",
+      "frozen legacy migration",
+      "unknown quest",
+      "invalid position",
+      "invalid party",
+      "invalid character data",
+      "numeric bounds",
+      "checksum",
+      "backup recovery",
+      "legacy recovery and export",
+      "waterworks progress migration",
+      "optional task validation",
+      "ordered ceremony recovery validation"
+    ]
+  },
+  "timedComboDamage": [
+    20,
+    25,
+    31
+  ],
+  "runtimeErrors": 0,
+  "assetBundleUnchanged": true
+}

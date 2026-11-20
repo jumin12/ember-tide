@@ -1,24 +1,35 @@
 {
-  "release": "elyndor-alpha-1.44-fountain-and-housing-return-2026-11-20",
-  "version": "Alpha Version 1.44",
+  "release": "elyndor-alpha-1.45-stable-fountain-and-legacy-saves-2026-11-20",
+  "version": "Alpha Version 1.45",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 7693568,
-    "sha256": "0d481e5223c6ab786192849d848db192c2e3488b177ca3ba095f3ec6f6efa18d",
+    "bytes": 7697857,
+    "sha256": "33b990da953e6cc61a116b9d1cb56f0c3f663411e77341138976e7c110473f97",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "d34c2b3eb34b94513a237a6e23a2ef5f3ff67ab5"
+    "previousRelease": "709687432a4b36799124a4f4bb61b8a7f16d3762"
   },
   "changes": [
-    "Brookstead’s fountain keeps its stonework intact as you walk around it. Flowing streams stay visible from every side, with continuous limestone textures and softer glare on the water.",
-    "Select Leave when speaking to Azarith in your private yard to walk through the portal and return to the town and spot where you started your trip."
+    "Brookstead’s restored fountain now flows when entering through the developer panel or resuming a journey past the pump repair. The streams and limestone joints stay readable on smaller displays.",
+    "Journey records in save formats 3 through 5 can load, export and migrate to the current format. Older records that are missing waterworks flags recover them from their quest progress.",
+    "Load Game marks older save formats. Export a backup, then save to a new slot and verify it loads before deleting the old record."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.45",
+      "date": "November 20, 2026",
+      "title": "Stable fountain and legacy saves",
+      "items": [
+        "Brookstead’s restored fountain now flows when entering through the developer panel or resuming a journey past the pump repair. The streams and limestone joints stay readable on smaller displays.",
+        "Journey records in save formats 3 through 5 can load, export and migrate to the current format. Older records that are missing waterworks flags recover them from their quest progress.",
+        "Load Game marks older save formats. Export a backup, then save to a new slot and verify it loads before deleting the old record."
+      ]
+    },
     {
       "version": "Alpha Version 1.44",
       "date": "November 20, 2026",
@@ -895,8 +906,8 @@
     "coloredAbilitySceneLighting": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v144/verification.json",
-    "sha256": "e2a154ca959b72ba452da142c41d7cd264b8cb003ee4607545254e7c32007bea",
+    "file": "elyndor/previews/release-v145/verification.json",
+    "sha256": "491e9f90ba94ed69f57e9f36c0f647d96621672c1c3aa088c1d13a02be522660",
     "finalRelease": "PASS",
     "desktopAndPhone": true
   },
@@ -937,9 +948,9 @@
     "spriteLighting": "Coherent party and NPC canopy reception outside combat; original art and sampling retained"
   },
   "previousPublishedRelease": {
-    "commit": "d34c2b3eb34b94513a237a6e23a2ef5f3ff67ab5",
-    "version": "Alpha Version 1.43",
-    "sha256": "cc4a9a0e21d2ed7d8f6e101d78812b6a63c0fe3cf83881c59001a3ca95098d8a"
+    "commit": "709687432a4b36799124a4f4bb61b8a7f16d3762",
+    "version": "Alpha Version 1.44",
+    "sha256": "0d481e5223c6ab786192849d848db192c2e3488b177ca3ba095f3ec6f6efa18d"
   },
   "housing": {
     "maximumOwnedHomes": 1,

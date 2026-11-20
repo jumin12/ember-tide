@@ -2,7 +2,8 @@
 // recovery records and portable files. Runtime state is never read directly
 // from unvalidated browser storage.
 const SAVE_SCHEMA=5,SAVE_FORMAT='elyndor-journey',SAVE_SLOTS=['auto','1','2','3'];
-const saveManager={pending:false,lastWrite:-100,loading:null,recovered:new Set(),errors:[],cache:new Map()};
+const READABLE_SAVE_VERSIONS=[SAVE_SCHEMA,4,3];
+const saveManager={pending:false,lastWrite:-100,loading:null,recovered:new Set(),legacy:new Set(),errors:[],cache:new Map()};
 const LEGACY_QUEST_KEYS=['arrival','gate','pump','wildlife','aftermath','travelFern','tavinIntro','joinTavin','commander1','stabilize','betrayal','evacuate','fernRepair','highmere','standoff','patients','patrol','leader','rescue','lysa','commander2','brace','alderRepair','returnLysa','reportNotes','logs','relay','pause','initialCouncil','dream','archives','trialCouncil','trialReturn','reliefRepair','councilFindings','nearby','commander3','siteRepair','debrief','snow','complete'];
 const LEGACY_WORLD_QUEST_KEYS=["arrival","gate","pump","wildlife","aftermath","travelFern","tavinIntro","joinTavin","commander1","stabilize","betrayal","evacuate","fernRepair","fernLight","highmere","standoff","patients","patrol","leader","rescue","lysa","commander2","brace","alderRepair","alderLight","returnLysa","reportNotes","logs","relay","pause","initialCouncil","dream","archives","trialCouncil","trialReturn","reliefRepair","reliefLight","councilFindings","nearby","commander3","siteRepair","siteLight","debrief","snow","complete"];
 function saveChecksum(text){let h=2166136261;for(let i=0;i<text.length;i++){h^=text.charCodeAt(i);h=Math.imul(h,16777619);}return(h>>>0).toString(16).padStart(8,'0');}
@@ -19,8 +20,8 @@ function cleanSaveTree(value,depth=0){
 function normalizeJourneySave(input){
   if(!saveObject(input))throw Error('This is not a journey record.');
   let raw=input;
-  if(input.format!==undefined){if(input.format!==SAVE_FORMAT||input.schema!==SAVE_SCHEMA||!saveObject(input.payload))throw Error('This journey format is not supported.');const text=JSON.stringify(input.payload);if(input.checksum!==saveChecksum(text))throw Error('This record is incomplete or damaged.');raw=input.payload;}
-  if(![3,4,5].includes(raw.version))throw Error('This record version is not supported.');
+  if(input.format!==undefined){if(input.format!==SAVE_FORMAT||!READABLE_SAVE_VERSIONS.includes(input.schema)||!saveObject(input.payload))throw Error('This journey format is not supported.');const text=JSON.stringify(input.payload);if(input.checksum!==saveChecksum(text))throw Error('This record is incomplete or damaged.');raw=input.payload;}
+  if(!READABLE_SAVE_VERSIONS.includes(raw.version))throw Error('This record version is not supported.');
   const q=cleanSaveTree(raw),base=initialState(),old=q.version===3;
   const questKey=q.questId??(old?LEGACY_QUEST_KEYS:LEGACY_WORLD_QUEST_KEYS)[q.beat],beat=BEATS.findIndex(b=>b[0]===questKey);
   if(beat<0)throw Error('The saved quest is unknown.');
@@ -28,7 +29,13 @@ function normalizeJourneySave(input){
   if(!saveObject(q.position)||!Number.isFinite(q.position.x)||!Number.isFinite(q.position.z))throw Error('The saved position is missing.');
   if(!Array.isArray(q.members)||!q.members.length||q.members.some(id=>!CAST[id]))throw Error('The saved party is invalid.');
   if(!saveObject(q.characters)||!saveObject(q.flags))throw Error('The saved character state is missing.');
-  const s={...base,...q,version:5,questId:questKey,beat,mode:'explore',members:[...new Set(q.members)],flags:{...q.flags},settings:{...base.settings,...(saveObject(q.settings)?q.settings:{})},characters:{}};
+  const s={...base,...q,version:SAVE_SCHEMA,questId:questKey,beat,mode:'explore',members:[...new Set(q.members)],flags:{...q.flags},settings:{...base.settings,...(saveObject(q.settings)?q.settings:{})},characters:{}};
+  // Older records can have the completed quest without its world flags.
+  const gateBeat=BEATS.findIndex(b=>b[0]==='gate'),pumpBeat=BEATS.findIndex(b=>b[0]==='pump');
+  if(s.flags.gate_open===1||gateBeat>=0&&beat>gateBeat)s.flags.gate_open=true;
+  if(s.flags.pump_repaired===true||s.flags.pump_repaired===1||s.flags.temporary_water_available===true||pumpBeat>=0&&beat>pumpBeat){
+    Object.assign(s.flags,{gate_open:true,pump_repaired:true,temporary_water_available:true});
+  }
   normalizeParty96(s);
   for(const[id,def]of Object.entries(base.characters)){
     const c=saveObject(q.characters[id])?q.characters[id]:{},gear={weapon:null,armor:null,accessory:null,offhand:null};
@@ -57,13 +64,35 @@ function normalizeJourneySave(input){
   if(s.restoredLights.length===LIGHT_SITES.length&&beat>BEATS.findIndex(b=>b[0]==='siteLight'))s.flags.region_restored=true;
   s.savedAt=boundedNumber(q.savedAt,Date.now(),0,Date.now()+86400000);return s;
 }
-function parseJourneySave(text){if(typeof text!=='string'||text.length>4000000)throw Error('The journey file is too large.');return normalizeJourneySave(JSON.parse(text));}
+function decodeJourneySave(text){
+  if(typeof text!=='string'||text.length>4000000)throw Error('The journey file is too large.');
+  const source=JSON.parse(text),record=normalizeJourneySave(source);
+  return {record,legacy:source.format===undefined?source.version!==SAVE_SCHEMA:source.schema!==SAVE_SCHEMA||source.payload.version!==SAVE_SCHEMA};
+}
+function parseJourneySave(text){return decodeJourneySave(text).record;}
 function encodeJourneySave(payload){return JSON.stringify({format:SAVE_FORMAT,schema:SAVE_SCHEMA,payload,checksum:saveChecksum(JSON.stringify(payload))});}
+function hasJourneyRecordData(slot){
+  try{return READABLE_SAVE_VERSIONS.some(v=>{
+    const key='elyndor-save-v'+v+'-'+slot;
+    return localStorage.getItem(key)!==null||localStorage.getItem(key+'-backup')!==null;
+  });}catch{return false;}
+}
 function readJourneyRecord(slot){
-  if(!SAVE_SLOTS.includes(String(slot)))return null;const key='elyndor-save-v5-'+slot;
-  for(const name of[key,key+'-backup','elyndor-save-v4-'+slot,'elyndor-save-v3-'+slot]){
-    try{const text=localStorage.getItem(name);if(!text)continue;const record=parseJourneySave(text);if(name===key+'-backup')saveManager.recovered.add(String(slot));else saveManager.recovered.delete(String(slot));return record;}catch{}
-  }return null;
+  slot=String(slot);if(!SAVE_SLOTS.includes(slot))return null;
+  saveManager.recovered.delete(slot);saveManager.legacy.delete(slot);
+  for(const version of READABLE_SAVE_VERSIONS){
+    const key='elyndor-save-v'+version+'-'+slot;
+    for(const backup of [false,true]){
+      try{
+        const text=localStorage.getItem(backup?key+'-backup':key);if(!text)continue;
+        const {record,legacy}=decodeJourneySave(text);
+        if(backup)saveManager.recovered.add(slot);
+        if(legacy||version!==SAVE_SCHEMA)saveManager.legacy.add(slot);
+        return record;
+      }catch{}
+    }
+  }
+  return null;
 }
 readSave=readJourneyRecord;
 function snapshotJourney(){
@@ -71,9 +100,9 @@ function snapshotJourney(){
   return normalizeJourneySave(s);
 }
 function writeJourneyRecord(slot,record){
-  const key='elyndor-save-v5-'+slot,text=encodeJourneySave(record),old=localStorage.getItem(key);parseJourneySave(text);
+  const key='elyndor-save-v'+SAVE_SCHEMA+'-'+slot,text=encodeJourneySave(record),old=localStorage.getItem(key);parseJourneySave(text);
   if(old){try{parseJourneySave(old);localStorage.setItem(key+'-backup',old);}catch{}}
-  localStorage.setItem(key,text);parseJourneySave(localStorage.getItem(key));saveManager.recovered.delete(String(slot));return true;
+  localStorage.setItem(key,text);parseJourneySave(localStorage.getItem(key));saveManager.recovered.delete(String(slot));saveManager.legacy.delete(String(slot));return true;
 }
 function canSnapshotJourney(){return !!player&&!battle&&!restoration&&!eventAction&&!dialogue&&!transition&&!gameLoading&&!sceneSwitchPending&&state.mode==='explore'&&!(typeof campaignEvents!=='undefined'&&campaignEvents.active);}
 saveSlot=function(slot,silent=false){
@@ -85,21 +114,32 @@ autoSave=function(){saveManager.pending=true;};
 function flushJourneyCheckpoint(){if(saveManager.pending&&canSnapshotJourney()&&clock-saveManager.lastWrite>1){if(saveSlot('auto',true))saveManager.pending=false;}}
 loadSlot=function(slot='auto'){
   if(gameLoading||saveManager.loading)return false;const saved=readSave(String(slot));if(!saved){toast('This record could not be read.');return false;}
+  const legacy=saveManager.legacy.has(String(slot)),recovered=saveManager.recovered.has(String(slot));
   const previousState=state;title19.stopped=true;setJourneyLoading(true);resetSimulation();loading36.pendingSave=String(slot);
   const task=(async()=>{try{
     await yieldLoad36();await yieldLoad36();restoreVillage26();if(typeof cancelCampaignEvents==='function')cancelCampaignEvents();state=saved;menu=null;dialogue=null;battle=null;eventAction=null;transition=null;restoration=null;route=null;saveManager.pending=false;
     for(const selector of['#title','#menu','#dialogue','#battle-hud','#battle-results'])$(selector)?.classList.add('hidden');$('#letterbox').classList.remove('active');$('#hud').classList.remove('hidden');$('#scene-transition').classList.remove('show');
     buildWorld(saved.scene,[saved.position.x,saved.position.z]);
     for(const n of saved.worldNPCs){const a=npcs.find(a=>n.instanceId?a.instanceId===n.instanceId:a.id===n.id&&!a.instanceId);if(a&&staticFree(n.x,n.z,.4)){a.x=n.x;a.z=n.z;a.tasks=n.tasks;a.workIndex=n.workIndex;}}
-    syncStoryWorld();await prepareGameplayGraphics();updateHUD();toast(saveManager.recovered.has(String(slot))?'Recovered the previous good record.':'Journey resumed.');if(typeof resumeCampaignEvents==='function')queueMicrotask(resumeCampaignEvents);return true;
+    syncStoryWorld();await prepareGameplayGraphics();updateHUD();toast(legacy?'Older journey loaded. Export a backup and verify a new save before deleting the old one.':recovered?'Recovered the previous good record.':'Journey resumed.');if(typeof resumeCampaignEvents==='function')queueMicrotask(resumeCampaignEvents);return true;
   }catch(e){state=previousState;console.error(e);$('#fatal-text').textContent='The journey could not be resumed. Your saved records are unchanged. '+e.message;$('#fatal').classList.remove('hidden');return false;}
   finally{setJourneyLoading(false);loading36.pendingSave=null;saveManager.loading=null;resetSimulation();}})();saveManager.loading=task;window.journeyGraphicsReady=task;return true;
 };
-removeSave19=function(slot){if(!['1','2','3'].includes(String(slot)))return false;try{for(const v of['v5','v4','v3']){localStorage.removeItem('elyndor-save-'+v+'-'+slot);localStorage.removeItem('elyndor-save-'+v+'-'+slot+'-backup');}saveManager.recovered.delete(String(slot));return true;}catch{toast('The browser could not remove this record.');return false;}};
+removeSave19=function(slot){if(!['1','2','3'].includes(String(slot)))return false;try{for(const v of READABLE_SAVE_VERSIONS){localStorage.removeItem('elyndor-save-v'+v+'-'+slot);localStorage.removeItem('elyndor-save-v'+v+'-'+slot+'-backup');}saveManager.recovered.delete(String(slot));saveManager.legacy.delete(String(slot));return true;}catch{toast('The browser could not remove this record.');return false;}};
 function exportJourneySave(slot){const record=readSave(slot);if(!record)return;const blob=new Blob([encodeJourneySave(record)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='Elyndor-record-'+slot+'-'+record.questId+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 function importJourneySave(slot){
   const input=document.createElement('input');input.type='file';input.accept='.json,application/json';input.onchange=async()=>{const file=input.files?.[0];if(!file)return;try{if(file.size>4000000)throw Error('The journey file is too large.');const record=parseJourneySave(await file.text());const modal=document.createElement('dialog');modal.className='journey-import';modal.innerHTML='<h2>Import journey into Record '+slot+'?</h2><p>'+esc(CAST[record.members[0]].name)+' · '+esc(SCENES[record.scene].name)+' · '+esc(BEATS[record.beat][2])+'</p><p>The current record in this slot will be kept as its recovery copy.</p><button data-import-confirm class="primary">Import record</button><button data-import-cancel>Cancel</button>';document.body.append(modal);modal.querySelector('[data-import-cancel]').onclick=()=>{modal.close();modal.remove();};modal.querySelector('[data-import-confirm]').onclick=()=>{try{writeJourneyRecord(slot,record);modal.close();modal.remove();renderTitlePanel19();if(menu)renderMenu();toast('Journey imported into Record '+slot+'.');}catch(e){toast(e.message);}};modal.addEventListener('cancel',()=>modal.remove(),{once:true});modal.showModal();}catch(e){toast('Cannot import this journey: '+e.message);}};input.click();
 }
 document.addEventListener('click',e=>{const button=e.target.closest('[data-export-journey],[data-import-journey]');if(!button)return;e.preventDefault();if(button.dataset.exportJourney)exportJourneySave(button.dataset.exportJourney);else importJourneySave(button.dataset.importJourney);});
-function decorateJourneyRecords(){for(const card of $$('.journey-slot19')){if(card.querySelector('.journey-portable'))continue;const slot=card.dataset.slot19,bar=document.createElement('div');bar.className='journey-portable';const valid=!!readSave(slot);bar.innerHTML='<button data-import-journey="'+slot+'">Import file</button>'+(valid?'<button data-export-journey="'+slot+'">Export file</button>':'')+(saveManager.recovered.has(slot)?'<small>Recovery copy available</small>':'');card.append(bar);}}
+function decorateJourneyRecords(){
+  for(const card of $$('.journey-slot19')){
+    if(card.querySelector('.journey-portable'))continue;
+    const slot=card.dataset.slot19,bar=document.createElement('div'),valid=!!readSave(slot);
+    bar.className='journey-portable';
+    bar.innerHTML='<button data-import-journey="'+slot+'">Import file</button>'+(valid?'<button data-export-journey="'+slot+'">Export file</button>':'');
+    if(saveManager.recovered.has(slot))bar.insertAdjacentHTML('beforeend','<small>Recovery copy available</small>');
+    if(saveManager.legacy.has(slot))bar.insertAdjacentHTML('afterbegin','<small class="journey-legacy">Old save format. Export a backup, then save to a new slot and check that it loads before deleting this record.</small>');
+    card.append(bar);
+  }
+}
 const persistenceObserver=new MutationObserver(decorateJourneyRecords);persistenceObserver.observe($('#title'),{childList:true,subtree:true});persistenceObserver.observe($('#menu'),{childList:true,subtree:true});

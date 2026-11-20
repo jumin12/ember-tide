@@ -2,6 +2,16 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.45 — Stable fountain and legacy saves
+
+November 20, 2026
+
+- Brookstead’s restored fountain now flows when entering through the developer panel or resuming a journey past the pump repair. The streams and limestone joints stay readable on smaller displays.
+- Journey records in save formats 3 through 5 can load, export and migrate to the current format. Older records that are missing waterworks flags recover them from their quest progress.
+- Load Game marks older save formats. Export a backup, then save to a new slot and verify it loads before deleting the old record.
+
+[Release verification](elyndor/previews/release-v145/verification.json)
+
 ## Alpha Version 1.44 — Brookstead fountain and housing return
 
 November 20, 2026

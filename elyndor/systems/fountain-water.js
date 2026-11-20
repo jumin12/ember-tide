@@ -3,7 +3,7 @@
 function installFountain124(){
  const f=world?.userData.fountain123;if(activeScene?.key!=='brookstead'||!f||f.installed)return;
  const river=world.userData.waterPools.find(o=>waterUniforms62.has(o.material)),riverUniforms=river&&waterUniforms62.get(river.material);if(!riverUniforms)return;
- f.time={value:0};f.flow={value:state.flags.pump_repaired?1:0};f.center={value:new THREE.Vector3(f.x,f.base+.64,f.z)};
+ f.time={value:0};f.flow={value:0};f.center={value:new THREE.Vector3(f.x,f.base+.64,f.z)};
  const pool=f.pool;world.attach(pool);pool.updateMatrixWorld(true);
  const n=pool.geometry.attributes.position.count,flow=new Float32Array(n*2);
  for(let i=0;i<n;i++){const p=pool.geometry.attributes.position,x=p.getX(i),z=-p.getY(i),length=Math.hypot(x,z)||1;flow[i*2]=-z/length;flow[i*2+1]=x/length;}
@@ -47,23 +47,28 @@ function installFountain124(){
 
 function installFountainStreams124(f){
  const curve=new THREE.CubicBezierCurve3(V3(.54,2.685,0),V3(1.20,2.89,0),V3(1.64,1.68,0),V3(1.8,.623,0));
- const segments=44,ring=11,geo=new THREE.TubeGeometry(curve,segments,.035,ring-1,false),centers=[];
+ const segments=44,ring=11,radius=.035,geo=new THREE.TubeGeometry(curve,segments,radius,ring-1,false),centers=[];
  for(let i=0;i<=segments;i++){const p=curve.getPointAt(i/segments);for(let j=0;j<ring;j++)centers.push(p.x,p.y,p.z);}
  geo.setAttribute('jetCenter',new THREE.Float32BufferAttribute(centers,3));
  const material=new THREE.ShaderMaterial({transparent:true,depthWrite:false,clipping:true,uniforms:{
-  time:f.time,flow:f.flow,day:waterLight62.day,skyTint:waterLight62.sky,keyTint:waterLight62.key,
+  time:f.time,flow:f.flow,jetPixels:{value:1},day:waterLight62.day,skyTint:waterLight62.sky,keyTint:waterLight62.key,
   sunDirection:waterLight62.sun,sunPower:waterLight62.power,cloud:waterLight62.cloud,waterArt:{value:textures.riverSurface18}
  },vertexShader:`
  #include <clipping_planes_pars_vertex>
- attribute vec3 jetCenter;uniform float time;varying vec3 worldPoint,worldNormal;varying vec2 streamUV;varying float phase;
+ attribute vec3 jetCenter;uniform float time,jetPixels;varying vec3 worldPoint,worldNormal;varying vec2 streamUV;varying float phase;
  void main(){
   phase=instanceMatrix[0].z*5.+instanceMatrix[0].x*2.3;
   float run=uv.x;float advect=run*30.-time*6.2+phase;
   float pulse=1.+.14*sin(advect)+.072*sin(advect*2.6+uv.y*6.283);
-  vec3 p=jetCenter+(position-jetCenter)*pulse;
+  mat4 jetMatrix=modelMatrix*instanceMatrix;
+  vec4 viewCenter=viewMatrix*jetMatrix*vec4(jetCenter,1.);
+  float projectedDiameter=jetPixels*projectionMatrix[1][1]/max(.01,-viewCenter.z);
+  // Keep small and low-resolution views from dropping subpixel streams.
+  float coverage=clamp(1.55/max(.01,projectedDiameter),1.,1.65);
+  vec3 p=jetCenter+(position-jetCenter)*pulse*coverage;
   p.z+=.011*sin(run*20.-time*4.5+phase)*sin(run*3.14159);
   p.y+=.014*sin(run*24.-time*6.+phase)*sin(run*3.14159);
-  vec4 w=modelMatrix*instanceMatrix*vec4(p,1.);worldPoint=w.xyz;
+  vec4 w=jetMatrix*vec4(p,1.);worldPoint=w.xyz;
   worldNormal=normalize(mat3(modelMatrix)*mat3(instanceMatrix)*normal);streamUV=uv;
   vec4 mvPosition=viewMatrix*w;
   gl_Position=projectionMatrix*mvPosition;
@@ -97,15 +102,19 @@ function installFountainStreams124(f){
   #include <colorspace_fragment>
  }`});
  f.streams=new THREE.InstancedMesh(geo,material,8);f.streams.name='Curved recirculating fountain jets';
+ const bufferSize=new THREE.Vector2();
+ f.streams.onBeforeRender=r=>{
+  material.uniforms.jetPixels.value=radius*(r.getRenderTarget()?.viewport.w??r.getDrawingBufferSize(bufferSize).y);
+ };
  const transform=new THREE.Matrix4();for(let i=0;i<8;i++)f.streams.setMatrixAt(i,transform.makeRotationY(-i*TAU/8));
  f.streams.instanceMatrix.needsUpdate=true;f.streams.computeBoundingSphere();
  f.streams.userData.dynamicWater=true;f.streams.userData.dynamicFX=true;f.basin.add(f.streams);
 
- const crownMaterial=new THREE.MeshPhysicalMaterial({color:'#80a2a4',roughness:.21,clearcoat:1,clearcoatRoughness:.13,envMap:surface67.outdoor,envMapIntensity:.65,transparent:true,opacity:.29,depthWrite:false});
+ const crownMaterial=new THREE.MeshPhysicalMaterial({color:'#80a2a4',roughness:.21,clearcoat:1,clearcoatRoughness:.13,envMap:surface67.outdoor,envMapIntensity:.65,transparent:true,opacity:.29,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-1});
  const crownNormal=envPbr103.maps.get('waveHeight103:normalRough');
  crownMaterial.normalMap=crownNormal;
  crownMaterial.normalScale.set(.28,.28);
- crownMaterial.onBeforeCompile=s=>{
+ if(crownNormal)crownMaterial.onBeforeCompile=s=>{
   s.uniforms.crownTime=f.time;s.fragmentShader='uniform float crownTime;\n'+s.fragmentShader;
   s.fragmentShader=s.fragmentShader.replace('#include <normal_fragment_maps>',`
    vec2 crownUV=vNormalMapUv*2.+vec2(crownTime*.29,-crownTime*.22);
@@ -114,7 +123,7 @@ function installFountainStreams124(f){
    normal=normalize(tbn*crownWave);
    diffuseColor.a*=1.-smoothstep(.43,.50,length(vNormalMapUv-vec2(.5)));`);
  };
- crownMaterial.customProgramCacheKey=()=> 'fountain-wet-crown';
+ crownMaterial.customProgramCacheKey=()=> 'fountain-wet-crown-'+!!crownNormal;
  f.crown=new THREE.Mesh(new THREE.CircleGeometry(.596,48),crownMaterial);f.crown.name='Shallow water over the fountain crown';
  f.crown.position.y=2.701;f.crown.rotation.x=-Math.PI/2;
  f.crown.userData.dynamicWater=true;f.crown.userData.dynamicFX=true;f.basin.add(f.crown);
@@ -129,9 +138,11 @@ const fountainBuildBefore124=buildWorld;
 buildWorld=function(...args){const r=fountainBuildBefore124(...args);installFountain124();return r;};
 function updateFountain124(dt){
  const f=world?.userData.fountain123;if(!f?.installed||activeScene.key!=='brookstead')return;
- const on=state.flags.pump_repaired===true;f.flow.value=mix(f.flow.value,on?1:0,1-Math.exp(-Math.max(0,dt)*3));f.time.value+=Math.max(0,dt)*(.10+f.flow.value*.90);
+ const on=state.flags.pump_repaired===true;
+ f.flow.value=dt>0?mix(f.flow.value,Number(on),1-Math.exp(-dt*3)):Number(on);
+ f.time.value+=Math.max(0,dt)*(.10+f.flow.value*.90);
  f.streams.visible=f.drops.visible=f.crown.visible=on;
- if(on&&dt>0){
+ if(on){
   const {transform,position,scale,rotation}=f.spray;
   for(let i=0;i<48;i++){
    const a=Math.floor(i/6)*TAU/8,j=i%6;

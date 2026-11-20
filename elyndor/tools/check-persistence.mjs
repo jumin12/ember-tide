@@ -5,6 +5,8 @@ const storage=new Map(),context=vm.createContext({console,Date,Set,Map,Math,JSON
 vm.runInContext(fs.readFileSync('elyndor/data.js','utf8'),context);
 vm.runInContext(`let readSave,saveSlot,autoSave,loadSlot,removeSave19;const LIGHT_SITES=['fern','alder','relief','site'].map(id=>({id,repair:id+'_repaired',beat:id+'Light',area:'entrance'}));const PLACES={approach:[0,0]};const LOCAL_REQUESTS16={fern:{},harbor:{}};BEATS.push(['siteLight',2,'Light','Light','Site']);`,context);
 vm.runInContext(fs.readFileSync('elyndor/systems/combat.js','utf8'),context);
+const partySource=fs.readFileSync('elyndor/party-v11.js','utf8');
+vm.runInContext(partySource.slice(0,partySource.indexOf('function partyRosterMarkup96')),context);
 vm.runInContext(fs.readFileSync('elyndor/systems/persistence.js','utf8'),context);
 const run=source=>vm.runInContext(source,context);
 run(`globalThis.valid=initialState();valid.version=5;valid.questId='arrival';valid.scene='entrance';valid.position={x:12,z:14};valid.savedAt=Date.now();`);
@@ -23,6 +25,17 @@ run(`writeJourneyRecord('1',valid);writeJourneyRecord('1',{...valid,gold:240});l
 assert.equal(run(`readSave('1').gold`),180,'A corrupt primary must recover the previous valid record');
 assert.equal(run(`saveManager.recovered.has('1')`),true);
 
+run(`globalThis.legacy={...valid,version:4,questId:undefined,beat:5};globalThis.legacyText=JSON.stringify(legacy);localStorage.setItem('elyndor-save-v4-2-backup',legacyText);`);
+assert.equal(run(`readSave('2').questId`),'travelFern');
+assert.equal(run(`saveManager.legacy.has('2')&&saveManager.recovered.has('2')`),true);
+assert.equal(run(`readSave('2').flags.gate_open&&readSave('2').flags.pump_repaired`),true);
+assert.equal(run(`parseJourneySave(encodeJourneySave(readSave('2'))).questId`),'travelFern');
+assert.equal(run(`localStorage.getItem('elyndor-save-v4-2-backup')===legacyText`),true,'Loading and exporting must preserve the old record');
+assert.equal(run(`decodeJourneySave(JSON.stringify({format:SAVE_FORMAT,schema:4,payload:legacy,checksum:saveChecksum(legacyText)})).record.flags.pump_repaired`),true);
+assert.equal(run(`normalizeJourneySave({...valid,version:3,questId:undefined,beat:3}).flags.pump_repaired`),true);
+assert.equal(run(`normalizeJourneySave({...valid,questId:'pump'}).flags.gate_open`),true);
+assert.equal(run(`Boolean(normalizeJourneySave({...valid,questId:'pump'}).flags.pump_repaired)`),false,'The pump repair objective must remain playable');
+assert.equal(run(`saveManager.legacy.has('1')`),false,'Current recovery copies are not legacy records');
 run(`globalThis.optional=normalizeJourneySave({...valid,localRequests16:{fern:{accepted:true,done:[0,0,1,99,-1],claimed:true},unknown:{accepted:true,done:[0,1,2],claimed:true}},trackedRequest16:"unknown"});`);assert.deepEqual(JSON.parse(run("JSON.stringify(optional.localRequests16.fern.done)")),[0,1]);assert.equal(run("optional.localRequests16.fern.claimed"),false);assert.equal(run("optional.trackedRequest16"),null);
 
 run(`globalThis.ceremony={...valid,questId:'siteLight',restoredLights:['fern','alder','relief','site'],regionalRestoration:{order:['alder','fern','relief','site'],origin:{scene:'entrance',position:[0,0]}}};`);
@@ -30,4 +43,4 @@ assert.equal(run(`normalizeJourneySave(ceremony).regionalRestoration.order[0]`),
 assert.throws(()=>run(`normalizeJourneySave({...ceremony,regionalRestoration:{...ceremony.regionalRestoration,order:['fern','fern','relief','site']}})`),/ceremony/);
 assert.throws(()=>run(`normalizeJourneySave({...ceremony,regionalRestoration:{...ceremony.regionalRestoration,origin:{scene:'missing',position:[0,0]}}})`),/ceremony/);
 assert.throws(()=>run(`normalizeJourneySave({...ceremony,regionalRestoration:{...ceremony.regionalRestoration,origin:{scene:'entrance',position:[null,0]}}})`),/ceremony/);
-console.log(JSON.stringify({pass:true,cases:['stable quest identity','frozen legacy migration','unknown quest','invalid position','invalid party','invalid character data','numeric bounds','checksum','backup recovery','optional task validation','ordered ceremony recovery validation']}));
+console.log(JSON.stringify({pass:true,cases:['stable quest identity','frozen legacy migration','unknown quest','invalid position','invalid party','invalid character data','numeric bounds','checksum','backup recovery','legacy recovery and export','waterworks progress migration','optional task validation','ordered ceremony recovery validation']}));

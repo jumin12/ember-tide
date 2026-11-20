@@ -51,6 +51,24 @@ function basinRing123(parent,outer,inner,y,depth,tint){
  const geometry=new THREE.ExtrudeGeometry(shape,{depth,bevelEnabled:false,curveSegments:64});geometry.rotateX(-Math.PI/2);
  const o=mesh(wrapFountainStone123(geometry,outer),fountainStone123(tint),0,y,0,parent);o.name='Continuous circular fountain masonry';return o;
 }
+function fountainMortar123(m,x,z){
+ const before=m.onBeforeCompile,key=m.customProgramCacheKey(),center={value:new THREE.Vector2(x,z)};
+ m.onBeforeCompile=function(shader,...args){
+  before.call(this,shader,...args);
+  shader.uniforms.fountainRimCenter123=center;
+  const varying='varying vec3 fountainRim123;\n';
+  shader.vertexShader='uniform vec2 fountainRimCenter123;\n'+varying+shader.vertexShader.replace(
+   '#include <worldpos_vertex>','#include <worldpos_vertex>\nfountainRim123=vec3((modelMatrix*vec4(transformed,1.)).xz-fountainRimCenter123,objectNormal.y);');
+  // Filter mortar in screen space so oblique joints stay continuous at low resolution.
+  shader.fragmentShader=varying+shader.fragmentShader.replace('#include <map_fragment>',`#include <map_fragment>
+   float sector123=atan(fountainRim123.y,fountainRim123.x)*5.092958;
+   float joint123=length(fountainRim123.xy)*sin(abs(fract(sector123+.5)-.5)*.196350);
+   float pixel123=max(.004,length(fwidth(fountainRim123.xy))*.5);
+   float mortar123=(1.-smoothstep(max(0.,.018-pixel123),.018+pixel123,joint123))*min(1.,.018/pixel123);
+   diffuseColor.rgb*=1.-.34*mortar123*step(.5,fountainRim123.z);`);
+ };
+ m.customProgramCacheKey=()=>key+'-antialiased-fountain-mortar123';
+}
 function rebuildBasin123(g,x,z){
  // The old polygon of radial boxes left gaps and could be buried by terrain.
  // Replace the basin itself, independently from the surrounding plaza.
@@ -61,9 +79,8 @@ function rebuildBasin123(g,x,z){
  const high=Math.max(...heights),low=Math.min(...heights),level=high+.12,basin=new THREE.Group();basin.position.y=level-g.position.y;basin.name='Complete elevated fountain basin';g.add(basin);
  const foundationDepth=Math.max(.28,level-low+.12);
  mesh(wrapFountainStone123(new THREE.CylinderGeometry(3.16,3.20,foundationDepth,96),3.16),fountainStone123('#a9b3a3'),0,-foundationDepth/2+.035,0,basin);
- basinRing123(basin,2.87,2.20,.03,.69,'#b5bfad');basinRing123(basin,3.03,2.12,.72,.18,'#cbd0ba');
- // Radial mortar cuts sit on a continuous cap; they cannot expose terrain.
- for(let i=0;i<32;i++){const a=i/32*TAU,o=box(Math.cos(a)*2.575,.903,Math.sin(a)*2.575,.017,.009,.90,'darkWood','#73847a',basin);o.rotation.y=Math.PI/2-a;}
+ basinRing123(basin,2.87,2.20,.03,.69,'#b5bfad');
+ const rim=basinRing123(basin,3.03,2.12,.72,.18,'#cbd0ba');fountainMortar123(rim.material,x,z);
  const waterMat=new THREE.MeshPhysicalMaterial({color:'#377c7b',roughness:.16,metalness:0,envMap:surface67.outdoor,envMapIntensity:.55,clearcoat:.8,clearcoatRoughness:.12});
  const pool=mesh(new THREE.CircleGeometry(2.195,96),waterMat,0,.64,0,basin);pool.rotation.x=-Math.PI/2;pool.castShadow=false;pool.name='Unbroken circular fountain pool';pool.userData.dynamicWater=true;
  const column=fountainStone123('#c8cebb');

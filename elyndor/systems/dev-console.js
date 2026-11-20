@@ -64,6 +64,8 @@ async function startDevSession60(){
  state.scene=q.original.scene;state.poi=activeScene.key;state.lastScene=state.scene;state.restoredLights=[];state.explored=[];
  $('#title').classList.add('hidden');$('#hud').classList.remove('hidden');initAudio();
  state.mode='explore';state.flags.prologue_complete=state.flags.combat_tutorial_complete=true;state.beat=BEATS.findIndex(b=>b[0]==='travelFern');state.encounterDistance=-1e9;state.trackedQuest=null;state.trackedPoi=null;tutorialState16().hidden=mentorState17().hidden=true;updateGuide16();
+ Object.assign(state.flags,{gate_open:true,pump_repaired:true,temporary_water_available:true});
+ state.river17={released:true,age:120};
  state.members=['bren','soren','mira','lysa'];state.reserveMembers=['tavin'];for(const id of Object.keys(CAST)){state.characters[id].level=3;state.flags[id+'_awakened']=true;}setupParty([player.x,player.z]);restoreParty();updateHUD();resetSimulation();
 }
 async function leaveDevBattle60(){
@@ -71,7 +73,7 @@ async function leaveDevBattle60(){
 }
 function applyDevLighting60(){
  const q=devConsole60;state.worldMinutes=q.minutes;state.settings.weather=q.weather;weather.rain.value=weather.snow.value=weather.wet.value=0;weather.cloud.value=q.weather==='clear'?.18:.8;if(q.weather==='rain'){weather.rain.value=.8;weather.wet.value=.5;}
- for(let i=0;i<100;i++)updateLighting();for(const a of actors)updateActor(a,0);updateCamera(1,true);updateHUD();updateRenderBudget(true);render();resetSimulation();
+ for(let i=0;i<100;i++)updateLighting();for(const a of actors)updateActor(a,0);updateFountain124(0);updateCamera(1,true);updateHUD();updateRenderBudget(true);render();resetSimulation();
 }
 async function devGoScene60(force=false){
  const q=devConsole60;if(q.location==='current')return;

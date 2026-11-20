@@ -1,0 +1,62 @@
+[
+  {
+    "file": "AGENTS.md",
+    "bytes": 591,
+    "sha256": "819b004f4a0f4d43d6f0b6521e5fabba7f33603435578b26c9f4a776c8dbbec4"
+  },
+  {
+    "file": "elyndor/previews/release-v145/verification.json",
+    "bytes": 1999,
+    "sha256": "491e9f90ba94ed69f57e9f36c0f647d96621672c1c3aa088c1d13a02be522660"
+  },
+  {
+    "file": "elyndor/systems/brookstead-square.js",
+    "bytes": 18916,
+    "sha256": "c29eb2fb422bdb2983fe0b2c42145852e8134aab2c586befe271687f643ac6a3"
+  },
+  {
+    "file": "elyndor/systems/dev-console.js",
+    "bytes": 24032,
+    "sha256": "da85c249230cdaa3f38a5cee5cf286de3ac53ea0a1043d17f4f340c05a13a2c7"
+  },
+  {
+    "file": "elyndor/systems/fountain-water.js",
+    "bytes": 12358,
+    "sha256": "06bbd68f1a37839dd2cdf5ae630d1ce26560d48372cee61fc753d8a4d2c34296"
+  },
+  {
+    "file": "elyndor/systems/persistence.css",
+    "bytes": 637,
+    "sha256": "0d0d52743f8d08b7ce17ae60dfaca2f5b0bbcec8d0ee91b27726a11d8dd370ea"
+  },
+  {
+    "file": "elyndor/systems/persistence.js",
+    "bytes": 17283,
+    "sha256": "7fac190987c9763549139e809e16e04adbd928934714c0348ffa1727976a98ad"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 94644,
+    "sha256": "069cec346fdd6cafa5521026f1a8545de14323f95c435b74237ccae0b4d9947b"
+  },
+  {
+    "file": "elyndor/tools/check-persistence.mjs",
+    "bytes": 5675,
+    "sha256": "ea45559ffa2cc7ae20a12f1325ca674369418838db4f207719a28cfe094b5acf"
+  },
+  {
+    "file": "index.html",
+    "bytes": 7697857,
+    "sha256": "33b990da953e6cc61a116b9d1cb56f0c3f663411e77341138976e7c110473f97"
+  },
+  {
+    "file": "README.md",
+    "bytes": 99064,
+    "sha256": "e5cacce62f923b7e3f4f03aca999d9675e8fefad723bdff06a89b73ec73fc88a"
+  },
+  {
+    "file": "release.json",
+    "bytes": 98593,
+    "sha256": "b1514abddd11b891a0014eb124c70bb1c27e3ff6c81b78c0ee2660861afeb46a"
+  }
+]
