@@ -1,0 +1,57 @@
+[
+  {
+    "file": "elyndor/previews/release-v144/verification.json",
+    "bytes": 984,
+    "sha256": "e2a154ca959b72ba452da142c41d7cd264b8cb003ee4607545254e7c32007bea"
+  },
+  {
+    "file": "elyndor/systems/brookstead-square.js",
+    "bytes": 17860,
+    "sha256": "50488c991da3e3dfcdcf191cd1f2c56b8b5983bf897813ed980afc875cbfdf16"
+  },
+  {
+    "file": "elyndor/systems/fountain-water.js",
+    "bytes": 11735,
+    "sha256": "696f2dc4fa54d0d89d0997a0e27a109ebc453b3800b8ab8dca19047d3c1afde3"
+  },
+  {
+    "file": "elyndor/systems/housing-concept-ui.js",
+    "bytes": 8438,
+    "sha256": "ccac100bdaa39d0a1ee0b4c712e37eda2c02bcf137987b6125757a1ef854ad93"
+  },
+  {
+    "file": "elyndor/systems/housing-ui.js",
+    "bytes": 22916,
+    "sha256": "a4b4f72a28230e3b5dfb668d4d1502746696565bd864a4138d59b04c7d034b1d"
+  },
+  {
+    "file": "elyndor/systems/housing-world.js",
+    "bytes": 22501,
+    "sha256": "9398b9a0d6ba6f16ad21632cd0ddb14a8bcb2c56d088e400c13276369770c841"
+  },
+  {
+    "file": "elyndor/systems/player-visibility.js",
+    "bytes": 6974,
+    "sha256": "903ba594ed6f3f3d7c53151ec6c0a0136fe7062e4bca036f4bdd32c918b82368"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 94094,
+    "sha256": "97d399d48f79edf0509e6298f6380a8f13e3291fb7390b1d04d073d995f1f058"
+  },
+  {
+    "file": "index.html",
+    "bytes": 7693568,
+    "sha256": "0d481e5223c6ab786192849d848db192c2e3488b177ca3ba095f3ec6f6efa18d"
+  },
+  {
+    "file": "README.md",
+    "bytes": 98385,
+    "sha256": "e6532f0d1d12582426de84bcec5077e2498faca44f0135f177f6d62e290a8d3b"
+  },
+  {
+    "file": "release.json",
+    "bytes": 97688,
+    "sha256": "7032a984f2b1a74aee88266dd528357316a07d6ddbeb18c33edf73ddfde464a6"
+  }
+]

@@ -1,28 +1,33 @@
 {
-  "release": "elyndor-alpha-1.43-brookstead-fountain-and-hud-2026-11-19",
-  "version": "Alpha Version 1.43",
+  "release": "elyndor-alpha-1.44-fountain-and-housing-return-2026-11-20",
+  "version": "Alpha Version 1.44",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 7690821,
-    "sha256": "cc4a9a0e21d2ed7d8f6e101d78812b6a63c0fe3cf83881c59001a3ca95098d8a",
+    "bytes": 7693568,
+    "sha256": "0d481e5223c6ab786192849d848db192c2e3488b177ca3ba095f3ec6f6efa18d",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "15c57d822f8e8221a87d6241bf54b3e8467e9ab2"
+    "previousRelease": "d34c2b3eb34b94513a237a6e23a2ef5f3ff67ab5"
   },
   "changes": [
-    "Fixed the housing menu so pressing Enter confirms the highlighted choice, including Leave, in all six settlements.",
-    "Polished the combat HUD with an ornate turn rail, larger enemy portraits, command icons, and a clearer selection chevron.",
-    "Removed the stray dither patch from open cobblestones while retaining the player reveal behind foreground scenery.",
-    "Refined Brookstead’s fountain with curved streams, visible spray and ripples at contact, and lighting-responsive reflections.",
-    "Gave fireplaces natural mineral textures, chipped edges, and less uniform stone courses.",
-    "Refined environmental flame movement, smoke, embers, and glowing fissures in the hearth fuel."
+    "Brookstead’s fountain keeps its stonework intact as you walk around it. Flowing streams stay visible from every side, with continuous limestone textures and softer glare on the water.",
+    "Select Leave when speaking to Azarith in your private yard to walk through the portal and return to the town and spot where you started your trip."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.44",
+      "date": "November 20, 2026",
+      "title": "Brookstead fountain and housing return",
+      "items": [
+        "Brookstead’s fountain keeps its stonework intact as you walk around it. Flowing streams stay visible from every side, with continuous limestone textures and softer glare on the water.",
+        "Select Leave when speaking to Azarith in your private yard to walk through the portal and return to the town and spot where you started your trip."
+      ]
+    },
     {
       "version": "Alpha Version 1.43",
       "date": "November 19, 2026",
@@ -890,8 +895,8 @@
     "coloredAbilitySceneLighting": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v143/verification.json",
-    "sha256": "713c914c77ce5468d4de3d57f41d17744157d9cd8db0718574a46f0f2dcbc208",
+    "file": "elyndor/previews/release-v144/verification.json",
+    "sha256": "e2a154ca959b72ba452da142c41d7cd264b8cb003ee4607545254e7c32007bea",
     "finalRelease": "PASS",
     "desktopAndPhone": true
   },
@@ -932,9 +937,9 @@
     "spriteLighting": "Coherent party and NPC canopy reception outside combat; original art and sampling retained"
   },
   "previousPublishedRelease": {
-    "commit": "15c57d822f8e8221a87d6241bf54b3e8467e9ab2",
-    "version": "Alpha Version 1.42",
-    "sha256": "057d09b40e5ac4c97a1b8fe4fcc4659a2ce4f9214a249a5b8f6b230005b94fce"
+    "commit": "d34c2b3eb34b94513a237a6e23a2ef5f3ff67ab5",
+    "version": "Alpha Version 1.43",
+    "sha256": "cc4a9a0e21d2ed7d8f6e101d78812b6a63c0fe3cf83881c59001a3ca95098d8a"
   },
   "housing": {
     "maximumOwnedHomes": 1,

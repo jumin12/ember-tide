@@ -88,13 +88,16 @@ function createHomeKeeper139(x,z){
  world.userData.homeKeeper139={a,o};return a;
 }
 function addTownHousing139(){return addTownHousing140();}
+function homeReturnTown139(h=housing139()){
+ return POIS[h.return?.poi]??POIS[h.home?.region]??POIS.brookstead;
+}
 function buildPrivatePlot139(spawn){
  const h=housing139(),q=homeStyle139(),layout=homeLayout139();state.poi='homePlot139';HOME_PLOT139.name=SCENES.homePlot139.name=q.name;SCENES.homePlot139.kit=q.kit;
  const floor=homePlane139(180,180,'grass','#91a384',-.022,world,64);floor.material=homeGardenMaterial139();floor.userData.terrain=true;world.userData.terrain=floor;world.userData.walkSurfaces=[floor];world.userData.terrainChunks=[];
  homePath139([[10,15],[4,12],[0,7],[0,2]],3.2);homePath139([[0,10],[-7,9],[-12,13]],2.4);
  const shell=homeShell139(q.id,world);world.userData.buildings.push(shell.g);obstacle(0,-4,shell.w+.1,shell.d+.1,'home exterior');
  interactables.push({id:'homeDoor139',type:'homeDoor139',x:0,z:2.05,radius:2.4,label:'Enter '+q.name,visualHeight:1.7});
- homePortal139(11,15,'Return to '+(POIS[h.return?.poi]?.name??q.town));createHomeKeeper139(7.5,15.9);
+ homePortal139(11,15,'Return to '+homeReturnTown139(h).name);createHomeKeeper139(7.5,15.9);
  const rng=seeded(139+[...q.id].reduce((n,c)=>n+c.charCodeAt(0),0));
  for(let i=0;i<180;i++){const a=rng()*TAU,r=i<65?24+rng()*8:30+rng()*29,x=Math.cos(a)*r,z=Math.sin(a)*r-5;if(Math.hypot(x-9,z-17)<12||z>20&&Math.abs(x)<14)continue;tree(x,z,.85+rng()*.65,q.trees,rng);}
  for(const [x,z,s]of[[-15,-10,1.05],[-15,3,.95],[-15,18,.82],[17,-8,1.0],[20,4,.9],[-10,-18,1.1],[10,-18,.95]])tree(x,z,s,q.trees,rng);
@@ -169,8 +172,8 @@ async function visitHome139(){
  closeHousing139();homeChange139();return changeJourneyScene('homePlot139',[7.5,19]);
 }
 async function returnFromHome139(){
- const h=housing139(),r=h.return??{scene:POIS[h.home?.region??'brookstead'].id,poi:h.home?.region??'brookstead',x:POIS[h.home?.region??'brookstead'].spawn[0],z:POIS[h.home?.region??'brookstead'].spawn[1]};
- closeHousing139();return changeJourneyScene(r.scene,[r.x,r.z]);
+ const h=housing139(),r=h.return,town=homeReturnTown139(h);
+ closeHousing139();return changeJourneyScene(r?.scene??town.id,r?[r.x,r.z]:town.spawn);
 }
 const homeActBefore139=act;
 act=function(o,...a){

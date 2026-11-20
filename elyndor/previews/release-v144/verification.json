@@ -1,0 +1,42 @@
+{
+  "version": "Alpha Version 1.44",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7693568,
+    "sha256": "0d481e5223c6ab786192849d848db192c2e3488b177ca3ba095f3ec6f6efa18d",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "base": "d34c2b3eb34b94513a237a6e23a2ef5f3ff67ab5",
+  "gameplayChecks": {
+    "Desktop Chrome 1440×900": {
+      "viewCount": 12,
+      "testedReturns": [
+        "harbor",
+        "fern"
+      ],
+      "pumpAndReflections": true,
+      "solidFountain": true,
+      "saveRoundTrip": true,
+      "runtimeErrors": 0,
+      "nightView": true
+    },
+    "Chrome portrait phone emulation 390×844 DPR 2": {
+      "viewCount": 4,
+      "testedReturns": [
+        "harbor"
+      ],
+      "pumpAndReflections": true,
+      "solidFountain": true,
+      "saveRoundTrip": true,
+      "runtimeErrors": 0
+    }
+  },
+  "timedComboDamage": [
+    20,
+    25,
+    31
+  ],
+  "runtimeErrors": 0,
+  "assetBundleUnchanged": true
+}

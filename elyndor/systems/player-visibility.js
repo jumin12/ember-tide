@@ -93,7 +93,7 @@ function registerPlayerOccluders114(){
   for(let p=o;p&&p!==world;p=p.parent){architecture||=buildings.has(p);effect||=!!p.userData.dynamicFX;actor||=actorMeshes.has(p);}
   const ground=terrain.has(o)||o.userData.terrain||o.geometry.attributes.pathMix||o.geometry.attributes.terrainRoad||o.userData.plantKey||o.userData.frontagePath110||o===water||o.userData.waterRole||o.userData.water62===true||o.userData.freshwater38||materials.every(m=>m?.userData.walkablePaving);
   let blocksPlayer=false;
-  if(!battle&&!actor&&!effect&&!ground){
+  if(!battle&&!actor&&!effect&&!ground&&!materials.every(m=>m?.userData.keepSolidForPlayerReveal)){
    if(!o.geometry.boundingBox)o.geometry.computeBoundingBox();
    // Shared unit boxes/cylinders carry their actual dimensions in the transform.
    const bounds=o.geometry.boundingBox?.clone().applyMatrix4(o.matrixWorld);

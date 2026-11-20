@@ -23,10 +23,33 @@ brookFountain=function(){
  rebuildBasin123(g,x,z);
  world.userData.square122=g.userData.square122;
 };
+function fountainStone123(tint){
+ const m=new THREE.MeshPhysicalMaterial({map:envPbr103.maps.get('rockLimestone:albedo')??textures.wall,color:tint,roughness:.93,metalness:0});
+ m.userData.textureKey='rockLimestone';m.userData.keepSolidForPlayerReveal=true;
+ addCloudLighting(m);lightPaintedSurface82(m);materialFinish103(m);return m;
+}
+function wrapFountainStone123(source,radius){
+ const geometry=source.index?source.toNonIndexed():source;
+ if(geometry!==source)source.dispose();
+ const {position,normal,uv}=geometry.attributes,repeat=Math.max(1,Math.round(TAU*radius*.64));
+ // Side faces share one cylindrical projection. Unwrap triangles that cross
+ // the repeat seam so interpolation cannot stretch the texture over the ring.
+ const angle=new Float32Array(3);
+ for(let i=0;i<position.count;i+=3){
+  if(Math.abs(normal.getY(i))>.5){
+   for(let j=i;j<i+3;j++)uv.setXY(j,position.getX(j)*.64,position.getZ(j)*.64);
+   continue;
+  }
+  for(let j=0;j<3;j++)angle[j]=Math.atan2(position.getZ(i+j),position.getX(i+j))/TAU;
+  const seam=Math.max(...angle)-Math.min(...angle)>.5;
+  for(let j=0;j<3;j++)uv.setXY(i+j,(angle[j]+(seam&&angle[j]<0?1:0))*repeat,position.getY(i+j)*.64);
+ }
+ uv.needsUpdate=true;return geometry;
+}
 function basinRing123(parent,outer,inner,y,depth,tint){
  const shape=new THREE.Shape();shape.absarc(0,0,outer,0,TAU,false);const hole=new THREE.Path();hole.absarc(0,0,inner,0,TAU,true);shape.holes.push(hole);
  const geometry=new THREE.ExtrudeGeometry(shape,{depth,bevelEnabled:false,curveSegments:64});geometry.rotateX(-Math.PI/2);
- const o=mesh(geometry,material('wall',tint),0,y,0,parent);o.name='Continuous circular fountain masonry';return o;
+ const o=mesh(wrapFountainStone123(geometry,outer),fountainStone123(tint),0,y,0,parent);o.name='Continuous circular fountain masonry';return o;
 }
 function rebuildBasin123(g,x,z){
  // The old polygon of radial boxes left gaps and could be buried by terrain.
@@ -36,13 +59,15 @@ function rebuildBasin123(g,x,z){
  world.userData.supplyJets=(world.userData.supplyJets??[]).filter(o=>!removed.has(o));
  const heights=[];for(let j=0;j<=4;j++)for(let i=0;i<64;i++){const a=i/64*TAU,rad=j/4*3.18;heights.push(heightAt(x+Math.cos(a)*rad,z+Math.sin(a)*rad));}
  const high=Math.max(...heights),low=Math.min(...heights),level=high+.12,basin=new THREE.Group();basin.position.y=level-g.position.y;basin.name='Complete elevated fountain basin';g.add(basin);
- const foundationDepth=Math.max(.28,level-low+.12);mesh(new THREE.CylinderGeometry(3.16,3.20,foundationDepth,96),material('wall','#a9b3a3'),0,-foundationDepth/2+.035,0,basin);
+ const foundationDepth=Math.max(.28,level-low+.12);
+ mesh(wrapFountainStone123(new THREE.CylinderGeometry(3.16,3.20,foundationDepth,96),3.16),fountainStone123('#a9b3a3'),0,-foundationDepth/2+.035,0,basin);
  basinRing123(basin,2.87,2.20,.03,.69,'#b5bfad');basinRing123(basin,3.03,2.12,.72,.18,'#cbd0ba');
  // Radial mortar cuts sit on a continuous cap; they cannot expose terrain.
  for(let i=0;i<32;i++){const a=i/32*TAU,o=box(Math.cos(a)*2.575,.903,Math.sin(a)*2.575,.017,.009,.90,'darkWood','#73847a',basin);o.rotation.y=Math.PI/2-a;}
  const waterMat=new THREE.MeshPhysicalMaterial({color:'#377c7b',roughness:.16,metalness:0,envMap:surface67.outdoor,envMapIntensity:.55,clearcoat:.8,clearcoatRoughness:.12});
  const pool=mesh(new THREE.CircleGeometry(2.195,96),waterMat,0,.64,0,basin);pool.rotation.x=-Math.PI/2;pool.castShadow=false;pool.name='Unbroken circular fountain pool';pool.userData.dynamicWater=true;
- for(const [radius,yy,h]of[[.76,.5,1.2],[1.1,1.5,.23],[.4,2,1],[.62,2.6,.19]])mesh(new THREE.CylinderGeometry(radius,radius*1.05,h,32),material('wall','#c8cebb'),0,yy,0,basin);
+ const column=fountainStone123('#c8cebb');
+ for(const [radius,yy,h]of[[.76,.5,1.2],[1.1,1.5,.23],[.4,2,1],[.62,2.6,.19]])mesh(wrapFountainStone123(new THREE.CylinderGeometry(radius,radius*1.05,h,32),radius),column,0,yy,0,basin);
  for(let i=0;i<8;i++){
   const a=i/8*TAU,curve=new THREE.QuadraticBezierCurve3(V3(Math.cos(a)*.48,2.71,Math.sin(a)*.48),V3(Math.cos(a)*1.1,2.1,Math.sin(a)*1.1),V3(Math.cos(a)*1.8,.65,Math.sin(a)*1.8));
   const stream=mesh(new THREE.TubeGeometry(curve,24,.026,6,false),material('cloth','#b6d0cd',{transparent:true,opacity:.64,emissive:'#347c7b',emissiveIntensity:.10}),0,0,0,basin);stream.castShadow=false;stream.userData.dynamicWater=true;world.userData.supplyJets.push(stream);

@@ -2,6 +2,15 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.44 — Brookstead fountain and housing return
+
+November 20, 2026
+
+- Brookstead’s fountain keeps its stonework intact as you walk around it. Flowing streams stay visible from every side, with continuous limestone textures and softer glare on the water.
+- Select Leave when speaking to Azarith in your private yard to walk through the portal and return to the town and spot where you started your trip.
+
+[Release verification](elyndor/previews/release-v144/verification.json)
+
 ## Alpha Version 1.43 — Brookstead fountain and combat HUD polish
 
 November 19, 2026

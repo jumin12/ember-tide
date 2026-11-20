@@ -69,7 +69,10 @@ function paintHomePreview139(){
 }
 async function housingAction139(action){
  const q=housingMenu139;if(!q.open)return;
- if(action==='leave'){closeHousing139();return;}
+ if(action==='leave'){
+  if(q.page==='greeting'&&state.scene==='homePlot139')return returnFromHome139();
+  closeHousing139();return;
+ }
  const h=housing139(),c=homeCurrentChoice139();
  if(action==='browse'){q.page='browse';q.message='';}
  else if(action==='back'){q.page='greeting';q.confirm=null;}
