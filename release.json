@@ -1,25 +1,33 @@
 {
-  "release": "elyndor-alpha-1.45-stable-fountain-and-legacy-saves-2026-11-20",
-  "version": "Alpha Version 1.45",
+  "release": "elyndor-alpha-1.46-brookstead-fountain-2026-11-20",
+  "version": "Alpha Version 1.46",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 7697857,
-    "sha256": "33b990da953e6cc61a116b9d1cb56f0c3f663411e77341138976e7c110473f97",
+    "bytes": 7700034,
+    "sha256": "a00af1e86b52e7479f6ed344b2e62c1476f7dc77be3a950a1fe5c65be212f707",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "709687432a4b36799124a4f4bb61b8a7f16d3762"
+    "previousRelease": "1002b691d80b0841c595beaff0c0e3d86a204b06"
   },
   "changes": [
-    "Brookstead’s restored fountain now flows when entering through the developer panel or resuming a journey past the pump repair. The streams and limestone joints stay readable on smaller displays.",
-    "Journey records in save formats 3 through 5 can load, export and migrate to the current format. Older records that are missing waterworks flags recover them from their quest progress.",
-    "Load Game marks older save formats. Export a backup, then save to a new slot and verify it loads before deleting the old record."
+    "Restored the look of Brookstead’s fountain from the approved midday view, with pale weathered stone, defined joints and fine translucent streams flowing into blue-green water.",
+    "The fountain’s finish stays consistent as you walk around it. The streams remain readable on smaller displays and resume after loading a journey past the pump repair."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.46",
+      "date": "November 20, 2026",
+      "title": "Brookstead fountain visual restoration",
+      "items": [
+        "Restored the look of Brookstead’s fountain from the approved midday view, with pale weathered stone, defined joints and fine translucent streams flowing into blue-green water.",
+        "The fountain’s finish stays consistent as you walk around it. The streams remain readable on smaller displays and resume after loading a journey past the pump repair."
+      ]
+    },
     {
       "version": "Alpha Version 1.45",
       "date": "November 20, 2026",
@@ -906,8 +914,8 @@
     "coloredAbilitySceneLighting": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v145/verification.json",
-    "sha256": "491e9f90ba94ed69f57e9f36c0f647d96621672c1c3aa088c1d13a02be522660",
+    "file": "elyndor/previews/release-v146/verification.json",
+    "sha256": "a5b8ea8365aa4e8275de4dcdc43016d77824d26030aa71a13f24e68d44b669d2",
     "finalRelease": "PASS",
     "desktopAndPhone": true
   },
@@ -948,9 +956,9 @@
     "spriteLighting": "Coherent party and NPC canopy reception outside combat; original art and sampling retained"
   },
   "previousPublishedRelease": {
-    "commit": "709687432a4b36799124a4f4bb61b8a7f16d3762",
-    "version": "Alpha Version 1.44",
-    "sha256": "0d481e5223c6ab786192849d848db192c2e3488b177ca3ba095f3ec6f6efa18d"
+    "commit": "1002b691d80b0841c595beaff0c0e3d86a204b06",
+    "version": "Alpha Version 1.45",
+    "sha256": "33b990da953e6cc61a116b9d1cb56f0c3f663411e77341138976e7c110473f97"
   },
   "housing": {
     "maximumOwnedHomes": 1,

@@ -1,0 +1,72 @@
+{
+  "version": "Alpha Version 1.46",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7700034,
+    "sha256": "a00af1e86b52e7479f6ed344b2e62c1476f7dc77be3a950a1fe5c65be212f707",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "base": "1002b691d80b0841c595beaff0c0e3d86a204b06",
+  "gameplayChecks": {
+    "desktop": {
+      "views": [
+        "reference-angle",
+        "north",
+        "west",
+        "north-east",
+        "play",
+        "small",
+        "night",
+        "dusk-rain",
+        "flow"
+      ],
+      "pumpGating": true,
+      "liveReflections": true,
+      "runtimeErrors": 0
+    },
+    "phone": {
+      "views": [
+        "play",
+        "small",
+        "night",
+        "dusk-rain",
+        "flow"
+      ],
+      "pumpGating": true,
+      "liveReflections": true,
+      "runtimeErrors": 0
+    },
+    "legacy": {
+      "loaded": true,
+      "exportedAndReimported": true,
+      "originalRecordPreserved": true,
+      "runtimeErrors": 0
+    }
+  },
+  "saveCompatibility": {
+    "pass": true,
+    "cases": [
+      "stable quest identity",
+      "frozen legacy migration",
+      "unknown quest",
+      "invalid position",
+      "invalid party",
+      "invalid character data",
+      "numeric bounds",
+      "checksum",
+      "backup recovery",
+      "legacy recovery and export",
+      "waterworks progress migration",
+      "optional task validation",
+      "ordered ceremony recovery validation"
+    ]
+  },
+  "timedComboDamage": [
+    20,
+    25,
+    31
+  ],
+  "runtimeErrors": 0,
+  "assetBundleUnchanged": true
+}

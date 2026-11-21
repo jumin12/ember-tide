@@ -2,6 +2,15 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.46 — Brookstead fountain visual restoration
+
+November 20, 2026
+
+- Restored the look of Brookstead’s fountain from the approved midday view, with pale weathered stone, defined joints and fine translucent streams flowing into blue-green water.
+- The fountain’s finish stays consistent as you walk around it. The streams remain readable on smaller displays and resume after loading a journey past the pump repair.
+
+[Release verification](elyndor/previews/release-v146/verification.json)
+
 ## Alpha Version 1.45 — Stable fountain and legacy saves
 
 November 20, 2026

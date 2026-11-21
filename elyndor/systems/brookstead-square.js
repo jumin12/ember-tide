@@ -24,32 +24,57 @@ brookFountain=function(){
  world.userData.square122=g.userData.square122;
 };
 function fountainStone123(tint){
- const m=new THREE.MeshPhysicalMaterial({map:envPbr103.maps.get('rockLimestone:albedo')??textures.wall,color:tint,roughness:.93,metalness:0});
- m.userData.textureKey='rockLimestone';m.userData.keepSolidForPlayerReveal=true;
- addCloudLighting(m);lightPaintedSurface82(m);materialFinish103(m);return m;
-}
-function wrapFountainStone123(source,radius){
- const geometry=source.index?source.toNonIndexed():source;
- if(geometry!==source)source.dispose();
- const {position,normal,uv}=geometry.attributes,repeat=Math.max(1,Math.round(TAU*radius*.64));
- // Side faces share one cylindrical projection. Unwrap triangles that cross
- // the repeat seam so interpolation cannot stretch the texture over the ring.
- const angle=new Float32Array(3);
- for(let i=0;i<position.count;i+=3){
-  if(Math.abs(normal.getY(i))>.5){
-   for(let j=i;j<i+3;j++)uv.setXY(j,position.getX(j)*.64,position.getZ(j)*.64);
-   continue;
-  }
-  for(let j=0;j<3;j++)angle[j]=Math.atan2(position.getZ(i+j),position.getX(i+j))/TAU;
-  const seam=Math.max(...angle)-Math.min(...angle)>.5;
-  for(let j=0;j<3;j++)uv.setXY(i+j,(angle[j]+(seam&&angle[j]<0?1:0))*repeat,position.getY(i+j)*.64);
- }
- uv.needsUpdate=true;return geometry;
+ const m=new THREE.MeshPhysicalMaterial({color:tint,roughness:.93,metalness:0});
+ m.userData.keepSolidForPlayerReveal=true;
+ addCloudLighting(m);lightPaintedSurface82(m);
+ const before=m.onBeforeCompile,key=m.customProgramCacheKey(),layer=surfaceLayer102('wall');
+ const density=(48/512)*(layer===1?.47:.65);
+ m.onBeforeCompile=function(shader,...args){
+  before.call(this,shader,...args);
+  shader.uniforms.fountainStoneArt123={value:environment102.surfaces};
+  shader.uniforms.fountainStoneDetail123={value:envPbr103.surfaceData};
+  shader.uniforms.fountainDay123=waterLight62.day;
+  const varyings='varying vec3 fountainStonePoint123, fountainStoneAxis123;\n';
+  shader.vertexShader=varyings+shader.vertexShader.replace('#include <worldpos_vertex>',`#include <worldpos_vertex>
+   fountainStonePoint123=(modelMatrix*vec4(transformed,1.)).xyz;
+   fountainStoneAxis123=mat3(modelMatrix)*objectNormal;`);
+  // Match the original masonry atlas and world scale. Blend on rounded sides so
+  // turning around the basin cannot expose a hard change of projection.
+  shader.fragmentShader=varyings+
+   'uniform highp sampler2DArray fountainStoneArt123, fountainStoneDetail123;\nuniform float fountainDay123;\n'+
+   shader.fragmentShader.replace('#include <map_fragment>',`
+    vec3 stoneUV123=fountainStonePoint123*${density};
+    vec3 stoneWeights123=pow(abs(normalize(fountainStoneAxis123)),vec3(8.));
+    stoneWeights123/=dot(stoneWeights123,vec3(1.));
+    vec3 stoneX123=vec3(stoneUV123.zy,${layer}.0);
+    vec3 stoneY123=vec3(stoneUV123.xz,${layer}.0);
+    vec3 stoneZ123=vec3(stoneUV123.xy,${layer}.0);
+    vec3 limestone123=texture(fountainStoneArt123,stoneX123).rgb*stoneWeights123.x+
+      texture(fountainStoneArt123,stoneY123).rgb*stoneWeights123.y+
+      texture(fountainStoneArt123,stoneZ123).rgb*stoneWeights123.z;
+    diffuseColor.rgb*=limestone123*vec3(1.20,1.18,1.37);
+    // fountain mortar`)
+   .replace('#include <normal_fragment_maps>',`
+    vec4 detailX123=texture(fountainStoneDetail123,stoneX123);
+    vec4 detailY123=texture(fountainStoneDetail123,stoneY123);
+    vec4 detailZ123=texture(fountainStoneDetail123,stoneZ123);
+    vec2 bendX123=detailX123.rg*2.-1.,bendY123=detailY123.rg*2.-1.,bendZ123=detailZ123.rg*2.-1.;
+    vec3 relief123=vec3(0.,bendX123.y,bendX123.x)*stoneWeights123.x+
+      vec3(bendY123.x,0.,bendY123.y)*stoneWeights123.y+
+      vec3(bendZ123.x,bendZ123.y,0.)*stoneWeights123.z;
+    normal=normalize(normal+mat3(viewMatrix)*relief123*.34);
+    roughnessFactor=dot(vec3(detailX123.a,detailY123.a,detailZ123.a),stoneWeights123);`)
+   .replace('#include <lights_fragment_end>',`#include <lights_fragment_end>
+    // Restore the pale bounce from the original courtyard stone.
+    reflectedLight.indirectDiffuse+=diffuseColor.rgb*vec3(.055,.054,.067)*mix(.18,1.,fountainDay123);`);
+ };
+ m.customProgramCacheKey=()=>key+'-fountain-masonry123-'+layer;
+ return m;
 }
 function basinRing123(parent,outer,inner,y,depth,tint){
  const shape=new THREE.Shape();shape.absarc(0,0,outer,0,TAU,false);const hole=new THREE.Path();hole.absarc(0,0,inner,0,TAU,true);shape.holes.push(hole);
  const geometry=new THREE.ExtrudeGeometry(shape,{depth,bevelEnabled:false,curveSegments:64});geometry.rotateX(-Math.PI/2);
- const o=mesh(wrapFountainStone123(geometry,outer),fountainStone123(tint),0,y,0,parent);o.name='Continuous circular fountain masonry';return o;
+ const o=mesh(geometry,fountainStone123(tint),0,y,0,parent);o.name='Continuous circular fountain masonry';return o;
 }
 function fountainMortar123(m,x,z){
  const before=m.onBeforeCompile,key=m.customProgramCacheKey(),center={value:new THREE.Vector2(x,z)};
@@ -60,12 +85,12 @@ function fountainMortar123(m,x,z){
   shader.vertexShader='uniform vec2 fountainRimCenter123;\n'+varying+shader.vertexShader.replace(
    '#include <worldpos_vertex>','#include <worldpos_vertex>\nfountainRim123=vec3((modelMatrix*vec4(transformed,1.)).xz-fountainRimCenter123,objectNormal.y);');
   // Filter mortar in screen space so oblique joints stay continuous at low resolution.
-  shader.fragmentShader=varying+shader.fragmentShader.replace('#include <map_fragment>',`#include <map_fragment>
+  shader.fragmentShader=varying+shader.fragmentShader.replace('// fountain mortar',`
    float sector123=atan(fountainRim123.y,fountainRim123.x)*5.092958;
    float joint123=length(fountainRim123.xy)*sin(abs(fract(sector123+.5)-.5)*.196350);
    float pixel123=max(.004,length(fwidth(fountainRim123.xy))*.5);
    float mortar123=(1.-smoothstep(max(0.,.018-pixel123),.018+pixel123,joint123))*min(1.,.018/pixel123);
-   diffuseColor.rgb*=1.-.34*mortar123*step(.5,fountainRim123.z);`);
+   diffuseColor.rgb*=mix(vec3(1.),vec3(.52,.43,.32),mortar123*step(.5,fountainRim123.z));`);
  };
  m.customProgramCacheKey=()=>key+'-antialiased-fountain-mortar123';
 }
@@ -78,13 +103,13 @@ function rebuildBasin123(g,x,z){
  const heights=[];for(let j=0;j<=4;j++)for(let i=0;i<64;i++){const a=i/64*TAU,rad=j/4*3.18;heights.push(heightAt(x+Math.cos(a)*rad,z+Math.sin(a)*rad));}
  const high=Math.max(...heights),low=Math.min(...heights),level=high+.12,basin=new THREE.Group();basin.position.y=level-g.position.y;basin.name='Complete elevated fountain basin';g.add(basin);
  const foundationDepth=Math.max(.28,level-low+.12);
- mesh(wrapFountainStone123(new THREE.CylinderGeometry(3.16,3.20,foundationDepth,96),3.16),fountainStone123('#a9b3a3'),0,-foundationDepth/2+.035,0,basin);
+ mesh(new THREE.CylinderGeometry(3.16,3.20,foundationDepth,96),fountainStone123('#a9b3a3'),0,-foundationDepth/2+.035,0,basin);
  basinRing123(basin,2.87,2.20,.03,.69,'#b5bfad');
  const rim=basinRing123(basin,3.03,2.12,.72,.18,'#cbd0ba');fountainMortar123(rim.material,x,z);
  const waterMat=new THREE.MeshPhysicalMaterial({color:'#377c7b',roughness:.16,metalness:0,envMap:surface67.outdoor,envMapIntensity:.55,clearcoat:.8,clearcoatRoughness:.12});
  const pool=mesh(new THREE.CircleGeometry(2.195,96),waterMat,0,.64,0,basin);pool.rotation.x=-Math.PI/2;pool.castShadow=false;pool.name='Unbroken circular fountain pool';pool.userData.dynamicWater=true;
  const column=fountainStone123('#c8cebb');
- for(const [radius,yy,h]of[[.76,.5,1.2],[1.1,1.5,.23],[.4,2,1],[.62,2.6,.19]])mesh(wrapFountainStone123(new THREE.CylinderGeometry(radius,radius*1.05,h,32),radius),column,0,yy,0,basin);
+ for(const [radius,yy,h]of[[.76,.5,1.2],[1.1,1.5,.23],[.4,2,1],[.62,2.6,.19]])mesh(new THREE.CylinderGeometry(radius,radius*1.05,h,32),column,0,yy,0,basin);
  for(let i=0;i<8;i++){
   const a=i/8*TAU,curve=new THREE.QuadraticBezierCurve3(V3(Math.cos(a)*.48,2.71,Math.sin(a)*.48),V3(Math.cos(a)*1.1,2.1,Math.sin(a)*1.1),V3(Math.cos(a)*1.8,.65,Math.sin(a)*1.8));
   const stream=mesh(new THREE.TubeGeometry(curve,24,.026,6,false),material('cloth','#b6d0cd',{transparent:true,opacity:.64,emissive:'#347c7b',emissiveIntensity:.10}),0,0,0,basin);stream.castShadow=false;stream.userData.dynamicWater=true;world.userData.supplyJets.push(stream);
