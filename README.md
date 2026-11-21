@@ -2,6 +2,16 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.48 — Detailed hearths and a clearer combat HUD
+
+November 21, 2026
+
+- Restored natural stone grain and roughness on fireplaces. Brookstead House, inns and the smithy use distinct finishes, with fieldstone, slate and limestone still available in player housing.
+- Made environmental flames flicker more naturally, with finer embers and gentle firelight.
+- Refined the combat HUD with glowing double selectors and stronger gold frames. Party levels and Ascension gauges remain visible in both phone orientations.
+
+[Release verification](elyndor/previews/release-v148/verification.json)
+
 ## Alpha Version 1.47 — Clean fountain and smoother Brookstead shadows
 
 November 20, 2026

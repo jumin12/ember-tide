@@ -1,17 +1,17 @@
 // Ordinary fires have a common optical treatment. Their opening, fuel and
 // intensity control the silhouette. Combat spell effects use their own art.
 const ENVIRONMENT_FIRE163={
- hearth:{width:1.74,height:1.77,heat:1.05,embers:1,smoke:1,speed:1},
- inn:{width:2.36,height:2.23,heat:1.12,embers:1,smoke:1,speed:.88},
- forge:{width:1.40,height:1.11,heat:1.34,embers:1,smoke:.65,speed:1.32},
- torch:{width:.61,height:1.05,heat:1.06,embers:.48,smoke:.24,speed:1.18},
- candle:{width:.18,height:.31,heat:.84,embers:0,smoke:0,speed:.54}
+ hearth:{width:1.74,height:1.77,heat:1.05,embers:1,smoke:1,speed:1,flicker:1.48},
+ inn:{width:2.36,height:2.23,heat:1.12,embers:1,smoke:1,speed:.88,flicker:1.40},
+ forge:{width:1.40,height:1.11,heat:1.34,embers:1,smoke:.65,speed:1.32,flicker:1.34},
+ torch:{width:.61,height:1.05,heat:1.06,embers:.48,smoke:.24,speed:1.18,flicker:1.28},
+ candle:{width:.18,height:.31,heat:.84,embers:0,smoke:0,speed:.54,flicker:1.25}
 };
 function environmentFire163(parent,kind,x,y,z,scale=1){
  const profile=ENVIRONMENT_FIRE163[kind],seed=(x*2.31+z*1.27+y*.35)%43;
  const m=new THREE.ShaderMaterial({transparent:true,depthWrite:false,uniforms:{
   time:windUniforms.time,seed:{value:seed},heat:{value:profile.heat},
-  embers:{value:profile.embers},smoke:{value:profile.smoke},speed:{value:profile.speed}
+  embers:{value:profile.embers},smoke:{value:profile.smoke},speed:{value:profile.speed},flicker:{value:profile.flicker}
  },vertexShader:`
  varying vec2 fireUv; varying float fireDistance;
  void main(){
@@ -22,7 +22,7 @@ function environmentFire163(parent,kind,x,y,z,scale=1){
   p.y+=position.y*length(modelMatrix[1].xyz);
   vec4 v=viewMatrix*vec4(p,1.);fireDistance=-v.z;gl_Position=projectionMatrix*v;
  }`,fragmentShader:`
- uniform float time,seed,heat,embers,smoke,speed;
+ uniform float time,seed,heat,embers,smoke,speed,flicker;
  varying vec2 fireUv; varying float fireDistance;
  float gasNoise(vec2 p){
   vec2 cell=floor(p),f=fract(p);f=f*f*(3.-2.*f);
@@ -45,11 +45,16 @@ function environmentFire163(parent,kind,x,y,z,scale=1){
   return vec2(contour,hot);
  }
  void main(){
-  vec2 p=fireUv-vec2(.5,0.);float t=time*speed+seed;
-  vec2 rear=ribbon(p,-.18,.155,.65+.12*sin(t*2.1),1.4,t);
-  vec2 tall=ribbon(p,.045,.179,.89+.11*sin(t*2.7+.9),3.2,t);
-  vec2 right=ribbon(p,.22,.128,.59+.14*sin(t*2.5+2.),5.2,t);
-  vec2 lead=ribbon(p,-.08,.148,.56+.13*sin(t*3.6+1.8),6.1,t*1.10);
+  vec2 p=fireUv-vec2(.5,0.);
+  float driftTime=time*speed+seed,t=time*speed*flicker+seed;
+  // The tongues respond to separate, continuous gusts. The fuel bed, smoke
+  // and embers keep their slower motion.
+  float gust=gasNoise(vec2(t*1.53+seed,7.4))-.5;
+  float eddy=gasNoise(vec2(t*1.97+seed,21.2))-.5;
+  vec2 rear=ribbon(p,-.18,.155,.65+.12*sin(t*2.1)+gust*.14,1.4,t);
+  vec2 tall=ribbon(p,.045,.179,.84+.10*sin(t*2.7+.9)+eddy*.17,3.2,t);
+  vec2 right=ribbon(p,.22,.128,.59+.14*sin(t*2.5+2.)-gust*.12,5.2,t);
+  vec2 lead=ribbon(p,-.08,.148,.56+.13*sin(t*3.6+1.8)-eddy*.11,6.1,t*1.10);
   vec2 base=ribbon(p,.09,.158,.39+.08*sin(t*4.+3.),.1,t*1.15);
   vec2 left=ribbon(p,-.25,.118,.36+.09*sin(t*3.2+.8),2.1,t*1.06);
   float body=1.-(1.-rear.x*.60)*(1.-tall.x*.66)*(1.-right.x*.62)*(1.-lead.x*.73)*(1.-base.x*.69)*(1.-left.x*.56);
@@ -60,19 +65,21 @@ function environmentFire163(parent,kind,x,y,z,scale=1){
   float gaps=gasNoise(vec2(p.x*16.+sin(p.y*24.-t*3.7)*.75,p.y*17.-t*4.7));
   body*=mix(.38,1.,smoothstep(.20,.64,gas*.62+gaps*.38));hot*=.46+.54*smoothstep(.18,.72,gas);
   vec3 flame=mix(vec3(.66,.027,.001),vec3(1.48,.29,.008),body*.70+hot*.27);
-  flame=mix(flame,vec3(2.18,1.16,.29),clamp(hot*(.76+.23*heel),0.,1.))*heat;
+  flame=mix(flame,mix(vec3(2.18,1.16,.29),vec3(2.38,1.61,.66),heel),clamp(hot*(.76+.25*heel),0.,1.))*heat;
   vec2 bed=(p-vec2(0.,.10))*vec2(3.1,6.0);
   float glow=exp(-dot(bed,bed))*.17;
-  float drift=p.x-.06*sin(p.y*12.-t*.9)-.13*sin(p.y*5.-t*.62);
+  float drift=p.x-.06*sin(p.y*12.-driftTime*.9)-.13*sin(p.y*5.-driftTime*.62);
   float vapor=exp(-drift*drift*34.)*smoothstep(.37,.66,p.y)*(1.-smoothstep(.72,1.,p.y));
-  vapor*=smoke*(.018+.12*pow(gasNoise(vec2(drift*22.,p.y*15.-t*.91)),1.9));
+  vapor*=smoke*(.018+.12*pow(gasNoise(vec2(drift*22.,p.y*15.-driftTime*.91)),1.9));
   float sparks=0.;
   if(embers>0.)for(int i=0;i<10;i++){
-   float k=float(i),travel=fract(t*(.36+k*.052)+k*.371);
+   float k=float(i),travel=fract(driftTime*(.36+k*.052)+k*.371);
    float life=travel*(1.5-.5*travel);
-   vec2 q=p-vec2(sin(k*3.71+seed)*.26+sin(t*.75+k)*life*.12,.095+life*.89);
+   vec2 q=p-vec2(sin(k*3.71+seed)*.26+sin(driftTime*.75+k)*life*.12,.095+life*.89);
    float pulse=smoothstep(0.,.12,travel)*(1.-smoothstep(.52,1.,travel));
-   sparks+=exp(-dot(q*vec2(1.,.72),q*vec2(1.,.72))*mix(9500.,25500.,fract(k*.373)))*pulse*(.43+.57*fract(k*.61));
+   q.x+=q.y*.42*sin(k*2.73+seed);
+   q.y*=.65+.25*fract(k*.44);
+   sparks+=exp(-dot(q,q)*mix(18000.,46000.,fract(k*.373)))*pulse*(.43+.57*fract(k*.61));
   }
   sparks=clamp(sparks*embers,0.,1.);
   float border=1.-smoothstep(.43,.50,abs(p.x));
@@ -93,7 +100,7 @@ function environmentFire163(parent,kind,x,y,z,scale=1){
  parent.add(fire);return fire;
 }
 function firelight163(time,phase=0){
- return 1+.078*Math.sin(time*2.8+phase)+.041*Math.sin(time*5.1+phase*1.7);
+ return 1+.060*Math.sin(time*3.7+phase)+.036*Math.sin(time*6.8+phase*1.7)+.014*Math.sin(time*10.9+phase*.83);
 }
 function bindFirelight163(light,phase){
  (world.userData.fireLights163??=[]).push({light,phase,power:light.intensity});
@@ -116,7 +123,8 @@ function hearthStone163(variant){
 function hearthFuelMaterial163(home){
  const fuel=new THREE.MeshStandardMaterial({map:envPbr103.maps.get('woodWeathered101:albedo')??textures.bark,color:home?'#594a40':'#4e423c',roughness:.96});
  addCloudLighting(fuel);lightPaintedSurface82(fuel);
- const compile=fuel.onBeforeCompile,key=fuel.customProgramCacheKey();fuel.userData.homeOwned139=true;
+ const compile=fuel.onBeforeCompile,key=fuel.customProgramCacheKey();
+ fuel.userData.homeOwned139=true;fuel.userData.preserveSurfaceShader=true;
  fuel.onBeforeCompile=function(shader,...args){
   compile.call(this,shader,...args);
   shader.uniforms.emberTime163=windUniforms.time;
@@ -135,56 +143,75 @@ function hearthFuelMaterial163(home){
  };
  fuel.customProgramCacheKey=()=>key+'-embers-in-fuel163';return fuel;
 }
+function hearthQuarryUv163(geometry,seed){
+ const random=seeded(seed),s=random(),t=random(),uv=geometry.attributes.uv;
+ for(let i=0;i<uv.count;i++)uv.setXY(i,s,t);
+ return geometry;
+}
 function hearthStoneFinish163(name,tint){
  const map=envPbr103.maps.get(name+':albedo')??environment102.maps.get(name),normalRough=envPbr103.maps.get(name+':normalRough');
  const m=new THREE.MeshStandardMaterial({map,color:tint,roughness:.92});
  addCloudLighting(m);lightPaintedSurface82(m);
- const before=m.onBeforeCompile,key=m.customProgramCacheKey();m.userData.homeOwned139=true;
+ const before=m.onBeforeCompile,key=m.customProgramCacheKey();
+ m.userData.homeOwned139=true;m.userData.preserveSurfaceShader=true;
  m.onBeforeCompile=function(s,...args){
   before.call(this,s,...args);s.uniforms.hearthStoneNR={value:normalRough};
-  const vary='varying vec3 hearthStonePosition,hearthStoneNormal;\n';
+  const vary='varying vec3 hearthStonePosition,hearthStoneNormal;varying vec2 hearthQuarry;\n';
   s.vertexShader=vary+s.vertexShader;
   s.vertexShader=s.vertexShader.replace('#include <worldpos_vertex>',`#include <worldpos_vertex>
    hearthStonePosition=(modelMatrix*vec4(transformed,1.)).xyz;
-   hearthStoneNormal=inverseTransformDirection(transformedNormal,viewMatrix);`);
+   hearthStoneNormal=inverseTransformDirection(transformedNormal,viewMatrix);
+   hearthQuarry=uv;`);
   s.fragmentShader=vary+'uniform sampler2D hearthStoneNR;\n'+normalBasis103+s.fragmentShader;
   s.fragmentShader=s.fragmentShader.replace('#include <map_fragment>',`
-   vec3 hf=hearthStonePosition*.73;
+   vec3 hf=hearthStonePosition*.47;
    vec3 weights=pow(abs(normalize(hearthStoneNormal)),vec3(6.));weights/=dot(weights,vec3(1.));
-   vec2 xy=hf.xy+vec2(.48,.10),xz=hf.xz+vec2(.23,.61),zy=hf.zy+vec2(.72,.34);
+   // Cut each block from a different part of the quarry texture. Triplanar
+   // coordinates keep that same grain on its bevels and exposed side.
+   float angle=(hearthQuarry.x-.5)*1.7;
+   mat2 turn=mat2(cos(angle),sin(angle),-sin(angle),cos(angle));
+   vec2 xy=turn*hf.xy+hearthQuarry, xz=turn*hf.xz+hearthQuarry.yx, zy=turn*hf.zy-hearthQuarry;
    vec3 stoneArt=texture2D(map,zy).rgb*weights.x+texture2D(map,xz).rgb*weights.y+texture2D(map,xy).rgb*weights.z;
-   vec3 broad=texture2D(map,hf.xy*.28+hf.zz*.1).rgb;
-   vec3 mineral=vec3(.25)+stoneArt*.77;
-   diffuseColor.rgb*=mineral*mix(1.55,2.10,dot(broad,vec3(.23,.57,.20)));
+   vec2 grainUV=weights.y>.5?xz:weights.x>.5?zy:xy;
+   vec3 grain=texture2D(map,mat2(.8,-.6,.6,.8)*grainUV*2.17+.43).rgb;
+   float minerals=dot(stoneArt,vec3(.2126,.7152,.0722));
+   float grit=dot(grain,vec3(.2126,.7152,.0722));
+   vec3 stoneHue=(stoneArt-minerals)*.62;
+   float relief=clamp(minerals*2.8,.22,1.52)*clamp(.76+grit*1.23,.8,1.22);
+   diffuseColor.rgb*=relief*mix(.92,1.08,hearthQuarry.y)+stoneHue;
    vec4 nrX=texture2D(hearthStoneNR,zy),nrY=texture2D(hearthStoneNR,xz),nrZ=texture2D(hearthStoneNR,xy);`);
   s.fragmentShader=s.fragmentShader.replace('#include <roughnessmap_fragment>','#include <roughnessmap_fragment>\nroughnessFactor=clamp(dot(vec3(nrX.a,nrY.a,nrZ.a),weights),.72,.97);');
   s.fragmentShader=s.fragmentShader.replace('#include <normal_fragment_maps>',`
    vec3 stoneNormal=normal;
-   vec3 nx=vec3((nrX.rg*2.-1.)*.43,nrX.b*2.-1.);
-   vec3 ny=vec3((nrY.rg*2.-1.)*.43,nrY.b*2.-1.);
-   vec3 nz=vec3((nrZ.rg*2.-1.)*.43,nrZ.b*2.-1.);
+   vec3 nx=vec3((nrX.rg*2.-1.)*1.35,nrX.b*2.-1.);
+   vec3 ny=vec3((nrY.rg*2.-1.)*1.35,nrY.b*2.-1.);
+   vec3 nz=vec3((nrZ.rg*2.-1.)*1.35,nrZ.b*2.-1.);
    normal=normalize(dataNormal103(-vViewPosition,stoneNormal,zy,nx)*weights.x+dataNormal103(-vViewPosition,stoneNormal,xz,ny)*weights.y+dataNormal103(-vViewPosition,stoneNormal,xy,nz)*weights.z);`);
- };m.customProgramCacheKey=()=>key+'-hearth-world-mineral-'+name;return m;
+ };m.customProgramCacheKey=()=>key+'-hearth-quarry-'+name;return m;
 }
-function masonryHearth163(parent,{key,tint,scale=1,forge=false,home=false,region='brookstead'}){
+function masonryHearth163(parent,{key,tint,scale=1,forge=false,home=false,region=activeScene.key==='highmereInn'?'highmere':'brookstead'}){
  const country=region==='fern'||region==='alder',dressed=region==='highmere'||region==='harbor';
+ const indoorAlbedo=home||forge?1:dressed?.55:.74;
  const mortar=new THREE.Color(tint).multiplyScalar(.31),random=seeded(forge?166435:country?166436:dressed?166437:166438);
- const stone=(variation=1)=>new THREE.Color(tint).multiplyScalar(Math.round(variation*24)/24);
- const mineral=forge||key==='stoneSlate'?'rockSlate':country?'rockMoss':dressed||key==='wall'?'rockLimestone':'rockGranite';
+ const stone=(variation=1)=>new THREE.Color(tint).multiplyScalar(indoorAlbedo*Math.round(variation*24)/24);
+ const mineral=forge||key==='rockB'?'rockSlate':key==='rockA'||dressed?'rockLimestone':country?'rockMoss':'rockGranite';
  const finishes=new Map();
- const finish=(materialKey,color)=>{
-  const name=materialKey==='rock'?'rockSlate':mineral,id=name+color;
+ const finish=(name,color)=>{
+  const id=name+color;
   if(!finishes.has(id))finishes.set(id,hearthStoneFinish163(name,color));
   return finishes.get(id);
  };
- const block=(name,x,y,z,w,h,d,color,materialKey=key)=>{
-  const o=mesh(hearthStone163(Math.floor(random()*6)),finish(materialKey,color.getStyle()),x,y,z,parent);
+ // UVs carry a per-piece quarry sample through the interior fixture batch.
+ let stoneIndex=country?19:dressed?79:forge?139:199;
+ const block=(name,x,y,z,w,h,d,color,material=mineral)=>{
+  const shape=hearthQuarryUv163(hearthStone163(Math.floor(random()*6)).clone(),166620+stoneIndex++*131);
+  const o=mesh(shape,finish(material,color.getStyle()),x,y,z,parent);
   o.scale.set(w,h,d);
   o.name=name;o.castShadow=o.receiveShadow=true;return o;
  };
  block('Weathered hearth plinth',0,.105,.06,3.14,.21,2.27,stone(.70));
  for(let col=0;col<5;col++)for(let row=0;row<2;row++)block('Fitted hearth flagstone',(col-2)*.601,.224,.62-row*.72,.588,.10,.705,stone(.83+random()*.13));
- block('Soot-dark firebox back',0,1.32,-.94,2.44,2.17,.22,mortar,'rock');
+ block('Soot-dark firebox back',0,1.32,-.94,2.44,2.17,.22,mortar,'rockSlate');
  for(const side of[-1,1]){
   block('Soot-dark firebox return',side*1.113,1.19,-.28,.45,1.95,1.36,stone(.48));
   for(let row=0;row<5;row++){
@@ -203,7 +230,8 @@ function masonryHearth163(parent,{key,tint,scale=1,forge=false,home=false,region
   shape.absellipse(0,spring,inner,inner*.62,b,a,true,0);
   shape.closePath();
   const geometry=new THREE.ExtrudeGeometry(shape,{depth:i===4?.47:.41,curveSegments:4,bevelEnabled:true,bevelThickness:.013,bevelSize:.007,bevelSegments:2,steps:1});
-  const face=mesh(geometry,finish(key,stone(.84+random()*.16).getStyle()),0,0,.16,parent);face.name=i===4?'Projecting arch keystone':'Cut arch stone';face.castShadow=face.receiveShadow=true;
+  const face=mesh(hearthQuarryUv163(geometry,166620+stoneIndex++*131),finish(mineral,stone(.84+random()*.16).getStyle()),0,0,.16,parent);
+  face.name=i===4?'Projecting arch keystone':'Cut arch stone';face.castShadow=face.receiveShadow=true;
  }
  for(const side of[-1,1])block('Mantel corbel',side*1.12,2.15,.21,.56,.21,1.45,stone(.85));
  block('Carved mantel bed',0,2.43,-.16,3.00,.13,1.54,stone(.80));

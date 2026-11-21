@@ -11,7 +11,7 @@ buildPlants=function(){plantsBeforeLushLight();const seen=new Set();for(const o 
 mergeGroup=function(group){
  group.updateMatrixWorld(true);const inverse=group.matrixWorld.clone().invert(),buckets=new Map(),removed=[],seen=new Set();
  group.traverse(o=>{
-  if(!o.isMesh||o.isInstancedMesh||Array.isArray(o.material))return;const base=o.material,already=!!o.geometry.attributes.tile&&!!base.userData.textureArray,eligible=already||base.isMeshStandardMaterial&&!base.isMeshPhysicalMaterial&&!base.transparent&&(!base.map||terrainTileNames.some(k=>textures[k]===base.map)),bucketKey=eligible?'atlas':base.uuid;
+  if(!o.isMesh||o.isInstancedMesh||Array.isArray(o.material))return;const base=o.material,already=!!o.geometry.attributes.tile&&!!base.userData.textureArray,eligible=already||base.isMeshStandardMaterial&&!base.isMeshPhysicalMaterial&&!base.transparent&&!base.userData.preserveSurfaceShader&&(!base.map||terrainTileNames.some(k=>textures[k]===base.map)),bucketKey=eligible?'atlas':base.uuid;
   const stamp=o.geometry.uuid+'|'+o.matrixWorld.elements.map(n=>n.toFixed(5)).join(',');if(seen.has(stamp)){removed.push(o);surfaceAudit.duplicateMeshes++;return;}seen.add(stamp);
   if(!buckets.has(bucketKey))buckets.set(bucketKey,{material:eligible?staticAtlasMaterial():base,list:[],atlas:eligible});const g=o.geometry.index?o.geometry.toNonIndexed():o.geometry.clone(),p=g.attributes.position,n=g.attributes.normal,uv=g.attributes.uv,scale=V3().setFromMatrixScale(o.matrixWorld),keyName=base.userData.textureKey||terrainTileNames.find(k=>textures[k]===base.map)||(base.metalness>.2?'metal':base.emissiveIntensity>.3?'cloth':'rock');
   if(already)surfaceAudit.preservedAtlasMeshes++;

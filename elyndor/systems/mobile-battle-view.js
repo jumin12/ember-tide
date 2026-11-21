@@ -48,7 +48,7 @@ function layoutMobileCombat69(){
  phoneCombat69.wasActive=true;fitMobileRender69();
  document.documentElement.style.setProperty('--combat-party69',field.party+'px');document.documentElement.style.setProperty('--combat-dock69',field.dock+'px');
  const n=$('#combo');for(const[k,v]of Object.entries({left:'8px',right:'8px',top:'auto',bottom:(field.party+18)+'px',width:(innerWidth-16)+'px',transform:'none'}))n.style.setProperty(k,v,'important');
- for(const card of $$('#battle-party [data-character]')){const c=state.characters[card.dataset.character];card.toggleAttribute('data-current69',card.dataset.character===currentFighter());const label=card.querySelector('header>small'),text=c.ascended?'Asc':c.charge+'%';if(label&&label.textContent!==text)label.textContent=text;}
+ for(const card of $$('#battle-party [data-character]'))card.toggleAttribute('data-current69',card.dataset.character===currentFighter());
 }
 const cameraMobileBefore69=updateCamera;
 updateCamera=function(...args){

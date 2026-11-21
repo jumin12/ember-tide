@@ -1,24 +1,35 @@
 {
-  "release": "elyndor-alpha-1.47-brookstead-opening-2026-11-20",
-  "version": "Alpha Version 1.47",
+  "release": "elyndor-alpha-1.48-hearths-and-combat-hud-2026-11-21",
+  "version": "Alpha Version 1.48",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 7700766,
-    "sha256": "f08be1ee2e4d909a67c437369435509841e4d6c02e966c6544b3d9f1801cc40a",
+    "bytes": 7706006,
+    "sha256": "0da4c2db654badcd681dc051954044e71922a099e2b32368e5d1eeeb728817e2",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "107b2f5a16ee693c143d8009ad984e4310db7210"
+    "previousRelease": "4214e8d9dbeb164acae424c82c432e6ed883532f"
   },
   "changes": [
-    "Removed the stray white droplets above Brookstead’s fountain when starting a new journey. The fountain’s streams and splash effects begin once the pump is repaired.",
-    "Smoothed jagged shadow edges in Brookstead’s outdoor areas while keeping the same shadow resolution."
+    "Restored natural stone grain and roughness on fireplaces. Brookstead House, inns and the smithy use distinct finishes, with fieldstone, slate and limestone still available in player housing.",
+    "Made environmental flames flicker more naturally, with finer embers and gentle firelight.",
+    "Refined the combat HUD with glowing double selectors and stronger gold frames. Party levels and Ascension gauges remain visible in both phone orientations."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.48",
+      "date": "November 21, 2026",
+      "title": "Detailed hearths and a clearer combat HUD",
+      "items": [
+        "Restored natural stone grain and roughness on fireplaces. Brookstead House, inns and the smithy use distinct finishes, with fieldstone, slate and limestone still available in player housing.",
+        "Made environmental flames flicker more naturally, with finer embers and gentle firelight.",
+        "Refined the combat HUD with glowing double selectors and stronger gold frames. Party levels and Ascension gauges remain visible in both phone orientations."
+      ]
+    },
     {
       "version": "Alpha Version 1.47",
       "date": "November 20, 2026",
@@ -923,8 +934,8 @@
     "coloredAbilitySceneLighting": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v147/verification.json",
-    "sha256": "4880d698f8f5b09feb7343519ba1a8a7e59542385decdec8c6cdbd7e0979ba43",
+    "file": "elyndor/previews/release-v148/verification.json",
+    "sha256": "77ee7924e425a9f4414a18fda5f11c0cf6e2b3288a24100deac1d75f47bd4c5f",
     "finalRelease": "PASS",
     "desktopAndPhone": true
   },
@@ -965,9 +976,9 @@
     "spriteLighting": "Coherent party and NPC canopy reception outside combat; original art and sampling retained"
   },
   "previousPublishedRelease": {
-    "commit": "107b2f5a16ee693c143d8009ad984e4310db7210",
-    "version": "Alpha Version 1.46",
-    "sha256": "a00af1e86b52e7479f6ed344b2e62c1476f7dc77be3a950a1fe5c65be212f707"
+    "commit": "4214e8d9dbeb164acae424c82c432e6ed883532f",
+    "version": "Alpha Version 1.47",
+    "sha256": "f08be1ee2e4d909a67c437369435509841e4d6c02e966c6544b3d9f1801cc40a"
   },
   "housing": {
     "maximumOwnedHomes": 1,

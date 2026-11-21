@@ -1,0 +1,47 @@
+[
+  {
+    "file": "elyndor/materials-v14.js",
+    "bytes": 6612,
+    "sha256": "77de908dfbad2bca1a2cd0759089b987f59ed8e671a5ce7a98c20d7e644357c8"
+  },
+  {
+    "file": "elyndor/previews/release-v148/verification.json",
+    "bytes": 3124,
+    "sha256": "77ee7924e425a9f4414a18fda5f11c0cf6e2b3288a24100deac1d75f47bd4c5f"
+  },
+  {
+    "file": "elyndor/systems/combat-hud-polish.css",
+    "bytes": 18208,
+    "sha256": "d7f652814a753dd15565e6253b6558f159b56292672094de469350bae5405c08"
+  },
+  {
+    "file": "elyndor/systems/environmental-fire.js",
+    "bytes": 15702,
+    "sha256": "7e1528c3ca22c8aeef935d9ab5bbf6b9d8d364bcb2b19f77975d0bccde2ebfab"
+  },
+  {
+    "file": "elyndor/systems/mobile-battle-view.js",
+    "bytes": 10641,
+    "sha256": "5910cd3584b845fc99f8bba1fe6966bcf1646ee5c284d6c6d8613187bb2235c7"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 96082,
+    "sha256": "8dd3a4ee7c7a6e5befc76413ec19a7e6aef546881dd6551276af4d1581dba5e7"
+  },
+  {
+    "file": "index.html",
+    "bytes": 7706006,
+    "sha256": "0da4c2db654badcd681dc051954044e71922a099e2b32368e5d1eeeb728817e2"
+  },
+  {
+    "file": "README.md",
+    "bytes": 100650,
+    "sha256": "2e28311c3a714345413cac3913ff8f3342c4e40844b0436292f5d7ee67cfdb78"
+  },
+  {
+    "file": "release.json",
+    "bytes": 100186,
+    "sha256": "645f7e257f67e08a87936815159403d2f14d73d5cebee4ecdb13d3b6d9006cb6"
+  }
+]
