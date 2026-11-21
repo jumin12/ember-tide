@@ -1,24 +1,33 @@
 {
-  "release": "elyndor-alpha-1.46-brookstead-fountain-2026-11-20",
-  "version": "Alpha Version 1.46",
+  "release": "elyndor-alpha-1.47-brookstead-opening-2026-11-20",
+  "version": "Alpha Version 1.47",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 7700034,
-    "sha256": "a00af1e86b52e7479f6ed344b2e62c1476f7dc77be3a950a1fe5c65be212f707",
+    "bytes": 7700766,
+    "sha256": "f08be1ee2e4d909a67c437369435509841e4d6c02e966c6544b3d9f1801cc40a",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "1002b691d80b0841c595beaff0c0e3d86a204b06"
+    "previousRelease": "107b2f5a16ee693c143d8009ad984e4310db7210"
   },
   "changes": [
-    "Restored the look of Brookstead’s fountain from the approved midday view, with pale weathered stone, defined joints and fine translucent streams flowing into blue-green water.",
-    "The fountain’s finish stays consistent as you walk around it. The streams remain readable on smaller displays and resume after loading a journey past the pump repair."
+    "Removed the stray white droplets above Brookstead’s fountain when starting a new journey. The fountain’s streams and splash effects begin once the pump is repaired.",
+    "Smoothed jagged shadow edges in Brookstead’s outdoor areas while keeping the same shadow resolution."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.47",
+      "date": "November 20, 2026",
+      "title": "Clean fountain and smoother Brookstead shadows",
+      "items": [
+        "Removed the stray white droplets above Brookstead’s fountain when starting a new journey. The fountain’s streams and splash effects begin once the pump is repaired.",
+        "Smoothed jagged shadow edges in Brookstead’s outdoor areas while keeping the same shadow resolution."
+      ]
+    },
     {
       "version": "Alpha Version 1.46",
       "date": "November 20, 2026",
@@ -914,8 +923,8 @@
     "coloredAbilitySceneLighting": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v146/verification.json",
-    "sha256": "a5b8ea8365aa4e8275de4dcdc43016d77824d26030aa71a13f24e68d44b669d2",
+    "file": "elyndor/previews/release-v147/verification.json",
+    "sha256": "4880d698f8f5b09feb7343519ba1a8a7e59542385decdec8c6cdbd7e0979ba43",
     "finalRelease": "PASS",
     "desktopAndPhone": true
   },
@@ -956,9 +965,9 @@
     "spriteLighting": "Coherent party and NPC canopy reception outside combat; original art and sampling retained"
   },
   "previousPublishedRelease": {
-    "commit": "1002b691d80b0841c595beaff0c0e3d86a204b06",
-    "version": "Alpha Version 1.45",
-    "sha256": "33b990da953e6cc61a116b9d1cb56f0c3f663411e77341138976e7c110473f97"
+    "commit": "107b2f5a16ee693c143d8009ad984e4310db7210",
+    "version": "Alpha Version 1.46",
+    "sha256": "a00af1e86b52e7479f6ed344b2e62c1476f7dc77be3a950a1fe5c65be212f707"
   },
   "housing": {
     "maximumOwnedHomes": 1,

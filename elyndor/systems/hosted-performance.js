@@ -108,7 +108,12 @@ updateReflection=function(...args){
 // ticks, while fitting restored a different recipe only on depth-draw frames.
 function setOutdoorShadowSettings155(){
  if(!sun||!world||battle||encounter53.active||!['poi','overworld'].includes(activeScene?.kind))return;
- const macro=activeScene.kind==='overworld';sun.shadow.radius=.35;sun.shadow.bias=macro?-.00016:-.000035;sun.shadow.normalBias=macro?.10:.012;
+ const macro=activeScene.kind==='overworld',brook=activeScene.key==='brookstead';
+ const shadow=sun.shadow,extent=shadow.camera.right-shadow.camera.left;
+ // A consistent world-space edge softens the courtyard's curved stone shadows.
+ shadow.radius=brook?clamp(shadow.mapSize.x*.068/Math.max(78,extent),.90,1.9):.35;
+ shadow.bias=macro?-.00016:-.000035;
+ shadow.normalBias=macro?.10:brook?.018:.012;
 }
 const outdoorLightBefore155=updateLighting;
 updateLighting=function(...args){const result=outdoorLightBefore155(...args);setOutdoorShadowSettings155();return result;};

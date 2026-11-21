@@ -1,0 +1,58 @@
+{
+  "version": "Alpha Version 1.47",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7700766,
+    "sha256": "f08be1ee2e4d909a67c437369435509841e4d6c02e966c6544b3d9f1801cc40a",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "base": "107b2f5a16ee693c143d8009ad984e4310db7210",
+  "gameplayChecks": {
+    "desktop": {
+      "views": [
+        "arrival",
+        "opening-play",
+        "opening-detail",
+        "opening-small",
+        "repaired"
+      ],
+      "shadowMapSize": 2048,
+      "gateAndPumpActionsPassed": true,
+      "legacyDroplets": 0,
+      "runtimeErrors": 0
+    },
+    "phone": {
+      "views": [
+        "arrival",
+        "opening-play",
+        "repaired"
+      ],
+      "shadowMapSize": 1536,
+      "gateAndPumpActionsPassed": true,
+      "legacyDroplets": 0,
+      "runtimeErrors": 0
+    },
+    "standardMovement": true
+  },
+  "saveCompatibility": {
+    "pass": true,
+    "cases": [
+      "stable quest identity",
+      "frozen legacy migration",
+      "unknown quest",
+      "invalid position",
+      "invalid party",
+      "invalid character data",
+      "numeric bounds",
+      "checksum",
+      "backup recovery",
+      "legacy recovery and export",
+      "waterworks progress migration",
+      "optional task validation",
+      "ordered ceremony recovery validation"
+    ]
+  },
+  "runtimeErrors": 0,
+  "assetBundleUnchanged": true
+}

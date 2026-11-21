@@ -7,8 +7,10 @@ function pavingMaterial122(){
  const m=new THREE.MeshStandardMaterial({map:environment102.maps.get('cobbleOld'),color:'#b7bead',roughness:.93,metalness:0,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-1});m.userData.textureKey='cobbleOld';m.userData.walkablePaving=true;addCloudLighting(m);lightPaintedSurface82(m);materialFinish103(m);townPaving122.set(world,m);return m;
 }
 brookFountain=function(){
- const start=world.children.length;fountainBefore122();
+ const start=world.children.length,emitterCount=world.userData.fountains.length;fountainBefore122();
  const g=world.children.slice(start).find(o=>o.isGroup&&o.children[0]?.geometry?.type==='CircleGeometry');if(!g)return;
+ // The rebuilt basin owns its pump-gated spray. Discard the old crown emitter.
+ world.userData.fountains.length=emitterCount;
  const {x,z,r}=BROOK.plaza,rows=14,segments=96,positions=[],uv=[],indices=[];
  for(let j=0;j<=rows;j++)for(let i=0;i<=segments;i++){
   const a=i/segments*TAU,rad=r*j/rows,xx=Math.cos(a)*rad,zz=Math.sin(a)*rad;
@@ -114,7 +116,6 @@ function rebuildBasin123(g,x,z){
   const a=i/8*TAU,curve=new THREE.QuadraticBezierCurve3(V3(Math.cos(a)*.48,2.71,Math.sin(a)*.48),V3(Math.cos(a)*1.1,2.1,Math.sin(a)*1.1),V3(Math.cos(a)*1.8,.65,Math.sin(a)*1.8));
   const stream=mesh(new THREE.TubeGeometry(curve,24,.026,6,false),material('cloth','#b6d0cd',{transparent:true,opacity:.64,emissive:'#347c7b',emissiveIntensity:.10}),0,0,0,basin);stream.castShadow=false;stream.userData.dynamicWater=true;world.userData.supplyJets.push(stream);
  }
- const point=world.userData.fountains[world.userData.fountains.length-1];point.set(x,level+2.75,z);
  const blocker=colliders.find(c=>c.type==='fountain'&&Math.hypot(c.x-x,c.z-z)<.1);if(blocker)blocker.w=blocker.d=3.05;
  g.userData.square122.basin123={continuous:true,innerRadius:2.20,outerRadius:3.03,groundHigh:high,groundLow:low,base:level,minimumClearance:level-high};
  world.userData.fountain123={basin,pool,base:level,x,z};

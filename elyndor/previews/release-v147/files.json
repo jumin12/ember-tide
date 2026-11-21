@@ -1,0 +1,37 @@
+[
+  {
+    "file": "elyndor/previews/release-v147/verification.json",
+    "bytes": 1409,
+    "sha256": "4880d698f8f5b09feb7343519ba1a8a7e59542385decdec8c6cdbd7e0979ba43"
+  },
+  {
+    "file": "elyndor/systems/brookstead-square.js",
+    "bytes": 20612,
+    "sha256": "c98787252a8d31ea94fc299fadefd49dcc27cbcbab5abad5cabd64540f485f71"
+  },
+  {
+    "file": "elyndor/systems/hosted-performance.js",
+    "bytes": 11652,
+    "sha256": "c973fa3004a9036b05a3ccd35acae49cd8820fe4ab0462ca72f75a3a6b4b5315"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 95517,
+    "sha256": "e579cec4be42ad80040bdec0632616726bb1d97889c2cf72eaaad053ec7b940a"
+  },
+  {
+    "file": "index.html",
+    "bytes": 7700766,
+    "sha256": "f08be1ee2e4d909a67c437369435509841e4d6c02e966c6544b3d9f1801cc40a"
+  },
+  {
+    "file": "README.md",
+    "bytes": 100035,
+    "sha256": "bf9e5299b3c98b9262a9a5005bea7b2dbc8cb2d35f30e3b76c916c19506cca60"
+  },
+  {
+    "file": "release.json",
+    "bytes": 99358,
+    "sha256": "9bb8016e0944f15264f5f70911145bb8efd79219cd357ef367f7196a1a3fbf17"
+  }
+]

@@ -2,6 +2,15 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.47 — Clean fountain and smoother Brookstead shadows
+
+November 20, 2026
+
+- Removed the stray white droplets above Brookstead’s fountain when starting a new journey. The fountain’s streams and splash effects begin once the pump is repaired.
+- Smoothed jagged shadow edges in Brookstead’s outdoor areas while keeping the same shadow resolution.
+
+[Release verification](elyndor/previews/release-v147/verification.json)
+
 ## Alpha Version 1.46 — Brookstead fountain visual restoration
 
 November 20, 2026
