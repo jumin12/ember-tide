@@ -1,25 +1,33 @@
 {
-  "release": "elyndor-alpha-1.48-hearths-and-combat-hud-2026-11-21",
-  "version": "Alpha Version 1.48",
+  "release": "elyndor-alpha-1.49-flame-and-ascension-2026-11-21",
+  "version": "Alpha Version 1.49",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 7706006,
-    "sha256": "0da4c2db654badcd681dc051954044e71922a099e2b32368e5d1eeeb728817e2",
+    "bytes": 7707729,
+    "sha256": "9ac47e3e3f4cab5cba65aefc6519200424b64b8a0d4f609d2359edef599c6a6a",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "4214e8d9dbeb164acae424c82c432e6ed883532f"
+    "previousRelease": "81106c5af05cf6707aebc20a2b9195f272180c1e"
   },
   "changes": [
-    "Restored natural stone grain and roughness on fireplaces. Brookstead House, inns and the smithy use distinct finishes, with fieldstone, slate and limestone still available in player housing.",
-    "Made environmental flames flicker more naturally, with finer embers and gentle firelight.",
-    "Refined the combat HUD with glowing double selectors and stronger gold frames. Party levels and Ascension gauges remain visible in both phone orientations."
+    "Restored the Alpha 1.48 flame appearance and tuned environmental fire to a middle flicker speed.",
+    "Extended the bottoms of combat party cards by six pixels so Ascension has room inside its frame on desktop and phone."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.49",
+      "date": "November 21, 2026",
+      "title": "Refined flame flicker and Ascension spacing",
+      "items": [
+        "Restored the Alpha 1.48 flame appearance and tuned environmental fire to a middle flicker speed.",
+        "Extended the bottoms of combat party cards by six pixels so Ascension has room inside its frame on desktop and phone."
+      ]
+    },
     {
       "version": "Alpha Version 1.48",
       "date": "November 21, 2026",
@@ -934,8 +942,8 @@
     "coloredAbilitySceneLighting": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v148/verification.json",
-    "sha256": "77ee7924e425a9f4414a18fda5f11c0cf6e2b3288a24100deac1d75f47bd4c5f",
+    "file": "elyndor/previews/release-v149/verification.json",
+    "sha256": "78a7b55a2d298ed66a2cc0dd82333b40475d87ead4336788e7ca1553d7b8a4e0",
     "finalRelease": "PASS",
     "desktopAndPhone": true
   },
@@ -976,9 +984,9 @@
     "spriteLighting": "Coherent party and NPC canopy reception outside combat; original art and sampling retained"
   },
   "previousPublishedRelease": {
-    "commit": "4214e8d9dbeb164acae424c82c432e6ed883532f",
-    "version": "Alpha Version 1.47",
-    "sha256": "f08be1ee2e4d909a67c437369435509841e4d6c02e966c6544b3d9f1801cc40a"
+    "commit": "81106c5af05cf6707aebc20a2b9195f272180c1e",
+    "version": "Alpha Version 1.48",
+    "sha256": "0da4c2db654badcd681dc051954044e71922a099e2b32368e5d1eeeb728817e2"
   },
   "housing": {
     "maximumOwnedHomes": 1,

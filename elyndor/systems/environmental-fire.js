@@ -1,11 +1,11 @@
 // Ordinary fires have a common optical treatment. Their opening, fuel and
 // intensity control the silhouette. Combat spell effects use their own art.
 const ENVIRONMENT_FIRE163={
- hearth:{width:1.74,height:1.77,heat:1.05,embers:1,smoke:1,speed:1,flicker:1.48},
- inn:{width:2.36,height:2.23,heat:1.12,embers:1,smoke:1,speed:.88,flicker:1.40},
- forge:{width:1.40,height:1.11,heat:1.34,embers:1,smoke:.65,speed:1.32,flicker:1.34},
- torch:{width:.61,height:1.05,heat:1.06,embers:.48,smoke:.24,speed:1.18,flicker:1.28},
- candle:{width:.18,height:.31,heat:.84,embers:0,smoke:0,speed:.54,flicker:1.25}
+ hearth:{width:1.74,height:1.77,heat:1.05,embers:1,smoke:1,speed:1,flicker:1.89},
+ inn:{width:2.36,height:2.23,heat:1.12,embers:1,smoke:1,speed:.88,flicker:1.79},
+ forge:{width:1.40,height:1.11,heat:1.34,embers:1,smoke:.65,speed:1.32,flicker:1.71},
+ torch:{width:.61,height:1.05,heat:1.06,embers:.48,smoke:.24,speed:1.18,flicker:1.64},
+ candle:{width:.18,height:.31,heat:.84,embers:0,smoke:0,speed:.54,flicker:1.60}
 };
 function environmentFire163(parent,kind,x,y,z,scale=1){
  const profile=ENVIRONMENT_FIRE163[kind],seed=(x*2.31+z*1.27+y*.35)%43;

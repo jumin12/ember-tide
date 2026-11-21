@@ -1,0 +1,37 @@
+[
+  {
+    "file": "elyndor/previews/release-v149/verification.json",
+    "bytes": 2937,
+    "sha256": "78a7b55a2d298ed66a2cc0dd82333b40475d87ead4336788e7ca1553d7b8a4e0"
+  },
+  {
+    "file": "elyndor/systems/combat-hud-polish.css",
+    "bytes": 19588,
+    "sha256": "b3fd0972ee8f06ca9dc514177d256f4af3b4e045d9574fb3f4660d9f30742b1c"
+  },
+  {
+    "file": "elyndor/systems/environmental-fire.js",
+    "bytes": 15702,
+    "sha256": "a163559c00789e1eebe8a11a153e129ca0861f0eb309af150f4ec7bef6dc65ce"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 96425,
+    "sha256": "3879bcec6663efa7d5040fc1c9219d77a701568ea00e5fe06f087565db1204b0"
+  },
+  {
+    "file": "index.html",
+    "bytes": 7707729,
+    "sha256": "9ac47e3e3f4cab5cba65aefc6519200424b64b8a0d4f609d2359edef599c6a6a"
+  },
+  {
+    "file": "README.md",
+    "bytes": 101042,
+    "sha256": "d6d206d8de3d6ed955e8002e726b5661d4e7908cb414343e1a2e3f2c156eedcd"
+  },
+  {
+    "file": "release.json",
+    "bytes": 100372,
+    "sha256": "10c33b2d0c3fa0ebbc69b4ec86721d3d0531c7a6ee3e82635d221d8ecf6154c9"
+  }
+]

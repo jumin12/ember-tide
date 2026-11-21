@@ -24,6 +24,31 @@ body.combat-ui65 #battle-hud>#battle-command {
   box-shadow:var(--battle-engraving),0 0 7px #f4b55280,0 0 15px #d88e3838!important;
   overflow:visible;
 }
+body.combat-ui65 #battle-hud #battle-party {
+  --party-card-bottom-extension:6px;
+}
+body.combat-ui65 #battle-hud #battle-party .party-card65 {
+  /* Use the existing 9px bottom margin to keep the grid rows and card tops fixed. */
+  margin-bottom:calc(9px - var(--party-card-bottom-extension));
+}
+@media (min-width:701px) and (min-height:501px) {
+  body.combat-ui65 #battle-hud #battle-party .party-card65 {
+    padding-bottom:calc(5px + var(--party-card-bottom-extension))!important;
+  }
+}
+@media (min-width:901px) and (min-height:551px) {
+  body.combat-ui65 #battle-hud #battle-party .party-card65 {
+    min-height:calc(112px + var(--party-card-bottom-extension))!important;
+    padding-bottom:calc(9px + var(--party-card-bottom-extension))!important;
+  }
+}
+body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-hud #battle-party .party-card65 {
+  --extended-party-card-height:calc(var(--combat-party69) + var(--party-card-bottom-extension));
+  height:var(--extended-party-card-height)!important;
+  min-height:var(--extended-party-card-height)!important;
+  max-height:var(--extended-party-card-height)!important;
+  padding-bottom:calc(4px + var(--party-card-bottom-extension))!important;
+}
 body.combat-ui65 #battle-hud .command-head {
   position: relative;
   padding: 12px 63px 10px 14px!important;
@@ -163,7 +188,8 @@ body.combat-ui65 #battle-hud #turn-order .turn-token27.current>i {
   }
   body.combat-ui65 #battle-hud #battle-party .party-card65 {
     position:relative;grid-template-columns:52px minmax(0,1fr)!important;
-    padding:5px 10px 7px!important;gap:9px!important;min-height:0!important;height:86px!important;
+    padding:5px 10px calc(7px + var(--party-card-bottom-extension))!important;
+    gap:9px!important;min-height:0!important;height:calc(86px + var(--party-card-bottom-extension))!important;
     background:var(--battle-panel)!important;font-variant-numeric:tabular-nums;
   }
   body.combat-ui65 #battle-hud #battle-party .party-card65>img {
@@ -179,7 +205,7 @@ body.combat-ui65 #battle-hud #turn-order .turn-token27.current>i {
   body.combat-ui65 #battle-hud #battle-party .party-card65 header>small {font-size:9px;color:#e2c17c}
   body.combat-ui65 #battle-hud #battle-party .party-card65 label {font-size:10px!important;line-height:1.25!important;margin-top:1px!important}
   body.combat-ui65 #battle-hud #battle-party .party-card65>.status-row65 {
-    position:absolute;left:7px;bottom:3px;width:45px;max-height:21px;min-height:0;padding:0;
+    position:absolute;left:7px;bottom:calc(3px + var(--party-card-bottom-extension));width:45px;max-height:21px;min-height:0;padding:0;
   }
   body.combat-ui65 #world-enemy-bars27 .foe-bar27 {font-size:13px;padding:7px 8px;min-width:122px}
 }
@@ -231,7 +257,7 @@ body.combat-ui65 #battle-hud #turn-order .turn-token27.current>i {
   }
   body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-party .party-card65 .ascension-label65 span {font:600 8px/8px system-ui!important}
   body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-party .party-card65 .ascension65 {margin-top:0;height:2px!important}
-  body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-party .status-row65 {top:auto;bottom:4px;right:32px;max-width:16px}
+  body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-party .status-row65 {top:auto;bottom:calc(4px + var(--party-card-bottom-extension));right:32px;max-width:16px}
   body[data-minimap51].compact33.combat-ui65.mobile-combat69 #battle-hud #battle-callout {
     top:calc(max(4px,env(safe-area-inset-top)) + 48px)!important;
     bottom:auto!important;max-width:calc(100vw - 32px)!important;

@@ -2,6 +2,15 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.49 — Refined flame flicker and Ascension spacing
+
+November 21, 2026
+
+- Restored the Alpha 1.48 flame appearance and tuned environmental fire to a middle flicker speed.
+- Extended the bottoms of combat party cards by six pixels so Ascension has room inside its frame on desktop and phone.
+
+[Release verification](elyndor/previews/release-v149/verification.json)
+
 ## Alpha Version 1.48 — Detailed hearths and a clearer combat HUD
 
 November 21, 2026

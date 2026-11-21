@@ -1,0 +1,127 @@
+{
+  "version": "Alpha Version 1.49",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7707729,
+    "sha256": "9ac47e3e3f4cab5cba65aefc6519200424b64b8a0d4f609d2359edef599c6a6a",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "base": "81106c5af05cf6707aebc20a2b9195f272180c1e",
+  "gameplayChecks": {
+    "partyLayouts": 36,
+    "sizes": 9,
+    "bottomExtensionPx": 6,
+    "minimumGaugeClearancePx": 10,
+    "fireplaces": {
+      "brookstead": {
+        "kinds": {
+          "torch": 5
+        },
+        "stone": {},
+        "flickeringLights": 6
+      },
+      "brookInn": {
+        "kinds": {
+          "candle": 3,
+          "inn": 1
+        },
+        "stone": {
+          "rockGranite": 51,
+          "rockSlate": 1
+        },
+        "flickeringLights": 6
+      },
+      "brookForge": {
+        "kinds": {
+          "forge": 1
+        },
+        "stone": {
+          "rockSlate": 52
+        },
+        "flickeringLights": 6
+      },
+      "highmereInn": {
+        "kinds": {
+          "candle": 3,
+          "inn": 1
+        },
+        "stone": {
+          "rockLimestone": 51,
+          "rockSlate": 1
+        },
+        "flickeringLights": 6
+      },
+      "finishes": {
+        "first": {
+          "appearance": "fieldstone",
+          "bounds": [
+            3.1808901643753043,
+            3.9201971757411957,
+            2.4416099759936323
+          ],
+          "mantel": "rockGranite"
+        },
+        "slate": {
+          "appearance": "fieldstone",
+          "draft": "slate",
+          "bounds": [
+            3.1808901643753043,
+            3.9201971757411957,
+            2.4416099759936323
+          ],
+          "mantel": "rockSlate"
+        },
+        "restored": {
+          "appearance": "fieldstone",
+          "bounds": [
+            3.1808901643753043,
+            3.9201971757411957,
+            2.4416099759936323
+          ],
+          "mantel": "rockGranite"
+        },
+        "saved": {
+          "appearance": "limestone",
+          "bounds": [
+            3.1808901643753043,
+            3.9201971757411957,
+            2.4416099759936323
+          ],
+          "mantel": "rockLimestone"
+        }
+      }
+    },
+    "timedComboDamage": [
+      20,
+      25,
+      31
+    ],
+    "flameAppearanceRestored": true,
+    "sampledFlameFrameDifference": {
+      "Alpha 1.48": 10.67,
+      "Tuned": 13.52,
+      "Faster preview": 19.06
+    }
+  },
+  "saveCompatibility": {
+    "pass": true,
+    "cases": [
+      "stable quest identity",
+      "frozen legacy migration",
+      "unknown quest",
+      "invalid position",
+      "invalid party",
+      "invalid character data",
+      "numeric bounds",
+      "checksum",
+      "backup recovery",
+      "legacy recovery and export",
+      "waterworks progress migration",
+      "optional task validation",
+      "ordered ceremony recovery validation"
+    ]
+  },
+  "runtimeErrors": 0,
+  "assetBundleUnchanged": true
+}
