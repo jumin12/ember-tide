@@ -58,15 +58,18 @@ async function startDevSession60(){
  if(battle||dialogue||eventAction||restoration||transition||campaignEvents.active)throw Error('Finish the current battle, conversation or event before starting a test session.');
  q.original={state,copy:JSON.parse(JSON.stringify(state)),scene:state.scene,point:player?[player.x,player.z]:null,title:{scene:title19.scene,focus:title19.focus?[...title19.focus]:null,age:title19.age,index:title19.index,bag:[...title19.bag],tab:title19.tab},titleVisible:!$('#title').classList.contains('hidden'),pending:saveManager.pending};
  q.active=true;saveManager.pending=false;clearDevTransient60();
- // A test needs a temporary record, not a second construction of the opening
- // town and its scripted dialogue. The requested tester owns scene loading.
- const settings={...state.settings};state=initialState();state.version=4;state.worldFormat=1;state.settings=settings;
- state.scene=q.original.scene;state.poi=activeScene.key;state.lastScene=state.scene;state.restoredLights=[];state.explored=[];
+ if(q.original.titleVisible){
+  const settings={...state.settings};state=initialState();state.version=SAVE_SCHEMA;state.worldFormat=2;state.settings=settings;
+  state.scene=q.original.scene;state.poi=activeScene.key;state.lastScene=state.scene;state.restoredLights=[];
+  state.beat=BEATS.findIndex(b=>b[0]==='travelFern');
+  Object.assign(state.flags,{prologue_complete:true,combat_tutorial_complete:true,gate_open:true,pump_repaired:true,temporary_water_available:true});
+  state.river17={released:true,age:120};
+  state.members=['bren','soren','mira','lysa'];state.reserveMembers=['tavin'];
+  for(const id of Object.keys(CAST)){state.characters[id].level=3;state.flags[id+'_awakened']=true;}
+  setupParty([player.x,player.z]);restoreParty();
+ }else state=structuredClone(state);
  $('#title').classList.add('hidden');$('#hud').classList.remove('hidden');initAudio();
- state.mode='explore';state.flags.prologue_complete=state.flags.combat_tutorial_complete=true;state.beat=BEATS.findIndex(b=>b[0]==='travelFern');state.encounterDistance=-1e9;state.trackedQuest=null;state.trackedPoi=null;tutorialState16().hidden=mentorState17().hidden=true;updateGuide16();
- Object.assign(state.flags,{gate_open:true,pump_repaired:true,temporary_water_available:true});
- state.river17={released:true,age:120};
- state.members=['bren','soren','mira','lysa'];state.reserveMembers=['tavin'];for(const id of Object.keys(CAST)){state.characters[id].level=3;state.flags[id+'_awakened']=true;}setupParty([player.x,player.z]);restoreParty();updateHUD();resetSimulation();
+ state.mode='explore';tutorialState16().hidden=mentorState17().hidden=true;updateGuide16();updateHUD();resetSimulation();
 }
 async function leaveDevBattle60(){
  await devWait60(()=>encounter53.phase==='idle');if(battle){endBattle('fled');await devWait60(()=>!battle&&encounter53.phase==='idle');}clearDevTransient60();if(devConsole60.active)state.mode='explore';
@@ -79,17 +82,17 @@ async function devGoScene60(force=false){
  const q=devConsole60;if(q.location==='current')return;
  const matches=q.location==='overworld'?activeScene?.kind==='overworld'&&q.loadedRegion===q.region:q.location.startsWith('poi:')?activeScene?.kind==='poi'&&activeScene.key===q.location.slice(4):activeScene?.kind==='interior'&&activeScene.key===q.location.slice(5);
  if(!force&&q.loadedLocation===q.location&&matches)return;
- const reuse=q.loadedLocation===q.location&&matches;
  if(q.location==='overworld'){
-  const p=POIS[q.region];if(!p)throw Error('Choose a valid overworld region.');if(activeScene?.kind!=='overworld'||force&&!reuse){await changeJourneyScene('overworld',[p.node[0],p.node[1]+16]);await devWait60(()=>!gameLoading&&!sceneSwitchPending&&!poiFade.active);}
+  const p=POIS[q.region];if(!p)throw Error('Choose a valid overworld region.');if(activeScene?.kind!=='overworld'&&!await changeJourneyScene('overworld',[p.node[0],p.node[1]+16]))throw Error('Could not load the overworld.');
   const point=safePoint({x:p.node[0],z:p.node[1]+16},actorRadius(player)+.1);setupParty([point.x,point.z]);q.loadedRegion=q.region;
  }else if(q.location.startsWith('poi:')){
-  const key=q.location.slice(4),p=POIS[key];if(!p)throw Error('Choose a valid point of interest.');if(reuse)setupParty(p.spawn);else await changeJourneyScene(p.id,p.spawn);await devWait60(()=>!gameLoading&&!sceneSwitchPending&&!poiFade.active);
-  if(q.spawn==='court'){const a=JRPG_LAYOUTS46[key]?.courts?.[0],point=key==='brookstead'?safePoint({x:-121,z:106}):a?safePoint({x:a[0],z:a[1]+9}):null;if(point)setupParty([point.x,point.z]);}
+  const key=q.location.slice(4),p=POIS[key];if(!p)throw Error('Choose a valid point of interest.');
+  if(!await changeJourneyScene(p.id,p.spawn))throw Error('Could not load '+p.name+'.');
+  if(q.spawn==='court'&&!dialogue&&!campaignEvents.active){const a=JRPG_LAYOUTS46[key]?.courts?.[0],point=key==='brookstead'?safePoint({x:-121,z:106}):a?safePoint({x:a[0],z:a[1]+9}):null;if(point)setupParty([point.x,point.z]);}
  }else if(q.location.startsWith('room:')){
-  const key=q.location.slice(5),room=INTERIORS[key];if(!room||!SCENES[key])throw Error('Choose a valid interior.');const poi=POIS[room.poi];state.interiorReturn={id:poi.id,poi:room.poi,spawn:[...poi.spawn]};if(reuse)setupParty([0,5]);else await changeJourneyScene(key,[0,5]);await devWait60(()=>!gameLoading&&!sceneSwitchPending&&!poiFade.active);
+  const key=q.location.slice(5),room=INTERIORS[key];if(!room||!SCENES[key])throw Error('Choose a valid interior.');const poi=POIS[room.poi];state.interiorReturn={id:poi.id,poi:room.poi,spawn:[...poi.spawn]};if(!await changeJourneyScene(key,[0,5]))throw Error('Could not load '+room.name+'.');
  }else throw Error('Choose a valid test location.');
- clearDevTransient60();state.mode='explore';state.encounterDistance=-1e9;
+ state.encounterDistance=0;
  q.loadedLocation=q.location;
 }
 async function endDevSession60(){
@@ -100,18 +103,23 @@ async function endDevSession60(){
  buildWorld(original.scene,original.point);await prepareGameplayGraphics();for(const key of Object.keys(state))delete state[key];Object.assign(state,JSON.parse(JSON.stringify(original.copy)));Object.assign(title19,original.title);title19.stopped=q.open?true:q.titleStopped;
  $('#title').classList.toggle('hidden',!original.titleVisible);$('#hud').classList.toggle('hidden',original.titleVisible);if(original.titleVisible)hideTitleParty19();renderTitlePanel19();updateLighting();updateCamera(1,true);updateHUD();render();saveManager.pending=original.pending;q.active=false;q.original=null;q.loadedLocation=null;q.loadedRegion=null;q.status='Test session ended · Journey restored';resetSimulation();
 }
-async function runDevAction60(action){
+async function runDevAction60(action,{actor=null}={}){
  const q=devConsole60;if(!q.unlocked||q.running)return;q.running=true;q.error='';q.status=action==='end'||action==='lock'?'Restoring journey…':'Preparing test…';renderDevConsole60();
  try{
   if(action==='end'||action==='lock'){await endDevSession60();if(action==='lock'){q.unlocked=false;q.open=false;title19.stopped=q.titleStopped;}}
   else{
    await startDevSession60();
    if(action==='battle'){
-    await leaveDevBattle60();const ids=q.party===2?['bren','soren']:state.members.length===4?[...state.members]:['bren','soren','mira','lysa'];if(state.members.join(',')!==ids.join(',')){state.members=ids;setupParty([player.x,player.z]);}restoreParty();for(const id of state.members)state.characters[id].charge=100;
-    q.minutes=q.phase==='night'?1380:q.phase==='golden'?1050:900;applyDevLighting60();state.settings.battleIntro=q.motion;encounter53.nextStage53=q.stage;battleIntro58.nextShot=q.shot||null;beginBattle('random');renderDevConsole60();await devWait60(()=>!!battle&&encounter53.phase==='idle'&&!introLocked58());q.status='Battle ready · '+BATTLE_STAGES53[q.stage].name;
+    await leaveDevBattle60();
+    const pair=['bren','soren'],ids=q.party===2&&(!actor||pair.includes(actor))?pair:[...new Set([...(actor?[actor]:[]),...state.members,...pair,'mira','lysa'])].slice(0,4);
+    if(state.members.join(',')!==ids.join(',')){await Promise.all(ids.map(id=>ensureSprite116(id)));state.members=ids;normalizeParty96();setupParty([player.x,player.z]);}restoreParty();
+    q.minutes=q.phase==='night'?1380:q.phase==='golden'?1050:900;applyDevLighting60();state.settings.battleIntro=q.motion;encounter53.nextStage53=q.stage;battleIntro58.nextShot=q.shot||null;beginBattle('random');renderDevConsole60();await devWait60(()=>!!battle&&encounter53.phase==='idle'&&!introLocked58());
+    // Native battle entry resets charge. Enable the full kit after that reset.
+    for(const id of state.members){state.flags[id+'_awakened']=true;state.characters[id].charge=100;}
+    renderBattle();q.status='Battle ready · '+BATTLE_STAGES53[q.stage].name;
    }else if(action==='leave'){await leaveDevBattle60();applyDevLighting60();q.status='Returned from battle';}
    else if(action==='restore'){restoreParty();updateHUD();q.status='Party restored';}
-   else{await leaveDevBattle60();await devGoScene60(action==='scene');applyDevLighting60();q.status=(action==='lighting'?'Lighting ready · '+devClock60(q.minutes):'Scene ready · '+(INTERIORS[activeScene.key]?.name??POIS[activeScene.key]?.name??'Valenne'));}
+   else{await leaveDevBattle60();await devGoScene60(action==='scene');applyDevLighting60();q.status=(action==='lighting'?'Lighting ready · '+devClock60(q.minutes):'Scene ready · '+(INTERIORS[activeScene.key]?.name??POIS[activeScene.key]?.name??'Valenne'));if(action==='scene'||dialogue||campaignEvents.active)hideDevConsole60();}
   }
  }catch(error){q.error=error.message;q.open=true;}finally{q.running=false;renderDevConsole60();}
 }
@@ -149,7 +157,6 @@ function devInput60(event){
 for(const type of['keydown','keyup','pointerdown','pointerup','pointermove','pointerover','click','dblclick','wheel','touchstart','touchmove','touchend','touchcancel','input','change','submit'])window.addEventListener(type,devInput60,{capture:true,passive:false});
 const devTitleBefore60=renderTitlePanel19;renderTitlePanel19=function(...args){const r=devTitleBefore60(...args),footer=$('#title-right19>footer');if(title19.tab==='news'&&footer&&!footer.querySelector('.dev-rune60')){const b=document.createElement('button');b.className='dev-rune60';b.dataset.devConsole60='';b.dataset.devAction='discover';b.setAttribute('aria-label','Inspect the small diamond');b.title='An unusual little mark';b.innerHTML='<img src="'+assets.images.ui50_diamond+'" alt="">';footer.append(b);}return r;};
 const devTickBefore60=tick;tick=function(dt){const q=devConsole60;if(q.open&&!q.unlocked)return;if(q.active&&q.hold)state.worldMinutes=q.minutes;const r=devTickBefore60(dt);if(q.active&&q.hold)state.worldMinutes=q.minutes;return r;};
-const devSceneEnteredBefore60=onSceneEntered;onSceneEntered=function(...args){if(!devConsole60.active)return devSceneEnteredBefore60(...args);};
 // Guard every normal record/settings write for the lifetime of a test journey.
 const devSaveBefore60=saveSlot,devAutoBefore60=autoSave,devFlushBefore60=flushJourneyCheckpoint,devWriteBefore60=writeJourneyRecord,devSettingsBefore60=saveSettings,devRemoveBefore60=removeSave19,devImportBefore60=importJourneySave,devLoadBefore60=loadSlot;
 saveSlot=function(...args){return devConsole60.active?false:devSaveBefore60(...args);};autoSave=function(...args){if(!devConsole60.active)return devAutoBefore60(...args);};flushJourneyCheckpoint=function(...args){if(!devConsole60.active)return devFlushBefore60(...args);};writeJourneyRecord=function(...args){return devConsole60.active?false:devWriteBefore60(...args);};saveSettings=function(...args){if(!devConsole60.active)return devSettingsBefore60(...args);};removeSave19=function(...args){return devConsole60.active?false:devRemoveBefore60(...args);};importJourneySave=function(...args){if(!devConsole60.active)return devImportBefore60(...args);};loadSlot=function(...args){if(devConsole60.active){toast('End the test session before loading a journey.');return false;}return devLoadBefore60(...args);};

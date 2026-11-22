@@ -47,19 +47,17 @@ function resetDevCombo144(){
  battle.animation=battle.pending=null;battle.queue=[q.actor];battle.turn=0;battle.status='choose';cinematic141.events=[];renderBattle();battleAction('attack');q.finishedAt=null;
 }
 const devWorkbenchActionBefore144=runDevAction60;
-runDevAction60=async function(action){const q=devConsole60,w=devWorkbench144;if(!q.unlocked)return;
+runDevAction60=async function(action,...args){const q=devConsole60,w=devWorkbench144;if(!q.unlocked)return;
  if(action.startsWith('cheat-')){if(q.running)return;try{q.error='';q.status=action==='cheat-item144'?grantDevItem144(w.item,Number(w.quantity)):grantDevGold144(action==='cheat-gold144'?Number(w.gold):Number(action.slice(11,-3)));sfx('menu');}catch(e){q.error=e.message;}renderDevConsole60();return;}
  if(action==='combo-stop144'){w.practice=null;q.status='Combo practice stopped.';renderDevConsole60();return;}
  if(action==='combo-practice144'||action==='combo-replay144'){
   if(q.running)return;try{w.practice=null;const id=CAST[w.actor]?w.actor:'bren';
-  await startDevSession60();await leaveDevBattle60();if(!['bren','soren'].includes(id))q.party=4;
-  if(!state.members.includes(id)){state.members[state.members.length-1]=id;await ensureSprite116(id);setupParty([player.x,player.z]);}
-  await devWorkbenchActionBefore144('battle');if(q.error||!battle)return;
+  await devWorkbenchActionBefore144('battle',{actor:id});if(q.error||!battle)return;
   w.practice={actor:id,auto:action==='combo-replay144',guided:action==='combo-practice144'&&w.guided,finishedAt:null,chains:0,enemyState:battle.enemies.map(e=>structuredClone(Object.fromEntries(Object.entries(e).filter(([k])=>k!=='actor'))))};
   hideDevConsole60();clearBattleIntro58();battle.intro=0;resetDevCombo144();toast(action==='combo-replay144'?'Combo replay · Full effects and scene lighting':'Combo practice · Left click or tap on gold');return;}catch(error){q.error=error.message;q.open=true;renderDevConsole60();return;}
  }
  if(['battle','scene','lighting','leave','end','lock'].includes(action)||action.startsWith('home-'))w.practice=null;
- const r=await devWorkbenchActionBefore144(action);if(action==='battle'&&!q.error&&battle){hideDevConsole60();toast('Battle ready · Choose Attack for the timed combo');}return r;
+ const r=await devWorkbenchActionBefore144(action,...args);if(action==='battle'&&!q.error&&battle){hideDevConsole60();toast('Battle ready · Choose Attack for the timed combo');}return r;
 };
 const devWorkbenchChainBefore144=advanceCinematicChain141;
 advanceCinematicChain141=function(dt){const q=devWorkbench144.practice,c=battle?.combo,x=c?.cinema141;

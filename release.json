@@ -1,24 +1,37 @@
 {
-  "release": "elyndor-alpha-1.49-flame-and-ascension-2026-11-21",
-  "version": "Alpha Version 1.49",
+  "release": "elyndor-alpha-1.50-combat-indicators-and-dev-panel-2026-11-21",
+  "version": "Alpha Version 1.50",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 7707729,
-    "sha256": "9ac47e3e3f4cab5cba65aefc6519200424b64b8a0d4f609d2359edef599c6a6a",
+    "bytes": 7708650,
+    "sha256": "16d1b08b55afe6b6f2d61be7b55a18cac244bff3c055f267f1f245b704c1bcdc",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "81106c5af05cf6707aebc20a2b9195f272180c1e"
+    "previousRelease": "e623532ff49a5136a31e20bf4898b0d1f9fd9031"
   },
   "changes": [
-    "Restored the Alpha 1.48 flame appearance and tuned environmental fire to a middle flicker speed.",
-    "Extended the bottoms of combat party cards by six pixels so Ascension has room inside its frame on desktop and phone."
+    "Restored the solid gold turn marker in the shared combat HUD, including Dev Panel battles (RE-136).",
+    "Kept the double-chevron beside the selected battle command as players navigate with the mouse or keyboard (RE-143).",
+    "Dev Panel scene skips run normal arrival events. Battle tests prepare the selected character and Ascension charge, and ending a test restores the original journey.",
+    "Fixed a shader error when Brookstead scenery is rebuilt during a test session."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.50",
+      "date": "November 21, 2026",
+      "title": "Steady battle indicators and Dev Panel fixes",
+      "items": [
+        "Restored the solid gold turn marker in the shared combat HUD, including Dev Panel battles (RE-136).",
+        "Kept the double-chevron beside the selected battle command as players navigate with the mouse or keyboard (RE-143).",
+        "Dev Panel scene skips run normal arrival events. Battle tests prepare the selected character and Ascension charge, and ending a test restores the original journey.",
+        "Fixed a shader error when Brookstead scenery is rebuilt during a test session."
+      ]
+    },
     {
       "version": "Alpha Version 1.49",
       "date": "November 21, 2026",
@@ -942,8 +955,8 @@
     "coloredAbilitySceneLighting": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v149/verification.json",
-    "sha256": "78a7b55a2d298ed66a2cc0dd82333b40475d87ead4336788e7ca1553d7b8a4e0",
+    "file": "elyndor/previews/release-v150/verification.json",
+    "sha256": "cf4a250d900ed0546b3cb42b6785c5e05fdd5e469801f68cb985f0d9124f6c4b",
     "finalRelease": "PASS",
     "desktopAndPhone": true
   },
@@ -984,9 +997,9 @@
     "spriteLighting": "Coherent party and NPC canopy reception outside combat; original art and sampling retained"
   },
   "previousPublishedRelease": {
-    "commit": "81106c5af05cf6707aebc20a2b9195f272180c1e",
-    "version": "Alpha Version 1.48",
-    "sha256": "0da4c2db654badcd681dc051954044e71922a099e2b32368e5d1eeeb728817e2"
+    "commit": "e623532ff49a5136a31e20bf4898b0d1f9fd9031",
+    "version": "Alpha Version 1.49",
+    "sha256": "9ac47e3e3f4cab5cba65aefc6519200424b64b8a0d4f609d2359edef599c6a6a"
   },
   "housing": {
     "maximumOwnedHomes": 1,

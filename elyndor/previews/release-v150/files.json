@@ -1,0 +1,67 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 101685,
+    "sha256": "424799deb879e36ec080454326ac786615503839820e97fc252e33ddc0e37f41"
+  },
+  {
+    "file": "elyndor/systems/ability-presentation.js",
+    "bytes": 27162,
+    "sha256": "bb54644cea0046a50f413cf4827d97b5a3fd53757fe5596878a36dbe96a246d7"
+  },
+  {
+    "file": "elyndor/systems/combat-hud-polish.css",
+    "bytes": 19154,
+    "sha256": "35201eee6a305f8747f1ca7d54b34991ffeb12b80a263c219d5fa49c08452c69"
+  },
+  {
+    "file": "elyndor/systems/combat-interface.js",
+    "bytes": 11214,
+    "sha256": "66c9e495494f24950a6f4f79dbfa6ee937a0da75fb9a7e4ad282275b6bdb0887"
+  },
+  {
+    "file": "elyndor/systems/dev-console.js",
+    "bytes": 23857,
+    "sha256": "8962a7d5263195b18e8117144ba88a5fed5cdbeaf4411d6383f3958a5e597a28"
+  },
+  {
+    "file": "elyndor/systems/dev-sprites.js",
+    "bytes": 14174,
+    "sha256": "e8b2dee5c6fd9b8fa9ddd6ab0be2bb88b4fd6e414d3c02755657c6e082585743"
+  },
+  {
+    "file": "elyndor/systems/developer-workbench.js",
+    "bytes": 10847,
+    "sha256": "f9bfc27f5a9ea81778ca3f19a0473e19581452aeb13bbbab8554374ca7bfea00"
+  },
+  {
+    "file": "elyndor/systems/housing-ui.js",
+    "bytes": 22948,
+    "sha256": "902e94ae990506994e55515fcc1aaa8bb3da2d94e32f2fa2dee6ed375c1bae53"
+  },
+  {
+    "file": "elyndor/systems/player-visibility.js",
+    "bytes": 6966,
+    "sha256": "3c3a75a1730c2708347e1b8ebf7d5efcb261e6fffb0997ee0e17a2a1376ce348"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 97017,
+    "sha256": "8dc3ca49a485fc9a56d5664974ec8548d4c98ec0b331c8aac75fba70888ab08c"
+  },
+  {
+    "file": "index.html",
+    "bytes": 7708650,
+    "sha256": "16d1b08b55afe6b6f2d61be7b55a18cac244bff3c055f267f1f245b704c1bcdc"
+  },
+  {
+    "file": "release.json",
+    "bytes": 101332,
+    "sha256": "0091e67b79f80647e0093d4718f7afb0997640abbdbfaca2ad2b7192ef561baf"
+  },
+  {
+    "file": "elyndor/previews/release-v150/verification.json",
+    "bytes": 14729,
+    "sha256": "cf4a250d900ed0546b3cb42b6785c5e05fdd5e469801f68cb985f0d9124f6c4b"
+  }
+]

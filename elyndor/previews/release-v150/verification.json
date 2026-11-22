@@ -1,0 +1,668 @@
+{
+  "version": "Alpha Version 1.50",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7708650,
+    "sha256": "16d1b08b55afe6b6f2d61be7b55a18cac244bff3c055f267f1f245b704c1bcdc",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "base": "e623532ff49a5136a31e20bf4898b0d1f9fd9031",
+  "testedPreviewSHA256": "b444e8899ad8ce29d3903cdd972d31d953281cec7af4224e77f0645c91e603f7",
+  "gameplayChecks": {
+    "desktop": {
+      "marker": {
+        "x": 568.501953125,
+        "y": 16.205080032348633,
+        "width": 24.1500244140625,
+        "height": 22.999998092651367
+      },
+      "battle": {
+        "scene": "waterfall",
+        "enemies": [
+          "ogre"
+        ],
+        "charge": [
+          100,
+          100,
+          100,
+          100
+        ],
+        "consoleClosed": true,
+        "cards": 4
+      },
+      "secondArena": {
+        "scene": "orchard",
+        "time": 1050,
+        "party": [
+          "tavin",
+          "bren",
+          "soren",
+          "mira"
+        ],
+        "stageLighting": "golden"
+      },
+      "combo": [
+        {
+          "type": "windup",
+          "id": "tavin",
+          "step": 0,
+          "time": 0.966666666666668,
+          "rate": 1,
+          "bullet": 0
+        },
+        {
+          "type": "focus",
+          "id": "tavin",
+          "step": 0,
+          "time": 1.3333333333333335,
+          "rate": 1,
+          "bullet": 0
+        },
+        {
+          "type": "input",
+          "id": "tavin",
+          "step": 0,
+          "time": 1.6999999999999988,
+          "rate": 1,
+          "bullet": 0,
+          "hit": true,
+          "window": 0.7574074074074073
+        },
+        {
+          "type": "release",
+          "id": "tavin",
+          "step": 0,
+          "time": 1.6999999999999988,
+          "rate": 1,
+          "bullet": 0
+        },
+        {
+          "type": "flight",
+          "id": "tavin",
+          "step": 0,
+          "time": 1.8333333333333317,
+          "rate": 1,
+          "bullet": 0
+        },
+        {
+          "type": "contact",
+          "id": "tavin",
+          "step": 0,
+          "time": 1.9833333333333312,
+          "rate": 1,
+          "bullet": 0,
+          "hit": true,
+          "clip": "attack",
+          "frame": 5,
+          "peak": 5,
+          "hpBefore": 520,
+          "hpAfter": 505
+        },
+        {
+          "type": "bullet-time-start",
+          "id": "tavin",
+          "step": 0,
+          "time": 1.9833333333333312,
+          "rate": 1,
+          "bullet": 0
+        },
+        {
+          "type": "hitstop",
+          "id": "tavin",
+          "step": 0,
+          "time": 1.9833333333333312,
+          "rate": 1,
+          "bullet": 0
+        },
+        {
+          "type": "recover",
+          "id": "tavin",
+          "step": 0,
+          "time": 2.0499999999999976,
+          "rate": 0.5777777777777777,
+          "bullet": 0.5555555555555556
+        },
+        {
+          "type": "link",
+          "id": "tavin",
+          "step": 0,
+          "time": 2.533333333333329,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "windup",
+          "id": "tavin",
+          "step": 1,
+          "time": 2.6499999999999955,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "focus",
+          "id": "tavin",
+          "step": 1,
+          "time": 3.399999999999993,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "input",
+          "id": "tavin",
+          "step": 1,
+          "time": 3.766666666666658,
+          "rate": 0.24,
+          "bullet": 1,
+          "hit": true,
+          "window": 0.7574074074074073
+        },
+        {
+          "type": "release",
+          "id": "tavin",
+          "step": 1,
+          "time": 3.766666666666658,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "flight",
+          "id": "tavin",
+          "step": 1,
+          "time": 4.316666666666657,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "contact",
+          "id": "tavin",
+          "step": 1,
+          "time": 4.966666666666654,
+          "rate": 0.24,
+          "bullet": 1,
+          "hit": true,
+          "clip": "attack",
+          "frame": 5,
+          "peak": 5,
+          "hpBefore": 505,
+          "hpAfter": 485
+        },
+        {
+          "type": "hitstop",
+          "id": "tavin",
+          "step": 1,
+          "time": 4.966666666666654,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "recover",
+          "id": "tavin",
+          "step": 1,
+          "time": 5.033333333333321,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "link",
+          "id": "tavin",
+          "step": 1,
+          "time": 5.533333333333319,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "windup",
+          "id": "tavin",
+          "step": 2,
+          "time": 5.649999999999985,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "focus",
+          "id": "tavin",
+          "step": 2,
+          "time": 6.399999999999983,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "input",
+          "id": "tavin",
+          "step": 2,
+          "time": 6.766666666666648,
+          "rate": 0.24,
+          "bullet": 1,
+          "hit": true,
+          "window": 0.7574074074074073
+        },
+        {
+          "type": "release",
+          "id": "tavin",
+          "step": 2,
+          "time": 6.766666666666648,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "flight",
+          "id": "tavin",
+          "step": 2,
+          "time": 7.316666666666646,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "contact",
+          "id": "tavin",
+          "step": 2,
+          "time": 7.966666666666644,
+          "rate": 0.24,
+          "bullet": 1,
+          "hit": true,
+          "clip": "attack",
+          "frame": 5,
+          "peak": 5,
+          "hpBefore": 485,
+          "hpAfter": 461
+        },
+        {
+          "type": "time-restored",
+          "id": "tavin",
+          "step": 2,
+          "time": 7.966666666666644,
+          "rate": 1,
+          "bullet": 0
+        },
+        {
+          "type": "hitstop",
+          "id": "tavin",
+          "step": 2,
+          "time": 7.966666666666644,
+          "rate": 1,
+          "bullet": 0
+        }
+      ],
+      "ability": {
+        "tested": "Mira · Mend",
+        "party": [
+          "mira",
+          "tavin",
+          "bren",
+          "soren"
+        ],
+        "mp": 98,
+        "maxMp": 106
+      },
+      "storyArrival": {
+        "scene": "fern",
+        "beat": "tavinIntro",
+        "party": [
+          "tavin"
+        ],
+        "talking": true,
+        "gold": 4321
+      },
+      "interior": {
+        "scene": "brookInn",
+        "town": "brookstead"
+      },
+      "housing": {
+        "scene": "homePlot139",
+        "home": "brookstead",
+        "returnTo": "entrance",
+        "portal": true
+      },
+      "saveRestored": true
+    },
+    "phone": {
+      "marker": {
+        "x": 68.5,
+        "y": 2,
+        "width": 13,
+        "height": 12
+      },
+      "battle": {
+        "scene": "waterfall",
+        "enemies": [
+          "ogre"
+        ],
+        "charge": [
+          100,
+          100,
+          100,
+          100
+        ],
+        "consoleClosed": true,
+        "cards": 4
+      },
+      "secondArena": {
+        "scene": "orchard",
+        "time": 1050,
+        "party": [
+          "tavin",
+          "bren",
+          "soren",
+          "mira"
+        ],
+        "stageLighting": "golden"
+      },
+      "combo": [
+        {
+          "type": "windup",
+          "id": "tavin",
+          "step": 0,
+          "time": 0.9833333333333347,
+          "rate": 1,
+          "bullet": 0
+        },
+        {
+          "type": "focus",
+          "id": "tavin",
+          "step": 0,
+          "time": 1.35,
+          "rate": 1,
+          "bullet": 0
+        },
+        {
+          "type": "input",
+          "id": "tavin",
+          "step": 0,
+          "time": 1.7499999999999987,
+          "rate": 1,
+          "bullet": 0,
+          "hit": true,
+          "window": 0.7574074074074073
+        },
+        {
+          "type": "release",
+          "id": "tavin",
+          "step": 0,
+          "time": 1.7499999999999987,
+          "rate": 1,
+          "bullet": 0
+        },
+        {
+          "type": "flight",
+          "id": "tavin",
+          "step": 0,
+          "time": 1.8833333333333315,
+          "rate": 1,
+          "bullet": 0
+        },
+        {
+          "type": "contact",
+          "id": "tavin",
+          "step": 0,
+          "time": 2.033333333333331,
+          "rate": 1,
+          "bullet": 0,
+          "hit": true,
+          "clip": "attack",
+          "frame": 5,
+          "peak": 5,
+          "hpBefore": 520,
+          "hpAfter": 505
+        },
+        {
+          "type": "bullet-time-start",
+          "id": "tavin",
+          "step": 0,
+          "time": 2.033333333333331,
+          "rate": 1,
+          "bullet": 0
+        },
+        {
+          "type": "hitstop",
+          "id": "tavin",
+          "step": 0,
+          "time": 2.033333333333331,
+          "rate": 1,
+          "bullet": 0
+        },
+        {
+          "type": "recover",
+          "id": "tavin",
+          "step": 0,
+          "time": 2.0999999999999974,
+          "rate": 0.5777777777777777,
+          "bullet": 0.5555555555555556
+        },
+        {
+          "type": "link",
+          "id": "tavin",
+          "step": 0,
+          "time": 2.583333333333329,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "windup",
+          "id": "tavin",
+          "step": 1,
+          "time": 2.6999999999999953,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "focus",
+          "id": "tavin",
+          "step": 1,
+          "time": 3.4499999999999926,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "input",
+          "id": "tavin",
+          "step": 1,
+          "time": 3.8333333333333246,
+          "rate": 0.24,
+          "bullet": 1,
+          "hit": true,
+          "window": 0.7574074074074073
+        },
+        {
+          "type": "release",
+          "id": "tavin",
+          "step": 1,
+          "time": 3.8333333333333246,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "flight",
+          "id": "tavin",
+          "step": 1,
+          "time": 4.383333333333323,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "contact",
+          "id": "tavin",
+          "step": 1,
+          "time": 5.033333333333321,
+          "rate": 0.24,
+          "bullet": 1,
+          "hit": true,
+          "clip": "attack",
+          "frame": 5,
+          "peak": 5,
+          "hpBefore": 505,
+          "hpAfter": 485
+        },
+        {
+          "type": "hitstop",
+          "id": "tavin",
+          "step": 1,
+          "time": 5.033333333333321,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "recover",
+          "id": "tavin",
+          "step": 1,
+          "time": 5.099999999999987,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "link",
+          "id": "tavin",
+          "step": 1,
+          "time": 5.599999999999985,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "windup",
+          "id": "tavin",
+          "step": 2,
+          "time": 5.716666666666652,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "focus",
+          "id": "tavin",
+          "step": 2,
+          "time": 6.466666666666649,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "input",
+          "id": "tavin",
+          "step": 2,
+          "time": 6.849999999999981,
+          "rate": 0.24,
+          "bullet": 1,
+          "hit": true,
+          "window": 0.7574074074074073
+        },
+        {
+          "type": "release",
+          "id": "tavin",
+          "step": 2,
+          "time": 6.849999999999981,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "flight",
+          "id": "tavin",
+          "step": 2,
+          "time": 7.399999999999979,
+          "rate": 0.24,
+          "bullet": 1
+        },
+        {
+          "type": "contact",
+          "id": "tavin",
+          "step": 2,
+          "time": 8.04999999999998,
+          "rate": 0.24,
+          "bullet": 1,
+          "hit": true,
+          "clip": "attack",
+          "frame": 5,
+          "peak": 5,
+          "hpBefore": 485,
+          "hpAfter": 461
+        },
+        {
+          "type": "time-restored",
+          "id": "tavin",
+          "step": 2,
+          "time": 8.04999999999998,
+          "rate": 1,
+          "bullet": 0
+        },
+        {
+          "type": "hitstop",
+          "id": "tavin",
+          "step": 2,
+          "time": 8.04999999999998,
+          "rate": 1,
+          "bullet": 0
+        }
+      ]
+    },
+    "commandNavigation": {
+      "before": {
+        "fighter": "lysa",
+        "fixedHover": {
+          "attack": [
+            "attack"
+          ],
+          "ascend": [
+            null
+          ],
+          "skills": [
+            "skills"
+          ],
+          "items": [
+            "items"
+          ],
+          "defend": [
+            "defend"
+          ],
+          "flee": [
+            "flee"
+          ]
+        }
+      },
+      "after": {
+        "fighter": "lysa",
+        "fixedHover": {
+          "attack": [
+            "attack"
+          ],
+          "ascend": [
+            "attack"
+          ],
+          "skills": [
+            "skills"
+          ],
+          "items": [
+            "items"
+          ],
+          "defend": [
+            "defend"
+          ],
+          "flee": [
+            "flee"
+          ]
+        }
+      }
+    },
+    "timedComboDamage": [
+      20,
+      25,
+      31
+    ]
+  },
+  "saveCompatibility": {
+    "pass": true,
+    "cases": [
+      "stable quest identity",
+      "frozen legacy migration",
+      "unknown quest",
+      "invalid position",
+      "invalid party",
+      "invalid character data",
+      "numeric bounds",
+      "checksum",
+      "backup recovery",
+      "legacy recovery and export",
+      "waterworks progress migration",
+      "optional task validation",
+      "ordered ceremony recovery validation"
+    ]
+  },
+  "runtimeErrors": 0,
+  "assetBundleUnchanged": true
+}

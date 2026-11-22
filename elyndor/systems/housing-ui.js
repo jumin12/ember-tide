@@ -149,11 +149,11 @@ renderDevConsole60=function(...args){const r=homeDevRenderBefore139(...args),q=d
 const homeDevFieldBefore139=changeDevField60;
 changeDevField60=function(input){if(['homeRegion139','homeLayout139'].includes(input.dataset.devField)){devConsole60[input.dataset.devField]=input.value;return;}return homeDevFieldBefore139(input);};
 const homeDevActionBefore139=runDevAction60;
-runDevAction60=async function(action){
- if(!action.startsWith('home-'))return homeDevActionBefore139(action);
+runDevAction60=async function(action,...args){
+ if(!action.startsWith('home-'))return homeDevActionBefore139(action,...args);
  const q=devConsole60;if(!q.unlocked||q.running)return;q.error='';
  try{
-  if(action==='home-town139'){q.location='poi:'+q.homeRegion139;q.spawn='court';await homeDevActionBefore139('scene');if(!q.error){hideDevConsole60();const keeper=world.userData.homeKeeper139;if(keeper)setupParty([keeper.a.x,keeper.a.z+2.3]);}return;}
+  if(action==='home-town139'){q.location='poi:'+q.homeRegion139;q.spawn='court';await homeDevActionBefore139('scene');if(!q.error&&!dialogue&&!campaignEvents.active){const keeper=world.userData.homeKeeper139;if(keeper)setupParty([keeper.a.x,keeper.a.z+2.3]);}return;}
   q.running=true;renderDevConsole60();await startDevSession60();await leaveDevBattle60();stopHomeDecor139IfActive();closeHousing139();
   if(action==='home-coins139'){state.gold+=2000;q.status='Added 2,000 coins to this test journey.';return;}
   if(action==='home-picker139'){hideDevConsole60();openHousing139('browse');return;}

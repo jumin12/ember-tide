@@ -1,6 +1,28 @@
 // Screen-space placement follows the approved Skills Menu animation. Actor
 // feedback is projected separately; moving the camera never moves HUD panels.
 const combatHud65={submenu:null,signature:'',lastTransition:null};
+const commandList65=$('#commands');
+let commandSelection65=null,commandSelectionFrame65=0;
+function updateCommandSelection65(){
+ const selected=commandList65.querySelector('button:enabled:focus-visible')
+  ??commandList65.querySelector('button:enabled:hover')
+  ??commandList65.querySelector('button[data-action="attack"]:enabled');
+ if(commandSelection65!==selected){
+  commandSelection65?.removeAttribute('data-command-selected65');
+  selected?.setAttribute('data-command-selected65','');
+  commandSelection65=selected;
+ }
+ commandList65.toggleAttribute('data-command-indicator65',!!selected);
+ if(selected){
+  commandList65.style.setProperty('--command-chevron-x65',(selected.offsetLeft-2)+'px');
+  commandList65.style.setProperty('--command-chevron-y65',(selected.offsetTop+selected.offsetHeight/2)+'px');
+ }
+}
+function queueCommandSelection65(){
+ if(!commandSelectionFrame65)commandSelectionFrame65=requestAnimationFrame(()=>{commandSelectionFrame65=0;updateCommandSelection65();});
+}
+for(const event of ['pointerover','pointerleave','focusin','focusout'])commandList65.addEventListener(event,queueCommandSelection65);
+new ResizeObserver(updateCommandSelection65).observe(commandList65);
 const BATTLE_COMMAND_ART={
  skills:'<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-opacity=".57"/><path d="M6.7 7.1a6.5 6.5 0 0 1 10.7 2.4c-3.5-2.4-7.9-.9-7.6 2.4M17.2 16.9a6.5 6.5 0 0 1-10.7-2.4c3.5 2.4 7.9.9 7.6-2.4M8.1 16.4c-1.1-3.5.9-6.9 3.5-7.4m4.3-1.4c1.1 3.5-.9 6.9-3.5 7.4" stroke="currentColor" stroke-width="1.45" stroke-linecap="round"/>',
  items:'<path d="M9.6 6 7.7 2.6l2.7.8L12 2l1.7 1.4 2.6-.8L14.4 6Z M9.5 8h5c3 2.5 5.5 6.3 5.5 9.7 0 2.6-2.9 3.9-8 3.9s-8-1.3-8-3.9c0-3.4 2.5-7.2 5.5-9.7Z" fill="currentColor"/><path d="M9 6.9h6m-7.2 9.3c.8-2 1.8-3.1 3.3-4.3" stroke="#815022" stroke-width="1.4" stroke-linecap="round"/>',
@@ -68,6 +90,7 @@ renderBattle=function(submenu=null,...args){
  const previous=combatHud65.submenu;combatHud65.submenu=submenu;document.body.classList.toggle('combat-ui65',!!battle);
  if(battle)ensureWeaknessState65();const r=combatUiBefore65(submenu,...args);if(!battle)return r;
  updatePartyCards36('battle-party');decorateCommands65();document.body.dataset.combatState65=battle.status;
+ updateCommandSelection65();queueCommandSelection65();
  $('#battle-command').classList.toggle('skills-panel65',submenu==='skills');
  if(previous!==submenu){const name=submenu??'commands';combatHud65.lastTransition={from:previous??'commands',to:name,region:'upper-right'};if(state.settings.motion!==false&&!matchMedia('(prefers-reduced-motion:reduce)').matches)$('#commands').animate([{opacity:0,transform:'translateX(12px)'},{opacity:1,transform:'translateX(0)'}],{duration:160,easing:'ease-out'});}
  if(submenu===null&&!battle.pending)weakness65.preview=null;

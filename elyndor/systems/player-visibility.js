@@ -14,7 +14,7 @@ function playerRevealMaterial(source){
  material.onBeforeCompile=function(shader,renderer){
   source.onBeforeCompile.call(this,shader,renderer);
   // Some props copy the shader hook when creating a scene-specific material.
-  if(shader.fragmentShader.includes('uniform vec4 playerRevealCircle;'))return;
+  if(shader.fragmentShader.includes('void applyPlayerReveal()'))return;
   shader.uniforms.playerRevealCircle=playerReveal.circle;
   shader.uniforms.playerRevealFloor=playerReveal.floorPlane;
   shader.uniforms.playerRevealBlock=playerReveal.blockSize;

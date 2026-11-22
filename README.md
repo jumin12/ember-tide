@@ -2,6 +2,17 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.50 — Steady battle indicators and Dev Panel fixes
+
+November 21, 2026
+
+- Restored the solid gold turn marker in the shared combat HUD, including Dev Panel battles (RE-136).
+- Kept the double-chevron beside the selected battle command as players navigate with the mouse or keyboard (RE-143).
+- Dev Panel scene skips run normal arrival events. Battle tests prepare the selected character and Ascension charge, and ending a test restores the original journey.
+- Fixed a shader error when Brookstead scenery is rebuilt during a test session.
+
+[Release verification](elyndor/previews/release-v150/verification.json)
+
 ## Alpha Version 1.49 — Refined flame flicker and Ascension spacing
 
 November 21, 2026
