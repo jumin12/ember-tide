@@ -1,0 +1,123 @@
+{
+  "version": "Alpha Version 1.51",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7709133,
+    "sha256": "f9e20b31ef7db4306abd5d30d0d15eeff11abea3192327e22ee964fc77123680",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "base": "dcb7b932aa369edfe2bcd2e4659a3aa219ee6f95",
+  "testedPreviewSHA256": "81f8747489fb83ac0738f1e2103ac8c74cb8da1e2926f4eedea7efdd44015bdc",
+  "gameplayChecks": {
+    "before": {
+      "errors": [],
+      "marker": {
+        "x": 599.814453125,
+        "y": 16.205080032348633,
+        "width": 24.1500244140625,
+        "height": 22.999998092651367
+      },
+      "mainTab": {
+        "animations": 0,
+        "replaced": 1,
+        "minOpacity": 1,
+        "sameButton": false,
+        "focused": false,
+        "submenu": null,
+        "changedTarget": true
+      },
+      "skillsTab": {
+        "animations": 2,
+        "replaced": 2,
+        "minOpacity": 0,
+        "sameButton": false,
+        "focused": false,
+        "submenu": "skills",
+        "changedTarget": true
+      },
+      "defend": {
+        "guarded": true,
+        "caption": "I’ll hold the line.",
+        "requests": 1,
+        "voiced": true,
+        "plays": 1
+      }
+    },
+    "desktop": {
+      "errors": [],
+      "marker": {
+        "x": 599.814453125,
+        "y": 16.205080032348633,
+        "width": 24.1500244140625,
+        "height": 22.999998092651367
+      },
+      "mainTab": {
+        "animations": 0,
+        "replaced": 0,
+        "minOpacity": 1,
+        "sameButton": true,
+        "focused": true,
+        "submenu": null,
+        "changedTarget": true
+      },
+      "skillsTab": {
+        "animations": 0,
+        "replaced": 0,
+        "minOpacity": 1,
+        "sameButton": true,
+        "focused": true,
+        "submenu": "skills",
+        "changedTarget": true
+      },
+      "defend": {
+        "guarded": true,
+        "caption": "",
+        "requests": 1,
+        "voiced": true,
+        "plays": 1
+      }
+    },
+    "phone": {
+      "errors": [],
+      "marker": {
+        "x": 68.5,
+        "y": 2,
+        "width": 13,
+        "height": 12
+      },
+      "defend": {
+        "guarded": true,
+        "caption": "",
+        "requests": 1,
+        "voiced": true,
+        "plays": 1
+      }
+    },
+    "timedComboDamage": [
+      20,
+      25,
+      31
+    ]
+  },
+  "saveCompatibility": {
+    "pass": true,
+    "cases": [
+      "stable quest identity",
+      "frozen legacy migration",
+      "unknown quest",
+      "invalid position",
+      "invalid party",
+      "invalid character data",
+      "numeric bounds",
+      "checksum",
+      "backup recovery",
+      "legacy recovery and export",
+      "waterworks progress migration",
+      "optional task validation",
+      "ordered ceremony recovery validation"
+    ]
+  },
+  "runtimeErrors": 0,
+  "assetBundleUnchanged": true
+}

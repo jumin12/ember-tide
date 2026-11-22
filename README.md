@@ -2,6 +2,16 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.51 — Combat marker, menus, and Defend audio
+
+November 21, 2026
+
+- Redrew the turn marker with an ivory center, a thin bright outline, and a warm gold glow to match the reference (RE-136).
+- Kept the battle menu open and preserved keyboard focus when switching targets, preventing the command indicator and menu from flashing (RE-143).
+- Defend still applies Guard and plays its recorded line. The floating caption has been removed.
+
+[Release verification](elyndor/previews/release-v151/verification.json)
+
 ## Alpha Version 1.50 — Steady battle indicators and Dev Panel fixes
 
 November 21, 2026

@@ -1,26 +1,35 @@
 {
-  "release": "elyndor-alpha-1.50-combat-indicators-and-dev-panel-2026-11-21",
-  "version": "Alpha Version 1.50",
+  "release": "elyndor-alpha-1.51-combat-marker-menu-defend-2026-11-21",
+  "version": "Alpha Version 1.51",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 7708650,
-    "sha256": "16d1b08b55afe6b6f2d61be7b55a18cac244bff3c055f267f1f245b704c1bcdc",
+    "bytes": 7709133,
+    "sha256": "f9e20b31ef7db4306abd5d30d0d15eeff11abea3192327e22ee964fc77123680",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "e623532ff49a5136a31e20bf4898b0d1f9fd9031"
+    "previousRelease": "dcb7b932aa369edfe2bcd2e4659a3aa219ee6f95"
   },
   "changes": [
-    "Restored the solid gold turn marker in the shared combat HUD, including Dev Panel battles (RE-136).",
-    "Kept the double-chevron beside the selected battle command as players navigate with the mouse or keyboard (RE-143).",
-    "Dev Panel scene skips run normal arrival events. Battle tests prepare the selected character and Ascension charge, and ending a test restores the original journey.",
-    "Fixed a shader error when Brookstead scenery is rebuilt during a test session."
+    "Redrew the turn marker with an ivory center, a thin bright outline, and a warm gold glow to match the reference (RE-136).",
+    "Kept the battle menu open and preserved keyboard focus when switching targets, preventing the command indicator and menu from flashing (RE-143).",
+    "Defend still applies Guard and plays its recorded line. The floating caption has been removed."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.51",
+      "date": "November 21, 2026",
+      "title": "Combat marker, menus, and Defend audio",
+      "items": [
+        "Redrew the turn marker with an ivory center, a thin bright outline, and a warm gold glow to match the reference (RE-136).",
+        "Kept the battle menu open and preserved keyboard focus when switching targets, preventing the command indicator and menu from flashing (RE-143).",
+        "Defend still applies Guard and plays its recorded line. The floating caption has been removed."
+      ]
+    },
     {
       "version": "Alpha Version 1.50",
       "date": "November 21, 2026",
@@ -955,8 +964,8 @@
     "coloredAbilitySceneLighting": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v150/verification.json",
-    "sha256": "cf4a250d900ed0546b3cb42b6785c5e05fdd5e469801f68cb985f0d9124f6c4b",
+    "file": "elyndor/previews/release-v151/verification.json",
+    "sha256": "b186de9116a1f88972392878535ebd8a95c87769d7832f688a77d1bcfbe80f2c",
     "finalRelease": "PASS",
     "desktopAndPhone": true
   },
@@ -997,9 +1006,9 @@
     "spriteLighting": "Coherent party and NPC canopy reception outside combat; original art and sampling retained"
   },
   "previousPublishedRelease": {
-    "commit": "e623532ff49a5136a31e20bf4898b0d1f9fd9031",
-    "version": "Alpha Version 1.49",
-    "sha256": "9ac47e3e3f4cab5cba65aefc6519200424b64b8a0d4f609d2359edef599c6a6a"
+    "commit": "dcb7b932aa369edfe2bcd2e4659a3aa219ee6f95",
+    "version": "Alpha Version 1.50",
+    "sha256": "16d1b08b55afe6b6f2d61be7b55a18cac244bff3c055f267f1f245b704c1bcdc"
   },
   "housing": {
     "maximumOwnedHomes": 1,

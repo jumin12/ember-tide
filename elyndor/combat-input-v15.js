@@ -11,7 +11,7 @@ function pickCombatant(clientX,clientY){
 function combatTargetActor(a,activate=false){
  if(!a||!battle||battle.status!=='choose')return;
  const index=battle.enemies.findIndex(e=>e.actor===a&&e.hp>0);
- if(index>=0){if(battle.target!==index){battle.target=index;combatPointer.selected++;playSound('combat-select',.25);renderBattle();}combatPointer.hover=a;return;}
+ if(index>=0){if(battle.target!==index){battle.target=index;combatPointer.selected++;playSound('combat-select',.25);renderBattle(combatHud65.submenu);}combatPointer.hover=a;return;}
  const ally=state.members.findIndex(id=>actorFor(id)===a);if(ally<0)return;combatPointer.focus=state.members[ally];combatPointer.hover=a;
  if(activate&&battle.pending){combatPointer.allySelections++;battleAllyTarget(ally);}
 }

@@ -29,7 +29,7 @@ button.primary{background:linear-gradient(100deg,#a38346,#674737);border-color:#
 .command-head h3{font-size:20px}
 #commands{padding:6px}
 #commands button{position:relative;min-height:43px;font-size:18px;padding:9px 15px;border:0;border-bottom:1px solid #d0ad601c;background:transparent;text-align:left}
-#commands button:hover:enabled,#commands button:focus-visible{background:linear-gradient(90deg,#a38346d9,#674737a0);box-shadow:inset 0 0 0 1px #e8cf84;outline:0}
+body:not(.combat-ui65) #commands button:hover:enabled,body:not(.combat-ui65) #commands button:focus-visible{background:linear-gradient(90deg,#a38346d9,#674737a0);box-shadow:inset 0 0 0 1px #e8cf84;outline:0}
 #commands button small{font:10px/1.4 system-ui;color:#d9dccb}
 #battle-targets{right:27px;bottom:30px;width:245px;gap:9px}
 #battle-targets button{background:linear-gradient(90deg,#131820f0,#1d2630cf);padding:13px 18px;border:0;border-top:1px solid #d0ad6060;clip-path:polygon(6% 0,100% 0,100% 100%,0 100%,0 24%)}
@@ -95,4 +95,4 @@ button.primary{background:linear-gradient(100deg,#a38346,#674737);border-color:#
 .enemy-badge{width:37px;height:37px;object-fit:contain;float:left;margin:0 12px 4px 0;image-rendering:pixelated}
 .menu-shell[data-page="map"] #menu-content{background-image:linear-gradient(#1d263035,#13182088),var(--map-paper);background-size:auto,256px;color:#131820}
 .menu-shell[data-page="map"] #menu-content .eyebrow,.menu-shell[data-page="map"] #menu-content .desc,.menu-shell[data-page="map"] .map-info{color:#45302a}
-#commands:not(:has(button:focus-visible)) button[data-action="attack"]{background:linear-gradient(90deg,#a38346dd,#765738a0);box-shadow:inset 0 0 0 1px #e8cf84}
+body:not(.combat-ui65) #commands:not(:has(button:focus-visible)) button[data-action="attack"]{background:linear-gradient(90deg,#a38346dd,#765738a0);box-shadow:inset 0 0 0 1px #e8cf84}

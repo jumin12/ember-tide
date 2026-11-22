@@ -1,6 +1,6 @@
 // Screen-space placement follows the approved Skills Menu animation. Actor
 // feedback is projected separately; moving the camera never moves HUD panels.
-const combatHud65={submenu:null,signature:'',lastTransition:null};
+const combatHud65={submenu:null,lastTransition:null};
 const commandList65=$('#commands');
 let commandSelection65=null,commandSelectionFrame65=0;
 function updateCommandSelection65(){
@@ -48,7 +48,8 @@ function updateAbilityHelp65(button){
  const box=$('#ability-help65');if(!box||!battle)return;const p=previewAbility65(button),id=currentFighter();
  let text='Choose a command. Experiment with ability types to discover enemy weaknesses.';
  if(p?.index!==undefined)text=CAST[id].skill[p.index][1];else if(button?.dataset.action==='attack')text='Strike when the rings meet in gold. The first hit starts bullet time; the final impact restores speed.';else if(button?.dataset.battleItem)text=ITEMS[button.dataset.battleItem]?.desc??text;
- box.innerHTML=(p?.type?icon65(p.type,20)+'<b>'+p.type+'</b> ':'')+'<span>'+esc(text)+'</span>';
+ const key=(p?.type??'')+'|'+text;
+ if(box.dataset.help65!==key){box.dataset.help65=key;box.innerHTML=(p?.type?icon65(p.type,20)+'<b>'+p.type+'</b> ':'')+'<span>'+esc(text)+'</span>';}
 }
 function decorateCommands65(){
  if(!battle)return;const id=currentFighter(),commands=$('#commands');
@@ -79,7 +80,6 @@ function decorateCommands65(){
  }
  let help=$('#ability-help65');if(!help){help=document.createElement('div');help.id='ability-help65';$('#battle-command').append(help);}
  let footer=$('#combat-footer65');if(!footer){footer=document.createElement('footer');footer.id='combat-footer65';footer.innerHTML='<button data-combat-legend65>Icon legend</button><small>Choose · Enter &nbsp; Back · Esc</small>';$('#battle-command').append(footer);}
- updateAbilityHelp65(document.activeElement?.closest('#commands button')??commands.querySelector('[data-skill], [data-action="attack"]'));
  const roster=$('#battle-party');
  roster.style.setProperty('--party-count65',state.members.length);
  roster.style.setProperty('--party-cols163',Math.min(state.members.length,2));
@@ -91,6 +91,7 @@ renderBattle=function(submenu=null,...args){
  if(battle)ensureWeaknessState65();const r=combatUiBefore65(submenu,...args);if(!battle)return r;
  updatePartyCards36('battle-party');decorateCommands65();document.body.dataset.combatState65=battle.status;
  updateCommandSelection65();queueCommandSelection65();
+ updateAbilityHelp65(commandSelection65??commandList65.querySelector('[data-skill]'));
  $('#battle-command').classList.toggle('skills-panel65',submenu==='skills');
  if(previous!==submenu){const name=submenu??'commands';combatHud65.lastTransition={from:previous??'commands',to:name,region:'upper-right'};if(state.settings.motion!==false&&!matchMedia('(prefers-reduced-motion:reduce)').matches)$('#commands').animate([{opacity:0,transform:'translateX(12px)'},{opacity:1,transform:'translateX(0)'}],{duration:160,easing:'ease-out'});}
  if(submenu===null&&!battle.pending)weakness65.preview=null;
@@ -112,8 +113,6 @@ updateEnemyBars27=function(...args){const r=nearEnemyBefore65(...args);if(!battl
 };
 const hudTickBefore65=tick;
 tick=function(...args){if($('#combat-legend65')){updateCombatFeedback65();return;}return hudTickBefore65(...args);};
-const previewTargetBefore65=combatTargetActor;
-combatTargetActor=function(...args){const submenu=combatHud65.submenu,preview=weakness65.preview,result=previewTargetBefore65(...args);if(battle?.status==='choose'&&['skills','items'].includes(submenu)){renderBattle(submenu);weakness65.preview=preview;updateCombatFeedback65();}return result;};
 const affinityMenuBefore65=renderMenu;
 renderMenu=function(...args){const r=affinityMenuBefore65(...args);if(!menu)return r;const id=menu.selected;
  if(['party','abilities'].includes(menu.tab)){

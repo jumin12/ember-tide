@@ -1,0 +1,62 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 102222,
+    "sha256": "83cb1f5a71658571755cd2a17a3f653f331ee859125082f911a9b3c6fc7d495e"
+  },
+  {
+    "file": "elyndor/combat-input-v15.js",
+    "bytes": 5823,
+    "sha256": "eaf8e6d148db5fa4a25b806b934a13ef828fd9dbc385a7d5c2b60d5e3ac8aad7"
+  },
+  {
+    "file": "elyndor/combat.js",
+    "bytes": 15979,
+    "sha256": "28c503ab85bbf3ccff26dd8cde8337633db9d7f29297249e951ba2f45ff8c61c"
+  },
+  {
+    "file": "elyndor/systems/combat-hud-polish.css",
+    "bytes": 19263,
+    "sha256": "7545f7016afd449a19894455c122ef6edf4b835a5abb40ccbe07fb01e3067409"
+  },
+  {
+    "file": "elyndor/systems/combat-information.css",
+    "bytes": 17847,
+    "sha256": "97ee6c7d28eab0def443d036a7f0c7641cc686d230fb1ae838d0b2074707be06"
+  },
+  {
+    "file": "elyndor/systems/combat-interface.js",
+    "bytes": 10895,
+    "sha256": "a2f13aa5a72a2d6f97a15effeb3e8c83d6de8aae58ec917e37488354f81f9903"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 97504,
+    "sha256": "e9b3d981ef528bcc30284d5f3a95b1df97ad0f0fc7df9ed924bc2696706cc9df"
+  },
+  {
+    "file": "elyndor/ui.js",
+    "bytes": 29412,
+    "sha256": "332b481b81a6947260db4f9b2bacebd4e84ba0d8d7ed143ca6c25b37af1f5649"
+  },
+  {
+    "file": "elyndor/visual-v7.css",
+    "bytes": 12623,
+    "sha256": "a5963c78a38c3efd144b711abf76fbf41e612844e66ac91a34ddc48660a42009"
+  },
+  {
+    "file": "index.html",
+    "bytes": 7709133,
+    "sha256": "f9e20b31ef7db4306abd5d30d0d15eeff11abea3192327e22ee964fc77123680"
+  },
+  {
+    "file": "release.json",
+    "bytes": 101794,
+    "sha256": "575cf9c1c0600f4f201f5f814ad2ef0bd3a1b2c62ee2c2ec0223b7a80c8b5c3a"
+  },
+  {
+    "file": "elyndor/previews/release-v151/verification.json",
+    "bytes": 2865,
+    "sha256": "b186de9116a1f88972392878535ebd8a95c87769d7832f688a77d1bcfbe80f2c"
+  }
+]

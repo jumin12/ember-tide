@@ -6,7 +6,7 @@ body.combat-ui65 {
   --battle-engraving: inset 0 0 0 2px #9b6b33,inset 0 0 0 3px #2c211b,inset 0 0 0 4px #d3ac674d,0 0 0 1px #33251b,0 5px 16px #02070b9c;
   --battle-active-frame: inset 0 0 0 2px #ffde8e,inset 0 0 0 4px #9f662a,inset 0 0 12px #f5ad4f71,0 0 2px 1px #ffdd8e,0 0 12px #ffb936ce;
   --battle-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 24'%3E%3Cpath d='m3 4 10 8L3 20m9-17 13 9-13 9' fill='none' stroke='%23c98425' stroke-width='4.3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='m3 4 10 8L3 20m9-17 13 9-13 9' fill='none' stroke='%23fff1b0' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  --battle-turn-indicator: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 23'%3E%3Cpath d='M2 2h20L12 19Z' fill='%23a35b19' stroke='%23ffcf68' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M6.5 5.8h11L12 15Z' fill='%23ffc55e' stroke='%23fff2b3' stroke-width='1.6' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --battle-turn-indicator: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 23'%3E%3Cpath d='M2.6 2.5h18.8L12 21Z' fill='%23794307' fill-opacity='.74' stroke='%23e79b18' stroke-width='3.1' stroke-linejoin='round'/%3E%3Cpath d='M2.6 2.5h18.8L12 21Z' fill='none' stroke='%23fff5c8' stroke-width='1.55' stroke-linejoin='round'/%3E%3Cpath d='M7.65 6.1h8.7L12 14.9Z' fill='%23fff9ea'/%3E%3C/svg%3E");
   --battle-portrait-frame: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Cpath d='M25 1.4 48.6 25 25 48.6 1.4 25Z' fill='none' stroke='%239a6f3a' stroke-width='2'/%3E%3Cpath d='M25 4 46 25 25 46 4 25Z' fill='none' stroke='%23dbb56d' stroke-width='1'/%3E%3C/svg%3E");
 }
 body.combat-ui65 #battle-hud>#battle-command,
@@ -108,7 +108,7 @@ body.combat-ui65 #battle-hud #turn-order .turn-token27.current>i {
   display:block!important;position:absolute;top:-12px;left:50%;z-index:2;
   translate:-50% 0;width:21px;height:20px;font-size:0;border:0;clip-path:none;
   background:var(--battle-turn-indicator) center / contain no-repeat;
-  filter:drop-shadow(0 0 1px #ffde8b);
+  filter:drop-shadow(0 0 1px #ffc454) drop-shadow(0 0 3px #f5a21c);
   pointer-events:none;
 }
 
