@@ -1,25 +1,39 @@
 {
-  "release": "elyndor-alpha-1.51-combat-marker-menu-defend-2026-11-21",
-  "version": "Alpha Version 1.51",
+  "release": "elyndor-alpha-1.52-limit-breaks-combat-lighting-2026-11-23",
+  "version": "Alpha Version 1.52",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 7709133,
-    "sha256": "f9e20b31ef7db4306abd5d30d0d15eeff11abea3192327e22ee964fc77123680",
+    "bytes": 7790862,
+    "sha256": "779f738fed67620be49c7cff79490ad8ece3ae46866969653ba92663bb2f69ac",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "dcb7b932aa369edfe2bcd2e4659a3aa219ee6f95"
+    "previousRelease": "bc7b5bebf2b30e23fb63d665b789089515196848"
   },
   "changes": [
-    "Redrew the turn marker with an ivory center, a thin bright outline, and a warm gold glow to match the reference (RE-136).",
-    "Kept the battle menu open and preserved keyboard focus when switching targets, preventing the command indicator and menu from flashing (RE-143).",
-    "Defend still applies Guard and plays its recorded line. The floating caption has been removed."
+    "Each party member now earns one Limit Break diamond per completed turn, up to five. Unspent diamonds carry into the next battle and into saved journeys. Older journeys start with an empty meter.",
+    "At five diamonds, Soren can use Wolf Ascendant from Skills. It marks enemies, rallies allies and delivers a physical sweep. Casting spends Soren’s five diamonds and preserves his allies’ charge. Bren can store charge while Radiant Pride awaits its final combat rules.",
+    "The combat command cursor follows the latest mouse or keyboard selection. The Hooked-beak Bird now fits inside its turn-order diamond, with the beak, body and tail in frame.",
+    "Spells and weapon hits cast local light on fighters and the ground across all 20 regional arenas and seven story battles. Frost Bloom has deeper blue facets against snow, Flame Lance casts amber light, and finishing hits flash at contact.",
+    "Regional battlefields blend their foreground terrain into the painted backdrop. Exploration lighting adds fountain ripples, reflected lamplight, rain sheen and distance haze to towns and the world map."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.52",
+      "date": "November 23, 2026",
+      "title": "Limit Breaks, combat HUD fixes, and battle lighting",
+      "items": [
+        "Each party member now earns one Limit Break diamond per completed turn, up to five. Unspent diamonds carry into the next battle and into saved journeys. Older journeys start with an empty meter.",
+        "At five diamonds, Soren can use Wolf Ascendant from Skills. It marks enemies, rallies allies and delivers a physical sweep. Casting spends Soren’s five diamonds and preserves his allies’ charge. Bren can store charge while Radiant Pride awaits its final combat rules.",
+        "The combat command cursor follows the latest mouse or keyboard selection. The Hooked-beak Bird now fits inside its turn-order diamond, with the beak, body and tail in frame.",
+        "Spells and weapon hits cast local light on fighters and the ground across all 20 regional arenas and seven story battles. Frost Bloom has deeper blue facets against snow, Flame Lance casts amber light, and finishing hits flash at contact.",
+        "Regional battlefields blend their foreground terrain into the painted backdrop. Exploration lighting adds fountain ripples, reflected lamplight, rain sheen and distance haze to towns and the world map."
+      ]
+    },
     {
       "version": "Alpha Version 1.51",
       "date": "November 21, 2026",
@@ -964,8 +978,8 @@
     "coloredAbilitySceneLighting": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v151/verification.json",
-    "sha256": "b186de9116a1f88972392878535ebd8a95c87769d7832f688a77d1bcfbe80f2c",
+    "file": "elyndor/previews/release-v152/verification.json",
+    "sha256": "7dfda0def2919d8cd3b5400dc5975f3be95e192e1e7a4fcefc6bf243ff6fe66f",
     "finalRelease": "PASS",
     "desktopAndPhone": true
   },
@@ -1006,9 +1020,9 @@
     "spriteLighting": "Coherent party and NPC canopy reception outside combat; original art and sampling retained"
   },
   "previousPublishedRelease": {
-    "commit": "dcb7b932aa369edfe2bcd2e4659a3aa219ee6f95",
-    "version": "Alpha Version 1.50",
-    "sha256": "16d1b08b55afe6b6f2d61be7b55a18cac244bff3c055f267f1f245b704c1bcdc"
+    "commit": "bc7b5bebf2b30e23fb63d665b789089515196848",
+    "version": "Alpha Version 1.51",
+    "sha256": "f9e20b31ef7db4306abd5d30d0d15eeff11abea3192327e22ee964fc77123680"
   },
   "housing": {
     "maximumOwnedHomes": 1,

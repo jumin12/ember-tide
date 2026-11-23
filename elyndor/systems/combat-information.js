@@ -14,7 +14,7 @@ const ABILITY_TYPES65={
 const STATUS_TYPES65={};
 [
  ['attackUp','Attack Up','Buffs',135,174,'#ee9b78','Increases physical attack power.'],['magicUp','Magic Up','Buffs',367,174,'#b399ed','Increases magic attack power.'],['defenseUp','Defense Up','Buffs',598,174,'#83bce8','Increases physical defense.'],['magicDefenseUp','Magic Defense Up','Buffs',836,174,'#8edfe4','Increases magic defense.'],['haste','Speed Up / Haste','Buffs',1068,174,'#eed17e','Increases action speed.'],['regen','Regen','Buffs',1300,174,'#9cdeb5','Gradually restores HP.'],
- ['attackDown','Attack Down','Debuffs',157,448,'#bf8b83','Decreases physical attack power.'],['magicDown','Magic Down','Debuffs',432,448,'#a78cbc','Decreases magic attack power.'],['defenseDown','Defense Down','Debuffs',704,448,'#d7a17f','Decreases physical defense.'],['magicDefenseDown','Magic Defense Down','Debuffs',978,448,'#a8a1df','Decreases magic defense.'],['slow','Slow','Debuffs',1250,448,'#a6b8ca','Decreases action speed.'],
+ ['wolfMark','Wolf Mark','Debuffs',704,448,'#ef859d','Receives 25% more damage.'],['wolfRally','Wolf Rally','Buffs',1068,174,'#ffac88','Increases turn speed by 20%.'],['attackDown','Attack Down','Debuffs',157,448,'#bf8b83','Decreases physical attack power.'],['magicDown','Magic Down','Debuffs',432,448,'#a78cbc','Decreases magic attack power.'],['defenseDown','Defense Down','Debuffs',704,448,'#d7a17f','Decreases physical defense.'],['magicDefenseDown','Magic Defense Down','Debuffs',978,448,'#a8a1df','Decreases magic defense.'],['slow','Slow','Debuffs',1250,448,'#a6b8ca','Decreases action speed.'],
  ['poisoned','Poisoned','Status Ailments',94,710,'#bc91db','Poison damage over time.'],['burning','Burning','Status Ailments',302,710,'#ee9877','Fire damage over time.'],['chill','Frozen / Chill','Status Ailments',510,710,'#a1dcef','Actions may be delayed or prevented.'],['shock','Shock','Status Ailments',718,710,'#ead477','May briefly prevent an action.'],['blind','Blind','Status Ailments',926,710,'#b3b5be','Reduces attack accuracy.'],['silence','Silence','Status Ailments',1133,710,'#d2b6e1','Prevents magic or special abilities.'],['stun','Stun','Status Ailments',1341,710,'#e9d382','Briefly prevents actions.']
 ].forEach(([id,name,group,x,y,color,description])=>STATUS_TYPES65[id]={name,group,x,y,color,description});
 function combatType65(kind,id=null){
@@ -73,6 +73,7 @@ function activeStatuses65(entity,id=null){
   else if(data&&typeof data==='object')for(const[k,v]of Object.entries(data))if(v!==false&&v!==0)put(aliases[k]??k,typeof v==='number'?v:v.turns??null);
  }
  if(id&&battle?.ward>0)put('magicDefenseUp',battle.ward);if(id&&battle?.guards.has(id))put('defenseUp',1);
+ if(battle&&entity?.wolfMarkUntil>battle.round)put('wolfMark',entity.wolfMarkUntil-battle.round);if(id&&battle?.wolfRallyUntil>battle.round)put('wolfRally',battle.wolfRallyUntil-battle.round);
  if(entity?.exposed>0)put('defenseDown',entity.exposed);if(entity?.braced)put('defenseUp',1);if(entity?.charged)put('attackUp',1);if(entity?.staggered)put('stun',1);
  return [...values.values()];
 }

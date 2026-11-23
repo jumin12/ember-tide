@@ -30,8 +30,11 @@ function worldGaussian132(holder,source,depth,w,h,focus,nearFar,scale=1){
  const ww=Math.max(1,w>>1),hh=Math.max(1,h>>1),u=q.material.uniforms;
  for(const t of q.targets)if(t.width!==ww||t.height!==hh)t.setSize(ww,hh);
  u.depth.value=depth;u.nearFar.value.copy(nearFar);u.focus.value=focus;
- u.source.value=source;u.axis.value.set(1.15*scale/w,0);renderer.setRenderTarget(q.targets[0]);renderer.render(q.scene,q.camera);
- u.source.value=q.targets[0].texture;u.axis.value.set(0,1.15*scale/h);renderer.setRenderTarget(q.targets[1]);renderer.render(q.scene,q.camera);
+ // The travel camera needs a visible optical defocus at its miniature scale.
+ // Retain the atlas kernel and the same two retained half-resolution targets.
+ const radius=holder===post?3.15:1.15;
+ u.source.value=source;u.axis.value.set(radius*scale/w,0);renderer.setRenderTarget(q.targets[0]);renderer.render(q.scene,q.camera);
+ u.source.value=q.targets[0].texture;u.axis.value.set(0,radius*scale/h);renderer.setRenderTarget(q.targets[1]);renderer.render(q.scene,q.camera);
  return q.targets[1].texture;
 }
 function prepareAtlasLens119(w,h){
@@ -45,15 +48,16 @@ function prepareAtlasLens119(w,h){
   q.blurMaterial=new THREE.ShaderMaterial({depthTest:false,depthWrite:false,toneMapped:false,uniforms:{source:{value:null},stepSize:{value:new THREE.Vector2()},threshold:{value:1}},vertexShader:lensVertex119,fragmentShader:`uniform sampler2D source;uniform vec2 stepSize;uniform float threshold;varying vec2 vUv;
    vec3 sampleLight(vec2 uv){vec3 c=texture2D(source,clamp(uv,vec2(.001),vec2(.999))).rgb;float l=max(max(c.r,c.g),c.b);return c*mix(1.,smoothstep(.88,1.65,l),threshold);}
    void main(){vec3 c=sampleLight(vUv)*.227027;c+=(sampleLight(vUv+stepSize*1.384615)+sampleLight(vUv-stepSize*1.384615))*.316216;c+=(sampleLight(vUv+stepSize*3.230769)+sampleLight(vUv-stepSize*3.230769))*.070270;gl_FragColor=vec4(c,1.);}`});
-  q.composite=new THREE.ShaderMaterial({depthTest:false,depthWrite:false,uniforms:{source:{value:q.target.texture},gaussian132:{value:null},depth:{value:q.target.depthTexture},bloom:{value:q.blur[1].texture},resolution:{value:new THREE.Vector2(w,h)},nearFar:{value:new THREE.Vector2()},focus:{value:160},day:{value:1},rain:{value:0},mistColour:{value:new THREE.Color()},projectionInverse:{value:new THREE.Matrix4()},cameraWorld:{value:new THREE.Matrix4()},time:{value:0}},vertexShader:lensVertex119,fragmentShader:`
-   uniform sampler2D source,depth,bloom,gaussian132;uniform vec2 resolution,nearFar;uniform float focus,day,rain,time;uniform vec3 mistColour;uniform mat4 projectionInverse,cameraWorld;varying vec2 vUv;
+  q.composite=new THREE.ShaderMaterial({depthTest:false,depthWrite:false,uniforms:{source:{value:q.target.texture},gaussian132:{value:null},depth:{value:q.target.depthTexture},bloom:{value:q.blur[1].texture},resolution:{value:new THREE.Vector2(w,h)},nearFar:{value:new THREE.Vector2()},focus:{value:160},day:{value:1},rain:{value:0},mistColour:{value:new THREE.Color()},anchor159:{value:new THREE.Vector3()},projectionInverse:{value:new THREE.Matrix4()},cameraWorld:{value:new THREE.Matrix4()},time:{value:0}},vertexShader:lensVertex119,fragmentShader:`
+   uniform sampler2D source,depth,bloom,gaussian132;uniform vec2 resolution,nearFar;uniform float focus,day,rain,time;uniform vec3 mistColour,anchor159;uniform mat4 projectionInverse,cameraWorld;varying vec2 vUv;
    float viewDepth(float d){float z=d*2.-1.;return 2.*nearFar.x*nearFar.y/(nearFar.y+nearFar.x-z*(nearFar.y-nearFar.x));}
-   float radiusAt(vec2 uv,float d){float farLens=smoothstep(focus*1.08,focus*1.68,d),nearLens=1.-smoothstep(focus*.39,focus*.65,d);float edge=smoothstep(.48,1.04,length((uv-.5)*vec2(1.55,1.7)));return max(farLens*3.4,max(nearLens*1.5,edge*2.0));}
+   float distantFocus159(vec3 world){float behind=dot(world.xz-anchor159.xz,normalize(-cameraWorld[2].xz));return smoothstep(focus*.80,focus*1.80,behind)*.94;}
    void main(){
-    float raw=texture2D(depth,vUv).r,d=viewDepth(raw),radius=radiusAt(vUv,d);
-    vec3 col=mix(texture2D(source,vUv).rgb,texture2D(gaussian132,vUv).rgb,clamp(radius/3.4,0.,.94));
-    float behind=smoothstep(focus*1.22,focus*2.65,d);
+    float raw=texture2D(depth,vUv).r,d=viewDepth(raw);
     vec4 v=projectionInverse*vec4(vUv*2.-1.,raw*2.-1.,1.);v/=v.w;vec3 world=(cameraWorld*v).xyz;
+    float blur159=distantFocus159(world);
+    vec3 col=mix(texture2D(source,vUv).rgb,texture2D(gaussian132,vUv).rgb,blur159);
+    float behind=smoothstep(focus*1.22,focus*2.65,d);
     float cloud=.5+.5*sin(world.x*.029+world.z*.017+time*.024)*sin(world.z*.023-time*.017);
     float veil=behind*(.07+rain*.07)*mix(.72,1.,cloud);
     col=mix(col,mistColour,veil);col+=texture2D(bloom,vUv).rgb*mix(.13,.075,day);
@@ -78,6 +82,7 @@ function renderAtlasPresentation119(rect,ratio,c){
   q.blurMaterial.uniforms.source.value=q.blur[0].texture;q.blurMaterial.uniforms.threshold.value=0;q.blurMaterial.uniforms.stepSize.value.set(0,4/h);
   renderer.setRenderTarget(q.blur[1]);renderer.render(q.scene,q.camera);
   u.nearFar.value.set(c.near,c.far);u.focus.value=Math.max(1,-atlas3d.target.clone().applyMatrix4(c.matrixWorldInverse).z);u.day.value=celestial31.day.value;u.rain.value=weather.rain.value;u.mistColour.value.copy(exactAtlas67.scene.fog.color);u.projectionInverse.value.copy(c.projectionMatrixInverse);u.cameraWorld.value.copy(c.matrixWorld);u.time.value=performance.now()*.001;
+  u.anchor159.value.copy(atlas3d.target);
   u.gaussian132.value=worldGaussian132(q,q.target.texture,q.target.depthTexture,w,h,u.focus.value,u.nearFar.value,ratio);
   q.quad.material=q.composite;renderer.setRenderTarget(null);renderer.setViewport(rect.x*ratio,(innerHeight-rect.bottom)*ratio,w,h);renderer.setScissor(rect.x*ratio,(innerHeight-rect.bottom)*ratio,w,h);renderer.setScissorTest(true);renderer.clear();renderer.render(q.scene,q.camera);
   const canvas=$('#atlas3d-surface');if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;}
@@ -85,21 +90,24 @@ function renderAtlasPresentation119(rect,ratio,c){
  }finally{renderer.setRenderTarget(target);renderer.setViewport(viewport);renderer.setScissor(scissor);renderer.setScissorTest(test);}
 }
 
-// The travel view uses its existing depth buffer. Blur stays outside the party's
-// focal band, uses native pixels and never touches the HTML interface.
+// Reconstruct actual world positions from the existing depth buffer. Keep a
+// broad travel/settlement focal field; only terrain beyond it receives blur.
 const setupLensBefore119=setupPost;
 setupPost=function(...args){
  const result=setupLensBefore119(...args),m=post?.material;if(!m||m.uniforms.travelLens119)return result;
- m.uniforms.travelLens119={value:0};m.uniforms.travelGaussian132={value:null};m.fragmentShader='uniform sampler2D travelGaussian132;uniform float travelLens119;\n'+m.fragmentShader;
+ m.uniforms.travelLens119={value:0};m.uniforms.travelGaussian132={value:null};m.uniforms.travelAnchor159={value:new THREE.Vector3()};m.fragmentShader='uniform sampler2D travelGaussian132;uniform float travelLens119;uniform vec3 travelAnchor159;\n'+m.fragmentShader;
  m.fragmentShader=m.fragmentShader.replace('// Gameplay remains sharp at every depth;',`if(travelLens119>.5){
-  float far119=smoothstep(focus+12.,focus+90.,d),edge119=smoothstep(.48,1.05,length((vUv-.5)*vec2(1.60,1.8)));
-  col=mix(col,texture2D(travelGaussian132,vUv).rgb,max(far119*.94,edge119*.70));
+  vec3 world159=(poiCamera55*vec4(poiView55(vUv),1.)).xyz;
+  float behind159=dot(world159.xz-travelAnchor159.xz,normalize(-poiCamera55[2].xz));
+  float blur159=smoothstep(110.,240.,behind159)*.98;
+  col=mix(col,texture2D(travelGaussian132,vUv).rgb,blur159);
  }
  // Gameplay remains sharp at every depth;`);
- m.fragmentShader=m.fragmentShader.replace('#include <colorspace_fragment>','#include <colorspace_fragment>\nif(travelLens119>.5){float edge132=smoothstep(.25,.72,length((vUv-.5)*vec2(1.04,.96)));gl_FragColor.rgb*=1.-edge132*.36;}');m.needsUpdate=true;
+ m.fragmentShader=m.fragmentShader.replace('#include <colorspace_fragment>','#include <colorspace_fragment>\nif(travelLens119>.5){float edge132=smoothstep(.20,.69,length((vUv-.5)*vec2(1.04,.96)));gl_FragColor.rgb*=1.-edge132*mix(.52,.44,night22);}');m.needsUpdate=true;
  const draw=renderer.render;
  renderer.render=function(s,c){
   if(s===post.scene&&m.uniforms.travelLens119.value>.5){const target=this.getRenderTarget(),viewport=this.getViewport(new THREE.Vector4()),scissor=this.getScissor(new THREE.Vector4()),test=this.getScissorTest();
+   m.uniforms.travelAnchor159.value.copy(cameraTarget);
    try{this.setScissorTest(false);m.uniforms.travelGaussian132.value=worldGaussian132(post,post.target.texture,post.target.depthTexture,post.target.width,post.target.height,m.uniforms.focus.value,m.uniforms.nearFar.value,Math.max(1,m.uniforms.pixelRatio33?.value??1));}
    finally{this.setRenderTarget(target);this.setViewport(viewport);this.setScissor(scissor);this.setScissorTest(test);}
   }return draw.call(this,s,c);

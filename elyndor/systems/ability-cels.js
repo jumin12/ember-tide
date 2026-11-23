@@ -17,13 +17,36 @@ function warmAbilitySheets145(){
  return abilityAtlases145.pending;
 }
 const ABILITY_CEL_FRAGMENT145=`varying vec2 uv145,info145;varying vec3 tint145,normal145,world145;uniform float time145,style145;uniform sampler2D sheet145;
+// Ramp the photographed luminance of each cel through a distinct element palette.
+// The paper-white band is narrow, so individual branches survive a bright floor.
+vec3 celLight(float s,float l){
+ vec3 shade=vec3(.29,.012,.004),body=vec3(1.,.22,.014),hot=vec3(1.32,1.04,.56);
+ if(s>.5&&s<1.5){shade=vec3(.012,.034,.23);body=vec3(.032,.33,.89);hot=vec3(.79,1.18,1.35);}
+ else if(s>1.5&&s<2.5){shade=vec3(.016,.16,.095);body=vec3(.14,.86,.42);hot=vec3(1.08,1.26,.76);}
+ else if(s>2.5&&s<3.5){shade=vec3(.066,.038,.36);body=vec3(.19,.44,.99);hot=vec3(.77,1.13,1.35);}
+ else if((s>3.5&&s<4.5)||s>6.5){shade=vec3(.13,.025,.35);body=vec3(.55,.19,.98);hot=vec3(.86,1.07,1.38);}
+ else if(s>4.5&&s<5.5){shade=vec3(.022,.095,.27);body=vec3(.15,.66,1.04);hot=vec3(.93,1.18,1.30);}
+ else if(s>5.5&&s<6.5){shade=vec3(.27,.075,.023);body=vec3(1.0,.52,.13);hot=vec3(1.30,1.18,.80);}
+ return mix(mix(shade,body,smoothstep(.04,.50,l)),hot,smoothstep(.51,.94,l));
+}
 vec4 cel145(float frame){vec2 cell=vec2(mod(frame,4.),2.-floor(frame/4.));vec2 inset=vec2(.5/384.,.5/341.333333);vec2 local=clamp(uv145,inset,1.-inset);return texture2D(sheet145,(cell+local)/vec2(4.,3.));}
 void main(){float at=clamp(info145.y,0.,1.)*11.,f=floor(at),blend=fract(at);vec4 a=cel145(f),b=cel145(min(11.,f+1.));
  // Interpolate premultiplied light, so low-alpha RGB never leaves dark boxes
  // or pale veils. Suppress the generator's very faint ambient backdrop.
  float aa=smoothstep(.065,.95,a.a)*a.a,bb=smoothstep(.065,.95,b.a)*b.a;float alpha=mix(aa,bb,blend);vec3 rgb=mix(a.rgb*aa,b.rgb*bb,blend)/max(.00001,alpha);
  vec2 edge=min(uv145,1.-uv145);alpha*=smoothstep(0.,.065,min(edge.x,edge.y))*info145.x;
- if(alpha<.004)discard;gl_FragColor=vec4(rgb*1.18,min(.98,alpha));}`;
+ if(alpha<.004)discard;
+ float peak=max(rgb.r,max(rgb.g,rgb.b));
+ float light=.59*dot(rgb,vec3(.22,.68,.10))+.41*peak;
+ // Blue is near saturation over most of the frost sheet. Red and green
+ // distinguish the translucent blue facets from their white cutting edges.
+ if(style145>.5&&style145<1.5)light=.72*rgb.r+.28*rgb.g;
+ float density=smoothstep(.04,.82,alpha);
+ vec3 enamel=mix(rgb,celLight(style145,light),.78)*(.78+.24*density);
+ // A single crest follows the bright strokes through the original twelve frames.
+ float crest=1.-smoothstep(.0,.36,abs(info145.y-.46));
+ enamel+=celLight(style145,.91)*smoothstep(.62,1.,light)*crest*.18;
+ gl_FragColor=vec4(enamel,min(.98,alpha*(.90+.18*density)));}`;
 const abilitySheetBeginBefore145=beginBattle;
 beginBattle=function(...args){warmAbilitySheets145().catch(()=>{});return abilitySheetBeginBefore145(...args);};
 const abilitySheetCoverBefore145=advanceEncounterCover53;
@@ -45,16 +68,17 @@ drawAbilityPacket145=function(q){
   // luminous 2D cels and a trail of small separately animated sprite packets.
   if(q.element==='arrow')return abilitySpatialDrawBefore145(q);
   const end=q.target?abilityFront145(q.target,q.to):q.to,current=q.from.clone().lerp(end,t),color=q.element==='fire'?'#ff9d3f':['heal','ward','wardheal'].includes(q.element)?look.color:'#66caff';current.y+=Math.sin(t*Math.PI)*.22;
-  const key=q.element==='fire'?'celFire':['heal','ward','wardheal'].includes(q.element)?'celHeal':'celShot';drawAbilityCel145(q,key,current,color,q.strong?1.55:1.18,q.strong?1.55:1.18,.98,.18+t*.25);
+  const key=q.element==='fire'?'celFire':q.element==='ice'?'celFrost':q.element==='ward'?'celWard':['heal','wardheal'].includes(q.element)?'celHeal':'celShot';drawAbilityCel145(q,key,current,color,q.strong?1.55:1.18,q.strong?1.55:1.18,.98,.18+t*.25);
   abilityMotes145(q,current,color,12,.16,.4,false);
   abilityLight145(current,color,18);return;
  }
  let key='celArcane',color=look.color,width=clamp(body.width*1.65,2.7,7.1)*boost,height=clamp(body.height*1.20,3.1,7.8)*boost;
  if(q.kind==='fire'){key='celFire';color='#ffae43';}
- else if(q.kind==='ice'){key='celFrost';color='#a5ecff';}
+ else if(q.kind==='ice'){key='celFrost';color='#72b4ff';}
  else if(q.kind==='heal'){key='celHeal';width=clamp(body.width*1.65,2.7,5.3)*boost;height=clamp(body.height*1.24,3.1,7)*boost;}
  else if(q.kind==='ward'){key='celWard';color='#8bdcff';width=clamp(body.width*1.5,2.6,6.3)*boost;height=clamp(body.height*1.2,3,7.4)*boost;}
- else if(q.kind==='ascend'){key='celAscend';color=look.accent;}
+ else if(q.kind==='arcane'){color='#aa82ff';}
+ else if(q.kind==='ascend'){key='celAscend';color='#ffd47a';}
  else if(['blade','arrow','impact'].includes(q.kind)){key=q.kind==='blade'?'celSlash':'celAscend';color=q.kind==='blade'?'#66c6ff':look.accent;}
  // The authored fire has a low ignition point; place that point at the feet.
  // Peak contact cels arrive quickly, then unravel instead of waiting until
@@ -68,5 +92,5 @@ drawAbilityPacket145=function(q){
  abilityMotes145(q,front,q.kind==='fire'?'#ffd987':color,q.strong?44:30,radius*(q.kind==='fire'?2.2:1.4),q.kind==='heal'?body.height*.65:3.0,!['heal','ward','ascend'].includes(q.kind));
  if(q.kind==='ice')for(let i=0;i<8;i++){const a=i*2.399,age=q.age,p=front.clone().add(V3(Math.cos(a)*age*radius,age*(1.3+i%3*.4)-age*age*1.4,Math.sin(a)*age*radius));if(p.y>ground.y+.1)drawAbility145('crystal',p,V3(.055,.12,.05),new THREE.Quaternion().setFromEuler(new THREE.Euler(age*3,a,age*2)),'#b8eeff',ease,t);}
  if(q.kind==='heal'&&q.owner==='tavin')for(let i=0;i<6;i++){const f=(i/6+q.age*.4)%1,a=i*2.399+q.age,p=ground.clone().add(V3(Math.cos(a)*radius*.65,.2+f*body.height,Math.sin(a)*radius*.65));drawAbility145('leaf',p,V3(.16,.12,.28),new THREE.Quaternion().setFromEuler(new THREE.Euler(f,a,.4)),look.color,ease*Math.sin(f*Math.PI),f);}
- abilityLight145(front,q.kind==='fire'?'#ffb45e':color,ease*(q.kind==='fire'?q.strong?60:42:q.strong?38:26));
+ abilityLight145(front,q.kind==='fire'?'#ff8739':color,ease*(q.kind==='fire'?q.strong?60:42:q.strong?38:26));
 };

@@ -23,7 +23,7 @@ updateContacts39=function(...args){
   if(index>=q.mesh.count)break;
   if(!a.mesh.visible||!a.mesh.parent||a.mesh.material.opacity<.03)continue;
   if(a===player||followers.includes(a)||a.npc){
-   const p=a.mesh.position,macro=activeScene.kind==='overworld',size=clamp(a.size*Math.abs(a.mesh.scale.x)*(macro?.78:.86),1.15,macro?5.4:3.8),seat=contactSeat133(a,size);
+   const p=a.mesh.position,macro=activeScene.kind==='overworld',visual=macro&&a.party?overworldPartyVisual159/1.60:1,size=clamp(a.size*Math.abs(a.mesh.scale.x)*(macro?.78:.86),1.15*visual,(macro?5.4:3.8)*visual),seat=contactSeat133(a,size);
    q.dummy.position.set(p.x,seat.y,p.z);
    q.dummy.scale.set(size,1,size);q.dummy.rotation.set(0,0,0);q.dummy.updateMatrix();
    q.mesh.setMatrixAt(index,q.dummy.matrix);slope.setXY(index,seat.sx,seat.sz);alpha.setX(index,macro?((state.worldMinutes+1440)%1440>=360&&(state.worldMinutes+1440)%1440<1170?.86:0):a.npc?.78:.82);

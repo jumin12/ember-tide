@@ -2,6 +2,18 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.52 — Limit Breaks, combat HUD fixes, and battle lighting
+
+November 23, 2026
+
+- Each party member now earns one Limit Break diamond per completed turn, up to five. Unspent diamonds carry into the next battle and into saved journeys. Older journeys start with an empty meter.
+- At five diamonds, Soren can use Wolf Ascendant from Skills. It marks enemies, rallies allies and delivers a physical sweep. Casting spends Soren’s five diamonds and preserves his allies’ charge. Bren can store charge while Radiant Pride awaits its final combat rules.
+- The combat command cursor follows the latest mouse or keyboard selection. The Hooked-beak Bird now fits inside its turn-order diamond, with the beak, body and tail in frame.
+- Spells and weapon hits cast local light on fighters and the ground across all 20 regional arenas and seven story battles. Frost Bloom has deeper blue facets against snow, Flame Lance casts amber light, and finishing hits flash at contact.
+- Regional battlefields blend their foreground terrain into the painted backdrop. Exploration lighting adds fountain ripples, reflected lamplight, rain sheen and distance haze to towns and the world map.
+
+[Command cursor replay](elyndor/previews/release-v152/command-cursor.gif) · [Bird portrait](elyndor/previews/release-v152/bird-portrait.png) · [Limit Break meters](elyndor/previews/release-v152/limit-break.png) · [Soren’s Skills menu](elyndor/previews/release-v152/wolf-ascendant-menu.png) · [Battle lighting](elyndor/previews/release-v152/battle-lighting.jpg) · [Exploration lighting](elyndor/previews/release-v152/exploration-lighting.jpg)
+
 ## Alpha Version 1.51 — Combat marker, menus, and Defend audio
 
 November 21, 2026

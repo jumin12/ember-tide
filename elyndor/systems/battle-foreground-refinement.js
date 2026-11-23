@@ -161,38 +161,29 @@ function bindBattleGrass(b){
  material.customProgramCacheKey=()=>key()+'-seated-battle-grass';
  return material;
 }
-// Sample painted dry ground in each scene's day, golden-hour, or night image.
-// These rows affect terrain pigment only. The backdrop uses its authored framing.
-const GROUND_SWATCH_ROWS={
- waterfall:.366,woodland:.365,orchard:.365,ruins:.369,cavern:.354,
- mountain:.358,snow:.400,coast:.361,royalRoad:.384,moonlit:.364,
- grassMeadow:.405,grassRiver:.389,grassFlowers:.407,grassDowns:.387,grassWindmill:.386,
- grassAutumn:.382,grassStones:.391,grassHills:.378,grassBirch:.390,grassTwilight:.382
-};
 function gradeBattleGroundEdge(b,stage){
- const swatchRow=GROUND_SWATCH_ROWS[stage];
- if(swatchRow===undefined)return;
+ const [swatchRow,width]=BATTLE_GROUND_JOINS[stage];
  const floor=b.group.children.find(o=>o.name==='Actual level ground and carved water banks');
  const material=floor?.material;
  if(!material?.userData.surface132)return;
  // Average contact colours across the plate. Transfer only the broad light
  // and hue at the join. Stonework and water never project onto the floor.
- const canvas=document.createElement('canvas');canvas.width=72;canvas.height=8;
+ const canvas=document.createElement('canvas');canvas.width=144;canvas.height=8;
  const ctx=canvas.getContext('2d',{willReadFrequently:true}),image=b.plate90.image;
  // The lower band is painted ground on each plate, even if the camera
  // sees a lake, cliff or masonry on the far side of the join.
  const row=(1-swatchRow)*image.height;
- ctx.drawImage(image,0,row-image.height*.022,image.width,image.height*.044,0,0,72,8);
- const pixels=ctx.getImageData(0,0,72,8).data;
+ ctx.drawImage(image,0,row-image.height*.022,image.width,image.height*.044,0,0,144,8);
+ const pixels=ctx.getImageData(0,0,144,8).data;
  // Convert the plate's linear display colour to the working lighting space.
  const sceneLight=value=>{
   const color=clamp(value/64,.0001,.97),a=2.51-2.43*color,b=.03-.59*color;
   return (-b+Math.sqrt(b*b+.56*a*color))/(2*a);
  };
- const swatches=Array.from({length:9},(_,strip)=>{
+ const swatches=Array.from({length:18},(_,strip)=>{
   const color=V3();
   for(let y=0;y<8;y++)for(let x=strip*8;x<(strip+1)*8;x++){
-   const i=(y*72+x)*4;color.x+=linear161[pixels[i]];color.y+=linear161[pixels[i+1]];color.z+=linear161[pixels[i+2]];
+   const i=(y*144+x)*4;color.x+=linear161[pixels[i]];color.y+=linear161[pixels[i+1]];color.z+=linear161[pixels[i+2]];
   }
   return V3(sceneLight(color.x),sceneLight(color.y),sceneLight(color.z));
  });
@@ -206,8 +197,8 @@ function gradeBattleGroundEdge(b,stage){
   const u=clamp(worldPoint.x*.5*b.crop90.x,-.5,.5);
   const fit=b.plateFit97.value;
   const source=.5+u/(fit+(1-fit)*4*u*u);
-  const strip=clamp(source*9-.5,0,7.999),low=Math.floor(strip),fraction=strip-low;
-  const offset=i*4,a=swatches[low],c=swatches[low+1];
+  const strip=clamp(source*swatches.length-.5,0,swatches.length-1),low=Math.floor(strip),fraction=strip-low;
+  const offset=i*4,a=swatches[low],c=swatches[Math.min(low+1,swatches.length-1)];
   const weight=(1-smooth(.05,4.6,depth))*.78;
   contacts[offset]=mix(a.x,c.x,fraction)*weight;
   contacts[offset+1]=mix(a.y,c.y,fraction)*weight;
@@ -229,6 +220,52 @@ function gradeBattleGroundEdge(b,stage){
  material.customProgramCacheKey=()=>key()+'-painted-contact-pigment';
  material.needsUpdate=true;
  material.userData.groundContact={swatchRow,swatches:swatches.map(c=>c.toArray())};
+ buildBattleGroundJoin(floor,b,width);
+}
+
+// Split existing triangles so both surfaces use the same vertices, material
+// detail, light and normals. Only the last few metres need alpha blending.
+function buildBattleGroundJoin(floor,b,width){
+ const geometry=floor.geometry,position=geometry.attributes.position;
+ const distance=new Float32Array(position.count);
+ for(let i=0;i<position.count;i++){
+  distance[i]=Math.max(0,position.getZ(i)-apronEdge113(b,position.getX(i)));
+ }
+ const body=[],border=[],indices=geometry.index.array;
+ for(let i=0;i<indices.length;i+=3){
+  const a=indices[i],c=indices[i+1],d=indices[i+2];
+  const dst=Math.min(distance[a],distance[c],distance[d])<width?border:body;
+  dst.push(a,c,d);
+ }
+ if(!border.length||!body.length)return;
+ const rimGeometry=geometry59(new THREE.BufferGeometry());
+ for(const [name,attribute] of Object.entries(geometry.attributes))rimGeometry.setAttribute(name,attribute);
+ rimGeometry.setAttribute('bankDistance',new THREE.BufferAttribute(distance,1));
+ rimGeometry.setIndex(border);geometry.setIndex(body);
+ const source=floor.material,rimMaterial=material59(source.clone());
+ rimMaterial.transparent=true;rimMaterial.depthWrite=true;rimMaterial.forceSinglePass=true;
+ rimMaterial.customProgramCacheKey=()=>source.customProgramCacheKey()+'-terrain-join';
+ rimMaterial.onBeforeCompile=function(shader,...args){
+  source.onBeforeCompile.call(this,shader,...args);
+  shader.uniforms.bankWidth={value:width};
+  shader.vertexShader='attribute float bankDistance;varying float joinDistance;\n'+shader.vertexShader.replace(
+   '#include <begin_vertex>','#include <begin_vertex>\njoinDistance=bankDistance;');
+  shader.fragmentShader='uniform float bankWidth;varying float joinDistance;\n'+shader.fragmentShader.replace(
+   '#include <opaque_fragment>',`
+    float reach=clamp(joinDistance/bankWidth,0.,1.);
+    float grain=clamp((relief132-.17)*2.4,-.38,.38);
+    float cover=smoothstep(0.,1.,reach+grain*reach*(1.-reach));
+    if(cover<.002)discard;
+    diffuseColor.a*=cover;
+    // The arena lens reads depth. Ease from the distant plate to the actual
+    // bank so the depth-of-field pass cannot redraw a line across the join.
+    gl_FragDepth=mix(1.,gl_FragCoord.z,cover);
+    #include <opaque_fragment>`);
+ };
+ const rim=new THREE.Mesh(rimGeometry,rimMaterial);
+ rim.name='Battle terrain transition';rim.receiveShadow=floor.receiveShadow;
+ rim.renderOrder=b.landscape90.renderOrder+.25;floor.parent.add(rim);
+ floor.userData.transitionWidth=width;b.terrainJoin=rim;
 }
 
 function cleanBattleSet161(b){

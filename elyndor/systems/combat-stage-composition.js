@@ -1,5 +1,15 @@
 // A short, level fighting ground in front of the native landscape painting.
 // Keep cast formation and battle lenses independent of the scenic back edge.
+// UV height of continuous ground in each painting, and the depth in metres
+// over which its native ground cover meets the physical set.
+const BATTLE_GROUND_JOINS={
+ waterfall:[.322,4.2], woodland:[.304,3.8], orchard:[.321,3.7], ruins:[.294,3.6],
+ cavern:[.305,3.8], mountain:[.292,3.7], snow:[.354,4.4], coast:[.315,4.2],
+ royalRoad:[.305,4.1], moonlit:[.302,3.8], grassMeadow:[.349,4.4], grassRiver:[.325,4.2],
+ grassFlowers:[.352,4.3], grassDowns:[.333,4.1], grassWindmill:[.335,4.1],
+ grassAutumn:[.331,4.2], grassStones:[.325,3.9], grassHills:[.32,4.3],
+ grassBirch:[.335,4.1], grassTwilight:[.328,4.3]
+};
 function stageEdge122(b){
  const q=fightingHollow93(b),margin=b.spec.cave?7.2:b.spec.royal?7:5.8;
  return q.back-margin;
@@ -101,7 +111,7 @@ makeHybridLandscape90=function(b){
  vistaBefore122(b);
  const ref=b.reference90,eye=ref.position,origin=b.group.position,edge=stageEdge122(b);
  const seam=V3(0,arenaHeight88(b,0,edge),edge).add(origin).project(ref).y*.5+.5;
- const horizon=BATTLE_ART99[encounter53.selected].landmark,span=clamp((1.08-seam)/(1-horizon),.55,1.04);
+ const horizon=BATTLE_GROUND_JOINS[encounter53.selected][0],span=clamp((1.08-seam)/(1-horizon),.55,1.04);
  b.window90.set(seam-horizon*span,span);b.plateFit97.value=innerHeight>innerWidth&&innerWidth<760?.98:.96;
  const depth=Math.max(34,-edge+17),g=b.landscape90.geometry,p=g.attributes.position,uv=g.attributes.uv,nx=128,ny=82;
  for(let j=0;j<=ny;j++)for(let i=0;i<=nx;i++){

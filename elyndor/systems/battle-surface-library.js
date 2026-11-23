@@ -1,6 +1,6 @@
 // Each arena owns an independently authored native ground surface, decoded
 // only behind its encounter cover. All three lighting phases share its pigment.
-const SURFACES132={waterfall:.115,woodland:.105,orchard:.110,ruins:.17,cavern:.105,mountain:.115,snow:.10,coast:.105,royalRoad:.18,moonlit:.105,grassMeadow:.11,grassRiver:.11,grassFlowers:.11,grassDowns:.11,grassWindmill:.11,grassAutumn:.11,grassStones:.11,grassHills:.11,grassBirch:.11,grassTwilight:.11};
+const SURFACES132={waterfall:.115,woodland:.105,orchard:.110,ruins:.125,cavern:.105,mountain:.115,snow:.10,coast:.105,royalRoad:.067,moonlit:.105,grassMeadow:.11,grassRiver:.11,grassFlowers:.11,grassDowns:.11,grassWindmill:.11,grassAutumn:.11,grassStones:.11,grassHills:.11,grassBirch:.11,grassTwilight:.11};
 function groundLight132(b){return b.night||b.spec.cave?.88:b.spec.snow?.82:b.spec.ruins||b.spec.royal?.76:encounter53.phase55==='golden'?.73:.68;}
 async function loadStageSurface132(stage){
  const key='stage132_'+stage;if(materials100.cache.has(key))return materials100.cache.get(key);

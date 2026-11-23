@@ -83,5 +83,34 @@ buildSolidTree=function(x,z,...args){if(activeScene?.kind==='overworld')for(cons
 worldEntrancePoint45=function(key){const q=dioramas67.sites.get(key);return q?{x:q.gate[0],z:q.gate[1]}:{x:POIS[key].node[0],z:POIS[key].node[1]};};
 nearbyWorldEntrance=function(){if(!player||activeScene?.kind!=='overworld')return null;return interactables.filter(o=>o.type==='location'&&interactionAvailable(o)&&dist(player,o)<(o.diorama67?5.5:12)).sort((a,b)=>dist(player,a)-dist(player,b))[0]??null;};
 const dioramaCameraBefore67=updateCamera;
-updateCamera=function(dt=1/60,instant=false){const r=dioramaCameraBefore67(dt,instant);if(!compactWorld44()||!player)return r;const offset=V3(28,100,108).multiplyScalar(state.settings.zoom??1);camera.position.copy(cameraTarget).add(offset);camera.fov=34;camera.lookAt(cameraTarget);camera.updateProjectionMatrix();camera.updateMatrixWorld();focusPoint.copy(cameraTarget);post.material.uniforms.focus.value=camera.position.distanceTo(cameraTarget);faceNativeHumanoids66();sideCameraStats.angle=Math.atan2(offset.y,Math.hypot(offset.x,offset.z))*180/Math.PI;return r;};
+function clearTravelView158(offset,dt,instant){
+ if(perf.building||sceneBuildFilter||!world.userData.terrainChunks?.length)return offset;
+ const radius=offset.length(),horizontal=Math.hypot(offset.x,offset.z),base=Math.atan2(offset.y,horizontal),party=[player,...followers].filter(a=>a?.mesh.visible);
+ const q=world.userData.travelCamera158??={pitch:base,desired:base,at:-Infinity,positions:[],target:V3(),radius:0};
+ const moved=q.target.distanceToSquared(cameraTarget)>.25||party.length!==q.positions.length||party.some((a,i)=>!q.positions[i]||Math.hypot(a.x-q.positions[i][0],a.z-q.positions[i][1])>.5);
+ if(instant||q.radius!==radius||clock-q.at>.12&&moved){
+  const sample=terrainSampler64().sample,dx=offset.x/horizontal,dz=offset.z/horizontal;
+  const clear=pitch=>{const h=radius*Math.cos(pitch),cx=cameraTarget.x+dx*h,cz=cameraTarget.z+dz*h,cy=cameraTarget.y+radius*Math.sin(pitch);
+   for(const a of party){const ax=a.mesh.position.x,az=a.mesh.position.z,ay=a.mesh.position.y+Math.max(.65,a.size*.20),steps=Math.ceil(Math.hypot(cx-ax,cz-az)/3);
+    for(let i=1;i<steps;i++){const t=i/steps;if(sample(mix(ax,cx,t),mix(az,cz,t))+.45>mix(ay,cy,t))return false;}
+   }return true;
+  };
+  let required=base;while(required<54*Math.PI/180&&!clear(required))required+=3*Math.PI/180;
+  q.desired=required>base?Math.min(55*Math.PI/180,required+Math.PI/180):base;q.at=clock;q.radius=radius;q.target.copy(cameraTarget);q.positions=party.map(a=>[a.x,a.z]);
+ }
+ // Keep orbit distance/azimuth fixed, lift only for a blocking ridge, and ease
+ // back into the lower scenic view without terrain or actor transparency.
+ q.pitch=instant?q.desired:mix(q.pitch,q.desired,1-Math.exp(-Math.max(0,dt)/(q.desired>q.pitch?.12:.65)));
+ if(Math.abs(q.pitch-q.desired)<.001)q.pitch=q.desired;
+ const h=radius*Math.cos(q.pitch);offset.set(offset.x/horizontal*h,radius*Math.sin(q.pitch),offset.z/horizontal*h);return offset;
+}
+updateCamera=function(dt=1/60,instant=false){
+ const r=dioramaCameraBefore67(dt,instant);if(!compactWorld44()||!player)return r;
+ // A lower travel view opens the distant landscape while keeping the party's
+ // scale and focus stable when the movement heading changes.
+ const portrait=camera.aspect<.8,offset=V3(28,92,139).multiplyScalar((state.settings.zoom??1)*(portrait?1.12:1));
+ clearTravelView158(offset,dt,instant);
+ camera.position.copy(cameraTarget).add(offset);camera.fov=portrait?42:35.5;camera.lookAt(cameraTarget);camera.updateProjectionMatrix();camera.updateMatrixWorld();
+ focusPoint.copy(cameraTarget);post.material.uniforms.focus.value=camera.position.distanceTo(cameraTarget);faceNativeHumanoids66();sideCameraStats.angle=Math.atan2(offset.y,Math.hypot(offset.x,offset.z))*180/Math.PI;return r;
+};
 returnToOverworld=function(){const p=POIS[activeScene.key]??POIS[state.interiorReturn?.poi],q=p&&dioramas67.sites.get(Object.keys(POIS).find(k=>POIS[k]===p));if(q)return changeJourneyScene('overworld',[q.gate[0]+Math.sin(q.a)*4,q.gate[1]+Math.cos(q.a)*4]);return changeJourneyScene('overworld',state.overworldPosition??POIS.brookstead.node);};

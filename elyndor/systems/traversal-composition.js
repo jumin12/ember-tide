@@ -150,7 +150,8 @@ worldSiteModel45=function(key,p){
 };
 // Larger sprites are uniformly scaled and face the lens. The logical radius,
 // walk speed, encounter distance and interaction code still use the old scale.
+const overworldPartyVisual159=1.28;
 const cameraTraversalBefore66=updateCamera;
-updateCamera=function(...args){const result=cameraTraversalBefore66(...args);if(!compactWorld44())return result;for(const a of[player,...followers]){a.mesh.quaternion.copy(camera.quaternion);a.mesh.scale.setScalar(compactTraversal44.partyScale*1.60);}return result;};
+updateCamera=function(...args){const result=cameraTraversalBefore66(...args);if(!compactWorld44())return result;for(const a of[player,...followers]){a.mesh.quaternion.copy(camera.quaternion);a.mesh.scale.setScalar(compactTraversal44.partyScale*overworldPartyVisual159);}return result;};
 const worldCompositionBefore66=buildWorld;
-buildWorld=function(...args){const result=worldCompositionBefore66(...args);if(activeScene?.kind==='overworld')world.userData.traversal66={visualPartyFactor:1.60,logicalPartyScale:compactTraversal44.partyScale,habitats:['dense forest','light woodland','open meadow','road shoulder','riverbank','rocky ridge','settlement approach'],miniatureKeys:Object.keys(POIS),boundaryPreserved:world.userData.boundary46?.sealed===true};return result;};
+buildWorld=function(...args){const result=worldCompositionBefore66(...args);if(activeScene?.kind==='overworld')world.userData.traversal66={visualPartyFactor:overworldPartyVisual159,logicalPartyScale:compactTraversal44.partyScale,habitats:['dense forest','light woodland','open meadow','road shoulder','riverbank','rocky ridge','settlement approach'],miniatureKeys:Object.keys(POIS),boundaryPreserved:world.userData.boundary46?.sealed===true};return result;};

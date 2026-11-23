@@ -318,7 +318,12 @@
       "systems/timed-combo-focus.js",
       "systems/home-performance.js",
       "systems/home-threshold-effects.js",
-      "systems/environmental-fire.js"
+      "systems/environmental-fire.js",
+      "systems/overworld-presentation.js",
+      "systems/overworld-scenery.js",
+      "systems/landscape-and-impact-light.js",
+      "systems/exploration-lighting.js",
+      "systems/limit-break.js"
     ]
   },
   "styles": [

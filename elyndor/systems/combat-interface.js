@@ -2,27 +2,25 @@
 // feedback is projected separately; moving the camera never moves HUD panels.
 const combatHud65={submenu:null,lastTransition:null};
 const commandList65=$('#commands');
-let commandSelection65=null,commandSelectionFrame65=0;
+let commandSelection65=null,commandSelectionFrame65=0,commandInput65='pointer';
 function updateCommandSelection65(){
- const selected=commandList65.querySelector('button:enabled:focus-visible')
-  ??commandList65.querySelector('button:enabled:hover')
+ const focused=commandList65.querySelector('button:enabled:focus-visible');
+ const hovered=commandList65.querySelector('button:enabled:hover');
+ const selected=(commandInput65==='keyboard'?focused:hovered)??hovered??focused
   ??commandList65.querySelector('button[data-action="attack"]:enabled');
  if(commandSelection65!==selected){
   commandSelection65?.removeAttribute('data-command-selected65');
   selected?.setAttribute('data-command-selected65','');
   commandSelection65=selected;
  }
- commandList65.toggleAttribute('data-command-indicator65',!!selected);
- if(selected){
-  commandList65.style.setProperty('--command-chevron-x65',(selected.offsetLeft-2)+'px');
-  commandList65.style.setProperty('--command-chevron-y65',(selected.offsetTop+selected.offsetHeight/2)+'px');
- }
 }
 function queueCommandSelection65(){
  if(!commandSelectionFrame65)commandSelectionFrame65=requestAnimationFrame(()=>{commandSelectionFrame65=0;updateCommandSelection65();});
 }
-for(const event of ['pointerover','pointerleave','focusin','focusout'])commandList65.addEventListener(event,queueCommandSelection65);
-new ResizeObserver(updateCommandSelection65).observe(commandList65);
+commandList65.addEventListener('pointermove',()=>{commandInput65='pointer';queueCommandSelection65();});
+commandList65.addEventListener('pointerover',()=>{commandInput65='pointer';queueCommandSelection65();});
+document.addEventListener('keydown',()=>{if(!battle)return;commandInput65='keyboard';queueCommandSelection65();},true);
+for(const event of ['pointerleave','focusin','focusout'])commandList65.addEventListener(event,queueCommandSelection65);
 const BATTLE_COMMAND_ART={
  skills:'<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-opacity=".57"/><path d="M6.7 7.1a6.5 6.5 0 0 1 10.7 2.4c-3.5-2.4-7.9-.9-7.6 2.4M17.2 16.9a6.5 6.5 0 0 1-10.7-2.4c3.5 2.4 7.9.9 7.6-2.4M8.1 16.4c-1.1-3.5.9-6.9 3.5-7.4m4.3-1.4c1.1 3.5-.9 6.9-3.5 7.4" stroke="currentColor" stroke-width="1.45" stroke-linecap="round"/>',
  items:'<path d="M9.6 6 7.7 2.6l2.7.8L12 2l1.7 1.4 2.6-.8L14.4 6Z M9.5 8h5c3 2.5 5.5 6.3 5.5 9.7 0 2.6-2.9 3.9-8 3.9s-8-1.3-8-3.9c0-3.4 2.5-7.2 5.5-9.7Z" fill="currentColor"/><path d="M9 6.9h6m-7.2 9.3c.8-2 1.8-3.1 3.3-4.3" stroke="#815022" stroke-width="1.4" stroke-linecap="round"/>',
@@ -33,7 +31,7 @@ const BATTLE_COMMAND_ART={
 const partyEffectsBefore65=updatePartyCards36;
 updatePartyCards36=function(id,...args){
  const node=$('#'+id);if(battle&&id==='battle-party'){
-  const signature=JSON.stringify(state.members.map(k=>activeStatuses65(state.characters[k],k)));
+  const signature=JSON.stringify(state.members.map(k=>[state.characters[k].limitBreak,activeStatuses65(state.characters[k],k)]));
   if(node.dataset.effects65!==signature){node.dataset.effects65=signature;delete node.dataset.cards36;}
  }
  return partyEffectsBefore65(id,...args);
@@ -42,7 +40,7 @@ const battleCardBefore65=card;
 card=function(id,...args){
  if(!battle)return battleCardBefore65(id,...args);
  const c=state.characters[id],s=stats(id),a=CAST[id];
- return '<button class="party-card party-card65" data-ally="'+state.members.indexOf(id)+'" data-character="'+id+'" aria-label="'+a.name+' · HP '+c.hp+' of '+s.hp+' · MP '+c.mp+' of '+s.mp+'"><img src="'+face26(id)+'" alt=""><div><header><b>'+a.name+'</b><small>Lv '+c.level+'</small></header><label>HP <span>'+c.hp+' / '+s.hp+'</span></label><i class="stat-bar65"><em style="width:'+clamp(c.hp/s.hp*100,0,100)+'%"></em></i><label>MP <span>'+c.mp+' / '+s.mp+'</span></label><i class="stat-bar65 mp65"><em style="width:'+clamp(c.mp/s.mp*100,0,100)+'%"></em></i><label class="ascension-label65">Ascension <span>'+(c.ascended?'Active':c.charge+'%')+'</span></label><i class="stat-bar65 ascension65"><em style="width:'+(c.ascended?100:c.charge)+'%"></em></i></div>'+statusRow65(c,id)+'</button>';
+ return '<button class="party-card party-card65" data-ally="'+state.members.indexOf(id)+'" data-character="'+id+'" aria-label="'+a.name+' · HP '+c.hp+' of '+s.hp+' · MP '+c.mp+' of '+s.mp+' / Limit Break '+(c.limitBreak??0)+' of 5"><img src="'+face26(id)+'" alt=""><div><header><b>'+a.name+'</b><small>Lv '+c.level+'</small></header><label>HP <span>'+c.hp+' / '+s.hp+'</span></label><i class="stat-bar65"><em style="width:'+clamp(c.hp/s.hp*100,0,100)+'%"></em></i><label>MP <span>'+c.mp+' / '+s.mp+'</span></label><i class="stat-bar65 mp65"><em style="width:'+clamp(c.mp/s.mp*100,0,100)+'%"></em></i><label class="ascension-label65">Ascension <span>'+(c.ascended?'Active':c.charge+'%')+'</span></label><i class="stat-bar65 ascension65"><em style="width:'+(c.ascended?100:c.charge)+'%"></em></i></div>'+limitMeter(id)+statusRow65(c,id)+'</button>';
 };
 function updateAbilityHelp65(button){
  const box=$('#ability-help65');if(!box||!battle)return;const p=previewAbility65(button),id=currentFighter();

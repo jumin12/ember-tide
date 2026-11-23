@@ -36,7 +36,7 @@ function renderBattle(submenu=null){
  const c=state.characters[id],back='<button data-battle-back>← Back</button>';
  if(submenu==='skills'){
   const skills=CAST[id].skill.map((sk,i)=>`<button data-skill="${i}" ${c.mp<sk[2]?'disabled':''}>${c.ascended?sk[5]:sk[0]}<small>${sk[2]} MP</small></button>`);
-  return renderBattleCommands(id,skills.join('')+back);
+  return renderBattleCommands(id,skills.join('')+limitSkillButton(id)+back);
  }
  if(submenu==='items'){
   const items=Object.entries(state.items).filter(([k,v])=>v>0&&ITEMS[k]?.type==='Supplies');

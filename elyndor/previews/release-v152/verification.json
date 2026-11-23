@@ -1,0 +1,148 @@
+{
+  "version": "Alpha Version 1.52",
+  "base": "bc7b5bebf2b30e23fb63d665b789089515196848",
+  "testedGameplaySHA256": "23ad84cb95c29973b468dc27cae863f35a4917bfd84c43531c782b3ee6f7dcc0",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7790862,
+    "sha256": "779f738fed67620be49c7cff79490ad8ece3ae46866969653ba92663bb2f69ac",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "checks": {
+    "desktop": {
+      "portrait": {
+        "radius": 27,
+        "minU": -19,
+        "maxU": 19,
+        "minV": -27,
+        "maxV": 27
+      },
+      "prior": {
+        "hp": [
+          160,
+          160
+        ],
+        "mp": 94,
+        "asc": 100,
+        "bren": 3,
+        "soren": 5
+      },
+      "next": {
+        "hp": [
+          21,
+          21
+        ],
+        "mp": 94,
+        "asc": 100,
+        "bren": 3,
+        "soren": 0
+      },
+      "roundTrip": [
+        {
+          "bren": 3,
+          "soren": 0,
+          "mira": 0,
+          "lysa": 5
+        },
+        {
+          "bren": 3,
+          "soren": 0,
+          "mira": 0,
+          "lysa": 5
+        }
+      ],
+      "earned": {
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          5
+        ],
+        "other": 3,
+        "winning": 4,
+        "status": "victory"
+      }
+    },
+    "phone": {
+      "portrait": {
+        "radius": 27,
+        "minU": -19,
+        "maxU": 19,
+        "minV": -27,
+        "maxV": 27
+      },
+      "prior": {
+        "hp": [
+          160,
+          160
+        ],
+        "mp": 94,
+        "asc": 100,
+        "bren": 3,
+        "soren": 5
+      },
+      "next": {
+        "hp": [
+          21,
+          21
+        ],
+        "mp": 94,
+        "asc": 100,
+        "bren": 3,
+        "soren": 0
+      },
+      "roundTrip": [
+        {
+          "bren": 3,
+          "soren": 0,
+          "mira": 0,
+          "lysa": 5
+        },
+        {
+          "bren": 3,
+          "soren": 0,
+          "mira": 0,
+          "lysa": 5
+        }
+      ],
+      "earned": {
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          5
+        ],
+        "other": 3,
+        "winning": 4,
+        "status": "victory"
+      }
+    },
+    "persistence": {
+      "pass": true,
+      "cases": [
+        "stable quest identity",
+        "frozen legacy migration",
+        "unknown quest",
+        "invalid position",
+        "invalid party",
+        "invalid character data",
+        "numeric bounds",
+        "checksum",
+        "backup recovery",
+        "legacy recovery and export",
+        "waterworks progress migration",
+        "optional task validation",
+        "ordered ceremony recovery validation"
+      ]
+    },
+    "assets": {
+      "checked": 1517,
+      "missing": []
+    }
+  }
+}

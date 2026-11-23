@@ -41,7 +41,7 @@ function normalizeJourneySave(input){
     const c=saveObject(q.characters[id])?q.characters[id]:{},gear={weapon:null,armor:null,accessory:null,offhand:null};
     for(const slot of Object.keys(gear)){const key=c.gear?.[slot];if(typeof key==='string'&&ITEMS[key]?.slot===slot)gear[slot]=key;}
     const level=Math.floor(boundedNumber(c.level,1,1,99)),limits=characterStats(id,{...c,level,gear}),maxHp=limits.hp,maxMp=limits.mp;
-    s.characters[id]={...def,...c,level,xp:Math.floor(boundedNumber(c.xp,0,0,1000000)),hp:boundedNumber(c.hp,maxHp,0,maxHp),mp:boundedNumber(c.mp,maxMp,0,maxMp),charge:0,ascended:false,gear};
+    s.characters[id]={...def,...c,level,xp:Math.floor(boundedNumber(c.xp,0,0,1000000)),hp:boundedNumber(c.hp,maxHp,0,maxHp),mp:boundedNumber(c.mp,maxMp,0,maxMp),limitBreak:Math.floor(boundedNumber(c.limitBreak,0,0,5)),charge:0,ascended:false,gear};
   }
   s.items={};for(const[k,v]of Object.entries(saveObject(q.items)?q.items:{}))if(ITEMS[k])s.items[k]=Math.floor(boundedNumber(v,0,0,9999));
   s.gold=Math.floor(boundedNumber(q.gold,base.gold,0,99999999));s.elapsed=boundedNumber(q.elapsed,0,0,1e9);s.worldMinutes=boundedNumber(q.worldMinutes,base.worldMinutes,0,1e9);

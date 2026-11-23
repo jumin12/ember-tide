@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "beat": 5,
+  "scene": "entrance",
+  "position": {"x": 12, "z": 14},
+  "members": ["bren", "soren"],
+  "characters": {
+    "bren": {"level": 2, "xp": 9, "hp": 42, "mp": 17, "charge": 76, "ascended": false},
+    "soren": {"level": 2, "xp": 12, "hp": 51, "mp": 20, "charge": 22, "ascended": false}
+  },
+  "flags": {},
+  "gold": 240
+}

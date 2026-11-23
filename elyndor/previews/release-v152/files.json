@@ -1,0 +1,202 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 103875,
+    "sha256": "4879d1fc93193382c08b5dce82b349d50ffdad2c948154e7280637f170571ee4"
+  },
+  {
+    "file": "elyndor/build-manifest.json",
+    "bytes": 13763,
+    "sha256": "ad0b681404702b1b9f9924af4ae6b475cb60ee21a212efa677eee2776804ed54"
+  },
+  {
+    "file": "elyndor/combat-v27.js",
+    "bytes": 8022,
+    "sha256": "dd9ff9c63cbaef989369829e6a19ba45a47948374b67160fa86d94b07c8916e7"
+  },
+  {
+    "file": "elyndor/combat.js",
+    "bytes": 16042,
+    "sha256": "2bcc36b7038c8a7e80fa1f93f5a450c880b915cadc92b66dc4f149b4b1ef4a77"
+  },
+  {
+    "file": "elyndor/data.js",
+    "bytes": 18609,
+    "sha256": "72e1a661223d917f9dde4076f09263ce94775560a045e1c505956640ee6e5397"
+  },
+  {
+    "file": "elyndor/previews/release-v152/battle-lighting.jpg",
+    "bytes": 651851,
+    "sha256": "86412ef1f6dd9753ccc68be24c137e83fe763938edf6aa832cf6013b56552aaa"
+  },
+  {
+    "file": "elyndor/previews/release-v152/bird-portrait.png",
+    "bytes": 69986,
+    "sha256": "02eaa42308510e20b0c3232e2d5144ccb384c02e0004afa6551f3c57bbf6a180"
+  },
+  {
+    "file": "elyndor/previews/release-v152/command-cursor.gif",
+    "bytes": 474510,
+    "sha256": "c0c080c3f4eb5b7143b51abc16586129a7d3fce089ec7a34359110c5e149472b"
+  },
+  {
+    "file": "elyndor/previews/release-v152/command-cursor.png",
+    "bytes": 132328,
+    "sha256": "584d29fa5311f7ea329e8901945b026a063cb6c6e8e477d5410dfa19fd8ff5fc"
+  },
+  {
+    "file": "elyndor/previews/release-v152/exploration-lighting.jpg",
+    "bytes": 551770,
+    "sha256": "ebaf394762455664bcd857bcf200836c5cca483b772a2c0bfe4ba28308707144"
+  },
+  {
+    "file": "elyndor/previews/release-v152/limit-break.png",
+    "bytes": 130040,
+    "sha256": "f4b92bcd8bfc44ee7b7e5832889b8f9fc025da376b3c5226ae129253a1c301a4"
+  },
+  {
+    "file": "elyndor/previews/release-v152/verification.json",
+    "bytes": 2814,
+    "sha256": "7dfda0def2919d8cd3b5400dc5975f3be95e192e1e7a4fcefc6bf243ff6fe66f"
+  },
+  {
+    "file": "elyndor/previews/release-v152/wolf-ascendant-menu.png",
+    "bytes": 165530,
+    "sha256": "bae1aa82a04a19866b3257543c2eb9ca92667133e3bead7ca09540b429a839d8"
+  },
+  {
+    "file": "elyndor/systems/ability-cels.js",
+    "bytes": 10114,
+    "sha256": "676be73e1a73716d2678cb91d6b837bf2e7513b6b7174a26afc8373146f42269"
+  },
+  {
+    "file": "elyndor/systems/atlas-presentation.js",
+    "bytes": 11685,
+    "sha256": "f053fbdb90c2610e256f72d97b11d571b4047a94f5c5f7d3453d729181714b0f"
+  },
+  {
+    "file": "elyndor/systems/battle-foreground-refinement.js",
+    "bytes": 26025,
+    "sha256": "9079c8425cb6efa6e0de9ee00fcfcc0b8818283a15fd5697cca541307f638663"
+  },
+  {
+    "file": "elyndor/systems/battle-surface-library.js",
+    "bytes": 6335,
+    "sha256": "6babcbf2e120f842f1add2ea73f8f7ae916410f67b819899fa664fbd5e47b710"
+  },
+  {
+    "file": "elyndor/systems/combat-hud-polish.css",
+    "bytes": 20133,
+    "sha256": "28f10bff353a22f57f63681373ce363140107160c778897cb39f278ec0766a00"
+  },
+  {
+    "file": "elyndor/systems/combat-information.js",
+    "bytes": 15531,
+    "sha256": "d5bef4ee1917d4297f2e2d249ef0f0aaf873dd0815d788de49da9f2e76b22020"
+  },
+  {
+    "file": "elyndor/systems/combat-interface.js",
+    "bytes": 11060,
+    "sha256": "dce63e5a812d2d4ccaa4961268733926472caaa350a38dda0faafa67707fad32"
+  },
+  {
+    "file": "elyndor/systems/combat-stage-composition.js",
+    "bytes": 12695,
+    "sha256": "f20d39e8559033851cdd08a3f4fe855431a0c3c4eaf6f27894d861eaad407546"
+  },
+  {
+    "file": "elyndor/systems/combat-validation.js",
+    "bytes": 1322,
+    "sha256": "f4b680015e04808dddc8928ab8c74362a11d7521b217a3d29554052ddafb4976"
+  },
+  {
+    "file": "elyndor/systems/combat.js",
+    "bytes": 16467,
+    "sha256": "cf34af49879a428d96631500161d0f6d6db64bbb989596d0eef50d4d756485e2"
+  },
+  {
+    "file": "elyndor/systems/exploration-lighting.js",
+    "bytes": 10099,
+    "sha256": "2f1745d776ce8f33ca6e5fa05224dc5df05ccbe735fdddb18bb159a0542dab56"
+  },
+  {
+    "file": "elyndor/systems/exploration-review.js",
+    "bytes": 4059,
+    "sha256": "41ff0ebd617899f284424aab1f3c742993ec23afb10650d918f4a115bb307e82"
+  },
+  {
+    "file": "elyndor/systems/landscape-and-impact-light.js",
+    "bytes": 31263,
+    "sha256": "bc25b29d3ee05b320b124691ab56043bae2bee8551724ea962457da7540646aa"
+  },
+  {
+    "file": "elyndor/systems/limit-break.js",
+    "bytes": 3423,
+    "sha256": "b0016362a94b1e154bb37050af8714c3cebab832c1848ac52dbf621cb4b09dd7"
+  },
+  {
+    "file": "elyndor/systems/natural-canopies.js",
+    "bytes": 5355,
+    "sha256": "91b9d2918a48792f8de257d3988544e53d5e4590cfd61b626d83d296b4db789f"
+  },
+  {
+    "file": "elyndor/systems/overworld-presentation.js",
+    "bytes": 8418,
+    "sha256": "f9ffa8677d63412eb8fc343ee6765b750f724de719d6f947e528fd590631ac68"
+  },
+  {
+    "file": "elyndor/systems/overworld-scenery.js",
+    "bytes": 17880,
+    "sha256": "b6556e20cb91f90cb9fb6c3caaa4b9df96a7223623d708afe38043014d52e6ef"
+  },
+  {
+    "file": "elyndor/systems/persistence.js",
+    "bytes": 17340,
+    "sha256": "2c987d761062df962547cbd4beb3e05cbec70c0e4e143e1e02ea5088a7fca3fa"
+  },
+  {
+    "file": "elyndor/systems/poi-dioramas.js",
+    "bytes": 17439,
+    "sha256": "f96f8d1474d09071be74fccfcf2e212e2673f7310a7a919be3ce747a0eff5fc7"
+  },
+  {
+    "file": "elyndor/systems/traversal-composition.js",
+    "bytes": 18805,
+    "sha256": "e3791bbfc127d1f26d64007a7d36d878857312bf2e11d3913b91aeb643afa48d"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 98728,
+    "sha256": "98a86bdb1e1480e9f88ca3cd72edcad258f43962fe1c4e13e92efb2c5445dabd"
+  },
+  {
+    "file": "elyndor/tools/check-persistence.mjs",
+    "bytes": 6614,
+    "sha256": "910aa90dc8ce6597a4fcf75ce660a0166b7e9fbc530a09d2b208b2cde8df10cb"
+  },
+  {
+    "file": "elyndor/tools/fixtures/pre-limit-journey-v4.json",
+    "bytes": 351,
+    "sha256": "e8aa592723f27e935aa27b4621d76938cc4d0a6b3c51e4bc702787283a37c4c6"
+  },
+  {
+    "file": "elyndor/ui.js",
+    "bytes": 29433,
+    "sha256": "de41a2e6026ce0ec6c2b0304a5e11779268af2d91217ae06cbaa76f1ca1dee79"
+  },
+  {
+    "file": "elyndor/visibility-v21.js",
+    "bytes": 6472,
+    "sha256": "baf844960d5bbaa32345810b52a4ff2da2f944cf09a4fdd28528514c60f52c60"
+  },
+  {
+    "file": "index.html",
+    "bytes": 7790862,
+    "sha256": "779f738fed67620be49c7cff79490ad8ece3ae46866969653ba92663bb2f69ac"
+  },
+  {
+    "file": "release.json",
+    "bytes": 103863,
+    "sha256": "f617069ca1c7d94d624a4bda2a64cb473546753af27343dc3badf956e3192eb2"
+  }
+]

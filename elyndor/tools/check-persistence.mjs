@@ -31,6 +31,14 @@ assert.equal(run(`saveManager.legacy.has('2')&&saveManager.recovered.has('2')`),
 assert.equal(run(`readSave('2').flags.gate_open&&readSave('2').flags.pump_repaired`),true);
 assert.equal(run(`parseJourneySave(encodeJourneySave(readSave('2'))).questId`),'travelFern');
 assert.equal(run(`localStorage.getItem('elyndor-save-v4-2-backup')===legacyText`),true,'Loading and exporting must preserve the old record');
+context.oldLimitText=fs.readFileSync(new URL('./fixtures/pre-limit-journey-v4.json',import.meta.url),'utf8');
+run(`localStorage.setItem('elyndor-save-v4-3',oldLimitText);`);
+assert.equal(run(`readSave('3').characters.bren.limitBreak`),0);
+assert.equal(run(`parseJourneySave(encodeJourneySave(readSave('3'))).characters.bren.limitBreak`),0);
+assert.equal(run(`localStorage.getItem('elyndor-save-v4-3')===oldLimitText`),true);
+run(`globalThis.charged=readSave('3');charged.characters.bren.limitBreak=3;charged.characters.soren.limitBreak=5;writeJourneyRecord('3',charged)`);
+assert.deepEqual(Array.from(run(`['bren','soren'].map(id=>parseJourneySave(encodeJourneySave(readSave('3'))).characters[id].limitBreak)`)),[3,5]);
+assert.deepEqual(Array.from(run(`[-2,3.8,8,'5',null].map(v=>{const r=JSON.parse(JSON.stringify(valid));r.characters.bren.limitBreak=v;return normalizeJourneySave(r).characters.bren.limitBreak})`)),[0,3,5,0,0]);
 assert.equal(run(`decodeJourneySave(JSON.stringify({format:SAVE_FORMAT,schema:4,payload:legacy,checksum:saveChecksum(legacyText)})).record.flags.pump_repaired`),true);
 assert.equal(run(`normalizeJourneySave({...valid,version:3,questId:undefined,beat:3}).flags.pump_repaired`),true);
 assert.equal(run(`normalizeJourneySave({...valid,questId:'pump'}).flags.gate_open`),true);

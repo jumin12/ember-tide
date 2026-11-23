@@ -18,7 +18,17 @@ function spriteAvatar27(id){
  const x=wide?right-size*.91:(left+right-size)/2,y=top-size*.08;
  const canvas=document.createElement('canvas');canvas.width=canvas.height=64;
  const ctx=canvas.getContext('2d');ctx.imageSmoothingEnabled=false;
- ctx.drawImage(sample,x,y,size,size,3,3,58,58);
+ if(id==='bird'){
+  // Fit the actual silhouette in diamond coordinates, including the beak and tail.
+  let minU=Infinity,maxU=-Infinity,minV=Infinity,maxV=-Infinity;
+  for(let py=0;py<meta.h;py++)for(let px=0;px<meta.w;px++){
+   if(rgba[(py*meta.w+px)*4+3]<16)continue;
+   minU=Math.min(minU,px+py);maxU=Math.max(maxU,px+py);
+   minV=Math.min(minV,px-py);maxV=Math.max(maxV,px-py);
+  }
+  const u=(minU+maxU)/2,v=(minV+maxV)/2,scale=56/(Math.max(maxU-minU,maxV-minV)+2);
+  ctx.translate(32,32);ctx.scale(scale,scale);ctx.drawImage(sample,-(u+v+1)/2,-(u-v+1)/2);
+ }else ctx.drawImage(sample,x,y,size,size,3,3,58,58);
  const url=canvas.toDataURL();spriteAvatars27.set(id,url);return url;
 }
 function timeline27(){

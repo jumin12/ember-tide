@@ -75,6 +75,22 @@ body.combat-ui65 #battle-hud .command-mark65 {
 }
 body.combat-ui65 #battle-hud .command-mark65>svg {width:21px;height:21px;filter:drop-shadow(0 1px 1px #b8762f)}
 body.combat-ui65 #battle-hud .command-label65 {min-width:0;margin-inline-end:auto;text-align:left}
+body.combat-ui65 #battle-party .limit-meter {
+  position:absolute;left:8px;bottom:4px;display:flex;align-items:center;justify-content:center;
+  gap:3px;width:46px;height:8px;pointer-events:none;
+}
+body.combat-ui65 #battle-party .limit-meter i {
+  display:block;width:6px;height:6px;flex:none;transform:rotate(45deg);
+  background:#101d2b;border:1px solid #ae8c55;box-sizing:border-box;
+}
+body.combat-ui65 #battle-party .limit-meter .filled {
+  border-color:#b9f3ff;background:linear-gradient(135deg,#c8fbff,#30c5ef 56%,#277fae);
+}
+body.combat-ui65 #battle-party .limit-meter[data-charge="5"] .filled {box-shadow:0 0 4px #63d9ff}
+@media(max-width:1000px),(max-height:619px){
+  body.combat-ui65 #battle-party .limit-meter{left:4px;bottom:1px;width:31px;gap:2px;height:6px}
+  body.combat-ui65 #battle-party .limit-meter i{width:4px;height:4px}
+}
 body.combat-ui65 #battle-hud #commands button[data-command-selected65] {
   background:linear-gradient(90deg,#3c391f,#153541 29%,#081c29 88%,#27312c)!important;
   border:1px solid #ffe0a6!important;
@@ -171,8 +187,8 @@ body.combat-ui65 #battle-hud #turn-order .turn-token27.current>i {
     position:relative;padding:5px 8px!important;gap:2px!important;
   }
   body.combat-ui65 #battle-hud #commands button {font-size:17px!important}
-  body.combat-ui65 #battle-hud #commands[data-command-indicator65]::before {
-    content:"";position:absolute;left:var(--command-chevron-x65);top:var(--command-chevron-y65);translate:-100% -50%;width:27px;height:22px;
+  body.combat-ui65 #battle-hud #commands button[data-command-selected65]::before {
+    content:"";position:absolute;right:calc(100% + 3px);top:50%;transform:translateY(-50%);width:27px;height:22px;
     background:var(--battle-chevron) center / contain no-repeat;
     filter:drop-shadow(0 0 2px #fff1b7) drop-shadow(0 0 6px #ff9f2e);pointer-events:none;
   }
@@ -201,8 +217,9 @@ body.combat-ui65 #battle-hud #turn-order .turn-token27.current>i {
   body.combat-ui65 #battle-hud #battle-party .party-card65 header>small {font-size:9px;color:#e2c17c}
   body.combat-ui65 #battle-hud #battle-party .party-card65 label {font-size:10px!important;line-height:1.25!important;margin-top:1px!important}
   body.combat-ui65 #battle-hud #battle-party .party-card65>.status-row65 {
-    position:absolute;left:7px;bottom:calc(3px + var(--party-card-bottom-extension));width:45px;max-height:21px;min-height:0;padding:0;
+    position:absolute;left:7px;bottom:2px;width:45px;max-height:21px;min-height:0;padding:0;
   }
+  body.combat-ui65 #battle-party .limit-meter {left:12px;top:56px;bottom:auto;height:6px}
   body.combat-ui65 #world-enemy-bars27 .foe-bar27 {font-size:13px;padding:7px 8px;min-width:122px}
 }
 

@@ -32,7 +32,7 @@ function growthFor(id,xpAward){const c=state.characters[id],before={level:c.leve
 function growthPreview(id){return growthFor(id,battleReward().xp);}
 function applyBattleGrowth(id,xp){const c=state.characters[id],g=growthFor(id,xp);c.level=g.level;c.xp=g.xp;if(g.level>g.before.level){c.hp=Math.min(stats(id).hp,c.hp+40*(g.level-g.before.level));c.mp=Math.min(stats(id).mp,c.mp+15*(g.level-g.before.level));toast(CAST[id].name+' reached level '+c.level+'.');}return g;}
 function makeQueue(){
-  const tutorial=battle.kind==='wildlife'&&!state.flags.combat_tutorial_complete,entries=[...state.members.filter(id=>state.characters[id].hp>0).map((id,i)=>({key:id,speed:stats(id).speed,order:i})),...battle.enemies.flatMap((e,i)=>e.hp>0?[{key:'enemy:'+i,speed:e.speed??10,order:state.members.length+i}]:[])];
+  const tutorial=battle.kind==='wildlife'&&!state.flags.combat_tutorial_complete,entries=[...state.members.filter(id=>state.characters[id].hp>0).map((id,i)=>({key:id,speed:stats(id).speed*(battle.wolfRallyUntil>battle.round?1.2:1),order:i})),...battle.enemies.flatMap((e,i)=>e.hp>0?[{key:'enemy:'+i,speed:e.speed??10,order:state.members.length+i}]:[])];
   if(!tutorial)entries.sort((a,b)=>b.speed-a.speed||a.order-b.order);
   battle.queue=entries.map(q=>q.key);battle.turn=0;battle.status='choose';planEnemyIntentions();renderBattle();
 }
@@ -50,7 +50,7 @@ function chooseEnemyTarget95(e,ids=eligiblePartyTargets95(),random=Math.random){
 }
 function planEnemyIntentions(random=Math.random){for(const e of battle.enemies){if(e.hp<=0)continue;let type='strike',power=1,label='Strike';if(e.charged){type='heavy';power=1.65;label='Heavy strike';}else if(['windup','channel'].includes(e.behavior)&&battle.round%3===2){type='charge';power=0;label=e.behavior==='channel'?'Gathering energy':'Winding up';}else if(e.behavior==='brace'&&battle.round%3===2){type='brace';power=.65;label='Braced charge';}else if(e.behavior==='hunt'){type='hunt';power=.95;label='Focused attack';}e.intent={type,power,label,target:chooseEnemyTarget95(e,eligiblePartyTargets95(),random)};}}
 function damageEnemy(e,amount){
-  if(!e||e.hp<=0||amount<=0)return;const fighter=currentFighter(),kind=battle.damageKind??(fighter==='bren'?'blade':fighter==='tavin'?'arrow':fighter==='lysa'?'fire':'arcane'),armor=(e.def??0)*(e.braced?1.5:1)*(kind==='arrow'?.2:isMagicalDamage65(kind)?.15:1),weak=matchingWeakness65(e,kind,fighter);let damage=Math.max(1,Math.round((amount-armor*.35)*(weak?1.25:1)*(e.exposed?1.12:1)));
+  if(!e||e.hp<=0||amount<=0)return;const fighter=currentFighter(),kind=battle.damageKind??(fighter==='bren'?'blade':fighter==='tavin'?'arrow':fighter==='lysa'?'fire':'arcane'),armor=(e.def??0)*(e.braced?1.5:1)*(kind==='arrow'?.2:isMagicalDamage65(kind)?.15:1),weak=matchingWeakness65(e,kind,fighter);let damage=Math.max(1,Math.round((amount-armor*.35)*(weak?1.25:1)*(e.exposed?1.12:1)*(e.wolfMarkUntil>battle.round?1.25:1)));
   if(battle.lesson18?.active)damage=Math.min(damage,Math.max(0,e.hp-1));if(damage<=0)return;
   e.hp=Math.max(0,e.hp-damage);e.actor.hitFlash=.5;combatFlinch(e.actor);floatText(e.actor,damage);sfx('hit');post.material.uniforms.flash.value=.12;
   if(battle.combo?.step===2&&battle.combo.input==='hit')e.staggered=true;
