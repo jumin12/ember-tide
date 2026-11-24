@@ -1,0 +1,750 @@
+{
+  "version": "Alpha Version 1.53",
+  "base": "6470816d4cb95da2b3ba8b6371c99c077e60d2a6",
+  "testedLocalGameplaySHA256": "6d4ce63ee473b21d3abd5310ee66b5f7ce84199fd6b665b05fba5db148397236",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7794478,
+    "sha256": "5319fdc1327ec99bbca673acfb7687a7d2eafde3e4d38ae1df2bace331619287",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "checks": {
+    "desktop": {
+      "layout": [
+        {
+          "id": "bren",
+          "card": [
+            0,
+            0,
+            224,
+            92
+          ],
+          "face": [
+            12,
+            7,
+            50,
+            50
+          ],
+          "stats": [
+            73,
+            7,
+            139,
+            72
+          ],
+          "status": [
+            -970,
+            -695,
+            0,
+            0
+          ],
+          "meter": [
+            14,
+            70,
+            46,
+            8
+          ],
+          "charge": "3"
+        },
+        {
+          "id": "soren",
+          "card": [
+            0,
+            0,
+            224,
+            92
+          ],
+          "face": [
+            12,
+            7,
+            50,
+            50
+          ],
+          "stats": [
+            73,
+            7,
+            139,
+            72
+          ],
+          "status": [
+            -1200,
+            -695,
+            0,
+            0
+          ],
+          "meter": [
+            14,
+            70,
+            46,
+            8
+          ],
+          "charge": "5"
+        },
+        {
+          "id": "mira",
+          "card": [
+            0,
+            0,
+            224,
+            92
+          ],
+          "face": [
+            12,
+            7,
+            50,
+            50
+          ],
+          "stats": [
+            73,
+            7,
+            139,
+            72
+          ],
+          "status": [
+            -970,
+            -796,
+            0,
+            0
+          ],
+          "meter": [
+            14,
+            70,
+            46,
+            8
+          ],
+          "charge": "0"
+        },
+        {
+          "id": "lysa",
+          "card": [
+            0,
+            0,
+            224,
+            92
+          ],
+          "face": [
+            12,
+            7,
+            50,
+            50
+          ],
+          "stats": [
+            73,
+            7,
+            139,
+            72
+          ],
+          "status": [
+            -1200,
+            -796,
+            0,
+            0
+          ],
+          "meter": [
+            14,
+            70,
+            46,
+            8
+          ],
+          "charge": "0"
+        }
+      ],
+      "bird": {
+        "w": 112,
+        "h": 104,
+        "cols": 12,
+        "frames": {
+          "south": 0,
+          "idle_south": 9,
+          "southwest": 14,
+          "idle_southwest": 23,
+          "west": 28,
+          "idle_west": 37,
+          "northwest": 42,
+          "idle_northwest": 51,
+          "north": 56,
+          "idle_north": 65,
+          "northeast": 70,
+          "idle_northeast": 79,
+          "east": 84,
+          "idle_east": 93,
+          "southeast": 98,
+          "idle_southeast": 107,
+          "battleIdle_west": 37,
+          "battleIdle_south": 9,
+          "battleIdle_east": 93,
+          "battleIdle_north": 65,
+          "battleIdle_southwest": 23,
+          "battleIdle_northwest": 51,
+          "battleIdle_northeast": 79,
+          "battleIdle_southeast": 107,
+          "battleIdle": 93,
+          "attack_east": 112,
+          "attack": 112,
+          "cast_east": 112,
+          "cast": 112,
+          "recoil_east": 119,
+          "recoil": 119,
+          "guard": 93,
+          "enemyIdle": 93,
+          "retreat": 84
+        },
+        "tokens": [
+          45.1015625,
+          39.21875,
+          39.21875,
+          39.21875
+        ]
+      },
+      "hover": {
+        "key": [
+          "action",
+          "defend"
+        ],
+        "menu": null
+      },
+      "leave": {
+        "key": [
+          "action",
+          "defend"
+        ],
+        "menu": null
+      },
+      "next": {
+        "key": [
+          "action",
+          "ascend"
+        ],
+        "menu": null
+      },
+      "lower": {
+        "key": [
+          "skill",
+          "1"
+        ],
+        "menu": "skills"
+      },
+      "lowerLeave": {
+        "key": [
+          "skill",
+          "1"
+        ],
+        "menu": "skills"
+      },
+      "status": {
+        "icons": 2,
+        "clear": true,
+        "enabled": "limit-ready-glow",
+        "reduced": "none"
+      },
+      "back": {
+        "key": [
+          "battle-sub",
+          "skills"
+        ],
+        "menu": null
+      },
+      "cast": {
+        "status": "animate",
+        "pending": null,
+        "mp": 45
+      },
+      "world": {
+        "r": [
+          703.4744306475222,
+          366.12231777899365,
+          146.44862568512838,
+          22.547814707280008
+        ],
+        "center": [
+          703.4744306475222,
+          533.8776822210064
+        ],
+        "pos": [
+          -98.29246538622385,
+          88.60313017679402
+        ],
+        "cam": [
+          -96.35206538622386,
+          12.89362497227168,
+          108.59553017679403
+        ]
+      }
+    },
+    "phone": {
+      "layout": [
+        {
+          "id": "bren",
+          "card": [
+            0,
+            0,
+            91,
+            74
+          ],
+          "face": [
+            6,
+            6,
+            14,
+            14
+          ],
+          "stats": [
+            6,
+            6,
+            79,
+            52
+          ],
+          "status": [
+            -8,
+            -766,
+            0,
+            0
+          ],
+          "meter": [
+            30,
+            62,
+            31,
+            6
+          ],
+          "charge": "3"
+        },
+        {
+          "id": "soren",
+          "card": [
+            0,
+            0,
+            91,
+            74
+          ],
+          "face": [
+            6,
+            6,
+            14,
+            14
+          ],
+          "stats": [
+            6,
+            6,
+            79,
+            52
+          ],
+          "status": [
+            -102,
+            -766,
+            0,
+            0
+          ],
+          "meter": [
+            30,
+            62,
+            31,
+            6
+          ],
+          "charge": "5"
+        },
+        {
+          "id": "mira",
+          "card": [
+            0,
+            0,
+            91,
+            74
+          ],
+          "face": [
+            6,
+            6,
+            14,
+            14
+          ],
+          "stats": [
+            6,
+            6,
+            79,
+            52
+          ],
+          "status": [
+            -196,
+            -766,
+            0,
+            0
+          ],
+          "meter": [
+            30,
+            62,
+            31,
+            6
+          ],
+          "charge": "0"
+        },
+        {
+          "id": "lysa",
+          "card": [
+            0,
+            0,
+            91,
+            74
+          ],
+          "face": [
+            6,
+            6,
+            14,
+            14
+          ],
+          "stats": [
+            6,
+            6,
+            79,
+            52
+          ],
+          "status": [
+            -291,
+            -766,
+            0,
+            0
+          ],
+          "meter": [
+            30,
+            62,
+            31,
+            6
+          ],
+          "charge": "0"
+        }
+      ],
+      "viewport": {
+        "bottom": 840,
+        "height": 844,
+        "top": 766,
+        "commandsBottom": 760,
+        "hostBottom": 840
+      },
+      "bird": {
+        "w": 112,
+        "h": 104,
+        "cols": 12,
+        "frames": {
+          "south": 0,
+          "idle_south": 9,
+          "southwest": 14,
+          "idle_southwest": 23,
+          "west": 28,
+          "idle_west": 37,
+          "northwest": 42,
+          "idle_northwest": 51,
+          "north": 56,
+          "idle_north": 65,
+          "northeast": 70,
+          "idle_northeast": 79,
+          "east": 84,
+          "idle_east": 93,
+          "southeast": 98,
+          "idle_southeast": 107,
+          "battleIdle_west": 37,
+          "battleIdle_south": 9,
+          "battleIdle_east": 93,
+          "battleIdle_north": 65,
+          "battleIdle_southwest": 23,
+          "battleIdle_northwest": 51,
+          "battleIdle_northeast": 79,
+          "battleIdle_southeast": 107,
+          "battleIdle": 93,
+          "attack_east": 112,
+          "attack": 112,
+          "cast_east": 112,
+          "cast": 112,
+          "recoil_east": 119,
+          "recoil": 119,
+          "guard": 93,
+          "enemyIdle": 93,
+          "retreat": 84
+        },
+        "tokens": [
+          22,
+          22,
+          22,
+          22
+        ]
+      },
+      "lower": {
+        "key": [
+          "skill",
+          "1"
+        ],
+        "menu": "skills"
+      },
+      "lowerLeave": {
+        "key": [
+          "skill",
+          "1"
+        ],
+        "menu": "skills"
+      },
+      "status": {
+        "icons": 2,
+        "clear": true,
+        "enabled": "limit-ready-glow",
+        "reduced": "none"
+      },
+      "back": {
+        "key": [
+          "battle-sub",
+          "skills"
+        ],
+        "menu": null
+      },
+      "cast": {
+        "status": "animate",
+        "pending": null,
+        "mp": 45
+      }
+    },
+    "landscape": {
+      "layout": [
+        {
+          "id": "bren",
+          "card": [
+            0,
+            0,
+            205,
+            66
+          ],
+          "face": [
+            -8,
+            -320,
+            0,
+            0
+          ],
+          "stats": [
+            6,
+            9,
+            193,
+            37
+          ],
+          "status": [
+            -8,
+            -320,
+            0,
+            0
+          ],
+          "meter": [
+            87,
+            54,
+            31,
+            6
+          ],
+          "charge": "3"
+        },
+        {
+          "id": "soren",
+          "card": [
+            0,
+            0,
+            205,
+            66
+          ],
+          "face": [
+            -216,
+            -320,
+            0,
+            0
+          ],
+          "stats": [
+            6,
+            9,
+            193,
+            37
+          ],
+          "status": [
+            -216,
+            -320,
+            0,
+            0
+          ],
+          "meter": [
+            87,
+            54,
+            31,
+            6
+          ],
+          "charge": "5"
+        },
+        {
+          "id": "mira",
+          "card": [
+            0,
+            0,
+            205,
+            66
+          ],
+          "face": [
+            -423,
+            -320,
+            0,
+            0
+          ],
+          "stats": [
+            6,
+            9,
+            193,
+            37
+          ],
+          "status": [
+            -423,
+            -320,
+            0,
+            0
+          ],
+          "meter": [
+            87,
+            54,
+            31,
+            6
+          ],
+          "charge": "0"
+        },
+        {
+          "id": "lysa",
+          "card": [
+            0,
+            0,
+            205,
+            66
+          ],
+          "face": [
+            -631,
+            -320,
+            0,
+            0
+          ],
+          "stats": [
+            6,
+            9,
+            193,
+            37
+          ],
+          "status": [
+            -631,
+            -320,
+            0,
+            0
+          ],
+          "meter": [
+            87,
+            54,
+            31,
+            6
+          ],
+          "charge": "0"
+        }
+      ],
+      "viewport": {
+        "bottom": 386,
+        "height": 390,
+        "top": 320,
+        "commandsBottom": 314,
+        "hostBottom": 386
+      },
+      "bird": {
+        "w": 112,
+        "h": 104,
+        "cols": 12,
+        "frames": {
+          "south": 0,
+          "idle_south": 9,
+          "southwest": 14,
+          "idle_southwest": 23,
+          "west": 28,
+          "idle_west": 37,
+          "northwest": 42,
+          "idle_northwest": 51,
+          "north": 56,
+          "idle_north": 65,
+          "northeast": 70,
+          "idle_northeast": 79,
+          "east": 84,
+          "idle_east": 93,
+          "southeast": 98,
+          "idle_southeast": 107,
+          "battleIdle_west": 37,
+          "battleIdle_south": 9,
+          "battleIdle_east": 93,
+          "battleIdle_north": 65,
+          "battleIdle_southwest": 23,
+          "battleIdle_northwest": 51,
+          "battleIdle_northeast": 79,
+          "battleIdle_southeast": 107,
+          "battleIdle": 93,
+          "attack_east": 112,
+          "attack": 112,
+          "cast_east": 112,
+          "cast": 112,
+          "recoil_east": 119,
+          "recoil": 119,
+          "guard": 93,
+          "enemyIdle": 93,
+          "retreat": 84
+        },
+        "tokens": [
+          22,
+          22,
+          22,
+          22
+        ]
+      },
+      "lower": {
+        "key": [
+          "skill",
+          "1"
+        ],
+        "menu": "skills"
+      },
+      "lowerLeave": {
+        "key": [
+          "skill",
+          "1"
+        ],
+        "menu": "skills"
+      },
+      "status": {
+        "icons": 2,
+        "clear": true,
+        "enabled": "limit-ready-glow",
+        "reduced": "none"
+      },
+      "back": {
+        "key": [
+          "battle-sub",
+          "skills"
+        ],
+        "menu": null
+      },
+      "cast": {
+        "status": "animate",
+        "pending": null,
+        "mp": 45
+      }
+    },
+    "revealAreaRatio": 2,
+    "assets": {
+      "checked": 1517,
+      "missing": []
+    },
+    "persistence": {
+      "pass": true,
+      "cases": [
+        "stable quest identity",
+        "frozen legacy migration",
+        "unknown quest",
+        "invalid position",
+        "invalid party",
+        "invalid character data",
+        "numeric bounds",
+        "checksum",
+        "backup recovery",
+        "legacy recovery and export",
+        "waterworks progress migration",
+        "optional task validation",
+        "ordered ceremony recovery validation"
+      ]
+    }
+  }
+}

@@ -3,7 +3,8 @@ const spriteAvatars27=new Map();
 function spriteAvatar27(id){
  if(spriteAvatars27.has(id))return spriteAvatars27.get(id);
  const meta=assets.sprites[id],image=spriteImages[id];if(!meta||!image)return null;
- const cell=(meta.frames.enemyIdle??meta.frames.south)[0],sx=cell%meta.cols*meta.w,sy=Math.floor(cell/meta.cols)*meta.h;
+ const portraitPose=id==='bird'?meta.frames.idle_southeast:null;
+ const cell=(portraitPose??meta.frames.enemyIdle??meta.frames.south)[0],sx=cell%meta.cols*meta.w,sy=Math.floor(cell/meta.cols)*meta.h;
  const sample=document.createElement('canvas');sample.width=meta.w;sample.height=meta.h;
  const pixels=sample.getContext('2d',{willReadFrequently:true});pixels.drawImage(image,sx,sy,meta.w,meta.h,0,0,meta.w,meta.h);
  const rgba=pixels.getImageData(0,0,meta.w,meta.h).data;
@@ -19,15 +20,10 @@ function spriteAvatar27(id){
  const canvas=document.createElement('canvas');canvas.width=canvas.height=64;
  const ctx=canvas.getContext('2d');ctx.imageSmoothingEnabled=false;
  if(id==='bird'){
-  // Fit the actual silhouette in diamond coordinates, including the beak and tail.
-  let minU=Infinity,maxU=-Infinity,minV=Infinity,maxV=-Infinity;
-  for(let py=0;py<meta.h;py++)for(let px=0;px<meta.w;px++){
-   if(rgba[(py*meta.w+px)*4+3]<16)continue;
-   minU=Math.min(minU,px+py);maxU=Math.max(maxU,px+py);
-   minV=Math.min(minV,px-py);maxV=Math.max(maxV,px-py);
-  }
-  const u=(minU+maxU)/2,v=(minV+maxV)/2,scale=56/(Math.max(maxU-minU,maxV-minV)+2);
-  ctx.translate(32,32);ctx.scale(scale,scale);ctx.drawImage(sample,-(u+v+1)/2,-(u-v+1)/2);
+  // Frame the three-quarter head and breast inside the same diamond as the cast.
+  const height=bottom-top+1,crop=Math.round(height*.73);
+  const headX=left+(right-left)*.72;
+  ctx.drawImage(sample,Math.round(headX-crop/2),Math.round(top-height*.14),crop,crop,0,0,64,64);
  }else ctx.drawImage(sample,x,y,size,size,3,3,58,58);
  const url=canvas.toDataURL();spriteAvatars27.set(id,url);return url;
 }

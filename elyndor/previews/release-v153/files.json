@@ -1,0 +1,67 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 104923,
+    "sha256": "12b17b1af488ae86ad29cb9d7f5d459292c4b98d6a30433b3db0da0c9e5258e6"
+  },
+  {
+    "file": "elyndor/combat-v27.js",
+    "bytes": 7826,
+    "sha256": "fce4ee07934b1aa40405321b430a057462ab4aa9f83d0d7d8470ca3a151679ef"
+  },
+  {
+    "file": "elyndor/previews/release-v153/before-and-after.png",
+    "bytes": 503884,
+    "sha256": "55b4819df7e338ddec846ee5112593a6ffd63362d1e2cfeed997d3456645e71c"
+  },
+  {
+    "file": "elyndor/previews/release-v153/command-cursor.gif",
+    "bytes": 264657,
+    "sha256": "984fdbd83a38a64ee88c306eb65ba48efdaa679ec2b379ffed17d1ff881f7407"
+  },
+  {
+    "file": "elyndor/previews/release-v153/mobile-cards.png",
+    "bytes": 125031,
+    "sha256": "e76a8507bb8aeff0f14d2fa206a7327a312be38d10e70019d9fa312acc109e7c"
+  },
+  {
+    "file": "elyndor/previews/release-v153/verification.json",
+    "bytes": 14189,
+    "sha256": "460b3049f0dd66c4de9b482e133fec6b311ac6bd652d5a7eae01e10f9b78cdf0"
+  },
+  {
+    "file": "elyndor/systems/combat-hud-polish.css",
+    "bytes": 21628,
+    "sha256": "dc4b696a2b4e9828b6f4c389faac770876cc52779d5c50478af26b6a4515e8ca"
+  },
+  {
+    "file": "elyndor/systems/combat-interface.js",
+    "bytes": 12271,
+    "sha256": "4fa1f0cb7d247decac2259efb994887dde47adb934d0e109a1bb10dd85cd7546"
+  },
+  {
+    "file": "elyndor/systems/player-visibility.js",
+    "bytes": 6977,
+    "sha256": "87451f4c843fa4436d20eae9c6384fc94dff7129c5e3ca68cbfe9ae8b1ee9d18"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 99574,
+    "sha256": "dd3dbdeaec7e8b98108dedb4a8a7dc959421a56a60c00bf8daaec3a169220281"
+  },
+  {
+    "file": "elyndor/ui.js",
+    "bytes": 29686,
+    "sha256": "a8e90619b83564c968e555299ee5b373ef81c8fa5f924caa7222a3505bf8ace5"
+  },
+  {
+    "file": "index.html",
+    "bytes": 7794478,
+    "sha256": "5319fdc1327ec99bbca673acfb7687a7d2eafde3e4d38ae1df2bace331619287"
+  },
+  {
+    "file": "release.json",
+    "bytes": 104414,
+    "sha256": "d8c13d4ba75f176dcc690e13aed8a6d33f94c1090fe5fb0fcafd64d1a88ce3e2"
+  }
+]

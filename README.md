@@ -2,6 +2,17 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.53 — Party visibility, battle portraits, and command selection
+
+November 24, 2026
+
+- The dithered opening around the party leader now covers twice the screen area, making more of the party visible behind trees and buildings.
+- The Hooked-beak Bird’s turn-order diamond now shows a three-quarter portrait of its crest, hooked beak, and upper breast at party-portrait scale.
+- Limit Break diamonds sit lower and centered in the available card space. Charged diamonds glow cyan, and a full meter pulses gently. Reduced-motion settings keep the glow steady.
+- The battle cursor stays on the chosen command or skill when the pointer leaves the menu, the HUD refreshes, or you switch to the keyboard. Back restores the previous selection, including the item or skill that opened ally targeting.
+
+[Before and after](elyndor/previews/release-v153/before-and-after.png) · [Battle cursor replay](elyndor/previews/release-v153/command-cursor.gif) · [Phone card comparisons](elyndor/previews/release-v153/mobile-cards.png)
+
 ## Alpha Version 1.52 — Limit Breaks, combat HUD fixes, and battle lighting
 
 November 23, 2026

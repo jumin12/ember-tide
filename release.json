@@ -1,27 +1,37 @@
 {
-  "release": "elyndor-alpha-1.52-limit-breaks-combat-lighting-2026-11-23",
-  "version": "Alpha Version 1.52",
+  "release": "elyndor-alpha-1.53-party-visibility-battle-hud-2026-11-24",
+  "version": "Alpha Version 1.53",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 7790862,
-    "sha256": "779f738fed67620be49c7cff79490ad8ece3ae46866969653ba92663bb2f69ac",
+    "bytes": 7794478,
+    "sha256": "5319fdc1327ec99bbca673acfb7687a7d2eafde3e4d38ae1df2bace331619287",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "bc7b5bebf2b30e23fb63d665b789089515196848"
+    "previousRelease": "6470816d4cb95da2b3ba8b6371c99c077e60d2a6"
   },
   "changes": [
-    "Each party member now earns one Limit Break diamond per completed turn, up to five. Unspent diamonds carry into the next battle and into saved journeys. Older journeys start with an empty meter.",
-    "At five diamonds, Soren can use Wolf Ascendant from Skills. It marks enemies, rallies allies and delivers a physical sweep. Casting spends Soren’s five diamonds and preserves his allies’ charge. Bren can store charge while Radiant Pride awaits its final combat rules.",
-    "The combat command cursor follows the latest mouse or keyboard selection. The Hooked-beak Bird now fits inside its turn-order diamond, with the beak, body and tail in frame.",
-    "Spells and weapon hits cast local light on fighters and the ground across all 20 regional arenas and seven story battles. Frost Bloom has deeper blue facets against snow, Flame Lance casts amber light, and finishing hits flash at contact.",
-    "Regional battlefields blend their foreground terrain into the painted backdrop. Exploration lighting adds fountain ripples, reflected lamplight, rain sheen and distance haze to towns and the world map."
+    "The dithered opening around the party leader now covers twice the screen area, making more of the party visible behind trees and buildings.",
+    "The Hooked-beak Bird’s turn-order diamond now shows a three-quarter portrait of its crest, hooked beak, and upper breast at party-portrait scale.",
+    "Limit Break diamonds sit lower and centered in the available card space. Charged diamonds glow cyan, and a full meter pulses gently. Reduced-motion settings keep the glow steady.",
+    "The battle cursor stays on the chosen command or skill when the pointer leaves the menu, the HUD refreshes, or you switch to the keyboard. Back restores the previous selection, including the item or skill that opened ally targeting."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.53",
+      "date": "November 24, 2026",
+      "title": "Party visibility, battle portraits, and command selection",
+      "items": [
+        "The dithered opening around the party leader now covers twice the screen area, making more of the party visible behind trees and buildings.",
+        "The Hooked-beak Bird’s turn-order diamond now shows a three-quarter portrait of its crest, hooked beak, and upper breast at party-portrait scale.",
+        "Limit Break diamonds sit lower and centered in the available card space. Charged diamonds glow cyan, and a full meter pulses gently. Reduced-motion settings keep the glow steady.",
+        "The battle cursor stays on the chosen command or skill when the pointer leaves the menu, the HUD refreshes, or you switch to the keyboard. Back restores the previous selection, including the item or skill that opened ally targeting."
+      ]
+    },
     {
       "version": "Alpha Version 1.52",
       "date": "November 23, 2026",
@@ -978,8 +988,8 @@
     "coloredAbilitySceneLighting": true
   },
   "validation": {
-    "file": "elyndor/previews/release-v152/verification.json",
-    "sha256": "7dfda0def2919d8cd3b5400dc5975f3be95e192e1e7a4fcefc6bf243ff6fe66f",
+    "file": "elyndor/previews/release-v153/verification.json",
+    "sha256": "460b3049f0dd66c4de9b482e133fec6b311ac6bd652d5a7eae01e10f9b78cdf0",
     "finalRelease": "PASS",
     "desktopAndPhone": true
   },
@@ -1020,9 +1030,9 @@
     "spriteLighting": "Coherent party and NPC canopy reception outside combat; original art and sampling retained"
   },
   "previousPublishedRelease": {
-    "commit": "bc7b5bebf2b30e23fb63d665b789089515196848",
-    "version": "Alpha Version 1.51",
-    "sha256": "f9e20b31ef7db4306abd5d30d0d15eeff11abea3192327e22ee964fc77123680"
+    "commit": "6470816d4cb95da2b3ba8b6371c99c077e60d2a6",
+    "version": "Alpha Version 1.52",
+    "sha256": "779f738fed67620be49c7cff79490ad8ece3ae46866969653ba92663bb2f69ac"
   },
   "housing": {
     "maximumOwnedHomes": 1,

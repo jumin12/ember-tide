@@ -1,26 +1,43 @@
 // Screen-space placement follows the approved Skills Menu animation. Actor
 // feedback is projected separately; moving the camera never moves HUD panels.
-const combatHud65={submenu:null,lastTransition:null};
+const combatHud65={submenu:null,turn:null,lastTransition:null};
 const commandList65=$('#commands');
-let commandSelection65=null,commandSelectionFrame65=0,commandInput65='pointer';
-function updateCommandSelection65(){
- const focused=commandList65.querySelector('button:enabled:focus-visible');
- const hovered=commandList65.querySelector('button:enabled:hover');
- const selected=(commandInput65==='keyboard'?focused:hovered)??hovered??focused
-  ??commandList65.querySelector('button[data-action="attack"]:enabled');
- if(commandSelection65!==selected){
-  commandSelection65?.removeAttribute('data-command-selected65');
-  selected?.setAttribute('data-command-selected65','');
-  commandSelection65=selected;
+let commandSelection65=null,commandInput65='pointer';
+const rememberedCommands65=new WeakMap();
+function commandKey65(button){
+ for(const field of ['action','battleSub','skill','battleItem','ally','battleBack']){
+  if(field in button.dataset)return field+'='+button.dataset[field];
  }
 }
-function queueCommandSelection65(){
- if(!commandSelectionFrame65)commandSelectionFrame65=requestAnimationFrame(()=>{commandSelectionFrame65=0;updateCommandSelection65();});
+function commandMenuKey65(){return currentFighter()+'/' +(combatHud65.submenu??'commands');}
+function selectCommand65(button){
+ if(commandSelection65===button)return;
+ commandSelection65?.removeAttribute('data-command-selected65');
+ commandSelection65=button;
+ if(!button)return;
+ button.setAttribute('data-command-selected65','');
+ updateAbilityHelp65(button);
 }
-commandList65.addEventListener('pointermove',()=>{commandInput65='pointer';queueCommandSelection65();});
-commandList65.addEventListener('pointerover',()=>{commandInput65='pointer';queueCommandSelection65();});
-document.addEventListener('keydown',()=>{if(!battle)return;commandInput65='keyboard';queueCommandSelection65();},true);
-for(const event of ['pointerleave','focusin','focusout'])commandList65.addEventListener(event,queueCommandSelection65);
+function rememberCommand65(event){
+ const button=event.target.closest('button:enabled');
+ if(!battle||!button)return;
+ if(event.type.startsWith('pointer'))commandInput65='pointer';
+ selectCommand65(button);
+ if('battleBack' in button.dataset)return;
+ if(!rememberedCommands65.has(battle))rememberedCommands65.set(battle,new Map());
+ rememberedCommands65.get(battle).set(commandMenuKey65(),commandKey65(button));
+}
+for(const event of ['pointermove','pointerdown','focusin'])commandList65.addEventListener(event,rememberCommand65);
+document.addEventListener('keydown',event=>{
+ if(!battle||menu||dialogue||battle.status!=='choose')return;
+ if(document.activeElement!==document.body&&!commandList65.contains(document.activeElement))return;
+ commandInput65='keyboard';
+ if(event.key==='Escape'&&combatHud65.submenu){
+  event.preventDefault();event.stopImmediatePropagation();commandList65.querySelector('[data-battle-back]')?.click();
+ }else if(event.key==='Enter'&&commandSelection65&&document.activeElement!==commandSelection65){
+  commandSelection65.focus({preventScroll:true});
+ }
+},true);
 const BATTLE_COMMAND_ART={
  skills:'<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-opacity=".57"/><path d="M6.7 7.1a6.5 6.5 0 0 1 10.7 2.4c-3.5-2.4-7.9-.9-7.6 2.4M17.2 16.9a6.5 6.5 0 0 1-10.7-2.4c3.5 2.4 7.9.9 7.6-2.4M8.1 16.4c-1.1-3.5.9-6.9 3.5-7.4m4.3-1.4c1.1 3.5-.9 6.9-3.5 7.4" stroke="currentColor" stroke-width="1.45" stroke-linecap="round"/>',
  items:'<path d="M9.6 6 7.7 2.6l2.7.8L12 2l1.7 1.4 2.6-.8L14.4 6Z M9.5 8h5c3 2.5 5.5 6.3 5.5 9.7 0 2.6-2.9 3.9-8 3.9s-8-1.3-8-3.9c0-3.4 2.5-7.2 5.5-9.7Z" fill="currentColor"/><path d="M9 6.9h6m-7.2 9.3c.8-2 1.8-3.1 3.3-4.3" stroke="#815022" stroke-width="1.4" stroke-linecap="round"/>',
@@ -79,16 +96,27 @@ function decorateCommands65(){
  let help=$('#ability-help65');if(!help){help=document.createElement('div');help.id='ability-help65';$('#battle-command').append(help);}
  let footer=$('#combat-footer65');if(!footer){footer=document.createElement('footer');footer.id='combat-footer65';footer.innerHTML='<button data-combat-legend65>Icon legend</button><small>Choose · Enter &nbsp; Back · Esc</small>';$('#battle-command').append(footer);}
  const roster=$('#battle-party');
+ roster.toggleAttribute('data-limit-motion',state.settings.motion!==false);
  roster.style.setProperty('--party-count65',state.members.length);
  roster.style.setProperty('--party-cols163',Math.min(state.members.length,2));
  for(const card of roster.querySelectorAll('.party-card65'))card.classList.toggle('battle-active163',card.dataset.character===id);
 }
 const combatUiBefore65=renderBattle;
-renderBattle=function(submenu=null,...args){
- const previous=combatHud65.submenu;combatHud65.submenu=submenu;document.body.classList.toggle('combat-ui65',!!battle);
- if(battle)ensureWeaknessState65();const r=combatUiBefore65(submenu,...args);if(!battle)return r;
+renderBattle=function(submenu,...args){
+ if(battle)ensureWeaknessState65();
+ const previous=combatHud65.submenu,hadFocus=commandList65.contains(document.activeElement);
+ const turn=battle?.status==='choose'?[battle.id65,battle.round,battle.turn,currentFighter()].join('/'):null;
+ if(submenu===undefined)submenu=turn&&turn===combatHud65.turn?previous:null;
+ combatHud65.turn=turn;combatHud65.submenu=submenu;
+ document.body.classList.toggle('combat-ui65',!!battle);
+ const r=combatUiBefore65(submenu,...args);if(!battle)return r;
  updatePartyCards36('battle-party');decorateCommands65();document.body.dataset.combatState65=battle.status;
- updateCommandSelection65();queueCommandSelection65();
+ if(!commandSelection65?.isConnected||commandSelection65.disabled){
+  const buttons=[...commandList65.querySelectorAll('button:enabled')];
+  const remembered=rememberedCommands65.get(battle)?.get(commandMenuKey65());
+  selectCommand65(buttons.find(button=>commandKey65(button)===remembered)??buttons[0]??null);
+  if(hadFocus&&commandInput65==='keyboard')commandSelection65?.focus({preventScroll:true});
+ }
  updateAbilityHelp65(commandSelection65??commandList65.querySelector('[data-skill]'));
  $('#battle-command').classList.toggle('skills-panel65',submenu==='skills');
  if(previous!==submenu){const name=submenu??'commands';combatHud65.lastTransition={from:previous??'commands',to:name,region:'upper-right'};if(state.settings.motion!==false&&!matchMedia('(prefers-reduced-motion:reduce)').matches)$('#commands').animate([{opacity:0,transform:'translateX(12px)'},{opacity:1,transform:'translateX(0)'}],{duration:160,easing:'ease-out'});}

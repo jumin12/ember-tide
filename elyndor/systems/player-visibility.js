@@ -77,7 +77,7 @@ function updatePlayerReveal(r,c){
  const halfHeight=Math.hypot((q.center.x-q.foot.x)*width,(q.center.y-q.foot.y)*height)*.5;
  q.blockSize.value=Math.max(1,Math.round(2*pixelRatio));
  circle.set((vp?.x??0)+(q.center.x+1)*width*.5,(vp?.y??0)+(q.center.y+1)*height*.5,
-  Math.max(12*pixelRatio,halfHeight*1.62),viewDepth-.035);
+  Math.SQRT2*Math.max(12*pixelRatio,halfHeight*1.62),viewDepth-.035);
 }
 
 // Register the completed world, including structures added by the builder.
