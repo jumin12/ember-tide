@@ -183,7 +183,7 @@
     const terrain=b.group.children.find(mesh=>mesh.name==='Actual level ground and carved water banks');
     if(!terrain)return;
     const banks=b.terrainJoin?[terrain,b.terrainJoin]:[terrain];
-    const innerBank=(terrain.userData.transitionWidth??3)*.72;
+    const field=battlefieldFootprint(b.group);
     for(const mesh of banks)mesh.updateWorldMatrix(true,false);
     const ray=new THREE.Raycaster(),down=V3(0,-1,0);
     function bed(x,z){
@@ -192,15 +192,17 @@
       return top?b.group.worldToLocal(top.point).y:null;
     }
     const rockRows=[];
-    const shore=x=>apronEdge113(b,x)+innerBank;
+    const shore=x=>apronEdge113(b,x)+1.1;
     // Clustered, low wet stones interrupt the silhouette at the waterline.
     const clusters=[[-23,1.1],[-14,.44],[-9.4,.84],[-5.1,.32],[-1.6,.57],[2.4,.26],[6.7,1.05],[12.7,.37],[17.2,.84],[26,.60]];
     for(const [x,scale] of clusters){
       const z=shore(x)+.62+rng()*.58;
       for(let j=0;j<7;j++){
-        const xx=x+(rng()-.5)*3.7*scale,zz=z+(rng()-.5)*2.2,s=scale*(j===0?.88:.15+rng()*.53);
+        const xx=x+(rng()-.5)*3.7*scale,zz=z+(rng()-.5)*1.4,s=scale*(j===0?.55:.10+rng()*.32);
+        const sx=s*(1.1+rng()),sy=s*(.42+rng()*.54),sz=s*.9,radius=Math.hypot(sx,sy,sz)*1.22;
+        if(!supportedRear113(b,xx,zz,radius)||!onDistantBattleBank(field,xx-radius,xx+radius,zz+radius))continue;
         const h=bed(xx,zz);
-        if(h!==null)rockRows.push([xx,h-s*.11,zz,s*(1.1+rng()),s*(.42+rng()*.54),s*.9,rng()*6,rng()]);
+        if(h!==null)rockRows.push([xx,h-s*.18,zz,sx,sy,sz,rng()*6,rng()]);
       }
     }
     const stoneGeo=new THREE.IcosahedronGeometry(1,1), stoneMat=new THREE.MeshStandardMaterial({
@@ -229,11 +231,12 @@
       dummy.position.set(x,y,z);dummy.scale.set(sx,sy,sz);dummy.rotation.set(.12,angle,.22*t);dummy.updateMatrix();
       stones.setMatrixAt(i,dummy.matrix);stones.setColorAt(i,tint.setHSL(.15+t*.09,.10+t*.07,.51+t*.31));
     });
-    stones.receiveShadow=true;group.add(stones);
+    stones.name='Silverfall shoreline stones';stones.receiveShadow=true;group.add(stones);
     const leaves=[],colors=[];
     for(const [x,scale] of clusters.filter((_,i)=>i%3!==0)){
       for(let j=0;j<13;j++){
         const a=rng()*Math.PI*2,r=.18+rng()*.46,xx=x+Math.cos(a)*r,zz=shore(x)+Math.sin(a)*r+.25;
+        if(!onDistantBattleBank(field,xx-.25,xx+.25,zz+.25))continue;
         const y=bed(xx,zz);if(y===null)continue;
         const h=(.29+rng()*.42)*Math.max(.65,scale),w=.018+rng()*.026;
         leaves.push(xx-w,y,zz,xx+w,y,zz,xx+Math.cos(a)*.19,y+h,zz+Math.sin(a)*.18);
@@ -244,15 +247,6 @@
     blades.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));blades.computeVertexNormals();
     group.add(new THREE.Mesh(blades,new THREE.MeshBasicMaterial({vertexColors:true,side:THREE.DoubleSide})));
 
-    const mist=layer(new THREE.PlaneGeometry(12,2.6),`void main(){
-      float plume=cloud(vec2(p.x*8.-t*.16,p.y*3.+t*.11));
-      float bank=.24+.38*plume+.10*sin(p.x*13.+t*.27);
-      float a=smoothstep(.00,.16,p.y)*(1.-smoothstep(bank-.15,bank+.12,p.y));
-      a*=smoothstep(.02,.24,p.x)*(1.-smoothstep(.72,1.,p.x));
-      gl_FragColor=vec4(.62,.78,.82,a*(.13+.16*plume)*sunlight);
-    }`);
-    const spray=BATTLE_ART99.waterfall.spray[1];
-    mist.position.copy(paintedPoint97(b,...spray));
   }
 
   function makeStrike(){

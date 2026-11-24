@@ -21,11 +21,12 @@ function scenicBridge71(x,z){
   for(let i=0;i<pieces;i++){
    const u=-b.length/2+(i+.5)*step,wx=x+c*u-s*railZ,wz=z+s*u+c*railZ;
    if(bridgeJointInterior38(b,wx,wz,.9)||macroRoadInfo15(wx,wz).d<2.7)continue;
-   block16(g,u,level+.60,railZ,step+.015,1.20,.42,'wall','#bfc2ac');block16(g,u,level+1.27,railZ,step+.025,.18,.64,'wall','#dad2b8');obstacle(wx,wz,Math.abs(c)*step+Math.abs(s)*.46,Math.abs(s)*step+Math.abs(c)*.46,'bridge rail');
+   const stone=(i+pieces)%3===0?'#c0c8cc':'#b4bdc2',cap=(i+pieces)%4===0?'#e9e7dc':'#d5dbde';
+   block16(g,u,level+.60,railZ,step-.035,1.20,.52,'wall',stone);block16(g,u,level+1.32,railZ,step-.065,.24,.75,'wall',cap);obstacle(wx,wz,Math.abs(c)*step+Math.abs(s)*.46,Math.abs(s)*step+Math.abs(c)*.46,'bridge rail');
   }
   for(let i=0;i<=count;i++){
    const u=-b.length/2+i*span,wx=x+c*u-s*railZ,wz=z+s*u+c*railZ;if(bridgeJointInterior38(b,wx,wz,1.2))continue;
-   block16(g,u,level+.76,railZ,.93,1.52,.92,'wall','#c0c1aa');block16(g,u,level+1.60,railZ,1.16,.18,1.1,'wall','#d9d0b4');
+   block16(g,u,level+.76,railZ,.93,1.52,.92,'wall','#bcc5cb');block16(g,u,level+1.60,railZ,1.16,.18,1.1,'wall','#d5dce0');
    if(i===0||i===count){block16(g,u,level+1.89,railZ,.40,.42,.40,'darkWood','#786b51');block16(g,u,level+1.90,railZ,.29,.29,.44,'window','#ead1a0');piece16(g,geo16('bridge-lamp71',()=>new THREE.ConeGeometry(.39,.24,4)),'metal','#706d58',u,level+2.22,railZ);}
   }
  }

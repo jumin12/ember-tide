@@ -107,12 +107,14 @@ function stagedFootprint161(kind,size){
  return{rx:Math.max(.45,size*(scatter?1.65:1.25)),rz:Math.max(.40,size*(scatter?1.25:.95)),height:Math.max(.5,size*1.1)};
 }
 function stageObjects161(b,stats){
- const occupied=[],stances=fighterStances105(b),lines=fighterSightlines105(b);b.queries126={stances,lines};b.authoring101=true;b.nativeTrees89={trunks:[],leaves:[]};
- for(const[kind,u,v,size]of STAGING161[encounter53.selected]){
-  const base=bankPoint93(b,u,v);if(!base)continue;const shape=stagedFootprint161(kind,size);let accepted;
-  for(const[dx,dz]of[[0,0],[u<.5?-.9:.9,.8],[u<.5?-1.8:1.8,1.6],[0,2.5]]){
-   const x=base.x+dx,z=Math.max(base.z+dz,apronEdge113(b,base.x+dx)+shape.rz+.85),y=arenaFloor88(b,x,z),box=new THREE.Box3(V3(x-shape.rx,y-.08,z-shape.rz),V3(x+shape.rx,y+shape.height,z+shape.rz));
-   if(!supportedRear113(b,x,z,Math.max(shape.rx,shape.rz))||arenaWet89(b,x,z)>.05||stanceIntersects105(box,stances)||stoneOccludes105(box,b,lines)||occupied.some(q=>Math.abs(x-q.x)<shape.rx+q.rx+.35&&Math.abs(z-q.z)<shape.rz+q.rz+.35))continue;
+ const occupied=[],field=battlefieldFootprint(b.group),stances=field.homes,lines=fighterSightlines105(b);b.queries126={stances,lines};b.authoring101=true;b.nativeTrees89={trunks:[],leaves:[]};
+ for(const[kind,u,v,baseSize]of STAGING161[encounter53.selected]){
+  const size=baseSize*.64,shape=stagedFootprint161(kind,size),side=u<.5?-1:1;
+  const baseX=field.x+(u-.5)*2*(field.w+11);let accepted;
+  for(const shift of [0,2.4,-2.2,4.6]){
+   const x=baseX+side*shift,z=apronEdge113(b,x)+Math.max(shape.rx,shape.rz)+.95+.55*v;
+   const y=arenaFloor88(b,x,z),box=new THREE.Box3(V3(x-shape.rx,y-.08,z-shape.rz),V3(x+shape.rx,y+shape.height,z+shape.rz));
+   if(!onDistantBattleBank(field,box.min.x,box.max.x,box.max.z)||!supportedRear113(b,x,z,Math.max(shape.rx,shape.rz))||arenaWet89(b,x,z)>.05||stoneOccludes105(box,b,lines)||occupied.some(q=>Math.abs(x-q.x)<shape.rx+q.rx+.35&&Math.abs(z-q.z)<shape.rz+q.rz+.35))continue;
    // Low scenery rests on one bank rather than straddling a hollow.
    const heights=[[-shape.rx,0],[shape.rx,0],[0,-shape.rz],[0,shape.rz]].map(([xx,zz])=>arenaFloor88(b,x+xx,z+zz));if(Math.max(...heights)-Math.min(...heights)>.45)continue;
    accepted={kind,x,z,size,...shape};break;
@@ -177,7 +179,7 @@ function gradeBattleGroundEdge(b,stage){
  const pixels=ctx.getImageData(0,0,144,8).data;
  // Convert the plate's linear display colour to the working lighting space.
  const sceneLight=value=>{
-  const color=clamp(value/64,.0001,.97),a=2.51-2.43*color,b=.03-.59*color;
+  const color=clamp(value,.0001,.97),a=2.51-2.43*color,b=.03-.59*color;
   return (-b+Math.sqrt(b*b+.56*a*color))/(2*a);
  };
  const swatches=Array.from({length:18},(_,strip)=>{
@@ -185,35 +187,83 @@ function gradeBattleGroundEdge(b,stage){
   for(let y=0;y<8;y++)for(let x=strip*8;x<(strip+1)*8;x++){
    const i=(y*144+x)*4;color.x+=linear161[pixels[i]];color.y+=linear161[pixels[i+1]];color.z+=linear161[pixels[i+2]];
   }
-  return V3(sceneLight(color.x),sceneLight(color.y),sceneLight(color.z));
+  return V3(sceneLight(color.x/64),sceneLight(color.y/64),sceneLight(color.z/64));
  });
  const positions=floor.geometry.attributes.position,contacts=new Float32Array(positions.count*4);
- const worldPoint=V3();
+ const moonlitRidge=stage==='mountain'&&b.night;
+ // Sample only the land below the calibrated join. Low-pass filtering removes
+ // painted stones and foliage but keeps the broad pattern of light on the path.
+ const cols=30,rows=9,reach=Math.min(.22,swatchRow-.075);
+ canvas.width=cols;canvas.height=rows;ctx.imageSmoothingQuality='high';
+ ctx.drawImage(image,0,(1-swatchRow)*image.height,image.width,reach*image.height,0,0,cols,rows);
+ const patch=ctx.getImageData(0,0,cols,rows).data,groundPaint=[];
+ for(let i=0;i<patch.length;i+=4){
+  groundPaint.push(V3(...[i,i+1,i+2].map(k=>sceneLight(linear161[patch[k]]))));
+ }
+ const wash=new Float32Array(positions.count*4),paint=V3(),nextRow=V3();
+ // Carry broad pools of light and shade from the painted bank into the
+ // clearing. Work in world space so the light stays put during a camera move.
+ const lightField=new Float32Array(positions.count*3),average=V3();
+ for(const swatch of swatches)average.add(swatch);
+ average.divideScalar(swatches.length);
+ const luminance=c=>c.x*.2126+c.y*.7152+c.z*.0722,meanLight=Math.max(.012,luminance(average));
+ const broad=swatches.map((s,i)=>s.clone().multiplyScalar(.46)
+  .addScaledVector(swatches[Math.max(0,i-1)],.21).addScaledVector(swatches[Math.min(17,i+1)],.21)
+  .addScaledVector(swatches[Math.max(0,i-2)],.06).addScaledVector(swatches[Math.min(17,i+2)],.06));
+ const worldPoint=V3(),sample=V3(),channels=['x','y','z'];
  for(let i=0;i<positions.count;i++){
   const x=positions.getX(i),z=positions.getZ(i);
   const depth=z-apronEdge113(b,x);
-  if(depth>=4.6||depth<-.12)continue;
   worldPoint.fromBufferAttribute(positions,i).add(b.group.position).project(b.reference90);
   const u=clamp(worldPoint.x*.5*b.crop90.x,-.5,.5);
   const fit=b.plateFit97.value;
   const source=.5+u/(fit+(1-fit)*4*u*u);
   const strip=clamp(source*swatches.length-.5,0,swatches.length-1),low=Math.floor(strip),fraction=strip-low;
+  const rawV=(worldPoint.y*.5+.5-b.window90.x)/b.window90.y;
+  const px=clamp(source*cols-.5,0,cols-1),py=clamp((swatchRow-rawV)/reach*rows-.5,0,rows-1);
+  const x0=Math.floor(px),x1=Math.min(x0+1,cols-1),y0=Math.floor(py)*cols,y1=Math.min(Math.floor(py)+1,rows-1)*cols;
+  paint.copy(groundPaint[y0+x0]).lerp(groundPaint[y0+x1],px-x0);
+  nextRow.copy(groundPaint[y1+x0]).lerp(groundPaint[y1+x1],px-x0);
+  paint.lerp(nextRow,py-Math.floor(py));paint.toArray(wash,i*4);
+  wash[i*4+3]=mix(.51,.20,smooth(5,26,Math.max(0,depth)));
+  const fade=1.-.60*smooth(4,32,Math.max(0,depth));
+  sample.copy(broad[low]).lerp(broad[Math.min(low+1,broad.length-1)],fraction);
+  const localLight=Math.max(.008,luminance(sample)),gain=clamp(Math.sqrt(localLight/meanLight),.64,1.27);
+  for(let j=0;j<3;j++){
+   const channel=channels[j];
+   const hue=(sample[channel]/localLight)/Math.max(.12,average[channel]/meanLight);
+   lightField[i*3+j]=mix(1,gain*clamp(hue,.82,1.19),fade*.76);
+  }
+  if(depth>=4.6||depth<-.12)continue;
   const offset=i*4,a=swatches[low],c=swatches[Math.min(low+1,swatches.length-1)];
-  const weight=(1-smooth(.05,4.6,depth))*.78;
-  contacts[offset]=mix(a.x,c.x,fraction)*weight;
-  contacts[offset+1]=mix(a.y,c.y,fraction)*weight;
-  contacts[offset+2]=mix(a.z,c.z,fraction)*weight;
+  // In moonlight the ridge's silver gravel and ochre grass occupy the same
+  // narrow band. Sampling along its depth keeps the grass tint off the path.
+  const weight=(1-smooth(.05,4.6,depth))*(moonlitRidge?.93:.78);
+  const follow=smooth(.10,2.1,depth)*(moonlitRidge?1:.74);
+  for(let j=0;j<3;j++){
+   const channel=channels[j];contacts[offset+j]=mix(mix(a[channel],c[channel],fraction),paint[channel],follow)*weight;
+  }
   contacts[offset+3]=weight;
  }
  floor.geometry.setAttribute('groundContact',new THREE.BufferAttribute(contacts,4));
+ floor.geometry.setAttribute('bankLight',new THREE.BufferAttribute(lightField,3));
+ floor.geometry.setAttribute('bankWash',new THREE.BufferAttribute(wash,4));
+ const baseColor=stageAverage59(material.map);
+ const meanPigment=Math.max(.025,.2126*baseColor.r+.7152*baseColor.g+.0722*baseColor.b);
  const compile=material.onBeforeCompile,key=material.customProgramCacheKey.bind(material);
  material.onBeforeCompile=function(shader,...args){
   compile.call(this,shader,...args);
-  shader.vertexShader='attribute vec4 groundContact; varying vec4 contactColor;\n'+shader.vertexShader;
-  shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\ncontactColor=groundContact;');
-  shader.fragmentShader='varying vec4 contactColor;\n'+shader.fragmentShader;
+  shader.uniforms.meanGroundPigment={value:meanPigment};
+  shader.vertexShader='attribute vec4 groundContact,bankWash;attribute vec3 bankLight;varying vec3 fieldLight;varying vec4 contactColor,groundWash;\n'+shader.vertexShader;
+  shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\ncontactColor=groundContact;fieldLight=bankLight;groundWash=bankWash;');
+  shader.fragmentShader='uniform float meanGroundPigment;varying vec3 fieldLight;varying vec4 contactColor,groundWash;\n'+shader.fragmentShader;
   shader.fragmentShader=shader.fragmentShader.replace('#include <opaque_fragment>',`
    float textureDetail=clamp(.94+(relief132-.14)*.68,.84,1.13);
+   vec3 lumaBank=vec3(.2126,.7152,.0722);
+   float targetLum=max(.004,dot(groundWash.rgb,lumaBank)),litLum=max(.004,dot(outgoingLight,lumaBank));
+   vec3 hue=clamp(groundWash.rgb/targetLum/(outgoingLight/litLum+.016),vec3(.68),vec3(1.40));
+   float value=clamp(targetLum*clamp(relief132/meanGroundPigment,.48,1.85)/litLum,.53,1.82);
+   outgoingLight*=fieldLight*mix(vec3(1.),hue*value,groundWash.a);
    outgoingLight=outgoingLight*(1.-contactColor.a)+contactColor.rgb*textureDetail;
    #include <opaque_fragment>`);
  };
@@ -285,10 +335,12 @@ function cleanBattleSet161(b){
   for(let i=0;i<attempts&&stats.grass<count;i++){
    const x=-27+rng()*54,edge=apronEdge113(b,x),z=edge+.7+rng()*(q.front+15-edge-.7);if(blocked(x,z)||arenaWet89(b,x,z)>.04||!supportedRear113(b,x,z,.20))continue;
    const soil=turf(x,z);if(soil<.40)continue;
-   const patch=groundNoise104(x/spec[1]+seed*7.13,z/spec[1]-seed*2.7)*.72+groundNoise104(x*.67+seed,z*.67)*.28,lane=1-smooth(spec[3]*.5,spec[3]*1.6,Math.abs(x+Math.sin(z*.13+seed)*1.7)),chance=smooth(.26,.69,patch)*spec[0]*soil*(1-lane*.72);
+   const patch=groundNoise104(x/spec[1]+seed*7.13,z/spec[1]-seed*2.7)*.72+groundNoise104(x*.67+seed,z*.67)*.28,lane=1-smooth(spec[3]*.5,spec[3]*1.6,Math.abs(x+Math.sin(z*.13+seed)*1.7));
+   const margin=smooth(.68,1.32,Math.hypot((2*x-q.left-q.right)/(q.right-q.left+3),(2*z-q.back-q.front)/(q.front-q.back+5)));
+   const chance=smooth(.29,.70,patch)*spec[0]*soil*(1-lane*.72)*mix(.21,.94,margin);
    if(rng()>chance)continue;const y=arenaFloor88(b,x,z),dx=(arenaFloor88(b,x+.3,z)-arenaFloor88(b,x-.3,z))/.6,dz=(arenaFloor88(b,x,z+.3)-arenaFloor88(b,x,z-.3))/.6;if(Math.hypot(dx,dz)>.48)continue;
    const s=.36+rng()*.39,h=spec[2]*(.50+rng()*.64)*mix(.59,1,smooth(.34,.70,patch)),front=1-smooth(q.front,q.front+12,z);normal.set(-dx,1,-dz).normalize();tilt.setFromUnitVectors(up,normal);yaw.setFromAxisAngle(up,rng()*TAU);tilt.multiply(yaw);
-   arenaGrassInstanceBefore102(b,'staged-sward161',g,m,V3(x,y-.025,z),V3(s,h*mix(.78,1,front),s),tilt);stats.grass++;
+   arenaGrassInstanceBefore102(b,'staged-sward161',g,m,V3(x,y-.025,z),V3(s,h*mix(.78,1,front)*mix(.42,.88,margin),s),tilt);stats.grass++;
   }
  }
  flushBefore89(b);b.batches.clear();
@@ -302,15 +354,20 @@ function cleanBattleSet161(b){
   for(let i=0;i<grass.count;i++){
    grass.getMatrixAt(i,matrix);const x=matrix.elements[12],z=matrix.elements[14];
    const tone=groundNoise104(x*.57+13,z*.48-9);
-   tint.setRGB(.87+tone*.20,.90+tone*.13,.83+tone*.23);
+   tint.setRGB(.88+tone*.15,.77+tone*.15,.80+tone*.17);
    grass.setColorAt(i,tint);
   }
   grass.instanceColor.needsUpdate=true;
  }
  // Authored ferns/flowers keep their clustered arrangements but cannot emerge
  // from a mineral, a solid prop, paving, a fighter's stance or open water.
- for(const o of b.group.children){if(!o.isInstancedMesh||!o.material?.userData.realVegetation103||o.material.userData.realVegetation103==='grassBlades')continue;let write=0;const colour=new THREE.Color();
-  for(let i=0;i<o.count;i++){o.getMatrixAt(i,matrix);const e=matrix.elements;if(!habitat.cover||blocked(e[12],e[14],.12)||arenaWet89(b,e[12],e[14])>.04||turf(e[12],e[14])<.32){stats.removedPlants++;continue;}o.setMatrixAt(write,matrix);if(o.instanceColor){o.getColorAt(i,colour);o.setColorAt(write,colour);}write++;}
+ const field=battlefieldFootprint(b.group),plantBounds=new THREE.Box3();
+ for(const o of b.group.children){const vegetation=o.material?.userData.realVegetation103;
+  const cluster=o.name.startsWith('Physical detail92-')||o.name==='Physical heath101'||o.name==='Physical stage125-autumn-leaves';
+  if(!o.isInstancedMesh||(!vegetation&&!cluster)||vegetation==='grassBlades')continue;let write=0;const colour=new THREE.Color();
+  if(!o.geometry.boundingBox)o.geometry.computeBoundingBox();
+  for(let i=0;i<o.count;i++){o.getMatrixAt(i,matrix);const e=matrix.elements;plantBounds.copy(o.geometry.boundingBox).applyMatrix4(matrix);
+   if(!habitat.cover||!onDistantBattleBank(field,plantBounds.min.x,plantBounds.max.x,plantBounds.max.z)||blocked(e[12],e[14],.12)||arenaWet89(b,e[12],e[14])>.04||turf(e[12],e[14])<.32){stats.removedPlants++;continue;}o.setMatrixAt(write,matrix);if(o.instanceColor){o.getColorAt(i,colour);o.setColorAt(write,colour);}write++;}
   o.count=write;o.instanceMatrix.needsUpdate=true;if(o.instanceColor)o.instanceColor.needsUpdate=true;o.computeBoundingBox();o.computeBoundingSphere();
  }
  const palette=SURFACE_PALETTES132[stage],seen=new Set();b.group.traverse(o=>{for(const m of Array.isArray(o.material)?o.material:[o.material]){if(!m||seen.has(m))continue;seen.add(m);materialFinish103(m);bindStageAir97(m,b);if(m.userData.backgroundChroma132)continue;const foliage=m.userData.realVegetation103&&m.userData.realVegetation103!=='flowers'||m.userData.botany104&&!m.userData.trunk104&&!b.spec.autumn;if(foliage&&palette.grass)matchProp132(m,palette.grass,.45);else if(m.userData.weathered104&&palette.stone)matchProp132(m,palette.stone,.50);}});

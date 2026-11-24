@@ -1,0 +1,407 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 106469,
+    "sha256": "82108ae64697296dff1145f5bd9e2bdda24ce7116a30b35e054e663549c38487"
+  },
+  {
+    "file": "elyndor/assets/valenne-travel/brookstead.png",
+    "bytes": 58720,
+    "sha256": "84f21878f0a75100c51b709c47a18188e9eb14d196bc46e340d200147eef656a"
+  },
+  {
+    "file": "elyndor/assets/valenne-travel/fir.png",
+    "bytes": 5423,
+    "sha256": "87d1046574e729ea81879255c02805722cba6921459153b4bce57aa56b78c8e1"
+  },
+  {
+    "file": "elyndor/assets/valenne-travel/landscape.webp",
+    "bytes": 22734,
+    "sha256": "8caa8a23b9e0f185eb75fd386af026d976269d083076b9ea3c5fe7a9be29148c"
+  },
+  {
+    "file": "elyndor/assets/valenne-travel/limit-crystal.png",
+    "bytes": 2191,
+    "sha256": "e4e48cdc7b1b9d9ff9ca121f87c385691da9c78c69adbc1d9b503fae28f0f947"
+  },
+  {
+    "file": "elyndor/assets/valenne-travel/limit-ready.png",
+    "bytes": 25657,
+    "sha256": "ef9be2fcd94ab4e0d9b71c4022dc5295a222ca4d56ba3637b6114dc756ff8416"
+  },
+  {
+    "file": "elyndor/assets/valenne-travel/limit-socket.png",
+    "bytes": 1554,
+    "sha256": "03f594f9aa9ced3cf87b04fb889f2ec9e975be156044833945ddbee1f7ff9c57"
+  },
+  {
+    "file": "elyndor/assets/valenne-travel/oak.png",
+    "bytes": 25565,
+    "sha256": "06bd8b302b9cf86701ba6acf521d56d4e09af577e60e5d2cf77ea36ef39fa363"
+  },
+  {
+    "file": "elyndor/assets/valenne-travel/patrol.png",
+    "bytes": 30084,
+    "sha256": "ca59930e83f0eb4dabe9ccc0629bda7683fb861ad8100f4cad9e4290fd7dbb82"
+  },
+  {
+    "file": "elyndor/build-manifest.json",
+    "bytes": 13927,
+    "sha256": "5970b278c67927ece7543c428808b635d8924e5d9a210d872a0492401301156d"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/cavern-day.webp",
+    "bytes": 548438,
+    "sha256": "f46d4faab8514f870cdcbb3d7cdd74cbf00fbdbe294ade4273b932bcac61f593"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/coast-day.webp",
+    "bytes": 601032,
+    "sha256": "5528bec892f3c47ddd105eacb45c0f6ea1fa338cddcc5912fded2c975fafe291"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/gallery.html",
+    "bytes": 7549,
+    "sha256": "41e0ef67d7088e4639ca6b0c1deead245e082690a7df971b28c8e6f8e7c65349"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/grassAutumn-day.webp",
+    "bytes": 659482,
+    "sha256": "eb768613a7ac706b950816a776d666a72ff1a1e3bae834b1cc116c9f9a1f6ba3"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/grassBirch-day.webp",
+    "bytes": 691632,
+    "sha256": "0f3e3b55595ece90ccffc07861babff036ebcf0cc40fe4b6dc80195838b09c01"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/grassDowns-day.webp",
+    "bytes": 638098,
+    "sha256": "97e717b9c71a7b866d1205b069e419ca8406ca3dc452953deda889bbddb8c8ea"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/grassFlowers-day.webp",
+    "bytes": 756222,
+    "sha256": "4b93d01a693c4ca3fdfa4b174796ed1909ccb60b982fb2df0b0661e0e3423b7a"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/grassHills-day.webp",
+    "bytes": 656730,
+    "sha256": "3bd63aee0bbd1d2d6961a11caac8d0a40d2247ef6415a2a69d12fb7a5a7336eb"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/grassMeadow-day.webp",
+    "bytes": 729974,
+    "sha256": "3500ebcea391e8690448de27369cff67978466067d5fb73e6313e302ea350478"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/grassRiver-day.webp",
+    "bytes": 755828,
+    "sha256": "2ff391fda461b293e200680cec4c7a36d9204b0268dcff0a75b298b9f213d5cf"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/grassStones-day.webp",
+    "bytes": 639538,
+    "sha256": "a87c08e100ce192425d1b09d77fb9bf6830448a860460839dd55eca39d3a3595"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/grassTwilight-day.webp",
+    "bytes": 537534,
+    "sha256": "66b557fe52dd95e9dbe6df65d41ee21488775524e86f5f70cadcbeacb7ede090"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/grassWindmill-day.webp",
+    "bytes": 710578,
+    "sha256": "5e76203012d185a9e5e92987985b46863340068aca8fe0a0a7d461ca7cf7c6aa"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/moonlit-day.webp",
+    "bytes": 649424,
+    "sha256": "dd5ed54b7810acabf57fa33ba0035cce4fd39e6f21bd00912bdb0ebada1a83bd"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/mountain-day.webp",
+    "bytes": 656982,
+    "sha256": "8ce4792743ca532cba1e4dd4212f254e1d9379aca2b90ab4d1a70e15edeeb988"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/orchard-day.webp",
+    "bytes": 729436,
+    "sha256": "df929aff32a332cfd85e204a004e80d8c273f38e8609c4c652d77e04c387b3bc"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/royalRoad-day.webp",
+    "bytes": 635308,
+    "sha256": "5c8ff85082831f68e9b01e3f25c9464f09de21c7a0d090ddc80d9be25b1e1dc6"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/ruins-day.webp",
+    "bytes": 628686,
+    "sha256": "9acb4f4e13a2281aef4b13f1f955b4313e47f5b2fdf34fc88eea50a9dd4beae2"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/silverfall-detail.webp",
+    "bytes": 73476,
+    "sha256": "c5df4ee694349b36988c4cc455a446ee8c70e8b951de3ff0d4cb59bb12ebe98f"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/silverfall-phone.webp",
+    "bytes": 185156,
+    "sha256": "ec4c3912dafd37776744d34524502dd89c2993f0909ac8d42b8a526fee107c2e"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/snow-day.webp",
+    "bytes": 432700,
+    "sha256": "b639c040c4a4161ca58ac4ce9a70cc21f2a9eabbc72c5fcb88505f8dfd7caa07"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/snow-detail.webp",
+    "bytes": 23290,
+    "sha256": "b946fd8ddd9a93b3cad6685743b8b5e798b0cff4b363bc94ec86e13fc1979a92"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/story-betrayal.webp",
+    "bytes": 748428,
+    "sha256": "4ce1390a3f1d134b7ea9162e5a7db4eadca361d66c18c1df23036058e90cdd58"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/story-commander1.webp",
+    "bytes": 849112,
+    "sha256": "c506022b47875afc2a4de99a5726f7aba394a37d1f487041dcd7722f29804443"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/story-commander2.webp",
+    "bytes": 670544,
+    "sha256": "7c03a58f4bf9295de30c9fadd8e9c20b626ddc87b9277d45fdc1340fd2c569e1"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/story-commander3.webp",
+    "bytes": 757842,
+    "sha256": "7120615938571505331ffd9f37312f3861eef2c2376447d697d136d3b721c279"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/story-guard.webp",
+    "bytes": 716680,
+    "sha256": "589907d35f1d7a2ad4b91fdcb609a8dc339696bac8eefff9d95275eb37e1db4f"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/story-tavinIntro.webp",
+    "bytes": 870990,
+    "sha256": "00bb7e0b93a159c7bb58af1c01d66010541e6ad4134f3661fe252853c498154b"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/story-wildlife.webp",
+    "bytes": 957320,
+    "sha256": "4ebdf0f70837a3554007f46f28356df57c69e39ec6084890367ab1e30f96a33c"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/waterfall-day.webp",
+    "bytes": 722388,
+    "sha256": "d32edb8639ccd6e14848cf8c124a80d48a4805cb5807456a53255677a54a0bd6"
+  },
+  {
+    "file": "elyndor/previews/release-v154/battles/woodland-day.webp",
+    "bytes": 734012,
+    "sha256": "e5113070cfe71ec00034a4cacaec4bcdc7c8dd3f8e6779c049e3d7ce92827898"
+  },
+  {
+    "file": "elyndor/previews/release-v154/landmarks/alder.webp",
+    "bytes": 201382,
+    "sha256": "8dbf45f0f0b54aea109409941d28e7c41b5fbde54211e8b3721e9abe14ed3b68"
+  },
+  {
+    "file": "elyndor/previews/release-v154/landmarks/alderClearing.webp",
+    "bytes": 192194,
+    "sha256": "91f9ba5df8b963a69dc306c17aa34faa36f92f62da31b66c0a3e03cde04590b0"
+  },
+  {
+    "file": "elyndor/previews/release-v154/landmarks/alderRemnant.webp",
+    "bytes": 224938,
+    "sha256": "701ff63b801aba18fa974acadf8f7475d477ea7effc0f423248d2e62e271c361"
+  },
+  {
+    "file": "elyndor/previews/release-v154/landmarks/brookstead-dusk.webp",
+    "bytes": 206278,
+    "sha256": "885b927e05b945b1f83cf82b64d2edef1a1494b2efa56cca5705037b4882c642"
+  },
+  {
+    "file": "elyndor/previews/release-v154/landmarks/brookstead.webp",
+    "bytes": 316618,
+    "sha256": "5f3888e6c027f93a008cec232bd0c1f08b63aa624b4b7afa74f4a1a5d9146073"
+  },
+  {
+    "file": "elyndor/previews/release-v154/landmarks/depths.webp",
+    "bytes": 228226,
+    "sha256": "5b2615e3b299fe99fcd21a05ed9351362f818ebd30d559d9bd26fa1a445d2e0c"
+  },
+  {
+    "file": "elyndor/previews/release-v154/landmarks/fern.webp",
+    "bytes": 263652,
+    "sha256": "b5460e8deea1fc976aa0d58ff06a3b0cf83ba9ba4ab7fd5dc61ffb048b217beb"
+  },
+  {
+    "file": "elyndor/previews/release-v154/landmarks/fernClearing-dusk.webp",
+    "bytes": 139264,
+    "sha256": "f7f2123c63a3024cfec16219e1dfda9f5bf19f019b23b91075c0e2ff9cb94527"
+  },
+  {
+    "file": "elyndor/previews/release-v154/landmarks/fernClearing.webp",
+    "bytes": 246244,
+    "sha256": "6e4784ddb59bc5744a86bf5ad1999a357559bd1d9cfc9bd8a5e532354c2b7df7"
+  },
+  {
+    "file": "elyndor/previews/release-v154/landmarks/gallery.html",
+    "bytes": 3878,
+    "sha256": "2dc10c726e42d530b6e6f7ef814a2c8265979436c5226e224bd2215ca06ccfb1"
+  },
+  {
+    "file": "elyndor/previews/release-v154/landmarks/harbor-dusk.webp",
+    "bytes": 143410,
+    "sha256": "a77a991f054bc73f548f52c7acb68efcb9002bec31c035ad8e54f1334088efd4"
+  },
+  {
+    "file": "elyndor/previews/release-v154/landmarks/harbor.webp",
+    "bytes": 240134,
+    "sha256": "0d96d7333c50a7f25017fa3a54b4e360eb3cc832a7e113d7286f2d219cb6d078"
+  },
+  {
+    "file": "elyndor/previews/release-v154/landmarks/highmere.webp",
+    "bytes": 274044,
+    "sha256": "34b4aff9a94be7379fe7f6705420653ab3f81296eb29329540d58772520deb43"
+  },
+  {
+    "file": "elyndor/previews/release-v154/landmarks/nearbySite.webp",
+    "bytes": 145972,
+    "sha256": "911c02b493abc1737c18d5037bcac0f320c8de0c21cb7c593003c0bbe0c7052d"
+  },
+  {
+    "file": "elyndor/previews/release-v154/landmarks/patrol.webp",
+    "bytes": 278078,
+    "sha256": "da67d504d6bf59e5655c6337bc255878dfc3df5d2c105b499cb70da234fd3d04"
+  },
+  {
+    "file": "elyndor/previews/release-v154/landmarks/relief.webp",
+    "bytes": 196434,
+    "sha256": "5ca2856b106566d50cab9e0cdbc4f56f7750430ce85438469546f5bd60c55aea"
+  },
+  {
+    "file": "elyndor/previews/release-v154/landmarks/reliefClearing.webp",
+    "bytes": 226122,
+    "sha256": "e562f7b4c6a04f15370403c5a00303c191cc0fb90403120f73be7043b355f3de"
+  },
+  {
+    "file": "elyndor/previews/release-v154/landmarks/siteClearing.webp",
+    "bytes": 123724,
+    "sha256": "1d1ce31a03f3c035b68a424e403842e38d095263c1cb6e64bfbe189af623843f"
+  },
+  {
+    "file": "elyndor/previews/release-v154/landmarks/snow.webp",
+    "bytes": 154484,
+    "sha256": "7e39d51f0a46852291d748b1f3337d40e63751330e628f89555f067d40e48692"
+  },
+  {
+    "file": "elyndor/previews/release-v154/powerup.png",
+    "bytes": 181446,
+    "sha256": "6d72c4b98d09357a42d09aba65dd2efac4e8288455408e0752d65fe6fd066627"
+  },
+  {
+    "file": "elyndor/previews/release-v154/road.webp",
+    "bytes": 202198,
+    "sha256": "b2c46fc6eb4f3a3e8de11c3a412ca8cf38fd4ebea0cc07a1a6f42fcb7b5bbe5c"
+  },
+  {
+    "file": "elyndor/previews/release-v154/verification.json",
+    "bytes": 5101,
+    "sha256": "0caf106621c2ba82813c8d515c73e628e3bafa27f81935f42169f3bee7f5559c"
+  },
+  {
+    "file": "elyndor/systems/battle-atmosphere.js",
+    "bytes": 12555,
+    "sha256": "7af3705be01fcfcc945ed20ecbf25278973b4bdfb455fda4b4d55c23a03f8620"
+  },
+  {
+    "file": "elyndor/systems/battle-foreground-refinement.js",
+    "bytes": 30223,
+    "sha256": "fbbd89b822c4cc32bc30c87581295c828bf0d9c1bf2a80d6402369de189b9743"
+  },
+  {
+    "file": "elyndor/systems/battlefield-margins.js",
+    "bytes": 36243,
+    "sha256": "aaf0ce7f2483ad19902e6579889c2e57d92ab5fc6e01c9c56e2ccbc359ea43a5"
+  },
+  {
+    "file": "elyndor/systems/combat-art-direction.js",
+    "bytes": 47952,
+    "sha256": "1a1e80764f74586e2c652a196fc3d95d5be1947d53e701512e3651ed3334ffe2"
+  },
+  {
+    "file": "elyndor/systems/combat-hud-polish.css",
+    "bytes": 21803,
+    "sha256": "8ecbb9cb498c7be6616581b1d799b05aa124252ca92c8c083c65f30c254074e9"
+  },
+  {
+    "file": "elyndor/systems/landmark-models.js",
+    "bytes": 18279,
+    "sha256": "48148548602bfe301c2094042156a9125b56dac5437fadc251b1a7595c6f8d64"
+  },
+  {
+    "file": "elyndor/systems/landscape-and-impact-light.js",
+    "bytes": 31038,
+    "sha256": "460cc8051f1daf39530438c654debd593ba05bbc7d090cce0566ea573c531abc"
+  },
+  {
+    "file": "elyndor/systems/location-miniatures.js",
+    "bytes": 12877,
+    "sha256": "6af13e9436c4d3862a6fd8c0b1f4b9f82327ad22cd75c0fcc7cff947e6fb0565"
+  },
+  {
+    "file": "elyndor/systems/overworld-presentation.js",
+    "bytes": 8638,
+    "sha256": "db5dd8323c47f9b99b17dc71cb84e52ab9f100a6dab6e781d60994baceb83e4f"
+  },
+  {
+    "file": "elyndor/systems/overworld-scenery.js",
+    "bytes": 18252,
+    "sha256": "382668fb1942b621f04db3a4cfbfe9bc6f404978205e0238e5fb305e64f65b8e"
+  },
+  {
+    "file": "elyndor/systems/regional-landmark-models.js",
+    "bytes": 20101,
+    "sha256": "0e173bac32a86ab2d15493c164ec36b6eb471d2d586f60ad054284d4a46118b3"
+  },
+  {
+    "file": "elyndor/systems/scenic-bridges.js",
+    "bytes": 3657,
+    "sha256": "c38286bce179645678c030f2cc866fd2fa340852a84de53fc2fdde907b3fbc62"
+  },
+  {
+    "file": "elyndor/systems/travel-scenery-refinement.js",
+    "bytes": 9797,
+    "sha256": "764cad2ebb920a3db21be826736922a8ff4570c1db2090f4c344bbd09fb47cc7"
+  },
+  {
+    "file": "elyndor/systems/valenne-travel-art.js",
+    "bytes": 12053,
+    "sha256": "c278b5d20e86443568a6d44bb0ac705d0ed6bf5f8d9ee11ec49edeaaf2b7ca20"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 100850,
+    "sha256": "260c2b96e698375626d8f1dfcf73484ea1117610bb6586601c5f78c3cb5694ef"
+  },
+  {
+    "file": "elyndor/visibility-v21.js",
+    "bytes": 6524,
+    "sha256": "9a48e7469047c133b9e75a1d3db2aab6b75fbb3f2cd0764044cdaf4b482eb3de"
+  },
+  {
+    "file": "index.html",
+    "bytes": 7887057,
+    "sha256": "2580c370407ce2ed8d1aa1b5948d9534d6d3518e5795a3e35606c0059476cc2a"
+  },
+  {
+    "file": "release.json",
+    "bytes": 106401,
+    "sha256": "fd5dbf6f872ba23267005b998657dab10c230799a241723986a5246b293771e1"
+  }
+]

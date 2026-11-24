@@ -1,26 +1,39 @@
 {
-  "release": "elyndor-alpha-1.53-party-visibility-battle-hud-2026-11-24",
-  "version": "Alpha Version 1.53",
+  "release": "elyndor-alpha-1.54-valenne-landmarks-battlefield-scenery-2026-11-24",
+  "version": "Alpha Version 1.54",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 7794478,
-    "sha256": "5319fdc1327ec99bbca673acfb7687a7d2eafde3e4d38ae1df2bace331619287",
+    "bytes": 7887057,
+    "sha256": "2580c370407ce2ed8d1aa1b5948d9534d6d3518e5795a3e35606c0059476cc2a",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "6470816d4cb95da2b3ba8b6371c99c077e60d2a6"
+    "previousRelease": "01bd578bbb60edaaa4cb2384a44803bdf552320f"
   },
   "changes": [
-    "The dithered opening around the party leader now covers twice the screen area, making more of the party visible behind trees and buildings.",
-    "The Hooked-beak Bird’s turn-order diamond now shows a three-quarter portrait of its crest, hooked beak, and upper breast at party-portrait scale.",
-    "Limit Break diamonds sit lower and centered in the available card space. Charged diamonds glow cyan, and a full meter pulses gently. Reduced-motion settings keep the glow steady.",
-    "The battle cursor stays on the chosen command or skill when the pointer leaves the menu, the HUD refreshes, or you switch to the keyboard. Back restores the previous selection, including the item or skill that opened ally targeting."
+    "All 15 destinations on the Valenne overworld and atlas now have textured 3D landmarks. Look for Brookstead’s mill, Highmere’s towers, the shipyard at the harbor and the four Elder Light shrines. At dusk, windows and crystals glow and cast light on nearby surfaces.",
+    "Each of the 20 road entrances still leads to its own arrival point inside the destination. Bridge paving, stone-lined riverbanks, woodland and meadow surfaces now share the overworld’s new visual style.",
+    "Battle cards show each Limit Break charge as a faceted cyan crystal in a gold socket. A full row gains a blue flame effect, with a steady full-charge display when reduced motion is enabled.",
+    "Across all 20 battle arenas, soil, moss, paving and snow pick up the light and colour of the backdrop. At Silverfall, waterfall spray and ripples stay on the water behind the shoreline rocks.",
+    "Weathered rocks, ferns, wildflowers and coastal grasses frame the fight beside the party and in the lower-right foreground. Raised scenery leaves room around the fighters. The seven story battles use the ground at their actual locations, with placement fitted to desktop and phone views."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.54",
+      "date": "November 24, 2026",
+      "title": "Valenne landmarks and battlefield scenery",
+      "items": [
+        "All 15 destinations on the Valenne overworld and atlas now have textured 3D landmarks. Look for Brookstead’s mill, Highmere’s towers, the shipyard at the harbor and the four Elder Light shrines. At dusk, windows and crystals glow and cast light on nearby surfaces.",
+        "Each of the 20 road entrances still leads to its own arrival point inside the destination. Bridge paving, stone-lined riverbanks, woodland and meadow surfaces now share the overworld’s new visual style.",
+        "Battle cards show each Limit Break charge as a faceted cyan crystal in a gold socket. A full row gains a blue flame effect, with a steady full-charge display when reduced motion is enabled.",
+        "Across all 20 battle arenas, soil, moss, paving and snow pick up the light and colour of the backdrop. At Silverfall, waterfall spray and ripples stay on the water behind the shoreline rocks.",
+        "Weathered rocks, ferns, wildflowers and coastal grasses frame the fight beside the party and in the lower-right foreground. Raised scenery leaves room around the fighters. The seven story battles use the ground at their actual locations, with placement fitted to desktop and phone views."
+      ]
+    },
     {
       "version": "Alpha Version 1.53",
       "date": "November 24, 2026",
@@ -985,11 +998,15 @@
     "cinematicBulletTimeChains": true,
     "generated2DAbilityFlipbooks": true,
     "silhouetteScaledSpellContacts": true,
-    "coloredAbilitySceneLighting": true
+    "coloredAbilitySceneLighting": true,
+    "concept3DLandmarks": 15,
+    "linkedOverworldEntrances": 20,
+    "blendedBattleArenas": 20,
+    "groundedStoryBattleEnvironments": 7
   },
   "validation": {
-    "file": "elyndor/previews/release-v153/verification.json",
-    "sha256": "460b3049f0dd66c4de9b482e133fec6b311ac6bd652d5a7eae01e10f9b78cdf0",
+    "file": "elyndor/previews/release-v154/verification.json",
+    "sha256": "0caf106621c2ba82813c8d515c73e628e3bafa27f81935f42169f3bee7f5559c",
     "finalRelease": "PASS",
     "desktopAndPhone": true
   },
@@ -1030,9 +1047,9 @@
     "spriteLighting": "Coherent party and NPC canopy reception outside combat; original art and sampling retained"
   },
   "previousPublishedRelease": {
-    "commit": "6470816d4cb95da2b3ba8b6371c99c077e60d2a6",
-    "version": "Alpha Version 1.52",
-    "sha256": "779f738fed67620be49c7cff79490ad8ece3ae46866969653ba92663bb2f69ac"
+    "commit": "01bd578bbb60edaaa4cb2384a44803bdf552320f",
+    "version": "Alpha Version 1.53",
+    "sha256": "5319fdc1327ec99bbca673acfb7687a7d2eafde3e4d38ae1df2bace331619287"
   },
   "housing": {
     "maximumOwnedHomes": 1,

@@ -93,8 +93,10 @@ setupPost=function(...args){
   vec3 world156=(poiCamera55*vec4(centre55,1.)).xyz;
   float distance156=smoothstep(focus+18.,focus+145.,d),low156=1.-smoothstep(5.,34.,world156.y-poiGround55);
   float wisp156=poiNoise55(world156.xz*.027+vec2(time*.008,-time*.005));
-  float mist156=distance156*(.055+travelRain156*.085)*mix(.28,1.,low156)*mix(.52,1.,wisp156);
-  col=mix(col,poiMistColour55*1.32,mist156);
+  float mist156=distance156*(.055+travelRain156*.13)*mix(.28,1.,low156)*mix(.52,1.,wisp156);
+  float ribbon=smoothstep(.47,.80,wisp156*.68+.32*poiNoise55(world156.xz*.063+vec2(time*.013,2.7)));
+  mist156+=travelRain156*low156*ribbon*smoothstep(focus-28.,focus+54.,d)*.065;
+  col=mix(col,mix(poiMistColour55*1.32,vec3(.29,.40,.44),travelRain156*.63),mist156);
  }
  vec4 haze35=`);
  m.needsUpdate=true;return r;

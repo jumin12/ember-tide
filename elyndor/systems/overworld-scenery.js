@@ -54,20 +54,25 @@ buildSolidForest=function(...args){
  scenery.trees=[...new Set([...(world.userData.solidTrees??[]),...(world.userData.boundaryTrees50??[])])];scenery.forestMeshes=[];world.userData.treePoints=scenery.trees.map(t=>V3(t.x,t.y,t.z));
  const bins=new Map(),materials=new Map(),depths=new Map(),cell=64;let oldInstances=0;
  for(const t of scenery.trees){
-  const species=t.species30??0,variant=Math.abs(Math.floor(t.x*13+t.z*17))%3,key=Math.floor(t.x/cell)+','+Math.floor(t.z/cell)+','+species+','+variant,H=species===4?7.8:7;
+  const species=t.species30??0,variant=Math.abs(Math.floor(t.x*13+t.z*17))%3,H=species===4?7.8:7;
+  const style=valenneTreeStyle(t),key=[Math.floor(t.x/cell),Math.floor(t.z/cell),style??species,variant,H].join(',');
   const seed=n=>{const v=Math.sin(t.x*127.1+t.z*311.7+n)*43758.5453;return v-Math.floor(v)},sx=.84+seed(17)*.34,sz=.84+seed(43)*.34,sy=.88+seed(71)*.24;
   const matrix=new THREE.Matrix4().compose(V3(t.x,t.y,t.z),new THREE.Quaternion().setFromAxisAngle(V3(0,1,0),Math.sin(t.x*31+t.z*17)*TAU),V3(t.scale*sx,t.h/H*sy,t.scale*sz));t.growth160=[sx,sy,sz];
-  if(!bins.has(key))bins.set(key,{species,variant,center:V3(Math.floor(t.x/cell)*cell+cell/2,t.y,Math.floor(t.z/cell)*cell+cell/2),rows:[]});bins.get(key).rows.push({t,matrix});oldInstances+=(t.trunks?.length??0)+(t.crowns?.length??0);t.bindings=[];
+  if(!bins.has(key))bins.set(key,{species,style,variant,H,center:V3(Math.floor(t.x/cell)*cell+cell/2,t.y,Math.floor(t.z/cell)*cell+cell/2),rows:[]});bins.get(key).rows.push({t,matrix});oldInstances+=(t.trunks?.length??0)+(t.crowns?.length??0);t.bindings=[];
  }
- for(const {species,variant,center,rows}of bins.values()){
-  const mask=new THREE.InstancedBufferAttribute(new Float32Array(rows.length),1).setUsage(THREE.DynamicDrawUsage),lods=[0,1,2].map(lod=>{const g=shareGeometry36(travelTreeGeometry157(species,variant,lod));g.setAttribute('treeViewHidden',mask);return g});
-  if(!materials.has(species)){materials.set(species,rootedTravelMaterial157(treeMaterial104(species)));depths.set(species,rootedTravelMaterial157(treeMaterial104(species,false,null,true)))}
-  const o=new THREE.InstancedMesh(lods[0],materials.get(species),rows.length);o.name='Sculpted travel woodland '+species;
-  o.userData={forest:true,forestKind:'canopy30',center,entries:rows,nativeLods30:lods,treeViewMask:mask,fullGeometry:lods[0],farGeometry:lods[1],simpleGeometry:lods[2],botany104:true,species104:species,travelTree157:true};o.castShadow=o.receiveShadow=true;o.customDepthMaterial=depths.get(species);
-  rows.forEach((r,i)=>{o.setMatrixAt(i,r.matrix);o.setColorAt(i,new THREE.Color().setRGB(.92+.07*Math.sin(r.t.x*.17),.96+.04*Math.cos(r.t.z*.14),.93+.05*Math.sin(r.t.x*.11+r.t.z*.13)));r.t.bindings.push({mesh:o,index:i,matrix:r.matrix});r.t.travelMatrix157=r.matrix;r.t.travelVariant157=variant});
+ for(const {species,style,variant,H,center,rows}of bins.values()){
+  const mask=new THREE.InstancedBufferAttribute(new Float32Array(rows.length),1).setUsage(THREE.DynamicDrawUsage),lods=[0,1,2].map(lod=>{const g=shareGeometry36(style?valenneTreePlane(style,variant,H):travelTreeGeometry157(species,variant,lod));g.setAttribute('treeViewHidden',mask);return g});
+  const materialKey=style??species;
+  if(!materials.has(materialKey)){
+   materials.set(materialKey,style?valenneTreeMaterial(style):rootedTravelMaterial157(treeMaterial104(species)));
+   depths.set(materialKey,style?valenneTreeMaterial(style,true):rootedTravelMaterial157(treeMaterial104(species,false,null,true)));
+  }
+  const o=new THREE.InstancedMesh(lods[0],materials.get(materialKey),rows.length);o.name='Travel woodland '+materialKey;
+  o.userData={forest:true,forestKind:'canopy30',center,entries:rows,nativeLods30:lods,treeViewMask:mask,fullGeometry:lods[0],farGeometry:lods[1],simpleGeometry:lods[2],botany104:true,species104:species,travelTree157:true};o.castShadow=o.receiveShadow=true;o.customDepthMaterial=depths.get(materialKey);
+  rows.forEach((r,i)=>{o.setMatrixAt(i,r.matrix);o.setColorAt(i,new THREE.Color().setRGB(.92+.07*Math.sin(r.t.x*.17),.96+.04*Math.cos(r.t.z*.14),.93+.05*Math.sin(r.t.x*.11+r.t.z*.13)));r.t.bindings.push({mesh:o,index:i,matrix:r.matrix});r.t.travelMatrix157=r.matrix;r.t.travelVariant157=variant;r.t.travelStyle=style});
   o.onBeforeRender=(r,s,c)=>{forest30.main.value=c===camera?1:0};o.computeBoundingBox();o.computeBoundingSphere();world.add(o);scenery.forestMeshes.push(o);
  }
- world.userData.solidForestMeshes=scenery.forestMeshes;world.userData.leafCount=scenery.trees.length;world.userData.forest30={species:[...materials.keys()],trees:scenery.trees.length,clusters:scenery.trees.length,batches:scenery.forestMeshes.length,modeled104:true};
+ world.userData.solidForestMeshes=scenery.forestMeshes;world.userData.leafCount=scenery.trees.length;world.userData.forest30={species:[...new Set(scenery.trees.map(t=>t.species30??0))],trees:scenery.trees.length,clusters:scenery.trees.length,batches:scenery.forestMeshes.length,modeled104:true};
  world.userData.woodland157={trees:scenery.trees.length,batches:scenery.forestMeshes.length,oldInstances,newInstances:scenery.trees.length,variants:3,forms160:['broad','slender','windswept'],individualGrowth160:true,opaque:true};
 };
 
@@ -88,7 +93,7 @@ buildBoundary46=function(...args){
 const travelFinishBefore157=finishWorld102;
 finishWorld102=function(...args){
  const r=travelFinishBefore157(...args);if(activeScene?.kind!=='overworld')return r;finishTravelMeadow160();if(world.userData.travelBounds157)return r;
- for(const t of scenery.trees){if(!t.travelMatrix157)continue;const g=travelTreeGeometry157(t.species30??0,t.travelVariant157,0);t.box=g.boundingBox.clone().applyMatrix4(t.travelMatrix157).expandByScalar(.15);t.cover30=[t.box];}
+ for(const t of scenery.trees){if(!t.travelMatrix157)continue;const g=t.travelStyle?valenneTreePlane(t.travelStyle,t.travelVariant157,t.species30===4?7.8:7):travelTreeGeometry157(t.species30??0,t.travelVariant157,0);t.box=g.boundingBox.clone().applyMatrix4(t.travelMatrix157).expandByScalar(.15);t.cover30=[t.box];}
  treeCutCache30=null;world.userData.travelBounds157=true;return r;
 };
 

@@ -90,19 +90,20 @@ body.combat-ui65 #battle-hud .command-mark65>svg {width:21px;height:21px;filter:
 body.combat-ui65 #battle-hud .command-label65 {min-width:0;margin-inline-end:auto;text-align:left}
 body.combat-ui65 #battle-party .limit-meter {
   position:absolute;left:8px;bottom:4px;display:flex;align-items:center;justify-content:center;
-  gap:3px;width:46px;height:8px;pointer-events:none;
+  gap:.5px;width:52px;height:12px;pointer-events:none;isolation:isolate;
 }
 body.combat-ui65 #battle-party .limit-meter i {
-  display:block;width:6px;height:6px;flex:none;transform:rotate(45deg);
-  background:#101d2b;border:1px solid #ae8c55;box-sizing:border-box;
+  display:block;width:10px;height:12px;flex:none;
+  background:url("elyndor/assets/valenne-travel/limit-socket.png") center / 100% 100% no-repeat;
 }
 body.combat-ui65 #battle-party .limit-meter .filled {
-  border-color:#c3f7ff;background:linear-gradient(130deg,#fff 3%,#92f6ff 32%,#25bfe9 53%,#176293 82%);
-  box-shadow:0 0 2px #c2fbff,0 0 5px #34caffb0;
+  background-image:url("elyndor/assets/valenne-travel/limit-crystal.png");filter:drop-shadow(0 0 1.4px #1db5ff);
 }
-body.combat-ui65 #battle-party .limit-meter[data-charge="5"] .filled {
-  border-color:#e7fdff;box-shadow:0 0 3px #d7fbff,0 0 6px #32caff,0 0 9px #2680e494;
+body.combat-ui65 #battle-party .limit-meter[data-charge="5"]::before {
+  content:"";position:absolute;width:111%;aspect-ratio:136/82;top:50%;left:50%;translate:-50% -56%;
+  background:url("elyndor/assets/valenne-travel/limit-ready.png") center / contain no-repeat;
 }
+body.combat-ui65 #battle-party .limit-meter[data-charge="5"] .filled {visibility:hidden}
 @keyframes limit-ready-glow {
   from {filter:brightness(.94)}
   to {filter:brightness(1.24)}
@@ -113,8 +114,8 @@ body.combat-ui65 #battle-party .limit-meter[data-charge="5"] .filled {
   }
 }
 @media(max-width:1000px),(max-height:619px){
-  body.combat-ui65 #battle-party .limit-meter{left:50%;translate:-50% 0;bottom:1px;width:31px;gap:2px;height:6px}
-  body.combat-ui65 #battle-party .limit-meter i{width:4px;height:4px}
+  body.combat-ui65 #battle-party .limit-meter{left:50%;translate:-50% 0;bottom:1px;width:37px;gap:.5px;height:9px}
+  body.combat-ui65 #battle-party .limit-meter i{width:7px;height:9px}
   body.compact33.combat-ui65.mobile-combat69 #battle-party .limit-meter {bottom:4px}
 }
 body.combat-ui65 #battle-hud #commands button[data-command-selected65] {
@@ -247,7 +248,7 @@ body.combat-ui65 #battle-hud #turn-order .turn-token27.current>i {
   }
   /* Center in the portrait column between the image and the lower frame.
      Active status icons occupy the bottom 23px of this column. */
-  body.combat-ui65 #battle-party .limit-meter {left:12px;top:calc(50% + 27.5px);translate:0 -50%;bottom:auto;height:8px}
+  body.combat-ui65 #battle-party .limit-meter {left:9px;top:calc(50% + 27.5px);translate:0 -50%;bottom:auto}
   body.combat-ui65 #battle-party .party-card65:has(>.status-row65:not(:empty)) .limit-meter {top:calc(50% + 16px)}
   body.combat-ui65 #world-enemy-bars27 .foe-bar27 {font-size:13px;padding:7px 8px;min-width:122px}
 }

@@ -84,9 +84,9 @@ function riverRock134(variant){
 dressRiverbanks103=function(){
  if(activeScene.kind!=='overworld'||world.userData.bankDressing103)return;
  const edges=[...new Set([...traversalShoreCells.values()].flat())],rng=seeded(134887),bins=new Map(),occupied=new Set();let count=0;
- for(const e of edges){const length=Math.sqrt(e.length2);if(length<.5)continue;const steps=Math.max(1,Math.floor(length/7));
+ for(const e of edges){const length=Math.sqrt(e.length2);if(length<.5)continue;const steps=Math.max(1,Math.ceil(length/2.6));
   for(let i=0;i<steps;i++){
-   const t=(i+.1+rng()*.8)/steps,x=mix(e.x,e.xx,t),z=mix(e.z,e.zz,t),cluster=Math.sin(x*.087+Math.sin(z*.071));if(cluster<-.3&&rng()<.78)continue;
+   const t=(i+.1+rng()*.8)/steps,x=mix(e.x,e.xx,t),z=mix(e.z,e.zz,t),cluster=Math.sin(x*.087+Math.sin(z*.071));if(cluster<-.3&&rng()<.35)continue;
    const side=traversalWet(x+e.dz/length*1.5,z-e.dx/length*1.5)?-1:1;
    for(let j=0,n=1+Math.floor(rng()*3);j<n;j++){
     const offset=.35+rng()*1.3,xx=x+e.dz/length*side*offset+(rng()-.5)*2.2,zz=z-e.dx/length*side*offset+(rng()-.5)*2.2,k=Math.round(xx*1.2)+','+Math.round(zz*1.2);

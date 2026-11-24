@@ -96,11 +96,11 @@ function makeRegionalAir97(b){
  const s=b.spec,rows=[],summary={mist:0,spray:0,seaHaze:0,coldDrift:0,crystalHaze:0,chimneySmoke:0,lightShafts:0},back=fightingHollow93(b).back;
  const add=(p,w,h,alpha,kind=0)=>rows.push({p,w,h,alpha,kind,seed:rows.length*.173});
  const painted=(u,v,w,h,alpha)=>add(paintedPoint97(b,u,v),w,h,alpha);
- if(s.falls||battleArtStage99()?.spray){for(const[u,v]of(battleArtStage99()?.spray??[[.51,.49],[.65,.48],[.58,.51]]))painted(u,v,13,4,.075);summary.spray=3;}
+ if(!battleSprayBeds[encounter53.selected]&&(s.falls||battleArtStage99()?.spray)){for(const[u,v]of(battleArtStage99()?.spray??[[.51,.49],[.65,.48],[.58,.51]]))painted(u,v,13,4,.075);summary.spray=3;}
  if(s.sea){painted(.30,.50,23,3,.038);painted(.72,.46,24,3,.031);summary.seaHaze=2;}
  if(s.snow){for(const x of[-14,15])add(V3(x,arenaFloor88(b,x,back-28)+4.5,back-28),22,3,.037);summary.coldDrift=2;}
  else if(s.cave){for(const x of[-18,18])add(V3(x,arenaFloor88(b,x,back-18)+3,back-18),7,4,.045,2);summary.crystalHaze=2;}
- else if(s.trees||s.river){for(const x of[-17,17])add(V3(x,arenaFloor88(b,x,back-27)+4.5,back-27),20,3.8,s.dense?.036:.024);summary.mist=2;}
+ else if((s.trees||s.river)&&!battleSprayBeds[encounter53.selected]){for(const x of[-17,17])add(V3(x,arenaFloor88(b,x,back-27)+4.5,back-27),20,3.8,s.dense?.036:.024);summary.mist=2;}
  b.group.updateMatrixWorld(true);
  for(const house of b.group.children.filter(o=>o.name==='Native POI exterior architecture'||o.userData.chimney101)){
   if(house.userData.chimney101){const p=house.localToWorld(house.userData.chimney101.clone());b.group.worldToLocal(p);for(let i=0;i<4;i++)add(p.clone(),.65,1.15,.11,1);summary.chimneySmoke++;continue;}

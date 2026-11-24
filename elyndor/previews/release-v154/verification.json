@@ -1,0 +1,190 @@
+{
+  "version": "Alpha Version 1.54",
+  "previousCommit": "01bd578bbb60edaaa4cb2384a44803bdf552320f",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7887057,
+    "sha256": "2580c370407ce2ed8d1aa1b5948d9534d6d3518e5795a3e35606c0059476cc2a",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "testedGameplaySHA256": "2ba3a6db600625eaf9ab7e0599341822a262ad44bc9c55ce1d925a84de300698",
+  "comparisons": {
+    "battle": 30,
+    "landmark": 18,
+    "limitBreak": 1,
+    "overworldRoad": 1
+  },
+  "releaseChecks": {
+    "desktopArenas": [
+      "waterfall",
+      "woodland",
+      "orchard",
+      "ruins",
+      "cavern",
+      "mountain",
+      "snow",
+      "coast",
+      "royalRoad",
+      "moonlit",
+      "grassMeadow",
+      "grassRiver",
+      "grassFlowers",
+      "grassDowns",
+      "grassWindmill",
+      "grassAutumn",
+      "grassStones",
+      "grassHills",
+      "grassBirch",
+      "grassTwilight"
+    ],
+    "desktopStoryBattles": [
+      "wildlife",
+      "tavinIntro",
+      "commander1",
+      "betrayal",
+      "guard",
+      "commander2",
+      "commander3"
+    ],
+    "storyGroundRestored": true,
+    "fighterSilhouetteOverlaps": 0,
+    "battleIntroPosesChecked": 480,
+    "touchLayout": "Chrome phone emulation",
+    "overworldModels": 15,
+    "connectedRoadEntrances": [
+      "brookstead:west:0",
+      "brookstead:east:1",
+      "fern:east:0",
+      "fern:north:1",
+      "depths:south:0",
+      "highmere:west:0",
+      "highmere:east:1",
+      "alder:west:0",
+      "alder:east:1",
+      "patrol:east:0",
+      "alderRemnant:west:0",
+      "relief:west:0",
+      "relief:east:1",
+      "nearbySite:east:0",
+      "snow:south:0",
+      "fernClearing:south:0",
+      "alderClearing:east:0",
+      "reliefClearing:south:0",
+      "siteClearing:south:0",
+      "harbor:west:0"
+    ],
+    "sampledRoundTrips": [
+      "brookstead:west:0",
+      "brookstead:east:1",
+      "harbor:west:0"
+    ],
+    "limitBreak": {
+      "0": {
+        "n": 0,
+        "inBounds": true,
+        "role": "Limit Break 0 of 5"
+      },
+      "3": {
+        "n": 3,
+        "inBounds": true,
+        "role": "Limit Break 3 of 5"
+      },
+      "5": {
+        "n": 5,
+        "inBounds": true,
+        "role": "Limit Break 5 of 5"
+      },
+      "errors": []
+    },
+    "persistence": {
+      "pass": true,
+      "cases": [
+        "stable quest identity",
+        "frozen legacy migration",
+        "unknown quest",
+        "invalid position",
+        "invalid party",
+        "invalid character data",
+        "numeric bounds",
+        "checksum",
+        "backup recovery",
+        "legacy recovery and export",
+        "waterworks progress migration",
+        "optional task validation",
+        "ordered ceremony recovery validation"
+      ]
+    },
+    "runtimeAssets": {
+      "referencesChecked": 1525,
+      "travelArt": [
+        {
+          "file": "elyndor/assets/valenne-travel/brookstead.png",
+          "bytes": 58720,
+          "sha256": "84f21878f0a75100c51b709c47a18188e9eb14d196bc46e340d200147eef656a"
+        },
+        {
+          "file": "elyndor/assets/valenne-travel/fir.png",
+          "bytes": 5423,
+          "sha256": "87d1046574e729ea81879255c02805722cba6921459153b4bce57aa56b78c8e1"
+        },
+        {
+          "file": "elyndor/assets/valenne-travel/landscape.webp",
+          "bytes": 22734,
+          "sha256": "8caa8a23b9e0f185eb75fd386af026d976269d083076b9ea3c5fe7a9be29148c"
+        },
+        {
+          "file": "elyndor/assets/valenne-travel/limit-crystal.png",
+          "bytes": 2191,
+          "sha256": "e4e48cdc7b1b9d9ff9ca121f87c385691da9c78c69adbc1d9b503fae28f0f947"
+        },
+        {
+          "file": "elyndor/assets/valenne-travel/limit-ready.png",
+          "bytes": 25657,
+          "sha256": "ef9be2fcd94ab4e0d9b71c4022dc5295a222ca4d56ba3637b6114dc756ff8416"
+        },
+        {
+          "file": "elyndor/assets/valenne-travel/limit-socket.png",
+          "bytes": 1554,
+          "sha256": "03f594f9aa9ced3cf87b04fb889f2ec9e975be156044833945ddbee1f7ff9c57"
+        },
+        {
+          "file": "elyndor/assets/valenne-travel/oak.png",
+          "bytes": 25565,
+          "sha256": "06bd8b302b9cf86701ba6acf521d56d4e09af577e60e5d2cf77ea36ef39fa363"
+        },
+        {
+          "file": "elyndor/assets/valenne-travel/patrol.png",
+          "bytes": 30084,
+          "sha256": "ca59930e83f0eb4dabe9ccc0629bda7683fb861ad8100f4cad9e4290fd7dbb82"
+        }
+      ]
+    }
+  },
+  "verifiedGameplayChecks": {
+    "phoneArenas": 20,
+    "phoneStoryEncounters": 7,
+    "roundTrips": [
+      "brookstead:west:0",
+      "brookstead:east:1",
+      "fern:east:0",
+      "fern:north:1",
+      "highmere:west:0",
+      "highmere:east:1",
+      "alder:west:0",
+      "alder:east:1",
+      "relief:west:0",
+      "relief:east:1",
+      "harbor:west:0",
+      "depths:south:0",
+      "patrol:east:0",
+      "alderRemnant:west:0",
+      "nearbySite:east:0",
+      "snow:south:0",
+      "fernClearing:south:0",
+      "alderClearing:east:0",
+      "reliefClearing:south:0",
+      "siteClearing:south:0"
+    ]
+  }
+}

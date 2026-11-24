@@ -323,7 +323,11 @@
       "systems/overworld-scenery.js",
       "systems/landscape-and-impact-light.js",
       "systems/exploration-lighting.js",
-      "systems/limit-break.js"
+      "systems/limit-break.js",
+      "systems/landmark-models.js",
+      "systems/regional-landmark-models.js",
+      "systems/valenne-travel-art.js",
+      "systems/battlefield-margins.js"
     ]
   },
   "styles": [

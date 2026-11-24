@@ -2,6 +2,18 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.54 — Valenne landmarks and battlefield scenery
+
+November 24, 2026
+
+- All 15 destinations on the Valenne overworld and atlas now have textured 3D landmarks. Look for Brookstead’s mill, Highmere’s towers, the shipyard at the harbor and the four Elder Light shrines. At dusk, windows and crystals glow and cast light on nearby surfaces.
+- Each of the 20 road entrances still leads to its own arrival point inside the destination. Bridge paving, stone-lined riverbanks, woodland and meadow surfaces now share the overworld’s new visual style.
+- Battle cards show each Limit Break charge as a faceted cyan crystal in a gold socket. A full row gains a blue flame effect, with a steady full-charge display when reduced motion is enabled.
+- Across all 20 battle arenas, soil, moss, paving and snow pick up the light and colour of the backdrop. At Silverfall, waterfall spray and ripples stay on the water behind the shoreline rocks.
+- Weathered rocks, ferns, wildflowers and coastal grasses frame the fight beside the party and in the lower-right foreground. Raised scenery leaves room around the fighters. The seven story battles use the ground at their actual locations, with placement fitted to desktop and phone views.
+
+[Battlefield comparisons](elyndor/previews/release-v154/battles/gallery.html) · [Landmark comparisons](elyndor/previews/release-v154/landmarks/gallery.html) · [Limit Break indicator](elyndor/previews/release-v154/powerup.png) · [Overworld roads](elyndor/previews/release-v154/road.webp)
+
 ## Alpha Version 1.53 — Party visibility, battle portraits, and command selection
 
 November 24, 2026

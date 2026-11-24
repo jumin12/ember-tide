@@ -42,13 +42,16 @@ function miniFooting71(root,q,x,z,w,d,a=0){
  const foundation=block16(g,0,-h*.5,0,w+.12,h,d+.12,'wall','#b0b6a2');foundation.name='Individual terrain-seated stone footing';
  const worldPt=miniWorld71(q,x,z),angle=q.a+a,ww=Math.abs(Math.cos(angle))*w+Math.abs(Math.sin(angle))*d,dd=Math.abs(Math.sin(angle))*w+Math.abs(Math.cos(angle))*d;obstacle(worldPt.x,worldPt.z,ww,dd,'miniature building');root.userData.siteFootprints45.push({x:worldPt.x,z:worldPt.z,w:ww,d:dd,floor:y});return g;
 }
-function miniatureGateway71(root,q,gate,key){
+function drawMiniatureGateway71(root,q,gate,key){
  const loc=gate.local,dir=gate.dir,localDir=miniLocal71(q,q.x+dir[0],q.z+dir[1]),right={x:localDir.z,z:-localDir.x},stone=key==='highmere'||key==='harbor',post=stone?'wall':'wood';
  for(const side of[-1,1]){const x=loc.x+right.x*3.0*side,z=loc.z+right.z*3.0*side,at=miniWorld71(q,x,z),y=macroGround(at.x,at.z),h=stone?3.8:3.2;block16(root,x,y+h/2,z,stone?.7:.32,h,stone?.7:.32,post,stone?'#c2c4b0':'#9b825d');if(stone)block16(root,x,y+h+.12,z,.9,.24,.9,'wall','#d0ceba');else{const cap=block16(root,x,y+h+.08,z,.50,.15,.5,'darkWood','#7d6c4e');cap.rotation.y=q.a;}if(side===1){const sign=block16(root,x,y+1.35,z,.90,.55,.13,'wood','#b8a27b');sign.rotation.y=Math.atan2(dir[0],dir[1])-q.a;}}
  if(POIS[key].kind==='town'){
   const at=miniWorld71(q,loc.x,loc.z),y=macroGround(at.x,at.z)+(stone?3.8:3.2),n=new THREE.Group();n.position.set(loc.x,y,loc.z);n.rotation.y=Math.atan2(localDir.x,localDir.z);root.add(n);block16(n,0,0,0,7.0,.22,.38,post,stone?'#bfc4b1':'#8c7856');if(key!=='relief')roof16(n,0,.12,0,7.2,.9,1.6,key==='fern'?'#718e77':'#71859a');
  }
  const start={x:loc.x-localDir.x*3.5,z:loc.z-localDir.z*3.5},outside={x:loc.x+localDir.x*5.5,z:loc.z+localDir.z*5.5};miniatureLane71(root,q,[start,loc,outside],3.4,key==='highmere'?'cobble':'earth');
+}
+function miniatureGateway71(root,q,gate,key){
+ drawMiniatureGateway71(root,q,gate,key);
  createInteraction('location',gate.x,gate.z,'Enter '+POIS[key].name);Object.assign(interactables.at(-1),{poi:key,entranceId64:gate.id,worldGate71:gate,radius:3.7,visualHeight:.2,diorama67:true});
 }
 function miniatureRocks71(root,q,x,z,size=1,kind=0){const at=miniWorld71(q,x,z),o=new THREE.Mesh(rockGeometry62(kind),rockMaterial62(q.key==='snow'?1:0));o.position.set(x,macroGround(at.x,at.z)+size*.1,z);o.scale.set(size,size*.8,size);o.rotation.y=x*.3+z*.8;o.castShadow=o.receiveShadow=true;root.add(o);return o;}
