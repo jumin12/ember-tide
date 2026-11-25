@@ -2,6 +2,18 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.57 — Woodland canopies and battlefield grass
+
+November 25, 2026
+
+- Battle grass keeps its original blade shapes, height and color. Tufts grow where the ground around their roots is already green, leaving worn paths, bare dirt and snow clear.
+- The same placement applies in all 20 arenas and seven story encounters. Grass at each story location returns to its exploration layout when the fight ends.
+- Valenne’s oak, birch, willow, maple, spruce and pine now have textured 3D crowns. Their distinct silhouettes are visible along the roads and riverbanks.
+
+[Overworld tree comparison](elyndor/previews/release-v157/woodland-crowns.jpg)
+
+Battle grass before and after, using the preceding local grass pass for comparison. [Greenreach Meadow](elyndor/previews/release-v157/grassMeadow.jpg) · [Silverfall Clearing](elyndor/previews/release-v157/waterfall.jpg) · [Deepwood Glade](elyndor/previews/release-v157/woodland.jpg)
+
 ## Alpha Version 1.56 — River currents, woodland and battle scenery
 
 November 24, 2026

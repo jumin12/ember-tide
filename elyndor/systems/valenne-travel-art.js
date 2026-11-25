@@ -1,6 +1,6 @@
 // Travel-scale artwork is sampled in world coordinates. Routes, water depth,
 // trees and landmark entrances still use the authored terrain and transforms.
-const valenneArt={woodland:null,surfaces:null,river:null,loading:null};
+const valenneArt={surfaces:null,river:null,loading:null};
 const travelArtLoad=loadAssets;
 loadAssets=async function(...args){
  const result=await travelArtLoad.apply(this,args);
@@ -13,11 +13,11 @@ loadAssets=async function(...args){
 };
 async function loadValenneArt(){
  const folder='elyndor/assets/valenne-travel/';
- const names=['woodland','meadow-and-stone','landscape'];
+ const names=['meadow-and-stone','landscape'];
  const images=await Promise.all(names.map(async name=>{
   const image=new Image();image.src=folder+name+'.webp';await image.decode();return image;
  }));
- const source=images[1],canvas=document.createElement('canvas');
+ const source=images[0],canvas=document.createElement('canvas');
  canvas.width=source.width;canvas.height=source.height;
  const ctx=canvas.getContext('2d');ctx.drawImage(source,0,0);
  const pixels=ctx.getImageData(0,0,canvas.width,canvas.height);
@@ -25,10 +25,8 @@ async function loadValenneArt(){
  t.wrapS=t.wrapT=THREE.RepeatWrapping;t.colorSpace=THREE.SRGBColorSpace;t.magFilter=THREE.LinearFilter;
  t.minFilter=THREE.LinearMipmapLinearFilter;t.generateMipmaps=true;t.anisotropy=Math.min(4,renderer.capabilities.getMaxAnisotropy());
  t.userData.pinnedMap17=true;t.needsUpdate=true;valenneArt.surfaces=t;
- const trees=new THREE.Texture(images[0]);trees.colorSpace=THREE.SRGBColorSpace;
- trees.userData.pinnedMap17=true;trees.needsUpdate=true;valenneArt.woodland=trees;
  // Retain the original blue pigment and fine brushwork at their native resolution.
- const landscape=images[2],tile=landscape.width,strip=document.createElement('canvas');
+ const landscape=images[1],tile=landscape.width,strip=document.createElement('canvas');
  strip.width=strip.height=tile;
  strip.getContext('2d').drawImage(landscape,0,3*tile,tile,tile,0,0,tile,tile);
  const river=new THREE.CanvasTexture(strip);river.flipY=false;river.colorSpace=THREE.SRGBColorSpace;
@@ -48,75 +46,128 @@ function valenneTreeStyle(t){
  if(roll<.39)return grove>.48?'birch':'willow';
  return roll<.68?'oak':'maple';
 }
-const valenneCrowns=['oak','birch','willow','spruce','maple','pine'];
-function valenneTreePlane(height){
- const key='valenne-woodland-plane-'+height;
+// Crown profiles are modeled in the same seven-unit frame as the rooted trees.
+// The same branch positions are retained at every level of detail.
+const woodlandForms={
+ oak:   {width:2.18,base:2.35,top:6.45,lobes:8,leaf:'#62964f',bark:'#796345'},
+ birch: {width:1.37,base:2.55,top:7.15,lobes:7,leaf:'#86a852',bark:'#c2bda2'},
+ willow:{width:2.07,base:1.83,top:6.55,lobes:8,leaf:'#77965c',bark:'#786c4d'},
+ maple: {width:1.94,base:2.17,top:6.85,lobes:7,leaf:'#77a24f',bark:'#82674a'},
+ spruce:{width:1.75,base:.72,top:7.12,tiers:8,leaf:'#56875f',bark:'#785d41'},
+ pine:  {width:1.87,base:1.42,top:6.96,tiers:6,leaf:'#698b58',bark:'#866748'}
+};
+function woodlandCrownGeometry(style,lod){
+ const key='woodland-crown-'+style+'-'+lod;
  if(sharedGeo[key])return sharedGeo[key];
- const h=height,g=new THREE.PlaneGeometry(h,h);
- g.translate(0,h/2-h*6/256,0);
- g.computeBoundingBox();g.boundingBox.min.z=g.boundingBox.min.x;g.boundingBox.max.z=g.boundingBox.max.x;g.computeBoundingSphere();
+ const form=woodlandForms[style],seed=Object.keys(woodlandForms).indexOf(style)+1,random=seeded(seed*751+843);
+ const positions=[],colours=[],skin=[],indices=[];
+ const leaf=new THREE.Color(form.leaf),bark=new THREE.Color(form.bark);
+ function vertex(x,y,z,isLeaf,tone){
+  positions.push(x,y,z);skin.push(isLeaf?(form.tiers?2:1):0);
+  const ink=isLeaf?leaf:bark;
+  colours.push(ink.r*tone,ink.g*tone,ink.b*tone);
+ }
+ function connect(first,n,rows){
+  for(let j=0;j<rows-1;j++)for(let i=0;i<n;i++){
+   const a=first+j*n+i,b=first+j*n+(i+1)%n;
+   indices.push(a,a+n,b,b,a+n,b+n);
+  }
+ }
+ function limb(x,y,z,endX,endY,endZ,r,tip){
+  const first=skin.length,n=lod===2?4:6;
+  for(let end=0;end<2;end++)for(let i=0;i<n;i++){
+   const a=i*TAU/n,rad=end?tip:r;
+   vertex((end?endX:x)+Math.cos(a)*rad,end?endY:y,(end?endZ:z)+Math.sin(a)*rad,false,.78+.2*Math.cos(a-.7));
+  }
+  connect(first,n,2);
+ }
+ const lean=style==='pine'?.31:style==='birch'?-.22:.11;
+ limb(0,-.06,0,lean,form.top*.78,.09,style==='birch'?.14:.22,.065);
+ function crown(x,y,z,rx,ry,rz,turn,tint,needle=false){
+  const first=skin.length,n=lod===0?(needle?26:18):lod===1?(needle?16:12):7;
+  const profile=needle?[[.05,-.30],[.76,-.32],[1,-.19],[.68,.17],[.32,.49],[.025,.81]]:
+                       [[.035,-1],[.67,-.75],[.96,-.33],[1,.18],[.72,.63],[.38,.87],[.026,1]];
+  const rows=lod===2?profile.filter((_,j)=>j===0||j===2||j===profile.length-2||j===profile.length-1):profile;
+  for(const [radius,h] of rows)for(let i=0;i<n;i++){
+   const a=i*TAU/n+turn,scallop=Math.sin(a*(needle?7:5)+turn*1.9+h*.42);
+   const notch=Math.sin(a*3.0-turn+h*.58),r=radius*(1+.092*scallop+.078*notch);
+   const lip=(needle?.14:.09)*scallop*radius,down=style==='willow'?.15*Math.max(0,scallop)*radius:0;
+   vertex(x+rx*r*Math.cos(a),y+ry*(h+lip-down),z+rz*r*Math.sin(a),true,
+    tint*(.73+.30*(h+1)*.5+.075*scallop+.047*notch));
+  }
+  connect(first,n,rows.length);
+  // Small folded sprays break up the perimeter. Their shared tip and central
+  // ridge read as leafy branch ends at the on-screen size of a travel tree.
+  if(lod===2)return;
+  const count=needle?12:18,keep=lod===1?3:1;
+  for(let k=0;k<count;k+=keep){
+   const a=k*2.399963+turn,t=needle?-.11+.22*Math.sin(k*5.7):-.77+1.54*((k+.5)/count);
+   const rad=needle?.85:Math.sqrt(1-t*t)*.94,dx=Math.cos(a),dz=Math.sin(a);
+   const cx=x+dx*rx*rad,cz=z+dz*rz*rad,cy=y+t*ry;
+   const reach=(needle?.31:.28)*Math.min(rx,rz),width=(needle?.14:.22)*rx,drop=style==='willow'?.64:needle?.21:.10;
+   for(let j=-1;j<=1;j++){
+    const v=skin.length,jx=dx-dz*j*.45,jz=dz+dx*j*.45;
+    vertex(cx-jx*reach*.57,cy+.07,cz-jz*reach*.57,true,tint*.81);
+    vertex(cx-dz*width*.55,cy+.065,cz+dx*width*.55,true,tint*.95);
+    vertex(cx+jx*reach*.52,cy+.12,cz+jz*reach*.52,true,tint*1.15);
+    vertex(cx+dz*width*.55,cy+.04,cz-dx*width*.55,true,tint*.87);
+    vertex(cx+jx*reach,cy-drop,cz+jz*reach,true,tint*.96);
+    indices.push(v,v+1,v+2,v,v+2,v+3,v+1,v+4,v+2,v+2,v+4,v+3);
+   }
+  }
+
+ }
+ if(form.tiers){
+  for(let i=0;i<form.tiers;i++){
+   const t=i/(form.tiers-1),y=mix(form.base+.49,form.top-.55,t);
+   const r=form.width*(.16+.84*Math.pow(1-t,.83))*(.94+.1*random());
+   crown(lean*t+.15*Math.sin(i*2),y,.12*Math.cos(i*1.4),r,1.28-.34*t,r*(.90+.08*random()),i*1.83,.88+.14*t,true);
+  }
+ }else{
+  for(let i=0;i<form.lobes;i++){
+   const t=i/(form.lobes-1),a=i*2.39996+seed*.44,y=mix(form.base+.74,form.top-.97,t);
+   const r=form.width*(.47+.15*random()),reach=form.width*(.66-.37*t);
+   const x=lean*t+Math.cos(a)*reach,z=Math.sin(a)*reach,ry=style==='willow'?1.47+.39*random():style==='birch'?1.16+.22*random():.90+.28*random();
+   const depth=r*(.83+.22*random());
+   if(lod===2&&i%2)continue;
+   limb(lean*.4,Math.max(.9,y-1.55),.03,x,y,z,.095,.036);
+   crown(x,y,z,r*(lod===2?1.12:1),ry,depth,a,.87+.20*t);
+  }
+  crown(lean,form.top-.73,.05,form.width*.50,.96,form.width*.46,seed*.4,1.07);
+ }
+ const g=new THREE.BufferGeometry();
+ g.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));g.setAttribute('color',new THREE.Float32BufferAttribute(colours,3));
+ g.setAttribute('woodlandLeaf',new THREE.Float32BufferAttribute(skin,1));g.setIndex(indices);
+ g.computeVertexNormals();g.computeBoundingBox();g.computeBoundingSphere();
  return sharedGeo[key]=g;
 }
-// The shadow camera must cast the same physical leaf card that the player sees.
-const valenneCrownRight={value:V3(1,0,0)};
-const valenneRenderBefore=render;
-render=function(...args){
- if(activeScene?.kind==='overworld'){
-  camera.updateMatrixWorld();valenneCrownRight.value.setFromMatrixColumn(camera.matrixWorld,0);
-  valenneCrownRight.value.y=0;valenneCrownRight.value.normalize();
- }
- return valenneRenderBefore.apply(this,args);
-};
-function valenneTreeMaterial(depth=false){
- const options={map:valenneArt.woodland,alphaTest:.26,side:THREE.DoubleSide};
- const m=depth?new THREE.MeshDepthMaterial({...options,depthPacking:THREE.RGBADepthPacking}):
-  new THREE.MeshStandardMaterial({...options,roughness:1,metalness:0,envMapIntensity:.1});
+function woodlandCrownMaterial(depth=false){
+ const m=depth?new THREE.MeshDepthMaterial({depthPacking:THREE.RGBADepthPacking}):
+  new THREE.MeshStandardMaterial({vertexColors:true,roughness:.96,metalness:0});
  m.userData.treeViewCompiled=true;
- m.onBeforeCompile=s=>{
-  s.uniforms.travelMain=forest30.main;s.uniforms.crownRight=valenneCrownRight;
-  s.vertexShader='uniform vec3 crownRight; attribute float crownCell; attribute float treeViewHidden; uniform float travelMain;\n'+s.vertexShader.replace('#include <uv_vertex>',`#include <uv_vertex>
-   float cell=floor(crownCell);vec2 treeUV=uv;
-   if(fract(crownCell)>.25)treeUV.x=1.-treeUV.x;
-   vMapUv=(treeUV+vec2(mod(cell,4.),1.-floor(cell/4.)))/vec2(4.,2.);`).replace('#include <begin_vertex>',`
-   #include <begin_vertex>
-   vec3 side=${depth?'crownRight':'normalize(vec3(viewMatrix[0][0],0.,viewMatrix[2][0])+vec3(1e-7,0.,0.))'};
-   transformed.x=position.x*dot(side,instanceMatrix[0].xyz/max(length(instanceMatrix[0].xyz),.00001));
-   transformed.z=position.x*dot(side,instanceMatrix[2].xyz/max(length(instanceMatrix[2].xyz),.00001));
-   ${depth?'':'if(treeViewHidden>.5&&travelMain>.5)transformed=vec3(0.);'}`);
-  if(!depth){
-   s.vertexShader='varying vec2 crownUV; varying float conifer;\n'+s.vertexShader.replace('float cell=floor(crownCell);',
-    'crownUV=uv;float cell=floor(crownCell);conifer=(cell==3.||cell==5.)?1.:0.;');
-   s.uniforms.canopySun=weather.sun;
-   // Receive shadows on the sun-facing surface of the crown. Reading the
-   // shadow map on the paper-thin centre plane causes striped self-shadow.
-   s.vertexShader='uniform vec3 canopySun;\n'+s.vertexShader.replace('#include <shadowmap_vertex>',`
-    #ifdef USE_SHADOWMAP
-     vec3 crownLift=canopySun*(.16+.58*uv.y)*length(instanceMatrix[1].xyz);
-     worldPosition.xyz+=crownLift;
-    #endif
-    #include <shadowmap_vertex>
-    #ifdef USE_SHADOWMAP
-     worldPosition.xyz-=crownLift;
-    #endif`);
-   s.fragmentShader='varying vec2 crownUV; varying float conifer;\n'+s.fragmentShader.replace('#include <map_fragment>',`
-   #include <map_fragment>
-   vec3 pigment=diffuseColor.rgb;
-   float foliage=smoothstep(-.025,.08,pigment.g-pigment.b)*smoothstep(.07,.33,crownUV.y);
-   vec3 leafTint=mix(vec3(.36,.61,.34),vec3(.27,.53,.47),conifer);
-   diffuseColor.rgb*=mix(vec3(.52,.51,.46),leafTint,foliage);
-   diffuseColor.rgb*=mix(.71,1.04,smoothstep(.12,.77,crownUV.y));`).replace('#include <normal_fragment_maps>',`
-   #include <normal_fragment_maps>
-   // A rounded crown catches the same sun and sky as the meadow. Its normals
-   // follow the visible canopy even as the camera-facing leaf card turns.
-   vec2 shell=clamp(vec2((crownUV.x-.5)*2.,(crownUV.y-.49)*2.),-1.,1.);
-   vec3 right=normalize(vec3(viewMatrix[0][0],0.,viewMatrix[2][0])+vec3(1.e-7,0.,0.));
-   vec3 facing=cross(right,vec3(0.,1.,0.));
-   vec3 canopy=normalize(right*shell.x*.76+vec3(0.,.66+shell.y*.56,0.)+facing*(.55-.23*dot(shell,shell)));
-   normal=normalize(mat3(viewMatrix)*canopy);`);
-  }
+ if(depth)return m;
+ addCloudLighting(m);
+ const compile=m.onBeforeCompile,key=m.customProgramCacheKey();
+ m.onBeforeCompile=function(shader,...args){
+  compile.call(this,shader,...args);shader.uniforms.woodlandMain=forest30.main;
+  shader.vertexShader='attribute float woodlandLeaf,treeViewHidden; uniform float woodlandMain; varying vec3 leafPoint; varying float isCanopy;\n'+shader.vertexShader.replace('#include <begin_vertex>',
+   '#include <begin_vertex>\nleafPoint=position;isCanopy=woodlandLeaf;transformed*=1.-treeViewHidden*woodlandMain;');
+  shader.uniforms.crownLeaves={value:textures.oakCanopy};shader.uniforms.crownNeedles={value:textures.pineCanopy};
+  shader.vertexShader='varying vec3 branchNormal;\n'+shader.vertexShader.replace('leafPoint=position;', 'branchNormal=normal;leafPoint=position;');
+  shader.fragmentShader='uniform sampler2D crownLeaves,crownNeedles; varying vec3 leafPoint,branchNormal;varying float isCanopy;\n'+shader.fragmentShader.replace('#include <color_fragment>',`#include <color_fragment>
+   if(isCanopy>.5){
+    vec3 weights=pow(abs(normalize(branchNormal)),vec3(4.));weights/=max(.0001,dot(weights,vec3(1.)));
+    vec3 p=leafPoint*.52;
+    vec3 brush;
+    if(isCanopy>1.5)brush=texture2D(crownNeedles,p.zy).rgb*weights.x+texture2D(crownNeedles,p.xz).rgb*weights.y+texture2D(crownNeedles,p.xy).rgb*weights.z;
+    else brush=texture2D(crownLeaves,p.zy).rgb*weights.x+texture2D(crownLeaves,p.xz).rgb*weights.y+texture2D(crownLeaves,p.xy).rgb*weights.z;
+    float relief=dot(brush,vec3(.22,.70,.08));
+    diffuseColor.rgb*=mix(.60,.79,step(1.5,isCanopy))+.78*smoothstep(.020,.20,relief);
+    diffuseColor.rgb+=vec3(.023,.032,.008)*smoothstep(.15,.36,relief);
+   }`).replace('#include <opaque_fragment>', 'outgoingLight=max(outgoingLight,diffuseColor.rgb*.18);\n#include <opaque_fragment>');
  };
- m.customProgramCacheKey=()=>depth?'valenne-tree-shadow':'valenne-lit-canopy';
- if(!depth)addCloudLighting(m);return m;
+ m.customProgramCacheKey=()=>key+'-sculpted-woodland';
+ return m;
 }
 
 const valenneGroundBefore=groundMaterial102;

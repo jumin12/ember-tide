@@ -1,0 +1,82 @@
+{
+  "version": "Alpha Version 1.57",
+  "previousCommit": "11d7f8ed067f5496978be2cdcbdf002f5acaa7a3",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7917874,
+    "sha256": "fc9c7a60ca69f013181449ff700d5f13b942783e68c12d2346ddb5bdd7ccabd7",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "gameplaySHA256": "11d9072fa2c3e30107f9999d60ccebbdd049cd72721ccd6da0d4670c4aa560a0",
+  "checks": {
+    "desktop": {
+      "arenaViews": 20,
+      "stages": [
+        "cavern",
+        "coast",
+        "grassAutumn",
+        "grassBirch",
+        "grassDowns",
+        "grassFlowers",
+        "grassHills",
+        "grassMeadow",
+        "grassRiver",
+        "grassStones",
+        "grassTwilight",
+        "grassWindmill",
+        "moonlit",
+        "mountain",
+        "orchard",
+        "royalRoad",
+        "ruins",
+        "snow",
+        "waterfall",
+        "woodland"
+      ],
+      "lighting": [
+        "day"
+      ],
+      "webGLErrors": 0,
+      "storyEncountersWithGrassRestored": [
+        "wildlife",
+        "tavinIntro",
+        "commander1",
+        "betrayal",
+        "guard",
+        "commander2",
+        "commander3"
+      ]
+    },
+    "phone": {
+      "arenaViews": 8,
+      "stages": [
+        "grassMeadow",
+        "grassRiver",
+        "snow",
+        "waterfall"
+      ],
+      "lighting": [
+        "day",
+        "night"
+      ],
+      "webGLErrors": 0,
+      "storyEncountersWithGrassRestored": [
+        "wildlife",
+        "guard"
+      ]
+    },
+    "overworld": {
+      "treeForms": [
+        "birch",
+        "maple",
+        "oak",
+        "pine",
+        "spruce",
+        "willow"
+      ],
+      "destination": "brookstead",
+      "atlasLandmarks": 15
+    }
+  }
+}

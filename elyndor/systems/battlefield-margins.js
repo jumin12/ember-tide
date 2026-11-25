@@ -523,6 +523,107 @@ function buildMarginScatter(stage,group,q,b,inLane){
  }
  return {stones,count,materials};
 }
+// Read the existing ground pigment, including the painted bank at the rear.
+// A tuft needs a green root and a surrounding patch, even in a night battle.
+function battleGrowthField(floors,cx,cz,story){
+ const scan=new THREE.Scene(),materials=new Map(),bounds=new THREE.Box3(),box=new THREE.Box3();
+ const nightBank=!story&&encounter53.phase55==='night';
+ for(const floor of floors){
+  floor.updateWorldMatrix(true,false);
+  if(!floor.geometry.boundingBox)floor.geometry.computeBoundingBox();
+  bounds.union(box.copy(floor.geometry.boundingBox).applyMatrix4(floor.matrixWorld));
+  // Both pieces of an arena bank share the same underlying ground pigment.
+  const source=story?floor.material:floors[0].material;
+  let m=materials.get(source);
+  if(!m){
+   m=source.clone();materials.set(source,m);
+   m.onBeforeCompile=function(shader,...args){
+    source.onBeforeCompile.call(this,shader,...args);
+    const road=story&&shader.fragmentShader.includes('varying vec3 vGround')?'*(1.-smoothstep(.12,.54,vGroundBlend.x))':'';
+    const bank=shader.fragmentShader.includes('varying vec4 contactColor,groundWash;');
+    shader.fragmentShader=shader.fragmentShader.replace('#include <dithering_fragment>',`
+     vec3 soilInk=diffuseColor.rgb;
+     vec2 greenRatios=soilInk.gg/max(vec2(.001),soilInk.rb);
+     ${bank?`vec3 bankInk=mix(soilInk,groundWash.rgb,groundWash.a)*(1.-contactColor.a)+contactColor.rgb;
+       // The painted verge can veto a planting. Blue night light does not describe soil.
+       vec2 bankRatios=bankInk.gg/max(vec2(.001),bankInk.rb);
+       greenRatios.x=min(greenRatios.x,bankRatios.x);
+       ${nightBank?'':'greenRatios.y=min(greenRatios.y,bankRatios.y);'}`:''}
+     float green=smoothstep(1.02,1.13,greenRatios.x)*smoothstep(1.08,1.26,greenRatios.y)${road};
+     gl_FragColor=vec4(green,green,green,1.);`);
+   };
+   m.customProgramCacheKey=()=>source.customProgramCacheKey()+(nightBank?'-night-ground-growth':'-ground-growth');
+   m.side=THREE.DoubleSide;m.transparent=false;m.depthWrite=true;
+  }
+  const layer=new THREE.Mesh(floor.geometry,m);layer.matrixAutoUpdate=false;layer.matrix.copy(floor.matrixWorld);scan.add(layer);
+ }
+ const spanX=story?bounds.max.x-bounds.min.x:96,spanZ=story?bounds.max.z-bounds.min.z:106;
+ const x0=story?bounds.min.x:cx-spanX*.5,z0=story?bounds.min.z:cz-spanZ*.5;
+ const width=clamp(Math.ceil(spanX*4),4,1024),height=clamp(Math.ceil(spanZ*4),4,1024);
+ const lens=new THREE.OrthographicCamera(-spanX*.5,spanX*.5,spanZ*.5,-spanZ*.5,.1,bounds.max.y-bounds.min.y+4);
+ lens.up.set(0,0,-1);lens.position.set(x0+spanX*.5,bounds.max.y+2,z0+spanZ*.5);lens.lookAt(lens.position.x,bounds.min.y-1,lens.position.z);
+ const target=new THREE.WebGLRenderTarget(width,height,{depthBuffer:true});
+ const previous=renderer.getRenderTarget(),face=renderer.getActiveCubeFace(),level=renderer.getActiveMipmapLevel();
+ const clear=renderer.getClearColor(new THREE.Color()),alpha=renderer.getClearAlpha(),shadow=renderer.shadowMap.needsUpdate;
+ const rgba=new Uint8Array(width*height*4);
+ try{
+  renderer.setRenderTarget(target);renderer.setClearColor(0,0);renderer.clear();renderer.render(scan,lens);
+  renderer.readRenderTargetPixels(target,0,0,width,height,rgba);
+ }finally{
+  renderer.setRenderTarget(previous,face,level);renderer.setClearColor(clear,alpha);renderer.shadowMap.needsUpdate=shadow;
+  target.dispose();for(const m of materials.values())m.dispose();
+ }
+ const dx=Math.max(1,Math.round(.32*width/spanX)),dz=Math.max(1,Math.round(.32*height/spanZ));
+ return {allows(x,z){
+  const col=Math.floor((x-x0)*width/spanX),row=Math.floor((z0+spanZ-z)*height/spanZ);
+  if(col<dx||row<dz||col>=width-dx||row>=height-dz)return false;
+  const i=4*(row*width+col);
+  if(rgba[i]<115)return false;
+  const neighbors=Number(rgba[i-4*dx]>=105)+Number(rgba[i+4*dx]>=105)+
+   Number(rgba[i-4*width*dz]>=105)+Number(rgba[i+4*width*dz]>=105);
+  return neighbors>=3;
+ }};
+}
+function isBattleGroundcover(mesh){
+ const kind=mesh.userData.plantKey||mesh.material?.userData.realVegetation103;
+ return kind==='grassBlades'||/^Battlefield (?:right flank |right corner )?tussock$/.test(mesh.name);
+}
+function fitBattleGroundcover(root,field,restore){
+ root.updateWorldMatrix(true,true);
+ const matrix=new THREE.Matrix4(),base=V3(),tint=new THREE.Color();
+ let examined=0,rejected=0,kept=0;
+ root.traverse(mesh=>{
+  if(!mesh.isInstancedMesh||!isBattleGroundcover(mesh))return;
+  const native=restore&&!mesh.parent?.userData.dynamicFX;
+  const original=mesh.instanceMatrix;
+  let write=0,saved;
+  // Native POI vegetation can change draw distance and draw count during a
+  // fight. Preserve its instance order, LOD masks and the original buffer.
+  for(let i=0,n=native?original.count:mesh.count;i<n;i++){
+   mesh.getMatrixAt(i,matrix);base.setFromMatrixPosition(matrix).applyMatrix4(mesh.matrixWorld);
+   examined++;
+   if(!field.allows(base.x,base.z)){
+    rejected++;
+    if(native){
+     if(!saved){saved=original.array.slice();restore.push(()=>{original.array.set(saved);original.needsUpdate=true;});}
+     // Put the blade below the terrain for this fight, retaining its normal matrix.
+     matrix.elements[13]-=1200;mesh.setMatrixAt(i,matrix);
+    }
+    continue;
+   }
+   kept++;
+   if(!native){
+    if(write!==i)mesh.setMatrixAt(write,matrix);
+    if(i!==write&&mesh.instanceColor){mesh.getColorAt(i,tint);mesh.setColorAt(write,tint);}
+    write++;
+   }
+  }
+  if(!native){mesh.count=write;mesh.computeBoundingBox();mesh.computeBoundingSphere();if(mesh.instanceColor)mesh.instanceColor.needsUpdate=true;}
+  if(!native||saved)mesh.instanceMatrix.needsUpdate=true;
+ });
+ return {examined,rejected,kept};
+}
+
 const marginBuildBefore=buildStageScenery59;
 buildStageScenery59=function(...args){
  const result=marginBuildBefore.apply(this,args),b=arena88.current;
@@ -534,7 +635,12 @@ buildStageScenery59=function(...args){
  // The transparent rim delegates to this same material's compile hook.
  bindBattlefloorFinish(floor.material,data,stage,false);
  if(b.terrainJoin)b.terrainJoin.material.needsUpdate=true;
- b.marginStudy={count:scatter.count,footprints:scatter.stones.length,habitat:battleSoils[stage][2]};
+ let groundcover={examined:0,rejected:0,kept:0};
+ if(b.group.children.some(mesh=>mesh.isInstancedMesh&&mesh.count>0&&isBattleGroundcover(mesh))){
+  const growth=battleGrowthField(b.terrainJoin?[floor,b.terrainJoin]:[floor],q.x+b.group.position.x,q.z+b.group.position.z,false);
+  groundcover=fitBattleGroundcover(b.group,growth);
+ }
+ b.marginStudy={count:scatter.count,footprints:scatter.stones.length,habitat:battleSoils[stage][2],groundcover};
  return result;
 };
 
@@ -619,6 +725,7 @@ function updateStoryMargin(){
  const reframed=old&&idle&&(camera.position.distanceToSquared(old.eye)>1||
   camera.quaternion.angleTo(old.orientation)>.014||[0,5,8,9].some(i=>Math.abs(projection[i]-old.frustum[i])>.021)||
   innerWidth!==old.width||innerHeight!==old.height);
+ const sameGround=old&&old.story===story&&old.world===world&&old.homes===story?.rankHomes87;
  if(old&&(old.story!==story||old.world!==world||old.homes!==story?.rankHomes87||reframed))clearStoryMargin();
  if(!story||currentStoryMargin||!player||!battle.enemies.length||battle.enemies.some(e=>!e.actor)||!environment102.ground)return;
  const group=new THREE.Group();group.name='Story battlefield margins';group.userData.dynamicFX=true;world.add(group);
@@ -634,8 +741,10 @@ function updateStoryMargin(){
   }
   terrain.push([mesh,old,m]);mesh.material=m;
  });
+ const growth=(sameGround&&old.growth)||(terrain.length?battleGrowthField(terrain.map(([mesh])=>mesh),q.x,q.z,true):null);
+ if(growth)group.userData.groundcover=fitBattleGroundcover(world,growth,restoreRocks);
  group.userData.count=scenery.count;group.userData.groundMeshes=terrain.length;
- currentStoryMargin={story,homes:story.rankHomes87,eye:camera.position.clone(),orientation:camera.quaternion.clone(),
+ currentStoryMargin={story,growth,homes:story.rankHomes87,eye:camera.position.clone(),orientation:camera.quaternion.clone(),
   frustum:projection.slice(),width:innerWidth,height:innerHeight,
   world,group,terrain,restoreRocks,materials:[...scenery.materials,...copies.values()],texture:data.texture};
 }

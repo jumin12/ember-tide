@@ -55,22 +55,18 @@ buildSolidForest=function(...args){
  const bins=new Map(),materials=new Map(),depths=new Map(),cell=64;let oldInstances=0;
  for(const t of scenery.trees){
   const species=t.species30??0,variant=Math.abs(Math.floor(t.x*13+t.z*17))%3,H=species===4?7.8:7;
-  const style=valenneTreeStyle(t),key=[Math.floor(t.x/cell),Math.floor(t.z/cell),style?'woodland':species,style?0:variant,H].join(',');
+  const style=valenneTreeStyle(t),tile=style?cell*1.5:cell;
+  const key=[Math.floor(t.x/tile),Math.floor(t.z/tile),style??species,style?0:variant].join(',');
   const seed=n=>{const v=Math.sin(t.x*127.1+t.z*311.7+n)*43758.5453;return v-Math.floor(v)},sx=.79+seed(17)*.46,sz=style?sx:.84+seed(43)*.34,sy=.80+seed(71)*.40;
-  const matrix=new THREE.Matrix4().compose(V3(t.x,t.y,t.z),new THREE.Quaternion().setFromAxisAngle(V3(0,1,0),Math.sin(t.x*31+t.z*17)*TAU),V3(t.scale*sx,t.h/H*sy,t.scale*sz));t.growth160=[sx,sy,sz];
-  if(!bins.has(key))bins.set(key,{species,style,variant,H,center:V3(Math.floor(t.x/cell)*cell+cell/2,t.y,Math.floor(t.z/cell)*cell+cell/2),rows:[]});bins.get(key).rows.push({t,matrix,style});oldInstances+=(t.trunks?.length??0)+(t.crowns?.length??0);t.bindings=[];
+  const matrix=new THREE.Matrix4().compose(V3(t.x,t.y,t.z),new THREE.Quaternion().setFromAxisAngle(V3(0,1,0),Math.sin(t.x*31+t.z*17)*TAU),V3(t.scale*sx,t.h/(style?7:H)*sy,t.scale*sz));t.growth160=[sx,sy,sz];
+  if(!bins.has(key))bins.set(key,{species,style,variant,H,center:V3(Math.floor(t.x/tile)*tile+tile/2,t.y,Math.floor(t.z/tile)*tile+tile/2),rows:[]});bins.get(key).rows.push({t,matrix,style});oldInstances+=(t.trunks?.length??0)+(t.crowns?.length??0);t.bindings=[];
  }
  for(const {species,style,variant,H,center,rows}of bins.values()){
-  const mask=new THREE.InstancedBufferAttribute(new Float32Array(rows.length),1).setUsage(THREE.DynamicDrawUsage),lods=[0,1,2].map(lod=>{const g=shareGeometry36(style?valenneTreePlane(H):travelTreeGeometry157(species,variant,lod));g.setAttribute('treeViewHidden',mask);return g});
-  if(style){
-   const cells=new THREE.InstancedBufferAttribute(Float32Array.from(rows,({t,style})=>
-    valenneCrowns.indexOf(style)+(Math.sin(t.x*41.7+t.z*13.9)>0?.5:0)),1);
-   for(const g of lods)g.setAttribute('crownCell',cells);
-  }
+  const mask=new THREE.InstancedBufferAttribute(new Float32Array(rows.length),1).setUsage(THREE.DynamicDrawUsage),lods=[0,1,2].map(lod=>{const g=shareGeometry36(style?woodlandCrownGeometry(style,lod):travelTreeGeometry157(species,variant,lod));g.setAttribute('treeViewHidden',mask);return g});
   const materialKey=style?'woodland':species;
   if(!materials.has(materialKey)){
-   materials.set(materialKey,style?valenneTreeMaterial():rootedTravelMaterial157(treeMaterial104(species)));
-   depths.set(materialKey,style?valenneTreeMaterial(true):rootedTravelMaterial157(treeMaterial104(species,false,null,true)));
+   materials.set(materialKey,style?woodlandCrownMaterial():rootedTravelMaterial157(treeMaterial104(species)));
+   depths.set(materialKey,style?woodlandCrownMaterial(true):rootedTravelMaterial157(treeMaterial104(species,false,null,true)));
   }
   const o=new THREE.InstancedMesh(lods[0],materials.get(materialKey),rows.length);o.name='Travel woodland '+materialKey;
   o.userData={forest:true,forestKind:'canopy30',center,entries:rows,nativeLods30:lods,treeViewMask:mask,fullGeometry:lods[0],farGeometry:lods[1],simpleGeometry:lods[2],botany104:true,species104:species,travelTree157:true};o.castShadow=o.receiveShadow=true;o.customDepthMaterial=depths.get(materialKey);
@@ -98,7 +94,7 @@ buildBoundary46=function(...args){
 const travelFinishBefore157=finishWorld102;
 finishWorld102=function(...args){
  const r=travelFinishBefore157(...args);if(activeScene?.kind!=='overworld')return r;finishTravelMeadow160();if(world.userData.travelBounds157)return r;
- for(const t of scenery.trees){if(!t.travelMatrix157)continue;const g=t.travelStyle?valenneTreePlane(t.species30===4?7.8:7):travelTreeGeometry157(t.species30??0,t.travelVariant157,0);t.box=g.boundingBox.clone().applyMatrix4(t.travelMatrix157).expandByScalar(.15);t.cover30=[t.box];}
+ for(const t of scenery.trees){if(!t.travelMatrix157)continue;const g=t.travelStyle?woodlandCrownGeometry(t.travelStyle,0):travelTreeGeometry157(t.species30??0,t.travelVariant157,0);t.box=g.boundingBox.clone().applyMatrix4(t.travelMatrix157).expandByScalar(.15);t.cover30=[t.box];}
  treeCutCache30=null;world.userData.travelBounds157=true;return r;
 };
 

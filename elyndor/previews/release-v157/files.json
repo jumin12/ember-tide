@@ -1,0 +1,62 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 109073,
+    "sha256": "d26a810459c4f57a4e91a19b221c5d204c3bd3bf20f6f765b4653515def8eae1"
+  },
+  {
+    "file": "elyndor/previews/release-v157/grassMeadow.jpg",
+    "bytes": 331679,
+    "sha256": "72e3048aa40462a88da9c81d8c56fda38e41162b2bea9ba3f985b62945085fa6"
+  },
+  {
+    "file": "elyndor/previews/release-v157/verification.json",
+    "bytes": 1741,
+    "sha256": "8bca88b7486fd68bcb23a971d49d576dcb3f7e0ea507cb23b41747e153bc2fbc"
+  },
+  {
+    "file": "elyndor/previews/release-v157/waterfall.jpg",
+    "bytes": 339989,
+    "sha256": "f9946aa578ed6c0bb327e27a4e36975290e57222d83363f5d93804eba5b38f44"
+  },
+  {
+    "file": "elyndor/previews/release-v157/woodland-crowns.jpg",
+    "bytes": 326488,
+    "sha256": "47b8af51dd4707b4339ebb99f178016ea32bfe790d2aa2f7c858fcd60ef386bc"
+  },
+  {
+    "file": "elyndor/previews/release-v157/woodland.jpg",
+    "bytes": 323546,
+    "sha256": "d03fed8792a20f5af28295bdd911752b943eac55dc7008f866c44ef4f8804950"
+  },
+  {
+    "file": "elyndor/systems/battlefield-margins.js",
+    "bytes": 46874,
+    "sha256": "7b8f840d3c58e77d17703aa9d628124389772661ba17825553494b1f3daba32a"
+  },
+  {
+    "file": "elyndor/systems/overworld-scenery.js",
+    "bytes": 20199,
+    "sha256": "1b613ea0edbe01867ffbf0bf0674911a20ed1841e91614c0d50f362edff8f66c"
+  },
+  {
+    "file": "elyndor/systems/valenne-travel-art.js",
+    "bytes": 26456,
+    "sha256": "01f34d266d33b57c900dd9ee74a0df2e32942f66557b59facf197b514319bd4f"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 102690,
+    "sha256": "a09e4ba0e74c0fd7b547c6e0630c4770be1f46514ce64b5f00e0a9ecd7d8681a"
+  },
+  {
+    "file": "index.html",
+    "bytes": 7917874,
+    "sha256": "fc9c7a60ca69f013181449ff700d5f13b942783e68c12d2346ddb5bdd7ccabd7"
+  },
+  {
+    "file": "release.json",
+    "bytes": 107813,
+    "sha256": "7edf1904091b9abf65f03b65cd494f0df388e0d4e424f77bf1833dee9f1cac58"
+  }
+]
