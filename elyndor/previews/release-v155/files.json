@@ -1,0 +1,47 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 106874,
+    "sha256": "d6bc59858e40796402bd0aff7eda74f605d633b7b3b364fef1471edd455f1645"
+  },
+  {
+    "file": "elyndor/combat-v27.js",
+    "bytes": 8175,
+    "sha256": "0eaf82b3acb11204d8eb094772b6ff778bc5ad77027c2f57dbe7d5f67486e70e"
+  },
+  {
+    "file": "elyndor/previews/release-v155/desktop.png",
+    "bytes": 100274,
+    "sha256": "b4dc77d4c0584f65753988cc3ae68e9f3f2ad8caa76453fb541fe5ebd8ec813c"
+  },
+  {
+    "file": "elyndor/previews/release-v155/phone.png",
+    "bytes": 36330,
+    "sha256": "f1e97960f46da1251b71e1baa8b965d4a2c13c183f766517d22b048081154ce6"
+  },
+  {
+    "file": "elyndor/previews/release-v155/verification.json",
+    "bytes": 1484,
+    "sha256": "1cf32cf239c2b62ff4188ec346c395548d0df78426f174c0fcbad06a02bd816e"
+  },
+  {
+    "file": "elyndor/systems/combat-hud-polish.css",
+    "bytes": 21918,
+    "sha256": "e2600013d64744a9686bbf7d32ae5836dc4a1acbeac809562f219e490cb50538"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 101140,
+    "sha256": "4b673a7a03edf1f91bce68e520ed9dd4d45fb6dded6a601197a09d5a1f3e4ea8"
+  },
+  {
+    "file": "index.html",
+    "bytes": 7887805,
+    "sha256": "65db173f80857e06a3a9c6033a81015af637c25f2cbd4577bc6d47049655d6cb"
+  },
+  {
+    "file": "release.json",
+    "bytes": 105742,
+    "sha256": "2b9c4c2715c68e39ce969bd0a58a2a86005490895ac768122a43ff32480be635"
+  }
+]

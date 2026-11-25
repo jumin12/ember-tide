@@ -1,0 +1,58 @@
+{
+  "version": "Alpha Version 1.55",
+  "previousCommit": "9ae526393e4bdeca7cf8f2add4578044846fa1e2",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7887805,
+    "sha256": "65db173f80857e06a3a9c6033a81015af637c25f2cbd4577bc6d47049655d6cb",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "gameplaySHA256": "948a715cecd03ba449d28ab96a3edd2198bfc0f1ec6c21e62bf39e2cd20452e5",
+  "checks": {
+    "desktop": {
+      "wisp": {
+        "activeTurnCentered": true,
+        "portraitBounds": [
+          16,
+          6,
+          48,
+          58
+        ],
+        "portraitSHA256": "421a366646cbcc53a08e230ea5477dce9e4c9a3271f48cb18a45e74e6dbcdcfa"
+      },
+      "waterWisp": {
+        "activeTurnCentered": true,
+        "portraitBounds": [
+          15,
+          6,
+          50,
+          58
+        ],
+        "portraitSHA256": "e1a83864da8a810fcf6143dfdcd62be6b139d962cb3024fa1d1d6abe53a8a36a"
+      }
+    },
+    "phone": {
+      "wisp": {
+        "activeTurnCentered": true,
+        "portraitBounds": [
+          16,
+          6,
+          48,
+          58
+        ],
+        "portraitSHA256": "421a366646cbcc53a08e230ea5477dce9e4c9a3271f48cb18a45e74e6dbcdcfa"
+      },
+      "waterWisp": {
+        "activeTurnCentered": true,
+        "portraitBounds": [
+          15,
+          6,
+          50,
+          58
+        ],
+        "portraitSHA256": "e1a83864da8a810fcf6143dfdcd62be6b139d962cb3024fa1d1d6abe53a8a36a"
+      }
+    }
+  }
+}

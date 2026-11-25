@@ -3,7 +3,8 @@ const spriteAvatars27=new Map();
 function spriteAvatar27(id){
  if(spriteAvatars27.has(id))return spriteAvatars27.get(id);
  const meta=assets.sprites[id],image=spriteImages[id];if(!meta||!image)return null;
- const portraitPose=id==='bird'?meta.frames.idle_southeast:null;
+ const wisp=id==='wisp'||id==='waterWisp';
+ const portraitPose=wisp?meta.frames.idle_south??meta.frames.south:id==='bird'?meta.frames.idle_southeast:null;
  const cell=(portraitPose??meta.frames.enemyIdle??meta.frames.south)[0],sx=cell%meta.cols*meta.w,sy=Math.floor(cell/meta.cols)*meta.h;
  const sample=document.createElement('canvas');sample.width=meta.w;sample.height=meta.h;
  const pixels=sample.getContext('2d',{willReadFrequently:true});pixels.drawImage(image,sx,sy,meta.w,meta.h,0,0,meta.w,meta.h);
@@ -13,24 +14,29 @@ function spriteAvatar27(id){
   left=Math.min(left,x);right=Math.max(right,x);top=Math.min(top,y);bottom=Math.max(bottom,y);
  }
  if(left>=right||top>=bottom)return null;
- const wide=right-left>1.22*(bottom-top),size=Math.max(8,Math.round((bottom-top)*(wide?.88:.54)));
- // Wide beasts face right in the native encounter frames. Tall enemies use
- // the upper part of their silhouette so the portraits read at HUD scale.
- const x=wide?right-size*.91:(left+right-size)/2,y=top-size*.08;
  const canvas=document.createElement('canvas');canvas.width=canvas.height=64;
  const ctx=canvas.getContext('2d');ctx.imageSmoothingEnabled=false;
- if(id==='bird'){
+ if(wisp){
+  // The face sits in the middle of the flame. Leave room for its curls inside the diamond.
+  const width=right-left+1,height=bottom-top+1,scale=52/Math.max(width,height);
+  const w=Math.round(width*scale),h=Math.round(height*scale);
+  ctx.drawImage(sample,left,top,width,height,Math.round((64-w)/2),Math.round((64-h)/2),w,h);
+ }else if(id==='bird'){
   // Frame the three-quarter head and breast inside the same diamond as the cast.
   const height=bottom-top+1,crop=Math.round(height*.73);
   const headX=left+(right-left)*.72;
   ctx.drawImage(sample,Math.round(headX-crop/2),Math.round(top-height*.14),crop,crop,0,0,64,64);
- }else ctx.drawImage(sample,x,y,size,size,3,3,58,58);
+ }else{
+  const wide=right-left>1.22*(bottom-top),size=Math.max(8,Math.round((bottom-top)*(wide?.88:.54)));
+  const x=wide?right-size*.91:(left+right-size)/2,y=top-size*.08;
+  ctx.drawImage(sample,x,y,size,size,3,3,58,58);
+ }
  const url=canvas.toDataURL();spriteAvatars27.set(id,url);return url;
 }
 function timeline27(){
  if(!battle)return;const order=$('#turn-order');if(!order)return;
  const signature=JSON.stringify([battle.queue,battle.turn,battle.round,battle.enemies.map(e=>e.hp>0)]);if(order.dataset.signature27===signature&&order.children.length===battle.queue.length&&[...order.children].every(n=>n.classList.contains('turn-token27')))return;order.dataset.signature27=signature;
- order.innerHTML=battle.queue.map((q,i)=>{const enemy=q.startsWith('enemy:'),e=enemy?battle.enemies[+q.split(':')[1]]:null,id=enemy?null:q,a=e?.actor??actorFor(id),name=e?.name??CAST[id]?.name??'Traveler',img=enemy?spriteAvatar27(a?.id):face26(id),out=enemy?e?.hp<=0:state.characters[id]?.hp<=0;return `<span class="turn-token27 ${enemy?'foe':'ally'} ${i===battle.turn?'current':''} ${i<battle.turn?'acted':''} ${out?'fallen':''}" title="${esc(name)}${i<battle.turn?' · Acted':''}" aria-label="${esc(name)}${i===battle.turn?' · Current turn':''}"><i>${i<battle.turn?'✓':i+1}</i>${img?`<img src="${img}" alt="">`:`<b>${enemy?'◆':'✦'}</b>`}<em>${esc(name)}</em><span class="turn-bead65" aria-hidden="true"></span></span>`;}).join('');
+ order.innerHTML=battle.queue.map((q,i)=>{const enemy=q.startsWith('enemy:'),e=enemy?battle.enemies[+q.split(':')[1]]:null,id=enemy?null:q,a=e?.actor??actorFor(id),name=e?.name??CAST[id]?.name??'Traveler',img=enemy?spriteAvatar27(a?.id):face26(id),out=enemy?e?.hp<=0:state.characters[id]?.hp<=0;return `<span class="turn-token27 ${enemy?'foe':'ally'} ${i===battle.turn?'current':''} ${i<battle.turn?'acted':''} ${out?'fallen':''}" title="${esc(name)}${i<battle.turn?' · Acted':''}" aria-label="${esc(name)}${i===battle.turn?' · Current turn':''}"><i>${i<battle.turn?'✓':i+1}</i>${img?`<img src="${img}" alt=""${enemy && a ? ` data-creature="${esc(a.id)}"` : ''}>`:`<b>${enemy?'◆':'✦'}</b>`}<em>${esc(name)}</em><span class="turn-bead65" aria-hidden="true"></span></span>`;}).join('');
 }
 const battleUIBefore27=renderBattle;
 renderBattle=function(...args){const r=battleUIBefore27(...args);if(battle){timeline27();const old=$('#battle-targets');old.classList.add('world-targets27');old.replaceChildren();updateEnemyBars27();updateLesson18();}return r;};

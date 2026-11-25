@@ -1,3 +1,6 @@
+#turn-order .turn-token27 img:is([data-creature="wisp"],[data-creature="waterWisp"]) {
+  object-position:center;
+}
 body.combat-ui65 {
   --battle-gold: #d5ac62;
   --battle-gold-hi: #ffdfa0;

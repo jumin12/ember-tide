@@ -2,6 +2,14 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.55 — Centered wisp turn-order portraits
+
+November 24, 2026
+
+- Forest Wisps and Water Wisps now face forward in the turn order. The full flame is centered inside its diamond on desktop and phone, including when the wisp takes its turn.
+
+[Desktop before and after](elyndor/previews/release-v155/desktop.png) · [Phone before and after](elyndor/previews/release-v155/phone.png)
+
 ## Alpha Version 1.54 — Valenne landmarks and battlefield scenery
 
 November 24, 2026
