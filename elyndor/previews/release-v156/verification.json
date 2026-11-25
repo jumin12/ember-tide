@@ -1,0 +1,77 @@
+{
+  "version": "Alpha Version 1.56",
+  "previousCommit": "4ef6ab70ed5fe262e6b458d05d7f6b11d5edd049",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 7908251,
+    "sha256": "382dc491746f8f7c10cd620b42572b5a799c4a2a77df3b1961a5c7f73631c534",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "gameplaySHA256": "3ce7d4dc79e862de5516f4a181c9cc2787dee1775078e2c472be9824ae104499",
+  "checks": {
+    "desktop": {
+      "worldViews": [
+        "Brookstead",
+        "road",
+        "dusk"
+      ],
+      "entered": "brookstead",
+      "woodlandForms": [
+        "birch",
+        "maple",
+        "oak",
+        "pine",
+        "spruce",
+        "willow"
+      ],
+      "wispPortraits": [
+        "wisp",
+        "waterWisp"
+      ],
+      "battleLanes": {
+        "arenas": 20,
+        "storyEncounters": 7,
+        "largeDebrisInLanes": 0,
+        "storySceneryRestored": true
+      },
+      "atlasLandmarks": 15
+    },
+    "phone": {
+      "worldViews": [
+        "Brookstead",
+        "road",
+        "dusk"
+      ],
+      "entered": "brookstead",
+      "woodlandForms": [
+        "birch",
+        "maple",
+        "oak",
+        "pine",
+        "spruce",
+        "willow"
+      ],
+      "wispPortraits": [
+        "wisp",
+        "waterWisp"
+      ],
+      "battleLanes": {
+        "arenas": 20,
+        "storyEncounters": 7,
+        "largeDebrisInLanes": 0,
+        "storySceneryRestored": true
+      }
+    },
+    "river": {
+      "channels": 5,
+      "sampledBends": 10,
+      "secondsIntoSimulation": [
+        2.65,
+        2402.65
+      ],
+      "maxDownstreamAngleErrorDegrees": 5.9,
+      "sixSecondRepeatObserved": false
+    }
+  }
+}

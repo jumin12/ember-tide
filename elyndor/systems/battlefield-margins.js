@@ -60,6 +60,34 @@ function onDistantBattleBank(field,left,right,nearZ){
  return nearZ<=field.back-3.4&&field.homes.every(home=>
   right<home.minX-1.45||left>home.maxX+1.45||nearZ<=home.minZ-6.2);
 }
+// Reserve the ground across the entire formation and the gap the player sees
+// between its silhouettes. The two tests agree even for staggered rows.
+function battleLane(group,field,arena){
+ const lens=arena?.reference90??camera,origin=group.position,point=V3();
+ const left=Math.min(...field.homes.map(s=>s.minX)),right=Math.max(...field.homes.map(s=>s.maxX));
+ let x0=Infinity,x1=-Infinity,y0=Infinity,y1=-Infinity;
+ for(const actor of [player,...followers,...battle.enemies.map(e=>e.actor)]){
+  const home=battle.rankHomes87?.get(actor)??actor,shape=silhouette87(actor.visualId??actor.id);
+  const base=arena?encounter53.floorY:heightAt(home.x,home.z);
+  for(const side of [shape.left,shape.right])for(const h of [0,shape.height]){
+   point.set(home.x+side*actor.size,base+h*actor.size,home.z).project(lens);
+   x0=Math.min(x0,point.x);x1=Math.max(x1,point.x);y0=Math.min(y0,point.y);y1=Math.max(y1,point.y);
+  }
+ }
+ return bounds=>{
+  if(bounds.max.x>=left&&bounds.min.x<=right&&bounds.max.z>=field.back-.55&&bounds.min.z<=field.front+.55)return true;
+  let l=Infinity,r=-Infinity,b=Infinity,t=-Infinity;
+  for(const x of [bounds.min.x,bounds.max.x])for(const y of [bounds.min.y,bounds.max.y])for(const z of [bounds.min.z,bounds.max.z]){
+   point.set(x,y,z).add(origin).project(lens);l=Math.min(l,point.x);r=Math.max(r,point.x);b=Math.min(b,point.y);t=Math.max(t,point.y);
+  }
+  return r>x0-.015&&l<x1+.015&&t>y0-.021&&b<y1+.021;
+ };
+}
+function battleLaneObstacle(name,bounds,mineral=false){
+ if(mineral||/stone|rock|pebble|gravel|rubble|slab|gardenEdging/i.test(name))return true;
+ if(!/twig|branch|driftwood|\blogs?\b|timber|stump|fallen|crate|debris|wreck/i.test(name))return false;
+ return Math.max(bounds.max.x-bounds.min.x,bounds.max.z-bounds.min.z)>1.35||bounds.max.y-bounds.min.y>.80;
+}
 function marginWeight(x,z,q){
  const fx=(x-q.x)/(q.w+2.5),fz=(z-q.z)/(q.d+2.9);
  return smooth(.72,1.32,Math.hypot(fx,fz*.88));
@@ -216,7 +244,7 @@ function marginStoneGeometry(variant){
   g.computeVertexNormals();g.computeBoundingBox();g.computeBoundingSphere();g.userData.weathered104=true;return g;
  });
 }
-function buildMarginScatter(stage,group,q,b){
+function buildMarginScatter(stage,group,q,b,inLane){
  const family=battleSoils[stage][2],mineral=['mineral','snow','paved'].includes(family);
  const rng=seeded(33241+Object.keys(battleSoils).indexOf(stage)*7001),stones=[],buckets=new Map(),nearBuckets=new Map();
  const matrix=new THREE.Matrix4(),at=V3(),size=V3(),turn=new THREE.Quaternion(),up=V3(0,1,0),box=new THREE.Box3();
@@ -246,6 +274,13 @@ function buildMarginScatter(stage,group,q,b){
   const x=home.x-worldOrigin.x,z=home.z-worldOrigin.z,y=height(x,z);
   safeScreens.push(screenBox(x+s.left*a.size,x+s.right*a.size,y,y+s.height*a.size,z,z));
  }
+ function clearOfCast(bounds){
+  if(q.homes.some(s=>bounds.max.x>s.minX-.65&&bounds.min.x<s.maxX+.65&&
+     bounds.max.z>s.minZ-3.0&&bounds.min.z<s.maxZ+.82))return false;
+  const a=screenBox(bounds.min.x,bounds.max.x,bounds.min.y,bounds.max.y,bounds.min.z,bounds.max.z);
+  return safeScreens.every(s=>a.right<s.left-.012||a.left>s.right+.012||
+    a.bottom<s.top-.016||a.top>s.bottom+.016);
+ }
  function clearNearCorner(x,y,z,r,h){
   if(z-r<q.front-.38||q.homes.some(s=>Math.hypot(Math.max(s.minX-x,0,x-s.maxX),Math.max(s.minZ-z,0,z-s.maxZ))<r+1.4))return false;
   const a=screenBox(x-r,x+r,y-.15,y+h,z-r,z+r);
@@ -254,14 +289,20 @@ function buildMarginScatter(stage,group,q,b){
   return safeScreens.every(s=>a.right<s.left-.038||a.left>s.right+.038||a.bottom<s.top-.045||a.top>s.bottom+.045);
  }
  function batch(collection,type,x,y,z,sx,sy,sz,yaw){
+  turn.setFromAxisAngle(up,yaw);matrix.compose(at.set(x,y,z),turn,size.set(sx,sy,sz));
+  const g=geometryFor(type);if(!g.boundingBox)g.computeBoundingBox();
+  box.copy(g.boundingBox).applyMatrix4(matrix);
+  if(battleLaneObstacle(type,box)&&inLane(box))return false;
   if(!collection.has(type))collection.set(type,[]);
-  turn.setFromAxisAngle(up,yaw);matrix.compose(at.set(x,y,z),turn,size.set(sx,sy,sz));collection.get(type).push(matrix.clone());
+  collection.get(type).push(matrix.clone());return true;
  }
  // Test authored stone groups too. Their individual pieces can extend
  // beyond the patch centre after rotation or scaling.
  if(b)for(const o of group.children){
-  if(!o.isInstancedMesh||!o.material?.userData.weathered104)continue;
-  if(o.name.startsWith('Physical stage134-')){
+  if(!o.isInstancedMesh)continue;
+  const rock=!!o.material?.userData.weathered104;
+  if(!rock&&(!o.name.startsWith('Physical ')||o.material?.userData.realVegetation103))continue;
+  if(rock&&o.name.startsWith('Physical stage134-')){
    const variant=Number(o.name.split('-').at(-1))||0;o.geometry=marginStoneGeometry(variant%8);
   }
   const bounds=o.geometry.boundingBox??(o.geometry.computeBoundingBox(),o.geometry.boundingBox);
@@ -269,9 +310,9 @@ function buildMarginScatter(stage,group,q,b){
   for(let i=0;i<o.count;i++){
    o.getMatrixAt(i,matrix);matrix.decompose(at,turn,size);
    box.copy(bounds).applyMatrix4(matrix);
-   if(!onDistantBattleBank(q,box.min.x,box.max.x,box.max.z))continue;
+   if(battleLaneObstacle(o.name,box,rock)&&inLane(box)||rock&&!onDistantBattleBank(q,box.min.x,box.max.x,box.max.z)&&!clearOfCast(box))continue;
    const rx=(bounds.max.x-bounds.min.x)*size.x*.5,rz=(bounds.max.z-bounds.min.z)*size.z*.5;
-   if(rx>.16&&rz>.16){
+   if(rock&&rx>.16&&rz>.16){
     at.y-=Math.min(.24,size.y*.18);matrix.compose(at,turn,size);
     stones.push({x:at.x,z:at.z,rx,rz,yaw:Math.atan2(matrix.elements[8],matrix.elements[10])});
    }
@@ -284,6 +325,13 @@ function buildMarginScatter(stage,group,q,b){
   const x=q.x+(i-7+(rng()-.5)*.9)*(q.w+13)/7;
   const z=b?apronEdge113(b,x)+1.0+rng()*1.35:q.back-6.7-rng()*4.4;
   anchors.push({x,z,scale:.55+rng()*.60});
+ }
+ // Restore the uneven clumps on the two shoulders and the near lip of the old stage layout.
+ for(let i=0;i<19;i++){
+  const side=i%2?-1:1,front=i%4===2;
+  const x=q.x+(front?(rng()-.5)*2:side*(.85+rng()*.58))*(q.w+2.1);
+  const z=q.z+(front?1.02+rng()*.88:(rng()-.54)*2.6)*(q.d+2.1);
+  anchors.push({x,z,scale:.72+rng()*.93,shoulder:true});
  }
  // Two broken groups enter the picture from the camera side. Fit them to
  // the exposed field above the touch controls and seat them on the 3D floor.
@@ -309,6 +357,10 @@ function buildMarginScatter(stage,group,q,b){
  for(const [u,v,scale] of corners){
   if(groundAtScreen(u,(field.top+field.height*v)/innerHeight))anchors.push({x:point.x,z:point.z,scale,near:true});
  }
+ for(const [u,v] of [[.23,.91],[.49,.96],[.74,.87],[.45,.65],[.80,.63]]){
+  if(groundAtScreen(u+(rng()-.5)*.08,(field.top+field.height*(v+(rng()-.5)*.042))/innerHeight))
+   anchors.push({x:point.x,z:point.z,scale:.86+rng()*.69,shoulder:true});
+ }
  const clutter=family==='wood'?1.25:family==='paved'?.49:family==='snow'?.53:1;
  for(const anchor of anchors){
   for(let i=0;i<Math.round((b?.mobile?14:21)*clutter);i++){
@@ -318,11 +370,11 @@ function buildMarginScatter(stage,group,q,b){
    const twig=!stone&&(family==='coast'||family==='wood'||family==='field')&&t>.86;
    const litter=!stone&&!twig&&(mineral||family==='wood'&&t<.74||family==='field'&&t>.58||t>.83);
    if(family==='snow'&&!stone)continue;
-   const s=(large?.31+rng()*.35:stone?.08+rng()*.18:twig?.31+rng()*.37:.20+rng()*.34)*(near?(family==='paved'?1.18:1.55):1);
+   const s=(large?.43+rng()*.43:stone?.10+rng()*.24:twig?.40+rng()*.47:.25+rng()*.43)*(near?(family==='paved'?1.18:1.55):1);
    const rx=s*(stone?1.12:1),rz=s*(stone?.76:.74),h=stone?s*(large?.70:.51):s*.54;
    // Enclose every rotation of the uneven crown, stems and leaves.
    const radius=Math.max(rx,rz)*1.48;
-   if(!near&&!onDistantBattleBank(q,x-radius,x+radius,z+radius)||occupied.some(f=>Math.abs(x-f.x)<rx*.57+f.rx*.73&&Math.abs(z-f.z)<rz*.57+f.rz*.73))continue;
+   if(!near&&!anchor.shoulder&&!onDistantBattleBank(q,x-radius,x+radius,z+radius)||occupied.some(f=>Math.abs(x-f.x)<rx*.57+f.rx*.73&&Math.abs(z-f.z)<rz*.57+f.rz*.73))continue;
    if(b){
     if(arenaWet89(b,x,z)>.04||!supportedRear113(b,x,z,radius))continue;
    }else{
@@ -338,10 +390,10 @@ function buildMarginScatter(stage,group,q,b){
    const slope=Math.abs(height(x+rx,z)-height(x-rx,z))+Math.abs(height(x,z+rz)-height(x,z-rz));
    if(!Number.isFinite(y)||near&&!clearNearCorner(x,y,z,radius,s*.85)||slope>s*(near&&!b?1.22:.81))continue;
    box.min.set(x-rx,y-.16,z-rz);box.max.set(x+rx,y+h,z+rz);
-   if(stanceIntersects105(box,q.homes)||stoneOccludes105(box,{group},lines))continue;
+   if(anchor.shoulder&&!clearOfCast(box)||stanceIntersects105(box,q.homes)||stoneOccludes105(box,{group},lines))continue;
    const yaw=rng()*TAU;
    if(stone){
-    const which=rng()<.5?'stone-a':'stone-b';batch(collection,which,x,y-h*.31,z,rx,h,rz,yaw);
+    const which=rng()<.5?'stone-a':'stone-b';if(!batch(collection,which,x,y-h*.31,z,rx,h,rz,yaw))continue;
     const rock={x,z,rx,rz,yaw};stones.push(rock);occupied.push(rock);
    }else{
     const fern=!twig&&!litter&&['green','wood'].includes(family)&&t<.68;
@@ -406,7 +458,7 @@ function buildMarginScatter(stage,group,q,b){
    // perspective makes a gap between two heroes look large enough to fill.
    if(a.left<outer+gap&&a.top<feet+.026)continue;
    if(rock&&occupied.some(f=>Math.abs(x-f.x)<rx*.54+f.rx*.58&&Math.abs(z-f.z)<rz*.53+f.rz*.55))continue;
-   batch(collection,key,x,base,z,rx,h,rz,yaw);
+   if(!batch(collection,key,x,base,z,rx,h,rz,yaw))continue;
    if(rock){const foot={x,z,rx,rz,yaw};stones.push(foot);occupied.push(foot);}
   }
  }
@@ -475,7 +527,7 @@ const marginBuildBefore=buildStageScenery59;
 buildStageScenery59=function(...args){
  const result=marginBuildBefore.apply(this,args),b=arena88.current;
  if(!b?.cleanup161||b.marginStudy)return result;
- const stage=encounter53.selected,q=battlefieldFootprint(b.group),scatter=buildMarginScatter(stage,b.group,q,b);
+ const stage=encounter53.selected,q=battlefieldFootprint(b.group),scatter=buildMarginScatter(stage,b.group,q,b,battleLane(b.group,q,b));
  const data=battlefieldMask(q,stage,scatter.stones,false);data.origin=new THREE.Vector2(b.group.position.x,b.group.position.z);
  b.ownedTextures.push(data.texture);
  const floor=b.group.children.find(o=>o.name==='Actual level ground and carved water banks');
@@ -490,29 +542,44 @@ buildStageScenery59=function(...args){
 // scene and restore their exact original materials when the encounter ends.
 const storyMarginStages={brookstead:'grassRiver',fern:'woodland',depths:'cavern',patrol:'grassAutumn',alderRemnant:'ruins',nearbySite:'grassStones'};
 let currentStoryMargin=null;
-function clearNearbyStoryRocks(field){
+function clearNearbyStoryRocks(field,inLane){
  const restore=[],transform=new THREE.Matrix4(),bounds=new THREE.Box3(),tint=new THREE.Color();
  world.updateMatrixWorld(true);
- function inFight(){
-  return bounds.max.x>=field.x-field.w-14&&bounds.min.x<=field.x+field.w+14&&
-   bounds.min.z<=field.z+field.d+14&&bounds.max.z>=field.back-12&&
-   bounds.max.x-bounds.min.x<12&&bounds.max.z-bounds.min.z<12&&
-   !onDistantBattleBank(field,bounds.min.x,bounds.max.x,bounds.max.z);
+ const screens=[player,...followers,...battle.enemies.map(e=>e.actor)].map(a=>{
+  const home=battle.rankHomes87?.get(a)??a,s=silhouette87(a.visualId??a.id),y=heightAt(home.x,home.z);
+  return projectedBounds21(new THREE.Box3(V3(home.x+s.left*a.size,y,home.z),V3(home.x+s.right*a.size,y+s.height*a.size,home.z)));
+ });
+ function inFight(mesh,mineral){
+  if(!battleLaneObstacle(mesh.name,bounds,mineral))return false;
+  // Raised banks in the story POIs can project into the gap from well behind
+  // the back row. Test each prop's full extent, including large boulders.
+  if(bounds.max.x<field.x-field.w-35||bounds.min.x>field.x+field.w+35||
+     bounds.min.z>field.front+30||bounds.max.z<field.back-45)return false;
+  if(inLane(bounds)||field.homes.some(s=>bounds.max.x>s.minX-.65&&bounds.min.x<s.maxX+.65&&
+     bounds.max.z>s.minZ-3&&bounds.min.z<s.maxZ+.82))return true;
+  const a=projectedBounds21(bounds);
+  return screens.some(s=>a.x1>s.x0-.024&&a.x0<s.x1+.024&&a.y1>s.y0-.032&&a.y0<s.y1+.032);
  }
  world.traverse(mesh=>{
-  if(!mesh.isMesh||!(mesh.userData.geology62!==undefined||mesh.userData.localGeology62||
-     mesh.geometry.userData.geology62!==undefined||mesh.userData.naturalRock))return;
+  if(!mesh.isMesh)return;
+  const mineral=mesh.userData.geology62!==undefined||mesh.userData.localGeology62||
+     mesh.geometry.userData.geology62!==undefined||mesh.userData.naturalRock;
+  if(!mineral&&!mesh.userData.ecology104)return;
   if(!mesh.geometry.boundingBox)mesh.geometry.computeBoundingBox();
-  const original=mesh.geometry.boundingBox;
+  const original=mesh.geometry.boundingBox.clone();
+  for(const lod of [mesh.userData.detailedGeometry,mesh.userData.distantGeometry]){
+   if(!lod||lod===mesh.geometry)continue;
+   if(!lod.boundingBox)lod.computeBoundingBox();original.union(lod.boundingBox);
+  }
   if(!mesh.isInstancedMesh){
    bounds.copy(original).applyMatrix4(mesh.matrixWorld);
-   if(inFight()){const mask=mesh.layers.mask;mesh.layers.mask=0;restore.push(()=>{mesh.layers.mask=mask;});}
+   if(inFight(mesh,mineral)){const mask=mesh.layers.mask;mesh.layers.mask=0;restore.push(()=>{mesh.layers.mask=mask;});}
    return;
   }
   const count=mesh.count;let write=0,matrices,colors;
   for(let i=0;i<count;i++){
    mesh.getMatrixAt(i,transform);bounds.copy(original).applyMatrix4(transform).applyMatrix4(mesh.matrixWorld);
-   if(inFight()){
+   if(inFight(mesh,mineral)){
     if(!matrices){matrices=mesh.instanceMatrix.array.slice();colors=mesh.instanceColor?.array.slice();}
     continue;
    }
@@ -555,8 +622,8 @@ function updateStoryMargin(){
  if(old&&(old.story!==story||old.world!==world||old.homes!==story?.rankHomes87||reframed))clearStoryMargin();
  if(!story||currentStoryMargin||!player||!battle.enemies.length||battle.enemies.some(e=>!e.actor)||!environment102.ground)return;
  const group=new THREE.Group();group.name='Story battlefield margins';group.userData.dynamicFX=true;world.add(group);
- const q=battlefieldFootprint(group),restoreRocks=clearNearbyStoryRocks(q);
- const scenery=buildMarginScatter(stage,group,q,null),data=battlefieldMask(q,stage,scenery.stones,true);
+ const q=battlefieldFootprint(group),inLane=battleLane(group,q,null),restoreRocks=clearNearbyStoryRocks(q,inLane);
+ const scenery=buildMarginScatter(stage,group,q,null,inLane),data=battlefieldMask(q,stage,scenery.stones,true);
  data.origin=new THREE.Vector2();const copies=new Map(),terrain=[];
  world.traverse(mesh=>{
   const old=mesh.material;

@@ -1,0 +1,97 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 108116,
+    "sha256": "42aa967ac697ebba5c9cb05c5e1f6424c9962e86845af355d3a5def5618f39be"
+  },
+  {
+    "file": "elyndor/assets/valenne-travel/meadow-and-stone.webp",
+    "bytes": 116884,
+    "sha256": "69a5c0d979e311216b2278f0e6c52f288ad100023a784f0eeb000671995569e4"
+  },
+  {
+    "file": "elyndor/assets/valenne-travel/woodland.webp",
+    "bytes": 417874,
+    "sha256": "d12fa0e4c6b88d7b8677ed5855d76e7320165661cb8ad110cf65e0698ba9f8c2"
+  },
+  {
+    "file": "elyndor/combat-v27.js",
+    "bytes": 8211,
+    "sha256": "0b62a512c40e2f7b9044b40be1a2128935cb26f63cf4b993d548de519764cb22"
+  },
+  {
+    "file": "elyndor/previews/release-v156/battlefield.jpg",
+    "bytes": 297717,
+    "sha256": "e235eef29426db139a579da3b2887fc540cac796792225a3210b56640072ba09"
+  },
+  {
+    "file": "elyndor/previews/release-v156/brook-river-in-motion.webp",
+    "bytes": 15773132,
+    "sha256": "bc8164a50840b0e325d07e0c54015273740de58cb34fd7bcf6a2a3eecffb665e"
+  },
+  {
+    "file": "elyndor/previews/release-v156/valenne-bend.jpg",
+    "bytes": 377399,
+    "sha256": "b44b699053949da32cd39d249c74aa07e305cfb94bab8818052ab0ee761742dd"
+  },
+  {
+    "file": "elyndor/previews/release-v156/verification.json",
+    "bytes": 1685,
+    "sha256": "5242d2d863afa6dae9c9b515ae3dc2fe19135ab2ebac195a84f8523569403770"
+  },
+  {
+    "file": "elyndor/previews/release-v156/wisps.png",
+    "bytes": 99423,
+    "sha256": "e91ea004bb6e293199dd36facb18c51b2b8e95308aa3b3ff6c539ae7677176a2"
+  },
+  {
+    "file": "elyndor/previews/release-v156/woodland.jpg",
+    "bytes": 293125,
+    "sha256": "0a739b5a1390715c1b7e68adab0ae20be5153612b5f32d4b4e3bc3206e0f720c"
+  },
+  {
+    "file": "elyndor/systems/battlefield-margins.js",
+    "bytes": 40590,
+    "sha256": "c9566141851847d089ad3814c2912f0488832ab7017ab1b097b60643c874525c"
+  },
+  {
+    "file": "elyndor/systems/combat-hud-polish.css",
+    "bytes": 22008,
+    "sha256": "04c4319ecccbeb40bca82f32a002e558d98b816ccb2f2b6c51d7fab68b31fd5d"
+  },
+  {
+    "file": "elyndor/systems/environment-vegetation.js",
+    "bytes": 17880,
+    "sha256": "b9817577e1bc9f74358d1f5bd8380c83c4c4432a2b97663b3574ba6c473e5d97"
+  },
+  {
+    "file": "elyndor/systems/landscape-and-impact-light.js",
+    "bytes": 31225,
+    "sha256": "9d391ee1be84e9583baf39d2a0f3b1953d28fa8625baf886f300e8714fc2700f"
+  },
+  {
+    "file": "elyndor/systems/overworld-scenery.js",
+    "bytes": 20388,
+    "sha256": "df1f2516247812a79ea41269aaac490cf5f47a1b2e38519638fa5e4c242c2f9d"
+  },
+  {
+    "file": "elyndor/systems/valenne-travel-art.js",
+    "bytes": 23489,
+    "sha256": "0b0e5df3b7e71b00ec7be0c932156a3346e261fa6383585ec1b136735a6636de"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 102078,
+    "sha256": "6b72a6fd11b606d287e379852b1ff7941ce7836203405778f4daecf6e4b15457"
+  },
+  {
+    "file": "index.html",
+    "bytes": 7908251,
+    "sha256": "382dc491746f8f7c10cd620b42572b5a799c4a2a77df3b1961a5c7f73631c534"
+  },
+  {
+    "file": "release.json",
+    "bytes": 107437,
+    "sha256": "e694e8c23e19bd5639dbe26010f2bbffeecdedeed841e5f9cf7fda8a1abf25c4"
+  }
+]

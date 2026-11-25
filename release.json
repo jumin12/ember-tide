@@ -1,23 +1,37 @@
 {
-  "release": "elyndor-alpha-1.55-wisp-turn-order-portraits-2026-11-24",
-  "version": "Alpha Version 1.55",
+  "release": "elyndor-alpha-1.56-river-woodland-battle-scenery-2026-11-24",
+  "version": "Alpha Version 1.56",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 7887805,
-    "sha256": "65db173f80857e06a3a9c6033a81015af637c25f2cbd4577bc6d47049655d6cb",
+    "bytes": 7908251,
+    "sha256": "382dc491746f8f7c10cd620b42572b5a799c4a2a77df3b1961a5c7f73631c534",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "9ae526393e4bdeca7cf8f2add4578044846fa1e2"
+    "previousRelease": "4ef6ab70ed5fe262e6b458d05d7f6b11d5edd049"
   },
   "changes": [
-    "Forest Wisps and Water Wisps now face forward in the turn order. The full flame is centered inside its diamond on desktop and phone, including when the wisp takes its turn."
+    "Valenne’s five rivers carry the original blue water and fine painted ripples downstream. Crests turn with bends, travel faster through narrow reaches and break into smaller highlights near the banks.",
+    "Meadows have finer clover, moss and soil beneath the grass. Three wildflower shapes grow in irregular patches, and six tree silhouettes share the meadow’s daylight, dusk lighting and shadows.",
+    "All 20 battle arenas and seven story encounters have scenery along their edges again. Grass, flowers and small twigs stay between fighters, while rocks, logs and large debris sit outside the combat lanes. Local scenery returns after story battles.",
+    "Forest Wisp and Water Wisp portraits fill more of their turn-order diamonds. Their flames stay centered when either creature takes its turn on desktop and phone."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.56",
+      "date": "November 24, 2026",
+      "title": "River currents, woodland and battle scenery",
+      "items": [
+        "Valenne’s five rivers carry the original blue water and fine painted ripples downstream. Crests turn with bends, travel faster through narrow reaches and break into smaller highlights near the banks.",
+        "Meadows have finer clover, moss and soil beneath the grass. Three wildflower shapes grow in irregular patches, and six tree silhouettes share the meadow’s daylight, dusk lighting and shadows.",
+        "All 20 battle arenas and seven story encounters have scenery along their edges again. Grass, flowers and small twigs stay between fighters, while rocks, logs and large debris sit outside the combat lanes. Local scenery returns after story battles.",
+        "Forest Wisp and Water Wisp portraits fill more of their turn-order diamonds. Their flames stay centered when either creature takes its turn on desktop and phone."
+      ]
+    },
     {
       "version": "Alpha Version 1.55",
       "date": "November 24, 2026",
@@ -1009,8 +1023,8 @@
     "groundedStoryBattleEnvironments": 7
   },
   "validation": {
-    "file": "elyndor/previews/release-v155/verification.json",
-    "sha256": "1cf32cf239c2b62ff4188ec346c395548d0df78426f174c0fcbad06a02bd816e",
+    "file": "elyndor/previews/release-v156/verification.json",
+    "sha256": "5242d2d863afa6dae9c9b515ae3dc2fe19135ab2ebac195a84f8523569403770",
     "finalRelease": "PASS",
     "desktopAndPhone": true
   },
@@ -1051,9 +1065,9 @@
     "spriteLighting": "Coherent party and NPC canopy reception outside combat; original art and sampling retained"
   },
   "previousPublishedRelease": {
-    "version": "Alpha Version 1.54",
-    "commit": "9ae526393e4bdeca7cf8f2add4578044846fa1e2",
-    "sha256": "2580c370407ce2ed8d1aa1b5948d9534d6d3518e5795a3e35606c0059476cc2a"
+    "version": "Alpha Version 1.55",
+    "commit": "4ef6ab70ed5fe262e6b458d05d7f6b11d5edd049",
+    "sha256": "65db173f80857e06a3a9c6033a81015af637c25f2cbd4577bc6d47049655d6cb"
   },
   "housing": {
     "maximumOwnedHomes": 1,

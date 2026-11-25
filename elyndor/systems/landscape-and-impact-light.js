@@ -183,7 +183,7 @@
     const terrain=b.group.children.find(mesh=>mesh.name==='Actual level ground and carved water banks');
     if(!terrain)return;
     const banks=b.terrainJoin?[terrain,b.terrainJoin]:[terrain];
-    const field=battlefieldFootprint(b.group);
+    const field=battlefieldFootprint(b.group),inLane=battleLane(b.group,field,b),bounds=new THREE.Box3();
     for(const mesh of banks)mesh.updateWorldMatrix(true,false);
     const ray=new THREE.Raycaster(),down=V3(0,-1,0);
     function bed(x,z){
@@ -202,7 +202,9 @@
         const sx=s*(1.1+rng()),sy=s*(.42+rng()*.54),sz=s*.9,radius=Math.hypot(sx,sy,sz)*1.22;
         if(!supportedRear113(b,xx,zz,radius)||!onDistantBattleBank(field,xx-radius,xx+radius,zz+radius))continue;
         const h=bed(xx,zz);
-        if(h!==null)rockRows.push([xx,h-s*.18,zz,sx,sy,sz,rng()*6,rng()]);
+        if(h===null)continue;
+        bounds.min.set(xx-radius,h-sy,zz-radius);bounds.max.set(xx+radius,h+sy,zz+radius);
+        if(!inLane(bounds))rockRows.push([xx,h-s*.18,zz,sx,sy,sz,rng()*6,rng()]);
       }
     }
     const stoneGeo=new THREE.IcosahedronGeometry(1,1), stoneMat=new THREE.MeshStandardMaterial({

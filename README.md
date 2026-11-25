@@ -2,6 +2,17 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.56 — River currents, woodland and battle scenery
+
+November 24, 2026
+
+- Valenne’s five rivers carry the original blue water and fine painted ripples downstream. Crests turn with bends, travel faster through narrow reaches and break into smaller highlights near the banks.
+- Meadows have finer clover, moss and soil beneath the grass. Three wildflower shapes grow in irregular patches, and six tree silhouettes share the meadow’s daylight, dusk lighting and shadows.
+- All 20 battle arenas and seven story encounters have scenery along their edges again. Grass, flowers and small twigs stay between fighters, while rocks, logs and large debris sit outside the combat lanes. Local scenery returns after story battles.
+- Forest Wisp and Water Wisp portraits fill more of their turn-order diamonds. Their flames stay centered when either creature takes its turn on desktop and phone.
+
+[River animation](elyndor/previews/release-v156/brook-river-in-motion.webp) · [Valenne bend](elyndor/previews/release-v156/valenne-bend.jpg) · [Woodland](elyndor/previews/release-v156/woodland.jpg) · [Battlefield](elyndor/previews/release-v156/battlefield.jpg) · [Wisp portraits](elyndor/previews/release-v156/wisps.png)
+
 ## Alpha Version 1.55 — Centered wisp turn-order portraits
 
 November 24, 2026

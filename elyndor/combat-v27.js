@@ -17,10 +17,11 @@ function spriteAvatar27(id){
  const canvas=document.createElement('canvas');canvas.width=canvas.height=64;
  const ctx=canvas.getContext('2d');ctx.imageSmoothingEnabled=false;
  if(wisp){
-  // The face sits in the middle of the flame. Leave room for its curls inside the diamond.
-  const width=right-left+1,height=bottom-top+1,scale=52/Math.max(width,height);
-  const w=Math.round(width*scale),h=Math.round(height*scale);
-  ctx.drawImage(sample,left,top,width,height,Math.round((64-w)/2),Math.round((64-h)/2),w,h);
+  // Frame the luminous face as a bust. Let the flame tips run into the gold frame.
+  const width=right-left+1,height=bottom-top+1;
+  const crop=Math.max(1,Math.round(width*(id==='wisp'?.93:.83)));
+  const faceX=left+width*(id==='wisp'?.46:.50),faceY=top+height*.51;
+  ctx.drawImage(sample,Math.round(faceX-crop/2),Math.round(faceY-crop/2),crop,crop,0,0,64,64);
  }else if(id==='bird'){
   // Frame the three-quarter head and breast inside the same diamond as the cast.
   const height=bottom-top+1,crop=Math.round(height*.73);

@@ -6,15 +6,40 @@ updateCamera=function(...args){if(player&&!encounter53.active)botanicalFocus103.
 
 // True curved laminae and modeled flower heads. These are geometry, not
 // intersecting photographs of a whole plant. Every leaflet joins its rachis.
-function plantSculpt103(kind,far=false){
- const key='plant-sculpt103-'+kind+'-'+far;if(sharedGeo[key])return sharedGeo[key];const p=[],uv=[],col=[],indices=[],rng=seeded(kind==='fern'?103113:103119);
+function plantSculpt103(kind,far=false,form=null){
+ const key='plant-sculpt103-'+kind+'-'+far+(form===null?'':'-'+form);if(sharedGeo[key])return sharedGeo[key];const p=[],uv=[],col=[],indices=[],rng=seeded(kind==='fern'?103113:103119);
  const patch=(a,b,width,color,cupping=.10,steps=3)=>{const d=b.clone().sub(a),right=V3(-d.z,.12,d.x).normalize();if(right.length()<.1)right.set(1,0,0);const start=p.length/3;
   for(let j=0;j<=steps;j++){const t=j/steps,c=a.clone().addScaledVector(d,t),w=width*Math.pow(Math.sin(t*Math.PI),.7);c.y+=Math.sin(t*Math.PI)*cupping;
    for(let s=-1;s<=1;s++){const q=c.clone().addScaledVector(right,s*w);q.y-=Math.abs(s)*Math.sin(t*Math.PI)*cupping*.55;p.push(...q.toArray());uv.push((s+1)*.5,t);col.push(...color)}}
   for(let j=0;j<steps;j++)for(let s=0;s<2;s++){const i=start+j*3+s;indices.push(i,i+1,i+3,i+1,i+4,i+3)}};
  const stem=(a,b,r=.008,color=[.34,.49,.20])=>{const d=b.clone().sub(a),right=V3(-d.z,0,d.x).normalize();if(right.length()<.1)right.set(1,0,0);const n=far?3:4,start=p.length/3,up=right.clone().cross(d).normalize();
   for(const [c,w]of [[a,r],[b,r*.55]])for(let i=0;i<n;i++){const t=i/n*TAU,q=c.clone().addScaledVector(right,Math.cos(t)*w).addScaledVector(up,Math.sin(t)*w);p.push(...q.toArray());uv.push(i/n,c===a?0:1);col.push(...color)}for(let i=0;i<n;i++){const j=(i+1)%n;indices.push(start+i,start+j,start+n+i,start+j,start+n+j,start+n+i)}};
- if(kind==='flowers'){
+ if(kind==='flowers'&&form!==null){
+  // Three field species share the same leaf, stem and petal material. Heights
+  // and head spacing survive the reduction to the distant meadow geometry.
+  const spike=form===2,cup=form===1,count=far?2:spike?4:cup?5:3;
+  const pigment=spike?[.48,.47,.83]:cup?[.97,.70,.14]:[.95,.90,.76];
+  for(let i=0;i<count;i++){
+   const a=i*2.4+form,r=.12+.27*rng(),root=V3(Math.cos(a)*r,-.465,Math.sin(a)*r);
+   const tip=root.clone().add(V3(Math.cos(a)*.10,(spike?.65:cup?.32:.46)+rng()*.23,Math.sin(a)*.10));
+   stem(root,tip,.010);
+   for(let k=0;k<2;k++){
+    const from=root.clone().lerp(tip,.26+k*.22),phi=a+k*2.4;
+    patch(from,from.clone().add(V3(Math.cos(phi)*.19,.07,Math.sin(phi)*.19)),.037,[.28,.45,.15],.025,2);
+   }
+   for(let k=0;k<(spike?(far?3:5):1);k++){
+    const phi=k*2.4+a,center=spike?root.clone().lerp(tip,.55+.09*k).add(V3(Math.cos(phi)*.037,0,Math.sin(phi)*.037)):tip;
+    const petals=spike?4:cup?5:far?7:9,reach=(spike?.075:cup?.112:.143)*(1-.055*k);
+    for(let j=0;j<petals;j++){
+     const angle=j/petals*TAU+phi,to=center.clone().add(V3(Math.cos(angle)*reach,cup?.057:spike?.025:.012*Math.cos(angle),Math.sin(angle)*reach));
+     patch(center,to,spike?.025:cup?.052:.030,pigment,cup?.008:.017,2);
+    }
+    if(!spike)for(let j=0;j<4;j++){
+     const angle=j*TAU/4;patch(center,center.clone().add(V3(.036*Math.cos(angle),.019,.036*Math.sin(angle))),.026,[.86,.51,.08],.007,2);
+    }
+   }
+  }
+ }else if(kind==='flowers'){
   for(let i=0;i<(far?1:3);i++){const a=i*2.399,root=V3(Math.cos(a)*.12,-.465,Math.sin(a)*.12),top=root.clone().add(V3(.03*Math.sin(a),.40+rng()*.21,.03*Math.cos(a)));stem(root,top,.006);
    for(let j=0;j<2;j++){const from=root.clone().lerp(top,.26+j*.22),angle=a+j*2.3,to=from.clone().add(V3(Math.cos(angle)*.11,.045,Math.sin(angle)*.11));patch(from,to,.024,[.35,.50,.23],.025,2)}
    const petals=far?7:10;for(let j=0;j<petals;j++){const angle=j/petals*TAU,to=top.clone().add(V3(Math.cos(angle)*.078,.005+Math.sin(angle*2)*.008,Math.sin(angle)*.078));patch(top,to,.019,[.95,.94,.82],.018,far?2:3)}

@@ -55,21 +55,26 @@ buildSolidForest=function(...args){
  const bins=new Map(),materials=new Map(),depths=new Map(),cell=64;let oldInstances=0;
  for(const t of scenery.trees){
   const species=t.species30??0,variant=Math.abs(Math.floor(t.x*13+t.z*17))%3,H=species===4?7.8:7;
-  const style=valenneTreeStyle(t),key=[Math.floor(t.x/cell),Math.floor(t.z/cell),style??species,variant,H].join(',');
-  const seed=n=>{const v=Math.sin(t.x*127.1+t.z*311.7+n)*43758.5453;return v-Math.floor(v)},sx=.84+seed(17)*.34,sz=.84+seed(43)*.34,sy=.88+seed(71)*.24;
+  const style=valenneTreeStyle(t),key=[Math.floor(t.x/cell),Math.floor(t.z/cell),style?'woodland':species,style?0:variant,H].join(',');
+  const seed=n=>{const v=Math.sin(t.x*127.1+t.z*311.7+n)*43758.5453;return v-Math.floor(v)},sx=.79+seed(17)*.46,sz=style?sx:.84+seed(43)*.34,sy=.80+seed(71)*.40;
   const matrix=new THREE.Matrix4().compose(V3(t.x,t.y,t.z),new THREE.Quaternion().setFromAxisAngle(V3(0,1,0),Math.sin(t.x*31+t.z*17)*TAU),V3(t.scale*sx,t.h/H*sy,t.scale*sz));t.growth160=[sx,sy,sz];
-  if(!bins.has(key))bins.set(key,{species,style,variant,H,center:V3(Math.floor(t.x/cell)*cell+cell/2,t.y,Math.floor(t.z/cell)*cell+cell/2),rows:[]});bins.get(key).rows.push({t,matrix});oldInstances+=(t.trunks?.length??0)+(t.crowns?.length??0);t.bindings=[];
+  if(!bins.has(key))bins.set(key,{species,style,variant,H,center:V3(Math.floor(t.x/cell)*cell+cell/2,t.y,Math.floor(t.z/cell)*cell+cell/2),rows:[]});bins.get(key).rows.push({t,matrix,style});oldInstances+=(t.trunks?.length??0)+(t.crowns?.length??0);t.bindings=[];
  }
  for(const {species,style,variant,H,center,rows}of bins.values()){
-  const mask=new THREE.InstancedBufferAttribute(new Float32Array(rows.length),1).setUsage(THREE.DynamicDrawUsage),lods=[0,1,2].map(lod=>{const g=shareGeometry36(style?valenneTreePlane(style,variant,H):travelTreeGeometry157(species,variant,lod));g.setAttribute('treeViewHidden',mask);return g});
-  const materialKey=style??species;
+  const mask=new THREE.InstancedBufferAttribute(new Float32Array(rows.length),1).setUsage(THREE.DynamicDrawUsage),lods=[0,1,2].map(lod=>{const g=shareGeometry36(style?valenneTreePlane(H):travelTreeGeometry157(species,variant,lod));g.setAttribute('treeViewHidden',mask);return g});
+  if(style){
+   const cells=new THREE.InstancedBufferAttribute(Float32Array.from(rows,({t,style})=>
+    valenneCrowns.indexOf(style)+(Math.sin(t.x*41.7+t.z*13.9)>0?.5:0)),1);
+   for(const g of lods)g.setAttribute('crownCell',cells);
+  }
+  const materialKey=style?'woodland':species;
   if(!materials.has(materialKey)){
-   materials.set(materialKey,style?valenneTreeMaterial(style):rootedTravelMaterial157(treeMaterial104(species)));
-   depths.set(materialKey,style?valenneTreeMaterial(style,true):rootedTravelMaterial157(treeMaterial104(species,false,null,true)));
+   materials.set(materialKey,style?valenneTreeMaterial():rootedTravelMaterial157(treeMaterial104(species)));
+   depths.set(materialKey,style?valenneTreeMaterial(true):rootedTravelMaterial157(treeMaterial104(species,false,null,true)));
   }
   const o=new THREE.InstancedMesh(lods[0],materials.get(materialKey),rows.length);o.name='Travel woodland '+materialKey;
   o.userData={forest:true,forestKind:'canopy30',center,entries:rows,nativeLods30:lods,treeViewMask:mask,fullGeometry:lods[0],farGeometry:lods[1],simpleGeometry:lods[2],botany104:true,species104:species,travelTree157:true};o.castShadow=o.receiveShadow=true;o.customDepthMaterial=depths.get(materialKey);
-  rows.forEach((r,i)=>{o.setMatrixAt(i,r.matrix);o.setColorAt(i,new THREE.Color().setRGB(.92+.07*Math.sin(r.t.x*.17),.96+.04*Math.cos(r.t.z*.14),.93+.05*Math.sin(r.t.x*.11+r.t.z*.13)));r.t.bindings.push({mesh:o,index:i,matrix:r.matrix});r.t.travelMatrix157=r.matrix;r.t.travelVariant157=variant;r.t.travelStyle=style});
+  rows.forEach((r,i)=>{o.setMatrixAt(i,r.matrix);o.setColorAt(i,new THREE.Color().setRGB(.92+.07*Math.sin(r.t.x*.17),.96+.04*Math.cos(r.t.z*.14),.93+.05*Math.sin(r.t.x*.11+r.t.z*.13)));r.t.bindings.push({mesh:o,index:i,matrix:r.matrix});r.t.travelMatrix157=r.matrix;r.t.travelVariant157=variant;r.t.travelStyle=r.style});
   o.onBeforeRender=(r,s,c)=>{forest30.main.value=c===camera?1:0};o.computeBoundingBox();o.computeBoundingSphere();world.add(o);scenery.forestMeshes.push(o);
  }
  world.userData.solidForestMeshes=scenery.forestMeshes;world.userData.leafCount=scenery.trees.length;world.userData.forest30={species:[...new Set(scenery.trees.map(t=>t.species30??0))],trees:scenery.trees.length,clusters:scenery.trees.length,batches:scenery.forestMeshes.length,modeled104:true};
@@ -93,7 +98,7 @@ buildBoundary46=function(...args){
 const travelFinishBefore157=finishWorld102;
 finishWorld102=function(...args){
  const r=travelFinishBefore157(...args);if(activeScene?.kind!=='overworld')return r;finishTravelMeadow160();if(world.userData.travelBounds157)return r;
- for(const t of scenery.trees){if(!t.travelMatrix157)continue;const g=t.travelStyle?valenneTreePlane(t.travelStyle,t.travelVariant157,t.species30===4?7.8:7):travelTreeGeometry157(t.species30??0,t.travelVariant157,0);t.box=g.boundingBox.clone().applyMatrix4(t.travelMatrix157).expandByScalar(.15);t.cover30=[t.box];}
+ for(const t of scenery.trees){if(!t.travelMatrix157)continue;const g=t.travelStyle?valenneTreePlane(t.species30===4?7.8:7):travelTreeGeometry157(t.species30??0,t.travelVariant157,0);t.box=g.boundingBox.clone().applyMatrix4(t.travelMatrix157).expandByScalar(.15);t.cover30=[t.box];}
  treeCutCache30=null;world.userData.travelBounds157=true;return r;
 };
 
@@ -114,9 +119,18 @@ function travelGrassGeometry160(far=false){
 function finishTravelGrassGeometry160(){
  // Lush grass is partitioned into its final spatial batches by finishWorld102,
  // after buildPlants. Install the geometry on those retained batches.
- for(const m of world.userData.plantMeshes??[]){if(m.userData.plantKey!=='grassBlades'||m.userData.meadow160)continue;
-  const geometry=far=>{const source=travelGrassGeometry160(far),g=shareGeometry36(source);g.userData={...source.userData};world.userData.botanicalOwned30??=new Set();world.userData.botanicalOwned30.add(g);return g;};
-  const old=new Set([m.geometry,m.userData.detailedGeometry,m.userData.distantGeometry]);m.geometry=m.userData.detailedGeometry=geometry(false);m.userData.distantGeometry=geometry(true);m.userData.meadow160=true;m.computeBoundingBox();m.computeBoundingSphere();for(const g of old)g?.dispose();
+ for(const m of world.userData.plantMeshes??[]){
+  const kind=m.userData.plantKey;
+  if(!['grassBlades','flowers'].includes(kind)||m.userData.meadow160||m.userData.meadowFlowerForm!=null)continue;
+  const origin=m.userData.plantOriginal?.find(matrix=>matrix.elements[5]!==0)?.elements;
+  const form=origin?Math.min(2,Math.floor(groundNoise104(origin[12]*.13,origin[14]*.13)*4.2)):0;
+  const geometry=far=>{
+   const source=kind==='flowers'?plantSculpt103(kind,far,form):travelGrassGeometry160(far),g=shareGeometry36(source);
+   g.userData={...source.userData};world.userData.botanicalOwned30??=new Set();world.userData.botanicalOwned30.add(g);return g;
+  };
+  const old=new Set([m.geometry,m.userData.detailedGeometry,m.userData.distantGeometry]);m.geometry=m.userData.detailedGeometry=geometry(false);m.userData.distantGeometry=geometry(true);
+  if(kind==='flowers')m.userData.meadowFlowerForm=form;else m.userData.meadow160=true;
+  m.computeBoundingBox();m.computeBoundingSphere();for(const g of old)g?.dispose();
  }
 }
 function finishTravelMeadow160(){
@@ -141,6 +155,39 @@ function finishTravelMeadow160(){
   im.instanceMatrix.needsUpdate=true;if(im.instanceColor)im.instanceColor.needsUpdate=true;im.computeBoundingBox();im.computeBoundingSphere();
  }
  for(const m of materials)m.needsUpdate=true;stats.slopeCells=slopes.size;stats.milliseconds=performance.now()-start;world.userData.meadow160=stats;
+ seedTravelWildflowers(sample);
+}
+
+function seedTravelWildflowers(ground){
+ const plots=new Map(),cover=world.userData.plantMeshes??[];
+ const material=cover.find(m=>m.userData.plantKey==='flowers')?.material;
+ if(!material)return;
+ const up=V3(0,1,0),yaw=new THREE.Quaternion(),scale=V3(),spot=V3();
+ const rng=seeded(52039),counts=[0,0,0];
+ for(const patch of cover){
+  if(!patch.userData.meadow160)continue;
+  for(const turf of patch.userData.plantOriginal){
+   const e=turf.elements,x=e[12],z=e[14];
+   // These roots have already passed the checks for roads, water, courts and slopes.
+   if(e[5]<.001||rng()>.12)continue;
+   const pocket=groundNoise104(x*.15+18,z*.15-7);
+   if(pocket<.46)continue;
+   const mix=groundNoise104(x*.062-3,z*.062+8)+(rng()-.5)*.20;
+   const form=mix<.42?0:mix<.60?1:2;
+   const key=[Math.floor(x/48),Math.floor(z/48),form].join(',');
+   if(!plots.has(key))plots.set(key,{form,rows:[]});
+   const size=1.18+.74*rng(),width=size*(.83+.28*rng());
+   spot.set(x,ground(x,z)+.465*size-.026,z);
+   plots.get(key).rows.push(new THREE.Matrix4().compose(spot,yaw.setFromAxisAngle(up,rng()*TAU),scale.set(width,size,width)));
+   counts[form]++;
+  }
+ }
+ for(const {form,rows} of plots.values()){
+  const mesh=new THREE.InstancedMesh(plantSculpt103('flowers',true,form),material,rows.length);
+  rows.forEach((matrix,i)=>mesh.setMatrixAt(i,matrix));mesh.name='Valenne meadow flowers';
+  mesh.receiveShadow=true;mesh.computeBoundingSphere();world.add(mesh);
+ }
+ world.userData.travelFlowerPatches=counts;
 }
 
 // A second legacy far layer drew isolated old boughs over the full trees.
