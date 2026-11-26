@@ -94,7 +94,11 @@ function buildMiniature71(key,p){
  const q=dioramas67.sites.get(key),root=new THREE.Group();root.position.set(q.x,0,q.z);root.rotation.y=q.a;root.name=p.name+' landscape miniature';root.userData={miniatureIdentity66:key,poiLandmark45:key,diorama67:true,naturalMiniature71:true,persistentLandmark16:true,siteFootprints45:[]};world.add(root);world.userData.buildings.push(root);world.userData.landmarks45??={};world.userData.landmarks45[key]=root;
  const hub=q.hub71;for(const gate of q.gates71){const mid={x:mix(hub.x,gate.local.x,.52),z:mix(hub.z,gate.local.z,.52)};miniatureLane71(root,q,[hub,mid,gate.local],key==='highmere'?3.8:2.9,key==='highmere'?'cobble':'earth');miniatureGateway71(root,q,gate,key);}
  const old=miniLocal71(q,...q.legacyGate71);miniatureLane71(root,q,[old,{x:old.x*.55,z:old.z*.55},hub],3.1,key==='highmere'?'cobble':'earth');
- const count=p.kind==='town'?miniatureHomes71(root,q,key):miniatureAdventure71(root,q,key,p);miniatureWoodland71(root,q,seeded(71009+Object.keys(POIS).indexOf(key)*839));
+ const count=key==='brookstead'?brooksteadFootings(root,q):p.kind==='town'?miniatureHomes71(root,q,key):miniatureAdventure71(root,q,key,p);
+ miniatureWoodland71(root,q,seeded(71009+Object.keys(POIS).indexOf(key)*839));
+ if(key==='brookstead'){
+  obstacle(q.x+.35,q.z+.52,2.92,2.92,'Brookstead fountain basin');
+ }
  for(const[x,z,s,k]of[[-q.w*.43,-q.d*.38,.7,3],[q.w*.43,q.d*.38,.75,6],[-q.w*.45,q.d*.37,.55,0]])if(!q.gates71.some(g=>Math.hypot(g.local.x-x,g.local.z-z)<4.5))miniatureRocks71(root,q,x,z,s,k);
  root.updateMatrixWorld(true);root.userData.atlasBounds118=new THREE.Box3().setFromObject(root);mergeGroup(root);world.userData.miniatures??=[];world.userData.miniatures.push({key,buildings:count,uniquePlan:true,boxedCourt:false,entrance:[...q.gate],entrances:q.gates71.map(g=>({id:g.id,side:g.side,x:g.x,z:g.z})),archetype:dioramas67.archetypes[key]??p.kind});return root;
 }

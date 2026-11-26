@@ -1,25 +1,39 @@
 {
-  "release": "elyndor-alpha-1.57-woodland-canopies-battlefield-grass-2026-11-25",
-  "version": "Alpha Version 1.57",
+  "release": "elyndor-alpha-1.58-brookstead-millstream-battlefield-grass-2026-11-26",
+  "version": "Alpha Version 1.58",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 7917874,
-    "sha256": "fc9c7a60ca69f013181449ff700d5f13b942783e68c12d2346ddb5bdd7ccabd7",
+    "bytes": 8031584,
+    "sha256": "c1715c3b2fd5ab6e7c8df381310579e742cae2d54bc1205bb3feab3813236814",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "11d7f8ed067f5496978be2cdcbdf002f5acaa7a3"
+    "previousRelease": "ba314286c28cbf5b475b935a458d42ef9bd751e5"
   },
   "changes": [
-    "Battle grass keeps its original blade shapes, height and color. Tufts grow where the ground around their roots is already green, leaving worn paths, bare dirt and snow clear.",
-    "The same placement applies in all 20 arenas and seven story encounters. Grass at each story location returns to its exploration layout when the fight ends.",
-    "Valenne’s oak, birch, willow, maple, spruce and pine now have textured 3D crowns. Their distinct silhouettes are visible along the roads and riverbanks."
+    "On the Valenne overworld, a stream branches from the river, turns Brookstead’s mill wheel and rejoins the river downstream. The west road crosses a stone bridge and brings the party onto the bridge inside town. A four-jet fountain marks the square.",
+    "Battle grass fills sparse green patches and thins out in crowded meadows. Blades taper into the background across the arenas and story battlefields, leaving exposed dirt and snow clear.",
+    "Highmere, Fern Hollow, Valenne Harbor and Alderbridge have new modeled architecture. Fern Hollow’s inn, smithy, provisions shop and remnant chamber have distinct interiors, with a working stair into the chamber.",
+    "Lanterns, hearths and crystals cast directional shadows on nearby buildings, props and characters. Brookstead’s pools reflect their actual surroundings. Water in towns shares the painted river surface, and foam breaks into smaller crests along the banks.",
+    "Overworld trees have more distinct canopy layers, with overlapping leaf sprays on broadleaf trees and clearer branch tiers on conifers."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.58",
+      "date": "November 26, 2026",
+      "title": "Brookstead millstream and battlefield grass",
+      "items": [
+        "On the Valenne overworld, a stream branches from the river, turns Brookstead’s mill wheel and rejoins the river downstream. The west road crosses a stone bridge and brings the party onto the bridge inside town. A four-jet fountain marks the square.",
+        "Battle grass fills sparse green patches and thins out in crowded meadows. Blades taper into the background across the arenas and story battlefields, leaving exposed dirt and snow clear.",
+        "Highmere, Fern Hollow, Valenne Harbor and Alderbridge have new modeled architecture. Fern Hollow’s inn, smithy, provisions shop and remnant chamber have distinct interiors, with a working stair into the chamber.",
+        "Lanterns, hearths and crystals cast directional shadows on nearby buildings, props and characters. Brookstead’s pools reflect their actual surroundings. Water in towns shares the painted river surface, and foam breaks into smaller crests along the banks.",
+        "Overworld trees have more distinct canopy layers, with overlapping leaf sprays on broadleaf trees and clearer branch tiers on conifers."
+      ]
+    },
     {
       "version": "Alpha Version 1.57",
       "date": "November 25, 2026",
@@ -1032,8 +1046,8 @@
     "groundedStoryBattleEnvironments": 7
   },
   "validation": {
-    "file": "elyndor/previews/release-v157/verification.json",
-    "sha256": "8bca88b7486fd68bcb23a971d49d576dcb3f7e0ea507cb23b41747e153bc2fbc",
+    "file": "elyndor/previews/release-v158/verification.json",
+    "sha256": "23ca639eb20ece259aea2f093e536ab51548d069d03d3ad639cdc06c26d7381b",
     "finalRelease": "PASS",
     "desktopAndPhone": true
   },
@@ -1074,9 +1088,9 @@
     "spriteLighting": "Coherent party and NPC canopy reception outside combat; original art and sampling retained"
   },
   "previousPublishedRelease": {
-    "version": "Alpha Version 1.56",
-    "commit": "11d7f8ed067f5496978be2cdcbdf002f5acaa7a3",
-    "sha256": "382dc491746f8f7c10cd620b42572b5a799c4a2a77df3b1961a5c7f73631c534"
+    "version": "Alpha Version 1.57",
+    "commit": "ba314286c28cbf5b475b935a458d42ef9bd751e5",
+    "sha256": "fc9c7a60ca69f013181449ff700d5f13b942783e68c12d2346ddb5bdd7ccabd7"
   },
   "housing": {
     "maximumOwnedHomes": 1,

@@ -21,7 +21,7 @@ function boundaryWoodland47(f,ground,theme,trees,random){
  if(['cave','mountain','ruin','shrine'].includes(theme))return{brushes:0};
  const near=new Map(),cell=5,index=t=>{const key=Math.floor(t.x/cell)+','+Math.floor(t.z/cell);if(!near.has(key))near.set(key,[]);near.get(key).push(t);};if(f.overworld){const rows=bakedFloat36(BAKED_WORLD36.trees.data);for(let i=0;i<rows.length;i+=6)index({x:rows[i],z:rows[i+2],scale:rows[i+4]});}else for(const t of scenery.trees)index(t);
  const spacing=f.overworld?3.9:3.2,[x0,x1,z0,z1]=f.overworld?[LAND.minX,LAND.maxX,LAND.minZ,LAND.maxZ]:f.bounds,plantings={fern:[],grassBlades:[],flowers:[]};
- const dry=(x,z)=>f.overworld?ground(x,z)>=0&&!hydroSample38(x,z).wet:!waterGround(x,z);
+ const dry=(x,z)=>f.overworld?ground(x,z)>=0&&!hydroSample38(x,z).wet:!waterGround(x,z)&&!reservedTownGround(x,z,1.75);
  const cluster=(x,z)=>(Math.sin(x*.073+Math.cos(z*.053)*1.4)+Math.cos(z*.067-x*.027)+2)/4;
  for(let z=Math.floor((z0-23)/spacing)*spacing;z<z1+23;z+=spacing)for(let x=Math.floor((x0-23)/spacing)*spacing;x<x1+23;x+=spacing){
   const xx=x+(random()-.5)*spacing*.94,zz=z+(random()-.5)*spacing*.94,depth=-f.distance(xx,zz);if(depth<1.5||!f.overworld&&depth>38||!dry(xx,zz))continue;

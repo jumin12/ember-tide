@@ -107,7 +107,7 @@ function anvil67(x,z){
 function roomLantern66(x,y,z){
  const start=world.children.length;
  const brass=roomMaterial29('metal','#917044',{metalness:.65,roughness:.38}),glass=roomMaterial29('plaster','#ffe9b8',{emissive:'#ffbc62',emissiveIntensity:1.4});
- const body=mesh(geo16('room66-lantern',()=>new THREE.CylinderGeometry(.17,.2,.52,6)),glass,x,y+.3,z);body.name='Amber glass lantern';body.userData.dynamicFX=true;
+ const body=mesh(geo16('room66-lantern',()=>new THREE.CylinderGeometry(.17,.2,.52,6)),glass,x,y+.3,z);body.name='Amber glass lantern';body.userData.dynamicFX=true;body.userData.lanternCenter=0;
  for(const yy of[y,y+.60]){const cap=mesh(geo16('room66-lantern-cap',()=>new THREE.CylinderGeometry(.27,.24,.10,6)),brass,x,yy,z);cap.name='Lantern brass cap';}
  for(let i=0;i<4;i++){const a=i*Math.PI/2;roomPart66('Lantern metal frame',x+Math.cos(a)*.16,y+.3,z+Math.sin(a)*.16,.028,.6,.028,'metal','#7b684e');}
  const loop=mesh(geo16('room66-loop',()=>new THREE.TorusGeometry(.12,.022,5,12)),brass,x,y+.78,z);loop.name='Lantern hanging loop';
@@ -232,8 +232,9 @@ const brookInteriorBefore66=buildJourneyInterior;
 buildJourneyInterior=function(id,spawn){
  if(!brookRooms66.has(id))return brookInteriorBefore66(id,spawn);
  resetJourneyWorld(id);const spec=INTERIORS[id];activeScene.bounds=[-10.1,10.1,-7.65,7.65];state.interiorReturn??={id:POIS[spec.poi].id,poi:spec.poi,spawn:[...POIS[spec.poi].spawn]};state.poi=spec.poi;world.userData.interior=spec.type;
- const floor=roomPart66('Walkable room floor',0,-.16,0,21,.3,16,id==='brookForge'?'wall':'wood',id==='brookForge'?'#aaa18c':'#b7ab91');floor.castShadow=false;floor.userData.terrain=true;world.userData.terrain=floor;world.userData.walkSurfaces=[floor];
- const wallKey=spec.type==='inn'?'wood':'wall',guestDoor=spec.type==='inn';backWall67(wallKey,guestDoor);windowedSideWall66(-10.3,[-3.8,3.6],wallKey,'#b1a78f');windowedSideWall66(10.3,[2.9],wallKey,'#b1a78f');
+ const woodland=fernRoomSpecs[id],stoneFloor=id==='brookForge'||woodland?.category==='equipment';
+ const floor=roomPart66('Walkable room floor',0,-.16,0,21,.3,16,stoneFloor?(woodland?'cobble':'wall'):'wood',stoneFloor?'#aaa18c':'#b7ab91');floor.castShadow=false;floor.userData.terrain=true;world.userData.terrain=floor;world.userData.walkSurfaces=[floor];
+ const wallKey=woodland||spec.type==='inn'?'wood':'wall',guestDoor=spec.type==='inn'&&!woodland;backWall67(wallKey,guestDoor);windowedSideWall66(-10.3,[-3.8,3.6],wallKey,'#b1a78f');windowedSideWall66(10.3,[2.9],wallKey,'#b1a78f');
  backRail67('Walnut wainscot',1.05,2.1,'panel29','#c9b798',guestDoor);for(const x of[-10.03,10.03])roomPart66('Side wall wainscot',x,1.05,-.2,.16,2.1,15.5,'panel29','#c0ae8f');
  for(const x of[-10,-6.7,-1.5,1.5,6.7,10])roomPart66('Structural wall post',x,3.7,-7.58,.23,7.4,.28,'darkWood','#a08c6d');
  for(const y of[.25,2.13,5.8,7.45]){backRail67('Back wall timber rail',y,.2,'wood','#b09a77',guestDoor);for(const x of[-10.02,10.02])roomPart66('Side wall timber rail',x,y,-.2,.23,.2,15.4,'wood','#b09a77');}
@@ -242,21 +243,24 @@ buildJourneyInterior=function(id,spawn){
  if(guestDoor){roomDoor29(0,-7.54);createInteraction('sleep',0,-6.1,'Rest in the guest rooms');}
  roomPart66('Exterior door stone threshold',0,.025,7.25,2.7,.08,.48,'wall','#bdb6a1');
  obstacle(0,-7.9,21,.6,'interior wall');for(const x of[-10.3,10.3])obstacle(x,-.2,.6,15.6,'interior wall');
- roomDoorMode31='';roomSupportCapture66=true;try{buildBrookFixtures66(id);enrichRoom66(id);}finally{roomSupportCapture66=false;}checkRoomSupports66();
- for(const o of interactables){if(o.actor&&(o.type==='inn'||o.type==='shop')){const inn=spec.type==='inn',forge=id==='brookForge',p=inn?[-4.5,-6.35]:forge?[.2,-6.5]:[-4.5,-5.65],anchor=inn?[-4.5,-3.55]:forge?[.2,-3.45]:[-4.5,-2.8];o.actor.x=p[0];o.actor.z=p[1];o.x=anchor[0];o.z=anchor[1];o.serviceAnchor68=true;updateActor(o.actor,0);}if(o.type==='shop'||o.type==='inn')o.radius=2.65;if(o.type==='council')o.radius=4.6;if(o.type==='archivist')o.radius=4.2;if(o.actor){o.actor.scripted=true;o.actor.face='south';o.actor.home={x:o.actor.x,z:o.actor.z};o.actor.action='idle';o.actor.speed=0;updateActor(o.actor,0);npcs.push(o.actor);}}
+ roomDoorMode31='';roomSupportCapture66=true;try{if(woodland)buildFernFixtures(id);else{buildBrookFixtures66(id);enrichRoom66(id);}}finally{roomSupportCapture66=false;}checkRoomSupports66();
+ for(const o of interactables){if(o.actor&&(o.type==='inn'||o.type==='shop')){const inn=spec.type==='inn',forge=id==='brookForge',p=woodland?.staff??(inn?[-4.5,-6.35]:forge?[.2,-6.5]:[-4.5,-5.65]),anchor=woodland?.customer??(inn?[-4.5,-3.55]:forge?[.2,-3.45]:[-4.5,-2.8]);o.actor.x=p[0];o.actor.z=p[1];o.x=anchor[0];o.z=anchor[1];o.serviceAnchor68=true;updateActor(o.actor,0);}if(o.type==='shop'||o.type==='inn')o.radius=2.65;if(o.type==='council')o.radius=4.6;if(o.type==='archivist')o.radius=4.2;if(o.actor){o.actor.scripted=true;o.actor.face='south';o.actor.home={x:o.actor.x,z:o.actor.z};o.actor.action='idle';o.actor.speed=0;updateActor(o.actor,0);npcs.push(o.actor);}}
  createInteraction('interiorExit',0,7.1,'Return outside');Object.assign(interactables.at(-1),{radius:2.3,visualHeight:.2});
  const fixtures=new THREE.Group();fixtures.name='Authored cutaway '+id;fixtures.userData.chunk=true;fixtures.userData.center=V3();world.add(fixtures);const dynamic=new Set(actors.flatMap(a=>[a.mesh,a.shadow]));
  for(const o of[...world.children])if((o.isMesh||o.userData.interiorFixture29)&&!dynamic.has(o)&&o!==floor&&!o.userData.dynamicFX&&!world.userData.candles?.some(c=>c.mesh===o))fixtures.attach(o);
  mergeGroup(fixtures);world.userData.staticChunks=[fixtures];const lamps=[];world.traverse(o=>{if(o.isPointLight)lamps.push(o);});lamps.forEach(o=>o.removeFromParent());
  world.userData.lanterns=[];for(let i=0;i<6;i++){const l=new THREE.PointLight('#ffc68b',0,8,2);world.add(l);world.userData.lanterns.push(l);}buildRoomAir66();
- world.userData.room66={key:id,identity:spec.type==='inn'?'hearth and hospitality':id==='brookForge'?'forge and weapon workshop':spec.type==='shop'?'provisions and travelling goods':spec.type==='archives'?'royal records and reading room':id==='aidOffice'?'aid parcels and reports':'royal council chamber',footprint:[21,16],geometryAcrossTime:true,ceilingMembers:0};
+ world.userData.room66={key:id,identity:woodland?woodland.sub:spec.type==='inn'?'hearth and hospitality':id==='brookForge'?'forge and weapon workshop':spec.type==='shop'?'provisions and travelling goods':spec.type==='archives'?'royal records and reading room':id==='aidOffice'?'aid parcels and reports':'royal council chamber',footprint:[21,16],geometryAcrossTime:true,ceilingMembers:0};
  sceneBuildFilter=false;finishJourneyWorld(spawn??[0,5]);scene.background.set('#14171a');scene.fog.near=55;scene.fog.far=110;interior66.built++;
 };
 const cameraBeforeRooms66=updateCamera;
 updateCamera=function(dt,instant=false){
  if(!brookRooms66.has(activeScene?.key)||battle||restoration||!player)return cameraBeforeRooms66(dt,instant);
- const narrow=clamp((1.4-camera.aspect)/.6,0,1),look=V3(clamp(player.x*mix(.14,1,narrow),-mix(.8,8,narrow),mix(.8,8,narrow)),2.15,clamp(-2.9+player.z*.20,-3.9,-1.1)),offset=V3(0,8.8,24).multiplyScalar(state.settings.zoom??1);
- cameraTarget.lerp(look,instant?1:1-Math.exp(-dt*6));camera.position.copy(cameraTarget).add(offset);camera.fov=34;camera.lookAt(cameraTarget);camera.updateProjectionMatrix();camera.updateMatrixWorld();focusPoint.copy(cameraTarget);post.material.uniforms.focus.value=camera.position.distanceTo(cameraTarget);
+ const narrow=clamp((1.4-camera.aspect)/.6,0,1),woodland=!!fernRoomSpecs[activeScene.key];
+ const follow=woodland?mix(.24,1,narrow):mix(.14,1,narrow),range=mix(woodland?2.1:.8,woodland?9:8,narrow);
+ const look=V3(clamp(player.x*follow,-range,range),woodland?2.18:2.15,clamp(-2.9+player.z*.20,-3.9,-1.1));
+ const offset=(woodland?V3(0,3.72,22.35):V3(0,8.8,24)).multiplyScalar(state.settings.zoom??1);
+ cameraTarget.lerp(look,instant?1:1-Math.exp(-dt*6));camera.position.copy(cameraTarget).add(offset);camera.fov=woodland?36:34;camera.lookAt(cameraTarget);camera.updateProjectionMatrix();camera.updateMatrixWorld();focusPoint.copy(cameraTarget);post.material.uniforms.focus.value=camera.position.distanceTo(cameraTarget);
  for(const a of actors){a.mesh.quaternion.copy(camera.quaternion);a.shadow.visible=a.mesh.visible;}
 };
 const roomLightBefore66=updateLighting;
@@ -264,7 +268,7 @@ updateLighting=function(...args){const r=roomLightBefore66(...args);if(!brookRoo
  const h=(state.worldMinutes/60)%24,day=smooth(5.5,8,h)*(1-smooth(17,19.5,h)),night=1-day;interior66.day.value=day;
  sun.color.set(day>.2?'#ffe8c2':'#91b7df');sun.intensity=.16+day*2.4;sun.position.set(-9,15,5);sun.target.position.set(1,0,-2);sun.target.updateMatrixWorld();sun.updateMatrixWorld(true);
  hemi.color.set(day>.2?'#d6e1df':'#9cacc2');hemi.groundColor.set('#705849');hemi.intensity=.43+day*.38;if(skyBounce17){skyBounce17.color.set('#dfb891');skyBounce17.intensity=.27;}renderer.toneMappingExposure=1.12;
- const forge=activeScene.key==='brookForge',inn=INTERIORS[activeScene.key]?.type==='inn',hearth=inn?V3(6,1.7,-5.8):forge?V3(-6,1.7,-5.8):V3(-7.4,2,-4.1),anchors=[hearth,V3(-8,3,-.8),V3(8,3,.7),V3(-4,2.6,-4),V3(4,3,-4.5),V3(0,3.4,3)];
+ const woodland=fernRoomSpecs[activeScene.key],forge=activeScene.key==='brookForge'||woodland?.category==='equipment',inn=INTERIORS[activeScene.key]?.type==='inn',hearth=woodland?.hearth?V3(...woodland.hearth):inn?V3(6,1.7,-5.8):forge?V3(-6,1.7,-5.8):V3(-7.4,2,-4.1),anchors=[hearth,V3(-8,3,-.8),V3(8,3,.7),V3(-4,2.6,-4),V3(4,3,-4.5),V3(0,3.4,3)];
  world.userData.lanterns.forEach((l,i)=>{if((l.userData.effectUntil??0)>clock)return;l.position.copy(anchors[i]);l.color.set(i===0&&forge?'#ff9a42':'#ffc486');l.intensity=(i===0?(forge?25:inn?21:12):8)*(1+night*.62)*(1+Math.sin(clock*(1.8+i*.17)+i)*.018);l.distance=i===0?9:7;l.decay=2;});
  for(const m of world.userData.windows66??[])m.material.emissiveIntensity=.08+day*.30;
  sceneryLight.direction.value.copy(sun.position).sub(sun.target.position).normalize();weather.sun.value.copy(sceneryLight.direction.value);sceneryLight.shadowStrength.value=.47;

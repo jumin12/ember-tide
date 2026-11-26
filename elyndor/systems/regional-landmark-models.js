@@ -12,12 +12,21 @@ function landmarkHoop(parent,x,y,z,r,thickness,kind='bronze',tone='#c69c50'){
  const geo=geo16('landmark-ring-'+[r,thickness].join('/'),()=>new THREE.TorusGeometry(r,thickness,6,32));
  return landmarkPiece(parent,geo,kind,tone,x,y,z);
 }
-function landmarkLamp(parent,x,y,z){
+function landmarkLamp(parent,x,y,z,wallDepth=0){
  const g=landmarkGroup(parent,x,y,z);
+ g.userData.lanternCenter=.29;
  landmarkDrum(g,0,-.06,0,.34,.30,.12,'bronze','#ad8956',6);
  landmarkDrum(g,0,.06,0,.23,.28,.48,'window','#ffc47a',6);
  landmarkDrum(g,0,.54,0,.37,.09,.21,'metal','#8f8a77',6);
  for(const a of [0,2.09,4.19])landmarkBlock(g,Math.sin(a)*.26,.31,Math.cos(a)*.26,.05,.5,.05,'bronze','#977b50');
+ if(wallDepth){
+  // A ventilated cap hangs from an iron arm fixed into the post or masonry.
+  landmarkDrum(g,0,.72,0,.113,.12,.105,'metal','#736d61',6);
+  landmarkHoop(g,0,.87,0,.098,.024,'bronze','#a08a65');
+  landmarkBlock(g,0,.97,-wallDepth/2,.071,.075,wallDepth+.11,'metal','#777467');
+  landmarkBlock(g,0,.76,-wallDepth,.22,.56,.082,'metal','#827b69');
+  beam(V3(0,.58,-wallDepth+.022),V3(0,.94,-wallDepth*.28),.036,'metal','#81765e',g);
+ }
 }
 function landmarkTree(parent,x,z,height,fruit=false){
  const tree=landmarkGroup(parent,x,0,z);tree.scale.setScalar(height/3.6);

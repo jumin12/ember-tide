@@ -131,6 +131,23 @@ function waterVisible111(o){
  if(!o?.visible)return false;const patches=o===water?world.userData.waterPatches:o.userData.poolPatches;if(patches?.length)return patches.some(b=>mirrors111.frustum.intersectsBox(b));
  if(!o.geometry.boundingSphere)o.geometry.computeBoundingSphere();return mirrors111.frustum.intersectsObject(o);
 }
+// Reflect the actual view basis (including cutscenes and camera easing).
+// An oblique near plane also clips custom shaders that omit Three's clipping chunks.
+function setWaterMirrorCamera(level){
+ const c=reflectionCamera,plane=new THREE.Plane(V3(0,1,0),-level-.012);
+ c.copy(camera);c.position.setFromMatrixPosition(camera.matrixWorld);c.position.y=2*level-c.position.y;
+ const forward=camera.getWorldDirection(V3());forward.y*=-1;
+ c.up.setFromMatrixColumn(camera.matrixWorld,1);c.up.y*=-1;
+ c.lookAt(forward.add(c.position));c.updateMatrixWorld(true);
+ const eyePlane=plane.clone().applyMatrix4(c.matrixWorldInverse),v=new THREE.Vector4(...eyePlane.normal.toArray(),eyePlane.constant);
+ const q=new THREE.Vector4(Math.sign(v.x)||1,Math.sign(v.y)||1,1,1).applyMatrix4(c.projectionMatrixInverse);
+ const denominator=v.dot(q);
+ if(denominator>.0001){
+  v.multiplyScalar(2/denominator);const e=c.projectionMatrix.elements;
+  e[2]=v.x;e[6]=v.y;e[10]=v.z+1;e[14]=v.w;c.projectionMatrixInverse.copy(c.projectionMatrix).invert();
+ }
+ return plane;
+}
 function presentShadow111(){
  // Enter through the renderer so its light/render state exists. Skip only
  // camera color draws; the real light-camera depth draws still execute once.
@@ -150,28 +167,36 @@ updateReflection=function(...args){
  // The reflection reads this frame's actual sharp shadow depth, rather than
  // combining yesterday's depth texture with the newly fitted light matrix.
  scene.updateMatrixWorld(true);if(shadow36.due&&renderer.shadowMap.needsUpdate&&sun.shadow.needsUpdate){presentShadow111();mirrors111.shadowFrames++;}
- const oldTarget=renderer.getRenderTarget(),oldClip=renderer.clippingPlanes,auto=renderer.shadowMap.autoUpdate,pending=renderer.shadowMap.needsUpdate,sunPending=sun.shadow.needsUpdate,hidden=new Map(),trees=scenery.trees.filter(t=>t.hidden),depths=cutawayUniforms.depths.value.slice(),fades=(world.userData.cutaways??[]).map(o=>o.fade.value);
+ const oldTarget=renderer.getRenderTarget(),oldClip=renderer.clippingPlanes,auto=renderer.shadowMap.autoUpdate,pending=renderer.shadowMap.needsUpdate,sunPending=sun.shadow.needsUpdate,hidden=new Map(),forestMain=forest30.main.value;
  const hide=o=>{if(o&&!hidden.has(o)){hidden.set(o,o.visible);o.visible=false;}};for(const o of surfaces)hide(o);
  for(const o of [...perf.plants,world.userData.weatherBatch36,world.userData.dust22?.mesh,world.userData.mist28,world.userData.damSpray108,world.userData.millSpray111,world.userData.current19,world.userData.releaseSpray18,world.userData.shafts24?.group])hide(o);
- for(const t of trees)hideTree(t,false);for(const o of world.userData.cutaways??[])o.fade.value=0;cutawayUniforms.depths.value.fill(0);
- renderer.shadowMap.autoUpdate=false;renderer.shadowMap.needsUpdate=sun.shadow.needsUpdate=false;forest30.main.value=0;const rendered=new Map(),rows=[];
+ // A distant skyline model is a backdrop. It must not acquire a second
+ // life in Brookstead's canal, or appear through banks in an under-water view.
+ world.traverseVisible(o=>{if(o.userData.viewHidden||brook&&o.material?.userData.distantArchitecture26)hide(o);});
+ renderer.shadowMap.autoUpdate=false;renderer.shadowMap.needsUpdate=sun.shadow.needsUpdate=false;const rendered=new Map(),rows=[],byRole=new Map();
  try{for(const o of candidates){
   let level=o.position.y;if(brook&&o.userData.fill17){const f=o.userData.fill17;level=sampleCurrent18(f,(f.start+f.end)/2,riverState17());}
   else if(o.userData.freshwater38)level=traversalWaterHeight(player.x,player.z)+.035;
   const key=level.toFixed(3);let mirror=rendered.get(key);
   if(!mirror){let target=o.userData.poolTarget??(o===water?reflectionTarget:mirrors111.owned.get(o));if(!target){target=new THREE.WebGLRenderTarget(256,256,{depthBuffer:true});mirrors111.owned.set(o,target);}mirrorSize111(target);
-   reflectionCamera.copy(camera);reflectionCamera.position.y=2*level-camera.position.y;reflectionCamera.up.set(0,-1,0);reflectionCamera.lookAt(cameraTarget.x,2*level-cameraTarget.y,cameraTarget.z);reflectionCamera.updateMatrixWorld(true);
-   const matrix=(o.userData.reflMatrix??=new THREE.Matrix4());matrix.copy(mirrors111.bias).multiply(reflectionCamera.projectionMatrix).multiply(reflectionCamera.matrixWorldInverse);renderer.clippingPlanes=[new THREE.Plane(V3(0,1,0),-level-.015)];
+   const plane=setWaterMirrorCamera(level);
+   const matrix=(o.userData.reflMatrix??=new THREE.Matrix4());matrix.copy(mirrors111.bias).multiply(reflectionCamera.projectionMatrix).multiply(reflectionCamera.matrixWorldInverse);renderer.clippingPlanes=[...oldClip,plane];
    renderer.setRenderTarget(target);renderer.render(scene,reflectionCamera);mirror={target,matrix,level};rendered.set(key,mirror);mirrors111.passes++;liveSurfaceStats.reflections++;
   }
   const u=waterUniforms62.get(o.material);if(u){u.mirror62.value=mirror.target.texture;u.reflectionMatrix62.value=mirror.matrix;u.reflect62.value=1;}
+  if(o.userData.waterRole)byRole.set(o.userData.waterRole,mirror);
   o.userData.mirror111={frame:mirrors111.frames+1,level,width:mirror.target.width,height:mirror.target.height};rows.push({role:o.userData.waterRole??(o.userData.freshwater38?'river':'ocean'),...o.userData.mirror111});
  }
  // Cascades read the current upper and lower pool images; the continuation
  // shares its reservoir material, so no separate stale horizon mirror exists.
- if(brook)for(const o of world.userData.brookFallObjects??[]){const j=o.userData.join,u=waterUniforms62.get(o.material),q=riverState17(),upper=j.z===70?'reservoir':j.z===80?'headrace':'millrace',lower=j.z===70?'headrace':j.z===80?'millrace':'lowerBrook',up=rendered.get(currentLevel18(upper,j.z-j.halfSpan,q).toFixed(3)),down=rendered.get(currentLevel18(lower,j.z+j.halfSpan,q).toFixed(3));if(!u)continue;if(up){u.upperMirror62.value=up.target.texture;u.upperMatrix62.value=up.matrix;}if(down){u.mirror62.value=down.target.texture;u.reflectionMatrix62.value=down.matrix;}}
+ if(brook)for(const o of world.userData.brookFallObjects??[]){
+  const j=o.userData.join,u=waterUniforms62.get(o.material);if(!u)continue;
+  const upper=byRole.get(j.z===70?'reservoir':j.z===80?'headrace':'millrace'),lower=byRole.get(j.z===70?'headrace':j.z===80?'millrace':'lowerBrook');
+  const up=upper??lower,down=lower??upper;u.reflect62.value=up?1:0;
+  if(up){u.upperMirror62.value=up.target.texture;u.upperMatrix62.value=up.matrix;u.mirror62.value=down.target.texture;u.reflectionMatrix62.value=down.matrix;}
+ }
  mirrors111.frames++;world.userData.liveMirrors111={frame:mirrors111.frames,passes:rendered.size,levels:rows,perPresentedFrame:true,shadowFrame:mirrors111.shadowFrames};
- }finally{renderer.setRenderTarget(oldTarget);renderer.clippingPlanes=oldClip;renderer.shadowMap.autoUpdate=auto;renderer.shadowMap.needsUpdate=pending;sun.shadow.needsUpdate=sunPending;cutawayUniforms.depths.value.set(depths);(world.userData.cutaways??[]).forEach((o,i)=>o.fade.value=fades[i]);for(const[o,v]of hidden)o.visible=v;for(const t of trees)hideTree(t,true);forest30.main.value=1;}
+ }finally{renderer.setRenderTarget(oldTarget);renderer.clippingPlanes=oldClip;renderer.shadowMap.autoUpdate=auto;renderer.shadowMap.needsUpdate=pending;sun.shadow.needsUpdate=sunPending;for(const[o,v]of hidden)o.visible=v;forest30.main.value=forestMain;}
 };
 const disposeMirrorsBefore111=disposeContinuousWorld;
 disposeContinuousWorld=function(...args){for(const t of mirrors111.owned.values())t.dispose();mirrors111.owned.clear();mill111.world=null;mill111.spray=null;return disposeMirrorsBefore111(...args);};

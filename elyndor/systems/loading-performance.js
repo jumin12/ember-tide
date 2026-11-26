@@ -2,21 +2,28 @@
 // Retained-continent still reuses that exact world after its first visit.
 
 
+// Warm-up cameras render unrelated geometry. Only the live mirror camera owns
+// river pixels; a small target with the same output format compiles the same program.
+function warmupRenderTarget(source){
+ const t=source.texture;
+ return new THREE.WebGLRenderTarget(2,2,{type:t.type,format:t.format,colorSpace:t.colorSpace,samples:source.samples});
+}
 async function compileVisible136(){
  if(!renderer.compileAsync)return;
  // Compile against the real HDR target. Compiling against the screen creates
  // a different colour-output program and blocks again on the first draw.
  const target=renderer.getRenderTarget(),clip=renderer.clippingPlanes,visible=new THREE.Group(),empty=new THREE.Scene();
  visible.traverse=fn=>scene.traverseVisible(o=>{if(o.layers.test(camera.layers))fn(o);});visible.traverseVisible=()=>{};
+ const colour=warmupRenderTarget(post.target),mirror=water?.visible?warmupRenderTarget(reflectionTarget):null;
  try{
-  if(water?.visible){
-   renderer.setRenderTarget(reflectionTarget);renderer.clippingPlanes=[new THREE.Plane(V3(0,1,0),-water.position.y-.015)];
+  if(mirror){
+   renderer.setRenderTarget(mirror);renderer.clippingPlanes=[new THREE.Plane(V3(0,1,0),-water.position.y-.015)];
    // An empty draw sets Three's clipping state without linking world shaders.
    renderer.render(empty,camera);await renderer.compileAsync(visible,camera,scene);
   }
-  renderer.clippingPlanes=clip;renderer.setRenderTarget(post.target);renderer.render(empty,camera);
+  renderer.clippingPlanes=clip;renderer.setRenderTarget(colour);renderer.render(empty,camera);
   await renderer.compileAsync(visible,camera,scene);
- }finally{renderer.clippingPlanes=clip;renderer.setRenderTarget(target);}
+ }finally{renderer.clippingPlanes=clip;renderer.setRenderTarget(target);mirror?.dispose();colour.dispose();}
 }
 
 let worldData136=null,vegetationData138=null;

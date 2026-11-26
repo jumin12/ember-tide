@@ -2,6 +2,18 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.58 — Brookstead millstream and battlefield grass
+
+November 26, 2026
+
+- On the Valenne overworld, a stream branches from the river, turns Brookstead’s mill wheel and rejoins the river downstream. The west road crosses a stone bridge and brings the party onto the bridge inside town. A four-jet fountain marks the square.
+- Battle grass fills sparse green patches and thins out in crowded meadows. Blades taper into the background across the arenas and story battlefields, leaving exposed dirt and snow clear.
+- Highmere, Fern Hollow, Valenne Harbor and Alderbridge have new modeled architecture. Fern Hollow’s inn, smithy, provisions shop and remnant chamber have distinct interiors, with a working stair into the chamber.
+- Lanterns, hearths and crystals cast directional shadows on nearby buildings, props and characters. Brookstead’s pools reflect their actual surroundings. Water in towns shares the painted river surface, and foam breaks into smaller crests along the banks.
+- Overworld trees have more distinct canopy layers, with overlapping leaf sprays on broadleaf trees and clearer branch tiers on conifers.
+
+The screenshots compare the final millstream and grass pass with the preceding local build. [Browse all 31 views](https://jumin12.github.io/ember-tide/elyndor/previews/release-v158/index.html) · [Brookstead](elyndor/previews/release-v158/brookstead-comparison.jpg) · [Battlefields](elyndor/previews/release-v158/battle-comparison.jpg)
+
 ## Alpha Version 1.57 — Woodland canopies and battlefield grass
 
 November 25, 2026

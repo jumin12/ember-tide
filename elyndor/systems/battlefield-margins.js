@@ -528,6 +528,19 @@ function buildMarginScatter(stage,group,q,b,inLane){
 function battleGrowthField(floors,cx,cz,story){
  const scan=new THREE.Scene(),materials=new Map(),bounds=new THREE.Box3(),box=new THREE.Box3();
  const nightBank=!story&&encounter53.phase55==='night';
+ const sunlitBank=!story&&!nightBank;
+ if(sunlitBank){
+  // Read the same broad daylight and bank tint seen on the physical floor.
+  // Actor shadows, lanterns and spell lights must never seed a tuft.
+  scene.traverseVisible(light=>{
+   if(!light.isHemisphereLight&&!light.isAmbientLight&&!light.isDirectionalLight)return;
+   const copy=light.clone(false);copy.castShadow=false;
+   if(light.isDirectionalLight){
+    light.getWorldPosition(copy.position);light.target.getWorldPosition(copy.target.position);scan.add(copy.target);
+   }else if(light.isHemisphereLight)light.getWorldPosition(copy.position);
+   scan.add(copy);
+  });
+ }
  for(const floor of floors){
   floor.updateWorldMatrix(true,false);
   if(!floor.geometry.boundingBox)floor.geometry.computeBoundingBox();
@@ -544,15 +557,25 @@ function battleGrowthField(floors,cx,cz,story){
     shader.fragmentShader=shader.fragmentShader.replace('#include <dithering_fragment>',`
      vec3 soilInk=diffuseColor.rgb;
      vec2 greenRatios=soilInk.gg/max(vec2(.001),soilInk.rb);
-     ${bank?`vec3 bankInk=mix(soilInk,groundWash.rgb,groundWash.a)*(1.-contactColor.a)+contactColor.rgb;
-       // The painted verge can veto a planting. Blue night light does not describe soil.
+     ${bank?`// Apply the bank's bounded hue correction in neutral light. Its swatches
+       // carry lighting as well as colour, so raw RGB blending can erase olive turf.
+       vec3 growthLuma=vec3(.2126,.7152,.0722);
+       vec3 soilHue=soilInk/max(.004,dot(soilInk,growthLuma));
+       vec3 washHue=groundWash.rgb/max(.004,dot(groundWash.rgb,growthLuma));
+       vec3 bankInk=soilInk*mix(vec3(1.),clamp(washHue/(soilHue+.016),vec3(.68),vec3(1.40)),groundWash.a);
+       bankInk=bankInk*(1.-contactColor.a)+contactColor.rgb;
        vec2 bankRatios=bankInk.gg/max(vec2(.001),bankInk.rb);
        greenRatios.x=min(greenRatios.x,bankRatios.x);
        ${nightBank?'':'greenRatios.y=min(greenRatios.y,bankRatios.y);'}`:''}
-     float green=smoothstep(1.02,1.13,greenRatios.x)*smoothstep(1.08,1.26,greenRatios.y)${road};
-     gl_FragColor=vec4(green,green,green,1.);`);
+     float green=smoothstep(.985,1.067,greenRatios.x)*smoothstep(1.065,1.20,greenRatios.y)${road};
+     float olive=smoothstep(.88,1.04,greenRatios.x)*smoothstep(1.14,1.32,greenRatios.y)${road};
+     ${sunlitBank?`vec2 litRatios=outgoingLight.gg/max(vec2(.002),outgoingLight.rb);
+       float meadow=smoothstep(.992,1.095,litRatios.x)*smoothstep(1.14,1.34,litRatios.y);
+       green=max(green,meadow);olive=max(olive,smoothstep(.90,1.04,litRatios.x)*smoothstep(1.15,1.35,litRatios.y));`:''}
+     float dryTint=smoothstep(.91,1.15,soilInk.r/max(.002,soilInk.g));
+     gl_FragColor=vec4(green,dryTint,olive,1.);`);
    };
-   m.customProgramCacheKey=()=>source.customProgramCacheKey()+(nightBank?'-night-ground-growth':'-ground-growth');
+   m.customProgramCacheKey=()=>source.customProgramCacheKey()+'-ground-growth-'+(sunlitBank?'day':nightBank?'night':'neutral');
    m.side=THREE.DoubleSide;m.transparent=false;m.depthWrite=true;
   }
   const layer=new THREE.Mesh(floor.geometry,m);layer.matrixAutoUpdate=false;layer.matrix.copy(floor.matrixWorld);scan.add(layer);
@@ -573,22 +596,31 @@ function battleGrowthField(floors,cx,cz,story){
   renderer.setRenderTarget(previous,face,level);renderer.setClearColor(clear,alpha);renderer.shadowMap.needsUpdate=shadow;
   target.dispose();for(const m of materials.values())m.dispose();
  }
- const dx=Math.max(1,Math.round(.32*width/spanX)),dz=Math.max(1,Math.round(.32*height/spanZ));
- return {allows(x,z){
+ const dx=Math.max(1,Math.round(.26*width/spanX)),dz=Math.max(1,Math.round(.26*height/spanZ));
+ function growth(x,z){
   const col=Math.floor((x-x0)*width/spanX),row=Math.floor((z0+spanZ-z)*height/spanZ);
-  if(col<dx||row<dz||col>=width-dx||row>=height-dz)return false;
+  if(col<dx||row<dz||col>=width-dx||row>=height-dz)return 0;
   const i=4*(row*width+col);
-  if(rgba[i]<115)return false;
-  const neighbors=Number(rgba[i-4*dx]>=105)+Number(rgba[i+4*dx]>=105)+
-   Number(rgba[i-4*width*dz]>=105)+Number(rgba[i+4*width*dz]>=105);
-  return neighbors>=3;
- }};
+  const support=(rgba[i-4*dx]+rgba[i+4*dx]+rgba[i-4*width*dz]+rgba[i+4*width*dz])/4;
+  if(rgba[i]>=61&&support>=67&&(rgba[i]>=88||support>=111))return (rgba[i]*.65+support*.35)/255;
+  // A sun-dried olive edge can support short blades if it touches established
+  // turf. Isolated brown soil, grey rock and the POI roads still fail the test.
+  if(rgba[i+2]<117||col<3*dx||row<3*dz||col>=width-3*dx||row>=height-3*dz)return 0;
+  const verge=Math.max(rgba[i-12*dx],rgba[i+12*dx],rgba[i-12*width*dz],rgba[i+12*width*dz]);
+  return verge>149?(.30+.19*support/255):0;
+ }
+ // Tint is read only for accepted roots, inside the scan bounds.
+ function dryTint(x,z){
+  const col=Math.floor((x-x0)*width/spanX),row=Math.floor((z0+spanZ-z)*height/spanZ);
+  return rgba[4*(row*width+col)+1]/255;
+ }
+ return {growth,dryTint,allows:(x,z)=>growth(x,z)>0};
 }
 function isBattleGroundcover(mesh){
  const kind=mesh.userData.plantKey||mesh.material?.userData.realVegetation103;
  return kind==='grassBlades'||/^Battlefield (?:right flank |right corner )?tussock$/.test(mesh.name);
 }
-function fitBattleGroundcover(root,field,restore){
+function fitBattleGroundcover(root,field,restore,spaceRoot,rearScale){
  root.updateWorldMatrix(true,true);
  const matrix=new THREE.Matrix4(),base=V3(),tint=new THREE.Color();
  let examined=0,rejected=0,kept=0;
@@ -602,7 +634,7 @@ function fitBattleGroundcover(root,field,restore){
   for(let i=0,n=native?original.count:mesh.count;i<n;i++){
    mesh.getMatrixAt(i,matrix);base.setFromMatrixPosition(matrix).applyMatrix4(mesh.matrixWorld);
    examined++;
-   if(!field.allows(base.x,base.z)){
+   if(!field.allows(base.x,base.z)||!spaceRoot(base.x,base.z)){
     rejected++;
     if(native){
      if(!saved){saved=original.array.slice();restore.push(()=>{original.array.set(saved);original.needsUpdate=true;});}
@@ -613,7 +645,9 @@ function fitBattleGroundcover(root,field,restore){
    }
    kept++;
    if(!native){
-    if(write!==i)mesh.setMatrixAt(write,matrix);
+    const scale=mesh.name==='Physical staged-sward161'?rearScale(base.x,base.z):1;
+    if(scale<1){matrix.elements[4]*=scale;matrix.elements[5]*=scale;matrix.elements[6]*=scale;}
+    if(write!==i||scale<1)mesh.setMatrixAt(write,matrix);
     if(i!==write&&mesh.instanceColor){mesh.getColorAt(i,tint);mesh.setColorAt(write,tint);}
     write++;
    }
@@ -622,6 +656,82 @@ function fitBattleGroundcover(root,field,restore){
   if(!native||saved)mesh.instanceMatrix.needsUpdate=true;
  });
  return {examined,rejected,kept};
+}
+
+// Look across the playable ground after grading it. The older scatter leaves
+// holes where its approximate turf texture disagrees with the finished floor.
+function fillBattleTurf(group,field,q,stage,scatter,arena,restore){
+ const mobile=mobileBattle69(),step=mobile?.30:.215,origin=group.position;
+ const halfWidth=arena?Math.max(29,q.w+11):q.w+13,x0=q.x-halfWidth;
+ let z0=q.back-22;
+ if(arena)for(let x=x0;x<=q.x+halfWidth;x+=2)z0=Math.min(z0,apronEdge113(arena,x));
+ const cols=Math.ceil(2*halfWidth/step),rows=Math.ceil((q.front+12-z0)/step);
+ const rootsX=new Float32Array(rows*cols).fill(NaN),rootsZ=new Float32Array(rows*cols);
+ function rearScale(wx,wz){
+  const back=arena?apronEdge113(arena,wx-origin.x):z0;
+  return mix(.12,1,smooth(.55,12,wz-origin.z-back));
+ }
+ // Thin stacked native tufts before filling gaps. Use real root distances so
+ // two neighbouring grid cells cannot place a pair of tufts on top of each other.
+ function spaceRoot(wx,wz){
+  const x=wx-origin.x,z=wz-origin.z,i=Math.floor((x-x0)/step),j=Math.floor((z-z0)/step);
+  if(i<0||i>=cols||j<0||j>=rows)return true;
+  const slot=j*cols+i;
+  if(Number.isFinite(rootsX[slot]))return false;
+  const carpet=(field.growth(wx-1.3,wz)+field.growth(wx+1.3,wz)+field.growth(wx,wz-1.3)+field.growth(wx,wz+1.3))*.25;
+  const radius=step*(.72+.58*smooth(.36,.88,carpet)+.22*(1-rearScale(wx,wz)));
+  for(let r=Math.max(0,j-2);r<=Math.min(rows-1,j+2);r++)for(let c=Math.max(0,i-2);c<=Math.min(cols-1,i+2);c++){
+   const k=r*cols+c;
+   if((rootsX[k]-x)**2+(rootsZ[k]-z)**2<radius*radius)return false;
+  }
+  rootsX[slot]=x;rootsZ[slot]=z;return true;
+ }
+ const stats=fitBattleGroundcover(arena?group:world,field,restore,spaceRoot,rearScale);
+ stats.infill=0;
+ if(!HABITATS126[stage].cover)return stats;
+ const random=seeded(31433+Object.keys(battleSoils).indexOf(stage)*717);
+ const matrices=[],obj=new THREE.Object3D(),native=arena&&group.children.find(o=>o.name==='Physical staged-sward161');
+ const geometry=native?.geometry??curvedGrass102(mobile),height=(x,z)=>arena?arenaFloor88(arena,x,z):groundAt(x,z);
+ for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){
+  const x=x0+(i+.06+.88*random())*step,z=z0+(j+.06+.88*random())*step;
+  if(Number.isFinite(rootsX[j*cols+i]))continue;
+  const growth=field.growth(x+origin.x,z+origin.z);
+  if(!growth)continue;
+  const patch=groundNoise104(x*.48+5.7,z*.43)+.22*groundNoise104(x*1.33,z*1.56);
+  if(random()>mix(.81,.96,growth)*mix(.83,1,smooth(.22,.86,patch)))continue;
+  // Only the contact at the feet needs a gap. Short grass can continue
+  // through the wide rectangles used to keep boulders away from a sprite.
+  let stance=1;
+  for(const h of q.homes){
+   const sx=(2*x-h.minX-h.maxX)/Math.max(1,h.maxX-h.minX);
+   const sz=(2*z-h.minZ-h.maxZ)/Math.max(1,h.maxZ-h.minZ);
+   stance=Math.min(stance,sx*sx+sz*sz);
+  }
+  if(stance<.10)continue;
+  if(arena?(arenaWet89(arena,x,z)>.04||!supportedRear113(arena,x,z,.22)):
+     (waterGround(x,z)||!staticFree(x,z,.16)||Math.abs(heightAt(x,z)-groundAt(x,z))>.22))continue;
+  if(scatter.stones.some(r=>Math.abs(x-r.x)<r.rx*.95&&Math.abs(z-r.z)<r.rz*.95))continue;
+  const y=height(x,z),dx=(height(x+.2,z)-height(x-.2,z))/.4,dz=(height(x,z+.2)-height(x,z-.2))/.4;
+  if(!Number.isFinite(y)||Math.hypot(dx,dz)>.5||!spaceRoot(x+origin.x,z+origin.z))continue;
+  const rear=rearScale(x+origin.x,z+origin.z);
+  const size=(.77+random()*.34)*mix(.82,1,growth)*mix(.55,1,rear);
+  const blade=(.45+random()*.26)*mix(.65,1,growth)*mix(.46,1,smooth(.10,.95,stance))*mix(.83,1,marginWeight(x,z,q))*rear;
+  obj.scale.set(size,blade,size);obj.rotation.set(Math.atan(dz),random()*TAU,-Math.atan(dx),'ZXY');
+  obj.position.set(x,y-.015+(native?0:.465*blade),z);obj.updateMatrix();matrices.push(obj.matrix.clone());
+ }
+ if(!matrices.length)return stats;
+ const material=native?.material??vegetationMaterial103('grassBlades',arena);
+ if(!native){if(arena){material59(material);bindArenaWeather89(material,arena);bindStageAir97(material,arena);}else scatter.materials.push(material);}
+ const tufts=new THREE.InstancedMesh(geometry,material,matrices.length);
+ tufts.name='Battlefield green turf infill';tufts.receiveShadow=true;
+ const tint=new THREE.Color();
+ matrices.forEach((m,i)=>{
+  const x=m.elements[12],z=m.elements[14],tone=groundNoise104(x*.57+13,z*.48-9);
+  const dry=field.dryTint(x+origin.x,z+origin.z);
+  tufts.setMatrixAt(i,m);tufts.setColorAt(i,tint.setRGB(.94+tone*.13+dry*.20,.74+tone*.13-dry*.04,.90+tone*.14+dry*.09));
+ });
+ tufts.computeBoundingSphere();group.add(tufts);
+ stats.infill=matrices.length;return stats;
 }
 
 const marginBuildBefore=buildStageScenery59;
@@ -636,9 +746,9 @@ buildStageScenery59=function(...args){
  bindBattlefloorFinish(floor.material,data,stage,false);
  if(b.terrainJoin)b.terrainJoin.material.needsUpdate=true;
  let groundcover={examined:0,rejected:0,kept:0};
- if(b.group.children.some(mesh=>mesh.isInstancedMesh&&mesh.count>0&&isBattleGroundcover(mesh))){
+ if(HABITATS126[stage].cover||b.group.children.some(mesh=>mesh.isInstancedMesh&&mesh.count>0&&isBattleGroundcover(mesh))){
   const growth=battleGrowthField(b.terrainJoin?[floor,b.terrainJoin]:[floor],q.x+b.group.position.x,q.z+b.group.position.z,false);
-  groundcover=fitBattleGroundcover(b.group,growth);
+  groundcover=fillBattleTurf(b.group,growth,q,stage,scatter,b);
  }
  b.marginStudy={count:scatter.count,footprints:scatter.stones.length,habitat:battleSoils[stage][2],groundcover};
  return result;
@@ -742,7 +852,7 @@ function updateStoryMargin(){
   terrain.push([mesh,old,m]);mesh.material=m;
  });
  const growth=(sameGround&&old.growth)||(terrain.length?battleGrowthField(terrain.map(([mesh])=>mesh),q.x,q.z,true):null);
- if(growth)group.userData.groundcover=fitBattleGroundcover(world,growth,restoreRocks);
+ if(growth)group.userData.groundcover=fillBattleTurf(group,growth,q,stage,scenery,null,restoreRocks);
  group.userData.count=scenery.count;group.userData.groundMeshes=terrain.length;
  currentStoryMargin={story,growth,homes:story.rankHomes87,eye:camera.position.clone(),orientation:camera.quaternion.clone(),
   frustum:projection.slice(),width:innerWidth,height:innerHeight,

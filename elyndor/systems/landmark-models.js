@@ -133,8 +133,184 @@ function landmarkBarrel(parent,x,z,scale=1){
  const hoop=geo16('travel-cask-hoop',()=>new THREE.CylinderGeometry(.396,.396,.075,10,1,true));
  for(const y of [.25,.75])landmarkPiece(g,hoop,'metal','#686966',0,y,0);
 }
+// The two riverbanks, the west road and the mill share this one surveyed
+// centreline. The miniature, terrain, water shader and walking queries use it.
+let brooksteadRace=null;
+const brooksteadLots=[
+ {x:-7.1,z:-4.85,angle:1.02,w:4.2,d:5.2,h:3.25,roof:1.95,slate:'#8c9bac'},
+ {x:5.4,z:-5.5,angle:-.51,w:4.35,d:4.9,h:4.62,roof:2.35,slate:'#99a4ba',gable:true},
+ {x:7,z:5.85,angle:-.60,w:3.65,d:4.5,h:3.15,roof:1.76,slate:'#889bb8'},
+ {x:-.15,z:-5.65,angle:.45,w:2.6,d:2.4,h:1.9,roof:1.15,slate:'#96a8b7'}
+];
+function brooksteadFootings(root,site){
+ for(const lot of brooksteadLots){
+  const p=miniLocal71(site,site.x+lot.x,site.z+lot.z);
+  miniFooting71(root,site,p.x,p.z,lot.w,lot.d,lot.angle-site.a);
+ }
+ return brooksteadLots.length;
+}
+const raceRiverWet=traversalWet,raceRiverLevel=traversalWaterHeight,raceDryGround=macroGround;
+function prepareBrooksteadRace(site){
+ if(brooksteadRace)return brooksteadRace;
+ const west=site.gates71.find(g=>g.side==='west'),gx=west.x-site.x,gz=west.z-site.z;
+ const path=[[-24,29],[-19.4,24.1],[-13.7,18.9],[-9.3,13.8],[-9.5,8.4],[gx+.4,gz+3.1],[gx,gz],
+  [-11.8,-2.9],[-11.1,-5.1],[-11.4,-7.9],[-7.4,-11.1],[-2.4,-12],[3.6,-12.6],[8.9,-14.2],[16,-19.1]];
+ const curve=new THREE.CatmullRomCurve3(path.map(([x,z])=>V3(site.x+x,0,site.z+z)),false,'centripetal');
+ const pts=curve.getSpacedPoints(Math.ceil(curve.getLength()/.46));
+ const inlet=raceRiverLevel(pts[0].x,pts[0].z),outlet=raceRiverLevel(pts.at(-1).x,pts.at(-1).z);
+ const bins=new Map(),stations=[];let length=0;
+ for(let i=0;i<pts.length;i++){
+  const p=pts[i],prev=pts[Math.max(0,i-1)],next=pts[Math.min(pts.length-1,i+1)],dir=next.clone().sub(prev).normalize();
+  length+=p.distanceTo(prev);
+  const t=i/(pts.length-1),ends=Math.min(t,1-t);
+  const w=1.06+.19*Math.sin(t*16+.55)+.63*(1-smooth(0,.13,ends));
+  const station={x:p.x,z:p.z,y:mix(inlet,outlet,t),w,u:length,dx:dir.x,dz:dir.z};stations.push(station);
+  if(!i)continue;
+  const a=stations[i-1],pad=4.2;
+  for(let ix=Math.floor((Math.min(a.x,p.x)-pad)/6);ix<=Math.floor((Math.max(a.x,p.x)+pad)/6);ix++)
+   for(let iz=Math.floor((Math.min(a.z,p.z)-pad)/6);iz<=Math.floor((Math.max(a.z,p.z)+pad)/6);iz++){
+    const k=ix+','+iz;if(!bins.has(k))bins.set(k,[]);bins.get(k).push(i);
+   }
+ }
+ const bank=raceDryGround(west.x,west.z);
+ return brooksteadRace={stations,bins,length,site,west,bank};
+}
+function raceSample(x,z){
+ const race=brooksteadRace;
+ if(!race||Math.abs(x-race.site.x)>30||Math.abs(z-race.site.z)>35)return null;
+ const rows=race.bins.get(Math.floor(x/6)+','+Math.floor(z/6));if(!rows)return null;
+ let best=Infinity,station=0,f=0;
+ for(const i of rows){
+  const a=race.stations[i-1],b=race.stations[i],dx=b.x-a.x,dz=b.z-a.z;
+  const t=clamp(((x-a.x)*dx+(z-a.z)*dz)/(dx*dx+dz*dz),0,1);
+  const d=(x-a.x-dx*t)**2+(z-a.z-dz*t)**2;if(d<best){best=d;station=i;f=t;}
+ }
+ const a=race.stations[station-1],b=race.stations[station],w=mix(a.w,b.w,f),d=Math.sqrt(best);
+ return d<w+2.45?{d,w,y:mix(a.y,b.y,f),u:mix(a.u,b.u,f)}:null;
+}
+traversalWet=function(x,z){const q=raceSample(x,z);return !!q&&q.d<q.w||raceRiverWet(x,z);};
+const originalShoreGrade=traversalShoreGround;
+traversalShoreGround=(x,z,y)=>originalShoreGrade(x,z,y,raceRiverWet);
+traversalWaterHeight=function(x,z){
+ const q=raceSample(x,z);return q&&q.d<q.w+.6&&!raceRiverWet(x,z)?q.y:raceRiverLevel(x,z);
+};
+macroGround=function(x,z){
+ const ground=raceDryGround(x,z),q=raceSample(x,z);if(!q)return ground;
+ const bed=q.y-.50+.56*smooth(.45,1,q.d/q.w);
+ return mix(Math.min(ground,bed),ground,smooth(q.w,q.w+1.85,q.d));
+};
+// Subdivide only edges in the narrow cut. Adjacent faces share midpoint
+// indices, including where the refined bank meets the original terrain mesh.
+function cutBrooksteadBank(mesh){
+ const g=mesh.geometry;if(!g.boundingBox)g.computeBoundingBox();
+ const box=g.boundingBox,q=brooksteadRace.site;
+ if(box.max.x<q.x-30||box.min.x>q.x+30||box.max.z<q.z-35||box.min.z>q.z+35)return;
+ const attributes=Object.entries(g.attributes).filter(([name])=>name!=='normal');
+ const data=Object.fromEntries(attributes.map(([key,a])=>[key,Array.from(a.array)]));
+ const p=data.position,edges=new Map(),index=[];
+ for(let i=0;i<p.length;i+=3)if(raceSample(p[i],p[i+2]))p[i+1]=macroGround(p[i],p[i+2]);
+ function refine(a,b,c){
+  let edge=-1,max=.55*.55;
+  const corners=[a,b,c];
+  for(let n=0;n<3;n++){
+   const j=corners[n]*3,k=corners[(n+1)%3]*3,dx=p[j]-p[k],dz=p[j+2]-p[k+2],size=dx*dx+dz*dz;
+   if(size>max&&raceSample((p[j]+p[k])*.5,(p[j+2]+p[k+2])*.5)){edge=n;max=size;}
+  }
+  if(edge<0){index.push(a,b,c);return;}
+  const l=corners[edge],r=corners[(edge+1)%3],tip=corners[(edge+2)%3],key=Math.min(l,r)+','+Math.max(l,r);
+  let m=edges.get(key);
+  if(m===undefined){
+   m=p.length/3;edges.set(key,m);
+   for(const [name,attr] of attributes){const arr=data[name],n=attr.itemSize;for(let j=0;j<n;j++)arr.push((arr[l*n+j]+arr[r*n+j])*.5);}
+   p[m*3+1]=macroGround(p[m*3],p[m*3+2]);
+  }
+  refine(l,m,tip);refine(m,r,tip);
+ }
+ const old=g.index.array;for(let i=0;i<old.length;i+=3)refine(old[i],old[i+1],old[i+2]);
+ if(!edges.size)return;
+ if(data.color)for(let i=0;i<p.length;i+=3){
+  const s=raceSample(p[i],p[i+2]);if(!s)continue;
+  const margin=1-smooth(s.w-.08,s.w+.72,s.d);
+  data.color[i]*=1+.15*margin;data.color[i+1]*=1-.18*margin;data.color[i+2]*=1-.10*margin;
+ }
+ const next=new THREE.BufferGeometry();
+ next.userData.millraceBank=true;
+ for(const [name,a] of attributes)next.setAttribute(name,new THREE.BufferAttribute(new a.array.constructor(data[name]),a.itemSize,a.normalized));
+ next.setIndex(index);next.computeVertexNormals();next.computeBoundingBox();next.computeBoundingSphere();mesh.geometry=next;
+}
+// These triangles follow the actual channel. The ordinary distance mesh
+// samples a square grid, which would fill the cut when the camera pulls away.
+const raceTerrainDetailBefore=terrainDetailGeometry;
+terrainDetailGeometry=function(g,step){
+ return g.userData.millraceBank?g.clone():raceTerrainDetailBefore(g,step);
+};
+const raceTerrainBefore=macroTerrain15;
+macroTerrain15=function(...args){
+ prepareDioramas67();prepareBrooksteadRace(dioramas67.sites.get('brookstead'));
+ const result=raceTerrainBefore.apply(this,args);
+ for(const tile of world.userData.terrainChunks??[])cutBrooksteadBank(tile);
+ return result;
+};
+const raceWaterBefore=freshWater38;
+freshWater38=function(...args){
+ const result=raceWaterBefore.apply(this,args),race=brooksteadRace;if(!race)return result;
+ const p=[],uv=[],flow=[],frames=[],indices=[],cols=9;
+ const point=(s,v)=>({x:s.x-s.dz*s.w*v,z:s.z+s.dx*s.w*v,y:s.y,u:s.u,dx:s.dx,dz:s.dz});
+ // Terminate each strip on the actual triangulated shoreline. The two rivers
+ // have curved banks, so a single straight cap across the mouth would overlap.
+ const shore=(i,v,inlet)=>{
+  const route=race.stations,n=route.length;
+  let a=point(route[i],v);
+  if(!raceRiverWet(a.x,a.z))return a;
+  let inside=inlet?0:n-1,land=inside;
+  while(land>=0&&land<n){const b=point(route[land],v);if(!raceRiverWet(b.x,b.z))break;inside=land;land+=inlet?1:-1;}
+  if(land<0||land>=n)return a;
+  a=point(route[inside],v);const b=point(route[land],v);let lo=0,hi=1;
+  for(let j=0;j<12;j++){const f=(lo+hi)*.5;if(raceRiverWet(mix(a.x,b.x,f),mix(a.z,b.z,f)))lo=f;else hi=f;}
+  return {x:mix(a.x,b.x,lo),z:mix(a.z,b.z,lo),y:mix(a.y,b.y,lo),u:mix(a.u,b.u,lo),dx:b.dx,dz:b.dz};
+ };
+ for(let i=0;i<race.stations.length;i++)for(let j=0;j<cols;j++){
+  const v=j/(cols-1)*2-1,s=shore(i,v,i<race.stations.length*.5),n=i*cols+j;
+  p.push(s.x,s.y+.035,s.z);uv.push(s.x*.11,s.z*.11);flow.push(s.dx,s.dz);frames.push(s.u/1.17,v*race.stations[i].w,Math.abs(v),1);
+  if(i&&j)indices.push(n-cols-1,n-cols,n-1,n-cols,n,n-1);
+ }
+ const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(p,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));
+ g.setAttribute('channelFlow39',new THREE.Float32BufferAttribute(flow,2));g.setIndex(indices);g.computeVertexNormals();
+ const stream=new THREE.Mesh(g,args[0]);stream.name='Brookstead millrace';stream.userData.millrace=true;stream.userData.freshwater38=stream.userData.dynamicWater=true;stream.receiveShadow=true;
+ valenneRiverCoordinates(stream);
+ const frame=g.attributes.riverFrame,mid=(cols-1)/2,start=frame.getX(mid)-frames[mid*4];
+ for(let i=0;i<frame.count;i++){
+  const n=i*4,t=frames[n]*1.17,f=smooth(0,4,Math.min(t-frames[(i%cols)*4]*1.17,frames[(frame.count-cols+i%cols)*4]*1.17-t));
+  frame.setXYZW(i,start+frames[n],mix(frame.getY(i),frames[n+1],f),mix(frame.getZ(i),frames[n+2],f),1);
+ }
+ world.add(stream);
+ const rng=seeded(75213),stones=[],stone=new THREE.Object3D();
+ for(let i=5;i<race.stations.length-5;i+=2+Math.floor(rng()*6)){
+  const s=race.stations[i],side=rng()<.5?-1:1;
+  for(let j=0,n=1+Math.floor(rng()*4);j<n;j++){
+   const t=race.stations[Math.min(race.stations.length-1,i+j)],v=side*(t.w+.08+rng()*.31);
+   const x=t.x-t.dz*v,z=t.z+t.dx*v,sz=.18+.39*rng();
+   if(raceRiverWet(x,z)||Math.hypot(x-race.west.x,z-race.west.z)<2.6)continue;
+   stone.position.set(x,macroGround(x,z)-sz*.13,z);stone.rotation.set(.10*rng(),rng()*TAU,.15*rng());
+   stone.scale.set(sz,sz*(.44+.28*rng()),sz*(.61+.39*rng()));stone.updateMatrix();stones.push(stone.matrix.clone());
+  }
+ }
+ const bank=new THREE.InstancedMesh(riverRock134(7),rockMaterial62(0),stones.length);
+ stones.forEach((m,i)=>bank.setMatrixAt(i,m));bank.name='Brookstead millstream bank stones';bank.receiveShadow=true;bank.computeBoundingSphere();world.add(bank);
+ return result;
+};
+const millDeckHeightBefore=heightAt;
+heightAt=function(x,z,...args){
+ const race=brooksteadRace;
+ if(race&&activeScene?.kind==='overworld'&&!encounter53.active&&
+    Math.abs(z-race.west.z)<1.45&&Math.abs(x-race.west.x)<=3.35){
+  const t=(x-race.west.x)/3.35;
+  return race.bank+.63*1.25*(1-t*t)+.025;
+ }
+ return millDeckHeightBefore.call(this,x,z,...args);
+};
 function landmarkWheel(parent,x,y,z){
- const g=landmarkGroup(parent,x,y,z,-.22);g.name='Brookstead waterwheel';
+ const g=landmarkGroup(parent,x,y,z,.93);g.name='Brookstead waterwheel';
  const ring=geo16('travel-mill-ring',()=>new THREE.TorusGeometry(1.58,.145,6,24));
  for(const face of [-.48,.48]){
   landmarkPiece(g,ring,'wood','#a7835a',0,0,face);
@@ -164,6 +340,30 @@ function landmarkBridge(parent){
    landmarkBlock(parent,x,y+.04,side*.78,.84,.22,.28,'wall','#ded7c3').rotation.z=Math.atan(-.25*x);
   }
  }
+}
+function landmarkFountain(parent){
+ const lathe=(name,profile,kind,tint,y=0)=>landmarkPiece(parent,geo16('brookstead-fountain-'+name,()=>
+  new THREE.LatheGeometry(profile.map(([r,h])=>new THREE.Vector2(r,h)),24)),kind,tint,0,y,0);
+ lathe('plinth',[[.01,0],[1.91,0],[1.91,.10],[1.76,.15],[.01,.15]],'cobble','#b6ada0');
+ lathe('basin',[[1.22,.15],[1.48,.15],[1.62,.40],[1.62,.52],[1.43,.55],[1.33,.38],[1.22,.15]],'wall','#d0c8ac');
+ lathe('column',[[.39,.37],[.43,.52],[.25,.64],[.20,1.14],[.36,1.22],[.58,1.38],[.59,1.46],[.45,1.47],[.08,1.31]],'wall','#d9d1ba');
+ const waterMat=new THREE.MeshStandardMaterial({color:'#6ea8ab',emissive:'#376672',emissiveIntensity:.66,roughness:.26,metalness:.07,envMap:surface67.outdoor,envMapIntensity:.45});
+ waterMat.onBeforeCompile=s=>{
+  s.uniforms.basinTime=windUniforms.time;
+  s.vertexShader='varying vec2 basinUV;\n'+s.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nbasinUV=uv-.5;');
+  s.fragmentShader='uniform float basinTime;varying vec2 basinUV;\n'+s.fragmentShader.replace('#include <emissivemap_fragment>',`#include <emissivemap_fragment>
+   float radial=length(basinUV);
+   float ripple=sin(radial*92.-basinTime*3.6)*smoothstep(.04,.23,radial)*(1.-smoothstep(.025,.13,fwidth(radial)));
+   totalEmissiveRadiance+=vec3(.024,.054,.061)*(.7+.65*ripple);`);
+ };
+ waterMat.customProgramCacheKey=()=>'brookstead-basin-ripples';waterMat.userData.preserveSurfaceShader=true;
+ const pool=new THREE.Mesh(geo16('brookstead-fountain-pool',()=>new THREE.CylinderGeometry(1.41,1.40,.04,32)),waterMat);
+ pool.position.y=.41;pool.receiveShadow=true;parent.add(pool);
+ // Four arcing spills return water from the upper bowl to the basin.
+ const spill=geo16('brookstead-fountain-spill',()=>new THREE.TubeGeometry(new THREE.QuadraticBezierCurve3(
+  V3(.22,1.43,0),V3(.89,1.98,0),V3(1.08,.43,0)),14,.047,5,false));
+ const clear=new THREE.MeshStandardMaterial({color:'#d7edee',emissive:'#6894a0',emissiveIntensity:.78,roughness:.18,metalness:.09});
+ for(let i=0;i<4;i++){const jet=new THREE.Mesh(spill,clear);jet.rotation.y=i*Math.PI*.5+.40;parent.add(jet);}
 }
 function landmarkCourt(parent,site,path,tone,map){
  const wet=map==='water',base=macroGround(site.x,site.z),positions=[],uv=[],fade=[];
@@ -201,15 +401,19 @@ function buildLandmarkModel(site,key,footprints){
   // north and south lots and leave the actual road surface exposed between them.
   landmarkCourt(surfaces,site,[[-11,-3],[-10,-7],[-1,-8],[8,-7],[10,-4],[7,-1.9],[-3,-2.0]],'#c5b69d','earth');
   landmarkCourt(surfaces,site,[[-9,4.2],[-3.4,3.8],[4,3.7],[9,3.4],[10,6.7],[7,8.5],[-6,8.8]],'#c5b69d','earth');
-  const mill=place(-7.1,-4.85,1.02);landmarkHouse(mill,4.2,5.2,3.25,1.95,'#8c9bac');landmarkAwning(mill,0,3.4,3.15,1.94);
-  const tall=place(5.4,-5.5,-.51);landmarkHouse(tall,4.35,4.9,4.62,2.35,'#99a4ba',true);
-  const shop=place(7.0,5.85,-.60);landmarkHouse(shop,3.65,4.50,3.15,1.76,'#889bb8');landmarkAwning(shop,0,3.06,3.13,1.89);
-  const store=place(-.15,-5.65,.45);landmarkHouse(store,2.6,2.4,1.9,1.15,'#96a8b7');
-  landmarkCourt(surfaces,site,[[-10.65,3.8],[-9.5,3.6],[-7.4,4.0],[-6.6,4.9],[-4,5.5],[-3,6.3],[-1.5,8.75],[-2.7,8.98],[-4.65,7.05],[-7.55,6.35],[-8.8,5.1]],'#5d94ac','water');
-  landmarkCourt(surfaces,site,[[-11.5,-6.7],[-10.55,-6.9],[-9.55,-5.1],[-8.85,-3.35],[-9.5,-2.8],[-10.6,-4.1]],'#5d94ac','water');
-  const wheelBase=place(-10.05,-3.0);wheel=landmarkWheel(wheelBase,0,1.92,0);wheel.scale.setScalar(1.12);
+  const houses=brooksteadLots.map(lot=>{
+   const h=place(lot.x,lot.z,lot.angle);landmarkHouse(h,lot.w,lot.d,lot.h,lot.roof,lot.slate,lot.gable);return h;
+  });
+  const [mill,,shop]=houses;landmarkAwning(mill,0,3.4,3.15,1.94);landmarkAwning(shop,0,3.06,3.13,1.89);
+  const race=prepareBrooksteadRace(site),shaft=landmarkGroup(model,-11.1,raceSample(site.x-11.1,site.z-5.1).y-base, -5.1);
+  wheel=landmarkWheel(shaft,0,1.72,0);wheel.scale.setScalar(1.08);
+  const shaftBearing=landmarkGroup(shaft,0,1.72,0,.93);
+  const axle=landmarkPiece(shaftBearing,geo16('brookstead-driven-axle',()=>new THREE.CylinderGeometry(.16,.16,3.35,10)),'wood','#866442',0,0,1.66);
+  axle.rotation.x=Math.PI/2;
+  landmarkFountain(place(.35,.52));
   landmarkBarrel(mill,2.67,1.5);landmarkBarrel(mill,2.72,.65,.79);landmarkBarrel(shop,-2.12,1.55,.85);
-  landmarkBridge(place(-5.9,5.50,-.38));
+  const bridge=landmarkGroup(model,race.west.x-site.x,race.bank-base-.63,race.west.z-site.z);
+  bridge.scale.set(1,.63,1.90);landmarkBridge(bridge);
  }else if(key==='patrol'){
   landmarkCourt(surfaces,site,[[-6.4,-3.6],[-4.0,-5.1],[2,-5.5],[5,-3.9],[4.7,-2.25],[-1,-1.85],[-4.5,2.7],[-6.3,2.1]],'#c8b793','earth');
   const shed=place(-3.0,4.0,1.13),w=3.9,d=6.2,h=3.05;
@@ -234,6 +438,7 @@ function buildLandmarkModel(site,key,footprints){
   const a=i*TAU/32;if(Math.sin(a)>.64&&Math.cos(a)>.0)continue;
   const x=Math.cos(a)*width+(rng()-.5)*.70,z=Math.sin(a)*depth+(rng()-.5)*.55;
   if(site.gates71.some(g=>segmentDistance(site.x+x,site.z+z,[hub.x,hub.z],g.outer)<2.55))continue;
+  if(key==='brookstead'&&raceSample(site.x+x,site.z+z)?.d<2.25)continue;
   if(key!=='brookstead'&&key!=='patrol'&&macroRoadInfo15(site.x+x,site.z+z).d<2.7)continue;
   const y=macroGround(site.x+x,site.z+z)-base;
   const rock=landmarkPiece(model,geo16('landmark-fieldstone',()=>new THREE.IcosahedronGeometry(1,0)),'rock',i%3?'#adae9d':'#c7bea8',x,y+.15,z,.32+rng()*.32,.24+rng()*.22,.37+rng()*.25);
@@ -260,6 +465,7 @@ function buildLandmarkModel(site,key,footprints){
  const gates=landmarkGroup(model,0,-base,0,site.a);
  for(const gate of site.gates71){
   const portal=landmarkGroup(gates);portal.name=gate.id;portal.userData.entranceId=gate.id;
+  if(key==='brookstead'&&gate.side==='west')continue;
   drawMiniatureGateway71(portal,site,gate,key);
   portal.traverse(o=>{
    if(!o.isMesh)return;

@@ -20,7 +20,7 @@ function travelTreeGeometry157(species=0,variant=0,lod=0){
    tube(center,branch,.014,.005,3);
    const base=pos.length/3;
    for(let row=0;row<=steps;row++){const t=row/steps,mid=branch.clone().addScaledVector(outward,len*t).addScaledVector(up,Math.sin(t*Math.PI)*len*.22),span=w*Math.pow(Math.sin(t*Math.PI),.65);
-    for(const side of[-1,0,1])put(mid.clone().addScaledVector(right,side*span).addScaledVector(up,-Math.abs(side)*Math.sin(t*Math.PI)*len*.09),(side+1)*.5,t,1,.86+rng()*.13);
+    for(const side of[-1,0,1])put(mid.clone().addScaledVector(right,side*span).addScaledVector(up,-Math.abs(side)*Math.sin(t*Math.PI)*len*.09),(side+1)*.5,t,1,.67+.22*f+.12*t+rng()*.09);
    }
    for(let row=0;row<steps;row++)for(let j=0;j<2;j++){const q=base+row*3+j;index.push(q,q+1,q+3,q+1,q+4,q+3)}
   }
@@ -28,14 +28,14 @@ function travelTreeGeometry157(species=0,variant=0,lod=0){
  if(pine){
   const tiers=form===1?8:form===2?6:7;
   for(let j=0;j<tiers;j++){const t=j/(tiers-1),y=(form===1?1.45:.95)+t*(form===1?5.3:5.7),reach=(2.12-t*1.70)*(form===1?.74:form===2?1.1:1)*(1+Math.sin(j*2+variant)*.14),center=stem(y/H).add(V3(Math.sin(j*1.7)*.10*(1-t),0,Math.sin(j*2.1+variant)*.13));
-   tube(stem((y+.12)/H),center,.055*(1-t*.7),.03,5);shell(center,reach,lod===2?1.75:1.55,j*.81+variant,true);
+   tube(stem((y+.12)/H),center,.055*(1-t*.7),.03,5);shell(center,reach,1.22+.13*(1-t),j*.81+variant,true);
    if(lod<2)for(let branch=0;branch<3;branch++){const a=branch*TAU/3+j*.93;tube(center,center.clone().add(V3(Math.cos(a)*reach*.74,.30,Math.sin(a)*reach*.74)),.045*(1-t*.75),.018,5)}
   }
  }else{
   const count=form===1?4:form===2?6:5;
-  for(let j=0;j<count;j++){const shape=seeded(160019+species*197+variant*31+j*997),a=j*2.399963+variant*.83+(shape()-.5)*.40,y=(form===1?4.15:form===2?3.25:3.65)+(j/(count-1))*1.35+(shape()-.5)*.35,reach=(form===1?.72:form===2?1.65:1.25)*(birch?.78:willow?1.15:1)*(.78+shape()*.36),center=V3(Math.cos(a)*reach+lean*.6,y+.55,Math.sin(a)*reach);
+  for(let j=0;j<count;j++){const shape=seeded(160019+species*197+variant*31+j*997),a=j*2.399963+variant*.83+(shape()-.5)*.40,y=(form===1?3.80:form===2?3.05:3.35)+(j/(count-1))*1.92+(shape()-.5)*.28,reach=(form===1?.72:form===2?1.65:1.25)*(birch?.78:willow?1.15:1)*(.78+shape()*.36),center=V3(Math.cos(a)*reach+lean*.6,y+.55,Math.sin(a)*reach);
    tube(stem(.37+j*.060),center,birch?.075:.11,.035,lod===2?5:7);
-   shell(center,(form===1?1.12:form===2?1.75:1.55)*(birch?.82:willow?1.12:1),(form===1?2.8:form===2?2.35:2.65)*(willow?1.12:1),j*.91+variant);
+   shell(center,(form===1?1.12:form===2?1.75:1.55)*(birch?.82:willow?1.12:1),(form===1?2.12:form===2?1.75:1.90)*(willow?1.17:1),j*.91+variant);
   }
   shell(stem(form===1?.9:.84),form===1?.95:birch?1.20:1.45,birch?2.7:2.4,variant+5.3);
  }
@@ -47,6 +47,12 @@ const travelForestBefore157=buildSolidForest;
 function rootedTravelMaterial157(m){
  const before=m.onBeforeCompile,key=m.customProgramCacheKey();m.onBeforeCompile=function(s,...args){before.call(this,s,...args);
   s.vertexShader=s.vertexShader.replace('gust104*windPower104*flex104;','gust104*windPower104*flex104*uv.y;').replace('windPower104*leafSurface104*flex104;','windPower104*leafSurface104*flex104*uv.y;');
+  if(!m.isMeshDepthMaterial)s.fragmentShader=s.fragmentShader.replace('vec3 leafArt104=leafTint104*veinTone104;',`
+   float fold=vMapUv.x-.5,aa=fwidth(vMapUv.x);
+   float midrib=1.-smoothstep(.025,.10+aa,abs(fold));
+   float shoulders=1.-smoothstep(.31,.51,abs(fold));
+   float pigment=.84+.18*shoulders+.13*midrib+.12*fold;
+   vec3 leafArt104=leafTint104*pigment*mix(.83,1.19,smoothstep(.035,.24,dot(veinArt104,vec3(.21,.72,.07))));`);
  };m.customProgramCacheKey=()=>key+'-rooted-travel157';return m;
 }
 buildSolidForest=function(...args){

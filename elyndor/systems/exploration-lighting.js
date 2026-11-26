@@ -57,7 +57,7 @@
           float heightAtten=exp(-abs(worldPos.y-(lamp.a*192.-32.))*.43);
           float lamplight=lamp.r*lamp.r*heightAtten*support*(night+.21*extTwilight)*skyMask;
           vec3 reflected=vec3(.43,.225,.085)*(.20+sqrt(max(vec3(0.),color)));
-          color+=reflected*lamplight*(.46+.54*max(0.,N.y))*(1.-color);
+          color+=reflected*lamplight*.22*(.46+.54*max(0.,N.y))*(1.-color);
           if(basinPresent>.5){
             // Fold the original eight jets into one sector to measure distance
             // to the nearest real point of impact inside the circular basin.

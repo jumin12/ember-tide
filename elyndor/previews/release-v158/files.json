@@ -1,0 +1,462 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 110568,
+    "sha256": "6f229413bfec26642dea8ada2e7f59bf3c9c8c3d5cf2214f453d309a08bd6524"
+  },
+  {
+    "file": "elyndor/assets/settlements/woodland-and-masonry.webp",
+    "bytes": 384912,
+    "sha256": "52a8cb20a385dc8aece38e16c03bf4bf615b36adf8a2f3e2f6577e3a65d111a6"
+  },
+  {
+    "file": "elyndor/build-manifest.json",
+    "bytes": 14090,
+    "sha256": "cb0591c5a67cf22afda369d39335d9acfa1d6f1b438373e77639ad5334982be7"
+  },
+  {
+    "file": "elyndor/levels-v39.js",
+    "bytes": 20352,
+    "sha256": "5a95859ccdf01cce800472ea3f050dcff834c0d24c779a8cae897a18fc70d8f4"
+  },
+  {
+    "file": "elyndor/previews/release-v158/arrival-after.jpg",
+    "bytes": 525251,
+    "sha256": "66563e90c618cdc7dc511178b3d3f74af4a6e77d567b683627bbbda64c5c9356"
+  },
+  {
+    "file": "elyndor/previews/release-v158/arrival-before.jpg",
+    "bytes": 525128,
+    "sha256": "8e8eeb6b719bd50617f416eb76980e6a17dc1b5992d07c8dca2365c5c1d21a2c"
+  },
+  {
+    "file": "elyndor/previews/release-v158/battle-comparison.jpg",
+    "bytes": 458771,
+    "sha256": "471b334324c689e59bbb0520a77c42c58993e09a32cb01857fb00c9908518ee8"
+  },
+  {
+    "file": "elyndor/previews/release-v158/betrayal-after.jpg",
+    "bytes": 453434,
+    "sha256": "c172bea0589c57aeb0bc5dadd319479f7fa29a597a89ceb26438cdf7df697a9c"
+  },
+  {
+    "file": "elyndor/previews/release-v158/betrayal-before.jpg",
+    "bytes": 453508,
+    "sha256": "92b8d245e0c002a47149a1662e96383788facddbf28207feaaf6550734671d9c"
+  },
+  {
+    "file": "elyndor/previews/release-v158/brookstead-comparison.jpg",
+    "bytes": 375745,
+    "sha256": "d1da6fbae02645ebc1be0437f2419ab8ab07c544cee518e953326343b11a8125"
+  },
+  {
+    "file": "elyndor/previews/release-v158/cavern-after.jpg",
+    "bytes": 375912,
+    "sha256": "a829d5253c12f6dbc43dbf66920548bea986344b00df7c5e9c9ef8de34215300"
+  },
+  {
+    "file": "elyndor/previews/release-v158/cavern-before.jpg",
+    "bytes": 375906,
+    "sha256": "dd919c9e4d2e20de125864a8e5fa5fdfff9f820f06e24a76005a6041d9085bcd"
+  },
+  {
+    "file": "elyndor/previews/release-v158/coast-after.jpg",
+    "bytes": 432209,
+    "sha256": "effb50302b3a079cf3adbd50a99fc156353fd77f804fe4a19af166db3019feec"
+  },
+  {
+    "file": "elyndor/previews/release-v158/coast-before.jpg",
+    "bytes": 428473,
+    "sha256": "26ce9fcff859302807b55c6171f45ade861deee6a63e9a6f05a0002d9763fc32"
+  },
+  {
+    "file": "elyndor/previews/release-v158/commander1-after.jpg",
+    "bytes": 555651,
+    "sha256": "940340b852bc5982e0c62a8e20d64fe8d2df185d814a4879ef2941a652c1ddb8"
+  },
+  {
+    "file": "elyndor/previews/release-v158/commander1-before.jpg",
+    "bytes": 555722,
+    "sha256": "e222f85b896a2f2b9da2acc7ce8db223c7bb75fd7fd19c1db3e765f10a212a8c"
+  },
+  {
+    "file": "elyndor/previews/release-v158/commander2-after.jpg",
+    "bytes": 416167,
+    "sha256": "199f633064aa446fdf876d2e407d4f0df74e1f741cc386f4890edbfac17df7c7"
+  },
+  {
+    "file": "elyndor/previews/release-v158/commander2-before.jpg",
+    "bytes": 415918,
+    "sha256": "8669a88918351fa1ff5e308b504fce66f064455946f1e9d22fc2b60c902c8ce2"
+  },
+  {
+    "file": "elyndor/previews/release-v158/commander3-after.jpg",
+    "bytes": 458222,
+    "sha256": "9aa7f64961fb27cce12ec357f3d15d5b9876cbec366680b9997d1a25271ea1b8"
+  },
+  {
+    "file": "elyndor/previews/release-v158/commander3-before.jpg",
+    "bytes": 457864,
+    "sha256": "5f7f0458f59e7e4b1f6aa396647e7edbde5643acfb31299d48981b4d35af2c04"
+  },
+  {
+    "file": "elyndor/previews/release-v158/grassAutumn-after.jpg",
+    "bytes": 419657,
+    "sha256": "03a3d2f4722d8168c80409f2ce765055df93ea5ef0d2765fda3afdd3aace2315"
+  },
+  {
+    "file": "elyndor/previews/release-v158/grassAutumn-before.jpg",
+    "bytes": 419640,
+    "sha256": "696649e0095c70e2056b8723865b204211b468f1b7be6d96b41308595bc16d40"
+  },
+  {
+    "file": "elyndor/previews/release-v158/grassBirch-after.jpg",
+    "bytes": 442615,
+    "sha256": "1c2a86d545e3fb9fc4017cc9c0fc8532da896f800f43c6d79ec78323497e1f21"
+  },
+  {
+    "file": "elyndor/previews/release-v158/grassBirch-before.jpg",
+    "bytes": 448998,
+    "sha256": "436983ec505e29307de5485e9bb926c051e779390b276c459fe89413f1394805"
+  },
+  {
+    "file": "elyndor/previews/release-v158/grassDowns-after.jpg",
+    "bytes": 444368,
+    "sha256": "f67bce44f9920c39c79cd1ae9c02629cda25560a3c12d83702b9a545ca369f99"
+  },
+  {
+    "file": "elyndor/previews/release-v158/grassDowns-before.jpg",
+    "bytes": 446178,
+    "sha256": "5427701f80a5d1d863a57f1a4b632ae572fb33a79470d7660ad4f9afec9e0743"
+  },
+  {
+    "file": "elyndor/previews/release-v158/grassFlowers-after.jpg",
+    "bytes": 493633,
+    "sha256": "74f5066f3f04d3ec9031d3e6f62da67d4a29c03348377f4ac00ddb40c6210d62"
+  },
+  {
+    "file": "elyndor/previews/release-v158/grassFlowers-before.jpg",
+    "bytes": 526229,
+    "sha256": "be22d43f3458cc04e306cdd8cfdf068d3d22f711bef048967edacd729e5a0ee6"
+  },
+  {
+    "file": "elyndor/previews/release-v158/grassHills-after.jpg",
+    "bytes": 467339,
+    "sha256": "a751e1b91a443ee4050a459ab70829bb14f55f66bde9607d298ec040a0996b1a"
+  },
+  {
+    "file": "elyndor/previews/release-v158/grassHills-before.jpg",
+    "bytes": 482252,
+    "sha256": "2dec6492f25eb9063b5c3e44982c09544a8abe040de2a44037c964302c4d624f"
+  },
+  {
+    "file": "elyndor/previews/release-v158/grassMeadow-after.jpg",
+    "bytes": 471906,
+    "sha256": "727094dca1484c4f858f252b81737c32fd9e9c1d798bfa19a08f363bdd2e1015"
+  },
+  {
+    "file": "elyndor/previews/release-v158/grassMeadow-before.jpg",
+    "bytes": 499419,
+    "sha256": "ef20cf1ad67ce41a1c739954a8ff6e9a70160f7d64b76c0a81c789d8492edfae"
+  },
+  {
+    "file": "elyndor/previews/release-v158/grassRiver-after.jpg",
+    "bytes": 475143,
+    "sha256": "1c968e7e8ce3ddd28caa375a9eca5e608ccfc1e21488aa9c371d8e45c68462e9"
+  },
+  {
+    "file": "elyndor/previews/release-v158/grassRiver-before.jpg",
+    "bytes": 479666,
+    "sha256": "94dc020e198eccf8d13aa9ac214d591c7b108e058306e8c97e032a9232f0a541"
+  },
+  {
+    "file": "elyndor/previews/release-v158/grassStones-after.jpg",
+    "bytes": 456073,
+    "sha256": "e0df80933c539da4b14732c01b19ec20ca6f89be17c97953c0408754570a4c6f"
+  },
+  {
+    "file": "elyndor/previews/release-v158/grassStones-before.jpg",
+    "bytes": 462107,
+    "sha256": "7600f74350527b68c5d5a02b15bbcedd86a8d4ba0f135a5d3d1881e0db29c82d"
+  },
+  {
+    "file": "elyndor/previews/release-v158/grassTwilight-after.jpg",
+    "bytes": 376461,
+    "sha256": "73fe3815643ff0795d41cfe4dec209a542ea50a68d312f3762952f49d6f28f31"
+  },
+  {
+    "file": "elyndor/previews/release-v158/grassTwilight-before.jpg",
+    "bytes": 379823,
+    "sha256": "b071493d358a6649dbbb275412f3a4c23f5c75e1f724fdebfaa8522e61f0534b"
+  },
+  {
+    "file": "elyndor/previews/release-v158/grassWindmill-after.jpg",
+    "bytes": 463501,
+    "sha256": "8413102af8f0c91684ee9021603b4de9192879d59d82b7c0920639e0beea0e22"
+  },
+  {
+    "file": "elyndor/previews/release-v158/grassWindmill-before.jpg",
+    "bytes": 462694,
+    "sha256": "e16455971ce7de7250512ab17fc6006f3c4ef05e6c77b90f46ecc4a920197a6c"
+  },
+  {
+    "file": "elyndor/previews/release-v158/guard-after.jpg",
+    "bytes": 441536,
+    "sha256": "100f76f68fa2289d460ef49b4c92c20ac92793f06881a981e9b7a94db3a16d41"
+  },
+  {
+    "file": "elyndor/previews/release-v158/guard-before.jpg",
+    "bytes": 438641,
+    "sha256": "02c1253cff1ced0b09e29463c140db329d0c4c5200d9b2a437b6d497a83fba18"
+  },
+  {
+    "file": "elyndor/previews/release-v158/index.html",
+    "bytes": 3481,
+    "sha256": "1bec45badc6c9a735c78b613d72bc597d31eaa9a3381512656fcaa5ef8e7a9e2"
+  },
+  {
+    "file": "elyndor/previews/release-v158/moonlit-after.jpg",
+    "bytes": 441222,
+    "sha256": "98da8a68c62bc73833a6acd5fe2783c71d2ed110ab6800074f48e90b85cb667a"
+  },
+  {
+    "file": "elyndor/previews/release-v158/moonlit-before.jpg",
+    "bytes": 447668,
+    "sha256": "dc2cd71177e4f87814d800be65133ab9dfb9a5de6b0d8f1e0462fba28bf335fe"
+  },
+  {
+    "file": "elyndor/previews/release-v158/mountain-after.jpg",
+    "bytes": 426286,
+    "sha256": "1f09139b2ca75b44010213cea9df0fe9db0f444c9394b071b9a89674d59da22b"
+  },
+  {
+    "file": "elyndor/previews/release-v158/mountain-before.jpg",
+    "bytes": 426288,
+    "sha256": "07607380ee7bfe15bd7a43d5925ae3a8c14cdf9cac03fc5c91fc32a2ae6e372c"
+  },
+  {
+    "file": "elyndor/previews/release-v158/orchard-after.jpg",
+    "bytes": 451795,
+    "sha256": "b8db000b040a580b2f2d4cc03fa5e443b6b43744271f890f67a55a3c17a76805"
+  },
+  {
+    "file": "elyndor/previews/release-v158/orchard-before.jpg",
+    "bytes": 449701,
+    "sha256": "90e80023677bb39fb61cc3bdb22d58d00d59bce2492696b9559d89b8c1c7d93b"
+  },
+  {
+    "file": "elyndor/previews/release-v158/river-overview-after.jpg",
+    "bytes": 545453,
+    "sha256": "5398892faa0f20935a6e3c06f14b601f373c2e456eb0e30e1557d4c543114939"
+  },
+  {
+    "file": "elyndor/previews/release-v158/river-overview-before.jpg",
+    "bytes": 544938,
+    "sha256": "8cd4641d82f2379653c10df8d84d65d21443620e63d0c5dff54b0742babf0bb2"
+  },
+  {
+    "file": "elyndor/previews/release-v158/royalRoad-after.jpg",
+    "bytes": 428522,
+    "sha256": "e13043dbb4f4e94b3381da9737d3277a30e11365c7a666060de2540850eddb2d"
+  },
+  {
+    "file": "elyndor/previews/release-v158/royalRoad-before.jpg",
+    "bytes": 428487,
+    "sha256": "d91ec03497d6e4feb9d8eeee332352d65a31f3d6b068f597f48718c3973a6b9a"
+  },
+  {
+    "file": "elyndor/previews/release-v158/ruins-after.jpg",
+    "bytes": 419706,
+    "sha256": "07e3c45bb6d1539e9af0ca4ae46d81884da9f7319d0721c62a3985c8db2f14fa"
+  },
+  {
+    "file": "elyndor/previews/release-v158/ruins-before.jpg",
+    "bytes": 419684,
+    "sha256": "24178653ced785f90dad41102a360e53d0fac8e7586cce86cb7ba48c7eada8db"
+  },
+  {
+    "file": "elyndor/previews/release-v158/snow-after.jpg",
+    "bytes": 332335,
+    "sha256": "f412554f83e74d6b3ec80fb6d138c61a34656f85f878bc824a3e75e5178fef32"
+  },
+  {
+    "file": "elyndor/previews/release-v158/snow-before.jpg",
+    "bytes": 332346,
+    "sha256": "94540584ef5934c3fab0223a0206f984dfd956ad88f933a846ee7946b1e4f252"
+  },
+  {
+    "file": "elyndor/previews/release-v158/tavinIntro-after.jpg",
+    "bytes": 578861,
+    "sha256": "128e119eb0e485ec2d9e4ed05ee0f7cb95a0bad34405e13610aa30127f870d59"
+  },
+  {
+    "file": "elyndor/previews/release-v158/tavinIntro-before.jpg",
+    "bytes": 578844,
+    "sha256": "b07ec5f82aacc3f4035cd115bea851b69aed26ce946235226ecb06e09e0264b7"
+  },
+  {
+    "file": "elyndor/previews/release-v158/town-after.jpg",
+    "bytes": 581713,
+    "sha256": "1bd32f6dc913a46fc4847adb3d82340ca904d53e1cb47d492782df6cc534495c"
+  },
+  {
+    "file": "elyndor/previews/release-v158/town-before.jpg",
+    "bytes": 582269,
+    "sha256": "1cc0d068d7507d4e5f8e0f4aaf8d46b0aaa23237b00aa6e60b8b6a40aacaf607"
+  },
+  {
+    "file": "elyndor/previews/release-v158/travel-after.jpg",
+    "bytes": 579356,
+    "sha256": "ed497a9a9a9110a7e54a774debe9ffd0c2ff8dd5dfb0f15cc329ba8b36f816b2"
+  },
+  {
+    "file": "elyndor/previews/release-v158/travel-before.jpg",
+    "bytes": 577681,
+    "sha256": "6165fc726c94f65903873cf8869e819be0d2653e0987b3ae945368d9a91b907e"
+  },
+  {
+    "file": "elyndor/previews/release-v158/verification.json",
+    "bytes": 841,
+    "sha256": "23ca639eb20ece259aea2f093e536ab51548d069d03d3ad639cdc06c26d7381b"
+  },
+  {
+    "file": "elyndor/previews/release-v158/waterfall-after.jpg",
+    "bytes": 467593,
+    "sha256": "b0f1ebfd06475e316e67a89ec02584748caf98d865c1bec3a25574437e69c83f"
+  },
+  {
+    "file": "elyndor/previews/release-v158/waterfall-before.jpg",
+    "bytes": 466158,
+    "sha256": "c87ada508d8e8e761a2b45e9f65bb6e14607027b5a9b539b4fde4d70d68575ce"
+  },
+  {
+    "file": "elyndor/previews/release-v158/wildlife-after.jpg",
+    "bytes": 555043,
+    "sha256": "5d7dfee1cd9c4c0cba95b5791f497bfa06bc51ed130c93692f377844f53f4282"
+  },
+  {
+    "file": "elyndor/previews/release-v158/wildlife-before.jpg",
+    "bytes": 555634,
+    "sha256": "272a74de1bd8c6982dd8b804ba7b2baf4dd91fad762b84f4b8f1e1a52053ec1c"
+  },
+  {
+    "file": "elyndor/previews/release-v158/woodland-after.jpg",
+    "bytes": 442044,
+    "sha256": "98fbb694f2e0fa49288014a54bd2432d435aebdc082d99a0fb1e29189ec9b03d"
+  },
+  {
+    "file": "elyndor/previews/release-v158/woodland-before.jpg",
+    "bytes": 441647,
+    "sha256": "8a176fa610c5cb6a046ae812dda26654805483422859c216fa5f1fb9c04da089"
+  },
+  {
+    "file": "elyndor/systems/battlefield-margins.js",
+    "bytes": 53823,
+    "sha256": "27d3d101c2dde163cb6bc13e5f20be2f8ba9a4ff3defda91f58f4d7ff3b77162"
+  },
+  {
+    "file": "elyndor/systems/brookstead-interiors.js",
+    "bytes": 40034,
+    "sha256": "900b2c9849a3ef04b0617e7a0f8614463d740dae48e2205b07c448ceb0b1fd93"
+  },
+  {
+    "file": "elyndor/systems/exploration-lighting.js",
+    "bytes": 10103,
+    "sha256": "3a875c3f854f371c61333455381e0aee01418c82762eae9bb29f2feae095d799"
+  },
+  {
+    "file": "elyndor/systems/fern-environments.js",
+    "bytes": 30537,
+    "sha256": "88ad6bbea5e573f007501c5615fb4e5a2d74d5fc673cc485bef6c40915726515"
+  },
+  {
+    "file": "elyndor/systems/home-performance.js",
+    "bytes": 11497,
+    "sha256": "52d9a62e6b9f87940adf09c7d66e87298d4e7ba20255a6de75c232f6fb8e0c42"
+  },
+  {
+    "file": "elyndor/systems/hosted-performance.js",
+    "bytes": 11774,
+    "sha256": "7e7a9c9b2e34215ba1ab6cef64e2bfe990015dd4c0d703d57f160533cf24f5c4"
+  },
+  {
+    "file": "elyndor/systems/jrpg-boundaries.js",
+    "bytes": 19429,
+    "sha256": "c1298c9dac81a38d9abfb005f0f28ad06730cd0a7690fdf52f6959eac12a83f0"
+  },
+  {
+    "file": "elyndor/systems/landmark-models.js",
+    "bytes": 30595,
+    "sha256": "a17eb3bbe76259a87c1f4058403da2a869d437216adbc4084c40369657eefb24"
+  },
+  {
+    "file": "elyndor/systems/live-waterworks.js",
+    "bytes": 19386,
+    "sha256": "1556108e5157749fc0165ab16e696a8e9fbba230b63c55c85a2aa0e2571ecb2a"
+  },
+  {
+    "file": "elyndor/systems/loading-performance.js",
+    "bytes": 5117,
+    "sha256": "3c4f4f6df2af7d7ff5d66fa15e09f2fb2845abc08ab0f88b63220cf1d4842677"
+  },
+  {
+    "file": "elyndor/systems/location-miniatures.js",
+    "bytes": 13020,
+    "sha256": "a29b9a7caca033dffa39b97718568b4400e1a13d2e37d54f24ceeb0c819a463c"
+  },
+  {
+    "file": "elyndor/systems/overworld-scenery.js",
+    "bytes": 20646,
+    "sha256": "c4ab5fc3e2f83e990a12d768c46cbf2d3ed7ae80a7b084530f82a76a49e80401"
+  },
+  {
+    "file": "elyndor/systems/poi-local-shadows.js",
+    "bytes": 9183,
+    "sha256": "46c2114a43bfac28ffdf73d6735bc35ff5ce77ef2611285819b791bb94c19b0f"
+  },
+  {
+    "file": "elyndor/systems/regional-landmark-models.js",
+    "bytes": 20591,
+    "sha256": "158a58306e16663ed3ffd282f5aeb19d786c5d2462e1cc3f176c7e40418bb7ed"
+  },
+  {
+    "file": "elyndor/systems/settlement-architecture.js",
+    "bytes": 36012,
+    "sha256": "daceef22a888c66f8c2bb4d26dc6816af2eba5c4ed8aba0b5e3853579485ea5d"
+  },
+  {
+    "file": "elyndor/systems/settlement-streets.js",
+    "bytes": 6194,
+    "sha256": "5534b160f146e16e1994bef8b77da03eda1438ac166bdfbfcddb63527bd555af"
+  },
+  {
+    "file": "elyndor/systems/travel-scenery-refinement.js",
+    "bytes": 9891,
+    "sha256": "4b8f9026ca39422ac837eba65f0a4d8fffcd47512a3902d40ec9cd8df8a8bf61"
+  },
+  {
+    "file": "elyndor/systems/traversal-terrain.js",
+    "bytes": 21850,
+    "sha256": "747d23d8e95ff4844207531eb27994d424755666a19b46102ddf9458dbbaf85b"
+  },
+  {
+    "file": "elyndor/systems/valenne-travel-art.js",
+    "bytes": 34877,
+    "sha256": "8b520770bc1bf19926e66554ef300d314137c7b7542af6abe5b49d6d84d41820"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 103868,
+    "sha256": "f535bcbe3400f9f794919628c3adec17c877136f8d3d5169236981c32d1d8b0b"
+  },
+  {
+    "file": "index.html",
+    "bytes": 8031584,
+    "sha256": "c1715c3b2fd5ab6e7c8df381310579e742cae2d54bc1205bb3feab3813236814"
+  },
+  {
+    "file": "release.json",
+    "bytes": 109675,
+    "sha256": "6e706ef1b2f1b3d27b450b68181e36d65e6d606ab3b4e095c41c7be1ba093051"
+  }
+]

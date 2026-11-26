@@ -23,10 +23,10 @@ function traversalWet(x,z){
 function traversalShoreDistance(x,z){
  let distance2=400;for(const e of traversalShoreCells.get(Math.floor(x/24)+','+Math.floor(z/24))??[]){const t=clamp(((x-e.x)*e.dx+(z-e.z)*e.dz)/e.length2,0,1);distance2=Math.min(distance2,(x-e.x-e.dx*t)**2+(z-e.z-e.dz*t)**2);}return Math.sqrt(distance2);
 }
-function traversalShoreGround(x,z,y){
- const d=traversalShoreDistance(x,z);if(d>=18)return traversalWet(x,z)?Math.min(y,traversalWaterHeight(x,z)-.65):y;
+function traversalShoreGround(x,z,y,wet=traversalWet){
+ const d=traversalShoreDistance(x,z);if(d>=18)return wet(x,z)?Math.min(y,traversalWaterHeight(x,z)-.65):y;
  const level=traversalWaterHeight(x,z)+.035;
- if(traversalWet(x,z))return d<4?level-.75*smooth(0,4,d):Math.min(y,level-.75);
+ if(wet(x,z))return d<4?level-.75*smooth(0,4,d):Math.min(y,level-.75);
  return mix(level+d*.07,y,smooth(4,18,d));
 }
 function traversalRiverChunk(x,z,size){

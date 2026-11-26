@@ -1,0 +1,26 @@
+{
+  "version": "Alpha Version 1.58",
+  "previousCommit": "ba314286c28cbf5b475b935a458d42ef9bd751e5",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 8031584,
+    "sha256": "c1715c3b2fd5ab6e7c8df381310579e742cae2d54bc1205bb3feab3813236814",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "gameplaySHA256": "26bbe3d88d912f8d0a9b21835195146541dae13b3afb14492ed253cf4efba690",
+  "checks": {
+    "desktopArenas": 20,
+    "storyEncounters": 7,
+    "phoneArenaViews": 6,
+    "safeIntroCameraPoses": 480,
+    "brooksteadEntranceRoutes": [
+      "west bridge arrival",
+      "west road return",
+      "east arrival"
+    ],
+    "validStreamBankDetailLevels": 3,
+    "matchedComparisonPairs": 31,
+    "comparisonBaselineSHA256": "82f08ba1eac237483b0aa57a8716263aa0882ce9364b54d5be6819b0c316a32b"
+  }
+}

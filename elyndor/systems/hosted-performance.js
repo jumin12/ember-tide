@@ -92,14 +92,14 @@ contactSeat133=function(a,size){
 // simulation step. Camera motion invalidates immediately; idle ripples and
 // actors refresh at a bounded cadence. Reflection matrices are retained with
 // their exact image, and scene/light changes always force a fresh capture.
-const mirrors138={world:null,at:-Infinity,camera:V3(),rotation:new THREE.Quaternion(),resizes:-1,phase:null,frames:0,reuses:0};
+const mirrors138={world:null,at:-Infinity,camera:V3(),rotation:new THREE.Quaternion(),projection:new THREE.Matrix4(),resizes:-1,phase:null,frames:0,reuses:0};
 const reflectionBefore138=updateReflection;
 updateReflection=function(...args){
  const q=mirrors138,now=performance.now(),phone=touchDevice33(),period=phone?66:40,phase=activeScene?.key==='brookstead'?damState108().phase.value:null;
- const fresh=q.world===world&&q.resizes===device33.resizes&&q.phase===phase&&q.camera.distanceToSquared(camera.position)<.5625&&Math.abs(q.rotation.dot(camera.quaternion))>.99996;
+ const fresh=q.world===world&&q.resizes===device33.resizes&&q.phase===phase&&q.camera.distanceToSquared(camera.position)<.0004&&Math.abs(q.rotation.dot(camera.quaternion))>.9999995&&q.projection.equals(camera.projectionMatrix);
  if(!gameLoading&&!loading36.active&&!encounter53.active&&fresh&&now-q.at<period){q.reuses++;return;}
  const before=mirrors111.frames,result=reflectionBefore138(...args);
- if(mirrors111.frames!==before){Object.assign(q,{world,at:now,resizes:device33.resizes,phase});q.camera.copy(camera.position);q.rotation.copy(camera.quaternion);q.frames++;}
+ if(mirrors111.frames!==before){Object.assign(q,{world,at:now,resizes:device33.resizes,phase});q.camera.copy(camera.position);q.rotation.copy(camera.quaternion);q.projection.copy(camera.projectionMatrix);q.frames++;}
  return result;
 };
 

@@ -68,18 +68,18 @@ async function warmHomePrograms151(){
   for(const child of p.group.children)if(child!==p.return148.retired)collect(child);collect(p.fx146.group);show.add(keeper.mesh);
   const actor=createActor('azarithCast146',keeper.x,keeper.z,keeper.size);actors.splice(actors.indexOf(actor),1);actor.mesh.removeFromParent();actor.shadow?.removeFromParent();show.add(actor.mesh);
   const visible=new THREE.Group();visible.traverse=fn=>{for(const o of show)fn(o);proxy.traverse(fn);};visible.traverseVisible=()=>{};
-  const clipping=renderer.clippingPlanes;
-  try{renderer.setRenderTarget(post.target);await renderer.compileAsync(visible,camera,scene);
-   if(water?.visible){renderer.setRenderTarget(reflectionTarget);renderer.clippingPlanes=[new THREE.Plane(V3(0,1,0),-water.position.y-.015)];renderer.render(new THREE.Scene(),camera);await renderer.compileAsync(visible,camera,scene);renderer.clippingPlanes=clipping;}
+  const clipping=renderer.clippingPlanes,colour=warmupRenderTarget(post.target),mirror=water?.visible?warmupRenderTarget(reflectionTarget):null;
+  try{renderer.setRenderTarget(colour);await renderer.compileAsync(visible,camera,scene);
+   if(mirror){renderer.setRenderTarget(mirror);renderer.clippingPlanes=[new THREE.Plane(V3(0,1,0),-water.position.y-.015)];renderer.render(new THREE.Scene(),camera);await renderer.compileAsync(visible,camera,scene);renderer.clippingPlanes=clipping;}
    if(world!==owner)return;for(const t of [returnArt148.texture,...returnArt148.layers,actor.mesh.material.map])if(t?.isTexture)renderer.initTexture(t);
    // A real covered draw also uploads vertex buffers and prepares the shadow
    // pass, which compileAsync alone does not visit. No screen pixels change.
    const saved={viewport:renderer.getViewport(new THREE.Vector4()),scissor:renderer.getScissor(new THREE.Vector4()),test:renderer.getScissorTest(),open:p.open146.value,stone:p.stoneReveal146.value,group:p.group.visible,fx:p.fx146.group.visible,threshold:p.threshold151.root.visible},hidden=[];
    owner.traverse(o=>{if((o.isMesh||o.isPoints)&&!show.has(o)){hidden.push([o,o.visible]);o.visible=false;}});owner.add(actor.mesh);p.group.visible=p.fx146.group.visible=p.threshold151.root.visible=true;p.open146.value=p.stoneReveal146.value=1;
-   try{const eye=camera.clone(),target=p.group.localToWorld(V3(0,2.1,0));eye.position.copy(target).add(V3(0,.3,6));eye.lookAt(target);eye.updateMatrixWorld(true);renderer.setRenderTarget(post.target);renderer.setViewport(0,0,2,2);renderer.setScissor(0,0,2,2);renderer.setScissorTest(true);renderer.shadowMap.needsUpdate=sun.shadow.needsUpdate=true;renderer.render(scene,eye);if(water?.visible){renderer.setRenderTarget(reflectionTarget);renderer.clippingPlanes=[new THREE.Plane(V3(0,1,0),-water.position.y-.015)];renderer.render(scene,eye);renderer.clippingPlanes=clipping;}}
+   try{const eye=camera.clone(),target=p.group.localToWorld(V3(0,2.1,0));eye.position.copy(target).add(V3(0,.3,6));eye.lookAt(target);eye.updateMatrixWorld(true);renderer.setRenderTarget(colour);renderer.setViewport(0,0,2,2);renderer.setScissor(0,0,2,2);renderer.setScissorTest(true);renderer.shadowMap.needsUpdate=sun.shadow.needsUpdate=true;renderer.render(scene,eye);if(mirror){renderer.setRenderTarget(mirror);renderer.clippingPlanes=[new THREE.Plane(V3(0,1,0),-water.position.y-.015)];renderer.render(scene,eye);renderer.clippingPlanes=clipping;}}
    finally{actor.mesh.removeFromParent();for(const [o,value]of hidden)o.visible=value;p.group.visible=saved.group;p.fx146.group.visible=saved.fx;p.threshold151.root.visible=saved.threshold;p.open146.value=saved.open;p.stoneReveal146.value=saved.stone;renderer.setViewport(saved.viewport);renderer.setScissor(saved.scissor);renderer.setScissorTest(saved.test);renderer.shadowMap.needsUpdate=sun.shadow.needsUpdate=true;shadowBudget138.at=-Infinity;}
    pinPrograms36();homeWarm151.completed++;}
-  finally{renderer.clippingPlanes=clipping;renderer.setRenderTarget(original);actor.mesh.geometry.dispose();actor.mesh.material.map?.dispose();actor.mesh.material.dispose();actor.shadow?.geometry.dispose();actor.shadow?.material.dispose();}
+  finally{renderer.clippingPlanes=clipping;renderer.setRenderTarget(original);colour.dispose();mirror?.dispose();actor.mesh.geometry.dispose();actor.mesh.material.map?.dispose();actor.mesh.material.dispose();actor.shadow?.geometry.dispose();actor.shadow?.material.dispose();}
  })().catch(e=>{homeWarm151.tasks.delete(owner);throw e;});homeWarm151.tasks.set(owner,task);return task;
 }
 const homeWarmCastBefore151=warmHomeCast146;

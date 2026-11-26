@@ -97,7 +97,10 @@ dressRiverbanks103=function(){
     // without multiplying draw calls by the total number of shoreline rocks.
     if(!bins.has(key))bins.set(key,{geometry,material,rows:[]});
     const m=new THREE.Matrix4().compose(V3(xx,y-.12*sy,zz),new THREE.Quaternion().setFromEuler(new THREE.Euler((rng()-.5)*.14,rng()*TAU,(rng()-.5)*.14)),V3(s,sy,s*(.65+rng()*.65)));
-    bins.get(key).rows.push(m);occupied.add(k);count++;
+    occupied.add(k);
+    const channel=raceSample(xx,zz);
+    if(channel&&channel.d<channel.w+s*.84)continue;
+    bins.get(key).rows.push(m);count++;
    }
   }
  }
