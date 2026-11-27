@@ -124,7 +124,10 @@ const mirrors111={world:null,owned:new Map(),frames:0,passes:0,shadowFrames:0,si
 const presentation111={depth:0,id:0,mirrored:-1},presentationBefore111=render;
 render=function(...args){if(!presentation111.depth)presentation111.id++;presentation111.depth++;try{return presentationBefore111(...args);}finally{presentation111.depth--;}};
 function mirrorSize111(target){
- renderer.getDrawingBufferSize(mirrors111.size);const {x,y}=mirrors111.size,scale=Math.min(1,Math.sqrt((touchDevice33()?1050000:1600000)/(x*y))),w=Math.max(256,Math.round(x*scale)),h=Math.max(256,Math.round(y*scale));
+ renderer.getDrawingBufferSize(mirrors111.size);
+ const {x,y}=mirrors111.size,phone=touchDevice33(),high=state.settings.quality==='high';
+ const scale=Math.min(phone?.5:high?.8:.625,Math.sqrt((phone?360000:high?1050000:640000)/(x*y)));
+ const w=Math.max(1,Math.round(x*scale)),h=Math.max(1,Math.round(y*scale));
  if(target.width!==w||target.height!==h){target.setSize(w,h);target.texture.generateMipmaps=false;target.texture.minFilter=target.texture.magFilter=THREE.LinearFilter;}
 }
 function waterVisible111(o){
@@ -158,21 +161,29 @@ function presentShadow111(){
 const previousMirrors111=updateReflection;
 updateReflection=function(...args){
  if(!world||encounter53.active||!['poi','overworld'].includes(activeScene?.kind)||!world.userData.water62)return previousMirrors111(...args);
- if(gameLoading||loading36.active)return previousMirrors111(...args);
+ if((gameLoading||loading36.active)&&!loading36.presentingDestination)return previousMirrors111(...args);
  if(presentation111.depth){if(presentation111.mirrored===presentation111.id)return;presentation111.mirrored=presentation111.id;}
  camera.updateMatrixWorld(true);mirrors111.frustum.setFromProjectionMatrix(mirrors111.matrix.multiplyMatrices(camera.projectionMatrix,camera.matrixWorldInverse));
- const brook=activeScene.key==='brookstead',surfaces=[];world.traverse(o=>{if(o.isMesh&&o.userData.water62)surfaces.push(o);});
+ const brook=activeScene.key==='brookstead',surfaces=[],excluded=[];
  if(brook&&world.userData.fallsPhase111!==damState108().phase.value)updateCascadeJoins18(riverState17());
- const candidates=brook?[water,...world.userData.waterPools??[]].filter(waterVisible111):surfaces.filter(o=>!o.userData.waterfall&&waterVisible111(o));if(!candidates.length)return;
+ let candidates;
+ if(brook){candidates=[water,...world.userData.waterPools??[]].filter(waterVisible111);if(!candidates.length)return;}
+ world.traverseVisible(o=>{
+  if(o.isMesh&&o.userData.water62)surfaces.push(o);
+  if(o.userData.viewHidden||brook&&o.material?.userData.distantArchitecture26)excluded.push(o);
+ });
+ candidates??=surfaces.filter(o=>!o.userData.waterfall&&waterVisible111(o));if(!candidates.length)return;
  // The reflection reads this frame's actual sharp shadow depth, rather than
  // combining yesterday's depth texture with the newly fitted light matrix.
- scene.updateMatrixWorld(true);if(shadow36.due&&renderer.shadowMap.needsUpdate&&sun.shadow.needsUpdate){presentShadow111();mirrors111.shadowFrames++;}
+ scene.updateMatrixWorld();if(shadow36.due&&renderer.shadowMap.needsUpdate&&sun.shadow.needsUpdate){presentShadow111();mirrors111.shadowFrames++;}
  const oldTarget=renderer.getRenderTarget(),oldClip=renderer.clippingPlanes,auto=renderer.shadowMap.autoUpdate,pending=renderer.shadowMap.needsUpdate,sunPending=sun.shadow.needsUpdate,hidden=new Map(),forestMain=forest30.main.value;
  const hide=o=>{if(o&&!hidden.has(o)){hidden.set(o,o.visible);o.visible=false;}};for(const o of surfaces)hide(o);
  for(const o of [...perf.plants,world.userData.weatherBatch36,world.userData.dust22?.mesh,world.userData.mist28,world.userData.damSpray108,world.userData.millSpray111,world.userData.current19,world.userData.releaseSpray18,world.userData.shafts24?.group])hide(o);
  // A distant skyline model is a backdrop. It must not acquire a second
  // life in Brookstead's canal, or appear through banks in an under-water view.
- world.traverseVisible(o=>{if(o.userData.viewHidden||brook&&o.material?.userData.distantArchitecture26)hide(o);});
+ for(const o of excluded)hide(o);
+ const updateMatrices=scene.matrixWorldAutoUpdate;
+ scene.matrixWorldAutoUpdate=false;
  renderer.shadowMap.autoUpdate=false;renderer.shadowMap.needsUpdate=sun.shadow.needsUpdate=false;const rendered=new Map(),rows=[],byRole=new Map();
  try{for(const o of candidates){
   let level=o.position.y;if(brook&&o.userData.fill17){const f=o.userData.fill17;level=sampleCurrent18(f,(f.start+f.end)/2,riverState17());}
@@ -196,7 +207,7 @@ updateReflection=function(...args){
   if(up){u.upperMirror62.value=up.target.texture;u.upperMatrix62.value=up.matrix;u.mirror62.value=down.target.texture;u.reflectionMatrix62.value=down.matrix;}
  }
  mirrors111.frames++;world.userData.liveMirrors111={frame:mirrors111.frames,passes:rendered.size,levels:rows,perPresentedFrame:true,shadowFrame:mirrors111.shadowFrames};
- }finally{renderer.setRenderTarget(oldTarget);renderer.clippingPlanes=oldClip;renderer.shadowMap.autoUpdate=auto;renderer.shadowMap.needsUpdate=pending;sun.shadow.needsUpdate=sunPending;for(const[o,v]of hidden)o.visible=v;forest30.main.value=forestMain;}
+ }finally{scene.matrixWorldAutoUpdate=updateMatrices;renderer.setRenderTarget(oldTarget);renderer.clippingPlanes=oldClip;renderer.shadowMap.autoUpdate=auto;renderer.shadowMap.needsUpdate=pending;sun.shadow.needsUpdate=sunPending;for(const[o,v]of hidden)o.visible=v;forest30.main.value=forestMain;}
 };
 const disposeMirrorsBefore111=disposeContinuousWorld;
 disposeContinuousWorld=function(...args){for(const t of mirrors111.owned.values())t.dispose();mirrors111.owned.clear();mill111.world=null;mill111.spray=null;return disposeMirrorsBefore111(...args);};

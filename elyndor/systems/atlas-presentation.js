@@ -13,26 +13,28 @@ atlasWarmed16=true;
 const lensVertex119='varying vec2 vUv;void main(){vUv=uv;gl_Position=vec4(position.xy,0.,1.);}';
 // A separable continuous kernel avoids the repeated leaf outlines and grid
 // patterns produced by a widely spaced screen-space sample stencil.
-function worldGaussian132(holder,source,depth,w,h,focus,nearFar,scale=1){
+function worldGaussian132(holder,source,depth,w,h,focus,nearFar,scale=1,storyFar=0){
  let q=holder.gaussian132;
  if(!q){
   const type=source.type,targets=[0,1].map(()=>new THREE.WebGLRenderTarget(1,1,{type,depthBuffer:false,minFilter:THREE.LinearFilter,magFilter:THREE.LinearFilter}));
-  const material=new THREE.ShaderMaterial({depthTest:false,depthWrite:false,toneMapped:false,vertexShader:lensVertex119,uniforms:{source:{value:null},depth:{value:depth},axis:{value:new THREE.Vector2()},nearFar:{value:new THREE.Vector2()},focus:{value:focus}},fragmentShader:`
+  const material=new THREE.ShaderMaterial({depthTest:false,depthWrite:false,toneMapped:false,vertexShader:lensVertex119,uniforms:{source:{value:null},depth:{value:depth},axis:{value:new THREE.Vector2()},nearFar:{value:new THREE.Vector2()},focus:{value:focus},storyFar:{value:0},battleFocusGuides},fragmentShader:battlefieldFocusGLSL+`
+   uniform float storyFar;
    uniform sampler2D source,depth;uniform vec2 axis,nearFar;uniform float focus;varying vec2 vUv;
    float depth132(vec2 uv){float z=texture2D(depth,uv).r*2.-1.;return 2.*nearFar.x*nearFar.y/(nearFar.y+nearFar.x-z*(nearFar.y-nearFar.x));}
    vec3 sample132(vec2 uv,float d,vec3 centre){uv=clamp(uv,vec2(.001),vec2(.999));float sd=depth132(uv);float accept=1.-smoothstep(max(6.,focus*.04),max(20.,focus*.14),abs(sd-d));return mix(centre,texture2D(source,uv).rgb,accept);}
    void main(){float d=depth132(vUv);vec3 centre=texture2D(source,vUv).rgb,c=centre*.2270270270;
-    c+=(sample132(vUv+axis*1.3846153846,d,centre)+sample132(vUv-axis*1.3846153846,d,centre))*.3162162162;
-    c+=(sample132(vUv+axis*3.2307692308,d,centre)+sample132(vUv-axis*3.2307692308,d,centre))*.0702702703;gl_FragColor=vec4(c,1.);
+    vec2 stepUV=axis*(storyFar>0.?scenicFocus(vUv,d,storyFar):1.);
+    c+=(sample132(vUv+stepUV*1.3846153846,d,centre)+sample132(vUv-stepUV*1.3846153846,d,centre))*.3162162162;
+    c+=(sample132(vUv+stepUV*3.2307692308,d,centre)+sample132(vUv-stepUV*3.2307692308,d,centre))*.0702702703;gl_FragColor=vec4(c,1.);
    }`});
   const scene=new THREE.Scene(),camera=new THREE.OrthographicCamera(-1,1,1,-1,0,1),quad=new THREE.Mesh(new THREE.PlaneGeometry(2,2),material);quad.frustumCulled=false;scene.add(quad);q=holder.gaussian132={targets,material,scene,camera};
  }
  const ww=Math.max(1,w>>1),hh=Math.max(1,h>>1),u=q.material.uniforms;
  for(const t of q.targets)if(t.width!==ww||t.height!==hh)t.setSize(ww,hh);
- u.depth.value=depth;u.nearFar.value.copy(nearFar);u.focus.value=focus;
+ u.depth.value=depth;u.nearFar.value.copy(nearFar);u.focus.value=focus;u.storyFar.value=storyFar;
  // The travel camera needs a visible optical defocus at its miniature scale.
  // Retain the atlas kernel and the same two retained half-resolution targets.
- const radius=holder===post?3.15:1.15;
+ const radius=storyFar>0?1.65:holder===post?3.15:1.15;
  u.source.value=source;u.axis.value.set(radius*scale/w,0);renderer.setRenderTarget(q.targets[0]);renderer.render(q.scene,q.camera);
  u.source.value=q.targets[0].texture;u.axis.value.set(0,radius*scale/h);renderer.setRenderTarget(q.targets[1]);renderer.render(q.scene,q.camera);
  return q.targets[1].texture;
@@ -73,6 +75,8 @@ function prepareAtlasLens119(w,h){
  return q;
 }
 function renderAtlasPresentation119(rect,ratio,c){
+ const spills=atlasFountainSpills.get(exactAtlas67.scene);
+ if(spills)spills.visible=brookFountainRunning221();
  const w=Math.max(1,Math.round(rect.width*ratio)),h=Math.max(1,Math.round(rect.height*ratio)),q=prepareAtlasLens119(w,h),u=q.composite.uniforms;
  const target=renderer.getRenderTarget(),viewport=renderer.getViewport(new THREE.Vector4()),scissor=renderer.getScissor(new THREE.Vector4()),test=renderer.getScissorTest();
  try{
@@ -96,7 +100,12 @@ const setupLensBefore119=setupPost;
 setupPost=function(...args){
  const result=setupLensBefore119(...args),m=post?.material;if(!m||m.uniforms.travelLens119)return result;
  m.uniforms.travelLens119={value:0};m.uniforms.travelGaussian132={value:null};m.uniforms.travelAnchor159={value:new THREE.Vector3()};m.fragmentShader='uniform sampler2D travelGaussian132;uniform float travelLens119;uniform vec3 travelAnchor159;\n'+m.fragmentShader;
- m.fragmentShader=m.fragmentShader.replace('// Gameplay remains sharp at every depth;',`if(travelLens119>.5){
+ m.uniforms.storyFarFocus={value:0};m.uniforms.battleFocusGuides=battleFocusGuides;
+ m.fragmentShader=battlefieldFocusGLSL+'\nuniform float storyFarFocus;\n'+m.fragmentShader;
+ m.fragmentShader=m.fragmentShader.replace('// Gameplay remains sharp at every depth;',`if(storyFarFocus>0.){
+  float farDepth=-poiView55(vUv).z;
+  col=mix(col,texture2D(travelGaussian132,vUv).rgb,.60*scenicFocus(vUv,farDepth,storyFarFocus));
+ }else if(travelLens119>.5){
   vec3 world159=(poiCamera55*vec4(poiView55(vUv),1.)).xyz;
   float behind159=dot(world159.xz-travelAnchor159.xz,normalize(-poiCamera55[2].xz));
   float blur159=smoothstep(110.,240.,behind159)*.98;
@@ -106,9 +115,22 @@ setupPost=function(...args){
  m.fragmentShader=m.fragmentShader.replace('#include <colorspace_fragment>','#include <colorspace_fragment>\nif(travelLens119>.5){float edge132=smoothstep(.20,.69,length((vUv-.5)*vec2(1.04,.96)));gl_FragColor.rgb*=1.-edge132*mix(.52,.44,night22);}');m.needsUpdate=true;
  const draw=renderer.render;
  renderer.render=function(s,c){
-  if(s===post.scene&&m.uniforms.travelLens119.value>.5){const target=this.getRenderTarget(),viewport=this.getViewport(new THREE.Vector4()),scissor=this.getScissor(new THREE.Vector4()),test=this.getScissorTest();
+  if(s===post.scene){
+   let far=0;
+   if(battle&&!encounter53.active&&battle.enemies?.length){
+    const pose=m.uniforms.travelAnchor159.value;
+    for(const a of [player,...followers,...battle.enemies.map(e=>e.actor)]){
+     if(!a?.mesh?.visible)continue;
+     pose.set(a.x,a.mesh.position.y,a.z).applyMatrix4(camera.matrixWorldInverse);
+     far=Math.max(far,-pose.z+a.size);
+    }
+   }
+   m.uniforms.storyFarFocus.value=far;
+   if(far>0)projectBattleFocusGuides(null);
+  }
+  if(s===post.scene&&(m.uniforms.travelLens119.value>.5||m.uniforms.storyFarFocus.value>0.)){const target=this.getRenderTarget(),viewport=this.getViewport(new THREE.Vector4()),scissor=this.getScissor(new THREE.Vector4()),test=this.getScissorTest();
    m.uniforms.travelAnchor159.value.copy(cameraTarget);
-   try{this.setScissorTest(false);m.uniforms.travelGaussian132.value=worldGaussian132(post,post.target.texture,post.target.depthTexture,post.target.width,post.target.height,m.uniforms.focus.value,m.uniforms.nearFar.value,Math.max(1,m.uniforms.pixelRatio33?.value??1));}
+   try{this.setScissorTest(false);m.uniforms.travelGaussian132.value=worldGaussian132(post,post.target.texture,post.target.depthTexture,post.target.width,post.target.height,m.uniforms.focus.value,m.uniforms.nearFar.value,Math.max(1,m.uniforms.pixelRatio33?.value??1),m.uniforms.storyFarFocus.value);}
    finally{this.setRenderTarget(target);this.setViewport(viewport);this.setScissor(scissor);this.setScissorTest(test);}
   }return draw.call(this,s,c);
  };return result;

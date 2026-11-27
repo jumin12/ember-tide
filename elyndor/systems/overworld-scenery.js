@@ -110,7 +110,17 @@ function travelGrassGeometry160(far=false){
  const key='travel-sward160-'+far;if(sharedGeo[key])return sharedGeo[key];
  const blades=far?6:18,segments=far?2:3,rng=seeded(160433),p=[],uv=[],indices=[];
  for(let blade=0;blade<blades;blade++){
-  const a=blade*2.399963+rng()*.55,dir=V3(Math.cos(a),0,Math.sin(a)),side=V3(-dir.z,0,dir.x),r=.10+Math.sqrt(rng())*.43,root=V3(dir.x*r,-.465,dir.z*r),short=blade%3===0,h=(short?.27:.44)+rng()*(short?.17:.33),lean=.16+rng()*.29,width=.027+rng()*.024,base=p.length/3;
+  const a=blade*2.399963+rng()*.55,dir=V3(Math.cos(a),0,Math.sin(a)),side=V3(-dir.z,0,dir.x),r=.10+Math.sqrt(rng())*.43,root=V3(dir.x*r,-.465,dir.z*r),short=blade%3===0,h=(short?.27:.44)+rng()*(short?.17:.33),lean=.16+rng()*.29,width=(.027+rng()*.024)*(far?1.50:1),base=p.length/3;
+  if(far){
+   // A distant blade needs only its curved outline. The scaled width
+   // remains visible across the river without drawing subpixel folds.
+   for(const [t,s] of [[0,-1],[0,1],[.53,-1],[.53,1],[1,0]]){
+    const pt=root.clone().addScaledVector(dir,lean*t*t).addScaledVector(side,s*width*(1-t*.68));
+    p.push(pt.x,pt.y+h*(t-.12*t*t),pt.z);uv.push((s+1)*.5,t);
+   }
+   indices.push(base,base+1,base+2,base+1,base+3,base+2,base+2,base+3,base+4);
+   continue;
+  }
   for(let j=0;j<=segments;j++){const t=j/segments,center=root.clone().addScaledVector(dir,lean*t*t).add(V3(0,h*(t-.12*t*t),0)),w=width*Math.pow(1-t,.72);
    for(const s of[-1,0,1]){const v=center.clone().addScaledVector(side,s*w).addScaledVector(dir,s===0?Math.sin(t*Math.PI)*.013:0);p.push(...v.toArray());uv.push((s+1)*.5,t);}
   }
@@ -201,7 +211,31 @@ updateRenderBudget=function(...args){
  const r=travelBudgetBefore157(...args);if(activeScene?.kind!=='overworld'||!player)return r;
  const previous=world.userData.travelBudget157,run=performance106.budgetRuns;if(previous?.run===run&&!args[0])return r;
  const phone=touchDevice33(),range=phone?300:430,shadowRange=phone?110:160;
- for(const o of scenery.forestMeshes)if(o.userData.travelTree157){const d=Math.hypot(o.userData.center.x-player.x,o.userData.center.z-player.z);o.visible=d<range;o.castShadow=o.visible&&d<shadowRange;}
+ // Batches can span both banks of a river. Measure the closest occupied
+ // edge so the trees and grass at our feet do not inherit the far-bank LOD.
+ // Camera pans and close inspections can look well away from the party.
+ const focus=battle||encounter53.active?player:cameraTarget;
+ const fieldRadius=camera.position.distanceTo(cameraTarget)*Math.tan(camera.fov*Math.PI/360);
+ const centerWeight=mix(.18,.52,smooth(10,23,fieldRadius));
+ function distanceToBatch(o){
+  const b=o.boundingBox;
+  if(!b)return Math.hypot(o.userData.center.x-focus.x,o.userData.center.z-focus.z);
+  return Math.hypot(Math.max(0,b.min.x-focus.x,focus.x-b.max.x),Math.max(0,b.min.z-focus.z,focus.z-b.max.z));
+ }
+ for(const o of scenery.forestMeshes)if(o.userData.travelTree157){
+  const d=distanceToBatch(o),lod=o.userData.nativeLods30;
+  o.visible=d<range;o.castShadow=o.visible&&d<shadowRange;
+  const b=o.boundingBox;
+  const middle=b?Math.hypot((b.min.x+b.max.x)*.5-focus.x,(b.min.z+b.max.z)*.5-focus.z):d;
+  const detailDistance=mix(d,middle,centerWeight);
+  o.geometry=lod[detailDistance<(phone?19:31)?0:detailDistance<(phone?63:94)?1:2];
+ }
+ if(!battle&&!encounter53.active)for(const m of perf.plants)if(m.userData.meadow160){
+  const d=distanceToBatch(m);
+  m.visible=true;m.frustumCulled=true;
+  m.geometry=stableDistanceLod33(m,'meadowDetail',d,[phone?16:29],5)===0?m.userData.detailedGeometry:m.userData.distantGeometry;
+  m.count=Math.ceil(m.userData.total*(phone?.80:1));
+ }
  world.userData.travelBudget157={run,range,shadowRange};return r;
 };
 

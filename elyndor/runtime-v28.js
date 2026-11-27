@@ -30,7 +30,7 @@ resize=function(){
 
 // A loaded scene owns a fresh party. Never inherit a title-preview hide,
 // battle dissolve, clipping range, or a warm-up camera's culling decision.
-function settleArrival28(){
+function settleArrival28(paint=true){
  if(!player||battle||state.mode==='title')return;
  for(const a of[player,...followers]){
   if(a.mesh.parent!==world)world.add(a.mesh);if(a.shadow.parent!==world)world.add(a.shadow);
@@ -42,7 +42,7 @@ function settleArrival28(){
  // Force the destination view, including occlusion, before removing the loader.
  occlusionCache=null;const q=world.userData.clarity23;if(q)q.nearKey='';
  for(const cut of world.userData.cutaways??[]){cut.until=-1;cut.hidden=false;cut.fade.value=0;for(const m of cut.meshes)m.userData.viewHidden=false;}
- updateCamera(1,true);updateLighting();updateCutaways();updateRenderBudget(true);renderBeforeLoadingGate();runtime28.arrivals++;
+ updateCamera(1,true);updateLighting();updateCutaways();updateRenderBudget(true);if(paint)renderBeforeLoadingGate();runtime28.arrivals++;
 }
 const warmBefore28=prepareGameplayGraphics;
 prepareGameplayGraphics=async function(...args){const r=await warmBefore28(...args);settleArrival28();return r;};

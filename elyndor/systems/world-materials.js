@@ -22,7 +22,7 @@ loadAssets=async function(...args){
  const keys=[...GROUND102,...SURFACES102,...GROUNDCOVER102,'botanicalLeaf102','petal102','rockGranite','rockLimestone','rockSlate','rockMoss','woodWeathered101'];
  // Four simultaneous decodes bound peak upload/decode pressure on phones.
  for(let i=0;i<keys.length;i+=4)await Promise.all(keys.slice(i,i+4).map(loadWorldSurface102));
- environment102.ground=worldArray102(GROUND102);environment102.surfaces=worldArray102(SURFACES102);
+ environment102.ground=worldArray102(GROUND102);
  environment102.groundcover=worldArray102(GROUNDCOVER102);environment102.groundcover.wrapS=environment102.groundcover.wrapT=THREE.ClampToEdgeWrapping;
  const aliases={grass:'grassLush',grassA:'grassDry',earth:'earthTrail',earthA:'earthForest',rock:'rockGranite',rockA:'rockLimestone',rockB:'rockSlate',env62_stone:'rockGranite',riverStone18:'rockMoss',cobble:'cobbleOld',cobbleA:'cobbleOld',cobbleB:'cobbleOld',cobbleMoss30:'cobbleOld',snow:'snow',barren:'stoneGranite',desert:'sandCoast',plaster:'plaster102',plasterA:'plaster102',plasterSage86:'plaster102',wall:'masonry102',wallA:'masonry102',brick86:'masonry102',slate:'roofSlate102',roofClay86:'roofClay102',wood:'oakBoards102',floorOak86:'oakBoards102',floorPine86:'oakBoards102',furnitureOak86:'oakBoards102',timberOak86:'oakBoards102',woodSiding86:'oakBoards102',darkWood:'walnut102',floorWalnut86:'walnut102',furnitureWalnut86:'walnut102',timberOld86:'woodWeathered101',cloth:'canvas102',canvas86:'canvas102',wool86:'canvas102',metal:'iron102'};
  for(const[key,source]of Object.entries(aliases)){textures[key]=environment102.maps.get(source);surface67.byMap.set(textures[key],key)}

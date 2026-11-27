@@ -23,7 +23,15 @@ async function prepareGpuArrays138(){
    gpuDelivery138.arrays[name]=texture;gpuDelivery138.bytes+=meta.bytes;
   }
   return true;
- })().catch(error=>{delivery138.errors.push(error.message);for(const t of Object.values(gpuDelivery138.arrays))t.dispose();gpuDelivery138.arrays={};gpuDelivery138.loader?.dispose();gpuDelivery138.loader=null;return false;});
+ })().catch(error=>{
+  delivery138.errors.push(error.message);
+  for(const t of Object.values(gpuDelivery138.arrays))t.dispose();
+  gpuDelivery138.arrays={};gpuDelivery138.bytes=0;return false;
+ }).finally(()=>{
+  // The decoded textures own their buffers. The WASM workers and blob URL
+  // only belong to this bootstrap job, including on the fallback path.
+  gpuDelivery138.loader?.dispose();gpuDelivery138.loader=null;
+ });
  return gpuDelivery138.promise;
 }
 async function packedPbr138(keys){
@@ -89,17 +97,20 @@ contactSeat133=function(a,size){
 };
 
 // Keep sharp, live mirrors without re-drawing every river level on every
-// simulation step. Camera motion invalidates immediately; idle ripples and
+// simulation step. Camera cuts invalidate immediately; walking, ripples and
 // actors refresh at a bounded cadence. Reflection matrices are retained with
 // their exact image, and scene/light changes always force a fresh capture.
 const mirrors138={world:null,at:-Infinity,camera:V3(),rotation:new THREE.Quaternion(),projection:new THREE.Matrix4(),resizes:-1,phase:null,frames:0,reuses:0};
 const reflectionBefore138=updateReflection;
 updateReflection=function(...args){
- const q=mirrors138,now=performance.now(),phone=touchDevice33(),period=phone?66:40,phase=activeScene?.key==='brookstead'?damState108().phase.value:null;
- const fresh=q.world===world&&q.resizes===device33.resizes&&q.phase===phase&&q.camera.distanceToSquared(camera.position)<.0004&&Math.abs(q.rotation.dot(camera.quaternion))>.9999995&&q.projection.equals(camera.projectionMatrix);
+ const q=mirrors138,now=performance.now(),phone=touchDevice33(),period=phone?90:65,phase=activeScene?.key==='brookstead'?damState108().phase.value:null;
+ const fresh=q.world===world&&q.resizes===device33.resizes&&q.phase===phase&&q.camera.distanceToSquared(camera.position)<4&&Math.abs(q.rotation.dot(camera.quaternion))>.999&&q.projection.equals(camera.projectionMatrix);
  if(!gameLoading&&!loading36.active&&!encounter53.active&&fresh&&now-q.at<period){q.reuses++;return;}
  const before=mirrors111.frames,result=reflectionBefore138(...args);
- if(mirrors111.frames!==before){Object.assign(q,{world,at:now,resizes:device33.resizes,phase});q.camera.copy(camera.position);q.rotation.copy(camera.quaternion);q.projection.copy(camera.projectionMatrix);q.frames++;}
+ if(mirrors111.frames!==before||(!loading36.active&&!gameLoading&&!encounter53.active&&world?.userData.water62)){
+  Object.assign(q,{world,at:now,resizes:device33.resizes,phase});q.camera.copy(camera.position);q.rotation.copy(camera.quaternion);q.projection.copy(camera.projectionMatrix);
+  if(mirrors111.frames!==before)q.frames++;
+ }
  return result;
 };
 
@@ -121,7 +132,7 @@ const shadowFitBefore138=fitVisibleShadows,shadowBudget138={world:null,at:-Infin
 fitVisibleShadows=function(...args){
  if(!world||encounter53.active||!['poi','overworld'].includes(activeScene?.kind))return shadowFitBefore138(...args);
  setOutdoorShadowSettings155();
- const q=shadowBudget138,period=touchDevice33()?1/24:1/40,forced=gameLoading||loading36.active||q.world!==world||q.resize!==device33.resizes||!sun.shadow.map||shadow36.last< -10||q.camera.distanceToSquared(camera.position)>1;
+ const q=shadowBudget138,period=touchDevice33()?1/15:1/24,forced=q.world!==world||q.resize!==device33.resizes||!sun.shadow.map||shadow36.last< -10||q.camera.distanceToSquared(camera.position)>4||clock<q.at;
  if(!forced&&clock-q.at<period){shadow36.due=false;shadow36.skips++;q.reuses++;return;}
  // The old live-water wrapper forced a new shadow render on every call.
  // Keep its sharp penumbra but enter the fitted-shadow owner directly.

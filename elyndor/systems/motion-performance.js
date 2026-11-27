@@ -2,12 +2,26 @@
 // close scenery detailed and spend fewer vertices on distant/secondary views.
 const performance106={world:null,budgetAt:-1,budgetCamera:V3(),reflectionWorld:null,reflectionAt:-1,reflectionCamera:V3(),reflectionResize:-1,budgetRuns:0,budgetReuses:0,reflectionReuses:0,shadowPasses:0,secondaryPasses:0};
 const budgetBefore106=updateRenderBudget;
+const plantingViewRotation=new THREE.Quaternion();
+function plantingDistance(mesh){
+ const b=mesh.boundingBox,focus=cameraTarget;
+ if(!b)return Math.hypot(mesh.userData.center.x-focus.x,mesh.userData.center.z-focus.z);
+ return Math.hypot(Math.max(0,b.min.x-focus.x,focus.x-b.max.x),Math.max(0,b.min.z-focus.z,focus.z-b.max.z));
+}
 updateRenderBudget=function(force=false){
  if(!world||!player)return budgetBefore106(force);const p=performance106;
- if(!force&&p.world===world&&clock-p.budgetAt<.075&&p.budgetCamera.distanceToSquared(camera.position)<9){p.budgetReuses++;return;}
- p.world=world;p.budgetAt=clock;p.budgetCamera.copy(camera.position);p.budgetRuns++;const result=budgetBefore106(force),phone=touchDevice33();
+ const changedView=p.world!==world||clock<p.budgetAt||p.budgetCamera.distanceToSquared(camera.position)>=9||Math.abs(plantingViewRotation.dot(camera.quaternion))<.999;
+ if(!force&&!changedView&&clock-p.budgetAt<.075){p.budgetReuses++;return;}
+ p.world=world;p.budgetAt=clock;p.budgetCamera.copy(camera.position);plantingViewRotation.copy(camera.quaternion);p.budgetRuns++;
+ const result=budgetBefore106(force||changedView),phone=touchDevice33();
  for(const o of scenery.forestMeshes){const lod=o.userData.nativeLods30;if(!o.userData.botany104||!lod)continue;const d=Math.hypot(o.userData.center.x-player.x,o.userData.center.z-player.z),trunk=o.userData.forestKind==='trunk';o.geometry=lod[d<(phone?12:30)?0:d<(phone?48:85)?1:2];if(trunk)o.castShadow=o.visible&&d<(activeScene.kind==='overworld'?150:95);}
- for(const o of perf.plants)if(o.userData.realVegetation103){const d=Math.hypot(o.userData.center.x-player.x,o.userData.center.z-player.z);o.geometry=d<(phone?11:24)?o.userData.detailedGeometry:o.userData.distantGeometry;o.castShadow=false;}
+ if(!battle&&!encounter53.active)for(const o of perf.plants)if(!o.userData.meadow160){
+  const d=plantingDistance(o),u=o.userData;
+  o.visible=true;o.frustumCulled=true;
+  if(u.realVegetation103)o.castShadow=false;
+  if(u.total!=null)o.count=Math.ceil(u.total*(phone&&u.realVegetation103 ? .78 : 1));
+  if(u.detailedGeometry&&u.distantGeometry)o.geometry=stableDistanceLod33(o,'grassDetail',d,[phone?11:24],4)===0?u.detailedGeometry:u.distantGeometry;
+ }
  return result;
 };
 const reflectionBefore106=updateReflection;

@@ -72,7 +72,17 @@ function addScenicEcology104(){
 const finishEcologyBefore104=finishWorld102;
 finishWorld102=function(){finishEcologyBefore104();if(envPbr103.ready)addScenicEcology104();};
 const detailBudgetBefore104=updateRenderBudget;
-updateRenderBudget=function(...args){const r=detailBudgetBefore104(...args);if(!player||!world)return r;const macro=activeScene.kind==='overworld',phone=matchMedia('(pointer:coarse)').matches;for(const o of world.userData.ecology104?.meshes??[]){const d=Math.hypot(o.userData.center.x-player.x,o.userData.center.z-player.z);o.visible=d<(macro?185:105);o.geometry=d<(phone?22:40)?o.userData.detailedGeometry:o.userData.distantGeometry;o.castShadow=o.name.includes('stone')&&d<(macro?55:35);}return r;};
+updateRenderBudget=function(...args){
+ const r=detailBudgetBefore104(...args);if(!player||!world)return r;
+ const macro=activeScene.kind==='overworld',phone=touchDevice33();
+ for(const o of world.userData.ecology104?.meshes??[]){
+  const d=plantingDistance(o),u=o.userData;
+  o.visible=true;o.frustumCulled=true;
+  o.geometry=stableDistanceLod33(o,'ecologyDetail',d,[phone?22:40],5)===0?u.detailedGeometry:u.distantGeometry;
+  o.castShadow=o.name.includes('stone')&&d<(macro?55:35);
+ }
+ return r;
+};
 // A canopy backdrop is for distant crowns, not an oversized set of triangles
 // beside the party. Replace those old background sprays with modeled shoots.
 const backgroundBefore104=sameForest26;

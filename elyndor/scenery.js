@@ -142,25 +142,37 @@ updateActor=function(a,dt){animateVisibleActor(a,dt);if(a.mesh.userData.noSelfSh
 const showCharacterDialogue=showDialogue;
 showDialogue=function(){showCharacterDialogue();const speaker=dialogue.lines[dialogue.index][0];if(!speaker)return;let id=Object.keys(CAST).find(k=>CAST[k].name===speaker);if(speaker==='Commander')id=battle?.kind==='commander3'||['commander3','siteRepair','siteLight'].includes(currentBeat()[0])?'commander3':battle?.kind==='commander2'||['commander2','brace','alderRepair','alderLight'].includes(currentBeat()[0])?'commander2':'commander';if(speaker==='Guard')id=battle?.kind==='guard'||currentBeat()[0]==='patrol'||Math.hypot(player.x-176,player.z+57)<26?'alderGuardPortrait':'guard';if(!id){const exact=[[/council official|council steward/i,'councilOfficial'],[/royal archivist|archivist/i,'archivistPortrait'],[/relief.*official|station.*official/i,'reliefOfficial'],[/aid.*official/i,'aidOfficial']];id=exact.find(([pattern])=>pattern.test(speaker))?.[1];}if(!id){const roles=[[/commander/i,'commander'],[/representative|official/i,'representative'],[/elder|council steward/i,'elder'],[/carpenter|worker|quartermaster/i,'worker'],[/courier|scribe|recorder|archivist/i,'courier'],[/farmer|gardener|orchard/i,'farmer'],[/innkeeper|inn steward/i,'innkeeper'],[/merchant|fishmonger/i,'merchant'],[/healer|herbalist|medic/i,'healer'],[/guard|watch|bridgekeeper/i,'guard'],[/villager|tribesman/i,'tribeMale'],[/potter|tribeswoman/i,'tribeFemale']];id=roles.find(([pattern])=>pattern.test(speaker))?.[1];}const portrait=$('#dialogue-portrait');portrait.style.display=id&&assets.portraits[id]?'block':'none';portrait.style.backgroundImage=id&&assets.portraits[id]?`url('${assets.portraits[id]}')`:'';};
 
-// A compact working service court: the crank is physically coupled to the
-// sluice, and the pump has a trough rather than an unexplained floating outlet.
+// The pump empties into its trough beside the rear lane.
 INTERACTION_POS.pump=[-123,50];
 const ordinaryRoadInfo=roadInfo;
 roadInfo=function(x,z){const r=ordinaryRoadInfo(x,z),d=Math.hypot(Math.max(-128-x,0,x+110),Math.max(48-z,0,z-57));return d<r.d?{d,kind:'lane'}:r;};
 const workingCanal=buildWorkingCanal;
-buildWorkingCanal=function(){workingCanal();const y=baseLand(-127.8,47),top=y+1.9;
- for(const side of[-1,1]){box(-132+side*4.2,y+1,47,.28,2,.35,'wood','#9a8465');box(-132+side*4.2,y+.08,47,.65,.22,.65,'wall','#b9bbae');}
- box(-132,top,47,8.7,.28,.4,'wood','#8b765b');beam(V3(-125,y+1.3,47),V3(-127.8,y+1.3,47),.065,'metal','#8b8b7c');for(const x of[-134.3,-129.7])beam(V3(x,-.2,47.18),V3(x,top-.1,47.18),.022,'metal','#687878');
+buildWorkingCanal=function(){workingCanal();
  for(let i=0;i<7;i++)for(const yy of[-.5,.6])mesh(new THREE.SphereGeometry(.035,5,4),material('metal','#9d947b'),(i-3)*.95,yy,.28,world.userData.gate);
- const g=world.userData.pump;g.position.set(-123,groundAt(-123,50),50);const py=g.position.y;for(const side of[-1,1])box(.7+side*.72,.25,.9,.12,.5,1.5,'wall','#a9b4a5',g);for(const z of[.18,1.6])box(.7,.25,z,1.55,.5,.12,'wall','#a9b4a5',g);box(.7,.06,.9,1.45,.12,1.4,'wall','#a2ad9b',g);
- const waterSurface=new THREE.Mesh(new THREE.PlaneGeometry(1.3,1.2),new THREE.MeshStandardMaterial({color:'#315e67',transparent:true,opacity:.8,roughness:.2}));waterSurface.rotation.x=-Math.PI/2;waterSurface.position.set(.7,.26,.9);g.add(waterSurface);waterSurface.castShadow=false;
- beam(V3(.7,1.2,0),V3(.7,1.1,.35),.085,'metal','#7c8e83',g);obstacle(-122.3,50.9,1.7,1.65,'pump trough');world.userData.pumpStream={group:g,ground:py};
- const curve=new THREE.QuadraticBezierCurve3(V3(.7,1.1,.35),V3(.7,.65,.8),V3(.7,.28,.95)),flow=new THREE.Mesh(new THREE.TubeGeometry(curve,14,.027,5,false),new THREE.ShaderMaterial({transparent:true,depthWrite:false,uniforms:{time:windUniforms.time},vertexShader:'varying vec2 v;void main(){v=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:'uniform float time;varying vec2 v;void main(){float pulse=.5+.5*sin(v.x*55.-time*10.);gl_FragColor=vec4(mix(vec3(.18,.42,.49),vec3(.8,.96,1.),pulse),.6);}' }));g.add(flow);flow.castShadow=false;world.userData.pumpStream.mesh=flow;
- const foam=new THREE.InstancedMesh(sharedGeo.waterBead??=new THREE.SphereGeometry(.024,4,3),new THREE.MeshBasicMaterial({color:'#c8e5ea',transparent:true,opacity:.58}),24);foam.frustumCulled=false;world.add(foam);world.userData.sluiceFoam=foam;
- for(const group of[world.userData.gate,world.userData.crank,world.userData.pump,world.userData.waterwheel])mergeGroup(group);
+ const g=world.userData.pump;
+ const {stream,contact,on}=brookHandPump221(g);obstacle(-122.3,50.9,1.7,1.65,'pump trough');
+ const waterMat=new THREE.ShaderMaterial({transparent:true,depthWrite:false,uniforms:{time:windUniforms.time,sky:waterLight62.sky,day:waterLight62.day},
+  vertexShader:`varying vec2 flowUV;varying vec3 normalView,viewDir;void main(){
+   flowUV=uv;vec4 p=modelViewMatrix*vec4(position,1.);normalView=normalMatrix*normal;viewDir=-p.xyz;gl_Position=projectionMatrix*p;}`,
+  fragmentShader:`varying vec2 flowUV;varying vec3 normalView,viewDir;uniform vec3 sky;uniform float time,day;void main(){
+   float rim=pow(1.-abs(dot(normalize(normalView),normalize(viewDir))),1.5);
+   float rip=.5+.5*sin(flowUV.x*22.-time*5.+.8*sin(flowUV.x*33.-time*7.)+flowUV.y*9.);
+   vec3 tint=mix(vec3(.17,.30,.29),sky*.74,.37+.44*rim);
+   gl_FragColor=vec4(tint+vec3(.32,.34,.30)*pow(rip,4.)*(.32+.68*rim)*(.25+.75*day),.26+.45*rim+.12*rip);
+   #include <tonemapping_fragment>
+   #include <colorspace_fragment>
+  }`});
+ const flow=new THREE.Mesh(new THREE.TubeGeometry(stream,18,.034,10,false),waterMat);
+ g.add(flow);flow.castShadow=false;flow.userData.dynamicWater=true;flow.visible=!!state.flags.pump_repaired;
+ world.userData.pumpStream={group:g,ground:g.position.y,mesh:flow,contact,on};
+ for(const group of[world.userData.gate,world.userData.crank,world.userData.waterwheel])mergeGroup(group);
 };
 const animateSceneryFX=updateWorldFX;
-updateWorldFX=function(dt){animateSceneryFX(dt);if(world.userData.pumpStream)world.userData.pumpStream.mesh.visible=!!state.flags.pump_repaired;const foam=world.userData.sluiceFoam;if(foam){foam.visible=!!state.flags.gate_open&&Math.hypot(player.x+132,player.z-47)<35;if(foam.visible){const matrix=new THREE.Matrix4();for(let i=0;i<24;i++){const t=(clock*.75+i*.618)%1;matrix.makeTranslation(-132+Math.sin(i*2.399)*2.8,-1.36+Math.sin(t*Math.PI)*.15,47.3+t*.8);foam.setMatrixAt(i,matrix);}foam.instanceMatrix.needsUpdate=true;}}};
+updateWorldFX=function(dt){
+ animateSceneryFX(dt);
+ const pump=world.userData.pumpStream;
+ if(pump){pump.mesh.visible=!!state.flags.pump_repaired;pump.on.value=Number(pump.mesh.visible);}
+};
 
 updateLighting=function(){if(!world)return;const h=state.worldMinutes/60%24,day=Math.max(0,Math.sin((h-6)/12*Math.PI)),night=1-smooth(0,.2,day),dusk=Math.max(0,1-Math.abs(h-17.5)/2.4),p=restoration?cameraTarget:player??{x:0,z:0},y=heightAt(p.x,p.z);
  sun.position.set(p.x-27*Math.cos((h-6)/12*Math.PI),y+13+day*33,p.z+24);sun.target.position.set(p.x,y,p.z);sun.target.updateMatrixWorld();sun.color.set('#fff0d8').lerp(new THREE.Color('#9db8e0'),night);sun.intensity=mix(.28,3.15,Math.sqrt(day));hemi.color.set('#b8d5ed').lerp(new THREE.Color('#a6bad5'),night);hemi.groundColor.set('#58665f');hemi.intensity=mix(.76,1.02,day);renderer.toneMappingExposure=mix(1.06,1.12,day);

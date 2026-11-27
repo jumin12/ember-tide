@@ -3,7 +3,7 @@
 (() => {
   const enabled={value:0}, sunlight={value:0}, twilight={value:0};
   const crystal={value:new THREE.Vector4(0,0,0,0)}, corePosition=new THREE.Vector3();
-  const crystalPulse={value:1}, effectTime={value:0}, fountainBase={value:0};
+  const crystalPulse={value:1};
   const motion=matchMedia('(prefers-reduced-motion: reduce)');
 
   // Apply after the existing lens, using its per-pixel depth and surface normal.
@@ -13,10 +13,10 @@
     Object.assign(m.uniforms,{extLighting:enabled,extSunStrength:sunlight,extSun:weather.sun,
       extDay:celestial31.day,extTwilight:twilight,extRain:weather.rain,
       extLampField:lampField33.map,extLampBounds:lampField33.bounds,
-      extCrystal:crystal,extPulse:crystalPulse,extTime:effectTime,extFountainBase:fountainBase});
+      extCrystal:crystal,extPulse:crystalPulse});
     const shader=m.fragmentShader;
     const end=shader.lastIndexOf('}');
-    m.fragmentShader=`uniform float extLighting,extSunStrength,extDay,extTwilight,extRain,extPulse,extTime,extFountainBase;
+    m.fragmentShader=`uniform float extLighting,extSunStrength,extDay,extTwilight,extRain,extPulse;
       uniform vec3 extSun;uniform vec4 extLampBounds,extCrystal;uniform sampler2D extLampField;
     `+shader.slice(0,end)+`
       if(extLighting>.5){
@@ -58,22 +58,6 @@
           float lamplight=lamp.r*lamp.r*heightAtten*support*(night+.21*extTwilight)*skyMask;
           vec3 reflected=vec3(.43,.225,.085)*(.20+sqrt(max(vec3(0.),color)));
           color+=reflected*lamplight*.22*(.46+.54*max(0.,N.y))*(1.-color);
-          if(basinPresent>.5){
-            // Fold the original eight jets into one sector to measure distance
-            // to the nearest real point of impact inside the circular basin.
-            vec2 offset=worldPos.xz-basinXZ;float r=length(offset);
-            float water=(1.-smoothstep(2.13,2.20,r))*(1.-smoothstep(.05,.18,abs(worldPos.y-extFountainBase-.64)));
-            if(water>.001){
-              float angle=atan(offset.y,offset.x+.00001);
-              float jet=floor(angle/.78539816+.5)*.78539816;
-              float reach=length(offset-1.8*vec2(cos(jet),sin(jet)));
-              float phase=reach*2.35-extTime*.91;
-              float edge=abs(fract(phase+.5)-.5);
-              float wave=(1.-smoothstep(.04,.09+min(.18,fwidth(phase)),edge));
-              wave*=smoothstep(.025,.13,reach)*(1.-smoothstep(.44,.89,reach));
-              color+=water*wave*(.22+.78*extSunStrength)*vec3(.24,.38,.37)*(1.-color);
-            }
-          }
           if(extCrystal.w>.0){
             vec3 delta=worldPos-extCrystal.xyz;
             float dist2=dot(delta.xz,delta.xz);
@@ -99,13 +83,11 @@
     const outside=player&&usesLandscapeLight54()&&!battle&&state.mode!=='title';
     enabled.value=outside?(activeScene.kind==='overworld'?2:1):0;
     const animated=!motion.matches&&state?.settings?.motion!==false;
-    effectTime.value=animated?clock:0;
     const e=celestial31.sun.value.y;
     twilight.value=(1.-smooth(.05,.67,e))*smooth(-.14,.11,e);
     sunlight.value=activeScene?.key==='depths'?0:celestial31.day.value*(1.-.84*weather.rain.value)*(1.-.46*weather.cloud.value);
     crystal.value.w=0;
     if(enabled.value===1){
-      fountainBase.value=world.userData.fountain123?.base??0;
       const site=world.userData.lightSites?.[0];
       if(site?.core&&site.core.visible&&site.group.visible){
         site.core.getWorldPosition(corePosition);

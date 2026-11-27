@@ -65,7 +65,15 @@ function updateActor(a,dt){
 }
 function setupParty(point){for(const a of[player,...followers].filter(Boolean)){world.remove(a.mesh,a.shadow);actors=actors.filter(q=>q!==a);}followers=[];const members=state.members;player=createActor(members[0],point[0],point[1],currentScene().view==='world'?1.8:2.35);members.slice(1).forEach((id,i)=>{const a=createActor(id,point[0]-(i+1)*1.6,point[1],currentScene().view==='world'?1.8:2.35);if(a)followers.push(a);});trail=[{x:point[0]-8,z:point[1],s:0},{x:point[0],z:point[1],s:8}];trailLength=8;for(const o of interactables)if(o.actor){o.actor.mesh.visible=!members.includes(o.actor.id)&&!(state.flags.soren_departed&&state.scene==='depths'&&o.actorId==='soren')&&!(state.beat>=36&&state.scene==='nearbySite'&&o.actorId==='soren');o.actor.shadow.visible=o.actor.mesh.visible;} }
 function staticFree(x,z,r=.4){if(Math.abs(x)>31||Math.abs(z)>22.5||waterGround(x,z))return false;for(const c of colliders)if(Math.abs(x-c.x)<c.w+r&&Math.abs(z-c.z)<c.d+r)return false;return true;}
-function edgeFree(a,b,r=.4){const d=dist(a,b),n=Math.max(1,Math.ceil(d/.22));for(let i=1;i<=n;i++){const x=mix(a.x,b.x,i/n),z=mix(a.z,b.z,i/n);if(!staticFree(x,z,r))return false;const y=heightAt(x,z),previous=heightAt(mix(a.x,b.x,(i-1)/n),mix(a.z,b.z,(i-1)/n));if(Math.abs(y-previous)>.36)return false;}return true;}
+function edgeFree(a,b,r=.4){
+ const n=Math.max(1,Math.ceil(dist(a,b)/.22));let previous=heightAt(a.x,a.z);
+ for(let i=1;i<=n;i++){
+  const x=mix(a.x,b.x,i/n),z=mix(a.z,b.z,i/n);
+  if(!staticFree(x,z,r))return false;
+  const y=heightAt(x,z);if(Math.abs(y-previous)>.36)return false;previous=y;
+ }
+ return true;
+}
 function findRoute(from,to,avoid=[]){
  if(!staticFree(to.x,to.z,.5))return null;
  const crowd=avoid.filter(a=>Math.min(dist(a,from),dist(a,to))<dist(from,to)+4);

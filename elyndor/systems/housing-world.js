@@ -117,7 +117,7 @@ function homeWall139(parent,l,q){
  q=homeBuildingStyle139(q,true);const hw=l.w/2,hd=l.d/2,windows=[-.27*l.w,.27*l.w],edges=[-hw,...windows.flatMap(x=>[x-.80,x+.80]),hw],wallKey=q.wallMaterial139;
  for(let i=0;i<edges.length-1;i+=2){const a=edges[i],b=edges[i+1];homeBox139((a+b)/2,2.65,-hd,b-a,5.3,.36,wallKey,q.wall,parent);}
  homeBox139(0,.875,-hd,l.w,1.75,.36,wallKey,q.wall,parent);homeBox139(0,4.575,-hd,l.w,1.45,.36,wallKey,q.wall,parent);
- for(const x of windows)window31(parent,x,2.8,-hd+.18,0,1.15);
+ for(const x of windows)window31(parent,x,2.8,-hd+.18,0,1.15,roomWindowMaterial66());
  for(const s of[-1,1]){homeBox139(s*hw,2.5,-hd/2,.36,5,hd,wallKey,q.wall,parent);homeBox139(s*hw,.65,hd/2,.36,1.3,hd,wallKey,q.wall,parent);for(const z of[-hd,-hd/2,0,hd/2,hd])homeBox139(s*hw,z<0?2.5:.74,z,.25,z<0?5:1.5,.25,'wood',q.wood,parent);for(const z of[-hd,hd])homeBox139(0,.28,z,l.w,.3,.4,'wood',q.wood,parent);}
  for(const y of[1.2,5.25])homeBox139(0,y,-hd+.23,l.w,.18,.20,'wood',q.wood,parent);
  for(const x of[-hw,hw,0])homeBox139(x,2.6,-hd+.23,.22,5.2,.24,'wood',q.wood,parent);
@@ -141,7 +141,7 @@ function buildPrivateInterior139(spawn){
  for(const v of homeFixed139(l).filter(v=>v.solid!==false))obstacle(v.x,v.z,v.w,v.d,v.name);
  interactables.push({id:'homeExit139',type:'homeExit139',x:0,z:l.d/2-1.0,radius:2.25,label:'Step outside',visualHeight:.5});
  interactables.push({id:'homeDecor139',type:'homeDecor139',x:-l.w/2+3.8,z:-l.d/2+3.4,radius:3.4,label:'Decorate your home',visualHeight:1});
- rebuildHomeDecor139();finishJourneyWorld(spawn??[0,l.d/2-3.6]);world.userData.housing139={region:q.id,layout:h.home.layout,private:true,interiorDecor:true};
+ rebuildHomeDecor139();finishJourneyWorld(spawn??[0,l.d/2-3.6]);makeWorldDust22();world.userData.housing139={region:q.id,layout:h.home.layout,private:true,interiorDecor:true};
 }
 function retainTownForHome139(){
  if(activeScene?.kind!=='poi'||isHomeScene139()||!world||locations137.metadata.get(world)?.owner!==state)return false;

@@ -328,6 +328,7 @@
       "systems/regional-landmark-models.js",
       "systems/valenne-travel-art.js",
       "systems/battlefield-margins.js",
+      "systems/battlefield-weather.js",
       "systems/settlement-architecture.js",
       "systems/fern-environments.js",
       "systems/settlement-streets.js",

@@ -5,7 +5,7 @@ const traversalTerrain={version:6,grid:null,baseGrid:null,decoded:new Map(),rive
 const terrainDecodeBefore=bakedFloat36,terrainBaseBefore=macroBase15,terrainHydroBefore=hydroSample38;
 const traversalWaterCells=new Map(),traversalShoreCells=new Map();
 {
- const p=terrainDecodeBefore(ATLAS_HYDRO38.surface.positions),raw=Uint8Array.from(atob(ATLAS_HYDRO38.surface.indices),c=>c.charCodeAt(0)),indices=new Uint32Array(raw.buffer);
+ const p=terrainDecodeBefore(ATLAS_HYDRO38.surface.positions),raw=decodeAtlasBytes(ATLAS_HYDRO38.surface.indices),indices=new Uint32Array(raw.buffer);
  const edges=new Map();
  for(let i=0;i<indices.length;i+=3){const a=indices[i]*3,b=indices[i+1]*3,c=indices[i+2]*3,t={x:p[a],z:p[a+2],ux:p[b]-p[a],uz:p[b+2]-p[a+2],vx:p[c]-p[a],vz:p[c+2]-p[a+2]};t.inverse=1/(t.ux*t.vz-t.uz*t.vx);
   for(const[u,v]of[[a,b],[b,c],[c,a]]){const key=Math.min(u,v)+','+Math.max(u,v),edge=edges.get(key);if(edge)edge.count++;else edges.set(key,{count:1,x:p[u],z:p[u+2],xx:p[v],zz:p[v+2]});}

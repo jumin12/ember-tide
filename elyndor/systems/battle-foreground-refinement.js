@@ -126,17 +126,20 @@ function stageObjects161(b,stats){
 }
 
 function battleGrassGeometry(mobile){
- const blades=mobile?5:10,segments=mobile?2:3,positions=[],uvs=[],indices=[],random=seeded(162217);
+ const blades=mobile?6:11,segments=mobile?2:3,positions=[],uvs=[],indices=[],random=seeded(162217);
  for(let blade=0;blade<blades;blade++){
   const angle=blade*2.399963+random()*.55;
   const direction=V3(Math.cos(angle),0,Math.sin(angle));
   const across=V3(-direction.z,0,direction.x);
-  const root=direction.clone().multiplyScalar(.08+Math.sqrt(random())*.23);
-  const height=(blade%3===0?.25:.44)+random()*.27,lean=.14+random()*.24,width=.021+random()*.022;
+  // Offset three runners within the tuft. Short emerging blades share a
+  // root with the arching outer leaves instead of forming an upright comb.
+  const runner=blade%3,root=V3(Math.cos(runner*2.4)*.12,0,Math.sin(runner*2.4)*.15)
+   .addScaledVector(direction,.02+random()*.085);
+  const height=(runner===0?.25:.36)+random()*.31,lean=.13+random()*.23,width=.015+random()*.015;
   const start=positions.length/3;
   for(let segment=0;segment<=segments;segment++){
    const t=segment/segments,mid=root.clone().addScaledVector(direction,lean*t*t);
-   mid.y=height*(t-.14*t*t);
+   mid.y=height*(t-(runner===2?.34:.12)*t*t);
    for(const side of[-1,0,1]){
     const vertex=mid.clone().addScaledVector(across,side*width*Math.pow(1-t,.8));
     if(side===0)vertex.addScaledVector(direction,Math.sin(t*Math.PI)*.012);
@@ -152,16 +155,6 @@ function battleGrassGeometry(mobile){
  geometry.setAttribute('uv',new THREE.Float32BufferAttribute(uvs,2));
  geometry.setIndex(indices);geometry.computeVertexNormals();
  return geometry;
-}
-function bindBattleGrass(b){
- const material=arenaCoverMaterial102(b,'grassBlades');
- const compile=material.onBeforeCompile,key=material.customProgramCacheKey.bind(material);
- material.onBeforeCompile=function(shader,...args){
-  compile.call(this,shader,...args);
-  shader.vertexShader=shader.vertexShader.replace('position.y+.465','position.y');
- };
- material.customProgramCacheKey=()=>key()+'-seated-battle-grass';
- return material;
 }
 function gradeBattleGroundEdge(b,stage){
  const [swatchRow,width]=BATTLE_GROUND_JOINS[stage];
@@ -190,12 +183,13 @@ function gradeBattleGroundEdge(b,stage){
   return V3(sceneLight(color.x/64),sceneLight(color.y/64),sceneLight(color.z/64));
  });
  const positions=floor.geometry.attributes.position,contacts=new Float32Array(positions.count*4);
- const moonlitRidge=stage==='mountain'&&b.night;
  // Sample only the land below the calibrated join. Low-pass filtering removes
  // painted stones and foliage but keeps the broad pattern of light on the path.
- const cols=30,rows=9,reach=Math.min(.22,swatchRow-.075);
+ // Sample both sides of the curved contact line. At the sides of a bank
+ // the reference camera can see a different strip of ground than at centre.
+ const cols=80,rows=32,upper=Math.min(.96,swatchRow+.055),lower=Math.max(.015,swatchRow-.29);
  canvas.width=cols;canvas.height=rows;ctx.imageSmoothingQuality='high';
- ctx.drawImage(image,0,(1-swatchRow)*image.height,image.width,reach*image.height,0,0,cols,rows);
+ ctx.drawImage(image,0,(1-upper)*image.height,image.width,(upper-lower)*image.height,0,0,cols,rows);
  const patch=ctx.getImageData(0,0,cols,rows).data,groundPaint=[];
  for(let i=0;i<patch.length;i+=4){
   groundPaint.push(V3(...[i,i+1,i+2].map(k=>sceneLight(linear161[patch[k]]))));
@@ -220,12 +214,12 @@ function gradeBattleGroundEdge(b,stage){
   const source=.5+u/(fit+(1-fit)*4*u*u);
   const strip=clamp(source*swatches.length-.5,0,swatches.length-1),low=Math.floor(strip),fraction=strip-low;
   const rawV=(worldPoint.y*.5+.5-b.window90.x)/b.window90.y;
-  const px=clamp(source*cols-.5,0,cols-1),py=clamp((swatchRow-rawV)/reach*rows-.5,0,rows-1);
+  const px=clamp(source*cols-.5,0,cols-1),py=clamp((upper-rawV)/(upper-lower)*rows-.5,0,rows-1);
   const x0=Math.floor(px),x1=Math.min(x0+1,cols-1),y0=Math.floor(py)*cols,y1=Math.min(Math.floor(py)+1,rows-1)*cols;
   paint.copy(groundPaint[y0+x0]).lerp(groundPaint[y0+x1],px-x0);
   nextRow.copy(groundPaint[y1+x0]).lerp(groundPaint[y1+x1],px-x0);
   paint.lerp(nextRow,py-Math.floor(py));paint.toArray(wash,i*4);
-  wash[i*4+3]=mix(.51,.20,smooth(5,26,Math.max(0,depth)));
+  wash[i*4+3]=mix(.76,.20,smooth(width*.45,width+14,Math.max(0,depth)));
   const fade=1.-.60*smooth(4,32,Math.max(0,depth));
   sample.copy(broad[low]).lerp(broad[Math.min(low+1,broad.length-1)],fraction);
   const localLight=Math.max(.008,luminance(sample)),gain=clamp(Math.sqrt(localLight/meanLight),.64,1.27);
@@ -234,16 +228,11 @@ function gradeBattleGroundEdge(b,stage){
    const hue=(sample[channel]/localLight)/Math.max(.12,average[channel]/meanLight);
    lightField[i*3+j]=mix(1,gain*clamp(hue,.82,1.19),fade*.76);
   }
-  if(depth>=4.6||depth<-.12)continue;
-  const offset=i*4,a=swatches[low],c=swatches[Math.min(low+1,swatches.length-1)];
-  // In moonlight the ridge's silver gravel and ochre grass occupy the same
-  // narrow band. Sampling along its depth keeps the grass tint off the path.
-  const weight=(1-smooth(.05,4.6,depth))*(moonlitRidge?.93:.78);
-  const follow=smooth(.10,2.1,depth)*(moonlitRidge?1:.74);
-  for(let j=0;j<3;j++){
-   const channel=channels[j];contacts[offset+j]=mix(mix(a[channel],c[channel],fraction),paint[channel],follow)*weight;
-  }
-  contacts[offset+3]=weight;
+  if(depth>=width+2||depth<-.12)continue;
+  const weight=(1-smooth(.3,width+2,depth))*.89;
+  // Match the local landing and its light pools. The broad swatch just
+  // stabilizes the darkest samples; the terrain still supplies its grain.
+  nextRow.copy(paint).lerp(sample,.09).multiplyScalar(weight).toArray(contacts,i*4);contacts[i*4+3]=weight;
  }
  floor.geometry.setAttribute('groundContact',new THREE.BufferAttribute(contacts,4));
  floor.geometry.setAttribute('bankLight',new THREE.BufferAttribute(lightField,3));
@@ -258,13 +247,20 @@ function gradeBattleGroundEdge(b,stage){
   shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\ncontactColor=groundContact;fieldLight=bankLight;groundWash=bankWash;');
   shader.fragmentShader='uniform float meanGroundPigment;varying vec3 fieldLight;varying vec4 contactColor,groundWash;\n'+shader.fragmentShader;
   shader.fragmentShader=shader.fragmentShader.replace('#include <opaque_fragment>',`
-   float textureDetail=clamp(.94+(relief132-.14)*.68,.84,1.13);
+   float bankSun=1.;
+   #if defined(USE_SHADOWMAP) && NUM_DIR_LIGHT_SHADOWS > 0
+    if(receiveShadow&&contactColor.a>.001){
+     bankSun=getShadow(directionalShadowMap[0],directionalLightShadows[0].shadowMapSize,
+      directionalLightShadows[0].shadowBias,directionalLightShadows[0].shadowRadius,vDirectionalShadowCoord[0]);
+    }
+   #endif
+   float textureDetail=clamp(1.+(relief132/meanGroundPigment-1.)*.24,.78,1.27);
    vec3 lumaBank=vec3(.2126,.7152,.0722);
    float targetLum=max(.004,dot(groundWash.rgb,lumaBank)),litLum=max(.004,dot(outgoingLight,lumaBank));
    vec3 hue=clamp(groundWash.rgb/targetLum/(outgoingLight/litLum+.016),vec3(.68),vec3(1.40));
    float value=clamp(targetLum*clamp(relief132/meanGroundPigment,.48,1.85)/litLum,.53,1.82);
-   outgoingLight*=fieldLight*mix(vec3(1.),hue*value,groundWash.a);
-   outgoingLight=outgoingLight*(1.-contactColor.a)+contactColor.rgb*textureDetail;
+   outgoingLight*=fieldLight*mix(vec3(1.),hue*value,groundWash.a*mix(.30,1.,bankSun));
+   outgoingLight=outgoingLight*(1.-contactColor.a)+contactColor.rgb*textureDetail*mix(.38,1.,bankSun);
    #include <opaque_fragment>`);
  };
  material.customProgramCacheKey=()=>key()+'-painted-contact-pigment';
@@ -276,6 +272,7 @@ function gradeBattleGroundEdge(b,stage){
 // Split existing triangles so both surfaces use the same vertices, material
 // detail, light and normals. Only the last few metres need alpha blending.
 function buildBattleGroundJoin(floor,b,width){
+ const masonry=b.spec.ruins||b.spec.royal;
  const geometry=floor.geometry,position=geometry.attributes.position;
  const distance=new Float32Array(position.count);
  for(let i=0;i<position.count;i++){
@@ -303,18 +300,29 @@ function buildBattleGroundJoin(floor,b,width){
   shader.fragmentShader='uniform float bankWidth;varying float joinDistance;\n'+shader.fragmentShader.replace(
    '#include <opaque_fragment>',`
     float reach=clamp(joinDistance/bankWidth,0.,1.);
-    float grain=clamp((relief132-.17)*2.4,-.38,.38);
-    float cover=smoothstep(0.,1.,reach+grain*reach*(1.-reach));
-    if(cover<.002)discard;
+    // Carry individual turf patches, sand ripples and stone joints across
+    // the transition at different depths. The noise is fixed to the ground.
+    vec2 soilPoint=surfaceWorld132.xz;
+    float marginShape=grainNoise100(soilPoint*vec2(.24,.31))*.70+grainNoise100(soilPoint*.89)*.30-.5;
+    float surfaceGrain=clamp(relief132/meanGroundPigment-1.,-.75,.75);
+    float taper=4.*reach*(1.-reach);
+    float terrainEdge=reach+taper*(marginShape*${masonry?'.55':'.43'}+surfaceGrain*${masonry?'.12':'.07'});
+    float cover=smoothstep(${masonry?'.28,.87':'.14,.94'},terrainEdge);
+    // A moving cast shadow belongs to the physical receiver even where
+    // the unshadowed ground is see-through.
+    cover=mix(cover,1.,(1.-bankSun)*smoothstep(.05,.31,reach));
+    if(cover<.001)discard;
     diffuseColor.a*=cover;
-    // The arena lens reads depth. Ease from the distant plate to the actual
-    // bank so the depth-of-field pass cannot redraw a line across the join.
-    gl_FragDepth=mix(1.,gl_FragCoord.z,cover);
+    // The plate leaves the depth buffer at the far plane. Focus should
+    // settle onto the bank smoothly, independently of individual grains.
+    gl_FragDepth=mix(1.,gl_FragCoord.z,smoothstep(.015,.82,reach));
     #include <opaque_fragment>`);
  };
  const rim=new THREE.Mesh(rimGeometry,rimMaterial);
  rim.name='Battle terrain transition';rim.receiveShadow=floor.receiveShadow;
- rim.renderOrder=b.landscape90.renderOrder+.25;floor.parent.add(rim);
+ // Transparent contacts and targeting rings draw at -1 and 0. Composite
+ // the backdrop and the rim first, while keeping their normal depth tests.
+ b.landscape90.renderOrder=-3;rim.renderOrder=-2;floor.parent.add(rim);
  floor.userData.transitionWidth=width;b.terrainJoin=rim;
 }
 
@@ -326,7 +334,7 @@ function cleanBattleSet161(b){
  for(const o of stones){o.geometry.computeBoundingBox();for(let i=0;i<o.count;i++){o.getMatrixAt(i,matrix);solids.push(o.geometry.boundingBox.clone().applyMatrix4(matrix).expandByScalar(.12));}}
  const turf=turfSampler161(b),habitat=HABITATS126[stage],spec=SWARD161[stage],rng=seeded(161037+Object.keys(STAGING161).indexOf(stage)*947),stances=fighterStances105(b),q=fightingHollow93(b),blocked=(x,z,r=.18)=>stances.some(s=>x>s.minX-r&&x<s.maxX+r&&z>s.minZ-r&&z<s.maxZ+r)||solids.some(s=>x>s.min.x-r&&x<s.max.x+r&&z>s.min.z-r&&z<s.max.z+r)||stats.placements.some(s=>!['ferns','flowers','daisies','bluebells','softTufts','saltTufts','alpineTufts','violetTufts','heather','leafLitter','seedheads','reeds','wheat'].includes(s.kind)&&Math.abs(x-s.x)<s.rx+r&&Math.abs(z-s.z)<s.rz+r);
  if(habitat.cover&&budget){
-  const g=arenaGeometry88(b,'staged-sward161',()=>battleGrassGeometry(b.mobile)),m=bindBattleGrass(b),count=Math.min(budget,b.mobile?9500:19000),attempts=Math.min(72000,Math.max(24000,count*12)),seed=Object.keys(STAGING161).indexOf(stage),normal=V3(),up=V3(0,1,0),tilt=new THREE.Quaternion(),yaw=new THREE.Quaternion();
+  const g=arenaGeometry88(b,'staged-sward161',()=>battleGrassGeometry(b.mobile)),m=arenaCoverMaterial102(b,'grassBlades'),count=Math.min(budget,b.mobile?9500:19000),attempts=Math.min(72000,Math.max(24000,count*12)),seed=Object.keys(STAGING161).indexOf(stage),normal=V3(),up=V3(0,1,0),tilt=new THREE.Quaternion(),yaw=new THREE.Quaternion();
   // Tuft accents authored beside a prop join the same retained batch and
   // budget. Seat their roots consistently instead of layering a second field.
   const accents=b.group.children.filter(o=>o.isInstancedMesh&&o.material?.userData.realVegetation103==='grassBlades'),position=V3(),scale=V3(),rotation=new THREE.Quaternion();
@@ -346,19 +354,7 @@ function cleanBattleSet161(b){
  flushBefore89(b);b.batches.clear();
  gradeBattleGroundEdge(b,stage);
  const grass=b.group.children.find(o=>o.name==='Physical staged-sward161');
- if(grass){
-  // Pigment changes through the patches, without bright clumps or blade
-  // shadows drawing a hard outline around the grass.
-  grass.castShadow=false;
-  const tint=new THREE.Color();
-  for(let i=0;i<grass.count;i++){
-   grass.getMatrixAt(i,matrix);const x=matrix.elements[12],z=matrix.elements[14];
-   const tone=groundNoise104(x*.57+13,z*.48-9);
-   tint.setRGB(.88+tone*.15,.77+tone*.15,.80+tone*.17);
-   grass.setColorAt(i,tint);
-  }
-  grass.instanceColor.needsUpdate=true;
- }
+ if(grass)grass.castShadow=false;
  // Authored ferns/flowers keep their clustered arrangements but cannot emerge
  // from a mineral, a solid prop, paving, a fighter's stance or open water.
  const field=battlefieldFootprint(b.group),plantBounds=new THREE.Box3();

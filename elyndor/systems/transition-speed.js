@@ -83,7 +83,7 @@ for(const name of['clearRouteCover42','paintRoutes42','rebuildColliderGrid','set
 const macroNatureBefore64=buildMacroNature15,vegetationCPU64=new Map();
 function vegetationArray64(spec,double=false){
  if(vegetationCPU64.has(spec.data))return vegetationCPU64.get(spec.data);
- const raw=atob(spec.data),bytes=new Uint8Array(raw.length);for(let i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);
+ const bytes=decodeAtlasBytes(spec.data);
  const result=double?new Float64Array(bytes.buffer):new Float32Array(bytes.buffer);vegetationCPU64.set(spec.data,result);return result;
 }
 buildMacroNature15=function(...args){

@@ -126,23 +126,6 @@
   }
 
   function buildTown(f) {
-    const pool = layer(new THREE.CircleGeometry(2.16,80), `
-      void main(){
-        vec2 d=(p-.5)*2.;float r=length(d);
-        float ripple=length(d-vec2(.29,-.19));
-        float waves=sin(ripple*49.-t*2.5+1.2*n(d*6.));
-        float caustic=sin(d.x*18.+3.1*sin(d.y*8.+t*.6)+t*.4)
-                     +sin(d.y*16.+3.5*cos(d.x*8.-t*.47));
-        float glint=pow(max(0.,waves),11.)*smoothstep(.36,.69,n(d*7.+vec2(t*.11,0.)));
-        float vein=pow(max(0.,1.-abs(caustic)*.85),5.);
-        float reflection=glint*.44+vein*.095;float edge=1.-smoothstep(.89,1.,r);
-        vec3 c=mix(vec3(.26,.72,.77),vec3(.99,.91,.63),glint);
-        gl_FragColor=vec4(c,reflection*edge*(.24+.76*sunlight));
-      }`);
-    pool.rotation.x=-Math.PI/2;
-    pool.position.set(f.x,f.base+.675,f.z);
-    pool.renderOrder=7;
-
     const rays=layer(new THREE.PlaneGeometry(19,16),`
       void main(){
         float s=p.x+.37*p.y;
@@ -207,10 +190,12 @@
         if(!inLane(bounds))rockRows.push([xx,h-s*.18,zz,sx,sy,sz,rng()*6,rng()]);
       }
     }
+    const albedo=textures.env62_stone,rockKey=albedo?.userData.canonical103??'rockGranite';
     const stoneGeo=new THREE.IcosahedronGeometry(1,1), stoneMat=new THREE.MeshStandardMaterial({
       roughness:.68,metalness:.04,color:'#f3e5bf',
-      map:textures.env62_stone??null
+      map:albedo??null,normalMap:envPbr103.maps.get(rockKey+':normalRough')??textures.normal28_rock??null
     });
+    stoneMat.normalScale.setScalar(.32);
     const stoneVertices=stoneGeo.attributes.position;
     for(let i=0;i<stoneVertices.count;i++){
       const x=stoneVertices.getX(i),y=stoneVertices.getY(i),z=stoneVertices.getZ(i);
@@ -234,20 +219,7 @@
       stones.setMatrixAt(i,dummy.matrix);stones.setColorAt(i,tint.setHSL(.15+t*.09,.10+t*.07,.51+t*.31));
     });
     stones.name='Silverfall shoreline stones';stones.receiveShadow=true;group.add(stones);
-    const leaves=[],colors=[];
-    for(const [x,scale] of clusters.filter((_,i)=>i%3!==0)){
-      for(let j=0;j<13;j++){
-        const a=rng()*Math.PI*2,r=.18+rng()*.46,xx=x+Math.cos(a)*r,zz=shore(x)+Math.sin(a)*r+.25;
-        if(!onDistantBattleBank(field,xx-.25,xx+.25,zz+.25))continue;
-        const y=bed(xx,zz);if(y===null)continue;
-        const h=(.29+rng()*.42)*Math.max(.65,scale),w=.018+rng()*.026;
-        leaves.push(xx-w,y,zz,xx+w,y,zz,xx+Math.cos(a)*.19,y+h,zz+Math.sin(a)*.18);
-        colors.push(.11,.17,.065,.11,.19,.07,.50,.52+rng()*.14,.20);
-      }
-    }
-    const blades=new THREE.BufferGeometry();blades.setAttribute('position',new THREE.Float32BufferAttribute(leaves,3));
-    blades.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));blades.computeVertexNormals();
-    group.add(new THREE.Mesh(blades,new THREE.MeshBasicMaterial({vertexColors:true,side:THREE.DoubleSide})));
+    // Shore grass is planted by fillBattleTurf using this bank's actual soil and lighting.
 
   }
 
@@ -436,8 +408,7 @@
     m.uniforms.stageColour=stageColour;
     Object.assign(m.uniforms,bounceUniforms,{contactScreen,contactStrength,
       bounceInverse:{value:camera.projectionMatrixInverse},bounceCamera:{value:camera.matrixWorld}});
-    m.fragmentShader=bounceShader+'\nuniform mat4 bounceInverse,bounceCamera;uniform vec3 stageColour;uniform vec2 contactScreen;uniform float contactStrength;\n'+m.fragmentShader
-      .replace('texture2D(gaussianImage132,v).rgb,coc*','texture2D(gaussianImage132,v).rgb,coc*(1.-.82*farFocus)*');
+    m.fragmentShader=bounceShader+'\nuniform mat4 bounceInverse,bounceCamera;uniform vec3 stageColour;uniform vec2 contactScreen;uniform float contactStrength;\n'+m.fragmentShader;
     const end=m.fragmentShader.lastIndexOf('}');
     m.fragmentShader=m.fragmentShader.slice(0,end)+`
       vec3 ink=gl_FragColor.rgb;

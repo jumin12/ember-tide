@@ -8,10 +8,10 @@ function glazedMaterial104(){
  const t=envPbr103.maps.get('windowInterior104:albedo'),m=new THREE.MeshPhysicalMaterial({map:t,color:'#b0c8cf',roughness:.16,metalness:0,envMap:surface67.outdoor,envMapIntensity:.78,clearcoat:1,clearcoatRoughness:.09,emissive:'#ffb45e',emissiveMap:t,emissiveIntensity:.38});
  const before=m.onBeforeCompile;m.onBeforeCompile=function(s,...a){before.call(this,s,...a);s.uniforms.glassNight104=celestial31.night;s.fragmentShader='uniform float glassNight104;\n'+s.fragmentShader;s.fragmentShader=s.fragmentShader.replace('#include <emissivemap_fragment>','#include <emissivemap_fragment>\ntotalEmissiveRadiance*=mix(.08,2.8,glassNight104);');};m.customProgramCacheKey=()=> 'recessed-reflective-window104';Object.assign(m.userData,{glazing104:true,surface67:'glass67',pbr103:{key:'windowInterior104',reflective:true,roughness:.16,metalness:0}});addCloudLighting(m);facade104.materials.set(world,m);if(!t)facade104.initial.add(m);return m;
 }
-window31=function(parent,x,y,z,angle=0,scale=1){
+window31=function(parent,x,y,z,angle=0,scale=1,paneMaterial=null){
  const g=new THREE.Group();g.name='Recessed glazed window';g.position.set(x,y,z);g.rotation.y=angle;g.scale.setScalar(scale);parent.add(g);g.userData.glazing104=true;
  box(0,0,.005,1.47,1.76,.18,'darkWood','#262a28',g);
- const glass=new THREE.Mesh(new THREE.PlaneGeometry(1.15,1.45),glazedMaterial104());glass.position.z=.118;glass.name='Reflective glass with recessed room';glass.userData.dynamicFX=true;glass.userData.glazing104=true;glass.receiveShadow=true;g.add(glass);
+ const glass=new THREE.Mesh(new THREE.PlaneGeometry(1.15,1.45),paneMaterial??glazedMaterial104());glass.position.z=.118;glass.name=paneMaterial?'Window onto the exterior sky':'Reflective glass with recessed room';glass.userData.dynamicFX=true;glass.userData.glazing104=true;glass.receiveShadow=!paneMaterial;g.add(glass);
  for(const side of[-1,1]){box(side*.635,0,.18,.13,1.63,.20,'darkWood','#8d7452',g);box(0,side*.777,.18,1.40,.12,.20,'wood','#a78b61',g);}
  box(0,0,.205,.048,1.46,.08,'darkWood','#92784d',g);box(0,0,.215,1.15,.045,.08,'wood','#a18c62',g);
  for(const side of[-1,1]){box(side*.87,0,.04,.34,1.68,.13,'wood',side<0?'#786649':'#907a54',g);for(const yy of[-.53,.53])box(side*.87,yy,.12,.33,.06,.045,'metal','#4d5855',g);}

@@ -127,8 +127,17 @@ const stageRenderBefore53=render;
 render=function(...args){
  const q=encounter53;if(!q.active)return stageRenderBefore53(...args);
  maskExploration53();updateContacts39();weather.exterior.value=0;q.resources.material.uniforms.time.value=clock;q.resources.material.uniforms.screenAspect.value=innerWidth/innerHeight;
- if(typeof renderArena89==='function'&&renderArena89(q))return;
- shadow36.due=true;sun.shadow.needsUpdate=true;renderer.shadowMap.needsUpdate=true;renderer.setRenderTarget(null);renderer.setScissorTest(false);const size=renderer.getSize(new THREE.Vector2());renderer.setViewport(0,0,size.x,size.y);renderer.clear();renderer.render(q.scene,camera);updateCombatPointer();q.stats.rendered++;
+ if(q.beginProgramWarmup){
+  q.beginProgramWarmup=false;
+  // Render hooks have now installed the cast, shoreline and stage effects.
+  const task=prepareBattlePrograms137(q);q.programWarmup=task;
+  task.catch(error=>console.warn('Battle shader warm-up failed, using the first draw.',error)).finally(()=>{
+   if(q.programWarmup===task)q.programWarmup=null;
+  });
+ }
+ if(q.programWarmup)return;
+ if(typeof renderArena89==='function'&&renderArena89(q)){q.awaitingFirstFrame=false;return;}
+ shadow36.due=true;sun.shadow.needsUpdate=true;renderer.shadowMap.needsUpdate=true;renderer.setRenderTarget(null);renderer.setScissorTest(false);const size=renderer.getSize(new THREE.Vector2());renderer.setViewport(0,0,size.x,size.y);renderer.clear();renderer.render(q.scene,camera);updateCombatPointer();q.stats.rendered++;q.awaitingFirstFrame=false;
 };
 function transitionNode53(){
  let node=$('#encounter-transition53');if(node)return node;node=document.createElement('div');node.id='encounter-transition53';node.hidden=true;node.setAttribute('aria-hidden','true');node.innerHTML='<div class="encounter-rays53"></div><div class="encounter-cover53"></div><div class="encounter-seal53"><img src="'+assets.images.ui50_light+'" alt=""><span></span></div>';document.body.append(node);return node;
@@ -161,12 +170,15 @@ checkBattleOutcome=function(...args){
  return result;
 };
 function advanceEncounterCover53(dt){
+ if(encounter53.phase==='enter'&&encounter53.swapped&&(encounter53.programWarmup||encounter53.awaitingFirstFrame))return;
  const q=encounter53,node=transitionNode53();q.time+=dt;const p=clamp(q.time/q.duration,0,1),cover=p<.48?smooth(0,.44,p):1-smooth(.56,1,p);node.style.setProperty('--cover53',cover);node.style.setProperty('--rays53',Math.sin(p*Math.PI));node.style.setProperty('--turn53',p+'turn');
  if(p>=.48&&!q.swapped){q.swapped=true;
   if(q.phase==='enter'){
    activateStage53(q.selected);stageBeginBefore53(q.entryKind87??'random');battle.stage53=q.selected;q.homeXs=[player,...followers,...battle.enemies.map(e=>e.actor)].map(a=>a.x);battle.intro=.38;battle.started=clock;state.mode='encounter';
    for(const a of[player,...followers,...battle.enemies.map(e=>e.actor)]){updateActor(a,0);a.presentationPrevious=a.mesh.position.clone();a.presentationCurrent=a.mesh.position.clone();}
-   updateCamera(1,true);startBattleIntro58(true);prepareBattlePrograms137(q);q.stats.entries++;
+   updateCamera(1,true);startBattleIntro58(true);q.awaitingFirstFrame=true;
+   q.beginProgramWarmup=true;
+   q.time=q.duration*.5;node.style.setProperty('--cover53',1);q.stats.entries++;return;
   }else{
    deactivateStage53();stageEndBefore53(q.returnOutcome);q.returnOutcome=null;state.encounterDistance=0;for(const a of actors)updateActor(a,0);updateLighting();updateCamera(1,true);updateRenderBudget(true);state.mode='encounter';q.stats.returns++;
   }

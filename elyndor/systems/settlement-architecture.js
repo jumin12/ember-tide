@@ -5,10 +5,10 @@
 const settlementSurfaces=new Map(),settlementFinishes=new Map();
 const loadBeforeSettlementSurfaces=loadAssets;
 loadAssets=async function(...args){
- const result=await loadBeforeSettlementSurfaces(...args);
- if(settlementSurfaces.size)return result;
+ if(settlementSurfaces.size)return loadBeforeSettlementSurfaces(...args);
  const image=new Image();image.src='elyndor/assets/settlements/woodland-and-masonry.webp';
- try{await image.decode();}catch{return result;}
+ const [result,decoded]=await Promise.all([loadBeforeSettlementSurfaces(...args),image.decode().then(()=>true,()=>false)]);
+ if(!decoded)return result;
  const tile=image.naturalWidth/2;
  for(const [name,col,row] of [['cedar',0,0],['reed',1,0],['embroidery',0,1],['ashlar',1,1]]){
   const canvas=document.createElement('canvas');canvas.width=canvas.height=tile;

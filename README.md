@@ -2,6 +2,19 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.59 — Brookstead waterworks and battlefield atmosphere
+
+November 27, 2026
+
+- Four new 1080p loading screens show Brookstead’s fountain square, the Lantern Inn, Riverstone Supplies and the Royal Archives. Each has its own phone framing. The four images together are 44% smaller.
+- Brookstead’s hand pump fills a stone trough and the fountain reflects the square using the river’s water shading. Repairing the pump starts four brass spouts, with ripples where each jet lands. The pump lane, stairs and landings have clearer paths.
+- Walls stay solid when the party walks up to them and fade when they block the player. The cutaway follows the character working the canal wheel. Windows in inns, shops and player homes show the outdoor sky from dawn through night.
+- Across 20 arenas and seven story battles, grass and groundcover follow the terrain and soften the join with the backdrop. Rocks sit into the soil, combat lanes stay clear, and distant scenery comes into focus gradually as it approaches the fighters.
+- Snowfields have windblown flurries and low spindrift. Other battlefields use local effects such as spray, petals and dust. Woodland leaves drift past only a handful of times per journey. Some settle on the forest floor and remain on return.
+- Overworld trees have more defined branches and leaves. Grass stays visible as the camera moves, and light from placed fixtures carries through the scene. Scene and battle transitions prepare their shaders during loading and release temporary rendering resources afterward.
+
+[Loading screens](elyndor/previews/release-v159/loading-screens.jpg) · [Fountain and stairs](elyndor/previews/release-v159/brookstead.jpg) · [Interior windows](elyndor/previews/release-v159/windows.jpg) · [Snowfield comparison](elyndor/previews/release-v159/snowfield.jpg)
+
 ## Alpha Version 1.58 — Brookstead millstream and battlefield grass
 
 November 26, 2026

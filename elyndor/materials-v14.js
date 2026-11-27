@@ -20,10 +20,21 @@ mergeGroup=function(group){
    for(let i=0;i<p.count;i++){let u=uv?.getX(i)??0,v=uv?.getY(i)??0;if(base.userData.physicalUV){const wp=V3(p.getX(i),p.getY(i),p.getZ(i)).applyMatrix4(o.matrixWorld),wn=V3(n.getX(i),n.getY(i),n.getZ(i)).transformDirection(o.matrixWorld),x=wp.x,y=wp.y,z=wp.z,nx=Math.abs(wn.x),ny=Math.abs(wn.y),nz=Math.abs(wn.z);if(nx>=ny&&nx>=nz){u=z;v=y;if(woodKeys86.has(keyName)&&scale.z>scale.y)[u,v]=[v,u];}else if(ny>=nz){u=x;v=z;if(woodKeys86.has(keyName)&&scale.x>scale.z)[u,v]=[v,u];}else{u=x;v=y;if(woodKeys86.has(keyName)&&scale.x>scale.y)[u,v]=[v,u];}u*=density;v*=density;}coords[i*2]=u+phase;coords[i*2+1]=v+phase*.617;tiles[i]=tile;colors.set([base.color.r,base.color.g,base.color.b],i*3);emission.set([base.emissive.r*base.emissiveIntensity,base.emissive.g*base.emissiveIntensity,base.emissive.b*base.emissiveIntensity],i*3);}
    g.setAttribute('uv',new THREE.BufferAttribute(coords,2));g.setAttribute('color',new THREE.BufferAttribute(colors,3));g.setAttribute('tile',new THREE.BufferAttribute(tiles,1));g.setAttribute('localEmission',new THREE.BufferAttribute(emission,3));
   }
+  if(group.userData.landmarkLotCount){
+   let lot=o;while(lot!==group&&lot.userData.landmarkLot===undefined)lot=lot.parent;
+   g.userData.landmarkLot=lot.userData.landmarkLot??0;
+  }
   g.applyMatrix4(inverse.clone().multiply(o.matrixWorld));buckets.get(bucketKey).list.push(g);removed.push(o);
  });
  for(const o of removed)o.removeFromParent();for(const b of buckets.values()){
-  const g=new THREE.BufferGeometry(),attributes=['position','normal','uv',...(b.atlas?['color','tile','localEmission']:[])];for(const key of attributes){const size=key==='uv'?2:key==='tile'?1:3,arr=new Float32Array(b.list.reduce((sum,g)=>sum+g.attributes.position.count*size,0));let offset=0;for(const part of b.list){const src=part.attributes[key]?.array??new Float32Array(part.attributes.position.count*size).fill(key==='color'?1:0);arr.set(src,offset);offset+=src.length;}g.setAttribute(key,new THREE.BufferAttribute(arr,size));}g.computeBoundingSphere();const o=new THREE.Mesh(g,b.material);o.castShadow=o.receiveShadow=true;group.add(o);for(const part of b.list)part.dispose();
+  const g=new THREE.BufferGeometry(),attributes=['position','normal','uv',...(b.atlas?['color','tile','localEmission']:[])];for(const key of attributes){const size=key==='uv'?2:key==='tile'?1:3,arr=new Float32Array(b.list.reduce((sum,g)=>sum+g.attributes.position.count*size,0));let offset=0;for(const part of b.list){const src=part.attributes[key]?.array??new Float32Array(part.attributes.position.count*size).fill(key==='color'?1:0);arr.set(src,offset);offset+=src.length;}g.setAttribute(key,new THREE.BufferAttribute(arr,size));}
+  if(group.userData.landmarkLotCount){
+   // Preserve each town building's identity inside its shared material batches.
+   const ids=new Uint8Array(g.attributes.position.count);let offset=0;
+   for(const part of b.list){const end=offset+part.attributes.position.count;ids.fill(part.userData.landmarkLot,offset,end);offset=end;}
+   g.setAttribute('landmarkLot',new THREE.BufferAttribute(ids,1));
+  }
+  g.computeBoundingSphere();const o=new THREE.Mesh(g,b.material);o.castShadow=o.receiveShadow=true;group.add(o);for(const part of b.list)part.dispose();
  }surfaceAudit.merges++;
 };
 const terrainBeforeMaterialBiomes=addContinuousTerrain;

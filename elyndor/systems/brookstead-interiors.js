@@ -6,6 +6,36 @@ const brookRooms66=new Set(Object.keys(INTERIORS));
 const recordDialogueBefore67=startDialogue;
 startDialogue=function(...args){if(activeScene?.key!=='archives'||ambientSpeaker?.type!=='records')return recordDialogueBefore67(...args);const speaker=ambientSpeaker;ambientSpeaker=null;try{return recordDialogueBefore67(...args)}finally{ambientSpeaker=speaker}};
 const interior66={day:{value:1},time:{value:0},built:0};
+const roomGlazing66=new WeakMap();
+function roomWindowMaterial66(){
+ if(roomGlazing66.has(world))return roomGlazing66.get(world);
+ // Look out from the sash at standing eye height. The elevated gameplay
+ // camera can then show the horizon even when it points down into the room.
+ const m=new THREE.ShaderMaterial({uniforms:{
+  map:weather.cloudMap,time:weather.time,cover:weather.cloud,cloudHeight:weather.height,
+  solar:celestial31.sun,moon:celestial31.moon,solarColour:celestial31.colour,day:celestial31.day,
+  night:celestial31.night,twilight:celestial31.twilight,horizon:celestial31.horizon,zenith31:celestial31.zenith,
+  cloudLight:celestial31.cloudLight,cloudShade:celestial31.cloudShade
+ },vertexShader:`varying vec3 skyRay31,sashWorld66;
+  void main(){
+   vec3 p=(modelMatrix*vec4(position,1.)).xyz;
+   sashWorld66=modelMatrix[3].xyz;
+   vec2 bearing=normalize(sashWorld66.xz-cameraPosition.xz+vec2(.0001)),across=vec2(-bearing.y,bearing.x);
+   vec2 sight=bearing+across*dot(p.xz-sashWorld66.xz,across)*.48;
+   skyRay31=vec3(sight.x,.09+(p.y-sashWorld66.y)*.48+clamp((sashWorld66.y-3.5)*.028,-.04,.08),sight.y);
+   gl_Position=projectionMatrix*viewMatrix*vec4(p,1.);
+  }`,fragmentShader:'varying vec3 sashWorld66;uniform vec3 cloudLight,cloudShade;\n'+skyFragment31
+   .replace('cameraPosition.xz','sashWorld66.xz').replace('cloudHeight-cameraPosition.y','cloudHeight-sashWorld66.y')
+   .replace('gl_FragColor=vec4(c,1.);',`
+   c=mix(c,mix(cloudLight,cloudShade,cloud*.75),cloud*.78*smoothstep(.02,.12,d.y));
+   float a=atan(d.x,d.z),ridge=.021+.026*sin(5.*a)+.013*sin(13.*a)+.005*cos(41.*a);
+   float edge=max(.003,fwidth(d.y-ridge));
+   vec3 distanceColour=mix(zenith31,horizon,.45)*mix(.31,.54,day);
+   c=mix(distanceColour,c,smoothstep(ridge-edge,ridge+edge,d.y));
+   gl_FragColor=vec4(c,1.);`)});
+ m.name='Exterior sky through interior glass';m.userData.keepSolidForPlayerReveal=true;m.userData.preserveSurfaceShader=true;
+ roomGlazing66.set(world,m);return m;
+}
 let roomSupportCapture66=false;
 function captureRoomProp66(name,x,y,z,build){
  const start=world.children.length,result=build(),nodes=world.children.slice(start);if(!roomSupportCapture66)return result;
@@ -222,9 +252,15 @@ function buildCivicFixtures67(id){
  }
 }
 function buildRoomAir66(){
- const g=new THREE.BufferGeometry(),p=new Float32Array(64*3),rng=seeded(66013);for(let i=0;i<64;i++)p.set([(rng()-.5)*18,.6+rng()*5,(rng()-.5)*13],i*3);g.setAttribute('position',new THREE.BufferAttribute(p,3));
+ const g=new THREE.BufferGeometry(),p=[],rng=seeded(66013);
+ // Dust catches the light along the window shaft, from the sill to the floor.
+ for(let i=0;i<16;i++){
+  const t=rng();
+  p.push(mix(-9.7,-1.7,t)+(rng()-.5)*.8,mix(4.1,.35,t)+(rng()-.5)*.45,mix(-3.8,1.6,t)+(rng()-.5)*(1.+t));
+ }
+ g.setAttribute('position',new THREE.Float32BufferAttribute(p,3));
  const m=new THREE.ShaderMaterial({transparent:true,depthWrite:false,depthTest:true,blending:THREE.AdditiveBlending,uniforms:{time:interior66.time,day:interior66.day},vertexShader:'uniform float time;varying float a;void main(){vec3 p=position;p.y+=sin(time*.21+p.x)*.24;p.x+=sin(time*.13+p.z)*.13;vec4 v=modelViewMatrix*vec4(p,1.);gl_PointSize=1.5;gl_Position=projectionMatrix*v;a=.12+.10*sin(time*.37+p.x+p.z);}',fragmentShader:'uniform float day;varying float a;void main(){float d=length(gl_PointCoord-.5);gl_FragColor=vec4(1.,.86,.62,(1.-smoothstep(.1,.5,d))*a*(.3+day*.7));}'});
- const dust=new THREE.Points(g,m);dust.name='Slow interior dust';dust.userData.dynamicFX=true;world.add(dust);
+ const dust=new THREE.Points(g,m);dust.name='Slow interior dust';dust.userData.dynamicFX=true;world.add(dust);world.userData.roomDust31=dust;
  const shaftMaterial=new THREE.ShaderMaterial({transparent:true,depthWrite:false,depthTest:true,side:THREE.DoubleSide,blending:THREE.AdditiveBlending,uniforms:{day:interior66.day,time:interior66.time},vertexShader:'varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:'varying vec2 vUv;uniform float day,time;void main(){float soft=sin(vUv.y*3.14159);float drift=.8+.2*sin(vUv.y*14.+vUv.x*23.+time*.12);gl_FragColor=vec4(1.,.88,.66,soft*drift*day*.018);}'});
  for(let i=0;i<3;i++){const from=V3(-9.7,4.1,-3.8+(i-1)*.40),to=V3(-1.7+i*.4,.08,1.6+(i-1)*1.2),delta=from.clone().sub(to);const shaft=new THREE.Mesh(geo16('room66-window-shaft',()=>new THREE.CylinderGeometry(.11,.62,1,10,1,true)),shaftMaterial);shaft.position.copy(from).add(to).multiplyScalar(.5);shaft.scale.y=delta.length();shaft.quaternion.setFromUnitVectors(V3(0,1,0),delta.normalize());shaft.name='Soft window daylight';shaft.userData.dynamicFX=true;world.add(shaft);}
 }
@@ -238,8 +274,8 @@ buildJourneyInterior=function(id,spawn){
  backRail67('Walnut wainscot',1.05,2.1,'panel29','#c9b798',guestDoor);for(const x of[-10.03,10.03])roomPart66('Side wall wainscot',x,1.05,-.2,.16,2.1,15.5,'panel29','#c0ae8f');
  for(const x of[-10,-6.7,-1.5,1.5,6.7,10])roomPart66('Structural wall post',x,3.7,-7.58,.23,7.4,.28,'darkWood','#a08c6d');
  for(const y of[.25,2.13,5.8,7.45]){backRail67('Back wall timber rail',y,.2,'wood','#b09a77',guestDoor);for(const x of[-10.02,10.02])roomPart66('Side wall timber rail',x,y,-.2,.23,.2,15.4,'wood','#b09a77');}
- world.userData.windows66=[];for(const [x,z]of[[-10.04,-3.8],[-10.04,3.6],[10.04,2.9]]){const pane=roomPart66('Lead-glass window',x,3.5,z,.08,2.3,1.5,'window','#c1d6d8');pane.material=new THREE.MeshStandardMaterial({map:textures.window,color:'#9eb9c3',emissive:'#bed0d3',emissiveIntensity:.25,transparent:true,opacity:.94,roughness:.22});pane.castShadow=false;pane.userData.dynamicFX=true;world.userData.windows66.push(pane);for(const yy of[2.28,4.72])roomPart66('Window frame',x,yy,z,.27,.14,1.8,'darkWood','#a38b65');for(const dz of[-.82,0,.82])roomPart66('Window mullion',x,3.5,z+dz,.16,2.3,.09,'darkWood','#8f7958');roomPart66('Window crossbar',x,3.5,z,.17,.09,1.65,'darkWood','#8f7958');roomPart66('Window sill',x,2.25,z,.5,.18,2,'wood','#bca479');}
- for(const x of[-3.8,3.8]){const pane=roomPart66('High lead-glass transom',x,6.5,-7.61,1.1,1.0,.08,'window','#c1d6d8');pane.material=new THREE.MeshStandardMaterial({map:textures.window,color:'#9eb9c3',emissive:'#bed0d3',emissiveIntensity:.25,transparent:true,opacity:.94,roughness:.22});pane.castShadow=false;pane.userData.dynamicFX=true;world.userData.windows66.push(pane);for(const side of[-1,1]){roomPart66('Transom oak frame',x+side*.62,6.5,-7.53,.12,1.25,.19,'darkWood','#9a8564');roomPart66('Transom oak frame',x,6.5+side*.58,-7.53,1.35,.12,.19,'darkWood','#9a8564');}roomPart66('Transom mullion',x,6.5,-7.52,.05,1.0,.12,'metal','#817458');}
+ world.userData.windows66=[];for(const [x,z]of[[-10.04,-3.8],[-10.04,3.6],[10.04,2.9]]){const pane=roomPart66('Lead-glass window',x,3.5,z,.08,2.3,1.5,'window','#c1d6d8');pane.material=roomWindowMaterial66();pane.castShadow=false;pane.userData.dynamicFX=true;world.userData.windows66.push(pane);for(const yy of[2.28,4.72])roomPart66('Window frame',x,yy,z,.27,.14,1.8,'darkWood','#a38b65');for(const dz of[-.82,0,.82])roomPart66('Window mullion',x,3.5,z+dz,.16,2.3,.09,'darkWood','#8f7958');roomPart66('Window crossbar',x,3.5,z,.17,.09,1.65,'darkWood','#8f7958');roomPart66('Window sill',x,2.25,z,.5,.18,2,'wood','#bca479');}
+ for(const x of[-3.8,3.8]){const pane=roomPart66('High lead-glass transom',x,6.5,-7.61,1.1,1.0,.08,'window','#c1d6d8');pane.material=roomWindowMaterial66();pane.castShadow=false;pane.userData.dynamicFX=true;world.userData.windows66.push(pane);for(const side of[-1,1]){roomPart66('Transom oak frame',x+side*.62,6.5,-7.53,.12,1.25,.19,'darkWood','#9a8564');roomPart66('Transom oak frame',x,6.5+side*.58,-7.53,1.35,.12,.19,'darkWood','#9a8564');}roomPart66('Transom mullion',x,6.5,-7.52,.05,1.0,.12,'metal','#817458');}
  if(guestDoor){roomDoor29(0,-7.54);createInteraction('sleep',0,-6.1,'Rest in the guest rooms');}
  roomPart66('Exterior door stone threshold',0,.025,7.25,2.7,.08,.48,'wall','#bdb6a1');
  obstacle(0,-7.9,21,.6,'interior wall');for(const x of[-10.3,10.3])obstacle(x,-.2,.6,15.6,'interior wall');
@@ -270,7 +306,6 @@ updateLighting=function(...args){const r=roomLightBefore66(...args);if(!brookRoo
  hemi.color.set(day>.2?'#d6e1df':'#9cacc2');hemi.groundColor.set('#705849');hemi.intensity=.43+day*.38;if(skyBounce17){skyBounce17.color.set('#dfb891');skyBounce17.intensity=.27;}renderer.toneMappingExposure=1.12;
  const woodland=fernRoomSpecs[activeScene.key],forge=activeScene.key==='brookForge'||woodland?.category==='equipment',inn=INTERIORS[activeScene.key]?.type==='inn',hearth=woodland?.hearth?V3(...woodland.hearth):inn?V3(6,1.7,-5.8):forge?V3(-6,1.7,-5.8):V3(-7.4,2,-4.1),anchors=[hearth,V3(-8,3,-.8),V3(8,3,.7),V3(-4,2.6,-4),V3(4,3,-4.5),V3(0,3.4,3)];
  world.userData.lanterns.forEach((l,i)=>{if((l.userData.effectUntil??0)>clock)return;l.position.copy(anchors[i]);l.color.set(i===0&&forge?'#ff9a42':'#ffc486');l.intensity=(i===0?(forge?25:inn?21:12):8)*(1+night*.62)*(1+Math.sin(clock*(1.8+i*.17)+i)*.018);l.distance=i===0?9:7;l.decay=2;});
- for(const m of world.userData.windows66??[])m.material.emissiveIntensity=.08+day*.30;
  sceneryLight.direction.value.copy(sun.position).sub(sun.target.position).normalize();weather.sun.value.copy(sceneryLight.direction.value);sceneryLight.shadowStrength.value=.47;
  return r;
 };

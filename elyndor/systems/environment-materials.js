@@ -11,7 +11,8 @@ async function texture103(key,dataKind=null){
  const work=(async()=>{const row=source103(key);if(!row)throw Error('Missing environment art '+key);const url=dataKind?row.pbr[dataKind].gpu:row.url;
   if(!dataKind){for(const [alias,t]of Object.entries(textures))if(assets.images[alias]===url&&t?.image?.width){t.userData.shared103=true;t.userData.canonical103=key;envPbr103.maps.set(id,t);return t;}}
   let image=await loadImage116(url,key);const cap=mobileStartup116()?(dataKind?256:512):Infinity;if(Math.max(image.width,image.height)>cap){const scale=cap/Math.max(image.width,image.height),c=document.createElement('canvas');c.width=Math.max(1,Math.round(image.width*scale));c.height=Math.max(1,Math.round(image.height*scale));c.getContext('2d').drawImage(image,0,0,c.width,c.height);image.src='';image=c;}const t=new THREE.Texture(image);t.colorSpace=dataKind?THREE.NoColorSpace:THREE.SRGBColorSpace;t.minFilter=THREE.LinearMipmapLinearFilter;t.magFilter=THREE.LinearFilter;t.wrapS=t.wrapT=row.transparent?THREE.ClampToEdgeWrapping:THREE.RepeatWrapping;t.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());t.needsUpdate=true;t.userData={pinnedMap17:true,shared103:true,canonical103:key,data103:dataKind};envPbr103.maps.set(id,t);return t;
- })();envPbr103.pending.set(id,work);return work;
+ })();envPbr103.pending.set(id,work);
+ try{return await work;}finally{envPbr103.pending.delete(id);}
 }
 // Earlier loaders call these by name, so they already reuse the base decoder.
 loadSurface100=async function(key){if(materials100.cache.has(key))return materials100.cache.get(key);const t=await texture103(key);materials100.cache.set(key,t);materials100.loads++;return t;};
@@ -25,12 +26,15 @@ worldArray102=function(keys){
 };
 const environmentLoadBefore103=loadAssets;
 loadAssets=async function(...args){const r=await environmentLoadBefore103(...args);
- for(const [key,target]of Object.entries(assets.environment103.aliases)){if(target.startsWith('@'))continue;const t=await texture103(target);textures[key]=t;surface67.byMap.set(t,key)}
+ const aliases=Object.entries(assets.environment103.aliases).filter(([,target])=>!target.startsWith('@'));
+ const targets=[...new Set(aliases.map(([,target])=>target))];
+ for(let i=0;i<targets.length;i+=4)await Promise.all(targets.slice(i,i+4).map(key=>texture103(key)));
+ for(const [key,target]of aliases){const t=envPbr103.maps.get(target+':albedo');textures[key]=t;surface67.byMap.set(t,key);}
  // Every opaque atlas family receives the actual native replacement, including
  // book bindings, pottery, textiles, signs, metals and glass.
  const unique=[...new Set(terrainTileNames.map(canonical103).filter(k=>source103(k)&&!source103(k).transparent))];SURFACES102.splice(0,SURFACES102.length,...unique);
  for(let i=0;i<unique.length;i+=4)await Promise.all(unique.slice(i,i+4).map(loadWorldSurface102));
- environment102.surfaces.dispose();environment102.surfaces=worldArray102(SURFACES102);
+ environment102.surfaces=worldArray102(SURFACES102);
  if(await packedPbr138(unique)){
   envPbr103.surfaceData=gpuDelivery138.arrays.surfaceData;envPbr103.groundData=gpuDelivery138.arrays.groundData;
   await Promise.all(['barkOak','barkBirch','barkPine','botanicalLeaf102'].map(k=>texture103(k,'normalRough')));

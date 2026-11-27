@@ -191,7 +191,8 @@ function buildSettlements(){
  }
  for(const[x,z,w,d]of[[-46,-65,3,1.6],[114,-114,3,1.2],[127,-59,2,1.1]])gardenEdge(x,z,w,d);
  for(const[x,z]of[[-91,-84],[-55,-80],[110,-79],[144,-74],[20,-149]]){const y=groundAt(x,z);box(x,y+1.4,z,.13,2.8,.13,'wood','#665b43');beam(V3(x,y+2.75,z),V3(x+.55,y+2.75,z),.055,'metal','#675d46');lantern(x+.55,y+2.48,z);}
- for(const t of TOWNS){const rand=seeded(t.x*123+t.z);for(let i=0;i<10;i++){let a=rand()*TAU,r=t.r*(.65+rand()*.35),x=t.x+Math.cos(a)*r,z=t.z+Math.sin(a)*r;if(roadDistance(x,z)<5||channelDistance(x,z)<2)continue;fence([x-2,z],[x+2,z],t.id!=='highmere');}}
+ // Brookstead has fitted enclosures around its gardens and fields.
+ if(activeScene?.key!=='brookstead')for(const t of TOWNS){const rand=seeded(t.x*123+t.z);for(let i=0;i<10;i++){let a=rand()*TAU,r=t.r*(.65+rand()*.35),x=t.x+Math.cos(a)*r,z=t.z+Math.sin(a)*r;if(roadDistance(x,z)<5||channelDistance(x,z)<2)continue;fence([x-2,z],[x+2,z],t.id!=='highmere');}}
 }
 function buildGlobalWater(){
  buildWater({waterX:-43});const pos=[],uv=[],across=[],idx=[];
@@ -203,8 +204,8 @@ function buildGlobalWater(){
 }
 function buildWorkingCanal(){
  const x=-132,z=55,y=groundAt(-126,55),gate=new THREE.Group();gate.position.set(x,-1.3,z-8);world.add(gate);for(let i=0;i<7;i++)box((i-3)*.95,.1,0,.9,2,.25,'wood','#86714d',gate);for(const yy of[-.5,.6])box(0,yy,.18,6.8,.16,.14,'metal','#6a705b',gate);world.userData.gate=gate;
- const crank=new THREE.Group();crank.position.set(-125,y+1.3,z-8);world.add(crank);const wheel=mesh(new THREE.TorusGeometry(.52,.065,6,24),material('metal','#9e8860'),0,0,0,crank);wheel.rotation.y=Math.PI/2;for(let i=0;i<4;i++)beam(V3(),V3(0,Math.cos(i*Math.PI/2)*.5,Math.sin(i*Math.PI/2)*.5),.035,'metal','#b3a579',crank);box(-125,y+.6,z-8,.4,1.2,.4,'wall','#c4b89b');world.userData.crank=crank;obstacle(-125,z-8,.65,.65,'winch');
- const p={x:-123,z:50},pump=new THREE.Group();pump.position.set(p.x,groundAt(p.x,p.z),p.z);world.add(pump);box(0,.18,0,2.2,.36,2.2,'wall','#bcb293',pump);beam(V3(0,.2,0),V3(0,1.8,0),.18,'metal','#537269',pump);beam(V3(0,1.65,0),V3(.7,1.65,0),.11,'metal','#718478',pump);beam(V3(.7,1.65,0),V3(.7,1.2,0),.11,'metal','#718478',pump);beam(V3(-.7,1.3,0),V3(.1,2.1,0),.06,'metal','#acaa8d',pump);box(.75,.5,0,.9,1,1.4,'wall','#b5af93',pump);world.userData.pump=pump;obstacle(p.x,p.z,1.7,1.4,'pump');
+ const crank=new THREE.Group();crank.position.set(-125,y+1.3,z-8);world.add(crank);const wheel=mesh(new THREE.TorusGeometry(.52,.065,6,24),material('metal','#9e8860'),0,0,0,crank);wheel.rotation.y=Math.PI/2;for(let i=0;i<4;i++)beam(V3(),V3(0,Math.cos(i*Math.PI/2)*.5,Math.sin(i*Math.PI/2)*.5),.035,'metal','#b3a579',crank);world.userData.crank=crank;obstacle(-125,z-8,.65,.65,'winch');
+ const p={x:-123,z:50},pump=new THREE.Group();pump.position.set(p.x,groundAt(p.x,p.z),p.z);world.add(pump);world.userData.pump=pump;obstacle(p.x,p.z,1.7,1.4,'pump');
  const wheelG=new THREE.Group();wheelG.position.set(-128,-.5,66);world.add(wheelG);for(const xx of[-.4,.4]){const o=mesh(new THREE.TorusGeometry(2.1,.13,6,32),material('wood','#8c7752'),xx,0,0,wheelG);o.rotation.y=Math.PI/2;}for(let i=0;i<18;i++){const a=i*TAU/18,o=box(0,Math.cos(a)*2.05,Math.sin(a)*2.05,1.2,.24,.7,'wood','#a08c60',wheelG);o.rotation.x=-a;beam(V3(),V3(0,Math.cos(a)*2,Math.sin(a)*2),.07,'wood','#a69164',wheelG);}world.userData.waterwheel=wheelG;
 }
 function buildNature(){

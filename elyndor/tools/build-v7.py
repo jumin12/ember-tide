@@ -33,7 +33,6 @@ def main():
    for directions in state['frames'].get('animations',{}).values():
     for frames in directions.values():files.update(folder/p for p in frames)
  for category in ['images','portraits','hudPortraits','guide']:files.update(ROOT/p for p in manifest.get(category,{}).values())
- files.update(ROOT/q['file'] for q in manifest.get('loadingScreens',{}).values())
  signature=hashlib.sha256(str(FINAL).encode())
  for p in sorted(files):signature.update(str(p.relative_to(ROOT)).encode());signature.update(p.read_bytes())
  signature=signature.hexdigest();cache=OUT/'assets-v7.cache.json';meta_file=OUT/'assets-v7.cache-meta.json'
@@ -69,19 +68,13 @@ def main():
    'THREE':(ROOT/'three.vendor.js').read_text(encoding='utf-8'),'ASSETS':'window.__assetBundle36','BOOT_ASSETS':package_assets36(assets)})
  package_runtime136(ROOT,parts,bake)
  if len([n for names in graph['sections'].values() for n in names])!=len({n for names in graph['sections'].values() for n in names}):raise ValueError('Duplicate modules in the build graph')
- shots=manifest.get('loadingScreens',{})
- fresh_shots=ROOT/'elyndor/assets/source/environment-pbr-v103/loading/manifest.json'
- if fresh_shots.exists():shots=json.loads(fresh_shots.read_text(encoding="utf-8"))
- fresh_shots=ROOT/'elyndor/assets/source/loading-v106/manifest.json'
- if fresh_shots.exists():shots=json.loads(fresh_shots.read_text(encoding="utf-8"))
- fresh_shots=ROOT/'elyndor/assets/source/loading-v116/manifest.json'
- if fresh_shots.exists():shots=json.loads(fresh_shots.read_text(encoding="utf-8"))
- if FINAL and not shots:raise ValueError('An actual in-game river loading screenshot is required')
+ shots=json.loads(read('assets/source/loading-v116/manifest.json'))
+ if not {'river','inn','shop','archives'}<=shots.keys():raise ValueError('Missing a destination loading photograph')
  for q in shots.values():
   with Image.open(ROOT/q['file']) as im:
    if im.width<640 or im.height<360:raise ValueError('Loading illustrations must retain their full native resolution')
    im.verify()
- parts['LOADING_SCENES']=''.join('<figure class="'+('lore-active' if i==0 else '')+'" data-lore="'+key+'" style="--scene:'+str(i)+'"><img '+('src' if key=='river' else 'data-src')+'="'+runtime_file136(ROOT,(ROOT/q['file']).read_bytes(),'webp')+'" alt="'+q['name']+'"><figcaption>'+q['name']+'</figcaption></figure>' for i,(key,q) in enumerate(shots.items()))
+ parts['LOADING_SCENES']=''.join('<figure class="'+('lore-active' if key=='river' else '')+'" data-lore="'+key+'" style="--scene:'+str(i)+';--portrait-focus:'+str(q['portraitFocus'])+'%"><img '+('src' if key=='river' else 'data-src')+'="'+runtime_file136(ROOT,(ROOT/q['file']).read_bytes(),'webp')+'" alt="'+q['name']+'"><figcaption>'+q['name']+'</figcaption></figure>' for i,(key,q) in enumerate(shots.items()))
  parts['BRAND_CRYSTAL']=assets['images']['ui26_logo']
  src=read('index.source.html')
  for key,value in parts.items():src=src.replace('/*__'+key+'__*/',value)

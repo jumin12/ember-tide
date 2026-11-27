@@ -119,7 +119,11 @@ setupPost=function(){postBefore41();const shadowRender=renderer.shadowMap.render
 // Stable world cells retain their seeds when the player crosses a boundary.
 // Only the newly exposed outer cells change, beyond the visible dust fade.
 const dustBefore41=makeWorldDust22;
-makeWorldDust22=function(){dustBefore41();const q=world.userData.dust22;if(!q)return;const count=1200,g=q.mesh.geometry;
+const dustPerCell41=18;
+makeWorldDust22=function(){dustBefore41();const data=world.userData,q=data.dust22;
+ // Rooms have window or lamplight dust. Outdoors the shadow-aware cells supply both dust and fireflies.
+ if(data.motes&&(q||data.roomDust31))data.motes.visible=false;
+ if(!q)return;const count=25*dustPerCell41,g=q.mesh.geometry;
  g.setAttribute('position',new THREE.Float32BufferAttribute(new Float32Array(count*3),3));g.setAttribute('dustSeed22',new THREE.Float32BufferAttribute(new Float32Array(count*3),3));q.cells41=new Map();q.key=null;cinema22.particles=count;
  const m=q.mesh.material;
  m.uniforms.shadowMatrix41={value:sun.shadow.matrix};m.uniforms.shadowMap41={value:null};m.uniforms.hasShadow41={value:0};
@@ -134,7 +138,7 @@ updateWorldDust22=function(){const q=world?.userData.dust22;if(!q?.cells41)retur
  const p=q.mesh.geometry.attributes.position,s=q.mesh.geometry.attributes.dustSeed22,mod=n=>(n%5+5)%5;
  for(let x=cx-2;x<=cx+2;x++)for(let z=cz-2;z<=cz+2;z++){
   const slot=mod(x)*5+mod(z),id=x+','+z;if(q.cells41.get(slot)===id)continue;q.cells41.set(slot,id);
-  const rng=seeded(Math.imul(x+10031,73856093)^Math.imul(z+9061,19349663));for(let i=0;i<48;i++){const px=x*32+rng()*32,pz=z*32+rng()*32,n=slot*48+i;p.setXYZ(n,px,heightAt(px,pz)+.7+rng()*5.2,pz);s.setXYZ(n,rng(),rng(),rng());}
+  const rng=seeded(Math.imul(x+10031,73856093)^Math.imul(z+9061,19349663));for(let i=0;i<dustPerCell41;i++){const px=x*32+rng()*32,pz=z*32+rng()*32,n=slot*dustPerCell41+i;p.setXYZ(n,px,heightAt(px,pz)+.7+rng()*5.2,pz);s.setXYZ(n,rng(),rng(),rng());}
  }
  p.needsUpdate=s.needsUpdate=true;
 };

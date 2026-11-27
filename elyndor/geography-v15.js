@@ -8,7 +8,13 @@ POIS.harbor={name:'Valenne Coastal Harbor',id:'harbor',aliases:['harbor'],bounds
 SCENES.harbor={name:POIS.harbor.name,sub:'Coastal harbor · Valenne',view:'town',kit:'brookstead',seed:15152,path:[],interact:[]};PLACES.harbor=POIS.harbor.spawn;
 const HORIZON_CITADEL={name:'Distant Ruined Citadel',node:atlasCoord15(780,326),description:'An unexplored landmark beyond the northern ridges. Later development is not yet established.'};
 POIS.brookstead.services=['Inn and lodging','General supply shop','Weapons and armor shop'];POIS.fern.services=[];POIS.highmere.services=['Inn and lodging','Royal aid office','Aid courtyard','Royal Archives','Council'];POIS.alder.services=[];POIS.relief.services=[];POIS.nearbySite.name='Nearby Network Site';
-const reliefBytes15=Uint8Array.from(atob(WORLD_RELIEF_V15.bytes),c=>c.charCodeAt(0));
+function decodeAtlasBytes(source){
+ if(typeof Uint8Array.fromBase64==='function')return Uint8Array.fromBase64(source);
+ const raw=atob(source),bytes=new Uint8Array(raw.length);
+ for(let i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);
+ return bytes;
+}
+const reliefBytes15=decodeAtlasBytes(WORLD_RELIEF_V15.bytes);
 function reliefSample15(x,z,channel=0){const w=WORLD_RELIEF_V15.w,h=WORLD_RELIEF_V15.h,fx=clamp((x+512)/1024*(w-1),0,w-1),fz=clamp((z+288)/576*(h-1),0,h-1),ix=Math.floor(fx),iz=Math.floor(fz),nx=Math.min(w-1,ix+1),nz=Math.min(h-1,iz+1),u=fx-ix,v=fz-iz;return mix(mix(reliefBytes15[(iz*w+ix)*2+channel],reliefBytes15[(iz*w+nx)*2+channel],u),mix(reliefBytes15[(nz*w+ix)*2+channel],reliefBytes15[(nz*w+nx)*2+channel],u),v);}
 let reliefScale15=1/3,reliefOffset15=-16;
 function macroBase15(x,z){if(x<LAND.minX||x>LAND.maxX||z<LAND.minZ||z>LAND.maxZ)return-9;return reliefSample15(x,z)*reliefScale15+reliefOffset15;}

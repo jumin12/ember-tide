@@ -223,7 +223,7 @@ buildSettlements=function(){
  for(let i=0;i<10;i++){const depth=cross.length/10,xx=cross.start-(i+.5)*depth,top=cross.lo+(cross.hi-cross.lo)*(i+1)/10;box(xx,(top+cross.lo)/2-.03,cross.z,depth+.035,top-cross.lo+.06,cross.depth,'cobble','#d9dccb');box(xx+depth*.414,top+.015,cross.z,.13,.06,cross.depth+.1,'wall','#edf0e5');}
  brookFountain();
  bench(-130,60,Math.PI/2);bench(-110,73,-Math.PI/2);
- for(const f of[[-121,105,-103,105],[-100,103,-100,95],[-103,88,-100,88],[-116,72,-112,72],[-108,57,-100,57],[-100,57,-100,63],[-157,82,-151,82],[-161,100,-155,100],[-93,119,-81,119],[-81,119,-81,112],[-120,36,-108,36],[-96,130,-82,130],[-82,130,-82,122],[-96,130,-96,124]])brookFence(...f);
+ for(const f of[[-121,105,-103,105],[-100,103,-100,95],[-108,57,-100,57],[-100,57,-100,63],[-93,119,-81,119],[-81,119,-81,112],[-120,36,-108,36],[-96,130,-82,130],[-82,130,-82,122],[-96,130,-96,124]])brookFence(...f);
  for(const [x,z]of[[-146,117],[-125,117],[-128,74],[-130,63],[-111,65],[-108,52],[-146,75],[-159,80],[-160,66],[-106,102],[-95,109]]){const y=heightAt(x,z);box(x,y+1.7,z,.17,3.4,.17,'darkWood','#8a6041');beam(V3(x,y+3.4,z),V3(x+.7,y+3.4,z),.07,'wood','#aa7d51');lantern(x+.7,y+2.96,z);}
  world.userData.brookstead={terraces:[1.3,3.8,6.2],referenceLayout:true};
 };

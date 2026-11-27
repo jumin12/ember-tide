@@ -6,6 +6,9 @@
 const travelLighting150={materials:new WeakSet()};
 function prepareTravelLighting150(a){
  const o=a?.mesh,m=o?.material;if(!m?.map||travelLighting150.materials.has(m))return;travelLighting150.materials.add(m);
+ // The first actor tick and the scene builder can run in either order.
+ // Install the common surface shader before its actor-specific extensions.
+ addCloudLighting(m);
  const enabled={value:0},height={value:1},radius={value:new THREE.Vector2()},before=m.onBeforeCompile,key=m.customProgramCacheKey.bind(m);
  m.onBeforeCompile=function(s,...args){before.call(this,s,...args);s.uniforms.travelLighting150=enabled;s.uniforms.travelHeight150=height;s.uniforms.travelRadius150=radius;
   s.vertexShader='uniform float travelLighting150,travelHeight150;\n'+s.vertexShader;

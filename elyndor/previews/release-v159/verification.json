@@ -1,0 +1,32 @@
+{
+  "version": "Alpha Version 1.59",
+  "previousCommit": "3d86751e4ef37fd42375616f0e0bcb119e7c275e",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 8102788,
+    "sha256": "8b2a7ce8d01cd9177354218fad1c6897a3e2489eb2e23a956ca96a82923ecf66",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "gameplaySHA256": "d2c541c077e46b04e30a60cf5ec4c1686d64f1086770bfd54c1eb6a9bd443859",
+  "checks": {
+    "loadingDestinations": [
+      "brookInn",
+      "brookShop",
+      "archives",
+      "square"
+    ],
+    "nativeLoadingImageDimensions": [
+      1920,
+      1080
+    ],
+    "loadingImageBytes": 1796334,
+    "coldStartAndPortraitLoading": true,
+    "battleArenasEnteredAndExited": 20,
+    "sceneCacheSteps": 21,
+    "brooksteadHouseContactPositions": 108,
+    "woodlandSaveFlags": "existing journey flags",
+    "pumpRepairAndReload": true,
+    "privateHomeWindowTimes": 4
+  }
+}

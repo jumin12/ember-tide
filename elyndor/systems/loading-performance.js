@@ -14,7 +14,8 @@ async function compileVisible136(){
  // a different colour-output program and blocks again on the first draw.
  const target=renderer.getRenderTarget(),clip=renderer.clippingPlanes,visible=new THREE.Group(),empty=new THREE.Scene();
  visible.traverse=fn=>scene.traverseVisible(o=>{if(o.layers.test(camera.layers))fn(o);});visible.traverseVisible=()=>{};
- const colour=warmupRenderTarget(post.target),mirror=water?.visible?warmupRenderTarget(reflectionTarget):null;
+ const hasMirror=water?.visible||world?.userData.waterPools?.some(p=>p.visible);
+ const colour=warmupRenderTarget(post.target),mirror=hasMirror?warmupRenderTarget(reflectionTarget):null;
  try{
   if(mirror){
    renderer.setRenderTarget(mirror);renderer.clippingPlanes=[new THREE.Plane(V3(0,1,0),-water.position.y-.015)];
@@ -51,10 +52,16 @@ loadAssets=async function(...args){const [result]=await Promise.all([assetLoadBe
 
 // Link only visible battle materials against their real HDR output. The old
 // full-scene compile also linked the hidden town with combat light counts.
-function prepareBattlePrograms137(c){
+async function prepareBattlePrograms137(c){
  const old=renderer.getRenderTarget(),visible=new THREE.Group();
  visible.traverse=fn=>c.scene.traverseVisible(o=>{if(o.layers.test(camera.layers))fn(o);});visible.traverseVisible=()=>{};
- try{renderer.setRenderTarget(makeArenaPost89().target);renderer.compile(visible,camera,c.scene);}finally{renderer.setRenderTarget(old);}
+ let ready;
+ try{
+  renderer.setRenderTarget(makeArenaPost89().target);
+  if(renderer.compileAsync)ready=renderer.compileAsync(visible,camera,c.scene);
+  else renderer.compile(visible,camera,c.scene);
+ }finally{renderer.setRenderTarget(old);}
+ await ready;
 }
 const coverStartBefore137=startEncounterCover53;
 startEncounterCover53=function(phase,duration){

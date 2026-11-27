@@ -342,6 +342,8 @@ function landmarkBridge(parent){
  }
 }
 function landmarkFountain(parent){
+ parent.userData.keepSolidForPlayerReveal=true;
+ const supply={get value(){return Number(brookFountainRunning221());}};
  const lathe=(name,profile,kind,tint,y=0)=>landmarkPiece(parent,geo16('brookstead-fountain-'+name,()=>
   new THREE.LatheGeometry(profile.map(([r,h])=>new THREE.Vector2(r,h)),24)),kind,tint,0,y,0);
  lathe('plinth',[[.01,0],[1.91,0],[1.91,.10],[1.76,.15],[.01,.15]],'cobble','#b6ada0');
@@ -349,12 +351,12 @@ function landmarkFountain(parent){
  lathe('column',[[.39,.37],[.43,.52],[.25,.64],[.20,1.14],[.36,1.22],[.58,1.38],[.59,1.46],[.45,1.47],[.08,1.31]],'wall','#d9d1ba');
  const waterMat=new THREE.MeshStandardMaterial({color:'#6ea8ab',emissive:'#376672',emissiveIntensity:.66,roughness:.26,metalness:.07,envMap:surface67.outdoor,envMapIntensity:.45});
  waterMat.onBeforeCompile=s=>{
-  s.uniforms.basinTime=windUniforms.time;
+  s.uniforms.basinTime=windUniforms.time;s.uniforms.basinSupply=supply;
   s.vertexShader='varying vec2 basinUV;\n'+s.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nbasinUV=uv-.5;');
-  s.fragmentShader='uniform float basinTime;varying vec2 basinUV;\n'+s.fragmentShader.replace('#include <emissivemap_fragment>',`#include <emissivemap_fragment>
+  s.fragmentShader='uniform float basinTime,basinSupply;varying vec2 basinUV;\n'+s.fragmentShader.replace('#include <emissivemap_fragment>',`#include <emissivemap_fragment>
    float radial=length(basinUV);
    float ripple=sin(radial*92.-basinTime*3.6)*smoothstep(.04,.23,radial)*(1.-smoothstep(.025,.13,fwidth(radial)));
-   totalEmissiveRadiance+=vec3(.024,.054,.061)*(.7+.65*ripple);`);
+   totalEmissiveRadiance+=vec3(.024,.054,.061)*(.7+.65*ripple*basinSupply);`);
  };
  waterMat.customProgramCacheKey=()=>'brookstead-basin-ripples';waterMat.userData.preserveSurfaceShader=true;
  const pool=new THREE.Mesh(geo16('brookstead-fountain-pool',()=>new THREE.CylinderGeometry(1.41,1.40,.04,32)),waterMat);
@@ -363,7 +365,14 @@ function landmarkFountain(parent){
  const spill=geo16('brookstead-fountain-spill',()=>new THREE.TubeGeometry(new THREE.QuadraticBezierCurve3(
   V3(.22,1.43,0),V3(.89,1.98,0),V3(1.08,.43,0)),14,.047,5,false));
  const clear=new THREE.MeshStandardMaterial({color:'#d7edee',emissive:'#6894a0',emissiveIntensity:.78,roughness:.18,metalness:.09});
- for(let i=0;i<4;i++){const jet=new THREE.Mesh(spill,clear);jet.rotation.y=i*Math.PI*.5+.40;parent.add(jet);}
+ // Keep the four jets in one separate batch, including in cached atlas clones.
+ const jets=new THREE.Group();
+ for(let i=0;i<4;i++){const jet=new THREE.Mesh(spill,clear);jet.rotation.y=i*Math.PI*.5+.40;jets.add(jet);}
+ mergeGroup(parent);mergeGroup(jets);
+ for(const jet of jets.children){
+  jet.castShadow=false;jet.name='Brookstead fountain spills';
+ }
+ parent.add(jets);return parent;
 }
 function landmarkCourt(parent,site,path,tone,map){
  const wet=map==='water',base=macroGround(site.x,site.z),positions=[],uv=[],fade=[];
@@ -394,8 +403,12 @@ function landmarkCourt(parent,site,path,tone,map){
 function buildLandmarkModel(site,key,footprints){
  const model=new THREE.Group();model.name=POIS[key].name+' concept model';
  const base=macroGround(site.x,site.z);
- const place=(x,z,angle=0)=>landmarkGroup(model,x,macroGround(site.x+x,site.z+z)-base,z,angle);
- const rng=seeded(key==='brookstead'?29147:87632),surfaces=new THREE.Group();let wheel=null;
+ model.userData.landmarkLotCount=0;
+ const place=(x,z,angle=0)=>{
+  const lot=landmarkGroup(model,x,macroGround(site.x+x,site.z+z)-base,z,angle);
+  lot.userData.landmarkLot=++model.userData.landmarkLotCount;return lot;
+ };
+ const rng=seeded(key==='brookstead'?29147:87632),surfaces=new THREE.Group();let wheel=null,fountain=null;
  if(key==='brookstead'){
   // The east/west lane crosses the court. Seat the homes on the original
   // north and south lots and leave the actual road surface exposed between them.
@@ -410,7 +423,7 @@ function buildLandmarkModel(site,key,footprints){
   const shaftBearing=landmarkGroup(shaft,0,1.72,0,.93);
   const axle=landmarkPiece(shaftBearing,geo16('brookstead-driven-axle',()=>new THREE.CylinderGeometry(.16,.16,3.35,10)),'wood','#866442',0,0,1.66);
   axle.rotation.x=Math.PI/2;
-  landmarkFountain(place(.35,.52));
+  fountain=landmarkFountain(place(.35,.52));
   landmarkBarrel(mill,2.67,1.5);landmarkBarrel(mill,2.72,.65,.79);landmarkBarrel(shop,-2.12,1.55,.85);
   const bridge=landmarkGroup(model,race.west.x-site.x,race.bank-base-.63,race.west.z-site.z);
   bridge.scale.set(1,.63,1.90);landmarkBridge(bridge);
@@ -455,9 +468,11 @@ function buildLandmarkModel(site,key,footprints){
    sources.push([p.x,p.y,p.z,o.userData.lampTint]);
  });
  const wheelSeat=wheel?.parent;
+ fountain?.removeFromParent();
  if(wheel)wheel.removeFromParent();mergeGroup(model);
  for(const child of [...model.children])if(!child.isMesh)child.removeFromParent();
  model.add(surfaces);
+ if(fountain)model.add(fountain);
  const shadowPlots=footprints.length?footprints:[{x:site.x+3.65,z:site.z-3.3,w:7.8,d:4.8}];
  model.add(landmarkContactShadows(site,shadowPlots));
  if(wheel){mergeGroup(wheel);if(!wheelSeat.parent)model.add(wheelSeat);wheelSeat.add(wheel);}

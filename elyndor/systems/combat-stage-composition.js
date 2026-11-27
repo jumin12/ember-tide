@@ -3,12 +3,12 @@
 // UV height of continuous ground in each painting, and the depth in metres
 // over which its native ground cover meets the physical set.
 const BATTLE_GROUND_JOINS={
- waterfall:[.322,4.2], woodland:[.304,3.8], orchard:[.321,3.7], ruins:[.294,3.6],
- cavern:[.305,3.8], mountain:[.292,3.7], snow:[.354,4.4], coast:[.315,4.2],
- royalRoad:[.305,4.1], moonlit:[.302,3.8], grassMeadow:[.349,4.4], grassRiver:[.325,4.2],
- grassFlowers:[.352,4.3], grassDowns:[.333,4.1], grassWindmill:[.335,4.1],
- grassAutumn:[.331,4.2], grassStones:[.325,3.9], grassHills:[.32,4.3],
- grassBirch:[.335,4.1], grassTwilight:[.328,4.3]
+ waterfall:[.322,11.5], woodland:[.304,12], orchard:[.321,10.5], ruins:[.294,8.5],
+ cavern:[.305,9.5], mountain:[.292,10], snow:[.354,13], coast:[.315,11.5],
+ royalRoad:[.305,9], moonlit:[.302,12], grassMeadow:[.349,13], grassRiver:[.325,11.5],
+ grassFlowers:[.352,12], grassDowns:[.333,12], grassWindmill:[.335,12],
+ grassAutumn:[.331,11.5], grassStones:[.325,10.5], grassHills:[.32,12],
+ grassBirch:[.335,12], grassTwilight:[.328,12.5]
 };
 function stageEdge122(b){
  const q=fightingHollow93(b),margin=b.spec.cave?7.2:b.spec.royal?7:5.8;

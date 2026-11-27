@@ -1,27 +1,41 @@
 {
-  "release": "elyndor-alpha-1.58-brookstead-millstream-battlefield-grass-2026-11-26",
-  "version": "Alpha Version 1.58",
+  "release": "elyndor-alpha-1.59-brookstead-waterworks-and-battlefield-atmosphere-2026-11-27",
+  "version": "Alpha Version 1.59",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 8031584,
-    "sha256": "c1715c3b2fd5ab6e7c8df381310579e742cae2d54bc1205bb3feab3813236814",
+    "bytes": 8102788,
+    "sha256": "8b2a7ce8d01cd9177354218fad1c6897a3e2489eb2e23a956ca96a82923ecf66",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "ba314286c28cbf5b475b935a458d42ef9bd751e5"
+    "previousRelease": "3d86751e4ef37fd42375616f0e0bcb119e7c275e"
   },
   "changes": [
-    "On the Valenne overworld, a stream branches from the river, turns Brookstead’s mill wheel and rejoins the river downstream. The west road crosses a stone bridge and brings the party onto the bridge inside town. A four-jet fountain marks the square.",
-    "Battle grass fills sparse green patches and thins out in crowded meadows. Blades taper into the background across the arenas and story battlefields, leaving exposed dirt and snow clear.",
-    "Highmere, Fern Hollow, Valenne Harbor and Alderbridge have new modeled architecture. Fern Hollow’s inn, smithy, provisions shop and remnant chamber have distinct interiors, with a working stair into the chamber.",
-    "Lanterns, hearths and crystals cast directional shadows on nearby buildings, props and characters. Brookstead’s pools reflect their actual surroundings. Water in towns shares the painted river surface, and foam breaks into smaller crests along the banks.",
-    "Overworld trees have more distinct canopy layers, with overlapping leaf sprays on broadleaf trees and clearer branch tiers on conifers."
+    "Four new 1080p loading screens show Brookstead’s fountain square, the Lantern Inn, Riverstone Supplies and the Royal Archives. Each has its own phone framing. The four images together are 44% smaller.",
+    "Brookstead’s hand pump fills a stone trough and the fountain reflects the square using the river’s water shading. Repairing the pump starts four brass spouts, with ripples where each jet lands. The pump lane, stairs and landings have clearer paths.",
+    "Walls stay solid when the party walks up to them and fade when they block the player. The cutaway follows the character working the canal wheel. Windows in inns, shops and player homes show the outdoor sky from dawn through night.",
+    "Across 20 arenas and seven story battles, grass and groundcover follow the terrain and soften the join with the backdrop. Rocks sit into the soil, combat lanes stay clear, and distant scenery comes into focus gradually as it approaches the fighters.",
+    "Snowfields have windblown flurries and low spindrift. Other battlefields use local effects such as spray, petals and dust. Woodland leaves drift past only a handful of times per journey. Some settle on the forest floor and remain on return.",
+    "Overworld trees have more defined branches and leaves. Grass stays visible as the camera moves, and light from placed fixtures carries through the scene. Scene and battle transitions prepare their shaders during loading and release temporary rendering resources afterward."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.59",
+      "date": "November 27, 2026",
+      "title": "Brookstead waterworks and battlefield atmosphere",
+      "items": [
+        "Four new 1080p loading screens show Brookstead’s fountain square, the Lantern Inn, Riverstone Supplies and the Royal Archives. Each has its own phone framing. The four images together are 44% smaller.",
+        "Brookstead’s hand pump fills a stone trough and the fountain reflects the square using the river’s water shading. Repairing the pump starts four brass spouts, with ripples where each jet lands. The pump lane, stairs and landings have clearer paths.",
+        "Walls stay solid when the party walks up to them and fade when they block the player. The cutaway follows the character working the canal wheel. Windows in inns, shops and player homes show the outdoor sky from dawn through night.",
+        "Across 20 arenas and seven story battles, grass and groundcover follow the terrain and soften the join with the backdrop. Rocks sit into the soil, combat lanes stay clear, and distant scenery comes into focus gradually as it approaches the fighters.",
+        "Snowfields have windblown flurries and low spindrift. Other battlefields use local effects such as spray, petals and dust. Woodland leaves drift past only a handful of times per journey. Some settle on the forest floor and remain on return.",
+        "Overworld trees have more defined branches and leaves. Grass stays visible as the camera moves, and light from placed fixtures carries through the scene. Scene and battle transitions prepare their shaders during loading and release temporary rendering resources afterward."
+      ]
+    },
     {
       "version": "Alpha Version 1.58",
       "date": "November 26, 2026",
@@ -1046,8 +1060,8 @@
     "groundedStoryBattleEnvironments": 7
   },
   "validation": {
-    "file": "elyndor/previews/release-v158/verification.json",
-    "sha256": "23ca639eb20ece259aea2f093e536ab51548d069d03d3ad639cdc06c26d7381b",
+    "file": "elyndor/previews/release-v159/verification.json",
+    "sha256": "47ab292712cd5a836b4aaecbd60e55b06de1015ae9bba835ba8e48bdfde89ff6",
     "finalRelease": "PASS",
     "desktopAndPhone": true
   },
@@ -1088,9 +1102,9 @@
     "spriteLighting": "Coherent party and NPC canopy reception outside combat; original art and sampling retained"
   },
   "previousPublishedRelease": {
-    "version": "Alpha Version 1.57",
-    "commit": "ba314286c28cbf5b475b935a458d42ef9bd751e5",
-    "sha256": "fc9c7a60ca69f013181449ff700d5f13b942783e68c12d2346ddb5bdd7ccabd7"
+    "version": "Alpha Version 1.58",
+    "commit": "3d86751e4ef37fd42375616f0e0bcb119e7c275e",
+    "sha256": "c1715c3b2fd5ab6e7c8df381310579e742cae2d54bc1205bb3feab3813236814"
   },
   "housing": {
     "maximumOwnedHomes": 1,

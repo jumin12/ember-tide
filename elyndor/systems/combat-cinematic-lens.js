@@ -1,15 +1,49 @@
 // A photographic lens with separable Gaussian defocus. The fighters' depth
 // interval stays in focus and DOM UI never enters an image-processing target.
 const combatLens123={override:null,edgeOverride:null};
+// The far painting is translucent and leaves sky depth behind it. Estimate
+// its optical distance from the physical bank and a distant sightline. Both
+// samples use the live camera, so the focus does not stick to the screen.
+const battleFocusGuides={value:Array.from({length:5},()=>new THREE.Vector3())};
+const focusNearPoint=new THREE.Vector3(),focusFarPoint=new THREE.Vector3();
+function projectBattleFocusGuides(arena){
+ const site=arena?.fieldWeather?.centre??currentStoryMargin?.weather?.centre??cameraTarget;
+ const frame=battleField91().height/innerHeight;
+ for(let i=0;i<5;i++){
+  const dx=(i-2)*13,x=site.x+dx;
+  const z=arena?arena.group.position.z+apronEdge113(arena,x-arena.group.position.x):site.z-7;
+  const y=arena?arena.group.position.y+arenaFloor88(arena,x-arena.group.position.x,z-arena.group.position.z):heightAt(x,z);
+  focusNearPoint.set(x,y,z).project(camera);focusFarPoint.set(x,y+14,z-66).project(camera);
+  const bank=.5+.5*focusNearPoint.y;
+  const end=Math.max(bank+.34*frame,Math.min(bank+.49*frame,.5+.5*focusFarPoint.y));
+  battleFocusGuides.value[i].set(.5+.5*focusNearPoint.x,bank-.075*frame,end);
+ }
+}
+const battlefieldFocusGLSL=`
+ uniform vec3 battleFocusGuides[5];
+ float scenicFocus(vec2 uv,float depth,float focusEnd){
+  vec2 bounds=battleFocusGuides[0].yz;
+  for(int i=1;i<5;i++){
+   vec3 a=battleFocusGuides[i-1],b=battleFocusGuides[i];
+   bounds=mix(bounds,b.yz,smoothstep(a.x,max(a.x+.0001,b.x),uv.x));
+  }
+  float landscape=smoothstep(bounds.x,bounds.y,uv.y);
+  float distanceFromCast=max(0.,depth-focusEnd);
+  float optical=smoothstep(0.,4.,distanceFromCast)*min(1.,1.45*distanceFromCast/max(depth,.001));
+  // The foreground can never inherit sky depth across the terrain/plate join.
+  return min(landscape,optical);
+ }`;
 const cinematicPostBefore123=makeArenaPost89;
 makeArenaPost89=function(){
  const p=cinematicPostBefore123();if(p.uniforms.cinematicLens123)return p;
  p.uniforms.cinematicLens123={value:1};p.uniforms.edgeVignette123={value:1};
  p.uniforms.gaussianImage132={value:null};
- let shader='uniform sampler2D gaussianImage132;uniform float cinematicLens123,edgeVignette123;\n'+p.material.fragmentShader;
+ p.uniforms.battleFocusGuides=battleFocusGuides;
+ let shader=battlefieldFocusGLSL+'\nuniform sampler2D gaussianImage132;uniform float cinematicLens123,edgeVignette123;\n'+p.material.fragmentShader;
+ shader=shader.replace('coc=max(farFocus,nearFocus*.72)*quality','coc=max(scenicFocus(v,d,sharp.y),nearFocus*.72)*quality');
  shader=shader.replace('farFocus*.8*displayScale97','farFocus*mix(.8,5.0,cinematicLens123)*displayScale97');
- shader=shader.replace('mix(mix(.68,.24,phoneSharp92),.22,farFocus)','mix(mix(.68,.24,phoneSharp92),mix(.22,.94,cinematicLens123),farFocus)');
- shader=shader.replace('coc*mix(.68,.22,farFocus)','coc*mix(.68,mix(.22,.94,cinematicLens123),farFocus)');
+ shader=shader.replace('mix(mix(.68,.24,phoneSharp92),.22,farFocus)','mix(mix(.68,.24,phoneSharp92),mix(.22,.57,cinematicLens123),farFocus)');
+ shader=shader.replace('coc*mix(.68,.22,farFocus)','coc*mix(.68,mix(.22,.57,cinematicLens123),farFocus)');
  // Keep the original halo/AO taps, but remove their sparse blur stencil. A
  // continuous horizontal+vertical Gaussian prevents repeated image outlines.
  shader=shader.replace(/for\(int i=0;i<8;i\+\+\)\{[\s\S]*?blur\+=mix\(base,texture2D\(image,sampleUV\)\.rgb,accept\)\*\.1;/,`for(int i=0;i<8;i++){
@@ -28,22 +62,26 @@ makeArenaPost89=function(){
 function gaussianArena132(p,w,h){
  if(!p.gaussian132){
   const type=p.target.texture.type,targets=[0,1].map(()=>new THREE.WebGLRenderTarget(1,1,{type,depthBuffer:false,minFilter:THREE.LinearFilter,magFilter:THREE.LinearFilter}));
-  const material=new THREE.ShaderMaterial({depthTest:false,depthWrite:false,toneMapped:false,uniforms:{source:{value:null},depth132:{value:p.target.depthTexture},axis:{value:new THREE.Vector2()},clip132:p.uniforms.clip,sharp132:p.uniforms.sharp},vertexShader:'varying vec2 uv132;void main(){uv132=uv;gl_Position=vec4(position.xy,0.,1.);}',fragmentShader:`
+  const material=new THREE.ShaderMaterial({depthTest:false,depthWrite:false,toneMapped:false,uniforms:{source:{value:null},depth132:{value:p.target.depthTexture},axis:{value:new THREE.Vector2()},clip132:p.uniforms.clip,sharp132:p.uniforms.sharp,battleFocusGuides},vertexShader:'varying vec2 uv132;void main(){uv132=uv;gl_Position=vec4(position.xy,0.,1.);}',fragmentShader:battlefieldFocusGLSL+`
    uniform sampler2D source,depth132;uniform vec2 axis,clip132,sharp132;varying vec2 uv132;
    float distance132(vec2 p){float z=texture2D(depth132,p).r*2.-1.;return 2.*clip132.x*clip132.y/(clip132.y+clip132.x-z*(clip132.y-clip132.x));}
    vec3 sample132(vec2 uv,float d,vec3 centre){uv=clamp(uv,vec2(.001),vec2(.999));float sd=distance132(uv);return d>sharp132.y&&sd<sharp132.y?centre:texture2D(source,uv).rgb;}
    void main(){float d=distance132(uv132);vec3 centre=texture2D(source,uv132).rgb;
+    float foreground=1.-smoothstep(max(.2,sharp132.x-8.),sharp132.x-2.,d);
+    vec2 stepUV=axis*max(foreground,scenicFocus(uv132,d,sharp132.y));
     vec3 c=centre*.2270270270;
-    c+=(sample132(uv132+axis*1.3846153846,d,centre)+sample132(uv132-axis*1.3846153846,d,centre))*.3162162162;
-    c+=(sample132(uv132+axis*3.2307692308,d,centre)+sample132(uv132-axis*3.2307692308,d,centre))*.0702702703;
+    c+=(sample132(uv132+stepUV*1.3846153846,d,centre)+sample132(uv132-stepUV*1.3846153846,d,centre))*.3162162162;
+    c+=(sample132(uv132+stepUV*3.2307692308,d,centre)+sample132(uv132-stepUV*3.2307692308,d,centre))*.0702702703;
     gl_FragColor=vec4(c,1.);
    }`});
   const scene=new THREE.Scene(),camera=new THREE.OrthographicCamera(-1,1,1,-1,0,1),quad=new THREE.Mesh(new THREE.PlaneGeometry(2,2),material);quad.frustumCulled=false;scene.add(quad);p.gaussian132={targets,material,scene,camera};
  }
  const q=p.gaussian132,ratio=Math.min(2.5,renderer.getPixelRatio()),ww=Math.max(1,w>>1),hh=Math.max(1,h>>1),u=q.material.uniforms;
+ projectBattleFocusGuides(arena88.current);
  for(const t of q.targets)if(t.width!==ww||t.height!==hh)t.setSize(ww,hh);
- u.source.value=p.target.texture;u.axis.value.set(1.6*ratio/w,0);renderer.setRenderTarget(q.targets[0]);renderer.render(q.scene,q.camera);
- u.source.value=q.targets[0].texture;u.axis.value.set(0,1.6*ratio/h);renderer.setRenderTarget(q.targets[1]);renderer.render(q.scene,q.camera);
+ const radius=ratio*Math.min(1.15,h/(800*ratio))*1.75;
+ u.source.value=p.target.texture;u.axis.value.set(radius/w,0);renderer.setRenderTarget(q.targets[0]);renderer.render(q.scene,q.camera);
+ u.source.value=q.targets[0].texture;u.axis.value.set(0,radius/h);renderer.setRenderTarget(q.targets[1]);renderer.render(q.scene,q.camera);
  p.uniforms.gaussianImage132.value=q.targets[1].texture;
 }
 const cinematicRenderBefore123=renderArena89;

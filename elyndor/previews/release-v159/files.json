@@ -1,0 +1,357 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 112417,
+    "sha256": "76445cc1fcec495d724105fd63101fad221a4211c597cca190e15df827525ff2"
+  },
+  {
+    "file": "elyndor/assets/runtime-v136/101d8480d81e1ae760c60e1a6a51f9ad7e1e4113d63ee69e2dec42e2eaffc484.webp",
+    "bytes": 341686,
+    "sha256": "101d8480d81e1ae760c60e1a6a51f9ad7e1e4113d63ee69e2dec42e2eaffc484"
+  },
+  {
+    "file": "elyndor/assets/runtime-v136/277064c2b74abcdbe87de0e71af9ae5eea19cfcb4d057fbae51a44bd7a1021b0.webp",
+    "bytes": 704838,
+    "sha256": "277064c2b74abcdbe87de0e71af9ae5eea19cfcb4d057fbae51a44bd7a1021b0"
+  },
+  {
+    "file": "elyndor/assets/runtime-v136/3b6ec889b299712e4cde9bbfcd14047b74075e57b51760527b282b9fc5fdc9d4.webp",
+    "bytes": 378476,
+    "sha256": "3b6ec889b299712e4cde9bbfcd14047b74075e57b51760527b282b9fc5fdc9d4"
+  },
+  {
+    "file": "elyndor/assets/runtime-v136/e0059c863fc7c268d0292c0fbb8788ba87461b2d5f0fc7bebaa767ee7b9670f0.webp",
+    "bytes": 371334,
+    "sha256": "e0059c863fc7c268d0292c0fbb8788ba87461b2d5f0fc7bebaa767ee7b9670f0"
+  },
+  {
+    "file": "elyndor/assets/source/loading-v116/archives.webp",
+    "bytes": 378476,
+    "sha256": "3b6ec889b299712e4cde9bbfcd14047b74075e57b51760527b282b9fc5fdc9d4"
+  },
+  {
+    "file": "elyndor/assets/source/loading-v116/inn.webp",
+    "bytes": 371334,
+    "sha256": "e0059c863fc7c268d0292c0fbb8788ba87461b2d5f0fc7bebaa767ee7b9670f0"
+  },
+  {
+    "file": "elyndor/assets/source/loading-v116/manifest.json",
+    "bytes": 3695,
+    "sha256": "491b17ed6cc13ed81f61e8a5c1046dca15474745c1d14fc83fe9b2ac50d0baa7"
+  },
+  {
+    "file": "elyndor/assets/source/loading-v116/river.webp",
+    "bytes": 704838,
+    "sha256": "277064c2b74abcdbe87de0e71af9ae5eea19cfcb4d057fbae51a44bd7a1021b0"
+  },
+  {
+    "file": "elyndor/assets/source/loading-v116/shop.webp",
+    "bytes": 341686,
+    "sha256": "101d8480d81e1ae760c60e1a6a51f9ad7e1e4113d63ee69e2dec42e2eaffc484"
+  },
+  {
+    "file": "elyndor/atlas-v18.js",
+    "bytes": 5513,
+    "sha256": "e89c6f60eeaa57ac6421e004824c032df199e178dc6b00cb68b357d150d734c4"
+  },
+  {
+    "file": "elyndor/atmosphere-v33.js",
+    "bytes": 9572,
+    "sha256": "bf1e964d0beaf6e7f76825ba9b534fafd2938cee7dea047f332ebaca828c3a15"
+  },
+  {
+    "file": "elyndor/build-manifest.json",
+    "bytes": 14131,
+    "sha256": "c5c30a4c57accbe218fc826d17b4e0b0f96fd8b3c1b176a7649880a00a9e2c97"
+  },
+  {
+    "file": "elyndor/celestial-v31.js",
+    "bytes": 17332,
+    "sha256": "f5b9cb570a17c1ebd7ac5e8b22971f2fba3875368d9cafcdf8090c0437a99d95"
+  },
+  {
+    "file": "elyndor/game.js",
+    "bytes": 45253,
+    "sha256": "55cec9ddcbf8de3c9fb3bf54796aa4f58bb6d88a261feb8ee0cc1be26457f409"
+  },
+  {
+    "file": "elyndor/geography-v15.js",
+    "bytes": 24225,
+    "sha256": "9b64a181e84ed8105aa877c145372ab95e5b3a0ad0166360617dc60670a169f0"
+  },
+  {
+    "file": "elyndor/journey-v12.js",
+    "bytes": 25205,
+    "sha256": "7ba81b0b2492e6570d2e8763fea658df5ddbb1416f01cea08e82e895634b4660"
+  },
+  {
+    "file": "elyndor/loading-v11.js",
+    "bytes": 1817,
+    "sha256": "fc3a3964400b54aa1731108a7b36c30215a56c49cc0348ee209fe4168f6019f8"
+  },
+  {
+    "file": "elyndor/loading-v14.css",
+    "bytes": 2128,
+    "sha256": "7ab7d8fed2515bca8a7b277a6fd9bc87cc4d967827267954401ca5fd653dfaef"
+  },
+  {
+    "file": "elyndor/materials-v14.js",
+    "bytes": 7208,
+    "sha256": "d042b2173f699a3e2d70e8920d71c3f3405ec03b5f146aff7e6ab90d4b63cd8e"
+  },
+  {
+    "file": "elyndor/open-world.js",
+    "bytes": 85595,
+    "sha256": "a766098b3e5d56c44d99b061ccda8dbc14831f8488e91fd180d349fea956495d"
+  },
+  {
+    "file": "elyndor/previews/release-v159/brookstead.jpg",
+    "bytes": 539634,
+    "sha256": "0c8aec5f84beef668e1d3a5193707439d31084eefce120e34e2676b5ba9ae452"
+  },
+  {
+    "file": "elyndor/previews/release-v159/loading-screens.jpg",
+    "bytes": 510119,
+    "sha256": "4a87ec42f7bd9bb8788475f55217308468d3b72ee8b387f443218122bf78cdce"
+  },
+  {
+    "file": "elyndor/previews/release-v159/snowfield.jpg",
+    "bytes": 194071,
+    "sha256": "de1e7f733dbe1485d2a225ba018c9cd8411a44753f7cb19674d7eff4b8d60c9d"
+  },
+  {
+    "file": "elyndor/previews/release-v159/verification.json",
+    "bytes": 919,
+    "sha256": "47ab292712cd5a836b4aaecbd60e55b06de1015ae9bba835ba8e48bdfde89ff6"
+  },
+  {
+    "file": "elyndor/previews/release-v159/windows.jpg",
+    "bytes": 135757,
+    "sha256": "800398d38e61b2228f6c87e6bc4d5f157eeb04357d01aa2150d21c3866395ae3"
+  },
+  {
+    "file": "elyndor/runtime-v28.js",
+    "bytes": 3742,
+    "sha256": "a3e704b4ac16ad5e53ca1f2a863f4de0497af62c597e3583de6ad6b6453b93e3"
+  },
+  {
+    "file": "elyndor/runtime-v36.js",
+    "bytes": 26970,
+    "sha256": "655eec117d6843464b09480dc10b456191bc8371056edad86d62120426d85267"
+  },
+  {
+    "file": "elyndor/scenery.js",
+    "bytes": 34884,
+    "sha256": "aa64fe44f9aae2af668ed43525ce21d155ac4acd6b047acd170f501be74991ed"
+  },
+  {
+    "file": "elyndor/systems/atlas-presentation.js",
+    "bytes": 12893,
+    "sha256": "460b80a91feb8527ab4703cb73ba416773ac8287374d900b0db5bf7ed647969e"
+  },
+  {
+    "file": "elyndor/systems/battle-foreground-refinement.js",
+    "bytes": 30750,
+    "sha256": "d4c1a8e61cf946ff02936f1ea076881c231b703e4f207700a439154d0e577219"
+  },
+  {
+    "file": "elyndor/systems/battle-stages.js",
+    "bytes": 22446,
+    "sha256": "d953c42d5a48e62d57046e3e771265e09b25203b02ef31ccb7643318beff358d"
+  },
+  {
+    "file": "elyndor/systems/battlefield-margins.js",
+    "bytes": 63673,
+    "sha256": "dad5f972c35f3c8c4074ee00b13d154a81ce06e8c3b167aed4bd80c1d3930039"
+  },
+  {
+    "file": "elyndor/systems/battlefield-weather.js",
+    "bytes": 28333,
+    "sha256": "046ef9bb1c993713cab42999b901a3515b5040e0ac3dc491da2684b55ace08ea"
+  },
+  {
+    "file": "elyndor/systems/brookstead-gardens.js",
+    "bytes": 8885,
+    "sha256": "e5655727751465ca98500f84a7339a00cec94e5599de0b12957c1ae84b1c7e21"
+  },
+  {
+    "file": "elyndor/systems/brookstead-interiors.js",
+    "bytes": 41874,
+    "sha256": "6081989092a3107af8e6b7de3460268dace57facfafa164094255a1f5f864d73"
+  },
+  {
+    "file": "elyndor/systems/brookstead-square.js",
+    "bytes": 30914,
+    "sha256": "ebae2a0795dbd2b4524c8bdb09c5e39c1e68adbacf2001ddaa172183ccf0a701"
+  },
+  {
+    "file": "elyndor/systems/combat-cinematic-lens.js",
+    "bytes": 6831,
+    "sha256": "ff1f9afe0e0eef452ab59ff53653de230fb3831f63f6a0c7c3ae761080f67b3e"
+  },
+  {
+    "file": "elyndor/systems/combat-stage-composition.js",
+    "bytes": 12690,
+    "sha256": "1d0a4b96607ac769e5d07d6e03c637667c09bf0ca4c4b32cd6aebc972fd247a5"
+  },
+  {
+    "file": "elyndor/systems/environment-assets.js",
+    "bytes": 35804,
+    "sha256": "93f23367cd979e17bda751b393a8ea5df1472606894627691add72f1a72d21a7"
+  },
+  {
+    "file": "elyndor/systems/environment-materials.js",
+    "bytes": 16877,
+    "sha256": "41ef6093ab53082848110b1add896611fc79a6f33cf67c896d3e6f117f8478dd"
+  },
+  {
+    "file": "elyndor/systems/environment-vegetation.js",
+    "bytes": 17425,
+    "sha256": "9ecec961f5d43b09b22df6ff0cf8d403138d7be4d7b4d3c684779f2f13d65412"
+  },
+  {
+    "file": "elyndor/systems/exploration-lighting.js",
+    "bytes": 8924,
+    "sha256": "54217c92af2afd5bcbd03d5aa64cba1849e674affe81293d42fdfa693ae14d2a"
+  },
+  {
+    "file": "elyndor/systems/facade-detail.js",
+    "bytes": 8482,
+    "sha256": "3af1589e9c9c7ff544a964d5d5cc42015c083028b5953d160f2910a245577246"
+  },
+  {
+    "file": "elyndor/systems/fountain-water.js",
+    "bytes": 12039,
+    "sha256": "90d8770297765a6e645e439f53f607a42dc7883c3cf38b73ff83df1e97d5cd21"
+  },
+  {
+    "file": "elyndor/systems/hosted-performance.js",
+    "bytes": 12069,
+    "sha256": "1272dcc61518a0014a2b8e56713875ce608ba8b2b395bc4e9e78b0194931bc05"
+  },
+  {
+    "file": "elyndor/systems/housing-world.js",
+    "bytes": 22542,
+    "sha256": "572ceb308b80cd3f925dbd4eddfa86ea605a28f6932c880ea0baac6b32ab578f"
+  },
+  {
+    "file": "elyndor/systems/landmark-models.js",
+    "bytes": 31278,
+    "sha256": "51d4c316b3c707727a2296cc73cff81e32e14919e660f1f145819e993d6ec03e"
+  },
+  {
+    "file": "elyndor/systems/landscape-and-impact-light.js",
+    "bytes": 29682,
+    "sha256": "88a2bedfd91013d814aa14108ed168b30c69fee4f9c1bfbe6bf13349bb879348"
+  },
+  {
+    "file": "elyndor/systems/live-waterworks.js",
+    "bytes": 19743,
+    "sha256": "bf0915e8d330ffda069a4297653ae2e43c50f79a4c013db91ac2f1a045f0cc01"
+  },
+  {
+    "file": "elyndor/systems/loading-performance.js",
+    "bytes": 5318,
+    "sha256": "1e41d19295ceeb7672fa3907155670c76553ef3ff36c95760f824362cd19f086"
+  },
+  {
+    "file": "elyndor/systems/location-cache.js",
+    "bytes": 7128,
+    "sha256": "5d8dc9e7844331ee5907cbff3918f0c1238f2211a54984c072cf702cbc74c53c"
+  },
+  {
+    "file": "elyndor/systems/location-ecology.js",
+    "bytes": 16258,
+    "sha256": "59c9648963bf13935fccc9b88a4f0f074162ca5c83563e32da1bc9b2a73e34ba"
+  },
+  {
+    "file": "elyndor/systems/mobile-startup.js",
+    "bytes": 10401,
+    "sha256": "68ffd8f8216291e126fe34c657ad19c4eb0167281de8c79a98d97abff86339bf"
+  },
+  {
+    "file": "elyndor/systems/motion-performance.js",
+    "bytes": 9669,
+    "sha256": "88ef17b32bdb6fca51708c8edaf9fcb6a9209cb47b4c25f01b25c807f9a18865"
+  },
+  {
+    "file": "elyndor/systems/overworld-scenery.js",
+    "bytes": 22399,
+    "sha256": "6f66680d4b3269642cff27fbbe94fc66e27ee2ab545f6b14289d49f34b340478"
+  },
+  {
+    "file": "elyndor/systems/player-visibility.js",
+    "bytes": 11948,
+    "sha256": "e11573cbcea1121e9ded83a16db486d8ae4e86dc788f725586f8e4dc99e7309a"
+  },
+  {
+    "file": "elyndor/systems/poi-local-shadows.js",
+    "bytes": 12511,
+    "sha256": "8d65cfb3d45e626b61b2342f015f111512c1207b543a9497b219c2e0338bbe90"
+  },
+  {
+    "file": "elyndor/systems/rendering.js",
+    "bytes": 11653,
+    "sha256": "b5b8398f35f80da07b37e63562a97ab6100b723ea0842c5958c22d2cf710df2b"
+  },
+  {
+    "file": "elyndor/systems/settlement-architecture.js",
+    "bytes": 36087,
+    "sha256": "c0088807589144a0199cc8883658b7f077523889d3bd8374d81b13a541714764"
+  },
+  {
+    "file": "elyndor/systems/transition-speed.js",
+    "bytes": 9792,
+    "sha256": "cd466b0cc5a8dbad4f6ed5d4bfaf7b6f8e919f9a5b5a9dd508368c12bedca894"
+  },
+  {
+    "file": "elyndor/systems/travel-lighting.js",
+    "bytes": 2875,
+    "sha256": "ce3980289ab214cbaf879ac7267687913513e0fc26d8b09b08612e14f23a43b0"
+  },
+  {
+    "file": "elyndor/systems/traversal-terrain.js",
+    "bytes": 21826,
+    "sha256": "37ce96e7e8e2d77f71b4bce6493d810ebde4f54cf9d348c5976d878121167728"
+  },
+  {
+    "file": "elyndor/systems/valenne-travel-art.js",
+    "bytes": 40008,
+    "sha256": "ad199bd7ca81c9dda4d2ac87ae0b12131d309e63ddfe7515a2fcc2b1bc16f2dd"
+  },
+  {
+    "file": "elyndor/systems/world-materials.js",
+    "bytes": 24909,
+    "sha256": "01da0c40b9983d83c55e3cfdf8c96d1b1f5896713c2899d47f0702bf59bc62df"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 105460,
+    "sha256": "885feed780cff48cf698455292a21d2ebb75118d14659d5179e29bf0ace213a4"
+  },
+  {
+    "file": "elyndor/tools/build-v7.py",
+    "bytes": 7472,
+    "sha256": "c171771e7e55f580385e1ecf10471797333c8f447b52c027b3bc0fe56eddc010"
+  },
+  {
+    "file": "elyndor/town-v8.js",
+    "bytes": 43696,
+    "sha256": "e70fef599494e628350b78e760d21d8b47b015b5bb9725991fabe5cbc93ca5f7"
+  },
+  {
+    "file": "elyndor/world-art-v38.js",
+    "bytes": 28034,
+    "sha256": "18162ac6721b6bf57061d0ce0970ff604546939aaf7c238e5a6d6bf79b5d03f8"
+  },
+  {
+    "file": "index.html",
+    "bytes": 8102788,
+    "sha256": "8b2a7ce8d01cd9177354218fad1c6897a3e2489eb2e23a956ca96a82923ecf66"
+  },
+  {
+    "file": "release.json",
+    "bytes": 111807,
+    "sha256": "a676509d143be64bc3a81cd523cdde91ca8d9b7defc71c69cbff44a11db8a4c1"
+  }
+]

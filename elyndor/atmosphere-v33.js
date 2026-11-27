@@ -5,11 +5,18 @@ const blackLamp33=new THREE.DataTexture(new Uint8Array(4),1,1);blackLamp33.needs
 const lampField33={map:{value:blackLamp33},bounds:{value:new THREE.Vector4(0,0,1,1)},power:{value:0}};
 const materialLightBefore33=addCloudLighting;
 addCloudLighting=function(m){materialLightBefore33(m);if(!m?.userData.weatherV12||m.userData.lampField33)return;m.userData.lampField33=true;const old=m.onBeforeCompile,key=m.customProgramCacheKey();m.onBeforeCompile=sh=>{old(sh);sh.uniforms.lampField33=lampField33.map;sh.uniforms.lampBounds33=lampField33.bounds;sh.uniforms.lampPower33=lampField33.power;sh.fragmentShader='uniform sampler2D lampField33;uniform vec4 lampBounds33;uniform float lampPower33;\n'+sh.fragmentShader;sh.fragmentShader=sh.fragmentShader.replace('#include <opaque_fragment>',`vec2 lampUV33=(vWeatherWorld.xz-lampBounds33.xy)/lampBounds33.zw;float inLamp33=step(0.,lampUV33.x)*step(lampUV33.x,1.)*step(0.,lampUV33.y)*step(lampUV33.y,1.);vec4 lamp33=texture2D(lampField33,lampUV33);float floor33=lamp33.a*192.-32.;float height33=exp(-abs(vWeatherWorld.y-floor33)*.30);outgoingLight+=diffuseColor.rgb*vec3(1.6,.59,.12)*lamp33.r*lampPower33*height33*inLamp33;\n#include <opaque_fragment>`);};m.customProgramCacheKey=()=>key+'-lamp-bounce33';return m;};
-function buildLampField33(){
- lampField33.map.value=blackLamp33;if(activeScene.kind==='interior')return;const b=activeScene.bounds,pad=24,x0=b[0]-pad,z0=b[2]-pad,sx=b[1]-b[0]+pad*2,sz=b[3]-b[2]+pad*2,w=clamp(Math.ceil(sx/1.5),64,512),h=clamp(Math.ceil(sz/1.5),64,512),energy=new Float32Array(w*h),level=new Float32Array(w*h);
- for(const p of world.userData.lampSources??[]){const radius=14,ix=(p.x-x0)/sx*w,iz=(p.z-z0)/sz*h,rx=radius/sx*w,rz=radius/sz*h;for(let z=Math.max(0,Math.floor(iz-rz));z<=Math.min(h-1,Math.ceil(iz+rz));z++)for(let x=Math.max(0,Math.floor(ix-rx));x<=Math.min(w-1,Math.ceil(ix+rx));x++){const d=Math.hypot(x0+(x+.5)/w*sx-p.x,z0+(z+.5)/h*sz-p.z)/radius;if(d>=1)continue;const k=z*w+x,v=(1-d)**2;energy[k]+=v;level[k]+=(p.y-2)*v;}}
+function buildLampField33(sources){
+ lampField33.map.value=blackLamp33;
+ // Local fixtures are collected after construction, including interior hearths.
+ if(!sources&&activeScene.kind!=='overworld')return;
+ sources??=world.userData.lampSources??[];
+ if(!sources.length)return;
+ const b=activeScene.bounds??[Math.min(...sources.map(p=>p.x)),Math.max(...sources.map(p=>p.x)),Math.min(...sources.map(p=>p.z)),Math.max(...sources.map(p=>p.z))];
+ const pad=24,x0=b[0]-pad,z0=b[2]-pad,sx=b[1]-b[0]+pad*2,sz=b[3]-b[2]+pad*2,w=clamp(Math.ceil(sx/1.5),64,512),h=clamp(Math.ceil(sz/1.5),64,512),energy=new Float32Array(w*h),level=new Float32Array(w*h);
+ for(const p of sources){const radius=14,ix=(p.x-x0)/sx*w,iz=(p.z-z0)/sz*h,rx=radius/sx*w,rz=radius/sz*h;for(let z=Math.max(0,Math.floor(iz-rz));z<=Math.min(h-1,Math.ceil(iz+rz));z++)for(let x=Math.max(0,Math.floor(ix-rx));x<=Math.min(w-1,Math.ceil(ix+rx));x++){const d=Math.hypot(x0+(x+.5)/w*sx-p.x,z0+(z+.5)/h*sz-p.z)/radius;if(d>=1)continue;const k=z*w+x,v=(1-d)**2;energy[k]+=v;level[k]+=(p.y-2)*v;}}
  const data=new Uint8Array(w*h*4);for(let i=0;i<energy.length;i++){data[i*4]=Math.round(clamp(energy[i],0,1)*255);data[i*4+3]=Math.round(clamp(((energy[i]?level[i]/energy[i]:0)+32)/192,0,1)*255);}
- const t=new THREE.DataTexture(data,w,h);t.minFilter=t.magFilter=THREE.LinearFilter;t.needsUpdate=true;world.userData.lampMap33=t;lampField33.map.value=t;lampField33.bounds.value.set(x0,z0,sx,sz);
+ const t=new THREE.DataTexture(data,w,h);t.minFilter=t.magFilter=THREE.LinearFilter;t.needsUpdate=true;
+ world.userData.lampMap33?.dispose();world.userData.lampMap33=t;lampField33.map.value=t;lampField33.bounds.value.set(x0,z0,sx,sz);
 }
 const dayColours33=['#ffd6ad','#ffb77c','#ffaf68','#ffbc68','#ffdf9f','#ffedc3','#fff5da','#ffe3ab','#ffca70','#ffad53','#ffad7c','#ffc293','#ffdbb1','#ffd6ad'];
 SKY_PHASES31.forEach((p,i)=>p.colours[0].set(dayColours33[i]));
@@ -20,7 +27,9 @@ updateLighting=function(){
  lightsBefore33();if(!world||!player)return;const outside=activeScene.kind!=='interior';atmosphere33.exterior.value=outside?1:0;
  if(!outside){atmosphere33.glow.value=2.2;lampField33.power.value=0;return;}
  const h=celestial31.hour,e=celestial31.sun.value.y,day=celestial31.day.value,night=celestial31.night.value,rain=weather.rain.value;
- const golden=Math.max(1-smooth(0,2.1,Math.abs(h-6.8)),1-smooth(0,2.0,Math.abs(h-17.1)));atmosphere33.gold.value=golden;atmosphere33.glow.value=mix(.70,3.8,1-day)+golden*1.6;lampField33.power.value=mix(.70,.055,day)+golden*.25;
+ const golden=Math.max(1-smooth(0,2.1,Math.abs(h-6.8)),1-smooth(0,2.0,Math.abs(h-17.1)));atmosphere33.gold.value=golden;atmosphere33.glow.value=mix(.70,3.8,1-day)+golden*1.6;
+ // The fixture lights in POIs provide direct illumination and cast shadows.
+ lampField33.power.value=(mix(.70,.055,day)+golden*.25)*(activeScene.kind==='poi'?.11:1);
  const source=e>0?celestial31.sun.value:celestial31.moon.value,p=restoration?cameraTarget:player,y=heightAt(p.x,p.z);
  sun.position.copy(source).multiplyScalar(95).add(V3(p.x,y,p.z));sun.target.position.set(p.x,y,p.z);sun.target.updateMatrixWorld();sun.updateMatrixWorld(true);
  sun.color.copy(e>0?celestial31.colour.value:new THREE.Color('#a1c8ff'));
@@ -58,8 +67,6 @@ const effectBefore33=effectLight;
 effectLight=function(pos,color,power=18,duration=.65){effectBefore33(pos,color,power*1.25,duration*1.18);for(const l of world?.userData.lanterns??[])if((l.userData.effectUntil??0)>clock){l.visible=true;l.distance=24;l.decay=1.4;}atmosphere33.effectLights++;};
 const buildBefore33=buildWorld;
 buildWorld=function(...args){const r=buildBefore33(...args);world.userData.atmosphere33=true;
- // Warm door spill belongs to the building, and can be seen before reaching it.
- for(const g of world.userData.buildings??[])if(g.parent===world&&g.userData.door){const p=g.userData.door.clone();p.y+=1.9;p.z-=.35;world.userData.lampSources?.push(p);}
  buildLampField33();updateLighting();return r;
 };
 const disposeLightsBefore33=disposeContinuousWorld;

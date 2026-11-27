@@ -52,20 +52,22 @@ batchLandscape=function(...args){
  if(!world.userData.geologyComposition62&&activeScene?.kind==='poi'){
   const records=[],anchors=[],parts=[];world.updateMatrixWorld(true);world.traverse(o=>{if(o.userData.naturalRock&&o.parent===world)anchors.push(o);});
   const approaches=(world.userData.buildings??[]).filter(g=>g.userData.door).map(g=>{const d=g.userData.door,v=d.clone().sub(g.position);v.y=0;v.normalize();return[[d.x,d.z],[d.x+v.x*5,d.z+v.z*5]];});
+  const pumpWalk=activeScene.key==='brookstead'?NORTH_LANES122[0]:[];
+  const overlapsPumpWalk=(x,z,radius)=>pumpWalk.some((p,i)=>i>0&&segmentDistance(x,z,pumpWalk[i-1],p)<NORTH_LANE_WIDTH122/2+radius);
   for(const o of anchors){let{x,z}=o.position;let h=rockHabitat62(x,z);const rng=seeded(Math.round(x*137+z*977)),size=Math.max(o.scale.x,o.scale.z),oldX=x,oldZ=z;
    // Open flat lawns get gaps; rock-bearing banks, cuttings and slopes get talus.
    if(!o.userData.bankRock&&h.slope<.14&&h.road>13&&h.shore>7&&rng()<.8){o.removeFromParent();colliders=colliders.filter(c=>!['rock','boulder'].includes(c.type)||Math.hypot(c.x-x,c.z-z)>.2);continue;}
    // Loose slabs belong at the foot of a cutting, never dotted up its face.
    if(h.slope>.65)for(let j=0;j<15;j++){const dx=groundAt(x+.5,z)-groundAt(x-.5,z),dz=groundAt(x,z+.5)-groundAt(x,z-.5),d=Math.hypot(dx,dz);if(d<.1)break;const xx=x-dx/d*.85,zz=z-dz/d*.85;if(!inSceneBounds(xx,zz,0)||roadDistance(xx,zz)<size+3.2)break;x=xx;z=zz;h=rockHabitat62(x,z);if(h.slope<.42)break;}
    const radius=Math.max(.35,size*.85),blocked=h.slope>.8||h.road<radius+2.8||records.some(q=>Math.hypot(q.x-x,q.z-z)<Math.max(.5,size*.65))||approaches.some(p=>segmentDistance(x,z,...p)<radius+1.1);
-   if(blocked){o.removeFromParent();colliders=colliders.filter(c=>!['rock','boulder'].includes(c.type)||Math.hypot(c.x-oldX,c.z-oldZ)>.2);continue;}
+   if(blocked||overlapsPumpWalk(x,z,size)){o.removeFromParent();colliders=colliders.filter(c=>!['rock','boulder'].includes(c.type)||Math.hypot(c.x-oldX,c.z-oldZ)>.2);continue;}
    o.position.x=x;o.position.z=z;o.rotation.x=clamp(o.rotation.x,-.12,.16);o.rotation.z=clamp(o.rotation.z,-.13,.13);o.position.y=groundAt(x,z)+o.scale.y*.1;
    for(const c of colliders)if(['rock','boulder'].includes(c.type)&&Math.hypot(c.x-oldX,c.z-oldZ)<.2){c.x=x;c.z=z;c.w=radius*.72;c.d=radius*.72;}
    records.push({x,z,kind:o.userData.geology62,reason:h.reason});parts.push(o);
    if(size<.65)continue;
    const a=Math.atan2(groundAt(x,z+1)-groundAt(x,z-1),groundAt(x+1,z)-groundAt(x-1,z))+Math.PI;
    for(let k=0;k<2+Math.floor(rng()*3);k++){const angle=a+(rng()-.5)*3.3,reach=size*(.8+rng()*.9),xx=x+Math.cos(angle)*reach,zz=z+Math.sin(angle)*reach,s=size*(.12+rng()*.21);
-    if(!inSceneBounds(xx,zz,0)||rockHabitat62(xx,zz).slope>.65||roadDistance(xx,zz)<s+3.2||!staticFree(xx,zz,s*.7)||interactables.some(q=>Math.hypot(q.x-xx,q.z-zz)<s+2))continue;
+    if(!inSceneBounds(xx,zz,0)||rockHabitat62(xx,zz).slope>.65||roadDistance(xx,zz)<s+3.2||!staticFree(xx,zz,s*.7)||overlapsPumpWalk(xx,zz,s)||interactables.some(q=>Math.hypot(q.x-xx,q.z-zz)<s+2))continue;
     const part=new THREE.Mesh(rockGeometry62([1,3,6,7][k%4]),o.material);part.position.set(xx,groundAt(xx,zz)+s*.12,zz);part.scale.set(s,s*(.7+rng()*.4),s);part.rotation.y=rng()*TAU;part.castShadow=part.receiveShadow=true;part.userData.debris62=true;parts.push(part);
    }
   }

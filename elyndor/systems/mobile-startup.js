@@ -54,7 +54,11 @@ prepareGameplayGraphics=async function(...args){
  if(!loading36.active)beginLoad36();setLoadStage36(.72,'Preparing this location…');await yieldLoad36();
  prepareSurface67();finishWorld102();completeArrival70();updateWorldWeather15(true);ensureCombatPointer15();initPixelRelease();
  await prepareSounds36();updateCamera(1,true);updateLighting();updateRenderBudget(true);
- settleArrival28();settleRequestTargets68();await compileVisible136();renderBeforeLoadingGate();pinPrograms36();
+ settleArrival28(false);settleRequestTargets68();fitVisibleShadows();
+ await compileVisible136();
+ loading36.presentingDestination=true;
+ try{renderBeforeLoadingGate();}finally{loading36.presentingDestination=false;}
+ pinPrograms36();
  const gl=renderer.getContext(),fence=gl.fenceSync?.(gl.SYNC_GPU_COMMANDS_COMPLETE,0),deadline=performance.now()+2000;
  if(fence){gl.flush();try{while(gl.clientWaitSync(fence,0,0)===gl.TIMEOUT_EXPIRED&&performance.now()<deadline&&!gl.isContextLost())await yieldLoad36();}finally{gl.deleteSync(fence);}}
  if(gl.isContextLost())throw Error('Graphics memory was exhausted. Reload to retry.');
@@ -100,7 +104,11 @@ buildWorld=function(...args){if(loading36.mapPreparation)return;startup116.build
 // Cached-scene disposal can request a paint between removing its player and
 // seating the next party. That intermediate graph is never a visible frame.
 const coveredPaintBefore116=renderBeforeLoadingGate;
-renderBeforeLoadingGate=function(...args){if(startup116.building||!player)return;return coveredPaintBefore116(...args);};
+renderBeforeLoadingGate=function(...args){
+ if(startup116.building||!player)return;
+ if((gameLoading||loading36.active)&&loading36.readyWorld!==world&&!loading36.presentingDestination)return;
+ return coveredPaintBefore116(...args);
+};
 const paintBefore116=render;
 render=function(...args){if(startup116.building||!player)return;return paintBefore116(...args);};
 // Scene/battle restoration intentionally clears old travel history. Seed it

@@ -75,7 +75,7 @@ buildWorld=function(...args){const result=buildKeysBefore36(...args);cacheMateri
  // Scene roots never move. Avoid marking every descendant transform dirty on
  // each pass; actors, lights, weather and other children still update normally.
  scene.matrixAutoUpdate=false;world.matrixAutoUpdate=false;scene.updateMatrix();world.updateMatrix();scene.updateMatrixWorld(true);return result;};
-function bakedFloat36(source){const raw=atob(source),bytes=new Uint8Array(raw.length);for(let i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);return new Float32Array(bytes.buffer);}
+function bakedFloat36(source){const bytes=decodeAtlasBytes(source);return new Float32Array(bytes.buffer);}
 const gridBefore36=prepareMacroGrid15;
 prepareMacroGrid15=function(){if(window.__forceWorldBake36)return gridBefore36();if(!macroGrid15)macroGrid15=bakedFloat36(BAKED_WORLD36.grid.data);};
 const natureBefore36=buildMacroNature15;
