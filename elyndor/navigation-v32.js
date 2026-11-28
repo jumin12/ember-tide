@@ -53,6 +53,15 @@ trimPoiWorld=function(){trimRoutesBefore32();
 };
 // Fine, continuous road grades use the same height function as the character.
 // These support strips fill coarse terrain gaps at enlarged POI boundaries.
+function roadBedHeight32(x,z){
+ const data=world.userData, chamber=data.remnantWalk;
+ if(chamber&&Math.hypot(x-chamber.x,z-chamber.z)<14)return groundAt(x,z);
+ // A town road can cross a jetty approach or the capital stairs. Lay its
+ // bedding below the authored deck so that the boards and treads stay visible.
+ if(activeScene.key==='harbor'&&data.piers?.some(p=>Math.abs(x-p.x)<p.w/2+.65&&Math.abs(z-p.z)<p.d/2+.7))return Math.min(heightAt(x,z),1.47);
+ if(data.palaceStairSite&&Math.abs(x+70)<4.15&&z< -141.6&&z> -154)return groundAt(x,z);
+ return heightAt(x,z);
+}
 function buildRoadSupports32(){
  if(activeScene.kind!=='poi')return;const material=world.userData.terrainChunks[0]?.material;if(!material)return;
  if(activeScene.key==='harbor'){
@@ -63,7 +72,7 @@ function buildRoadSupports32(){
  for(const road of [...districts24[activeScene.key].roads,...roadContinuations32(activeScene.key)])for(let j=1;j<road.p.length;j++){
   const aa=road.p[j-1],bb=road.p[j],span=Math.hypot(bb[0]-aa[0],bb[1]-aa[1]),dx=(bb[0]-aa[0])/span,dz=(bb[1]-aa[1])/span,a=[aa[0]-dx*.08,aa[1]-dz*.08],b=[bb[0]+dx*.08,bb[1]+dz*.08],len=span+.16,w=road.kind==='trail'?5.5:8;
   const g=new THREE.PlaneGeometry(w,len,8,Math.max(2,Math.ceil(len/.45)));g.rotateX(-Math.PI/2);roadAttributes17(g);const p=g.attributes.position;
-  for(let i=0;i<p.count;i++){const u=p.getX(i),t=(p.getZ(i)+len/2)/len,x=mix(a[0],b[0],t)+dz*u,z=mix(a[1],b[1],t)-dx*u,h=heightAt(x,z);p.setXYZ(i,x,h+.018,z);const r=roadInfo(x,z);g.attributes.pathMix.setX(i,1-smooth(road.kind==='trail'?1.6:2.7,road.kind==='trail'?2.8:4.1,r.d));g.attributes.townMix.setX(i,road.kind==='trail'?0:1);g.attributes.riverMix.setX(i,1-smooth(-1,2.2,channelDistance(x,z)));g.attributes.snowMix.setX(i,winterAt(x,z));}
+  for(let i=0;i<p.count;i++){const u=p.getX(i),t=(p.getZ(i)+len/2)/len,x=mix(a[0],b[0],t)+dz*u,z=mix(a[1],b[1],t)-dx*u,h=roadBedHeight32(x,z);p.setXYZ(i,x,h+.018,z);const r=roadInfo(x,z);g.attributes.pathMix.setX(i,1-smooth(road.kind==='trail'?1.6:2.7,road.kind==='trail'?2.8:4.1,r.d));g.attributes.townMix.setX(i,road.kind==='trail'?0:1);g.attributes.riverMix.setX(i,1-smooth(-1,2.2,channelDistance(x,z)));g.attributes.snowMix.setX(i,winterAt(x,z));}
   g.computeVertexNormals();g.computeBoundingSphere();const o=new THREE.Mesh(g,material);o.receiveShadow=true;o.userData.terrain=o.userData.routeSupport32=true;group.add(o);world.userData.walkSurfaces.push(o);profiles.push({a,dx,dz,len,w,rows:Math.max(2,Math.ceil(len/.45)),p});count++;
  }
  world.userData.routeSupports32={group,count,profiles};

@@ -84,8 +84,7 @@ function cave38(){
  const caveStone=stoneSurface38('#b2bbb1');world.traverse(o=>{if(o.isMesh&&!Array.isArray(o.material)&&['rock','wall'].includes(o.material?.userData.textureKey))o.material=caveStone;});
  const rng=seeded(38111);for(const side of[-1,1])for(let i=0;i<19;i++){const x=side<0?b[0]+4:b[1]-4,z=mix(b[2]+3,b[3]-3,i/18);if(roadDistance(x,z)<7)continue;const o=boulder38(x,z,4+rng()*2,'#7c8e87');o.material=caveStone;o.scale.y*=2.3;o.userData.caveWall38=true;obstacle(x,z,3,3,'cave wall');}
  for(let i=0;i<18;i++){const x=mix(b[0]+4,b[1]-4,i/17),z=b[2]+4;if(roadDistance(x,z)>6){const o=boulder38(x,z,4+rng()*3,'#8e9c91');o.scale.y*=2;obstacle(x,z,3,3,'cave wall');}}
- for(const [x,z]of[[98,13],[122,13],[98,32],[123,32]])if(clearPlot38(x,z,1.6)){const y=groundAt(x,z),g=new THREE.Group();g.position.set(x,y,z);world.add(g);box(0,3,0,1.5,6,1.8,'wall','#9aa79c',g);for(const yy of[.3,5.9])box(0,yy,0,2.3,.6,2.4,'rock','#c2c7b2',g);obstacle(x,z,1.8,2,'vault pillar');}
- arch38(world,110,groundAt(110,9),9,12,9,2.8,'#a9b4a3');
+ // The remnant chamber builds its own structural ribs, recess and stairs.
  for(const o of world.children)if(o.userData.mechanism){for(const yy of[1.8,3.3]){const ring=mesh(new THREE.TorusGeometry(1.7,.16,8,32),material('metal','#a58f67',{metalness:.55,roughness:.44}),0,yy,0,o);ring.rotation.x=Math.PI/2;}box(0,2.5,0,.55,3.5,.55,'metal','#a8aa8b',o);for(const side of[-1,1])box(side*1.4,2.1,0,.4,3.2,.6,'wall','#c0c4ad',o);}
  for(const [x,z]of[[95,20],[124,17],[101,39]]){const light=new THREE.PointLight('#8cc5cf',4.5,18,2);light.position.set(x,groundAt(x,z)+3,z);world.add(light);}
  world.userData.plantMatrices=Object.fromEntries(Object.keys(world.userData.plantMatrices).map(k=>[k,[]]));

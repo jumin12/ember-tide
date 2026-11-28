@@ -23,7 +23,12 @@ function addScenicEcology104(){
  if(!['poi','overworld'].includes(activeScene.kind)||world.userData.ecology104)return;
  const profile=ecology104(),macro=activeScene.kind==='overworld',phone=matchMedia('(pointer:coarse)').matches,rng=seeded(104771+Math.round(activeScene.bounds[0]*37)),ground=terrainSampler64().sample,bins=new Map(),materials=new Map(),summary={identity:profile.name,plantings:0,stones:0,wood:0,batches:0,actorClearance:3,meshes:[]};
  const wet=(x,z)=>macro?traversalWet(x,z):waterGround(x,z),road=(x,z)=>macro?macroRoadInfo15(x,z).d:roadDistance(x,z),anchorClear=(x,z,r=3)=>![...interactables,...actors].some(o=>Math.hypot(x-o.x,z-o.z)<r);
- const free=(x,z,r=.25)=>inSceneBounds(x,z,0)&&!wet(x,z)&&road(x,z)>3.8&&staticFree(x,z,r)&&anchorClear(x,z);
+ // The quay is a built surface all the way out to its timber piers. The
+ // water query deliberately marks those decks dry to allow walking.
+ const quay=(x,z,r)=>activeScene.key==='harbor'&&(
+  (x>250-r&&x<391+r&&z>62.8-r&&z<85+r)||
+  world.userData.piers?.some(p=>Math.abs(x-p.x)<p.w*.5+r&&Math.abs(z-p.z)<p.d*.5+r));
+ const free=(x,z,r=.25)=>inSceneBounds(x,z,0)&&!quay(x,z,r)&&!wet(x,z)&&road(x,z)>3.8&&staticFree(x,z,r)&&anchorClear(x,z);
  const material=(kind)=>{if(!materials.has(kind))materials.set(kind,kind==='leaf'?treeMaterial104(0):vegetationMaterial103(kind));return materials.get(kind);};
  const submit=(kind,g,m,x,y,z,sx,sy,sz,angle=0)=>{const id=kind+'|'+Math.floor(x/(macro?64:24))+','+Math.floor(z/(macro?64:24));if(!bins.has(id))bins.set(id,{kind,g,m,rows:[],center:V3(Math.floor(x/(macro?64:24))*(macro?64:24)+(macro?32:12),0,Math.floor(z/(macro?64:24))*(macro?64:24)+(macro?32:12))});bins.get(id).rows.push(new THREE.Matrix4().compose(V3(x,y,z),new THREE.Quaternion().setFromAxisAngle(V3(0,1,0),angle),V3(sx,sy,sz)));};
  const plantAt=(kind,x,z,s)=>{if(!free(x,z))return;const g=kind==='leaf'?bough104(0,phone?1:0):plantSculpt103(kind,phone),y=ground(x,z)+(kind==='leaf'?-.02:.465*s)-.025;submit(kind,g,material(kind),x,y,z,s,s,s,rng()*TAU);summary.plantings++;};
@@ -56,6 +61,7 @@ function addScenicEcology104(){
  summary.courtGardens=0;summary.gardens=[];const courtPlan=brookGarden?{courts:[[-141,40,0]],routes:streetLines110(),loops:[]}:layout;
  if(courtPlan&&!macro)for(const [cx,cz,r]of courtPlan.courts.slice(0,2))for(const angle of brookGarden?[0]:[.78,2.36,3.93,5.5]){
   const x=cx+Math.cos(angle)*r*.68,z=cz+Math.sin(angle)*r*.68,radius=profile.flora==='formal'?1.5:1.8;
+  if(quay(x,z,radius))continue;
   let lane=Infinity;for(const line of[...courtPlan.routes,...courtPlan.loops??[]])for(let j=1;j<line.length;j++)lane=Math.min(lane,segmentDistance(x,z,line[j-1],line[j]));
   if(lane<radius+3.6||wet(x,z)||!anchorClear(x,z,radius+2.5)||!staticFree(x,z,radius))continue;const h=ground(x,z);if(Math.max(...[[-1,-1],[-1,1],[1,-1],[1,1]].map(([a,b])=>Math.abs(ground(x+a*radius,z+b*radius)-h)))>.14)continue;
   const snowBed=profile.flora==='snow',bed=new THREE.Mesh(new THREE.CylinderGeometry(radius,radius*1.02,.10,40),new THREE.MeshStandardMaterial({map:environment102.maps.get(snowBed?'snow':'earthForest'),roughness:.98,color:snowBed?'#ffffff':'#d3ceb7'}));bed.position.set(x,h+.035,z);bed.name='Low planted court island';bed.receiveShadow=true;bed.updateMatrix();bed.matrixAutoUpdate=false;world.add(bed);

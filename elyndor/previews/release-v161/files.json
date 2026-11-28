@@ -1,0 +1,352 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 114723,
+    "sha256": "b73ae3910ece8f8a50bb57622fa30eb87fb1e3d3464f68a683c29dc47a9f126d"
+  },
+  {
+    "file": "elyndor/assets/settlements/fern-house-finishes.webp",
+    "bytes": 491258,
+    "sha256": "bc4d65da0f482bfdb06e11e50d09684410b8991918d5fa04c67da6cb1bfec84a"
+  },
+  {
+    "file": "elyndor/assets/settlements/oak-stone-bark-linen.webp",
+    "bytes": 595502,
+    "sha256": "37942093303dbcb9b8d8678cbf07770d18a938eba816fc67a30a8abe76628550"
+  },
+  {
+    "file": "elyndor/journey-v12.js",
+    "bytes": 25359,
+    "sha256": "49c53f002028877dc3ca18a4c9056c94d2bc274345d9e27a73e3009b2e1baa37"
+  },
+  {
+    "file": "elyndor/navigation-v32.js",
+    "bytes": 8768,
+    "sha256": "1da993c7a3cb740fc48da6a70b2affc810d2dde31877008399633cc9cda13c47"
+  },
+  {
+    "file": "elyndor/polish.js",
+    "bytes": 24183,
+    "sha256": "b6bc039e02f42151fc2175590b3ef085e2f737c16e2441d7240f9df429d6d3ab"
+  },
+  {
+    "file": "elyndor/previews/release-v161/abWright.jpg",
+    "bytes": 330516,
+    "sha256": "ca5c90c998b426b10ddfa7dbd0e44ea1a587d4b666feb183fe8fbd500c573217"
+  },
+  {
+    "file": "elyndor/previews/release-v161/alder-after.jpg",
+    "bytes": 498535,
+    "sha256": "8b1ecb7cc70acf23d51b67e67b4855280b651114de37b1100cf220b53e18f56f"
+  },
+  {
+    "file": "elyndor/previews/release-v161/alder-before.jpg",
+    "bytes": 541328,
+    "sha256": "9cb6b6772f7534c3a46515629ee23f26fa1ba3743912156a8e49660f26b50644"
+  },
+  {
+    "file": "elyndor/previews/release-v161/alderBridge-after.jpg",
+    "bytes": 464512,
+    "sha256": "a9cf752e57d55e366b892a9b03f78560b7b978c5b455a9912edb87a31e993256"
+  },
+  {
+    "file": "elyndor/previews/release-v161/alderBridge-before.jpg",
+    "bytes": 434899,
+    "sha256": "b8118743389cf15b5f1e872db976fa1bf74c2ea9a359b05ccb6ecdb78c97788c"
+  },
+  {
+    "file": "elyndor/previews/release-v161/annex.jpg",
+    "bytes": 219709,
+    "sha256": "4a5dbc81cddbe6e2a62db658bcb6ea05050b9c8bbc4304ccc7511bec5a21c034"
+  },
+  {
+    "file": "elyndor/previews/release-v161/coastalDistrict-after.jpg",
+    "bytes": 431486,
+    "sha256": "09247f783b57b877dd076152f9d8505ae65c0c87cbe10cfa6ccf67d431c2d00c"
+  },
+  {
+    "file": "elyndor/previews/release-v161/coastalDistrict-before.jpg",
+    "bytes": 441767,
+    "sha256": "cc82465baa000c7875e14db3c6ddfe72d423265a9d863037ffd75453b0d8fc8c"
+  },
+  {
+    "file": "elyndor/previews/release-v161/depths-after.jpg",
+    "bytes": 319215,
+    "sha256": "96b3a302eebb1962706dc0419b879e8c6fdcd5c4e2d5d39c57d0cfa63bae2cdc"
+  },
+  {
+    "file": "elyndor/previews/release-v161/depths-before.jpg",
+    "bytes": 368575,
+    "sha256": "60250d6a3ff5df7c5a86495f4cb3746797e000cfc301b156906d46e8a8847562"
+  },
+  {
+    "file": "elyndor/previews/release-v161/duskVillage-after.jpg",
+    "bytes": 306840,
+    "sha256": "23c7ddb39602c93729c7a822d94b32715549f6ce6eee401072bedbd680743e6f"
+  },
+  {
+    "file": "elyndor/previews/release-v161/duskVillage-before.jpg",
+    "bytes": 352133,
+    "sha256": "040c80f16247e80cb998f7d6683ce7da699d64e6e8eead54ad0e3e4bad4e210e"
+  },
+  {
+    "file": "elyndor/previews/release-v161/eastSuite.jpg",
+    "bytes": 302371,
+    "sha256": "efe0e8b9a4cc5a20d8855cd203ce7dc7216d0f24bd48807f96f790a7fa3ff27a"
+  },
+  {
+    "file": "elyndor/previews/release-v161/fern-after.jpg",
+    "bytes": 511133,
+    "sha256": "1674cd30eba319de6077abce37acd17d07b903a594ec0afaac7cc0b217b81fef"
+  },
+  {
+    "file": "elyndor/previews/release-v161/fern-before.jpg",
+    "bytes": 542698,
+    "sha256": "bc27e124e8c140fc63eaf9f7b42e026ed8d921b503aa778b015c1b219c6160fb"
+  },
+  {
+    "file": "elyndor/previews/release-v161/fernBridge-after.jpg",
+    "bytes": 409747,
+    "sha256": "9ecb8fabcbb9857823858bae1e184ed71cda63166dea7c5e6e6a110c47a28206"
+  },
+  {
+    "file": "elyndor/previews/release-v161/fernBridge-before.jpg",
+    "bytes": 473171,
+    "sha256": "6726228e8c6913fd503b4a218b64119ea70286b72e03593038ab5eecf3618668"
+  },
+  {
+    "file": "elyndor/previews/release-v161/fernCanopyInn-after.jpg",
+    "bytes": 359937,
+    "sha256": "7a275c40bf2e3b2475db14e458d7617b111858c3855de985ba27551da7989fb3"
+  },
+  {
+    "file": "elyndor/previews/release-v161/fernCanopyInn-before.jpg",
+    "bytes": 373450,
+    "sha256": "c7bcd6e7f55221392108e799d214f793e3b2dc6cc8cd3b17d12a331fb4147d02"
+  },
+  {
+    "file": "elyndor/previews/release-v161/fernGate-after.jpg",
+    "bytes": 488036,
+    "sha256": "f4918cd88c7dd2da80806ba134b1df67321a2a0e3cf53f0574834d854be66f1b"
+  },
+  {
+    "file": "elyndor/previews/release-v161/fernGate-before.jpg",
+    "bytes": 474566,
+    "sha256": "0d345394ca845a22acc9ab92ee1cbc8c90be84539634a29f65883dd28e3cc2ee"
+  },
+  {
+    "file": "elyndor/previews/release-v161/fernHollowSmithy-after.jpg",
+    "bytes": 371705,
+    "sha256": "a28feec424da0fb4afe22ad1126eff4a3d29091b2c3f95b7f675e4eb4cf5f13d"
+  },
+  {
+    "file": "elyndor/previews/release-v161/fernHollowSmithy-before.jpg",
+    "bytes": 371580,
+    "sha256": "e4647130ecd215f59466571ddaf3455496c9129f7b90581c0c9a120e5e6e9157"
+  },
+  {
+    "file": "elyndor/previews/release-v161/fernHollowSupplies-after.jpg",
+    "bytes": 350179,
+    "sha256": "67c4d9713c67997399652a635a5574cb517bd9c082cdae1607bb77e5a90e7e57"
+  },
+  {
+    "file": "elyndor/previews/release-v161/fernHollowSupplies-before.jpg",
+    "bytes": 351163,
+    "sha256": "45de3c8d15155fb009ebb6dfdd553e215fb27021f2a0c988f02f119a98e9496f"
+  },
+  {
+    "file": "elyndor/previews/release-v161/fhHerbalist.jpg",
+    "bytes": 322870,
+    "sha256": "f1bc00fb2ecc94a140f3c8004b2778750ec2cbc3b0ba07cbc52280cc5a369223"
+  },
+  {
+    "file": "elyndor/previews/release-v161/fhWillow.jpg",
+    "bytes": 329079,
+    "sha256": "3c8e2665fa7b8669d72c17b372e8f92ebba0be206594e30e7fe4c8fce9c00bc6"
+  },
+  {
+    "file": "elyndor/previews/release-v161/finishingShop.jpg",
+    "bytes": 398257,
+    "sha256": "3b4ff9d928e3b32113af266b65d65c2705177c7501074cda9e408143ab101d23"
+  },
+  {
+    "file": "elyndor/previews/release-v161/harbor-after.jpg",
+    "bytes": 410420,
+    "sha256": "913d7e086dd689ce913f404f24df849ac9b3697d34eb61ca12007bf1393f356d"
+  },
+  {
+    "file": "elyndor/previews/release-v161/harbor-before.jpg",
+    "bytes": 428666,
+    "sha256": "b09bb9c6da472393b6663d7191bbb45aee18aa80b4bbbdf4891119cbfbe3a02d"
+  },
+  {
+    "file": "elyndor/previews/release-v161/highmere-after.jpg",
+    "bytes": 470876,
+    "sha256": "0e8edac3fe636ea7ba8b847bae400e46873c3f71392e0296d8d8d14fe7fe2fa7"
+  },
+  {
+    "file": "elyndor/previews/release-v161/highmere-before.jpg",
+    "bytes": 432597,
+    "sha256": "fe919464941e481ce807d0de332f6d653fdf6d1573b31349adbe576c1873a2c3"
+  },
+  {
+    "file": "elyndor/previews/release-v161/hmPalace.jpg",
+    "bytes": 387747,
+    "sha256": "5efdfc74ce494b592422922ba46a113c1f48930b13d1fb8723d4334667a18778"
+  },
+  {
+    "file": "elyndor/previews/release-v161/index.html",
+    "bytes": 7999,
+    "sha256": "7d3f8285623f6a9be15aa2a77a5203cd0ae07a77f9f6ecb0b24321d57cf1f153"
+  },
+  {
+    "file": "elyndor/previews/release-v161/roadsideCourt-after.jpg",
+    "bytes": 499220,
+    "sha256": "23f3e26c87eb458ddd93516d477d5b621293768543b5bc487c705b87610173ce"
+  },
+  {
+    "file": "elyndor/previews/release-v161/roadsideCourt-before.jpg",
+    "bytes": 544724,
+    "sha256": "03bf7ac1e25bcaab14e949173aa1a94bd536cdbb7b3d931c9a383a09274b3d13"
+  },
+  {
+    "file": "elyndor/previews/release-v161/royalDistrict-after.jpg",
+    "bytes": 459050,
+    "sha256": "76fdf531a690d64c88639b4fa7befda4d02c490fb14c7b7009440b27181fcb6c"
+  },
+  {
+    "file": "elyndor/previews/release-v161/royalDistrict-before.jpg",
+    "bytes": 461157,
+    "sha256": "9d920c3f22ee6edd8c31f090e62c251d3829254262a40f7c033d0c2739119f4a"
+  },
+  {
+    "file": "elyndor/previews/release-v161/stockroom.jpg",
+    "bytes": 321317,
+    "sha256": "dbd7ef157c8f6504e4e2e1c785819da36bb6f2e729832cad2c013e0f07086846"
+  },
+  {
+    "file": "elyndor/previews/release-v161/verification.json",
+    "bytes": 943,
+    "sha256": "8511639ccb8052c8713f41ae2926b9a4e58df4a5221928ff4f998fc859aaf517"
+  },
+  {
+    "file": "elyndor/previews/release-v161/vhBondStore.jpg",
+    "bytes": 339390,
+    "sha256": "a4f3217087d4b13eaa106e47380e139974ffd289595f4e9f693bb16d0e2b62d7"
+  },
+  {
+    "file": "elyndor/previews/release-v161/vhCustoms.jpg",
+    "bytes": 324418,
+    "sha256": "bc775e2bd864fc049d2900cd59996c401db8454db5c4d4cb4ac6e99b9df59eb7"
+  },
+  {
+    "file": "elyndor/previews/release-v161/vhSailmaker.jpg",
+    "bytes": 320700,
+    "sha256": "4a6f5ce6821739dfb2e11a6e4a22082a1eaadea98618751562cdd207358bc01b"
+  },
+  {
+    "file": "elyndor/previews/release-v161/villageCourt-after.jpg",
+    "bytes": 511818,
+    "sha256": "e830498e6d5d40f6fd7b9b084df4bc85cbac26a7af69603522524ea555590525"
+  },
+  {
+    "file": "elyndor/previews/release-v161/villageCourt-before.jpg",
+    "bytes": 542703,
+    "sha256": "3f9f6a46378f51a076d646ed4934f779811deed98b96d6cebba821b47fa12de4"
+  },
+  {
+    "file": "elyndor/previews/release-v161/westSuite.jpg",
+    "bytes": 295719,
+    "sha256": "b29eab95d1b2a85196d721c606e9fcfaf76e169e0375f4e11535b1512728fb83"
+  },
+  {
+    "file": "elyndor/settlements-v15.js",
+    "bytes": 12806,
+    "sha256": "dd22169966123a9870351d9176e6316a2852435e55c25fb10fabdd46829b1430"
+  },
+  {
+    "file": "elyndor/systems/brookstead-interiors.js",
+    "bytes": 51683,
+    "sha256": "723967fa3e904d986d9b05248894cffbb0a872c6765cb6898822cee62ec0b9b3"
+  },
+  {
+    "file": "elyndor/systems/building-entry.js",
+    "bytes": 5771,
+    "sha256": "2f950f4f12d7e5a95ff090ac16743f6af0b7d57147aa37994fa7aac892f28816"
+  },
+  {
+    "file": "elyndor/systems/facade-detail.js",
+    "bytes": 8780,
+    "sha256": "3aed25b4eed92a669cc8e3d6cefcc8899d77e7a79123feb5f86199e441251cef"
+  },
+  {
+    "file": "elyndor/systems/fern-environments.js",
+    "bytes": 63020,
+    "sha256": "a67d17c84220165cfeb2e6228876a1efa49fd94abb2593f5cde408eefae418c5"
+  },
+  {
+    "file": "elyndor/systems/jrpg-boundaries.js",
+    "bytes": 24279,
+    "sha256": "95fe787b684c956ecaf86dec32babe43a7d613eb8797b08bd041941972816a4b"
+  },
+  {
+    "file": "elyndor/systems/jrpg-layout-data.js",
+    "bytes": 6091,
+    "sha256": "88f665b6db3ac9b644958c1267daa078f75de4e845ce9e6ba33638691a126d2e"
+  },
+  {
+    "file": "elyndor/systems/jrpg-levels.js",
+    "bytes": 13570,
+    "sha256": "14455f80c88315e3cba5555671278c09f287deb47202bc6cde933193b1685a06"
+  },
+  {
+    "file": "elyndor/systems/location-ecology.js",
+    "bytes": 16630,
+    "sha256": "12775dcab279943b42138d774a49170df81d648a78164f065e710011b62dde2a"
+  },
+  {
+    "file": "elyndor/systems/poi-exits.js",
+    "bytes": 13545,
+    "sha256": "4b46589e31cac2258e2593ef0338eef5b4b4a5b5416534c28590e3abbe6d3769"
+  },
+  {
+    "file": "elyndor/systems/poi-local-shadows.js",
+    "bytes": 12536,
+    "sha256": "7fa7758e07ef22ca6a869cc99afba4266c7c200713e03a5ae8068270d2cb5a81"
+  },
+  {
+    "file": "elyndor/systems/settlement-architecture.js",
+    "bytes": 56865,
+    "sha256": "2a8e6018f552aec5925cd993596260da69eb85c643ada9536e54b4d02c1b4977"
+  },
+  {
+    "file": "elyndor/systems/settlement-streets.js",
+    "bytes": 25026,
+    "sha256": "6943bd6ba597e12395d6655c00bae3d379ce1be98e1fdfce0224d0f24bc9460e"
+  },
+  {
+    "file": "elyndor/systems/terrain-seating.js",
+    "bytes": 7084,
+    "sha256": "55853a6068fda47cb0fd094de11c57e2eed4db0d5f566f64f52eab830e79b35d"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 107248,
+    "sha256": "414e2466db58d47ccc616e2081c4c0986bb41571356d832f6ae0a3dc1a4605a5"
+  },
+  {
+    "file": "elyndor/world-art-v38.js",
+    "bytes": 27752,
+    "sha256": "5303ef07aeca7df2d36cdc72d3bb1b0a71bf98963d748641583b6f463913776c"
+  },
+  {
+    "file": "index.html",
+    "bytes": 8198170,
+    "sha256": "42eececf44f00743c52c03e75d7aa94f517d7898e2198b820ebc49b0277a666a"
+  },
+  {
+    "file": "release.json",
+    "bytes": 113379,
+    "sha256": "7218c4b169ed800cf623e3d31a80f94c0f4f035f6fe8815c437b6a4003280404"
+  }
+]

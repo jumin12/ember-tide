@@ -5,9 +5,13 @@ groundDecal=function(...args){const mesh=seatedDecalBefore45(...args);mesh.userD
 function seatingWeight45(x,z,p){const dx=x-p.x,dz=z-p.z,c=Math.cos(p.angle),s=Math.sin(p.angle),lx=dx*c-dz*s,lz=dx*s+dz*c,d=p.radius?Math.max(0,Math.hypot(dx,dz)-p.radius):Math.hypot(Math.max(0,Math.abs(lx)-p.w/2),Math.max(0,Math.abs(lz)-p.d/2));return d>=p.blend?0:1-smooth(0,p.blend,d);}
 function seatedGround45(x,z,base){
  const patches=activeScene?.kind==='poi'&&world?.userData.seating45?.patches;if(!patches)return base;
+ // Grade building plots into the outer bank while retaining the open channel.
+ const q=valleyWatercourses[activeScene.key];
+ const bank=q&&x>=q.x0&&x<=q.x1?smooth(streamWidth(q,x)-.12,streamWidth(q,x)+2.55,Math.abs(z-q.centre(x))):1;
+ if(bank===0)return base;
  let sum=base,total=1;
- for(const p of patches){const blend=seatingWeight45(x,z,p);if(blend<=0)continue;if(blend>1-1e-8)return p.level;const weight=blend/(1-blend);sum+=p.level*weight;total+=weight;}
- return sum/total;
+ for(const p of patches){const blend=seatingWeight45(x,z,p);if(blend<=0)continue;if(blend>1-1e-8)return mix(base,p.level,bank);const weight=blend/(1-blend);sum+=p.level*weight;total+=weight;}
+ return mix(base,sum/total,bank);
 }
 const seatedGroundBefore45=groundAt;
 groundAt=function(x,z,...args){return seatedGround45(x,z,seatedGroundBefore45(x,z,...args));};

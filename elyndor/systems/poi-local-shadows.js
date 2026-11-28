@@ -31,7 +31,7 @@ function placePoiLights(){
  if(!world||!player||battle||encounter53.active||!['poi','interior'].includes(activeScene?.kind))return;
  const fixtures=poiFixtureSources(),room=activeScene.kind==='interior';
  if(!fixtures.length)return;
- const data=world.userData,pool=data.lanterns,day=room?0:celestial31.day.value;
+ const data=world.userData,pool=data.lanterns,day=room||data.remnantGalleryDoor?0:celestial31.day.value;
  lampField33.power.value=room?.28:mix(.39,.035,day);
  const count=Math.min(room?6:4,pool?.length??0);
  const slots=data.fixtureSlots??=Array.from({length:count},()=>({source:null,target:null,gain:0}));

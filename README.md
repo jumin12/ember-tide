@@ -2,6 +2,18 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.61 — Settlement geography, interiors and entrances
+
+November 28, 2026
+
+- Highmere rises through planted stone terraces to a palace with an audience chamber. In Alderbridge, the western road crosses an orchard stream and climbs toward the meeting tree and workshops.
+- Fern Hollow’s smithy and provisioner face the village square, with the inn above the stream and its stone bridge. The inn has three private guest rooms, the smithy has a forge bellows and a finishing room, and the provisioner has a stocked back room.
+- Valenne Harbor’s curved stone quay shelters two working piers. The raised customs street overlooks the docks, and a separate door leads into the bonded warehouse.
+- The remnant’s daylight stair leads down to a flagstone hall. The device stands on a smaller platform to the right, beside a passage into an instrument chamber.
+- Thirty more buildings can be explored, including cottages, workshops and the palace. Leaving one returns the party to the same doorway. Town boundaries follow visible terrain, bridge decks and stairs match the walking surface, and the old staircase through the herbalist’s cottage is gone.
+
+[Compare all 16 views from Alpha 1.60 and 1.61, and explore the new interiors](https://jumin12.github.io/ember-tide/elyndor/previews/release-v161/index.html)
+
 ## Alpha Version 1.60 — Overworld grass, fountain reflections and moonlight shadows
 
 November 27, 2026

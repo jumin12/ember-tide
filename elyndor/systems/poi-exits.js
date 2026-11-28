@@ -55,7 +55,7 @@ function departureBlocked(x,z,r=0){
   const q=departureCoordinates(o,x,z);
   if(o.closedApproach&&x<o.x+r&&z>115-r)return true;
   if(q.along>-r&&o.exteriorTail?.some((p,i,a)=>i&&segmentDistance(x,z,a[i-1],p)<o.boundaryHalfWidth+r))return true;
-  return q.along>-r&&Math.abs(q.across)<o.boundaryHalfWidth+r;
+  return q.along>-r&&(!o.fittedMouth||q.along<1+r)&&Math.abs(q.across)<o.boundaryHalfWidth+r;
  });
 }
 const departureFreeBefore=staticFree;
@@ -70,7 +70,7 @@ moveActor=function(a,dx,dz,dt,...args){
   // a long frame or diagonal sprint from jumping across the exit plane.
   for(const o of world.userData.poiDepartures??[]){
    const q=departureCoordinates(o,a.x,a.z),d=o.autoDir39,out=dx*d[0]+dz*d[1],margin=actorRadius(a)+.02;
-   if(out<=0||q.along+out<=-margin)continue;
+   if(out<=0||q.along+out<=-margin||(o.fittedMouth&&q.along>margin))continue;
    const t=clamp((-margin-q.along)/out,0,1),cross=departureCoordinates(o,a.x+dx*t,a.z+dz*t).across;
    if(Math.abs(cross)>o.boundaryHalfWidth+margin)continue;
    dx*=t;dz*=t;
@@ -151,6 +151,19 @@ buildWorld=function(...args){
  const result=departureBuildBefore(...args);poiDeparture.dismissed=null;
  world.userData.poiDepartures=activeScene.kind==='poi'?(world.userData.thresholds39??[]).filter(o=>o.type==='poiExit'):[];
  for(const[o,i]of world.userData.poiDepartures.map((o,i)=>[o,i])){o.label='Proceed';o.boundaryHalfWidth=Math.max(6,o.autoHalfWidth39+3);o.autoArmed39=false;const tail=compactDepartures.get(activeScene.key)?.[i].tail,d=o.autoDir39;o.exteriorTail=[[o.x,o.z],...tail.slice(1).filter(p=>(p[0]-o.x)*d[0]+(p[1]-o.z)*d[1]>=0)];o.closedApproach=activeScene.key==='brookstead'&&o.autoDir39[0]<-.8;}
+ for(const o of world.userData.poiDepartures){
+  if(!['highmere','alder','harbor','fern','depths'].includes(activeScene.key))continue;
+  o.boundaryHalfWidth=o.autoHalfWidth39;
+  if(o.fittedMouth)continue;
+  o.fittedMouth=true;
+  const [dx,dz]=o.autoDir39,threshold=landmarkGroup(world);
+  for(let i=-4;i<=4;i++){
+   const u=i*(o.boundaryHalfWidth*2/9),x=o.x-dz*u-dx*.30,z=o.z+dx*u-dz*.30;
+   const tile=dressedBlock(threshold,x,heightAt(x,z)+.025,z,o.boundaryHalfWidth*2/9-.035,.062,.47,'laidFlags',i%2?'#bbb9a9':'#aaa99b',1.7);
+   tile.rotation.y=Math.atan2(dx,dz);
+  }
+  mergeGroup(threshold);
+ }
  if(activeScene.kind==='overworld'&&poiDeparture.arriving)settleDepartureOnWorld();
  // Old journey records can contain positions on the former exterior road.
  // Bring those arrivals back to the inside of their departure, once on load.
@@ -159,7 +172,7 @@ buildWorld=function(...args){
   for(const o of world.userData.poiDepartures){const q=departureCoordinates(o,player.x,player.z);
    const oldRoad=activeScene.key==='brookstead'&&o===world.userData.poiDepartures[0]&&player.x<-150&&player.z>115;
    const onTail=o.exteriorTail.some((p,i,a)=>i&&segmentDistance(player.x,player.z,a[i-1],p)<o.boundaryHalfWidth);
-   if(q.along>-.52&&(Math.abs(q.across)<o.boundaryHalfWidth||onTail||oldRoad)){
+   if(q.along>-.52&&((!o.fittedMouth||q.along<1)&&Math.abs(q.across)<o.boundaryHalfWidth||onTail||oldRoad)){
     const cross=clamp(q.across,-2,2),d=o.autoDir39,p=safePoint({x:o.x-d[0]*6-d[1]*cross,z:o.z-d[1]*6+d[0]*cross},.5);
     player.x=p.x;player.z=p.z;adjusted=true;
    }

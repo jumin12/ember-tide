@@ -265,28 +265,184 @@ function buildRoomAir66(){
  for(let i=0;i<3;i++){const from=V3(-9.7,4.1,-3.8+(i-1)*.40),to=V3(-1.7+i*.4,.08,1.6+(i-1)*1.2),delta=from.clone().sub(to);const shaft=new THREE.Mesh(geo16('room66-window-shaft',()=>new THREE.CylinderGeometry(.11,.62,1,10,1,true)),shaftMaterial);shaft.position.copy(from).add(to).multiplyScalar(.5);shaft.scale.y=delta.length();shaft.quaternion.setFromUnitVectors(V3(0,1,0),delta.normalize());shaft.name='Soft window daylight';shaft.userData.dynamicFX=true;world.add(shaft);}
 }
 const brookInteriorBefore66=buildJourneyInterior;
+function furnishTownAddress(id,spec){
+ const g=landmarkGroup(world);g.userData.interiorFixture29=true;
+ const side=SCENES[id].name.length%2?1:-1,room=spec.room;
+ const wood=spec.poi==='fern'?'#b6a287':spec.poi==='harbor'?'#a6a99e':'#afa08a';
+ const palace=room==='audience',warehouse=room==='cargo',coast=spec.poi==='harbor';
+ // World-scale grain follows each wall continuously across its window cutouts.
+ for(const m of world.children){
+  if(!m.isMesh)continue;
+  const floor=m===world.userData.terrain,wall=/Solid cutaway|around opening|open window/.test(m.name);
+  if(!floor&&!wall&&!/wainscot/i.test(m.name))continue;
+  const surface=floor?(palace?'laidFlags':room==='workshop'?'rockLimestone':'planedOak'):wall?(palace?'ashlar':coast&&warehouse?'cedar':'limePlaster'):'agedOak';
+  const color=floor?(palace?'#adafa7':'#a9957e'):wall?(palace?'#c7c9c1':coast?'#a6b2ae':'#c7baa4'):'#9a8870';
+  const {x,y,z}=m.position,sc=m.scale.clone(),original=m.geometry;
+  m.geometry=geo16('address-uv-'+m.name+[x,y,z,sc.x,sc.y,sc.z].join('/'),()=>{
+   const geom=original.clone(),pos=geom.attributes.position,n=geom.attributes.normal,uv=geom.attributes.uv;
+   for(let i=0;i<pos.count;i++){
+    const sideWall=Math.abs(n.getX(i))>.70,top=Math.abs(n.getY(i))>.70;
+    const xx=x+pos.getX(i)*sc.x,yy=y+pos.getY(i)*sc.y,zz=z+pos.getZ(i)*sc.z;
+    uv.setXY(i,(sideWall?zz:xx)*.32+.13,(top?zz:yy)*.32+.38);
+   }return geom;
+  });
+  m.material=craftSurface(surface,color);
+ }
+ const trusses=palace?[-5.45,-.70,3.94]:[-6.95,-.45,5.64];
+ for(const z of trusses)for(const s of [-1,1]){
+  const x=s*9.76;
+  if(palace){
+   const arc=Array.from({length:15},(_,i)=>{const ang=i*Math.PI/14;return V3(s*(6.37+1.71-1.71*Math.cos(ang)),6.19+1.12*Math.sin(ang),z);});
+   dressedBlock(g,x,3.05,z,.51,6.10,.78,'ashlar','#b0b4a9',1.70);
+   dressedBlock(g,x,6.10,z,.72,.34,.94,'ashlar','#c0c2b6',1.70);
+   for(let i=1;i<arc.length;i++){
+    const a=arc[i-1],b=arc[i],stone=dressedBlock(g,(a.x+b.x)*.5,(a.y+b.y)*.5,z,b.distanceTo(a)+.018,.36,.56,'ashlar',i%3?'#b1b6a9':'#c0c2b4',1.34);
+    stone.rotation.z=Math.atan2(b.y-a.y,b.x-a.x);
+   }
+  }else{
+   dressedBlock(g,x,3.62,z,.32,7.23,.42,'agedOak',wood,1.93);
+   beam(V3(x,4.98,z),V3(x-s*2.04,7.12,z),.14,'wood',wood,g);
+   dressedBlock(g,x-s*1.03,7.12,z,2.28,.24,.38,'agedOak',wood);
+  }
+ }
+ // A cutaway reveals the interior while showing where the south wall and actual door meet.
+ for(const sign of [-1,1]){
+  dressedBlock(g,sign*6.05,.23,7.73,8.67,.46,.44,palace?'ashlar':'agedOak',wood,2.3);
+  dressedBlock(g,sign*1.64,.65,7.67,.31,1.30,.53,'agedOak',wood);
+  obstacle(sign*6.05,7.78,8.67,.40,'cutaway wall foot');
+ }
+ const table=(x,z,w,d)=>{
+  for(const a of [-1,1])for(const b of [-1,1])dressedBlock(g,x+a*(w/2-.23),.60,z+b*(d/2-.19),.19,1.20,.21,'agedOak',wood);
+  dressedBlock(world,x,1.31,z,w,.22,d,'planedOak',wood,2.08);obstacle(x,z,w,d,'table');
+ };
+ function screens(x,doorway){
+  for(const [a,b] of [[-7.54,doorway-1.12],[doorway+1.12,1.45]]){
+   const d=b-a;
+   dressedBlock(g,x,1.98,(a+b)/2,.22,3.96,d,'limePlaster','#c6c1ac',2.18);
+   obstacle(x,(a+b)/2,.22,d,'partition');
+   for(const z of [a,b])dressedBlock(g,x,2.03,z,.34,4.06,.21,'agedOak',wood,2.10);
+  }
+  dressedBlock(g,x,3.78,doorway,.39,.46,2.44,'agedOak',wood,1.88);
+ }
+ if(room==='audience'){
+  for(const s of [-1,1])for(const z of [-5.45,-.70,3.94]){
+   const x=s*6.38;dressedBlock(g,x,.24,z,1.25,.48,1.28,'laidFlags','#c7c5b7',1.74);
+   landmarkDrum(g,x,.48,z,.46,.38,5.50,'wall','#c8cfcb',12);
+   dressedBlock(g,x,6.03,z,1.16,.48,1.22,'ashlar','#d2d4c5');obstacle(x,z,1.25,1.28,'stone column');
+  }
+  for(const s of [-1,1]){pennon(g,s*3.10,5.40,-7.23,1.45,3.49);roomChairFacing29(s*2.9,-5.46,0,2);}
+  roomRug29(0,.17,4.10,11.70);
+  const seat=landmarkGroup(g,0,0,-6.48);
+  dressedBlock(seat,0,.30,0,2.10,.60,1.52,'ashlar','#a5aaa1',1.67);
+  dressedBlock(seat,0,.89,0,1.60,.55,1.26,'embroidery','#b4a18a',0);
+  dressedBlock(seat,0,2.08,-.56,1.66,2.32,.24,'carvedFern','#b7a482',1.32);
+  for(const side of [-1,1]){dressedBlock(seat,side*.88,1.04,0,.18,1.04,1.34,'agedOak',wood);landmarkDrum(seat,side*.88,1.55,.54,.14,.10,.23,'bronze','#baa17a',10);}
+  const crown=landmarkGroup(seat,0,3.14,-.48);
+  for(let j=-2;j<=2;j++){
+   const h=.31+.15*(2-Math.abs(j));dressedBlock(crown,j*.32,h*.43,0,.29,h,.22,'agedOak','#ae9772');
+   landmarkBoulder(crown,j*.32,h-.015,.008,.12,.15,.11,'bronze','#c3ad80',.06*j);
+  }
+  dressedBlock(seat,0,2.20,-.403,1.23,1.67,.09,'embroidery','#9c8d72',0);
+  obstacle(0,-6.48,2.10,1.52,'throne');
+  for(const sign of [-1,1]){const bay=landmarkGroup(g,sign*7.75,0,-7.18);
+   for(let i=0;i<3;i++)dressedBlock(bay,(i-1)*.89,2.84,.06,.73,2.45,.14,'embroidery','#677a83',0);
+   dressedBlock(bay,0,4.14,.08,3,.16,.26,'carvedFern',wood);roomPlant29(sign*8.46,0,-5.89,1.64,true);
+  }
+  table(0,-4.12,3.4,1.13);roomBooks29(-.95,1.42,-4.10,3,3);roomLantern66(1.13,1.42,-4.10);
+ }else if(room==='cargo'){
+  const stack=(x,z,n)=>{for(let j=0;j<n;j++)wrappedBale(g,x,j*.75,z,2.02,.75,1.39,j%2?'#929f99':'#b7ab91');obstacle(x,z,2.02,1.39,'stacked cargo');};
+  for(const s of [-1,1])for(let j=0;j<3;j++)stack(s*(7.22+(j%2)*.66),-5.74+3.14*j,2+(j%2));
+  for(const sign of [-1,1]){
+   const rack=landmarkGroup(g,sign*7.55,0,-6.87);
+   for(const u of [-1.58,1.58])dressedBlock(rack,u,2.03,0,.28,4.06,.29,'agedOak',wood);
+   for(const y of [2.25,3.76]){
+    dressedBlock(rack,0,y,0,3.62,.18,.93,'planedOak',wood,1.94);
+    for(const u of [-.93,.05,1.07])wrappedBale(rack,u,y+.09,0,.84,.52,.69,'#aaa18b');
+   }
+   for(let j=0;j<3;j++)roomBag66(sign*(8.75-.58*j),0,2.98+.29*(j%2),.92+j*.1);
+  }
+  table(0,-5.35,4.22,1.52);roomBooks29(-.91,1.42,-5.35,4,7);ropeCoil66(.99,1.42,-5.35,.76);
+ }else{
+  screens(side*3.53,-2.82);
+  const niche=landmarkGroup(g,side*6.61,0,-7.43);
+  dressedBlock(niche,0,3.18,0,3.04,.21,.33,'carvedFern',wood);
+  for(const t of [-1,1]){
+   const panel=dressedBlock(niche,t*.78,2.35,.02,1.45,1.48,.10,'embroidery',coast?'#a4b2b1':'#c6ac90',0);panel.rotation.z=t*.015;
+  }
+  const bx=side*7.84,bz=-4.93;
+  dressedBlock(g,bx,.35,bz,2.22,.56,3.70,'agedOak',wood,1.85);
+  dressedBlock(g,bx,.74,bz,2.12,.25,3.60,'loomLinen','#e1d8bd',2.16);
+  dressedBlock(g,bx,.90,bz+.57,2.14,.12,2.30,'sageLinen','#d7d0b1',0);
+  dressedBlock(g,bx,.94,bz-1.13,1.56,.25,.66,'loomLinen','#ebe0c6',1.20);
+  obstacle(bx,bz,2.25,3.74,'bed frame');
+  table(side*5.29,-6.30,1.35,1.04);roomLantern66(side*5.29,1.42,-6.30);
+  const x=-side*4.52;
+  roomRug29(side*.63,2.91,3.23,3.51);
+  if(room==='home'){
+   roomTable29(x,-1.18,1.22);stockedRoomShelf66(x,-7.05,3.98,2);
+   roomPlant29(-side*8.31,0,3.67,1.22,true);
+   const stove=landmarkGroup(g,-side*8.17,0,-5.59);
+   dressedBlock(stove,0,.40,0,1.53,.79,1.10,'ashlar','#939689',1.29);
+   dressedBlock(stove,0,1.21,0,1.15,.82,.89,'iron102','#90938a');
+   dressedBlock(stove,0,1.25,.46,.72,.49,.09,'agedOak','#635c4e');
+   landmarkDrum(stove,0,1.61,-.18,.15,.15,5.95,'metal','#686d68',10);
+   obstacle(-side*8.17,-5.59,1.53,1.10,'iron stove');
+  }else{
+   table(x,-3.60,4.85,1.67);
+   if(room==='workshop'){
+    forgeTool66(x,1.42,-3.57,.45);for(let j=0;j<4;j++)dressedBlock(g,x+side*(1.20+j*.13),1.51,-3.60,.12,.16,.89,'iron102','#929b98');
+    const benchWall=landmarkGroup(g,x,0,-7.11);
+    dressedBlock(benchWall,0,2.05,0,3.93,.22,.45,'agedOak',wood);
+    for(let i=0;i<4;i++){
+     const u=-1.41+.90*i;beam(V3(u,2.88,.25),V3(u+.06,1.53,.25),.072,'wood',wood,benchWall);
+     dressedBlock(benchWall,u,2.74,.25,i%2?.42:.27,.16,.20,'iron102','#939d99');
+    }
+    if(id==='abWright'||id==='vhCooper'){
+     const hoop=landmarkGroup(g,-side*7.59,1.20,-6.66,.22*side);
+     landmarkHoop(hoop,0,0,0,1.15,.11,'wood','#957b59');
+     landmarkHoop(hoop,0,0,.02,1.23,.047,'metal','#888d85');
+     if(id==='abWright')for(let j=0;j<8;j++){const a=j*TAU/8;beam(V3(0,0,.015),V3(Math.cos(a)*1.12,Math.sin(a)*1.12,.015),.049,'wood',wood,hoop);}
+    }
+    roomCrate(-side*8.29,-5.20,1.00);
+   }else if(room==='weaver'){
+    for(let i=0;i<3;i++)roomRoll66(x+(i-1)*1.01,1.42,-3.60,.77,['#aca58b','#909f9d','#a89691'][i]);
+    const rack=landmarkGroup(g,x,0,-6.91);
+    for(const s of [-1,1])dressedBlock(rack,s*1.82,1.75,0,.20,3.52,.29,'agedOak',wood);
+    dressedBlock(rack,0,3.41,0,3.95,.17,.28,'agedOak',wood);
+    for(const s of [-1,1])dressedBlock(rack,s*.86,2.13,0,1.52,2.38,.08,s<0?'sageLinen':'loomLinen','#d7cbb8',0);
+    obstacle(x,-6.91,3.84,.34,'cloth rack');
+   }else{
+    stockedRoomShelf66(x,-7.06,4.58,room==='study'?3:5);
+    if(room==='study'){roomBooks29(x-.72,1.42,-3.58,5,1);roomChairFacing29(x,-1.90,x,-3.60);}
+    else{roomPlant29(x-.89,1.42,-3.63,1.03,true);roomBottle29(x+.78,1.42,-3.60,1,.88);}
+   }
+  }
+ }
+}
 buildJourneyInterior=function(id,spawn){
  if(!brookRooms66.has(id))return brookInteriorBefore66(id,spawn);
- resetJourneyWorld(id);const spec=INTERIORS[id];activeScene.bounds=[-10.1,10.1,-7.65,7.65];state.interiorReturn??={id:POIS[spec.poi].id,poi:spec.poi,spawn:[...POIS[spec.poi].spawn]};state.poi=spec.poi;world.userData.interior=spec.type;
+ resetJourneyWorld(id);const spec=INTERIORS[id];activeScene.bounds=[...(spec.bounds??[-10.1,10.1,-7.65,7.65])];state.interiorReturn??={id:POIS[spec.poi].id,poi:spec.poi,spawn:[...POIS[spec.poi].spawn]};state.poi=spec.poi;world.userData.interior=spec.type;
  const woodland=fernRoomSpecs[id],stoneFloor=id==='brookForge'||woodland?.category==='equipment';
- const floor=roomPart66('Walkable room floor',0,-.16,0,21,.3,16,stoneFloor?(woodland?'cobble':'wall'):'wood',stoneFloor?'#aaa18c':'#b7ab91');floor.castShadow=false;floor.userData.terrain=true;world.userData.terrain=floor;world.userData.walkSurfaces=[floor];
- const wallKey=woodland||spec.type==='inn'?'wood':'wall',guestDoor=spec.type==='inn'&&!woodland;backWall67(wallKey,guestDoor);windowedSideWall66(-10.3,[-3.8,3.6],wallKey,'#b1a78f');windowedSideWall66(10.3,[2.9],wallKey,'#b1a78f');
+ const roomDepth=woodland?22.4:16,floor=roomPart66('Walkable room floor',0,-.16,8-roomDepth*.5,21,.3,roomDepth,stoneFloor?(woodland?'cobble':'wall'):'wood',stoneFloor?'#aaa18c':'#b7ab91');floor.castShadow=false;floor.userData.terrain=true;world.userData.terrain=floor;world.userData.walkSurfaces=[floor];
+ if(woodland){buildFernEnvelope(id);}else{
+ const wallKey=spec.type==='inn'?'wood':'wall',guestDoor=spec.type==='inn'&&!woodland;backWall67(wallKey,guestDoor);windowedSideWall66(-10.3,[-3.8,3.6],wallKey,'#b1a78f');windowedSideWall66(10.3,[2.9],wallKey,'#b1a78f');
  backRail67('Walnut wainscot',1.05,2.1,'panel29','#c9b798',guestDoor);for(const x of[-10.03,10.03])roomPart66('Side wall wainscot',x,1.05,-.2,.16,2.1,15.5,'panel29','#c0ae8f');
  for(const x of[-10,-6.7,-1.5,1.5,6.7,10])roomPart66('Structural wall post',x,3.7,-7.58,.23,7.4,.28,'darkWood','#a08c6d');
  for(const y of[.25,2.13,5.8,7.45]){backRail67('Back wall timber rail',y,.2,'wood','#b09a77',guestDoor);for(const x of[-10.02,10.02])roomPart66('Side wall timber rail',x,y,-.2,.23,.2,15.4,'wood','#b09a77');}
  world.userData.windows66=[];for(const [x,z]of[[-10.04,-3.8],[-10.04,3.6],[10.04,2.9]]){const pane=roomPart66('Lead-glass window',x,3.5,z,.08,2.3,1.5,'window','#c1d6d8');pane.material=roomWindowMaterial66();pane.castShadow=false;pane.userData.dynamicFX=true;world.userData.windows66.push(pane);for(const yy of[2.28,4.72])roomPart66('Window frame',x,yy,z,.27,.14,1.8,'darkWood','#a38b65');for(const dz of[-.82,0,.82])roomPart66('Window mullion',x,3.5,z+dz,.16,2.3,.09,'darkWood','#8f7958');roomPart66('Window crossbar',x,3.5,z,.17,.09,1.65,'darkWood','#8f7958');roomPart66('Window sill',x,2.25,z,.5,.18,2,'wood','#bca479');}
  for(const x of[-3.8,3.8]){const pane=roomPart66('High lead-glass transom',x,6.5,-7.61,1.1,1.0,.08,'window','#c1d6d8');pane.material=roomWindowMaterial66();pane.castShadow=false;pane.userData.dynamicFX=true;world.userData.windows66.push(pane);for(const side of[-1,1]){roomPart66('Transom oak frame',x+side*.62,6.5,-7.53,.12,1.25,.19,'darkWood','#9a8564');roomPart66('Transom oak frame',x,6.5+side*.58,-7.53,1.35,.12,.19,'darkWood','#9a8564');}roomPart66('Transom mullion',x,6.5,-7.52,.05,1.0,.12,'metal','#817458');}
  if(guestDoor){roomDoor29(0,-7.54);createInteraction('sleep',0,-6.1,'Rest in the guest rooms');}
+ }
  roomPart66('Exterior door stone threshold',0,.025,7.25,2.7,.08,.48,'wall','#bdb6a1');
- obstacle(0,-7.9,21,.6,'interior wall');for(const x of[-10.3,10.3])obstacle(x,-.2,.6,15.6,'interior wall');
- roomDoorMode31='';roomSupportCapture66=true;try{if(woodland)buildFernFixtures(id);else{buildBrookFixtures66(id);enrichRoom66(id);}}finally{roomSupportCapture66=false;}checkRoomSupports66();
+ if(!woodland){obstacle(0,-7.9,21,.6,'interior wall');for(const x of[-10.3,10.3])obstacle(x,-.2,.6,15.6,'interior wall');}
+ roomDoorMode31='';roomSupportCapture66=true;try{if(woodland)buildFernFixtures(id);else if(spec.room)furnishTownAddress(id,spec);else{buildBrookFixtures66(id);enrichRoom66(id);}}finally{roomSupportCapture66=false;}checkRoomSupports66();
  for(const o of interactables){if(o.actor&&(o.type==='inn'||o.type==='shop')){const inn=spec.type==='inn',forge=id==='brookForge',p=woodland?.staff??(inn?[-4.5,-6.35]:forge?[.2,-6.5]:[-4.5,-5.65]),anchor=woodland?.customer??(inn?[-4.5,-3.55]:forge?[.2,-3.45]:[-4.5,-2.8]);o.actor.x=p[0];o.actor.z=p[1];o.x=anchor[0];o.z=anchor[1];o.serviceAnchor68=true;updateActor(o.actor,0);}if(o.type==='shop'||o.type==='inn')o.radius=2.65;if(o.type==='council')o.radius=4.6;if(o.type==='archivist')o.radius=4.2;if(o.actor){o.actor.scripted=true;o.actor.face='south';o.actor.home={x:o.actor.x,z:o.actor.z};o.actor.action='idle';o.actor.speed=0;updateActor(o.actor,0);npcs.push(o.actor);}}
  createInteraction('interiorExit',0,7.1,'Return outside');Object.assign(interactables.at(-1),{radius:2.3,visualHeight:.2});
  const fixtures=new THREE.Group();fixtures.name='Authored cutaway '+id;fixtures.userData.chunk=true;fixtures.userData.center=V3();world.add(fixtures);const dynamic=new Set(actors.flatMap(a=>[a.mesh,a.shadow]));
  for(const o of[...world.children])if((o.isMesh||o.userData.interiorFixture29)&&!dynamic.has(o)&&o!==floor&&!o.userData.dynamicFX&&!world.userData.candles?.some(c=>c.mesh===o))fixtures.attach(o);
  mergeGroup(fixtures);world.userData.staticChunks=[fixtures];const lamps=[];world.traverse(o=>{if(o.isPointLight)lamps.push(o);});lamps.forEach(o=>o.removeFromParent());
  world.userData.lanterns=[];for(let i=0;i<6;i++){const l=new THREE.PointLight('#ffc68b',0,8,2);world.add(l);world.userData.lanterns.push(l);}buildRoomAir66();
- world.userData.room66={key:id,identity:woodland?woodland.sub:spec.type==='inn'?'hearth and hospitality':id==='brookForge'?'forge and weapon workshop':spec.type==='shop'?'provisions and travelling goods':spec.type==='archives'?'royal records and reading room':id==='aidOffice'?'aid parcels and reports':'royal council chamber',footprint:[21,16],geometryAcrossTime:true,ceilingMembers:0};
+ world.userData.room66={key:id,identity:woodland?woodland.sub:spec.room??(spec.type==='inn'?'hearth and hospitality':id==='brookForge'?'forge and weapon workshop':spec.type==='shop'?'provisions and travelling goods':spec.type==='archives'?'royal records and reading room':id==='aidOffice'?'aid parcels and reports':'royal council chamber'),footprint:[21,roomDepth],geometryAcrossTime:true,ceilingMembers:0};
  sceneBuildFilter=false;finishJourneyWorld(spawn??[0,5]);scene.background.set('#14171a');scene.fog.near=55;scene.fog.far=110;interior66.built++;
 };
 const cameraBeforeRooms66=updateCamera;
@@ -295,8 +451,15 @@ updateCamera=function(dt,instant=false){
  const narrow=clamp((1.4-camera.aspect)/.6,0,1),woodland=!!fernRoomSpecs[activeScene.key];
  const follow=woodland?mix(.24,1,narrow):mix(.14,1,narrow),range=mix(woodland?2.1:.8,woodland?9:8,narrow);
  const look=V3(clamp(player.x*follow,-range,range),woodland?2.18:2.15,clamp(-2.9+player.z*.20,-3.9,-1.1));
- const offset=(woodland?V3(0,3.72,22.35):V3(0,8.8,24)).multiplyScalar(state.settings.zoom??1);
- cameraTarget.lerp(look,instant?1:1-Math.exp(-dt*6));camera.position.copy(cameraTarget).add(offset);camera.fov=woodland?36:34;camera.lookAt(cameraTarget);camera.updateProjectionMatrix();camera.updateMatrixWorld();focusPoint.copy(cameraTarget);post.material.uniforms.focus.value=camera.position.distanceTo(cameraTarget);
+ const inside=woodland?1-smooth(-9,-2.5,player.z):0;
+ if(woodland){
+  look.x=clamp(player.x*mix(follow,.91,inside),-8.6,8.6);
+  look.z=mix(-3.1+player.z*.26,player.z+.12,inside);
+  look.y=mix(2.34,1.78,inside);
+ }
+ const offset=(woodland?V3(-.97*(1-inside),mix(4.80,1.62,inside),mix(21.65,4.45,inside)):V3(0,8.8,24)).multiplyScalar(woodland?mix(state.settings.zoom??1,1,inside):state.settings.zoom??1);
+ if(woodland)look.z-=inside*1.07;
+ cameraTarget.lerp(look,instant?1:1-Math.exp(-dt*6));camera.position.copy(cameraTarget).add(offset);camera.fov=woodland?mix(36,52,inside):34;camera.lookAt(cameraTarget);camera.updateProjectionMatrix();camera.updateMatrixWorld();focusPoint.copy(cameraTarget);post.material.uniforms.focus.value=camera.position.distanceTo(cameraTarget);
  for(const a of actors){a.mesh.quaternion.copy(camera.quaternion);a.shadow.visible=a.mesh.visible;}
 };
 const roomLightBefore66=updateLighting;
@@ -305,6 +468,12 @@ updateLighting=function(...args){const r=roomLightBefore66(...args);if(!brookRoo
  sun.color.set(day>.2?'#ffe8c2':'#91b7df');sun.intensity=.16+day*2.4;sun.position.set(-9,15,5);sun.target.position.set(1,0,-2);sun.target.updateMatrixWorld();sun.updateMatrixWorld(true);
  hemi.color.set(day>.2?'#d6e1df':'#9cacc2');hemi.groundColor.set('#705849');hemi.intensity=.43+day*.38;if(skyBounce17){skyBounce17.color.set('#dfb891');skyBounce17.intensity=.27;}renderer.toneMappingExposure=1.12;
  const woodland=fernRoomSpecs[activeScene.key],forge=activeScene.key==='brookForge'||woodland?.category==='equipment',inn=INTERIORS[activeScene.key]?.type==='inn',hearth=woodland?.hearth?V3(...woodland.hearth):inn?V3(6,1.7,-5.8):forge?V3(-6,1.7,-5.8):V3(-7.4,2,-4.1),anchors=[hearth,V3(-8,3,-.8),V3(8,3,.7),V3(-4,2.6,-4),V3(4,3,-4.5),V3(0,3.4,3)];
+ if(woodland){
+  sun.position.set(-14,11,1.8);sun.updateMatrixWorld(true);
+  anchors[1].set(-8.89,4.69,-4.30);anchors[2].set(8.89,4.69,-4.30);
+  if(inn){anchors[3].set(3.90,1.25,-13.23);anchors[4].set(7.58,1.25,-13.23);anchors[5].set(-1.57,1.88,-4.19);}
+  else{const cx=forge?-.68:-2.17,spread=(forge?1.91:1.67)+.62;anchors[3].set(cx-spread,2.98,-6.96);anchors[4].set(cx+spread,2.98,-6.96);anchors[5].set(cx,3.35,-12.8);}
+ }
  world.userData.lanterns.forEach((l,i)=>{if((l.userData.effectUntil??0)>clock)return;l.position.copy(anchors[i]);l.color.set(i===0&&forge?'#ff9a42':'#ffc486');l.intensity=(i===0?(forge?25:inn?21:12):8)*(1+night*.62)*(1+Math.sin(clock*(1.8+i*.17)+i)*.018);l.distance=i===0?9:7;l.decay=2;});
  sceneryLight.direction.value.copy(sun.position).sub(sun.target.position).normalize();weather.sun.value.copy(sceneryLight.direction.value);sceneryLight.shadowStrength.value=.47;
  return r;

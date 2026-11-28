@@ -61,12 +61,27 @@ function boundaryField46(){
  else{
   for(const p of[...blueprint.routes,...blueprint.loops??[]])line(p,POIS[key].kind==='town'?8:7);
   for(const[x,z,r]of blueprint.courts)add([x,z],[x,z],r);
+  if(key==='depths')line([[115.7,19],[115.7,10.04],[120.03,10.04]],2.15,'excavated passage');
+  for(const p of world.userData.piers??[])add([p.x,p.z-p.d/2],[p.x,p.z+p.d/2],p.w/2,'jetty');
   const base=field.shapes.slice(),connect=(x,z,r)=>{const p=[x,z];let best=null,d=Infinity;for(const s of base){const dx=s.b[0]-s.a[0],dz=s.b[1]-s.a[1],t=clamp(((x-s.a[0])*dx+(z-s.a[1])*dz)/(dx*dx+dz*dz||1),0,1),q=[s.a[0]+dx*t,s.a[1]+dz*t],dd=Math.hypot(x-q[0],z-q[1]);if(dd<d){d=dd;best=q;}}add(p,p,r);if(best&&d>r)add(p,best,5);};
   for(const[x,z,w,d]of blueprint.houses??[])connect(x,z,Math.hypot(w,d)*.5+4);
   for(const o of interactables){if(o.type==='poiExit'||o.type==='location'||!Number.isFinite(o.x))continue;if(o.x<blueprint.core[0]-12||o.x>blueprint.core[1]+12||o.z<blueprint.core[2]-12||o.z>blueprint.core[3]+12)continue;connect(o.x,o.z,o.actor?6:5);}
   for(const g of world.userData.buildings??[])if(g.userData.authored46&&g.userData.footprint){const f=g.userData.footprint;connect(g.position.x,g.position.z,Math.hypot(f.w,f.d)*.5+3);}
  }
  field.distance=(x,z)=>{let best=-1e4;for(const s of field.grid.get(Math.floor(x/field.cell)+','+Math.floor(z/field.cell))??[]){const circle=s.a===s.b||s.a[0]===s.b[0]&&s.a[1]===s.b[1],d=circle?Math.hypot(x-s.a[0],z-s.a[1]):segmentDistance(x,z,s.a,s.b);best=Math.max(best,s.r-d);}return best;};
+ if(!overworld&&['highmere','fern','alder','harbor','depths'].includes(key)){
+  const paths=field.distance,b=blueprint.core,sceneBox=activeScene.bounds;
+  const outer=world.userData.levelBoundary39??levels39.plans.get(key);
+  const radius=key==='depths'?11:8;
+  field.physicalRim=true;
+  field.distance=(x,z)=>{
+   const dx=Math.abs(x-(b[0]+b[1])*.5)-(b[1]-b[0])*.5+radius,dz=Math.abs(z-(b[2]+b[3])*.5)-(b[3]-b[2])*.5+radius;
+   const yard=radius-Math.hypot(Math.max(0,dx),Math.max(0,dz))-Math.min(Math.max(dx,dz),0);
+   const extent=Math.min(x-sceneBox[0],sceneBox[1]-x,z-sceneBox[2],sceneBox[3]-z)-.38;
+   return Math.min(Math.max(yard,paths(x,z)),extent,outer&&!gateNear39(x,z,outer)?1.22-edgeDistance39(x,z,outer):Infinity);
+  };
+  field.bounds=[...sceneBox];
+ }
  world.userData.boundary46=field;return field;
 }
 const boundaryFreeBefore46=staticFree;
@@ -82,6 +97,40 @@ function boundaryContour46(f){
   if(edges.length===2)segments.push(edges);else if(edges.length===4){segments.push([edges[0],edges[1]],[edges[2],edges[3]]);}
  }
  return segments;
+}
+// The far slope starts beyond the walkable north edge. Both the surface
+// and the skyline trees use the same surveyed ridge profile.
+function valleyHorizon(field,ground,trees,rng,key){
+ const [x0,x1,north]=field.bounds,width=x1-x0+230,c=(x1+x0)/2,rows=34,cols=76;
+ const hill=(x,t)=>{
+  const start=ground(clamp(x,x0,x1),north)-1.04;
+  const low=(key==='highmere'?13:9)+4.3*Math.sin(x*.028)+1.67*Math.sin(x*.081+.67);
+  const high=31+8.9*Math.sin(x*.021+.48)+3.4*Math.cos(x*.045);
+  const blend=smooth(0,.20,t),base=mix(start,ground(c,north)-1.05,blend);
+  return base+low*smooth(0,.32,t)*(1-.55*smooth(.34,.61,t))+high*smooth(.57,.95,t)+1.35*Math.sin(x*.048+t*7)*blend;
+ };
+ const xyz=[],uv=[],colors=[],indices=[];
+ for(let j=0;j<=rows;j++)for(let i=0;i<=cols;i++){
+  const t=j/rows,x=c+(i/cols-.5)*width,z=north-t*162;
+  xyz.push(x,hill(x,t),z);uv.push(x*.14,z*.14);
+  const leaf=.63+.14*Math.sin(x*.17+t*9.3)+.08*Math.cos(x*.32-t*16);
+  colors.push(leaf*.73,leaf*.89,leaf*.72);
+  if(i&&j){const d=j*(cols+1)+i;indices.push(d-cols-2,d-cols-1,d,d-cols-2,d,d-1);}
+ }
+ const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.Float32BufferAttribute(xyz,3));geo.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));geo.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));geo.setIndex(indices);geo.computeVertexNormals();
+ const surface=new THREE.MeshStandardMaterial({map:textures.grass,vertexColors:true,roughness:1});
+ surface.onBeforeCompile=sh=>{
+  sh.vertexShader='varying float hillDepth;\n'+sh.vertexShader.replace('#include <begin_vertex>', '#include <begin_vertex>\nhillDepth=clamp(('+north.toFixed(3)+'-position.z)/162.,0.,1.);');
+  sh.fragmentShader='varying float hillDepth;\n'+sh.fragmentShader.replace('#include <map_fragment>', '#include <map_fragment>\nfloat tone=dot(diffuseColor.rgb,vec3(.2126,.7152,.0722));diffuseColor.rgb=mix(diffuseColor.rgb,tone*vec3(.79,1.05,1.04),.68+.26*hillDepth);').replace('#include <fog_fragment>','#include <fog_fragment>\n#ifdef USE_FOG\ngl_FragColor.rgb=mix(gl_FragColor.rgb,fogColor,.10+.52*hillDepth);\n#endif');
+ };
+ surface.userData.preserveSurfaceShader=true;surface.userData.keepSolidForPlayerReveal=true;
+ surface.customProgramCacheKey=()=>'settlement-hills-'+key;
+ const hillside=mesh(geo,surface,0,0,0,world);hillside.name='Wooded valley behind the settlement';hillside.castShadow=false;
+ for(let i=0;i<360;i++){
+  const x=c+(rng()-.5)*width,t=.025+.46*rng();
+  if(Math.sin(x*.096-t*6.1)+Math.sin(t*14+x*.055)<-.95)continue;
+  trees.push(boundaryTree47(x,north-t*162,hill(x,t)-.13,rng,true));
+ }
 }
 function buildBoundary46(){
  const f=boundaryField46();if(!f||f.sealed)return;f.sealed=true;buildingBoundary46=true;
@@ -104,7 +153,25 @@ function buildBoundary46(){
   const value={p:[x,base+rise-.14,z],rise};ridgePoints.set(key,value);return value;
  };
  for(let z=Math.floor((z0-24)/step)*step;z<z1+24;z+=step)for(let x=Math.floor((x0-24)/step)*step;x<x1+24;x+=step){const a=ridgePoint(x,z),b=ridgePoint(x+step,z),c=ridgePoint(x+step,z+step),d=ridgePoint(x,z+step);if(Math.max(a.rise,b.rise,c.rise,d.rise)<.08)continue;tri(a.p,b.p,d.p);tri(b.p,c.p,d.p);}
- const woodland=boundaryWoodland47(f,ground,theme,trees,rng);
+ const woodland=boundaryWoodland47(f,ground,theme,trees,rng),nearCount=trees.length;
+ if(f.physicalRim&&activeScene.key!=='depths')valleyHorizon(f,ground,trees,rng,activeScene.key);
+ if(f.physicalRim){
+  // The visible rock foot follows the very contour used by movement. Fields
+  // between houses are continuous; only the outer bank closes the valley.
+  const rim=p=>{
+   const [x,z]=p,dx=f.distance(x-.30,z)-f.distance(x+.30,z),dz=f.distance(x,z-.30)-f.distance(x,z+.30),length=Math.hypot(dx,dz)||1;
+   const h=1.72+.68*Math.sin(x*.19+z*.13)+.61*Math.cos(z*.17-x*.09)+(theme==='cave'?2.42:.52);
+   return [0,.57,2.48,4.32].map((d,i)=>[x+d*dx/length,ground(x+d*dx/length,z+d*dz/length)+[-.16,h*.73,h,h*.82][i],z+d*dz/length]);
+  };
+  for(const [a,b] of segments){
+   const x=(a[0]+b[0])*.5,z=(a[1]+b[1])*.5;
+   if(waterGround(x,z)||interactables.some(o=>o.type==='poiExit'&&Math.hypot(x-o.x,z-o.z)<3.45))continue;
+   const left=rim(a),right=rim(b);
+   for(let i=0;i<3;i++)for(const p of [left[i],right[i+1],right[i],left[i],left[i+1],right[i+1]]){
+    positions.push(...p);uv.push((p[0]+p[2])*.21,p[1]*.25);
+   }
+  }
+ }
  if(positions.length){
   const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));const moss=[];for(let i=0;i<positions.length;i+=3)moss.push(theme==='cave'?0:1-smooth(.25,4.5,positions[i+1]-ground(positions[i],positions[i+2])));g.setAttribute('edgeMoss47',new THREE.Float32BufferAttribute(moss,1));g.computeVertexNormals();
   const m=stoneSurface38('#b3bcaa'),before=m.onBeforeCompile,program=m.customProgramCacheKey();m.side=THREE.DoubleSide;
@@ -117,7 +184,9 @@ function buildBoundary46(){
   g.setAttribute('treeKind',new THREE.InstancedBufferAttribute(new Float32Array(n).fill(trunk?1:0),1));g.setAttribute('treeSpecies30',new THREE.InstancedBufferAttribute(Float32Array.from(entries,e=>e.t.species30),1));g.setAttribute('treeViewHidden',mask);
   const mesh=new THREE.InstancedMesh(g,forestMaterial30(trunk),n);mesh.customDepthMaterial=forestDepth30();mesh.userData={barrier46:true,boundaryForest50:true,treeViewMask:mask};mesh.castShadow=mesh.receiveShadow=true;mesh.layers.enable(1);entries.forEach((e,i)=>{mesh.setMatrixAt(i,e.matrix);const v=Math.sin(e.t.x*31+e.t.z*17)*.5+.5,c=new THREE.Color(trunk?'#c7b394':'#ffffff');if(!trunk)c.setRGB(.84+v*.16,.88+v*.12,.76+v*.20);mesh.setColorAt(i,c);e.t.bindings.push({mesh,index:i,matrix:e.matrix});});mesh.onBeforeRender=(r,s,c)=>{forest30.main.value=c===camera?1:0;};mesh.computeBoundingSphere();world.add(mesh);
  }
- scenery.trees.push(...trees);const cuts=world.userData.clarity23;if(cuts){for(const t of trees){const key=Math.floor(t.x/32)+','+Math.floor(t.z/32);if(!cuts.treeGrid.has(key))cuts.treeGrid.set(key,[]);cuts.treeGrid.get(key).push(t);}cuts.nearKey33=null;cuts.nearKey='';}treeCutCache30=null;world.userData.navCache?.clear();let hash47=2166136261;for(const t of trees)for(const v of[t.x,t.z,t.h,t.species30])hash47=Math.imul(hash47^Math.round(v*1000),16777619)>>>0;f.woodlandHash47=hash47;f.segments=segments;f.treeCount=trees.length;f.visualSegments=positions.length/36;
+ // Distant crowns are batched scenery outside the map and never obscure the party.
+ const nearbyTrees=trees.length===nearCount?trees:trees.slice(0,nearCount);
+ scenery.trees.push(...nearbyTrees);const cuts=world.userData.clarity23;if(cuts){for(const t of nearbyTrees){const key=Math.floor(t.x/32)+','+Math.floor(t.z/32);if(!cuts.treeGrid.has(key))cuts.treeGrid.set(key,[]);cuts.treeGrid.get(key).push(t);}cuts.nearKey33=null;cuts.nearKey='';}treeCutCache30=null;world.userData.navCache?.clear();let hash47=2166136261;for(const t of trees)for(const v of[t.x,t.z,t.h,t.species30])hash47=Math.imul(hash47^Math.round(v*1000),16777619)>>>0;f.woodlandHash47=hash47;f.segments=segments;f.treeCount=trees.length;f.visualSegments=positions.length/36;
  world.userData.boundaryTrees50=trees;world.userData.authoredLayout46={theme:theme??'continent valleys',rooms:JRPG_LAYOUTS46[activeScene.key]?.courts.length??Object.keys(POIS).length,barrierTrees:trees.length,barrierSegments:segments.length,naturalWoodland:true,denseInteriors50:true,understory:woodland.brushes};
  }finally{buildingBoundary46=false;}
 }

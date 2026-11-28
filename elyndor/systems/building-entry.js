@@ -13,14 +13,15 @@ function nearbyBuildingPortal48(){
  return(world.userData.buildingPortals48??[]).filter(o=>insideBuildingPortal48(o)).sort((a,b)=>dist(player,a)-dist(player,b))[0]??null;
 }
 const buildingWorldBefore48=buildWorld;
+function configureBuildingPortal48(o){
+ const front=o.doorOwner39?.userData.front??V3(0,0,1),length=Math.hypot(front.x,front.z)||1;
+ o.buildingPortal48={front:[front.x/length,front.z/length],width:o.type==='interiorExit'?2.4:2.55,back:o.type==='interiorExit'?2.2:1.55,depth:3.2};
+ o.label=o.type==='interiorExit'?'Proceed outside':'Open '+INTERIORS[o.interior].name;o.radius=4.3;o.autoArmed39=false;
+}
 buildWorld=function(...args){
  const result=buildingWorldBefore48(...args);buildingEntry48.dismissed=null;
  const doors=interactables.filter(isBuildingPortal48);world.userData.buildingPortals48=doors;
- for(const o of doors){
-  const front=o.doorOwner39?.userData.front??V3(0,0,1),length=Math.hypot(front.x,front.z)||1;
-  o.buildingPortal48={front:[front.x/length,front.z/length],width:o.type==='interiorExit'?2.4:2.55,back:o.type==='interiorExit'?2.2:1.55,depth:3.2};
-  o.label=o.type==='interiorExit'?'Proceed outside':'Open '+INTERIORS[o.interior].name;o.radius=4.3;o.autoArmed39=false;
- }
+ for(const o of doors)configureBuildingPortal48(o);
  return result;
 };
 const buildingNearestBefore48=nearestInteraction;

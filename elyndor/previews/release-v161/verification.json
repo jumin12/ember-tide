@@ -1,0 +1,31 @@
+{
+  "version": "Alpha Version 1.61",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 8198170,
+    "sha256": "42eececf44f00743c52c03e75d7aa94f517d7898e2198b820ebc49b0277a666a",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "gameplaySHA256": "ba6dc54706f0b97e0769aa6d8c8b6108532b7e210c5cef55062e0ccab068da29",
+  "previousCommit": "896f73b4745c5f2eddf9d8ccb2efc8ae37190ea5",
+  "previousVersion": "Alpha Version 1.60",
+  "comparisons": 16,
+  "interiorViews": 12,
+  "desktopAndEmulatedPhone": [
+    "alder",
+    "depths",
+    "fern",
+    "fernCanopyInn",
+    "fernHollowSmithy",
+    "fernHollowSupplies",
+    "harbor",
+    "highmere"
+  ],
+  "reachableInteractionPoints": 138,
+  "playerRoutesWalked": 27,
+  "stairCrossings": 10,
+  "streamBridgeCrossings": 4,
+  "newDoorRoundTrips": 30,
+  "saveCompatibility": "Legacy persistence fixtures and wheelwright interior export, load and return passed."
+}

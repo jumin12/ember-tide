@@ -1,16 +1,85 @@
 // Local architecture is placed against an authored street plan. A facade,
 // doorway, planted window box and its collision rotate together.
 const authoredGroundBefore46=groundAt,authoredGroundLevels46=new Map();
+const districtStairPlans={
+ highmere:[[-84,-88,-82,-102,7.8,4.5],[-70,-117,-70,-135,7.1,5.6]],
+ fern:[[93.5,68.4,92.1,56.7,4.95,3.85]],
+ alder:[[133,-101.5,132,-115.8,5.15,4.0]],
+ harbor:[[318,63.1,319,48.2,5.28,5.4]]
+};
+function districtShoulder(key,x,z){
+ let y=0;
+ for(const [sx,sz,ex,ez,width,rise] of districtStairPlans[key]??[]){
+  const dx=ex-sx,dz=ez-sz,length=Math.hypot(dx,dz);
+  const t=((x-sx)*dx+(z-sz)*dz)/(length*length);
+  if(t<=.32||t>=1)continue;
+  const side=Math.abs((x-sx)*dz-(z-sz)*dx)/length-width*.5;
+  y+=rise*(1-smooth(0,1,t))*smooth(.32,.45,t)*smooth(.32,1.62,side)*(1-smooth(8.6,12.5,side));
+ }
+ return y;
+}
+// The lip of each planted terrace follows the lane below it. The last two
+// metres at each end grade into the lane so the upper garden has an approach.
+const townGardenShelves={
+ highmere:[[-122,-98,-112,-115,2.6,2.9,10],[-65,-40,-118,-122,2.2,3.0,10],[-115,-93,-72,-74,2.7,1.42,8],[-62,-40,-73,-75,2.1,1.67,8]],
+ fern:[[57,83,68,69,3.3,2.24,9],[103,133,66,63,3.5,2.64,9],[98,119,102,99,1.6,1.35,6]],
+ alder:[[99,125,-106,-102,1.8,2.3,8],[141,160,-105,-102,2.4,2.52,9],[139,156,-81,-79,2.5,1.35,7]],
+ harbor:[[277,306,55,53,2.3,2.02,9],[330,358,51,53,2.2,1.96,7]]
+};
+function gardenShelfLip(s,x){const u=(x-s[0])/(s[1]-s[0]);return mix(s[2],s[3],u)+s[4]*Math.sin(Math.PI*u);}
+function gardenShelfEnd(s,x){return smooth(s[0],s[0]+3.8,x)*(1-smooth(s[1]-3.8,s[1],x));}
+function gardenShelfHeight(key,x,z){
+ let y=0;
+ for(const s of townGardenShelves[key]??[]){
+  if(x<=s[0]||x>=s[1])continue;
+  const back=gardenShelfLip(s,x)-z;
+  if(back<=-.44||back>s[6])continue;
+  y+=s[5]*gardenShelfEnd(s,x)*smooth(-.44,.95,back)*(1-smooth(s[6]*.48,s[6],back));
+ }
+ return y;
+}
+function districtRelief(key,x,z){
+ if(key==='highmere')return 4.5*(1-smooth(-103,-87,z))+5.6*(1-smooth(-135,-116,z))+districtShoulder(key,x,z)+gardenShelfHeight(key,x,z);
+ if(key==='alder')return 4.0*(1-smooth(-116,-100,z))+.98*smooth(136,152,x)+districtShoulder(key,x,z)+gardenShelfHeight(key,x,z);
+ if(key==='fern'){
+  const upland=3.85*(1-smooth(56,70,z)),innRise=2.68*smooth(103,119,x)*smooth(78,96,z);
+  const bank=3.45*Math.exp(-((x-127)**2/138+(z-97)**2/42));
+  // The portal is cut into the face of the bank. The path in front of its
+  // treads retains a clear floor, while turf wraps both stone shoulders.
+  const cut=(1-smooth(2.11,4.25,Math.abs(x-127)))*smooth(98.3,101.2,z);
+  return upland+innRise+bank*(1-cut)+districtShoulder(key,x,z)+gardenShelfHeight(key,x,z);
+ }
+ return 0;
+}
 groundAt=function(x,z,...args){
- const p=activeScene?.kind==='poi'&&JRPG_LAYOUTS46[activeScene.key];if(!p||['city','orchard','camp','harbor'].includes(p.theme))return authoredGroundBefore46(x,z,...args);
+ const p=activeScene?.kind==='poi'&&JRPG_LAYOUTS46[activeScene.key];if(!p||['camp','harbor'].includes(p.theme))return authoredGroundBefore46(x,z,...args);
+ const relief=districtRelief(activeScene.key,x,z);
+ if(p.theme==='city'||p.theme==='orchard')return authoredGroundBefore46(x,z,...args)+relief;
  const main=p.courts[0];let level=authoredGroundLevels46.get(activeScene.key);if(level===undefined){level=authoredGroundBefore46(main[0],main[1]);authoredGroundLevels46.set(activeScene.key,level);}
  let distance=Infinity;for(const[cx,cz,r]of p.courts)distance=Math.min(distance,Math.hypot(x-cx,z-cz)-r);
  for(const route of [...p.routes,...p.loops??[]])for(let i=1;i<route.length;i++)distance=Math.min(distance,segmentDistance(x,z,route[i-1],route[i])-6.2);
- const target=level+clamp((z-main[1])*.018+(x-main[0])*.008,-2,2),centre=Math.hypot(x-main[0],z-main[1]);const flattened=mix(target,level,1-smooth(main[2]-3,main[2]+3,centre)),blend=smooth(0,13,distance);return blend===0?flattened:mix(flattened,authoredGroundBefore46(x,z,...args),blend);
+ const target=level+clamp((z-main[1])*.018+(x-main[0])*.008,-2,2),centre=Math.hypot(x-main[0],z-main[1]);const flattened=mix(target,level,1-smooth(main[2]-3,main[2]+3,centre)),blend=smooth(0,13,distance);return relief+(blend===0?flattened:mix(flattened,authoredGroundBefore46(x,z,...args),blend));
+};
+const valleyWatercourses={
+ fern:{x0:34,x1:167,x:94,w:3.85,span:8.20,level:1.82,slope:.017,
+  centre:x=>106.4+12.1*Math.tanh((x-69)/22)+3.5*Math.sin((x-94)*.060)},
+ alder:{x0:65,x1:202,x:91,w:4.10,span:8.75,level:.48,slope:.006,
+  centre:x=>-60.7+9.95*Math.tanh((x-104)/21)+2.60*Math.sin((x-111)*.048)+12.6*smooth(92,112,x)}
+};
+function streamWidth(q,x){return 2.38+.48*Math.cos((x-q.x)*.126)+.29*Math.sin((x-q.x)*.27);}
+function streamLevel(q,x){return q.level+(x-q.x)*q.slope;}
+const groundBeforeValleyStreams=groundAt;
+groundAt=function(x,z,...rest){
+ const ground=groundBeforeValleyStreams(x,z,...rest),q=activeScene?.kind==='poi'&&valleyWatercourses[activeScene.key];
+ if(!q||x<q.x0||x>q.x1)return ground;
+ const across=Math.abs(z-q.centre(x)),w=streamWidth(q,x);
+ if(across>w+4.6)return ground;
+ const waterY=streamLevel(q,x),bed=waterY-.98+1.30*smooth(w-.96,w+.44,across);
+ return mix(bed,ground,smooth(w+.44,w+4.60,across));
 };
 function placeHouse46(spec,kit){
- const[x,z,w,d,turn=0]=spec,first=colliders.length,plants=Object.fromEntries(Object.entries(world.userData.plantMatrices).map(([k,a])=>[k,a.length]));
- const g=kit==='forest'?woodlandHouse(x,z,w,d):kit==='camp'?reliefShelter(x,z,w,d):kit==='city'?royalHouse(x,z,w,d):brookHouse(x,z,w,d,'home');
+ const[x,z,w,d,turn=0,role]=spec,first=colliders.length,plants=Object.fromEntries(Object.entries(world.userData.plantMatrices).map(([k,a])=>[k,a.length]));
+ const g=kit==='forest'?woodlandHouse(x,z,w,d,role):kit==='camp'?reliefShelter(x,z,w,d):kit==='city'?royalHouse(x,z,w,d):brookHouse(x,z,w,d,'home',role);
  orientHouse46(g,turn*Math.PI/2,first,plants);g.userData.authored46=true;return g;
 }
 function orientHouse46(g,angle,first,plants){
@@ -22,8 +91,8 @@ buildSettlements=function(...args){
  const spec=activeScene?.kind==='poi'&&JRPG_LAYOUTS46[activeScene.key];if(!spec||activeScene.key==='harbor')return authoredSettlementsBefore46(...args);
  for(const house of spec.houses??[])placeHouse46(house,spec.theme);
  if(activeScene.key==='highmere'){
-  PLACES.council=[-71,-134];PLACES.aidOffice=[-62,-107];
-  for(const[id,w,d,kind,turn]of[['council',18,15,'council',0],['aidOffice',12,10,'council',0],['archives',16,13,'archives',0],['inn',14,12,'inn',-1]]){const first=colliders.length,plants=Object.fromEntries(Object.entries(world.userData.plantMatrices).map(([k,a])=>[k,a.length])),g=openHall(id,w,d,kind);if(g){orientHouse46(g,turn*Math.PI/2,first,plants);g.userData.authored46=true;g.userData.interior46=id==='inn'?'highmereInn':id;}}
+  PLACES.council=[-92,-131];PLACES.aidOffice=[-55,-104];
+  for(const[id,w,d,kind,turn]of[['council',15.3,12.8,'council',1],['aidOffice',12,10,'council',0],['archives',16,13,'archives',0],['inn',14,12,'inn',-1]]){const first=colliders.length,plants=Object.fromEntries(Object.entries(world.userData.plantMatrices).map(([k,a])=>[k,a.length])),g=openHall(id,w,d,kind);if(g){orientHouse46(g,turn*Math.PI/2,first,plants);g.userData.authored46=true;g.userData.interior46=id==='inn'?'highmereInn':id;}}
  }
 };
 function mechanism46(x,z){

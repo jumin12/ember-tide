@@ -1,25 +1,39 @@
 {
-  "release": "elyndor-alpha-1.60-overworld-grass-fountain-reflections-moonlight-2026-11-27",
-  "version": "Alpha Version 1.60",
+  "release": "elyndor-alpha-1.61-settlement-geography-and-interiors-2026-11-28",
+  "version": "Alpha Version 1.61",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 8103108,
-    "sha256": "321204d4374bc8cc21fa2f2af67836937f6ad35aa4a3190b8bcb3bc719256977",
+    "bytes": 8198170,
+    "sha256": "42eececf44f00743c52c03e75d7aa94f517d7898e2198b820ebc49b0277a666a",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "7257b7b02fc237a834eac25cb3b5f673206319e2"
+    "previousRelease": "896f73b4745c5f2eddf9d8ccb2efc8ae37190ea5"
   },
   "changes": [
-    "Overworld grass stays in place as the party walks and the camera zooms. The atlas keeps the same grass coverage at wide zoom.",
-    "Brookstead’s fountain reflects the pillar and courtyard steadily. After the pump is repaired, ripples spread from the four places where the streams meet the basin.",
-    "Directional moonlight casts deeper shadows in towns, on the overworld and in night battles. A soft shadow stays under the party’s feet after dark."
+    "Highmere rises through planted stone terraces to a palace with an audience chamber. In Alderbridge, the western road crosses an orchard stream and climbs toward the meeting tree and workshops.",
+    "Fern Hollow’s smithy and provisioner face the village square, with the inn above the stream and its stone bridge. The inn has three private guest rooms, the smithy has a forge bellows and a finishing room, and the provisioner has a stocked back room.",
+    "Valenne Harbor’s curved stone quay shelters two working piers. The raised customs street overlooks the docks, and a separate door leads into the bonded warehouse.",
+    "The remnant’s daylight stair leads down to a flagstone hall. The device stands on a smaller platform to the right, beside a passage into an instrument chamber.",
+    "Thirty more buildings can be explored, including cottages, workshops and the palace. Leaving one returns the party to the same doorway. Town boundaries follow visible terrain, bridge decks and stairs match the walking surface, and the old staircase through the herbalist’s cottage is gone."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.61",
+      "title": "Settlement geography, interiors and entrances",
+      "date": "November 28, 2026",
+      "items": [
+        "Highmere rises through planted stone terraces to a palace with an audience chamber. In Alderbridge, the western road crosses an orchard stream and climbs toward the meeting tree and workshops.",
+        "Fern Hollow’s smithy and provisioner face the village square, with the inn above the stream and its stone bridge. The inn has three private guest rooms, the smithy has a forge bellows and a finishing room, and the provisioner has a stocked back room.",
+        "Valenne Harbor’s curved stone quay shelters two working piers. The raised customs street overlooks the docks, and a separate door leads into the bonded warehouse.",
+        "The remnant’s daylight stair leads down to a flagstone hall. The device stands on a smaller platform to the right, beside a passage into an instrument chamber.",
+        "Thirty more buildings can be explored, including cottages, workshops and the palace. Leaving one returns the party to the same doorway. Town boundaries follow visible terrain, bridge decks and stairs match the walking surface, and the old staircase through the herbalist’s cottage is gone."
+      ]
+    },
     {
       "version": "Alpha Version 1.60",
       "title": "Overworld grass, fountain reflections and moonlight shadows",
@@ -1067,8 +1081,8 @@
     "groundedStoryBattleEnvironments": 7
   },
   "validation": {
-    "file": "elyndor/previews/grass-fountain-moonlight/verification.json",
-    "sha256": "e87cb4f63de8196abb3552c10e47aa83d93e359555be8f217357fd190f78cae4",
+    "file": "elyndor/previews/release-v161/verification.json",
+    "sha256": "8511639ccb8052c8713f41ae2926b9a4e58df4a5221928ff4f998fc859aaf517",
     "finalRelease": "PASS",
     "desktopAndPhone": true
   },
@@ -1109,9 +1123,9 @@
     "spriteLighting": "Coherent party and NPC canopy reception outside combat; original art and sampling retained"
   },
   "previousPublishedRelease": {
-    "version": "Alpha Version 1.59",
-    "commit": "7257b7b02fc237a834eac25cb3b5f673206319e2",
-    "sha256": "8b2a7ce8d01cd9177354218fad1c6897a3e2489eb2e23a956ca96a82923ecf66"
+    "version": "Alpha Version 1.60",
+    "commit": "896f73b4745c5f2eddf9d8ccb2efc8ae37190ea5",
+    "sha256": "321204d4374bc8cc21fa2f2af67836937f6ad35aa4a3190b8bcb3bc719256977"
   },
   "housing": {
     "maximumOwnedHomes": 1,

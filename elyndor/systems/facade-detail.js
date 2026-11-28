@@ -25,11 +25,15 @@ function streetPoint104(x,z){const p=JRPG_LAYOUTS46[activeScene?.key];if(!p)retu
  for(const line of [...p.routes,...p.loops??[]])for(let i=1;i<line.length;i++){const a=line[i-1],b=line[i],dx=b[0]-a[0],dz=b[1]-a[1],u=clamp(((x-a[0])*dx+(z-a[1])*dz)/(dx*dx+dz*dz),0,1),xx=a[0]+dx*u,zz=a[1]+dz*u,d=Math.hypot(x-xx,z-zz);if(!nearest||d<nearest.d)nearest={x:xx,z:zz,d};}return nearest;
 }
 const streetOrientBefore104=orientHouse46;
-orientHouse46=function(g,angle,first,plants){const q=streetPoint104(g.position.x,g.position.z);if(q){angle=Math.round(Math.atan2(q.x-g.position.x,q.z-g.position.z)/(Math.PI/2))*Math.PI/2;g.userData.streetFacing104={street:[q.x,q.z],turn:angle};}return streetOrientBefore104(g,angle,first,plants);};
+orientHouse46=function(g,angle,first,plants){const q=g.userData.fernInterior?null:streetPoint104(g.position.x,g.position.z);if(q){angle=Math.round(Math.atan2(q.x-g.position.x,q.z-g.position.z)/(Math.PI/2))*Math.PI/2;g.userData.streetFacing104={street:[q.x,q.z],turn:angle};}return streetOrientBefore104(g,angle,first,plants);};
 const streetHouseBefore104=placeHouse46;
-placeHouse46=function(spec,kit){let[x,z,w,d,turn]=spec;const q=streetPoint104(x,z);if(q&&q.d>.01){const angle=Math.round(Math.atan2(q.x-x,q.z-z)/(Math.PI/2))*Math.PI/2,nx=(x-q.x)/q.d,nz=(z-q.z)/q.d,hx=Math.abs(Math.cos(angle))*w/2+Math.abs(Math.sin(angle))*d/2,hz=Math.abs(Math.sin(angle))*w/2+Math.abs(Math.cos(angle))*d/2,needed=Math.abs(nx)*hx+Math.abs(nz)*hz+4.3;
+placeHouse46=function(spec,kit){let[x,z,w,d,turn]=spec;
+ // The village shopfronts face the square across a common terrace. A rear
+ // service lane is closer to these plots but is not the public frontage.
+ const market=activeScene.key==='fern'&&['inn','smithy','provisions'].includes(spec[5]);
+ const q=market?null:streetPoint104(x,z);if(q&&q.d>.01){const angle=Math.round(Math.atan2(q.x-x,q.z-z)/(Math.PI/2))*Math.PI/2,nx=(x-q.x)/q.d,nz=(z-q.z)/q.d,hx=Math.abs(Math.cos(angle))*w/2+Math.abs(Math.sin(angle))*d/2,hz=Math.abs(Math.sin(angle))*w/2+Math.abs(Math.cos(angle))*d/2,needed=Math.abs(nx)*hx+Math.abs(nz)*hz+4.3;
   if(q.d<needed){const move=Math.min(8,needed-q.d);x+=nx*move;z+=nz*move;}turn=angle/(Math.PI/2);
- }const g=streetHouseBefore104([x,z,w,d,turn],kit);g.userData.site104={original:spec.slice(0,2),position:[x,z],streetClearance:4.3};return g;};
+ }const g=streetHouseBefore104([x,z,w,d,turn,...spec.slice(5)],kit);g.userData.site104={original:spec.slice(0,2),position:[x,z],streetClearance:4.3};return g;};
 function gable104(g,w,d,h,rise,key='plaster',tone='#ddd2b6'){
  let present=0;(g.userData.roofShell??g).traverse(o=>{if(o.geometry?.attributes.position.count===3){present++;o.name='Closed fitted gable';if(key==='wood')o.material=material('wood','#91866d',{side:THREE.DoubleSide});}});
  if(!present){const shape=new THREE.Shape();shape.moveTo(-w/2,0);shape.lineTo(w/2,0);shape.lineTo(0,rise-.03);shape.closePath();const geometry=new THREE.ExtrudeGeometry(shape,{depth:.13,bevelEnabled:false});for(const side of[-1,1]){const o=new THREE.Mesh(geometry,material(key,tone,{side:THREE.DoubleSide}));o.name='Closed fitted gable';o.position.set(0,h,side*d/2-.065);o.castShadow=o.receiveShadow=true;(g.userData.roofShell??g).add(o);}}
