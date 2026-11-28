@@ -35,7 +35,7 @@
         // keeps blue-hour silhouettes legible around the party.
         vec3 warm=mix(vec3(.115,.075,.020),vec3(.22,.105,.02),extTwilight);
         color+=warm*visibleSun*(1.-color)*skyMask;
-        color+=vec3(.025,.052,.092)*shade*(.42+night*.85+extRain*.28)*skyMask;
+        color+=vec3(.025,.052,.092)*shade*(.42+night*.16+extRain*.28)*skyMask;
         color*=1.-vec3(.045,.013,0.)*shade*(.5+.5*extDay);
 
         // The same shadow-marched light volume used by the original game

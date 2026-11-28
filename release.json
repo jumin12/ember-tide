@@ -1,28 +1,35 @@
 {
-  "release": "elyndor-alpha-1.59-brookstead-waterworks-and-battlefield-atmosphere-2026-11-27",
-  "version": "Alpha Version 1.59",
+  "release": "elyndor-alpha-1.60-overworld-grass-fountain-reflections-moonlight-2026-11-27",
+  "version": "Alpha Version 1.60",
   "game": "The Last Light of Elyndor",
   "artifact": {
     "file": "index.html",
-    "bytes": 8102788,
-    "sha256": "8b2a7ce8d01cd9177354218fad1c6897a3e2489eb2e23a956ca96a82923ecf66",
+    "bytes": 8103108,
+    "sha256": "321204d4374bc8cc21fa2f2af67836937f6ad35aa4a3190b8bcb3bc719256977",
     "offline": false,
     "delivery": "HTML and same-origin native runtime assets"
   },
   "githubHistory": {
     "firstCommit": "8a061609410b54af58775c8bbeaab15981a55acc",
     "firstDate": "2026-10-22",
-    "previousRelease": "3d86751e4ef37fd42375616f0e0bcb119e7c275e"
+    "previousRelease": "7257b7b02fc237a834eac25cb3b5f673206319e2"
   },
   "changes": [
-    "Four new 1080p loading screens show Brookstead’s fountain square, the Lantern Inn, Riverstone Supplies and the Royal Archives. Each has its own phone framing. The four images together are 44% smaller.",
-    "Brookstead’s hand pump fills a stone trough and the fountain reflects the square using the river’s water shading. Repairing the pump starts four brass spouts, with ripples where each jet lands. The pump lane, stairs and landings have clearer paths.",
-    "Walls stay solid when the party walks up to them and fade when they block the player. The cutaway follows the character working the canal wheel. Windows in inns, shops and player homes show the outdoor sky from dawn through night.",
-    "Across 20 arenas and seven story battles, grass and groundcover follow the terrain and soften the join with the backdrop. Rocks sit into the soil, combat lanes stay clear, and distant scenery comes into focus gradually as it approaches the fighters.",
-    "Snowfields have windblown flurries and low spindrift. Other battlefields use local effects such as spray, petals and dust. Woodland leaves drift past only a handful of times per journey. Some settle on the forest floor and remain on return.",
-    "Overworld trees have more defined branches and leaves. Grass stays visible as the camera moves, and light from placed fixtures carries through the scene. Scene and battle transitions prepare their shaders during loading and release temporary rendering resources afterward."
+    "Overworld grass stays in place as the party walks and the camera zooms. The atlas keeps the same grass coverage at wide zoom.",
+    "Brookstead’s fountain reflects the pillar and courtyard steadily. After the pump is repaired, ripples spread from the four places where the streams meet the basin.",
+    "Directional moonlight casts deeper shadows in towns, on the overworld and in night battles. A soft shadow stays under the party’s feet after dark."
   ],
   "releaseNotes": [
+    {
+      "version": "Alpha Version 1.60",
+      "title": "Overworld grass, fountain reflections and moonlight shadows",
+      "date": "November 27, 2026",
+      "items": [
+        "Overworld grass stays in place as the party walks and the camera zooms. The atlas keeps the same grass coverage at wide zoom.",
+        "Brookstead’s fountain reflects the pillar and courtyard steadily. After the pump is repaired, ripples spread from the four places where the streams meet the basin.",
+        "Directional moonlight casts deeper shadows in towns, on the overworld and in night battles. A soft shadow stays under the party’s feet after dark."
+      ]
+    },
     {
       "version": "Alpha Version 1.59",
       "date": "November 27, 2026",
@@ -1060,8 +1067,8 @@
     "groundedStoryBattleEnvironments": 7
   },
   "validation": {
-    "file": "elyndor/previews/release-v159/verification.json",
-    "sha256": "47ab292712cd5a836b4aaecbd60e55b06de1015ae9bba835ba8e48bdfde89ff6",
+    "file": "elyndor/previews/grass-fountain-moonlight/verification.json",
+    "sha256": "e87cb4f63de8196abb3552c10e47aa83d93e359555be8f217357fd190f78cae4",
     "finalRelease": "PASS",
     "desktopAndPhone": true
   },
@@ -1102,9 +1109,9 @@
     "spriteLighting": "Coherent party and NPC canopy reception outside combat; original art and sampling retained"
   },
   "previousPublishedRelease": {
-    "version": "Alpha Version 1.58",
-    "commit": "3d86751e4ef37fd42375616f0e0bcb119e7c275e",
-    "sha256": "c1715c3b2fd5ab6e7c8df381310579e742cae2d54bc1205bb3feab3813236814"
+    "version": "Alpha Version 1.59",
+    "commit": "7257b7b02fc237a834eac25cb3b5f673206319e2",
+    "sha256": "8b2a7ce8d01cd9177354218fad1c6897a3e2489eb2e23a956ca96a82923ecf66"
   },
   "housing": {
     "maximumOwnedHomes": 1,

@@ -2,6 +2,16 @@
 
 Automatic Discord changelog setup is described in [the notification guide](elyndor/docs/discord-changelog.md). Add the `DISCORD_WEBHOOK_URL` repository secret to enable announcements after verified Pages deployments.
 
+## Alpha Version 1.60 — Overworld grass, fountain reflections and moonlight shadows
+
+November 27, 2026
+
+- Overworld grass stays in place as the party walks and the camera zooms. The atlas keeps the same grass coverage at wide zoom.
+- Brookstead’s fountain reflects the pillar and courtyard steadily. After the pump is repaired, ripples spread from the four places where the streams meet the basin.
+- Directional moonlight casts deeper shadows in towns, on the overworld and in night battles. A soft shadow stays under the party’s feet after dark.
+
+[Overworld grass](elyndor/previews/grass-fountain-moonlight/grass.jpg) · [Walking and zooming](elyndor/previews/grass-fountain-moonlight/grass-motion.webp) · [Fountain reflection](elyndor/previews/grass-fountain-moonlight/fountain-motion.webp) · [Moonlight shadows](elyndor/previews/grass-fountain-moonlight/moonlight.jpg) · [Golden hour](elyndor/previews/grass-fountain-moonlight/golden-hour.jpg)
+
 ## Alpha Version 1.59 — Brookstead waterworks and battlefield atmosphere
 
 November 27, 2026

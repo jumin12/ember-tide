@@ -18,6 +18,8 @@ function contactSeat133(a,size){
 updateContacts39=function(...args){
  const result=contactsBefore119(...args),q=world?.userData.contacts39;
  if(!q||battle||encounter53.active||!['poi','overworld','interior'].includes(activeScene?.kind))return result;
+ const hour=((state.worldMinutes%1440+1440)%1440)/60;
+ const travelContact=mix(.44,.86,smooth(5.5,6.3,hour)*(1-smooth(18.25,19.5,hour)));
  const alpha=q.mesh.geometry.attributes.contactAlpha39,slope=q.mesh.geometry.attributes.contactSlope39;let index=0;
  for(const a of actors){
   if(index>=q.mesh.count)break;
@@ -26,10 +28,9 @@ updateContacts39=function(...args){
    const p=a.mesh.position,macro=activeScene.kind==='overworld',visual=macro&&a.party?overworldPartyVisual159/1.60:1,size=clamp(a.size*Math.abs(a.mesh.scale.x)*(macro?.78:.86),1.15*visual,(macro?5.4:3.8)*visual),seat=contactSeat133(a,size);
    q.dummy.position.set(p.x,seat.y,p.z);
    q.dummy.scale.set(size,1,size);q.dummy.rotation.set(0,0,0);q.dummy.updateMatrix();
-   q.mesh.setMatrixAt(index,q.dummy.matrix);slope.setXY(index,seat.sx,seat.sz);alpha.setX(index,macro?((state.worldMinutes+1440)%1440>=360&&(state.worldMinutes+1440)%1440<1170?.86:0):a.npc?.78:.82);
-   // Circular contact remains fixed in world scale at every heading and speed.
-   // Night uses the real moon/lamp shadow rather than a daylight contact disc.
-   const casts=macro?alpha.getX(index)===0:true;
+   q.mesh.setMatrixAt(index,q.dummy.matrix);slope.setXY(index,seat.sx,seat.sz);alpha.setX(index,macro?travelContact:a.npc?.78:.82);
+   // A soft foot contact remains under the moon's directional silhouette.
+   const casts=!macro||((hour<6||hour>=19.5)&&!a.pixelReleased);
    if(a.mesh.castShadow!==casts){a.mesh.castShadow=casts;shadow36.last=-100;renderer.shadowMap.needsUpdate=sun.shadow.needsUpdate=true;}
   }
   index++;

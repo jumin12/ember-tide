@@ -1,0 +1,97 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 113384,
+    "sha256": "a34a1ae32e89676e9695137cc57ad5dd4307516311deccb2b523aa1697eb58ad"
+  },
+  {
+    "file": "elyndor/previews/grass-fountain-moonlight/fountain-motion.webp",
+    "bytes": 886072,
+    "sha256": "1ef1cb647c480df6d37a05c13d67dbd63ef2c9ca82d3835bc8f181f34439feb0"
+  },
+  {
+    "file": "elyndor/previews/grass-fountain-moonlight/fountain.jpg",
+    "bytes": 424724,
+    "sha256": "9cf755547ff94e851d1302720a3b442766e8adfd0f2c3791c3699f9c337c9aa5"
+  },
+  {
+    "file": "elyndor/previews/grass-fountain-moonlight/golden-hour.jpg",
+    "bytes": 428198,
+    "sha256": "f085c184f7c774ec95b4a3ea4085558e0f47987da432b6ef1e8874b0e960a8b1"
+  },
+  {
+    "file": "elyndor/previews/grass-fountain-moonlight/grass-motion.webp",
+    "bytes": 2316252,
+    "sha256": "19679fb4df4201c98c7a8f8d622be945912ebc5cbcc6bc72d50e17bc4e41ca82"
+  },
+  {
+    "file": "elyndor/previews/grass-fountain-moonlight/grass.jpg",
+    "bytes": 577181,
+    "sha256": "a71fe2b002615e6bf0223c2d53215116c886b8d3a65303993ea57ca0e494566c"
+  },
+  {
+    "file": "elyndor/previews/grass-fountain-moonlight/moonlight.jpg",
+    "bytes": 844971,
+    "sha256": "33ee5e1680a4097474ce95ebe512129c9cf5e82ccf8d9fca7de4845319ba239d"
+  },
+  {
+    "file": "elyndor/previews/grass-fountain-moonlight/verification.json",
+    "bytes": 2594,
+    "sha256": "e87cb4f63de8196abb3552c10e47aa83d93e359555be8f217357fd190f78cae4"
+  },
+  {
+    "file": "elyndor/systems/environment-coherence.js",
+    "bytes": 9653,
+    "sha256": "fad9fc82989c2e49d6ac178b5063cb200de6169563b0215e8808228737164dcc"
+  },
+  {
+    "file": "elyndor/systems/exact-atlas.js",
+    "bytes": 13955,
+    "sha256": "420dfd7242c808e8ff84d66d86d2f48d1290f9ee3068f188447d57d19ab2e23c"
+  },
+  {
+    "file": "elyndor/systems/exploration-lighting.js",
+    "bytes": 8924,
+    "sha256": "3a6b3d5161f8d5c4e1e4e6e3aac65ff424e6c78141a8e47d47b074b055bc3bb2"
+  },
+  {
+    "file": "elyndor/systems/exploration-review.js",
+    "bytes": 4061,
+    "sha256": "5c741b9966213128fb69bb780ab4d1da382d3e272b6413bc7b7821c2bee42a89"
+  },
+  {
+    "file": "elyndor/systems/fountain-water.js",
+    "bytes": 12011,
+    "sha256": "be1169aaf81ea1ba30b539785504c984d0b188ca77a75c749591609ac96ac1e6"
+  },
+  {
+    "file": "elyndor/systems/overworld-scenery.js",
+    "bytes": 21925,
+    "sha256": "571579c513a3f8ac46c8c77bcb28affb0aa38ae605128b903805a979af96f220"
+  },
+  {
+    "file": "elyndor/systems/poi-lighting.js",
+    "bytes": 5305,
+    "sha256": "3b83947b843881dd33bf8c7a6a6dca8110ab3f8c479529736312b49753e7db50"
+  },
+  {
+    "file": "elyndor/systems/valenne-travel-art.js",
+    "bytes": 40091,
+    "sha256": "c9a9452a31cac654785ab0cba3f1f54751cc26aa5b02e2ac961b9f40a63978f2"
+  },
+  {
+    "file": "elyndor/title-v19.js",
+    "bytes": 106047,
+    "sha256": "25f368452b3e3719b8cbe979c9c69f301fbbd4112729e631e42a14229120ae58"
+  },
+  {
+    "file": "index.html",
+    "bytes": 8103108,
+    "sha256": "321204d4374bc8cc21fa2f2af67836937f6ad35aa4a3190b8bcb3bc719256977"
+  },
+  {
+    "file": "release.json",
+    "bytes": 111456,
+    "sha256": "ebfc616743db6cfba8417827b2f4df58c3706114ef3d5a56aeba3258030f7f2e"
+  }
+]

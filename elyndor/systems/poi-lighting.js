@@ -2,9 +2,9 @@
 // readable sky-lit shadow floor and restrained warm light at the horizon.
 const poiLight54={enabled:{value:0},warm:{value:0},day:{value:1},night:{value:0},frames:0};
 const POI_LIGHT_KEYS54=[
- [0,0.72,.858,0.5704,1.18,0,"#adc9ef","#91a8c3","#34465b","#a3bdd7","#273d58"],
- [4.5,0.62,.836,0.5828,1.18,0.05,"#b6c4e7","#a1acc3","#404b5b","#b8c4d7","#444b65"],
- [5.4,0.46,0.913,0.6572,1.18,0.2,"#d2c4df","#b1aec5","#555762","#d0c8d6","#7d6c7e"],
+ [0,1.58,.55,.30,1.18,0,"#adc9ef","#91a8c3","#34465b","#a3bdd7","#273d58"],
+ [4.5,1.24,.62,.36,1.18,0.05,"#b6c4e7","#a1acc3","#404b5b","#b8c4d7","#444b65"],
+ [5.4,0.64,.85,.58,1.18,0.2,"#d2c4df","#b1aec5","#555762","#d0c8d6","#7d6c7e"],
  [6.1,4.8,0.94,0.68,1.18,0.72,"#ffc88c","#d6cbbb","#737b5b","#ead8b3","#c3a58a"],
  [6.5,6.4,0.96,0.72,1.18,0.9,"#ffd38b","#becddd","#81835e","#dfdbc0","#ccbb96"],
  [7.5,5.1,0.98,0.7,1.17,0.3,"#ffe8bb","#c8dce3","#788866","#e0e8d6","#b8d4d6"],
@@ -14,10 +14,10 @@ const POI_LIGHT_KEYS54=[
  [16,5.4,0.98,0.69,1.18,0.43,"#ffdaa0","#d0d4d6","#87815e","#ecdfbc","#d9c6a8"],
  [17.5,7.0,1.0,0.73,1.18,0.95,"#ffc469","#becddd","#89785a","#dfdbc0","#d4a984"],
  [18.1,2.5,0.96,0.65,1.18,0.62,"#e7b398","#c3b2b8","#706375","#ddbdac","#ae8290"],
- [18.5,0.72,.968,0.6944,1.18,0.24,"#bdb9d3","#a59bb4","#50485e","#c6b1bd","#6c627e"],
- [19.5,0.67,.858,0.5828,1.18,0.03,"#a8bfe4","#91a1be","#39465c","#aabbd3","#3b4b69"],
- [21,0.73,.858,0.5704,1.18,0,"#a9c9ed","#8da7c2","#34475b","#a0bdd6","#293f5a"],
- [24,0.72,.858,0.5704,1.18,0,"#adc9ef","#91a8c3","#34465b","#a3bdd7","#273d58"]
+ [18.5,0.82,.91,.64,1.18,0.24,"#bdb9d3","#a59bb4","#50485e","#c6b1bd","#6c627e"],
+ [19.5,1.23,.67,.39,1.18,0.03,"#a8bfe4","#91a1be","#39465c","#aabbd3","#3b4b69"],
+ [21,1.55,.56,.31,1.18,0,"#a9c9ed","#8da7c2","#34475b","#a0bdd6","#293f5a"],
+ [24,1.58,.55,.30,1.18,0,"#adc9ef","#91a8c3","#34465b","#a3bdd7","#273d58"]
 ].map(([hour,power,ambient,fill,exposure,warm,...colours])=>({hour,n:[power,ambient,fill,exposure,warm],c:colours.map(s=>new THREE.Color(s))}));
 const poiSample54={n:new Float32Array(5),c:Array.from({length:5},()=>new THREE.Color())};
 function samplePoiLight54(hour){

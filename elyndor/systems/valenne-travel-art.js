@@ -523,7 +523,7 @@ waterMaterial62=function(o,...args){
    float daylight=day62,clearSun=daylight*(1.-.69*cloud62);
    float shelf=exp(-.52*waterDepth62),exposure=noise62(p*.074+vec2(81.,49.));
    float riffle=clamp(.21+.59*smoothstep(.24,.78,exposure)+.21*shelf,0.,1.);
-   float broad=noise62(pool*vec2(.31,.18)-vec2(.13*time62,0.));
+   float broad=${basin?'noise62(basinDelta124*.36)':'noise62(pool*vec2(.31,.18)-vec2(.13*time62,0.))'};
    vec2 footprint=fwidth(channel);
    float fineDetail=1.-smoothstep(.14,.66,max(footprint.x,footprint.y));
    float waveDetail=1.-smoothstep(.32,1.45,footprint.x);
@@ -543,12 +543,12 @@ waterMaterial62=function(o,...args){
    vec2 paintCoord=channel-vec2(flowTime*.96,0.);
    vec2 brushWarp=vec2(noise62(paintCoord*vec2(.13,.23)+6.),noise62(paintCoord*vec2(.22,.14)-18.))-.5;
    vec2 brushUV=paintCoord*vec2(.064,.121)+brushWarp*vec2(.09,.14);
-   vec2 lakeUV=pool*vec2(.050,.073)-vec2(.019*time62,0.)+.08*broad;
+   vec2 lakeUV=${basin?'basinDelta124*vec2(.093,.127)+.045*broad':'pool*vec2(.050,.073)-vec2(.019*time62,0.)+.08*broad'};
    vec3 ink=${travel?'mix(brokenPainting(lakeUV,.9),brokenPainting(brushUV,bank),river)':
      ribbon?'brokenPainting(brushUV,bank)':'brokenPainting(lakeUV,.9)'};
    ink*=.65+smoothstep(.011,.082,dot(ink,vec3(.21,.72,.07)))*1.12;
    ink*=mix(vec3(1.83,.91,.43),vec3(1.99,1.42,.93),daylight);
-   float facet=${basin?'fountainFlow124*poolSlope':'mix(poolSlope,slope,river)'};
+   float facet=${basin?'dot(impactNormal124,vec2(.55,.83))':'mix(poolSlope,slope,river)'};
    float signedFace=facet*(.49+.51*riffle)+river*fine*(.55+.76*riffle);
    float edgeGlint=smoothstep(.39,.99,signedFace);
    vec3 pigment=mix(vec3(.009,.032,.058),vec3(.027,.074,.082),shelf);
@@ -556,7 +556,7 @@ waterMaterial62=function(o,...args){
    vec3 waterColour=pigment*mix(vec3(.41,.49,.68),vec3(1.),daylight);
    vec3 sheen=mix(vec3(.039,.063,.11),vec3(.115,.184,.216),daylight);
    sheen*=.72+.43*sky62;
-   waterColour=mix(waterColour,ink,${basin?'.28+.54*fountainFlow124':'.82'})*(.99+.12*clamp(signedFace,-1.,1.));
+   waterColour=mix(waterColour,ink,${basin?'.24':'.82'})*(.99+.12*clamp(signedFace,-1.,1.));
    float brokenCrest=edgeGlint*(.12+.88*riffle)*(.48+.52*smoothstep(.017,.072,dot(ink,vec3(.21,.72,.07))));
    waterColour+=sheen*(brokenCrest*(.14+.22*clearSun)+.14*ribbons*river);
    float foam=${basin?'0.':'driftingFoam(mix(pool,channel,river),flowTime,bank,shelf,signedFace)'};

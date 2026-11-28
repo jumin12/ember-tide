@@ -26,7 +26,7 @@ function installFountain124(){
   s.fragmentShader=s.fragmentShader.replace(/float localAge108=releaseAge108-travel108\(worldWater62.z\);[\s\S]*?stream62.y-=worldWater62.y\*\.78;/,`vec2 basinDelta124=worldWater62.xz-fountainCenter124.xz;
    float localAge108=-999.;
    vec2 current62=vec2(.07,.04);
-   vec2 stream62=worldWater62.xz-current62*fountainTime124;`);
+   vec2 stream62=basinDelta124;`);
   s.fragmentShader=s.fragmentShader.replace('float edge62=max(1.-smoothstep(.01,.34,waterDepth62),1.-smoothstep(.05,.68,bed62.g));',`float edge62=1.-smoothstep(.015,.16,${d.poolRadius.toFixed(3)}-length(basinDelta124));`);
   s.fragmentShader=s.fragmentShader.replace('diffuseColor.rgb=mix(diffuseColor.rgb,mix(vec3(.15,.25,.29),vec3(.65,.8,.75),day62),foam62);',`vec2 impactNormal124=vec2(0.);float impactFoam124=0.;
    for(int j124=0;j124<${d.outlets};j124++){
@@ -46,7 +46,7 @@ function installFountain124(){
    diffuseColor.rgb=mix(diffuseColor.rgb,mix(vec3(.12,.20,.24),vec3(.54,.73,.72),day62),foam62);`);
   // Reflections, direct light and the lit surface share the same contact waves.
   s.fragmentShader=s.fragmentShader.replace('normal=normalize(normal+mat3(viewMatrix)*fineN62*.65);',`
-   float ambient124=.195*fountainFlow124;
+   float ambient124=.045*fountainFlow124;
    waveX62=waveX62*ambient124+impactNormal124.x;
    waveZ62=waveZ62*ambient124+impactNormal124.y;
    normal=normalize(normal+mat3(viewMatrix)*vec3(waveX62,0.,waveZ62));`);

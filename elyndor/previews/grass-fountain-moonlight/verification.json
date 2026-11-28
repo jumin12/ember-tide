@@ -1,0 +1,126 @@
+{
+  "version": "Alpha Version 1.60",
+  "previousCommit": "7257b7b02fc237a834eac25cb3b5f673206319e2",
+  "artifact": {
+    "file": "index.html",
+    "bytes": 8103108,
+    "sha256": "321204d4374bc8cc21fa2f2af67836937f6ad35aa4a3190b8bcb3bc719256977",
+    "offline": false,
+    "delivery": "HTML and same-origin native runtime assets"
+  },
+  "gameplaySHA256": "c35dff21d644f42e118dc83f59e9c968490235fe45aaea0b29dc7e600bc8b0c7",
+  "desktop": {
+    "walkingAndZoomFrames": 15,
+    "meadowBatches": 498,
+    "atlasZoomSamples": [
+      {
+        "distance": 140,
+        "shown": 40,
+        "inView": 40
+      },
+      {
+        "distance": 260,
+        "shown": 89,
+        "inView": 89
+      },
+      {
+        "distance": 360,
+        "shown": 142,
+        "inView": 142
+      },
+      {
+        "distance": 460,
+        "shown": 201,
+        "inView": 201
+      },
+      {
+        "distance": 260,
+        "shown": 89,
+        "inView": 89
+      },
+      {
+        "distance": 140,
+        "shown": 40,
+        "inView": 40
+      }
+    ],
+    "moonlightKey": 1.5093333435058593,
+    "moonlightSkyFill": 0.4973333179950714
+  },
+  "emulatedPhone": {
+    "walkingAndZoomFrames": 15,
+    "meadowBatches": 498,
+    "atlasZoomSamples": [
+      {
+        "distance": 140,
+        "shown": 18,
+        "inView": 18
+      },
+      {
+        "distance": 260,
+        "shown": 35,
+        "inView": 35
+      },
+      {
+        "distance": 360,
+        "shown": 56,
+        "inView": 56
+      },
+      {
+        "distance": 460,
+        "shown": 82,
+        "inView": 82
+      },
+      {
+        "distance": 260,
+        "shown": 35,
+        "inView": 35
+      },
+      {
+        "distance": 140,
+        "shown": 18,
+        "inView": 18
+      }
+    ],
+    "moonlightKey": 1.5093333435058593,
+    "moonlightSkyFill": 0.4973333179950714
+  },
+  "lightingPresets": [
+    {
+      "minute": 1050,
+      "source": [
+        -0.857630727521691,
+        0.11290922728592633,
+        0.501718089771846
+      ],
+      "casts": true,
+      "key": 5.182970705161528,
+      "hemi": 0.742127504982571,
+      "gl": 0
+    },
+    {
+      "minute": 1380,
+      "source": [
+        0.22388654638863784,
+        0.8355559662535229,
+        -0.5017180897718461
+      ],
+      "casts": true,
+      "key": 1.5093333435058593,
+      "hemi": 0.4973333179950714,
+      "gl": 0
+    },
+    {
+      "minute": 1050,
+      "source": [
+        -0.857630727521691,
+        0.11290922728592633,
+        0.501718089771846
+      ],
+      "casts": true,
+      "key": 5.182970705161528,
+      "hemi": 0.742127504982571,
+      "gl": 0
+    }
+  ]
+}

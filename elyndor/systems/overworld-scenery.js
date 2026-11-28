@@ -106,27 +106,22 @@ finishWorld102=function(...args){
 
 // A sward has short infill, taller blades and irregular roots spread through
 // the patch, rather than eight blades emerging from one tiny central point.
-function travelGrassGeometry160(far=false){
- const key='travel-sward160-'+far;if(sharedGeo[key])return sharedGeo[key];
- const blades=far?6:18,segments=far?2:3,rng=seeded(160433),p=[],uv=[],indices=[];
+function travelGrassGeometry160(atlas=false){
+ const key=atlas?'travel-sward-atlas':'travel-sward160';if(sharedGeo[key])return sharedGeo[key];
+ const blades=18,rng=seeded(160433),p=[],uv=[],indices=[];
+ const triangle=[[0,-1],[0,1],[1,0]],ribbon=[[0,-1],[0,1],[.54,-1],[.54,1],[1,0]];
  for(let blade=0;blade<blades;blade++){
-  const a=blade*2.399963+rng()*.55,dir=V3(Math.cos(a),0,Math.sin(a)),side=V3(-dir.z,0,dir.x),r=.10+Math.sqrt(rng())*.43,root=V3(dir.x*r,-.465,dir.z*r),short=blade%3===0,h=(short?.27:.44)+rng()*(short?.17:.33),lean=.16+rng()*.29,width=(.027+rng()*.024)*(far?1.50:1),base=p.length/3;
-  if(far){
-   // A distant blade needs only its curved outline. The scaled width
-   // remains visible across the river without drawing subpixel folds.
-   for(const [t,s] of [[0,-1],[0,1],[.53,-1],[.53,1],[1,0]]){
-    const pt=root.clone().addScaledVector(dir,lean*t*t).addScaledVector(side,s*width*(1-t*.68));
-    p.push(pt.x,pt.y+h*(t-.12*t*t),pt.z);uv.push((s+1)*.5,t);
-   }
-   indices.push(base,base+1,base+2,base+1,base+3,base+2,base+2,base+3,base+4);
-   continue;
+  const a=blade*2.399963+rng()*.55,dir=V3(Math.cos(a),0,Math.sin(a)),side=V3(-dir.z,0,dir.x),r=.10+Math.sqrt(rng())*.43,root=V3(dir.x*r,-.465,dir.z*r),short=blade%3===0,h=(short?.27:.44)+rng()*(short?.17:.33),lean=.16+rng()*.29,width=.034+rng()*.025,base=p.length/3;
+  // One bent ribbon keeps its roots, silhouette and coverage through every zoom.
+  const outline=atlas||short?triangle:ribbon;
+  for(const [t,s] of outline){
+   const pt=root.clone().addScaledVector(dir,lean*t*t).addScaledVector(side,s*width*Math.pow(1-t,.72));
+   p.push(pt.x,pt.y+h*(t-.12*t*t),pt.z);uv.push((s+1)*.5,t);
   }
-  for(let j=0;j<=segments;j++){const t=j/segments,center=root.clone().addScaledVector(dir,lean*t*t).add(V3(0,h*(t-.12*t*t),0)),w=width*Math.pow(1-t,.72);
-   for(const s of[-1,0,1]){const v=center.clone().addScaledVector(side,s*w).addScaledVector(dir,s===0?Math.sin(t*Math.PI)*.013:0);p.push(...v.toArray());uv.push((s+1)*.5,t);}
-  }
-  for(let j=0;j<segments;j++)for(let k=0;k<2;k++){const q=base+j*3+k;indices.push(q,q+1,q+3,q+1,q+4,q+3);}
+  indices.push(base,base+1,base+2);
+  if(outline===ribbon)indices.push(base+1,base+3,base+2,base+2,base+3,base+4);
  }
- const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(p,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));g.setIndex(indices);g.computeVertexNormals();g.computeBoundingBox();g.computeBoundingSphere();g.boundingSphere.radius+=.15;g.userData={meadow160:true,blades,segments,opaque:true,folded:true};return sharedGeo[key]=g;
+ const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(p,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));g.setIndex(indices);g.computeVertexNormals();g.computeBoundingBox();g.computeBoundingSphere();g.boundingSphere.radius+=.15;g.userData={meadow160:true,blades,segments:atlas?1:2,opaque:true};return sharedGeo[key]=g;
 }
 function finishTravelGrassGeometry160(){
  // Lush grass is partitioned into its final spatial batches by finishWorld102,
@@ -137,10 +132,10 @@ function finishTravelGrassGeometry160(){
   const origin=m.userData.plantOriginal?.find(matrix=>matrix.elements[5]!==0)?.elements;
   const form=origin?Math.min(2,Math.floor(groundNoise104(origin[12]*.13,origin[14]*.13)*4.2)):0;
   const geometry=far=>{
-   const source=kind==='flowers'?plantSculpt103(kind,far,form):travelGrassGeometry160(far),g=shareGeometry36(source);
+   const source=kind==='flowers'?plantSculpt103(kind,far,form):travelGrassGeometry160(),g=shareGeometry36(source);
    g.userData={...source.userData};world.userData.botanicalOwned30??=new Set();world.userData.botanicalOwned30.add(g);return g;
   };
-  const old=new Set([m.geometry,m.userData.detailedGeometry,m.userData.distantGeometry]);m.geometry=m.userData.detailedGeometry=geometry(false);m.userData.distantGeometry=geometry(true);
+  const old=new Set([m.geometry,m.userData.detailedGeometry,m.userData.distantGeometry]);m.geometry=m.userData.detailedGeometry=geometry(false);m.userData.distantGeometry=kind==='flowers'?geometry(true):m.geometry;
   if(kind==='flowers')m.userData.meadowFlowerForm=form;else m.userData.meadow160=true;
   m.computeBoundingBox();m.computeBoundingSphere();for(const g of old)g?.dispose();
  }
@@ -231,9 +226,9 @@ updateRenderBudget=function(...args){
   o.geometry=lod[detailDistance<(phone?19:31)?0:detailDistance<(phone?63:94)?1:2];
  }
  if(!battle&&!encounter53.active)for(const m of perf.plants)if(m.userData.meadow160){
-  const d=distanceToBatch(m);
   m.visible=true;m.frustumCulled=true;
-  m.geometry=stableDistanceLod33(m,'meadowDetail',d,[phone?16:29],5)===0?m.userData.detailedGeometry:m.userData.distantGeometry;
+  m.geometry=m.userData.detailedGeometry;
+  m.castShadow=false;
   m.count=Math.ceil(m.userData.total*(phone?.80:1));
  }
  world.userData.travelBudget157={run,range,shadowRange};return r;

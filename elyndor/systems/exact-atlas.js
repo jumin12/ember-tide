@@ -9,7 +9,8 @@ function captureCompletedAtlas67(){
   if(excluded.has(src)||src.userData.dynamicFX||src.userData.sunshafts||src.userData.distantScenery26||src.userData.backdrop||src.name==='retained-static-source-handles35')return;
   let dst;
   if(src.isMesh||src.isPoints){const mats=Array.isArray(src.material)?src.material:[src.material];if(mats.some(m=>m.isShaderMaterial)&&!src.userData.dynamicWater&&!src.userData.water62&&!src.userData.ocean38&&!src.userData.freshwater38&&!src.userData.gentleWater)return;
-   const geometry=src.userData.nativeLods30?.[0]??src.userData.fullGeometry??src.geometry;holdAtlas67(geometry);for(const g of src.userData.nativeLods30??[])holdAtlas67(g);mats.forEach(holdMaterial67);if(src.userData.terrain)mats.forEach(m=>exactAtlas67.terrainMaterials.add(m));for(const m of mats){const u=waterUniforms62.get(m);if(u&&!exactAtlas67.waterUniforms.includes(u))exactAtlas67.waterUniforms.push(u);}
+   // The atlas retains every grass root and blade tip with one triangle per blade.
+   const geometry=src.userData.meadow160?travelGrassGeometry160(true):src.userData.nativeLods30?.[0]??src.userData.fullGeometry??src.geometry;holdAtlas67(geometry);for(const g of src.userData.nativeLods30??[])holdAtlas67(g);mats.forEach(holdMaterial67);if(src.userData.terrain)mats.forEach(m=>exactAtlas67.terrainMaterials.add(m));for(const m of mats){const u=waterUniforms62.get(m);if(u&&!exactAtlas67.waterUniforms.includes(u))exactAtlas67.waterUniforms.push(u);}
    if(src.isInstancedMesh){dst=new THREE.InstancedMesh(geometry,src.material,src.userData.total??src.count);dst.instanceMatrix=src.instanceMatrix.clone();if(src.instanceColor)dst.instanceColor=src.instanceColor.clone();dst.count=src.count;dst.userData.lods67=src.userData.nativeLods30;dst.userData.center67=src.userData.center?.clone();if(src.userData.forest||src.userData.boundaryForest50)exactAtlas67.forests.push(dst);if(src.userData.plantKey){dst.userData.plantKey=src.userData.plantKey;exactAtlas67.plants.push(dst);}dst.computeBoundingSphere();exactAtlas67.stats.instanceCopies++;}
    else dst=src.isPoints?new THREE.Points(geometry,src.material):new THREE.Mesh(geometry,src.material);
    dst.castShadow=src.castShadow;dst.receiveShadow=src.receiveShadow;dst.customDepthMaterial=src.customDepthMaterial;if(dst.customDepthMaterial)holdMaterial67(dst.customDepthMaterial);dst.userData.sourceObject67=src.uuid;dst.userData.sourceGeometry67=geometry.uuid;exactAtlas67.sources.push({source:src.uuid,geometry,dst});exactAtlas67.stats.meshes++;exactAtlas67.stats.sharedGeometry++;
@@ -51,7 +52,9 @@ drawAtlas3d=function(){
  const restoreOutdoor=outdoorAtlasLight67();
  const frustum=new THREE.Frustum().setFromProjectionMatrix(new THREE.Matrix4().multiplyMatrices(c.projectionMatrix,c.matrixWorldInverse));
  for(const m of exactAtlas67.forests){const center=m.userData.center67??m.boundingSphere?.center??m.position,d=c.position.distanceTo(center);if(m.userData.lods67)m.geometry=m.userData.lods67[d<180?0:d<350?1:2];m.visible=!m.boundingSphere||frustum.intersectsObject(m);m.castShadow=d<280;}
- for(const m of exactAtlas67.plants){m.visible=c.position.distanceTo(m.boundingSphere?.center??m.position)<260;}
+ for(const m of exactAtlas67.plants){
+  m.visible=m.userData.plantKey==='grassBlades'||c.position.distanceTo(m.boundingSphere?.center??m.position)<260;
+ }
  const old=renderer.getClearColor(new THREE.Color()),alpha=renderer.getClearAlpha(),fog=exactAtlas67.scene.fog;fog.near=Math.max(900,r*1.4);fog.far=Math.max(2200,r*3);
  try{renderer.setClearColor(exactAtlas67.scene.background,1);renderAtlasPresentation119(rect,ratio,c);}
  finally{restoreOutdoor();renderer.setScissorTest(false);renderer.setViewport(0,0,width,height);renderer.setClearColor(old,alpha);surface67.day.value=sourceDay;forest30.main.value=sourceMode;shoreState62.texture.value=shoreTexture;shoreState62.bounds.value.copy(shoreBounds);shoreState62.enabled.value=shoreEnabled;weather.exterior.value=exterior;windUniforms.time.value=windTime;exactAtlas67.waterUniforms.forEach((u,i)=>u.reflect62.value=reflect[i]);if(scenery.staticAtlas)scenery.staticAtlas.envMap=sourceEnv;}

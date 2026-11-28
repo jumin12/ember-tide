@@ -28,10 +28,10 @@ arenaLight89=function(b){
  const dark=s.cave,forest=s.dense||s.elder,warm=s.autumn||s.twilight;
  sun.color.set(b.night?'#c0dcff':dark?'#b4def0':warm?'#ffe2bf':'#fff5e6');
  const daylight=clamp((study.floor[3]+.15)/.62,.83,1.10),moonlight=clamp((study.floor[3]+.08)/.32,.78,1.14);
- sun.intensity=b.night?(dark?.68:.90)*moonlight:(dark?1.15:forest?3.1:s.snow?2.65:warm?4.1:4.9)*daylight;
+ sun.intensity=b.night?(dark?.82:1.56)*moonlight:(dark?1.15:forest?3.1:s.snow?2.65:warm?4.1:4.9)*daylight;
  hemi.color.set(b.night?'#b3cce8':dark?'#aacbd8':'#d9e9f4');
  hemi.groundColor.set(b.night?'#607a85':dark?'#788f91':'#a2b39c');
- hemi.intensity=b.night?(dark?.72:.92)*moonlight:dark?1.04:s.snow?1.40:forest?1.16:1.26;
+ hemi.intensity=b.night?(dark?.60:.65)*moonlight:dark?1.04:s.snow?1.40:forest?1.16:1.26;
  encounter53.resources.fill.color.copy(hemi.color);encounter53.resources.fill.intensity=b.night?.13:dark?.14:.18;
  b.exposure89=1;
  b.lightMatch105={phase:b.night?'night':'day',habitat:dark?'cave':forest?'forest':warm?'warm':s.snow?'snow':'daylight',study,sun:sun.intensity,fill:hemi.intensity,nativePlate:true};
